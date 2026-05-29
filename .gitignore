@@ -17,5 +17,8 @@ venv/
 # Local generated previews
 preview/
 
+# Cloudflare Wrangler 本地缓存（含 wrangler-account.json：账号 id / 邮箱，勿入库）
+.wrangler/
+
 # Avoid committing the original docx
 *.docx
