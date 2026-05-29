@@ -14,7 +14,9 @@
     "validate": "python3 scripts/validate.py",
     "build": "python3 scripts/gen_html.py",
     "serve": "cd docs && python3 -m http.server 8000",
-    "fetch-stars": "python3 scripts/fetch_metadata.py"
+    "fetch-stars": "python3 scripts/fetch_metadata.py",
+    "discover": "python3 scripts/discover_candidates.py",
+    "render-issue": "python3 scripts/render_candidate_issue.py"
   },
   "keywords": [
     "ai",

@@ -86,6 +86,37 @@ skills-atlas/
 └── .github/                 # CI / Issue / PR 模板
 ```
 
+## 自动发现流水线
+
+每天扫 GitHub Search，把新出现的 skill 仓库挂候选清单，让维护者人审入库。
+
+```
+.github/workflows/daily-discover.yml   # 每天 UTC 02:00 跑
+  └─ scripts/discover_candidates.py    # GitHub Search × N 条 → 跟主库 diff
+       ↓
+     data/_inbox/raw/YYYY-MM-DD.json   # 当日候选（自动 PR）
+       ↓
+     scripts/render_candidate_issue.py # 渲染成 Issue body
+       ↓
+     gh issue create --label discover-bot   # 人审入口
+```
+
+人审决定哪些进 `data/repositories.yaml` + `data/skills.yaml`。**LLM 不会自动写入主数据**。
+
+| 阶段 | 状态 | 内容 |
+|---|---|---|
+| **PR-1** | ✅ 已交付 | 纯发现 + Issue 输出（无 LLM） |
+| **PR-2** | 规划中 | OpenRouter 廉价模型做 is-skill-repo 过滤 |
+| **PR-3** | 规划中 | GPT-5.5 给候选起 type / 分类 / 中文描述草稿 |
+
+被 PR-1 拒掉的仓库可以追加进 `data/_inbox/blocklist.yaml`，下一次发现自动跳过。
+
+手动触发：
+```bash
+GITHUB_TOKEN=ghp_xxx python3 scripts/discover_candidates.py
+python3 scripts/render_candidate_issue.py --out /tmp/issue.md
+```
+
 ## 主要功能
 
 - **左侧导航** 13 大类可折叠展开 / 74 子分组直跳

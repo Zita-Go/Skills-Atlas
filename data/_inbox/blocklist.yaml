@@ -1,0 +1,9 @@
+# 被人审拒绝过的候选仓库。daily-discover 流水线会跳过这里列出的 (author, repo)。
+#
+# 字段：
+#   author / repo  必填，大小写不敏感（脚本里全部转 lower 比较）
+#   reason         可选，人类可读的拒绝理由
+#   added_at       可选，加入日期（YYYY-MM-DD）
+#
+# 用法：人审 daily-discover 提的 PR 时，遇到不想再被推荐的仓库，
+# 在这里追加一条，下一次发现就会自动跳过。
