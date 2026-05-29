@@ -1,0 +1,18 @@
+name = "skills-atlas-llm"
+main = "index.js"
+compatibility_date = "2025-04-01"
+
+# 默认会绑到 https://skills-atlas-llm.<your-subdomain>.workers.dev
+# 想绑自定义域见 https://developers.cloudflare.com/workers/configuration/routing/
+
+[vars]
+# 允许的来源（前端站点）。多个用逗号分隔。
+# 部署成自己的站时改成你的域名。
+ALLOWED_ORIGINS = "https://zita-go.github.io"
+
+# 允许的模型白名单，逗号分隔。留空走代码里的 DEFAULT_MODELS。
+# MODELS_WHITELIST = "openai/gpt-oss-120b:free,z-ai/glm-4.5-air:free,nvidia/nemotron-3-super-120b-a12b:free,openai/gpt-oss-20b:free"
+
+# OPENROUTER_KEY 不在这里写！用 secret：
+#   wrangler secret put OPENROUTER_KEY
+# 然后粘贴你的 key。
