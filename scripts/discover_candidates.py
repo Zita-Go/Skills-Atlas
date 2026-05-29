@@ -7,6 +7,10 @@
   - 跟 data/_inbox/blocklist.yaml diff（人审拒绝过的不再骚扰）
   - 输出当日候选到 data/_inbox/raw/YYYY-MM-DD.json
 
+查询词 / 阈值 全部外置在 data/_inbox/discovery.config.yaml（公开可 PR）。
+本脚本只是「执行器」：读配置 → 跑搜索 → 出候选。改发现策略改那份 yaml，不用动代码。
+优先级：环境变量 > 配置文件 > 代码内置兜底（_FALLBACK，配置缺失时的安全网）。
+
 被 .github/workflows/daily-discover.yml 每天调用一次。
 本地跑：
     GITHUB_TOKEN=ghp_xxx python3 scripts/discover_candidates.py
@@ -34,43 +38,102 @@ RAW = INBOX / 'raw'
 GH_TOKEN = os.environ.get('GITHUB_TOKEN', '')
 USER_AGENT = 'skills-atlas-discover-bot'
 
-# --- 调参区 -----------------------------------------------------------------
+# --- 配置 -------------------------------------------------------------------
+# 调参全部走 data/_inbox/discovery.config.yaml。下面的 _FALLBACK 只是配置文件
+# 缺失 / 损坏时的安全网，同时充当 schema 的事实文档——改默认值请改 yaml，别改这里。
 
-# 一条查询最多取多少个结果（GitHub Search API 单次最大 100；多页累加）
-PER_QUERY_MAX = int(os.environ.get('DISCOVER_PER_QUERY_MAX', '50'))
+CONFIG_PATH = INBOX / 'discovery.config.yaml'
 
-# 一次 daily 跑最多收多少个候选（防 LLM 账单失控）。超过则截断并在结果里标记 truncated
-DAILY_CAP = int(os.environ.get('DISCOVER_DAILY_CAP', '60'))
+_FALLBACK: dict = {
+    'per_query_max': 50,        # 一条查询最多取多少结果（Search 单次最大 100，多页累加）
+    'daily_cap': 60,            # 一次 daily 最多收多少候选（防 LLM 账单失控），超出截断
+    'pushed_within_days': 90,   # 最近多少天内有 push 才算"活跃"
+    'min_stars': 30,            # 默认 star 阈值，填模板里的 {min_stars}
+    'queries': [
+        {'label': 'topic-claude-skills',     'template': 'topic:claude-skills stars:>{min_stars} pushed:>{since}'},
+        {'label': 'topic-agent-skills',      'template': 'topic:agent-skills stars:>{min_stars} pushed:>{since}'},
+        {'label': 'topic-claude-code',       'template': 'topic:claude-code-skills stars:>{min_stars} pushed:>{since}'},
+        {'label': 'topic-codex-skills',      'template': 'topic:codex-skills stars:>{min_stars} pushed:>{since}'},
+        {'label': 'topic-skill-marketplace', 'template': 'topic:skill-marketplace stars:>{min_stars} pushed:>{since}'},
+        {'label': 'path-skill-md',           'template': '"SKILL.md" in:path stars:>50 pushed:>{since}'},
+        {'label': 'path-dotclaude-skills',   'template': 'path:.claude/skills stars:>{min_stars} pushed:>{since}'},
+        {'label': 'name-agent-skills',       'template': 'agent-skills in:name stars:>{min_stars} pushed:>{since}'},
+        {'label': 'name-claude-skills',      'template': 'claude-skills in:name stars:>{min_stars} pushed:>{since}'},
+        {'label': 'zh-skill-readme',         'template': '技能 claude in:readme stars:>20 pushed:>{since}'},
+    ],
+}
 
-# 最近多少天内有 push 才算"活跃"
-PUSHED_WITHIN_DAYS = int(os.environ.get('DISCOVER_PUSHED_WITHIN_DAYS', '90'))
 
-# star 阈值；不同查询可单独覆盖（见 QUERIES）
-DEFAULT_MIN_STARS = int(os.environ.get('DISCOVER_MIN_STARS', '30'))
+def _env_int(name: str, default: int) -> int:
+    """读整数型环境变量；缺失或非法则回落到 default（并提示）。"""
+    raw = os.environ.get(name)
+    if raw is None or raw == '':
+        return default
+    try:
+        return int(raw)
+    except ValueError:
+        print(f'  ⚠️ 环境变量 {name}={raw!r} 不是整数，忽略', file=sys.stderr)
+        return default
 
 
-def _since_date() -> str:
+def _normalize_queries(raw_queries) -> list[tuple[str, str]]:
+    """把配置里的 queries 规整成 [(label, template), ...]，丢弃残缺项。"""
+    out: list[tuple[str, str]] = []
+    for q in raw_queries or []:
+        if isinstance(q, dict):
+            label, tmpl = q.get('label'), q.get('template')
+        elif isinstance(q, (list, tuple)) and len(q) == 2:
+            label, tmpl = q
+        else:
+            continue
+        if label and tmpl:
+            out.append((str(label), str(tmpl)))
+    return out
+
+
+def load_config() -> dict:
+    """读 discovery.config.yaml，套上 env 覆盖，缺啥补内置兜底。
+
+    优先级：环境变量 > 配置文件 > _FALLBACK。返回带 queries=[(label,template)] 的 dict。
+    """
+    cfg = {k: _FALLBACK[k] for k in ('per_query_max', 'daily_cap', 'pushed_within_days', 'min_stars')}
+    raw_queries = _FALLBACK['queries']
+
+    if CONFIG_PATH.exists():
+        try:
+            with open(CONFIG_PATH, encoding='utf-8') as f:
+                loaded = yaml.safe_load(f) or {}
+            if not isinstance(loaded, dict):
+                print(f'  ⚠️ {CONFIG_PATH.name} 顶层不是映射，改用内置兜底', file=sys.stderr)
+            else:
+                for k in ('per_query_max', 'daily_cap', 'pushed_within_days', 'min_stars'):
+                    if loaded.get(k) is not None:
+                        cfg[k] = int(loaded[k])
+                if loaded.get('queries'):
+                    raw_queries = loaded['queries']
+        except Exception as e:  # noqa: BLE001 — 配置坏不该让发现整个挂掉
+            print(f'  ⚠️ 读取 {CONFIG_PATH.name} 失败（{e}），改用内置兜底', file=sys.stderr)
+    else:
+        print(f'  ⚠️ 未找到 {CONFIG_PATH.name}，改用内置兜底', file=sys.stderr)
+
+    # 环境变量覆盖（CI 临时调参）
+    cfg['per_query_max'] = _env_int('DISCOVER_PER_QUERY_MAX', cfg['per_query_max'])
+    cfg['daily_cap'] = _env_int('DISCOVER_DAILY_CAP', cfg['daily_cap'])
+    cfg['pushed_within_days'] = _env_int('DISCOVER_PUSHED_WITHIN_DAYS', cfg['pushed_within_days'])
+    cfg['min_stars'] = _env_int('DISCOVER_MIN_STARS', cfg['min_stars'])
+
+    queries = _normalize_queries(raw_queries)
+    if not queries:
+        print('  ⚠️ 配置里没有有效查询，改用内置兜底查询', file=sys.stderr)
+        queries = _normalize_queries(_FALLBACK['queries'])
+    cfg['queries'] = queries
+    return cfg
+
+
+def _since_date(pushed_within_days: int) -> str:
     """GitHub Search 用的 ISO 日期（仅日期部分），用于 pushed:>since。"""
-    d = datetime.now(timezone.utc) - timedelta(days=PUSHED_WITHIN_DAYS)
+    d = datetime.now(timezone.utc) - timedelta(days=pushed_within_days)
     return d.strftime('%Y-%m-%d')
-
-
-# 查询模板。{since} 会被 _since_date() 替换。
-# 每条 query 是一个 (描述标签, 查询字符串) 的元组——标签会跟到候选里，便于审稿时知道
-# 这条候选是从哪个口子捞上来的。
-QUERIES: list[tuple[str, str]] = [
-    ('topic-claude-skills',     'topic:claude-skills stars:>{min_stars} pushed:>{since}'),
-    ('topic-agent-skills',      'topic:agent-skills stars:>{min_stars} pushed:>{since}'),
-    ('topic-claude-code',       'topic:claude-code-skills stars:>{min_stars} pushed:>{since}'),
-    ('topic-codex-skills',      'topic:codex-skills stars:>{min_stars} pushed:>{since}'),
-    ('topic-skill-marketplace', 'topic:skill-marketplace stars:>{min_stars} pushed:>{since}'),
-    ('path-skill-md',           '"SKILL.md" in:path stars:>50 pushed:>{since}'),
-    ('path-dotclaude-skills',   'path:.claude/skills stars:>{min_stars} pushed:>{since}'),
-    ('name-agent-skills',       'agent-skills in:name stars:>{min_stars} pushed:>{since}'),
-    ('name-claude-skills',      'claude-skills in:name stars:>{min_stars} pushed:>{since}'),
-    # 中文关键词
-    ('zh-skill-readme',         '技能 claude in:readme stars:>20 pushed:>{since}'),
-]
 
 
 # --- HTTP ------------------------------------------------------------------
@@ -184,7 +247,7 @@ def normalize_candidate(item: dict, matched_query_label: str) -> dict:
     }
 
 
-def is_acceptable(c: dict) -> tuple[bool, str]:
+def is_acceptable(c: dict, min_stars: int) -> tuple[bool, str]:
     """轻量过滤：fork / archived / disabled / 太冷的都不进 inbox。返回 (accept, reason)。"""
     if c['is_fork']:
         return False, 'fork'
@@ -192,8 +255,8 @@ def is_acceptable(c: dict) -> tuple[bool, str]:
         return False, 'archived'
     if c['disabled']:
         return False, 'disabled'
-    if c['stars'] < DEFAULT_MIN_STARS:
-        return False, f'stars<{DEFAULT_MIN_STARS}'
+    if c['stars'] < min_stars:
+        return False, f'stars<{min_stars}'
     return True, ''
 
 
@@ -203,21 +266,30 @@ def main() -> int:
     if not GH_TOKEN:
         print('⚠️ 未设置 GITHUB_TOKEN，使用未认证模式（速率限制更紧）。', file=sys.stderr)
 
+    cfg = load_config()
+    min_stars = cfg['min_stars']
+    per_query_max = cfg['per_query_max']
+    daily_cap = cfg['daily_cap']
+    queries = cfg['queries']
+    print(f'配置: {len(queries)} 条查询 · min_stars={min_stars} · '
+          f'per_query_max={per_query_max} · daily_cap={daily_cap} · '
+          f'pushed_within_days={cfg["pushed_within_days"]}')
+
     known = load_known_repos()
     blocked = load_blocklist()
     print(f'已收录仓库: {len(known)} 条；blocklist: {len(blocked)} 条')
 
-    since = _since_date()
+    since = _since_date(cfg['pushed_within_days'])
     print(f'查询活跃度窗口: pushed:>{since}\n')
 
     # author/repo（小写）→ 候选记录。同一仓库被多条 query 命中只保留一份，但合并 query 标签。
     seen: dict[tuple[str, str], dict] = {}
     rejected_summary: dict[str, int] = {}
 
-    for label, tmpl in QUERIES:
-        q = tmpl.format(since=since, min_stars=DEFAULT_MIN_STARS)
+    for label, tmpl in queries:
+        q = tmpl.format(since=since, min_stars=min_stars)
         print(f'[{label}] {q}')
-        items = search_repos(q, max_items=PER_QUERY_MAX)
+        items = search_repos(q, max_items=per_query_max)
         print(f'  → {len(items)} repos')
 
         for item in items:
@@ -233,7 +305,7 @@ def main() -> int:
                 rejected_summary['blocklisted'] = (
                     rejected_summary.get('blocklisted', 0) + 1)
                 continue
-            ok, reason = is_acceptable(cand)
+            ok, reason = is_acceptable(cand, min_stars)
             if not ok:
                 rejected_summary[reason] = rejected_summary.get(reason, 0) + 1
                 continue
@@ -251,9 +323,9 @@ def main() -> int:
     candidates = sorted(seen.values(), key=lambda c: -c['stars'])
 
     truncated = False
-    if len(candidates) > DAILY_CAP:
+    if len(candidates) > daily_cap:
         truncated = True
-        candidates = candidates[:DAILY_CAP]
+        candidates = candidates[:daily_cap]
 
     # 写盘
     RAW.mkdir(parents=True, exist_ok=True)
@@ -261,10 +333,10 @@ def main() -> int:
     out_path = RAW / f'{today}.json'
     payload = {
         'discovered_at': datetime.now(timezone.utc).isoformat(timespec='seconds'),
-        'queries': [{'label': l, 'template': t} for l, t in QUERIES],
-        'pushed_within_days': PUSHED_WITHIN_DAYS,
-        'min_stars': DEFAULT_MIN_STARS,
-        'daily_cap': DAILY_CAP,
+        'queries': [{'label': l, 'template': t} for l, t in queries],
+        'pushed_within_days': cfg['pushed_within_days'],
+        'min_stars': min_stars,
+        'daily_cap': daily_cap,
         'truncated': truncated,
         'rejected_summary': rejected_summary,
         'candidate_count': len(candidates),

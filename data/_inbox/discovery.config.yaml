@@ -1,0 +1,48 @@
+# 自动发现流水线的可调参数 —— 「怎么发现 skill 仓库」的唯一公开真相源。
+#
+# 不管由谁执行(GitHub Actions / Cloudflare Worker 的 curator),都读这一份文件。
+# 想加查询词 / 调阈值 = 改这里 + 提 PR,不用动 scripts/discover_candidates.py。
+#
+# 覆盖优先级:  环境变量  >  本文件  >  代码内置兜底(_FALLBACK)
+# 临时调参的环境变量(CI 里用):
+#   DISCOVER_PER_QUERY_MAX  DISCOVER_DAILY_CAP
+#   DISCOVER_PUSHED_WITHIN_DAYS  DISCOVER_MIN_STARS
+
+# 一条查询最多取多少结果(GitHub Search 单次最大 100,多页累加)
+per_query_max: 50
+
+# 一次 daily 跑最多收多少候选(防 LLM 账单失控);超出则截断并在结果里标记 truncated
+daily_cap: 60
+
+# 最近多少天内有 push 才算「活跃」
+pushed_within_days: 90
+
+# 默认 star 阈值;查询模板里没写死 stars: 的,用它来填 {min_stars}
+min_stars: 30
+
+# 查询列表。模板占位符: {since} → 活跃度日期(由 pushed_within_days 推出)
+#                        {min_stars} → 上面的 min_stars
+# label 会跟到候选记录的 matched_query 字段,审稿时一眼看出这条是从哪个口子捞上来的。
+# 个别查询可以把 stars 写死(如 path-skill-md 用 stars:>50)来单独收紧。
+queries:
+  - label: topic-claude-skills
+    template: 'topic:claude-skills stars:>{min_stars} pushed:>{since}'
+  - label: topic-agent-skills
+    template: 'topic:agent-skills stars:>{min_stars} pushed:>{since}'
+  - label: topic-claude-code
+    template: 'topic:claude-code-skills stars:>{min_stars} pushed:>{since}'
+  - label: topic-codex-skills
+    template: 'topic:codex-skills stars:>{min_stars} pushed:>{since}'
+  - label: topic-skill-marketplace
+    template: 'topic:skill-marketplace stars:>{min_stars} pushed:>{since}'
+  - label: path-skill-md
+    template: '"SKILL.md" in:path stars:>50 pushed:>{since}'
+  - label: path-dotclaude-skills
+    template: 'path:.claude/skills stars:>{min_stars} pushed:>{since}'
+  - label: name-agent-skills
+    template: 'agent-skills in:name stars:>{min_stars} pushed:>{since}'
+  - label: name-claude-skills
+    template: 'claude-skills in:name stars:>{min_stars} pushed:>{since}'
+  # 中文关键词
+  - label: zh-skill-readme
+    template: '技能 claude in:readme stars:>20 pushed:>{since}'
