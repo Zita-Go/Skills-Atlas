@@ -2328,37 +2328,47 @@ function setupAI(){
     const localScored = allRows.map(r => ({...r, score: scoreRow(r, tokens)}))
                                .filter(r => r.score > 0)
                                .sort((a,b) => b.score - a.score);
-    if(localScored.length === 0){
-      results.innerHTML = '<div class="ai-empty">没找到匹配的 skill。试试更宽泛的描述？</div>';
-      hideStatus();
-      return;
-    }
 
     const cfg = getLLMConfig();
+
+    // 没 LLM → 纯本地匹配
     if(!cfg){
-      // 兜底：纯本地
-      renderResults(localScored.slice(0, 12), 'local');
+      if(localScored.length === 0){
+        results.innerHTML = '<div class="ai-empty">没找到匹配的 skill（本地关键词匹配）。配置 LLM 后可获得更智能的推荐 → 点 ⚙</div>';
+      } else {
+        renderResults(localScored.slice(0, 12), 'local');
+      }
       hideStatus();
       return;
     }
 
-    // LLM rerank：候选取本地 TOP 40
-    const candidates = localScored.slice(0, 40);
-    showStatus(`<span class="ai-spin"></span><span>调用 ${escapeHtml(cfg.model)} 重排候选 ${candidates.length} 项…</span>`);
+    // 有 LLM：全部 186 条 skill 都给它（~26k tokens，远低于 128k 上下文）
+    // 让 LLM 视野完整，不会因 TF-IDF 评分缺漏而错过相关 skill
+    const candidates = allRows.map(r => ({...r, score: 0}));
+    showStatus(`<span class="ai-spin"></span><span>调用 ${escapeHtml(cfg.model)} 从 ${candidates.length} 个 skill 中筛选…</span>`);
     try{
       const reranked = await callLLMRerank(q, candidates, cfg);
       hideStatus();
       if(!reranked.length){
-        // LLM 说没匹配，降级回本地
-        showStatus(`<span>LLM 说没匹配，已回退到本地 TF-IDF</span>`);
-        renderResults(localScored.slice(0, 12), 'local-fallback');
+        if(localScored.length > 0){
+          showStatus(`<span>LLM 说没匹配，回退本地 TF-IDF top 12</span>`);
+          renderResults(localScored.slice(0, 12), 'local-fallback');
+        } else {
+          results.innerHTML = '<div class="ai-empty">LLM 没找到匹配的 skill。试试更具体的目标？</div>';
+        }
       } else {
         renderResults(reranked, 'llm');
       }
     }catch(err){
       console.warn('LLM rerank 失败:', err);
-      showStatus(`<span style="color:var(--err,#ff6b6b)">LLM 调用失败：${escapeHtml(err.message || String(err))} · 已回退本地</span>`);
-      renderResults(localScored.slice(0, 12), 'local-fallback');
+      const msg = err.message || String(err);
+      if(localScored.length > 0){
+        showStatus(`<span style="color:var(--err,#ff6b6b)">LLM 调用失败：${escapeHtml(msg)} · 已回退本地</span>`);
+        renderResults(localScored.slice(0, 12), 'local-fallback');
+      } else {
+        results.innerHTML = `<div class="ai-empty">LLM 调用失败：${escapeHtml(msg)}<br><br>本地关键词也没命中。试试切换其他模型？</div>`;
+        hideStatus();
+      }
     }
   }
 
