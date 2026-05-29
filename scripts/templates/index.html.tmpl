@@ -166,7 +166,8 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
 .nav-h2-wrap{padding-left:24px;display:none}
 .nav-section.expanded .nav-h2-wrap{display:block}
 .nav-h2{display:block;padding:5px 10px;border-radius:5px;
-  color:var(--fg-dim);font-size:12px;cursor:pointer;text-decoration:none}
+  color:var(--fg-dim);font-size:12px;cursor:pointer;text-decoration:none;
+  transition:background .12s, color .12s}
 .nav-h2:hover{background:var(--bg-card);color:var(--fg);text-decoration:none}
 .nav-h2.active{color:var(--accent);background:rgba(124,156,255,.08)}
 
@@ -197,7 +198,7 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
 .view-btn{background:transparent;border:0;color:var(--fg-muted);
   cursor:pointer;padding:4px 10px;border-radius:99px;font-size:14px;
   transition:all .15s;line-height:1;font-family:var(--font-sans)}
-.view-btn:hover{color:var(--fg)}
+.view-btn:hover{color:var(--fg);background:var(--bg-elev)}
 .view-btn.active{background:var(--grad);color:#fff;
   box-shadow:0 2px 8px rgba(124,156,255,.25)}
 
@@ -496,13 +497,16 @@ html.light .skill-tag{background:rgba(91,108,255,.08);color:var(--accent);
   border-color:rgba(91,108,255,.18)}
 html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 .card-group{display:flex;align-items:center;gap:8px;color:var(--fg-dim);
-  font-size:12.5px;white-space:nowrap;font-weight:500}
+  font-size:12.5px;font-weight:500;
+  min-width:0;flex-shrink:1;max-width:46%;margin-left:auto}
+.card-group > span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  min-width:0}
 .chain-badge{background:linear-gradient(135deg, var(--chain) 0%, var(--accent-2) 100%);
   color:#fff;padding:2px 8px;border-radius:5px;
   font-size:10px;font-weight:700;letter-spacing:.5px;
   box-shadow:0 2px 8px rgba(255,126,157,.25)}
 .card-desc{color:var(--fg-dim);font-size:13.5px;line-height:1.75;
-  margin:8px 0 12px;word-break:break-word}
+  margin:8px 0 12px;word-break:break-word;max-width:72ch}
 .card-desc code{font-size:.88em;font-family:var(--font-mono)}
 .card-sources{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;
   padding-top:12px;border-top:1px solid var(--border)}
@@ -521,6 +525,19 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
   display:inline-flex;align-items:center;gap:3px}
 .source-stars svg{width:11px;height:11px;flex-shrink:0;opacity:1}
 .source-link:hover .source-stars{color:#ffd86b}
+
+/* 点按时的轻微回弹，给"按下"的触感 */
+.toolbar .pill:active,.view-btn:active,.toolbar .theme-toggle:active{transform:scale(.96)}
+.ai-btn:active{transform:translateY(0);box-shadow:0 1px 6px rgba(124,156,255,.3)}
+.source-link:active{transform:translateY(0)}
+
+/* 尊重系统"减少动态效果"偏好：关掉位移/动画，避免眩晕 */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition-duration:.001ms !important;
+    animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    scroll-behavior:auto !important}
+  .card:hover,.ai-btn:hover,.source-link:hover{transform:none}
+}
 
 .empty-state{padding:60px 20px;text-align:center;color:var(--fg-muted)}
 .empty-state .big{font-size:48px;opacity:.4;margin-bottom:12px}
@@ -600,8 +617,14 @@ html.light .hero::after{
 .hero-viz{position:relative;z-index:1;width:200px;height:200px;flex-shrink:0}
 @media(max-width:760px){
   .hero{grid-template-columns:1fr;padding:24px}
-  .hero h2{font-size:22px}
+  .hero h2{font-size:21px;line-height:1.35;text-wrap:balance}
+  .hero p{text-wrap:pretty}
   .hero-viz{display:none}
+  /* 章节标题在窄屏缩一档，并禁止中文词内断行（只在空格/斜杠处折行） */
+  .section-h1{font-size:20px;margin:32px 0 10px;word-break:keep-all;overflow-wrap:anywhere}
+  .section-h2{font-size:14.5px;word-break:keep-all}
+  /* 卡片右上分类标签换到下一行时给全宽，避免被过度省略 */
+  .card-group{max-width:100%;margin-left:0}
 }
 
 /* No-result hint */
@@ -1167,7 +1190,7 @@ function buildContent(){
           data-stars="${maxStars}">`;
         html += `<div class="card-head">`;
         html += `<div class="card-skills">${skillsHtml}</div>`;
-        html += `<div class="card-group">${chainBadge}<span>${escapeHtml(row.group)}</span></div>`;
+        html += `<div class="card-group">${chainBadge}<span title="${escapeAttr(row.group)}">${escapeHtml(row.group)}</span></div>`;
         html += `</div>`;
         html += `<div class="card-desc">${escapeHtml(row.description)}</div>`;
         html += `<div class="card-sources">${sourcesHtml}</div>`;
