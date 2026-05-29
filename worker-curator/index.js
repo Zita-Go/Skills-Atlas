@@ -29,7 +29,9 @@ const UA = 'skills-atlas-curator';
 export default {
   // 定时入口（真正的生产路径）
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(runCuration(env).catch((e) => {
+    // cron 路径默认按 DRY_RUN 环境变量：测试期设成 "true"，定时跑也不写 KV / 不开 PR。
+    const dryRun = envFlag(env.DRY_RUN);
+    ctx.waitUntil(runCuration(env, { dryRun }).catch((e) => {
       console.error('curation failed:', e?.stack || e);
     }));
   },
@@ -44,8 +46,11 @@ export default {
       if (!env.TRIGGER_SECRET || url.searchParams.get('token') !== env.TRIGGER_SECRET) {
         return json({ error: 'forbidden' }, 403);
       }
+      // ?dry_run=true 显式优先；没传则回落到 DRY_RUN 环境变量。
+      const q = url.searchParams.get('dry_run');
+      const dryRun = q !== null ? envFlag(q) : envFlag(env.DRY_RUN);
       try {
-        const result = await runCuration(env);
+        const result = await runCuration(env, { dryRun });
         return json({ ok: true, ...result });
       } catch (e) {
         return json({ ok: false, error: String(e?.message || e) }, 500);
@@ -59,8 +64,9 @@ export default {
 // 主流程
 // ===========================================================================
 
-async function runCuration(env) {
+async function runCuration(env, { dryRun = false } = {}) {
   const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  if (dryRun) log('🧪 DRY RUN —— 照常发现 + 调 LLM，但不写 KV、不开 PR（零副作用）');
 
   // ① 拉配置 + 已知 + blocklist
   const cfg = await loadConfig(env);
@@ -101,7 +107,7 @@ async function runCuration(env) {
   log(`candidates after dedup: ${candidates.length}${truncated ? ' (truncated)' : ''}`);
 
   if (candidates.length === 0) {
-    return { today, candidates: 0, proposed: 0, rejected, pr: null };
+    return { today, dry_run: dryRun, candidates: 0, proposed: 0, rejected, pr: null };
   }
 
   // ③ + ④ 逐个候选过 LLM：先 is-skill 过滤，留下来的再起草
@@ -110,8 +116,8 @@ async function runCuration(env) {
     const verdict = await filterIsSkill(env, cfg.llm, cand);
     if (!verdict.is_skill) {
       bump(rejected, 'llm_not_skill');
-      // 非 skill 的也写 SEEN，省得明天再花 LLM 钱重判
-      await markSeen(env, candKey(cand), { stage: 'filtered_out', reason: verdict.reason });
+      // 非 skill 的也写 SEEN，省得明天再花 LLM 钱重判（dry-run 时不写，保证零副作用）
+      if (!dryRun) await markSeen(env, candKey(cand), { stage: 'filtered_out', reason: verdict.reason });
       continue;
     }
     let draft = null;
@@ -121,17 +127,25 @@ async function runCuration(env) {
       log(`draft failed for ${candKey(cand)}: ${e}`);
     }
     proposals.push({ ...cand, llm: { ...verdict, ...(draft || {}), drafted: !!draft } });
-    await markSeen(env, candKey(cand), { stage: 'proposed' });
+    if (!dryRun) await markSeen(env, candKey(cand), { stage: 'proposed' });
   }
 
   log(`proposals: ${proposals.length}`);
   if (proposals.length === 0) {
-    return { today, candidates: candidates.length, proposed: 0, rejected, pr: null };
+    return { today, dry_run: dryRun, candidates: candidates.length, proposed: 0, rejected, pr: null };
   }
 
   // ⑤ 开 PR：草稿落到 proposed/<date>.json，PR body 给人审勾选
+  if (dryRun) {
+    log(`🧪 DRY RUN —— 跳过开 PR；本应提议 ${proposals.length} 条（见 would_propose）`);
+    return {
+      today, dry_run: true,
+      candidates: candidates.length, proposed: proposals.length, rejected, pr: null,
+      would_propose: proposals.map(summarizeProposal),
+    };
+  }
   const prUrl = await openProposalPR(env, today, proposals, { rejected, truncated });
-  return { today, candidates: candidates.length, proposed: proposals.length, rejected, pr: prUrl };
+  return { today, dry_run: false, candidates: candidates.length, proposed: proposals.length, rejected, pr: prUrl };
 }
 
 // ===========================================================================
@@ -498,7 +512,18 @@ function renderPRBody(dateStr, proposals, path) {
 // ===========================================================================
 
 function int(v, def) { const n = parseInt(v, 10); return Number.isNaN(n) ? def : n; }
+function envFlag(v) { return /^(true|1|yes)$/i.test(String(v ?? '').trim()); }
 function bump(obj, k) { obj[k] = (obj[k] || 0) + 1; }
+// dry-run 返回里给人看的精简提议
+function summarizeProposal(p) {
+  const d = p.llm || {};
+  return {
+    full_name: p.full_name, stars: p.stars,
+    is_skill: d.is_skill, reason: d.reason,
+    type: d.type, category: d.category, description_zh: d.description_zh,
+    drafted: d.drafted,
+  };
+}
 function log(msg) { console.log(msg); }
 function json(data, status = 200) {
   return new Response(JSON.stringify(data, null, 2), {

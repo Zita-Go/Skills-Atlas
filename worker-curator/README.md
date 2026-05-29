@@ -40,16 +40,26 @@ wrangler deploy
 
 ## 测试
 
+**首次启动从 dry-run 开始**：`DRY_RUN` 在 `wrangler.toml` 里默认 `"true"`，所以刚部署时
+照常发现 + 调 LLM，但**不写 KV、不开 PR**（零副作用），`/run` 的响应里 `would_propose`
+会列出"它本来要提议什么"。看明白行为对了，再把 `DRY_RUN` 改成 `"false"` 重新 deploy。
+
 ```bash
-# 本地跑一次定时逻辑（不会真改 GitHub，除非配了真 PAT）
+# 本地跑一次定时逻辑（默认 dry-run，不会真改 GitHub）
 npm run dev   # wrangler dev --test-scheduled
 
-# 线上手动触发一轮（需带 token）
-curl -X POST "https://skills-atlas-curator.<subdomain>.workers.dev/run?token=$TRIGGER_SECRET"
+# 线上手动触发一轮 —— 空跑，只返回 would_propose，不开 PR
+curl -X POST "https://skills-atlas-curator.<subdomain>.workers.dev/run?token=$TRIGGER_SECRET&dry_run=true"
+
+# 确认 OK 后，真跑一次（开 PR）。也可改 wrangler.toml 的 DRY_RUN=false 再 deploy
+curl -X POST "https://skills-atlas-curator.<subdomain>.workers.dev/run?token=$TRIGGER_SECRET&dry_run=false"
 
 # 看日志
 npm run tail
 ```
+
+> dry-run 严格零副作用：既不开 PR，也**不写 KV `SEEN`** —— 否则空跑会把候选标记成"已见"，
+> 真跑时反而被跳过。所以可以放心反复 dry-run。
 
 ## 安全要点
 

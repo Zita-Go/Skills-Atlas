@@ -22,6 +22,11 @@ binding = "SEEN"
 id = "<填 wrangler kv namespace create SEEN 返回的 id>"
 
 [vars]
+# 空跑开关：true = 照常发现 + 调 LLM，但不写 KV、不开 PR（零副作用）。
+# 默认 true，让首次部署 + 定时任务也安全。验证行为 OK 后改成 "false" 才真正开 PR。
+# 也可临时用 /run?dry_run=true|false 覆盖单次。
+DRY_RUN = "true"
+
 # 目标仓库（curator 从这里读 config / repositories / blocklist，并向它开 PR）
 GITHUB_OWNER  = "Zita-Go"
 GITHUB_REPO   = "Skills-Atlas"
