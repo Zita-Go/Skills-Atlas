@@ -180,30 +180,73 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
   .view-switch{display:none}
 }
 
-/* 力导向图视图 */
-.graph-view{width:100%;height:calc(100vh - 200px);min-height:500px;
-  background:var(--bg-card);border:1px solid var(--border);
-  border-radius:var(--radius);position:relative;overflow:hidden}
-.graph-view svg{width:100%;height:100%}
-.graph-view .legend{position:absolute;top:16px;left:16px;
-  background:rgba(11,13,16,.8);backdrop-filter:blur(8px);
+/* === 力导向图视图（动态） === */
+.graph-view{width:100%;height:calc(100vh - 140px);min-height:560px;
+  background:radial-gradient(ellipse at center, rgba(124,156,255,.04) 0%, transparent 60%),
+    var(--bg-card);
+  border:1px solid var(--border);border-radius:var(--radius);
+  position:relative;overflow:hidden;cursor:grab}
+.graph-view.is-panning{cursor:grabbing}
+.graph-view svg{width:100%;height:100%;display:block;
+  user-select:none;-webkit-user-select:none}
+.graph-view .legend{position:absolute;top:14px;left:14px;
+  background:rgba(11,13,16,.78);backdrop-filter:blur(8px);
   -webkit-backdrop-filter:blur(8px);
-  border:1px solid var(--border);border-radius:8px;padding:10px 14px;
-  font-size:11.5px;color:var(--fg-dim);max-width:240px;line-height:1.7}
+  border:1px solid var(--border);border-radius:10px;padding:11px 14px;
+  font-size:11.5px;color:var(--fg-dim);max-width:240px;line-height:1.7;
+  z-index:5;pointer-events:none}
 html.light .graph-view .legend{background:rgba(255,255,255,.85)}
-.graph-view .legend b{color:var(--fg);font-weight:600}
+.graph-view .legend b{color:var(--fg);font-weight:600;letter-spacing:-0.01em}
 .graph-view .legend .swatch{display:inline-block;width:10px;height:10px;
   border-radius:50%;margin-right:5px;vertical-align:middle}
 .graph-view .tooltip{position:absolute;pointer-events:none;
   background:var(--bg-card);border:1px solid var(--border-strong);
   border-radius:6px;padding:6px 10px;font-size:11.5px;color:var(--fg);
-  box-shadow:var(--shadow);max-width:280px;z-index:10}
-.graph-view .node{cursor:pointer;transition:opacity .2s}
-.graph-view .node:hover{opacity:.9}
-.graph-view .link{stroke-opacity:.4}
-.graph-view .link.chain{stroke:var(--chain);stroke-opacity:.7}
+  box-shadow:var(--shadow);max-width:280px;z-index:10;
+  transition:opacity .12s;opacity:0}
+.graph-view .tooltip.visible{opacity:1}
+
+/* 控制面板 */
+.graph-controls{position:absolute;top:14px;right:14px;display:flex;
+  flex-direction:column;gap:6px;z-index:6}
+.graph-controls .gc-btn{display:flex;align-items:center;justify-content:center;
+  gap:6px;width:36px;height:36px;
+  background:rgba(11,13,16,.78);backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  border:1px solid var(--border);border-radius:8px;color:var(--fg-dim);
+  cursor:pointer;font-size:14px;font-weight:600;
+  transition:background .12s, color .12s, transform .08s}
+html.light .graph-controls .gc-btn{background:rgba(255,255,255,.85)}
+.graph-controls .gc-btn:hover{color:var(--fg);
+  border-color:var(--border-strong);transform:translateY(-1px)}
+.graph-controls .gc-btn.active{color:var(--accent);
+  border-color:rgba(124,156,255,.45)}
+.graph-controls .gc-btn[data-act="zoom"]{width:auto;padding:0 10px;
+  font-family:var(--font-mono);font-size:11px}
+.graph-zoom-row{display:flex;gap:4px}
+.graph-zoom-row .gc-btn{width:32px;height:32px;font-size:13px}
+
+/* 节点 / 边 */
+.graph-view .node{cursor:pointer}
+.graph-view .node circle{transition:stroke-width .15s, r .25s}
+.graph-view .node:hover circle{stroke-width:2.5}
+.graph-view .node.dragging{cursor:grabbing}
+.graph-view .node.dim{opacity:.18}
+.graph-view .node.highlight circle{stroke:var(--accent);stroke-width:3}
+.graph-view .link{stroke-opacity:.35;stroke-linecap:round;
+  transition:stroke-opacity .15s}
+.graph-view .link.dim{stroke-opacity:.06}
+.graph-view .link.chain{stroke:var(--chain);stroke-opacity:.6}
+.graph-view .link.chain.dim{stroke-opacity:.1}
+.graph-view .link.highlight{stroke-opacity:.9;stroke:var(--accent)}
 .graph-view .label{fill:var(--fg-dim);font-family:var(--font-mono);
-  font-size:9px;pointer-events:none;user-select:none}
+  font-size:9.5px;pointer-events:none;user-select:none;
+  paint-order:stroke;stroke:var(--bg);stroke-width:3;stroke-linejoin:round;
+  opacity:0;transition:opacity .15s}
+.graph-view .label.always{opacity:.85}
+.graph-view .node:hover .label,
+.graph-view .node.highlight .label{opacity:1;fill:var(--fg)}
+.graph-view .cluster-halo{fill:none;stroke:none;pointer-events:none}
 
 /* AI 推荐抽屉 */
 .ai-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);
@@ -1303,14 +1346,16 @@ function syncSidebarForView(){
   nav.classList.toggle('hidden', showRepo);
 }
 
-// === 力导向图 ===
+// === 力导向图（动态、可缩放、可拖拽） ===
+let _graphAnim = null;
 function buildGraph(){
   const container = document.getElementById('graphView');
-  if(container.dataset.built) return;  // 只构建一次
+  if(container.dataset.built) return;
   container.dataset.built = '1';
 
   const rows = getAllRows();
-  // 节点：每个 unique skill；边：同一 row 内所有 skill 两两相连（chain 用红线）
+
+  // 节点：每个 unique skill；边：同一 row 内 skill 两两相连
   const nodeMap = new Map();
   const links = [];
   const accentHues = [220, 250, 280, 310, 340, 10, 40, 70, 100, 130, 160, 190, 205];
@@ -1321,13 +1366,12 @@ function buildGraph(){
     const hue = accentHues[catI % accentHues.length];
     row.skills.forEach(sk => {
       if(!nodeMap.has(sk)) nodeMap.set(sk, {
-        id: sk, count: 0, hue, h1: row._h1, chain: false, sources: row.sources
+        id: sk, count: 0, hue, h1: row._h1, catI, chain: false, sources: row.sources
       });
       const n = nodeMap.get(sk);
       n.count++;
       if(row.chain) n.chain = true;
     });
-    // 同 row 内连边
     for(let i=0;i<row.skills.length;i++){
       for(let j=i+1;j<row.skills.length;j++){
         links.push({source: row.skills[i], target: row.skills[j], chain: row.chain});
@@ -1336,134 +1380,425 @@ function buildGraph(){
   });
 
   const nodes = [...nodeMap.values()];
-  const W = container.clientWidth || 1000;
-  const H = container.clientHeight || 600;
-
-  // 简化的力导向：随机初始化 + 几次迭代（无 d3，纯 vanilla）
-  nodes.forEach(n => {
-    n.x = W/2 + (Math.random()-.5)*W*.6;
-    n.y = H/2 + (Math.random()-.5)*H*.6;
-    n.vx = 0; n.vy = 0;
+  // 邻接表（用于 hover 高亮 + 链路力）
+  const neighbors = new Map(nodes.map(n => [n.id, new Set()]));
+  links.forEach(l => {
+    neighbors.get(l.source)?.add(l.target);
+    neighbors.get(l.target)?.add(l.source);
   });
 
-  function iterate(steps=300){
-    const k = 0.012;
-    for(let step=0; step<steps; step++){
-      // 排斥
-      for(let i=0;i<nodes.length;i++){
-        for(let j=i+1;j<nodes.length;j++){
-          const a = nodes[i], b = nodes[j];
-          const dx = a.x-b.x, dy = a.y-b.y;
-          const d2 = dx*dx + dy*dy + 0.01;
-          const d = Math.sqrt(d2);
-          const f = 800 / d2;
-          a.vx += dx/d*f; a.vy += dy/d*f;
-          b.vx -= dx/d*f; b.vy -= dy/d*f;
-        }
-      }
-      // 吸引（边）
-      links.forEach(l => {
-        const a = nodeMap.get(l.source), b = nodeMap.get(l.target);
-        if(!a || !b) return;
-        const dx = b.x-a.x, dy = b.y-a.y;
-        const d = Math.sqrt(dx*dx+dy*dy)+.01;
-        const f = (d - 60) * (l.chain ? 0.04 : 0.02);
-        a.vx += dx/d*f; a.vy += dy/d*f;
-        b.vx -= dx/d*f; b.vy -= dy/d*f;
-      });
-      // 中心引力 + 阻尼
-      nodes.forEach(n => {
-        n.vx += (W/2 - n.x) * 0.001;
-        n.vy += (H/2 - n.y) * 0.001;
-        n.vx *= 0.85; n.vy *= 0.85;
-        n.x += n.vx * k * 50; n.y += n.vy * k * 50;
-        n.x = Math.max(20, Math.min(W-20, n.x));
-        n.y = Math.max(20, Math.min(H-20, n.y));
-      });
-    }
-  }
-  iterate(250);
+  // 视图坐标系：用一个固定大世界（W×H）和 viewport transform 配合
+  const W = 2400, H = 1600;
+  const cx = W/2, cy = H/2;
 
+  // 类别中心：13 大类沿圆周分布（增大半径，让类簇彼此分开）
+  const catCount = DATA.sections.length;
+  const clusterR = Math.min(W, H) * 0.36;
+  const catCenter = new Map();
+  DATA.sections.forEach((s, i) => {
+    const ang = (i / catCount) * Math.PI * 2 - Math.PI/2;
+    catCenter.set(s.title, {
+      x: cx + Math.cos(ang) * clusterR,
+      y: cy + Math.sin(ang) * clusterR
+    });
+  });
+
+  // 初始位置：类簇中心 + 小扰动
+  nodes.forEach(n => {
+    const c = catCenter.get(n.h1) || {x: cx, y: cy};
+    n.x = c.x + (Math.random()-.5) * 200;
+    n.y = c.y + (Math.random()-.5) * 200;
+    n.vx = 0; n.vy = 0;
+    n.fx = null; n.fy = null;  // 拖动时锁定坐标
+    n.r = 4 + Math.min(10, Math.sqrt(n.count) * 3.2);
+  });
+
+  // ==== SVG 构建 ====
   const svgNS = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(svgNS, 'svg');
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+  // viewport transform layer（zoom + pan 都施加在它身上）
+  const viewport = document.createElementNS(svgNS, 'g');
+  viewport.classList.add('viewport');
+  svg.appendChild(viewport);
+
+  // 类簇背景晕光
+  const haloGroup = document.createElementNS(svgNS, 'g');
+  catCenter.forEach((c, h1) => {
+    const i = catIdx.get(h1) || 0;
+    const hue = accentHues[i % accentHues.length];
+    const halo = document.createElementNS(svgNS, 'circle');
+    halo.setAttribute('cx', c.x); halo.setAttribute('cy', c.y);
+    halo.setAttribute('r', 200);
+    halo.setAttribute('fill', `hsla(${hue}, 70%, 60%, .035)`);
+    halo.setAttribute('stroke', `hsla(${hue}, 70%, 60%, .12)`);
+    halo.setAttribute('stroke-width', 1);
+    halo.setAttribute('stroke-dasharray', '3 6');
+    halo.classList.add('cluster-halo');
+    haloGroup.appendChild(halo);
+  });
+  viewport.appendChild(haloGroup);
 
   // 边
   const linkGroup = document.createElementNS(svgNS, 'g');
-  links.forEach(l => {
-    const a = nodeMap.get(l.source), b = nodeMap.get(l.target);
-    if(!a || !b) return;
+  const linkEls = links.map(l => {
     const line = document.createElementNS(svgNS, 'line');
-    line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
-    line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
-    line.setAttribute('stroke', l.chain ? 'var(--chain)' : 'var(--border-strong)');
-    line.setAttribute('stroke-width', l.chain ? 1.5 : 0.8);
     line.classList.add('link');
     if(l.chain) line.classList.add('chain');
+    line.setAttribute('stroke', l.chain ? 'var(--chain)' : 'var(--border-strong)');
+    line.setAttribute('stroke-width', l.chain ? 1.6 : 0.8);
     linkGroup.appendChild(line);
+    return line;
   });
-  svg.appendChild(linkGroup);
+  viewport.appendChild(linkGroup);
 
-  // 节点
+  // 节点（每个 g 包含 circle + label）
   const nodeGroup = document.createElementNS(svgNS, 'g');
-  const tooltip = document.createElement('div');
-  tooltip.className = 'tooltip';
-  tooltip.style.display = 'none';
-  container.appendChild(tooltip);
+  // 决定哪些 label 常驻：top-N（按 count）+ 所有 chain 节点
+  const sortedByCount = [...nodes].sort((a,b)=> b.count - a.count);
+  const alwaysLabelSet = new Set(sortedByCount.slice(0, 40).map(n => n.id));
+  nodes.forEach(n => alwaysLabelSet.has(n.id) || n.chain && alwaysLabelSet.add(n.id));
 
-  nodes.forEach(n => {
+  const nodeEls = nodes.map(n => {
     const g = document.createElementNS(svgNS, 'g');
     g.classList.add('node');
-    g.setAttribute('transform', `translate(${n.x},${n.y})`);
-    const r = 4 + Math.min(8, n.count * 1.5);
+    g.dataset.id = n.id;
     const c = document.createElementNS(svgNS, 'circle');
-    c.setAttribute('r', r);
-    c.setAttribute('fill', `hsl(${n.hue}, 70%, 65%)`);
-    c.setAttribute('stroke', n.chain ? 'var(--chain)' : 'transparent');
-    c.setAttribute('stroke-width', '2');
+    c.setAttribute('r', n.r);
+    c.setAttribute('fill', `hsl(${n.hue}, 70%, 64%)`);
+    c.setAttribute('stroke', n.chain ? 'var(--chain)' : 'rgba(255,255,255,.15)');
+    c.setAttribute('stroke-width', n.chain ? 2 : 1);
     g.appendChild(c);
-    if(n.count >= 2 || n.id.length <= 16){
-      const t = document.createElementNS(svgNS, 'text');
-      t.classList.add('label');
-      t.setAttribute('y', r + 10);
-      t.setAttribute('text-anchor', 'middle');
-      t.textContent = n.id;
-      g.appendChild(t);
-    }
-    g.addEventListener('mouseenter', e => {
+    const t = document.createElementNS(svgNS, 'text');
+    t.classList.add('label');
+    if(alwaysLabelSet.has(n.id)) t.classList.add('always');
+    t.setAttribute('y', n.r + 11);
+    t.setAttribute('text-anchor', 'middle');
+    t.textContent = n.id;
+    g.appendChild(t);
+    nodeGroup.appendChild(g);
+    n._g = g; n._c = c; n._t = t;
+    return g;
+  });
+  viewport.appendChild(nodeGroup);
+
+  // tooltip
+  const tooltip = document.createElement('div');
+  tooltip.className = 'tooltip';
+  container.appendChild(tooltip);
+
+  // ==== Pan / Zoom ====
+  let scale = 1, tx = 0, ty = 0;
+  function applyTransform(){
+    viewport.setAttribute('transform', `translate(${tx},${ty}) scale(${scale})`);
+  }
+
+  // 屏幕坐标 → SVG 坐标（再 → 世界坐标）
+  function screenToWorld(clientX, clientY){
+    const rect = svg.getBoundingClientRect();
+    // SVG 内部 viewBox 单位
+    const vx = (clientX - rect.left) / rect.width * W;
+    const vy = (clientY - rect.top) / rect.height * H;
+    return {x: (vx - tx) / scale, y: (vy - ty) / scale};
+  }
+  function worldToView(wx, wy){ return {x: wx * scale + tx, y: wy * scale + ty}; }
+
+  // 鼠标滚轮缩放
+  svg.addEventListener('wheel', e => {
+    e.preventDefault();
+    const rect = svg.getBoundingClientRect();
+    const vx = (e.clientX - rect.left) / rect.width * W;
+    const vy = (e.clientY - rect.top) / rect.height * H;
+    const factor = Math.exp(-e.deltaY * 0.001);
+    const newScale = Math.max(0.3, Math.min(4, scale * factor));
+    // 在鼠标位置保持不变的情况下缩放
+    tx = vx - (vx - tx) * (newScale / scale);
+    ty = vy - (vy - ty) * (newScale / scale);
+    scale = newScale;
+    applyTransform();
+    updateZoomLabel();
+  }, {passive: false});
+
+  // 平移：在空白处按下
+  let panning = false, panStart = null;
+  svg.addEventListener('pointerdown', e => {
+    if(e.target.closest('.node')) return;
+    panning = true;
+    panStart = {x: e.clientX, y: e.clientY, tx, ty};
+    container.classList.add('is-panning');
+    svg.setPointerCapture(e.pointerId);
+  });
+  svg.addEventListener('pointermove', e => {
+    if(!panning) return;
+    const rect = svg.getBoundingClientRect();
+    const dx = (e.clientX - panStart.x) / rect.width * W;
+    const dy = (e.clientY - panStart.y) / rect.height * H;
+    tx = panStart.tx + dx;
+    ty = panStart.ty + dy;
+    applyTransform();
+  });
+  svg.addEventListener('pointerup', e => {
+    panning = false;
+    container.classList.remove('is-panning');
+  });
+  svg.addEventListener('pointercancel', () => { panning = false; container.classList.remove('is-panning'); });
+
+  // ==== 节点拖动 ====
+  let dragNode = null, dragStart = null;
+  nodes.forEach(n => {
+    n._g.addEventListener('pointerdown', e => {
+      e.stopPropagation();
+      dragNode = n;
+      dragStart = screenToWorld(e.clientX, e.clientY);
+      n.fx = n.x; n.fy = n.y;
+      n._g.classList.add('dragging');
+      svg.setPointerCapture(e.pointerId);
+      energy = 1;  // 重新激活模拟
+    });
+    n._g.addEventListener('click', e => {
+      // 仅当没有真正发生拖动（移动距离很小）时才视为 click
+      if(!n._dragMoved){
+        document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
+        const inp = document.getElementById('search');
+        inp.value = n.id; currentSearch = n.id;
+        document.getElementById('clearBtn').style.display = 'block';
+        const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'none';
+        applyFilter();
+      }
+      n._dragMoved = false;
+    });
+    n._g.addEventListener('pointerenter', () => {
+      const nb = neighbors.get(n.id);
+      // dim 所有 / highlight 自身和邻居
+      nodes.forEach(m => {
+        if(m === n || nb.has(m.id)) m._g.classList.remove('dim'), m._g.classList.add('highlight');
+        else m._g.classList.add('dim'), m._g.classList.remove('highlight');
+      });
+      links.forEach((l, i) => {
+        const adj = (l.source === n.id || l.target === n.id);
+        if(adj) linkEls[i].classList.add('highlight'), linkEls[i].classList.remove('dim');
+        else linkEls[i].classList.add('dim'), linkEls[i].classList.remove('highlight');
+      });
+      // tooltip
       tooltip.innerHTML = `<b>${escapeHtml(n.id)}</b><br>
         <span style="color:var(--fg-muted)">${escapeHtml(n.h1)}</span><br>
-        分组数: ${n.count} ${n.chain ? '· ⛓' : ''}`;
-      tooltip.style.display = 'block';
+        分组数: ${n.count}${n.chain ? ' · <span style="color:var(--chain)">⛓</span>' : ''}`;
+      tooltip.classList.add('visible');
     });
-    g.addEventListener('mousemove', e => {
+    n._g.addEventListener('pointermove', e => {
       const rect = container.getBoundingClientRect();
-      tooltip.style.left = (e.clientX - rect.left + 12) + 'px';
-      tooltip.style.top = (e.clientY - rect.top + 12) + 'px';
+      tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+      tooltip.style.top = (e.clientY - rect.top + 14) + 'px';
     });
-    g.addEventListener('mouseleave', () => tooltip.style.display = 'none');
-    g.addEventListener('click', () => {
-      // 跳回 cards 视图并搜索这个 skill
-      document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
-      const inp = document.getElementById('search');
-      inp.value = n.id; currentSearch = n.id;
-      document.getElementById('clearBtn').style.display = 'block';
-      const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'none';
-      applyFilter();
+    n._g.addEventListener('pointerleave', () => {
+      tooltip.classList.remove('visible');
+      nodes.forEach(m => m._g.classList.remove('dim', 'highlight'));
+      links.forEach((l, i) => linkEls[i].classList.remove('dim', 'highlight'));
     });
-    nodeGroup.appendChild(g);
   });
-  svg.appendChild(nodeGroup);
+
+  document.addEventListener('pointermove', e => {
+    if(!dragNode) return;
+    const w = screenToWorld(e.clientX, e.clientY);
+    if(Math.hypot(w.x - dragStart.x, w.y - dragStart.y) > 4){
+      dragNode._dragMoved = true;
+    }
+    dragNode.fx = w.x; dragNode.fy = w.y;
+    dragNode.x = w.x; dragNode.y = w.y;
+    energy = 1;
+  });
+  document.addEventListener('pointerup', () => {
+    if(dragNode){
+      dragNode._g.classList.remove('dragging');
+      dragNode.fx = null; dragNode.fy = null;
+      dragNode = null;
+    }
+  });
+
+  // ==== 力学模拟（每帧一步） ====
+  let energy = 1;
+  let paused = false;
+
+  function tick(){
+    const repulse = 950;
+    const linkDist = 70, linkChainDist = 50;
+    const damping = 0.82;
+
+    // 排斥（O(n²) - n=200 量级，没问题）
+    for(let i=0;i<nodes.length;i++){
+      const a = nodes[i];
+      for(let j=i+1;j<nodes.length;j++){
+        const b = nodes[j];
+        let dx = a.x - b.x, dy = a.y - b.y;
+        let d2 = dx*dx + dy*dy;
+        if(d2 < 0.5) { dx = (Math.random()-.5); dy = (Math.random()-.5); d2 = dx*dx + dy*dy + 0.5; }
+        const d = Math.sqrt(d2);
+        const f = repulse / d2;
+        a.vx += dx/d * f; a.vy += dy/d * f;
+        b.vx -= dx/d * f; b.vy -= dy/d * f;
+      }
+    }
+
+    // 链路吸引
+    for(const l of links){
+      const a = nodeMap.get(l.source), b = nodeMap.get(l.target);
+      if(!a || !b) continue;
+      const dx = b.x - a.x, dy = b.y - a.y;
+      const d = Math.sqrt(dx*dx + dy*dy) + 0.01;
+      const target = l.chain ? linkChainDist : linkDist;
+      const k = l.chain ? 0.06 : 0.025;
+      const f = (d - target) * k;
+      a.vx += dx/d * f; a.vy += dy/d * f;
+      b.vx -= dx/d * f; b.vy -= dy/d * f;
+    }
+
+    // 类簇中心引力
+    nodes.forEach(n => {
+      const c = catCenter.get(n.h1);
+      if(!c) return;
+      n.vx += (c.x - n.x) * 0.012;
+      n.vy += (c.y - n.y) * 0.012;
+    });
+
+    // 全局中心引力（极弱）
+    nodes.forEach(n => {
+      n.vx += (cx - n.x) * 0.0008;
+      n.vy += (cy - n.y) * 0.0008;
+    });
+
+    // 阻尼 + 位置更新（带能量退火）
+    let totalV = 0;
+    nodes.forEach(n => {
+      n.vx *= damping; n.vy *= damping;
+      const step = 0.4 * energy + 0.15;
+      if(n.fx == null){
+        n.x += n.vx * step;
+        n.y += n.vy * step;
+      } else {
+        n.x = n.fx; n.y = n.fy;
+        n.vx = 0; n.vy = 0;
+      }
+      // 边界
+      n.x = Math.max(40, Math.min(W - 40, n.x));
+      n.y = Math.max(40, Math.min(H - 40, n.y));
+      totalV += Math.abs(n.vx) + Math.abs(n.vy);
+    });
+
+    // 能量退火（无交互时逐渐冷却到一个底）
+    if(totalV / nodes.length < 0.5) energy *= 0.985;
+    energy = Math.max(0.05, Math.min(1, energy));
+  }
+
+  function render(){
+    nodes.forEach(n => {
+      n._g.setAttribute('transform', `translate(${n.x},${n.y})`);
+    });
+    links.forEach((l, i) => {
+      const a = nodeMap.get(l.source), b = nodeMap.get(l.target);
+      if(!a || !b) return;
+      linkEls[i].setAttribute('x1', a.x);
+      linkEls[i].setAttribute('y1', a.y);
+      linkEls[i].setAttribute('x2', b.x);
+      linkEls[i].setAttribute('y2', b.y);
+    });
+  }
+
+  function loop(){
+    if(!paused) tick();
+    render();
+    _graphAnim = requestAnimationFrame(loop);
+  }
+  // 预热：先跑一些 tick 让初始位置稳定
+  for(let i=0; i<120; i++) tick();
+  render();
+  loop();
+
+  // 双击节点：长按到该位置（pin）
+  nodes.forEach(n => {
+    n._g.addEventListener('dblclick', e => {
+      e.stopPropagation();
+      if(n.fx != null){ n.fx = null; n.fy = null; }
+      else { n.fx = n.x; n.fy = n.y; }
+    });
+  });
+
+  // ==== 控件 ====
+  container.appendChild(svg);
+
+  const ctrls = document.createElement('div');
+  ctrls.className = 'graph-controls';
+  ctrls.innerHTML = `
+    <button class="gc-btn" data-act="pause" title="暂停 / 继续">⏸</button>
+    <button class="gc-btn" data-act="reset" title="重置布局">↻</button>
+    <div class="graph-zoom-row">
+      <button class="gc-btn" data-act="zoom-out" title="缩小">−</button>
+      <button class="gc-btn" data-act="zoom-in" title="放大">＋</button>
+    </div>
+    <button class="gc-btn" data-act="zoom" title="重置缩放">100%</button>
+    <button class="gc-btn" data-act="labels" title="切换全部标签">A</button>`;
+  container.appendChild(ctrls);
+
+  function updateZoomLabel(){
+    ctrls.querySelector('[data-act="zoom"]').textContent = Math.round(scale * 100) + '%';
+  }
+  function zoomTo(s){
+    scale = Math.max(0.3, Math.min(4, s));
+    applyTransform(); updateZoomLabel();
+  }
+  function fitView(){ scale = 1; tx = 0; ty = 0; applyTransform(); updateZoomLabel(); }
+  fitView();
+
+  ctrls.querySelector('[data-act="pause"]').addEventListener('click', e => {
+    paused = !paused;
+    e.currentTarget.textContent = paused ? '▶' : '⏸';
+    e.currentTarget.classList.toggle('active', paused);
+    if(!paused) energy = 1;
+  });
+  ctrls.querySelector('[data-act="reset"]').addEventListener('click', () => {
+    nodes.forEach(n => {
+      const c = catCenter.get(n.h1) || {x: cx, y: cy};
+      n.x = c.x + (Math.random()-.5) * 200;
+      n.y = c.y + (Math.random()-.5) * 200;
+      n.vx = 0; n.vy = 0;
+      n.fx = null; n.fy = null;
+    });
+    energy = 1;
+    fitView();
+  });
+  ctrls.querySelector('[data-act="zoom-in"]').addEventListener('click', () => {
+    // 放大到屏幕中心
+    const oldScale = scale;
+    scale = Math.min(4, scale * 1.25);
+    tx = W/2 - (W/2 - tx) * (scale / oldScale);
+    ty = H/2 - (H/2 - ty) * (scale / oldScale);
+    applyTransform(); updateZoomLabel();
+  });
+  ctrls.querySelector('[data-act="zoom-out"]').addEventListener('click', () => {
+    const oldScale = scale;
+    scale = Math.max(0.3, scale * 0.8);
+    tx = W/2 - (W/2 - tx) * (scale / oldScale);
+    ty = H/2 - (H/2 - ty) * (scale / oldScale);
+    applyTransform(); updateZoomLabel();
+  });
+  ctrls.querySelector('[data-act="zoom"]').addEventListener('click', fitView);
+  let allLabels = false;
+  ctrls.querySelector('[data-act="labels"]').addEventListener('click', e => {
+    allLabels = !allLabels;
+    e.currentTarget.classList.toggle('active', allLabels);
+    nodes.forEach(n => n._t.classList.toggle('always', allLabels || alwaysLabelSet.has(n.id)));
+  });
 
   // 图例
   const legend = document.createElement('div');
   legend.className = 'legend';
   legend.innerHTML = `<b>网络视图</b><br>
-    · 节点 = skill，大小按出现次数<br>
-    · 颜色 = 所属大类（13 色）<br>
-    · 红边 = ⛓ 强绑定关系<br>
-    · 点击节点回卡片视图查看`;
-  container.appendChild(svg);
+    · 节点 = skill，大小 ∝ 出现次数<br>
+    · 颜色 = 所属大类<br>
+    · 红边 / 红圈 = ⛓ 强绑定<br>
+    · 滚轮缩放 · 拖拽节点 · 双击钉住<br>
+    · 点击节点跳回卡片视图`;
   container.appendChild(legend);
 }
 
