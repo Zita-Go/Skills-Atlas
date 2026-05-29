@@ -18,6 +18,22 @@
   default_branch: main
   description: An agentic skills framework & software development methodology that works.
   license: MIT
+  doc_path: README.md
+  skill_docs:
+    brainstorming: skills/brainstorming/SKILL.md
+    dispatching-parallel-agents: skills/dispatching-parallel-agents/SKILL.md
+    executing-plans: skills/executing-plans/SKILL.md
+    finishing-a-development-branch: skills/finishing-a-development-branch/SKILL.md
+    receiving-code-review: skills/receiving-code-review/SKILL.md
+    requesting-code-review: skills/requesting-code-review/SKILL.md
+    subagent-driven-development: skills/subagent-driven-development/SKILL.md
+    systematic-debugging: skills/systematic-debugging/SKILL.md
+    test-driven-development: skills/test-driven-development/SKILL.md
+    using-git-worktrees: skills/using-git-worktrees/SKILL.md
+    verification-before-completion: skills/verification-before-completion/SKILL.md
+    writing-plans: skills/writing-plans/SKILL.md
+    writing-skills: skills/writing-skills/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: mattpocock
   author: mattpocock
   repo: skills
@@ -29,6 +45,20 @@
   default_branch: main
   description: Skills for Real Engineers. Straight from my .claude directory.
   license: MIT
+  doc_path: README.md
+  skill_docs:
+    caveman: skills/productivity/caveman/SKILL.md
+    diagnose: skills/engineering/diagnose/SKILL.md
+    grill-me: skills/productivity/grill-me/SKILL.md
+    handoff: skills/productivity/handoff/SKILL.md
+    improve-codebase-architecture: skills/engineering/improve-codebase-architecture/SKILL.md
+    prototype: skills/engineering/prototype/SKILL.md
+    tdd: skills/engineering/tdd/SKILL.md
+    to-issues: skills/engineering/to-issues/SKILL.md
+    to-prd: skills/engineering/to-prd/SKILL.md
+    write-a-skill: skills/productivity/write-a-skill/SKILL.md
+    zoom-out: skills/engineering/zoom-out/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: Pawel
   author: phuryn
   repo: pm-skills
@@ -40,6 +70,73 @@
   default_branch: main
   description: 'PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.'
   license: MIT
+  doc_path: README.md
+  skill_docs:
+    ab-test-analysis: pm-data-analytics/skills/ab-test-analysis/SKILL.md
+    analyze-feature-requests: pm-product-discovery/skills/analyze-feature-requests/SKILL.md
+    ansoff-matrix: pm-product-strategy/skills/ansoff-matrix/SKILL.md
+    beachhead-segment: pm-go-to-market/skills/beachhead-segment/SKILL.md
+    brainstorm-experiments-existing: pm-product-discovery/skills/brainstorm-experiments-existing/SKILL.md
+    brainstorm-ideas-existing: pm-product-discovery/skills/brainstorm-ideas-existing/SKILL.md
+    brainstorm-ideas-new: pm-product-discovery/skills/brainstorm-ideas-new/SKILL.md
+    brainstorm-okrs: pm-execution/skills/brainstorm-okrs/SKILL.md
+    business-model: pm-product-strategy/skills/business-model/SKILL.md
+    cohort-analysis: pm-data-analytics/skills/cohort-analysis/SKILL.md
+    competitive-battlecard: pm-go-to-market/skills/competitive-battlecard/SKILL.md
+    competitor-analysis: pm-market-research/skills/competitor-analysis/SKILL.md
+    create-prd: pm-execution/skills/create-prd/SKILL.md
+    customer-journey-map: pm-market-research/skills/customer-journey-map/SKILL.md
+    draft-nda: pm-toolkit/skills/draft-nda/SKILL.md
+    dummy-dataset: pm-execution/skills/dummy-dataset/SKILL.md
+    grammar-check: pm-toolkit/skills/grammar-check/SKILL.md
+    growth-loops: pm-go-to-market/skills/growth-loops/SKILL.md
+    gtm-motions: pm-go-to-market/skills/gtm-motions/SKILL.md
+    gtm-strategy: pm-go-to-market/skills/gtm-strategy/SKILL.md
+    ideal-customer-profile: pm-go-to-market/skills/ideal-customer-profile/SKILL.md
+    identify-assumptions-existing: pm-product-discovery/skills/identify-assumptions-existing/SKILL.md
+    identify-assumptions-new: pm-product-discovery/skills/identify-assumptions-new/SKILL.md
+    interview-script: pm-product-discovery/skills/interview-script/SKILL.md
+    job-stories: pm-execution/skills/job-stories/SKILL.md
+    lean-canvas: pm-product-strategy/skills/lean-canvas/SKILL.md
+    market-segments: pm-market-research/skills/market-segments/SKILL.md
+    market-sizing: pm-market-research/skills/market-sizing/SKILL.md
+    marketing-ideas: pm-marketing-growth/skills/marketing-ideas/SKILL.md
+    metrics-dashboard: pm-product-discovery/skills/metrics-dashboard/SKILL.md
+    monetization-strategy: pm-product-strategy/skills/monetization-strategy/SKILL.md
+    north-star-metric: pm-marketing-growth/skills/north-star-metric/SKILL.md
+    opportunity-solution-tree: pm-product-discovery/skills/opportunity-solution-tree/SKILL.md
+    outcome-roadmap: pm-execution/skills/outcome-roadmap/SKILL.md
+    pestle-analysis: pm-product-strategy/skills/pestle-analysis/SKILL.md
+    porters-five-forces: pm-product-strategy/skills/porters-five-forces/SKILL.md
+    positioning-ideas: pm-marketing-growth/skills/positioning-ideas/SKILL.md
+    pre-mortem: pm-execution/skills/pre-mortem/SKILL.md
+    pricing-strategy: pm-product-strategy/skills/pricing-strategy/SKILL.md
+    prioritization-frameworks: pm-execution/skills/prioritization-frameworks/SKILL.md
+    prioritize-assumptions: pm-product-discovery/skills/prioritize-assumptions/SKILL.md
+    prioritize-features: pm-product-discovery/skills/prioritize-features/SKILL.md
+    privacy-policy: pm-toolkit/skills/privacy-policy/SKILL.md
+    product-name: pm-marketing-growth/skills/product-name/SKILL.md
+    product-strategy: pm-product-strategy/skills/product-strategy/SKILL.md
+    product-vision: pm-product-strategy/skills/product-vision/SKILL.md
+    release-notes: pm-execution/skills/release-notes/SKILL.md
+    retro: pm-execution/skills/retro/SKILL.md
+    review-resume: pm-toolkit/skills/review-resume/SKILL.md
+    sentiment-analysis: pm-market-research/skills/sentiment-analysis/SKILL.md
+    sprint-plan: pm-execution/skills/sprint-plan/SKILL.md
+    sql-queries: pm-data-analytics/skills/sql-queries/SKILL.md
+    stakeholder-map: pm-execution/skills/stakeholder-map/SKILL.md
+    startup-canvas: pm-product-strategy/skills/startup-canvas/SKILL.md
+    summarize-interview: pm-product-discovery/skills/summarize-interview/SKILL.md
+    summarize-meeting: pm-execution/skills/summarize-meeting/SKILL.md
+    swot-analysis: pm-product-strategy/skills/swot-analysis/SKILL.md
+    test-scenarios: pm-execution/skills/test-scenarios/SKILL.md
+    user-personas: pm-market-research/skills/user-personas/SKILL.md
+    user-segmentation: pm-market-research/skills/user-segmentation/SKILL.md
+    user-stories: pm-execution/skills/user-stories/SKILL.md
+    value-prop-statements: pm-marketing-growth/skills/value-prop-statements/SKILL.md
+    value-proposition: pm-product-strategy/skills/value-proposition/SKILL.md
+    wwas: pm-execution/skills/wwas/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: Codex
   author: openai
   repo: skills
@@ -50,6 +147,50 @@
   last_commit: '2026-05-21'
   default_branch: main
   description: Skills Catalog for Codex
+  doc_path: README.md
+  skill_docs:
+    aspnet-core: skills/.curated/aspnet-core/SKILL.md
+    chatgpt-apps: skills/.curated/chatgpt-apps/SKILL.md
+    cli-creator: skills/.curated/cli-creator/SKILL.md
+    cloudflare-deploy: skills/.curated/cloudflare-deploy/SKILL.md
+    define-goal: skills/.curated/define-goal/SKILL.md
+    figma: skills/.curated/figma/SKILL.md
+    figma-code-connect-components: skills/.curated/figma-code-connect-components/SKILL.md
+    figma-create-design-system-rules: skills/.curated/figma-create-design-system-rules/SKILL.md
+    figma-create-new-file: skills/.curated/figma-create-new-file/SKILL.md
+    figma-generate-design: skills/.curated/figma-generate-design/SKILL.md
+    figma-generate-library: skills/.curated/figma-generate-library/SKILL.md
+    figma-implement-design: skills/.curated/figma-implement-design/SKILL.md
+    figma-use: skills/.curated/figma-use/SKILL.md
+    gh-address-comments: skills/.curated/gh-address-comments/SKILL.md
+    gh-fix-ci: skills/.curated/gh-fix-ci/SKILL.md
+    hatch-pet: skills/.curated/hatch-pet/SKILL.md
+    imagegen: skills/.system/imagegen/SKILL.md
+    jupyter-notebook: skills/.curated/jupyter-notebook/SKILL.md
+    linear: skills/.curated/linear/SKILL.md
+    migrate-to-codex: skills/.curated/migrate-to-codex/SKILL.md
+    netlify-deploy: skills/.curated/netlify-deploy/SKILL.md
+    notion-knowledge-capture: skills/.curated/notion-knowledge-capture/SKILL.md
+    notion-meeting-intelligence: skills/.curated/notion-meeting-intelligence/SKILL.md
+    notion-research-documentation: skills/.curated/notion-research-documentation/SKILL.md
+    notion-spec-to-implementation: skills/.curated/notion-spec-to-implementation/SKILL.md
+    playwright: skills/.curated/playwright/SKILL.md
+    playwright-interactive: skills/.curated/playwright-interactive/SKILL.md
+    plugin-creator: skills/.system/plugin-creator/SKILL.md
+    render-deploy: skills/.curated/render-deploy/SKILL.md
+    screenshot: skills/.curated/screenshot/SKILL.md
+    security-best-practices: skills/.curated/security-best-practices/SKILL.md
+    security-ownership-map: skills/.curated/security-ownership-map/SKILL.md
+    security-threat-model: skills/.curated/security-threat-model/SKILL.md
+    sentry: skills/.curated/sentry/SKILL.md
+    skill-creator: skills/.system/skill-creator/SKILL.md
+    skill-installer: skills/.system/skill-installer/SKILL.md
+    speech: skills/.curated/speech/SKILL.md
+    transcribe: skills/.curated/transcribe/SKILL.md
+    vercel-deploy: skills/.curated/vercel-deploy/SKILL.md
+    winui-app: skills/.curated/winui-app/SKILL.md
+    yeet: skills/.curated/yeet/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: Fission-AI
   author: Fission-AI
   repo: OpenSpec
@@ -61,6 +202,7 @@
   default_branch: main
   description: Spec-driven development (SDD) for AI coding assistants.
   license: MIT
+  doc_path: README.md
 - id: gsd-build
   author: gsd-build
   repo: get-shit-done
@@ -72,6 +214,7 @@
   default_branch: main
   description: A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.
   license: MIT
+  doc_path: README.md
 - id: Anthropic
   author: anthropics
   repo: skills
@@ -82,6 +225,26 @@
   last_commit: '2026-05-29'
   default_branch: main
   description: Public repository for Agent Skills
+  doc_path: README.md
+  skill_docs:
+    algorithmic-art: skills/algorithmic-art/SKILL.md
+    brand-guidelines: skills/brand-guidelines/SKILL.md
+    canvas-design: skills/canvas-design/SKILL.md
+    claude-api: skills/claude-api/SKILL.md
+    doc-coauthoring: skills/doc-coauthoring/SKILL.md
+    docx: skills/docx/SKILL.md
+    frontend-design: skills/frontend-design/SKILL.md
+    internal-comms: skills/internal-comms/SKILL.md
+    mcp-builder: skills/mcp-builder/SKILL.md
+    pdf: skills/pdf/SKILL.md
+    pptx: skills/pptx/SKILL.md
+    skill-creator: skills/skill-creator/SKILL.md
+    slack-gif-creator: skills/slack-gif-creator/SKILL.md
+    theme-factory: skills/theme-factory/SKILL.md
+    web-artifacts-builder: skills/web-artifacts-builder/SKILL.md
+    webapp-testing: skills/webapp-testing/SKILL.md
+    xlsx: skills/xlsx/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: ComposioHQ
   author: ComposioHQ
   repo: awesome-claude-skills
@@ -92,6 +255,10 @@
   last_commit: '2026-05-22'
   default_branch: master
   description: A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows
+  doc_path: README.md
+  skill_docs:
+    webapp-testing: webapp-testing/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: superpowers-lab
   author: obra
   repo: superpowers-lab
@@ -103,6 +270,12 @@
   default_branch: main
   description: Experimental skills for Claude Code Superpowers - new techniques and tools
   license: MIT
+  doc_path: README.md
+  skill_docs:
+    finding-duplicate-functions: skills/finding-duplicate-functions/SKILL.md
+    using-tmux-for-interactive-commands: skills/using-tmux-for-interactive-commands/SKILL.md
+    windows-vm: skills/windows-vm/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: kenryu42
   author: kenryu42
   repo: claude-code-safety-net
@@ -114,6 +287,7 @@
   default_branch: main
   description: A coding agent hook that acts as a safety net, catching destructive git and filesystem commands before they execute. Supports Codex, Claude Code, OpenCode, Gemini CLI and Copilot CLI.
   license: MIT
+  doc_path: README.md
 - id: Gemini
   author: google-gemini
   repo: gemini-skills
@@ -125,6 +299,12 @@
   default_branch: main
   description: Skills for the Gemini API, SDK and model/agent interactions
   license: Apache-2.0
+  doc_path: README.md
+  skill_docs:
+    gemini-api-dev: skills/gemini-api-dev/SKILL.md
+    gemini-interactions-api: skills/gemini-interactions-api/SKILL.md
+    gemini-live-api-dev: skills/gemini-live-api-dev/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: vercel-labs
   author: vercel-labs
   repo: agent-skills
@@ -135,6 +315,12 @@
   last_commit: '2026-05-27'
   default_branch: main
   description: Vercel's official collection of agent skills
+  doc_path: README.md
+  skill_docs:
+    composition-patterns: skills/composition-patterns/SKILL.md
+    react-best-practices: skills/react-best-practices/SKILL.md
+    web-design-guidelines: skills/web-design-guidelines/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: trailofbits
   author: trailofbits
   repo: skills
@@ -146,6 +332,7 @@
   default_branch: main
   description: Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows
   license: CC-BY-SA-4.0
+  doc_path: README.md
 - id: PSPDFKit-labs
   author: PSPDFKit-labs
   repo: nutrient-agent-skill
@@ -156,6 +343,7 @@
   last_commit: '2026-03-23'
   default_branch: main
   description: Universal Agent Skill for document processing with Nutrient DWS API — works with Claude Code, Codex, Gemini CLI, Cursor, and 35+ more agents
+  doc_path: README.md
 - id: kreuzberg-dev
   author: kreuzberg-dev
   repo: kreuzberg
@@ -167,6 +355,10 @@
   default_branch: main
   description: A polyglot document intelligence framework with a Rust core. Extract text, metadata, images, and structured information from PDFs, Office documents, images, and 97+ formats. Available for
     Rust, Python, Ruby, Java, Go, PHP, Elixir, C#, R, C, TypeScript (Node/Bun/Wasm/Deno)- or use via CLI, REST API, or MCP server.
+  doc_path: README.md
+  skill_docs:
+    kreuzberg: skills/kreuzberg/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: deusyu
   author: deusyu
   repo: translate-book
@@ -200,6 +392,10 @@
   default_branch: master
   description: Hand-crafted Claude Code Skills focused on improving agent results quality. Compatible with OpenCode, Cursor, Antigravity, Gemini CLI, and others.
   license: GPL-3.0
+  doc_path: README.md
+  skill_docs:
+    write-concisely: plugins/docs/skills/write-concisely/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: alchaincyf
   author: alchaincyf
   repo: huashu-design
@@ -228,6 +424,7 @@
   default_branch: main
   description: 🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman
   license: MIT
+  doc_path: README.md
 - id: SeanZoR
   author: SeanZoR
   repo: claude-speed-reader
@@ -239,6 +436,7 @@
   default_branch: main
   description: Speed read Claude's responses at 600+ WPM using RSVP with Spritz-style ORP highlighting
   license: MIT
+  doc_path: README.md
 - id: PleasePrompto
   author: PleasePrompto
   repo: notebooklm-skill
@@ -275,6 +473,10 @@
   description: AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into
     a queryable knowledge graph. App code + database schema + infrastructure in one graph.
   license: MIT
+  doc_path: README.md
+  skill_docs:
+    graphify: graphify/skill.md
+  skill_docs_generated_at: '2026-05-29'
 - id: bevibing
   author: bevibing
   repo: tutor-skills
@@ -286,6 +488,7 @@
   default_branch: main
   description: A Claude Code skill that turns PDFs, docs, and codebases into Obsidian study vaults
   license: MIT
+  doc_path: README.md
 - id: stephenturner
   author: stephenturner
   repo: skill-focus
@@ -306,6 +509,7 @@
   stars: 135
   last_commit: '2026-05-13'
   license: MIT
+  doc_path: README.md
 - id: hanfang
   author: hanfang
   repo: claude-memory-skill
@@ -317,6 +521,7 @@
   default_branch: main
   description: A minimal, low-friction memory system for Claude Code
   license: MIT
+  doc_path: README.md
 - id: thedotmack
   author: thedotmack
   repo: claude-mem
@@ -329,6 +534,7 @@
   description: Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works
     with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More
   license: Apache-2.0
+  doc_path: README.md
 - id: alirezarezvani
   author: alirezarezvani
   repo: claude-skills
@@ -341,6 +547,7 @@
   description: 337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding
     agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills.
   license: MIT
+  doc_path: README.md
 - id: Dean
   author: deanpeters
   repo: Product-Manager-Skills
@@ -351,6 +558,50 @@
   last_commit: '2026-05-20'
   default_branch: main
   description: Product Management skills framework built on battle-tested methods for Claude Code, Cowork, Codex, and AI agents.
+  doc_path: README.md
+  skill_docs:
+    acquisition-channel-advisor: skills/acquisition-channel-advisor/SKILL.md
+    ai-shaped-readiness-advisor: skills/ai-shaped-readiness-advisor/SKILL.md
+    altitude-horizon-framework: skills/altitude-horizon-framework/SKILL.md
+    business-health-diagnostic: skills/business-health-diagnostic/SKILL.md
+    company-research: skills/company-research/SKILL.md
+    customer-journey-map: skills/customer-journey-map/SKILL.md
+    director-readiness-advisor: skills/director-readiness-advisor/SKILL.md
+    discovery-interview-prep: skills/discovery-interview-prep/SKILL.md
+    discovery-process: skills/discovery-process/SKILL.md
+    eol-message: skills/eol-message/SKILL.md
+    epic-breakdown-advisor: skills/epic-breakdown-advisor/SKILL.md
+    epic-hypothesis: skills/epic-hypothesis/SKILL.md
+    executive-onboarding-playbook: skills/executive-onboarding-playbook/SKILL.md
+    feature-investment-advisor: skills/feature-investment-advisor/SKILL.md
+    finance-based-pricing-advisor: skills/finance-based-pricing-advisor/SKILL.md
+    finance-metrics-quickref: skills/finance-metrics-quickref/SKILL.md
+    jobs-to-be-done: skills/jobs-to-be-done/SKILL.md
+    lean-ux-canvas: skills/lean-ux-canvas/SKILL.md
+    opportunity-solution-tree: skills/opportunity-solution-tree/SKILL.md
+    pestel-analysis: skills/pestel-analysis/SKILL.md
+    pol-probe-advisor: skills/pol-probe-advisor/SKILL.md
+    positioning-statement: skills/positioning-statement/SKILL.md
+    positioning-workshop: skills/positioning-workshop/SKILL.md
+    prd-development: skills/prd-development/SKILL.md
+    press-release: skills/press-release/SKILL.md
+    prioritization-advisor: skills/prioritization-advisor/SKILL.md
+    problem-framing-canvas: skills/problem-framing-canvas/SKILL.md
+    problem-statement: skills/problem-statement/SKILL.md
+    product-strategy-session: skills/product-strategy-session/SKILL.md
+    proto-persona: skills/proto-persona/SKILL.md
+    recommendation-canvas: skills/recommendation-canvas/SKILL.md
+    roadmap-planning: skills/roadmap-planning/SKILL.md
+    saas-economics-efficiency-metrics: skills/saas-economics-efficiency-metrics/SKILL.md
+    saas-revenue-growth-metrics: skills/saas-revenue-growth-metrics/SKILL.md
+    skill-authoring-workflow: skills/skill-authoring-workflow/SKILL.md
+    storyboard: skills/storyboard/SKILL.md
+    tam-sam-som-calculator: skills/tam-sam-som-calculator/SKILL.md
+    user-story: skills/user-story/SKILL.md
+    user-story-splitting: skills/user-story-splitting/SKILL.md
+    vp-cpo-readiness-advisor: skills/vp-cpo-readiness-advisor/SKILL.md
+    workshop-facilitation: skills/workshop-facilitation/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: founder-skills
   author: ognjengt
   repo: founder-skills
@@ -360,6 +611,24 @@
   stars: 182
   last_commit: '2026-05-18'
   license: MIT
+  doc_path: README.md
+  skill_docs:
+    brand-copywriter: skills/brand-copywriter/SKILL.md
+    competitor-intel: skills/competitor-intel/SKILL.md
+    cro-optimization: skills/cro-optimization/SKILL.md
+    go-to-market-plan: skills/go-to-market-plan/SKILL.md
+    lead-magnet-generator: skills/lead-magnet-generator/SKILL.md
+    linkedin-writer: skills/linkedin-writer/SKILL.md
+    marketing-ideas: skills/marketing-ideas/SKILL.md
+    outreach-specialist: skills/outreach-specialist/SKILL.md
+    prd-generator: skills/prd-generator/SKILL.md
+    pricing-strategist: skills/pricing-strategist/SKILL.md
+    product-hunt-launch-plan: skills/product-hunt-launch-plan/SKILL.md
+    sop-creator: skills/sop-creator/SKILL.md
+    strategic-planning: skills/strategic-planning/SKILL.md
+    viral-hook-creator: skills/viral-hook-creator/SKILL.md
+    x-writer: skills/x-writer/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: wrsmith108
   author: wrsmith108
   repo: linear-claude-skill
@@ -392,6 +661,51 @@
   default_branch: main
   description: Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.
   license: MIT
+  doc_path: README.md
+  skill_docs:
+    ab-testing: skills/ab-testing/SKILL.md
+    ad-creative: skills/ad-creative/SKILL.md
+    ads: skills/ads/SKILL.md
+    ai-seo: skills/ai-seo/SKILL.md
+    analytics: skills/analytics/SKILL.md
+    aso: skills/aso/SKILL.md
+    churn-prevention: skills/churn-prevention/SKILL.md
+    co-marketing: skills/co-marketing/SKILL.md
+    cold-email: skills/cold-email/SKILL.md
+    community-marketing: skills/community-marketing/SKILL.md
+    competitor-profiling: skills/competitor-profiling/SKILL.md
+    competitors: skills/competitors/SKILL.md
+    content-strategy: skills/content-strategy/SKILL.md
+    copy-editing: skills/copy-editing/SKILL.md
+    copywriting: skills/copywriting/SKILL.md
+    cro: skills/cro/SKILL.md
+    customer-research: skills/customer-research/SKILL.md
+    directory-submissions: skills/directory-submissions/SKILL.md
+    emails: skills/emails/SKILL.md
+    free-tools: skills/free-tools/SKILL.md
+    image: skills/image/SKILL.md
+    launch: skills/launch/SKILL.md
+    lead-magnets: skills/lead-magnets/SKILL.md
+    marketing-ideas: skills/marketing-ideas/SKILL.md
+    marketing-psychology: skills/marketing-psychology/SKILL.md
+    onboarding: skills/onboarding/SKILL.md
+    paywalls: skills/paywalls/SKILL.md
+    popups: skills/popups/SKILL.md
+    pricing: skills/pricing/SKILL.md
+    product-marketing: skills/product-marketing/SKILL.md
+    programmatic-seo: skills/programmatic-seo/SKILL.md
+    prospecting: skills/prospecting/SKILL.md
+    referrals: skills/referrals/SKILL.md
+    revops: skills/revops/SKILL.md
+    sales-enablement: skills/sales-enablement/SKILL.md
+    schema: skills/schema/SKILL.md
+    seo-audit: skills/seo-audit/SKILL.md
+    signup: skills/signup/SKILL.md
+    site-architecture: skills/site-architecture/SKILL.md
+    sms: skills/sms/SKILL.md
+    social: skills/social/SKILL.md
+    video: skills/video/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: AgriciDaniel-seo
   author: AgriciDaniel
   repo: claude-seo
@@ -404,6 +718,7 @@
   description: Universal SEO skill for Claude Code. 25 sub-skills + 18 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, backlinks, local SEO, maps intelligence, semantic clustering, e-commerce
     SEO, international SEO, Google APIs, and PDF/Excel reporting. Optional DataForSEO, Firecrawl, and Banana extensions.
   license: MIT
+  doc_path: README.md
 - id: ReScienceLab
   author: ReScienceLab
   repo: opc-skills
@@ -415,6 +730,17 @@
   default_branch: main
   description: Agent Skills for Solopreneurs
   license: Apache-2.0
+  doc_path: README.md
+  skill_docs:
+    banner-creator: skills/banner-creator/SKILL.md
+    domain-hunter: skills/domain-hunter/SKILL.md
+    logo-creator: skills/logo-creator/SKILL.md
+    nanobanana: skills/nanobanana/SKILL.md
+    producthunt: skills/producthunt/SKILL.md
+    reddit: skills/reddit/SKILL.md
+    requesthunt: skills/requesthunt/SKILL.md
+    twitter: skills/twitter/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: AgriciDaniel-ads
   author: AgriciDaniel
   repo: claude-ads
@@ -424,6 +750,7 @@
   stars: 5322
   last_commit: '2026-05-18'
   license: MIT
+  doc_path: README.md
 - id: nextlevelbuilder
   author: nextlevelbuilder
   repo: ui-ux-pro-max-skill
@@ -435,6 +762,7 @@
   default_branch: main
   description: An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms
   license: MIT
+  doc_path: README.md
 - id: op7418-NB
   author: op7418
   repo: NanoBanana-PPT-Skills
@@ -454,6 +782,9 @@
   default_branch: main
   description: Create beautiful slides on the web using a coding agent's frontend skills
   license: MIT
+  skill_docs:
+    frontend-slides: plugins/frontend-slides/skills/frontend-slides/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: nexu-io
   author: nexu-io
   repo: open-design
@@ -466,6 +797,7 @@
   description: 🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames
     📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Claude Code / OpenClaw / Codex / Cursor / OpenCode / Qwen / Copilot / Hermes / Kimi & 17+ CLIs.
   license: Apache-2.0
+  doc_path: README.md
 - id: op7418-YT
   author: op7418
   repo: Youtube-clipper-skill
@@ -485,6 +817,7 @@
   stars: 4069
   last_commit: '2026-05-07'
   license: AGPL-3.0
+  doc_path: README.md
 - id: remotion-dev
   author: remotion-dev
   repo: skills
@@ -493,6 +826,7 @@
   skill_group_count: 1
   stars: 3352
   last_commit: '2026-05-07'
+  doc_path: README.md
 - id: Firecrawl
   author: firecrawl
   repo: cli
@@ -503,6 +837,7 @@
   last_commit: '2026-05-28'
   default_branch: main
   description: CLI and Agent Skill for Firecrawl - Add scrape, search, and browsing capabilities to your AI agents
+  doc_path: README.md
 - id: mvanhorn
   author: mvanhorn
   repo: last30days-skill
@@ -514,6 +849,7 @@
   default_branch: main
   description: AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary
   license: MIT
+  doc_path: README.md
 - id: Paramchoudhary
   author: Paramchoudhary
   repo: ResumeSkills
@@ -526,6 +862,22 @@
   description: A collection of AI agent skills focused on resume optimization, job applications, and career development. Built for job seekers, career changers, and professionals who want Claude Code to
     help with resume writing, ATS optimization, interview prep, and strategic job search.
   license: MIT
+  doc_path: README.md
+  skill_docs:
+    academic-cv-builder: skills/academic-cv-builder/SKILL.md
+    career-changer-translator: skills/career-changer-translator/SKILL.md
+    cover-letter-generator: skills/cover-letter-generator/SKILL.md
+    creative-portfolio-resume: skills/creative-portfolio-resume/SKILL.md
+    resume-ats-optimizer: skills/resume-ats-optimizer/SKILL.md
+    resume-bullet-writer: skills/resume-bullet-writer/SKILL.md
+    resume-formatter: skills/resume-formatter/SKILL.md
+    resume-quantifier: skills/resume-quantifier/SKILL.md
+    resume-section-builder: skills/resume-section-builder/SKILL.md
+    resume-tailor: skills/resume-tailor/SKILL.md
+    resume-version-manager: skills/resume-version-manager/SKILL.md
+    salary-negotiation-prep: skills/salary-negotiation-prep/SKILL.md
+    tech-resume-optimizer: skills/tech-resume-optimizer/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: santifer
   author: santifer
   repo: career-ops
@@ -537,6 +889,7 @@
   default_branch: main
   description: AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.
   license: MIT
+  doc_path: README.md
 - id: gokapso
   author: gokapso
   repo: agent-skills
@@ -547,6 +900,12 @@
   last_commit: '2026-05-23'
   default_branch: master
   description: Kapso agent skills for WhatsApp.
+  doc_path: README.md
+  skill_docs:
+    automate-whatsapp: skills/automate-whatsapp/SKILL.md
+    integrate-whatsapp: skills/integrate-whatsapp/SKILL.md
+    observe-whatsapp: skills/observe-whatsapp/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: Charlie85270
   author: Charlie85270
   repo: Dorothy
@@ -558,6 +917,7 @@
   default_branch: main
   description: Dorothy, the wife your AI agents needs.
   license: MIT
+  doc_path: README.md
 - id: wanshuiyin
   author: wanshuiyin
   repo: Auto-claude-code-research-in-sleep
@@ -570,6 +930,7 @@
   description: 'ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in
     — works with Claude Code, Codex, OpenClaw, or any LLM agent.'
   license: MIT
+  doc_path: README.md
 - id: garrytan
   author: garrytan
   repo: gstack
@@ -603,6 +964,7 @@
   default_branch: main
   description: Open-source accounting and tax skills for AI. 133 countries + 51 US states. Upload to Claude/ChatGPT or connect via MCP. Verified by accountants.
   license: AGPL-3.0
+  doc_path: README.md
 - id: imbad0202
   author: imbad0202
   repo: academic-research-skills
@@ -613,6 +975,7 @@
   last_commit: '2026-05-29'
   default_branch: main
   description: 'Academic Research Skills for Claude Code: research → write → review → revise → finalize'
+  doc_path: README.md
 - id: K-Dense-AI
   author: K-Dense-AI
   repo: scientific-agent-skills
@@ -625,6 +988,7 @@
   description: 'Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology,
     chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Antigravity, and the open Agent Skills standard.'
   license: MIT
+  doc_path: README.md
 - id: muratcankoylan
   author: muratcankoylan
   repo: Agent-Skills-for-Context-Engineering
@@ -637,6 +1001,23 @@
   description: A comprehensive collection of Agent Skills for context engineering, multi-agent architectures, and production agent systems. Use when building, optimizing, or debugging agent systems that
     require effective context management.
   license: MIT
+  skill_docs:
+    advanced-evaluation: skills/advanced-evaluation/SKILL.md
+    bdi-mental-states: skills/bdi-mental-states/SKILL.md
+    context-compression: skills/context-compression/SKILL.md
+    context-degradation: skills/context-degradation/SKILL.md
+    context-fundamentals: skills/context-fundamentals/SKILL.md
+    context-optimization: skills/context-optimization/SKILL.md
+    evaluation: skills/evaluation/SKILL.md
+    filesystem-context: skills/filesystem-context/SKILL.md
+    harness-engineering: skills/harness-engineering/SKILL.md
+    hosted-agents: skills/hosted-agents/SKILL.md
+    latent-briefing: skills/latent-briefing/SKILL.md
+    memory-systems: skills/memory-systems/SKILL.md
+    multi-agent-patterns: skills/multi-agent-patterns/SKILL.md
+    project-development: skills/project-development/SKILL.md
+    tool-design: skills/tool-design/SKILL.md
+  skill_docs_generated_at: '2026-05-29'
 - id: UseAI-pro
   author: UseAI-pro
   repo: openclaw-skills-security
@@ -648,6 +1029,7 @@
   default_branch: main
   description: Curated, security-first OpenClaw skills (Markdown-based). Security audit skills - detect prompt injection, supply chain attacks, credential leaks. Works with Codex CLI, Claude Code, any LLM.
   license: MIT
+  doc_path: README.md
 - id: anthropics-marketplace
   author: anthropics
   repo: claude-plugins-official
@@ -659,6 +1041,7 @@
   default_branch: main
   description: Official, Anthropic-managed directory of high quality Claude Code Plugins.
   license: Apache-2.0
+  doc_path: README.md
 - id: multica-ai
   author: multica-ai
   repo: andrej-karpathy-skills
@@ -669,3 +1052,4 @@
   last_commit: '2026-04-20'
   default_branch: main
   description: A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.
+  doc_path: README.md

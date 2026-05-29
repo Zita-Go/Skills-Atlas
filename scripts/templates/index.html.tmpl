@@ -710,6 +710,11 @@ html.light .card:hover{
   color:hsl(var(--cat-hue), 65%, 72%);
   border-color:hsla(var(--cat-hue), 70%, 60%, .22);
 }
+/* Phase 2：有自己 SKILL.md 的 skill 标签可点开 */
+.card .skill-tag.has-doc{cursor:pointer}
+.card .skill-tag.has-doc::after{content:" 📖";font-size:9px;opacity:.5}
+.card .skill-tag.has-doc:hover{background:hsla(var(--cat-hue), 70%, 60%, .26);
+  border-color:var(--accent);transform:translateY(-1px)}
 html.light .card .skill-tag{
   background:hsla(var(--cat-hue), 60%, 50%, .08);
   color:hsl(var(--cat-hue), 55%, 42%);
@@ -1212,7 +1217,19 @@ function buildContent(){
         totalSkills += row.skills.length;
         row.sources.forEach(s => vendorSet.add(s.name));
 
-        const skillsHtml = row.skills.map(sk => `<span class="skill-tag">${escapeHtml(sk)}</span>`).join('');
+        const skillsHtml = row.skills.map(sk => {
+          // Phase 2：若该 skill 有自己的 SKILL.md（扫本行各来源仓库的 skill_docs），标签可点开查看
+          let hit = null;
+          for(const s of row.sources){
+            const v = DATA.vendors[s.name];
+            const p = v && v.skill_docs && v.skill_docs[sk];
+            if(p){ hit = { v, name: s.name, path: p }; break; }
+          }
+          if(hit){
+            return `<span class="skill-tag has-doc" data-act="usage" data-author="${escapeAttr(hit.v.author)}" data-repo="${escapeAttr(hit.v.repo)}" data-branch="${escapeAttr(hit.v.default_branch||'main')}" data-docpath="${escapeAttr(hit.path)}" data-url="${escapeAttr(hit.v.url)}" data-name="${escapeAttr(hit.name)}" data-skill="${escapeAttr(sk)}" title="查看 ${escapeAttr(sk)} 的 SKILL.md（不跳转）">${escapeHtml(sk)}</span>`;
+          }
+          return `<span class="skill-tag">${escapeHtml(sk)}</span>`;
+        }).join('');
         const sourceCount = row.sources.length;
         const sortedSources = [...row.sources].sort((a,b) => (b.stars||0) - (a.stars||0));
         const sourcesHtml = sortedSources.map(s => {
@@ -3172,7 +3189,7 @@ function setupUsage(){
 
   // 全局事件委托：卡片里的 📖 用法 / 📋 安装 按钮（兼容视图重渲染）
   document.body.addEventListener('click', e => {
-    const b = e.target.closest('.src-act');
+    const b = e.target.closest('[data-act]');
     if(!b) return;
     if(b.dataset.act === 'copy') return copyText(b.dataset.cmd || '', b);
     if(b.dataset.act === 'usage') openUsage(b.dataset);
@@ -3180,7 +3197,7 @@ function setupUsage(){
 
   async function openUsage(d){
     ov.classList.remove('hidden');
-    sub.textContent = `${d.author}/${d.repo}`;
+    sub.textContent = d.skill ? `${d.skill} · ${d.author}/${d.repo}` : `${d.author}/${d.repo}`;
     repoLink.href = d.url || `https://github.com/${d.author}/${d.repo}`;
     const v = DATA.vendors[d.name];
     const cmd = (v && v.install && v.install.command) ? v.install.command : '';

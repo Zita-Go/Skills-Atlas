@@ -29,7 +29,7 @@
                   "repo": "superpowers",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
@@ -58,7 +58,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add mattpocock/skills",
                     "kind": "skill",
@@ -75,7 +75,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -92,7 +92,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -120,7 +120,7 @@
                   "repo": "OpenSpec",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "git clone https://github.com/Fission-AI/OpenSpec",
                     "note": "安装方式见仓库 README",
@@ -137,7 +137,7 @@
                   "repo": "get-shit-done",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "git clone https://github.com/gsd-build/get-shit-done",
                     "note": "安装方式见仓库 README",
@@ -164,7 +164,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add mattpocock/skills",
                     "kind": "skill",
@@ -198,7 +198,7 @@
                   "repo": "superpowers",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
@@ -215,7 +215,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add mattpocock/skills",
                     "kind": "skill",
@@ -232,7 +232,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -261,7 +261,7 @@
                   "repo": "superpowers",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
@@ -278,7 +278,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add mattpocock/skills",
                     "kind": "skill",
@@ -295,7 +295,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -322,7 +322,7 @@
                   "repo": "superpowers",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
@@ -349,7 +349,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -366,7 +366,7 @@
                   "repo": "awesome-claude-skills",
                   "default_branch": "master",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ComposioHQ/awesome-claude-skills",
                     "kind": "skill",
@@ -394,7 +394,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -427,7 +427,7 @@
                   "repo": "superpowers",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
@@ -455,7 +455,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add mattpocock/skills",
                     "kind": "skill",
@@ -482,7 +482,7 @@
                   "repo": "superpowers-lab",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add obra/superpowers-lab",
                     "kind": "skill",
@@ -516,7 +516,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -544,7 +544,7 @@
                   "repo": "superpowers",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
@@ -571,7 +571,7 @@
                   "repo": "claude-code-safety-net",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "/plugin marketplace add kenryu42/claude-code-safety-net",
                     "kind": "plugin"
@@ -605,7 +605,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -641,7 +641,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -658,7 +658,7 @@
                   "repo": "gemini-skills",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add google-gemini/gemini-skills",
                     "kind": "skill",
@@ -675,7 +675,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -702,7 +702,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -729,7 +729,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -756,7 +756,7 @@
                   "repo": "agent-skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "git clone https://github.com/vercel-labs/agent-skills",
                     "note": "安装方式见仓库 README",
@@ -789,7 +789,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -816,7 +816,7 @@
                   "repo": "superpowers-lab",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add obra/superpowers-lab",
                     "kind": "skill",
@@ -843,7 +843,7 @@
                   "repo": "superpowers-lab",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add obra/superpowers-lab",
                     "kind": "skill",
@@ -877,7 +877,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -904,7 +904,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "CC-BY-SA-4.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "/plugin marketplace add trailofbits/skills",
                     "kind": "marketplace"
@@ -930,7 +930,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -971,7 +971,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -998,7 +998,7 @@
                   "repo": "nutrient-agent-skill",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add PSPDFKit-labs/nutrient-agent-skill",
                     "kind": "skill",
@@ -1025,7 +1025,7 @@
                   "repo": "kreuzberg",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "git clone https://github.com/kreuzberg-dev/kreuzberg",
                     "note": "安装方式见仓库 README",
@@ -1090,7 +1090,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -1144,7 +1144,7 @@
                   "repo": "context-engineering-kit",
                   "default_branch": "master",
                   "license": "GPL-3.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add NeoLabHQ/context-engineering-kit",
                     "kind": "skill",
@@ -1172,7 +1172,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -1243,7 +1243,7 @@
                   "repo": "caveman",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add JuliusBrussee/caveman",
                     "kind": "skill",
@@ -1260,7 +1260,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add mattpocock/skills",
                     "kind": "skill",
@@ -1287,7 +1287,7 @@
                   "repo": "claude-speed-reader",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add SeanZoR/claude-speed-reader",
                     "kind": "skill",
@@ -1364,7 +1364,7 @@
                   "repo": "graphify",
                   "default_branch": "v8",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add safishamsi/graphify",
                     "kind": "skill",
@@ -1391,7 +1391,7 @@
                   "repo": "tutor-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add bevibing/tutor-skills",
                     "kind": "skill",
@@ -1453,7 +1453,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -1480,7 +1480,7 @@
                   "repo": "notion-cookbook",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add makenotion/notion-cookbook",
                     "kind": "skill",
@@ -1512,7 +1512,7 @@
                   "repo": "claude-memory-skill",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add hanfang/claude-memory-skill",
                     "kind": "skill",
@@ -1539,7 +1539,7 @@
                   "repo": "claude-mem",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "git clone https://github.com/thedotmack/claude-mem",
                     "note": "安装方式见仓库 README",
@@ -1566,7 +1566,7 @@
                   "repo": "claude-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add alirezarezvani/claude-skills",
                     "kind": "skill",
@@ -1608,7 +1608,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -1625,7 +1625,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -1652,7 +1652,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -1669,7 +1669,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -1697,7 +1697,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -1714,7 +1714,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -1744,7 +1744,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -1761,7 +1761,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -1778,7 +1778,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -1806,7 +1806,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -1839,7 +1839,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -1868,7 +1868,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -1895,7 +1895,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -1927,7 +1927,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -1944,7 +1944,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -1973,7 +1973,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2001,7 +2001,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add mattpocock/skills",
                     "kind": "skill",
@@ -2018,7 +2018,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2046,7 +2046,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2075,7 +2075,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2111,7 +2111,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2142,7 +2142,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2159,7 +2159,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2187,7 +2187,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2204,7 +2204,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2235,7 +2235,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2252,7 +2252,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2281,7 +2281,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2298,7 +2298,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2332,7 +2332,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2359,7 +2359,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2386,7 +2386,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2421,7 +2421,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2438,7 +2438,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2455,7 +2455,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add mattpocock/skills",
                     "kind": "skill",
@@ -2472,7 +2472,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -2504,7 +2504,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2521,7 +2521,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2551,7 +2551,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -2568,7 +2568,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add mattpocock/skills",
                     "kind": "skill",
@@ -2619,7 +2619,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2636,7 +2636,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2665,7 +2665,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2698,7 +2698,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2744,7 +2744,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2778,7 +2778,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2807,7 +2807,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2824,7 +2824,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2854,7 +2854,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2887,7 +2887,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -2904,7 +2904,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2931,7 +2931,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -2963,7 +2963,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -2990,7 +2990,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -3017,7 +3017,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -3044,7 +3044,7 @@
                   "repo": "Product-Manager-Skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
@@ -3087,7 +3087,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3114,7 +3114,7 @@
                   "repo": "claude-seo",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add AgriciDaniel/claude-seo",
                     "kind": "skill",
@@ -3141,7 +3141,7 @@
                   "repo": "opc-skills",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
@@ -3175,7 +3175,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3202,7 +3202,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -3229,7 +3229,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -3256,7 +3256,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -3289,7 +3289,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3316,7 +3316,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3345,7 +3345,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3362,7 +3362,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -3389,7 +3389,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -3422,7 +3422,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3449,7 +3449,7 @@
                   "repo": "claude-ads",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add AgriciDaniel/claude-ads",
                     "kind": "skill",
@@ -3476,7 +3476,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3512,7 +3512,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3539,7 +3539,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -3566,7 +3566,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3599,7 +3599,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3616,7 +3616,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -3644,7 +3644,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3671,7 +3671,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3701,7 +3701,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3734,7 +3734,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -3751,7 +3751,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -3768,7 +3768,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3803,7 +3803,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -3820,7 +3820,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3837,7 +3837,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -3864,7 +3864,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3896,7 +3896,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3923,7 +3923,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3950,7 +3950,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -3985,7 +3985,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -4002,7 +4002,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -4019,7 +4019,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -4053,7 +4053,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -4070,7 +4070,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -4097,7 +4097,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -4129,7 +4129,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -4157,7 +4157,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -4197,7 +4197,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -4229,7 +4229,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -4258,7 +4258,7 @@
                   "repo": "agent-skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "git clone https://github.com/vercel-labs/agent-skills",
                     "note": "安装方式见仓库 README",
@@ -4285,7 +4285,7 @@
                   "repo": "ui-ux-pro-max-skill",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nextlevelbuilder/ui-ux-pro-max-skill",
                     "kind": "skill",
@@ -4317,7 +4317,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -4356,7 +4356,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -4388,7 +4388,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -4496,7 +4496,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -4528,7 +4528,7 @@
                   "repo": "open-design",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nexu-io/open-design",
                     "kind": "skill",
@@ -4560,7 +4560,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -4587,7 +4587,7 @@
                   "repo": "opc-skills",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
@@ -4616,7 +4616,7 @@
                   "repo": "opc-skills",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
@@ -4633,7 +4633,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -4665,7 +4665,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -4692,7 +4692,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -4719,7 +4719,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -4784,7 +4784,7 @@
                   "repo": "OpenMontage",
                   "default_branch": "main",
                   "license": "AGPL-3.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "git clone https://github.com/calesthio/OpenMontage",
                     "note": "安装方式见仓库 README",
@@ -4811,7 +4811,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add remotion-dev/skills",
                     "kind": "skill",
@@ -4838,7 +4838,7 @@
                   "repo": "marketingskills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
@@ -4871,7 +4871,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -4913,7 +4913,7 @@
                   "repo": "cli",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add firecrawl/cli",
                     "kind": "skill",
@@ -4940,7 +4940,7 @@
                   "repo": "agent-skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "git clone https://github.com/vercel-labs/agent-skills",
                     "note": "安装方式见仓库 README",
@@ -4972,7 +4972,7 @@
                   "repo": "last30days-skill",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add mvanhorn/last30days-skill",
                     "kind": "skill",
@@ -5002,7 +5002,7 @@
                   "repo": "opc-skills",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
@@ -5029,7 +5029,7 @@
                   "repo": "opc-skills",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
@@ -5061,7 +5061,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -5088,7 +5088,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -5115,7 +5115,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -5147,7 +5147,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -5189,7 +5189,7 @@
                   "repo": "ResumeSkills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Paramchoudhary/ResumeSkills",
                     "kind": "skill",
@@ -5219,7 +5219,7 @@
                   "repo": "ResumeSkills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Paramchoudhary/ResumeSkills",
                     "kind": "skill",
@@ -5249,7 +5249,7 @@
                   "repo": "ResumeSkills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Paramchoudhary/ResumeSkills",
                     "kind": "skill",
@@ -5280,7 +5280,7 @@
                   "repo": "ResumeSkills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Paramchoudhary/ResumeSkills",
                     "kind": "skill",
@@ -5307,7 +5307,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -5340,7 +5340,7 @@
                   "repo": "ResumeSkills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Paramchoudhary/ResumeSkills",
                     "kind": "skill",
@@ -5357,7 +5357,7 @@
                   "repo": "career-ops",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add santifer/career-ops",
                     "kind": "skill",
@@ -5384,7 +5384,7 @@
                   "repo": "ResumeSkills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Paramchoudhary/ResumeSkills",
                     "kind": "skill",
@@ -5416,7 +5416,7 @@
                   "repo": "career-ops",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add santifer/career-ops",
                     "kind": "skill",
@@ -5433,7 +5433,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -5466,7 +5466,7 @@
                   "repo": "pm-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
@@ -5506,7 +5506,7 @@
                   "repo": "agent-skills",
                   "default_branch": "master",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add gokapso/agent-skills",
                     "kind": "skill",
@@ -5556,7 +5556,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -5588,7 +5588,7 @@
                   "repo": "Dorothy",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "git clone https://github.com/Charlie85270/Dorothy",
                     "note": "安装方式见仓库 README",
@@ -5620,7 +5620,7 @@
                   "repo": "Auto-claude-code-research-in-sleep",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add wanshuiyin/Auto-claude-code-research-in-sleep",
                     "kind": "multi-skill-suite",
@@ -5658,7 +5658,7 @@
                   "repo": "founder-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
@@ -5712,7 +5712,7 @@
                   "repo": "opc-skills",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
@@ -5781,7 +5781,7 @@
                   "repo": "openaccountants",
                   "default_branch": "main",
                   "license": "AGPL-3.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openaccountants/openaccountants",
                     "kind": "skill",
@@ -5819,7 +5819,7 @@
                   "repo": "academic-research-skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add imbad0202/academic-research-skills",
                     "kind": "multi-skill-suite",
@@ -5851,7 +5851,7 @@
                   "repo": "scientific-agent-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add K-Dense-AI/scientific-agent-skills",
                     "kind": "multi-skill-suite",
@@ -6249,7 +6249,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
@@ -6266,7 +6266,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -6283,7 +6283,7 @@
                   "repo": "superpowers",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
@@ -6300,7 +6300,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add mattpocock/skills",
                     "kind": "skill",
@@ -6333,7 +6333,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -6361,7 +6361,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -6388,7 +6388,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add openai/skills",
                     "kind": "skill",
@@ -6420,7 +6420,7 @@
                   "repo": "openclaw-skills-security",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add UseAI-pro/openclaw-skills-security",
                     "kind": "skill",
@@ -6452,7 +6452,7 @@
                   "repo": "claude-plugins-official",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "/plugin marketplace add anthropics/claude-plugins-official",
                     "kind": "marketplace"
@@ -6483,7 +6483,7 @@
                   "repo": "andrej-karpathy-skills",
                   "default_branch": "main",
                   "license": null,
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "# 把该仓库的 CLAUDE.md 复制到你的项目根目录",
                     "kind": "claude-md-template"
@@ -6506,13 +6506,27 @@
       "repo": "superpowers",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add obra/superpowers",
         "kind": "skill",
         "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "brainstorming": "skills/brainstorming/SKILL.md",
+        "dispatching-parallel-agents": "skills/dispatching-parallel-agents/SKILL.md",
+        "executing-plans": "skills/executing-plans/SKILL.md",
+        "finishing-a-development-branch": "skills/finishing-a-development-branch/SKILL.md",
+        "receiving-code-review": "skills/receiving-code-review/SKILL.md",
+        "requesting-code-review": "skills/requesting-code-review/SKILL.md",
+        "subagent-driven-development": "skills/subagent-driven-development/SKILL.md",
+        "systematic-debugging": "skills/systematic-debugging/SKILL.md",
+        "test-driven-development": "skills/test-driven-development/SKILL.md",
+        "using-git-worktrees": "skills/using-git-worktrees/SKILL.md",
+        "verification-before-completion": "skills/verification-before-completion/SKILL.md",
+        "writing-plans": "skills/writing-plans/SKILL.md",
+        "writing-skills": "skills/writing-skills/SKILL.md"
+      }
     },
     "mattpocock": {
       "url": "https://github.com/mattpocock/skills",
@@ -6523,13 +6537,25 @@
       "repo": "skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add mattpocock/skills",
         "kind": "skill",
         "alt": "git clone https://github.com/mattpocock/skills ~/.claude/skills/skills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "caveman": "skills/productivity/caveman/SKILL.md",
+        "diagnose": "skills/engineering/diagnose/SKILL.md",
+        "grill-me": "skills/productivity/grill-me/SKILL.md",
+        "handoff": "skills/productivity/handoff/SKILL.md",
+        "improve-codebase-architecture": "skills/engineering/improve-codebase-architecture/SKILL.md",
+        "prototype": "skills/engineering/prototype/SKILL.md",
+        "tdd": "skills/engineering/tdd/SKILL.md",
+        "to-issues": "skills/engineering/to-issues/SKILL.md",
+        "to-prd": "skills/engineering/to-prd/SKILL.md",
+        "write-a-skill": "skills/productivity/write-a-skill/SKILL.md",
+        "zoom-out": "skills/engineering/zoom-out/SKILL.md"
+      }
     },
     "Pawel": {
       "url": "https://github.com/phuryn/pm-skills",
@@ -6540,13 +6566,78 @@
       "repo": "pm-skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add phuryn/pm-skills",
         "kind": "skill",
         "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "ab-test-analysis": "pm-data-analytics/skills/ab-test-analysis/SKILL.md",
+        "analyze-feature-requests": "pm-product-discovery/skills/analyze-feature-requests/SKILL.md",
+        "ansoff-matrix": "pm-product-strategy/skills/ansoff-matrix/SKILL.md",
+        "beachhead-segment": "pm-go-to-market/skills/beachhead-segment/SKILL.md",
+        "brainstorm-experiments-existing": "pm-product-discovery/skills/brainstorm-experiments-existing/SKILL.md",
+        "brainstorm-ideas-existing": "pm-product-discovery/skills/brainstorm-ideas-existing/SKILL.md",
+        "brainstorm-ideas-new": "pm-product-discovery/skills/brainstorm-ideas-new/SKILL.md",
+        "brainstorm-okrs": "pm-execution/skills/brainstorm-okrs/SKILL.md",
+        "business-model": "pm-product-strategy/skills/business-model/SKILL.md",
+        "cohort-analysis": "pm-data-analytics/skills/cohort-analysis/SKILL.md",
+        "competitive-battlecard": "pm-go-to-market/skills/competitive-battlecard/SKILL.md",
+        "competitor-analysis": "pm-market-research/skills/competitor-analysis/SKILL.md",
+        "create-prd": "pm-execution/skills/create-prd/SKILL.md",
+        "customer-journey-map": "pm-market-research/skills/customer-journey-map/SKILL.md",
+        "draft-nda": "pm-toolkit/skills/draft-nda/SKILL.md",
+        "dummy-dataset": "pm-execution/skills/dummy-dataset/SKILL.md",
+        "grammar-check": "pm-toolkit/skills/grammar-check/SKILL.md",
+        "growth-loops": "pm-go-to-market/skills/growth-loops/SKILL.md",
+        "gtm-motions": "pm-go-to-market/skills/gtm-motions/SKILL.md",
+        "gtm-strategy": "pm-go-to-market/skills/gtm-strategy/SKILL.md",
+        "ideal-customer-profile": "pm-go-to-market/skills/ideal-customer-profile/SKILL.md",
+        "identify-assumptions-existing": "pm-product-discovery/skills/identify-assumptions-existing/SKILL.md",
+        "identify-assumptions-new": "pm-product-discovery/skills/identify-assumptions-new/SKILL.md",
+        "interview-script": "pm-product-discovery/skills/interview-script/SKILL.md",
+        "job-stories": "pm-execution/skills/job-stories/SKILL.md",
+        "lean-canvas": "pm-product-strategy/skills/lean-canvas/SKILL.md",
+        "market-segments": "pm-market-research/skills/market-segments/SKILL.md",
+        "market-sizing": "pm-market-research/skills/market-sizing/SKILL.md",
+        "marketing-ideas": "pm-marketing-growth/skills/marketing-ideas/SKILL.md",
+        "metrics-dashboard": "pm-product-discovery/skills/metrics-dashboard/SKILL.md",
+        "monetization-strategy": "pm-product-strategy/skills/monetization-strategy/SKILL.md",
+        "north-star-metric": "pm-marketing-growth/skills/north-star-metric/SKILL.md",
+        "opportunity-solution-tree": "pm-product-discovery/skills/opportunity-solution-tree/SKILL.md",
+        "outcome-roadmap": "pm-execution/skills/outcome-roadmap/SKILL.md",
+        "pestle-analysis": "pm-product-strategy/skills/pestle-analysis/SKILL.md",
+        "porters-five-forces": "pm-product-strategy/skills/porters-five-forces/SKILL.md",
+        "positioning-ideas": "pm-marketing-growth/skills/positioning-ideas/SKILL.md",
+        "pre-mortem": "pm-execution/skills/pre-mortem/SKILL.md",
+        "pricing-strategy": "pm-product-strategy/skills/pricing-strategy/SKILL.md",
+        "prioritization-frameworks": "pm-execution/skills/prioritization-frameworks/SKILL.md",
+        "prioritize-assumptions": "pm-product-discovery/skills/prioritize-assumptions/SKILL.md",
+        "prioritize-features": "pm-product-discovery/skills/prioritize-features/SKILL.md",
+        "privacy-policy": "pm-toolkit/skills/privacy-policy/SKILL.md",
+        "product-name": "pm-marketing-growth/skills/product-name/SKILL.md",
+        "product-strategy": "pm-product-strategy/skills/product-strategy/SKILL.md",
+        "product-vision": "pm-product-strategy/skills/product-vision/SKILL.md",
+        "release-notes": "pm-execution/skills/release-notes/SKILL.md",
+        "retro": "pm-execution/skills/retro/SKILL.md",
+        "review-resume": "pm-toolkit/skills/review-resume/SKILL.md",
+        "sentiment-analysis": "pm-market-research/skills/sentiment-analysis/SKILL.md",
+        "sprint-plan": "pm-execution/skills/sprint-plan/SKILL.md",
+        "sql-queries": "pm-data-analytics/skills/sql-queries/SKILL.md",
+        "stakeholder-map": "pm-execution/skills/stakeholder-map/SKILL.md",
+        "startup-canvas": "pm-product-strategy/skills/startup-canvas/SKILL.md",
+        "summarize-interview": "pm-product-discovery/skills/summarize-interview/SKILL.md",
+        "summarize-meeting": "pm-execution/skills/summarize-meeting/SKILL.md",
+        "swot-analysis": "pm-product-strategy/skills/swot-analysis/SKILL.md",
+        "test-scenarios": "pm-execution/skills/test-scenarios/SKILL.md",
+        "user-personas": "pm-market-research/skills/user-personas/SKILL.md",
+        "user-segmentation": "pm-market-research/skills/user-segmentation/SKILL.md",
+        "user-stories": "pm-execution/skills/user-stories/SKILL.md",
+        "value-prop-statements": "pm-marketing-growth/skills/value-prop-statements/SKILL.md",
+        "value-proposition": "pm-product-strategy/skills/value-proposition/SKILL.md",
+        "wwas": "pm-execution/skills/wwas/SKILL.md"
+      }
     },
     "Codex": {
       "url": "https://github.com/openai/skills",
@@ -6557,13 +6648,55 @@
       "repo": "skills",
       "default_branch": "main",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add openai/skills",
         "kind": "skill",
         "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "aspnet-core": "skills/.curated/aspnet-core/SKILL.md",
+        "chatgpt-apps": "skills/.curated/chatgpt-apps/SKILL.md",
+        "cli-creator": "skills/.curated/cli-creator/SKILL.md",
+        "cloudflare-deploy": "skills/.curated/cloudflare-deploy/SKILL.md",
+        "define-goal": "skills/.curated/define-goal/SKILL.md",
+        "figma": "skills/.curated/figma/SKILL.md",
+        "figma-code-connect-components": "skills/.curated/figma-code-connect-components/SKILL.md",
+        "figma-create-design-system-rules": "skills/.curated/figma-create-design-system-rules/SKILL.md",
+        "figma-create-new-file": "skills/.curated/figma-create-new-file/SKILL.md",
+        "figma-generate-design": "skills/.curated/figma-generate-design/SKILL.md",
+        "figma-generate-library": "skills/.curated/figma-generate-library/SKILL.md",
+        "figma-implement-design": "skills/.curated/figma-implement-design/SKILL.md",
+        "figma-use": "skills/.curated/figma-use/SKILL.md",
+        "gh-address-comments": "skills/.curated/gh-address-comments/SKILL.md",
+        "gh-fix-ci": "skills/.curated/gh-fix-ci/SKILL.md",
+        "hatch-pet": "skills/.curated/hatch-pet/SKILL.md",
+        "imagegen": "skills/.system/imagegen/SKILL.md",
+        "jupyter-notebook": "skills/.curated/jupyter-notebook/SKILL.md",
+        "linear": "skills/.curated/linear/SKILL.md",
+        "migrate-to-codex": "skills/.curated/migrate-to-codex/SKILL.md",
+        "netlify-deploy": "skills/.curated/netlify-deploy/SKILL.md",
+        "notion-knowledge-capture": "skills/.curated/notion-knowledge-capture/SKILL.md",
+        "notion-meeting-intelligence": "skills/.curated/notion-meeting-intelligence/SKILL.md",
+        "notion-research-documentation": "skills/.curated/notion-research-documentation/SKILL.md",
+        "notion-spec-to-implementation": "skills/.curated/notion-spec-to-implementation/SKILL.md",
+        "playwright": "skills/.curated/playwright/SKILL.md",
+        "playwright-interactive": "skills/.curated/playwright-interactive/SKILL.md",
+        "plugin-creator": "skills/.system/plugin-creator/SKILL.md",
+        "render-deploy": "skills/.curated/render-deploy/SKILL.md",
+        "screenshot": "skills/.curated/screenshot/SKILL.md",
+        "security-best-practices": "skills/.curated/security-best-practices/SKILL.md",
+        "security-ownership-map": "skills/.curated/security-ownership-map/SKILL.md",
+        "security-threat-model": "skills/.curated/security-threat-model/SKILL.md",
+        "sentry": "skills/.curated/sentry/SKILL.md",
+        "skill-creator": "skills/.system/skill-creator/SKILL.md",
+        "skill-installer": "skills/.system/skill-installer/SKILL.md",
+        "speech": "skills/.curated/speech/SKILL.md",
+        "transcribe": "skills/.curated/transcribe/SKILL.md",
+        "vercel-deploy": "skills/.curated/vercel-deploy/SKILL.md",
+        "winui-app": "skills/.curated/winui-app/SKILL.md",
+        "yeet": "skills/.curated/yeet/SKILL.md"
+      }
     },
     "Fission-AI": {
       "url": "https://github.com/Fission-AI/OpenSpec",
@@ -6574,7 +6707,7 @@
       "repo": "OpenSpec",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "git clone https://github.com/Fission-AI/OpenSpec",
         "note": "安装方式见仓库 README",
@@ -6591,7 +6724,7 @@
       "repo": "get-shit-done",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "git clone https://github.com/gsd-build/get-shit-done",
         "note": "安装方式见仓库 README",
@@ -6608,13 +6741,31 @@
       "repo": "skills",
       "default_branch": "main",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add anthropics/skills",
         "kind": "skill",
         "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "algorithmic-art": "skills/algorithmic-art/SKILL.md",
+        "brand-guidelines": "skills/brand-guidelines/SKILL.md",
+        "canvas-design": "skills/canvas-design/SKILL.md",
+        "claude-api": "skills/claude-api/SKILL.md",
+        "doc-coauthoring": "skills/doc-coauthoring/SKILL.md",
+        "docx": "skills/docx/SKILL.md",
+        "frontend-design": "skills/frontend-design/SKILL.md",
+        "internal-comms": "skills/internal-comms/SKILL.md",
+        "mcp-builder": "skills/mcp-builder/SKILL.md",
+        "pdf": "skills/pdf/SKILL.md",
+        "pptx": "skills/pptx/SKILL.md",
+        "skill-creator": "skills/skill-creator/SKILL.md",
+        "slack-gif-creator": "skills/slack-gif-creator/SKILL.md",
+        "theme-factory": "skills/theme-factory/SKILL.md",
+        "web-artifacts-builder": "skills/web-artifacts-builder/SKILL.md",
+        "webapp-testing": "skills/webapp-testing/SKILL.md",
+        "xlsx": "skills/xlsx/SKILL.md"
+      }
     },
     "ComposioHQ": {
       "url": "https://github.com/ComposioHQ/awesome-claude-skills",
@@ -6625,13 +6776,15 @@
       "repo": "awesome-claude-skills",
       "default_branch": "master",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add ComposioHQ/awesome-claude-skills",
         "kind": "skill",
         "alt": "git clone https://github.com/ComposioHQ/awesome-claude-skills ~/.claude/skills/awesome-claude-skills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "webapp-testing": "webapp-testing/SKILL.md"
+      }
     },
     "superpowers-lab": {
       "url": "https://github.com/obra/superpowers-lab",
@@ -6642,13 +6795,17 @@
       "repo": "superpowers-lab",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add obra/superpowers-lab",
         "kind": "skill",
         "alt": "git clone https://github.com/obra/superpowers-lab ~/.claude/skills/superpowers-lab"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "finding-duplicate-functions": "skills/finding-duplicate-functions/SKILL.md",
+        "using-tmux-for-interactive-commands": "skills/using-tmux-for-interactive-commands/SKILL.md",
+        "windows-vm": "skills/windows-vm/SKILL.md"
+      }
     },
     "kenryu42": {
       "url": "https://github.com/kenryu42/claude-code-safety-net",
@@ -6659,7 +6816,7 @@
       "repo": "claude-code-safety-net",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "/plugin marketplace add kenryu42/claude-code-safety-net",
         "kind": "plugin"
@@ -6675,13 +6832,17 @@
       "repo": "gemini-skills",
       "default_branch": "main",
       "license": "Apache-2.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add google-gemini/gemini-skills",
         "kind": "skill",
         "alt": "git clone https://github.com/google-gemini/gemini-skills ~/.claude/skills/gemini-skills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "gemini-api-dev": "skills/gemini-api-dev/SKILL.md",
+        "gemini-interactions-api": "skills/gemini-interactions-api/SKILL.md",
+        "gemini-live-api-dev": "skills/gemini-live-api-dev/SKILL.md"
+      }
     },
     "vercel-labs": {
       "url": "https://github.com/vercel-labs/agent-skills",
@@ -6692,13 +6853,17 @@
       "repo": "agent-skills",
       "default_branch": "main",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "git clone https://github.com/vercel-labs/agent-skills",
         "note": "安装方式见仓库 README",
         "kind": "cli"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "composition-patterns": "skills/composition-patterns/SKILL.md",
+        "react-best-practices": "skills/react-best-practices/SKILL.md",
+        "web-design-guidelines": "skills/web-design-guidelines/SKILL.md"
+      }
     },
     "trailofbits": {
       "url": "https://github.com/trailofbits/skills",
@@ -6709,7 +6874,7 @@
       "repo": "skills",
       "default_branch": "main",
       "license": "CC-BY-SA-4.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "/plugin marketplace add trailofbits/skills",
         "kind": "marketplace"
@@ -6725,7 +6890,7 @@
       "repo": "nutrient-agent-skill",
       "default_branch": "main",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add PSPDFKit-labs/nutrient-agent-skill",
         "kind": "skill",
@@ -6742,13 +6907,15 @@
       "repo": "kreuzberg",
       "default_branch": "main",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "git clone https://github.com/kreuzberg-dev/kreuzberg",
         "note": "安装方式见仓库 README",
         "kind": "extraction-engine"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "kreuzberg": "skills/kreuzberg/SKILL.md"
+      }
     },
     "deusyu": {
       "url": "https://github.com/deusyu/translate-book",
@@ -6793,13 +6960,15 @@
       "repo": "context-engineering-kit",
       "default_branch": "master",
       "license": "GPL-3.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add NeoLabHQ/context-engineering-kit",
         "kind": "skill",
         "alt": "git clone https://github.com/NeoLabHQ/context-engineering-kit ~/.claude/skills/context-engineering-kit"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "write-concisely": "plugins/docs/skills/write-concisely/SKILL.md"
+      }
     },
     "alchaincyf": {
       "url": "https://github.com/alchaincyf/huashu-design",
@@ -6844,7 +7013,7 @@
       "repo": "caveman",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add JuliusBrussee/caveman",
         "kind": "skill",
@@ -6861,7 +7030,7 @@
       "repo": "claude-speed-reader",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add SeanZoR/claude-speed-reader",
         "kind": "skill",
@@ -6912,13 +7081,15 @@
       "repo": "graphify",
       "default_branch": "v8",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add safishamsi/graphify",
         "kind": "skill",
         "alt": "git clone https://github.com/safishamsi/graphify ~/.claude/skills/graphify"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "graphify": "graphify/skill.md"
+      }
     },
     "bevibing": {
       "url": "https://github.com/bevibing/tutor-skills",
@@ -6929,7 +7100,7 @@
       "repo": "tutor-skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add bevibing/tutor-skills",
         "kind": "skill",
@@ -6963,7 +7134,7 @@
       "repo": "notion-cookbook",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add makenotion/notion-cookbook",
         "kind": "skill",
@@ -6980,7 +7151,7 @@
       "repo": "claude-memory-skill",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add hanfang/claude-memory-skill",
         "kind": "skill",
@@ -6997,7 +7168,7 @@
       "repo": "claude-mem",
       "default_branch": "main",
       "license": "Apache-2.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "git clone https://github.com/thedotmack/claude-mem",
         "note": "安装方式见仓库 README",
@@ -7014,7 +7185,7 @@
       "repo": "claude-skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add alirezarezvani/claude-skills",
         "kind": "skill",
@@ -7031,13 +7202,55 @@
       "repo": "Product-Manager-Skills",
       "default_branch": "main",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add deanpeters/Product-Manager-Skills",
         "kind": "skill",
         "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "acquisition-channel-advisor": "skills/acquisition-channel-advisor/SKILL.md",
+        "ai-shaped-readiness-advisor": "skills/ai-shaped-readiness-advisor/SKILL.md",
+        "altitude-horizon-framework": "skills/altitude-horizon-framework/SKILL.md",
+        "business-health-diagnostic": "skills/business-health-diagnostic/SKILL.md",
+        "company-research": "skills/company-research/SKILL.md",
+        "customer-journey-map": "skills/customer-journey-map/SKILL.md",
+        "director-readiness-advisor": "skills/director-readiness-advisor/SKILL.md",
+        "discovery-interview-prep": "skills/discovery-interview-prep/SKILL.md",
+        "discovery-process": "skills/discovery-process/SKILL.md",
+        "eol-message": "skills/eol-message/SKILL.md",
+        "epic-breakdown-advisor": "skills/epic-breakdown-advisor/SKILL.md",
+        "epic-hypothesis": "skills/epic-hypothesis/SKILL.md",
+        "executive-onboarding-playbook": "skills/executive-onboarding-playbook/SKILL.md",
+        "feature-investment-advisor": "skills/feature-investment-advisor/SKILL.md",
+        "finance-based-pricing-advisor": "skills/finance-based-pricing-advisor/SKILL.md",
+        "finance-metrics-quickref": "skills/finance-metrics-quickref/SKILL.md",
+        "jobs-to-be-done": "skills/jobs-to-be-done/SKILL.md",
+        "lean-ux-canvas": "skills/lean-ux-canvas/SKILL.md",
+        "opportunity-solution-tree": "skills/opportunity-solution-tree/SKILL.md",
+        "pestel-analysis": "skills/pestel-analysis/SKILL.md",
+        "pol-probe-advisor": "skills/pol-probe-advisor/SKILL.md",
+        "positioning-statement": "skills/positioning-statement/SKILL.md",
+        "positioning-workshop": "skills/positioning-workshop/SKILL.md",
+        "prd-development": "skills/prd-development/SKILL.md",
+        "press-release": "skills/press-release/SKILL.md",
+        "prioritization-advisor": "skills/prioritization-advisor/SKILL.md",
+        "problem-framing-canvas": "skills/problem-framing-canvas/SKILL.md",
+        "problem-statement": "skills/problem-statement/SKILL.md",
+        "product-strategy-session": "skills/product-strategy-session/SKILL.md",
+        "proto-persona": "skills/proto-persona/SKILL.md",
+        "recommendation-canvas": "skills/recommendation-canvas/SKILL.md",
+        "roadmap-planning": "skills/roadmap-planning/SKILL.md",
+        "saas-economics-efficiency-metrics": "skills/saas-economics-efficiency-metrics/SKILL.md",
+        "saas-revenue-growth-metrics": "skills/saas-revenue-growth-metrics/SKILL.md",
+        "skill-authoring-workflow": "skills/skill-authoring-workflow/SKILL.md",
+        "storyboard": "skills/storyboard/SKILL.md",
+        "tam-sam-som-calculator": "skills/tam-sam-som-calculator/SKILL.md",
+        "user-story": "skills/user-story/SKILL.md",
+        "user-story-splitting": "skills/user-story-splitting/SKILL.md",
+        "vp-cpo-readiness-advisor": "skills/vp-cpo-readiness-advisor/SKILL.md",
+        "workshop-facilitation": "skills/workshop-facilitation/SKILL.md"
+      }
     },
     "founder-skills": {
       "url": "https://github.com/ognjengt/founder-skills",
@@ -7048,13 +7261,29 @@
       "repo": "founder-skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add ognjengt/founder-skills",
         "kind": "skill",
         "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "brand-copywriter": "skills/brand-copywriter/SKILL.md",
+        "competitor-intel": "skills/competitor-intel/SKILL.md",
+        "cro-optimization": "skills/cro-optimization/SKILL.md",
+        "go-to-market-plan": "skills/go-to-market-plan/SKILL.md",
+        "lead-magnet-generator": "skills/lead-magnet-generator/SKILL.md",
+        "linkedin-writer": "skills/linkedin-writer/SKILL.md",
+        "marketing-ideas": "skills/marketing-ideas/SKILL.md",
+        "outreach-specialist": "skills/outreach-specialist/SKILL.md",
+        "prd-generator": "skills/prd-generator/SKILL.md",
+        "pricing-strategist": "skills/pricing-strategist/SKILL.md",
+        "product-hunt-launch-plan": "skills/product-hunt-launch-plan/SKILL.md",
+        "sop-creator": "skills/sop-creator/SKILL.md",
+        "strategic-planning": "skills/strategic-planning/SKILL.md",
+        "viral-hook-creator": "skills/viral-hook-creator/SKILL.md",
+        "x-writer": "skills/x-writer/SKILL.md"
+      }
     },
     "wrsmith108": {
       "url": "https://github.com/wrsmith108/linear-claude-skill",
@@ -7099,13 +7328,56 @@
       "repo": "marketingskills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add coreyhaines31/marketingskills",
         "kind": "skill",
         "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "ab-testing": "skills/ab-testing/SKILL.md",
+        "ad-creative": "skills/ad-creative/SKILL.md",
+        "ads": "skills/ads/SKILL.md",
+        "ai-seo": "skills/ai-seo/SKILL.md",
+        "analytics": "skills/analytics/SKILL.md",
+        "aso": "skills/aso/SKILL.md",
+        "churn-prevention": "skills/churn-prevention/SKILL.md",
+        "co-marketing": "skills/co-marketing/SKILL.md",
+        "cold-email": "skills/cold-email/SKILL.md",
+        "community-marketing": "skills/community-marketing/SKILL.md",
+        "competitor-profiling": "skills/competitor-profiling/SKILL.md",
+        "competitors": "skills/competitors/SKILL.md",
+        "content-strategy": "skills/content-strategy/SKILL.md",
+        "copy-editing": "skills/copy-editing/SKILL.md",
+        "copywriting": "skills/copywriting/SKILL.md",
+        "cro": "skills/cro/SKILL.md",
+        "customer-research": "skills/customer-research/SKILL.md",
+        "directory-submissions": "skills/directory-submissions/SKILL.md",
+        "emails": "skills/emails/SKILL.md",
+        "free-tools": "skills/free-tools/SKILL.md",
+        "image": "skills/image/SKILL.md",
+        "launch": "skills/launch/SKILL.md",
+        "lead-magnets": "skills/lead-magnets/SKILL.md",
+        "marketing-ideas": "skills/marketing-ideas/SKILL.md",
+        "marketing-psychology": "skills/marketing-psychology/SKILL.md",
+        "onboarding": "skills/onboarding/SKILL.md",
+        "paywalls": "skills/paywalls/SKILL.md",
+        "popups": "skills/popups/SKILL.md",
+        "pricing": "skills/pricing/SKILL.md",
+        "product-marketing": "skills/product-marketing/SKILL.md",
+        "programmatic-seo": "skills/programmatic-seo/SKILL.md",
+        "prospecting": "skills/prospecting/SKILL.md",
+        "referrals": "skills/referrals/SKILL.md",
+        "revops": "skills/revops/SKILL.md",
+        "sales-enablement": "skills/sales-enablement/SKILL.md",
+        "schema": "skills/schema/SKILL.md",
+        "seo-audit": "skills/seo-audit/SKILL.md",
+        "signup": "skills/signup/SKILL.md",
+        "site-architecture": "skills/site-architecture/SKILL.md",
+        "sms": "skills/sms/SKILL.md",
+        "social": "skills/social/SKILL.md",
+        "video": "skills/video/SKILL.md"
+      }
     },
     "AgriciDaniel-seo": {
       "url": "https://github.com/AgriciDaniel/claude-seo",
@@ -7116,7 +7388,7 @@
       "repo": "claude-seo",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add AgriciDaniel/claude-seo",
         "kind": "skill",
@@ -7133,13 +7405,22 @@
       "repo": "opc-skills",
       "default_branch": "main",
       "license": "Apache-2.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add ReScienceLab/opc-skills",
         "kind": "skill",
         "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "banner-creator": "skills/banner-creator/SKILL.md",
+        "domain-hunter": "skills/domain-hunter/SKILL.md",
+        "logo-creator": "skills/logo-creator/SKILL.md",
+        "nanobanana": "skills/nanobanana/SKILL.md",
+        "producthunt": "skills/producthunt/SKILL.md",
+        "reddit": "skills/reddit/SKILL.md",
+        "requesthunt": "skills/requesthunt/SKILL.md",
+        "twitter": "skills/twitter/SKILL.md"
+      }
     },
     "AgriciDaniel-ads": {
       "url": "https://github.com/AgriciDaniel/claude-ads",
@@ -7150,7 +7431,7 @@
       "repo": "claude-ads",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add AgriciDaniel/claude-ads",
         "kind": "skill",
@@ -7167,7 +7448,7 @@
       "repo": "ui-ux-pro-max-skill",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add nextlevelbuilder/ui-ux-pro-max-skill",
         "kind": "skill",
@@ -7207,7 +7488,9 @@
         "kind": "skill",
         "alt": "git clone https://github.com/zarazhangrui/frontend-slides ~/.claude/skills/frontend-slides"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "frontend-slides": "plugins/frontend-slides/skills/frontend-slides/SKILL.md"
+      }
     },
     "nexu-io": {
       "url": "https://github.com/nexu-io/open-design",
@@ -7218,7 +7501,7 @@
       "repo": "open-design",
       "default_branch": "main",
       "license": "Apache-2.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add nexu-io/open-design",
         "kind": "skill",
@@ -7252,7 +7535,7 @@
       "repo": "OpenMontage",
       "default_branch": "main",
       "license": "AGPL-3.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "git clone https://github.com/calesthio/OpenMontage",
         "note": "安装方式见仓库 README",
@@ -7269,7 +7552,7 @@
       "repo": "skills",
       "default_branch": "main",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add remotion-dev/skills",
         "kind": "skill",
@@ -7286,7 +7569,7 @@
       "repo": "cli",
       "default_branch": "main",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add firecrawl/cli",
         "kind": "skill",
@@ -7303,7 +7586,7 @@
       "repo": "last30days-skill",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add mvanhorn/last30days-skill",
         "kind": "skill",
@@ -7320,13 +7603,27 @@
       "repo": "ResumeSkills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add Paramchoudhary/ResumeSkills",
         "kind": "skill",
         "alt": "git clone https://github.com/Paramchoudhary/ResumeSkills ~/.claude/skills/ResumeSkills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "academic-cv-builder": "skills/academic-cv-builder/SKILL.md",
+        "career-changer-translator": "skills/career-changer-translator/SKILL.md",
+        "cover-letter-generator": "skills/cover-letter-generator/SKILL.md",
+        "creative-portfolio-resume": "skills/creative-portfolio-resume/SKILL.md",
+        "resume-ats-optimizer": "skills/resume-ats-optimizer/SKILL.md",
+        "resume-bullet-writer": "skills/resume-bullet-writer/SKILL.md",
+        "resume-formatter": "skills/resume-formatter/SKILL.md",
+        "resume-quantifier": "skills/resume-quantifier/SKILL.md",
+        "resume-section-builder": "skills/resume-section-builder/SKILL.md",
+        "resume-tailor": "skills/resume-tailor/SKILL.md",
+        "resume-version-manager": "skills/resume-version-manager/SKILL.md",
+        "salary-negotiation-prep": "skills/salary-negotiation-prep/SKILL.md",
+        "tech-resume-optimizer": "skills/tech-resume-optimizer/SKILL.md"
+      }
     },
     "santifer": {
       "url": "https://github.com/santifer/career-ops",
@@ -7337,7 +7634,7 @@
       "repo": "career-ops",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add santifer/career-ops",
         "kind": "skill",
@@ -7354,13 +7651,17 @@
       "repo": "agent-skills",
       "default_branch": "master",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add gokapso/agent-skills",
         "kind": "skill",
         "alt": "git clone https://github.com/gokapso/agent-skills ~/.claude/skills/agent-skills"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "automate-whatsapp": "skills/automate-whatsapp/SKILL.md",
+        "integrate-whatsapp": "skills/integrate-whatsapp/SKILL.md",
+        "observe-whatsapp": "skills/observe-whatsapp/SKILL.md"
+      }
     },
     "Charlie85270": {
       "url": "https://github.com/Charlie85270/Dorothy",
@@ -7371,7 +7672,7 @@
       "repo": "Dorothy",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "git clone https://github.com/Charlie85270/Dorothy",
         "note": "安装方式见仓库 README",
@@ -7388,7 +7689,7 @@
       "repo": "Auto-claude-code-research-in-sleep",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add wanshuiyin/Auto-claude-code-research-in-sleep",
         "kind": "multi-skill-suite",
@@ -7439,7 +7740,7 @@
       "repo": "openaccountants",
       "default_branch": "main",
       "license": "AGPL-3.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add openaccountants/openaccountants",
         "kind": "skill",
@@ -7456,7 +7757,7 @@
       "repo": "academic-research-skills",
       "default_branch": "main",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add imbad0202/academic-research-skills",
         "kind": "multi-skill-suite",
@@ -7473,7 +7774,7 @@
       "repo": "scientific-agent-skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add K-Dense-AI/scientific-agent-skills",
         "kind": "multi-skill-suite",
@@ -7496,7 +7797,23 @@
         "kind": "skill",
         "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
       },
-      "skill_docs": null
+      "skill_docs": {
+        "advanced-evaluation": "skills/advanced-evaluation/SKILL.md",
+        "bdi-mental-states": "skills/bdi-mental-states/SKILL.md",
+        "context-compression": "skills/context-compression/SKILL.md",
+        "context-degradation": "skills/context-degradation/SKILL.md",
+        "context-fundamentals": "skills/context-fundamentals/SKILL.md",
+        "context-optimization": "skills/context-optimization/SKILL.md",
+        "evaluation": "skills/evaluation/SKILL.md",
+        "filesystem-context": "skills/filesystem-context/SKILL.md",
+        "harness-engineering": "skills/harness-engineering/SKILL.md",
+        "hosted-agents": "skills/hosted-agents/SKILL.md",
+        "latent-briefing": "skills/latent-briefing/SKILL.md",
+        "memory-systems": "skills/memory-systems/SKILL.md",
+        "multi-agent-patterns": "skills/multi-agent-patterns/SKILL.md",
+        "project-development": "skills/project-development/SKILL.md",
+        "tool-design": "skills/tool-design/SKILL.md"
+      }
     },
     "UseAI-pro": {
       "url": "https://github.com/UseAI-pro/openclaw-skills-security",
@@ -7507,7 +7824,7 @@
       "repo": "openclaw-skills-security",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add UseAI-pro/openclaw-skills-security",
         "kind": "skill",
@@ -7524,7 +7841,7 @@
       "repo": "claude-plugins-official",
       "default_branch": "main",
       "license": "Apache-2.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "/plugin marketplace add anthropics/claude-plugins-official",
         "kind": "marketplace"
@@ -7540,7 +7857,7 @@
       "repo": "andrej-karpathy-skills",
       "default_branch": "main",
       "license": null,
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "# 把该仓库的 CLAUDE.md 复制到你的项目根目录",
         "kind": "claude-md-template"
