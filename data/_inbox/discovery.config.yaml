@@ -46,3 +46,25 @@ queries:
   # 中文关键词
   - label: zh-skill-readme
     template: '技能 claude in:readme stars:>20 pushed:>{since}'
+
+# ---------------------------------------------------------------------------
+# Worker B（curator）的 LLM 设置 —— 给 PR-2(is-skill 过滤) / PR-3(起草) 用。
+# 注意：Stage-1 的 discover_candidates.py 不调 LLM，会忽略这一段;只有 Worker B 读它。
+# 全部走 OpenRouter :free，复用站点同一把 OPENROUTER_KEY（Cloudflare Worker secret）。
+llm:
+  endpoint: https://openrouter.ai/api/v1/chat/completions
+
+  # 故障转移链：按顺序逐个尝试，命中 fallback_on 的情况就降级到下一个。
+  # 首选 gpt-oss-120b（平衡）;限流 / 不可用时降级到 glm-4.5-air（中文强）。
+  models:
+    - openai/gpt-oss-120b:free
+    - z-ai/glm-4.5-air:free
+
+  # 触发降级到下一个模型的条件：HTTP 状态码 + 'empty'(返回体为空/无 choices)
+  fallback_on: [429, 500, 502, 503, 504, empty]
+
+  # 在单个模型上最多重试几次再降级（轻量，别死磕一个模型）
+  max_retries_per_model: 1
+
+  # 单次请求超时（秒）
+  timeout_s: 60
