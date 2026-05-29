@@ -67,12 +67,48 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
   font-family:ui-monospace,"SF Mono",Menlo,Monaco,Consolas,monospace}
 
 /* Layout */
-.app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh}
+.app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;
+  transition:grid-template-columns .28s cubic-bezier(.4,0,.2,1)}
+.app.sidebar-collapsed{grid-template-columns:0 1fr}
 .sidebar{
   position:sticky;top:0;height:100vh;overflow-y:auto;
   background:var(--bg-elev);border-right:1px solid var(--border);
   padding:18px 14px 80px;
+  transition:transform .28s cubic-bezier(.4,0,.2,1), opacity .2s;
+  will-change:transform
 }
+.app.sidebar-collapsed .sidebar{
+  transform:translateX(-100%);opacity:0;pointer-events:none}
+
+/* sidebar 顶部的折叠/展开按钮（桌面） */
+.sidebar-head{display:flex;align-items:flex-start;justify-content:space-between;
+  gap:8px;margin-bottom:6px}
+.sidebar-toggle{display:flex;align-items:center;justify-content:center;
+  width:26px;height:26px;background:transparent;border:1px solid var(--border);
+  border-radius:6px;color:var(--fg-muted);cursor:pointer;flex-shrink:0;
+  transition:background .12s, color .12s, border-color .12s;
+  font-size:13px;line-height:1;padding:0}
+.sidebar-toggle:hover{background:var(--bg-card);color:var(--fg);
+  border-color:var(--border-strong)}
+.sidebar-toggle svg{width:14px;height:14px;fill:none;stroke:currentColor;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* 收起后吸附在左边缘的召回轨道 */
+.sidebar-rail{display:none;position:fixed;left:0;top:50%;
+  transform:translateY(-50%);
+  width:22px;height:64px;
+  background:var(--bg-elev);
+  border:1px solid var(--border);border-left:none;
+  border-top-right-radius:8px;border-bottom-right-radius:8px;
+  cursor:pointer;z-index:20;color:var(--fg-muted);
+  align-items:center;justify-content:center;
+  transition:width .15s, color .12s, background .12s, box-shadow .15s;
+  box-shadow:2px 2px 12px rgba(0,0,0,.18)}
+.app.sidebar-collapsed .sidebar-rail{display:flex}
+.sidebar-rail:hover{width:28px;color:var(--fg);
+  background:var(--bg-card);box-shadow:4px 4px 16px rgba(0,0,0,.28)}
+.sidebar-rail svg{width:13px;height:13px;fill:none;stroke:currentColor;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .sidebar h1{font-size:17px;margin:0 0 6px;letter-spacing:-0.01em;font-weight:700;
   background:var(--grad);-webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent}
@@ -309,7 +345,19 @@ html.light .graph-controls .gc-btn{background:rgba(255,255,255,.85)}
   transition:border .15s,box-shadow .15s}
 .ai-input-wrap textarea:focus{border-color:var(--accent);
   box-shadow:0 0 0 3px rgba(124,156,255,.15)}
-.ai-suggestions{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.ai-input-foot{display:flex;align-items:flex-start;justify-content:space-between;
+  gap:14px;margin-top:12px;flex-wrap:wrap}
+.ai-suggestions{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:0}
+.ai-submit{display:inline-flex;align-items:center;gap:8px;
+  background:var(--grad);color:#fff;border:0;font-weight:600;
+  padding:7px 14px;border-radius:99px;cursor:pointer;font-size:12.5px;
+  flex-shrink:0;transition:all .15s;white-space:nowrap}
+.ai-submit:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.ai-submit:active{transform:translateY(0)}
+.ai-submit:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.ai-submit-kbd{font-family:var(--font-mono);font-size:10.5px;
+  background:rgba(255,255,255,.18);padding:2px 6px;border-radius:5px;
+  letter-spacing:.04em}
 .ai-tag{background:var(--bg-elev);border:1px solid var(--border);
   padding:5px 12px;border-radius:99px;font-size:12px;color:var(--fg-dim);
   cursor:pointer;transition:all .15s}
@@ -488,11 +536,15 @@ html.light .highlight{background:rgba(217,118,6,.18)}
 /* Mobile */
 @media(max-width:900px){
   .app{grid-template-columns:1fr}
+  .app.sidebar-collapsed{grid-template-columns:1fr}
+  .app.sidebar-collapsed .sidebar{transform:none;opacity:1;pointer-events:auto}
   .sidebar{position:fixed;left:-100%;width:280px;z-index:100;
     transition:left .25s;box-shadow:0 0 40px rgba(0,0,0,.5)}
   .sidebar.open{left:0}
   .main{padding:18px 18px 80px}
   .menu-btn{display:flex !important}
+  .sidebar-toggle{display:none}
+  .app.sidebar-collapsed .sidebar-rail{display:none}
   .toolbar{position:sticky;top:0;background:var(--bg);z-index:10;
     padding-top:8px;margin-top:-18px}
 }
@@ -767,9 +819,14 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
 </style>
 </head>
 <body>
-<div class="app">
+<div class="app" id="app">
 <aside class="sidebar" id="sidebar">
-  <h1>🗺️ Skills Atlas</h1>
+  <div class="sidebar-head">
+    <h1>🗺️ Skills Atlas</h1>
+    <button class="sidebar-toggle" id="sidebarToggle" title="收起目录" aria-label="收起目录">
+      <svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg>
+    </button>
+  </div>
   <div class="subtitle">按功能分类 · AI Agent Skills 全景</div>
   <div class="stat-row" id="statRow"></div>
   <div class="search-wrap">
@@ -781,6 +838,9 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
   <div class="search-result-count" id="searchResultCount"></div>
   <nav id="nav"></nav>
 </aside>
+<button class="sidebar-rail" id="sidebarRail" title="展开目录" aria-label="展开目录">
+  <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+</button>
 
 <main class="main">
   <div class="toolbar">
@@ -898,12 +958,18 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
       <span class="ai-model-chips" id="aiModelChips"></span>
     </div>
     <div class="ai-input-wrap">
-      <textarea id="aiInput" placeholder="例如：我想给 SaaS 做完整的 GTM 策略，包括竞品分析、定价、北极星指标和发布计划" rows="3"></textarea>
-      <div class="ai-suggestions">
-        <span class="ai-tag" data-q="完整开发工作流，包括 TDD 和 code review">完整开发工作流</span>
-        <span class="ai-tag" data-q="做 SEO 全套，从审计到内容到结构化数据">SEO 全套</span>
-        <span class="ai-tag" data-q="把会议笔记做成结构化文档放进 Notion">Notion 知识工作流</span>
-        <span class="ai-tag" data-q="新产品发现：用户访谈、JTBD、机会方案树">产品发现循环</span>
+      <textarea id="aiInput" placeholder="例如：我想给 SaaS 做完整的 GTM 策略，包括竞品分析、定价、北极星指标和发布计划&#10;&#10;⌘/Ctrl + Enter 提交，或点右下「✨ 推荐」按钮" rows="4"></textarea>
+      <div class="ai-input-foot">
+        <div class="ai-suggestions">
+          <span class="ai-tag" data-q="完整开发工作流，包括 TDD 和 code review">完整开发工作流</span>
+          <span class="ai-tag" data-q="做 SEO 全套，从审计到内容到结构化数据">SEO 全套</span>
+          <span class="ai-tag" data-q="把会议笔记做成结构化文档放进 Notion">Notion 知识工作流</span>
+          <span class="ai-tag" data-q="新产品发现：用户访谈、JTBD、机会方案树">产品发现循环</span>
+        </div>
+        <button class="ai-submit" id="aiSubmit" type="button">
+          <span>✨ 推荐</span>
+          <kbd class="ai-submit-kbd">⌘↵</kbd>
+        </button>
       </div>
     </div>
     <div class="ai-status hidden" id="aiStatus"></div>
@@ -2362,9 +2428,23 @@ function setupAI(){
   document.addEventListener('keydown', e => {
     if(e.key === 'Escape' && !overlay.classList.contains('hidden')) close();
   });
+  // 跟踪 IME 输入状态，避免中文输入法选词回车被误判为提交
+  let composing = false;
+  input.addEventListener('compositionstart', () => { composing = true; });
+  input.addEventListener('compositionend', () => { composing = false; });
   input.addEventListener('keydown', e => {
-    if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); search(); }
+    if(e.key !== 'Enter' || e.shiftKey) return;
+    // Cmd/Ctrl + Enter：强制提交（即使在输入法选词中）
+    if(e.metaKey || e.ctrlKey){ e.preventDefault(); search(); return; }
+    // 普通 Enter：跳过 IME composition 中（中文输入法选词阶段）
+    if(composing || e.isComposing || e.keyCode === 229) return;
+    e.preventDefault();
+    search();
   });
+  const submitBtn = document.getElementById('aiSubmit');
+  if(submitBtn){
+    submitBtn.addEventListener('click', () => search());
+  }
   document.querySelectorAll('.ai-tag').forEach(tag => {
     tag.addEventListener('click', () => {
       input.value = tag.dataset.q;
@@ -2729,13 +2809,56 @@ function setupTheme(){
 }
 
 function setupMenuBtn(){
+  const sidebar = document.getElementById('sidebar');
+  const app = document.getElementById('app');
+  const toggleBtn = document.getElementById('sidebarToggle');
+  const railBtn = document.getElementById('sidebarRail');
+  const STORAGE_KEY = 'atlas:sidebar:collapsed';
+
+  // 移动端抽屉
   document.getElementById('menuBtn').addEventListener('click', () => {
-    document.getElementById('sidebar').classList.toggle('open');
+    sidebar.classList.toggle('open');
   });
-  // close sidebar after clicking on mobile nav
   document.getElementById('nav').addEventListener('click', e => {
     if(window.innerWidth < 900 && e.target.classList.contains('nav-h2')){
-      document.getElementById('sidebar').classList.remove('open');
+      sidebar.classList.remove('open');
+    }
+  });
+
+  // 桌面端折叠：恢复用户偏好
+  function applyCollapsed(collapsed){
+    if(window.innerWidth < 900) return;  // 移动端忽略
+    app.classList.toggle('sidebar-collapsed', !!collapsed);
+  }
+  let collapsed = false;
+  try { collapsed = localStorage.getItem(STORAGE_KEY) === '1'; } catch(_){}
+  applyCollapsed(collapsed);
+
+  function setCollapsed(v){
+    collapsed = v;
+    applyCollapsed(v);
+    try { localStorage.setItem(STORAGE_KEY, v ? '1' : '0'); } catch(_){}
+  }
+
+  toggleBtn?.addEventListener('click', () => setCollapsed(true));
+  railBtn?.addEventListener('click', () => setCollapsed(false));
+
+  // 快捷键：[ 切换桌面侧栏；focus 在 input 时不响应
+  document.addEventListener('keydown', e => {
+    if(e.key !== '[') return;
+    const t = e.target;
+    if(t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+    if(window.innerWidth < 900) return;
+    e.preventDefault();
+    setCollapsed(!collapsed);
+  });
+
+  // 窗口尺寸跨越断点时同步状态
+  window.addEventListener('resize', () => {
+    if(window.innerWidth < 900){
+      app.classList.remove('sidebar-collapsed');
+    } else if(collapsed){
+      app.classList.add('sidebar-collapsed');
     }
   });
 }
