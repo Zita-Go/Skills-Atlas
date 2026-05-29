@@ -543,11 +543,17 @@ html.light .highlight{background:rgba(217,118,6,.18)}
   .sidebar.open{left:0}
   .main{padding:18px 18px 80px}
   .menu-btn{display:flex !important}
-  .sidebar-toggle{display:none}
+  /* 移动端抽屉里保留收起按钮（桌面是折叠，移动端点它关抽屉，见 JS） */
+  .sidebar-toggle{display:flex}
   .app.sidebar-collapsed .sidebar-rail{display:none}
   .toolbar{position:sticky;top:0;background:var(--bg);z-index:10;
     padding-top:8px;margin-top:-18px}
+  /* 抽屉打开时显示遮罩，点遮罩关闭（见 JS） */
+  .sidebar.open ~ .sidebar-backdrop{opacity:1;pointer-events:auto}
 }
+/* 移动端抽屉背景遮罩：默认不可见，仅移动端抽屉打开时由上面的规则点亮 */
+.sidebar-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;
+  opacity:0;pointer-events:none;transition:opacity .25s}
 .menu-btn{display:none;background:var(--bg-card);border:1px solid var(--border);
   border-radius:6px;padding:6px 10px;color:var(--fg);cursor:pointer}
 
@@ -841,6 +847,7 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
 <button class="sidebar-rail" id="sidebarRail" title="展开目录" aria-label="展开目录">
   <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
 </button>
+<div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
 
 <main class="main">
   <div class="toolbar">
@@ -2850,8 +2857,15 @@ function setupMenuBtn(){
     try { localStorage.setItem(STORAGE_KEY, v ? '1' : '0'); } catch(_){}
   }
 
-  toggleBtn?.addEventListener('click', () => setCollapsed(true));
+  toggleBtn?.addEventListener('click', () => {
+    if(window.innerWidth < 900){ sidebar.classList.remove('open'); }  // 移动端：关抽屉
+    else { setCollapsed(true); }                                      // 桌面：折叠
+  });
   railBtn?.addEventListener('click', () => setCollapsed(false));
+  // 移动端：点背景遮罩关抽屉
+  document.getElementById('sidebarBackdrop')?.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+  });
 
   // 快捷键：[ 切换桌面侧栏；focus 在 input 时不响应
   document.addEventListener('keydown', e => {
@@ -2867,8 +2881,9 @@ function setupMenuBtn(){
   window.addEventListener('resize', () => {
     if(window.innerWidth < 900){
       app.classList.remove('sidebar-collapsed');
-    } else if(collapsed){
-      app.classList.add('sidebar-collapsed');
+    } else {
+      sidebar.classList.remove('open');  // 跨回桌面：清掉移动端抽屉态
+      if(collapsed) app.classList.add('sidebar-collapsed');
     }
   });
 }
