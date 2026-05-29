@@ -258,6 +258,64 @@ html.light .graph-view .legend{background:rgba(255,255,255,.85)}
   overflow:hidden}
 .ai-empty{color:var(--fg-muted);text-align:center;padding:40px 0;font-size:13px}
 
+.ai-title{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ai-mode-badge{font-family:var(--font-mono);font-size:10px;font-weight:600;
+  padding:2px 8px;border-radius:99px;letter-spacing:.04em;
+  -webkit-text-fill-color:initial;background-clip:initial;-webkit-background-clip:initial}
+.ai-mode-badge[data-mode="local"]{background:rgba(124,156,255,.10);color:var(--accent);
+  border:1px solid rgba(124,156,255,.25)}
+.ai-mode-badge[data-mode="llm"]{background:rgba(196,121,255,.12);color:#c479ff;
+  border:1px solid rgba(196,121,255,.30)}
+.ai-header-actions{display:flex;gap:6px;align-items:center}
+.ai-icon-btn{background:transparent;border:1px solid var(--border);color:var(--fg-muted);
+  width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px;
+  display:inline-flex;align-items:center;justify-content:center;line-height:1;
+  transition:all .15s}
+.ai-icon-btn:hover{border-color:var(--accent);color:var(--accent);
+  background:rgba(124,156,255,.08)}
+.ai-icon-btn.active{border-color:var(--accent);color:var(--accent);
+  background:rgba(124,156,255,.10)}
+.ai-settings{padding:14px 28px;border-bottom:1px solid var(--border);
+  background:rgba(124,156,255,.04)}
+.ai-settings-head{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.ai-settings-head strong{font-size:13px;color:var(--fg)}
+.ai-settings-hint{font-size:11.5px;color:var(--fg-muted);line-height:1.55}
+.ai-settings-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.ai-settings-row label{font-family:var(--font-mono);font-size:11px;
+  color:var(--fg-muted);width:70px;flex-shrink:0;text-align:right}
+.ai-settings-row input{flex:1;background:var(--bg-elev);border:1px solid var(--border);
+  border-radius:8px;color:var(--fg);font-family:var(--font-mono);font-size:12px;
+  padding:7px 10px;outline:none;transition:border .15s,box-shadow .15s}
+.ai-settings-row input:focus{border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(124,156,255,.12)}
+.ai-settings-foot{display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:10px;margin-top:6px}
+.ai-settings-presets{font-size:11px;color:var(--fg-muted)}
+.ai-settings-presets a{color:var(--accent);text-decoration:none;
+  margin-left:6px;cursor:pointer}
+.ai-settings-presets a:hover{text-decoration:underline}
+.ai-settings-btns{display:flex;gap:6px}
+.ai-btn-primary,.ai-btn-secondary{font-size:11.5px;padding:6px 12px;
+  border-radius:8px;cursor:pointer;font-weight:600;transition:all .15s;
+  border:1px solid var(--border);background:var(--bg-elev);color:var(--fg-dim)}
+.ai-btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.ai-btn-primary{background:var(--grad);color:#fff;border:0}
+.ai-btn-primary:hover{filter:brightness(1.1)}
+.ai-settings-status{font-family:var(--font-mono);font-size:11px;
+  margin-top:8px;min-height:14px}
+.ai-settings-status[data-state="ok"]{color:var(--ok,#3ddc97)}
+.ai-settings-status[data-state="err"]{color:var(--err,#ff6b6b)}
+.ai-settings-status[data-state="info"]{color:var(--fg-muted)}
+.ai-status{padding:8px 28px;font-family:var(--font-mono);font-size:11px;
+  color:var(--fg-muted);display:flex;align-items:center;gap:8px}
+.ai-status .ai-spin{display:inline-block;width:11px;height:11px;
+  border:1.5px solid var(--accent);border-top-color:transparent;
+  border-radius:50%;animation:ai-spin .7s linear infinite}
+@keyframes ai-spin{to{transform:rotate(360deg)}}
+.ai-result-source{font-family:var(--font-mono);font-size:10.5px;
+  color:var(--fg-muted);margin-top:6px;line-height:1.5}
+.ai-result-source strong{color:var(--fg-dim);font-weight:600}
+
 .section-h1{position:relative;margin:48px 0 12px;font-size:26px;font-weight:700;
   display:flex;align-items:center;gap:12px;scroll-margin-top:80px;
   letter-spacing:-0.02em;padding-left:14px}
@@ -1549,57 +1607,169 @@ function scoreRow(row, queryTokens){
   if(maxStars > 0) score *= (1 + Math.log10(maxStars+1) * 0.04);
   return score;
 }
+// === LLM BYOK 配置 ===
+const LLM_PRESETS = {
+  openai:   { baseUrl: 'https://api.openai.com/v1',          model: 'gpt-4o-mini' },
+  deepseek: { baseUrl: 'https://api.deepseek.com/v1',        model: 'deepseek-chat' },
+  moonshot: { baseUrl: 'https://api.moonshot.cn/v1',         model: 'moonshot-v1-8k' },
+  ollama:   { baseUrl: 'http://localhost:11434/v1',          model: 'llama3.1' },
+};
+const LLM_CFG_KEY = 'skills-atlas:llm-cfg';
+function getLLMConfig(){
+  try{
+    const raw = localStorage.getItem(LLM_CFG_KEY);
+    if(!raw) return null;
+    const cfg = JSON.parse(raw);
+    if(!cfg.apiKey || !cfg.baseUrl || !cfg.model) return null;
+    return cfg;
+  }catch(e){ return null; }
+}
+function saveLLMConfig(cfg){
+  localStorage.setItem(LLM_CFG_KEY, JSON.stringify(cfg));
+}
+function clearLLMConfig(){ localStorage.removeItem(LLM_CFG_KEY); }
+
+function buildLLMPrompt(query, candidates){
+  const lines = candidates.map((r, i) => {
+    const skills = r.skills.join(' / ');
+    const desc = (r.description || '').slice(0, 140);
+    return `${i+1}. [${r._h1.split('、').slice(-1)[0]} / ${r._h2}] ${r.group} — ${skills}${desc?' :: '+desc:''}`;
+  }).join('\n');
+  return [
+    {role: 'system', content: '你是一个 skill 推荐助手。用户给出一个目标，你从候选列表里挑出最相关的 6-12 个 skill 组合，按相关性从高到低排序，并给每个解释一句为什么。**严格只输出 JSON**，不要 markdown，不要前后缀文字。格式：{"results":[{"index":<候选序号 1-based>,"reason":"<10-30 字中文解释>"}]}。如果完全找不到相关项，返回 {"results":[]}。'},
+    {role: 'user', content: `目标：${query}\n\n候选 skill 组合：\n${lines}\n\n返回 JSON。`}
+  ];
+}
+
+async function callLLMRerank(query, candidates, cfg){
+  const url = cfg.baseUrl.replace(/\/+$/,'') + '/chat/completions';
+  const body = {
+    model: cfg.model,
+    messages: buildLLMPrompt(query, candidates),
+    temperature: 0.2,
+    response_format: { type: 'json_object' }
+  };
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 30000);
+  let resp;
+  try{
+    resp = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type':'application/json', 'Authorization':'Bearer '+cfg.apiKey },
+      body: JSON.stringify(body),
+      signal: ctrl.signal
+    });
+  } finally { clearTimeout(timer); }
+  if(!resp.ok){
+    const text = await resp.text().catch(() => '');
+    throw new Error(`HTTP ${resp.status}: ${text.slice(0,200)}`);
+  }
+  const data = await resp.json();
+  const content = data.choices?.[0]?.message?.content || '';
+  // 容错：有些模型不严格遵守 response_format
+  const m = content.match(/\{[\s\S]*\}/);
+  if(!m) throw new Error('LLM 返回非 JSON: ' + content.slice(0,120));
+  let parsed;
+  try{ parsed = JSON.parse(m[0]); }
+  catch(e){ throw new Error('JSON 解析失败: ' + e.message); }
+  const arr = parsed.results || parsed.recommendations || [];
+  if(!Array.isArray(arr)) throw new Error('LLM 返回 results 不是数组');
+  // 把 LLM 给的 1-based index 映射回 candidates
+  return arr.map(r => {
+    const idx = (typeof r.index === 'number' ? r.index : parseInt(r.index, 10)) - 1;
+    if(isNaN(idx) || idx < 0 || idx >= candidates.length) return null;
+    return { ...candidates[idx], _llmReason: r.reason || '' };
+  }).filter(Boolean);
+}
+
 function setupAI(){
   const overlay = document.getElementById('aiOverlay');
   const btn = document.getElementById('aiBtn');
   const closeBtn = document.getElementById('aiClose');
   const input = document.getElementById('aiInput');
   const results = document.getElementById('aiResults');
+  const status = document.getElementById('aiStatus');
+  const modeBadge = document.getElementById('aiModeBadge');
+  const settingsPanel = document.getElementById('aiSettings');
+  const settingsBtn = document.getElementById('aiSettingsBtn');
+  const baseUrlInput = document.getElementById('llmBaseUrl');
+  const modelInput = document.getElementById('llmModel');
+  const apiKeyInput = document.getElementById('llmApiKey');
+  const saveBtn = document.getElementById('llmSaveBtn');
+  const clearBtn = document.getElementById('llmClearBtn');
+  const testBtn = document.getElementById('llmTestBtn');
+  const llmStatusEl = document.getElementById('llmStatus');
+
+  function refreshModeBadge(){
+    const cfg = getLLMConfig();
+    if(cfg){
+      modeBadge.dataset.mode = 'llm';
+      modeBadge.textContent = 'LLM · ' + cfg.model;
+      modeBadge.title = `通过 ${cfg.baseUrl} 调用 ${cfg.model}`;
+    } else {
+      modeBadge.dataset.mode = 'local';
+      modeBadge.textContent = '本地匹配';
+      modeBadge.title = '当前用本地 TF-IDF + 同义词，未配置 LLM';
+    }
+  }
+  function loadConfigToForm(){
+    const cfg = getLLMConfig();
+    if(cfg){
+      baseUrlInput.value = cfg.baseUrl;
+      modelInput.value = cfg.model;
+      apiKeyInput.value = cfg.apiKey;
+    }
+  }
+  function setLLMStatus(text, state){
+    llmStatusEl.textContent = text;
+    if(state) llmStatusEl.dataset.state = state; else llmStatusEl.removeAttribute('data-state');
+  }
+  function showStatus(html){
+    status.innerHTML = html;
+    status.classList.remove('hidden');
+  }
+  function hideStatus(){ status.classList.add('hidden'); }
 
   function open(){
     overlay.classList.remove('hidden');
     setTimeout(() => input.focus(), 50);
+    refreshModeBadge();
     if(!input.value.trim()){
       results.innerHTML = '<div class="ai-empty">输入你的目标 / 任务，按 Enter 推荐 skill 组合</div>';
+      hideStatus();
     }
   }
   function close(){ overlay.classList.add('hidden'); }
-  function search(){
-    const q = input.value.trim();
-    if(!q){ results.innerHTML = '<div class="ai-empty">请输入想做的事</div>'; return; }
-    const tokens = expandQuery(q);
-    const allRows = getAllRows();
-    const scored = allRows.map(r => ({...r, score: scoreRow(r, tokens)}))
-                          .filter(r => r.score > 0)
-                          .sort((a,b) => b.score - a.score)
-                          .slice(0, 12);
-    if(scored.length === 0){
+
+  function renderResults(rows, source){
+    if(!rows.length){
       results.innerHTML = '<div class="ai-empty">没找到匹配的 skill。试试更宽泛的描述？</div>';
       return;
     }
-    results.innerHTML = scored.map(r => {
+    results.innerHTML = rows.map(r => {
       const skills = r.skills.map(s => `<span class="skill-tag">${escapeHtml(s)}</span>`).join('');
-      const score = Math.round(r.score * 10) / 10;
+      const score = r.score != null ? Math.round(r.score * 10) / 10 : null;
+      const scoreHtml = score != null ? `<div class="ai-result-score">${score}</div>` : '';
+      const reasonHtml = r._llmReason
+        ? `<div class="ai-result-source"><strong>LLM：</strong>${escapeHtml(r._llmReason)}</div>` : '';
       return `<div class="ai-result-card" data-h1="${escapeAttr(slugify(r._h1))}"
         data-h2="${escapeAttr(slugify(r._h2))}" data-skills="${escapeAttr(r.skills[0])}">
         <div class="ai-result-head">
           <div class="ai-result-skills">${skills}${r.chain?'<span class="chain-badge">⛓</span>':''}</div>
-          <div class="ai-result-score">${score}</div>
+          ${scoreHtml}
         </div>
         <div class="ai-result-group">${escapeHtml(r._h1)} · ${escapeHtml(r._h2)} · ${escapeHtml(r.group)}</div>
         <div class="ai-result-desc">${escapeHtml(r.description)}</div>
+        ${reasonHtml}
       </div>`;
     }).join('');
-    // 点击卡片跳到对应章节
     results.querySelectorAll('.ai-result-card').forEach(c => {
       c.addEventListener('click', () => {
         const target = c.dataset.h1 + '--' + c.dataset.h2;
         close();
-        // 切回 cards 视图
         if(currentView !== 'cards'){
           document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
         }
-        // 用 skill 名作为搜索关键词聚焦该 row
         const inp = document.getElementById('search');
         inp.value = c.dataset.skills;
         currentSearch = c.dataset.skills;
@@ -1613,6 +1783,105 @@ function setupAI(){
       });
     });
   }
+
+  async function search(){
+    const q = input.value.trim();
+    if(!q){ results.innerHTML = '<div class="ai-empty">请输入想做的事</div>'; hideStatus(); return; }
+    const tokens = expandQuery(q);
+    const allRows = getAllRows();
+    const localScored = allRows.map(r => ({...r, score: scoreRow(r, tokens)}))
+                               .filter(r => r.score > 0)
+                               .sort((a,b) => b.score - a.score);
+    if(localScored.length === 0){
+      results.innerHTML = '<div class="ai-empty">没找到匹配的 skill。试试更宽泛的描述？</div>';
+      hideStatus();
+      return;
+    }
+
+    const cfg = getLLMConfig();
+    if(!cfg){
+      // 兜底：纯本地
+      renderResults(localScored.slice(0, 12), 'local');
+      hideStatus();
+      return;
+    }
+
+    // LLM rerank：候选取本地 TOP 40
+    const candidates = localScored.slice(0, 40);
+    showStatus(`<span class="ai-spin"></span><span>调用 ${escapeHtml(cfg.model)} 重排候选 ${candidates.length} 项…</span>`);
+    try{
+      const reranked = await callLLMRerank(q, candidates, cfg);
+      hideStatus();
+      if(!reranked.length){
+        // LLM 说没匹配，降级回本地
+        showStatus(`<span>LLM 说没匹配，已回退到本地 TF-IDF</span>`);
+        renderResults(localScored.slice(0, 12), 'local-fallback');
+      } else {
+        renderResults(reranked, 'llm');
+      }
+    }catch(err){
+      console.warn('LLM rerank 失败:', err);
+      showStatus(`<span style="color:var(--err,#ff6b6b)">LLM 调用失败：${escapeHtml(err.message || String(err))} · 已回退本地</span>`);
+      renderResults(localScored.slice(0, 12), 'local-fallback');
+    }
+  }
+
+  // 设置面板事件
+  function toggleSettings(){
+    const isHidden = settingsPanel.classList.toggle('hidden');
+    settingsBtn.classList.toggle('active', !isHidden);
+    if(!isHidden) loadConfigToForm();
+  }
+  settingsBtn.addEventListener('click', toggleSettings);
+
+  saveBtn.addEventListener('click', () => {
+    const cfg = {
+      baseUrl: baseUrlInput.value.trim(),
+      model: modelInput.value.trim(),
+      apiKey: apiKeyInput.value.trim()
+    };
+    if(!cfg.baseUrl || !cfg.model || !cfg.apiKey){
+      setLLMStatus('请填完 Base URL / Model / API Key', 'err'); return;
+    }
+    saveLLMConfig(cfg);
+    setLLMStatus('已保存。下次推荐将走 LLM。', 'ok');
+    refreshModeBadge();
+  });
+  clearBtn.addEventListener('click', () => {
+    clearLLMConfig();
+    baseUrlInput.value = ''; modelInput.value = ''; apiKeyInput.value = '';
+    setLLMStatus('已清空，回退到本地匹配', 'info');
+    refreshModeBadge();
+  });
+  testBtn.addEventListener('click', async () => {
+    const cfg = {
+      baseUrl: baseUrlInput.value.trim(),
+      model: modelInput.value.trim(),
+      apiKey: apiKeyInput.value.trim()
+    };
+    if(!cfg.baseUrl || !cfg.model || !cfg.apiKey){
+      setLLMStatus('请填完 Base URL / Model / API Key', 'err'); return;
+    }
+    setLLMStatus('测试中…', 'info');
+    try{
+      const r = await callLLMRerank('hello world', [
+        { _h1:'测试', _h2:'测试', group:'ping', skills:['ping'], description:'ping test', chain:false, sources:[] }
+      ], cfg);
+      setLLMStatus(`✓ 连通成功（返回 ${r.length} 条）`, 'ok');
+    }catch(err){
+      setLLMStatus(`✗ 失败：${err.message || err}`, 'err');
+    }
+  });
+  document.querySelectorAll('.ai-settings-presets a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const p = LLM_PRESETS[a.dataset.preset];
+      if(!p) return;
+      baseUrlInput.value = p.baseUrl;
+      modelInput.value = p.model;
+      setLLMStatus(`已套用 ${a.dataset.preset} 预设，记得填 API Key 再保存`, 'info');
+    });
+  });
 
   btn.addEventListener('click', open);
   closeBtn.addEventListener('click', close);
@@ -1629,6 +1898,9 @@ function setupAI(){
       search();
     });
   });
+
+  // 启动初始化
+  refreshModeBadge();
 }
 
 // === ⌘K Spotlight 搜索 ===
