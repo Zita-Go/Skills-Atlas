@@ -1117,7 +1117,7 @@ function buildNav(){
       const targetEl = document.getElementById(target);
       if(targetEl){
         targetEl.scrollIntoView({behavior:'smooth', block:'start'});
-        history.replaceState(null, '', '#' + target);
+        pushHash(target);
       }
       // 展开自己（不折叠别人——避免用户已经展开的被关掉）
       const section = el.parentElement;
@@ -1140,7 +1140,7 @@ function buildNav(){
       const targetEl = document.getElementById(target);
       if(targetEl){
         targetEl.scrollIntoView({behavior:'smooth', block:'start'});
-        history.replaceState(null, '', '#' + target);
+        pushHash(target);
       }
       nav.querySelectorAll('.nav-h2').forEach(x => x.classList.remove('active'));
       a.classList.add('active');
@@ -2679,7 +2679,7 @@ function setupSpotlight(){
       const el = document.getElementById(targetId);
       if(el){
         el.scrollIntoView({behavior:'smooth', block:'start'});
-        history.replaceState(null, '', '#' + targetId);
+        pushHash(targetId);
       }
       // 同步侧栏高亮
       const navH2 = document.querySelector(`.nav-h2[data-target="${targetId}"]`);
@@ -3032,26 +3032,35 @@ function setupJumpOffset(){
 // 默认全部展开（让所有子分组立刻可见）
 document.querySelectorAll('.nav-section').forEach(s => s.classList.add('expanded'));
 
-// auto-expand the section we navigate to
-window.addEventListener('hashchange', () => {
-  const id = location.hash.slice(1);
-  if(!id) return;
-  const navH2 = document.querySelector(`.nav-h2[data-target="${id}"]`);
-  if(navH2){
-    const section = navH2.closest('.nav-section');
-    if(section) section.classList.add('expanded');
-  }
-});
-
-// auto-expand based on initial hash
-if(location.hash){
-  const id = location.hash.slice(1);
-  const navH2 = document.querySelector(`.nav-h2[data-target="${id}"]`);
-  if(navH2){
-    const section = navH2.closest('.nav-section');
-    if(section) section.classList.add('expanded');
-  }
+// === 锚点跳转 / 浏览器历史 ===
+// hash 里是 URL 编码的中文 slug，必须 decode 才能匹配元素 id / data-target
+function hashId(){
+  try{ return decodeURIComponent((location.hash || '').slice(1)); }
+  catch(_){ return (location.hash || '').slice(1); }
 }
+// 把一次跳转写入浏览器历史（同一目标不重复入栈），供 nav / spotlight 调用
+function pushHash(id){
+  if(hashId() !== id){ history.pushState(null, '', '#' + id); }
+}
+// 滚到当前 hash 对应的小节（前进/后退、深链都走这里）
+function scrollToHashTarget(behavior){
+  const id = hashId();
+  if(!id){ window.scrollTo({top:0, behavior: behavior || 'auto'}); return; }
+  const el = document.getElementById(id);
+  if(!el) return;
+  const navH2 = document.querySelector(`.nav-h2[data-target="${id}"]`);
+  if(navH2){
+    const section = navH2.closest('.nav-section');
+    if(section) section.classList.add('expanded');
+  }
+  el.scrollIntoView({behavior: behavior || 'auto', block:'start'});
+}
+// 自己管理滚动，避免浏览器默认恢复跟 JS 平滑滚动打架
+if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+// 前进/后退：滚回对应小节（这就是"按后退回到刚才看的小节"）
+window.addEventListener('popstate', () => scrollToHashTarget('smooth'));
+// 深链 / 刷新：进页面后定位到 hash 小节
+if(location.hash){ requestAnimationFrame(() => scrollToHashTarget('auto')); }
 </script>
 </body>
 </html>
