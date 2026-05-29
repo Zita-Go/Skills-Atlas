@@ -124,7 +124,7 @@ python3 scripts/render_candidate_issue.py --out /tmp/issue.md
 - **3 种过滤** 全部 / ⛓ 强绑定 / 多源 / 单 skill
 - **暗 / 亮主题** 一键切换 + 记住偏好
 - **响应式设计** 移动端自动收侧边栏
-- **零外部依赖** 纯 system fonts + 无 CDN
+- **轻量** 仅字体走 jsdelivr CDN（含系统字体兜底），数据与脚本零运行时依赖
 
 ## 贡献
 
@@ -132,7 +132,7 @@ python3 scripts/render_candidate_issue.py --out /tmp/issue.md
 
 详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-### 加一个新 skill 三步
+### 加一个新 skill 四步
 
 1. 编辑 `data/skills.yaml` 加一条
 2. 跑 `python3 scripts/validate.py` 校验

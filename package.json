@@ -7,8 +7,7 @@
     "docs/",
     "data/",
     "README.md",
-    "LICENSE",
-    "LICENSE-DATA"
+    "LICENSE"
   ],
   "scripts": {
     "validate": "python3 scripts/validate.py",

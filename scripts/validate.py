@@ -7,6 +7,8 @@
   3. skills.yaml 里每个 group 引用的 category / subcategory 必须在 categories.yaml 存在
   4. skills.yaml 里每个 group 的 sources 必须在 repositories.yaml 存在
   5. repositories.yaml 里每个仓库的 url 必须是合法 GitHub URL
+  6. skills.yaml 里每个 group 必填字段完整（id/skills/group/category/
+     subcategory/chain/description/sources），且 chain 为布尔值
 
 退出码：0 全部通过；1 有错误。
 """
@@ -52,25 +54,45 @@ def main():
         cat_subcat_map[c['id']] = set(sub_ids)
 
     # 2. skills.yaml 里 id 唯一
-    skill_ids = [s['id'] for s in skills]
+    skill_ids = [s['id'] for s in skills if 'id' in s]
     if len(skill_ids) != len(set(skill_ids)):
         dup = [x for x in skill_ids if skill_ids.count(x) > 1]
         err(f'重复的 skill group id: {set(dup)}')
 
+    # 2b. 每个 group 必填字段完整 + 类型合理
+    required = ['id', 'skills', 'group', 'category',
+                'subcategory', 'chain', 'description', 'sources']
+    for i, s in enumerate(skills):
+        sid = s.get('id', f'<第 {i + 1} 条>')
+        for field in required:
+            if field == 'chain':
+                # chain=False 是合法值，不能用真值判断，单独校验
+                if 'chain' not in s:
+                    err(f'skill {sid}: 缺少必填字段 "chain"')
+                elif not isinstance(s['chain'], bool):
+                    err(f'skill {sid}: chain 必须是布尔值，'
+                        f'当前是 {type(s["chain"]).__name__}')
+            elif field not in s or s[field] in (None, '', []):
+                err(f'skill {sid}: 缺少必填字段 "{field}"')
+
     # 3. skills.yaml 引用 category / subcategory 必须存在
     for s in skills:
-        if s['category'] not in cat_subcat_map:
-            err(f'skill {s["id"]}: 未知 category "{s["category"]}"')
-        elif s['subcategory'] not in cat_subcat_map[s['category']]:
-            err(f'skill {s["id"]}: category "{s["category"]}" '
-                f'下未找到 subcategory "{s["subcategory"]}"')
+        cat = s.get('category')
+        sub = s.get('subcategory')
+        if cat is None:
+            continue  # 已由 2b 报告
+        if cat not in cat_subcat_map:
+            err(f'skill {s.get("id")}: 未知 category "{cat}"')
+        elif sub not in cat_subcat_map[cat]:
+            err(f'skill {s.get("id")}: category "{cat}" '
+                f'下未找到 subcategory "{sub}"')
 
     # 4. skills.yaml sources 必须在 repositories.yaml 里
     repo_ids = {r['id'] for r in repos}
     for s in skills:
         for src in s.get('sources', []):
             if src not in repo_ids:
-                err(f'skill {s["id"]}: 未知 source "{src}"')
+                err(f'skill {s.get("id")}: 未知 source "{src}"')
 
     # 5. repository url 合法
     url_re = re.compile(r'^https://github\.com/[^/]+/[^/]+/?$')
