@@ -325,7 +325,9 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 .source-link svg{width:11px;height:11px;flex-shrink:0;opacity:.7}
 .source-link:hover svg{opacity:1}
 .source-stars{font-size:10.5px;color:var(--warn);font-weight:600;
-  margin-left:2px;letter-spacing:.02em}
+  margin-left:2px;letter-spacing:.02em;
+  display:inline-flex;align-items:center;gap:3px}
+.source-stars svg{width:11px;height:11px;flex-shrink:0;opacity:1}
 .source-link:hover .source-stars{color:#ffd86b}
 
 .empty-state{padding:60px 20px;text-align:center;color:var(--fg-muted)}
@@ -452,15 +454,26 @@ html.light .section-h1 .h1-tone{
   background:hsla(var(--cat-hue), 55%, 50%, .08)}
 
 /* === ⛓ Chain connection line === */
-.cards{position:relative}
-.cards.has-chain{padding-left:24px}
-.connection-svg{position:absolute;left:0;top:0;width:24px;height:100%;
+.h1-wrap{position:relative}
+.h1-wrap.has-chain{padding-left:36px}
+.h1-wrap.has-chain > .section-h1{margin-left:-22px}
+.h1-wrap.has-chain > .section-h2{margin-left:-22px}
+.connection-svg{position:absolute;left:0;top:0;width:36px;height:100%;
   pointer-events:none;overflow:visible;z-index:0}
-.connection-line{fill:none;stroke:var(--chain);stroke-width:1.8;
-  stroke-linecap:round;opacity:.7}
-.connection-node{fill:var(--chain);stroke:var(--bg-card);stroke-width:2}
+.connection-line{fill:none;stroke:var(--chain);stroke-width:2;
+  stroke-linecap:round;opacity:.65;
+  filter:drop-shadow(0 0 6px hsla(340, 80%, 60%, .25))}
+.connection-node{fill:var(--chain);stroke:var(--bg);stroke-width:2}
 .connection-node-outer{fill:none;stroke:var(--chain);stroke-width:1;opacity:.4}
-.cards.has-chain .card{position:relative;z-index:1}
+.h1-wrap.has-chain .card{position:relative;z-index:1}
+.h1-wrap.has-chain .card.chain::before{
+  content:'';position:absolute;left:-26px;top:50%;width:14px;height:1.5px;
+  background:var(--chain);opacity:.55;transform:translateY(-50%)}
+@media(max-width:760px){
+  .h1-wrap.has-chain{padding-left:24px}
+  .connection-svg{width:24px}
+  .h1-wrap.has-chain .card.chain::before{left:-18px;width:8px}
+}
 
 /* === 按仓库视图 === */
 .repo-view{padding-top:8px}
@@ -487,7 +500,9 @@ html.light .section-h1 .h1-tone{
   color:var(--fg);word-break:break-all;line-height:1.4}
 .repo-card-name .author{color:var(--fg-muted);font-weight:400}
 .repo-card-stars{font-family:var(--font-mono);font-size:11px;color:var(--warn);
-  font-weight:600;flex-shrink:0;white-space:nowrap}
+  font-weight:600;flex-shrink:0;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:3px}
+.repo-card-stars svg{width:12px;height:12px;flex-shrink:0}
 .repo-card-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .repo-card-tag{font-family:var(--font-mono);font-size:10.5px;
   background:rgba(124,156,255,.10);color:var(--accent);
@@ -666,11 +681,52 @@ html.light .section-h1 .h1-tone{
   <div class="ai-modal">
     <div class="ai-header">
       <div>
-        <div class="ai-title">✨ AI 推荐</div>
+        <div class="ai-title">
+          <span>✨ AI 推荐</span>
+          <span class="ai-mode-badge" id="aiModeBadge" data-mode="local">本地匹配</span>
+        </div>
         <div class="ai-subtitle">描述你想做的事，给你推荐 skill 组合</div>
       </div>
-      <button class="ai-close" id="aiClose" aria-label="close">×</button>
+      <div class="ai-header-actions">
+        <button class="ai-icon-btn" id="aiSettingsBtn" title="LLM 设置（BYOK）" aria-label="settings">⚙</button>
+        <button class="ai-close" id="aiClose" aria-label="close">×</button>
+      </div>
     </div>
+
+    <div class="ai-settings hidden" id="aiSettings">
+      <div class="ai-settings-head">
+        <strong>接入你自己的 LLM（BYOK）</strong>
+        <span class="ai-settings-hint">填了 API Key 后启用 LLM 重排，否则用本地关键词匹配。Key 只存浏览器 localStorage，不会上传。</span>
+      </div>
+      <div class="ai-settings-row">
+        <label>Base URL</label>
+        <input type="text" id="llmBaseUrl" placeholder="https://api.openai.com/v1" autocomplete="off">
+      </div>
+      <div class="ai-settings-row">
+        <label>Model</label>
+        <input type="text" id="llmModel" placeholder="gpt-4o-mini" autocomplete="off">
+      </div>
+      <div class="ai-settings-row">
+        <label>API Key</label>
+        <input type="password" id="llmApiKey" placeholder="sk-..." autocomplete="off">
+      </div>
+      <div class="ai-settings-foot">
+        <span class="ai-settings-presets">
+          预设：
+          <a href="#" data-preset="openai">OpenAI</a>
+          <a href="#" data-preset="deepseek">DeepSeek</a>
+          <a href="#" data-preset="moonshot">Moonshot</a>
+          <a href="#" data-preset="ollama">Ollama (本机)</a>
+        </span>
+        <span class="ai-settings-btns">
+          <button class="ai-btn-secondary" id="llmTestBtn">测试连接</button>
+          <button class="ai-btn-secondary" id="llmClearBtn">清空</button>
+          <button class="ai-btn-primary" id="llmSaveBtn">保存</button>
+        </span>
+      </div>
+      <div class="ai-settings-status" id="llmStatus"></div>
+    </div>
+
     <div class="ai-input-wrap">
       <textarea id="aiInput" placeholder="例如：我想给 SaaS 做完整的 GTM 策略，包括竞品分析、定价、北极星指标和发布计划" rows="3"></textarea>
       <div class="ai-suggestions">
@@ -680,6 +736,7 @@ html.light .section-h1 .h1-tone{
         <span class="ai-tag" data-q="新产品发现：用户访谈、JTBD、机会方案树">产品发现循环</span>
       </div>
     </div>
+    <div class="ai-status hidden" id="aiStatus"></div>
     <div class="ai-results" id="aiResults"></div>
   </div>
 </div>
@@ -746,6 +803,8 @@ function highlightText(text, query){
 }
 
 const githubIcon = '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 .37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
+// GitHub 同款 octicon star-fill (16x16)
+const starIcon = '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>';
 
 let currentFilter = 'all';
 let currentSearch = '';
@@ -827,14 +886,16 @@ function buildContent(){
     const slug = slugify(h1.title);
     const hue = hueOf(h1.title);
     const tone = toneOf(h1.title);
-    html += `<h2 class="section-h1" id="${slug}" style="--cat-hue:${hue}"><span class="h1-icon">${icon}</span><span>${escapeHtml(h1.title)}</span><span class="h1-tone" title="色温：${tone}">${tone}</span></h2>`;
+    // 统计该大类的 chain 卡片数；>=2 时此 wrapper 标记 has-chain 用于绘连线
+    const chainCount = h1.subsections.reduce((s, h2) => s + h2.rows.filter(r => r.chain).length, 0);
+    const wrapClass = chainCount >= 2 ? 'h1-wrap has-chain' : 'h1-wrap';
+    html += `<section class="${wrapClass}" data-h1-slug="${escapeAttr(slug)}" style="--cat-hue:${hue}" data-chain-count="${chainCount}">`;
+    html += `<h2 class="section-h1" id="${slug}"><span class="h1-icon">${icon}</span><span>${escapeHtml(h1.title)}</span><span class="h1-tone" title="色温：${tone}">${tone}</span></h2>`;
     h1.subsections.forEach(h2 => {
       const subSlug = slugify(h2.title);
       const fullId = slug + '--' + subSlug;
       html += `<h3 class="section-h2" id="${fullId}">${escapeHtml(h2.title)} <a class="anchor" href="#${fullId}">#</a></h3>`;
-      const chainCount = h2.rows.filter(r => r.chain).length;
-      const cardsClass = chainCount >= 2 ? 'cards has-chain' : 'cards';
-      html += `<div class="${cardsClass}" style="--cat-hue:${hue}" data-chain-count="${chainCount}">`;
+      html += `<div class="cards">`;
       h2.rows.forEach(row => {
         totalGroups++;
         if(row.chain) totalChains++;
@@ -846,7 +907,7 @@ function buildContent(){
         const sortedSources = [...row.sources].sort((a,b) => (b.stars||0) - (a.stars||0));
         const sourcesHtml = sortedSources.map(s => {
           const starHtml = (s.stars != null && s.stars > 0)
-            ? `<span class="source-stars">★ ${formatStars(s.stars)}</span>` : '';
+            ? `<span class="source-stars">${starIcon}${formatStars(s.stars)}</span>` : '';
           return `<a class="source-link" href="${escapeAttr(s.url)}" target="_blank" rel="noopener">${githubIcon}<span>${escapeHtml(s.name)}</span>${starHtml}</a>`;
         }).join('');
 
@@ -872,6 +933,7 @@ function buildContent(){
       });
       html += '</div>';
     });
+    html += '</section>';   // /.h1-wrap
   });
   root.innerHTML = html;
 
@@ -889,38 +951,34 @@ function buildContent(){
   drawChainConnections();
 }
 
-// 在每个 has-chain 的 cards 容器内，给 chain 卡片绘制左侧 SVG 连线
+// 在每个 has-chain 的 .h1-wrap 容器内，给该大类下所有 chain 卡片绘制左侧 SVG 连线
 function drawChainConnections(){
-  document.querySelectorAll('.cards.has-chain').forEach(wrap => {
+  document.querySelectorAll('.h1-wrap.has-chain').forEach(wrap => {
     // 清掉旧的（重新 layout 时复用）
     wrap.querySelector(':scope > .connection-svg')?.remove();
-    const cards = [...wrap.querySelectorAll(':scope > .card.chain:not(.hidden)')];
+    const cards = [...wrap.querySelectorAll('.card.chain:not(.hidden)')];
     if(cards.length < 2) return;
 
     const wrapRect = wrap.getBoundingClientRect();
     const points = cards.map(c => {
       const r = c.getBoundingClientRect();
-      // Y 在 wrap 内的相对中心位置（卡片左侧的连接点）
       return r.top - wrapRect.top + r.height / 2;
     });
 
     const svgNS = 'http://www.w3.org/2000/svg';
     const svg = document.createElementNS(svgNS, 'svg');
     svg.classList.add('connection-svg');
-    const minY = Math.min(...points);
-    const maxY = Math.max(...points);
     svg.setAttribute('viewBox', `0 0 24 ${wrap.scrollHeight}`);
     svg.setAttribute('preserveAspectRatio', 'none');
     svg.setAttribute('aria-hidden', 'true');
 
-    // 主干竖线（贝塞尔风格的微弯曲）
+    // 主干曲线
     const cx = 12;
     let path = `M ${cx} ${points[0]}`;
     for(let i = 1; i < points.length; i++){
       const prev = points[i-1], cur = points[i];
       const mid = (prev + cur) / 2;
-      // 用三次贝塞尔做轻微 S 形曲线
-      path += ` C ${cx + 4} ${mid}, ${cx - 4} ${mid}, ${cx} ${cur}`;
+      path += ` C ${cx + 6} ${mid}, ${cx - 6} ${mid}, ${cx} ${cur}`;
     }
     const trunk = document.createElementNS(svgNS, 'path');
     trunk.setAttribute('d', path);
@@ -1079,13 +1137,193 @@ function setupViewSwitch(){
       currentView = v;
       document.querySelectorAll('#viewSwitch .view-btn').forEach(x => x.classList.remove('active'));
       b.classList.add('active');
+      const isCards = v === 'cards';
+      const isRepo = v === 'repo';
       const isGraph = v === 'graph';
-      document.getElementById('content').classList.toggle('hidden', isGraph);
-      document.querySelector('.hero').classList.toggle('hidden', isGraph);
+      document.getElementById('content').classList.toggle('hidden', !isCards);
+      document.querySelector('.hero').classList.toggle('hidden', !isCards);
+      document.getElementById('repoView').classList.toggle('hidden', !isRepo);
       document.getElementById('graphView').classList.toggle('hidden', !isGraph);
+      // 切回卡片视图时重画连线（容器尺寸可能变了）
+      if(isCards) requestAnimationFrame(drawChainConnections);
+      if(isRepo) buildRepoView();
       if(isGraph) buildGraph();
+      syncSidebarForView();
     });
   });
+}
+
+// === 按仓库视图 ===
+function buildRepoView(){
+  const container = document.getElementById('repoView');
+  if(container.dataset.built) return;
+  container.dataset.built = '1';
+
+  // 从 DATA.vendors 收集；同时统计每个仓库被引用的 skill row / group
+  const repoStats = {};   // id -> {rows: Set, groupNames: Set, h1Set: Set}
+  getAllRows().forEach(row => {
+    row.sources.forEach(s => {
+      if(!repoStats[s.name]) repoStats[s.name] = {rows: 0, groups: new Set(), h1s: new Set()};
+      repoStats[s.name].rows += 1;
+      repoStats[s.name].groups.add(row.group);
+      repoStats[s.name].h1s.add(row._h1);
+    });
+  });
+
+  // 按 type 分组
+  const byType = {};
+  Object.entries(DATA.vendors).forEach(([id, v]) => {
+    const t = v.type || 'skill';
+    if(!byType[t]) byType[t] = [];
+    const stats = repoStats[id] || {rows: 0, groups: new Set(), h1s: new Set()};
+    byType[t].push({id, ...v, _rows: stats.rows, _groups: stats.groups.size, _h1s: stats.h1s.size});
+  });
+
+  // 排序 type：先按数量倒序，再字母序
+  const typeOrder = Object.keys(byType).sort((a, b) => {
+    const da = byType[a].length, db = byType[b].length;
+    return db - da || a.localeCompare(b);
+  });
+
+  // 类型 → 中文标签 + 色温 hue（继承类别色温思路：暖工具暖色，工程冷色）
+  const TYPE_LABEL = {
+    'skill': 'Skill 包',
+    'skill-pack': 'Skill 套装',
+    'multi-skill-suite': '多 skill 套件',
+    'plugin': '插件',
+    'cli': 'CLI 工具',
+    'cli-framework': 'CLI 框架',
+    'cli-mcp': 'CLI / MCP',
+    'sdd-framework': 'SDD 框架',
+    'python-library': 'Python 库',
+    'desktop-app': '桌面应用',
+    'video-engine': '视频引擎',
+    'extraction-engine': '抽取引擎',
+    'marketplace': 'Marketplace',
+    'claude-md-template': 'Claude.md 模板'
+  };
+  const TYPE_HUE = {
+    'skill': 215, 'skill-pack': 220, 'multi-skill-suite': 230,
+    'plugin': 280, 'cli': 195, 'cli-framework': 200, 'cli-mcp': 205,
+    'sdd-framework': 175, 'python-library': 155,
+    'desktop-app': 240, 'video-engine': 350, 'extraction-engine': 35,
+    'marketplace': 320, 'claude-md-template': 45
+  };
+
+  let html = '';
+  typeOrder.forEach(t => {
+    const repos = byType[t].sort((a, b) => (b.stars || 0) - (a.stars || 0) || a.id.localeCompare(b.id));
+    const label = TYPE_LABEL[t] || t;
+    const hue = TYPE_HUE[t] != null ? TYPE_HUE[t] : 220;
+    const slug = 'repotype-' + slugify(t);
+    html += `<section class="repo-type-group" id="${slug}" style="--cat-hue:${hue}">`;
+    html += `<h3 class="repo-type-head">`;
+    html += `<span>${escapeHtml(label)}</span>`;
+    html += `<span class="type-badge">${escapeHtml(t)}</span>`;
+    html += `<span class="type-count">${repos.length} 个</span>`;
+    html += `</h3>`;
+    html += `<div class="repo-grid">`;
+    repos.forEach(r => {
+      const star = (r.stars != null && r.stars > 0)
+        ? `<span class="repo-card-stars">${starIcon}${formatStars(r.stars)}</span>` : '';
+      const tags = [
+        r._groups > 0 ? `<span class="repo-card-tag">${r._groups} 分组</span>` : '',
+        r._h1s > 0 ? `<span class="repo-card-tag">${r._h1s} 大类</span>` : '',
+        r.skill_group_count ? `<span class="repo-card-tag">${r.skill_group_count} skill</span>` : ''
+      ].filter(Boolean).join('');
+      const author = r.author ? `<span class="author">${escapeHtml(r.author)}/</span>` : '';
+      const repoName = r.repo || r.id;
+      html += `<div class="repo-card" data-repo="${escapeAttr(r.id)}" style="--cat-hue:${hue}">`;
+      html += `<div class="repo-card-head">`;
+      html += `<div class="repo-card-name">${author}${escapeHtml(repoName)}</div>`;
+      html += star;
+      html += `</div>`;
+      if(tags) html += `<div class="repo-card-meta">${tags}</div>`;
+      html += `<a class="repo-card-link" href="${escapeAttr(r.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${githubIcon}<span>查看仓库</span></a>`;
+      html += `</div>`;
+    });
+    html += `</div></section>`;
+  });
+
+  container.innerHTML = html;
+
+  // 点击仓库卡片：切回功能视图并把搜索锁到该仓库 id
+  container.querySelectorAll('.repo-card').forEach(c => {
+    c.addEventListener('click', () => {
+      const repoId = c.dataset.repo;
+      // 切到 cards 视图
+      document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
+      const inp = document.getElementById('search');
+      inp.value = repoId;
+      currentSearch = repoId;
+      document.getElementById('clearBtn').style.display = 'block';
+      const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'none';
+      applyFilter();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  });
+
+  // 同步侧边栏导航
+  buildRepoNav(typeOrder, byType, TYPE_LABEL);
+}
+
+// 在切到 repo 视图时把侧边栏 nav 切成仓库列表（单独一个 nav 容器，叠在原 nav 上方/替换）
+function buildRepoNav(typeOrder, byType, TYPE_LABEL){
+  // 直接复用 #nav；用一个内部容器 #navRepo 表示 repo 模式
+  const nav = document.getElementById('nav');
+  if(nav.dataset.repoBuilt) return;
+  nav.dataset.repoBuilt = '1';
+  // 创建 navRepo 容器并追加（默认 hidden）
+  let navRepo = document.getElementById('navRepo');
+  if(!navRepo){
+    navRepo = document.createElement('div');
+    navRepo.id = 'navRepo';
+    navRepo.className = 'hidden';
+    nav.parentElement.appendChild(navRepo);
+  }
+  let html = '';
+  typeOrder.forEach(t => {
+    const label = TYPE_LABEL[t] || t;
+    const slug = 'repotype-' + slugify(t);
+    html += `<div class="nav-repo-type expanded" data-target="${slug}">`;
+    html += `<div class="nav-repo-type-head">`;
+    html += `<span class="caret">▸</span>`;
+    html += `<span>${escapeHtml(label)}</span>`;
+    html += `<span class="badge">${byType[t].length}</span>`;
+    html += `</div>`;
+    html += `<div class="nav-repo-list">`;
+    byType[t].slice(0, 30).forEach(r => {
+      html += `<a class="nav-repo-item" data-repo="${escapeAttr(r.id)}" data-target="${slug}" title="${escapeAttr(r.author + '/' + (r.repo || r.id))}">${escapeHtml(r.id)}</a>`;
+    });
+    html += `</div></div>`;
+  });
+  navRepo.innerHTML = html;
+
+  // 折叠/展开
+  navRepo.querySelectorAll('.nav-repo-type-head').forEach(h => {
+    h.addEventListener('click', () => h.parentElement.classList.toggle('expanded'));
+  });
+  // 单条点击：滚到对应 type group
+  navRepo.querySelectorAll('.nav-repo-item').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = a.dataset.target;
+      const el = document.getElementById(target);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      navRepo.querySelectorAll('.nav-repo-item').forEach(x => x.classList.remove('active'));
+      a.classList.add('active');
+    });
+  });
+}
+
+// 当切换视图时同步切换侧边栏 nav 模式
+function syncSidebarForView(){
+  const navRepo = document.getElementById('navRepo');
+  const nav = document.getElementById('nav');
+  if(!navRepo) return;
+  const showRepo = currentView === 'repo';
+  navRepo.classList.toggle('hidden', !showRepo);
+  nav.classList.toggle('hidden', showRepo);
 }
 
 // === 力导向图 ===
@@ -1381,11 +1619,6 @@ function setupAI(){
   overlay.addEventListener('click', e => { if(e.target === overlay) close(); });
   document.addEventListener('keydown', e => {
     if(e.key === 'Escape' && !overlay.classList.contains('hidden')) close();
-    // Cmd+K / Ctrl+K 唤起
-    if((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k'){
-      e.preventDefault();
-      open();
-    }
   });
   input.addEventListener('keydown', e => {
     if(e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); search(); }
@@ -1395,6 +1628,316 @@ function setupAI(){
       input.value = tag.dataset.q;
       search();
     });
+  });
+}
+
+// === ⌘K Spotlight 搜索 ===
+function fuzzyScore(query, target){
+  // 连续子序列匹配 + 起首/连续奖励 + 完整子串大幅奖励
+  if(!query) return 0;
+  const q = query.toLowerCase();
+  const t = target.toLowerCase();
+  // 完整子串：直接高分（且越靠前越高）
+  const idx = t.indexOf(q);
+  if(idx >= 0){
+    return 100 + (q.length / t.length) * 50 + Math.max(0, 30 - idx);
+  }
+  // 子序列 fuzzy
+  let qi = 0, score = 0, streak = 0, prevMatch = -2;
+  for(let ti = 0; ti < t.length && qi < q.length; ti++){
+    if(t[ti] === q[qi]){
+      score += 1;
+      if(ti === prevMatch + 1) streak += 1.2;
+      else streak = 0;
+      score += streak;
+      // 起首奖励：单词边界（空格/-/_/./）后的字符
+      if(ti === 0 || /[\s\-_./]/.test(t[ti-1])) score += 2;
+      prevMatch = ti;
+      qi++;
+    }
+  }
+  if(qi < q.length) return 0;  // query 没全部匹配上
+  // 长度惩罚
+  return score - (t.length - q.length) * 0.05;
+}
+
+function setupSpotlight(){
+  const overlay = document.getElementById('spotlightOverlay');
+  const input = document.getElementById('spotlightInput');
+  const list = document.getElementById('spotlightList');
+  const btn = document.getElementById('spotlightBtn');
+
+  // 构建索引
+  const items = [];
+  // 1) skill 名
+  const skillH1 = new Map();   // skillName -> h1Title (取首个出现的)
+  const skillHue = new Map();  // skillName -> hue
+  const skillTargets = new Map(); // skillName -> {h1Slug, h2Slug}
+  getAllRows().forEach(row => {
+    const h1Slug = slugify(row._h1);
+    const h2Slug = slugify(row._h2);
+    const hue = hueOf(row._h1);
+    row.skills.forEach(sk => {
+      if(!skillH1.has(sk)){
+        skillH1.set(sk, row._h1);
+        skillHue.set(sk, hue);
+        skillTargets.set(sk, {h1Slug, h2Slug, group: row.group});
+      }
+    });
+  });
+  skillH1.forEach((h1, sk) => {
+    const tgt = skillTargets.get(sk);
+    items.push({
+      kind: 'skill', icon: '◆', label: sk,
+      meta: `${h1} · ${tgt.group}`,
+      hue: skillHue.get(sk),
+      action: () => jumpToSkill(sk, tgt)
+    });
+  });
+  // 2) 功能分组（group）
+  getAllRows().forEach(row => {
+    const h1Slug = slugify(row._h1);
+    const h2Slug = slugify(row._h2);
+    items.push({
+      kind: 'group', icon: row.chain ? '⛓' : '◇', label: row.group,
+      meta: `${row._h1} · ${row._h2}` + (row.chain ? ' · 强绑定' : ''),
+      hue: hueOf(row._h1),
+      action: () => jumpToSection(`${h1Slug}--${h2Slug}`, row.skills[0])
+    });
+  });
+  // 3) 大类 / 子分组
+  DATA.sections.forEach(h1 => {
+    items.push({
+      kind: 'category', icon: H1_ICONS[h1.title] || '📌', label: h1.title,
+      meta: `大类 · ${h1.subsections.length} 子分组`,
+      hue: hueOf(h1.title),
+      action: () => jumpToSection(slugify(h1.title))
+    });
+    h1.subsections.forEach(h2 => {
+      items.push({
+        kind: 'sub', icon: '§', label: h2.title,
+        meta: `${h1.title} · ${h2.rows.length} 分组`,
+        hue: hueOf(h1.title),
+        action: () => jumpToSection(slugify(h1.title) + '--' + slugify(h2.title))
+      });
+    });
+  });
+  // 4) 仓库
+  Object.entries(DATA.vendors).forEach(([id, v]) => {
+    items.push({
+      kind: 'repo', icon: '📦', label: id,
+      meta: `${v.author || ''}/${v.repo || id} · ${v.type || 'skill'}`,
+      hue: 215,
+      action: () => jumpToRepo(id)
+    });
+  });
+
+  let active = 0;
+  let filtered = [];
+
+  function jumpToSkill(skillName, tgt){
+    closeSpotlight();
+    if(currentView !== 'cards'){
+      document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
+    }
+    const inp = document.getElementById('search');
+    inp.value = skillName;
+    currentSearch = skillName;
+    document.getElementById('clearBtn').style.display = 'block';
+    const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'none';
+    applyFilter();
+    setTimeout(() => {
+      const el = document.getElementById(`${tgt.h1Slug}--${tgt.h2Slug}`);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 80);
+  }
+  function jumpToSection(targetId, focusSkill){
+    closeSpotlight();
+    if(currentView !== 'cards'){
+      document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
+    }
+    // 清除搜索以确保章节可见
+    const inp = document.getElementById('search');
+    if(inp.value){
+      inp.value = '';
+      currentSearch = '';
+      document.getElementById('clearBtn').style.display = 'none';
+      const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'block';
+      applyFilter();
+    }
+    setTimeout(() => {
+      const el = document.getElementById(targetId);
+      if(el){
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+        history.replaceState(null, '', '#' + targetId);
+      }
+      // 同步侧栏高亮
+      const navH2 = document.querySelector(`.nav-h2[data-target="${targetId}"]`);
+      if(navH2){
+        document.querySelectorAll('.nav-h2').forEach(x => x.classList.remove('active'));
+        navH2.classList.add('active');
+        const section = navH2.closest('.nav-section');
+        if(section) section.classList.add('expanded');
+      }
+    }, 80);
+  }
+  function jumpToRepo(repoId){
+    closeSpotlight();
+    if(currentView !== 'cards'){
+      document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
+    }
+    const inp = document.getElementById('search');
+    inp.value = repoId;
+    currentSearch = repoId;
+    document.getElementById('clearBtn').style.display = 'block';
+    const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'none';
+    applyFilter();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function render(query){
+    if(!query){
+      // 默认显示分类型示例
+      const groups = [
+        {label: 'SKILL', items: items.filter(x => x.kind === 'skill').slice(0, 4)},
+        {label: '分组 / GROUP', items: items.filter(x => x.kind === 'group').slice(0, 4)},
+        {label: '大类 / CATEGORY', items: items.filter(x => x.kind === 'category').slice(0, 4)},
+        {label: '仓库 / REPO', items: items.filter(x => x.kind === 'repo').slice(0, 4)}
+      ];
+      filtered = [];
+      let html = '';
+      groups.forEach(g => {
+        if(!g.items.length) return;
+        html += `<div class="spotlight-section-label">${g.label}</div>`;
+        g.items.forEach(it => {
+          const i = filtered.length;
+          filtered.push(it);
+          html += renderRow(it, '', i);
+        });
+      });
+      list.innerHTML = html || '<div class="spotlight-empty">输入关键词搜索 skill / 分组 / 大类 / 仓库</div>';
+    } else {
+      // fuzzy match
+      const scored = items.map(it => ({...it, _score: Math.max(
+        fuzzyScore(query, it.label),
+        fuzzyScore(query, it.meta) * 0.4
+      )})).filter(x => x._score > 0)
+        .sort((a, b) => {
+          // 同分时按 kind 优先级：skill > group > sub > category > repo
+          if(b._score - a._score > 0.5) return b._score - a._score;
+          const order = {skill: 0, group: 1, sub: 2, category: 3, repo: 4};
+          return (order[a.kind] || 9) - (order[b.kind] || 9);
+        }).slice(0, 30);
+      filtered = scored;
+      if(!scored.length){
+        list.innerHTML = '<div class="spotlight-empty">没有匹配项，换个关键词试试</div>';
+      } else {
+        list.innerHTML = scored.map((it, i) => renderRow(it, query, i)).join('');
+      }
+    }
+    active = 0;
+    updateActive();
+    bindRowClicks();
+  }
+  function renderRow(it, query, idx){
+    const labelHtml = highlightFuzzy(it.label, query);
+    const metaHtml = escapeHtml(it.meta);
+    const kindLabel = {skill: 'skill', group: 'group', sub: 'sub', category: 'cat', repo: 'repo'}[it.kind] || it.kind;
+    return `<div class="spotlight-result" data-idx="${idx}" style="--cat-hue:${it.hue||220}">
+      <div class="sp-icon">${it.icon}</div>
+      <div class="sp-body">
+        <div class="sp-title">${labelHtml}</div>
+        <div class="sp-meta">${metaHtml}</div>
+      </div>
+      <div class="sp-kind">${kindLabel}</div>
+    </div>`;
+  }
+  function highlightFuzzy(label, query){
+    if(!query) return escapeHtml(label);
+    const q = query.toLowerCase();
+    const t = label.toLowerCase();
+    // 优先：完整子串
+    const idx = t.indexOf(q);
+    if(idx >= 0){
+      return escapeHtml(label.slice(0, idx))
+        + '<span class="match">' + escapeHtml(label.slice(idx, idx + q.length)) + '</span>'
+        + escapeHtml(label.slice(idx + q.length));
+    }
+    // 否则按 fuzzy 字符高亮
+    let qi = 0, out = '';
+    for(let i = 0; i < label.length; i++){
+      const ch = label[i];
+      if(qi < q.length && t[i] === q[qi]){
+        out += '<span class="match">' + escapeHtml(ch) + '</span>';
+        qi++;
+      } else {
+        out += escapeHtml(ch);
+      }
+    }
+    return out;
+  }
+  function updateActive(){
+    list.querySelectorAll('.spotlight-result').forEach((el, i) => {
+      el.classList.toggle('active', i === active);
+      if(i === active){
+        el.scrollIntoView({block:'nearest'});
+      }
+    });
+  }
+  function bindRowClicks(){
+    list.querySelectorAll('.spotlight-result').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        active = parseInt(el.dataset.idx);
+        updateActive();
+      });
+      el.addEventListener('click', () => {
+        active = parseInt(el.dataset.idx);
+        confirmActive();
+      });
+    });
+  }
+  function confirmActive(){
+    const it = filtered[active];
+    if(it && it.action) it.action();
+  }
+
+  function openSpotlight(){
+    overlay.classList.remove('hidden');
+    input.value = '';
+    setTimeout(() => input.focus(), 30);
+    render('');
+  }
+  function closeSpotlight(){
+    overlay.classList.add('hidden');
+  }
+
+  btn.addEventListener('click', openSpotlight);
+  overlay.addEventListener('click', e => { if(e.target === overlay) closeSpotlight(); });
+  input.addEventListener('input', () => render(input.value.trim()));
+  input.addEventListener('keydown', e => {
+    if(e.key === 'ArrowDown'){
+      e.preventDefault();
+      if(filtered.length){ active = (active + 1) % filtered.length; updateActive(); }
+    } else if(e.key === 'ArrowUp'){
+      e.preventDefault();
+      if(filtered.length){ active = (active - 1 + filtered.length) % filtered.length; updateActive(); }
+    } else if(e.key === 'Enter'){
+      e.preventDefault();
+      confirmActive();
+    } else if(e.key === 'Escape'){
+      e.preventDefault();
+      closeSpotlight();
+    }
+  });
+  document.addEventListener('keydown', e => {
+    // Cmd/Ctrl + K
+    if((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k'){
+      e.preventDefault();
+      if(overlay.classList.contains('hidden')) openSpotlight();
+      else closeSpotlight();
+    }
+    // 在 overlay 打开时 Esc 关闭（input handler 内已处理，但用户可能 focus 转移）
+    if(e.key === 'Escape' && !overlay.classList.contains('hidden')) closeSpotlight();
   });
 }
 
@@ -1504,9 +2047,16 @@ setupSearch();
 setupFilters();
 setupViewSwitch();
 setupAI();
+setupSpotlight();
 setupTheme();
 setupMenuBtn();
 setupScrollSpy();
+
+// 字体或图片加载会影响卡片高度，加载完后重新画一次连线
+window.addEventListener('load', () => requestAnimationFrame(drawChainConnections));
+if(document.fonts && document.fonts.ready){
+  document.fonts.ready.then(() => requestAnimationFrame(drawChainConnections));
+}
 
 // 默认全部展开（让所有子分组立刻可见）
 document.querySelectorAll('.nav-section').forEach(s => s.classList.add('expanded'));
