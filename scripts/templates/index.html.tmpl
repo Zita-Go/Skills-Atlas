@@ -38,6 +38,7 @@
   --grad-soft: linear-gradient(135deg, rgba(124,156,255,.12) 0%, rgba(196,121,255,.08) 100%);
   --radius:12px;
   --sidebar-w: 320px;
+  --jump-offset: 80px;  /* 锚点跳转留白，JS 按 sticky toolbar 实际高度动态更新（换行变高时也不被遮挡） */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
 }
@@ -217,7 +218,9 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
   margin-left:4px;letter-spacing:.02em;vertical-align:middle}
 @media(max-width:760px){
   .ai-btn .ai-kbd{display:none}
-  .view-switch{display:none}
+  /* 窄屏不再隐藏视图切换器（否则仓库/网络视图无法进入），改为只留图标 */
+  .vb-label{display:none}
+  .view-btn{padding:4px 9px;font-size:16px}
   .tb-divider{display:none}
 }
 
@@ -445,7 +448,7 @@ html.light .graph-controls .gc-btn{background:rgba(255,255,255,.85)}
 .ai-result-source strong{color:var(--fg-dim);font-weight:600}
 
 .section-h1{position:relative;margin:48px 0 12px;font-size:26px;font-weight:700;
-  display:flex;align-items:center;gap:12px;scroll-margin-top:80px;
+  display:flex;align-items:center;gap:12px;scroll-margin-top:var(--jump-offset);
   letter-spacing:-0.02em;padding-left:14px}
 .section-h1::before{content:'';position:absolute;left:0;top:50%;
   transform:translateY(-50%);width:4px;height:28px;border-radius:2px;
@@ -453,7 +456,7 @@ html.light .graph-controls .gc-btn{background:rgba(255,255,255,.85)}
 .section-h1 .h1-icon{font-size:26px}
 .section-h1:first-of-type{margin-top:8px}
 .section-h2{margin:34px 0 16px;font-size:16px;font-weight:600;color:var(--fg);
-  scroll-margin-top:80px;letter-spacing:-0.01em;
+  scroll-margin-top:var(--jump-offset);letter-spacing:-0.01em;
   padding-bottom:8px;border-bottom:1px dashed var(--border)}
 .section-h2 .anchor{color:var(--fg-muted);font-size:13px;margin-left:8px;
   font-weight:400;opacity:0;transition:opacity .15s;text-decoration:none}
@@ -706,7 +709,7 @@ html.light .section-h1 .h1-tone{
 .repo-type-group{margin-bottom:36px}
 .repo-type-head{display:flex;align-items:center;gap:10px;
   margin:0 0 14px;font-size:18px;font-weight:700;letter-spacing:-0.01em;
-  scroll-margin-top:80px}
+  scroll-margin-top:var(--jump-offset)}
 .repo-type-head .type-badge{font-family:var(--font-mono);font-size:11px;
   background:var(--bg-card);border:1px solid var(--border);
   padding:3px 10px;border-radius:99px;color:var(--fg-muted);font-weight:500;
@@ -886,9 +889,9 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
   <div class="toolbar">
     <button class="menu-btn" id="menuBtn">☰</button>
     <div class="view-switch" id="viewSwitch">
-      <button class="view-btn active" data-view="cards" title="按功能视图">⊞ 功能</button>
-      <button class="view-btn" data-view="repo" title="按仓库视图">📦 仓库</button>
-      <button class="view-btn" data-view="graph" title="网络视图">◈ 网络</button>
+      <button class="view-btn active" data-view="cards" title="按功能视图">⊞ <span class="vb-label">功能</span></button>
+      <button class="view-btn" data-view="repo" title="按仓库视图">📦 <span class="vb-label">仓库</span></button>
+      <button class="view-btn" data-view="graph" title="网络视图">◈ <span class="vb-label">网络</span></button>
     </div>
     <span class="tb-divider" aria-hidden="true"></span>
     <span class="pill active" data-filter="all">全部</span>
@@ -3009,6 +3012,21 @@ setupSpotlight();
 setupTheme();
 setupMenuBtn();
 setupScrollSpy();
+setupJumpOffset();
+
+// 让锚点跳转留白 = sticky toolbar 实际高度 + 16（toolbar 换行变高时也不会挡住小节标题）
+function setupJumpOffset(){
+  const toolbar = document.querySelector('.toolbar');
+  if(!toolbar) return;
+  const sync = () => {
+    const h = toolbar.offsetHeight || 60;
+    document.documentElement.style.setProperty('--jump-offset', (h + 16) + 'px');
+  };
+  sync();
+  window.addEventListener('resize', sync);
+  // toolbar 自身换行也会改高度（如 filter pills 折行），用 ResizeObserver 兜住
+  if(window.ResizeObserver){ new ResizeObserver(sync).observe(toolbar); }
+}
 
 
 // 默认全部展开（让所有子分组立刻可见）
