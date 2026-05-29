@@ -1,0 +1,41 @@
+{
+  "name": "skills-atlas",
+  "version": "0.1.0",
+  "description": "按功能分类的 AI Agent Skills 全景：370+ skill，62 仓库，13 大类。",
+  "main": "docs/data.json",
+  "files": [
+    "docs/",
+    "data/",
+    "README.md",
+    "LICENSE",
+    "LICENSE-DATA"
+  ],
+  "scripts": {
+    "validate": "python3 scripts/validate.py",
+    "build": "python3 scripts/gen_html.py",
+    "serve": "cd docs && python3 -m http.server 8000",
+    "fetch-stars": "python3 scripts/fetch_metadata.py"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "claude",
+    "claude-code",
+    "codex",
+    "skills",
+    "agent-skills",
+    "atlas",
+    "directory",
+    "awesome-list"
+  ],
+  "author": "Skills Atlas contributors",
+  "license": "MIT",
+  "homepage": "https://github.com/Zita-Go/Skills-Atlas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zita-Go/Skills-Atlas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Zita-Go/Skills-Atlas/issues"
+  }
+}

@@ -1,0 +1,31 @@
+name: 修复源仓库错误
+description: 报告失效链接 / 改名 / 删除的仓库
+labels: ["bug", "source-fix"]
+body:
+  - type: input
+    id: vendor_id
+    attributes:
+      label: vendor id
+      description: data/repositories.yaml 里的 id 字段
+      placeholder: 例如 superpowers
+    validations:
+      required: true
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: 问题类型
+      options:
+        - 链接失效（404）
+        - 仓库改名 / 转移
+        - 仓库已删除 / 私有
+        - SKILL.md 路径变了
+        - 其它
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: 详情
+      placeholder: 新链接 / 替代品 / 解决建议...
+    validations:
+      required: true

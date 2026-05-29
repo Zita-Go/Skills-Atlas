@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Skills Atlas — 按功能分类的 AI Agent Skills 全景</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#0b0d10; --bg-elev:#13161b; --bg-card:#181c22;
+  --border:#262b33; --border-strong:#363c47;
+  --fg:#e6e9ef; --fg-dim:#9aa3b2; --fg-muted:#6b7384;
+  --accent:#7c9cff; --accent-2:#5dd6c5; --warn:#ffb86b; --chain:#ff7e9d;
+  --link:#9ec1ff;
+  --code-bg:#1f242c;
+  --shadow:0 1px 0 rgba(255,255,255,.02), 0 8px 24px rgba(0,0,0,.35);
+  --radius:10px;
+  --sidebar-w: 320px;
+}
+html.light{
+  --bg:#fafbfd; --bg-elev:#ffffff; --bg-card:#ffffff;
+  --border:#e6e8ec; --border-strong:#cdd2da;
+  --fg:#171a21; --fg-dim:#4a5260; --fg-muted:#7a8190;
+  --accent:#3b5bdb; --accent-2:#0ca678; --warn:#d97706; --chain:#d6336c;
+  --link:#1c4ed8;
+  --code-bg:#f1f3f7;
+  --shadow:0 1px 0 rgba(0,0,0,.02), 0 4px 12px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif;
+  font-size:14px;line-height:1.65;
+}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92em;
+  font-family:ui-monospace,"SF Mono",Menlo,Monaco,Consolas,monospace}
+
+/* Layout */
+.app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh}
+.sidebar{
+  position:sticky;top:0;height:100vh;overflow-y:auto;
+  background:var(--bg-elev);border-right:1px solid var(--border);
+  padding:18px 14px 80px;
+}
+.sidebar h1{font-size:15px;margin:0 0 4px;letter-spacing:.5px}
+.sidebar .subtitle{color:var(--fg-muted);font-size:12px;margin-bottom:14px}
+.sidebar .stat-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.sidebar .stat{background:var(--bg-card);border:1px solid var(--border);
+  border-radius:6px;padding:6px 8px;font-size:11px;color:var(--fg-dim)}
+.sidebar .stat b{color:var(--fg)}
+
+.search-wrap{position:relative;margin-bottom:14px}
+.search-wrap input{
+  width:100%;padding:9px 32px 9px 32px;background:var(--bg-card);
+  border:1px solid var(--border);border-radius:8px;color:var(--fg);
+  font-size:13px;outline:none;transition:border .15s
+}
+.search-wrap input:focus{border-color:var(--accent)}
+.search-wrap .search-icon{position:absolute;left:10px;top:50%;
+  transform:translateY(-50%);color:var(--fg-muted);font-size:13px}
+.search-wrap .clear-btn{position:absolute;right:8px;top:50%;
+  transform:translateY(-50%);cursor:pointer;color:var(--fg-muted);
+  background:none;border:0;font-size:14px;padding:4px;display:none}
+.search-wrap .clear-btn:hover{color:var(--fg)}
+
+.nav-section{margin-bottom:6px}
+.nav-h1{display:flex;align-items:center;gap:8px;padding:8px 10px;
+  border-radius:6px;cursor:pointer;font-weight:600;font-size:13px;
+  user-select:none;transition:background .12s}
+.nav-h1:hover{background:var(--bg-card)}
+.nav-h1.active{color:var(--accent);background:rgba(124,156,255,.08)}
+.nav-h1 .icon{font-size:14px;flex-shrink:0}
+.nav-h1 .nav-h1-title{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-h1 .count{margin-left:auto;background:var(--bg-card);color:var(--fg-muted);
+  font-size:10px;padding:1px 6px;border-radius:9px;font-weight:500;flex-shrink:0}
+.nav-h1 .caret{display:inline-block;width:14px;text-align:center;
+  font-size:10px;color:var(--fg-muted);transition:transform .15s;flex-shrink:0;
+  cursor:pointer;padding:2px;border-radius:3px}
+.nav-h1 .caret:hover{background:var(--bg-card);color:var(--fg)}
+.nav-section.expanded .nav-h1 .caret{transform:rotate(90deg)}
+.nav-h2-wrap{padding-left:24px;display:none}
+.nav-section.expanded .nav-h2-wrap{display:block}
+.nav-h2{display:block;padding:5px 10px;border-radius:5px;
+  color:var(--fg-dim);font-size:12px;cursor:pointer;text-decoration:none}
+.nav-h2:hover{background:var(--bg-card);color:var(--fg);text-decoration:none}
+.nav-h2.active{color:var(--accent);background:rgba(124,156,255,.08)}
+
+/* Main */
+.main{padding:32px 40px 80px;max-width:none;overflow-x:hidden}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+  margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.toolbar .pill{background:var(--bg-card);border:1px solid var(--border);
+  padding:4px 10px;border-radius:14px;font-size:12px;color:var(--fg-dim);
+  cursor:pointer;transition:all .12s;user-select:none}
+.toolbar .pill:hover{border-color:var(--border-strong);color:var(--fg)}
+.toolbar .pill.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.toolbar .spacer{flex:1}
+.toolbar .theme-toggle{background:var(--bg-card);border:1px solid var(--border);
+  padding:5px 12px;border-radius:6px;color:var(--fg);cursor:pointer;font-size:13px}
+.toolbar .theme-toggle:hover{border-color:var(--border-strong)}
+
+.section-h1{margin:36px 0 8px;font-size:24px;font-weight:700;
+  display:flex;align-items:center;gap:10px;scroll-margin-top:20px}
+.section-h1 .h1-icon{font-size:24px}
+.section-h1:first-child{margin-top:0}
+.section-h2{margin:28px 0 14px;font-size:17px;font-weight:600;color:var(--fg);
+  scroll-margin-top:20px}
+.section-h2 .anchor{color:var(--fg-muted);font-size:14px;margin-left:8px;
+  font-weight:400;opacity:0;transition:opacity .15s}
+.section-h2:hover .anchor{opacity:1}
+
+.cards{display:flex;flex-direction:column;gap:12px}
+.card{background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);padding:16px 18px;
+  box-shadow:var(--shadow);transition:border .12s}
+.card:hover{border-color:var(--border-strong)}
+.card.chain{border-left:3px solid var(--chain)}
+.card-head{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;
+  margin-bottom:8px}
+.card-skills{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:0}
+.skill-tag{background:rgba(124,156,255,.10);color:var(--accent);
+  border:1px solid rgba(124,156,255,.20);padding:2px 8px;border-radius:5px;
+  font-size:12px;font-family:ui-monospace,"SF Mono",Menlo,monospace;
+  white-space:nowrap}
+html.light .skill-tag{background:rgba(59,91,219,.08)}
+.card-group{display:flex;align-items:center;gap:6px;color:var(--fg-dim);
+  font-size:12px;white-space:nowrap}
+.chain-badge{background:var(--chain);color:#fff;padding:1px 6px;
+  border-radius:4px;font-size:10px;font-weight:600;letter-spacing:.4px}
+.card-desc{color:var(--fg-dim);font-size:13.5px;line-height:1.7;
+  margin:6px 0 10px;word-break:break-word}
+.card-desc code{font-size:.88em}
+.card-sources{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;
+  padding-top:10px;border-top:1px dashed var(--border)}
+.source-link{display:inline-flex;align-items:center;gap:4px;
+  background:var(--bg-elev);border:1px solid var(--border);
+  padding:3px 10px;border-radius:5px;font-size:11.5px;
+  color:var(--fg-dim);text-decoration:none;transition:all .12s}
+.source-link:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.source-link svg{width:11px;height:11px;flex-shrink:0}
+
+.empty-state{padding:60px 20px;text-align:center;color:var(--fg-muted)}
+.empty-state .big{font-size:48px;opacity:.4;margin-bottom:12px}
+
+/* Highlight match */
+.highlight{background:rgba(255,184,107,.25);color:var(--warn);
+  padding:0 2px;border-radius:2px}
+html.light .highlight{background:rgba(217,118,6,.18)}
+
+/* Hidden via filter */
+.hidden{display:none !important}
+
+/* Mobile */
+@media(max-width:900px){
+  .app{grid-template-columns:1fr}
+  .sidebar{position:fixed;left:-100%;width:280px;z-index:100;
+    transition:left .25s;box-shadow:0 0 40px rgba(0,0,0,.5)}
+  .sidebar.open{left:0}
+  .main{padding:18px 18px 80px}
+  .menu-btn{display:flex !important}
+  .toolbar{position:sticky;top:0;background:var(--bg);z-index:10;
+    padding-top:8px;margin-top:-18px}
+}
+.menu-btn{display:none;background:var(--bg-card);border:1px solid var(--border);
+  border-radius:6px;padding:6px 10px;color:var(--fg);cursor:pointer}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:var(--fg-muted)}
+::-webkit-scrollbar-track{background:transparent}
+
+/* Stat in main */
+.hero{margin-bottom:24px;padding:18px 22px;background:var(--bg-card);
+  border:1px solid var(--border);border-radius:var(--radius)}
+.hero h2{margin:0 0 6px;font-size:18px}
+.hero p{margin:0;color:var(--fg-dim);font-size:13px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px}
+.hero-stats > div{font-size:12px;color:var(--fg-muted)}
+.hero-stats > div b{color:var(--fg);font-size:18px;display:block;font-weight:700}
+
+/* No-result hint */
+.no-result-hint{color:var(--fg-muted);font-size:13px;padding:8px 0}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <h1>🗺️ Skills Atlas</h1>
+  <div class="subtitle">按功能分类 · AI Agent Skills 全景</div>
+  <div class="stat-row" id="statRow"></div>
+  <div class="search-wrap">
+    <span class="search-icon">⌕</span>
+    <input id="search" placeholder="搜 skill / 描述 / 仓库 ..." />
+    <button class="clear-btn" id="clearBtn">×</button>
+  </div>
+  <nav id="nav"></nav>
+</aside>
+
+<main class="main">
+  <div class="toolbar">
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <span class="pill active" data-filter="all">全部</span>
+    <span class="pill" data-filter="chain">⛓ 强绑定</span>
+    <span class="pill" data-filter="multi-source">多源</span>
+    <span class="pill" data-filter="single-skill">单 skill</span>
+    <div class="spacer"></div>
+    <button class="theme-toggle" id="themeToggle">🌙 暗色</button>
+  </div>
+  <div class="hero">
+    <h2>按功能分类的 AI Agent Skills 全景</h2>
+    <p>来自 62 个 GitHub 仓库的 350+ 独立 skill，按 13 大类 / 74 个功能分组重新归类。⛓ 标记表示该组 skill 必须串起来用才发挥作用。</p>
+    <div class="hero-stats">
+      <div><b id="heroSkillCount">—</b>独立 skill</div>
+      <div><b id="heroGroupCount">—</b>功能分组</div>
+      <div><b id="heroVendorCount">—</b>源仓库</div>
+      <div><b id="heroChainCount">—</b>强绑定工作流</div>
+    </div>
+  </div>
+  <div id="content"></div>
+  <div class="empty-state hidden" id="emptyState">
+    <div class="big">🤔</div>
+    <div>没有匹配的 skill，试试别的关键词</div>
+  </div>
+</main>
+</div>
+
+<script>
+const DATA = {{DATA_JSON}};
+const H1_ICONS = {"一、软件开发与工程": "⚙️", "二、文档与知识管理": "📄", "三、产品管理（PM）": "🎯", "四、营销 / 增长 / 销售": "📣", "五、设计 / 视觉 / 前端": "🎨", "六、媒体生产": "🎬", "七、数据 / 抓取 / 情报": "🔍", "八、求职 / 个人办公": "💼", "九、通信 / 工具集成": "🔗", "十、创业 / 财务 / 合规": "💰", "十一、学术 / 科研 / 长跑研究": "🔬", "十二、Agent 架构 / Context Engineering": "🧠", "十三、元能力 / Skill 治理": "🛠️"};
+
+function slugify(s){
+  return s.replace(/[^\w\u4e00-\u9fff]+/g,'-').replace(/^-|-$/g,'');
+}
+function escapeHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function escapeAttr(s){
+  return escapeHtml(s).replace(/"/g,'&quot;');
+}
+function highlightText(text, query){
+  if(!query) return escapeHtml(text);
+  const re = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')','gi');
+  return escapeHtml(text).replace(re, '<span class="highlight">$1</span>');
+}
+
+const githubIcon = '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 .37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>';
+
+let currentFilter = 'all';
+let currentSearch = '';
+
+function buildNav(){
+  const nav = document.getElementById('nav');
+  let html = '';
+  DATA.sections.forEach((h1, i) => {
+    const icon = H1_ICONS[h1.title] || '📌';
+    const slug = slugify(h1.title);
+    const totalRows = h1.subsections.reduce((sum, h2) => sum + h2.rows.length, 0);
+    html += `<div class="nav-section" data-h1="${escapeAttr(slug)}">`;
+    html += `<div class="nav-h1" data-target="${slug}">`;
+    html += `<span class="caret" onclick="event.stopPropagation();toggleNav(this.parentElement.parentElement)">▸</span>`;
+    html += `<span class="icon">${icon}</span><span class="nav-h1-title">${escapeHtml(h1.title)}</span>`;
+    html += `<span class="count">${totalRows}</span></div>`;
+    html += '<div class="nav-h2-wrap">';
+    h1.subsections.forEach(h2 => {
+      const subSlug = slugify(h2.title);
+      html += `<a href="#${slug}--${subSlug}" class="nav-h2" data-target="${slug}--${subSlug}">${escapeHtml(h2.title)}</a>`;
+    });
+    html += '</div></div>';
+  });
+  nav.innerHTML = html;
+
+  // 大类点击：跳转 + 自动展开自己 + 折叠其它
+  nav.querySelectorAll('.nav-h1').forEach(el => {
+    el.addEventListener('click', () => {
+      const target = el.dataset.target;
+      const targetEl = document.getElementById(target);
+      if(targetEl){
+        targetEl.scrollIntoView({behavior:'smooth', block:'start'});
+        history.replaceState(null, '', '#' + target);
+      }
+      // 展开自己（不折叠别人——避免用户已经展开的被关掉）
+      const section = el.parentElement;
+      section.classList.add('expanded');
+      // 高亮
+      nav.querySelectorAll('.nav-h1').forEach(x => x.classList.remove('active'));
+      el.classList.add('active');
+      // mobile auto-close
+      if(window.innerWidth < 900){
+        document.getElementById('sidebar').classList.remove('open');
+      }
+    });
+  });
+
+  // 子项点击：平滑滚动 + 高亮
+  nav.querySelectorAll('.nav-h2').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = a.dataset.target;
+      const targetEl = document.getElementById(target);
+      if(targetEl){
+        targetEl.scrollIntoView({behavior:'smooth', block:'start'});
+        history.replaceState(null, '', '#' + target);
+      }
+      nav.querySelectorAll('.nav-h2').forEach(x => x.classList.remove('active'));
+      a.classList.add('active');
+      if(window.innerWidth < 900){
+        document.getElementById('sidebar').classList.remove('open');
+      }
+    });
+  });
+}
+
+function toggleNav(section){
+  section.classList.toggle('expanded');
+}
+
+function buildContent(){
+  const root = document.getElementById('content');
+  let html = '';
+  let totalSkills = 0, totalGroups = 0, totalChains = 0;
+  const vendorSet = new Set();
+
+  DATA.sections.forEach(h1 => {
+    const icon = H1_ICONS[h1.title] || '📌';
+    const slug = slugify(h1.title);
+    html += `<h2 class="section-h1" id="${slug}"><span class="h1-icon">${icon}</span><span>${escapeHtml(h1.title)}</span></h2>`;
+    h1.subsections.forEach(h2 => {
+      const subSlug = slugify(h2.title);
+      const fullId = slug + '--' + subSlug;
+      html += `<h3 class="section-h2" id="${fullId}">${escapeHtml(h2.title)} <a class="anchor" href="#${fullId}">#</a></h3>`;
+      html += '<div class="cards">';
+      h2.rows.forEach(row => {
+        totalGroups++;
+        if(row.chain) totalChains++;
+        totalSkills += row.skills.length;
+        row.sources.forEach(s => vendorSet.add(s.name));
+
+        const skillsHtml = row.skills.map(sk => `<span class="skill-tag">${escapeHtml(sk)}</span>`).join('');
+        const sourceCount = row.sources.length;
+        const sourcesHtml = row.sources.map(s =>
+          `<a class="source-link" href="${escapeAttr(s.url)}" target="_blank" rel="noopener">${githubIcon}<span>${escapeHtml(s.name)}</span></a>`
+        ).join('');
+
+        const chainBadge = row.chain ? '<span class="chain-badge">⛓ 强绑定</span>' : '';
+
+        // data attributes for filtering
+        const searchText = (row.skills.join(' ') + ' ' + row.group + ' ' + row.description + ' ' +
+                            row.sources.map(s=>s.name).join(' ')).toLowerCase();
+        html += `<div class="card${row.chain?' chain':''}"
+          data-search="${escapeAttr(searchText)}"
+          data-chain="${row.chain}"
+          data-skills="${row.skills.length}"
+          data-sources="${sourceCount}">`;
+        html += `<div class="card-head">`;
+        html += `<div class="card-skills">${skillsHtml}</div>`;
+        html += `<div class="card-group">${chainBadge}<span>${escapeHtml(row.group)}</span></div>`;
+        html += `</div>`;
+        html += `<div class="card-desc">${escapeHtml(row.description)}</div>`;
+        html += `<div class="card-sources">${sourcesHtml}</div>`;
+        html += `</div>`;
+      });
+      html += '</div>';
+    });
+  });
+  root.innerHTML = html;
+
+  document.getElementById('heroSkillCount').textContent = totalSkills;
+  document.getElementById('heroGroupCount').textContent = totalGroups;
+  document.getElementById('heroVendorCount').textContent = vendorSet.size;
+  document.getElementById('heroChainCount').textContent = totalChains;
+
+  const sr = document.getElementById('statRow');
+  sr.innerHTML = `<span class="stat"><b>${totalGroups}</b> 分组</span>
+    <span class="stat"><b>${totalSkills}</b> skill</span>
+    <span class="stat"><b>${vendorSet.size}</b> 源</span>`;
+}
+
+function applyFilter(){
+  const cards = document.querySelectorAll('.card');
+  const q = currentSearch.toLowerCase();
+  let visibleCount = 0;
+  cards.forEach(c => {
+    let visible = true;
+    // filter
+    if(currentFilter === 'chain' && c.dataset.chain !== 'true') visible = false;
+    if(currentFilter === 'multi-source' && parseInt(c.dataset.sources) < 2) visible = false;
+    if(currentFilter === 'single-skill' && parseInt(c.dataset.skills) > 1) visible = false;
+    // search
+    if(visible && q && !c.dataset.search.includes(q)) visible = false;
+    c.classList.toggle('hidden', !visible);
+    if(visible) visibleCount++;
+  });
+  // hide empty subsections
+  document.querySelectorAll('.section-h2').forEach(h2 => {
+    const cardsWrap = h2.nextElementSibling;
+    if(!cardsWrap || !cardsWrap.classList.contains('cards')) return;
+    const anyVisible = cardsWrap.querySelector('.card:not(.hidden)');
+    h2.classList.toggle('hidden', !anyVisible);
+    cardsWrap.classList.toggle('hidden', !anyVisible);
+  });
+  // hide empty h1
+  document.querySelectorAll('.section-h1').forEach(h1 => {
+    let next = h1.nextElementSibling;
+    let anyVisible = false;
+    while(next && !next.classList.contains('section-h1')){
+      if(next.classList.contains('section-h2') && !next.classList.contains('hidden')){
+        anyVisible = true; break;
+      }
+      next = next.nextElementSibling;
+    }
+    h1.classList.toggle('hidden', !anyVisible);
+  });
+  document.getElementById('emptyState').classList.toggle('hidden', visibleCount > 0);
+}
+
+function setupSearch(){
+  const inp = document.getElementById('search');
+  const clearBtn = document.getElementById('clearBtn');
+  inp.addEventListener('input', e => {
+    currentSearch = e.target.value;
+    clearBtn.style.display = currentSearch ? 'block' : 'none';
+    applyFilter();
+  });
+  clearBtn.addEventListener('click', () => {
+    inp.value = '';
+    currentSearch = '';
+    clearBtn.style.display = 'none';
+    applyFilter();
+    inp.focus();
+  });
+}
+
+function setupFilters(){
+  document.querySelectorAll('.toolbar .pill').forEach(p => {
+    p.addEventListener('click', () => {
+      document.querySelectorAll('.toolbar .pill').forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+      currentFilter = p.dataset.filter;
+      applyFilter();
+    });
+  });
+}
+
+function setupTheme(){
+  const btn = document.getElementById('themeToggle');
+  const saved = localStorage.getItem('theme') || 'dark';
+  if(saved === 'light'){ document.documentElement.classList.add('light'); btn.textContent = '☀️ 亮色'; }
+  btn.addEventListener('click', () => {
+    const isLight = document.documentElement.classList.toggle('light');
+    btn.textContent = isLight ? '☀️ 亮色' : '🌙 暗色';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+}
+
+function setupMenuBtn(){
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('sidebar').classList.toggle('open');
+  });
+  // close sidebar after clicking on mobile nav
+  document.getElementById('nav').addEventListener('click', e => {
+    if(window.innerWidth < 900 && e.target.classList.contains('nav-h2')){
+      document.getElementById('sidebar').classList.remove('open');
+    }
+  });
+}
+
+function setupScrollSpy(){
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        const id = e.target.id;
+        document.querySelectorAll('.nav-h2').forEach(a => {
+          a.classList.toggle('active', a.dataset.target === id);
+        });
+        // expand parent h1
+        const navH2 = document.querySelector(`.nav-h2[data-target="${id}"]`);
+        if(navH2){
+          const section = navH2.closest('.nav-section');
+          if(section && !section.classList.contains('expanded')){
+            // 不自动展开，只标记
+          }
+        }
+      }
+    });
+  }, {rootMargin: '-30% 0px -60% 0px'});
+  document.querySelectorAll('.section-h2').forEach(h => observer.observe(h));
+}
+
+// Init
+buildNav();
+buildContent();
+setupSearch();
+setupFilters();
+setupTheme();
+setupMenuBtn();
+setupScrollSpy();
+
+// 默认全部展开（让所有子分组立刻可见）
+document.querySelectorAll('.nav-section').forEach(s => s.classList.add('expanded'));
+
+// auto-expand the section we navigate to
+window.addEventListener('hashchange', () => {
+  const id = location.hash.slice(1);
+  if(!id) return;
+  const navH2 = document.querySelector(`.nav-h2[data-target="${id}"]`);
+  if(navH2){
+    const section = navH2.closest('.nav-section');
+    if(section) section.classList.add('expanded');
+  }
+});
+
+// auto-expand based on initial hash
+if(location.hash){
+  const id = location.hash.slice(1);
+  const navH2 = document.querySelector(`.nav-h2[data-target="${id}"]`);
+  if(navH2){
+    const section = navH2.closest('.nav-section');
+    if(section) section.classList.add('expanded');
+  }
+}
+</script>
+</body>
+</html>

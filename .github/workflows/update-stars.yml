@@ -1,0 +1,37 @@
+name: Weekly Star Sync
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # 每周一 UTC 00:00
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pyyaml
+      - name: Fetch metadata
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/fetch_metadata.py
+      - name: Re-render HTML
+        run: python3 scripts/gen_html.py
+      - name: Create PR if changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: weekly star + metadata sync'
+          title: 'chore: weekly star sync'
+          body: |
+            自动同步源仓库的 star / last_commit / description。
+            此 PR 仅当数据有变化时创建。
+          branch: chore/weekly-sync
+          delete-branch: true
+          add-paths: |
+            data/repositories.yaml
+            docs/data.json
+            docs/index.html

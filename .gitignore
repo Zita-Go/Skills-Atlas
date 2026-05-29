@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Local server logs
+*.log
+
+# Local generated previews
+preview/
+
+# Avoid committing the original docx
+*.docx

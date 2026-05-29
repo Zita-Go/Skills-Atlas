@@ -1,0 +1,202 @@
+# 13 大类 / 74 子分组定义。
+# 每次新增分类需要在这里加，并同步到 skills.yaml。
+- id: software-engineering
+  title: 一、软件开发与工程
+  icon: ⚙️
+  subcategories:
+  - id: 1-1
+    title: 1.1 计划 / SDD（Spec-Driven Development）方法论
+  - id: 1-2
+    title: 1.2 TDD / 测试 / 调试 / 验证
+  - id: 1-3
+    title: 1.3 代码 Review / 重构 / 语义去重
+  - id: 1-4
+    title: 1.4 Git / PR / CI 协作
+  - id: 1-5
+    title: 1.5 多平台部署
+  - id: 1-6
+    title: 1.6 API / SDK / MCP / Agent 开发
+  - id: 1-7
+    title: 1.7 .NET / 桌面 / 远端运行环境
+  - id: 1-8
+    title: 1.8 安全审计 / 威胁建模
+- id: docs-knowledge
+  title: 二、文档与知识管理
+  icon: 📄
+  subcategories:
+  - id: 2-1
+    title: 2.1 Office 文档处理（Word / PPT / Excel / PDF）
+  - id: 2-2
+    title: 2.2 长文本翻译 / 跨语言
+  - id: 2-3
+    title: 2.3 写作 / 共写 / 文案打磨
+  - id: 2-4
+    title: 2.4 NotebookLM / 知识图谱 / 课程化
+  - id: 2-5
+    title: 2.5 Notion 协作矩阵
+  - id: 2-6
+    title: 2.6 跨 session 持久记忆
+- id: product-management
+  title: 三、产品管理（PM）
+  icon: 🎯
+  subcategories:
+  - id: 3-1
+    title: 3.1 用户研究 / 客户旅程 / 反馈分析
+  - id: 3-2
+    title: 3.2 问题框定 / 假设管理
+  - id: 3-3
+    title: 3.3 产品发现 / 实验
+  - id: 3-4
+    title: 3.4 战略 / 定位 / 商业模式
+  - id: 3-5
+    title: 3.5 GTM / 进入策略 / 增长 loop
+  - id: 3-6
+    title: 3.6 PRD / Spec / 工程 handoff
+  - id: 3-7
+    title: 3.7 优先级 / 投资决策
+  - id: 3-8
+    title: 3.8 SaaS 健康 / 财务指标 / 单位经济
+  - id: 3-9
+    title: 3.9 OKR / Sprint / Retro / Stakeholder
+  - id: 3-10
+    title: 3.10 发布 / EOL / 沟通
+  - id: 3-11
+    title: 3.11 PM 元能力
+- id: marketing-growth
+  title: 四、营销 / 增长 / 销售
+  icon: 📣
+  subcategories:
+  - id: 4-1
+    title: 4.1 SEO / AEO / GEO / 结构化数据
+  - id: 4-2
+    title: 4.2 文案 / 营销心理 / 产品命名
+  - id: 4-3
+    title: 4.3 多渠道分发（邮件 / SMS / 社交）
+  - id: 4-4
+    title: 4.4 付费广告 / ASO
+  - id: 4-5
+    title: 4.5 CRO / 转化优化
+  - id: 4-6
+    title: 4.6 潜客 / 引流 / 推荐 / 联盟
+  - id: 4-7
+    title: 4.7 病毒式传播 / Hook / 创意
+  - id: 4-8
+    title: 4.8 竞品 / 对比页 / 战情
+  - id: 4-9
+    title: 4.9 销售辅助 / RevOps / 留存
+  - id: 4-10
+    title: 4.10 定价 / 商业模型
+  - id: 4-11
+    title: 4.11 GTM / 发布 / Product Hunt
+  - id: 4-12
+    title: 4.12 SOP / 测量
+- id: design-frontend
+  title: 五、设计 / 视觉 / 前端
+  icon: 🎨
+  subcategories:
+  - id: 5-1
+    title: 5.1 品牌系统 / 视觉规范
+  - id: 5-2
+    title: 5.2 前端工程规范
+  - id: 5-3
+    title: 5.3 UI artifact / Web app 构建
+  - id: 5-4
+    title: 5.4 Figma 双向集成
+  - id: 5-5
+    title: 5.5 演示 / 幻灯片生成
+  - id: 5-6
+    title: 5.6 开源设计 skill 包
+  - id: 5-7
+    title: 5.7 创意 / 艺术 / 品牌资产
+  - id: 5-8
+    title: 5.8 截图 / 多媒体生成
+- id: media
+  title: 六、媒体生产
+  icon: 🎬
+  subcategories:
+  - id: 6-1
+    title: 6.1 视频剪辑 / 生成
+  - id: 6-2
+    title: 6.2 音频 / TTS / 转写
+- id: data-scraping
+  title: 七、数据 / 抓取 / 情报
+  icon: 🔍
+  subcategories:
+  - id: 7-1
+    title: 7.1 网页抓取 / 爬虫
+  - id: 7-2
+    title: 7.2 跨平台社交 / 趋势监测
+  - id: 7-3
+    title: 7.3 数据库 / SQL / 分析
+  - id: 7-4
+    title: 7.4 Notebook / 文档型分析
+- id: jobsearch
+  title: 八、求职 / 个人办公
+  icon: 💼
+  subcategories:
+  - id: 8-1
+    title: 8.1 简历 / Cover Letter / LinkedIn
+  - id: 8-2
+    title: 8.2 面试 / 谈判 / 求职流水线
+  - id: 8-3
+    title: 8.3 个人法律文档
+- id: comms-integration
+  title: 九、通信 / 工具集成
+  icon: 🔗
+  subcategories:
+  - id: 9-1
+    title: 9.1 即时通讯集成
+  - id: 9-2
+    title: 9.2 项目管理 / Issue 追踪
+  - id: 9-3
+    title: 9.3 桌面 Agent 编排平台
+  - id: 9-4
+    title: 9.4 Sleep-time 自治研究
+- id: startup-finance
+  title: 十、创业 / 财务 / 合规
+  icon: 💰
+  subcategories:
+  - id: 10-1
+    title: 10.1 创业者综合 toolkit
+  - id: 10-2
+    title: 10.2 Bootstrapped CFO / 财务管理
+  - id: 10-3
+    title: 10.3 会计 / 税务 / 跨国合规
+- id: academic-research
+  title: 十一、学术 / 科研 / 长跑研究
+  icon: 🔬
+  subcategories:
+  - id: 11-1
+    title: 11.1 学术写作全流程
+  - id: 11-2
+    title: 11.2 科研 / 工程 / 分析
+- id: agent-architecture
+  title: 十二、Agent 架构 / Context Engineering
+  icon: 🧠
+  subcategories:
+  - id: 12-1
+    title: 12.1 Context 概念基础
+  - id: 12-2
+    title: 12.2 Context 生命周期管理
+  - id: 12-3
+    title: 12.3 Agent 记忆系统
+  - id: 12-4
+    title: 12.4 多 agent 拓扑 / 远端 sandbox / Harness
+  - id: 12-5
+    title: 12.5 Tool / 评测 / 项目级方法论
+- id: meta-skill-mgmt
+  title: 十三、元能力 / Skill 治理
+  icon: 🛠️
+  subcategories:
+  - id: 13-1
+    title: 13.1 写 Skill / 创建 Skill
+  - id: 13-2
+    title: 13.2 安装 / 发现 / 打包
+  - id: 13-3
+    title: 13.3 Skill 安全审计
+  - id: 13-4
+    title: 13.4 Plugin Marketplace
+  - id: 13-5
+    title: 13.5 行为约束模板
+  - id: 强绑定-工作流清单功能维度共-18-套
+    title: 强绑定 ⛓ 工作流清单（功能维度共 18 套）
