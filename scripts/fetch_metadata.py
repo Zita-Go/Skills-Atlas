@@ -50,6 +50,10 @@ def main():
         r['default_branch'] = info.get('default_branch', 'main')
         if info.get('description'):
             r['description'] = info['description']
+        # SPDX 许可证；NOASSERTION / null 视为未知，不写
+        lic = (info.get('license') or {}).get('spdx_id')
+        if lic and lic != 'NOASSERTION':
+            r['license'] = lic
         updated += 1
         # 简单速率限制
         time.sleep(0.3 if GH_TOKEN else 1.5)
@@ -58,7 +62,12 @@ def main():
         f.write('# 源仓库元数据。type 字段：skill / skill-pack / plugin / cli /\n'
                 '# cli-framework / cli-mcp / sdd-framework / python-library /\n'
                 '# desktop-app / video-engine / extraction-engine / marketplace /\n'
-                '# multi-skill-suite / claude-md-template\n')
+                '# multi-skill-suite / claude-md-template\n'
+                '# 可选字段：\n'
+                '#   license          —— SPDX id，本脚本自动采集（NOASSERTION/无则留空）\n'
+                '#   doc_path         —— 仓库内主文档相对路径；缺省时前端回退 SKILL.md→README.md\n'
+                '#   install_override —— {command, note}，按 type 生成的安装命令不对时覆盖\n'
+                '#   skill_docs       —— Phase 2：{skill名: 仓库内路径} 映射\n')
         yaml.safe_dump(repos, f, allow_unicode=True, sort_keys=False,
                        default_flow_style=False, width=200)
 
