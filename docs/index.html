@@ -2063,8 +2063,10 @@ async function callLLMRerank(query, candidates, cfg){
   const body = {
     model: cfg.model,
     messages: buildLLMPrompt(query, candidates),
-    temperature: 0.2,
-    response_format: { type: 'json_object' }
+    temperature: 0.2
+    // 不加 response_format=json_object：实测 OpenRouter 部分 provider（如 OpenInference）
+    // 在带 reasoning 模型 + json_object 同时启用时，会把答案写进 reasoning 而 content 为空。
+    // 系统 prompt 已要求严格输出 JSON，模型基本都遵守。
   };
   const headers = { 'Content-Type': 'application/json' };
   if(!useProxy){
@@ -2112,10 +2114,18 @@ async function callLLMRerank(query, candidates, cfg){
     const raw = e.metadata?.raw || '';
     throw new Error(`${e.message || 'provider error'}${raw ? ' :: '+raw.slice(0,120) : ''}`);
   }
-  const content = data.choices?.[0]?.message?.content || '';
-  // 容错：有些模型不严格遵守 response_format
-  const m = content.match(/\{[\s\S]*\}/);
-  if(!m) throw new Error('LLM 返回非 JSON: ' + content.slice(0,120));
+  // 推理模型（gpt-oss 等）可能把 JSON 答案放进 reasoning_content / reasoning 而非 content。
+  // 把所有可能的字段拼起来再做 JSON 提取。
+  const msg = data.choices?.[0]?.message || {};
+  const candidates_text = [
+    msg.content, msg.reasoning_content, msg.reasoning, msg.refusal
+  ].filter(s => typeof s === 'string' && s.trim()).join('\n');
+  const m = candidates_text.match(/\{[\s\S]*\}/);
+  if(!m){
+    const finishReason = data.choices?.[0]?.finish_reason || '?';
+    const usage = data.usage || {};
+    throw new Error(`LLM 返回空内容（finish=${finishReason} / tokens=${usage.completion_tokens||'?'}）· 换个模型试试`);
+  }
   let parsed;
   try{ parsed = JSON.parse(m[0]); }
   catch(e){ throw new Error('JSON 解析失败: ' + e.message); }
