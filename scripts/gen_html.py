@@ -21,7 +21,7 @@ def load(name):
 
 def build_sections(categories, skills, repos):
     """把扁平 skills 列表按 category / subcategory 重新组织成嵌套结构（前端消费）"""
-    repo_url = {r['id']: r['url'] for r in repos}
+    repo_map = {r['id']: r for r in repos}
     sections = []
     for cat in categories:
         h1 = {'title': cat['title'], 'icon': cat.get('icon', '📌'),
@@ -30,10 +30,16 @@ def build_sections(categories, skills, repos):
             h2 = {'title': sub['title'], 'rows': []}
             for s in skills:
                 if s['category'] == cat['id'] and s['subcategory'] == sub['id']:
-                    sources_resolved = [
-                        {'name': src, 'url': repo_url.get(src, '#')}
-                        for src in s.get('sources', [])
-                    ]
+                    sources_resolved = []
+                    for src in s.get('sources', []):
+                        repo = repo_map.get(src, {})
+                        sources_resolved.append({
+                            'name': src,
+                            'url': repo.get('url', '#'),
+                            'stars': repo.get('stars'),
+                            'last_commit': repo.get('last_commit'),
+                            'type': repo.get('type', 'skill'),
+                        })
                     h2['rows'].append({
                         'skills': s['skills'],
                         'group': s['group'],
@@ -54,7 +60,14 @@ def main():
     repos = load('repositories.yaml')
 
     sections = build_sections(categories, skills, repos)
-    vendors = {r['id']: r['url'] for r in repos}
+    vendors = {r['id']: {
+        'url': r['url'],
+        'stars': r.get('stars'),
+        'last_commit': r.get('last_commit'),
+        'type': r.get('type', 'skill'),
+        'author': r.get('author'),
+        'repo': r.get('repo'),
+    } for r in repos}
 
     data = {'sections': sections, 'vendors': vendors}
 

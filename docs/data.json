@@ -21,7 +21,10 @@
               "sources": [
                 {
                   "name": "superpowers",
-                  "url": "https://github.com/obra/superpowers"
+                  "url": "https://github.com/obra/superpowers",
+                  "stars": 211626,
+                  "last_commit": "2026-05-27",
+                  "type": "skill"
                 }
               ]
             },
@@ -37,15 +40,24 @@
               "sources": [
                 {
                   "name": "mattpocock",
-                  "url": "https://github.com/mattpocock/skills"
+                  "url": "https://github.com/mattpocock/skills",
+                  "stars": 110660,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -60,11 +72,17 @@
               "sources": [
                 {
                   "name": "Fission-AI",
-                  "url": "https://github.com/Fission-AI/OpenSpec"
+                  "url": "https://github.com/Fission-AI/OpenSpec",
+                  "stars": 51530,
+                  "last_commit": "2026-05-28",
+                  "type": "cli-framework"
                 },
                 {
                   "name": "gsd-build",
-                  "url": "https://github.com/gsd-build/get-shit-done"
+                  "url": "https://github.com/gsd-build/get-shit-done",
+                  "stars": 63770,
+                  "last_commit": "2026-05-27",
+                  "type": "sdd-framework"
                 }
               ]
             },
@@ -78,7 +96,10 @@
               "sources": [
                 {
                   "name": "mattpocock",
-                  "url": "https://github.com/mattpocock/skills"
+                  "url": "https://github.com/mattpocock/skills",
+                  "stars": 110660,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -99,15 +120,24 @@
               "sources": [
                 {
                   "name": "superpowers",
-                  "url": "https://github.com/obra/superpowers"
+                  "url": "https://github.com/obra/superpowers",
+                  "stars": 211626,
+                  "last_commit": "2026-05-27",
+                  "type": "skill"
                 },
                 {
                   "name": "mattpocock",
-                  "url": "https://github.com/mattpocock/skills"
+                  "url": "https://github.com/mattpocock/skills",
+                  "stars": 110660,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -123,15 +153,24 @@
               "sources": [
                 {
                   "name": "superpowers",
-                  "url": "https://github.com/obra/superpowers"
+                  "url": "https://github.com/obra/superpowers",
+                  "stars": 211626,
+                  "last_commit": "2026-05-27",
+                  "type": "skill"
                 },
                 {
                   "name": "mattpocock",
-                  "url": "https://github.com/mattpocock/skills"
+                  "url": "https://github.com/mattpocock/skills",
+                  "stars": 110660,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -145,7 +184,10 @@
               "sources": [
                 {
                   "name": "superpowers",
-                  "url": "https://github.com/obra/superpowers"
+                  "url": "https://github.com/obra/superpowers",
+                  "stars": 211626,
+                  "last_commit": "2026-05-27",
+                  "type": "skill"
                 }
               ]
             },
@@ -159,11 +201,17 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 },
                 {
                   "name": "ComposioHQ",
-                  "url": "https://github.com/ComposioHQ/awesome-claude-skills"
+                  "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+                  "stars": 62362,
+                  "last_commit": "2026-05-22",
+                  "type": "skill"
                 }
               ]
             },
@@ -178,7 +226,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             }
@@ -198,7 +249,10 @@
               "sources": [
                 {
                   "name": "superpowers",
-                  "url": "https://github.com/obra/superpowers"
+                  "url": "https://github.com/obra/superpowers",
+                  "stars": 211626,
+                  "last_commit": "2026-05-27",
+                  "type": "skill"
                 }
               ]
             },
@@ -213,7 +267,10 @@
               "sources": [
                 {
                   "name": "mattpocock",
-                  "url": "https://github.com/mattpocock/skills"
+                  "url": "https://github.com/mattpocock/skills",
+                  "stars": 110660,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -227,7 +284,10 @@
               "sources": [
                 {
                   "name": "superpowers-lab",
-                  "url": "https://github.com/obra/superpowers-lab"
+                  "url": "https://github.com/obra/superpowers-lab",
+                  "stars": 350,
+                  "last_commit": "2026-03-23",
+                  "type": "skill"
                 }
               ]
             }
@@ -248,7 +308,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -263,7 +326,10 @@
               "sources": [
                 {
                   "name": "superpowers",
-                  "url": "https://github.com/obra/superpowers"
+                  "url": "https://github.com/obra/superpowers",
+                  "stars": 211626,
+                  "last_commit": "2026-05-27",
+                  "type": "skill"
                 }
               ]
             },
@@ -277,7 +343,10 @@
               "sources": [
                 {
                   "name": "kenryu42",
-                  "url": "https://github.com/kenryu42/claude-code-safety-net"
+                  "url": "https://github.com/kenryu42/claude-code-safety-net",
+                  "stars": 1366,
+                  "last_commit": "2026-05-08",
+                  "type": "plugin"
                 }
               ]
             }
@@ -299,7 +368,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             }
@@ -322,15 +394,24 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 },
                 {
                   "name": "Gemini",
-                  "url": "https://github.com/google-gemini/gemini-skills"
+                  "url": "https://github.com/google-gemini/gemini-skills",
+                  "stars": 3576,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -344,7 +425,10 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             },
@@ -358,7 +442,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -372,7 +459,10 @@
               "sources": [
                 {
                   "name": "vercel-labs",
-                  "url": "https://github.com/vercel-labs/agent-skills"
+                  "url": "https://github.com/vercel-labs/agent-skills",
+                  "stars": 27282,
+                  "last_commit": "2026-05-27",
+                  "type": "cli"
                 }
               ]
             }
@@ -392,7 +482,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -406,7 +499,10 @@
               "sources": [
                 {
                   "name": "superpowers-lab",
-                  "url": "https://github.com/obra/superpowers-lab"
+                  "url": "https://github.com/obra/superpowers-lab",
+                  "stars": 350,
+                  "last_commit": "2026-03-23",
+                  "type": "skill"
                 }
               ]
             },
@@ -420,7 +516,10 @@
               "sources": [
                 {
                   "name": "superpowers-lab",
-                  "url": "https://github.com/obra/superpowers-lab"
+                  "url": "https://github.com/obra/superpowers-lab",
+                  "stars": 350,
+                  "last_commit": "2026-03-23",
+                  "type": "skill"
                 }
               ]
             }
@@ -441,7 +540,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -455,7 +557,10 @@
               "sources": [
                 {
                   "name": "trailofbits",
-                  "url": "https://github.com/trailofbits/skills"
+                  "url": "https://github.com/trailofbits/skills",
+                  "stars": 5462,
+                  "last_commit": "2026-05-27",
+                  "type": "marketplace"
                 }
               ]
             },
@@ -469,7 +574,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             }
@@ -497,7 +605,10 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             },
@@ -511,7 +622,10 @@
               "sources": [
                 {
                   "name": "PSPDFKit-labs",
-                  "url": "https://github.com/PSPDFKit-labs/nutrient-agent-skill"
+                  "url": "https://github.com/PSPDFKit-labs/nutrient-agent-skill",
+                  "stars": 10,
+                  "last_commit": "2026-03-23",
+                  "type": "skill"
                 }
               ]
             },
@@ -525,7 +639,10 @@
               "sources": [
                 {
                   "name": "kreuzberg-dev",
-                  "url": "https://github.com/kreuzberg-dev/kreuzberg"
+                  "url": "https://github.com/kreuzberg-dev/kreuzberg",
+                  "stars": 8406,
+                  "last_commit": "2026-05-29",
+                  "type": "extraction-engine"
                 }
               ]
             }
@@ -544,7 +661,10 @@
               "sources": [
                 {
                   "name": "deusyu",
-                  "url": "https://github.com/deusyu/translate-book"
+                  "url": "https://github.com/deusyu/translate-book",
+                  "stars": 739,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -564,7 +684,10 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             },
@@ -578,7 +701,10 @@
               "sources": [
                 {
                   "name": "blader",
-                  "url": "https://github.com/blader/humanizer"
+                  "url": "https://github.com/blader/humanizer",
+                  "stars": 21450,
+                  "last_commit": "2026-05-27",
+                  "type": "skill"
                 }
               ]
             },
@@ -592,7 +718,10 @@
               "sources": [
                 {
                   "name": "NeoLabHQ",
-                  "url": "https://github.com/NeoLabHQ/context-engineering-kit"
+                  "url": "https://github.com/NeoLabHQ/context-engineering-kit",
+                  "stars": 1051,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -607,11 +736,17 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "alchaincyf",
-                  "url": "https://github.com/alchaincyf/huashu-design"
+                  "url": "https://github.com/alchaincyf/huashu-design",
+                  "stars": 15586,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -625,7 +760,10 @@
               "sources": [
                 {
                   "name": "Shpigford",
-                  "url": "https://github.com/Shpigford/readme"
+                  "url": "https://github.com/Shpigford/readme",
+                  "stars": null,
+                  "last_commit": null,
+                  "type": "skill"
                 }
               ]
             },
@@ -639,11 +777,17 @@
               "sources": [
                 {
                   "name": "JuliusBrussee",
-                  "url": "https://github.com/JuliusBrussee/caveman"
+                  "url": "https://github.com/JuliusBrussee/caveman",
+                  "stars": 66146,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "mattpocock",
-                  "url": "https://github.com/mattpocock/skills"
+                  "url": "https://github.com/mattpocock/skills",
+                  "stars": 110660,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -657,7 +801,10 @@
               "sources": [
                 {
                   "name": "SeanZoR",
-                  "url": "https://github.com/SeanZoR/claude-speed-reader"
+                  "url": "https://github.com/SeanZoR/claude-speed-reader",
+                  "stars": 15,
+                  "last_commit": "2026-01-15",
+                  "type": "skill"
                 }
               ]
             }
@@ -677,11 +824,17 @@
               "sources": [
                 {
                   "name": "PleasePrompto",
-                  "url": "https://github.com/PleasePrompto/notebooklm-skill"
+                  "url": "https://github.com/PleasePrompto/notebooklm-skill",
+                  "stars": 6702,
+                  "last_commit": "2025-11-21",
+                  "type": "skill"
                 },
                 {
                   "name": "teng-lin",
-                  "url": "https://github.com/teng-lin/notebooklm-py"
+                  "url": "https://github.com/teng-lin/notebooklm-py",
+                  "stars": 15444,
+                  "last_commit": "2026-05-29",
+                  "type": "python-library"
                 }
               ]
             },
@@ -695,7 +848,10 @@
               "sources": [
                 {
                   "name": "safishamsi",
-                  "url": "https://github.com/safishamsi/graphify"
+                  "url": "https://github.com/safishamsi/graphify",
+                  "stars": 55810,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             },
@@ -709,7 +865,10 @@
               "sources": [
                 {
                   "name": "bevibing",
-                  "url": "https://github.com/bevibing/tutor-skills"
+                  "url": "https://github.com/bevibing/tutor-skills",
+                  "stars": 906,
+                  "last_commit": "2026-02-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -723,7 +882,10 @@
               "sources": [
                 {
                   "name": "stephenturner",
-                  "url": "https://github.com/stephenturner/skill-focus"
+                  "url": "https://github.com/stephenturner/skill-focus",
+                  "stars": 30,
+                  "last_commit": "2026-03-26",
+                  "type": "skill"
                 }
               ]
             }
@@ -745,7 +907,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -759,7 +924,10 @@
               "sources": [
                 {
                   "name": "makenotion",
-                  "url": "https://github.com/makenotion/notion-cookbook"
+                  "url": "https://github.com/makenotion/notion-cookbook",
+                  "stars": 135,
+                  "last_commit": "2026-05-13",
+                  "type": "skill"
                 }
               ]
             }
@@ -778,7 +946,10 @@
               "sources": [
                 {
                   "name": "hanfang",
-                  "url": "https://github.com/hanfang/claude-memory-skill"
+                  "url": "https://github.com/hanfang/claude-memory-skill",
+                  "stars": 27,
+                  "last_commit": "2026-02-07",
+                  "type": "skill"
                 }
               ]
             },
@@ -792,7 +963,10 @@
               "sources": [
                 {
                   "name": "thedotmack",
-                  "url": "https://github.com/thedotmack/claude-mem"
+                  "url": "https://github.com/thedotmack/claude-mem",
+                  "stars": 79485,
+                  "last_commit": "2026-05-29",
+                  "type": "cli-mcp"
                 }
               ]
             },
@@ -806,7 +980,10 @@
               "sources": [
                 {
                   "name": "alirezarezvani",
-                  "url": "https://github.com/alirezarezvani/claude-skills"
+                  "url": "https://github.com/alirezarezvani/claude-skills",
+                  "stars": 16477,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             }
@@ -835,11 +1012,17 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -853,11 +1036,17 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -872,11 +1061,17 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -893,15 +1088,24 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -916,7 +1120,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -936,7 +1143,10 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -952,7 +1162,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -966,7 +1179,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -985,11 +1201,17 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1005,7 +1227,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1020,11 +1245,17 @@
               "sources": [
                 {
                   "name": "mattpocock",
-                  "url": "https://github.com/mattpocock/skills"
+                  "url": "https://github.com/mattpocock/skills",
+                  "stars": 110660,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1039,7 +1270,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1055,7 +1289,10 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -1078,7 +1315,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1096,11 +1336,17 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1115,11 +1361,17 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1137,11 +1389,17 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1157,11 +1415,17 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -1182,7 +1446,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1196,7 +1463,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1210,7 +1480,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -1232,19 +1505,31 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "mattpocock",
-                  "url": "https://github.com/mattpocock/skills"
+                  "url": "https://github.com/mattpocock/skills",
+                  "stars": 110660,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             },
@@ -1263,11 +1548,17 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1284,15 +1575,24 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 },
                 {
                   "name": "mattpocock",
-                  "url": "https://github.com/mattpocock/skills"
+                  "url": "https://github.com/mattpocock/skills",
+                  "stars": 110660,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "wrsmith108",
-                  "url": "https://github.com/wrsmith108/linear-claude-skill"
+                  "url": "https://github.com/wrsmith108/linear-claude-skill",
+                  "stars": 108,
+                  "last_commit": "2026-04-19",
+                  "type": "skill"
                 }
               ]
             }
@@ -1313,11 +1613,17 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1333,7 +1639,10 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -1353,11 +1662,17 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Digidai",
-                  "url": "https://github.com/Digidai/product-manager-skills"
+                  "url": "https://github.com/Digidai/product-manager-skills",
+                  "stars": 92,
+                  "last_commit": "2026-04-12",
+                  "type": "skill"
                 }
               ]
             },
@@ -1373,7 +1688,10 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -1394,7 +1712,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1410,11 +1731,17 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1431,7 +1758,10 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -1451,11 +1781,17 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1469,7 +1805,10 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             }
@@ -1488,7 +1827,10 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1502,7 +1844,10 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1516,7 +1861,10 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1530,7 +1878,10 @@
               "sources": [
                 {
                   "name": "Dean",
-                  "url": "https://github.com/deanpeters/Product-Manager-Skills"
+                  "url": "https://github.com/deanpeters/Product-Manager-Skills",
+                  "stars": 4606,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -1560,7 +1911,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -1574,7 +1928,10 @@
               "sources": [
                 {
                   "name": "AgriciDaniel-seo",
-                  "url": "https://github.com/AgriciDaniel/claude-seo"
+                  "url": "https://github.com/AgriciDaniel/claude-seo",
+                  "stars": 7274,
+                  "last_commit": "2026-05-25",
+                  "type": "skill"
                 }
               ]
             },
@@ -1588,7 +1945,10 @@
               "sources": [
                 {
                   "name": "ReScienceLab",
-                  "url": "https://github.com/ReScienceLab/opc-skills"
+                  "url": "https://github.com/ReScienceLab/opc-skills",
+                  "stars": 896,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -1609,7 +1969,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -1623,7 +1986,10 @@
               "sources": [
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             },
@@ -1637,7 +2003,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -1651,7 +2020,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -1671,7 +2043,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -1685,7 +2060,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -1701,11 +2079,17 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             },
@@ -1719,7 +2103,10 @@
               "sources": [
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             }
@@ -1739,7 +2126,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -1753,7 +2143,10 @@
               "sources": [
                 {
                   "name": "AgriciDaniel-ads",
-                  "url": "https://github.com/AgriciDaniel/claude-ads"
+                  "url": "https://github.com/AgriciDaniel/claude-ads",
+                  "stars": 5322,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             },
@@ -1767,7 +2160,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -1790,7 +2186,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -1804,7 +2203,10 @@
               "sources": [
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             },
@@ -1818,7 +2220,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -1838,11 +2243,17 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             },
@@ -1857,7 +2268,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -1871,7 +2285,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -1888,7 +2305,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -1908,15 +2328,24 @@
               "sources": [
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 },
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -1938,15 +2367,24 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             },
@@ -1960,7 +2398,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -1979,7 +2420,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -1993,7 +2437,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -2007,7 +2454,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -2029,15 +2479,24 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             }
@@ -2058,11 +2517,17 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             },
@@ -2076,7 +2541,10 @@
               "sources": [
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             }
@@ -2095,7 +2563,10 @@
               "sources": [
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             },
@@ -2110,7 +2581,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -2137,7 +2611,10 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             }
@@ -2156,7 +2633,10 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             },
@@ -2172,7 +2652,10 @@
               "sources": [
                 {
                   "name": "vercel-labs",
-                  "url": "https://github.com/vercel-labs/agent-skills"
+                  "url": "https://github.com/vercel-labs/agent-skills",
+                  "stars": 27282,
+                  "last_commit": "2026-05-27",
+                  "type": "cli"
                 }
               ]
             },
@@ -2186,7 +2669,10 @@
               "sources": [
                 {
                   "name": "nextlevelbuilder",
-                  "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+                  "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+                  "stars": 84450,
+                  "last_commit": "2026-04-03",
+                  "type": "skill"
                 }
               ]
             }
@@ -2205,7 +2691,10 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             }
@@ -2231,7 +2720,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             }
@@ -2250,7 +2742,10 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             },
@@ -2264,7 +2759,10 @@
               "sources": [
                 {
                   "name": "op7418-NB",
-                  "url": "https://github.com/op7418/NanoBanana-PPT-Skills"
+                  "url": "https://github.com/op7418/NanoBanana-PPT-Skills",
+                  "stars": 2839,
+                  "last_commit": "2026-01-19",
+                  "type": "skill"
                 }
               ]
             },
@@ -2278,7 +2776,10 @@
               "sources": [
                 {
                   "name": "zarazhangrui",
-                  "url": "https://github.com/zarazhangrui/frontend-slides"
+                  "url": "https://github.com/zarazhangrui/frontend-slides",
+                  "stars": 19526,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             },
@@ -2292,7 +2793,10 @@
               "sources": [
                 {
                   "name": "alchaincyf",
-                  "url": "https://github.com/alchaincyf/huashu-design"
+                  "url": "https://github.com/alchaincyf/huashu-design",
+                  "stars": 15586,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -2306,7 +2810,10 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             }
@@ -2325,7 +2832,10 @@
               "sources": [
                 {
                   "name": "nexu-io",
-                  "url": "https://github.com/nexu-io/open-design"
+                  "url": "https://github.com/nexu-io/open-design",
+                  "stars": 55103,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             }
@@ -2344,7 +2854,10 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             },
@@ -2358,7 +2871,10 @@
               "sources": [
                 {
                   "name": "ReScienceLab",
-                  "url": "https://github.com/ReScienceLab/opc-skills"
+                  "url": "https://github.com/ReScienceLab/opc-skills",
+                  "stars": 896,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -2374,11 +2890,17 @@
               "sources": [
                 {
                   "name": "ReScienceLab",
-                  "url": "https://github.com/ReScienceLab/opc-skills"
+                  "url": "https://github.com/ReScienceLab/opc-skills",
+                  "stars": 896,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 },
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -2397,7 +2919,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -2411,7 +2936,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -2425,7 +2953,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             }
@@ -2450,7 +2981,10 @@
               "sources": [
                 {
                   "name": "op7418-YT",
-                  "url": "https://github.com/op7418/Youtube-clipper-skill"
+                  "url": "https://github.com/op7418/Youtube-clipper-skill",
+                  "stars": 1918,
+                  "last_commit": "2026-01-22",
+                  "type": "skill"
                 }
               ]
             },
@@ -2464,7 +2998,10 @@
               "sources": [
                 {
                   "name": "calesthio",
-                  "url": "https://github.com/calesthio/OpenMontage"
+                  "url": "https://github.com/calesthio/OpenMontage",
+                  "stars": 4069,
+                  "last_commit": "2026-05-07",
+                  "type": "video-engine"
                 }
               ]
             },
@@ -2478,7 +3015,10 @@
               "sources": [
                 {
                   "name": "remotion-dev",
-                  "url": "https://github.com/remotion-dev/skills"
+                  "url": "https://github.com/remotion-dev/skills",
+                  "stars": 3352,
+                  "last_commit": "2026-05-07",
+                  "type": "skill"
                 }
               ]
             },
@@ -2492,7 +3032,10 @@
               "sources": [
                 {
                   "name": "Corey",
-                  "url": "https://github.com/coreyhaines31/marketingskills"
+                  "url": "https://github.com/coreyhaines31/marketingskills",
+                  "stars": 30972,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -2512,7 +3055,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             }
@@ -2541,7 +3087,10 @@
               "sources": [
                 {
                   "name": "Firecrawl",
-                  "url": "https://github.com/firecrawl/cli"
+                  "url": "https://github.com/firecrawl/cli",
+                  "stars": 425,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -2555,7 +3104,10 @@
               "sources": [
                 {
                   "name": "vercel-labs",
-                  "url": "https://github.com/vercel-labs/agent-skills"
+                  "url": "https://github.com/vercel-labs/agent-skills",
+                  "stars": 27282,
+                  "last_commit": "2026-05-27",
+                  "type": "cli"
                 }
               ]
             }
@@ -2574,7 +3126,10 @@
               "sources": [
                 {
                   "name": "mvanhorn",
-                  "url": "https://github.com/mvanhorn/last30days-skill"
+                  "url": "https://github.com/mvanhorn/last30days-skill",
+                  "stars": 26766,
+                  "last_commit": "2026-05-22",
+                  "type": "skill"
                 }
               ]
             },
@@ -2591,7 +3146,10 @@
               "sources": [
                 {
                   "name": "ReScienceLab",
-                  "url": "https://github.com/ReScienceLab/opc-skills"
+                  "url": "https://github.com/ReScienceLab/opc-skills",
+                  "stars": 896,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             },
@@ -2605,7 +3163,10 @@
               "sources": [
                 {
                   "name": "ReScienceLab",
-                  "url": "https://github.com/ReScienceLab/opc-skills"
+                  "url": "https://github.com/ReScienceLab/opc-skills",
+                  "stars": 896,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -2624,7 +3185,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -2638,7 +3202,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -2652,7 +3219,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -2671,7 +3241,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             }
@@ -2700,7 +3273,10 @@
               "sources": [
                 {
                   "name": "Paramchoudhary",
-                  "url": "https://github.com/Paramchoudhary/ResumeSkills"
+                  "url": "https://github.com/Paramchoudhary/ResumeSkills",
+                  "stars": 617,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -2717,7 +3293,10 @@
               "sources": [
                 {
                   "name": "Paramchoudhary",
-                  "url": "https://github.com/Paramchoudhary/ResumeSkills"
+                  "url": "https://github.com/Paramchoudhary/ResumeSkills",
+                  "stars": 617,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -2734,7 +3313,10 @@
               "sources": [
                 {
                   "name": "Paramchoudhary",
-                  "url": "https://github.com/Paramchoudhary/ResumeSkills"
+                  "url": "https://github.com/Paramchoudhary/ResumeSkills",
+                  "stars": 617,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -2752,7 +3334,10 @@
               "sources": [
                 {
                   "name": "Paramchoudhary",
-                  "url": "https://github.com/Paramchoudhary/ResumeSkills"
+                  "url": "https://github.com/Paramchoudhary/ResumeSkills",
+                  "stars": 617,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -2766,7 +3351,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -2786,11 +3374,17 @@
               "sources": [
                 {
                   "name": "Paramchoudhary",
-                  "url": "https://github.com/Paramchoudhary/ResumeSkills"
+                  "url": "https://github.com/Paramchoudhary/ResumeSkills",
+                  "stars": 617,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 },
                 {
                   "name": "santifer",
-                  "url": "https://github.com/santifer/career-ops"
+                  "url": "https://github.com/santifer/career-ops",
+                  "stars": 47727,
+                  "last_commit": "2026-05-25",
+                  "type": "skill"
                 }
               ]
             },
@@ -2804,7 +3398,10 @@
               "sources": [
                 {
                   "name": "Paramchoudhary",
-                  "url": "https://github.com/Paramchoudhary/ResumeSkills"
+                  "url": "https://github.com/Paramchoudhary/ResumeSkills",
+                  "stars": 617,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             },
@@ -2823,11 +3420,17 @@
               "sources": [
                 {
                   "name": "santifer",
-                  "url": "https://github.com/santifer/career-ops"
+                  "url": "https://github.com/santifer/career-ops",
+                  "stars": 47727,
+                  "last_commit": "2026-05-25",
+                  "type": "skill"
                 },
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             }
@@ -2847,7 +3450,10 @@
               "sources": [
                 {
                   "name": "Pawel",
-                  "url": "https://github.com/phuryn/pm-skills"
+                  "url": "https://github.com/phuryn/pm-skills",
+                  "stars": 11716,
+                  "last_commit": "2026-05-20",
+                  "type": "skill"
                 }
               ]
             }
@@ -2874,7 +3480,10 @@
               "sources": [
                 {
                   "name": "gokapso",
-                  "url": "https://github.com/gokapso/agent-skills"
+                  "url": "https://github.com/gokapso/agent-skills",
+                  "stars": 125,
+                  "last_commit": "2026-05-23",
+                  "type": "skill"
                 }
               ]
             }
@@ -2894,11 +3503,17 @@
               "sources": [
                 {
                   "name": "wrsmith108",
-                  "url": "https://github.com/wrsmith108/linear-claude-skill"
+                  "url": "https://github.com/wrsmith108/linear-claude-skill",
+                  "stars": 108,
+                  "last_commit": "2026-04-19",
+                  "type": "skill"
                 },
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             }
@@ -2917,7 +3532,10 @@
               "sources": [
                 {
                   "name": "Charlie85270",
-                  "url": "https://github.com/Charlie85270/Dorothy"
+                  "url": "https://github.com/Charlie85270/Dorothy",
+                  "stars": 293,
+                  "last_commit": "2026-05-05",
+                  "type": "desktop-app"
                 }
               ]
             }
@@ -2936,7 +3554,10 @@
               "sources": [
                 {
                   "name": "wanshuiyin",
-                  "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep"
+                  "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+                  "stars": 10962,
+                  "last_commit": "2026-05-29",
+                  "type": "multi-skill-suite"
                 }
               ]
             }
@@ -2961,7 +3582,10 @@
               "sources": [
                 {
                   "name": "founder-skills",
-                  "url": "https://github.com/ognjengt/founder-skills"
+                  "url": "https://github.com/ognjengt/founder-skills",
+                  "stars": 182,
+                  "last_commit": "2026-05-18",
+                  "type": "skill"
                 }
               ]
             },
@@ -2975,7 +3599,10 @@
               "sources": [
                 {
                   "name": "garrytan",
-                  "url": "https://github.com/garrytan/gstack"
+                  "url": "https://github.com/garrytan/gstack",
+                  "stars": 104176,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             },
@@ -2989,7 +3616,10 @@
               "sources": [
                 {
                   "name": "ReScienceLab",
-                  "url": "https://github.com/ReScienceLab/opc-skills"
+                  "url": "https://github.com/ReScienceLab/opc-skills",
+                  "stars": 896,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -3010,7 +3640,10 @@
               "sources": [
                 {
                   "name": "EveryInc",
-                  "url": "https://github.com/EveryInc/charlie-cfo-skill"
+                  "url": "https://github.com/EveryInc/charlie-cfo-skill",
+                  "stars": 231,
+                  "last_commit": "2026-01-29",
+                  "type": "skill"
                 }
               ]
             }
@@ -3032,7 +3665,10 @@
               "sources": [
                 {
                   "name": "openaccountants",
-                  "url": "https://github.com/openaccountants/openaccountants"
+                  "url": "https://github.com/openaccountants/openaccountants",
+                  "stars": 88,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 }
               ]
             }
@@ -3057,7 +3693,10 @@
               "sources": [
                 {
                   "name": "imbad0202",
-                  "url": "https://github.com/imbad0202/academic-research-skills"
+                  "url": "https://github.com/imbad0202/academic-research-skills",
+                  "stars": 23599,
+                  "last_commit": "2026-05-29",
+                  "type": "multi-skill-suite"
                 }
               ]
             }
@@ -3076,7 +3715,10 @@
               "sources": [
                 {
                   "name": "K-Dense-AI",
-                  "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
+                  "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+                  "stars": 26482,
+                  "last_commit": "2026-05-28",
+                  "type": "multi-skill-suite"
                 }
               ]
             }
@@ -3101,7 +3743,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             }
@@ -3123,7 +3768,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             }
@@ -3142,7 +3790,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             },
@@ -3156,7 +3807,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             },
@@ -3170,7 +3824,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             }
@@ -3189,7 +3846,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             },
@@ -3203,7 +3863,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             },
@@ -3217,7 +3880,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             }
@@ -3236,7 +3902,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             },
@@ -3250,7 +3919,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             },
@@ -3264,7 +3936,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             },
@@ -3278,7 +3953,10 @@
               "sources": [
                 {
                   "name": "muratcankoylan",
-                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+                  "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+                  "stars": 16123,
+                  "last_commit": "2026-05-26",
+                  "type": "skill"
                 }
               ]
             }
@@ -3305,19 +3983,31 @@
               "sources": [
                 {
                   "name": "Anthropic",
-                  "url": "https://github.com/anthropics/skills"
+                  "url": "https://github.com/anthropics/skills",
+                  "stars": 143206,
+                  "last_commit": "2026-05-29",
+                  "type": "skill"
                 },
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 },
                 {
                   "name": "superpowers",
-                  "url": "https://github.com/obra/superpowers"
+                  "url": "https://github.com/obra/superpowers",
+                  "stars": 211626,
+                  "last_commit": "2026-05-27",
+                  "type": "skill"
                 },
                 {
                   "name": "mattpocock",
-                  "url": "https://github.com/mattpocock/skills"
+                  "url": "https://github.com/mattpocock/skills",
+                  "stars": 110660,
+                  "last_commit": "2026-05-28",
+                  "type": "skill"
                 }
               ]
             }
@@ -3337,7 +4027,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -3352,7 +4045,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             },
@@ -3366,7 +4062,10 @@
               "sources": [
                 {
                   "name": "Codex",
-                  "url": "https://github.com/openai/skills"
+                  "url": "https://github.com/openai/skills",
+                  "stars": 20775,
+                  "last_commit": "2026-05-21",
+                  "type": "skill"
                 }
               ]
             }
@@ -3385,7 +4084,10 @@
               "sources": [
                 {
                   "name": "UseAI-pro",
-                  "url": "https://github.com/UseAI-pro/openclaw-skills-security"
+                  "url": "https://github.com/UseAI-pro/openclaw-skills-security",
+                  "stars": 58,
+                  "last_commit": "2026-03-10",
+                  "type": "skill"
                 }
               ]
             }
@@ -3404,7 +4106,10 @@
               "sources": [
                 {
                   "name": "anthropics-marketplace",
-                  "url": "https://github.com/anthropics/claude-plugins-official"
+                  "url": "https://github.com/anthropics/claude-plugins-official",
+                  "stars": 28499,
+                  "last_commit": "2026-05-29",
+                  "type": "marketplace"
                 }
               ]
             }
@@ -3423,7 +4128,10 @@
               "sources": [
                 {
                   "name": "multica-ai",
-                  "url": "https://github.com/multica-ai/andrej-karpathy-skills"
+                  "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+                  "stars": 160941,
+                  "last_commit": "2026-04-20",
+                  "type": "claude-md-template"
                 }
               ]
             }
@@ -3433,67 +4141,501 @@
     }
   ],
   "vendors": {
-    "superpowers": "https://github.com/obra/superpowers",
-    "mattpocock": "https://github.com/mattpocock/skills",
-    "Pawel": "https://github.com/phuryn/pm-skills",
-    "Codex": "https://github.com/openai/skills",
-    "Fission-AI": "https://github.com/Fission-AI/OpenSpec",
-    "gsd-build": "https://github.com/gsd-build/get-shit-done",
-    "Anthropic": "https://github.com/anthropics/skills",
-    "ComposioHQ": "https://github.com/ComposioHQ/awesome-claude-skills",
-    "superpowers-lab": "https://github.com/obra/superpowers-lab",
-    "kenryu42": "https://github.com/kenryu42/claude-code-safety-net",
-    "Gemini": "https://github.com/google-gemini/gemini-skills",
-    "vercel-labs": "https://github.com/vercel-labs/agent-skills",
-    "trailofbits": "https://github.com/trailofbits/skills",
-    "PSPDFKit-labs": "https://github.com/PSPDFKit-labs/nutrient-agent-skill",
-    "kreuzberg-dev": "https://github.com/kreuzberg-dev/kreuzberg",
-    "deusyu": "https://github.com/deusyu/translate-book",
-    "blader": "https://github.com/blader/humanizer",
-    "NeoLabHQ": "https://github.com/NeoLabHQ/context-engineering-kit",
-    "alchaincyf": "https://github.com/alchaincyf/huashu-design",
-    "Shpigford": "https://github.com/Shpigford/readme",
-    "JuliusBrussee": "https://github.com/JuliusBrussee/caveman",
-    "SeanZoR": "https://github.com/SeanZoR/claude-speed-reader",
-    "PleasePrompto": "https://github.com/PleasePrompto/notebooklm-skill",
-    "teng-lin": "https://github.com/teng-lin/notebooklm-py",
-    "safishamsi": "https://github.com/safishamsi/graphify",
-    "bevibing": "https://github.com/bevibing/tutor-skills",
-    "stephenturner": "https://github.com/stephenturner/skill-focus",
-    "makenotion": "https://github.com/makenotion/notion-cookbook",
-    "hanfang": "https://github.com/hanfang/claude-memory-skill",
-    "thedotmack": "https://github.com/thedotmack/claude-mem",
-    "alirezarezvani": "https://github.com/alirezarezvani/claude-skills",
-    "Dean": "https://github.com/deanpeters/Product-Manager-Skills",
-    "founder-skills": "https://github.com/ognjengt/founder-skills",
-    "wrsmith108": "https://github.com/wrsmith108/linear-claude-skill",
-    "Digidai": "https://github.com/Digidai/product-manager-skills",
-    "Corey": "https://github.com/coreyhaines31/marketingskills",
-    "AgriciDaniel-seo": "https://github.com/AgriciDaniel/claude-seo",
-    "ReScienceLab": "https://github.com/ReScienceLab/opc-skills",
-    "AgriciDaniel-ads": "https://github.com/AgriciDaniel/claude-ads",
-    "nextlevelbuilder": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-    "op7418-NB": "https://github.com/op7418/NanoBanana-PPT-Skills",
-    "zarazhangrui": "https://github.com/zarazhangrui/frontend-slides",
-    "nexu-io": "https://github.com/nexu-io/open-design",
-    "op7418-YT": "https://github.com/op7418/Youtube-clipper-skill",
-    "calesthio": "https://github.com/calesthio/OpenMontage",
-    "remotion-dev": "https://github.com/remotion-dev/skills",
-    "Firecrawl": "https://github.com/firecrawl/cli",
-    "mvanhorn": "https://github.com/mvanhorn/last30days-skill",
-    "Paramchoudhary": "https://github.com/Paramchoudhary/ResumeSkills",
-    "santifer": "https://github.com/santifer/career-ops",
-    "gokapso": "https://github.com/gokapso/agent-skills",
-    "Charlie85270": "https://github.com/Charlie85270/Dorothy",
-    "wanshuiyin": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
-    "garrytan": "https://github.com/garrytan/gstack",
-    "EveryInc": "https://github.com/EveryInc/charlie-cfo-skill",
-    "openaccountants": "https://github.com/openaccountants/openaccountants",
-    "imbad0202": "https://github.com/imbad0202/academic-research-skills",
-    "K-Dense-AI": "https://github.com/K-Dense-AI/scientific-agent-skills",
-    "muratcankoylan": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
-    "UseAI-pro": "https://github.com/UseAI-pro/openclaw-skills-security",
-    "anthropics-marketplace": "https://github.com/anthropics/claude-plugins-official",
-    "multica-ai": "https://github.com/multica-ai/andrej-karpathy-skills"
+    "superpowers": {
+      "url": "https://github.com/obra/superpowers",
+      "stars": 211626,
+      "last_commit": "2026-05-27",
+      "type": "skill",
+      "author": "obra",
+      "repo": "superpowers"
+    },
+    "mattpocock": {
+      "url": "https://github.com/mattpocock/skills",
+      "stars": 110660,
+      "last_commit": "2026-05-28",
+      "type": "skill",
+      "author": "mattpocock",
+      "repo": "skills"
+    },
+    "Pawel": {
+      "url": "https://github.com/phuryn/pm-skills",
+      "stars": 11716,
+      "last_commit": "2026-05-20",
+      "type": "skill",
+      "author": "phuryn",
+      "repo": "pm-skills"
+    },
+    "Codex": {
+      "url": "https://github.com/openai/skills",
+      "stars": 20775,
+      "last_commit": "2026-05-21",
+      "type": "skill",
+      "author": "openai",
+      "repo": "skills"
+    },
+    "Fission-AI": {
+      "url": "https://github.com/Fission-AI/OpenSpec",
+      "stars": 51530,
+      "last_commit": "2026-05-28",
+      "type": "cli-framework",
+      "author": "Fission-AI",
+      "repo": "OpenSpec"
+    },
+    "gsd-build": {
+      "url": "https://github.com/gsd-build/get-shit-done",
+      "stars": 63770,
+      "last_commit": "2026-05-27",
+      "type": "sdd-framework",
+      "author": "gsd-build",
+      "repo": "get-shit-done"
+    },
+    "Anthropic": {
+      "url": "https://github.com/anthropics/skills",
+      "stars": 143206,
+      "last_commit": "2026-05-29",
+      "type": "skill",
+      "author": "anthropics",
+      "repo": "skills"
+    },
+    "ComposioHQ": {
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "stars": 62362,
+      "last_commit": "2026-05-22",
+      "type": "skill",
+      "author": "ComposioHQ",
+      "repo": "awesome-claude-skills"
+    },
+    "superpowers-lab": {
+      "url": "https://github.com/obra/superpowers-lab",
+      "stars": 350,
+      "last_commit": "2026-03-23",
+      "type": "skill",
+      "author": "obra",
+      "repo": "superpowers-lab"
+    },
+    "kenryu42": {
+      "url": "https://github.com/kenryu42/claude-code-safety-net",
+      "stars": 1366,
+      "last_commit": "2026-05-08",
+      "type": "plugin",
+      "author": "kenryu42",
+      "repo": "claude-code-safety-net"
+    },
+    "Gemini": {
+      "url": "https://github.com/google-gemini/gemini-skills",
+      "stars": 3576,
+      "last_commit": "2026-05-20",
+      "type": "skill",
+      "author": "google-gemini",
+      "repo": "gemini-skills"
+    },
+    "vercel-labs": {
+      "url": "https://github.com/vercel-labs/agent-skills",
+      "stars": 27282,
+      "last_commit": "2026-05-27",
+      "type": "cli",
+      "author": "vercel-labs",
+      "repo": "agent-skills"
+    },
+    "trailofbits": {
+      "url": "https://github.com/trailofbits/skills",
+      "stars": 5462,
+      "last_commit": "2026-05-27",
+      "type": "marketplace",
+      "author": "trailofbits",
+      "repo": "skills"
+    },
+    "PSPDFKit-labs": {
+      "url": "https://github.com/PSPDFKit-labs/nutrient-agent-skill",
+      "stars": 10,
+      "last_commit": "2026-03-23",
+      "type": "skill",
+      "author": "PSPDFKit-labs",
+      "repo": "nutrient-agent-skill"
+    },
+    "kreuzberg-dev": {
+      "url": "https://github.com/kreuzberg-dev/kreuzberg",
+      "stars": 8406,
+      "last_commit": "2026-05-29",
+      "type": "extraction-engine",
+      "author": "kreuzberg-dev",
+      "repo": "kreuzberg"
+    },
+    "deusyu": {
+      "url": "https://github.com/deusyu/translate-book",
+      "stars": 739,
+      "last_commit": "2026-05-28",
+      "type": "skill",
+      "author": "deusyu",
+      "repo": "translate-book"
+    },
+    "blader": {
+      "url": "https://github.com/blader/humanizer",
+      "stars": 21450,
+      "last_commit": "2026-05-27",
+      "type": "skill",
+      "author": "blader",
+      "repo": "humanizer"
+    },
+    "NeoLabHQ": {
+      "url": "https://github.com/NeoLabHQ/context-engineering-kit",
+      "stars": 1051,
+      "last_commit": "2026-05-28",
+      "type": "skill",
+      "author": "NeoLabHQ",
+      "repo": "context-engineering-kit"
+    },
+    "alchaincyf": {
+      "url": "https://github.com/alchaincyf/huashu-design",
+      "stars": 15586,
+      "last_commit": "2026-05-28",
+      "type": "skill",
+      "author": "alchaincyf",
+      "repo": "huashu-design"
+    },
+    "Shpigford": {
+      "url": "https://github.com/Shpigford/readme",
+      "stars": null,
+      "last_commit": null,
+      "type": "skill",
+      "author": "Shpigford",
+      "repo": "readme"
+    },
+    "JuliusBrussee": {
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "stars": 66146,
+      "last_commit": "2026-05-20",
+      "type": "skill",
+      "author": "JuliusBrussee",
+      "repo": "caveman"
+    },
+    "SeanZoR": {
+      "url": "https://github.com/SeanZoR/claude-speed-reader",
+      "stars": 15,
+      "last_commit": "2026-01-15",
+      "type": "skill",
+      "author": "SeanZoR",
+      "repo": "claude-speed-reader"
+    },
+    "PleasePrompto": {
+      "url": "https://github.com/PleasePrompto/notebooklm-skill",
+      "stars": 6702,
+      "last_commit": "2025-11-21",
+      "type": "skill",
+      "author": "PleasePrompto",
+      "repo": "notebooklm-skill"
+    },
+    "teng-lin": {
+      "url": "https://github.com/teng-lin/notebooklm-py",
+      "stars": 15444,
+      "last_commit": "2026-05-29",
+      "type": "python-library",
+      "author": "teng-lin",
+      "repo": "notebooklm-py"
+    },
+    "safishamsi": {
+      "url": "https://github.com/safishamsi/graphify",
+      "stars": 55810,
+      "last_commit": "2026-05-29",
+      "type": "skill",
+      "author": "safishamsi",
+      "repo": "graphify"
+    },
+    "bevibing": {
+      "url": "https://github.com/bevibing/tutor-skills",
+      "stars": 906,
+      "last_commit": "2026-02-28",
+      "type": "skill",
+      "author": "bevibing",
+      "repo": "tutor-skills"
+    },
+    "stephenturner": {
+      "url": "https://github.com/stephenturner/skill-focus",
+      "stars": 30,
+      "last_commit": "2026-03-26",
+      "type": "skill",
+      "author": "stephenturner",
+      "repo": "skill-focus"
+    },
+    "makenotion": {
+      "url": "https://github.com/makenotion/notion-cookbook",
+      "stars": 135,
+      "last_commit": "2026-05-13",
+      "type": "skill",
+      "author": "makenotion",
+      "repo": "notion-cookbook"
+    },
+    "hanfang": {
+      "url": "https://github.com/hanfang/claude-memory-skill",
+      "stars": 27,
+      "last_commit": "2026-02-07",
+      "type": "skill",
+      "author": "hanfang",
+      "repo": "claude-memory-skill"
+    },
+    "thedotmack": {
+      "url": "https://github.com/thedotmack/claude-mem",
+      "stars": 79485,
+      "last_commit": "2026-05-29",
+      "type": "cli-mcp",
+      "author": "thedotmack",
+      "repo": "claude-mem"
+    },
+    "alirezarezvani": {
+      "url": "https://github.com/alirezarezvani/claude-skills",
+      "stars": 16477,
+      "last_commit": "2026-05-29",
+      "type": "skill",
+      "author": "alirezarezvani",
+      "repo": "claude-skills"
+    },
+    "Dean": {
+      "url": "https://github.com/deanpeters/Product-Manager-Skills",
+      "stars": 4606,
+      "last_commit": "2026-05-20",
+      "type": "skill",
+      "author": "deanpeters",
+      "repo": "Product-Manager-Skills"
+    },
+    "founder-skills": {
+      "url": "https://github.com/ognjengt/founder-skills",
+      "stars": 182,
+      "last_commit": "2026-05-18",
+      "type": "skill",
+      "author": "ognjengt",
+      "repo": "founder-skills"
+    },
+    "wrsmith108": {
+      "url": "https://github.com/wrsmith108/linear-claude-skill",
+      "stars": 108,
+      "last_commit": "2026-04-19",
+      "type": "skill",
+      "author": "wrsmith108",
+      "repo": "linear-claude-skill"
+    },
+    "Digidai": {
+      "url": "https://github.com/Digidai/product-manager-skills",
+      "stars": 92,
+      "last_commit": "2026-04-12",
+      "type": "skill",
+      "author": "Digidai",
+      "repo": "product-manager-skills"
+    },
+    "Corey": {
+      "url": "https://github.com/coreyhaines31/marketingskills",
+      "stars": 30972,
+      "last_commit": "2026-05-28",
+      "type": "skill",
+      "author": "coreyhaines31",
+      "repo": "marketingskills"
+    },
+    "AgriciDaniel-seo": {
+      "url": "https://github.com/AgriciDaniel/claude-seo",
+      "stars": 7274,
+      "last_commit": "2026-05-25",
+      "type": "skill",
+      "author": "AgriciDaniel",
+      "repo": "claude-seo"
+    },
+    "ReScienceLab": {
+      "url": "https://github.com/ReScienceLab/opc-skills",
+      "stars": 896,
+      "last_commit": "2026-05-28",
+      "type": "skill",
+      "author": "ReScienceLab",
+      "repo": "opc-skills"
+    },
+    "AgriciDaniel-ads": {
+      "url": "https://github.com/AgriciDaniel/claude-ads",
+      "stars": 5322,
+      "last_commit": "2026-05-18",
+      "type": "skill",
+      "author": "AgriciDaniel",
+      "repo": "claude-ads"
+    },
+    "nextlevelbuilder": {
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "stars": 84450,
+      "last_commit": "2026-04-03",
+      "type": "skill",
+      "author": "nextlevelbuilder",
+      "repo": "ui-ux-pro-max-skill"
+    },
+    "op7418-NB": {
+      "url": "https://github.com/op7418/NanoBanana-PPT-Skills",
+      "stars": 2839,
+      "last_commit": "2026-01-19",
+      "type": "skill",
+      "author": "op7418",
+      "repo": "NanoBanana-PPT-Skills"
+    },
+    "zarazhangrui": {
+      "url": "https://github.com/zarazhangrui/frontend-slides",
+      "stars": 19526,
+      "last_commit": "2026-05-26",
+      "type": "skill",
+      "author": "zarazhangrui",
+      "repo": "frontend-slides"
+    },
+    "nexu-io": {
+      "url": "https://github.com/nexu-io/open-design",
+      "stars": 55103,
+      "last_commit": "2026-05-29",
+      "type": "skill",
+      "author": "nexu-io",
+      "repo": "open-design"
+    },
+    "op7418-YT": {
+      "url": "https://github.com/op7418/Youtube-clipper-skill",
+      "stars": 1918,
+      "last_commit": "2026-01-22",
+      "type": "skill",
+      "author": "op7418",
+      "repo": "Youtube-clipper-skill"
+    },
+    "calesthio": {
+      "url": "https://github.com/calesthio/OpenMontage",
+      "stars": 4069,
+      "last_commit": "2026-05-07",
+      "type": "video-engine",
+      "author": "calesthio",
+      "repo": "OpenMontage"
+    },
+    "remotion-dev": {
+      "url": "https://github.com/remotion-dev/skills",
+      "stars": 3352,
+      "last_commit": "2026-05-07",
+      "type": "skill",
+      "author": "remotion-dev",
+      "repo": "skills"
+    },
+    "Firecrawl": {
+      "url": "https://github.com/firecrawl/cli",
+      "stars": 425,
+      "last_commit": "2026-05-28",
+      "type": "skill",
+      "author": "firecrawl",
+      "repo": "cli"
+    },
+    "mvanhorn": {
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "stars": 26766,
+      "last_commit": "2026-05-22",
+      "type": "skill",
+      "author": "mvanhorn",
+      "repo": "last30days-skill"
+    },
+    "Paramchoudhary": {
+      "url": "https://github.com/Paramchoudhary/ResumeSkills",
+      "stars": 617,
+      "last_commit": "2026-05-20",
+      "type": "skill",
+      "author": "Paramchoudhary",
+      "repo": "ResumeSkills"
+    },
+    "santifer": {
+      "url": "https://github.com/santifer/career-ops",
+      "stars": 47727,
+      "last_commit": "2026-05-25",
+      "type": "skill",
+      "author": "santifer",
+      "repo": "career-ops"
+    },
+    "gokapso": {
+      "url": "https://github.com/gokapso/agent-skills",
+      "stars": 125,
+      "last_commit": "2026-05-23",
+      "type": "skill",
+      "author": "gokapso",
+      "repo": "agent-skills"
+    },
+    "Charlie85270": {
+      "url": "https://github.com/Charlie85270/Dorothy",
+      "stars": 293,
+      "last_commit": "2026-05-05",
+      "type": "desktop-app",
+      "author": "Charlie85270",
+      "repo": "Dorothy"
+    },
+    "wanshuiyin": {
+      "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+      "stars": 10962,
+      "last_commit": "2026-05-29",
+      "type": "multi-skill-suite",
+      "author": "wanshuiyin",
+      "repo": "Auto-claude-code-research-in-sleep"
+    },
+    "garrytan": {
+      "url": "https://github.com/garrytan/gstack",
+      "stars": 104176,
+      "last_commit": "2026-05-29",
+      "type": "skill",
+      "author": "garrytan",
+      "repo": "gstack"
+    },
+    "EveryInc": {
+      "url": "https://github.com/EveryInc/charlie-cfo-skill",
+      "stars": 231,
+      "last_commit": "2026-01-29",
+      "type": "skill",
+      "author": "EveryInc",
+      "repo": "charlie-cfo-skill"
+    },
+    "openaccountants": {
+      "url": "https://github.com/openaccountants/openaccountants",
+      "stars": 88,
+      "last_commit": "2026-05-29",
+      "type": "skill",
+      "author": "openaccountants",
+      "repo": "openaccountants"
+    },
+    "imbad0202": {
+      "url": "https://github.com/imbad0202/academic-research-skills",
+      "stars": 23599,
+      "last_commit": "2026-05-29",
+      "type": "multi-skill-suite",
+      "author": "imbad0202",
+      "repo": "academic-research-skills"
+    },
+    "K-Dense-AI": {
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "stars": 26482,
+      "last_commit": "2026-05-28",
+      "type": "multi-skill-suite",
+      "author": "K-Dense-AI",
+      "repo": "scientific-agent-skills"
+    },
+    "muratcankoylan": {
+      "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+      "stars": 16123,
+      "last_commit": "2026-05-26",
+      "type": "skill",
+      "author": "muratcankoylan",
+      "repo": "Agent-Skills-for-Context-Engineering"
+    },
+    "UseAI-pro": {
+      "url": "https://github.com/UseAI-pro/openclaw-skills-security",
+      "stars": 58,
+      "last_commit": "2026-03-10",
+      "type": "skill",
+      "author": "UseAI-pro",
+      "repo": "openclaw-skills-security"
+    },
+    "anthropics-marketplace": {
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "stars": 28499,
+      "last_commit": "2026-05-29",
+      "type": "marketplace",
+      "author": "anthropics",
+      "repo": "claude-plugins-official"
+    },
+    "multica-ai": {
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "stars": 160941,
+      "last_commit": "2026-04-20",
+      "type": "claude-md-template",
+      "author": "multica-ai",
+      "repo": "andrej-karpathy-skills"
+    }
   }
 }
