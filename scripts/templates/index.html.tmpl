@@ -201,6 +201,9 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
 .view-btn:hover{color:var(--fg);background:var(--bg-elev)}
 .view-btn.active{background:var(--grad);color:#fff;
   box-shadow:0 2px 8px rgba(124,156,255,.25)}
+/* 顶栏分组分隔线：把"视图切换"和"筛选"两组在视觉上分开 */
+.tb-divider{width:1px;align-self:stretch;min-height:20px;
+  background:var(--border);margin:2px 4px;flex:0 0 auto}
 
 /* AI 推荐按钮 */
 .ai-btn{background:var(--grad);color:#fff;border:0;
@@ -215,6 +218,7 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
 @media(max-width:760px){
   .ai-btn .ai-kbd{display:none}
   .view-switch{display:none}
+  .tb-divider{display:none}
 }
 
 /* === 力导向图视图（动态） === */
@@ -448,7 +452,7 @@ html.light .graph-controls .gc-btn{background:rgba(255,255,255,.85)}
   background:var(--grad)}
 .section-h1 .h1-icon{font-size:26px}
 .section-h1:first-of-type{margin-top:8px}
-.section-h2{margin:28px 0 14px;font-size:16px;font-weight:600;color:var(--fg);
+.section-h2{margin:34px 0 16px;font-size:16px;font-weight:600;color:var(--fg);
   scroll-margin-top:80px;letter-spacing:-0.01em;
   padding-bottom:8px;border-bottom:1px dashed var(--border)}
 .section-h2 .anchor{color:var(--fg-muted);font-size:13px;margin-left:8px;
@@ -456,7 +460,7 @@ html.light .graph-controls .gc-btn{background:rgba(255,255,255,.85)}
 .section-h2:hover .anchor{opacity:1}
 .section-h2 .anchor:hover{color:var(--accent)}
 
-.cards{display:flex;flex-direction:column;gap:14px}
+.cards{display:flex;flex-direction:column;gap:16px}
 .card{position:relative;background:var(--bg-card);border:1px solid var(--border);
   border-radius:var(--radius);padding:18px 20px;
   box-shadow:var(--shadow);
@@ -530,6 +534,12 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 .toolbar .pill:active,.view-btn:active,.toolbar .theme-toggle:active{transform:scale(.96)}
 .ai-btn:active{transform:translateY(0);box-shadow:0 1px 6px rgba(124,156,255,.3)}
 .source-link:active{transform:translateY(0)}
+
+/* 键盘聚焦统一用品牌色描边（仅 Tab 键触发，鼠标点击不显示，不干扰日常观感） */
+a:focus-visible,button:focus-visible,input:focus-visible,
+.pill:focus-visible,.view-btn:focus-visible,.source-link:focus-visible,
+[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px;
+  border-radius:6px}
 
 /* 尊重系统"减少动态效果"偏好：关掉位移/动画，避免眩晕 */
 @media (prefers-reduced-motion: reduce){
@@ -880,6 +890,7 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
       <button class="view-btn" data-view="repo" title="按仓库视图">📦 仓库</button>
       <button class="view-btn" data-view="graph" title="网络视图">◈ 网络</button>
     </div>
+    <span class="tb-divider" aria-hidden="true"></span>
     <span class="pill active" data-filter="all">全部</span>
     <span class="pill" data-filter="chain">⛓ 强绑定</span>
     <span class="pill" data-filter="multi-source">多源</span>
