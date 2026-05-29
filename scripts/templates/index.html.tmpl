@@ -511,27 +511,8 @@ html.light .section-h1 .h1-tone{
   color:hsl(var(--cat-hue), 55%, 40%);
   background:hsla(var(--cat-hue), 55%, 50%, .08)}
 
-/* === ⛓ Chain connection line === */
+/* H1 容器（仅用作 section 包裹） */
 .h1-wrap{position:relative}
-.h1-wrap.has-chain{padding-left:36px}
-.h1-wrap.has-chain > .section-h1{margin-left:-22px}
-.h1-wrap.has-chain > .section-h2{margin-left:-22px}
-.connection-svg{position:absolute;left:0;top:0;width:36px;height:100%;
-  pointer-events:none;overflow:visible;z-index:0}
-.connection-line{fill:none;stroke:var(--chain);stroke-width:2;
-  stroke-linecap:round;opacity:.65;
-  filter:drop-shadow(0 0 6px hsla(340, 80%, 60%, .25))}
-.connection-node{fill:var(--chain);stroke:var(--bg);stroke-width:2}
-.connection-node-outer{fill:none;stroke:var(--chain);stroke-width:1;opacity:.4}
-.h1-wrap.has-chain .card{position:relative;z-index:1}
-.h1-wrap.has-chain .card.chain::before{
-  content:'';position:absolute;left:-26px;top:50%;width:14px;height:1.5px;
-  background:var(--chain);opacity:.55;transform:translateY(-50%)}
-@media(max-width:760px){
-  .h1-wrap.has-chain{padding-left:24px}
-  .connection-svg{width:24px}
-  .h1-wrap.has-chain .card.chain::before{left:-18px;width:8px}
-}
 
 /* === 按仓库视图 === */
 .repo-view{padding-top:8px}
@@ -772,6 +753,7 @@ html.light .section-h1 .h1-tone{
         <span class="ai-settings-presets">
           预设：
           <a href="#" data-preset="openai">OpenAI</a>
+          <a href="#" data-preset="openrouter">OpenRouter (free)</a>
           <a href="#" data-preset="deepseek">DeepSeek</a>
           <a href="#" data-preset="moonshot">Moonshot</a>
           <a href="#" data-preset="ollama">Ollama (本机)</a>
@@ -944,10 +926,9 @@ function buildContent(){
     const slug = slugify(h1.title);
     const hue = hueOf(h1.title);
     const tone = toneOf(h1.title);
-    // 统计该大类的 chain 卡片数；>=2 时此 wrapper 标记 has-chain 用于绘连线
+    // 统计该大类的 chain 卡片数（仅用于信息展示，不再绘制连线）
     const chainCount = h1.subsections.reduce((s, h2) => s + h2.rows.filter(r => r.chain).length, 0);
-    const wrapClass = chainCount >= 2 ? 'h1-wrap has-chain' : 'h1-wrap';
-    html += `<section class="${wrapClass}" data-h1-slug="${escapeAttr(slug)}" style="--cat-hue:${hue}" data-chain-count="${chainCount}">`;
+    html += `<section class="h1-wrap" data-h1-slug="${escapeAttr(slug)}" style="--cat-hue:${hue}" data-chain-count="${chainCount}">`;
     html += `<h2 class="section-h1" id="${slug}"><span class="h1-icon">${icon}</span><span>${escapeHtml(h1.title)}</span><span class="h1-tone" title="色温：${tone}">${tone}</span></h2>`;
     h1.subsections.forEach(h2 => {
       const subSlug = slugify(h2.title);
@@ -1005,65 +986,8 @@ function buildContent(){
     <span class="stat"><b>${totalSkills}</b> skill</span>
     <span class="stat"><b>${vendorSet.size}</b> 源</span>`;
 
-  // 渲染完后画 ⛓ 连线
-  drawChainConnections();
+  // 渲染完成（连线已删除）
 }
-
-// 在每个 has-chain 的 .h1-wrap 容器内，给该大类下所有 chain 卡片绘制左侧 SVG 连线
-function drawChainConnections(){
-  document.querySelectorAll('.h1-wrap.has-chain').forEach(wrap => {
-    // 清掉旧的（重新 layout 时复用）
-    wrap.querySelector(':scope > .connection-svg')?.remove();
-    const cards = [...wrap.querySelectorAll('.card.chain:not(.hidden)')];
-    if(cards.length < 2) return;
-
-    const wrapRect = wrap.getBoundingClientRect();
-    const points = cards.map(c => {
-      const r = c.getBoundingClientRect();
-      return r.top - wrapRect.top + r.height / 2;
-    });
-
-    const svgNS = 'http://www.w3.org/2000/svg';
-    const svg = document.createElementNS(svgNS, 'svg');
-    svg.classList.add('connection-svg');
-    svg.setAttribute('viewBox', `0 0 24 ${wrap.scrollHeight}`);
-    svg.setAttribute('preserveAspectRatio', 'none');
-    svg.setAttribute('aria-hidden', 'true');
-
-    // 主干曲线
-    const cx = 12;
-    let path = `M ${cx} ${points[0]}`;
-    for(let i = 1; i < points.length; i++){
-      const prev = points[i-1], cur = points[i];
-      const mid = (prev + cur) / 2;
-      path += ` C ${cx + 6} ${mid}, ${cx - 6} ${mid}, ${cx} ${cur}`;
-    }
-    const trunk = document.createElementNS(svgNS, 'path');
-    trunk.setAttribute('d', path);
-    trunk.classList.add('connection-line');
-    svg.appendChild(trunk);
-
-    // 节点圆点
-    points.forEach(y => {
-      const outer = document.createElementNS(svgNS, 'circle');
-      outer.setAttribute('cx', cx); outer.setAttribute('cy', y);
-      outer.setAttribute('r', 7); outer.classList.add('connection-node-outer');
-      svg.appendChild(outer);
-      const c = document.createElementNS(svgNS, 'circle');
-      c.setAttribute('cx', cx); c.setAttribute('cy', y);
-      c.setAttribute('r', 3.5); c.classList.add('connection-node');
-      svg.appendChild(c);
-    });
-    wrap.insertBefore(svg, wrap.firstChild);
-  });
-}
-
-// 窗口尺寸变化时重画
-let _chainResizeTimer = null;
-window.addEventListener('resize', () => {
-  clearTimeout(_chainResizeTimer);
-  _chainResizeTimer = setTimeout(drawChainConnections, 150);
-});
 
 function applyFilter(){
   const cards = document.querySelectorAll('.card');
@@ -1122,9 +1046,6 @@ function applyFilter(){
       countEl.textContent = '';
     }
   }
-
-  // 过滤改变可见卡片后重画 ⛓ 连线
-  drawChainConnections();
 }
 
 function setupSearch(){
@@ -1202,8 +1123,6 @@ function setupViewSwitch(){
       document.querySelector('.hero').classList.toggle('hidden', !isCards);
       document.getElementById('repoView').classList.toggle('hidden', !isRepo);
       document.getElementById('graphView').classList.toggle('hidden', !isGraph);
-      // 切回卡片视图时重画连线（容器尺寸可能变了）
-      if(isCards) requestAnimationFrame(drawChainConnections);
       if(isRepo) buildRepoView();
       if(isGraph) buildGraph();
       syncSidebarForView();
@@ -1609,10 +1528,11 @@ function scoreRow(row, queryTokens){
 }
 // === LLM BYOK 配置 ===
 const LLM_PRESETS = {
-  openai:   { baseUrl: 'https://api.openai.com/v1',          model: 'gpt-4o-mini' },
-  deepseek: { baseUrl: 'https://api.deepseek.com/v1',        model: 'deepseek-chat' },
-  moonshot: { baseUrl: 'https://api.moonshot.cn/v1',         model: 'moonshot-v1-8k' },
-  ollama:   { baseUrl: 'http://localhost:11434/v1',          model: 'llama3.1' },
+  openai:     { baseUrl: 'https://api.openai.com/v1',          model: 'gpt-4o-mini' },
+  openrouter: { baseUrl: 'https://openrouter.ai/api/v1',       model: 'openai/gpt-oss-120b:free' },
+  deepseek:   { baseUrl: 'https://api.deepseek.com/v1',        model: 'deepseek-chat' },
+  moonshot:   { baseUrl: 'https://api.moonshot.cn/v1',         model: 'moonshot-v1-8k' },
+  ollama:     { baseUrl: 'http://localhost:11434/v1',          model: 'llama3.1' },
 };
 const LLM_CFG_KEY = 'skills-atlas:llm-cfg';
 function getLLMConfig(){
@@ -1649,22 +1569,47 @@ async function callLLMRerank(query, candidates, cfg){
     temperature: 0.2,
     response_format: { type: 'json_object' }
   };
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + cfg.apiKey
+  };
+  // OpenRouter 推荐带这两个 header（用于站点识别和限流分流）
+  if(/openrouter\.ai/i.test(cfg.baseUrl)){
+    headers['HTTP-Referer'] = location.origin + location.pathname;
+    headers['X-Title'] = 'Skills Atlas';
+  }
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 30000);
   let resp;
   try{
     resp = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type':'application/json', 'Authorization':'Bearer '+cfg.apiKey },
+      method: 'POST', headers,
       body: JSON.stringify(body),
       signal: ctrl.signal
     });
   } finally { clearTimeout(timer); }
   if(!resp.ok){
     const text = await resp.text().catch(() => '');
-    throw new Error(`HTTP ${resp.status}: ${text.slice(0,200)}`);
+    // 尝试解析 OpenRouter / OpenAI 标准错误对象
+    let detail = text.slice(0, 200);
+    try{
+      const j = JSON.parse(text);
+      const e = j.error || j;
+      detail = e.message || detail;
+      if(e.metadata && e.metadata.raw) detail += ' :: ' + e.metadata.raw.slice(0, 120);
+    }catch(_){}
+    if(resp.status === 429){
+      throw new Error(`HTTP 429 限流：${detail}（免费模型常见，可换个模型再试）`);
+    }
+    throw new Error(`HTTP ${resp.status}: ${detail}`);
   }
+  // 有些 provider 即使 200 也会把 error 塞 body 里
   const data = await resp.json();
+  if(data.error){
+    const e = data.error;
+    const raw = e.metadata?.raw || '';
+    throw new Error(`${e.message || 'provider error'}${raw ? ' :: '+raw.slice(0,120) : ''}`);
+  }
   const content = data.choices?.[0]?.message?.content || '';
   // 容错：有些模型不严格遵守 response_format
   const m = content.match(/\{[\s\S]*\}/);
@@ -2324,11 +2269,6 @@ setupTheme();
 setupMenuBtn();
 setupScrollSpy();
 
-// 字体或图片加载会影响卡片高度，加载完后重新画一次连线
-window.addEventListener('load', () => requestAnimationFrame(drawChainConnections));
-if(document.fonts && document.fonts.ready){
-  document.fonts.ready.then(() => requestAnimationFrame(drawChainConnections));
-}
 
 // 默认全部展开（让所有子分组立刻可见）
 document.querySelectorAll('.nav-section').forEach(s => s.classList.add('expanded'));
