@@ -1,0 +1,43 @@
+name = "skills-atlas-curator"
+main = "index.js"
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Worker B —— 「造目录的引擎」。和对公网开放的 worker/(Worker A 推荐代理)分开部署，
+# 因为它持有写权限的 GITHUB_PAT，blast radius 必须隔离。
+#
+# 它不该被公网随便戳：
+#   - 真正的入口是下面的 Cron（每天定时）
+#   - fetch() 仅用于手动测试，靠 ?token=<TRIGGER_SECRET> 鉴权（见 index.js）
+
+# 每天 UTC 02:00 触发（≈ 北京时间 10:00），和原 daily-discover.yml 同档
+[triggers]
+crons = ["0 2 * * *"]
+
+# SEEN 账本：去重 + 「推迟」语义（写入时带 TTL，过期自动重新浮现）。
+# 部署前先建：wrangler kv namespace create SEEN
+# 然后把返回的 id 填到下面。
+[[kv_namespaces]]
+binding = "SEEN"
+id = "<填 wrangler kv namespace create SEEN 返回的 id>"
+
+[vars]
+# 目标仓库（curator 从这里读 config / repositories / blocklist，并向它开 PR）
+GITHUB_OWNER  = "Zita-Go"
+GITHUB_REPO   = "Skills-Atlas"
+GITHUB_BRANCH = "main"
+
+# 读取配置 / 数据的位置（相对仓库根）。改发现策略只改仓库里这份 yaml，不用动 Worker。
+CONFIG_PATH       = "data/_inbox/discovery.config.yaml"
+REPOSITORIES_PATH = "data/repositories.yaml"
+BLOCKLIST_PATH    = "data/_inbox/blocklist.yaml"
+PROPOSED_DIR      = "data/_inbox/proposed"
+
+# 「推迟」语义：被提议过的候选写进 KV，多少天内不再重复提议。0 = 永不过期。
+SEEN_TTL_DAYS = "90"
+
+# === secrets（不写这里！用 wrangler secret put 设置）===
+#   wrangler secret put OPENROUTER_KEY   # OpenRouter key，和 Worker A 同一把
+#   wrangler secret put GITHUB_PAT       # 细粒度 PAT，仅本库，权限：
+#                                        #   Contents:write · Pull requests:write · Issues:write
+#   wrangler secret put TRIGGER_SECRET   # 手动 fetch 触发的口令（随机长串）

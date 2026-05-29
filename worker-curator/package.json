@@ -1,0 +1,18 @@
+{
+  "name": "skills-atlas-curator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Worker B：每日发现 skill 候选 → LLM 过滤/起草 → 向主库开 PR（PR-2/PR-3）。",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --test-scheduled",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
