@@ -318,6 +318,16 @@ html.light .graph-view .link.dim{stroke-opacity:.07}
 /* chain 边流光：把视线引向强绑定关系（reduced-motion 下被全局规则停掉）*/
 .graph-view .link.chain{stroke-dasharray:7 7;animation:chainflow 1.5s linear infinite}
 @keyframes chainflow{to{stroke-dashoffset:-14}}
+/* 嵌入模式：隐藏侧栏/工具栏/hero，只留全屏图 + Powered-by 角标 */
+body.embed .sidebar, body.embed .sidebar-rail, body.embed .sidebar-backdrop,
+body.embed .toolbar, body.embed .hero{display:none !important}
+body.embed .app{grid-template-columns:1fr}
+body.embed .main{padding:0;height:100vh}
+body.embed #graphView, body.embed .graph-view{height:100vh;min-height:100vh}
+.embed-badge{position:fixed;left:12px;bottom:12px;z-index:50;font-size:11px;font-weight:500;
+  background:var(--bg-card);border:1px solid var(--border);color:var(--fg-dim);
+  padding:5px 11px;border-radius:99px;text-decoration:none;opacity:.85;backdrop-filter:blur(6px)}
+.embed-badge:hover{opacity:1;color:var(--accent);border-color:var(--accent)}
 
 /* 节点详情侧抽屉 */
 .graph-drawer{position:absolute;top:0;right:0;height:100%;width:300px;max-width:82%;
@@ -2565,7 +2575,8 @@ function buildGraph(){
     <div class="graph-zoom-row">
       <button class="gc-btn gc-zoom" data-act="export-png" title="导出 PNG / Export PNG">PNG</button>
       <button class="gc-btn gc-zoom" data-act="export-svg" title="导出 SVG / Export SVG">SVG</button>
-    </div>`;
+    </div>
+    <button class="gc-btn gc-zoom" data-act="embed" title="复制嵌入代码 / Copy embed code">&lt;/&gt;</button>`;
   container.appendChild(ctrls);
 
   function updateZoomLabel(){
@@ -2659,6 +2670,16 @@ function buildGraph(){
   }
   ctrls.querySelector('[data-act="export-png"]').addEventListener('click', () => exportGraph('png'));
   ctrls.querySelector('[data-act="export-svg"]').addEventListener('click', () => exportGraph('svg'));
+  // 复制嵌入代码：当前 视图/过滤/选中节点 + embed=1 的 iframe 片段
+  ctrls.querySelector('[data-act="embed"]').addEventListener('click', e => {
+    const u = new URL(location);
+    u.searchParams.set('embed', '1'); u.searchParams.set('view', 'graph');
+    if(currentFilter && currentFilter !== 'all') u.searchParams.set('gfilter', currentFilter); else u.searchParams.delete('gfilter');
+    if(graphSelectedId) u.searchParams.set('gnode', graphSelectedId); else u.searchParams.delete('gnode');
+    const code = `<iframe src="${u.toString()}" width="100%" height="620" style="border:1px solid var(--border,#e6e8ec);border-radius:12px" loading="lazy" title="Skills Atlas"></iframe>`;
+    try{ navigator.clipboard.writeText(code); }catch(_){}
+    const btn = e.currentTarget, o = btn.textContent; btn.textContent = '✓'; setTimeout(() => { btn.innerHTML = '&lt;/&gt;'; }, 1200);
+  });
 
   // 图例
   const legend = document.createElement('div');
@@ -3947,7 +3968,18 @@ if(location.hash){ requestAnimationFrame(() => scrollToHashTarget('auto')); }
 // 图视图深链还原：?view=graph/repo & gfilter=... & gnode=...（可分享/刷新保持）
 (function restoreGraphFromURL(){
   const sp = new URLSearchParams(location.search);
-  const v = sp.get('view'), gf = sp.get('gfilter'), gn = sp.get('gnode');
+  const embed = sp.get('embed') === '1';
+  const v = sp.get('view') || (embed ? 'graph' : null), gf = sp.get('gfilter'), gn = sp.get('gnode');
+  // 嵌入模式：隐藏侧栏/工具栏/hero，只留图 + 「Powered by」角标（可点回完整站）
+  if(embed){
+    document.body.classList.add('embed');
+    const badge = document.createElement('a');
+    badge.className = 'embed-badge';
+    const full = new URL(location); full.searchParams.delete('embed');
+    badge.href = full.toString(); badge.target = '_blank'; badge.rel = 'noopener';
+    badge.textContent = 'Powered by Skills Atlas';
+    document.body.appendChild(badge);
+  }
   if(gf && ['chain','multi-source','single-skill'].includes(gf)){
     const pill = document.querySelector(`.toolbar .pill[data-filter="${gf}"]`);
     if(pill) pill.click();   // 设过滤 + 应用（卡片或图）
