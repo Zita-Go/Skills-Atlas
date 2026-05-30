@@ -576,7 +576,8 @@ body.embed .views-dock{display:none}   /* 嵌入是固定快照，不暴露视�
 .section-h2:hover .anchor{opacity:1}
 .section-h2 .anchor:hover{color:var(--accent)}
 
-.cards{display:flex;flex-direction:column;gap:16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill, minmax(min(100%, 430px), 1fr));
+  align-items:start;gap:16px}
 .card{position:relative;background:var(--bg-card);border:1px solid var(--border);
   border-radius:var(--radius);padding:18px 20px;
   box-shadow:var(--shadow);
