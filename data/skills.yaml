@@ -390,16 +390,6 @@
   sources:
   - Pawel
   - alchaincyf
-- id: docs-knowledge--2-3--035
-  skills:
-  - readme
-  group: README 自动生成
-  category: docs-knowledge
-  subcategory: 2-3
-  chain: false
-  description: Shpigford/readme（根据项目结构自动生成 README + 安装 + API 模板 + 贡献指南）
-  sources:
-  - Shpigford
 - id: docs-knowledge--2-3--036
   skills:
   - caveman

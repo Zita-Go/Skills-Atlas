@@ -33,7 +33,7 @@
     verification-before-completion: skills/verification-before-completion/SKILL.md
     writing-plans: skills/writing-plans/SKILL.md
     writing-skills: skills/writing-skills/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: mattpocock
   author: mattpocock
   repo: skills
@@ -58,7 +58,7 @@
     to-prd: skills/engineering/to-prd/SKILL.md
     write-a-skill: skills/productivity/write-a-skill/SKILL.md
     zoom-out: skills/engineering/zoom-out/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: Pawel
   author: phuryn
   repo: pm-skills
@@ -136,7 +136,7 @@
     value-prop-statements: pm-marketing-growth/skills/value-prop-statements/SKILL.md
     value-proposition: pm-product-strategy/skills/value-proposition/SKILL.md
     wwas: pm-execution/skills/wwas/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: Codex
   author: openai
   repo: skills
@@ -190,7 +190,41 @@
     vercel-deploy: skills/.curated/vercel-deploy/SKILL.md
     winui-app: skills/.curated/winui-app/SKILL.md
     yeet: skills/.curated/yeet/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
+  skill_licenses:
+    aspnet-core: Apache-2.0
+    chatgpt-apps: Apache-2.0
+    cli-creator: Apache-2.0
+    cloudflare-deploy: Apache-2.0
+    define-goal: Apache-2.0
+    gh-address-comments: Apache-2.0
+    gh-fix-ci: Apache-2.0
+    hatch-pet: Apache-2.0
+    imagegen: Apache-2.0
+    jupyter-notebook: Apache-2.0
+    linear: Apache-2.0
+    migrate-to-codex: Apache-2.0
+    netlify-deploy: Apache-2.0
+    notion-knowledge-capture: MIT
+    notion-meeting-intelligence: MIT
+    notion-research-documentation: MIT
+    notion-spec-to-implementation: MIT
+    playwright: Apache-2.0
+    playwright-interactive: Apache-2.0
+    plugin-creator: Apache-2.0
+    render-deploy: Apache-2.0
+    screenshot: Apache-2.0
+    security-best-practices: Apache-2.0
+    security-ownership-map: Apache-2.0
+    security-threat-model: Apache-2.0
+    sentry: Apache-2.0
+    skill-creator: Apache-2.0
+    skill-installer: Apache-2.0
+    speech: Apache-2.0
+    transcribe: Apache-2.0
+    vercel-deploy: MIT
+    winui-app: Apache-2.0
+    yeet: Apache-2.0
 - id: Fission-AI
   author: Fission-AI
   repo: OpenSpec
@@ -244,7 +278,8 @@
     web-artifacts-builder: skills/web-artifacts-builder/SKILL.md
     webapp-testing: skills/webapp-testing/SKILL.md
     xlsx: skills/xlsx/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
+  license: Apache-2.0
 - id: ComposioHQ
   author: ComposioHQ
   repo: awesome-claude-skills
@@ -258,7 +293,8 @@
   doc_path: README.md
   skill_docs:
     webapp-testing: webapp-testing/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
+  license: Apache-2.0
 - id: superpowers-lab
   author: obra
   repo: superpowers-lab
@@ -275,7 +311,7 @@
     finding-duplicate-functions: skills/finding-duplicate-functions/SKILL.md
     using-tmux-for-interactive-commands: skills/using-tmux-for-interactive-commands/SKILL.md
     windows-vm: skills/windows-vm/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: kenryu42
   author: kenryu42
   repo: claude-code-safety-net
@@ -304,7 +340,7 @@
     gemini-api-dev: skills/gemini-api-dev/SKILL.md
     gemini-interactions-api: skills/gemini-interactions-api/SKILL.md
     gemini-live-api-dev: skills/gemini-live-api-dev/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: vercel-labs
   author: vercel-labs
   repo: agent-skills
@@ -320,7 +356,7 @@
     composition-patterns: skills/composition-patterns/SKILL.md
     react-best-practices: skills/react-best-practices/SKILL.md
     web-design-guidelines: skills/web-design-guidelines/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: trailofbits
   author: trailofbits
   repo: skills
@@ -358,7 +394,7 @@
   doc_path: README.md
   skill_docs:
     kreuzberg: skills/kreuzberg/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: deusyu
   author: deusyu
   repo: translate-book
@@ -395,7 +431,7 @@
   doc_path: README.md
   skill_docs:
     write-concisely: plugins/docs/skills/write-concisely/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: alchaincyf
   author: alchaincyf
   repo: huashu-design
@@ -407,12 +443,6 @@
   default_branch: master
   description: Huashu Design · HTML-native design skill for Claude Code · Claude Code 里 HTML 原生的设计 skill · 高保真原型 / 幻灯片 / 动画 + 20 设计哲学 + 5 维评审 + MP4 导出 · Agent-agnostic
   license: MIT
-- id: Shpigford
-  author: Shpigford
-  repo: readme
-  url: https://github.com/Shpigford/readme
-  type: skill
-  skill_group_count: 1
 - id: JuliusBrussee
   author: JuliusBrussee
   repo: caveman
@@ -476,7 +506,7 @@
   doc_path: README.md
   skill_docs:
     graphify: graphify/skill.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: bevibing
   author: bevibing
   repo: tutor-skills
@@ -601,7 +631,7 @@
     user-story-splitting: skills/user-story-splitting/SKILL.md
     vp-cpo-readiness-advisor: skills/vp-cpo-readiness-advisor/SKILL.md
     workshop-facilitation: skills/workshop-facilitation/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: founder-skills
   author: ognjengt
   repo: founder-skills
@@ -628,7 +658,7 @@
     strategic-planning: skills/strategic-planning/SKILL.md
     viral-hook-creator: skills/viral-hook-creator/SKILL.md
     x-writer: skills/x-writer/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: wrsmith108
   author: wrsmith108
   repo: linear-claude-skill
@@ -705,7 +735,7 @@
     sms: skills/sms/SKILL.md
     social: skills/social/SKILL.md
     video: skills/video/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: AgriciDaniel-seo
   author: AgriciDaniel
   repo: claude-seo
@@ -740,7 +770,7 @@
     reddit: skills/reddit/SKILL.md
     requesthunt: skills/requesthunt/SKILL.md
     twitter: skills/twitter/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: AgriciDaniel-ads
   author: AgriciDaniel
   repo: claude-ads
@@ -784,7 +814,7 @@
   license: MIT
   skill_docs:
     frontend-slides: plugins/frontend-slides/skills/frontend-slides/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: nexu-io
   author: nexu-io
   repo: open-design
@@ -877,7 +907,7 @@
     resume-version-manager: skills/resume-version-manager/SKILL.md
     salary-negotiation-prep: skills/salary-negotiation-prep/SKILL.md
     tech-resume-optimizer: skills/tech-resume-optimizer/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: santifer
   author: santifer
   repo: career-ops
@@ -905,7 +935,7 @@
     automate-whatsapp: skills/automate-whatsapp/SKILL.md
     integrate-whatsapp: skills/integrate-whatsapp/SKILL.md
     observe-whatsapp: skills/observe-whatsapp/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: Charlie85270
   author: Charlie85270
   repo: Dorothy
@@ -1017,7 +1047,7 @@
     multi-agent-patterns: skills/multi-agent-patterns/SKILL.md
     project-development: skills/project-development/SKILL.md
     tool-design: skills/tool-design/SKILL.md
-  skill_docs_generated_at: '2026-05-29'
+  skill_docs_generated_at: '2026-05-30'
 - id: UseAI-pro
   author: UseAI-pro
   repo: openclaw-skills-security

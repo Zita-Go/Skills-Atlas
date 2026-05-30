@@ -1229,7 +1229,8 @@ function buildContent(){
             if(p){ hit = { v, name: s.name, path: p }; break; }
           }
           if(hit){
-            return `<span class="skill-tag has-doc" data-act="usage" data-author="${escapeAttr(hit.v.author)}" data-repo="${escapeAttr(hit.v.repo)}" data-branch="${escapeAttr(hit.v.default_branch||'main')}" data-docpath="${escapeAttr(hit.path)}" data-url="${escapeAttr(hit.v.url)}" data-name="${escapeAttr(hit.name)}" data-skill="${escapeAttr(sk)}" title="查看 ${escapeAttr(sk)} 的 SKILL.md（不跳转）">${escapeHtml(sk)}</span>`;
+            const lic = (hit.v.skill_licenses && hit.v.skill_licenses[sk]) || hit.v.license || '';
+            return `<span class="skill-tag has-doc" data-act="usage" data-author="${escapeAttr(hit.v.author)}" data-repo="${escapeAttr(hit.v.repo)}" data-branch="${escapeAttr(hit.v.default_branch||'main')}" data-docpath="${escapeAttr(hit.path)}" data-url="${escapeAttr(hit.v.url)}" data-name="${escapeAttr(hit.name)}" data-skill="${escapeAttr(sk)}" data-license="${escapeAttr(lic)}" title="查看 ${escapeAttr(sk)} 的 SKILL.md（协议：${escapeAttr(lic||'未知')}）">${escapeHtml(sk)}</span>`;
           }
           return `<span class="skill-tag">${escapeHtml(sk)}</span>`;
         }).join('');
@@ -1240,7 +1241,7 @@ function buildContent(){
             ? `<span class="source-stars">${starIcon}${formatStars(s.stars)}</span>` : '';
           const link = `<a class="source-link" href="${escapeAttr(s.url)}" target="_blank" rel="noopener">${githubIcon}<span>${escapeHtml(s.name)}</span>${starHtml}</a>`;
           const usageBtn = (s.author && s.repo)
-            ? `<button class="src-act" data-act="usage" data-author="${escapeAttr(s.author)}" data-repo="${escapeAttr(s.repo)}" data-branch="${escapeAttr(s.default_branch||'main')}" data-docpath="${escapeAttr(s.doc_path||'')}" data-url="${escapeAttr(s.url)}" data-name="${escapeAttr(s.name)}" title="查看 ${escapeAttr(s.name)} 的用法（不跳转 GitHub）">📖 用法</button>`
+            ? `<button class="src-act" data-act="usage" data-author="${escapeAttr(s.author)}" data-repo="${escapeAttr(s.repo)}" data-branch="${escapeAttr(s.default_branch||'main')}" data-docpath="${escapeAttr(s.doc_path||'')}" data-url="${escapeAttr(s.url)}" data-name="${escapeAttr(s.name)}" data-license="${escapeAttr(s.license||'')}" title="查看 ${escapeAttr(s.name)} 的用法（不跳转 GitHub）">📖 用法</button>`
             : '';
           const cmd = (s.install && s.install.command) ? s.install.command : '';
           const copyBtn = cmd
@@ -3175,6 +3176,7 @@ function setupUsage(){
       '<div class="usage-toolbar">' +
         '<a class="ai-btn-secondary" id="usageRepo" target="_blank" rel="noopener">在 GitHub 打开 ↗</a>' +
         '<button class="ai-btn-secondary" id="usageCopy">📋 复制安装命令</button>' +
+        '<a class="license-badge" id="usageLic" target="_blank" rel="noopener" style="display:none"></a>' +
       '</div>' +
       '<div class="usage-body" id="usageBody"></div>' +
     '</div>';
@@ -3183,6 +3185,7 @@ function setupUsage(){
   const sub = ov.querySelector('#usageSub');
   const repoLink = ov.querySelector('#usageRepo');
   const copyBtn = ov.querySelector('#usageCopy');
+  const licEl = ov.querySelector('#usageLic');
   const close = () => ov.classList.add('hidden');
   ov.querySelector('#usageClose').addEventListener('click', close);
   ov.addEventListener('click', e => { if(e.target === ov) close(); });
@@ -3206,6 +3209,8 @@ function setupUsage(){
     const cmd = (v && v.install && v.install.command) ? v.install.command : '';
     copyBtn.style.display = cmd ? '' : 'none';
     copyBtn.onclick = () => copyText(cmd, copyBtn);
+    if(d.license){ licEl.textContent = '协议 ' + d.license; licEl.href = d.url || `https://github.com/${d.author}/${d.repo}`; licEl.style.display = ''; }
+    else licEl.style.display = 'none';
     body.innerHTML = '<div class="usage-state">加载中…</div>';
     try{
       const { text, path } = await fetchDoc(d);

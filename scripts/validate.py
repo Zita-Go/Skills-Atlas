@@ -119,6 +119,9 @@ def main():
         sd = r.get('skill_docs')
         if sd is not None and not isinstance(sd, dict):
             err(f'repo {r["id"]}: skill_docs 必须是 skill名→路径 映射')
+        slic = r.get('skill_licenses')
+        if slic is not None and not isinstance(slic, dict):
+            err(f'repo {r["id"]}: skill_licenses 必须是 skill名→SPDX 映射')
 
     # 6. 反向：每个 repo 都被至少一个 skill 引用
     used_repos = {src for s in skills for src in s.get('sources', [])}

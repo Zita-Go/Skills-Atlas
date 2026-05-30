@@ -5,8 +5,8 @@
 **按功能分类的 AI Agent Skills 全景**
 不再问"有什么 skill"，而是"我要做 X 该用哪个 skill"。
 
-[![Skills](https://img.shields.io/badge/skills-370+-blue)](data/skills.yaml)
-[![Repos](https://img.shields.io/badge/repositories-62-green)](data/repositories.yaml)
+[![Skills](https://img.shields.io/badge/skills-369-blue)](data/skills.yaml)
+[![Repos](https://img.shields.io/badge/repositories-61-green)](data/repositories.yaml)
 [![Categories](https://img.shields.io/badge/categories-13_×_74-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -18,7 +18,7 @@
 
 ## 为什么有这个项目
 
-AI Agent Skills 生态在 2025 年爆发，但分散在 ~62 个 GitHub 仓库里。
+AI Agent Skills 生态在 2025 年爆发，但分散在 ~61 个 GitHub 仓库里。
 现有的 awesome 列表只列名字 + 一句话描述，**不知道哪几个能配合用**。
 
 **Skills Atlas** 按"功能维度"重新组织：
@@ -30,10 +30,10 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~62 个 GitHub 仓库里
 
 | 维度 | 数量 |
 |---|---:|
-| 独立 skill | 370+ |
-| 功能分组 | 186 |
+| 独立 skill | 369 |
+| 功能分组 | 185 |
 | 大类 / 子分组 | 13 / 74 |
-| 源仓库 | 62 |
+| 源仓库 | 61 |
 | ⛓ 强绑定工作流 | 18 |
 
 ## 怎么用
@@ -73,8 +73,8 @@ skills-atlas/
 │   └── data.json            # 给前端 fetch 的结构化数据
 ├── data/                    # 源数据（贡献者主要改这里）
 │   ├── categories.yaml      # 13 大类 / 74 子分组
-│   ├── skills.yaml          # 186 个 skill 分组
-│   └── repositories.yaml    # 62 个源仓库元数据
+│   ├── skills.yaml          # 185 个 skill 分组
+│   └── repositories.yaml    # 61 个源仓库元数据
 ├── scripts/                 # 数据处理脚本
 │   ├── parse_md.py          # md → yaml（首次迁移用）
 │   ├── gen_html.py          # yaml → html（修改 yaml 后重新生成）

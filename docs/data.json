@@ -348,7 +348,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -365,7 +365,7 @@
                   "author": "ComposioHQ",
                   "repo": "awesome-claude-skills",
                   "default_branch": "master",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ComposioHQ/awesome-claude-skills",
@@ -640,7 +640,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -701,7 +701,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -970,7 +970,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -1089,7 +1089,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -1194,33 +1194,6 @@
                     "command": "npx skills add alchaincyf/huashu-design",
                     "kind": "skill",
                     "alt": "git clone https://github.com/alchaincyf/huashu-design ~/.claude/skills/huashu-design"
-                  }
-                }
-              ]
-            },
-            {
-              "skills": [
-                "readme"
-              ],
-              "group": "README 自动生成",
-              "chain": false,
-              "description": "Shpigford/readme（根据项目结构自动生成 README + 安装 + API 模板 + 贡献指南）",
-              "sources": [
-                {
-                  "name": "Shpigford",
-                  "url": "https://github.com/Shpigford/readme",
-                  "stars": null,
-                  "last_commit": null,
-                  "type": "skill",
-                  "author": "Shpigford",
-                  "repo": "readme",
-                  "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
-                  "install": {
-                    "command": "npx skills add Shpigford/readme",
-                    "kind": "skill",
-                    "alt": "git clone https://github.com/Shpigford/readme ~/.claude/skills/readme"
                   }
                 }
               ]
@@ -2930,7 +2903,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -4196,7 +4169,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -4228,7 +4201,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -4316,7 +4289,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -4387,7 +4360,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -4495,7 +4468,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -4559,7 +4532,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -5432,7 +5405,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -6248,7 +6221,7 @@
                   "author": "anthropics",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add anthropics/skills",
@@ -6526,7 +6499,8 @@
         "verification-before-completion": "skills/verification-before-completion/SKILL.md",
         "writing-plans": "skills/writing-plans/SKILL.md",
         "writing-skills": "skills/writing-skills/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "mattpocock": {
       "url": "https://github.com/mattpocock/skills",
@@ -6555,7 +6529,8 @@
         "to-prd": "skills/engineering/to-prd/SKILL.md",
         "write-a-skill": "skills/productivity/write-a-skill/SKILL.md",
         "zoom-out": "skills/engineering/zoom-out/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "Pawel": {
       "url": "https://github.com/phuryn/pm-skills",
@@ -6637,7 +6612,8 @@
         "value-prop-statements": "pm-marketing-growth/skills/value-prop-statements/SKILL.md",
         "value-proposition": "pm-product-strategy/skills/value-proposition/SKILL.md",
         "wwas": "pm-execution/skills/wwas/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "Codex": {
       "url": "https://github.com/openai/skills",
@@ -6696,6 +6672,41 @@
         "vercel-deploy": "skills/.curated/vercel-deploy/SKILL.md",
         "winui-app": "skills/.curated/winui-app/SKILL.md",
         "yeet": "skills/.curated/yeet/SKILL.md"
+      },
+      "skill_licenses": {
+        "aspnet-core": "Apache-2.0",
+        "chatgpt-apps": "Apache-2.0",
+        "cli-creator": "Apache-2.0",
+        "cloudflare-deploy": "Apache-2.0",
+        "define-goal": "Apache-2.0",
+        "gh-address-comments": "Apache-2.0",
+        "gh-fix-ci": "Apache-2.0",
+        "hatch-pet": "Apache-2.0",
+        "imagegen": "Apache-2.0",
+        "jupyter-notebook": "Apache-2.0",
+        "linear": "Apache-2.0",
+        "migrate-to-codex": "Apache-2.0",
+        "netlify-deploy": "Apache-2.0",
+        "notion-knowledge-capture": "MIT",
+        "notion-meeting-intelligence": "MIT",
+        "notion-research-documentation": "MIT",
+        "notion-spec-to-implementation": "MIT",
+        "playwright": "Apache-2.0",
+        "playwright-interactive": "Apache-2.0",
+        "plugin-creator": "Apache-2.0",
+        "render-deploy": "Apache-2.0",
+        "screenshot": "Apache-2.0",
+        "security-best-practices": "Apache-2.0",
+        "security-ownership-map": "Apache-2.0",
+        "security-threat-model": "Apache-2.0",
+        "sentry": "Apache-2.0",
+        "skill-creator": "Apache-2.0",
+        "skill-installer": "Apache-2.0",
+        "speech": "Apache-2.0",
+        "transcribe": "Apache-2.0",
+        "vercel-deploy": "MIT",
+        "winui-app": "Apache-2.0",
+        "yeet": "Apache-2.0"
       }
     },
     "Fission-AI": {
@@ -6713,7 +6724,8 @@
         "note": "安装方式见仓库 README",
         "kind": "cli-framework"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "gsd-build": {
       "url": "https://github.com/gsd-build/get-shit-done",
@@ -6730,7 +6742,8 @@
         "note": "安装方式见仓库 README",
         "kind": "sdd-framework"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "Anthropic": {
       "url": "https://github.com/anthropics/skills",
@@ -6740,7 +6753,7 @@
       "author": "anthropics",
       "repo": "skills",
       "default_branch": "main",
-      "license": null,
+      "license": "Apache-2.0",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add anthropics/skills",
@@ -6765,7 +6778,8 @@
         "web-artifacts-builder": "skills/web-artifacts-builder/SKILL.md",
         "webapp-testing": "skills/webapp-testing/SKILL.md",
         "xlsx": "skills/xlsx/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "ComposioHQ": {
       "url": "https://github.com/ComposioHQ/awesome-claude-skills",
@@ -6775,7 +6789,7 @@
       "author": "ComposioHQ",
       "repo": "awesome-claude-skills",
       "default_branch": "master",
-      "license": null,
+      "license": "Apache-2.0",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add ComposioHQ/awesome-claude-skills",
@@ -6784,7 +6798,8 @@
       },
       "skill_docs": {
         "webapp-testing": "webapp-testing/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "superpowers-lab": {
       "url": "https://github.com/obra/superpowers-lab",
@@ -6805,7 +6820,8 @@
         "finding-duplicate-functions": "skills/finding-duplicate-functions/SKILL.md",
         "using-tmux-for-interactive-commands": "skills/using-tmux-for-interactive-commands/SKILL.md",
         "windows-vm": "skills/windows-vm/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "kenryu42": {
       "url": "https://github.com/kenryu42/claude-code-safety-net",
@@ -6821,7 +6837,8 @@
         "command": "/plugin marketplace add kenryu42/claude-code-safety-net",
         "kind": "plugin"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "Gemini": {
       "url": "https://github.com/google-gemini/gemini-skills",
@@ -6842,7 +6859,8 @@
         "gemini-api-dev": "skills/gemini-api-dev/SKILL.md",
         "gemini-interactions-api": "skills/gemini-interactions-api/SKILL.md",
         "gemini-live-api-dev": "skills/gemini-live-api-dev/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "vercel-labs": {
       "url": "https://github.com/vercel-labs/agent-skills",
@@ -6863,7 +6881,8 @@
         "composition-patterns": "skills/composition-patterns/SKILL.md",
         "react-best-practices": "skills/react-best-practices/SKILL.md",
         "web-design-guidelines": "skills/web-design-guidelines/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "trailofbits": {
       "url": "https://github.com/trailofbits/skills",
@@ -6879,7 +6898,8 @@
         "command": "/plugin marketplace add trailofbits/skills",
         "kind": "marketplace"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "PSPDFKit-labs": {
       "url": "https://github.com/PSPDFKit-labs/nutrient-agent-skill",
@@ -6896,7 +6916,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/PSPDFKit-labs/nutrient-agent-skill ~/.claude/skills/nutrient-agent-skill"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "kreuzberg-dev": {
       "url": "https://github.com/kreuzberg-dev/kreuzberg",
@@ -6915,7 +6936,8 @@
       },
       "skill_docs": {
         "kreuzberg": "skills/kreuzberg/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "deusyu": {
       "url": "https://github.com/deusyu/translate-book",
@@ -6932,7 +6954,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/deusyu/translate-book ~/.claude/skills/translate-book"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "blader": {
       "url": "https://github.com/blader/humanizer",
@@ -6949,7 +6972,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/blader/humanizer ~/.claude/skills/humanizer"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "NeoLabHQ": {
       "url": "https://github.com/NeoLabHQ/context-engineering-kit",
@@ -6968,7 +6992,8 @@
       },
       "skill_docs": {
         "write-concisely": "plugins/docs/skills/write-concisely/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "alchaincyf": {
       "url": "https://github.com/alchaincyf/huashu-design",
@@ -6985,24 +7010,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/alchaincyf/huashu-design ~/.claude/skills/huashu-design"
       },
-      "skill_docs": null
-    },
-    "Shpigford": {
-      "url": "https://github.com/Shpigford/readme",
-      "stars": null,
-      "last_commit": null,
-      "type": "skill",
-      "author": "Shpigford",
-      "repo": "readme",
-      "default_branch": "main",
-      "license": null,
-      "doc_path": null,
-      "install": {
-        "command": "npx skills add Shpigford/readme",
-        "kind": "skill",
-        "alt": "git clone https://github.com/Shpigford/readme ~/.claude/skills/readme"
-      },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "JuliusBrussee": {
       "url": "https://github.com/JuliusBrussee/caveman",
@@ -7019,7 +7028,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/JuliusBrussee/caveman ~/.claude/skills/caveman"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "SeanZoR": {
       "url": "https://github.com/SeanZoR/claude-speed-reader",
@@ -7036,7 +7046,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/SeanZoR/claude-speed-reader ~/.claude/skills/claude-speed-reader"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "PleasePrompto": {
       "url": "https://github.com/PleasePrompto/notebooklm-skill",
@@ -7053,7 +7064,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/PleasePrompto/notebooklm-skill ~/.claude/skills/notebooklm-skill"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "teng-lin": {
       "url": "https://github.com/teng-lin/notebooklm-py",
@@ -7070,7 +7082,8 @@
         "note": "安装方式见仓库 README",
         "kind": "python-library"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "safishamsi": {
       "url": "https://github.com/safishamsi/graphify",
@@ -7089,7 +7102,8 @@
       },
       "skill_docs": {
         "graphify": "graphify/skill.md"
-      }
+      },
+      "skill_licenses": null
     },
     "bevibing": {
       "url": "https://github.com/bevibing/tutor-skills",
@@ -7106,7 +7120,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/bevibing/tutor-skills ~/.claude/skills/tutor-skills"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "stephenturner": {
       "url": "https://github.com/stephenturner/skill-focus",
@@ -7123,7 +7138,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/stephenturner/skill-focus ~/.claude/skills/skill-focus"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "makenotion": {
       "url": "https://github.com/makenotion/notion-cookbook",
@@ -7140,7 +7156,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/makenotion/notion-cookbook ~/.claude/skills/notion-cookbook"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "hanfang": {
       "url": "https://github.com/hanfang/claude-memory-skill",
@@ -7157,7 +7174,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/hanfang/claude-memory-skill ~/.claude/skills/claude-memory-skill"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "thedotmack": {
       "url": "https://github.com/thedotmack/claude-mem",
@@ -7174,7 +7192,8 @@
         "note": "安装方式见仓库 README",
         "kind": "cli-mcp"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "alirezarezvani": {
       "url": "https://github.com/alirezarezvani/claude-skills",
@@ -7191,7 +7210,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/alirezarezvani/claude-skills ~/.claude/skills/claude-skills"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "Dean": {
       "url": "https://github.com/deanpeters/Product-Manager-Skills",
@@ -7250,7 +7270,8 @@
         "user-story-splitting": "skills/user-story-splitting/SKILL.md",
         "vp-cpo-readiness-advisor": "skills/vp-cpo-readiness-advisor/SKILL.md",
         "workshop-facilitation": "skills/workshop-facilitation/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "founder-skills": {
       "url": "https://github.com/ognjengt/founder-skills",
@@ -7283,7 +7304,8 @@
         "strategic-planning": "skills/strategic-planning/SKILL.md",
         "viral-hook-creator": "skills/viral-hook-creator/SKILL.md",
         "x-writer": "skills/x-writer/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "wrsmith108": {
       "url": "https://github.com/wrsmith108/linear-claude-skill",
@@ -7300,7 +7322,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/wrsmith108/linear-claude-skill ~/.claude/skills/linear-claude-skill"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "Digidai": {
       "url": "https://github.com/Digidai/product-manager-skills",
@@ -7317,7 +7340,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/Digidai/product-manager-skills ~/.claude/skills/product-manager-skills"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "Corey": {
       "url": "https://github.com/coreyhaines31/marketingskills",
@@ -7377,7 +7401,8 @@
         "sms": "skills/sms/SKILL.md",
         "social": "skills/social/SKILL.md",
         "video": "skills/video/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "AgriciDaniel-seo": {
       "url": "https://github.com/AgriciDaniel/claude-seo",
@@ -7394,7 +7419,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/AgriciDaniel/claude-seo ~/.claude/skills/claude-seo"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "ReScienceLab": {
       "url": "https://github.com/ReScienceLab/opc-skills",
@@ -7420,7 +7446,8 @@
         "reddit": "skills/reddit/SKILL.md",
         "requesthunt": "skills/requesthunt/SKILL.md",
         "twitter": "skills/twitter/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "AgriciDaniel-ads": {
       "url": "https://github.com/AgriciDaniel/claude-ads",
@@ -7437,7 +7464,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/AgriciDaniel/claude-ads ~/.claude/skills/claude-ads"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "nextlevelbuilder": {
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
@@ -7454,7 +7482,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/nextlevelbuilder/ui-ux-pro-max-skill ~/.claude/skills/ui-ux-pro-max-skill"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "op7418-NB": {
       "url": "https://github.com/op7418/NanoBanana-PPT-Skills",
@@ -7471,7 +7500,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/op7418/NanoBanana-PPT-Skills ~/.claude/skills/NanoBanana-PPT-Skills"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "zarazhangrui": {
       "url": "https://github.com/zarazhangrui/frontend-slides",
@@ -7490,7 +7520,8 @@
       },
       "skill_docs": {
         "frontend-slides": "plugins/frontend-slides/skills/frontend-slides/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "nexu-io": {
       "url": "https://github.com/nexu-io/open-design",
@@ -7507,7 +7538,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/nexu-io/open-design ~/.claude/skills/open-design"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "op7418-YT": {
       "url": "https://github.com/op7418/Youtube-clipper-skill",
@@ -7524,7 +7556,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/op7418/Youtube-clipper-skill ~/.claude/skills/Youtube-clipper-skill"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "calesthio": {
       "url": "https://github.com/calesthio/OpenMontage",
@@ -7541,7 +7574,8 @@
         "note": "安装方式见仓库 README",
         "kind": "video-engine"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "remotion-dev": {
       "url": "https://github.com/remotion-dev/skills",
@@ -7558,7 +7592,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/remotion-dev/skills ~/.claude/skills/skills"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "Firecrawl": {
       "url": "https://github.com/firecrawl/cli",
@@ -7575,7 +7610,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/firecrawl/cli ~/.claude/skills/cli"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "mvanhorn": {
       "url": "https://github.com/mvanhorn/last30days-skill",
@@ -7592,7 +7628,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/mvanhorn/last30days-skill ~/.claude/skills/last30days-skill"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "Paramchoudhary": {
       "url": "https://github.com/Paramchoudhary/ResumeSkills",
@@ -7623,7 +7660,8 @@
         "resume-version-manager": "skills/resume-version-manager/SKILL.md",
         "salary-negotiation-prep": "skills/salary-negotiation-prep/SKILL.md",
         "tech-resume-optimizer": "skills/tech-resume-optimizer/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "santifer": {
       "url": "https://github.com/santifer/career-ops",
@@ -7640,7 +7678,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/santifer/career-ops ~/.claude/skills/career-ops"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "gokapso": {
       "url": "https://github.com/gokapso/agent-skills",
@@ -7661,7 +7700,8 @@
         "automate-whatsapp": "skills/automate-whatsapp/SKILL.md",
         "integrate-whatsapp": "skills/integrate-whatsapp/SKILL.md",
         "observe-whatsapp": "skills/observe-whatsapp/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "Charlie85270": {
       "url": "https://github.com/Charlie85270/Dorothy",
@@ -7678,7 +7718,8 @@
         "note": "安装方式见仓库 README",
         "kind": "desktop-app"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "wanshuiyin": {
       "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
@@ -7695,7 +7736,8 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep ~/.claude/skills/Auto-claude-code-research-in-sleep"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "garrytan": {
       "url": "https://github.com/garrytan/gstack",
@@ -7712,7 +7754,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/garrytan/gstack ~/.claude/skills/gstack"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "EveryInc": {
       "url": "https://github.com/EveryInc/charlie-cfo-skill",
@@ -7729,7 +7772,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/EveryInc/charlie-cfo-skill ~/.claude/skills/charlie-cfo-skill"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "openaccountants": {
       "url": "https://github.com/openaccountants/openaccountants",
@@ -7746,7 +7790,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/openaccountants/openaccountants ~/.claude/skills/openaccountants"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "imbad0202": {
       "url": "https://github.com/imbad0202/academic-research-skills",
@@ -7763,7 +7808,8 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/imbad0202/academic-research-skills ~/.claude/skills/academic-research-skills"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "K-Dense-AI": {
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
@@ -7780,7 +7826,8 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/K-Dense-AI/scientific-agent-skills ~/.claude/skills/scientific-agent-skills"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "muratcankoylan": {
       "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
@@ -7813,7 +7860,8 @@
         "multi-agent-patterns": "skills/multi-agent-patterns/SKILL.md",
         "project-development": "skills/project-development/SKILL.md",
         "tool-design": "skills/tool-design/SKILL.md"
-      }
+      },
+      "skill_licenses": null
     },
     "UseAI-pro": {
       "url": "https://github.com/UseAI-pro/openclaw-skills-security",
@@ -7830,7 +7878,8 @@
         "kind": "skill",
         "alt": "git clone https://github.com/UseAI-pro/openclaw-skills-security ~/.claude/skills/openclaw-skills-security"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "anthropics-marketplace": {
       "url": "https://github.com/anthropics/claude-plugins-official",
@@ -7846,7 +7895,8 @@
         "command": "/plugin marketplace add anthropics/claude-plugins-official",
         "kind": "marketplace"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     },
     "multica-ai": {
       "url": "https://github.com/multica-ai/andrej-karpathy-skills",
@@ -7862,7 +7912,8 @@
         "command": "# 把该仓库的 CLAUDE.md 复制到你的项目根目录",
         "kind": "claude-md-template"
       },
-      "skill_docs": null
+      "skill_docs": null,
+      "skill_licenses": null
     }
   }
 }

@@ -110,6 +110,7 @@ def main():
         'doc_path': r.get('doc_path'),
         'install': install_for(r),
         'skill_docs': r.get('skill_docs'),  # Phase 2 富化后才有，否则 None
+        'skill_licenses': r.get('skill_licenses'),  # 仓库内协议不统一时的逐 skill 协议
     } for r in repos}
 
     data = {'sections': sections, 'vendors': vendors}

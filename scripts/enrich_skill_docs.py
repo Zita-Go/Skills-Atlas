@@ -78,6 +78,47 @@ def pick_doc_path(paths):
     return None
 
 
+def raw_get(author, repo, branch, path):
+    """取 raw 文本（raw 域，不耗 API 配额）。"""
+    try:
+        url = f'https://raw.githubusercontent.com/{author}/{repo}/{branch}/{path}'
+        with urlopen(Request(url, headers={'User-Agent': 'skills-atlas-bot'}),
+                     timeout=15) as r:
+            return r.read().decode('utf-8', 'ignore')
+    except (HTTPError, URLError):
+        return None
+
+
+def classify_license(text):
+    """从 LICENSE 文本粗判 SPDX id（覆盖常见协议；认不出返回 None）。"""
+    if not text:
+        return None
+    t = text.lower()
+    if 'apache license' in t and ('version 2' in t or '2.0' in t):
+        return 'Apache-2.0'
+    if 'permission is hereby granted, free of charge' in t or 'mit license' in t:
+        return 'MIT'
+    if 'gnu affero general public' in t:
+        return 'AGPL-3.0'
+    if 'gnu lesser general public' in t:
+        return 'LGPL-3.0'
+    if 'gnu general public license' in t:
+        return 'GPL-3.0' if 'version 3' in t else 'GPL-2.0'
+    if 'mozilla public license' in t and '2.0' in t:
+        return 'MPL-2.0'
+    if 'redistribution and use in source and binary' in t:
+        return 'BSD-3-Clause' if 'neither the name' in t else 'BSD-2-Clause'
+    if 'isc license' in t:
+        return 'ISC'
+    if 'this is free and unencumbered software released into the public domain' in t:
+        return 'Unlicense'
+    if 'creative commons attribution-sharealike' in t:
+        return 'CC-BY-SA-4.0'
+    if 'creative commons attribution' in t:
+        return 'CC-BY-4.0'
+    return None
+
+
 def main():
     skills = yaml.safe_load(open(DATA / 'skills.yaml', encoding='utf-8'))
     repos = yaml.safe_load(open(DATA / 'repositories.yaml', encoding='utf-8'))
@@ -90,6 +131,7 @@ def main():
             refs.setdefault(src, set()).update(g.get('skills', []))
 
     scanned = mapped = failed = 0
+    lic_repo = lic_skill = 0
     for r in repos:
         a, name = r.get('author'), r.get('repo')
         if not a or not name:
@@ -128,6 +170,31 @@ def main():
                 if near:
                     print(f'  未精确匹配 {r["id"]}/{sk} 近似: {near[:3]}（需人审）', file=sys.stderr)
 
+        # Phase 2b：per-skill LICENSE（仅对仍"未知"许可证的仓库；统一则定仓库 license，不统一才逐 skill）
+        r.pop('skill_licenses', None)
+        if sd and not r.get('license'):
+            lower = {p.lower(): p for p in paths}
+            skill_lic = {}
+            for sk, mdpath in sd.items():
+                d = mdpath.rsplit('/', 1)[0]
+                licpath = next((lower[c] for c in
+                                (f'{d}/license.txt', f'{d}/license', f'{d}/license.md')
+                                if c in lower), None)
+                if not licpath:
+                    continue
+                spdx = classify_license(raw_get(a, name, branch, licpath))
+                time.sleep(0.15)
+                if spdx:
+                    skill_lic[sk] = spdx
+            if skill_lic:
+                vals = set(skill_lic.values())
+                if len(vals) == 1:
+                    r['license'] = next(iter(vals))
+                    lic_repo += 1
+                else:
+                    r['skill_licenses'] = skill_lic
+                    lic_skill += len(skill_lic)
+
         if sd:
             r['skill_docs'] = sd
             r['skill_docs_generated_at'] = today
@@ -142,7 +209,8 @@ def main():
                        default_flow_style=False, width=200)
 
     print(f'\n✅ 扫描 {scanned} 个仓库（{failed} 失败），'
-          f'映射 {mapped} 个 skill→SKILL.md。')
+          f'映射 {mapped} 个 skill→SKILL.md；'
+          f'per-skill LICENSE 补全 {lic_repo} 个仓库 + {lic_skill} 个逐 skill。')
 
 
 if __name__ == '__main__':
