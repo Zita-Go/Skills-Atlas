@@ -122,9 +122,9 @@
                   "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
-                    "command": "git clone https://github.com/Fission-AI/OpenSpec",
-                    "note": "安装方式见仓库 README",
-                    "kind": "cli-framework"
+                    "command": "npm install -g @fission-ai/openspec@latest",
+                    "note": "SDD 框架（非 skill）；装后用 openspec init 接入 Claude Code/Cursor/Codex",
+                    "kind": "override"
                   }
                 },
                 {
@@ -139,9 +139,9 @@
                   "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
-                    "command": "git clone https://github.com/gsd-build/get-shit-done",
-                    "note": "安装方式见仓库 README",
-                    "kind": "sdd-framework"
+                    "command": "npm install -g get-shit-done-cc",
+                    "note": "元提示/SDD 框架（非 skill）；详见仓库 README",
+                    "kind": "override"
                   }
                 }
               ]
@@ -758,8 +758,7 @@
                   "license": null,
                   "doc_path": "README.md",
                   "install": {
-                    "command": "git clone https://github.com/vercel-labs/agent-skills",
-                    "note": "安装方式见仓库 README",
+                    "command": "npx skills add vercel-labs/agent-skills",
                     "kind": "cli"
                   }
                 }
@@ -1027,8 +1026,7 @@
                   "license": null,
                   "doc_path": "README.md",
                   "install": {
-                    "command": "git clone https://github.com/kreuzberg-dev/kreuzberg",
-                    "note": "安装方式见仓库 README",
+                    "command": "npx skills add kreuzberg-dev/kreuzberg",
                     "kind": "extraction-engine"
                   }
                 }
@@ -1312,8 +1310,7 @@
                   "license": "MIT",
                   "doc_path": null,
                   "install": {
-                    "command": "git clone https://github.com/teng-lin/notebooklm-py",
-                    "note": "安装方式见仓库 README",
+                    "command": "npx skills add teng-lin/notebooklm-py",
                     "kind": "python-library"
                   }
                 }
@@ -1514,8 +1511,7 @@
                   "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
-                    "command": "git clone https://github.com/thedotmack/claude-mem",
-                    "note": "安装方式见仓库 README",
+                    "command": "npx skills add thedotmack/claude-mem",
                     "kind": "cli-mcp"
                   }
                 }
@@ -4233,8 +4229,7 @@
                   "license": null,
                   "doc_path": "README.md",
                   "install": {
-                    "command": "git clone https://github.com/vercel-labs/agent-skills",
-                    "note": "安装方式见仓库 README",
+                    "command": "npx skills add vercel-labs/agent-skills",
                     "kind": "cli"
                   }
                 }
@@ -4759,8 +4754,7 @@
                   "license": "AGPL-3.0",
                   "doc_path": "README.md",
                   "install": {
-                    "command": "git clone https://github.com/calesthio/OpenMontage",
-                    "note": "安装方式见仓库 README",
+                    "command": "npx skills add calesthio/OpenMontage",
                     "kind": "video-engine"
                   }
                 }
@@ -4915,8 +4909,7 @@
                   "license": null,
                   "doc_path": "README.md",
                   "install": {
-                    "command": "git clone https://github.com/vercel-labs/agent-skills",
-                    "note": "安装方式见仓库 README",
+                    "command": "npx skills add vercel-labs/agent-skills",
                     "kind": "cli"
                   }
                 }
@@ -5563,8 +5556,7 @@
                   "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
-                    "command": "git clone https://github.com/Charlie85270/Dorothy",
-                    "note": "安装方式见仓库 README",
+                    "command": "npx skills add Charlie85270/Dorothy",
                     "kind": "desktop-app"
                   }
                 }
@@ -6720,9 +6712,9 @@
       "license": "MIT",
       "doc_path": "README.md",
       "install": {
-        "command": "git clone https://github.com/Fission-AI/OpenSpec",
-        "note": "安装方式见仓库 README",
-        "kind": "cli-framework"
+        "command": "npm install -g @fission-ai/openspec@latest",
+        "note": "SDD 框架（非 skill）；装后用 openspec init 接入 Claude Code/Cursor/Codex",
+        "kind": "override"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -6738,9 +6730,9 @@
       "license": "MIT",
       "doc_path": "README.md",
       "install": {
-        "command": "git clone https://github.com/gsd-build/get-shit-done",
-        "note": "安装方式见仓库 README",
-        "kind": "sdd-framework"
+        "command": "npm install -g get-shit-done-cc",
+        "note": "元提示/SDD 框架（非 skill）；详见仓库 README",
+        "kind": "override"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -6873,8 +6865,7 @@
       "license": null,
       "doc_path": "README.md",
       "install": {
-        "command": "git clone https://github.com/vercel-labs/agent-skills",
-        "note": "安装方式见仓库 README",
+        "command": "npx skills add vercel-labs/agent-skills",
         "kind": "cli"
       },
       "skill_docs": {
@@ -6930,8 +6921,7 @@
       "license": null,
       "doc_path": "README.md",
       "install": {
-        "command": "git clone https://github.com/kreuzberg-dev/kreuzberg",
-        "note": "安装方式见仓库 README",
+        "command": "npx skills add kreuzberg-dev/kreuzberg",
         "kind": "extraction-engine"
       },
       "skill_docs": {
@@ -7078,8 +7068,7 @@
       "license": "MIT",
       "doc_path": null,
       "install": {
-        "command": "git clone https://github.com/teng-lin/notebooklm-py",
-        "note": "安装方式见仓库 README",
+        "command": "npx skills add teng-lin/notebooklm-py",
         "kind": "python-library"
       },
       "skill_docs": null,
@@ -7188,8 +7177,7 @@
       "license": "Apache-2.0",
       "doc_path": "README.md",
       "install": {
-        "command": "git clone https://github.com/thedotmack/claude-mem",
-        "note": "安装方式见仓库 README",
+        "command": "npx skills add thedotmack/claude-mem",
         "kind": "cli-mcp"
       },
       "skill_docs": null,
@@ -7570,8 +7558,7 @@
       "license": "AGPL-3.0",
       "doc_path": "README.md",
       "install": {
-        "command": "git clone https://github.com/calesthio/OpenMontage",
-        "note": "安装方式见仓库 README",
+        "command": "npx skills add calesthio/OpenMontage",
         "kind": "video-engine"
       },
       "skill_docs": null,
@@ -7714,8 +7701,7 @@
       "license": "MIT",
       "doc_path": "README.md",
       "install": {
-        "command": "git clone https://github.com/Charlie85270/Dorothy",
-        "note": "安装方式见仓库 README",
+        "command": "npx skills add Charlie85270/Dorothy",
         "kind": "desktop-app"
       },
       "skill_docs": null,

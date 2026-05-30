@@ -19,36 +19,33 @@ def load(name):
         return yaml.safe_load(f)
 
 
-# type → 一键安装命令模板。skill 系默认走 Vercel 的 `npx skills add`
-# （跨 47+ agent 自动找路径）；其余给合适的 marketplace / 提示。
-INSTALL_TEMPLATES = {
-    'skill':              lambda r: f'npx skills add {r["author"]}/{r["repo"]}',
-    'skill-pack':         lambda r: f'npx skills add {r["author"]}/{r["repo"]}',
-    'multi-skill-suite':  lambda r: f'npx skills add {r["author"]}/{r["repo"]}',
-    'plugin':             lambda r: f'/plugin marketplace add {r["author"]}/{r["repo"]}',
-    'marketplace':        lambda r: f'/plugin marketplace add {r["author"]}/{r["repo"]}',
-    'claude-md-template': lambda r: '# 把该仓库的 CLAUDE.md 复制到你的项目根目录',
-}
-
-
 def install_for(repo):
     """返回 {command, alt?, note?, kind}，前端直接用、不含分支逻辑。
-    优先级：install_override > 按 type 的模板 > 兜底 git clone。"""
+    优先级：install_override > 按 type。
+
+    默认 `npx skills add owner/repo`（Vercel skills CLI）：它会在仓库的
+    root / skills/ / skills/.curated/ 等位置找 SKILL.md，找不到就优雅报
+    "No skills found" 退出——所以对任何含 SKILL.md 的仓库都安全有效，哪怕
+    它在 GitHub 上被归类为 cli / library / desktop-app。纯工具/框架（无
+    SKILL.md，如 OpenSpec / get-shit-done）用 install_override 给真实命令。
+    """
     if not repo:
         return None
     ov = repo.get('install_override')
     if isinstance(ov, dict) and ov.get('command'):
         return {'command': ov['command'], 'note': ov.get('note', ''), 'kind': 'override'}
+    author, name = repo.get('author'), repo.get('repo')
+    if not (author and name):
+        return None
     typ = repo.get('type', 'skill')
-    fn = INSTALL_TEMPLATES.get(typ)
-    if fn and repo.get('author') and repo.get('repo'):
-        out = {'command': fn(repo), 'kind': typ}
-        if typ in ('skill', 'skill-pack', 'multi-skill-suite'):
-            out['alt'] = f'git clone {repo.get("url", "")} ~/.claude/skills/{repo["repo"]}'
-        return out
-    # cli / cli-framework / sdd-framework / python-library / desktop-app / *-engine
-    return {'command': f'git clone {repo.get("url", "")}',
-            'note': '安装方式见仓库 README', 'kind': typ}
+    if typ in ('plugin', 'marketplace'):
+        return {'command': f'/plugin marketplace add {author}/{name}', 'kind': typ}
+    if typ == 'claude-md-template':
+        return {'command': '# 把该仓库的 CLAUDE.md 复制到你的项目根目录', 'kind': typ}
+    out = {'command': f'npx skills add {author}/{name}', 'kind': typ}
+    if typ in ('skill', 'skill-pack', 'multi-skill-suite'):
+        out['alt'] = f'git clone {repo.get("url", "")} ~/.claude/skills/{name}'
+    return out
 
 
 def build_sections(categories, skills, repos):

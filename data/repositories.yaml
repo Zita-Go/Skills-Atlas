@@ -237,6 +237,9 @@
   description: Spec-driven development (SDD) for AI coding assistants.
   license: MIT
   doc_path: README.md
+  install_override:
+    command: npm install -g @fission-ai/openspec@latest
+    note: SDD 框架（非 skill）；装后用 openspec init 接入 Claude Code/Cursor/Codex
 - id: gsd-build
   author: gsd-build
   repo: get-shit-done
@@ -249,6 +252,9 @@
   description: A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.
   license: MIT
   doc_path: README.md
+  install_override:
+    command: npm install -g get-shit-done-cc
+    note: 元提示/SDD 框架（非 skill）；详见仓库 README
 - id: Anthropic
   author: anthropics
   repo: skills
