@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zita-go.github.io/Skills-Atlas/sitemap.xml

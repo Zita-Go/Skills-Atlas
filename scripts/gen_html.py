@@ -160,9 +160,37 @@ def main():
         template = f.read()
     rendered = template.replace('{{DATA_JSON}}',
                                 json.dumps(data, ensure_ascii=False))
+    # SEO：注入 schema.org JSON-LD（无日期 → 确定性，parity 友好）
+    n_groups = sum(len(s['rows']) for h in sections for s in h['subsections'])
+    ld = json.dumps({
+        '@context': 'https://schema.org', '@type': 'Dataset',
+        'name': 'Skills Atlas',
+        'alternateName': '按功能分类的 AI Agent Skills 全景',
+        'description': f'A functional panorama of AI Agent Skills — {n_groups} groups across 13 categories.',
+        'url': 'https://zita-go.github.io/Skills-Atlas/',
+        'keywords': ['AI agent skills', 'Claude Code', 'Codex', 'SKILL.md', 'skill directory'],
+        'license': 'https://opensource.org/licenses/MIT',
+        'creator': {'@type': 'Organization', 'name': 'Skills Atlas contributors'},
+        'distribution': {'@type': 'DataDownload', 'encodingFormat': 'application/json',
+                         'contentUrl': 'https://zita-go.github.io/Skills-Atlas/data.json'},
+    }, ensure_ascii=False)
+    rendered = rendered.replace(
+        '</head>', f'<script type="application/ld+json">{ld}</script>\n</head>', 1)
     with open(DOCS / 'index.html', 'w', encoding='utf-8') as f:
         f.write(rendered)
     print(f'Wrote docs/index.html ({len(rendered)/1024:.1f} KB)')
+
+    # SEO：sitemap + robots（确定性）
+    (DOCS / 'sitemap.xml').write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        '  <url><loc>https://zita-go.github.io/Skills-Atlas/</loc></url>\n'
+        '  <url><loc>https://zita-go.github.io/Skills-Atlas/?lang=en</loc></url>\n'
+        '</urlset>\n', encoding='utf-8')
+    (DOCS / 'robots.txt').write_text(
+        'User-agent: *\nAllow: /\n'
+        'Sitemap: https://zita-go.github.io/Skills-Atlas/sitemap.xml\n', encoding='utf-8')
+    print('Wrote docs/sitemap.xml + robots.txt')
 
 
 if __name__ == '__main__':

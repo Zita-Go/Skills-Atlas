@@ -1,0 +1,38 @@
+{
+  "name": "skills-atlas-data",
+  "version": "0.1.0",
+  "description": "Structured data for Skills Atlas — AI agent skills across repos & categories, with install commands and SKILL.md paths.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "bin": {
+    "skills-atlas": "bin/cli.js"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "bin/cli.js",
+    "data.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "prepublishOnly": "node build.js"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "skills",
+    "agent-skills",
+    "claude-code",
+    "codex",
+    "skill-directory",
+    "skills-atlas"
+  ],
+  "license": "MIT",
+  "homepage": "https://zita-go.github.io/Skills-Atlas/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zita-Go/Skills-Atlas.git",
+    "directory": "packages/skills-atlas-data"
+  }
+}
