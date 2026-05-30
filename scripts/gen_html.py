@@ -162,13 +162,23 @@ def main():
         template = f.read()
     rendered = template.replace('{{DATA_JSON}}',
                                 json.dumps(data, ensure_ascii=False))
-    # SEO：注入 schema.org JSON-LD（无日期 → 确定性，parity 友好）
+    # SEO：动态计数注入到模板占位符（避免 meta 数字写死后过期）
     n_groups = sum(len(s['rows']) for h in sections for s in h['subsections'])
+    n_repos = len(repos)
+    n_cats = len(sections)
+    n_subcats = sum(len(h['subsections']) for h in sections)
+    n_unique = len({sk for s in skills for sk in s['skills']})
+    n_chains = sum(1 for s in skills if s.get('chain'))
+    for ph, val in {'{{N_REPOS}}': n_repos, '{{N_GROUPS}}': n_groups,
+                    '{{N_CATS}}': n_cats, '{{N_SUBCATS}}': n_subcats,
+                    '{{N_UNIQUE}}': n_unique, '{{N_CHAINS}}': n_chains}.items():
+        rendered = rendered.replace(ph, str(val))
+    # SEO：注入 schema.org JSON-LD（无日期 → 确定性，parity 友好）
     ld = json.dumps({
         '@context': 'https://schema.org', '@type': 'Dataset',
         'name': 'Skills Atlas',
         'alternateName': '按功能分类的 AI Agent Skills 全景',
-        'description': f'A functional panorama of AI Agent Skills — {n_groups} groups across 13 categories.',
+        'description': f'A functional panorama of AI Agent Skills — {n_unique} skills in {n_groups} groups across {n_cats} categories.',
         'url': 'https://zita-go.github.io/Skills-Atlas/',
         'keywords': ['AI agent skills', 'Claude Code', 'Codex', 'SKILL.md', 'skill directory'],
         'license': 'https://opensource.org/licenses/MIT',

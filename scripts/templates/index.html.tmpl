@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Skills Atlas — AI Agent Skills by function</title>
-<meta name="description" content="370+ AI Agent Skills mapped across 13 functional categories. Skills from 62 GitHub repos regrouped into 74 functional groups, with 18 ⛓ chained workflows meant to be used together.">
+<meta name="description" content="{{N_UNIQUE}} AI Agent Skills from {{N_REPOS}} GitHub repos, organized into {{N_CATS}} functional categories and {{N_GROUPS}} groups, with {{N_CHAINS}} ⛓ chained workflows.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark light">
 
 <!-- Open Graph / Twitter Card -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Skills Atlas — find AI Agent Skills by function">
-<meta property="og:description" content="370+ skills · 62 repos · 13 categories · 74 sub-groups · 18 chain workflows">
+<meta property="og:description" content="{{N_UNIQUE}} skills · {{N_REPOS}} repos · {{N_CATS}} categories · {{N_GROUPS}} groups · {{N_CHAINS}} chain workflows">
 <meta property="og:image" content="https://zita-go.github.io/Skills-Atlas/og.svg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Skills Atlas">
@@ -1190,7 +1190,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
 
 <!-- ⌘K Spotlight -->
 <div class="spotlight-overlay hidden" id="spotlightOverlay">
-  <div class="spotlight-modal">
+  <div class="spotlight-modal" role="dialog" aria-modal="true" aria-label="Spotlight 搜索" data-i18n-aria="tt_search">
     <div class="spotlight-input-wrap">
       <span class="icon">⌕</span>
       <input id="spotlightInput" placeholder="搜 skill / 仓库 / 分组 / 大类…（fuzzy 匹配）" data-i18n-ph="sp_ph" autocomplete="off" autocorrect="off" spellcheck="false" />
@@ -1208,7 +1208,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
 
 <!-- AI 推荐抽屉 -->
 <div class="ai-overlay hidden" id="aiOverlay">
-  <div class="ai-modal">
+  <div class="ai-modal" role="dialog" aria-modal="true" aria-label="AI 推荐" data-i18n-aria="tt_ai">
     <div class="ai-header">
       <div>
         <div class="ai-title">
@@ -1306,6 +1306,7 @@ const I18N = {
     stat_skill: '独立 skill', stat_group: '功能分组', stat_vendor: '源仓库', stat_chain: '强绑定工作流',
     empty: '没有匹配的 skill，试试别的关键词',
     sp_ph: '搜 skill / 仓库 / 分组 / 大类…（fuzzy 匹配）',
+    sp_empty_default: '输入关键词搜索 skill / 分组 / 大类 / 仓库', sp_empty_none: '没有匹配项，换个关键词试试',
     sp_move: '移动', sp_enter: '跳转', sp_esc: '关闭', sp_invoke: '唤起',
     ai_title: '✨ AI 推荐', ai_subtitle: '描述你想做的事，给你推荐 skill 组合',
     view_repo_link: '查看仓库',
@@ -1323,7 +1324,7 @@ const I18N = {
     usage_notfound: '没找到 SKILL.md / README。',
     usage_viewgh: '在 GitHub 查看 ↗',
     page_title: 'Skills Atlas — 按功能分类的 AI Agent Skills 全景',
-    meta_desc: '370+ AI Agent Skills 按 13 大功能分类的全景导航。来自 62 个 GitHub 仓库的 skill 重新归类到 74 个功能分组，标记 18 个必须串联使用的 ⛓ 强绑定工作流。',
+    meta_desc: '按功能分类的 AI Agent Skills 全景：来自 {{N_REPOS}} 个 GitHub 仓库的 {{N_UNIQUE}} 个 skill，归入 {{N_CATS}} 大类 / {{N_GROUPS}} 个功能分组，含 {{N_CHAINS}} 条 ⛓ 强绑定工作流。',
     og_title: 'Skills Atlas — 按功能找 AI Agent Skills',
     tw_desc: '按功能分类的 AI Agent Skills 全景',
     ai_byok_head: '用自己的 LLM（覆盖默认）',
@@ -1363,6 +1364,7 @@ const I18N = {
     stat_skill: 'skills', stat_group: 'groups', stat_vendor: 'source repos', stat_chain: 'chained workflows',
     empty: 'No matching skills — try another keyword',
     sp_ph: 'Search skills / repos / groups / categories… (fuzzy)',
+    sp_empty_default: 'Search skills / groups / categories / repos', sp_empty_none: 'No matches — try another keyword',
     sp_move: 'Navigate', sp_enter: 'Jump', sp_esc: 'Close', sp_invoke: 'to open',
     ai_title: '✨ AI Pick', ai_subtitle: 'Describe what you want to do; get a skill combo',
     view_repo_link: 'View repo',
@@ -1380,7 +1382,7 @@ const I18N = {
     usage_notfound: 'No SKILL.md / README found.',
     usage_viewgh: 'View on GitHub ↗',
     page_title: 'Skills Atlas — AI Agent Skills by function',
-    meta_desc: '370+ AI Agent Skills mapped across 13 functional categories. Skills from 62 GitHub repos regrouped into 74 functional groups, with 18 ⛓ chained workflows meant to be used together.',
+    meta_desc: '{{N_UNIQUE}} AI Agent Skills from {{N_REPOS}} GitHub repos, organized into {{N_CATS}} functional categories and {{N_GROUPS}} groups, with {{N_CHAINS}} ⛓ chained workflows.',
     og_title: 'Skills Atlas — find AI Agent Skills by function',
     tw_desc: 'AI Agent Skills, organized by function',
     ai_byok_head: 'Use your own LLM (override default)',
@@ -3313,7 +3315,9 @@ function setupAI(){
   }
   function hideStatus(){ status.classList.add('hidden'); }
 
+  let aiReturnFocus = null;
   function open(){
+    aiReturnFocus = document.activeElement;
     overlay.classList.remove('hidden');
     setTimeout(() => input.focus(), 50);
     refreshModeBadge();
@@ -3322,7 +3326,7 @@ function setupAI(){
       hideStatus();
     }
   }
-  function close(){ overlay.classList.add('hidden'); }
+  function close(){ overlay.classList.add('hidden'); if(aiReturnFocus && aiReturnFocus.focus) aiReturnFocus.focus(); }
 
   function renderResults(rows, source){
     if(!rows.length){
@@ -3730,7 +3734,7 @@ function setupSpotlight(){
           html += renderRow(it, '', i);
         });
       });
-      list.innerHTML = html || '<div class="spotlight-empty">输入关键词搜索 skill / 分组 / 大类 / 仓库</div>';
+      list.innerHTML = html || `<div class="spotlight-empty">${t('sp_empty_default')}</div>`;
     } else {
       // fuzzy match
       const scored = items.map(it => ({...it, _score: Math.max(
@@ -3745,7 +3749,7 @@ function setupSpotlight(){
         }).slice(0, 30);
       filtered = scored;
       if(!scored.length){
-        list.innerHTML = '<div class="spotlight-empty">没有匹配项，换个关键词试试</div>';
+        list.innerHTML = `<div class="spotlight-empty">${t('sp_empty_none')}</div>`;
       } else {
         list.innerHTML = scored.map((it, i) => renderRow(it, query, i)).join('');
       }
@@ -3816,7 +3820,9 @@ function setupSpotlight(){
     if(it && it.action) it.action();
   }
 
+  let spotReturnFocus = null;
   function openSpotlight(){
+    spotReturnFocus = document.activeElement;
     overlay.classList.remove('hidden');
     input.value = '';
     setTimeout(() => input.focus(), 30);
@@ -3824,6 +3830,7 @@ function setupSpotlight(){
   }
   function closeSpotlight(){
     overlay.classList.add('hidden');
+    if(spotReturnFocus && spotReturnFocus.focus) spotReturnFocus.focus();
   }
 
   btn.addEventListener('click', openSpotlight);
