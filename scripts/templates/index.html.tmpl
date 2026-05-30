@@ -568,9 +568,9 @@ body.embed .views-dock{display:none}   /* 嵌入是固定快照，不暴露视�
   background:var(--grad)}
 .section-h1 .h1-icon{font-size:26px;font-family:"Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif}
 .section-h1:first-of-type{margin-top:8px}
-.section-h2{margin:34px 0 16px;font-size:16px;font-weight:600;color:var(--fg);
+.section-h2{margin:30px 0 14px;font-size:15px;font-weight:600;color:var(--fg);
   scroll-margin-top:var(--jump-offset);letter-spacing:-0.01em;
-  padding-bottom:8px;border-bottom:1px dashed var(--border)}
+  padding:1px 0 1px 12px;border-left:3px solid hsla(var(--cat-hue,220),65%,60%,.7)}
 .section-h2 .anchor{color:var(--fg-muted);font-size:13px;margin-left:8px;
   font-weight:400;opacity:0;transition:opacity .15s;text-decoration:none}
 .section-h2:hover .anchor{opacity:1}
@@ -628,7 +628,7 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 .card-desc{color:var(--fg-dim);font-size:13.5px;line-height:1.75;
   margin:8px 0 12px;word-break:break-word;max-width:72ch}
 .card-desc code{font-size:.88em;font-family:var(--font-mono)}
-.card-sources{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;
+.card-sources{display:flex;flex-direction:column;gap:7px;margin-top:12px;
   padding-top:12px;border-top:1px solid var(--border)}
 .source-link{display:inline-flex;align-items:center;gap:5px;
   background:transparent;border:1px solid var(--border);
@@ -645,8 +645,9 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
   display:inline-flex;align-items:center;gap:3px}
 .source-stars svg{width:11px;height:11px;flex-shrink:0;opacity:1}
 .source-link:hover .source-stars{color:#ffd86b}
-/* 用法 / 一键安装：source 行内动作按钮 + 许可证徽章 */
-.source-row{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}
+/* 用法 / 一键安装：每个来源独占一整行（左=链接+动作，右=协议/更新元信息）*/
+.source-row{display:flex;width:100%;align-items:center;gap:6px;flex-wrap:wrap}
+.source-meta{display:inline-flex;align-items:center;gap:6px;margin-left:auto}
 .card.clickable{cursor:pointer}
 .card-desc,.card-skills,.card .skill-tag{user-select:text}
 .card-uc{font-size:12.5px;color:var(--fg);margin:6px 0 10px;line-height:1.6;display:flex;flex-wrap:wrap;gap:6px;align-items:center;user-select:text}
@@ -1693,7 +1694,7 @@ function buildContent(){
           const days = s.last_commit ? daysSince(s.last_commit) : null;
           const staleHtml = (days != null && days > 90)
             ? `<span class="stale-badge" title="${escapeAttr(LANG === 'en' ? `last updated ${days}d ago` : `最后更新 ${days} 天前，可能已停止维护`)}"><span aria-hidden="true">⏳</span> ${Math.round(days/30)}${LANG === 'en' ? 'mo' : '个月未更新'}</span>` : '';
-          return `<span class="source-row">${link}${usageBtn}${copyBtn}${lic}${staleHtml}</span>`;
+          return `<span class="source-row">${link}${usageBtn}${copyBtn}<span class="source-meta">${lic}${staleHtml}</span></span>`;
         }).join('');
 
         const chainBadge = row.chain ? `<span class="chain-badge">${t('chain_badge')}</span>` : '';
