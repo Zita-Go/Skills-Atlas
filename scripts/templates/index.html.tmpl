@@ -2561,7 +2561,11 @@ function buildGraph(){
       <button class="gc-btn" data-act="zoom-in" title="放大">${ICON.zoomIn}</button>
     </div>
     <button class="gc-btn gc-zoom" data-act="zoom" title="重置缩放">100%</button>
-    <button class="gc-btn" data-act="labels" title="切换全部标签">${ICON.labels}</button>`;
+    <button class="gc-btn" data-act="labels" title="切换全部标签">${ICON.labels}</button>
+    <div class="graph-zoom-row">
+      <button class="gc-btn gc-zoom" data-act="export-png" title="导出 PNG / Export PNG">PNG</button>
+      <button class="gc-btn gc-zoom" data-act="export-svg" title="导出 SVG / Export SVG">SVG</button>
+    </div>`;
   container.appendChild(ctrls);
 
   function updateZoomLabel(){
@@ -2613,6 +2617,48 @@ function buildGraph(){
     e.currentTarget.classList.toggle('active', allLabels);
     nodes.forEach(n => n._t.classList.toggle('always', allLabels || alwaysLabelSet.has(n.id)));
   });
+
+  // ==== 导出 PNG / SVG（自动取景整图；解析 CSS 变量为具体色，保证独立文件可渲染）====
+  function _download(blob, name){
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+  }
+  function _exportSVGString(){
+    const clone = svg.cloneNode(true);
+    const o = svg.querySelectorAll('*'), c = clone.querySelectorAll('*');
+    const props = ['fill','stroke','stroke-width','stroke-opacity','opacity','stroke-dasharray','stroke-linecap','stroke-linejoin'];
+    for(let i = 0; i < o.length; i++){
+      const cs = getComputedStyle(o[i]);
+      props.forEach(pp => { const v = cs.getPropertyValue(pp); if(v) c[i].setAttribute(pp, v); });
+    }
+    // 自动取景：所有节点包围盒 + padding
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    nodes.forEach(n => { minX = Math.min(minX, n.x - n.r - 14); minY = Math.min(minY, n.y - n.r - 14); maxX = Math.max(maxX, n.x + n.r + 14); maxY = Math.max(maxY, n.y + n.r + 14); });
+    const vbW = maxX - minX, vbH = maxY - minY;
+    clone.setAttribute('viewBox', `${minX} ${minY} ${vbW} ${vbH}`);
+    clone.setAttribute('width', Math.round(vbW)); clone.setAttribute('height', Math.round(vbH));
+    const vp = clone.querySelector('.viewport'); if(vp) vp.setAttribute('transform', 'translate(0,0) scale(1)');
+    const bgc = getComputedStyle(document.body).backgroundColor || '#0b0d10';
+    const r = document.createElementNS(svgNS, 'rect');
+    r.setAttribute('x', minX); r.setAttribute('y', minY); r.setAttribute('width', vbW); r.setAttribute('height', vbH); r.setAttribute('fill', bgc);
+    clone.insertBefore(r, vp);   // 纯色背景置底
+    return { xml: '<?xml version="1.0" encoding="UTF-8"?>\n' + new XMLSerializer().serializeToString(clone), w: vbW, h: vbH, bg: bgc };
+  }
+  function exportGraph(format){
+    const { xml, w, h, bg } = _exportSVGString();
+    if(format === 'svg'){ _download(new Blob([xml], {type: 'image/svg+xml;charset=utf-8'}), 'skills-atlas-graph.svg'); return; }
+    const scale = 2, img = new Image();
+    img.onload = () => {
+      const cv = document.createElement('canvas'); cv.width = Math.round(w * scale); cv.height = Math.round(h * scale);
+      const cx2 = cv.getContext('2d'); cx2.fillStyle = bg; cx2.fillRect(0, 0, cv.width, cv.height);
+      cx2.drawImage(img, 0, 0, cv.width, cv.height);
+      cv.toBlob(bl => { if(bl) _download(bl, 'skills-atlas-graph.png'); }, 'image/png');
+    };
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(xml);
+  }
+  ctrls.querySelector('[data-act="export-png"]').addEventListener('click', () => exportGraph('png'));
+  ctrls.querySelector('[data-act="export-svg"]').addEventListener('click', () => exportGraph('svg'));
 
   // 图例
   const legend = document.createElement('div');
