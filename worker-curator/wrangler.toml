@@ -42,11 +42,11 @@ PROPOSED_DIR      = "data/_inbox/proposed"
 # 「推迟」语义：被提议过的候选写进 KV，多少天内不再重复提议。0 = 永不过期。
 SEEN_TTL_DAYS = "90"
 
-# 每轮最多 LLM 处理几个候选。Cloudflare 免费套餐单次调用上限 50 个子请求
-# （搜索 + 每候选 2~4 次 LLM 调用），所以免费套餐别设太高，10 比较稳。
-# 超出的候选不写 SEEN，下一轮（次日 cron）自然接着处理，几天内消化完。
-# 升级到 Workers Paid（$5/月，1000 子请求/次）后可调大或设 0（= 不额外限，吃满 daily_cap）。
-MAX_CANDIDATES_PER_RUN = "10"
+# 每轮最多处理几个候选。免费套餐除了 50 子请求上限，更卡的是【后台执行时长】——
+# free 模型慢，仓库一多就超时被 Cloudflare 掐死。仓库已并行处理，但仍建议小步快跑：
+# 免费套餐设 2~3，超出的不写 SEEN、下一轮（次日 cron）接着处理，几天内消化完。
+# 升级 Workers Paid（$5/月）后时长/子请求都宽，可调大到吃满 daily_cap 或设 0（不额外限）。
+MAX_CANDIDATES_PER_RUN = "2"
 
 # === secrets（不写这里！用 wrangler secret put 设置）===
 #   wrangler secret put OPENROUTER_KEY    # OpenRouter key，和 Worker A 同一把

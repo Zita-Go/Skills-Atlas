@@ -164,41 +164,17 @@ async function runCuration(env, { dryRun = false, limit = 0 } = {}) {
   const taxonomy = await loadTaxonomy(env);
   log(`taxonomy: ${taxonomy.length} 个子分类`);
 
-  // ③ 抽取 + ④ 按功能分类：每个仓库 → 枚举它的 skill（扫 SKILL.md）→ 一次 LLM 批量归类。
-  // 没有 SKILL.md 的仓库（含 awesome 聚合清单 / 文档 / 工具）不当来源收，记 no_skill_files。
-  // 单仓库失败（含撞子请求上限）只记 repo_error 跳过，不拖垮整批。
+  // ③ 抽取 + ④ 按功能分类：仓库【并行】处理（墙钟从"求和"变"最慢那个"，压进免费时长）。
+  // 每个仓库 → 枚举 SKILL.md → 一次 LLM 批量归类。无 SKILL.md / 教程演示 → 剔除。
+  // 并发上限 REPO_CONCURRENCY，避免对同一 host 开太多连接。
+  const results = await mapLimit(candidates, REPO_CONCURRENCY, (cand) => processCandidate(env, cfg, cand, taxonomy, dryRun));
   const proposals = []; // 每项 = { repo, skills: [classified...] }
-  for (const cand of candidates) {
-    try {
-      const skillFiles = enumerateSkills(await fetchRepoTree(env, cand));
-      if (skillFiles.length === 0) {
-        bump(rejected, 'no_skill_files');
-        filteredOut.push({
-          full_name: cand.full_name, stars: cand.stars,
-          reason: '无 SKILL.md / .claude/skills —— 非原始来源（可能是聚合清单/文档/工具）',
-        });
-        if (!dryRun) await markSeen(env, candKey(cand), { stage: 'no_skill_files' });
-        continue;
-      }
-      const { is_collection, collection_reason, skills } = await classifyRepoSkills(env, cfg.llm, cand, skillFiles, taxonomy);
-      if (!is_collection) {
-        // 有 SKILL.md 但只是教程/演示/模板（玩具示例）→ 不当来源收
-        bump(rejected, 'not_a_collection');
-        filteredOut.push({
-          full_name: cand.full_name, stars: cand.stars,
-          skill_files: skillFiles.length,
-          reason: `非正经集合（教程/演示/模板）：${collection_reason || '玩具示例'}`,
-        });
-        if (!dryRun) await markSeen(env, candKey(cand), { stage: 'not_a_collection' });
-        continue;
-      }
-      proposals.push({ repo: cand, skills });
-      if (!dryRun) await markSeen(env, candKey(cand), { stage: 'proposed', skills: skills.length });
-    } catch (e) {
-      // 不写 SEEN —— 让它下一轮还能再试
-      bump(rejected, 'repo_error');
-      filteredOut.push({ full_name: cand.full_name, stars: cand.stars, reason: `error: ${String(e?.message || e)}` });
-      log(`repo ${candKey(cand)} failed: ${e}`);
+  for (const r of results) {
+    if (r.kind === 'proposed') {
+      proposals.push({ repo: r.cand, skills: r.skills });
+    } else {
+      bump(rejected, r.reason_key);
+      filteredOut.push(r.filtered);
     }
   }
 
@@ -234,6 +210,39 @@ async function runCuration(env, { dryRun = false, limit = 0 } = {}) {
     repos_proposed: proposals.length, skills_proposed: skillsProposed,
     rejected, filtered_out: filteredOut, pr: prUrl,
   };
+}
+
+// 同一时刻最多并行处理几个仓库（每个仓库内部的 chunk 仍是串行）。
+// 别开太大：对 api.github.com / openrouter.ai 同 host 连接有软上限。
+const REPO_CONCURRENCY = 4;
+
+// 处理单个候选仓库：抽取 → 分类 → 返回 tagged 结果（不改共享状态，便于并行）。
+// markSeen 在内部各自做（KV 写互不影响）。返回 {kind:'proposed',cand,skills} 或
+// {kind:'rejected',reason_key,filtered}。
+async function processCandidate(env, cfg, cand, taxonomy, dryRun) {
+  try {
+    const skillFiles = enumerateSkills(await fetchRepoTree(env, cand));
+    if (skillFiles.length === 0) {
+      if (!dryRun) await markSeen(env, candKey(cand), { stage: 'no_skill_files' });
+      return { kind: 'rejected', reason_key: 'no_skill_files',
+        filtered: { full_name: cand.full_name, stars: cand.stars,
+          reason: '无 SKILL.md / .claude/skills —— 非原始来源（可能是聚合清单/文档/工具）' } };
+    }
+    const { is_collection, collection_reason, skills } = await classifyRepoSkills(env, cfg.llm, cand, skillFiles, taxonomy);
+    if (!is_collection) {
+      if (!dryRun) await markSeen(env, candKey(cand), { stage: 'not_a_collection' });
+      return { kind: 'rejected', reason_key: 'not_a_collection',
+        filtered: { full_name: cand.full_name, stars: cand.stars, skill_files: skillFiles.length,
+          reason: `非正经集合（教程/演示/模板）：${collection_reason || '玩具示例'}` } };
+    }
+    if (!dryRun) await markSeen(env, candKey(cand), { stage: 'proposed', skills: skills.length });
+    return { kind: 'proposed', cand, skills };
+  } catch (e) {
+    // 不写 SEEN —— 让它下一轮还能再试
+    log(`repo ${candKey(cand)} failed: ${e}`);
+    return { kind: 'rejected', reason_key: 'repo_error',
+      filtered: { full_name: cand.full_name, stars: cand.stars, reason: `error: ${String(e?.message || e)}` } };
+  }
 }
 
 // ===========================================================================
@@ -516,6 +525,16 @@ const CLASSIFY_CHUNK = 10;
 function chunkArr(arr, n) {
   const out = [];
   for (let i = 0; i < arr.length; i += n) out.push(arr.slice(i, i + n));
+  return out;
+}
+
+// 有界并发 map：每批最多 limit 个并行，批与批之间串行。保序返回。
+async function mapLimit(items, limit, fn) {
+  const out = [];
+  for (let i = 0; i < items.length; i += limit) {
+    const batch = items.slice(i, i + limit);
+    out.push(...await Promise.all(batch.map(fn)));
+  }
   return out;
 }
 
