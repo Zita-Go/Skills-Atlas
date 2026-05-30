@@ -420,15 +420,15 @@ async function fetchRepoTree(env, cand) {
 // 这同时是"原始来源 vs 聚合清单"的判据 —— 聚合清单没有 SKILL.md，返回空。
 function enumerateSkills(tree) {
   const out = [];
-  const seen = new Set();
+  const seenName = new Set();
   for (const node of tree) {
     if (node.type !== 'blob') continue;
     const p = node.path || '';
     if (p.split('/').pop() !== 'SKILL.md') continue; // SKILL.md 是约定文件名
-    if (seen.has(p)) continue;
-    seen.add(p);
     const parts = p.split('/');
     const name = parts.length >= 2 ? parts[parts.length - 2] : '(root)'; // 上级目录名
+    if (seenName.has(name)) continue; // 同名 skill（不同路径/副本）只留一个，避免重复提议
+    seenName.add(name);
     out.push({ name, path: p });
     if (out.length >= SKILL_CAP) break;
   }
@@ -465,8 +465,10 @@ async function classifyRepoSkills(env, llm, cand, skillFiles, subs) {
         '你在帮一个【按功能整理】的 AI skill 目录给新发现的 skill 归类。'
         + '目录的功能子分类（id: 标题）如下：\n' + taxonomyStr + '\n\n'
         + '给定一个来源仓库和它里面的 skill 列表，为【每个 skill】判断它在功能上属于哪个子分类，并起一个简洁的功能"组名"。\n'
-        + '策略：拿不准就【新开一个组】（宁可多开，回头人工合并），不要硬塞进不合适的子分类；'
-        + '实在无法归入任何子分类时 subcategory 填 ""。\n'
+        + '策略：只有当 skill【明确】属于某子分类才填该 id；只是字面沾边不算'
+        + '（例如"写文档/记录 ADR"不要塞进"2.1 Office 文档处理(处理 Word/PPT 文件)"）。\n'
+        + '拿不准 / 没有明确合适的子分类时：subcategory 留空 ""，并【新开一个组】'
+        + '（宁可多开，回头人工合并），绝不硬塞进勉强的子分类。\n'
         + 'description_zh 只描述能从 skill 名/路径合理推断的内容，信息不足就给一句保守概述，【绝不编造数字或细节】。\n'
         + '只输出 JSON：{"skills":[{"name":"<原样回填 skill 名>","subcategory":"4-1","group":"功能组名","description_zh":"...","what":"它能帮 agent 做什么(一句)"}]}',
     },
