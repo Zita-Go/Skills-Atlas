@@ -13,8 +13,8 @@
   url: https://github.com/obra/superpowers
   type: skill
   skill_group_count: 7
-  stars: 211626
-  last_commit: '2026-05-27'
+  stars: 212339
+  last_commit: '2026-05-30'
   default_branch: main
   description: An agentic skills framework & software development methodology that works.
   license: MIT
@@ -40,7 +40,7 @@
   url: https://github.com/mattpocock/skills
   type: skill
   skill_group_count: 10
-  stars: 110660
+  stars: 111576
   last_commit: '2026-05-28'
   default_branch: main
   description: Skills for Real Engineers. Straight from my .claude directory.
@@ -65,7 +65,7 @@
   url: https://github.com/phuryn/pm-skills
   type: skill
   skill_group_count: 37
-  stars: 11716
+  stars: 11732
   last_commit: '2026-05-20'
   default_branch: main
   description: 'PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.'
@@ -143,8 +143,8 @@
   url: https://github.com/openai/skills
   type: skill
   skill_group_count: 24
-  stars: 20775
-  last_commit: '2026-05-21'
+  stars: 20841
+  last_commit: '2026-05-29'
   default_branch: main
   description: Skills Catalog for Codex
   doc_path: README.md
@@ -231,7 +231,7 @@
   url: https://github.com/Fission-AI/OpenSpec
   type: cli-framework
   skill_group_count: 1
-  stars: 51530
+  stars: 51670
   last_commit: '2026-05-28'
   default_branch: main
   description: Spec-driven development (SDD) for AI coding assistants.
@@ -246,7 +246,7 @@
   url: https://github.com/gsd-build/get-shit-done
   type: sdd-framework
   skill_group_count: 1
-  stars: 63770
+  stars: 63780
   last_commit: '2026-05-27'
   default_branch: main
   description: A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.
@@ -261,7 +261,7 @@
   url: https://github.com/anthropics/skills
   type: skill
   skill_group_count: 14
-  stars: 143206
+  stars: 143592
   last_commit: '2026-05-29'
   default_branch: main
   description: Public repository for Agent Skills
@@ -292,7 +292,7 @@
   url: https://github.com/ComposioHQ/awesome-claude-skills
   type: skill
   skill_group_count: 1
-  stars: 62362
+  stars: 62442
   last_commit: '2026-05-22'
   default_branch: master
   description: A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows
@@ -307,7 +307,7 @@
   url: https://github.com/obra/superpowers-lab
   type: skill
   skill_group_count: 3
-  stars: 350
+  stars: 352
   last_commit: '2026-03-23'
   default_branch: main
   description: Experimental skills for Claude Code Superpowers - new techniques and tools
@@ -324,7 +324,7 @@
   url: https://github.com/kenryu42/claude-code-safety-net
   type: plugin
   skill_group_count: 1
-  stars: 1366
+  stars: 1367
   last_commit: '2026-05-08'
   default_branch: main
   description: A coding agent hook that acts as a safety net, catching destructive git and filesystem commands before they execute. Supports Codex, Claude Code, OpenCode, Gemini CLI and Copilot CLI.
@@ -336,7 +336,7 @@
   url: https://github.com/google-gemini/gemini-skills
   type: skill
   skill_group_count: 1
-  stars: 3576
+  stars: 3580
   last_commit: '2026-05-20'
   default_branch: main
   description: Skills for the Gemini API, SDK and model/agent interactions
@@ -353,8 +353,8 @@
   url: https://github.com/vercel-labs/agent-skills
   type: cli
   skill_group_count: 3
-  stars: 27282
-  last_commit: '2026-05-27'
+  stars: 27309
+  last_commit: '2026-05-29'
   default_branch: main
   description: Vercel's official collection of agent skills
   doc_path: README.md
@@ -369,7 +369,7 @@
   url: https://github.com/trailofbits/skills
   type: marketplace
   skill_group_count: 1
-  stars: 5462
+  stars: 5474
   last_commit: '2026-05-27'
   default_branch: main
   description: Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows
@@ -392,7 +392,7 @@
   url: https://github.com/kreuzberg-dev/kreuzberg
   type: extraction-engine
   skill_group_count: 1
-  stars: 8406
+  stars: 8415
   last_commit: '2026-05-29'
   default_branch: main
   description: A polyglot document intelligence framework with a Rust core. Extract text, metadata, images, and structured information from PDFs, Office documents, images, and 97+ formats. Available for
@@ -401,14 +401,15 @@
   skill_docs:
     kreuzberg: skills/kreuzberg/SKILL.md
   skill_docs_generated_at: '2026-05-30'
+  license: Elastic-2.0
 - id: deusyu
   author: deusyu
   repo: translate-book
   url: https://github.com/deusyu/translate-book
   type: skill
   skill_group_count: 1
-  stars: 739
-  last_commit: '2026-05-28'
+  stars: 740
+  last_commit: '2026-05-29'
   default_branch: main
   description: Claude Code skill that translates entire books (PDF/DOCX/EPUB) into any language using parallel subagents
   license: MIT
@@ -418,7 +419,7 @@
   url: https://github.com/blader/humanizer
   type: skill
   skill_group_count: 1
-  stars: 21450
+  stars: 21549
   last_commit: '2026-05-27'
   default_branch: main
   description: Claude Code skill that removes signs of AI-generated writing from text
@@ -429,7 +430,7 @@
   url: https://github.com/NeoLabHQ/context-engineering-kit
   type: skill
   skill_group_count: 1
-  stars: 1051
+  stars: 1055
   last_commit: '2026-05-28'
   default_branch: master
   description: Hand-crafted Claude Code Skills focused on improving agent results quality. Compatible with OpenCode, Cursor, Antigravity, Gemini CLI, and others.
@@ -444,7 +445,7 @@
   url: https://github.com/alchaincyf/huashu-design
   type: skill
   skill_group_count: 2
-  stars: 15586
+  stars: 15669
   last_commit: '2026-05-28'
   default_branch: master
   description: Huashu Design · HTML-native design skill for Claude Code · Claude Code 里 HTML 原生的设计 skill · 高保真原型 / 幻灯片 / 动画 + 20 设计哲学 + 5 维评审 + MP4 导出 · Agent-agnostic
@@ -455,7 +456,7 @@
   url: https://github.com/JuliusBrussee/caveman
   type: skill
   skill_group_count: 1
-  stars: 66146
+  stars: 66431
   last_commit: '2026-05-20'
   default_branch: main
   description: 🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman
@@ -479,7 +480,7 @@
   url: https://github.com/PleasePrompto/notebooklm-skill
   type: skill
   skill_group_count: 1
-  stars: 6702
+  stars: 6721
   last_commit: '2025-11-21'
   default_branch: master
   description: Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini.
@@ -491,8 +492,8 @@
   url: https://github.com/teng-lin/notebooklm-py
   type: python-library
   skill_group_count: 1
-  stars: 15444
-  last_commit: '2026-05-29'
+  stars: 15508
+  last_commit: '2026-05-30'
   default_branch: main
   description: Unofficial Python API and agentic skill for Google NotebookLM. Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents
     like Claude Code, Codex, and OpenClaw.
@@ -503,7 +504,7 @@
   url: https://github.com/safishamsi/graphify
   type: skill
   skill_group_count: 1
-  stars: 55810
+  stars: 56217
   last_commit: '2026-05-29'
   default_branch: v8
   description: AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into
@@ -519,7 +520,7 @@
   url: https://github.com/bevibing/tutor-skills
   type: skill
   skill_group_count: 1
-  stars: 906
+  stars: 908
   last_commit: '2026-02-28'
   default_branch: main
   description: A Claude Code skill that turns PDFs, docs, and codebases into Obsidian study vaults
@@ -546,6 +547,8 @@
   last_commit: '2026-05-13'
   license: MIT
   doc_path: README.md
+  default_branch: main
+  description: Hub for getting started with Notion, including documentation, customizable scripts, and quick-start guides.
 - id: hanfang
   author: hanfang
   repo: claude-memory-skill
@@ -564,7 +567,7 @@
   url: https://github.com/thedotmack/claude-mem
   type: cli-mcp
   skill_group_count: 1
-  stars: 79485
+  stars: 79630
   last_commit: '2026-05-29'
   default_branch: main
   description: Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works
@@ -577,7 +580,7 @@
   url: https://github.com/alirezarezvani/claude-skills
   type: skill
   skill_group_count: 1
-  stars: 16477
+  stars: 16542
   last_commit: '2026-05-29'
   default_branch: main
   description: 337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding
@@ -590,7 +593,7 @@
   url: https://github.com/deanpeters/Product-Manager-Skills
   type: skill
   skill_group_count: 25
-  stars: 4606
+  stars: 4618
   last_commit: '2026-05-20'
   default_branch: main
   description: Product Management skills framework built on battle-tested methods for Claude Code, Cowork, Codex, and AI agents.
@@ -638,6 +641,7 @@
     vp-cpo-readiness-advisor: skills/vp-cpo-readiness-advisor/SKILL.md
     workshop-facilitation: skills/workshop-facilitation/SKILL.md
   skill_docs_generated_at: '2026-05-30'
+  license: CC-BY-NC-SA-4.0
 - id: founder-skills
   author: ognjengt
   repo: founder-skills
@@ -665,6 +669,8 @@
     viral-hook-creator: skills/viral-hook-creator/SKILL.md
     x-writer: skills/x-writer/SKILL.md
   skill_docs_generated_at: '2026-05-30'
+  default_branch: main
+  description: Claude skills for founders
 - id: wrsmith108
   author: wrsmith108
   repo: linear-claude-skill
@@ -682,18 +688,19 @@
   url: https://github.com/Digidai/product-manager-skills
   type: skill
   skill_group_count: 1
-  stars: 92
+  stars: 93
   last_commit: '2026-04-12'
   default_branch: main
   description: 'PM skill for Claude Code, Codex, Cursor, and Windsurf: diagnose SaaS metrics, critique PRDs, plan roadmaps, run discovery, and coach PM career transitions.'
+  license: CC-BY-NC-SA-4.0
 - id: Corey
   author: coreyhaines31
   repo: marketingskills
   url: https://github.com/coreyhaines31/marketingskills
   type: skill
   skill_group_count: 24
-  stars: 30972
-  last_commit: '2026-05-28'
+  stars: 31083
+  last_commit: '2026-05-29'
   default_branch: main
   description: Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.
   license: MIT
@@ -748,7 +755,7 @@
   url: https://github.com/AgriciDaniel/claude-seo
   type: skill
   skill_group_count: 1
-  stars: 7274
+  stars: 7309
   last_commit: '2026-05-25'
   default_branch: main
   description: Universal SEO skill for Claude Code. 25 sub-skills + 18 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, backlinks, local SEO, maps intelligence, semantic clustering, e-commerce
@@ -761,8 +768,8 @@
   url: https://github.com/ReScienceLab/opc-skills
   type: skill
   skill_group_count: 6
-  stars: 896
-  last_commit: '2026-05-28'
+  stars: 899
+  last_commit: '2026-05-29'
   default_branch: main
   description: Agent Skills for Solopreneurs
   license: Apache-2.0
@@ -783,17 +790,20 @@
   url: https://github.com/AgriciDaniel/claude-ads
   type: skill
   skill_group_count: 1
-  stars: 5322
+  stars: 5336
   last_commit: '2026-05-18'
   license: MIT
   doc_path: README.md
+  default_branch: main
+  description: Comprehensive paid advertising audit & optimization skill for Claude Code. 250+ checks across Google, Meta, YouTube, LinkedIn, TikTok, Microsoft & Apple Ads with weighted scoring, parallel
+    agents, industry templates, and AI creative generation.
 - id: nextlevelbuilder
   author: nextlevelbuilder
   repo: ui-ux-pro-max-skill
   url: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
   type: skill
   skill_group_count: 1
-  stars: 84450
+  stars: 84808
   last_commit: '2026-04-03'
   default_branch: main
   description: An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms
@@ -805,15 +815,17 @@
   url: https://github.com/op7418/NanoBanana-PPT-Skills
   type: skill
   skill_group_count: 1
-  stars: 2839
+  stars: 2845
   last_commit: '2026-01-19'
+  default_branch: main
+  description: NanoBanana PPT Skills 基于 AI 自动生成高质量 PPT 图片和视频的强大工具，支持智能转场和交互式播放
 - id: zarazhangrui
   author: zarazhangrui
   repo: frontend-slides
   url: https://github.com/zarazhangrui/frontend-slides
   type: skill
   skill_group_count: 1
-  stars: 19526
+  stars: 19600
   last_commit: '2026-05-26'
   default_branch: main
   description: Create beautiful slides on the web using a coding agent's frontend skills
@@ -827,7 +839,7 @@
   url: https://github.com/nexu-io/open-design
   type: skill
   skill_group_count: 1
-  stars: 55103
+  stars: 55506
   last_commit: '2026-05-29'
   default_branch: main
   description: 🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames
@@ -840,7 +852,7 @@
   url: https://github.com/op7418/Youtube-clipper-skill
   type: skill
   skill_group_count: 1
-  stars: 1918
+  stars: 1921
   last_commit: '2026-01-22'
   default_branch: main
   license: MIT
@@ -850,19 +862,23 @@
   url: https://github.com/calesthio/OpenMontage
   type: video-engine
   skill_group_count: 1
-  stars: 4069
+  stars: 4092
   last_commit: '2026-05-07'
   license: AGPL-3.0
   doc_path: README.md
+  default_branch: main
+  description: World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.
 - id: remotion-dev
   author: remotion-dev
   repo: skills
   url: https://github.com/remotion-dev/skills
   type: skill
   skill_group_count: 1
-  stars: 3352
+  stars: 3361
   last_commit: '2026-05-07'
   doc_path: README.md
+  default_branch: main
+  description: Agent Skills
 - id: Firecrawl
   author: firecrawl
   repo: cli
@@ -870,7 +886,7 @@
   type: skill
   skill_group_count: 1
   stars: 425
-  last_commit: '2026-05-28'
+  last_commit: '2026-05-29'
   default_branch: main
   description: CLI and Agent Skill for Firecrawl - Add scrape, search, and browsing capabilities to your AI agents
   doc_path: README.md
@@ -880,8 +896,8 @@
   url: https://github.com/mvanhorn/last30days-skill
   type: skill
   skill_group_count: 1
-  stars: 26766
-  last_commit: '2026-05-22'
+  stars: 26792
+  last_commit: '2026-05-29'
   default_branch: main
   description: AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary
   license: MIT
@@ -892,7 +908,7 @@
   url: https://github.com/Paramchoudhary/ResumeSkills
   type: skill
   skill_group_count: 6
-  stars: 617
+  stars: 623
   last_commit: '2026-05-20'
   default_branch: main
   description: A collection of AI agent skills focused on resume optimization, job applications, and career development. Built for job seekers, career changers, and professionals who want Claude Code to
@@ -920,7 +936,7 @@
   url: https://github.com/santifer/career-ops
   type: skill
   skill_group_count: 2
-  stars: 47727
+  stars: 47839
   last_commit: '2026-05-25'
   default_branch: main
   description: AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.
@@ -960,7 +976,7 @@
   url: https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep
   type: multi-skill-suite
   skill_group_count: 1
-  stars: 10962
+  stars: 10998
   last_commit: '2026-05-29'
   default_branch: main
   description: 'ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in
@@ -973,8 +989,8 @@
   url: https://github.com/garrytan/gstack
   type: skill
   skill_group_count: 1
-  stars: 104176
-  last_commit: '2026-05-29'
+  stars: 104518
+  last_commit: '2026-05-30'
   default_branch: main
   description: 'Use Garry Tan''s exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA'
   license: MIT
@@ -984,7 +1000,7 @@
   url: https://github.com/EveryInc/charlie-cfo-skill
   type: skill
   skill_group_count: 1
-  stars: 231
+  stars: 232
   last_commit: '2026-01-29'
   default_branch: main
   description: Claude Code skill for bootstrapped CFO financial management. Named after Charlie Munger.
@@ -995,7 +1011,7 @@
   url: https://github.com/openaccountants/openaccountants
   type: skill
   skill_group_count: 1
-  stars: 88
+  stars: 89
   last_commit: '2026-05-29'
   default_branch: main
   description: Open-source accounting and tax skills for AI. 133 countries + 51 US states. Upload to Claude/ChatGPT or connect via MCP. Verified by accountants.
@@ -1007,18 +1023,19 @@
   url: https://github.com/imbad0202/academic-research-skills
   type: multi-skill-suite
   skill_group_count: 1
-  stars: 23599
+  stars: 23921
   last_commit: '2026-05-29'
   default_branch: main
   description: 'Academic Research Skills for Claude Code: research → write → review → revise → finalize'
   doc_path: README.md
+  license: CC-BY-NC-4.0
 - id: K-Dense-AI
   author: K-Dense-AI
   repo: scientific-agent-skills
   url: https://github.com/K-Dense-AI/scientific-agent-skills
   type: multi-skill-suite
   skill_group_count: 1
-  stars: 26482
+  stars: 26552
   last_commit: '2026-05-28'
   default_branch: main
   description: 'Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology,
@@ -1031,7 +1048,7 @@
   url: https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering
   type: skill
   skill_group_count: 12
-  stars: 16123
+  stars: 16143
   last_commit: '2026-05-26'
   default_branch: main
   description: A comprehensive collection of Agent Skills for context engineering, multi-agent architectures, and production agent systems. Use when building, optimizing, or debugging agent systems that
@@ -1072,7 +1089,7 @@
   url: https://github.com/anthropics/claude-plugins-official
   type: marketplace
   skill_group_count: 1
-  stars: 28499
+  stars: 28617
   last_commit: '2026-05-29'
   default_branch: main
   description: Official, Anthropic-managed directory of high quality Claude Code Plugins.
@@ -1084,7 +1101,7 @@
   url: https://github.com/multica-ai/andrej-karpathy-skills
   type: claude-md-template
   skill_group_count: 1
-  stars: 160941
+  stars: 161732
   last_commit: '2026-04-20'
   default_branch: main
   description: A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.

@@ -112,9 +112,22 @@ def classify_license(text):
         return 'ISC'
     if 'this is free and unencumbered software released into the public domain' in t:
         return 'Unlicense'
-    if 'creative commons attribution-sharealike' in t:
+    if 'elastic license' in t:
+        return 'Elastic-2.0'
+    if 'business source license' in t:
+        return 'BUSL-1.1'
+    if 'server side public license' in t:
+        return 'SSPL-1.0'
+    if 'polyform' in t and 'noncommercial' in t:
+        return 'PolyForm-Noncommercial-1.0.0'
+    # Creative Commons：NC（非商用）变体更具体，先判
+    if 'noncommercial' in t and 'sharealike' in t:
+        return 'CC-BY-NC-SA-4.0'
+    if 'noncommercial' in t:
+        return 'CC-BY-NC-4.0'
+    if 'attribution-sharealike' in t or ('creative commons' in t and 'sharealike' in t):
         return 'CC-BY-SA-4.0'
-    if 'creative commons attribution' in t:
+    if 'creative commons' in t and 'attribution' in t:
         return 'CC-BY-4.0'
     return None
 
@@ -170,8 +183,17 @@ def main():
                 if near:
                     print(f'  未精确匹配 {r["id"]}/{sk} 近似: {near[:3]}（需人审）', file=sys.stderr)
 
-        # Phase 2b：per-skill LICENSE（仅对仍"未知"许可证的仓库；统一则定仓库 license，不统一才逐 skill）
+        # Phase 2b：补 license（fetch_metadata 已取 GitHub SPDX；这里补 GitHub 认不出的）
         r.pop('skill_licenses', None)
+        if not r.get('license'):
+            # 先读根 LICENSE：ELv2 / CC-NC / BUSL 等 GitHub 不 SPDX 化的在这里抓
+            lower0 = {p.lower(): p for p in paths}
+            for cand in ('license', 'license.txt', 'license.md', 'copying'):
+                if cand in lower0:
+                    spdx = classify_license(raw_get(a, name, branch, lower0[cand]))
+                    if spdx:
+                        r['license'] = spdx
+                    break
         if sd and not r.get('license'):
             lower = {p.lower(): p for p in paths}
             skill_lic = {}

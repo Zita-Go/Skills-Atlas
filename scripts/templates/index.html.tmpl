@@ -535,6 +535,26 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 /* 用法 / 一键安装：source 行内动作按钮 + 许可证徽章 */
 .source-row{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}
 .card.clickable{cursor:pointer}
+.card-desc,.card-skills,.card .skill-tag{user-select:text}
+.license-badge.ok{background:rgba(110,200,140,.12);color:#7fd99b;border-color:rgba(110,200,140,.3)}
+.license-badge.copyleft{background:rgba(255,180,90,.12);color:#ffc46b;border-color:rgba(255,180,90,.3)}
+.license-badge.restrict{background:rgba(255,110,120,.14);color:#ff8b94;border-color:rgba(255,110,120,.4);font-weight:700}
+.stale-badge{font-family:var(--font-mono);font-size:10px;padding:2px 7px;border-radius:99px;white-space:nowrap;
+  background:rgba(255,180,90,.10);color:#e0a85a;border:1px solid rgba(255,180,90,.25)}
+.hero-start{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:16px}
+.hero-start-q{font-size:12.5px;color:var(--fg-dim)}
+.start-chip{background:var(--bg-elev);border:1px solid var(--border);color:var(--fg-dim);
+  padding:7px 14px;border-radius:99px;font-size:12.5px;cursor:pointer;transition:all .15s}
+.start-chip:hover{border-color:var(--accent);color:var(--accent);background:rgba(124,156,255,.08);transform:translateY(-1px)}
+.hero-start-eg{font-size:11px;color:var(--fg-muted);flex-basis:100%;margin-top:2px}
+.usage-install{padding:6px 28px 0;font-size:12.5px;line-height:1.65}
+.usage-install .ui-note{color:var(--fg-dim);margin:4px 0}
+.usage-install .ui-prereq{color:var(--fg-muted);margin:4px 0}
+.usage-install .ui-alt{margin:6px 0;color:var(--fg-dim)}
+.usage-install .ui-alt summary{cursor:pointer;color:var(--accent);font-size:12px}
+.usage-install code{font-family:var(--font-mono);background:var(--bg-elev);padding:2px 6px;border-radius:4px;font-size:11.5px}
+.usage-install .ui-cmd{display:flex;gap:8px;align-items:center;margin:2px 0 6px}
+.usage-install .ui-cmd code{flex:1;overflow-x:auto;padding:7px 10px;white-space:nowrap}
 .src-act{display:inline-flex;align-items:center;gap:4px;cursor:pointer;
   background:transparent;border:1px solid var(--border);
   padding:4px 9px;border-radius:99px;font-size:11px;color:var(--fg-dim);
@@ -953,6 +973,13 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
         <div><b id="heroVendorCount">—</b>源仓库</div>
         <div><b id="heroChainCount">—</b>强绑定工作流</div>
       </div>
+      <div class="hero-start">
+        <span class="hero-start-q">不知从哪开始？</span>
+        <button class="start-chip" data-start="search">🔍 搜 skill / 描述 / 仓库</button>
+        <button class="start-chip" data-start="ai">✨ 描述需求，AI 推荐</button>
+        <button class="start-chip" data-start="browse">📂 浏览 13 大类</button>
+        <span class="hero-start-eg">例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」</span>
+      </div>
     </div>
     <div class="hero-viz">
       <svg id="heroChart" viewBox="0 0 200 200" width="200" height="200"></svg>
@@ -1195,6 +1222,27 @@ function toggleNav(section){
   section.classList.toggle('expanded');
 }
 
+// 许可证分级：宽松 / copyleft / 限制性(商用受限·非商用) / 未声明 —— 决定徽章样式与提示
+const LIC_COPYLEFT = ['GPL-3.0','GPL-2.0','AGPL-3.0','LGPL-3.0','MPL-2.0','CC-BY-SA-4.0'];
+const LIC_RESTRICT = ['Elastic-2.0','BUSL-1.1','SSPL-1.0','CC-BY-NC-4.0','CC-BY-NC-SA-4.0','PolyForm-Noncommercial-1.0.0'];
+function licMeta(spdx){
+  if(!spdx) return { cls:'unknown', label:'未声明', note:'上游未声明许可证，使用前请到仓库确认' };
+  if(LIC_RESTRICT.includes(spdx)) return { cls:'restrict', label:spdx, note:(/NC|PolyForm/.test(spdx)?'⚠ 非商用许可':'⚠ 商用受限') };
+  if(LIC_COPYLEFT.includes(spdx)) return { cls:'copyleft', label:spdx, note:'copyleft：衍生作品需以同协议开源' };
+  return { cls:'ok', label:spdx, note:'宽松开源协议' };
+}
+function installPrereq(cmd){
+  if(!cmd) return '';
+  if(cmd.startsWith('npx ')) return '需 Node.js ≥18。粘到终端运行；skill 会装到 ~/.claude/skills/，用 skills list 验证。';
+  if(cmd.startsWith('npm ')) return '需 Node.js + npm。粘到终端运行。';
+  if(cmd.startsWith('pip ')) return '需 Python 3 + pip。粘到终端运行。';
+  if(cmd.startsWith('/plugin')) return '在 Claude Code 里运行此斜杠命令（先加 marketplace，再 /plugin install 选具体插件）。';
+  if(cmd.startsWith('git clone')) return '需 git。clone 后按仓库 README 使用。';
+  if(cmd.startsWith('#')) return '按提示手动操作。';
+  return '粘到终端运行。';
+}
+function daysSince(iso){ try{ return Math.floor((Date.now() - new Date(iso).getTime())/864e5); }catch(_){ return null; } }
+
 function buildContent(){
   const root = document.getElementById('content');
   let html = '';
@@ -1248,10 +1296,14 @@ function buildContent(){
           const copyBtn = cmd
             ? `<button class="src-act" data-act="copy" data-cmd="${escapeAttr(cmd)}" title="复制安装命令：${escapeAttr(cmd)}">📋 安装</button>`
             : '';
+          const lm = licMeta(s.license);
           const lic = s.license
-            ? `<a class="license-badge" href="${escapeAttr(s.url)}/blob/${escapeAttr(s.default_branch||'main')}/LICENSE" target="_blank" rel="noopener" title="许可证 ${escapeAttr(s.license)}（点击查看）">${escapeHtml(s.license)}</a>`
-            : `<span class="license-badge unknown" title="上游未声明许可证 / 待同步，使用前请到仓库确认">未知</span>`;
-          return `<span class="source-row">${link}${usageBtn}${copyBtn}${lic}</span>`;
+            ? `<a class="license-badge ${lm.cls}" href="${escapeAttr(s.url)}/blob/${escapeAttr(s.default_branch||'main')}/LICENSE" target="_blank" rel="noopener" title="${escapeAttr(lm.label)}：${escapeAttr(lm.note)}（点击查看 LICENSE）">${escapeHtml(s.license)}${lm.cls==='restrict'?' ⚠':''}</a>`
+            : `<span class="license-badge unknown" title="${escapeAttr(lm.note)}">未声明</span>`;
+          const days = s.last_commit ? daysSince(s.last_commit) : null;
+          const staleHtml = (days != null && days > 90)
+            ? `<span class="stale-badge" title="最后更新 ${days} 天前，可能已停止维护">⏳ ${Math.round(days/30)}个月未更新</span>` : '';
+          return `<span class="source-row">${link}${usageBtn}${copyBtn}${lic}${staleHtml}</span>`;
         }).join('');
 
         const chainBadge = row.chain ? '<span class="chain-badge">⛓ 强绑定</span>' : '';
@@ -3196,6 +3248,7 @@ function setupUsage(){
         '<button class="ai-btn-secondary" id="usageCopy">📋 复制安装命令</button>' +
         '<a class="license-badge" id="usageLic" target="_blank" rel="noopener" style="display:none"></a>' +
       '</div>' +
+      '<div class="usage-install" id="usageInstall" style="display:none"></div>' +
       '<div class="usage-body" id="usageBody"></div>' +
     '</div>';
   document.body.appendChild(ov);
@@ -3204,6 +3257,7 @@ function setupUsage(){
   const repoLink = ov.querySelector('#usageRepo');
   const copyBtn = ov.querySelector('#usageCopy');
   const licEl = ov.querySelector('#usageLic');
+  const installEl = ov.querySelector('#usageInstall');
   const close = () => ov.classList.add('hidden');
   ov.querySelector('#usageClose').addEventListener('click', close);
   ov.addEventListener('click', e => { if(e.target === ov) close(); });
@@ -3217,6 +3271,8 @@ function setupUsage(){
     const b = e.target.closest('[data-act]');
     if(!b) return;
     if(b.dataset.act === 'copy') return copyText(b.dataset.cmd || '', b);
+    // 卡片本体触发：用户在选文字时不打断（按钮/标签不受此限）
+    if(b.classList.contains('card') && window.getSelection && window.getSelection().toString().length > 3) return;
     if(b.dataset.act === 'usage') openUsage(b.dataset);
   });
 
@@ -3225,11 +3281,26 @@ function setupUsage(){
     sub.textContent = d.skill ? `${d.skill} · ${d.author}/${d.repo}` : `${d.author}/${d.repo}`;
     repoLink.href = d.url || `https://github.com/${d.author}/${d.repo}`;
     const v = DATA.vendors[d.name];
-    const cmd = (v && v.install && v.install.command) ? v.install.command : '';
+    const inst = (v && v.install) || {};
+    const cmd = inst.command || '';
     copyBtn.style.display = cmd ? '' : 'none';
     copyBtn.onclick = () => copyText(cmd, copyBtn);
-    if(d.license){ licEl.textContent = '协议 ' + d.license; licEl.href = d.url || `https://github.com/${d.author}/${d.repo}`; licEl.style.display = ''; }
-    else licEl.style.display = 'none';
+    const lm = licMeta(d.license);
+    if(d.license){
+      licEl.textContent = lm.label + (lm.cls === 'restrict' ? ' ⚠' : '');
+      licEl.className = 'license-badge ' + lm.cls;
+      licEl.title = lm.note;
+      licEl.href = `${d.url || ('https://github.com/' + d.author + '/' + d.repo)}/blob/${d.branch || 'main'}/LICENSE`;
+      licEl.style.display = '';
+    } else licEl.style.display = 'none';
+    if(cmd){
+      let ih = `<div class="ui-cmd"><code>${escapeHtml(cmd)}</code><button class="src-act" data-act="copy" data-cmd="${escapeAttr(cmd)}">📋 复制</button></div>`;
+      ih += '<div class="ui-prereq">' + escapeHtml(installPrereq(cmd)) + '</div>';
+      if(inst.note) ih += '<div class="ui-note">ℹ️ ' + escapeHtml(inst.note) + '</div>';
+      if(inst.alt) ih += `<details class="ui-alt"><summary>备选命令</summary><code>${escapeHtml(inst.alt)}</code> <button class="src-act" data-act="copy" data-cmd="${escapeAttr(inst.alt)}">复制</button></details>`;
+      installEl.innerHTML = ih;
+      installEl.style.display = '';
+    } else installEl.style.display = 'none';
     body.innerHTML = '<div class="usage-state">加载中…</div>';
     try{
       const { text, path } = await fetchDoc(d);
@@ -3256,6 +3327,13 @@ setupUsage();
 setupTheme();
 setupMenuBtn();
 setupScrollSpy();
+// 落地"从哪开始"三入口
+document.querySelectorAll('.start-chip').forEach(c => c.addEventListener('click', () => {
+  const a = c.dataset.start;
+  if(a === 'ai'){ const b = document.getElementById('aiBtn'); if(b) b.click(); }
+  else if(a === 'browse'){ const el = document.getElementById('content'); if(el) el.scrollIntoView({ behavior:'smooth' }); }
+  else { const i = document.getElementById('search'); if(i){ i.focus(); i.scrollIntoView({ block:'center' }); } }
+}));
 setupJumpOffset();
 
 // 让锚点跳转留白 = sticky toolbar 实际高度 + 16（toolbar 换行变高时也不会挡住小节标题）
