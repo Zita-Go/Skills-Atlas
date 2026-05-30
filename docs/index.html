@@ -2269,10 +2269,6 @@ function buildGraph(){
     container.classList.add('is-panning');
     svg.setPointerCapture(e.pointerId);
   });
-  // 点空白处（非拖拽）清除聚焦 / 关抽屉
-  svg.addEventListener('click', e => {
-    if(!e.target.closest('.node') && !panMoved && focusedNode) clearFocus();
-  });
   svg.addEventListener('pointermove', e => {
     if(!panning) return;
     panMoved = true;
@@ -2284,28 +2280,30 @@ function buildGraph(){
     applyTransform();
   });
   svg.addEventListener('pointerup', e => {
+    // 空白处轻点（非拖拽）→ 清除聚焦/关抽屉。注意必须在 pointerup 判定，
+    // 不能用 click 事件：节点 pointerdown 的 setPointerCapture 会把 click 派发到 svg，
+    // 误判成"点空白"而把刚打开的抽屉立刻关掉。
+    const wasEmptyTap = panning && !panMoved;
     panning = false;
     container.classList.remove('is-panning');
+    if(wasEmptyTap && focusedNode) clearFocus();
   });
   svg.addEventListener('pointercancel', () => { panning = false; container.classList.remove('is-panning'); });
 
   // ==== 节点拖动 ====
-  let dragNode = null, dragStart = null;
+  let dragNode = null, dragStart = null, dragStartScreen = null;
   nodes.forEach(n => {
     n._g.addEventListener('pointerdown', e => {
       e.stopPropagation();
       dragNode = n;
       dragStart = screenToWorld(e.clientX, e.clientY);
+      dragStartScreen = {x: e.clientX, y: e.clientY};
       n.fx = n.x; n.fy = n.y;
       n._g.classList.add('dragging');
       svg.setPointerCapture(e.pointerId);
       energy = 1;  // 重新激活模拟
     });
-    n._g.addEventListener('click', e => {
-      // 仅当没有真正发生拖动（移动距离很小）时才视为 click → 打开详情抽屉 + 聚焦邻域（留在图内）
-      if(!n._dragMoved){ openDrawer(n); }
-      n._dragMoved = false;
-    });
+    // 点击在 document 的 pointerup 里统一处理（避免 setPointerCapture 导致 click 不触发 + 防双开）
     n._g.addEventListener('pointerenter', () => {
       const nb = neighbors.get(n.id);
       // dim 所有 / highlight 自身和邻居
@@ -2337,10 +2335,11 @@ function buildGraph(){
 
   document.addEventListener('pointermove', e => {
     if(!dragNode) return;
-    const w = screenToWorld(e.clientX, e.clientY);
-    if(Math.hypot(w.x - dragStart.x, w.y - dragStart.y) > 4){
+    // 用屏幕像素判定是否真的在拖动（之前用世界坐标阈值 4，约 <2px，导致正常点击被误判为拖动、抽屉打不开）
+    if(dragStartScreen && Math.hypot(e.clientX - dragStartScreen.x, e.clientY - dragStartScreen.y) > 6){
       dragNode._dragMoved = true;
     }
+    const w = screenToWorld(e.clientX, e.clientY);
     dragNode.fx = w.x; dragNode.fy = w.y;
     dragNode.x = w.x; dragNode.y = w.y;
     energy = 1;
@@ -2348,8 +2347,12 @@ function buildGraph(){
   document.addEventListener('pointerup', () => {
     if(dragNode){
       dragNode._g.classList.remove('dragging');
+      // 没拖动 = 点击 → 打开详情抽屉。（不能依赖节点的 click 事件：pointerdown 时
+      // svg.setPointerCapture 把后续 click 派发到了 svg，节点上的 click 永远不触发。）
+      if(!dragNode._dragMoved){ openDrawer(dragNode); }
       dragNode.fx = null; dragNode.fy = null;
-      dragNode = null;
+      dragNode._dragMoved = false;
+      dragNode = null; dragStartScreen = null;
     }
   });
 
