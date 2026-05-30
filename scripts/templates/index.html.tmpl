@@ -549,6 +549,15 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 .start-chip{background:var(--bg-elev);border:1px solid var(--border);color:var(--fg-dim);
   padding:7px 14px;border-radius:99px;font-size:12.5px;cursor:pointer;transition:all .15s}
 .start-chip:hover{border-color:var(--accent);color:var(--accent);background:rgba(124,156,255,.08);transform:translateY(-1px)}
+/* 性能：屏外卡片不渲染（首屏更快） */
+.card{content-visibility:auto;contain-intrinsic-size:auto 200px}
+/* 键盘焦点环（可访问性） */
+.skill-tag.has-doc:focus-visible,.src-act:focus-visible,.start-chip:focus-visible,.license-badge:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+/* 移动端触摸目标放大 */
+@media (max-width:760px){
+  .src-act,.source-link,.pill,.view-btn,.start-chip{min-height:38px;padding-top:9px;padding-bottom:9px}
+  .skill-tag{padding-top:6px;padding-bottom:6px}
+}
 .hero-start-eg{font-size:11px;color:var(--fg-muted);flex-basis:100%;margin-top:2px}
 .usage-install{padding:6px 28px 0;font-size:12.5px;line-height:1.65}
 .usage-install .ui-note{color:var(--fg-dim);margin:4px 0}
@@ -1454,7 +1463,7 @@ function buildContent(){
           }
           if(hit){
             const lic = (hit.v.skill_licenses && hit.v.skill_licenses[sk]) || hit.v.license || '';
-            return `<span class="skill-tag has-doc" data-act="usage" data-author="${escapeAttr(hit.v.author)}" data-repo="${escapeAttr(hit.v.repo)}" data-branch="${escapeAttr(hit.v.default_branch||'main')}" data-docpath="${escapeAttr(hit.path)}" data-url="${escapeAttr(hit.v.url)}" data-name="${escapeAttr(hit.name)}" data-skill="${escapeAttr(sk)}" data-license="${escapeAttr(lic)}" title="${escapeAttr(LANG === 'en' ? `View SKILL.md for ${sk} (license: ${lic||'unknown'})` : `查看 ${sk} 的 SKILL.md（协议：${lic||'未知'}）`)}">${escapeHtml(sk)}</span>`;
+            return `<span class="skill-tag has-doc" tabindex="0" role="button" data-act="usage" data-author="${escapeAttr(hit.v.author)}" data-repo="${escapeAttr(hit.v.repo)}" data-branch="${escapeAttr(hit.v.default_branch||'main')}" data-docpath="${escapeAttr(hit.path)}" data-url="${escapeAttr(hit.v.url)}" data-name="${escapeAttr(hit.name)}" data-skill="${escapeAttr(sk)}" data-license="${escapeAttr(lic)}" title="${escapeAttr(LANG === 'en' ? `View SKILL.md for ${sk} (license: ${lic||'unknown'})` : `查看 ${sk} 的 SKILL.md（协议：${lic||'未知'}）`)}">${escapeHtml(sk)}</span>`;
           }
           return `<span class="skill-tag">${escapeHtml(sk)}</span>`;
         }).join('');
@@ -2381,6 +2390,7 @@ function expandQuery(q){
 }
 function scoreRow(row, queryTokens){
   const text = (row.skills.join(' ') + ' ' + row.group + ' ' + row.description + ' ' +
+                (row.use_case||'') + ' ' + (row.personas||[]).join(' ') + ' ' +
                 row._h1 + ' ' + row._h2).toLowerCase();
   let score = 0;
   queryTokens.forEach(t => {
@@ -2389,6 +2399,8 @@ function scoreRow(row, queryTokens){
     if(row.group.toLowerCase().includes(t)) score += 5;
     // skill 名匹配
     if(row.skills.some(s => s.toLowerCase().includes(t))) score += 4;
+    // 用例（场景）匹配：高信号
+    if((row.use_case||'').toLowerCase().includes(t)) score += 3;
     // 描述匹配
     const occurrences = (text.match(new RegExp(t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'))||[]).length;
     score += occurrences * 1.5;
@@ -3372,6 +3384,8 @@ function renderMarkdown(src){
   src = src.replace(/```[^\n]*\n([\s\S]*?)```/g, (_, code) => {
     blocks.push(code); return `\u0000B${blocks.length - 1}\u0000`;
   });
+  // 去掉 README 里的 HTML 标签噪音（代码块已抽出；之后仍 escape，安全）
+  src = src.replace(/<\/?[a-zA-Z][^>]{0,300}>/g, '');
   let h = escapeHtml(src);                             // 关键：先转义全文
   // 行内（在已转义文本上）：代码 / 粗体 / 斜体 / 链接
   h = h.replace(/`([^`\n]+)`/g, (_, c) => `<code>${c}</code>`)
@@ -3431,7 +3445,7 @@ function setupUsage(){
   ov.className = 'ai-overlay hidden';
   ov.id = 'usageOverlay';
   ov.innerHTML =
-    '<div class="ai-modal">' +
+    '<div class="ai-modal" role="dialog" aria-modal="true">' +
       '<div class="ai-header">' +
         `<div><div class="ai-title"><span>${t('usage_btn')}</span></div>` +
         '<div class="ai-subtitle" id="usageSub"></div></div>' +
@@ -3468,6 +3482,13 @@ function setupUsage(){
     // 卡片本体触发：用户在选文字时不打断（按钮/标签不受此限）
     if(b.classList.contains('card') && window.getSelection && window.getSelection().toString().length > 3) return;
     if(b.dataset.act === 'usage') openUsage(b.dataset);
+  });
+
+  // 键盘可达：Enter/Space 触发聚焦的 skill 标签（span 默认不响应键盘）
+  document.body.addEventListener('keydown', e => {
+    if(e.key !== 'Enter' && e.key !== ' ') return;
+    const b = e.target.closest && e.target.closest('.skill-tag.has-doc[data-act="usage"]');
+    if(b){ e.preventDefault(); openUsage(b.dataset); }
   });
 
   async function openUsage(d){
