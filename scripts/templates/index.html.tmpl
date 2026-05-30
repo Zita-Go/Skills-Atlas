@@ -290,7 +290,7 @@ html.light .graph-controls .gc-btn{background:rgba(255,255,255,.85)}
 .graph-view .node.dim circle{filter:none}
 .graph-view .node.highlight circle{stroke:var(--accent);stroke-width:3;
   filter:drop-shadow(0 0 8px rgba(124,156,255,.6))}
-.graph-view .link{stroke-opacity:.5;stroke-linecap:round;
+.graph-view .link{stroke-opacity:.5;stroke-linecap:round;fill:none;
   transition:stroke-opacity .15s}
 .graph-view .link.dim{stroke-opacity:.05}
 .graph-view .link.chain{stroke:var(--chain);stroke-opacity:.8;stroke-width:1.8}
@@ -2149,13 +2149,14 @@ function buildGraph(){
   // 边
   const linkGroup = document.createElementNS(svgNS, 'g');
   const linkEls = links.map(l => {
-    const line = document.createElementNS(svgNS, 'line');
-    line.classList.add('link');
-    if(l.chain) line.classList.add('chain');
-    line.setAttribute('stroke', l.chain ? 'var(--chain)' : 'var(--border-strong)');
-    line.setAttribute('stroke-width', l.chain ? 1.6 : 0.8);
-    linkGroup.appendChild(line);
-    return line;
+    const path = document.createElementNS(svgNS, 'path');  // 改用贝塞尔弧线：密集簇里平行边视觉分离、不糊成一团
+    path.classList.add('link');
+    if(l.chain) path.classList.add('chain');
+    path.setAttribute('stroke', l.chain ? 'var(--chain)' : 'var(--border-strong)');
+    path.setAttribute('stroke-width', l.chain ? 1.6 : 0.8);
+    path.setAttribute('fill', 'none');
+    linkGroup.appendChild(path);
+    return path;
   });
   viewport.appendChild(linkGroup);
 
@@ -2495,10 +2496,13 @@ function buildGraph(){
     links.forEach((l, i) => {
       const a = nodeMap.get(l.source), b = nodeMap.get(l.target);
       if(!a || !b) return;
-      linkEls[i].setAttribute('x1', a.x);
-      linkEls[i].setAttribute('y1', a.y);
-      linkEls[i].setAttribute('x2', b.x);
-      linkEls[i].setAttribute('y2', b.y);
+      // 二次贝塞尔：控制点在中点沿法线偏移，弧度 ∝ 距离（封顶），让平行边分开、更有机
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      const dx = b.x - a.x, dy = b.y - a.y;
+      const len = Math.hypot(dx, dy) || 1;
+      const off = Math.min(len * 0.12, 26);
+      const cx2 = mx + (-dy / len) * off, cy2 = my + (dx / len) * off;
+      linkEls[i].setAttribute('d', `M${a.x},${a.y} Q${cx2},${cy2} ${b.x},${b.y}`);
     });
   }
 
