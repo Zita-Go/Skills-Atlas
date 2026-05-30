@@ -3,6 +3,7 @@
  *
  * 功能：
  *  - 把前端 POST /v1/chat/completions 的请求注入 OPENROUTER_KEY 后转发到 OpenRouter
+ *  - GET /raw?u=... 兜底代理 raw.githubusercontent.com 内容（用法内联用；SSRF 白名单）
  *  - 模型白名单：只允许 4 个 :free 模型，防止有人偷请求改成付费模型烧账
  *  - 来源白名单：只接受来自 ALLOWED_ORIGINS 的请求，挡掉跨站盗用
  *  - 限速：用 Cloudflare KV 或 in-memory Map 简单按 IP 计数（10 次/分钟）
@@ -57,7 +58,7 @@ function corsHeaders(origin, allowed) {
   const allow = allowed.includes(origin) ? origin : '';
   return {
     'Access-Control-Allow-Origin': allow,
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Max-Age': '86400',
     'Vary': 'Origin',
@@ -88,6 +89,33 @@ export default {
     // 健康检查
     if (request.method === 'GET' && url.pathname === '/') {
       return jsonResp({ ok: true, service: 'skills-atlas-llm-proxy' }, 200, cors);
+    }
+
+    // 用法内联：兜底代理第三方 raw.githubusercontent.com 内容
+    // （raw 本身带 CORS，前端直取失败/限流时才走这里）
+    if (request.method === 'GET' && url.pathname === '/raw') {
+      if (!allowedOrigins.includes(origin)) {
+        return jsonResp({ error: { message: 'Origin not allowed', code: 403 } }, 403, cors);
+      }
+      const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+      if (!rateLimitOk(ip)) {
+        return jsonResp({ error: { message: 'Rate limit exceeded (10 req/min)', code: 429 } }, 429, cors);
+      }
+      const target = url.searchParams.get('u') || '';
+      // SSRF 白名单：只允许 raw.githubusercontent.com，挡掉内网/任意地址
+      if (!/^https:\/\/raw\.githubusercontent\.com\//.test(target)) {
+        return jsonResp({ error: { message: 'Bad target (only raw.githubusercontent.com)', code: 400 } }, 400, cors);
+      }
+      const up = await fetch(target, { cf: { cacheTtl: 600, cacheEverything: true } });
+      const text = await up.text();
+      return new Response(text, {
+        status: up.status,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'Cache-Control': 'public, max-age=600',
+          ...cors,
+        },
+      });
     }
 
     // 仅接受 /v1/chat/completions POST

@@ -532,6 +532,40 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
   display:inline-flex;align-items:center;gap:3px}
 .source-stars svg{width:11px;height:11px;flex-shrink:0;opacity:1}
 .source-link:hover .source-stars{color:#ffd86b}
+/* 用法 / 一键安装：source 行内动作按钮 + 许可证徽章 */
+.source-row{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}
+.src-act{display:inline-flex;align-items:center;gap:4px;cursor:pointer;
+  background:transparent;border:1px solid var(--border);
+  padding:4px 9px;border-radius:99px;font-size:11px;color:var(--fg-dim);
+  font-family:var(--font-mono);font-weight:500;transition:all .15s;white-space:nowrap}
+.src-act:hover{border-color:var(--accent);color:var(--accent);
+  background:rgba(124,156,255,.08);transform:translateY(-1px)}
+.src-act:active{transform:translateY(0)}
+.license-badge{font-family:var(--font-mono);font-size:10px;font-weight:600;
+  padding:2px 7px;border-radius:99px;letter-spacing:.02em;text-decoration:none;
+  background:rgba(124,156,255,.10);color:var(--accent);
+  border:1px solid rgba(124,156,255,.25)}
+.license-badge:hover{filter:brightness(1.12)}
+.license-badge.unknown{background:var(--bg-elev);color:var(--fg-muted);
+  border-color:var(--border);cursor:default}
+/* 用法弹窗正文（运行时拉取的 Markdown，安全渲染） */
+.usage-toolbar{display:flex;gap:8px;flex-wrap:wrap;padding:14px 28px 0}
+.usage-body{padding:18px 28px 26px;font-size:13.5px;line-height:1.75;
+  color:var(--fg-dim);word-break:break-word;overflow-wrap:anywhere}
+.usage-body h1,.usage-body h2,.usage-body h3{color:var(--fg);
+  margin:18px 0 8px;line-height:1.3;font-weight:700}
+.usage-body h1{font-size:19px}.usage-body h2{font-size:16px}.usage-body h3{font-size:14px}
+.usage-body p{margin:8px 0}
+.usage-body ul{margin:8px 0;padding-left:20px}.usage-body li{margin:3px 0}
+.usage-body a{color:var(--accent);text-decoration:none}
+.usage-body a:hover{text-decoration:underline}
+.usage-body code{font-family:var(--font-mono);font-size:.88em;
+  background:var(--bg-elev);padding:1px 5px;border-radius:4px}
+.usage-body pre{background:var(--bg-elev);border:1px solid var(--border);
+  border-radius:8px;padding:12px 14px;overflow-x:auto;margin:10px 0}
+.usage-body pre code{background:transparent;padding:0;font-size:12px;line-height:1.6;display:block}
+.usage-state{color:var(--fg-muted);text-align:center;padding:40px 20px;font-size:13px}
+.usage-state a{color:var(--accent)}
 
 /* 点按时的轻微回弹，给"按下"的触感 */
 .toolbar .pill:active,.view-btn:active,.toolbar .theme-toggle:active{transform:scale(.96)}
@@ -679,6 +713,11 @@ html.light .card:hover{
   color:hsl(var(--cat-hue), 65%, 72%);
   border-color:hsla(var(--cat-hue), 70%, 60%, .22);
 }
+/* Phase 2：有自己 SKILL.md 的 skill 标签可点开 */
+.card .skill-tag.has-doc{cursor:pointer}
+.card .skill-tag.has-doc::after{content:" 📖";font-size:9px;opacity:.5}
+.card .skill-tag.has-doc:hover{background:hsla(var(--cat-hue), 70%, 60%, .26);
+  border-color:var(--accent);transform:translateY(-1px)}
 html.light .card .skill-tag{
   background:hsla(var(--cat-hue), 60%, 50%, .08);
   color:hsl(var(--cat-hue), 55%, 42%);
@@ -1181,13 +1220,36 @@ function buildContent(){
         totalSkills += row.skills.length;
         row.sources.forEach(s => vendorSet.add(s.name));
 
-        const skillsHtml = row.skills.map(sk => `<span class="skill-tag">${escapeHtml(sk)}</span>`).join('');
+        const skillsHtml = row.skills.map(sk => {
+          // Phase 2：若该 skill 有自己的 SKILL.md（扫本行各来源仓库的 skill_docs），标签可点开查看
+          let hit = null;
+          for(const s of row.sources){
+            const v = DATA.vendors[s.name];
+            const p = v && v.skill_docs && v.skill_docs[sk];
+            if(p){ hit = { v, name: s.name, path: p }; break; }
+          }
+          if(hit){
+            return `<span class="skill-tag has-doc" data-act="usage" data-author="${escapeAttr(hit.v.author)}" data-repo="${escapeAttr(hit.v.repo)}" data-branch="${escapeAttr(hit.v.default_branch||'main')}" data-docpath="${escapeAttr(hit.path)}" data-url="${escapeAttr(hit.v.url)}" data-name="${escapeAttr(hit.name)}" data-skill="${escapeAttr(sk)}" title="查看 ${escapeAttr(sk)} 的 SKILL.md（不跳转）">${escapeHtml(sk)}</span>`;
+          }
+          return `<span class="skill-tag">${escapeHtml(sk)}</span>`;
+        }).join('');
         const sourceCount = row.sources.length;
         const sortedSources = [...row.sources].sort((a,b) => (b.stars||0) - (a.stars||0));
         const sourcesHtml = sortedSources.map(s => {
           const starHtml = (s.stars != null && s.stars > 0)
             ? `<span class="source-stars">${starIcon}${formatStars(s.stars)}</span>` : '';
-          return `<a class="source-link" href="${escapeAttr(s.url)}" target="_blank" rel="noopener">${githubIcon}<span>${escapeHtml(s.name)}</span>${starHtml}</a>`;
+          const link = `<a class="source-link" href="${escapeAttr(s.url)}" target="_blank" rel="noopener">${githubIcon}<span>${escapeHtml(s.name)}</span>${starHtml}</a>`;
+          const usageBtn = (s.author && s.repo)
+            ? `<button class="src-act" data-act="usage" data-author="${escapeAttr(s.author)}" data-repo="${escapeAttr(s.repo)}" data-branch="${escapeAttr(s.default_branch||'main')}" data-docpath="${escapeAttr(s.doc_path||'')}" data-url="${escapeAttr(s.url)}" data-name="${escapeAttr(s.name)}" title="查看 ${escapeAttr(s.name)} 的用法（不跳转 GitHub）">📖 用法</button>`
+            : '';
+          const cmd = (s.install && s.install.command) ? s.install.command : '';
+          const copyBtn = cmd
+            ? `<button class="src-act" data-act="copy" data-cmd="${escapeAttr(cmd)}" title="复制安装命令：${escapeAttr(cmd)}">📋 安装</button>`
+            : '';
+          const lic = s.license
+            ? `<a class="license-badge" href="${escapeAttr(s.url)}/blob/${escapeAttr(s.default_branch||'main')}/LICENSE" target="_blank" rel="noopener" title="许可证 ${escapeAttr(s.license)}（点击查看）">${escapeHtml(s.license)}</a>`
+            : `<span class="license-badge unknown" title="上游未声明许可证 / 待同步，使用前请到仓库确认">未知</span>`;
+          return `<span class="source-row">${link}${usageBtn}${copyBtn}${lic}</span>`;
         }).join('');
 
         const chainBadge = row.chain ? '<span class="chain-badge">⛓ 强绑定</span>' : '';
@@ -3000,6 +3062,163 @@ function drawHeroChart(){
   svg.innerHTML = arcs.join('');
 }
 
+/* ===== 用法内联 + 一键安装命令 ===== */
+// Worker 兜底代理（raw 自带 CORS，直取失败时才走它）
+const RAW_PROXY = SITE_DEFAULT_LLM.proxyUrl.replace(/\/v1\/chat\/completions$/, '/raw');
+const _docCache = new Map();
+
+function rawUrl(author, repo, branch, path){
+  return `https://raw.githubusercontent.com/${author}/${repo}/${branch || 'main'}/${path}`;
+}
+function candidatePaths(docpath){
+  return docpath ? [docpath]
+    : ['SKILL.md', 'README.md', 'readme.md', 'Readme.md', 'docs/SKILL.md', '.claude/SKILL.md'];
+}
+function withTimeout(promise, ms){
+  return Promise.race([promise,
+    new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms))]);
+}
+async function fetchDoc(d){
+  const branch = d.branch || 'main';
+  const key = `${d.author}/${d.repo}@${branch}:${d.docpath || '*'}`;
+  if(_docCache.has(key)) return _docCache.get(key);
+  let lastErr = null;
+  for(const p of candidatePaths(d.docpath)){
+    const direct = rawUrl(d.author, d.repo, branch, p);
+    for(const u of [direct, `${RAW_PROXY}?u=${encodeURIComponent(direct)}`]){
+      try{
+        const r = await withTimeout(fetch(u, { redirect: 'follow' }), 8000);
+        if(r.ok){
+          const out = { text: await r.text(), path: p };
+          _docCache.set(key, out);
+          return out;
+        }
+      }catch(e){ lastErr = e; }
+    }
+  }
+  throw lastErr || new Error('not found');
+}
+
+// 极简、安全的 Markdown 渲染器：先整体 escapeHtml 中和所有 HTML/XSS，
+// 再只产出固定白名单标签；链接仅允许 http(s)，不渲染图片。
+function renderMarkdown(src){
+  src = String(src).slice(0, 200000);                 // 限大小，防超大 README 卡顿
+  const blocks = [];
+  src = src.replace(/```[^\n]*\n([\s\S]*?)```/g, (_, code) => {
+    blocks.push(code); return `\u0000B${blocks.length - 1}\u0000`;
+  });
+  let h = escapeHtml(src);                             // 关键：先转义全文
+  // 行内（在已转义文本上）：代码 / 粗体 / 斜体 / 链接
+  h = h.replace(/`([^`\n]+)`/g, (_, c) => `<code>${c}</code>`)
+       .replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>')
+       .replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>')
+       .replace(/\[([^\]\n]+)\]\(([^)\s]+)\)/g, (m, txt, url) =>
+          /^https?:\/\//i.test(url)
+            ? `<a href="${url.replace(/"/g, '&quot;')}" target="_blank" rel="noopener nofollow">${txt}</a>`
+            : m);                                      // 非 http(s) 链接降级为纯文本
+  // 块级：按行组装 h1-3 / ul / p / 代码块占位
+  const lines = h.split('\n');
+  let out = '', inList = false;
+  const closeList = () => { if(inList){ out += '</ul>'; inList = false; } };
+  for(const line of lines){
+    const t = line.trim();
+    if(!t){ closeList(); continue; }
+    let m;
+    if(/^\u0000B\d+\u0000$/.test(t)){
+      closeList();
+      out += `<pre><code>${escapeHtml(blocks[+t.slice(2, -1)])}</code></pre>`;
+    } else if((m = t.match(/^(#{1,3})\s+(.*)$/))){
+      closeList(); out += `<h${m[1].length}>${m[2]}</h${m[1].length}>`;
+    } else if((m = t.match(/^[-*+]\s+(.*)$/))){
+      if(!inList){ out += '<ul>'; inList = true; }
+      out += `<li>${m[1]}</li>`;
+    } else {
+      closeList(); out += `<p>${t}</p>`;
+    }
+  }
+  closeList();
+  // 兜底：还原任何残留的行内代码块占位
+  out = out.replace(/\u0000B(\d+)\u0000/g, (_, i) => `<pre><code>${escapeHtml(blocks[i])}</code></pre>`);
+  return out;
+}
+
+function flashBtn(btn, text){
+  if(btn.dataset._old == null) btn.dataset._old = btn.innerHTML;
+  btn.innerHTML = text;
+  setTimeout(() => { btn.innerHTML = btn.dataset._old; delete btn.dataset._old; }, 1300);
+}
+async function copyText(cmd, btn){
+  try{
+    await navigator.clipboard.writeText(cmd);
+    flashBtn(btn, '✓ 已复制');
+  }catch(_){
+    const ta = document.createElement('textarea');
+    ta.value = cmd; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try{ document.execCommand('copy'); flashBtn(btn, '✓ 已复制'); }
+    catch(e){ flashBtn(btn, '复制失败'); }
+    document.body.removeChild(ta);
+  }
+}
+
+function setupUsage(){
+  const ov = document.createElement('div');
+  ov.className = 'ai-overlay hidden';
+  ov.id = 'usageOverlay';
+  ov.innerHTML =
+    '<div class="ai-modal">' +
+      '<div class="ai-header">' +
+        '<div><div class="ai-title"><span>📖 用法</span></div>' +
+        '<div class="ai-subtitle" id="usageSub"></div></div>' +
+        '<button class="ai-close" id="usageClose" aria-label="close">×</button>' +
+      '</div>' +
+      '<div class="usage-toolbar">' +
+        '<a class="ai-btn-secondary" id="usageRepo" target="_blank" rel="noopener">在 GitHub 打开 ↗</a>' +
+        '<button class="ai-btn-secondary" id="usageCopy">📋 复制安装命令</button>' +
+      '</div>' +
+      '<div class="usage-body" id="usageBody"></div>' +
+    '</div>';
+  document.body.appendChild(ov);
+  const body = ov.querySelector('#usageBody');
+  const sub = ov.querySelector('#usageSub');
+  const repoLink = ov.querySelector('#usageRepo');
+  const copyBtn = ov.querySelector('#usageCopy');
+  const close = () => ov.classList.add('hidden');
+  ov.querySelector('#usageClose').addEventListener('click', close);
+  ov.addEventListener('click', e => { if(e.target === ov) close(); });
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && !ov.classList.contains('hidden')) close();
+  });
+
+  // 全局事件委托：卡片里的 📖 用法 / 📋 安装 按钮（兼容视图重渲染）
+  document.body.addEventListener('click', e => {
+    const b = e.target.closest('[data-act]');
+    if(!b) return;
+    if(b.dataset.act === 'copy') return copyText(b.dataset.cmd || '', b);
+    if(b.dataset.act === 'usage') openUsage(b.dataset);
+  });
+
+  async function openUsage(d){
+    ov.classList.remove('hidden');
+    sub.textContent = d.skill ? `${d.skill} · ${d.author}/${d.repo}` : `${d.author}/${d.repo}`;
+    repoLink.href = d.url || `https://github.com/${d.author}/${d.repo}`;
+    const v = DATA.vendors[d.name];
+    const cmd = (v && v.install && v.install.command) ? v.install.command : '';
+    copyBtn.style.display = cmd ? '' : 'none';
+    copyBtn.onclick = () => copyText(cmd, copyBtn);
+    body.innerHTML = '<div class="usage-state">加载中…</div>';
+    try{
+      const { text, path } = await fetchDoc(d);
+      body.innerHTML = renderMarkdown(text);
+      sub.textContent = `${d.author}/${d.repo} · ${path}`;
+    }catch(err){
+      const gh = d.url || `https://github.com/${d.author}/${d.repo}`;
+      body.innerHTML = '<div class="usage-state">没找到 SKILL.md / README。<br>' +
+        `<a href="${escapeAttr(gh)}" target="_blank" rel="noopener">在 GitHub 查看 ↗</a></div>`;
+    }
+  }
+}
+
 // Init
 buildNav();
 buildContent();
@@ -3009,6 +3228,7 @@ setupFilters();
 setupViewSwitch();
 setupAI();
 setupSpotlight();
+setupUsage();
 setupTheme();
 setupMenuBtn();
 setupScrollSpy();

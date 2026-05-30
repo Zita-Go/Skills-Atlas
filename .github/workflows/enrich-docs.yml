@@ -1,0 +1,46 @@
+name: Monthly Skill-Docs Enrichment
+
+# 每月扫各源仓库文件树，给 skill 映射 SKILL.md 路径 + 仓库主文档 doc_path，
+# 开 PR 给人审。**不在 deploy 路径上**（含目录名归一化匹配，需人工确认）。
+on:
+  schedule:
+    - cron: '0 3 1 * *'   # 每月 1 号 UTC 03:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pyyaml
+      - name: Enrich skill docs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/enrich_skill_docs.py
+      - name: Re-render HTML
+        run: python3 scripts/gen_html.py
+      - name: Create PR if changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(enrich): 同步 skill_docs / doc_path'
+          title: 'chore(enrich): skill 文档路径富化'
+          body: |
+            自动扫描各源仓库文件树，更新 `skill_docs`（skill→SKILL.md 路径）
+            与仓库主文档 `doc_path`。
+
+            ⚠️ 含目录名归一化匹配，请人工抽查映射是否正确再合并。
+            未精确匹配 / 多候选的 skill 见 Actions 日志（不会自动写入）。
+          branch: chore/enrich-skill-docs
+          delete-branch: true
+          add-paths: |
+            data/repositories.yaml
+            docs/data.json
+            docs/index.html

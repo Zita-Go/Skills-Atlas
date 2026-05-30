@@ -94,13 +94,31 @@ def main():
             if src not in repo_ids:
                 err(f'skill {s.get("id")}: 未知 source "{src}"')
 
-    # 5. repository url 合法
+    # 5. repository url 合法 + 新可选字段校验
     url_re = re.compile(r'^https://github\.com/[^/]+/[^/]+/?$')
+    lic_re = re.compile(r'^[\w.\-+]+$')
+    known_types = {'skill', 'skill-pack', 'plugin', 'cli', 'cli-framework',
+                   'cli-mcp', 'sdd-framework', 'python-library', 'desktop-app',
+                   'video-engine', 'extraction-engine', 'marketplace',
+                   'multi-skill-suite', 'claude-md-template'}
     for r in repos:
         if not url_re.match(r['url'].rstrip('/')):
             err(f'repo {r["id"]}: 非法 GitHub URL "{r["url"]}"')
         if not r.get('author') or not r.get('repo'):
             warn(f'repo {r["id"]}: 缺 author / repo 字段')
+        if r.get('type') not in known_types:
+            warn(f'repo {r["id"]}: 未知 type "{r.get("type")}"')
+        if 'license' in r and not lic_re.match(str(r['license'])):
+            warn(f'repo {r["id"]}: license 格式可疑 "{r["license"]}"')
+        ov = r.get('install_override')
+        if ov is not None and (not isinstance(ov, dict) or not ov.get('command')):
+            err(f'repo {r["id"]}: install_override 必须是含 command 的对象')
+        dp = r.get('doc_path')
+        if dp is not None and (not isinstance(dp, str) or dp.startswith('/')):
+            warn(f'repo {r["id"]}: doc_path 应为仓库内相对路径')
+        sd = r.get('skill_docs')
+        if sd is not None and not isinstance(sd, dict):
+            err(f'repo {r["id"]}: skill_docs 必须是 skill名→路径 映射')
 
     # 6. 反向：每个 repo 都被至少一个 skill 引用
     used_repos = {src for s in skills for src in s.get('sources', [])}

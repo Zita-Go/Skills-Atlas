@@ -22,6 +22,15 @@ worker 的防护：
 - **模型白名单**：只允许 4 个 `:free` 模型，防止有人改成付费模型烧账
 - **限速**：单 IP 10 次/分钟（in-memory，简易兜底）
 
+## 路由
+
+- `GET /` —— 健康检查
+- `POST /v1/chat/completions` —— LLM 代理（注入 key 转发 OpenRouter）
+- `GET /raw?u=<raw.githubusercontent.com URL>` —— 用法内联的兜底代理：
+  前端默认直接 fetch `raw.githubusercontent.com`（它自带 CORS），只有直取失败 /
+  被 GitHub 限流时才走这条。**SSRF 白名单**：只允许 `raw.githubusercontent.com`，
+  并复用同样的 Origin 白名单 + 单 IP 限速；命中后边缘缓存 10 分钟以减轻 GitHub 限流。
+
 ## 部署
 
 只需要一次。用 [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/)。
