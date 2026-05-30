@@ -1711,12 +1711,10 @@ function setupFilters(){
       document.querySelectorAll('.toolbar .pill').forEach(x => x.classList.remove('active'));
       p.classList.add('active');
       currentFilter = p.dataset.filter;
-      // 过滤是「skill 组」维度的；在仓库/网络视图下点击会作用于隐藏的卡片视图而无反应，
-      // 故先切回功能视图再应用，保证即时反馈。
-      if(currentView !== 'cards'){
-        document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
-      }
-      applyFilter();
+      // 在当前视图内就地过滤：网络图重绘只留匹配的 skill；功能视图过滤卡片。
+      // （仓库视图按仓库聚合，类型过滤不适用 —— 切到仓库视图时这些 pill 已隐藏）
+      if(currentView === 'graph') buildGraph();
+      else applyFilter();
     });
   });
 }
@@ -1751,6 +1749,8 @@ function setupViewSwitch(){
       document.querySelector('.hero').classList.toggle('hidden', !isCards);
       document.getElementById('repoView').classList.toggle('hidden', !isRepo);
       document.getElementById('graphView').classList.toggle('hidden', !isGraph);
+      // 类型过滤（强绑定/多源/单 skill）只在功能/网络视图适用；仓库视图按仓库聚合，隐藏这些 pill
+      document.querySelectorAll('.toolbar .pill, .toolbar .tb-divider').forEach(el => el.classList.toggle('hidden', isRepo));
       if(isRepo) buildRepoView();
       if(isGraph) buildGraph();
       syncSidebarForView();
@@ -1947,10 +1947,18 @@ function syncSidebarForView(){
 let _graphAnim = null;
 function buildGraph(){
   const container = document.getElementById('graphView');
-  if(container.dataset.built) return;
-  container.dataset.built = '1';
+  if(container.dataset.built === currentFilter) return;   // 已按当前过滤构建，避免重复重绘
+  container.dataset.built = currentFilter;
+  if(_graphAnim){ cancelAnimationFrame(_graphAnim); _graphAnim = null; }  // 停掉上一次力导向循环
+  container.innerHTML = '';                                // 清旧 svg/tooltip/控件/图例，重建
 
-  const rows = getAllRows();
+  // 按当前类型过滤：只保留匹配的 skill 组，图中即只剩对应类型的 skill
+  const rows = getAllRows().filter(r => {
+    if(currentFilter === 'chain') return r.chain;
+    if(currentFilter === 'multi-source') return (r.sources && r.sources.length) >= 2;
+    if(currentFilter === 'single-skill') return (r.skills && r.skills.length) === 1;
+    return true;
+  });
 
   // 节点：每个 unique skill；边：同一 row 内 skill 两两相连
   const nodeMap = new Map();
