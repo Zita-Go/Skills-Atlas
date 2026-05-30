@@ -572,7 +572,8 @@
   license: MIT
   doc_path: README.md
   default_branch: main
-  description: Hub for getting started with Notion, including documentation, customizable scripts, and quick-start guides.
+  description: Notion 上手中心：文档、可定制脚本与快速上手指南的集合。
+  description_en: Hub for getting started with Notion, including documentation, customizable scripts, and quick-start guides.
 - id: hanfang
   author: hanfang
   repo: claude-memory-skill
@@ -696,7 +697,8 @@
     x-writer: skills/x-writer/SKILL.md
   skill_docs_generated_at: '2026-05-30'
   default_branch: main
-  description: Claude skills for founders
+  description: 面向创始人的 Claude skills 集合。
+  description_en: Claude skills for founders
 - id: wrsmith108
   author: wrsmith108
   repo: linear-claude-skill
@@ -825,8 +827,8 @@
   license: MIT
   doc_path: README.md
   default_branch: main
-  description: Comprehensive paid advertising audit & optimization skill for Claude Code. 250+ checks across Google, Meta, YouTube, LinkedIn, TikTok, Microsoft & Apple Ads with weighted scoring, parallel
-    agents, industry templates, and AI creative generation.
+  description: 面向 Claude Code 的付费广告全面审计与优化 skill：横跨 Google、Meta、YouTube、LinkedIn、TikTok、Microsoft、Apple Ads 的 250+ 项检查，含加权评分、并行 agent、行业模板与 AI 创意生成。
+  description_en: Comprehensive paid advertising audit & optimization skill for Claude Code. 250+ checks across Google, Meta, YouTube, LinkedIn, TikTok, Microsoft & Apple Ads with weighted scoring, parallel agents, industry templates, and AI creative generation.
 - id: nextlevelbuilder
   author: nextlevelbuilder
   repo: ui-ux-pro-max-skill
@@ -851,6 +853,7 @@
   default_branch: main
   license: MIT
   description: NanoBanana PPT Skills 基于 AI 自动生成高质量 PPT 图片和视频的强大工具，支持智能转场和交互式播放
+  description_en: NanoBanana PPT Skills — a powerful AI tool that auto-generates high-quality PPT images and videos, with smart transitions and interactive playback.
 - id: zarazhangrui
   author: zarazhangrui
   repo: frontend-slides
@@ -889,6 +892,8 @@
   last_commit: '2026-01-22'
   default_branch: main
   license: MIT
+  description: 面向 Claude Code 的 AI YouTube 视频剪辑 skill：下载视频、按语义自动分章、裁剪片段、生成中英双语字幕并烧录进视频。
+  description_en: 'AI-powered YouTube video clipper for Claude Code: download videos, generate semantic chapters, clip segments, translate subtitles to bilingual, and burn them into videos.'
 - id: calesthio
   author: calesthio
   repo: OpenMontage
@@ -900,7 +905,8 @@
   license: AGPL-3.0
   doc_path: README.md
   default_branch: main
-  description: World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.
+  description: 全球首个开源 agentic 视频制作系统：12 条流水线、52 个工具、500+ agent skills，把你的 AI 编程助手变成完整的视频制作工作室。
+  description_en: World's first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.
 - id: remotion-dev
   author: remotion-dev
   repo: skills
@@ -912,7 +918,8 @@
   doc_path: README.md
   default_branch: main
   license: Remotion License
-  description: Agent Skills
+  description: Remotion 官方 agent skills：用 React 以编程方式制作视频。
+  description_en: Remotion's official agent skills for creating videos programmatically with React.
 - id: Firecrawl
   author: firecrawl
   repo: cli
