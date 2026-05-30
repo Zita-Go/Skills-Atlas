@@ -12,7 +12,7 @@ Stop asking "what skills exist" and start asking "which skill should I use to do
 [![Categories](https://img.shields.io/badge/categories-13_×_74-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[**🌐 Visit online**](https://zita-go.github.io/Skills-Atlas/) · [📦 Data download](data/) · [🤝 Contribute a new skill](CONTRIBUTING.md) · [💬 Discussions](../../discussions)
+[**🌐 Visit online**](https://zita-go.github.io/Skills-Atlas/?lang=en) · [📦 Data download](data/) · [🤝 Contribute a new skill](CONTRIBUTING.en.md) · [💬 Discussions](../../discussions)
 
 </div>
 
@@ -41,7 +41,7 @@ Existing awesome lists only give you names plus a one-line description — they 
 ## How to use
 
 ### Visit online
-👉 [Open the website](https://zita-go.github.io/Skills-Atlas/)
+👉 [Open the website](https://zita-go.github.io/Skills-Atlas/?lang=en)
 
 ### Offline (single-file HTML)
 ```bash
@@ -132,7 +132,7 @@ python3 scripts/render_candidate_issue.py --out /tmp/issue.md
 
 Contributions are welcome — new skills / fixes to source-repo errors / improved descriptions / added translations.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+See [CONTRIBUTING.en.md](CONTRIBUTING.en.md) for details.
 
 ### Adding a new skill in four steps
 

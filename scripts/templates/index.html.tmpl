@@ -1180,7 +1180,7 @@ function resolveLang(){
     const s = localStorage.getItem('atlas:lang');
     if(s === 'en' || s === 'zh') return s;
   }catch(_){}
-  return (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
+  return 'en';  // 默认英文；用户切到中文后 localStorage 记住，?lang 可覆盖
 }
 let LANG = resolveLang();
 // chrome 文案：缺英文则回退中文

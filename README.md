@@ -12,7 +12,7 @@
 [![Categories](https://img.shields.io/badge/categories-13_×_74-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[**🌐 在线访问**](https://zita-go.github.io/Skills-Atlas/) · [📦 数据下载](data/) · [🤝 贡献新 skill](CONTRIBUTING.md) · [💬 讨论区](../../discussions)
+[**🌐 在线访问**](https://zita-go.github.io/Skills-Atlas/?lang=zh) · [📦 数据下载](data/) · [🤝 贡献新 skill](CONTRIBUTING.md) · [💬 讨论区](../../discussions)
 
 </div>
 
@@ -41,7 +41,7 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~61 个 GitHub 仓库里
 ## 怎么用
 
 ### 在线访问
-👉 [打开网站](https://zita-go.github.io/Skills-Atlas/)
+👉 [打开网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)
 
 ### 离线（单文件 HTML）
 ```bash
