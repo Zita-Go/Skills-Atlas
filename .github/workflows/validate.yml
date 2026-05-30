@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install deps
-        run: pip install pyyaml pypinyin
+        run: pip install pyyaml 'pypinyin==0.55.0'
       - name: Validate YAML data
         run: python3 scripts/validate.py
       - name: Re-render HTML to ensure parity
