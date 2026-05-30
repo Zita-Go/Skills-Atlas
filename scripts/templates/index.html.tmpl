@@ -323,9 +323,12 @@ html.light .graph-view .link.dim{stroke-opacity:.07}
 .graph-drawer .gd-close{position:absolute;top:10px;right:10px;width:26px;height:26px;
   border:0;background:var(--bg-card);color:var(--fg-muted);border-radius:6px;cursor:pointer;font-size:15px}
 .graph-drawer .gd-close:hover{color:var(--fg)}
-.graph-drawer .gd-title{font-family:var(--font-mono);font-size:15px;font-weight:700;color:var(--fg);
-  word-break:break-word;padding-right:28px;letter-spacing:-.01em}
+.graph-drawer .gd-eyebrow{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.graph-drawer .gd-title{font-family:var(--font-mono);font-size:16px;font-weight:700;color:var(--fg);
+  word-break:break-word;padding-right:28px;letter-spacing:-.01em;margin-top:2px}
 .graph-drawer .gd-sub{font-size:11.5px;color:var(--fg-muted);margin-top:4px}
+.graph-drawer .gd-what{font-size:12.5px;color:var(--fg-dim);line-height:1.65;
+  background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:9px 11px}
 .graph-drawer .gd-body{padding:12px 16px 16px;overflow-y:auto;flex:1;font-size:12.5px}
 .graph-drawer .gd-sec{margin:0 0 14px}
 .graph-drawer .gd-sec h4{margin:0 0 6px;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;
@@ -2195,28 +2198,42 @@ function buildGraph(){
   function clearFocus(){ focusedNode = null; clearHighlight(); drawer.classList.remove('open'); graphSelectedId = null; syncGraphURL(); }
   function catLabelOf(h1zh){ const s = DATA.sections.find(x => x.title === h1zh); return s ? pickT(s.title_en, s.title) : h1zh; }
   function jumpToCard(skillName){
+    const g = rows.filter(r => (r.skills || []).includes(skillName))[0];
     document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
     const inp = document.getElementById('search');
     if(inp){ inp.value = skillName; currentSearch = skillName; const cb = document.getElementById('clearBtn'); if(cb) cb.style.display = 'block'; const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'none'; }
     applyFilter();
+    // 滚到该 skill 所属分组的小节并定位（之前只过滤、不滚动，所以"没跳过去"）
+    if(g){
+      const id = slugify(g._h1) + '--' + slugify(g._h2);
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if(el){ el.scrollIntoView({behavior: 'smooth', block: 'start'}); pushHash(id); }
+      }, 100);
+    }
   }
   function openDrawer(n){
     focusedNode = n; graphSelectedId = n.id; setHighlight(n); centerNode(n);
     const groups = rows.filter(r => (r.skills || []).includes(n.id));
+    const primary = groups[0] || {};
+    const descr = pickT(primary.description_en, primary.description) || '';
+    const whatText = pickT(primary.use_case_en, primary.use_case) || (descr.length > 220 ? descr.slice(0, 220) + '…' : descr);
     const nbIds = [...(neighbors.get(n.id) || [])].sort();
     const srcSet = new Set(); groups.forEach(g => (g.sources || []).forEach(s => srcSet.add(s.name || s)));
     const chip = (txt, act) => `<span class="gd-chip" data-nb="${escapeAttr(act)}">${escapeHtml(txt)}</span>`;
     const nbHtml = nbIds.length ? nbIds.map(id => chip(id, id)).join('') : `<span style="color:var(--fg-muted)">${EN ? 'none' : '无'}</span>`;
-    const grpHtml = groups.map(g => `<div class="gd-group">${escapeHtml(pickT(g.group_en, g.group))}<div class="gd-cat">${escapeHtml(catLabelOf(g._h1))}</div></div>`).join('');
+    const grpHtml = groups.map(g => `<div class="gd-group">${escapeHtml(pickT(g.group_en, g.group))}<div class="gd-cat">${escapeHtml(catLabelOf(g._h1))}${g.chain ? ' · ⛓' : ''}</div></div>`).join('');
     const srcHtml = [...srcSet].map(s => `<span class="gd-chip" style="cursor:default;background:var(--bg-card);color:var(--fg-dim);border-color:var(--border)">${escapeHtml(s)}</span>`).join('');
     drawer.innerHTML =
       `<div class="gd-head"><button class="gd-close" aria-label="close">×</button>` +
+      `<div class="gd-eyebrow">${EN ? 'SKILL' : '技能'}</div>` +
       `<div class="gd-title">${escapeHtml(n.id)}</div>` +
-      `<div class="gd-sub">${escapeHtml(catLabelOf(n.h1))} · ${n.count} ${EN ? (n.count === 1 ? 'group' : 'groups') : '个分组'}${n.chain ? ' · <span style="color:var(--chain)">⛓</span>' : ''}</div></div>` +
+      `<div class="gd-sub">${escapeHtml(catLabelOf(n.h1))} · ${EN ? `in ${n.count} ${n.count === 1 ? 'group' : 'groups'}` : `出现于 ${n.count} 个分组`}${n.chain ? ' · <span style="color:var(--chain)">⛓ ' + (EN ? 'chained' : '强绑定') + '</span>' : ''}</div></div>` +
       `<div class="gd-body">` +
-        `<div class="gd-sec"><h4>${EN ? 'Used with' : '常搭配'}</h4><div class="gd-chips">${nbHtml}</div></div>` +
-        `<div class="gd-sec"><h4>${EN ? 'Appears in' : '出现于'}</h4>${grpHtml}</div>` +
-        (srcHtml ? `<div class="gd-sec"><h4>${EN ? 'Sources' : '来源仓库'}</h4><div class="gd-chips">${srcHtml}</div></div>` : '') +
+        (whatText ? `<div class="gd-sec"><h4>${EN ? 'What it does' : '用途'}</h4><div class="gd-what">${escapeHtml(whatText)}</div></div>` : '') +
+        `<div class="gd-sec"><h4>${EN ? 'Often used with' : '常一起用'}</h4><div class="gd-chips">${nbHtml}</div></div>` +
+        `<div class="gd-sec"><h4>${EN ? 'Part of these workflows' : '所属功能分组'}</h4>${grpHtml}</div>` +
+        (srcHtml ? `<div class="gd-sec"><h4>${EN ? 'From repos' : '来自仓库'}</h4><div class="gd-chips">${srcHtml}</div></div>` : '') +
       `</div>` +
       `<div class="gd-foot"><button class="gd-btn primary" data-act="jump">${EN ? 'Open in cards →' : '在功能视图查看 →'}</button>` +
       `<button class="gd-btn" data-act="link" style="flex:0 0 auto" title="${EN ? 'Copy shareable link' : '复制可分享链接'}">🔗</button></div>`;
