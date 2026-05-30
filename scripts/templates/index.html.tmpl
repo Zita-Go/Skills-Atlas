@@ -26,7 +26,7 @@
 
 :root{
   --bg:#0a0c10; --bg-elev:#11141a; --bg-card:#161a21;
-  --border:#23272f; --border-strong:#363c47;
+  --border:#23272f; --border-strong:#363c47; --graph-node-stroke:rgba(255,255,255,.18);
   --fg:#e8ecf2; --fg-dim:#9aa3b2; --fg-muted:#6b7384;
   --accent:#7c9cff; --accent-2:#c479ff; --accent-3:#5dd6c5;
   --warn:#ffb86b; --chain:#ff7e9d;
@@ -44,7 +44,7 @@
 }
 html.light{
   --bg:#fafbfd; --bg-elev:#ffffff; --bg-card:#ffffff;
-  --border:#e6e8ec; --border-strong:#cdd2da;
+  --border:#e6e8ec; --border-strong:#cdd2da; --graph-node-stroke:rgba(0,0,0,.18);
   --fg:#0f1218; --fg-dim:#475063; --fg-muted:#7a8190;
   --accent:#5b6cff; --accent-2:#a855f7; --accent-3:#0ca678;
   --warn:#d97706; --chain:#d6336c;
@@ -297,6 +297,9 @@ html.light .graph-controls .gc-btn{background:rgba(255,255,255,.85)}
 .graph-view .link.chain.dim{stroke-opacity:.08}
 .graph-view .link.highlight{stroke-opacity:1;stroke:var(--accent);
   stroke-width:2.5}
+/* 亮色主题：连线在白底上加点对比 */
+html.light .graph-view .link{stroke-opacity:.62}
+html.light .graph-view .link.dim{stroke-opacity:.07}
 .graph-view .label{fill:var(--fg-dim);font-family:var(--font-mono);
   font-size:9.5px;pointer-events:none;user-select:none;
   paint-order:stroke;stroke:var(--bg);stroke-width:3;stroke-linejoin:round;
@@ -2134,7 +2137,7 @@ function buildGraph(){
     const c = document.createElementNS(svgNS, 'circle');
     c.setAttribute('r', n.r);
     c.setAttribute('fill', `hsl(${n.hue}, 70%, 64%)`);
-    c.setAttribute('stroke', n.chain ? 'var(--chain)' : 'rgba(255,255,255,.18)');
+    c.setAttribute('stroke', n.chain ? 'var(--chain)' : 'var(--graph-node-stroke)');
     c.setAttribute('stroke-width', n.chain ? 2 : 1);
     g.appendChild(c);
     const t = document.createElementNS(svgNS, 'text');
@@ -2300,7 +2303,7 @@ function buildGraph(){
       n.fx = n.x; n.fy = n.y;
       n._g.classList.add('dragging');
       svg.setPointerCapture(e.pointerId);
-      energy = 1;  // 重新激活模拟
+      energy = 1; wake();  // 重新激活模拟 + 唤醒循环（静止后停了也能拖）
     });
     // 点击在 document 的 pointerup 里统一处理（避免 setPointerCapture 导致 click 不触发 + 防双开）
     n._g.addEventListener('pointerenter', () => {
@@ -2424,9 +2427,9 @@ function buildGraph(){
       totalV += Math.abs(n.vx) + Math.abs(n.vy);
     });
 
-    // 能量退火（无交互时逐渐冷却到一个底）
+    // 能量退火（无交互时逐渐冷却到 0，便于静止后停掉 rAF）
     if(totalV / nodes.length < 0.5) energy *= 0.985;
-    energy = Math.max(0.05, Math.min(1, energy));
+    energy = Math.max(0, Math.min(1, energy));
   }
 
   function render(){
@@ -2443,15 +2446,23 @@ function buildGraph(){
     });
   }
 
+  const REDUCE = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const STOP = 0.06;   // 能量低于此 + 无拖动 → 停掉动画循环（打开就安静、不空转耗电）
   function loop(){
     if(!paused) tick();
     render();
+    // 静止（能量耗尽 / 暂停）且未在拖动 → 停 rAF；交互时由 wake() 唤醒
+    if((paused || energy <= STOP) && !dragNode){ _graphAnim = null; return; }
     _graphAnim = requestAnimationFrame(loop);
   }
-  // 预热：先跑一些 tick 让初始位置稳定
-  for(let i=0; i<120; i++) tick();
+  function wake(boost){          // 交互时唤醒动画循环（拖动/重置/取消暂停）
+    if(boost) energy = Math.max(energy, boost);
+    if(!_graphAnim) _graphAnim = requestAnimationFrame(loop);  // loop 内的停止条件会处理 paused/拖动结束
+  }
+  // 预热：reduced-motion 多跑 tick 充分收敛；渲染一次。reduced-motion 不常驻循环（静止呈现），交互时再 wake 短跑
+  for(let i=0; i < (REDUCE ? 400 : 120); i++) tick();
   render();
-  loop();
+  if(!REDUCE) loop();
 
   // 双击节点：长按到该位置（pin）
   nodes.forEach(n => {
@@ -2502,7 +2513,7 @@ function buildGraph(){
     paused = !paused;
     e.currentTarget.innerHTML = paused ? ICON.play : ICON.pause;
     e.currentTarget.classList.toggle('active', paused);
-    if(!paused) energy = 1;
+    if(!paused){ energy = 1; wake(); }
   });
   ctrls.querySelector('[data-act="reset"]').addEventListener('click', () => {
     nodes.forEach(n => {
@@ -2512,7 +2523,7 @@ function buildGraph(){
       n.vx = 0; n.vy = 0;
       n.fx = null; n.fy = null;
     });
-    energy = 1;
+    energy = 1; wake();
     fitView();
   });
   ctrls.querySelector('[data-act="zoom-in"]').addEventListener('click', () => {
