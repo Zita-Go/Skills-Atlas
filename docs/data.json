@@ -2,10 +2,12 @@
   "sections": [
     {
       "title": "一、软件开发与工程",
+      "title_en": null,
       "icon": "⚙️",
       "subsections": [
         {
           "title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -16,8 +18,10 @@
                 "dispatching-parallel-agents"
               ],
               "group": "核心开发工作流（superpowers）",
+              "group_en": null,
               "chain": true,
               "description": "brainstorming + writing-plans + executing-plans + subagent-driven-development + dispatching-parallel-agents 五件套：苏格拉底式精炼意图 → 拆 2-5 分钟微任务（每任务给精确文件路径+完整代码+验证）→ 批次执行 + 人工 checkpoint → 每任务派 fresh subagent + 双阶段 review（spec 合规 → 代码质量）→ 并行 subagent 编排",
+              "description_en": null,
               "sources": [
                 {
                   "name": "superpowers",
@@ -45,8 +49,10 @@
                 "define-goal"
               ],
               "group": "意图澄清 / \"逼问\"模式",
+              "group_en": null,
               "chain": false,
               "description": "grill-me（让 Claude 反过来盘问你的计划直到所有决策树压力测试）+ Pawel pre-mortem（\"假设它失败了，为什么\"）+ Codex define-goal（把模糊意图改写成\"具体可验证目标\"含 outcome / artifact / verification / scope / stop / 阈值）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "mattpocock",
@@ -107,8 +113,10 @@
                 "get-shit-done"
               ],
               "group": "轻量 SDD 框架",
+              "group_en": null,
               "chain": false,
               "description": "openspec（Fission-AI/OpenSpec：openspec init 把\"提议变更 → 评审 → 归档\"接入 Claude Code/Cursor/Codex）；get-shit-done（gsd-build：把 meta-prompt + context engineering + SDD 串成统一框架，对标 BMAD/Spec-Kit 但更精简）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Fission-AI",
@@ -151,8 +159,10 @@
                 "handoff"
               ],
               "group": "会话接力 / 上下文 handoff",
+              "group_en": null,
               "chain": false,
               "description": "mattpocock handoff（把当前会话压成结构化 handoff 文档，让另一个 agent / 另一段会话无缝接力，不再\"跟下一个 Claude 解释一遍\"）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "mattpocock",
@@ -177,6 +187,7 @@
         },
         {
           "title": "1.2 TDD / 测试 / 调试 / 验证",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -185,8 +196,10 @@
                 "test-scenarios"
               ],
               "group": "TDD（多家同名版本）",
+              "group_en": null,
               "chain": false,
               "description": "superpowers test-driven-development（最严，强制 RED-GREEN-REFACTOR）+ mattpocock tdd（最轻，单 vertical slice）+ Pawel test-scenarios（从 user story 生成全面测试场景）。三家可选",
+              "description_en": null,
               "sources": [
                 {
                   "name": "superpowers",
@@ -248,8 +261,10 @@
                 "sentry"
               ],
               "group": "系统化调试",
+              "group_en": null,
               "chain": false,
               "description": "superpowers systematic-debugging 4 阶段根因（含 root-cause-tracing / defense-in-depth / condition-based-waiting）+ mattpocock diagnose（复现→最小化→假设→注入观测→修→回归测试）+ Codex sentry（看生产 issue + AI 根因 + AI 修复方案，PII 自脱敏）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "superpowers",
@@ -309,8 +324,10 @@
                 "verification-before-completion"
               ],
               "group": "完工验证",
+              "group_en": null,
               "chain": false,
               "description": "superpowers verification-before-completion（\"真的修好了吗\"完工自检）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "superpowers",
@@ -336,8 +353,10 @@
                 "webapp-testing"
               ],
               "group": "Web 应用 UI 测试",
+              "group_en": null,
               "chain": true,
               "description": "Anthropic webapp-testing + ComposioHQ webapp-testing（用 Playwright 测本地 webapp，跨浏览器 Chromium/Firefox/WebKit + 移动模拟 + 截图 + 网络拦截 + console 错误捕获）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -381,8 +400,10 @@
                 "playwright-interactive"
               ],
               "group": "浏览器自动化",
+              "group_en": null,
               "chain": false,
               "description": "Codex playwright（终端开真实浏览器，snapshot→click/type/fill）+ playwright-interactive（用 js_repl 维持 Playwright/Electron 持久会话做 UI 迭代调试）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -407,6 +428,7 @@
         },
         {
           "title": "1.3 代码 Review / 重构 / 语义去重",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -414,8 +436,10 @@
                 "receiving-code-review"
               ],
               "group": "Code Review 双向",
+              "group_en": null,
               "chain": true,
               "description": "superpowers requesting-code-review（提交前清单）+ receiving-code-review（接 review 反馈处理）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "superpowers",
@@ -442,8 +466,10 @@
                 "zoom-out"
               ],
               "group": "重构 / 拯救 ball-of-mud",
+              "group_en": null,
               "chain": false,
               "description": "mattpocock improve-codebase-architecture（每几天跑一次找 deepening 机会拯救代码库）+ zoom-out（让 agent 退一步给系统级解释）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "mattpocock",
@@ -469,8 +495,10 @@
                 "finding-duplicate-functions"
               ],
               "group": "语义代码去重",
+              "group_en": null,
               "chain": false,
               "description": "superpowers-lab finding-duplicate-functions（Haiku 分类 → Opus 找同意图不同实现）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "superpowers-lab",
@@ -495,6 +523,7 @@
         },
         {
           "title": "1.4 Git / PR / CI 协作",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -503,8 +532,10 @@
                 "yeet"
               ],
               "group": "GitHub 三件套",
+              "group_en": null,
               "chain": true,
               "description": "Codex gh-address-comments（拉 PR review thread 编号让用户挑哪些要修）+ gh-fix-ci（定位失败的 GitHub Actions 检查抓 run/job 日志先出 plan 再改）+ yeet（一气呵成 stage→commit→push→开 draft PR，自动发现 PR 模板填好 title/body）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -531,8 +562,10 @@
                 "finishing-a-development-branch"
               ],
               "group": "Git 工作流",
+              "group_en": null,
               "chain": false,
               "description": "superpowers using-git-worktrees（在新 branch 创隔离 workspace + 跑 setup + 验证 baseline）+ finishing-a-development-branch（验证完成→选 merge/PR/keep/discard→清理 worktree）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "superpowers",
@@ -558,8 +591,10 @@
                 "claude-code-safety-net"
               ],
               "group": "危险命令拦截",
+              "group_en": null,
               "chain": false,
               "description": "kenryu42 claude-code-safety-net（plugin 不是 skill）：hook 进 PreToolUse 事件，在 Claude 跑 git push --force / reset --hard / rm -rf / clean -f 等危险命令前拦截等用户确认",
+              "description_en": null,
               "sources": [
                 {
                   "name": "kenryu42",
@@ -583,6 +618,7 @@
         },
         {
           "title": "1.5 多平台部署",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -592,8 +628,10 @@
                 "vercel-deploy"
               ],
               "group": "平台特化部署（4 选 1 平行替代）",
+              "group_en": null,
               "chain": false,
               "description": "cloudflare-deploy（Workers/Pages/D1/R2/KV/Queues/AI/Vectorize/WAF 60+ 产品决策树）+ netlify-deploy（npx netlify CLI 自动 link + 智能识 Next/Vite/静态）+ render-deploy（Git-backed + render.yaml Blueprint）+ vercel-deploy（默认 preview，CLI 不可用时降级到 deploy script 拿 previewUrl + claimUrl）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -618,6 +656,7 @@
         },
         {
           "title": "1.6 API / SDK / MCP / Agent 开发",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -628,8 +667,10 @@
                 "openai-docs"
               ],
               "group": "三大模型厂 SDK 直连",
+              "group_en": null,
               "chain": false,
               "description": "Anthropic claude-api（强制 prompt caching + adaptive thinking + 4.5/4.6/4.7 升级）+ Gemini 三件套 ⛓（gemini-api-dev / gemini-live-api-dev WebSocket 实时音视频 / gemini-interactions-api 替代旧 generateContent + 处理 schema breaking change）+ Codex openai-docs（用 developers.openai.com MCP 优先查文档 + 模型选型 + 模型字符串升级）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -689,8 +730,10 @@
                 "mcp-builder"
               ],
               "group": "MCP Server 开发",
+              "group_en": null,
               "chain": false,
               "description": "Anthropic mcp-builder（四阶段方法论：研究 → 实现 → 测试 → 评估，输出完整 MCP Server 项目 + 10 个 eval QA 对）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -716,8 +759,10 @@
                 "chatgpt-apps"
               ],
               "group": "OpenAI 平台开发",
+              "group_en": null,
               "chain": true,
               "description": "Codex chatgpt-apps（docs-first 脚手架 ChatGPT Apps SDK：archetype 分类 → tool plan → 选 starter → MCP server + widget UI 骨架；强制要先调 openai-docs）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -743,8 +788,10 @@
                 "agent-browser"
               ],
               "group": "浏览器 agent CLI",
+              "group_en": null,
               "chain": false,
               "description": "vercel-labs/agent-browser（基于 Chrome DevTools Protocol 的 agent 浏览器自动化 CLI：导航 / 填表 / 点击 / 截图 / 抓数据）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "vercel-labs",
@@ -768,6 +815,7 @@
         },
         {
           "title": "1.7 .NET / 桌面 / 远端运行环境",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -775,8 +823,10 @@
                 "winui-app"
               ],
               "group": "Microsoft / .NET 栈",
+              "group_en": null,
               "chain": true,
               "description": "aspnet-core（按 .NET 10 / ASP.NET Core 10 当前实践写 Blazor / Razor Pages / MVC / Minimal APIs / Web API + DI + 中间件 + 认证 + SignalR + gRPC）+ winui-app（装/改 WinUI 3 + Windows App SDK 桌面应用，自动跑 WinGet 装 VS 2026 + dotnet new winui）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -802,8 +852,10 @@
                 "windows-vm"
               ],
               "group": "Windows VM in Docker",
+              "group_en": null,
               "chain": false,
               "description": "superpowers-lab windows-vm（headless Win11 in Docker + KVM + SSH，自动装 OpenSSH + Node + Claude Code，让 Claude Code 能跑在 Windows 上）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "superpowers-lab",
@@ -829,8 +881,10 @@
                 "using-tmux-for-interactive-commands"
               ],
               "group": "tmux 操控交互 CLI",
+              "group_en": null,
               "chain": false,
               "description": "superpowers-lab using-tmux-for-interactive-commands（agent 进 vim / git rebase -i / menuconfig / REPL 改文件）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "superpowers-lab",
@@ -855,6 +909,7 @@
         },
         {
           "title": "1.8 安全审计 / 威胁建模",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -863,8 +918,10 @@
                 "security-ownership-map"
               ],
               "group": "应用层安全三件套",
+              "group_en": null,
               "chain": false,
               "description": "Codex security-best-practices（按语言加载 reference py/js/ts/go 写 secure-by-default 代码）+ security-threat-model（基于仓库证据做 AppSec 级威胁建模：scope → 信任边界 → asset → entry → 攻击者能力 → abuse path → 缓解）+ security-ownership-map（从 git history 建\"人 ↔ 文件\"二部图算 bus factor / 孤儿敏感代码 / co-change 聚类）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -890,8 +947,10 @@
                 "skills"
               ],
               "group": "专业级安全 Marketplace",
+              "group_en": null,
               "chain": false,
               "description": "trailofbits/skills（35+ plugin 跨 9 个领域）：智能合约（building-secure-contracts 6 链 + entry-point-analyzer）、代码审计（c-review/differential-review/fp-check/insecure-defaults/semgrep-rule/sharp-edges/static-analysis/supply-chain-risk-auditor/testing-handbook/trailmark/variant-analysis/agentic-actions-auditor/audit-context-building/burpsuite-project-parser/dimensional-analysis）、恶意代码（yara-authoring）、形式化验证（constant-time/mutation/property-based/spec-to-code/zeroize-audit）、逆向（dwarf-expert）、移动（firebase-apk-scanner）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "trailofbits",
@@ -916,8 +975,10 @@
                 "sentry"
               ],
               "group": "生产监控",
+              "group_en": null,
               "chain": false,
               "description": "Codex sentry（用 sentry CLI 只读地查 issue / event / health，含 issue explain AI 根因 + issue plan AI 修复方案，输出 PII 自脱敏）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -944,10 +1005,12 @@
     },
     {
       "title": "二、文档与知识管理",
+      "title_en": null,
       "icon": "📄",
       "subsections": [
         {
           "title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -957,8 +1020,10 @@
                 "xlsx"
               ],
               "group": "Office 四件套（Anthropic）",
+              "group_en": null,
               "chain": false,
               "description": "docx（Word 读/改/生成含 letterhead/目录/追踪修订/图片）+ pdf（读/抽/合/拆/旋/水印/加密/表单/OCR）+ pptx（读/编辑/创建 + 10 套配色 + 字体规则 + subagent 视觉 QA）+ xlsx（强制金融建模色彩规范：蓝输入/黑公式/绿跨表/红外链）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -984,8 +1049,10 @@
                 "nutrient-agent-skill"
               ],
               "group": "PDF 重型 API",
+              "group_en": null,
               "chain": false,
               "description": "PSPDFKit-labs/nutrient-agent-skill（依赖 Nutrient DWS API）：转换（PDF↔DOCX/XLSX/PPTX/HTML/图）/ assemble（合并/分页/旋转）/ 抽文本+表格 / OCR 20+ 语言 / pattern + AI 双路 PII 脱敏 / 水印 / CMS+CAdES 数字签名 / 表单填充 / PDF/A 合规 / 优化 linearize",
+              "description_en": null,
               "sources": [
                 {
                   "name": "PSPDFKit-labs",
@@ -1011,8 +1078,10 @@
                 "kreuzberg"
               ],
               "group": "多格式抽取引擎",
+              "group_en": null,
               "chain": false,
               "description": "kreuzberg-dev/kreuzberg：Rust 内核覆盖 90+ 文件格式 + 300+ 编程语言 tree-sitter 代码语义抽取 + 143 个 LLM/VLM provider 做 VLM-OCR + TOON 序列化省 30-50% RAG token；提供 14 语言 binding（Python/Node/Ruby/Java/Go/PHP/Elixir/C#/R/C/Swift/Dart）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "kreuzberg-dev",
@@ -1036,14 +1105,17 @@
         },
         {
           "title": "2.2 长文本翻译 / 跨语言",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "translate-book"
               ],
               "group": "整本书并行翻译",
+              "group_en": null,
               "chain": false,
               "description": "deusyu/translate-book（PDF/DOCX/EPUB）：Calibre 转 HTMLZ → 切 chunk → 8 路并行 subagent 翻译 → manifest SHA-256 校验 → 增量重译 → Pandoc 合回；带 glossary 实体一致性 + 邻域上下文（前后 ~300 字）解决代词指代",
+              "description_en": null,
               "sources": [
                 {
                   "name": "deusyu",
@@ -1068,6 +1140,7 @@
         },
         {
           "title": "2.3 写作 / 共写 / 文案打磨",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -1075,8 +1148,10 @@
                 "internal-comms"
               ],
               "group": "协作写文档",
+              "group_en": null,
               "chain": false,
               "description": "Anthropic doc-coauthoring（\"上下文采集 → 迭代结构 → 读者测试\"三阶段共写 PRD/RFC/设计文档）+ Anthropic internal-comms（写 3P 进度 / company newsletter / FAQ / leadership update / incident report）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -1102,8 +1177,10 @@
                 "humanizer"
               ],
               "group": "去 AI 味 / 提高自然度",
+              "group_en": null,
               "chain": false,
               "description": "blader/humanizer（drop 常见 AI 模板词、补节奏变化、提高自然度，让 LLM 输出读起来不像 LLM 写的）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "blader",
@@ -1129,8 +1206,10 @@
                 "write-concisely"
               ],
               "group": "简洁化改写",
+              "group_en": null,
               "chain": false,
               "description": "NeoLabHQ/write-concisely（套用 Strunk & White《The Elements of Style》原则：去冗、强动词、被动→主动、改善结构）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "NeoLabHQ",
@@ -1157,8 +1236,10 @@
                 "huashu-skills"
               ],
               "group": "语法 / 文风审查",
+              "group_en": null,
               "chain": false,
               "description": "Pawel grammar-check（找语法/逻辑/流畅度问题给定向修改建议）+ alchaincyf huashu-skills（含 AI 审校 / 选题生成 / 视频脚本拆解 21 内容创作 skill）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -1201,8 +1282,10 @@
                 "caveman"
               ],
               "group": "极简输出模式",
+              "group_en": null,
               "chain": false,
               "description": "JuliusBrussee/caveman + mattpocock caveman（\"穴居人模式\"把 Claude 输出风格压到极简——drop 所有 filler、保留完整技术准确度，实测可省 ~75% token）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "JuliusBrussee",
@@ -1245,8 +1328,10 @@
                 "claude-speed-reader"
               ],
               "group": "速读 Claude 回复",
+              "group_en": null,
               "chain": false,
               "description": "SeanZoR/claude-speed-reader（用 RSVP 每次显示一个词 + 红色高亮 ORP 最优识别点以 600+ WPM 速读 Claude 上一段回答；空格/←→ 控速）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "SeanZoR",
@@ -1271,6 +1356,7 @@
         },
         {
           "title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -1278,8 +1364,10 @@
                 "notebooklm-py"
               ],
               "group": "NotebookLM 双路线",
+              "group_en": null,
               "chain": false,
               "description": "PleasePrompto/notebooklm-skill（Patchright 浏览器自动化登录 + 查询 source-grounded 答案 + 列出/切换 notebook + 持久化 auth）vs teng-lin/notebooklm-py（非官方 NotebookLM Python API 纯 async + 无需 OAuth + 创建 notebook + 上传 source + 查询 + 生成 audio）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "PleasePrompto",
@@ -1321,8 +1409,10 @@
                 "graphify"
               ],
               "group": "项目知识图谱",
+              "group_en": null,
               "chain": false,
               "description": "safishamsi/graphify（/graphify 命令把整个项目的代码 / 文档 / PDF / 图片 / 视频 映射成可查询知识图谱，让 Claude 跨文件推理时不需要每次重新搜）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "safishamsi",
@@ -1348,8 +1438,10 @@
                 "tutor-skills"
               ],
               "group": "Obsidian 学习金库",
+              "group_en": null,
               "chain": true,
               "description": "bevibing/tutor-skills（tutor-setup + tutor）：自动检测是 Document 还是 Codebase 模式，把 PDF/MD/HTML/EPUB/源代码 → Obsidian StudyVault（概念笔记 + MOC + 练习题）→ tutor 做 4 题/轮交互式测验 + 记忆薄弱点（🟥🟨🟩🟦⬜）做下一轮 drill",
+              "description_en": null,
               "sources": [
                 {
                   "name": "bevibing",
@@ -1375,8 +1467,10 @@
                 "skill-focus"
               ],
               "group": "论文摘要（FOCUS 方法）",
+              "group_en": null,
               "chain": false,
               "description": "stephenturner/skill-focus（用 FOCUS 框架做学术论文摘要：把每篇论文压成\"focus / outcome / contribution / underlying / sample\"五段式，便于 AI 后续做 cross-paper 综述与跨文献比较）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "stephenturner",
@@ -1401,6 +1495,7 @@
         },
         {
           "title": "2.5 Notion 协作矩阵",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -1410,8 +1505,10 @@
                 "notion-spec-to-implementation"
               ],
               "group": "Notion 4 联工作流",
+              "group_en": null,
               "chain": true,
               "description": "Codex notion-knowledge-capture（对话/笔记按数据库 schema 转结构化页 5 类：决策/how-to/FAQ/wiki/学习记录）+ notion-meeting-intelligence（拉历史 Notion + Codex research 出 agenda 6 模板：状态/决策/计划/retro/1:1/头脑风暴）+ notion-research-documentation（多页交叉调研合成 + 强制 citations，4 模板：quick brief / summary / comparison / comprehensive）+ notion-spec-to-implementation（把 Notion spec 解析成实现计划页 + 任务库条目 + 互相关联）。全部依赖 Notion MCP",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -1437,8 +1534,10 @@
                 "notion-cookbook"
               ],
               "group": "Notion 官方 cookbook",
+              "group_en": null,
               "chain": false,
               "description": "makenotion/notion-cookbook（Notion × Claude MCP 工作流，含自动化文档撰写 / 会议准备 / 研究等）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "makenotion",
@@ -1463,14 +1562,17 @@
         },
         {
           "title": "2.6 跨 session 持久记忆",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "claude-memory-skill"
               ],
               "group": "轻量分层记忆",
+              "group_en": null,
               "chain": false,
               "description": "hanfang/claude-memory-skill（core.md 始终加载存 summary + 指针 → topics/<x>.md 按需加载 → me.md 关于你；写记忆走后台 agent 不阻塞主 agent；纯 grep 检索不用向量库）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "hanfang",
@@ -1496,8 +1598,10 @@
                 "claude-mem"
               ],
               "group": "影子 agent + MCP 记忆",
+              "group_en": null,
               "chain": false,
               "description": "thedotmack/claude-mem（spawn 影子 Sonnet 跟随主会话写 observations + 4 个 MCP tool 做 token 高效的 3 层记忆工作流：search → context → recall；mem-search skill 自动 invoke）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "thedotmack",
@@ -1522,8 +1626,10 @@
                 "self-improving-agent"
               ],
               "group": "自我精炼 agent",
+              "group_en": null,
               "chain": false,
               "description": "alirezarezvani self-improving-agent（利用 Claude Code v2.1.32+ auto-memory 自动记录的项目模式 / debug 经验 / 纠正历史，做模式提升 + skill 抽取 + 记忆健康检查）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "alirezarezvani",
@@ -1550,10 +1656,12 @@
     },
     {
       "title": "三、产品管理（PM）",
+      "title_en": null,
       "icon": "🎯",
       "subsections": [
         {
           "title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -1564,8 +1672,10 @@
                 "proto-persona"
               ],
               "group": "用户画像 / persona",
+              "group_en": null,
               "chain": false,
               "description": "Pawel user-personas（3 个 persona 含 JTBD + pains + gains）+ user-segmentation（按行为/JTBD/需求切分用户群）+ market-segments（3-5 个客户细分含 product fit）+ ideal-customer-profile（ICP 人口学+行为+JTBD）+ Dean proto-persona（在做完整调研前先建假设型 persona）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -1608,8 +1718,10 @@
                 "customer-journey-map"
               ],
               "group": "客户旅程图",
+              "group_en": null,
               "chain": false,
               "description": "Pawel customer-journey-map + Dean customer-journey-map / customer-journey-mapping-workshop（NNGroup 框架画跨触点 journey + 多轮工作坊引导）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -1653,8 +1765,10 @@
                 "job-stories"
               ],
               "group": "JTBD（Jobs-to-be-Done）",
+              "group_en": null,
               "chain": false,
               "description": "Dean jobs-to-be-done（Christensen + Osterwalder 三栏 + pains/gains）+ Pawel job-stories（when X I want Y so Z 格式 + 验收标准）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -1700,8 +1814,10 @@
                 "transcribe"
               ],
               "group": "客户访谈",
+              "group_en": null,
               "chain": false,
               "description": "Pawel interview-script（含 JTBD 探询 + Mom Test 风格） + summarize-interview（transcript → JTBD + 行动项）+ Dean discovery-interview-prep（按研究目标定方法 + 题目 + 偏差预警）+ Codex transcribe（用 gpt-4o-mini-transcribe 或带说话人分离做转写）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -1762,8 +1878,10 @@
                 "analyze-feature-requests"
               ],
               "group": "反馈情感分析",
+              "group_en": null,
               "chain": false,
               "description": "Pawel sentiment-analysis（用户反馈情感打分 + JTBD 洞察）+ Pawel analyze-feature-requests（按主题/影响/努力/风险给 feature request 排优先级）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -1788,6 +1906,7 @@
         },
         {
           "title": "3.2 问题框定 / 假设管理",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -1795,8 +1914,10 @@
                 "problem-framing-canvas"
               ],
               "group": "问题陈述",
+              "group_en": null,
               "chain": false,
               "description": "Dean problem-statement（\"I am / Trying to / But / Because / Which makes me feel\" 五段式）+ problem-framing-canvas（MITRE 三段：Look Inward / Look Outward / Reframe + HMW）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -1824,8 +1945,10 @@
                 "prioritize-assumptions"
               ],
               "group": "假设识别 / 排序",
+              "group_en": null,
               "chain": false,
               "description": "Pawel identify-assumptions-existing（V/U/V/F 4 维风险 + 验证建议）+ identify-assumptions-new（含 Ethical/Compliance 8 维）+ prioritize-assumptions（Impact × Risk 矩阵 + 实验配对 Strategyzer）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -1851,8 +1974,10 @@
                 "pre-mortem"
               ],
               "group": "Pre-mortem",
+              "group_en": null,
               "chain": false,
               "description": "Pawel pre-mortem（对 PRD / 发布计划做\"假设它失败了，为什么\"风险分析）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -1877,14 +2002,17 @@
         },
         {
           "title": "3.3 产品发现 / 实验",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "opportunity-solution-tree"
               ],
               "group": "OST（Opportunity Solution Tree）",
+              "group_en": null,
               "chain": false,
               "description": "Dean opportunity-solution-tree + Pawel opportunity-solution-tree（Teresa Torres 框架：outcome → opportunities → solutions → experiments；Pawel 版强调 Importance ×(1−Satisfaction) opportunity score）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -1929,8 +2057,10 @@
                 "brainstorm-experiments-existing"
               ],
               "group": "脑暴点子（双路径）",
+              "group_en": null,
               "chain": false,
               "description": "Pawel brainstorm-ideas-existing（PM/设计师/工程师三视角给现有产品脑暴）+ brainstorm-ideas-new（早期发现阶段为新产品脑暴）+ Pawel brainstorm-experiments-existing / -new（lean pretotype Savoia）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -1957,8 +2087,10 @@
                 "pol-probe-advisor"
               ],
               "group": "Prototype 选型",
+              "group_en": null,
               "chain": false,
               "description": "mattpocock prototype（写\"丢弃式原型\"——能跑的终端 app 或同一路由下几个差异巨大的 UI 变体）+ Dean pol-probe-advisor（推荐 5 种 prototype：Feasibility / Task-Focused / Narrative / Synthetic / Vibe）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "mattpocock",
@@ -2002,8 +2134,10 @@
                 "cohort-analysis"
               ],
               "group": "实验数据分析",
+              "group_en": null,
               "chain": false,
               "description": "Pawel ab-test-analysis（用样本量/p-value/置信区间/guardrail metric 评估 A/B 按\"ship/extend/stop/investigate\"决策；丢 CSV 还会生成 Python 算数）+ cohort-analysis（cohort 留存 + feature adoption + segment 切分）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2031,8 +2165,10 @@
                 "storyboard"
               ],
               "group": "Lean UX / Discovery 编排",
+              "group_en": null,
               "chain": false,
               "description": "Dean discovery-process（3-4 周完整发现循环 frame→research→synthesize→validate）+ Dean lean-ux-canvas（Jeff Gothelf v2 hypothesis-driven）+ Dean storyboard（6 帧叙事可视化用户旅程）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -2057,6 +2193,7 @@
         },
         {
           "title": "3.4 战略 / 定位 / 商业模式",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -2067,8 +2204,10 @@
                 "value-proposition"
               ],
               "group": "Canvas 全套",
+              "group_en": null,
               "chain": false,
               "description": "Pawel lean-canvas（Ash Maurya 9 段，主动指出与 Startup Canvas 差异）+ business-model（Strategyzer 9 块 BMC）+ startup-canvas（Pawel 自创 = Product Strategy + Business Model 合并）+ product-strategy（Pawel 9-section Product Strategy Canvas）+ value-proposition（6 段式 JTBD 价值主张）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2098,8 +2237,10 @@
                 "ansoff-matrix"
               ],
               "group": "外部环境分析",
+              "group_en": null,
               "chain": false,
               "description": "Pawel pestle-analysis（PESTLE 6 维：政治/经济/社会/科技/法律/环境）+ Dean pestel-analysis + Pawel porters-five-forces（竞争/供应商/买家/替代品/新进入者）+ swot-analysis（SWOT + actionable 推荐）+ ansoff-matrix（4 象限：市场渗透/开发/产品开发/多元化）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2143,8 +2284,10 @@
                 "market-sizing"
               ],
               "group": "市场规模",
+              "group_en": null,
               "chain": false,
               "description": "Dean tam-sam-som-calculator（真实数据 + 引用 + VC 投递 deck）+ Pawel market-sizing（top-down + bottom-up 估 TAM/SAM/SOM）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -2191,8 +2334,10 @@
                 "press-release"
               ],
               "group": "定位 / 愿景",
+              "group_en": null,
               "chain": false,
               "description": "Dean positioning-statement（Geoffrey Moore \"For/that need/is a/that/Unlike\" 框架）+ positioning-workshop（自适应问题引导多人完成定位）+ Pawel positioning-ideas（差异化定位创意）+ product-vision（鼓舞人心又可达成的 vision statement）+ Dean press-release（Amazon Working Backwards 写\"未来发布稿\"）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -2237,8 +2382,10 @@
                 "outcome-roadmap"
               ],
               "group": "战略编排 workflow",
+              "group_en": null,
               "chain": false,
               "description": "Dean product-strategy-session（2-4 周完整战略 session：positioning→framing→exploration→roadmap）+ Dean roadmap-planning（1-2 周战略 roadmap：inputs→epics→prioritize→sequence→communicate）+ Pawel outcome-roadmap（output→outcome roadmap 改造）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -2280,6 +2427,7 @@
         },
         {
           "title": "3.5 GTM / 进入策略 / 增长 loop",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -2288,8 +2436,10 @@
                 "gtm-strategy"
               ],
               "group": "滩头市场 + GTM 动作",
+              "group_en": null,
               "chain": false,
               "description": "Pawel beachhead-segment（Geoffrey Moore：burning pain × WTP × winnable × referral 4 维选第一个市场 + 90 天获客方案）+ gtm-motions（7 种 GTM 动作 PLG/SLG/ABM/Inbound/Outbound/Community/Channel 选组合）+ gtm-strategy（渠道 + message + 发布时间线）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2315,8 +2465,10 @@
                 "growth-loops"
               ],
               "group": "增长 loop",
+              "group_en": null,
               "chain": false,
               "description": "Pawel growth-loops（5 类 flywheel 识别合适的 growth loop）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2342,8 +2494,10 @@
                 "north-star-metric"
               ],
               "group": "北极星指标",
+              "group_en": null,
               "chain": false,
               "description": "Pawel north-star-metric（先把业务划成 Attention/Transaction/Productivity 三类 game，再按 7 项标准选 NSM + 3-5 个 input metric）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2368,6 +2522,7 @@
         },
         {
           "title": "3.6 PRD / Spec / 工程 handoff",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -2377,8 +2532,10 @@
                 "prd-generator"
               ],
               "group": "PRD 写作",
+              "group_en": null,
               "chain": false,
               "description": "Pawel create-prd（8 节模板：Summary/Contacts/Background/Objective/Market/Value Prop/Solution/Release）+ Dean prd-development（2-4 天结构化 PRD：problem→personas→solution→metrics→stories）+ mattpocock to-prd（把当前对话上下文直接合成 PRD 并提交成 GitHub issue）+ founder-skills prd-generator（给 AI 编程工具用的 PRD，输出 PDF）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2460,8 +2617,10 @@
                 "epic-hypothesis"
               ],
               "group": "User Story / 拆任务",
+              "group_en": null,
               "chain": false,
               "description": "Pawel user-stories（INVEST + 3C's）+ wwas（Why-What-Acceptance）+ Dean user-story（Mike Cohn + Gherkin）+ user-story-mapping/(workshop)（Patton backbone + release slice）+ user-story-splitting + Dean epic-breakdown-advisor（Lawrence 9 splitting pattern）+ Dean epic-hypothesis（initiative→hypothesis 改写）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2507,8 +2666,10 @@
                 "linear"
               ],
               "group": "Spec → 工程",
+              "group_en": null,
               "chain": false,
               "description": "Codex notion-spec-to-implementation（Notion spec 解析成实现计划页 + 任务库 + 互相关联）+ mattpocock to-issues（把 plan 拆成 vertical slice issue）+ wrsmith108 linear-claude-skill（Linear 任务管理：MCP / linear CLI / 辅助脚本三 backend；管理 issue/project/initiative/label/state；批量 sync 代码改动到 ticket）+ Codex linear（同 Linear MCP，sprint plan/bug triage/release plan/retro）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -2567,6 +2728,7 @@
         },
         {
           "title": "3.7 优先级 / 投资决策",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -2575,8 +2737,10 @@
                 "prioritize-features"
               ],
               "group": "优先级框架对比",
+              "group_en": null,
               "chain": false,
               "description": "Pawel prioritization-frameworks（9 框架：RICE/ICE/Kano/WSJF/MoSCoW/Cost of Delay/Story Mapping/Buy a Feature/Opportunity Score）+ Dean prioritization-advisor（推荐合适框架 + 评估表）+ Pawel prioritize-features（4 维：影响/努力/风险/战略对齐）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2621,8 +2785,10 @@
                 "finance-based-pricing-advisor"
               ],
               "group": "投资 / ROI",
+              "group_en": null,
               "chain": false,
               "description": "Dean feature-investment-advisor（ROI + 战略价值评分）+ Dean acquisition-channel-advisor（unit economics 评估渠道 CAC/LTV/payback/利润 → scale/test/kill）+ Dean finance-based-pricing-advisor（财务影响分析评估定价改动）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -2647,6 +2813,7 @@
         },
         {
           "title": "3.8 SaaS 健康 / 财务指标 / 单位经济",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -2654,8 +2821,10 @@
                 "pm-operator"
               ],
               "group": "SaaS 诊断",
+              "group_en": null,
               "chain": false,
               "description": "Dean business-health-diagnostic（诊断 SaaS 健康度，列红旗按修复价值排优先）+ Digidai pm-operator（30+ 框架 + SaaS 诊断 输入 MRR/churn/CAC 给诊断 + PRD 同侪审稿 + 6 阶段全 PM Sprint Discover→Position→Prioritize→Specify→Validate→Measure + Coaching 模式）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -2700,8 +2869,10 @@
                 "saas-revenue-growth-metrics"
               ],
               "group": "财务速查",
+              "group_en": null,
               "chain": false,
               "description": "Dean finance-metrics-quickref（32+ SaaS 财务指标公式 + benchmark 速查）+ saas-economics-efficiency-metrics（CAC/LTV/payback/Rule of 40/burn multiple）+ saas-revenue-growth-metrics（MRR/ARR/churn/NRR/expansion）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -2726,6 +2897,7 @@
         },
         {
           "title": "3.9 OKR / Sprint / Retro / Stakeholder",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -2734,8 +2906,10 @@
                 "retro"
               ],
               "group": "OKR / Sprint",
+              "group_en": null,
               "chain": false,
               "description": "Pawel brainstorm-okrs（与公司目标对齐的团队 OKR）+ Pawel sprint-plan（容量 + 故事选择 + 风险映射）+ Pawel retro（结构化 sprint retrospective + action items）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2763,8 +2937,10 @@
                 "workshop-facilitation"
               ],
               "group": "会议 / 利益相关者",
+              "group_en": null,
               "chain": false,
               "description": "Pawel summarize-meeting（transcript → 结构化纪要 + 待办）+ Pawel stakeholder-map（power × interest 矩阵 + 沟通计划）+ Dean workshop-facilitation（任意 workshop 主持）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2810,8 +2986,10 @@
                 "executive-onboarding-playbook"
               ],
               "group": "PM 升职 / 领导力",
+              "group_en": null,
               "chain": false,
               "description": "Dean altitude-horizon-framework（PM→Director scope/time horizon/失败模式 mindset 转变）+ director-readiness-advisor（4 类关键场景应对）+ vp-cpo-readiness-advisor（Director→VP/CPO 转变 + CEO 面试框架）+ executive-onboarding-playbook（30-60-90 天 VP/CPO 入职诊断）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -2836,6 +3014,7 @@
         },
         {
           "title": "3.10 发布 / EOL / 沟通",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -2843,8 +3022,10 @@
                 "eol-message"
               ],
               "group": "Release Notes / EOL",
+              "group_en": null,
               "chain": false,
               "description": "Pawel release-notes（ticket/changelog → 用户向发布说明）+ Dean eol-message（产品/功能下线含时间表/迁移路径/补偿）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -2887,8 +3068,10 @@
                 "internal-comms"
               ],
               "group": "企业内部沟通",
+              "group_en": null,
               "chain": false,
               "description": "Anthropic internal-comms（3P 进度 / company newsletter / FAQ / leadership update / incident report）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -2913,14 +3096,17 @@
         },
         {
           "title": "3.11 PM 元能力",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "ai-shaped-readiness-advisor"
               ],
               "group": "AI 转型诊断",
+              "group_en": null,
               "chain": false,
               "description": "Dean ai-shaped-readiness-advisor（5 项 competency 诊断\"自动化 vs 重设计\" AI 机会）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -2946,8 +3132,10 @@
                 "recommendation-canvas"
               ],
               "group": "AI 推荐功能 doc",
+              "group_en": null,
               "chain": false,
               "description": "Dean recommendation-canvas（数据/算法/置信/回退/UX 文档化）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -2973,8 +3161,10 @@
                 "company-research"
               ],
               "group": "公司调研",
+              "group_en": null,
               "chain": false,
               "description": "Dean company-research（产品/定位/财务/市场/客户深度分析）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -3000,8 +3190,10 @@
                 "skill-authoring-workflow"
               ],
               "group": "元工作流",
+              "group_en": null,
               "chain": false,
               "description": "Dean skill-authoring-workflow（写 PM skill 自身的元工作流）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Dean",
@@ -3028,10 +3220,12 @@
     },
     {
       "title": "四、营销 / 增长 / 销售",
+      "title_en": null,
       "icon": "📣",
       "subsections": [
         {
           "title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -3043,8 +3237,10 @@
                 "content-strategy"
               ],
               "group": "SEO 全套（Corey Haines 6 件）",
+              "group_en": null,
               "chain": false,
               "description": "seo-audit（技术/on-page/Core Web Vitals/indexing/爬错给优先级清单）+ ai-seo（AI Overviews / ChatGPT / Perplexity / Gemini 引用优化，AEO/GEO/LLMO 策略）+ programmatic-seo（12 套 playbook：Templates/Curation/Comparisons/Locations/Personas/Integrations/Glossary/Profiles 做 templated 落地页避免 thin-content）+ schema（schema.org JSON-LD：Article/FAQ/Product/HowTo/Organization）+ site-architecture（页面层级/导航/URL/面包屑/内链 hub-and-spoke）+ content-strategy（写啥 + topic cluster + editorial calendar）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3070,8 +3266,10 @@
                 "claude-seo"
               ],
               "group": "大型 SEO 仓库",
+              "group_en": null,
               "chain": false,
               "description": "AgriciDaniel/claude-seo（25 skill + 13 sub-agent + 17 脚本）：on-page 优化 / 技术 SEO / 结构化数据校验 / Search Console + PageSpeed Insights + Google Ads API 集成；可直接把 meta tag、schema markup、关键词出价改动 ship 到源码或 CMS",
+              "description_en": null,
               "sources": [
                 {
                   "name": "AgriciDaniel-seo",
@@ -3097,8 +3295,10 @@
                 "seo-geo"
               ],
               "group": "生成引擎优化",
+              "group_en": null,
               "chain": false,
               "description": "ReScienceLab seo-geo（GEO = Generative Engine Optimization for ChatGPT/Perplexity/Google）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "ReScienceLab",
@@ -3123,6 +3323,7 @@
         },
         {
           "title": "4.2 文案 / 营销心理 / 产品命名",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -3131,8 +3332,10 @@
                 "marketing-psychology"
               ],
               "group": "文案三件套",
+              "group_en": null,
               "chain": true,
               "description": "Corey copywriting（写或重写 landing/home/pricing/feature/about：headline 公式 + CTA + 特性→收益→结果）+ copy-editing（7-pass sweeps：clarity/specificity/verbs/cuts/voice/proof/consistency 改现成 copy 不重写）+ marketing-psychology（first principles/JTBD/social proof/scarcity/loss aversion/anchoring/Cialdini 七原则）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3158,8 +3361,10 @@
                 "brand-copywriter"
               ],
               "group": "品牌文案",
+              "group_en": null,
               "chain": false,
               "description": "founder-skills brand-copywriter（AIDA/PAS/BAB 框架文案：广告 / landing / 邮件）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "founder-skills",
@@ -3185,8 +3390,10 @@
                 "value-prop-statements"
               ],
               "group": "价值主张 / Value Prop",
+              "group_en": null,
               "chain": false,
               "description": "Pawel value-prop-statements（营销 / 销售 / onboarding 多场景 value prop）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -3212,8 +3419,10 @@
                 "product-name"
               ],
               "group": "产品命名",
+              "group_en": null,
               "chain": false,
               "description": "Pawel product-name（5 个对齐品牌价值的产品名）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -3238,6 +3447,7 @@
         },
         {
           "title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -3245,8 +3455,10 @@
                 "cold-email"
               ],
               "group": "邮件全套",
+              "group_en": null,
               "chain": false,
               "description": "Corey emails（生命周期邮件 / drip / 欢迎 / win-back）+ cold-email（人味 B2B 冷邮件 + 多步 follow-up：observation→problem→proof→ask 框架，禁用 leverage/synergy buzzword）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3272,8 +3484,10 @@
                 "sms"
               ],
               "group": "短信营销",
+              "group_en": null,
               "chain": false,
               "description": "Corey sms（短信营销 / 交易短信 / 序列含合规与发送频率）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3301,8 +3515,10 @@
                 "linkedin-writer"
               ],
               "group": "社媒平台 写作",
+              "group_en": null,
               "chain": false,
               "description": "Corey social（LinkedIn/X/Instagram/TikTok 发帖 + calendar）+ founder-skills x-writer（51+ 模板 × 6 voice：Hormozi/Naval/Gazdecki/Dakota/Machina/Ognjen × 8 format）+ linkedin-writer（8+ 模板 × 7 format：Lessons/Blueprint/Story/Strategy/Case/Hot Take/Quick Hack）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3345,8 +3561,10 @@
                 "outreach-specialist"
               ],
               "group": "B2B 外联",
+              "group_en": null,
               "chain": false,
               "description": "founder-skills outreach-specialist（cold email/LinkedIn DM/X DM 8 模板 + 跟进策略）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "founder-skills",
@@ -3371,6 +3589,7 @@
         },
         {
           "title": "4.4 付费广告 / ASO",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -3378,8 +3597,10 @@
                 "ad-creative"
               ],
               "group": "广告策略 / 创意",
+              "group_en": null,
               "chain": false,
               "description": "Corey ads（Google/Meta/LinkedIn/TikTok/X campaign 策略 / 人群 / bidding / 预算 / retargeting / ROAS / CPA）+ ad-creative（大批量产 RSA headline/description/primary text + bulk 变体 + creative testing）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3405,8 +3626,10 @@
                 "claude-ads"
               ],
               "group": "付费广告全账户审计",
+              "group_en": null,
               "chain": false,
               "description": "AgriciDaniel/claude-ads（Google Ads / Meta Ads 全账户 audit，资深 PPC 人手要 4-6 小时的活让 agent 跑完）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "AgriciDaniel-ads",
@@ -3432,8 +3655,10 @@
                 "aso"
               ],
               "group": "App 商店优化",
+              "group_en": null,
               "chain": false,
               "description": "Corey aso（App Store / Google Play 评分/关键词/视觉/评论审计）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3458,6 +3683,7 @@
         },
         {
           "title": "4.5 CRO / 转化优化",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -3468,8 +3694,10 @@
                 "onboarding"
               ],
               "group": "CRO 一组",
+              "group_en": null,
               "chain": false,
               "description": "Corey cro（已合并 page-cro/popup-cro/form-cro/paywall-cro/onboarding-cro/signup-flow-cro 6 个为单 skill：现有需求/阻力消除/紧迫感/信任 4 维诊断）+ popups（modal/slide-in/exit-intent + 触发时机/文案/表单字段/设备适配）+ paywalls（in-app 升级 modal + loss aversion/anchoring 心理学）+ signup（注册转化 + 试用激活 + 减摩擦）+ onboarding（缩短 time-to-value + 激活事件）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3495,8 +3723,10 @@
                 "cro-optimization"
               ],
               "group": "CRO 优化大集合",
+              "group_en": null,
               "chain": false,
               "description": "founder-skills cro-optimization（13 项 CRO 原则诊断 landing page 给前后对比改写）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "founder-skills",
@@ -3522,8 +3752,10 @@
                 "ab-testing"
               ],
               "group": "A/B 实验设计",
+              "group_en": null,
               "chain": false,
               "description": "Corey ab-testing（写 hypothesis / 算样本量 / 严控提前 stop / 实验 backlog）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3548,6 +3780,7 @@
         },
         {
           "title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -3555,8 +3788,10 @@
                 "lead-magnet-generator"
               ],
               "group": "Lead Magnet",
+              "group_en": null,
               "chain": false,
               "description": "Corey lead-magnets（ebook/checklist/模板/报告 + 落地页 + 邮件抓取漏斗）+ founder-skills lead-magnet-generator（带 CTA 的 lead magnet：X/LinkedIn 快/详细版）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3600,8 +3835,10 @@
                 "customer-research"
               ],
               "group": "潜客 / 客户研究",
+              "group_en": null,
               "chain": false,
               "description": "Corey prospecting（建/筛 ICP-fit 名单：行业/tech stack/招聘信号）+ Corey customer-research（用户访谈 / review mining / support ticket 提炼 VOC + JTBD）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3627,8 +3864,10 @@
                 "free-tools"
               ],
               "group": "免费工具引流",
+              "group_en": null,
               "chain": false,
               "description": "Corey free-tools（规划免费工具策略：定题/UX/SEO 价值/转化路径）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3657,8 +3896,10 @@
                 "co-marketing"
               ],
               "group": "推荐 / 联盟 / 社区 / 联合",
+              "group_en": null,
               "chain": false,
               "description": "Corey referrals（客户推荐 / affiliate / WoM 含奖励结构 / 漏斗 / 追踪）+ directory-submissions（SaaS / 产品 / 本地 / 行业目录提交）+ community-marketing（Discord/Slack/Reddit/Circle/Discourse 社区 + ambassador）+ co-marketing（找 ideal partner + joint campaign）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3683,6 +3924,7 @@
         },
         {
           "title": "4.7 病毒式传播 / Hook / 创意",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -3690,8 +3932,10 @@
                 "marketing-ideas"
               ],
               "group": "Hook / 创意点子",
+              "group_en": null,
               "chain": false,
               "description": "founder-skills viral-hook-creator（写病毒式内容 hook）+ marketing-ideas（160+ 策略库给 5 条最佳）+ Pawel marketing-ideas（5 条创意 + 低成本营销点子 + rationale）+ Corey marketing-ideas（SaaS campaign 创意）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "founder-skills",
@@ -3750,6 +3994,7 @@
         },
         {
           "title": "4.8 竞品 / 对比页 / 战情",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -3759,8 +4004,10 @@
                 "competitor-intel"
               ],
               "group": "竞品分析",
+              "group_en": null,
               "chain": false,
               "description": "Pawel competitor-analysis（优势/劣势/差异化）+ competitive-battlecard（销售用 battlecard：\"我们 vs Salesforce\"）+ Corey competitor-profiling（从 URL 起步 + 实页抓 + SEO + review 数据出标准化 profile）+ founder-skills competitor-intel（指标 + leverage 策略 + 下一步预测）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -3820,8 +4067,10 @@
                 "competitors"
               ],
               "group": "比较 / 替代页（SEO）",
+              "group_en": null,
               "chain": false,
               "description": "Corey competitors（4 种格式 [Competitor] alternative / alternatives / You vs / A vs B 写 SEO + 销售比较页）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3846,14 +4095,17 @@
         },
         {
           "title": "4.9 销售辅助 / RevOps / 留存",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "sales-enablement"
               ],
               "group": "销售辅助",
+              "group_en": null,
               "chain": false,
               "description": "Corey sales-enablement（pitch deck / one-pager / objection handling / demo script / battle card）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3879,8 +4131,10 @@
                 "revops"
               ],
               "group": "RevOps",
+              "group_en": null,
               "chain": false,
               "description": "Corey revops（lead lifecycle / scoring / SLA / marketing-to-sales handoff / CRM 字段）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3906,8 +4160,10 @@
                 "churn-prevention"
               ],
               "group": "流失防御",
+              "group_en": null,
               "chain": false,
               "description": "Corey churn-prevention（cancel flow / save offer / dunning / failed payment recovery / win-back，区分 voluntary vs involuntary）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -3932,6 +4188,7 @@
         },
         {
           "title": "4.10 定价 / 商业模型",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -3941,8 +4198,10 @@
                 "monetization-strategy"
               ],
               "group": "定价策略",
+              "group_en": null,
               "chain": false,
               "description": "Pawel pricing-strategy（含 WTP 估算）+ Corey pricing（SaaS pricing tier / 计费模型 / 年付折扣 / grandfather / psychological anchor）+ founder-skills pricing-strategist（交互 Q&A 出分层定价 + revenue optimization）+ Pawel monetization-strategy（3-5 个变现策略 + 验证实验）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -4001,6 +4260,7 @@
         },
         {
           "title": "4.11 GTM / 发布 / Product Hunt",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -4009,8 +4269,10 @@
                 "product-hunt-launch-plan"
               ],
               "group": "发布 GTM",
+              "group_en": null,
               "chain": false,
               "description": "Corey launch（产品/功能发布 + 合作伙伴 + 渠道 + PR + PH 等）+ founder-skills go-to-market-plan（3 套 GTM 策略）+ founder-skills product-hunt-launch-plan（PH 拿 #1 战术：小时级 battle plan + 模板 + 20+ 备选发布平台）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -4053,8 +4315,10 @@
                 "strategic-planning"
               ],
               "group": "战略规划",
+              "group_en": null,
               "chain": false,
               "description": "founder-skills strategic-planning（诊断瓶颈给 3 个高影响下一步）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "founder-skills",
@@ -4079,14 +4343,17 @@
         },
         {
           "title": "4.12 SOP / 测量",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "sop-creator"
               ],
               "group": "SOP",
+              "group_en": null,
               "chain": false,
               "description": "founder-skills sop-creator（写企业流程 SOP，员工 onboarding 等）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "founder-skills",
@@ -4113,8 +4380,10 @@
                 "analytics"
               ],
               "group": "基座上下文 / 测量",
+              "group_en": null,
               "chain": false,
               "description": "Corey product-marketing（维护 product-marketing.md 单一上下文：定位/ICP/声明/差异化/关键 message，其他 marketing skill 启动时优先读它）+ Corey analytics（GA4/GTM/Mixpanel/Amplitude/PostHog/Segment 跟踪 + tracking plan + UTM 规范 + debug）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -4141,10 +4410,12 @@
     },
     {
       "title": "五、设计 / 视觉 / 前端",
+      "title_en": null,
       "icon": "🎨",
       "subsections": [
         {
           "title": "5.1 品牌系统 / 视觉规范",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -4153,8 +4424,10 @@
                 "canvas-design"
               ],
               "group": "品牌视觉三件套",
+              "group_en": null,
               "chain": true,
               "description": "Anthropic brand-guidelines（注入 Anthropic 色系字体：dark #141413、orange #d97757、Poppins/Lora）+ theme-factory（10 套预设主题：Ocean Depths / Sunset Boulevard / Modern Minimalist / Tech Innovation 等）+ canvas-design（把视觉哲学落到博物馆/杂志级 PNG/PDF 海报）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -4179,14 +4452,17 @@
         },
         {
           "title": "5.2 前端工程规范",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "frontend-design"
               ],
               "group": "前端美学",
+              "group_en": null,
               "chain": false,
               "description": "Anthropic frontend-design（让 Claude 跳出 AI slop，用极简 / 野兽 / 复古未来主义等明确美学方向写生产级 UI）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -4214,8 +4490,10 @@
                 "composition-patterns"
               ],
               "group": "Vercel 三件套",
+              "group_en": null,
               "chain": false,
               "description": "vercel-labs web-design-guidelines（100+ 条规则跨 11 类：可访问性 aria/语义 HTML/键盘 + focus 状态 + 表单 autocomplete/校验 + 动效 prefers-reduced-motion + 排印 curly quotes/tabular-nums + 图片 lazy/alt + 性能 preconnect + URL 反映状态 + dark mode color-scheme/theme-color + 触控 touch-action + Intl 国际化）+ react-best-practices（40+ 条规则按 Critical/High/Medium/Low 排成 8 类：消除瀑布请求 / bundle size / 服务端性能 / 客户端 fetch / 重渲染 / 渲染性能 / JS 微优化）+ composition-patterns（治\"boolean prop 爆炸\"：把 <Modal showHeader showFooter showClose closable…> 重构成 compound component <Modal.Header /> <Modal.Body />，状态提升减少 prop）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "vercel-labs",
@@ -4240,8 +4518,10 @@
                 "ui-ux-pro-max-skill"
               ],
               "group": "跨平台 UI/UX",
+              "group_en": null,
               "chain": false,
               "description": "nextlevelbuilder/ui-ux-pro-max-skill（写组件库 / 视觉风格 / 多平台适配的设计指导原则）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "nextlevelbuilder",
@@ -4266,14 +4546,17 @@
         },
         {
           "title": "5.3 UI artifact / Web app 构建",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "web-artifacts-builder"
               ],
               "group": "单文件 React HTML artifact",
+              "group_en": null,
               "chain": false,
               "description": "Anthropic web-artifacts-builder（React 18 + TS + Vite + Tailwind + shadcn/ui 构建 Claude.ai 单文件 HTML，Parcel + html-inline 打包）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -4298,6 +4581,7 @@
         },
         {
           "title": "5.4 Figma 双向集成",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -4311,8 +4595,10 @@
                 "figma-create-design-system-rules"
               ],
               "group": "Figma 8 件套",
+              "group_en": null,
               "chain": true,
               "description": "Codex figma（总入口路由：先 get_design_context → get_metadata → get_screenshot 再实现）+ figma-use（强制前置硬规则：return 而非 figma.notify、loadFontAsync、color 0–1、变量 scope 必填）+ figma-create-new-file（drafts 下建空白文件）+ figma-generate-design（代码/描述译成 Figma 屏，用已发布组件 + tokens 装配）+ figma-generate-library（反向造专业设计系统：discovery → tokens → 文档页 → 组件 → 验证，20-100+ API 调用分阶段）+ figma-implement-design（Figma 节点 1:1 像素级译成代码）+ figma-code-connect-components（Code Connect 映射 Org/Enterprise）+ figma-create-design-system-rules（生成 CLAUDE.md / .cursor/rules 等 agent rule）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -4337,14 +4623,17 @@
         },
         {
           "title": "5.5 演示 / 幻灯片生成",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "pptx"
               ],
               "group": "PPTX 标准生成",
+              "group_en": null,
               "chain": false,
               "description": "Anthropic pptx（10 套配色 + 字体规则 + subagent 视觉 QA）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -4370,8 +4659,10 @@
                 "NanoBanana-PPT-Skills"
               ],
               "group": "PPT 视频流水线",
+              "group_en": null,
               "chain": false,
               "description": "op7418/NanoBanana-PPT-Skills（文档分析提炼大纲 → Nano Banana Pro 出\"渐变毛玻璃卡片风格\"图 → 可灵 AI 生成转场视频 → FFmpeg 合成 + 交互 web 播放器）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "op7418-NB",
@@ -4397,8 +4688,10 @@
                 "frontend-slides"
               ],
               "group": "零依赖 HTML 演示",
+              "group_en": null,
               "chain": false,
               "description": "zarazhangrui/frontend-slides（1920×1080 固定 16:9 stage + 12 视觉风格预设 + bold-template-pack 可视化预览卡 + PPTX 转 web + Playwright 导 PDF + Vercel 部署）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "zarazhangrui",
@@ -4424,8 +4717,10 @@
                 "huashu-design"
               ],
               "group": "HTML-native 设计 skill",
+              "group_en": null,
               "chain": false,
               "description": "alchaincyf/huashu-design（高保真原型 / 幻灯片 / 动画 + 20 设计哲学 + 5 维评审 + MP4 导出，用 HTML 当万能设计画布）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "alchaincyf",
@@ -4451,8 +4746,10 @@
                 "slack-gif-creator"
               ],
               "group": "Slack 动画素材",
+              "group_en": null,
               "chain": false,
               "description": "Anthropic slack-gif-creator（生成符合 Slack 限制的 128×128 emoji 或 480×480 ≤2MB 动画 GIF）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -4477,14 +4774,17 @@
         },
         {
           "title": "5.6 开源设计 skill 包",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "open-design"
               ],
               "group": "Claude Design 本地化平替",
+              "group_en": null,
               "chain": false,
               "description": "nexu-io/open-design（19 skill）：local-first + BYOK + 支持 16 个 coding-agent CLI；交互式目录两个 mode，prototype 模式自带 32 个子 skill（杂志风落地页/动画/原型）；自家定义了 SKILL.md 协议扩展",
+              "description_en": null,
               "sources": [
                 {
                   "name": "nexu-io",
@@ -4509,14 +4809,17 @@
         },
         {
           "title": "5.7 创意 / 艺术 / 品牌资产",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "algorithmic-art"
               ],
               "group": "算法艺术",
+              "group_en": null,
               "chain": false,
               "description": "Anthropic algorithmic-art（用 p5.js 生成\"算法哲学\"驱动的生成艺术：noise field / 粒子系统等，输出 .md 哲学 + .html 观察器 + .js 算法）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -4542,8 +4845,10 @@
                 "nanobanana"
               ],
               "group": "AI 出图（Nano Banana Pro）",
+              "group_en": null,
               "chain": false,
               "description": "ReScienceLab nanobanana（用 Gemini 3 Pro Image Preview 出图）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "ReScienceLab",
@@ -4571,8 +4876,10 @@
                 "image"
               ],
               "group": "Logo / Banner 生成",
+              "group_en": null,
               "chain": true,
               "description": "ReScienceLab logo-creator（AI 出 logo + 裁剪 + 去背 + 导 SVG，依赖 nanobanana）+ banner-creator（GitHub/Twitter/LinkedIn banner，依赖 nanobanana）+ Corey image（营销图 brief：广告 creative / 社媒 / 博客封面 / infographic）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "ReScienceLab",
@@ -4614,14 +4921,17 @@
         },
         {
           "title": "5.8 截图 / 多媒体生成",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "screenshot"
               ],
               "group": "跨 OS 截屏",
+              "group_en": null,
               "chain": false,
               "description": "Codex screenshot（含 macOS 权限预检）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -4647,8 +4957,10 @@
                 "imagegen"
               ],
               "group": "AI 出图（Codex）",
+              "group_en": null,
               "chain": false,
               "description": "Codex imagegen（默认走 Codex 内置 image_gen 工具生成位图）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -4674,8 +4986,10 @@
                 "hatch-pet"
               ],
               "group": "动画 sprite 生成",
+              "group_en": null,
               "chain": true,
               "description": "Codex hatch-pet（端到端造 Codex 兼容动画宠物：8×9 spritesheet + 8 状态行 + QA contact sheet + motion preview，依赖 imagegen）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -4702,18 +5016,22 @@
     },
     {
       "title": "六、媒体生产",
+      "title_en": null,
       "icon": "🎬",
       "subsections": [
         {
           "title": "6.1 视频剪辑 / 生成",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "Youtube-clipper-skill"
               ],
               "group": "YouTube 剪辑流水线",
+              "group_en": null,
               "chain": false,
               "description": "op7418/Youtube-clipper-skill（6 阶段：环境检测 → yt-dlp 下载视频 + VTT 字幕 → AI 分析字幕做 2-5 分钟级章节切分 → AskUserQuestion 选段 → ffmpeg-full 剪辑 + 中英双语字幕 + libass 烧录 + 总结文案）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "op7418-YT",
@@ -4739,8 +5057,10 @@
                 "OpenMontage"
               ],
               "group": "Agentic 视频生产引擎",
+              "group_en": null,
               "chain": false,
               "description": "calesthio/OpenMontage（自称\"世界第一个开源 agentic 视频生产引擎\"：可纯生成图片视频含 Ken Burns 动效 + 配音 + 字幕，也可剪真视频；目标让 Claude 用 0 成本做纪录片 / 广告）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "calesthio",
@@ -4765,8 +5085,10 @@
                 "skills"
               ],
               "group": "Remotion 程序化视频",
+              "group_en": null,
               "chain": false,
               "description": "remotion-dev/skills/remotion（Remotion React 项目 best practices：音视频时长 / 帧率 / Composition / useCurrentFrame / 性能 / 渲染参数等约束，Remotion 官方文档直接引用）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "remotion-dev",
@@ -4792,8 +5114,10 @@
                 "video"
               ],
               "group": "多渠道视频脚本",
+              "group_en": null,
               "chain": false,
               "description": "Corey video（视频脚本 / shorts / demo / YouTube 规划）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Corey",
@@ -4818,6 +5142,7 @@
         },
         {
           "title": "6.2 音频 / TTS / 转写",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -4825,8 +5150,10 @@
                 "transcribe"
               ],
               "group": "TTS / 转写",
+              "group_en": null,
               "chain": false,
               "description": "Codex speech（OpenAI Audio API 做 TTS：旁白 / IVR / 可访问性）+ Codex transcribe（用 gpt-4o-mini-transcribe 或带说话人分离做转写）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -4853,10 +5180,12 @@
     },
     {
       "title": "七、数据 / 抓取 / 情报",
+      "title_en": null,
       "icon": "🔍",
       "subsections": [
         {
           "title": "7.1 网页抓取 / 爬虫",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -4867,8 +5196,10 @@
                 "firecrawl-build-interact"
               ],
               "group": "Firecrawl 抓取流水线",
+              "group_en": null,
               "chain": true,
               "description": "firecrawl-build（入口路由 /scrape /search /interact 三窄端点）+ firecrawl-build-onboarding（装 SDK + 浏览器授权 + 写 FIRECRAWL_API_KEY + 跑通第一次调用）+ firecrawl-build-scrape（已知 URL 拿 markdown/HTML/链接/截图/结构化字段，默认 markdown + onlyMainContent）+ firecrawl-build-search（从 query 起步找候选页，可 hydrate 成完整内容）+ firecrawl-build-interact（处理点击/填表/分页/登录后访问等 /scrape 搞不定的动态页）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Firecrawl",
@@ -4894,8 +5225,10 @@
                 "agent-browser"
               ],
               "group": "浏览器 agent CLI",
+              "group_en": null,
               "chain": false,
               "description": "vercel-labs/agent-browser（Chrome DevTools Protocol：导航 / 填表 / 点击 / 截图 / 抓数据）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "vercel-labs",
@@ -4919,14 +5252,17 @@
         },
         {
           "title": "7.2 跨平台社交 / 趋势监测",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "last30days-skill"
               ],
               "group": "多源情报聚合",
+              "group_en": null,
               "chain": false,
               "description": "mvanhorn/last30days-skill（把 Reddit upvote / X 点赞 / YouTube 转录 / HN / Polymarket 真金白银 / GitHub star 当成\"投票\"：并行搜索 + 多 query 扩展 + engagement+freshness 评分 + 跨源去重聚合 + 引用合成；--store 进 SQLite + watchlist + briefing 做趋势监控 + Slack/webhook 推送）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "mvanhorn",
@@ -4955,8 +5291,10 @@
                 "requesthunt"
               ],
               "group": "平台单点查询",
+              "group_en": null,
               "chain": false,
               "description": "ReScienceLab reddit（Reddit JSON API 查内容）+ twitter（用 twitterapi.io 查 X）+ producthunt（查 PH 帖子/topic/user/collection）+ requesthunt（在 Reddit/X/GitHub 挖用户需求）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "ReScienceLab",
@@ -4982,8 +5320,10 @@
                 "domain-hunter"
               ],
               "group": "域名查找 + 比价",
+              "group_en": null,
               "chain": true,
               "description": "ReScienceLab domain-hunter（依赖 twitter + reddit；域名查找 + 注册商比价 + 优惠码）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "ReScienceLab",
@@ -5008,14 +5348,17 @@
         },
         {
           "title": "7.3 数据库 / SQL / 分析",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "sql-queries"
               ],
               "group": "自然语言 → SQL",
+              "group_en": null,
               "chain": false,
               "description": "Pawel sql-queries（覆盖 BigQuery / PostgreSQL / MySQL / Snowflake / SQL Server，可读 schema 给优化建议）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -5041,8 +5384,10 @@
                 "metrics-dashboard"
               ],
               "group": "指标 dashboard 设计",
+              "group_en": null,
               "chain": false,
               "description": "Pawel metrics-dashboard（产品指标 dashboard + 数据源 + 告警阈值）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -5068,8 +5413,10 @@
                 "dummy-dataset"
               ],
               "group": "测试 / 假数据生成",
+              "group_en": null,
               "chain": false,
               "description": "Pawel dummy-dataset（生成 CSV / JSON / SQL 格式真实感假数据）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -5094,14 +5441,17 @@
         },
         {
           "title": "7.4 Notebook / 文档型分析",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "jupyter-notebook"
               ],
               "group": "Jupyter Notebook",
+              "group_en": null,
               "chain": false,
               "description": "Codex jupyter-notebook（起 experiment 或 tutorial 两类干净可复现 notebook，避免手写 JSON 出错）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -5128,10 +5478,12 @@
     },
     {
       "title": "八、求职 / 个人办公",
+      "title_en": null,
       "icon": "💼",
       "subsections": [
         {
           "title": "8.1 简历 / Cover Letter / LinkedIn",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -5142,8 +5494,10 @@
                 "resume-section-builder"
               ],
               "group": "Resume 优化（5 件）",
+              "group_en": null,
               "chain": false,
               "description": "Paramchoudhary resume-ats-optimizer（ATS 兼容 + 关键词命中）+ resume-bullet-writer（弱 bullet 改成成就+指标+影响）+ resume-quantifier（给 bullet 加可量化数字）+ resume-formatter（干净易扫格式）+ resume-section-builder（定向构造 leadership 章节）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Paramchoudhary",
@@ -5172,8 +5526,10 @@
                 "offer-comparison-analyzer"
               ],
               "group": "Job Search（4 件）",
+              "group_en": null,
               "chain": false,
               "description": "Paramchoudhary job-description-analyzer（JD 匹配分 + gap + 申请策略）+ resume-tailor（针对 JD 改简历，保持真实）+ resume-version-manager（多版本管理）+ offer-comparison-analyzer（offer 对比）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Paramchoudhary",
@@ -5202,8 +5558,10 @@
                 "reference-list-builder"
               ],
               "group": "Supporting Docs（4 件）",
+              "group_en": null,
               "chain": false,
               "description": "Paramchoudhary cover-letter-generator（用简历+JD 生成个性化 cover letter）+ linkedin-profile-optimizer（LinkedIn 同步 + 可搜索性优化）+ portfolio-case-study-writer（作品集 case study）+ reference-list-builder（推荐人清单）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Paramchoudhary",
@@ -5233,8 +5591,10 @@
                 "career-changer-translator"
               ],
               "group": "专业化简历",
+              "group_en": null,
               "chain": false,
               "description": "Paramchoudhary tech-resume-optimizer（工程/PM/技术高管）+ executive-resume-writer（C-suite/VP）+ academic-cv-builder（学术 CV）+ creative-portfolio-resume（设计/创意类）+ career-changer-translator（跨行业转岗\"翻译\"经验）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Paramchoudhary",
@@ -5260,8 +5620,10 @@
                 "review-resume"
               ],
               "group": "PM 简历审查",
+              "group_en": null,
               "chain": false,
               "description": "Pawel review-resume（对照 10 项最佳实践：XYZ+S 公式 + 关键词 + 结构 逐条审）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -5286,6 +5648,7 @@
         },
         {
           "title": "8.2 面试 / 谈判 / 求职流水线",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -5293,8 +5656,10 @@
                 "interview-prep"
               ],
               "group": "面试准备",
+              "group_en": null,
               "chain": false,
               "description": "Paramchoudhary interview-prep-generator（从简历生成 STAR 故事 + 练习题 + 谈点）+ santifer career-ops::interview-prep（STAR+R 框架）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Paramchoudhary",
@@ -5337,8 +5702,10 @@
                 "salary-negotiation-prep"
               ],
               "group": "薪资谈判",
+              "group_en": null,
               "chain": false,
               "description": "Paramchoudhary salary-negotiation-prep（市场行情研究 + 谈判脚本）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Paramchoudhary",
@@ -5369,8 +5736,10 @@
                 "cv-sync-check"
               ],
               "group": "求职自动化系统",
+              "group_en": null,
               "chain": false,
               "description": "santifer/career-ops 14 mode：oferta（A-F 评分单 JD）+ liveness（JD 是否还挂着）+ scan（扫 Greenhouse/Ashby/Lever portal）+ batch（批处理 N 个 JD）+ pdf（生成 ATS-optimized PDF Playwright + HTML 模板）+ cv-sync-check / followup-cadence / merge-tracker / dedup / doctor / analyze-patterns / normalize-statuses；带 Go BubbleTea TUI dashboard",
+              "description_en": null,
               "sources": [
                 {
                   "name": "santifer",
@@ -5412,6 +5781,7 @@
         },
         {
           "title": "8.3 个人法律文档",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -5419,8 +5789,10 @@
                 "privacy-policy"
               ],
               "group": "NDA / 隐私政策",
+              "group_en": null,
               "chain": false,
               "description": "Pawel draft-nda（信息类型 / 司法管辖 / 关键条款）+ Pawel privacy-policy（含 GDPR/CCPA 合规考量）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Pawel",
@@ -5447,10 +5819,12 @@
     },
     {
       "title": "九、通信 / 工具集成",
+      "title_en": null,
       "icon": "🔗",
       "subsections": [
         {
           "title": "9.1 即时通讯集成",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -5459,8 +5833,10 @@
                 "observe-whatsapp"
               ],
               "group": "WhatsApp 三件套",
+              "group_en": null,
               "chain": true,
               "description": "gokapso integrate-whatsapp（接 Cloud API + 配 webhook + 发 message/template/flow）+ automate-whatsapp（用 workflow / agent / function / database 搭自动化）+ observe-whatsapp（debug 投递问题 + 查 webhook delivery + 健康检查）。三者依赖同一 Kapso API（KAPSO_API_BASE_URL + KAPSO_API_KEY）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "gokapso",
@@ -5485,6 +5861,7 @@
         },
         {
           "title": "9.2 项目管理 / Issue 追踪",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -5492,8 +5869,10 @@
                 "linear"
               ],
               "group": "Linear 任务管理",
+              "group_en": null,
               "chain": false,
               "description": "wrsmith108/linear-claude-skill（MCP / linear CLI / 辅助脚本三 backend 自适应；管理 issue / project / initiative / label / state；批量 sync 代码改动到 Linear ticket）+ Codex linear（Linear MCP，做 sprint plan / bug triage / 文档审计 / 负载均衡 / release plan / retro）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "wrsmith108",
@@ -5535,14 +5914,17 @@
         },
         {
           "title": "9.3 桌面 Agent 编排平台",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "Dorothy"
               ],
               "group": "多 agent 桌面 app",
+              "group_en": null,
               "chain": false,
               "description": "Charlie85270/Dorothy（\"AI agent 们的老婆\"——并行编排多 CLI agent 的 Electron 桌面 App）：Kanban 自动派单 + 定时任务 + GitHub PR/Issue 触发自动化 + Telegram + Slack 远程控制 + 本地 Vault（FTS index SQLite）+ Twitter/X 数据 MCP + Google Workspace 集成；6 内置 MCP server（kanban / orchestrator / socialdata / telegram / vault / world / x）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Charlie85270",
@@ -5566,14 +5948,17 @@
         },
         {
           "title": "9.4 Sleep-time 自治研究",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "Auto-claude-code-research-in-sleep"
               ],
               "group": "睡眠时长跑研究 ARIS",
+              "group_en": null,
               "chain": false,
               "description": "wanshuiyin/Auto-claude-code-research-in-sleep（搭好 schedule + skill 组合，AI 在你不在线时长跑 research / 调研 / 总结）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "wanshuiyin",
@@ -5600,18 +5985,22 @@
     },
     {
       "title": "十、创业 / 财务 / 合规",
+      "title_en": null,
       "icon": "💰",
       "subsections": [
         {
           "title": "10.1 创业者综合 toolkit",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "founder-skills"
               ],
               "group": "Founder 工具箱",
+              "group_en": null,
               "chain": false,
               "description": "ognjengt/founder-skills（共用 FOUNDER_CONTEXT.md 基座上下文；含战略 / 销售 / 内容创作 / 工程交付 4 类共 15 skill：详见前文 §3-§4 各小节，在不同功能分类下被引用）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "founder-skills",
@@ -5637,8 +6026,10 @@
                 "gstack"
               ],
               "group": "YC CEO 个人配置",
+              "group_en": null,
               "chain": false,
               "description": "garrytan/gstack（YC CEO Garry Tan 个人 Claude Code 配置开源版：6 个 slash command/skill 含 /office-hours、/landing 等，把他每周写 10K+ 行的工作流公开）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "garrytan",
@@ -5664,8 +6055,10 @@
                 "opc-skills"
               ],
               "group": "Solopreneur 工具集",
+              "group_en": null,
               "chain": false,
               "description": "ReScienceLab/opc-skills（10 skill 跨资产生成 / 调研增长 / Meta；详见 §5、§7）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "ReScienceLab",
@@ -5690,6 +6083,7 @@
         },
         {
           "title": "10.2 Bootstrapped CFO / 财务管理",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -5698,8 +6092,10 @@
                 "driver-based"
               ],
               "group": "Charlie Munger 风格 CFO",
+              "group_en": null,
               "chain": false,
               "description": "EveryInc/charlie-cfo-skill：mental model（profit 是约束不是目标）+ 单位经济（LTV ≥ 3× CAC、payback < 12 月）+ 现金管理（24-36 月 runway、Burn Multiple、Rule of 40）+ 资本配置（招聘 ROI 4 问、不要单部门 >50% 扩张）+ working capital（CCC、AR/AP discipline、年付 prepay = 0% 融资）+ driver-based forecast 三方案（base / -15-20% / -30-40%）+ \\$3-5M ARR spending benchmarks",
+              "description_en": null,
               "sources": [
                 {
                   "name": "EveryInc",
@@ -5724,6 +6120,7 @@
         },
         {
           "title": "10.3 会计 / 税务 / 跨国合规",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -5733,8 +6130,10 @@
                 "patterns"
               ],
               "group": "多国会计 / 税务超大库（11 领域）",
+              "group_en": null,
               "chain": false,
               "description": "openaccountants（716 skill 跨 134 国 + 51 美国州 + 13 加拿大省）：tax 各国所得税 / VAT / GST 税率与申报；bookkeeping 各国 chart of accounts / P&L 格式；e-invoicing 各国电子发票 mandatory fields / 传输格式；payroll PAYE / 社保 / 工资单格式；company-formation 实体类型 / 注册步骤 / 成本；financial-statements 年度账目 / 报告框架 / 审计阈值；transfer-pricing TP 文档 / 公平定价 / CbCR；tax-optimization 合法扣除 / 时机策略 / 实体结构；crypto-tax 加密资产税务；cross-border 跨境 / Pillar Two / DAC7；verticals + integrations（Xero/Stripe/PayPal/QBO 平台导出）+ intelligence + patterns",
+              "description_en": null,
               "sources": [
                 {
                   "name": "openaccountants",
@@ -5761,18 +6160,22 @@
     },
     {
       "title": "十一、学术 / 科研 / 长跑研究",
+      "title_en": null,
       "icon": "🔬",
       "subsections": [
         {
           "title": "11.1 学术写作全流程",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "academic-research-skills"
               ],
               "group": "学术研究流水线",
+              "group_en": null,
               "chain": false,
               "description": "imbad0202/academic-research-skills（research → write → review → revise → finalize 全流程；同作者另有 Codex 版 -codex 仓库）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "imbad0202",
@@ -5797,14 +6200,17 @@
         },
         {
           "title": "11.2 科研 / 工程 / 分析",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "scientific-agent-skills"
               ],
               "group": "Scientific Agent skill 集",
+              "group_en": null,
               "chain": false,
               "description": "K-Dense-AI/scientific-agent-skills（旧名 claude-scientific-skills）：给科研 / 工程 / 分析 / 金融 / 写作的 agent skill 集；含 literature-review 等多个 skill，背后串了 50+ 开源科研项目",
+              "description_en": null,
               "sources": [
                 {
                   "name": "K-Dense-AI",
@@ -5831,18 +6237,22 @@
     },
     {
       "title": "十二、Agent 架构 / Context Engineering",
+      "title_en": null,
       "icon": "🧠",
       "subsections": [
         {
           "title": "12.1 Context 概念基础",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "context-fundamentals"
               ],
               "group": "Context Engineering 地基课",
+              "group_en": null,
               "chain": false,
               "description": "muratcankoylan context-fundamentals（解释 context 是什么 / context window 解剖 / attention 机制 / U 形 attention 曲线 / 四大原则：informativity / position-aware / progressive disclosure / iterative curation；明确把所有相邻 skill 的路由关系声明清楚）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -5867,6 +6277,7 @@
         },
         {
           "title": "12.2 Context 生命周期管理",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -5876,8 +6287,10 @@
                 "filesystem-context"
               ],
               "group": "Context 生命周期 4 件套",
+              "group_en": null,
               "chain": true,
               "description": "muratcankoylan context-degradation（5 种可观测 degradation 模式：lost-in-middle / poisoning / distraction / confusion / clash 各给 detection signals + mitigation）+ context-optimization（Token 效率 4 把刀按优先级排：KV-cache > observation masking > 70% 压缩阈值 > context partitioning ≥60% 才考虑切多 agent）+ context-compression（长会话压缩 3 策略：Anchored Iterative Summarization / Opaque Compression / Regenerative Full Summary，目标是 tokens-per-task）+ filesystem-context（把文件系统当 context 的\"溢出层\"治 4 类失败模式：missing/under-retrieved/over-retrieved/buried）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -5902,14 +6315,17 @@
         },
         {
           "title": "12.3 Agent 记忆系统",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "memory-systems"
               ],
               "group": "持久语义记忆框架选型",
+              "group_en": null,
               "chain": false,
               "description": "muratcankoylan memory-systems（4 框架对比：Mem0 向量+图 / Zep+Graphiti 双时态知识图 / Letta 自编辑分层 / Cognee 多层语义图 ECL pipeline + LoCoMo / LongMemEval / DMR / MemBench 基准）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -5935,8 +6351,10 @@
                 "latent-briefing"
               ],
               "group": "KV cache 表征级共享",
+              "group_en": null,
               "chain": false,
               "description": "muratcankoylan latent-briefing（多 agent 在 KV cache 表征层共享记忆而不是文本摘要：Attention Matching + 任务条件 query + 共享 head mask + median+tau·MAD 阈值）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -5962,8 +6380,10 @@
                 "bdi-mental-states"
               ],
               "group": "BDI 心智状态",
+              "group_en": null,
               "chain": false,
               "description": "muratcankoylan bdi-mental-states（把 RDF 上下文转成 Belief/Desire/Intention 心智状态：endurant 持久状态 vs perdurant 变迁过程，用 motivates / fulfils 串成认知链；面向 SEMAS / JADE / JADEX / LAG 神经符号架构）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -5988,14 +6408,17 @@
         },
         {
           "title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "multi-agent-patterns"
               ],
               "group": "多 agent 拓扑选型",
+              "group_en": null,
               "chain": false,
               "description": "muratcankoylan multi-agent-patterns（三种拓扑：Supervisor / 对等 swarm / Hierarchical 选型；显式 handoff 协议 + 防 sycophancy 共识 + 错误级联防护；强调\"sub-agent 是为了隔离 context 而不是模拟组织角色\"）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -6021,8 +6444,10 @@
                 "hosted-agents"
               ],
               "group": "远端 sandbox agent 运行时",
+              "group_en": null,
               "chain": false,
               "description": "muratcankoylan hosted-agents（agent 跑在远端 sandbox：Modal / Cloudflare DO 风格；image registry 30 分钟预热 + warm pool + session 持久化 + multi-端共享 + self-spawning sub-agent）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -6048,8 +6473,10 @@
                 "harness-engineering"
               ],
               "group": "自主 loop 控制平面",
+              "group_en": null,
               "chain": false,
               "description": "muratcankoylan harness-engineering（自主 agent loop 的 4 类 surface：Locked / Editable / Append-only / Human-controlled + novelty gate + ablation + pruning + rollback + durable log + PR 提交边界，参考 Karpathy autoresearch / AlphaEvolve / FunSearch）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -6074,14 +6501,17 @@
         },
         {
           "title": "12.5 Tool / 评测 / 项目级方法论",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "tool-design"
               ],
               "group": "Tool 设计",
+              "group_en": null,
               "chain": false,
               "description": "muratcankoylan tool-design（description 当 prompt 而不是文档 + consolidation 原则 + 命名空间 db_*/web_* + 可恢复 error + MCP 适配；配 Vercel d0 砍 80% 工具案例）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -6107,8 +6537,10 @@
                 "evaluation"
               ],
               "group": "Agent 评测",
+              "group_en": null,
               "chain": false,
               "description": "muratcankoylan evaluation（outcome over path + 多维 rubric：factual / completeness / citation / source / tool efficiency；先确定性检查再 LLM judge；性能方差三大主因：token 预算 / 工具调用次数 / 模型选择，参考 BrowseComp）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -6134,8 +6566,10 @@
                 "advanced-evaluation"
               ],
               "group": "进阶 LLM-as-judge",
+              "group_en": null,
               "chain": false,
               "description": "muratcankoylan advanced-evaluation（Direct Scoring vs Pairwise；偏置 landscape：position / length / self-enhancement / verbosity 各自缓解；G-Eval / MT-Bench 方法）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -6161,8 +6595,10 @@
                 "project-development"
               ],
               "group": "项目级方法论",
+              "group_en": null,
               "chain": false,
               "description": "muratcankoylan project-development（先做 task-model fit 决定该不该上 LLM；5 段式 pipeline：acquire → prepare → process → parse → render；token + 美元成本估算；single vs multi-agent 取舍；配 Karpathy HN Capsule / Vercel d0 / Manus 案例）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "muratcankoylan",
@@ -6189,10 +6625,12 @@
     },
     {
       "title": "十三、元能力 / Skill 治理",
+      "title_en": null,
       "icon": "🛠️",
       "subsections": [
         {
           "title": "13.1 写 Skill / 创建 Skill",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -6201,8 +6639,10 @@
                 "write-a-skill"
               ],
               "group": "Skill 创建器",
+              "group_en": null,
               "chain": false,
               "description": "Anthropic skill-creator（起草 → 写测例 → 跑 eval-viewer → 比较 → 重写；带 generate_review.py / agents/grader.md / references/schemas.md）+ Codex skill-creator（教写 SKILL.md + quick_validate）+ superpowers writing-skills（创建符合最佳实践的新 skill 含测试方法）+ mattpocock write-a-skill",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Anthropic",
@@ -6278,6 +6718,7 @@
         },
         {
           "title": "13.2 安装 / 发现 / 打包",
+          "title_en": null,
           "rows": [
             {
               "skills": [
@@ -6285,8 +6726,10 @@
                 "skills"
               ],
               "group": "Skill 安装 / 发现",
+              "group_en": null,
               "chain": false,
               "description": "Codex skill-installer（把 curated skill 装到 \\$CODEX_HOME/skills）+ vercel-labs/skills find-skills（npx skills 工具自带：Claude 主动到开放 skill 生态找匹配主题 skill 并装上；shadowing 规则浅层 SKILL.md 覆盖嵌套同名）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -6313,8 +6756,10 @@
                 "cli-creator"
               ],
               "group": "Plugin / CLI 打包",
+              "group_en": null,
               "chain": false,
               "description": "Codex plugin-creator（脚手架 plugin 目录 + marketplace.json）+ Codex cli-creator（按 API 选 Rust/TS/Python 建 stable-JSON 输出 + 配套 skill）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -6340,8 +6785,10 @@
                 "migrate-to-codex"
               ],
               "group": "跨 agent 迁移",
+              "group_en": null,
               "chain": false,
               "description": "Codex migrate-to-codex（把 Claude Code 的 instructions / skills / agents / MCP / hooks 迁到 Codex）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "Codex",
@@ -6366,14 +6813,17 @@
         },
         {
           "title": "13.3 Skill 安全审计",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "openclaw-skills-security"
               ],
               "group": "装前安全门",
+              "group_en": null,
               "chain": true,
               "description": "UseAI-pro/openclaw-skills-security（skill-vetter + skill-auditor）：装 OpenClaw / Claude skill 之前先做安全审计；分析 metadata、权限范围、代码内容是否有恶意行为；类似 npm audit 但针对 skill",
+              "description_en": null,
               "sources": [
                 {
                   "name": "UseAI-pro",
@@ -6398,14 +6848,17 @@
         },
         {
           "title": "13.4 Plugin Marketplace",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "claude-plugins-official"
               ],
               "group": "Anthropic 官方 Marketplace",
+              "group_en": null,
               "chain": false,
               "description": "anthropics/claude-plugins-official（28+ 个 Anthropic 自营高质量 plugin；/plugin install <name>@claude-plugins-official）；同体系还有 anthropics/claude-plugins-community（社区版）和 knowledge-work-plugins（角色化）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "anthropics-marketplace",
@@ -6429,14 +6882,17 @@
         },
         {
           "title": "13.5 行为约束模板",
+          "title_en": null,
           "rows": [
             {
               "skills": [
                 "andrej-karpathy-skills"
               ],
               "group": "CLAUDE.md 模板",
+              "group_en": null,
               "chain": false,
               "description": "multica-ai/andrej-karpathy-skills（仓库里只有一个 CLAUDE.md 文件——把 Karpathy 在 X 上发的 4 条编程行为约束固化成 prompt；技术上不是 Agent Skill 而是 CLAUDE.md prompt 模板）",
+              "description_en": null,
               "sources": [
                 {
                   "name": "multica-ai",
@@ -6464,6 +6920,8 @@
   "vendors": {
     "superpowers": {
       "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "description_en": null,
       "stars": 211626,
       "last_commit": "2026-05-27",
       "type": "skill",
@@ -6496,6 +6954,8 @@
     },
     "mattpocock": {
       "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .claude directory.",
+      "description_en": null,
       "stars": 110660,
       "last_commit": "2026-05-28",
       "type": "skill",
@@ -6526,6 +6986,8 @@
     },
     "Pawel": {
       "url": "https://github.com/phuryn/pm-skills",
+      "description": "PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.",
+      "description_en": null,
       "stars": 11716,
       "last_commit": "2026-05-20",
       "type": "skill",
@@ -6609,6 +7071,8 @@
     },
     "Codex": {
       "url": "https://github.com/openai/skills",
+      "description": "Skills Catalog for Codex",
+      "description_en": null,
       "stars": 20775,
       "last_commit": "2026-05-21",
       "type": "skill",
@@ -6703,6 +7167,8 @@
     },
     "Fission-AI": {
       "url": "https://github.com/Fission-AI/OpenSpec",
+      "description": "Spec-driven development (SDD) for AI coding assistants.",
+      "description_en": null,
       "stars": 51530,
       "last_commit": "2026-05-28",
       "type": "cli-framework",
@@ -6721,6 +7187,8 @@
     },
     "gsd-build": {
       "url": "https://github.com/gsd-build/get-shit-done",
+      "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
+      "description_en": null,
       "stars": 63770,
       "last_commit": "2026-05-27",
       "type": "sdd-framework",
@@ -6739,6 +7207,8 @@
     },
     "Anthropic": {
       "url": "https://github.com/anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "description_en": null,
       "stars": 143206,
       "last_commit": "2026-05-29",
       "type": "skill",
@@ -6775,6 +7245,8 @@
     },
     "ComposioHQ": {
       "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
+      "description_en": null,
       "stars": 62362,
       "last_commit": "2026-05-22",
       "type": "skill",
@@ -6795,6 +7267,8 @@
     },
     "superpowers-lab": {
       "url": "https://github.com/obra/superpowers-lab",
+      "description": "Experimental skills for Claude Code Superpowers - new techniques and tools",
+      "description_en": null,
       "stars": 350,
       "last_commit": "2026-03-23",
       "type": "skill",
@@ -6817,6 +7291,8 @@
     },
     "kenryu42": {
       "url": "https://github.com/kenryu42/claude-code-safety-net",
+      "description": "A coding agent hook that acts as a safety net, catching destructive git and filesystem commands before they execute. Supports Codex, Claude Code, OpenCode, Gemini CLI and Copilot CLI.",
+      "description_en": null,
       "stars": 1366,
       "last_commit": "2026-05-08",
       "type": "plugin",
@@ -6834,6 +7310,8 @@
     },
     "Gemini": {
       "url": "https://github.com/google-gemini/gemini-skills",
+      "description": "Skills for the Gemini API, SDK and model/agent interactions",
+      "description_en": null,
       "stars": 3576,
       "last_commit": "2026-05-20",
       "type": "skill",
@@ -6856,6 +7334,8 @@
     },
     "vercel-labs": {
       "url": "https://github.com/vercel-labs/agent-skills",
+      "description": "Vercel's official collection of agent skills",
+      "description_en": null,
       "stars": 27282,
       "last_commit": "2026-05-27",
       "type": "cli",
@@ -6877,6 +7357,8 @@
     },
     "trailofbits": {
       "url": "https://github.com/trailofbits/skills",
+      "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows",
+      "description_en": null,
       "stars": 5462,
       "last_commit": "2026-05-27",
       "type": "marketplace",
@@ -6894,6 +7376,8 @@
     },
     "PSPDFKit-labs": {
       "url": "https://github.com/PSPDFKit-labs/nutrient-agent-skill",
+      "description": "Universal Agent Skill for document processing with Nutrient DWS API — works with Claude Code, Codex, Gemini CLI, Cursor, and 35+ more agents",
+      "description_en": null,
       "stars": 10,
       "last_commit": "2026-03-23",
       "type": "skill",
@@ -6912,6 +7396,8 @@
     },
     "kreuzberg-dev": {
       "url": "https://github.com/kreuzberg-dev/kreuzberg",
+      "description": "A polyglot document intelligence framework with a Rust core. Extract text, metadata, images, and structured information from PDFs, Office documents, images, and 97+ formats. Available for Rust, Python, Ruby, Java, Go, PHP, Elixir, C#, R, C, TypeScript (Node/Bun/Wasm/Deno)- or use via CLI, REST API, or MCP server.",
+      "description_en": null,
       "stars": 8406,
       "last_commit": "2026-05-29",
       "type": "extraction-engine",
@@ -6931,6 +7417,8 @@
     },
     "deusyu": {
       "url": "https://github.com/deusyu/translate-book",
+      "description": "Claude Code skill that translates entire books (PDF/DOCX/EPUB) into any language using parallel subagents",
+      "description_en": null,
       "stars": 739,
       "last_commit": "2026-05-28",
       "type": "skill",
@@ -6949,6 +7437,8 @@
     },
     "blader": {
       "url": "https://github.com/blader/humanizer",
+      "description": "Claude Code skill that removes signs of AI-generated writing from text",
+      "description_en": null,
       "stars": 21450,
       "last_commit": "2026-05-27",
       "type": "skill",
@@ -6967,6 +7457,8 @@
     },
     "NeoLabHQ": {
       "url": "https://github.com/NeoLabHQ/context-engineering-kit",
+      "description": "Hand-crafted Claude Code Skills focused on improving agent results quality. Compatible with OpenCode, Cursor, Antigravity, Gemini CLI, and others.",
+      "description_en": null,
       "stars": 1051,
       "last_commit": "2026-05-28",
       "type": "skill",
@@ -6987,6 +7479,8 @@
     },
     "alchaincyf": {
       "url": "https://github.com/alchaincyf/huashu-design",
+      "description": "Huashu Design · HTML-native design skill for Claude Code · Claude Code 里 HTML 原生的设计 skill · 高保真原型 / 幻灯片 / 动画 + 20 设计哲学 + 5 维评审 + MP4 导出 · Agent-agnostic",
+      "description_en": null,
       "stars": 15586,
       "last_commit": "2026-05-28",
       "type": "skill",
@@ -7005,6 +7499,8 @@
     },
     "JuliusBrussee": {
       "url": "https://github.com/JuliusBrussee/caveman",
+      "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
+      "description_en": null,
       "stars": 66146,
       "last_commit": "2026-05-20",
       "type": "skill",
@@ -7023,6 +7519,8 @@
     },
     "SeanZoR": {
       "url": "https://github.com/SeanZoR/claude-speed-reader",
+      "description": "Speed read Claude's responses at 600+ WPM using RSVP with Spritz-style ORP highlighting",
+      "description_en": null,
       "stars": 15,
       "last_commit": "2026-01-15",
       "type": "skill",
@@ -7041,6 +7539,8 @@
     },
     "PleasePrompto": {
       "url": "https://github.com/PleasePrompto/notebooklm-skill",
+      "description": "Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base.",
+      "description_en": null,
       "stars": 6702,
       "last_commit": "2025-11-21",
       "type": "skill",
@@ -7059,6 +7559,8 @@
     },
     "teng-lin": {
       "url": "https://github.com/teng-lin/notebooklm-py",
+      "description": "Unofficial Python API and agentic skill for Google NotebookLM. Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents like Claude Code, Codex, and OpenClaw.",
+      "description_en": null,
       "stars": 15444,
       "last_commit": "2026-05-29",
       "type": "python-library",
@@ -7076,6 +7578,8 @@
     },
     "safishamsi": {
       "url": "https://github.com/safishamsi/graphify",
+      "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.",
+      "description_en": null,
       "stars": 55810,
       "last_commit": "2026-05-29",
       "type": "skill",
@@ -7096,6 +7600,8 @@
     },
     "bevibing": {
       "url": "https://github.com/bevibing/tutor-skills",
+      "description": "A Claude Code skill that turns PDFs, docs, and codebases into Obsidian study vaults",
+      "description_en": null,
       "stars": 906,
       "last_commit": "2026-02-28",
       "type": "skill",
@@ -7114,6 +7620,8 @@
     },
     "stephenturner": {
       "url": "https://github.com/stephenturner/skill-focus",
+      "description": "Summarize a paper with the FOCUS method",
+      "description_en": null,
       "stars": 30,
       "last_commit": "2026-03-26",
       "type": "skill",
@@ -7132,6 +7640,8 @@
     },
     "makenotion": {
       "url": "https://github.com/makenotion/notion-cookbook",
+      "description": null,
+      "description_en": null,
       "stars": 135,
       "last_commit": "2026-05-13",
       "type": "skill",
@@ -7150,6 +7660,8 @@
     },
     "hanfang": {
       "url": "https://github.com/hanfang/claude-memory-skill",
+      "description": "A minimal, low-friction memory system for Claude Code",
+      "description_en": null,
       "stars": 27,
       "last_commit": "2026-02-07",
       "type": "skill",
@@ -7168,6 +7680,8 @@
     },
     "thedotmack": {
       "url": "https://github.com/thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "description_en": null,
       "stars": 79485,
       "last_commit": "2026-05-29",
       "type": "cli-mcp",
@@ -7185,6 +7699,8 @@
     },
     "alirezarezvani": {
       "url": "https://github.com/alirezarezvani/claude-skills",
+      "description": "337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills.",
+      "description_en": null,
       "stars": 16477,
       "last_commit": "2026-05-29",
       "type": "skill",
@@ -7203,6 +7719,8 @@
     },
     "Dean": {
       "url": "https://github.com/deanpeters/Product-Manager-Skills",
+      "description": "Product Management skills framework built on battle-tested methods for Claude Code, Cowork, Codex, and AI agents.",
+      "description_en": null,
       "stars": 4606,
       "last_commit": "2026-05-20",
       "type": "skill",
@@ -7263,6 +7781,8 @@
     },
     "founder-skills": {
       "url": "https://github.com/ognjengt/founder-skills",
+      "description": null,
+      "description_en": null,
       "stars": 182,
       "last_commit": "2026-05-18",
       "type": "skill",
@@ -7297,6 +7817,8 @@
     },
     "wrsmith108": {
       "url": "https://github.com/wrsmith108/linear-claude-skill",
+      "description": "Agent skill for managing Linear issues, projects, and teams. MCP tools, SDK automation, GraphQL API patterns.",
+      "description_en": null,
       "stars": 108,
       "last_commit": "2026-04-19",
       "type": "skill",
@@ -7315,6 +7837,8 @@
     },
     "Digidai": {
       "url": "https://github.com/Digidai/product-manager-skills",
+      "description": "PM skill for Claude Code, Codex, Cursor, and Windsurf: diagnose SaaS metrics, critique PRDs, plan roadmaps, run discovery, and coach PM career transitions.",
+      "description_en": null,
       "stars": 92,
       "last_commit": "2026-04-12",
       "type": "skill",
@@ -7333,6 +7857,8 @@
     },
     "Corey": {
       "url": "https://github.com/coreyhaines31/marketingskills",
+      "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+      "description_en": null,
       "stars": 30972,
       "last_commit": "2026-05-28",
       "type": "skill",
@@ -7394,6 +7920,8 @@
     },
     "AgriciDaniel-seo": {
       "url": "https://github.com/AgriciDaniel/claude-seo",
+      "description": "Universal SEO skill for Claude Code. 25 sub-skills + 18 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, backlinks, local SEO, maps intelligence, semantic clustering, e-commerce SEO, international SEO, Google APIs, and PDF/Excel reporting. Optional DataForSEO, Firecrawl, and Banana extensions.",
+      "description_en": null,
       "stars": 7274,
       "last_commit": "2026-05-25",
       "type": "skill",
@@ -7412,6 +7940,8 @@
     },
     "ReScienceLab": {
       "url": "https://github.com/ReScienceLab/opc-skills",
+      "description": "Agent Skills for Solopreneurs",
+      "description_en": null,
       "stars": 896,
       "last_commit": "2026-05-28",
       "type": "skill",
@@ -7439,6 +7969,8 @@
     },
     "AgriciDaniel-ads": {
       "url": "https://github.com/AgriciDaniel/claude-ads",
+      "description": null,
+      "description_en": null,
       "stars": 5322,
       "last_commit": "2026-05-18",
       "type": "skill",
@@ -7457,6 +7989,8 @@
     },
     "nextlevelbuilder": {
       "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
+      "description_en": null,
       "stars": 84450,
       "last_commit": "2026-04-03",
       "type": "skill",
@@ -7475,6 +8009,8 @@
     },
     "op7418-NB": {
       "url": "https://github.com/op7418/NanoBanana-PPT-Skills",
+      "description": null,
+      "description_en": null,
       "stars": 2839,
       "last_commit": "2026-01-19",
       "type": "skill",
@@ -7493,6 +8029,8 @@
     },
     "zarazhangrui": {
       "url": "https://github.com/zarazhangrui/frontend-slides",
+      "description": "Create beautiful slides on the web using a coding agent's frontend skills",
+      "description_en": null,
       "stars": 19526,
       "last_commit": "2026-05-26",
       "type": "skill",
@@ -7513,6 +8051,8 @@
     },
     "nexu-io": {
       "url": "https://github.com/nexu-io/open-design",
+      "description": "🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Claude Code / OpenClaw / Codex / Cursor / OpenCode / Qwen / Copilot / Hermes / Kimi & 17+ CLIs.",
+      "description_en": null,
       "stars": 55103,
       "last_commit": "2026-05-29",
       "type": "skill",
@@ -7531,6 +8071,8 @@
     },
     "op7418-YT": {
       "url": "https://github.com/op7418/Youtube-clipper-skill",
+      "description": null,
+      "description_en": null,
       "stars": 1918,
       "last_commit": "2026-01-22",
       "type": "skill",
@@ -7549,6 +8091,8 @@
     },
     "calesthio": {
       "url": "https://github.com/calesthio/OpenMontage",
+      "description": null,
+      "description_en": null,
       "stars": 4069,
       "last_commit": "2026-05-07",
       "type": "video-engine",
@@ -7566,6 +8110,8 @@
     },
     "remotion-dev": {
       "url": "https://github.com/remotion-dev/skills",
+      "description": null,
+      "description_en": null,
       "stars": 3352,
       "last_commit": "2026-05-07",
       "type": "skill",
@@ -7584,6 +8130,8 @@
     },
     "Firecrawl": {
       "url": "https://github.com/firecrawl/cli",
+      "description": "CLI and Agent Skill for Firecrawl - Add scrape, search, and browsing capabilities to your AI agents",
+      "description_en": null,
       "stars": 425,
       "last_commit": "2026-05-28",
       "type": "skill",
@@ -7602,6 +8150,8 @@
     },
     "mvanhorn": {
       "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "description_en": null,
       "stars": 26766,
       "last_commit": "2026-05-22",
       "type": "skill",
@@ -7620,6 +8170,8 @@
     },
     "Paramchoudhary": {
       "url": "https://github.com/Paramchoudhary/ResumeSkills",
+      "description": "A collection of AI agent skills focused on resume optimization, job applications, and career development. Built for job seekers, career changers, and professionals who want Claude Code to help with resume writing, ATS optimization, interview prep, and strategic job search.",
+      "description_en": null,
       "stars": 617,
       "last_commit": "2026-05-20",
       "type": "skill",
@@ -7652,6 +8204,8 @@
     },
     "santifer": {
       "url": "https://github.com/santifer/career-ops",
+      "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
+      "description_en": null,
       "stars": 47727,
       "last_commit": "2026-05-25",
       "type": "skill",
@@ -7670,6 +8224,8 @@
     },
     "gokapso": {
       "url": "https://github.com/gokapso/agent-skills",
+      "description": "Kapso agent skills for WhatsApp.",
+      "description_en": null,
       "stars": 125,
       "last_commit": "2026-05-23",
       "type": "skill",
@@ -7692,6 +8248,8 @@
     },
     "Charlie85270": {
       "url": "https://github.com/Charlie85270/Dorothy",
+      "description": "Dorothy, the wife your AI agents needs.",
+      "description_en": null,
       "stars": 293,
       "last_commit": "2026-05-05",
       "type": "desktop-app",
@@ -7709,6 +8267,8 @@
     },
     "wanshuiyin": {
       "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+      "description": "ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in — works with Claude Code, Codex, OpenClaw, or any LLM agent.",
+      "description_en": null,
       "stars": 10962,
       "last_commit": "2026-05-29",
       "type": "multi-skill-suite",
@@ -7727,6 +8287,8 @@
     },
     "garrytan": {
       "url": "https://github.com/garrytan/gstack",
+      "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+      "description_en": null,
       "stars": 104176,
       "last_commit": "2026-05-29",
       "type": "skill",
@@ -7745,6 +8307,8 @@
     },
     "EveryInc": {
       "url": "https://github.com/EveryInc/charlie-cfo-skill",
+      "description": "Claude Code skill for bootstrapped CFO financial management. Named after Charlie Munger.",
+      "description_en": null,
       "stars": 231,
       "last_commit": "2026-01-29",
       "type": "skill",
@@ -7763,6 +8327,8 @@
     },
     "openaccountants": {
       "url": "https://github.com/openaccountants/openaccountants",
+      "description": "Open-source accounting and tax skills for AI. 133 countries + 51 US states. Upload to Claude/ChatGPT or connect via MCP. Verified by accountants.",
+      "description_en": null,
       "stars": 88,
       "last_commit": "2026-05-29",
       "type": "skill",
@@ -7781,6 +8347,8 @@
     },
     "imbad0202": {
       "url": "https://github.com/imbad0202/academic-research-skills",
+      "description": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
+      "description_en": null,
       "stars": 23599,
       "last_commit": "2026-05-29",
       "type": "multi-skill-suite",
@@ -7799,6 +8367,8 @@
     },
     "K-Dense-AI": {
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Antigravity, and the open Agent Skills standard.",
+      "description_en": null,
       "stars": 26482,
       "last_commit": "2026-05-28",
       "type": "multi-skill-suite",
@@ -7817,6 +8387,8 @@
     },
     "muratcankoylan": {
       "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+      "description": "A comprehensive collection of Agent Skills for context engineering, multi-agent architectures, and production agent systems. Use when building, optimizing, or debugging agent systems that require effective context management.",
+      "description_en": null,
       "stars": 16123,
       "last_commit": "2026-05-26",
       "type": "skill",
@@ -7851,6 +8423,8 @@
     },
     "UseAI-pro": {
       "url": "https://github.com/UseAI-pro/openclaw-skills-security",
+      "description": "Curated, security-first OpenClaw skills (Markdown-based). Security audit skills - detect prompt injection, supply chain attacks, credential leaks. Works with Codex CLI, Claude Code, any LLM.",
+      "description_en": null,
       "stars": 58,
       "last_commit": "2026-03-10",
       "type": "skill",
@@ -7869,6 +8443,8 @@
     },
     "anthropics-marketplace": {
       "url": "https://github.com/anthropics/claude-plugins-official",
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+      "description_en": null,
       "stars": 28499,
       "last_commit": "2026-05-29",
       "type": "marketplace",
@@ -7886,6 +8462,8 @@
     },
     "multica-ai": {
       "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "description_en": null,
       "stars": 160941,
       "last_commit": "2026-04-20",
       "type": "claude-md-template",
