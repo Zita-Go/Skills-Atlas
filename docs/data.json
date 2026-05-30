@@ -956,7 +956,7 @@
                   "author": "vercel-labs",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add vercel-labs/agent-skills",
@@ -1283,7 +1283,7 @@
                   "author": "PSPDFKit-labs",
                   "repo": "nutrient-agent-skill",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add PSPDFKit-labs/nutrient-agent-skill",
@@ -5490,7 +5490,7 @@
                   "author": "vercel-labs",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add vercel-labs/agent-skills",
@@ -5705,7 +5705,7 @@
                   "author": "op7418",
                   "repo": "NanoBanana-PPT-Skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": null,
                   "install": {
                     "command": "npx skills add op7418/NanoBanana-PPT-Skills",
@@ -6250,7 +6250,7 @@
                   "author": "remotion-dev",
                   "repo": "skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Remotion License",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add remotion-dev/skills",
@@ -6391,7 +6391,7 @@
                   "author": "firecrawl",
                   "repo": "cli",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "ISC",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add firecrawl/cli",
@@ -6429,7 +6429,7 @@
                   "author": "vercel-labs",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add vercel-labs/agent-skills",
@@ -8492,7 +8492,7 @@
                   "author": "multica-ai",
                   "repo": "andrej-karpathy-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "# 把该仓库的 CLAUDE.md 复制到你的项目根目录",
@@ -8939,7 +8939,7 @@
       "author": "vercel-labs",
       "repo": "agent-skills",
       "default_branch": "main",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add vercel-labs/agent-skills",
@@ -8981,7 +8981,7 @@
       "author": "PSPDFKit-labs",
       "repo": "nutrient-agent-skill",
       "default_branch": "main",
-      "license": null,
+      "license": "Apache-2.0",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add PSPDFKit-labs/nutrient-agent-skill",
@@ -9614,7 +9614,7 @@
       "author": "op7418",
       "repo": "NanoBanana-PPT-Skills",
       "default_branch": "main",
-      "license": null,
+      "license": "MIT",
       "doc_path": null,
       "install": {
         "command": "npx skills add op7418/NanoBanana-PPT-Skills",
@@ -9715,7 +9715,7 @@
       "author": "remotion-dev",
       "repo": "skills",
       "default_branch": "main",
-      "license": null,
+      "license": "Remotion License",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add remotion-dev/skills",
@@ -9735,7 +9735,7 @@
       "author": "firecrawl",
       "repo": "cli",
       "default_branch": "main",
-      "license": null,
+      "license": "ISC",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add firecrawl/cli",
@@ -10067,7 +10067,7 @@
       "author": "multica-ai",
       "repo": "andrej-karpathy-skills",
       "default_branch": "main",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "# 把该仓库的 CLAUDE.md 复制到你的项目根目录",

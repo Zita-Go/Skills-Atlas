@@ -367,6 +367,7 @@
   stars: 27309
   last_commit: '2026-05-29'
   default_branch: main
+  license: MIT
   description: Vercel's official collection of agent skills
   description_en: Vercel's official collection of agent skills
   doc_path: README.md
@@ -397,6 +398,7 @@
   stars: 10
   last_commit: '2026-03-23'
   default_branch: main
+  license: Apache-2.0
   description: Universal Agent Skill for document processing with Nutrient DWS API — works with Claude Code, Codex, Gemini CLI, Cursor, and 35+ more agents
   description_en: Universal Agent Skill for document processing with Nutrient DWS API — works with Claude Code, Codex, Gemini CLI, Cursor, and 35+ more agents
   doc_path: README.md
@@ -847,6 +849,7 @@
   stars: 2845
   last_commit: '2026-01-19'
   default_branch: main
+  license: MIT
   description: NanoBanana PPT Skills 基于 AI 自动生成高质量 PPT 图片和视频的强大工具，支持智能转场和交互式播放
 - id: zarazhangrui
   author: zarazhangrui
@@ -908,6 +911,7 @@
   last_commit: '2026-05-07'
   doc_path: README.md
   default_branch: main
+  license: Remotion License
   description: Agent Skills
 - id: Firecrawl
   author: firecrawl
@@ -918,6 +922,7 @@
   stars: 425
   last_commit: '2026-05-29'
   default_branch: main
+  license: ISC
   description: CLI and Agent Skill for Firecrawl - Add scrape, search, and browsing capabilities to your AI agents
   description_en: CLI and Agent Skill for Firecrawl - Add scrape, search, and browsing capabilities to your AI agents
   doc_path: README.md
@@ -1145,6 +1150,7 @@
   stars: 161732
   last_commit: '2026-04-20'
   default_branch: main
+  license: MIT
   description: A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.
   description_en: A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.
   doc_path: README.md
