@@ -909,11 +909,11 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
       <svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg>
     </button>
   </div>
-  <div class="subtitle">按功能分类 · AI Agent Skills 全景</div>
+  <div class="subtitle" data-i18n="subtitle">按功能分类 · AI Agent Skills 全景</div>
   <div class="stat-row" id="statRow"></div>
   <div class="search-wrap">
     <span class="search-icon">⌕</span>
-    <input id="search" placeholder="搜 skill / 描述 / 仓库" autocomplete="off" />
+    <input id="search" placeholder="搜 skill / 描述 / 仓库" data-i18n-ph="searchPh" autocomplete="off" />
     <span class="kbd-hint" id="kbdHint">/</span>
     <button class="clear-btn" id="clearBtn" aria-label="clear">×</button>
   </div>
@@ -929,29 +929,30 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
   <div class="toolbar">
     <button class="menu-btn" id="menuBtn">☰</button>
     <div class="view-switch" id="viewSwitch">
-      <button class="view-btn active" data-view="cards" title="按功能视图">⊞ <span class="vb-label">功能</span></button>
-      <button class="view-btn" data-view="repo" title="按仓库视图">📦 <span class="vb-label">仓库</span></button>
-      <button class="view-btn" data-view="graph" title="网络视图">◈ <span class="vb-label">网络</span></button>
+      <button class="view-btn active" data-view="cards" title="按功能视图">⊞ <span class="vb-label" data-i18n="view_cards">功能</span></button>
+      <button class="view-btn" data-view="repo" title="按仓库视图">📦 <span class="vb-label" data-i18n="view_repo">仓库</span></button>
+      <button class="view-btn" data-view="graph" title="网络视图">◈ <span class="vb-label" data-i18n="view_graph">网络</span></button>
     </div>
     <span class="tb-divider" aria-hidden="true"></span>
-    <span class="pill active" data-filter="all">全部</span>
-    <span class="pill" data-filter="chain">⛓ 强绑定</span>
-    <span class="pill" data-filter="multi-source">多源</span>
-    <span class="pill" data-filter="single-skill">单 skill</span>
+    <span class="pill active" data-filter="all" data-i18n="f_all">全部</span>
+    <span class="pill" data-filter="chain" data-i18n="f_chain">⛓ 强绑定</span>
+    <span class="pill" data-filter="multi-source" data-i18n="f_multi">多源</span>
+    <span class="pill" data-filter="single-skill" data-i18n="f_single">单 skill</span>
     <div class="spacer"></div>
-    <button class="theme-toggle" id="spotlightBtn" title="Spotlight 搜索 (⌘K / Ctrl+K)">⌕ 搜索 <kbd class="ai-kbd">⌘K</kbd></button>
-    <button class="ai-btn" id="aiBtn" title="AI 推荐">✨ AI 推荐</button>
+    <button class="theme-toggle" id="spotlightBtn" title="Spotlight 搜索 (⌘K / Ctrl+K)">⌕ <span data-i18n="btn_search">搜索</span> <kbd class="ai-kbd">⌘K</kbd></button>
+    <button class="ai-btn" id="aiBtn" title="AI 推荐"><span data-i18n="btn_ai">✨ AI 推荐</span></button>
+    <button class="theme-toggle" id="langToggle" title="Switch language">EN</button>
     <button class="theme-toggle" id="themeToggle">🌙 暗色</button>
   </div>
   <div class="hero">
     <div class="hero-text">
-      <h2>按功能分类的 AI Agent Skills 全景</h2>
-      <p>不再问"有什么 skill"，而是"我要做 X 该用哪个 skill"。来自 62 个 GitHub 仓库的 370+ 独立 skill，重新归类到 13 大类 / 74 个功能分组，⛓ 标记表示必须串起来用的工作流。</p>
+      <h2 data-i18n="hero_h2">按功能分类的 AI Agent Skills 全景</h2>
+      <p data-i18n="hero_p">不再问"有什么 skill"，而是"我要做 X 该用哪个 skill"。来自 62 个 GitHub 仓库的 370+ 独立 skill，重新归类到 13 大类 / 74 个功能分组，⛓ 标记表示必须串起来用的工作流。</p>
       <div class="hero-stats">
-        <div><b id="heroSkillCount">—</b>独立 skill</div>
-        <div><b id="heroGroupCount">—</b>功能分组</div>
-        <div><b id="heroVendorCount">—</b>源仓库</div>
-        <div><b id="heroChainCount">—</b>强绑定工作流</div>
+        <div><b id="heroSkillCount">—</b><span data-i18n="stat_skill">独立 skill</span></div>
+        <div><b id="heroGroupCount">—</b><span data-i18n="stat_group">功能分组</span></div>
+        <div><b id="heroVendorCount">—</b><span data-i18n="stat_vendor">源仓库</span></div>
+        <div><b id="heroChainCount">—</b><span data-i18n="stat_chain">强绑定工作流</span></div>
       </div>
     </div>
     <div class="hero-viz">
@@ -963,7 +964,7 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
   <div id="graphView" class="hidden graph-view"></div>
   <div class="empty-state hidden" id="emptyState">
     <div class="big">🤔</div>
-    <div>没有匹配的 skill，试试别的关键词</div>
+    <div data-i18n="empty">没有匹配的 skill，试试别的关键词</div>
   </div>
 </main>
 
@@ -972,15 +973,15 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
   <div class="spotlight-modal">
     <div class="spotlight-input-wrap">
       <span class="icon">⌕</span>
-      <input id="spotlightInput" placeholder="搜 skill / 仓库 / 分组 / 大类…（fuzzy 匹配）" autocomplete="off" autocorrect="off" spellcheck="false" />
+      <input id="spotlightInput" placeholder="搜 skill / 仓库 / 分组 / 大类…（fuzzy 匹配）" data-i18n-ph="sp_ph" autocomplete="off" autocorrect="off" spellcheck="false" />
       <span class="esc-hint">ESC</span>
     </div>
     <div class="spotlight-list" id="spotlightList"></div>
     <div class="spotlight-footer">
-      <span><kbd>↑</kbd><kbd>↓</kbd> 移动</span>
-      <span><kbd>Enter</kbd> 跳转</span>
-      <span><kbd>Esc</kbd> 关闭</span>
-      <span style="margin-left:auto">⌘K / Ctrl+K 唤起</span>
+      <span><kbd>↑</kbd><kbd>↓</kbd> <span data-i18n="sp_move">移动</span></span>
+      <span><kbd>Enter</kbd> <span data-i18n="sp_enter">跳转</span></span>
+      <span><kbd>Esc</kbd> <span data-i18n="sp_esc">关闭</span></span>
+      <span style="margin-left:auto">⌘K / Ctrl+K <span data-i18n="sp_invoke">唤起</span></span>
     </div>
   </div>
 </div>
@@ -991,10 +992,10 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
     <div class="ai-header">
       <div>
         <div class="ai-title">
-          <span>✨ AI 推荐</span>
+          <span data-i18n="ai_title">✨ AI 推荐</span>
           <span class="ai-mode-badge" id="aiModeBadge" data-mode="local">本地匹配</span>
         </div>
-        <div class="ai-subtitle">描述你想做的事，给你推荐 skill 组合</div>
+        <div class="ai-subtitle" data-i18n="ai_subtitle">描述你想做的事，给你推荐 skill 组合</div>
       </div>
       <div class="ai-header-actions">
         <button class="ai-icon-btn" id="aiSettingsBtn" title="LLM 设置（BYOK）" aria-label="settings">⚙</button>
@@ -1004,8 +1005,8 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
 
     <div class="ai-settings hidden" id="aiSettings">
       <div class="ai-settings-head">
-        <strong>用自己的 LLM（覆盖默认）</strong>
-        <span class="ai-settings-hint">站点默认已经能用（OpenRouter free 池）。要换更强的模型 / 用自己的 quota，可填入自己的 key 覆盖。Key 只存你浏览器 localStorage，不会上传任何服务器。</span>
+        <strong data-i18n="ai_byok_head">用自己的 LLM（覆盖默认）</strong>
+        <span class="ai-settings-hint" data-i18n="ai_byok_hint">站点默认已经能用（OpenRouter free 池）。要换更强的模型 / 用自己的 quota，可填入自己的 key 覆盖。Key 只存你浏览器 localStorage，不会上传任何服务器。</span>
       </div>
       <div class="ai-settings-row">
         <label>Base URL</label>
@@ -1021,37 +1022,37 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
       </div>
       <div class="ai-settings-foot">
         <span class="ai-settings-presets">
-          预设：
+          <span data-i18n="ai_presets">预设：</span>
           <a href="#" data-preset="openai">OpenAI</a>
           <a href="#" data-preset="openrouter">OpenRouter (free)</a>
           <a href="#" data-preset="deepseek">DeepSeek</a>
           <a href="#" data-preset="moonshot">Moonshot</a>
-          <a href="#" data-preset="ollama">Ollama (本机)</a>
+          <a href="#" data-preset="ollama" data-i18n="preset_ollama">Ollama (本机)</a>
         </span>
         <span class="ai-settings-btns">
-          <button class="ai-btn-secondary" id="llmTestBtn">测试连接</button>
-          <button class="ai-btn-secondary" id="llmClearBtn">清空</button>
-          <button class="ai-btn-primary" id="llmSaveBtn">保存</button>
+          <button class="ai-btn-secondary" id="llmTestBtn" data-i18n="btn_test">测试连接</button>
+          <button class="ai-btn-secondary" id="llmClearBtn" data-i18n="btn_clear">清空</button>
+          <button class="ai-btn-primary" id="llmSaveBtn" data-i18n="btn_save">保存</button>
         </span>
       </div>
       <div class="ai-settings-status" id="llmStatus"></div>
     </div>
 
     <div class="ai-model-picker" id="aiModelPicker">
-      <span class="ai-model-label">模型</span>
+      <span class="ai-model-label" data-i18n="ai_model_label">模型</span>
       <span class="ai-model-chips" id="aiModelChips"></span>
     </div>
     <div class="ai-input-wrap">
-      <textarea id="aiInput" placeholder="例如：我想给 SaaS 做完整的 GTM 策略，包括竞品分析、定价、北极星指标和发布计划&#10;&#10;⌘/Ctrl + Enter 提交，或点右下「✨ 推荐」按钮" rows="4"></textarea>
+      <textarea id="aiInput" data-i18n-ph="ai_input_ph" placeholder="例如：我想给 SaaS 做完整的 GTM 策略，包括竞品分析、定价、北极星指标和发布计划&#10;&#10;⌘/Ctrl + Enter 提交，或点右下「✨ 推荐」按钮" rows="4"></textarea>
       <div class="ai-input-foot">
         <div class="ai-suggestions">
-          <span class="ai-tag" data-q="完整开发工作流，包括 TDD 和 code review">完整开发工作流</span>
-          <span class="ai-tag" data-q="做 SEO 全套，从审计到内容到结构化数据">SEO 全套</span>
-          <span class="ai-tag" data-q="把会议笔记做成结构化文档放进 Notion">Notion 知识工作流</span>
-          <span class="ai-tag" data-q="新产品发现：用户访谈、JTBD、机会方案树">产品发现循环</span>
+          <span class="ai-tag" data-q="完整开发工作流，包括 TDD 和 code review" data-i18n="chip1_label" data-i18n-q="chip1_q">完整开发工作流</span>
+          <span class="ai-tag" data-q="做 SEO 全套，从审计到内容到结构化数据" data-i18n="chip2_label" data-i18n-q="chip2_q">SEO 全套</span>
+          <span class="ai-tag" data-q="把会议笔记做成结构化文档放进 Notion" data-i18n="chip3_label" data-i18n-q="chip3_q">Notion 知识工作流</span>
+          <span class="ai-tag" data-q="新产品发现：用户访谈、JTBD、机会方案树" data-i18n="chip4_label" data-i18n-q="chip4_q">产品发现循环</span>
         </div>
         <button class="ai-submit" id="aiSubmit" type="button">
-          <span>✨ 推荐</span>
+          <span data-i18n="ai_submit">✨ 推荐</span>
           <kbd class="ai-submit-kbd">⌘↵</kbd>
         </button>
       </div>
@@ -1064,6 +1065,166 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
 
 <script>
 const DATA = {{DATA_JSON}};
+
+// ===== i18n（双语框架）=====
+// 界面 chrome 全量翻译；数据内容（分类/组名/描述）由 data.json 的 *_en 字段提供，
+// 缺失时 pickT() 回退到中文。语言固定于本次页面加载（切换走重载，保证渲染一致）。
+const I18N = {
+  zh: {
+    subtitle: '按功能分类 · AI Agent Skills 全景',
+    searchPh: '搜 skill / 描述 / 仓库',
+    view_cards: '功能', view_repo: '仓库', view_graph: '网络',
+    f_all: '全部', f_chain: '⛓ 强绑定', f_multi: '多源', f_single: '单 skill',
+    btn_search: '搜索', btn_ai: '✨ AI 推荐',
+    theme_dark: '🌙 暗色', theme_light: '☀️ 亮色',
+    hero_h2: '按功能分类的 AI Agent Skills 全景',
+    hero_p: '不再问"有什么 skill"，而是"我要做 X 该用哪个 skill"。来自 62 个 GitHub 仓库的 370+ 独立 skill，重新归类到 13 大类 / 74 个功能分组，⛓ 标记表示必须串起来用的工作流。',
+    stat_skill: '独立 skill', stat_group: '功能分组', stat_vendor: '源仓库', stat_chain: '强绑定工作流',
+    empty: '没有匹配的 skill，试试别的关键词',
+    sp_ph: '搜 skill / 仓库 / 分组 / 大类…（fuzzy 匹配）',
+    sp_move: '移动', sp_enter: '跳转', sp_esc: '关闭', sp_invoke: '唤起',
+    ai_title: '✨ AI 推荐', ai_subtitle: '描述你想做的事，给你推荐 skill 组合',
+    view_repo_link: '查看仓库',
+    chain_badge: '⛓ 强绑定', chain_word: '强绑定',
+    tone_label: '色温',
+    sr_groups: '分组', sr_skills: 'skill', sr_sources: '源',
+    rc_groups: '分组', rc_cross: '大类', rc_skill: 'skill', rc_versatile: '★ 多面手', count_unit: ' 个',
+    graph_title: '网络视图',
+    graph_l_node: '· 节点 = skill，大小 ∝ 出现次数',
+    graph_legend_chain: '· 红边 / 红圈 = ⛓ 强绑定',
+    graph_l_ctrl: '· 滚轮缩放 · 拖拽节点 · 双击钉住',
+    ai_empty_local: '没找到匹配的 skill。试试更宽泛的描述？',
+    ai_empty_local_hint: '没找到匹配的 skill（本地关键词匹配）。配置 LLM 后可获得更智能的推荐 → 点 ⚙',
+    ai_empty_llm: 'LLM 没找到匹配的 skill。试试更具体的目标？',
+    usage_notfound: '没找到 SKILL.md / README。',
+    usage_viewgh: '在 GitHub 查看 ↗',
+    page_title: 'Skills Atlas — 按功能分类的 AI Agent Skills 全景',
+    meta_desc: '370+ AI Agent Skills 按 13 大功能分类的全景导航。来自 62 个 GitHub 仓库的 skill 重新归类到 74 个功能分组，标记 18 个必须串联使用的 ⛓ 强绑定工作流。',
+    og_title: 'Skills Atlas — 按功能找 AI Agent Skills',
+    tw_desc: '按功能分类的 AI Agent Skills 全景',
+    ai_byok_head: '用自己的 LLM（覆盖默认）',
+    ai_byok_hint: '站点默认已经能用（OpenRouter free 池）。要换更强的模型 / 用自己的 quota，可填入自己的 key 覆盖。Key 只存你浏览器 localStorage，不会上传任何服务器。',
+    ai_presets: '预设：',
+    preset_ollama: 'Ollama (本机)',
+    btn_test: '测试连接', btn_clear: '清空', btn_save: '保存',
+    ai_model_label: '模型',
+    ai_input_ph: '例如：我想给 SaaS 做完整的 GTM 策略，包括竞品分析、定价、北极星指标和发布计划\n\n⌘/Ctrl + Enter 提交，或点右下「✨ 推荐」按钮',
+    ai_submit: '✨ 推荐',
+    chip1_label: '完整开发工作流', chip1_q: '完整开发工作流，包括 TDD 和 code review',
+    chip2_label: 'SEO 全套', chip2_q: '做 SEO 全套，从审计到内容到结构化数据',
+    chip3_label: 'Notion 知识工作流', chip3_q: '把会议笔记做成结构化文档放进 Notion',
+    chip4_label: '产品发现循环', chip4_q: '新产品发现：用户访谈、JTBD、机会方案树',
+    ai_empty_default: '输入你的目标 / 任务，按 Enter 推荐 skill 组合',
+    ai_empty_noquery: '请输入想做的事',
+    mode_local: '本地匹配', mode_local_title: '当前用本地 TF-IDF + 同义词，未配置 LLM',
+    usage_btn: '📖 用法', install_btn: '📋 安装', license_unknown: '未知',
+    usage_open_gh: '在 GitHub 打开 ↗', usage_copy_cmd: '📋 复制安装命令',
+    copied: '✓ 已复制', copy_failed: '复制失败',
+  },
+  en: {
+    subtitle: 'AI Agent Skills, organized by function',
+    searchPh: 'Search skills / descriptions / repos',
+    view_cards: 'Function', view_repo: 'Repos', view_graph: 'Graph',
+    f_all: 'All', f_chain: '⛓ Chained', f_multi: 'Multi-source', f_single: 'Single skill',
+    btn_search: 'Search', btn_ai: '✨ AI Pick',
+    theme_dark: '🌙 Dark', theme_light: '☀️ Light',
+    hero_h2: 'AI Agent Skills, organized by function',
+    hero_p: 'Stop asking "what skills exist" — ask "which skill should I use to do X". 370+ skills from 62 GitHub repos, regrouped into 13 categories / 74 functional groups. ⛓ marks workflows meant to be chained together.',
+    stat_skill: 'skills', stat_group: 'groups', stat_vendor: 'source repos', stat_chain: 'chained workflows',
+    empty: 'No matching skills — try another keyword',
+    sp_ph: 'Search skills / repos / groups / categories… (fuzzy)',
+    sp_move: 'Navigate', sp_enter: 'Jump', sp_esc: 'Close', sp_invoke: 'to open',
+    ai_title: '✨ AI Pick', ai_subtitle: 'Describe what you want to do; get a skill combo',
+    view_repo_link: 'View repo',
+    chain_badge: '⛓ Chained', chain_word: 'Chained',
+    tone_label: 'Hue',
+    sr_groups: 'groups', sr_skills: 'skills', sr_sources: 'repos',
+    rc_groups: 'groups', rc_cross: 'categories', rc_skill: 'skills', rc_versatile: '★ Versatile', count_unit: '',
+    graph_title: 'Network view',
+    graph_l_node: '· node = skill, size ∝ frequency',
+    graph_legend_chain: '· red edge / ring = ⛓ Chained',
+    graph_l_ctrl: '· scroll to zoom · drag nodes · double-click to pin',
+    ai_empty_local: 'No matching skill. Try a broader description?',
+    ai_empty_local_hint: 'No matching skill (local keyword match). Configure an LLM for smarter picks → click ⚙',
+    ai_empty_llm: 'The LLM found no matching skill. Try a more specific goal?',
+    usage_notfound: 'No SKILL.md / README found.',
+    usage_viewgh: 'View on GitHub ↗',
+    page_title: 'Skills Atlas — AI Agent Skills by function',
+    meta_desc: '370+ AI Agent Skills mapped across 13 functional categories. Skills from 62 GitHub repos regrouped into 74 functional groups, with 18 ⛓ chained workflows meant to be used together.',
+    og_title: 'Skills Atlas — find AI Agent Skills by function',
+    tw_desc: 'AI Agent Skills, organized by function',
+    ai_byok_head: 'Use your own LLM (override default)',
+    ai_byok_hint: 'The site default already works (OpenRouter free pool). To use a stronger model / your own quota, enter your own key to override. The key is stored only in your browser localStorage and is never uploaded to any server.',
+    ai_presets: 'Presets:',
+    preset_ollama: 'Ollama (local)',
+    btn_test: 'Test', btn_clear: 'Clear', btn_save: 'Save',
+    ai_model_label: 'Model',
+    ai_input_ph: 'e.g. I want a full GTM strategy for a SaaS — competitor analysis, pricing, north-star metric and launch plan\n\n⌘/Ctrl + Enter to submit, or click "✨ Recommend" at the bottom right',
+    ai_submit: '✨ Recommend',
+    chip1_label: 'Full dev workflow', chip1_q: 'full dev workflow including TDD and code review',
+    chip2_label: 'Full SEO', chip2_q: 'full SEO suite, from audit to content to structured data',
+    chip3_label: 'Notion knowledge workflow', chip3_q: 'turn meeting notes into structured docs in Notion',
+    chip4_label: 'Product discovery loop', chip4_q: 'new product discovery: user interviews, JTBD, opportunity solution tree',
+    ai_empty_default: 'Enter your goal / task and press Enter for skill recommendations',
+    ai_empty_noquery: 'Please enter what you want to do',
+    mode_local: 'Local match', mode_local_title: 'Using local TF-IDF + synonyms; no LLM configured',
+    usage_btn: '📖 Usage', install_btn: '📋 Install', license_unknown: 'unknown',
+    usage_open_gh: 'Open on GitHub ↗', usage_copy_cmd: '📋 Copy install command',
+    copied: '✓ Copied', copy_failed: 'Copy failed',
+  },
+};
+function resolveLang(){
+  try{
+    const u = new URLSearchParams(location.search).get('lang');
+    if(u === 'en' || u === 'zh') return u;
+    const s = localStorage.getItem('atlas:lang');
+    if(s === 'en' || s === 'zh') return s;
+  }catch(_){}
+  return (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
+}
+let LANG = resolveLang();
+// chrome 文案：缺英文则回退中文
+function t(key){ const v = (I18N[LANG] || {})[key]; return v != null ? v : (I18N.zh[key] || ''); }
+// 数据文案：英文为空则回退中文（slug/id 永远用中文，保证锚点/跳转稳定）
+function pickT(en, zh){ return (LANG === 'en' && en) ? en : zh; }
+function applyChrome(){
+  document.documentElement.lang = (LANG === 'en' ? 'en' : 'zh-CN');
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = t(el.dataset.i18n); if(typeof v === 'string') el.textContent = v;
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const v = t(el.dataset.i18nPh); if(typeof v === 'string') el.placeholder = v;
+  });
+  // 示例 chip 的查询词（data-q）也随语言切换
+  document.querySelectorAll('[data-i18n-q]').forEach(el => {
+    const v = t(el.dataset.i18nQ); if(typeof v === 'string') el.dataset.q = v;
+  });
+  // <head>：标题 + meta（无 JS 时静态中文兜底，有 JS 时按语言切）
+  document.title = t('page_title');
+  const setMeta = (sel, key) => {
+    const el = document.querySelector(sel); if(!el) return;
+    const v = t(key); if(typeof v === 'string') el.setAttribute('content', v);
+  };
+  setMeta('meta[name="description"]', 'meta_desc');
+  setMeta('meta[property="og:title"]', 'og_title');
+  setMeta('meta[property="og:description"]', 'tw_desc');
+  setMeta('meta[name="twitter:title"]', 'og_title');
+  setMeta('meta[name="twitter:description"]', 'tw_desc');
+}
+// 切换语言：写入偏好 + 同步 ?lang，重载页面（语言固定于加载，渲染最稳）
+function setLang(l){
+  if(l !== 'en' && l !== 'zh') return;
+  try{ localStorage.setItem('atlas:lang', l); }catch(_){}
+  const u = new URL(location); u.searchParams.set('lang', l);
+  location.assign(u.toString());
+}
+function setupLang(){
+  const btn = document.getElementById('langToggle');
+  if(!btn) return;
+  btn.textContent = (LANG === 'zh' ? 'EN' : '中');
+  btn.title = (LANG === 'zh' ? 'Switch to English' : '切换到中文');
+  btn.addEventListener('click', () => setLang(LANG === 'zh' ? 'en' : 'zh'));
+}
 const H1_ICONS = {"一、软件开发与工程": "⚙️", "二、文档与知识管理": "📄", "三、产品管理（PM）": "🎯", "四、营销 / 增长 / 销售": "📣", "五、设计 / 视觉 / 前端": "🎨", "六、媒体生产": "🎬", "七、数据 / 抓取 / 情报": "🔍", "八、求职 / 个人办公": "💼", "九、通信 / 工具集成": "🔗", "十、创业 / 财务 / 合规": "💰", "十一、学术 / 科研 / 长跑研究": "🔬", "十二、Agent 架构 / Context Engineering": "🧠", "十三、元能力 / Skill 治理": "🛠️"};
 
 // 各大类色温（hue 0-360）：暖色端（橙/红）= 营销 / 创业 / 求职 / 媒体；冷色端（蓝/青/紫）= 工程 / 数据 / Agent
@@ -1139,12 +1300,12 @@ function buildNav(){
     html += `<div class="nav-section" data-h1="${escapeAttr(slug)}">`;
     html += `<div class="nav-h1" data-target="${slug}">`;
     html += `<span class="caret" onclick="event.stopPropagation();toggleNav(this.parentElement.parentElement)">▸</span>`;
-    html += `<span class="icon">${icon}</span><span class="nav-h1-title">${escapeHtml(h1.title)}</span>`;
+    html += `<span class="icon">${icon}</span><span class="nav-h1-title">${escapeHtml(pickT(h1.title_en, h1.title))}</span>`;
     html += `<span class="count">${totalRows}</span></div>`;
     html += '<div class="nav-h2-wrap">';
     h1.subsections.forEach(h2 => {
       const subSlug = slugify(h2.title);
-      html += `<a href="#${slug}--${subSlug}" class="nav-h2" data-target="${slug}--${subSlug}">${escapeHtml(h2.title)}</a>`;
+      html += `<a href="#${slug}--${subSlug}" class="nav-h2" data-target="${slug}--${subSlug}">${escapeHtml(pickT(h2.title_en, h2.title))}</a>`;
     });
     html += '</div></div>';
   });
@@ -1209,11 +1370,11 @@ function buildContent(){
     // 统计该大类的 chain 卡片数（仅用于信息展示，不再绘制连线）
     const chainCount = h1.subsections.reduce((s, h2) => s + h2.rows.filter(r => r.chain).length, 0);
     html += `<section class="h1-wrap" data-h1-slug="${escapeAttr(slug)}" style="--cat-hue:${hue}" data-chain-count="${chainCount}">`;
-    html += `<h2 class="section-h1" id="${slug}"><span class="h1-icon">${icon}</span><span>${escapeHtml(h1.title)}</span><span class="h1-tone" title="色温：${tone}">${tone}</span></h2>`;
+    html += `<h2 class="section-h1" id="${slug}"><span class="h1-icon">${icon}</span><span>${escapeHtml(pickT(h1.title_en, h1.title))}</span><span class="h1-tone" title="${t('tone_label')}: ${tone}">${tone}</span></h2>`;
     h1.subsections.forEach(h2 => {
       const subSlug = slugify(h2.title);
       const fullId = slug + '--' + subSlug;
-      html += `<h3 class="section-h2" id="${fullId}">${escapeHtml(h2.title)} <a class="anchor" href="#${fullId}">#</a></h3>`;
+      html += `<h3 class="section-h2" id="${fullId}">${escapeHtml(pickT(h2.title_en, h2.title))} <a class="anchor" href="#${fullId}">#</a></h3>`;
       html += `<div class="cards">`;
       h2.rows.forEach(row => {
         totalGroups++;
@@ -1231,7 +1392,7 @@ function buildContent(){
           }
           if(hit){
             const lic = (hit.v.skill_licenses && hit.v.skill_licenses[sk]) || hit.v.license || '';
-            return `<span class="skill-tag has-doc" data-act="usage" data-author="${escapeAttr(hit.v.author)}" data-repo="${escapeAttr(hit.v.repo)}" data-branch="${escapeAttr(hit.v.default_branch||'main')}" data-docpath="${escapeAttr(hit.path)}" data-url="${escapeAttr(hit.v.url)}" data-name="${escapeAttr(hit.name)}" data-skill="${escapeAttr(sk)}" data-license="${escapeAttr(lic)}" title="查看 ${escapeAttr(sk)} 的 SKILL.md（协议：${escapeAttr(lic||'未知')}）">${escapeHtml(sk)}</span>`;
+            return `<span class="skill-tag has-doc" data-act="usage" data-author="${escapeAttr(hit.v.author)}" data-repo="${escapeAttr(hit.v.repo)}" data-branch="${escapeAttr(hit.v.default_branch||'main')}" data-docpath="${escapeAttr(hit.path)}" data-url="${escapeAttr(hit.v.url)}" data-name="${escapeAttr(hit.name)}" data-skill="${escapeAttr(sk)}" data-license="${escapeAttr(lic)}" title="${escapeAttr(LANG === 'en' ? `View SKILL.md for ${sk} (license: ${lic||'unknown'})` : `查看 ${sk} 的 SKILL.md（协议：${lic||'未知'}）`)}">${escapeHtml(sk)}</span>`;
           }
           return `<span class="skill-tag">${escapeHtml(sk)}</span>`;
         }).join('');
@@ -1242,19 +1403,19 @@ function buildContent(){
             ? `<span class="source-stars">${starIcon}${formatStars(s.stars)}</span>` : '';
           const link = `<a class="source-link" href="${escapeAttr(s.url)}" target="_blank" rel="noopener">${githubIcon}<span>${escapeHtml(s.name)}</span>${starHtml}</a>`;
           const usageBtn = (s.author && s.repo)
-            ? `<button class="src-act" data-act="usage" data-author="${escapeAttr(s.author)}" data-repo="${escapeAttr(s.repo)}" data-branch="${escapeAttr(s.default_branch||'main')}" data-docpath="${escapeAttr(s.doc_path||'')}" data-url="${escapeAttr(s.url)}" data-name="${escapeAttr(s.name)}" data-license="${escapeAttr(s.license||'')}" title="查看 ${escapeAttr(s.name)} 的用法（不跳转 GitHub）">📖 用法</button>`
+            ? `<button class="src-act" data-act="usage" data-author="${escapeAttr(s.author)}" data-repo="${escapeAttr(s.repo)}" data-branch="${escapeAttr(s.default_branch||'main')}" data-docpath="${escapeAttr(s.doc_path||'')}" data-url="${escapeAttr(s.url)}" data-name="${escapeAttr(s.name)}" data-license="${escapeAttr(s.license||'')}" title="${escapeAttr(LANG === 'en' ? `View ${s.name} usage (no GitHub redirect)` : `查看 ${s.name} 的用法（不跳转 GitHub）`)}">${t('usage_btn')}</button>`
             : '';
           const cmd = (s.install && s.install.command) ? s.install.command : '';
           const copyBtn = cmd
-            ? `<button class="src-act" data-act="copy" data-cmd="${escapeAttr(cmd)}" title="复制安装命令：${escapeAttr(cmd)}">📋 安装</button>`
+            ? `<button class="src-act" data-act="copy" data-cmd="${escapeAttr(cmd)}" title="${escapeAttr(LANG === 'en' ? `Copy install command: ${cmd}` : `复制安装命令：${cmd}`)}">${t('install_btn')}</button>`
             : '';
           const lic = s.license
-            ? `<a class="license-badge" href="${escapeAttr(s.url)}/blob/${escapeAttr(s.default_branch||'main')}/LICENSE" target="_blank" rel="noopener" title="许可证 ${escapeAttr(s.license)}（点击查看）">${escapeHtml(s.license)}</a>`
-            : `<span class="license-badge unknown" title="上游未声明许可证 / 待同步，使用前请到仓库确认">未知</span>`;
+            ? `<a class="license-badge" href="${escapeAttr(s.url)}/blob/${escapeAttr(s.default_branch||'main')}/LICENSE" target="_blank" rel="noopener" title="${escapeAttr(LANG === 'en' ? `License ${s.license} (click to view)` : `许可证 ${s.license}（点击查看）`)}">${escapeHtml(s.license)}</a>`
+            : `<span class="license-badge unknown" title="${escapeAttr(LANG === 'en' ? 'No upstream license declared / pending sync — check the repo before use' : '上游未声明许可证 / 待同步，使用前请到仓库确认')}">${t('license_unknown')}</span>`;
           return `<span class="source-row">${link}${usageBtn}${copyBtn}${lic}</span>`;
         }).join('');
 
-        const chainBadge = row.chain ? '<span class="chain-badge">⛓ 强绑定</span>' : '';
+        const chainBadge = row.chain ? `<span class="chain-badge">${t('chain_badge')}</span>` : '';
 
         const maxStars = row.sources.reduce((m, s) => Math.max(m, s.stars || 0), 0);
         // data attributes for filtering
@@ -1285,9 +1446,9 @@ function buildContent(){
           data-stars="${maxStars}">`;
         html += `<div class="card-head">`;
         html += `<div class="card-skills">${skillsHtml}</div>`;
-        html += `<div class="card-group">${chainBadge}<span title="${escapeAttr(row.group)}">${escapeHtml(row.group)}</span></div>`;
+        html += `<div class="card-group">${chainBadge}<span title="${escapeAttr(pickT(row.group_en, row.group))}">${escapeHtml(pickT(row.group_en, row.group))}</span></div>`;
         html += `</div>`;
-        html += `<div class="card-desc">${escapeHtml(row.description)}</div>`;
+        html += `<div class="card-desc">${escapeHtml(pickT(row.description_en, row.description))}</div>`;
         html += `<div class="card-sources">${sourcesHtml}</div>`;
         html += `</div>`;
       });
@@ -1303,9 +1464,9 @@ function buildContent(){
   document.getElementById('heroChainCount').textContent = totalChains;
 
   const sr = document.getElementById('statRow');
-  sr.innerHTML = `<span class="stat"><b>${totalGroups}</b> 分组</span>
-    <span class="stat"><b>${totalSkills}</b> skill</span>
-    <span class="stat"><b>${vendorSet.size}</b> 源</span>`;
+  sr.innerHTML = `<span class="stat"><b>${totalGroups}</b> ${t('sr_groups')}</span>
+    <span class="stat"><b>${totalSkills}</b> ${t('sr_skills')}</span>
+    <span class="stat"><b>${vendorSet.size}</b> ${t('sr_sources')}</span>`;
 
   // 渲染完成（连线已删除）
 }
@@ -1507,18 +1668,28 @@ function buildRepoView(){
     'desktop-app': 240, 'video-engine': 350, 'extraction-engine': 35,
     'marketplace': 320, 'claude-md-template': 45
   };
+  // 英文类型标签（loop 变量名为 t，会遮蔽 i18n 的 t()，故这里用直取 I18N[LANG] 的 _L / _labels）
+  const TYPE_LABEL_EN = {
+    'skill': 'Skill pack', 'skill-pack': 'Skill bundle', 'multi-skill-suite': 'Multi-skill suite',
+    'plugin': 'Plugin', 'cli': 'CLI tool', 'cli-framework': 'CLI framework', 'cli-mcp': 'CLI / MCP',
+    'sdd-framework': 'SDD framework', 'python-library': 'Python library', 'desktop-app': 'Desktop app',
+    'video-engine': 'Video engine', 'extraction-engine': 'Extraction engine', 'marketplace': 'Marketplace',
+    'claude-md-template': 'Claude.md template'
+  };
+  const _labels = (LANG === 'en') ? TYPE_LABEL_EN : TYPE_LABEL;
+  const _L = I18N[LANG] || I18N.zh;
 
   let html = '';
   typeOrder.forEach(t => {
     const repos = byType[t].sort((a, b) => (b.stars || 0) - (a.stars || 0) || a.id.localeCompare(b.id));
-    const label = TYPE_LABEL[t] || t;
+    const label = _labels[t] || t;
     const hue = TYPE_HUE[t] != null ? TYPE_HUE[t] : 220;
     const slug = 'repotype-' + slugify(t);
     html += `<section class="repo-type-group" id="${slug}" style="--cat-hue:${hue}">`;
     html += `<h3 class="repo-type-head">`;
     html += `<span>${escapeHtml(label)}</span>`;
     html += `<span class="type-badge">${escapeHtml(t)}</span>`;
-    html += `<span class="type-count">${repos.length} 个</span>`;
+    html += `<span class="type-count">${repos.length}${_L.count_unit}</span>`;
     html += `</h3>`;
     html += `<div class="repo-grid">`;
     repos.forEach(r => {
@@ -1526,10 +1697,10 @@ function buildRepoView(){
         ? `<span class="repo-card-stars">${starIcon}${formatStars(r.stars)}</span>` : '';
       // 隐藏值为 1 的分组/大类标签（无信息量）
       const tags = [
-        r._groups > 1 ? `<span class="repo-card-tag">${r._groups} 分组</span>` : '',
-        r._h1s > 1 ? `<span class="repo-card-tag">跨 ${r._h1s} 大类</span>` : '',
-        r.skill_group_count ? `<span class="repo-card-tag">${r.skill_group_count} skill</span>` : '',
-        r._groups >= 5 ? `<span class="repo-card-tag tag-hot">★ 多面手</span>` : ''
+        r._groups > 1 ? `<span class="repo-card-tag">${r._groups} ${_L.rc_groups}</span>` : '',
+        r._h1s > 1 ? `<span class="repo-card-tag">${LANG === 'en' ? r._h1s + ' ' + _L.rc_cross : '跨 ' + r._h1s + ' ' + _L.rc_cross}</span>` : '',
+        r.skill_group_count ? `<span class="repo-card-tag">${r.skill_group_count} ${_L.rc_skill}</span>` : '',
+        r._groups >= 5 ? `<span class="repo-card-tag tag-hot">${_L.rc_versatile}</span>` : ''
       ].filter(Boolean).join('');
       const author = r.author ? `<span class="author">${escapeHtml(r.author)}/</span>` : '';
       const repoName = r.repo || r.id;
@@ -1539,7 +1710,7 @@ function buildRepoView(){
       html += star;
       html += `</div>`;
       if(tags) html += `<div class="repo-card-meta">${tags}</div>`;
-      html += `<a class="repo-card-link" href="${escapeAttr(r.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${githubIcon}<span>查看仓库</span></a>`;
+      html += `<a class="repo-card-link" href="${escapeAttr(r.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${githubIcon}<span>${_L.view_repo_link}</span></a>`;
       html += `</div>`;
     });
     html += `</div></section>`;
@@ -1564,7 +1735,7 @@ function buildRepoView(){
   });
 
   // 同步侧边栏导航
-  buildRepoNav(typeOrder, byType, TYPE_LABEL);
+  buildRepoNav(typeOrder, byType, _labels);
 }
 
 // 在切到 repo 视图时把侧边栏 nav 切成仓库列表（单独一个 nav 容器，叠在原 nav 上方/替换）
@@ -2092,10 +2263,10 @@ function buildGraph(){
     const hue = accentHues[i % accentHues.length];
     return `<div class="legend-cat"><span class="swatch" style="background:hsl(${hue},70%,64%);color:hsl(${hue},70%,64%)"></span><span>${escapeHtml(shortCat(s.title))}</span></div>`;
   }).join('');
-  legend.innerHTML = `<b>网络视图</b>
-    <div style="margin-top:4px">· 节点 = skill，大小 ∝ 出现次数</div>
-    <div>· 红边 / 红圈 = ⛓ 强绑定</div>
-    <div style="color:var(--fg-muted)">· 滚轮缩放 · 拖拽节点 · 双击钉住</div>
+  legend.innerHTML = `<b>${t('graph_title')}</b>
+    <div style="margin-top:4px">${t('graph_l_node')}</div>
+    <div>${t('graph_legend_chain')}</div>
+    <div style="color:var(--fg-muted)">${t('graph_l_ctrl')}</div>
     <div class="legend-cats">${catLegend}</div>`;
   // legend 加宽
   legend.style.maxWidth = '300px';
@@ -2352,18 +2523,18 @@ function setupAI(){
     const cfg = getLLMConfig();
     if(!cfg){
       modeBadge.dataset.mode = 'local';
-      modeBadge.textContent = '本地匹配';
-      modeBadge.title = '当前用本地 TF-IDF + 同义词，未配置 LLM';
+      modeBadge.textContent = t('mode_local');
+      modeBadge.title = t('mode_local_title');
       return;
     }
     if(cfg.source === 'byok'){
       modeBadge.dataset.mode = 'llm';
-      modeBadge.textContent = 'LLM · 自有 key · ' + cfg.model;
-      modeBadge.title = `通过 ${cfg.baseUrl} 调用 ${cfg.model}（你的 key）`;
+      modeBadge.textContent = (LANG === 'en' ? 'LLM · own key · ' : 'LLM · 自有 key · ') + cfg.model;
+      modeBadge.title = LANG === 'en' ? `Calling ${cfg.model} via ${cfg.baseUrl} (your key)` : `通过 ${cfg.baseUrl} 调用 ${cfg.model}（你的 key）`;
     } else {
       modeBadge.dataset.mode = 'llm';
       modeBadge.textContent = '✨ ' + (SITE_LLM_MODELS.find(m => m.id === cfg.model)?.label || cfg.model);
-      modeBadge.title = `站点默认 LLM (${cfg.model}) · 通过 worker 代理，不暴露 key · 想用自己的额度可在 ⚙ 里设置`;
+      modeBadge.title = LANG === 'en' ? `Site-default LLM (${cfg.model}) · proxied via worker, key not exposed · set your own quota in ⚙` : `站点默认 LLM (${cfg.model}) · 通过 worker 代理，不暴露 key · 想用自己的额度可在 ⚙ 里设置`;
     }
   }
   function loadConfigToForm(){
@@ -2396,7 +2567,7 @@ function setupAI(){
     setTimeout(() => input.focus(), 50);
     refreshModeBadge();
     if(!input.value.trim()){
-      results.innerHTML = '<div class="ai-empty">输入你的目标 / 任务，按 Enter 推荐 skill 组合</div>';
+      results.innerHTML = `<div class="ai-empty">${t('ai_empty_default')}</div>`;
       hideStatus();
     }
   }
@@ -2404,7 +2575,7 @@ function setupAI(){
 
   function renderResults(rows, source){
     if(!rows.length){
-      results.innerHTML = '<div class="ai-empty">没找到匹配的 skill。试试更宽泛的描述？</div>';
+      results.innerHTML = `<div class="ai-empty">${t('ai_empty_local')}</div>`;
       return;
     }
     results.innerHTML = rows.map(r => {
@@ -2412,7 +2583,7 @@ function setupAI(){
       const score = r.score != null ? Math.round(r.score * 10) / 10 : null;
       const scoreHtml = score != null ? `<div class="ai-result-score">${score}</div>` : '';
       const reasonHtml = r._llmReason
-        ? `<div class="ai-result-source"><strong>LLM：</strong>${escapeHtml(r._llmReason)}</div>` : '';
+        ? `<div class="ai-result-source"><strong>${LANG === 'en' ? 'LLM: ' : 'LLM：'}</strong>${escapeHtml(r._llmReason)}</div>` : '';
       return `<div class="ai-result-card" data-h1="${escapeAttr(slugify(r._h1))}"
         data-h2="${escapeAttr(slugify(r._h2))}" data-skills="${escapeAttr(r.skills[0])}">
         <div class="ai-result-head">
@@ -2447,7 +2618,7 @@ function setupAI(){
 
   async function search(){
     const q = input.value.trim();
-    if(!q){ results.innerHTML = '<div class="ai-empty">请输入想做的事</div>'; hideStatus(); return; }
+    if(!q){ results.innerHTML = `<div class="ai-empty">${t('ai_empty_noquery')}</div>`; hideStatus(); return; }
     const tokens = expandQuery(q);
     const allRows = getAllRows();
     const localScored = allRows.map(r => ({...r, score: scoreRow(r, tokens)}))
@@ -2459,7 +2630,7 @@ function setupAI(){
     // 没 LLM → 纯本地匹配
     if(!cfg){
       if(localScored.length === 0){
-        results.innerHTML = '<div class="ai-empty">没找到匹配的 skill（本地关键词匹配）。配置 LLM 后可获得更智能的推荐 → 点 ⚙</div>';
+        results.innerHTML = `<div class="ai-empty">${t('ai_empty_local_hint')}</div>`;
       } else {
         renderResults(localScored.slice(0, 12), 'local');
       }
@@ -2470,16 +2641,16 @@ function setupAI(){
     // 有 LLM：全部 186 条 skill 都给它（~26k tokens，远低于 128k 上下文）
     // 让 LLM 视野完整，不会因 TF-IDF 评分缺漏而错过相关 skill
     const candidates = allRows.map(r => ({...r, score: 0}));
-    showStatus(`<span class="ai-spin"></span><span>调用 ${escapeHtml(cfg.model)} 从 ${candidates.length} 个 skill 中筛选…</span>`);
+    showStatus(`<span class="ai-spin"></span><span>${LANG === 'en' ? `Calling ${escapeHtml(cfg.model)} to pick from ${candidates.length} skills…` : `调用 ${escapeHtml(cfg.model)} 从 ${candidates.length} 个 skill 中筛选…`}</span>`);
     try{
       const reranked = await callLLMRerank(q, candidates, cfg);
       hideStatus();
       if(!reranked.length){
         if(localScored.length > 0){
-          showStatus(`<span>LLM 说没匹配，回退本地 TF-IDF top 12</span>`);
+          showStatus(`<span>${LANG === 'en' ? 'LLM found no match — falling back to local TF-IDF top 12' : 'LLM 说没匹配，回退本地 TF-IDF top 12'}</span>`);
           renderResults(localScored.slice(0, 12), 'local-fallback');
         } else {
-          results.innerHTML = '<div class="ai-empty">LLM 没找到匹配的 skill。试试更具体的目标？</div>';
+          results.innerHTML = `<div class="ai-empty">${t('ai_empty_llm')}</div>`;
         }
       } else {
         renderResults(reranked, 'llm');
@@ -2488,10 +2659,10 @@ function setupAI(){
       console.warn('LLM rerank 失败:', err);
       const msg = err.message || String(err);
       if(localScored.length > 0){
-        showStatus(`<span style="color:var(--err,#ff6b6b)">LLM 调用失败：${escapeHtml(msg)} · 已回退本地</span>`);
+        showStatus(`<span style="color:var(--err,#ff6b6b)">${LANG === 'en' ? `LLM call failed: ${escapeHtml(msg)} · fell back to local` : `LLM 调用失败：${escapeHtml(msg)} · 已回退本地`}</span>`);
         renderResults(localScored.slice(0, 12), 'local-fallback');
       } else {
-        results.innerHTML = `<div class="ai-empty">LLM 调用失败：${escapeHtml(msg)}<br><br>本地关键词也没命中。试试切换其他模型？</div>`;
+        results.innerHTML = `<div class="ai-empty">${LANG === 'en' ? `LLM call failed: ${escapeHtml(msg)}<br><br>Local keyword match found nothing either. Try a different model?` : `LLM 调用失败：${escapeHtml(msg)}<br><br>本地关键词也没命中。试试切换其他模型？`}</div>`;
         hideStatus();
       }
     }
@@ -2512,18 +2683,20 @@ function setupAI(){
       apiKey: apiKeyInput.value.trim()
     };
     if(!cfg.baseUrl || !cfg.model || !cfg.apiKey){
-      setLLMStatus('请填完 Base URL / Model / API Key', 'err'); return;
+      setLLMStatus(LANG === 'en' ? 'Fill in Base URL / Model / API Key' : '请填完 Base URL / Model / API Key', 'err'); return;
     }
     saveLLMConfig(cfg);
-    setLLMStatus('已保存。下次推荐将用你自己的 key。', 'ok');
+    setLLMStatus(LANG === 'en' ? 'Saved. Next picks will use your own key.' : '已保存。下次推荐将用你自己的 key。', 'ok');
     refreshModeBadge();
     renderModelPicker();
   });
   clearBtn.addEventListener('click', () => {
     clearLLMConfig();
     baseUrlInput.value = ''; modelInput.value = ''; apiKeyInput.value = '';
-    const fallback = (SITE_DEFAULT_LLM.enabled && SITE_DEFAULT_LLM.proxyUrl) ? '站点默认 LLM' : '本地匹配';
-    setLLMStatus(`已清空，回退到${fallback}`, 'info');
+    const fallback = (SITE_DEFAULT_LLM.enabled && SITE_DEFAULT_LLM.proxyUrl)
+      ? (LANG === 'en' ? 'site-default LLM' : '站点默认 LLM')
+      : t('mode_local');
+    setLLMStatus(LANG === 'en' ? `Cleared — falling back to ${fallback}` : `已清空，回退到${fallback}`, 'info');
     refreshModeBadge();
     renderModelPicker();
   });
@@ -2534,16 +2707,16 @@ function setupAI(){
       apiKey: apiKeyInput.value.trim()
     };
     if(!cfg.baseUrl || !cfg.model || !cfg.apiKey){
-      setLLMStatus('请填完 Base URL / Model / API Key', 'err'); return;
+      setLLMStatus(LANG === 'en' ? 'Fill in Base URL / Model / API Key' : '请填完 Base URL / Model / API Key', 'err'); return;
     }
-    setLLMStatus('测试中…', 'info');
+    setLLMStatus(LANG === 'en' ? 'Testing…' : '测试中…', 'info');
     try{
       const r = await callLLMRerank('hello world', [
         { _h1:'测试', _h2:'测试', group:'ping', skills:['ping'], description:'ping test', chain:false, sources:[] }
       ], cfg);
-      setLLMStatus(`✓ 连通成功（返回 ${r.length} 条）`, 'ok');
+      setLLMStatus(LANG === 'en' ? `✓ Connected (returned ${r.length})` : `✓ 连通成功（返回 ${r.length} 条）`, 'ok');
     }catch(err){
-      setLLMStatus(`✗ 失败：${err.message || err}`, 'err');
+      setLLMStatus(LANG === 'en' ? `✗ Failed: ${err.message || err}` : `✗ 失败：${err.message || err}`, 'err');
     }
   });
   document.querySelectorAll('.ai-settings-presets a').forEach(a => {
@@ -2691,7 +2864,7 @@ function setupSpotlight(){
     const h2Slug = slugify(row._h2);
     items.push({
       kind: 'group', icon: row.chain ? '⛓' : '◇', label: row.group,
-      meta: `${row._h1} · ${row._h2}` + (row.chain ? ' · 强绑定' : ''),
+      meta: `${row._h1} · ${row._h2}` + (row.chain ? ' · ' + t('chain_word') : ''),
       hue: hueOf(row._h1),
       action: () => jumpToSection(`${h1Slug}--${h2Slug}`, row.skills[0])
     });
@@ -2935,10 +3108,11 @@ function setupSpotlight(){
 function setupTheme(){
   const btn = document.getElementById('themeToggle');
   const saved = localStorage.getItem('theme') || 'dark';
-  if(saved === 'light'){ document.documentElement.classList.add('light'); btn.textContent = '☀️ 亮色'; }
+  if(saved === 'light'){ document.documentElement.classList.add('light'); }
+  btn.textContent = (saved === 'light') ? t('theme_light') : t('theme_dark');
   btn.addEventListener('click', () => {
     const isLight = document.documentElement.classList.toggle('light');
-    btn.textContent = isLight ? '☀️ 亮色' : '🌙 暗色';
+    btn.textContent = isLight ? t('theme_light') : t('theme_dark');
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
   });
 }
@@ -3034,6 +3208,7 @@ function drawHeroChart(){
   // 统计每大类的 group 数
   const slices = DATA.sections.map(h1 => ({
     title: h1.title,
+    title_en: h1.title_en,
     count: h1.subsections.reduce((sum, h2) => sum + h2.rows.length, 0)
   }));
   const total = slices.reduce((s, x) => s + x.count, 0);
@@ -3066,7 +3241,7 @@ function drawHeroChart(){
           + ` L ${x3} ${y3} A ${r2} ${r2} 0 ${large} 0 ${x4} ${y4} Z`;
     const hue = hues[i % hues.length];
     arcs.push(`<path d="${d}" fill="hsl(${hue}, 70%, 65%)" opacity="0.85">
-      <title>${s.title}: ${s.count}</title></path>`);
+      <title>${pickT(s.title_en, s.title)}: ${s.count}</title></path>`);
     acc = end;
   });
 
@@ -3169,13 +3344,13 @@ function flashBtn(btn, text){
 async function copyText(cmd, btn){
   try{
     await navigator.clipboard.writeText(cmd);
-    flashBtn(btn, '✓ 已复制');
+    flashBtn(btn, t('copied'));
   }catch(_){
     const ta = document.createElement('textarea');
     ta.value = cmd; ta.style.position = 'fixed'; ta.style.opacity = '0';
     document.body.appendChild(ta); ta.focus(); ta.select();
     try{ document.execCommand('copy'); flashBtn(btn, '✓ 已复制'); }
-    catch(e){ flashBtn(btn, '复制失败'); }
+    catch(e){ flashBtn(btn, t('copy_failed')); }
     document.body.removeChild(ta);
   }
 }
@@ -3187,13 +3362,13 @@ function setupUsage(){
   ov.innerHTML =
     '<div class="ai-modal">' +
       '<div class="ai-header">' +
-        '<div><div class="ai-title"><span>📖 用法</span></div>' +
+        `<div><div class="ai-title"><span>${t('usage_btn')}</span></div>` +
         '<div class="ai-subtitle" id="usageSub"></div></div>' +
         '<button class="ai-close" id="usageClose" aria-label="close">×</button>' +
       '</div>' +
       '<div class="usage-toolbar">' +
-        '<a class="ai-btn-secondary" id="usageRepo" target="_blank" rel="noopener">在 GitHub 打开 ↗</a>' +
-        '<button class="ai-btn-secondary" id="usageCopy">📋 复制安装命令</button>' +
+        `<a class="ai-btn-secondary" id="usageRepo" target="_blank" rel="noopener">${t('usage_open_gh')}</a>` +
+        `<button class="ai-btn-secondary" id="usageCopy">${t('usage_copy_cmd')}</button>` +
         '<a class="license-badge" id="usageLic" target="_blank" rel="noopener" style="display:none"></a>' +
       '</div>' +
       '<div class="usage-body" id="usageBody"></div>' +
@@ -3237,13 +3412,15 @@ function setupUsage(){
       sub.textContent = `${d.author}/${d.repo} · ${path}`;
     }catch(err){
       const gh = d.url || `https://github.com/${d.author}/${d.repo}`;
-      body.innerHTML = '<div class="usage-state">没找到 SKILL.md / README。<br>' +
-        `<a href="${escapeAttr(gh)}" target="_blank" rel="noopener">在 GitHub 查看 ↗</a></div>`;
+      body.innerHTML = `<div class="usage-state">${t('usage_notfound')}<br>` +
+        `<a href="${escapeAttr(gh)}" target="_blank" rel="noopener">${t('usage_viewgh')}</a></div>`;
     }
   }
 }
 
 // Init
+applyChrome();   // 先按当前语言刷静态界面文字
+setupLang();     // 语言切换按钮
 buildNav();
 buildContent();
 drawHeroChart();

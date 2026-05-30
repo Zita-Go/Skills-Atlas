@@ -1,19 +1,19 @@
-name: 修复源仓库错误
-description: 报告失效链接 / 改名 / 删除的仓库
+name: 修复源仓库错误 / Fix source repository error
+description: 报告失效链接 / 改名 / 删除的仓库 / Report a broken link, renamed, or deleted repository
 labels: ["bug", "source-fix"]
 body:
   - type: input
     id: vendor_id
     attributes:
       label: vendor id
-      description: data/repositories.yaml 里的 id 字段
-      placeholder: 例如 superpowers
+      description: data/repositories.yaml 里的 id 字段 / The id field in data/repositories.yaml
+      placeholder: 例如 superpowers / e.g. superpowers
     validations:
       required: true
   - type: dropdown
     id: issue_type
     attributes:
-      label: 问题类型
+      label: 问题类型 / Issue type
       options:
         - 链接失效（404）
         - 仓库改名 / 转移
@@ -25,7 +25,7 @@ body:
   - type: textarea
     id: details
     attributes:
-      label: 详情
-      placeholder: 新链接 / 替代品 / 解决建议...
+      label: 详情 / Details
+      placeholder: 新链接 / 替代品 / 解决建议... / New link / replacement / suggested resolution...
     validations:
       required: true

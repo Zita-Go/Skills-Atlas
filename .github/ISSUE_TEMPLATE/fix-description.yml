@@ -1,19 +1,19 @@
-name: 修正描述 / 归类
-description: 某个 skill / 分组的描述写错了，或归类放错了
+name: 修正描述 / 归类 / Fix description or category
+description: 某个 skill / 分组的描述写错了，或归类放错了 / A skill or group has an incorrect description, or is placed in the wrong category
 labels: ["bug", "fix-description"]
 body:
   - type: input
     id: target
     attributes:
-      label: 目标 skill / 分组
-      description: skills.yaml 里的 group id，或某个 skill 名称
-      placeholder: 例如 software-engineering--1-1--001 或 brainstorming
+      label: 目标 skill / 分组 / Target skill or group
+      description: skills.yaml 里的 group id，或某个 skill 名称 / The group id in skills.yaml, or a skill name
+      placeholder: 例如 software-engineering--1-1--001 或 brainstorming / e.g. software-engineering--1-1--001 or brainstorming
     validations:
       required: true
   - type: dropdown
     id: issue_type
     attributes:
-      label: 问题类型
+      label: 问题类型 / Issue type
       options:
         - 描述不准确 / 过时
         - 归类错误（大类或子分组放错了）
@@ -25,15 +25,15 @@ body:
   - type: textarea
     id: details
     attributes:
-      label: 详情
-      description: 哪里错了？正确的应该是什么？
-      placeholder: 当前描述说…，但实际上…；或：建议从 A 改归到 B
+      label: 详情 / Details
+      description: 哪里错了？正确的应该是什么？ / What is wrong? What should it be?
+      placeholder: "当前描述说…，但实际上…；或：建议从 A 改归到 B / The current description says…, but actually…; or: suggest moving from A to B"
     validations:
       required: true
   - type: input
     id: suggested_fix
     attributes:
-      label: 建议的正确归类（仅归类错误时填）
-      placeholder: 例如 数据 / 抓取 / 情报 → 7.1 网页抓取
+      label: 建议的正确归类（仅归类错误时填） / Suggested correct category (only if miscategorized)
+      placeholder: 例如 数据 / 抓取 / 情报 → 7.1 网页抓取 / e.g. Data / Scraping / Intelligence → 7.1 Web scraping
     validations:
       required: false

@@ -1,33 +1,33 @@
-name: 加新 skill
-description: 提议把一个新的 skill 加进 Atlas
+name: 加新 skill / Add a new skill
+description: 提议把一个新的 skill 加进 Atlas / Propose adding a new skill to Atlas
 labels: ["enhancement", "skill-addition"]
 body:
   - type: input
     id: skill_name
     attributes:
-      label: Skill 名称
-      placeholder: 例如 my-cool-skill
+      label: Skill 名称 / Skill name
+      placeholder: 例如 my-cool-skill / e.g. my-cool-skill
     validations:
       required: true
   - type: input
     id: repo_url
     attributes:
-      label: 源仓库 URL
+      label: 源仓库 URL / Source repository URL
       placeholder: https://github.com/owner/repo
     validations:
       required: true
   - type: textarea
     id: description
     attributes:
-      label: 一句话描述
-      description: 这个 skill 做什么？
-      placeholder: 自动把…
+      label: 一句话描述 / One-line description
+      description: 这个 skill 做什么？ / What does this skill do?
+      placeholder: 自动把… / Automatically…
     validations:
       required: true
   - type: dropdown
     id: category
     attributes:
-      label: 推荐归类（13 大类之一）
+      label: 推荐归类（13 大类之一） / Suggested category (one of 13 categories)
       options:
         - 软件开发与工程
         - 文档与知识管理
@@ -48,6 +48,6 @@ body:
   - type: checkboxes
     id: chain
     attributes:
-      label: 是否强绑定（必须配合其它 skill 使用）？
+      label: 是否强绑定（必须配合其它 skill 使用）？ / Is it tightly coupled (must be used with other skills)?
       options:
         - label: 是的，这个 skill 是某个 ⛓ 强绑定工作流的一部分
