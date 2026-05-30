@@ -383,9 +383,14 @@ body.embed .views-dock{display:none}   /* 嵌入是固定快照，不暴露视�
 .graph-drawer .gd-chip{font-family:var(--font-mono);font-size:11px;padding:2px 8px;border-radius:6px;
   background:rgba(124,156,255,.10);color:var(--accent);border:1px solid rgba(124,156,255,.22);cursor:pointer;transition:all .12s}
 .graph-drawer .gd-chip:hover{background:rgba(124,156,255,.2)}
-.graph-drawer .gd-group{padding:6px 0;border-bottom:1px dashed var(--border);line-height:1.5;color:var(--fg-dim)}
+.graph-drawer .gd-group{position:relative;padding:7px 8px;margin:0 -8px;border-bottom:1px dashed var(--border);line-height:1.5;color:var(--fg-dim);cursor:pointer;border-radius:6px;transition:background .12s,color .12s}
+.graph-drawer .gd-group:hover{background:rgba(124,156,255,.08);color:var(--fg)}
 .graph-drawer .gd-group:last-child{border-bottom:0}
 .graph-drawer .gd-group .gd-cat{color:var(--fg-muted);font-size:10.5px}
+.graph-drawer .gd-group .gd-go{position:absolute;right:8px;top:7px;color:var(--accent);opacity:0;transition:opacity .12s}
+.graph-drawer .gd-group:hover .gd-go{opacity:1}
+.graph-drawer .gd-chip.gd-repo{cursor:pointer}
+.graph-drawer .gd-chip.gd-repo.no-link{cursor:default;background:var(--bg-card);color:var(--fg-dim);border-color:var(--border)}
 .graph-drawer .gd-foot{padding:12px 16px;border-top:1px solid var(--border);display:flex;gap:8px}
 .graph-drawer .gd-btn{flex:1;text-align:center;padding:8px 10px;border-radius:8px;font-size:12px;cursor:pointer;
   border:1px solid var(--border);background:var(--bg-card);color:var(--fg);font-family:inherit;transition:all .12s}
@@ -2275,13 +2280,13 @@ function buildGraph(){
   function centerNode(n){ tx = W/2 - n.x * scale; ty = H/2 - n.y * scale; applyTransform(); }
   function clearFocus(){ focusedNode = null; clearHighlight(); drawer.classList.remove('open'); graphSelectedId = null; syncGraphURL(); }
   function catLabelOf(h1zh){ const s = DATA.sections.find(x => x.title === h1zh); return s ? pickT(s.title_en, s.title) : h1zh; }
-  function jumpToCard(skillName){
-    const g = rows.filter(r => (r.skills || []).includes(skillName))[0];
+  function jumpToCard(skillName, group){
+    const g = group || rows.filter(r => (r.skills || []).includes(skillName))[0];
     document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
     const inp = document.getElementById('search');
     if(inp){ inp.value = skillName; currentSearch = skillName; const cb = document.getElementById('clearBtn'); if(cb) cb.style.display = 'block'; const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'none'; }
     applyFilter();
-    // 滚到该 skill 所属分组的小节并定位（之前只过滤、不滚动，所以"没跳过去"）
+    // 滚到目标分组的小节并定位（之前只过滤、不滚动，所以"没跳过去"）
     if(g){
       const id = slugify(g._h1) + '--' + slugify(g._h2);
       setTimeout(() => {
@@ -2297,11 +2302,16 @@ function buildGraph(){
     const descr = pickT(primary.description_en, primary.description) || '';
     const whatText = pickT(primary.use_case_en, primary.use_case) || (descr.length > 220 ? descr.slice(0, 220) + '…' : descr);
     const nbIds = [...(neighbors.get(n.id) || [])].sort();
-    const srcSet = new Set(); groups.forEach(g => (g.sources || []).forEach(s => srcSet.add(s.name || s)));
+    // 保留 source 对象（按名去重），以便仓库芯片能跳到对应 GitHub
+    const srcMap = new Map();
+    groups.forEach(g => (g.sources || []).forEach(s => { const nm = (s && s.name) || s; if(nm && !srcMap.has(nm)) srcMap.set(nm, s); }));
     const chip = (txt, act) => `<span class="gd-chip" data-nb="${escapeAttr(act)}">${escapeHtml(txt)}</span>`;
     const nbHtml = nbIds.length ? nbIds.map(id => chip(id, id)).join('') : `<span style="color:var(--fg-muted)">${EN ? 'none' : '无'}</span>`;
-    const grpHtml = groups.map(g => `<div class="gd-group">${escapeHtml(pickT(g.group_en, g.group))}<div class="gd-cat">${escapeHtml(catLabelOf(g._h1))}${g.chain ? ' · ⛓' : ''}</div></div>`).join('');
-    const srcHtml = [...srcSet].map(s => `<span class="gd-chip" style="cursor:default;background:var(--bg-card);color:var(--fg-dim);border-color:var(--border)">${escapeHtml(s)}</span>`).join('');
+    const grpHtml = groups.map((g, gi) => `<div class="gd-group" data-gi="${gi}" title="${EN ? 'Open this group in cards' : '在功能视图查看该分组'}">${escapeHtml(pickT(g.group_en, g.group))}<span class="gd-go">→</span><div class="gd-cat">${escapeHtml(catLabelOf(g._h1))}${g.chain ? ' · ⛓' : ''}</div></div>`).join('');
+    const srcHtml = [...srcMap].map(([nm, s]) => {
+      const url = (s && s.url) || '';
+      return `<span class="gd-chip gd-repo${url ? '' : ' no-link'}" data-url="${escapeAttr(url)}"${url ? ` title="${escapeAttr(url)}"` : ''}>${escapeHtml(nm)}${url ? ' ↗' : ''}</span>`;
+    }).join('');
     drawer.innerHTML =
       `<div class="gd-head"><button class="gd-close" aria-label="close">×</button>` +
       `<div class="gd-eyebrow">${EN ? 'SKILL' : '技能'}</div>` +
@@ -2319,6 +2329,10 @@ function buildGraph(){
     drawer.querySelector('.gd-close').addEventListener('click', clearFocus);
     drawer.querySelector('[data-act="jump"]').addEventListener('click', () => jumpToCard(n.id));
     drawer.querySelectorAll('.gd-chip[data-nb]').forEach(c => c.addEventListener('click', () => { const m = nodeMap.get(c.dataset.nb); if(m) openDrawer(m); }));
+    // 「所属功能分组」每项可点 → 在功能视图打开该分组
+    drawer.querySelectorAll('.gd-group[data-gi]').forEach(el => el.addEventListener('click', () => { const g = groups[+el.dataset.gi]; if(g) jumpToCard(n.id, g); }));
+    // 「来自仓库」芯片可点 → 新标签打开该仓库 GitHub
+    drawer.querySelectorAll('.gd-repo[data-url]').forEach(c => { const u = c.dataset.url; if(u) c.addEventListener('click', () => window.open(u, '_blank', 'noopener')); });
     const lk = drawer.querySelector('[data-act="link"]');
     if(lk) lk.addEventListener('click', () => {
       try{ navigator.clipboard.writeText(location.href); }catch(_){}
