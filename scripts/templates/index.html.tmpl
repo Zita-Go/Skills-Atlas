@@ -1928,7 +1928,7 @@ function getAllRows(){
   DATA.sections.forEach(h1 => {
     h1.subsections.forEach(h2 => {
       h2.rows.forEach(r => {
-        rows.push({...r, _h1: h1.title, _h2: h2.title});
+        rows.push({...r, _h1: h1.title, _h2: h2.title, _h1en: h1.title_en, _h2en: h2.title_en});
       });
     });
   });
@@ -3591,6 +3591,7 @@ function setupSpotlight(){
 
   // 构建索引
   const items = [];
+  const EN = LANG === 'en';
   // 1) skill 名
   const skillH1 = new Map();   // skillName -> h1Title (取首个出现的)
   const skillHue = new Map();  // skillName -> hue
@@ -3603,7 +3604,7 @@ function setupSpotlight(){
       if(!skillH1.has(sk)){
         skillH1.set(sk, row._h1);
         skillHue.set(sk, hue);
-        skillTargets.set(sk, {h1Slug, h2Slug, group: row.group});
+        skillTargets.set(sk, {h1Slug, h2Slug, group: row.group, group_en: row.group_en, h1en: row._h1en});
       }
     });
   });
@@ -3611,7 +3612,7 @@ function setupSpotlight(){
     const tgt = skillTargets.get(sk);
     items.push({
       kind: 'skill', icon: '◆', label: sk,
-      meta: `${h1} · ${tgt.group}`,
+      meta: `${pickT(tgt.h1en, h1)} · ${pickT(tgt.group_en, tgt.group)}`,
       hue: skillHue.get(sk),
       action: () => jumpToSkill(sk, tgt)
     });
@@ -3621,8 +3622,8 @@ function setupSpotlight(){
     const h1Slug = slugify(row._h1);
     const h2Slug = slugify(row._h2);
     items.push({
-      kind: 'group', icon: row.chain ? '⛓' : '◇', label: row.group,
-      meta: `${row._h1} · ${row._h2}` + (row.chain ? ' · ' + t('chain_word') : ''),
+      kind: 'group', icon: row.chain ? '⛓' : '◇', label: pickT(row.group_en, row.group),
+      meta: `${pickT(row._h1en, row._h1)} · ${pickT(row._h2en, row._h2)}` + (row.chain ? ' · ' + t('chain_word') : ''),
       hue: hueOf(row._h1),
       action: () => jumpToSection(`${h1Slug}--${h2Slug}`, row.skills[0])
     });
@@ -3630,15 +3631,15 @@ function setupSpotlight(){
   // 3) 大类 / 子分组
   DATA.sections.forEach(h1 => {
     items.push({
-      kind: 'category', icon: H1_ICONS[h1.title] || '📌', label: h1.title,
-      meta: `大类 · ${h1.subsections.length} 子分组`,
+      kind: 'category', icon: H1_ICONS[h1.title] || '📌', label: pickT(h1.title_en, h1.title),
+      meta: EN ? `category · ${h1.subsections.length} subgroups` : `大类 · ${h1.subsections.length} 子分组`,
       hue: hueOf(h1.title),
       action: () => jumpToSection(slugify(h1.title))
     });
     h1.subsections.forEach(h2 => {
       items.push({
-        kind: 'sub', icon: '§', label: h2.title,
-        meta: `${h1.title} · ${h2.rows.length} 分组`,
+        kind: 'sub', icon: '§', label: pickT(h2.title_en, h2.title),
+        meta: `${pickT(h1.title_en, h1.title)} · ${h2.rows.length} ${EN ? 'groups' : '分组'}`,
         hue: hueOf(h1.title),
         action: () => jumpToSection(slugify(h1.title) + '--' + slugify(h2.title))
       });
@@ -3721,10 +3722,10 @@ function setupSpotlight(){
     if(!query){
       // 默认显示分类型示例
       const groups = [
-        {label: 'SKILL', items: items.filter(x => x.kind === 'skill').slice(0, 4)},
-        {label: '分组 / GROUP', items: items.filter(x => x.kind === 'group').slice(0, 4)},
-        {label: '大类 / CATEGORY', items: items.filter(x => x.kind === 'category').slice(0, 4)},
-        {label: '仓库 / REPO', items: items.filter(x => x.kind === 'repo').slice(0, 4)}
+        {label: EN ? 'SKILL' : '技能', items: items.filter(x => x.kind === 'skill').slice(0, 4)},
+        {label: EN ? 'GROUP' : '分组', items: items.filter(x => x.kind === 'group').slice(0, 4)},
+        {label: EN ? 'CATEGORY' : '大类', items: items.filter(x => x.kind === 'category').slice(0, 4)},
+        {label: EN ? 'REPO' : '仓库', items: items.filter(x => x.kind === 'repo').slice(0, 4)}
       ];
       filtered = [];
       let html = '';
