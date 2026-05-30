@@ -26,7 +26,7 @@
 
 :root{
   --bg:#0a0c10; --bg-elev:#11141a; --bg-card:#161a21;
-  --border:#23272f; --border-strong:#363c47; --graph-node-stroke:rgba(255,255,255,.18);
+  --border:#23272f; --border-strong:#363c47; --graph-node-stroke:rgba(255,255,255,.18); --graph-dot:rgba(255,255,255,.05);
   --fg:#e8ecf2; --fg-dim:#9aa3b2; --fg-muted:#6b7384;
   --accent:#7c9cff; --accent-2:#c479ff; --accent-3:#5dd6c5;
   --warn:#ffb86b; --chain:#ff7e9d;
@@ -44,7 +44,7 @@
 }
 html.light{
   --bg:#fafbfd; --bg-elev:#ffffff; --bg-card:#ffffff;
-  --border:#e6e8ec; --border-strong:#cdd2da; --graph-node-stroke:rgba(0,0,0,.18);
+  --border:#e6e8ec; --border-strong:#cdd2da; --graph-node-stroke:rgba(0,0,0,.18); --graph-dot:rgba(0,0,0,.06);
   --fg:#0f1218; --fg-dim:#475063; --fg-muted:#7a8190;
   --accent:#5b6cff; --accent-2:#a855f7; --accent-3:#0ca678;
   --warn:#d97706; --chain:#d6336c;
@@ -308,6 +308,16 @@ html.light .graph-view .link.dim{stroke-opacity:.07}
 .graph-view .node:hover .label,
 .graph-view .node.highlight .label{opacity:1;fill:var(--fg)}
 .graph-view .cluster-halo{fill:none;stroke:none;pointer-events:none}
+.graph-view .graph-bg{pointer-events:none}
+.graph-view .node-hi{pointer-events:none}
+/* 入场淡入 */
+.graph-view .viewport{transition:opacity .55s ease}
+.graph-view.entering .viewport{opacity:0}
+/* 聚焦/hover 的高亮节点发光（仅少量节点，避免掉帧）*/
+.graph-view .node.highlight circle{filter:url(#nodeGlow)}
+/* chain 边流光：把视线引向强绑定关系（reduced-motion 下被全局规则停掉）*/
+.graph-view .link.chain{stroke-dasharray:7 7;animation:chainflow 1.5s linear infinite}
+@keyframes chainflow{to{stroke-dashoffset:-14}}
 
 /* 节点详情侧抽屉 */
 .graph-drawer{position:absolute;top:0;right:0;height:100%;width:300px;max-width:82%;
@@ -2091,10 +2101,34 @@ function buildGraph(){
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
 
+  // 视觉系统 defs：节点高光(玻璃珠) + 发光 + 点阵背景
+  const defs = document.createElementNS(svgNS, 'defs');
+  defs.innerHTML =
+    '<radialGradient id="orbHi" cx="34%" cy="28%" r="78%">' +
+      '<stop offset="0%" stop-color="rgba(255,255,255,.55)"/>' +
+      '<stop offset="42%" stop-color="rgba(255,255,255,.08)"/>' +
+      '<stop offset="100%" stop-color="rgba(255,255,255,0)"/>' +
+    '</radialGradient>' +
+    '<filter id="nodeGlow" x="-70%" y="-70%" width="240%" height="240%">' +
+      '<feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>' +
+    '</filter>' +
+    '<pattern id="dotgrid" width="48" height="48" patternUnits="userSpaceOnUse">' +
+      '<circle cx="2" cy="2" r="1.1" fill="var(--graph-dot)"/>' +
+    '</pattern>';
+  svg.appendChild(defs);
+
   // viewport transform layer（zoom + pan 都施加在它身上）
   const viewport = document.createElementNS(svgNS, 'g');
   viewport.classList.add('viewport');
   svg.appendChild(viewport);
+
+  // 点阵背景（无限画布感）：铺一大块，pan 时始终有底纹
+  const bg = document.createElementNS(svgNS, 'rect');
+  bg.classList.add('graph-bg');
+  bg.setAttribute('x', -W); bg.setAttribute('y', -H);
+  bg.setAttribute('width', W * 3); bg.setAttribute('height', H * 3);
+  bg.setAttribute('fill', 'url(#dotgrid)');
+  viewport.appendChild(bg);
 
   // 类簇背景晕光
   const haloGroup = document.createElementNS(svgNS, 'g');
@@ -2144,6 +2178,11 @@ function buildGraph(){
     c.setAttribute('stroke', n.chain ? 'var(--chain)' : 'var(--graph-node-stroke)');
     c.setAttribute('stroke-width', n.chain ? 2 : 1);
     g.appendChild(c);
+    // 玻璃珠高光：白色径向高光叠在彩色圆上，立体感（共用一个 gradient，无 per-node 开销）
+    const hi = document.createElementNS(svgNS, 'circle');
+    hi.setAttribute('r', n.r); hi.setAttribute('fill', 'url(#orbHi)');
+    hi.classList.add('node-hi');
+    g.appendChild(hi);
     const t = document.createElementNS(svgNS, 'text');
     t.classList.add('label');
     if(alwaysLabelSet.has(n.id)) t.classList.add('always');
@@ -2493,6 +2532,11 @@ function buildGraph(){
 
   // ==== 控件 ====
   container.appendChild(svg);
+  // 入场淡入（非 reduced-motion）：先 opacity 0，下一帧过渡到 1
+  if(!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)){
+    container.classList.add('entering');
+    requestAnimationFrame(() => requestAnimationFrame(() => container.classList.remove('entering')));
+  }
 
   const ICON = {
     pause: '<svg class="gc-icon" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>',
