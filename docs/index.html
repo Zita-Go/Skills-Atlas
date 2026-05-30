@@ -200,12 +200,14 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
 /* 视图切换器 */
 .view-switch{display:inline-flex;background:var(--bg-card);
   border:1px solid var(--border);border-radius:99px;padding:2px;gap:0}
-.view-btn{background:transparent;border:0;color:var(--fg-muted);
-  cursor:pointer;padding:4px 10px;border-radius:99px;font-size:14px;
+.view-btn{display:inline-flex;align-items:center;gap:6px;
+  background:transparent;border:0;color:var(--fg-muted);
+  cursor:pointer;padding:5px 12px;border-radius:99px;font-size:13px;
   transition:all .15s;line-height:1;font-family:var(--font-sans)}
 .view-btn:hover{color:var(--fg);background:var(--bg-elev)}
 .view-btn.active{background:var(--grad);color:#fff;
   box-shadow:0 2px 8px rgba(124,156,255,.25)}
+.view-btn .vb-ico{width:15px;height:15px;flex-shrink:0;display:block}
 /* 顶栏分组分隔线：把"视图切换"和"筛选"两组在视觉上分开 */
 .tb-divider{width:1px;align-self:stretch;min-height:20px;
   background:var(--border);margin:2px 4px;flex:0 0 auto}
@@ -224,7 +226,8 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
   .ai-btn .ai-kbd{display:none}
   /* 窄屏不再隐藏视图切换器（否则仓库/网络视图无法进入），改为只留图标 */
   .vb-label{display:none}
-  .view-btn{padding:4px 9px;font-size:16px}
+  .view-btn{padding:8px 11px}
+  .view-btn .vb-ico{width:17px;height:17px}
   .tb-divider{display:none}
 }
 
@@ -1137,9 +1140,9 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
   <div class="toolbar">
     <button class="menu-btn" id="menuBtn">☰</button>
     <div class="view-switch" id="viewSwitch">
-      <button class="view-btn active" data-view="cards" title="按功能视图" data-i18n-title="tt_view_cards">⊞ <span class="vb-label" data-i18n="view_cards">功能</span></button>
-      <button class="view-btn" data-view="repo" title="按仓库视图" data-i18n-title="tt_view_repo">📦 <span class="vb-label" data-i18n="view_repo">仓库</span></button>
-      <button class="view-btn" data-view="graph" title="网络视图" data-i18n-title="tt_view_graph">◈ <span class="vb-label" data-i18n="view_graph">网络</span></button>
+      <button class="view-btn active" data-view="cards" title="按功能视图" data-i18n-title="tt_view_cards"><svg class="vb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg><span class="vb-label" data-i18n="view_cards">功能</span></button>
+      <button class="view-btn" data-view="repo" title="按仓库视图" data-i18n-title="tt_view_repo"><svg class="vb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8v8a2 2 0 0 1-1 1.73l-7 4a2 2 0 0 1-2 0l-7-4A2 2 0 0 1 3 16V8a2 2 0 0 1 1-1.73l7-4a2 2 0 0 1 2 0l7 4A2 2 0 0 1 21 8z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg><span class="vb-label" data-i18n="view_repo">仓库</span></button>
+      <button class="view-btn" data-view="graph" title="网络视图" data-i18n-title="tt_view_graph"><svg class="vb-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.3 10.8 7.4-4.3M8.3 13.2l7.4 4.3"/></svg><span class="vb-label" data-i18n="view_graph">网络</span></button>
     </div>
     <span class="tb-divider" aria-hidden="true"></span>
     <span class="pill active" data-filter="all" data-i18n="f_all">全部</span>
