@@ -1,14 +1,15 @@
 /**
  * Skills Atlas Curator (Cloudflare Worker B)
  * ============================================
- * 「造目录的引擎」。每天 Cron 触发：
+ * 「造目录的引擎」。每天 Cron 触发。目录【按功能整理】，所以产出的是
+ * "按功能归好类的 skill"，不是"仓库条目"：
  *
  *   ① 从公共库拉 discovery.config.yaml / repositories.yaml / blocklist.yaml
- *      + 从 KV 读 SEEN 账本
+ *      / categories.yaml + 从 KV 读 SEEN 账本
  *   ② GitHub Search（只读）→ 原始候选，剔除 known ∪ blocklist ∪ SEEN
- *   ③ PR-2  廉价 LLM：is-skill-repo? → 丢掉非 skill
- *   ④ PR-3  起草 LLM：type / 分类 / 中文描述
- *   ⑤ 用 GITHUB_PAT 开 PR（草稿写到 data/_inbox/proposed/<date>.json）
+ *   ③ 抽取：读每个仓库文件树，枚举 SKILL.md（没有 = 非来源/聚合清单，剔除）
+ *   ④ 分类：一次 LLM 把仓库里的 skill 按功能归到 74 个子分类（宁可新开组）
+ *   ⑤ 用 GITHUB_PAT 开 PR（草稿写到 data/_inbox/proposed/<date>.json，按功能分组）
  *      + 把候选写进 KV SEEN（带 TTL = 「推迟」语义）
  *
  * 付费 key（OPENROUTER_KEY）和写权限（GITHUB_PAT）都只在这个 Worker 里，
@@ -118,58 +119,72 @@ async function runCuration(env, { dryRun = false, limit = 0 } = {}) {
   const filteredOut = [];
 
   if (candidates.length === 0) {
-    return { today, dry_run: dryRun, candidates: 0, deferred, proposed: 0, rejected, filtered_out: filteredOut, pr: null };
+    return { today, dry_run: dryRun, candidates: 0, deferred, repos_proposed: 0, skills_proposed: 0, rejected, filtered_out: filteredOut, pr: null };
   }
 
-  // ③ + ④ 逐个候选过 LLM：先 is-skill 过滤，留下来的再起草。
-  // 单个候选失败（含撞子请求上限）只记 llm_error 跳过，不拖垮整批。
-  const proposals = [];
+  // 功能分类的"槽"：13 大类 / 74 子分类（来自 categories.yaml）。一次性加载。
+  const taxonomy = await loadTaxonomy(env);
+  log(`taxonomy: ${taxonomy.length} 个子分类`);
+
+  // ③ 抽取 + ④ 按功能分类：每个仓库 → 枚举它的 skill（扫 SKILL.md）→ 一次 LLM 批量归类。
+  // 没有 SKILL.md 的仓库（含 awesome 聚合清单 / 文档 / 工具）不当来源收，记 no_skill_files。
+  // 单仓库失败（含撞子请求上限）只记 repo_error 跳过，不拖垮整批。
+  const proposals = []; // 每项 = { repo, skills: [classified...] }
   for (const cand of candidates) {
     try {
-      const verdict = await filterIsSkill(env, cfg.llm, cand);
-      if (!verdict.is_skill) {
-        bump(rejected, 'llm_not_skill');
+      const skillFiles = enumerateSkills(await fetchRepoTree(env, cand));
+      if (skillFiles.length === 0) {
+        bump(rejected, 'no_skill_files');
         filteredOut.push({
           full_name: cand.full_name, stars: cand.stars,
-          confidence: verdict.confidence ?? null, reason: verdict.reason,
+          reason: '无 SKILL.md / .claude/skills —— 非原始来源（可能是聚合清单/文档/工具）',
         });
-        // 非 skill 的也写 SEEN，省得明天再花 LLM 钱重判（dry-run 时不写，保证零副作用）
-        if (!dryRun) await markSeen(env, candKey(cand), { stage: 'filtered_out', reason: verdict.reason });
+        if (!dryRun) await markSeen(env, candKey(cand), { stage: 'no_skill_files' });
         continue;
       }
-      let draft = null;
-      try {
-        draft = await draftSkill(env, cfg.llm, cand);
-      } catch (e) {
-        log(`draft failed for ${candKey(cand)}: ${e}`);
-      }
-      proposals.push({ ...cand, llm: { ...verdict, ...(draft || {}), drafted: !!draft } });
-      if (!dryRun) await markSeen(env, candKey(cand), { stage: 'proposed' });
+      const skills = await classifyRepoSkills(env, cfg.llm, cand, skillFiles, taxonomy);
+      proposals.push({ repo: cand, skills });
+      if (!dryRun) await markSeen(env, candKey(cand), { stage: 'proposed', skills: skills.length });
     } catch (e) {
       // 不写 SEEN —— 让它下一轮还能再试
-      bump(rejected, 'llm_error');
+      bump(rejected, 'repo_error');
       filteredOut.push({ full_name: cand.full_name, stars: cand.stars, reason: `error: ${String(e?.message || e)}` });
-      log(`candidate ${candKey(cand)} failed: ${e}`);
+      log(`repo ${candKey(cand)} failed: ${e}`);
     }
   }
 
-  log(`proposals: ${proposals.length}`);
+  const skillsProposed = proposals.reduce((n, p) => n + p.skills.length, 0);
+  log(`proposals: ${proposals.length} 仓库 / ${skillsProposed} skill`);
   if (proposals.length === 0) {
-    return { today, dry_run: dryRun, candidates: candidates.length, deferred, proposed: 0, rejected, filtered_out: filteredOut, pr: null };
+    return { today, dry_run: dryRun, candidates: candidates.length, deferred, repos_proposed: 0, skills_proposed: 0, rejected, filtered_out: filteredOut, pr: null };
   }
 
-  // ⑤ 开 PR：草稿落到 proposed/<date>.json，PR body 给人审勾选
+  // 把每个 skill 拍平成功能维度的一条，给 dry-run 输出 / PR body 用。
+  const flatSkills = () => proposals.flatMap((p) => p.skills.map((s) => ({
+    skill: s.name, source: p.repo.full_name, stars: p.repo.stars,
+    subcategory: s.subcategory, subcategory_title: s.subcategory_title,
+    group: s.group, description_zh: s.description_zh,
+  })));
+
+  // ⑤ 开 PR：草稿落到 proposed/<date>.json，PR body 按功能分组给人审
   if (dryRun) {
-    log(`🧪 DRY RUN —— 跳过开 PR；本应提议 ${proposals.length} 条（见 would_propose）`);
+    log(`🧪 DRY RUN —— 跳过开 PR；本应提议 ${skillsProposed} 个 skill（见 would_propose）`);
     return {
       today, dry_run: true,
-      candidates: candidates.length, deferred, proposed: proposals.length, rejected, pr: null,
-      would_propose: proposals.map(summarizeProposal),
+      candidates: candidates.length, deferred,
+      repos_proposed: proposals.length, skills_proposed: skillsProposed,
+      rejected, pr: null,
+      would_propose: flatSkills(),
       filtered_out: filteredOut,
     };
   }
   const prUrl = await openProposalPR(env, today, proposals, { rejected, truncated });
-  return { today, dry_run: false, candidates: candidates.length, deferred, proposed: proposals.length, rejected, filtered_out: filteredOut, pr: prUrl };
+  return {
+    today, dry_run: false,
+    candidates: candidates.length, deferred,
+    repos_proposed: proposals.length, skills_proposed: skillsProposed,
+    rejected, filtered_out: filteredOut, pr: prUrl,
+  };
 }
 
 // ===========================================================================
@@ -279,14 +294,7 @@ async function githubSearch(env, query, maxItems) {
     const pageSize = Math.min(50, maxItems - items.length);
     const url = `${GH_API}/search/repositories?q=${encodeURIComponent(query)}`
       + `&sort=stars&order=desc&per_page=${pageSize}&page=${page}`;
-    const resp = await fetch(url, {
-      headers: {
-        'User-Agent': UA,
-        Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${env.GITHUB_PAT}`,
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
-    });
+    const resp = await fetch(url, { headers: ghAuth(readToken(env)) });
     if (!resp.ok) { log(`  ⚠️ search HTTP ${resp.status}`); break; }
     const data = await resp.json();
     const batch = data.items || [];
@@ -380,62 +388,123 @@ function extractJSON(text) {
   return JSON.parse(body.slice(start, end + 1));
 }
 
-// PR-2：是不是一个 skill 仓库？
-async function filterIsSkill(env, llm, c) {
-  const messages = [
-    {
-      role: 'system',
-      content:
-        '你是 AI Agent Skill 目录的审稿助手。判断给定 GitHub 仓库是否是一个面向 '
-        + 'AI agent（Claude Code / Codex 等）的 "skill" 或 skill 集合仓库'
-        + '（包含 SKILL.md / .claude/skills / 明确的 agent skill 内容）。'
-        + '排除：个人 dotfiles、无关库、纯文章、与 agent skill 无关的项目。'
-        + '只输出 JSON：{"is_skill": true|false, "confidence": 0-1, "reason": "一句话中文"}',
-    },
-    {
-      role: 'user',
-      content: JSON.stringify({
-        full_name: c.full_name, description: c.github_description,
-        topics: c.topics, language: c.language, stars: c.stars,
-      }),
-    },
-  ];
-  const { text } = await llmComplete(env, llm, messages, { maxTokens: 200 });
-  try {
-    const o = extractJSON(text);
-    return { is_skill: !!o.is_skill, confidence: o.confidence ?? null, reason: String(o.reason || '') };
-  } catch {
-    // 解析失败时保守放行进人审（宁可让人看，不要静默丢）
-    return { is_skill: true, confidence: null, reason: 'LLM 输出无法解析，保守放行' };
-  }
+// ===========================================================================
+// 抽取：读仓库文件树 → 枚举 SKILL.md（一个仓库一次 tree 请求）
+// ===========================================================================
+
+const SKILL_CAP = 60; // 单仓库最多枚举多少 skill，给分类 prompt 与提案体封顶
+
+function ghAuth(token) {
+  return {
+    'User-Agent': UA,
+    Accept: 'application/vnd.github+json',
+    Authorization: `Bearer ${token}`,
+    'X-GitHub-Api-Version': '2022-11-28',
+  };
 }
 
-// PR-3：起草 type / 分类 / 中文描述（仅草稿，人审定夺）
-async function draftSkill(env, llm, c) {
+// 读公开库（搜索 + 文件树）用只读 token；没配 GITHUB_READ_TOKEN 就回退到 GITHUB_PAT。
+// 写权限的 GITHUB_PAT 若只授权了本库，可能读不了别人的公开库 → 这时必须配 READ_TOKEN。
+function readToken(env) { return env.GITHUB_READ_TOKEN || env.GITHUB_PAT; }
+
+async function fetchRepoTree(env, cand) {
+  const branch = cand.default_branch || 'main';
+  const url = `${GH_API}/repos/${cand.author}/${cand.repo}/git/trees/${encodeURIComponent(branch)}?recursive=1`;
+  const resp = await fetch(url, { headers: ghAuth(readToken(env)) });
+  if (!resp.ok) throw new Error(`tree ${cand.full_name} -> HTTP ${resp.status}`);
+  const data = await resp.json();
+  return Array.isArray(data.tree) ? data.tree : [];
+}
+
+// 从文件树枚举 skill：每个 SKILL.md 算一个 skill，名字取其所在目录名。
+// 这同时是"原始来源 vs 聚合清单"的判据 —— 聚合清单没有 SKILL.md，返回空。
+function enumerateSkills(tree) {
+  const out = [];
+  const seen = new Set();
+  for (const node of tree) {
+    if (node.type !== 'blob') continue;
+    const p = node.path || '';
+    if (p.split('/').pop() !== 'SKILL.md') continue; // SKILL.md 是约定文件名
+    if (seen.has(p)) continue;
+    seen.add(p);
+    const parts = p.split('/');
+    const name = parts.length >= 2 ? parts[parts.length - 2] : '(root)'; // 上级目录名
+    out.push({ name, path: p });
+    if (out.length >= SKILL_CAP) break;
+  }
+  return out;
+}
+
+// ===========================================================================
+// 分类：把仓库里的 skill 按功能归到 categories.yaml 的 74 个子分类（一仓库一次 LLM）
+// ===========================================================================
+
+// categories.yaml → 拍平成 [{id, title, category, category_title}]（74 个子分类槽）
+async function loadTaxonomy(env) {
+  let cats = [];
+  try {
+    cats = yaml.load(await fetchRepoText(env, env.CATEGORIES_PATH)) || [];
+  } catch (e) {
+    log(`⚠️ 读取 ${env.CATEGORIES_PATH} 失败（${e}），分类只能给空子分类`);
+  }
+  const subs = [];
+  for (const c of Array.isArray(cats) ? cats : []) {
+    for (const s of c.subcategories || []) {
+      if (s?.id && s?.title) subs.push({ id: String(s.id), title: String(s.title), category: c.id, category_title: c.title });
+    }
+  }
+  return subs;
+}
+
+async function classifyRepoSkills(env, llm, cand, skillFiles, subs) {
+  const taxonomyStr = subs.map((s) => `${s.id}: ${s.title}`).join('\n');
   const messages = [
     {
       role: 'system',
       content:
-        '你给 AI skill 目录起草条目元数据。基于仓库信息输出 JSON：'
-        + '{"type": "skill|skill-pack|plugin|cli|...", "category": "建议大类(中文)", '
-        + '"description_zh": "30-60字中文描述，说清它能帮 agent 做什么"}。只输出 JSON。',
+        '你在帮一个【按功能整理】的 AI skill 目录给新发现的 skill 归类。'
+        + '目录的功能子分类（id: 标题）如下：\n' + taxonomyStr + '\n\n'
+        + '给定一个来源仓库和它里面的 skill 列表，为【每个 skill】判断它在功能上属于哪个子分类，并起一个简洁的功能"组名"。\n'
+        + '策略：拿不准就【新开一个组】（宁可多开，回头人工合并），不要硬塞进不合适的子分类；'
+        + '实在无法归入任何子分类时 subcategory 填 ""。\n'
+        + 'description_zh 只描述能从 skill 名/路径合理推断的内容，信息不足就给一句保守概述，【绝不编造数字或细节】。\n'
+        + '只输出 JSON：{"skills":[{"name":"<原样回填 skill 名>","subcategory":"4-1","group":"功能组名","description_zh":"...","what":"它能帮 agent 做什么(一句)"}]}',
     },
     {
       role: 'user',
       content: JSON.stringify({
-        full_name: c.full_name, description: c.github_description,
-        topics: c.topics, language: c.language,
+        repo: cand.full_name,
+        repo_description: cand.github_description,
+        topics: cand.topics,
+        skills: skillFiles.map((s) => ({ name: s.name, path: s.path })),
       }),
     },
   ];
-  const { text, model } = await llmComplete(env, llm, messages, { maxTokens: 400 });
-  const o = extractJSON(text);
-  return {
-    type: String(o.type || ''),
-    category: String(o.category || ''),
-    description_zh: String(o.description_zh || ''),
-    drafted_by: model,
-  };
+  const { text, model } = await llmComplete(env, llm, messages, { maxTokens: 1500 });
+  let arr = [];
+  try {
+    const o = extractJSON(text);
+    arr = Array.isArray(o.skills) ? o.skills : [];
+  } catch (e) {
+    log(`classify parse failed for ${cand.full_name}: ${e}`);
+  }
+  // 以仓库实际枚举到的 skill 为准，按 name 对齐 LLM 结果；子分类要在真 taxonomy 里才认。
+  const byName = new Map(arr.map((x) => [String(x.name || ''), x]));
+  return skillFiles.map((sf) => {
+    const x = byName.get(sf.name) || {};
+    const sub = subs.find((s) => s.id === String(x.subcategory || ''));
+    return {
+      name: sf.name,
+      path: sf.path,
+      subcategory: sub ? sub.id : '',
+      subcategory_title: sub ? sub.title : '',
+      category: sub ? sub.category : '',
+      group: String(x.group || ''),
+      description_zh: String(x.description_zh || ''),
+      what: String(x.what || ''),
+      drafted_by: model,
+    };
+  });
 }
 
 // ===========================================================================
@@ -488,11 +557,12 @@ async function openProposalPR(env, dateStr, proposals, meta) {
   if (!put.ok) throw new Error(`put file -> HTTP ${put.status}`);
 
   // 4) 开 PR（已存在同 head 的 PR 则不重复开）
+  const nSkills = proposals.reduce((n, p) => n + p.skills.length, 0);
   const body = renderPRBody(dateStr, proposals, path);
   const pr = await fetch(`${GH_API}/repos/${owner}/${repo}/pulls`, {
     method: 'POST', headers,
     body: JSON.stringify({
-      title: `[curator] ${dateStr} ${proposals.length} 个候选 skill（草稿待审）`,
+      title: `[curator] ${dateStr} ${nSkills} 个 skill / ${proposals.length} 来源（按功能·草稿待审）`,
       head: branch, base, body,
     }),
   });
@@ -505,29 +575,43 @@ async function openProposalPR(env, dateStr, proposals, meta) {
   throw new Error(`create PR -> HTTP ${pr.status}`);
 }
 
+// 按功能（子分类）分组渲染，呼应"目录按功能整理"的定位。
 function renderPRBody(dateStr, proposals, path) {
+  const skills = proposals.flatMap((p) => p.skills.map((s) => ({
+    ...s, source: p.repo.full_name, url: p.repo.url, stars: p.repo.stars,
+  })));
   const lines = [
-    `# 🤖 ${dateStr} curator 候选草稿（${proposals.length} 条）`,
+    `# 🤖 ${dateStr} curator 候选 skill（按功能 · 草稿待审）`,
     '',
-    `> 由 worker-curator 自动生成。**草稿仅供参考，分类/描述需人审改定后才进 \`data/skills.yaml\`。**`,
-    `> 原始数据：\`${path}\``,
+    `> worker-curator 自动生成。**分类 / 组名 / 描述都是草稿，需人审改定后才进 \`data/skills.yaml\`。**`,
+    `> 采用"宁可多开新组"策略 —— 同一功能可能拆成多条，请人工合并到合适的已有组。`,
+    `> 共 ${skills.length} 个 skill / ${proposals.length} 个来源仓库 · 原始数据 \`${path}\``,
     '',
   ];
-  proposals.forEach((p, i) => {
-    const d = p.llm || {};
-    lines.push(
-      `### ${i + 1}. [${p.full_name}](${p.url})  ⭐ ${p.stars} · \`${p.license || '—'}\` · ${p.language || '—'}`,
-      '',
-      `- GitHub: ${p.github_description || '_(无)_'}`,
-      `- LLM 判定: is_skill=${d.is_skill} ${d.confidence != null ? `(conf ${d.confidence})` : ''} — ${d.reason || ''}`,
-      `- 草拟 type: \`${d.type || '?'}\` · 分类: \`${d.category || '?'}\``,
-      `- 草拟中文描述: ${d.description_zh || '_(起草失败)_'}`,
-      '',
-      '- [ ] ✅ 接受 → 编辑进 `data/skills.yaml` / `data/repositories.yaml`',
-      '- [ ] ❌ 拒绝 → 加 `data/_inbox/blocklist.yaml`',
-      '',
-    );
-  });
+  // 按子分类标题分组
+  const bySub = new Map();
+  for (const s of skills) {
+    const k = s.subcategory_title || '（未归入子分类）';
+    if (!bySub.has(k)) bySub.set(k, []);
+    bySub.get(k).push(s);
+  }
+  for (const [subTitle, arr] of bySub) {
+    lines.push(`## ${subTitle}`, '');
+    for (const s of arr) {
+      lines.push(
+        `- **${s.name}** — 组「${s.group || '?'}」 · 来源 [${s.source}](${s.url}) ⭐${s.stars}`,
+        `  - ${s.description_zh || '_(无描述)_'}`,
+      );
+    }
+    lines.push('');
+  }
+  lines.push(
+    '---',
+    '',
+    '- [ ] 已审，接受的 skill 编辑进 `data/skills.yaml`（合并到合适的已有组 / 子分类）',
+    '- [ ] 不收的来源 → 加 `data/_inbox/blocklist.yaml`',
+    '',
+  );
   return lines.join('\n');
 }
 
@@ -538,16 +622,6 @@ function renderPRBody(dateStr, proposals, path) {
 function int(v, def) { const n = parseInt(v, 10); return Number.isNaN(n) ? def : n; }
 function envFlag(v) { return /^(true|1|yes)$/i.test(String(v ?? '').trim()); }
 function bump(obj, k) { obj[k] = (obj[k] || 0) + 1; }
-// dry-run 返回里给人看的精简提议
-function summarizeProposal(p) {
-  const d = p.llm || {};
-  return {
-    full_name: p.full_name, stars: p.stars,
-    is_skill: d.is_skill, reason: d.reason,
-    type: d.type, category: d.category, description_zh: d.description_zh,
-    drafted: d.drafted,
-  };
-}
 function log(msg) { console.log(msg); }
 function json(data, status = 200) {
   return new Response(JSON.stringify(data, null, 2), {

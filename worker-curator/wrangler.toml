@@ -36,6 +36,7 @@ GITHUB_BRANCH = "main"
 CONFIG_PATH       = "data/_inbox/discovery.config.yaml"
 REPOSITORIES_PATH = "data/repositories.yaml"
 BLOCKLIST_PATH    = "data/_inbox/blocklist.yaml"
+CATEGORIES_PATH   = "data/categories.yaml"
 PROPOSED_DIR      = "data/_inbox/proposed"
 
 # 「推迟」语义：被提议过的候选写进 KV，多少天内不再重复提议。0 = 永不过期。
@@ -48,8 +49,12 @@ SEEN_TTL_DAYS = "90"
 MAX_CANDIDATES_PER_RUN = "10"
 
 # === secrets（不写这里！用 wrangler secret put 设置）===
-#   wrangler secret put OPENROUTER_KEY   # OpenRouter key，和 Worker A 同一把
-#   wrangler secret put GITHUB_PAT       # 细粒度 PAT，仅本库，权限：
-#                                        #   Contents:write · Pull requests:write
-#                                        #   （当前代码只开 PR，不需要 Issues 权限）
-#   wrangler secret put TRIGGER_SECRET   # 手动 fetch 触发的口令（随机长串）
+#   wrangler secret put OPENROUTER_KEY    # OpenRouter key，和 Worker A 同一把
+#   wrangler secret put GITHUB_PAT        # 写：细粒度 PAT，仅本库，
+#                                         #   Contents:write · Pull requests:write
+#                                         #   （只开 PR，不需要 Issues 权限）
+#   wrangler secret put GITHUB_READ_TOKEN # 读（可选但推荐）：读候选仓库文件树用。
+#                                         #   classic token 不勾任何 scope 即可（公开读 5000/h）。
+#                                         #   不配则回退用 GITHUB_PAT —— 但若 PAT 只授权本库，
+#                                         #   会读不了别人的公开库，抽取层全 repo_error，故强烈建议配。
+#   wrangler secret put TRIGGER_SECRET    # 手动 fetch 触发的口令（随机长串）

@@ -1,7 +1,7 @@
 # Skills Atlas Curator — Worker B
 
-「造目录的引擎」。每天 Cron 跑：发现新 skill 候选 → LLM 过滤(PR-2) → LLM 起草(PR-3)
-→ 向主库开 PR。付费 key 与写权限都只在这个 Worker 里，**不进公共仓库的 Actions secrets**。
+「造目录的引擎」。目录【按功能整理】，所以产出的是"按功能归好类的 skill"，不是"仓库条目"。
+付费 key 与写权限都只在这个 Worker 里，**不进公共仓库的 Actions secrets**。
 
 和 `../worker/`（Worker A，对公网开放的前端推荐代理）**分开部署**——blast radius 隔离：
 A 被滥用顶多刷免费模型，碰不到这里的 `GITHUB_PAT`。
@@ -9,11 +9,12 @@ A 被滥用顶多刷免费模型，碰不到这里的 `GITHUB_PAT`。
 ```
 Cron(每天 02:00 UTC)
   └─ scheduled() → runCuration()
-       ① 拉公共库 discovery.config.yaml / repositories.yaml / blocklist.yaml + KV SEEN
+       ① 拉公共库 discovery.config / repositories / blocklist / categories.yaml + KV SEEN
        ② GitHub Search → 候选，剔除 known ∪ blocklist ∪ SEEN
-       ③ LLM is-skill 过滤（config.llm 故障转移链）
-       ④ LLM 起草 type / 分类 / 中文描述
-       ⑤ 开 PR：草稿写 data/_inbox/proposed/<date>.json + 候选写 KV SEEN(带 TTL)
+       ③ 抽取：读每个仓库文件树，枚举 SKILL.md
+              （没有 SKILL.md = 非来源/聚合清单/文档 → 剔除，记 no_skill_files）
+       ④ 分类：一次 LLM 把仓库里的 skill 按功能归到 74 个子分类（宁可新开组）
+       ⑤ 开 PR：草稿写 data/_inbox/proposed/<date>.json（按功能分组）+ 候选写 KV SEEN(带 TTL)
 ```
 
 发现策略（查询词 / 阈值）和 LLM 模型链全部读公共库的
@@ -29,11 +30,15 @@ npm install                       # 装 js-yaml + wrangler
 wrangler kv namespace create SEEN
 
 # 2) 配 secrets（不要写进 wrangler.toml）
-wrangler secret put OPENROUTER_KEY   # 和 Worker A 同一把 OpenRouter key
-wrangler secret put GITHUB_PAT       # 细粒度 PAT，scope 仅 Zita-Go/Skills-Atlas
-                                     #   权限：Contents:write · Pull requests:write
-                                     #   （当前代码只开 PR，不需要 Issues 权限）
-wrangler secret put TRIGGER_SECRET   # 手动 /run 触发口令（随机长串）
+wrangler secret put OPENROUTER_KEY    # 和 Worker A 同一把 OpenRouter key
+wrangler secret put GITHUB_PAT        # 【写】细粒度 PAT，scope 仅 Zita-Go/Skills-Atlas
+                                      #   权限：Contents:write · Pull requests:write
+                                      #   （只开 PR，不需要 Issues 权限）
+wrangler secret put GITHUB_READ_TOKEN # 【读·推荐】读候选仓库文件树用。classic token 不勾
+                                      #   任何 scope 即可（公开读 5000/h）。不配则回退用
+                                      #   GITHUB_PAT —— 但若 PAT 只授权本库，会读不了别人的
+                                      #   公开库，抽取层全 repo_error，故强烈建议单独配。
+wrangler secret put TRIGGER_SECRET    # 手动 /run 触发口令（随机长串）
 
 # 3) 部署
 wrangler deploy
