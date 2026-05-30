@@ -975,6 +975,19 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
   border-color:rgba(124,156,255,.25);background:rgba(124,156,255,.08)}
 .repo-card-link:hover{color:var(--accent);text-decoration:none;
   border-color:rgba(124,156,255,.45) !important}
+/* 仓库卡片：一句话描述（2 行截断）+ 协议/更新时间页脚 —— 更专业的目录卡 */
+.repo-card-desc{font-size:12px;line-height:1.55;color:var(--fg-dim);margin-top:3px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.repo-card-foot{display:flex;align-items:center;gap:7px;margin-top:11px;padding-top:10px;
+  border-top:1px solid var(--border);font-size:10.5px;font-family:var(--font-mono);
+  color:var(--fg-muted);min-height:20px}
+.repo-card-foot .rc-lic{padding:1px 7px;border-radius:99px;border:1px solid var(--border);
+  background:var(--bg-elev);color:var(--fg-dim);font-weight:600;letter-spacing:.02em;flex-shrink:0}
+.repo-card-foot .rc-upd{display:inline-flex;align-items:center;gap:3px;white-space:nowrap}
+.repo-card-foot .rc-upd svg{width:11px;height:11px}
+.repo-card-foot .rc-upd.fresh{color:#2ea043}
+html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
+.repo-card-foot .repo-card-link{margin-top:0;margin-left:auto;flex-shrink:0}
 
 /* sidebar 仓库导航 */
 .nav-repo-type{margin-bottom:6px}
@@ -1982,6 +1995,18 @@ function buildRepoView(){
   };
   const _labels = (LANG === 'en') ? TYPE_LABEL_EN : TYPE_LABEL;
   const _L = I18N[LANG] || I18N.zh;
+  const _en = LANG === 'en';
+  const clockIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  // last_commit("YYYY-MM-DD") → 相对时间（运行时按访客时钟算）；近 30 天视为「活跃」
+  const _daysSince = ds => { const d = new Date(ds); if(isNaN(d)) return null; const n = Math.floor((Date.now() - d.getTime()) / 86400000); return n < 0 ? 0 : n; };
+  const relTimeShort = ds => {
+    const n = _daysSince(ds); if(n === null) return '';
+    if(n === 0) return _en ? 'today' : '今天';
+    if(n < 7) return _en ? `${n}d ago` : `${n} 天前`;
+    if(n < 30) { const w = Math.floor(n / 7); return _en ? `${w}w ago` : `${w} 周前`; }
+    if(n < 365) { const m = Math.floor(n / 30); return _en ? `${m}mo ago` : `${m} 个月前`; }
+    const y = Math.floor(n / 365); return _en ? `${y}y ago` : `${y} 年前`;
+  };
 
   let html = '';
   typeOrder.forEach(t => {
@@ -2008,13 +2033,19 @@ function buildRepoView(){
       ].filter(Boolean).join('');
       const author = r.author ? `<span class="author">${escapeHtml(r.author)}/</span>` : '';
       const repoName = r.repo || r.id;
+      const desc = pickT(r.description_en, r.description) || '';
+      const lic = r.license ? `<span class="rc-lic">${escapeHtml(r.license)}</span>` : '';
+      const upd = relTimeShort(r.last_commit);
+      const fresh = (_daysSince(r.last_commit) ?? 999) < 30 ? ' fresh' : '';
+      const updHtml = upd ? `<span class="rc-upd${fresh}" title="${escapeAttr((_en ? 'last commit ' : '最近提交 ') + (r.last_commit || ''))}">${clockIcon}${upd}</span>` : '';
       html += `<div class="repo-card" data-repo="${escapeAttr(r.id)}" style="--cat-hue:${hue}">`;
       html += `<div class="repo-card-head">`;
       html += `<div class="repo-card-name">${author}${escapeHtml(repoName)}</div>`;
       html += star;
       html += `</div>`;
+      if(desc) html += `<div class="repo-card-desc">${escapeHtml(desc)}</div>`;
       if(tags) html += `<div class="repo-card-meta">${tags}</div>`;
-      html += `<a class="repo-card-link" href="${escapeAttr(r.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${githubIcon}<span>${_L.view_repo_link}</span></a>`;
+      html += `<div class="repo-card-foot">${lic}${updHtml}<a class="repo-card-link" href="${escapeAttr(r.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${githubIcon}<span>${_L.view_repo_link}</span></a></div>`;
       html += `</div>`;
     });
     html += `</div></section>`;
