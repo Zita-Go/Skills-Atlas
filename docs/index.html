@@ -247,6 +247,31 @@ html.light .graph-view .legend{background:rgba(255,255,255,.85)}
 .graph-view .legend b{color:var(--fg);font-weight:600;letter-spacing:-0.01em}
 .graph-view .legend .swatch{display:inline-block;width:10px;height:10px;
   border-radius:50%;margin-right:5px;vertical-align:middle}
+/* 视图坞：策展预设 + 已保存视图（商用差异化③） */
+.graph-view .views-dock{position:absolute;left:14px;bottom:14px;z-index:6;
+  display:flex;flex-direction:column;gap:7px;max-width:min(62%,560px)}
+.views-dock .vd-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.views-dock .vd-label{font-size:10px;font-weight:700;letter-spacing:.09em;
+  color:var(--fg-muted);text-transform:uppercase;margin-right:1px;user-select:none}
+.views-dock .vd-chip{display:inline-flex;align-items:center;gap:5px;cursor:pointer;
+  background:rgba(11,13,16,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid var(--border);border-radius:99px;padding:5px 11px;
+  font-size:11.5px;line-height:1;color:var(--fg-dim);white-space:nowrap;
+  transition:border-color .15s,color .15s,background .15s,transform .08s}
+html.light .views-dock .vd-chip{background:rgba(255,255,255,.85)}
+.views-dock .vd-chip:hover{color:var(--fg);border-color:var(--border-strong)}
+.views-dock .vd-chip:active{transform:scale(.96)}
+.views-dock .vd-chip.active{color:#fff;background:var(--grad);border-color:transparent}
+.views-dock .vd-chip.vd-save{color:var(--fg-dim);border-style:dashed}
+.views-dock .vd-chip.vd-save:hover{color:var(--accent);border-color:var(--accent)}
+.views-dock .vd-chip .vd-x{font-size:13px;line-height:1;color:var(--fg-muted);
+  margin:-1px -3px -1px 1px;padding:0 2px;border-radius:50%}
+.views-dock .vd-chip .vd-x:hover{color:var(--danger,#e5484d)}
+.views-dock .vd-empty{font-size:11px;color:var(--fg-muted);align-self:center}
+@media(max-width:760px){
+  .graph-view .views-dock{max-width:calc(100% - 28px);bottom:10px}
+  .views-dock .vd-saved{display:none}   /* 移动端只留策展预设，省空间 */
+}
 .graph-view .tooltip{position:absolute;pointer-events:none;
   background:var(--bg-card);border:1px solid var(--border-strong);
   border-radius:6px;padding:6px 10px;font-size:11.5px;color:var(--fg);
@@ -324,6 +349,7 @@ body.embed .toolbar, body.embed .hero{display:none !important}
 body.embed .app{grid-template-columns:1fr}
 body.embed .main{padding:0;height:100vh}
 body.embed #graphView, body.embed .graph-view{height:100vh;min-height:100vh}
+body.embed .views-dock{display:none}   /* 嵌入是固定快照，不暴露视图切换；避免与角标重叠 */
 .embed-badge{position:fixed;left:12px;bottom:12px;z-index:50;font-size:11px;font-weight:500;
   background:var(--bg-card);border:1px solid var(--border);color:var(--fg-dim);
   padding:5px 11px;border-radius:99px;text-decoration:none;opacity:.85;backdrop-filter:blur(6px)}
@@ -2018,6 +2044,7 @@ let _graphAnim = null;
 let graphFindFn = null;       // (query, openTop) => 高亮+居中匹配节点；openTop 时打开其抽屉
 let graphOpenNodeFn = null;   // (skillId) => 打开该节点抽屉（深链还原用）
 let graphSelectedId = null;   // 当前选中节点 id（深链用）
+let _pendingGraphView = null; // 跨重建的「保存视图」还原（切过滤会重建图、闭包失效）
 // 把当前 视图/过滤/选中节点 同步进 URL query（保留 ?lang），用于可分享深链
 function syncGraphURL(){
   try{
@@ -2702,6 +2729,91 @@ function buildGraph(){
   // legend 加宽
   legend.style.maxWidth = '300px';
   container.appendChild(legend);
+
+  // ==== 视图坞：策展预设 + 已保存视图（商用差异化③）====
+  // 最高连接度节点（当前过滤范围内）→「最常联用」预设
+  let hubId = null, hubDeg = -1;
+  neighbors.forEach((set, id) => { if(set.size > hubDeg){ hubDeg = set.size; hubId = id; } });
+  const PRESETS = [
+    { f: 'all',          label: EN ? '🌐 All' : '🌐 全部' },
+    { f: 'chain',        label: EN ? '⛓ Chained' : '⛓ 强绑定' },
+    { f: 'multi-source', label: EN ? '🔱 Multi-source' : '🔱 多源' },
+  ];
+  const VKEY = 'atlas:graph:views';
+  const loadViews = () => { try{ return JSON.parse(localStorage.getItem(VKEY)) || []; }catch(_){ return []; } };
+  const storeViews = a => { try{ localStorage.setItem(VKEY, JSON.stringify(a.slice(0, 8))); }catch(_){} };
+
+  const dock = document.createElement('div');
+  dock.className = 'views-dock';
+  const presetChips = PRESETS.map(p =>
+    `<button class="vd-chip${p.f === currentFilter ? ' active' : ''}" data-preset="${p.f}">${p.label}</button>`).join('');
+  const hubChip = hubId ? `<button class="vd-chip" data-preset="hub" title="${escapeAttr(hubId)}">${EN ? '🔥 Most connected' : '🔥 最常联用'}</button>` : '';
+  dock.innerHTML =
+    `<div class="vd-row vd-presets"><span class="vd-label">${EN ? 'Views' : '视图'}</span>${presetChips}${hubChip}</div>` +
+    `<div class="vd-row vd-saved"></div>`;
+  container.appendChild(dock);
+
+  // 还原一个已保存视图：跨过滤需先重建图（闭包会失效），用 _pendingGraphView 接力
+  function applyViewHere(v){
+    if(typeof v.scale === 'number'){ scale = Math.max(0.3, Math.min(4, v.scale)); tx = v.tx; ty = v.ty; applyTransform(); updateZoomLabel(); }
+    if(v.nodeId && nodeMap.has(v.nodeId)) openDrawer(nodeMap.get(v.nodeId));
+  }
+  function restoreView(v){
+    const f = v.filter || 'all';
+    if(f !== currentFilter){
+      _pendingGraphView = v;
+      const pill = document.querySelector(`.toolbar .pill[data-filter="${f}"]`);
+      if(pill){ pill.click(); return; }            // 同步重建图 → 新实例消费 _pendingGraphView
+      _pendingGraphView = null;
+    }
+    applyViewHere(v);
+  }
+  function renderSaved(){
+    const saved = loadViews();
+    const row = dock.querySelector('.vd-saved');
+    if(!saved.length){
+      row.innerHTML = `<button class="vd-chip vd-save" data-act="save-view">${EN ? '★ Save view' : '★ 保存视图'}</button>`;
+    } else {
+      row.innerHTML = saved.map((v, i) =>
+        `<button class="vd-chip" data-saved="${i}" title="${escapeAttr((v.filter||'all') + (v.nodeId ? ' · ' + v.nodeId : ''))}">${escapeHtml(v.name)}<span class="vd-x" data-del="${i}" title="${EN ? 'Remove' : '删除'}">×</span></button>`).join('') +
+        `<button class="vd-chip vd-save" data-act="save-view">${EN ? '★ Save' : '★ 保存'}</button>`;
+    }
+  }
+  renderSaved();
+
+  dock.addEventListener('click', e => {
+    const presetBtn = e.target.closest('[data-preset]');
+    if(presetBtn){
+      const f = presetBtn.dataset.preset;
+      if(f === 'hub'){ if(hubId && nodeMap.has(hubId)) openDrawer(nodeMap.get(hubId)); return; }
+      const pill = document.querySelector(`.toolbar .pill[data-filter="${f}"]`);
+      if(pill) pill.click();   // 复用工具栏过滤逻辑（重建图 + 同步 URL）
+      return;
+    }
+    const del = e.target.closest('[data-del]');
+    if(del){
+      e.stopPropagation();
+      const arr = loadViews(); arr.splice(+del.dataset.del, 1); storeViews(arr); renderSaved();
+      return;
+    }
+    const savedBtn = e.target.closest('[data-saved]');
+    if(savedBtn){ const v = loadViews()[+savedBtn.dataset.saved]; if(v) restoreView(v); return; }
+    if(e.target.closest('[data-act="save-view"]')){
+      const arr = loadViews();
+      const selName = graphSelectedId || (PRESETS.find(p => p.f === currentFilter) || {}).label || (EN ? 'View' : '视图');
+      let name = selName.replace(/^[^\w一-鿿]+/, '').trim() || (EN ? 'View' : '视图');
+      let nm = name, k = 2; while(arr.some(v => v.name === nm)) nm = `${name} ${k++}`;
+      arr.unshift({ name: nm, filter: currentFilter, nodeId: graphSelectedId, scale, tx, ty });
+      storeViews(arr); renderSaved();
+      return;
+    }
+  });
+
+  // 消费跨重建的待还原视图（restoreView 触发的 pill.click 重建后落到这里）
+  if(_pendingGraphView){
+    const pv = _pendingGraphView; _pendingGraphView = null;
+    requestAnimationFrame(() => applyViewHere(pv));
+  }
 }
 
 // === AI 推荐（轻量 TF-IDF + 同义词扩展） ===
