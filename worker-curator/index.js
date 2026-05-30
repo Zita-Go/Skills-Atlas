@@ -27,40 +27,78 @@ const UA = 'skills-atlas-curator';
 // 入口
 // ===========================================================================
 
+const RESULT_KEY = 'result:latest';
+
+// 跑一轮并把状态写进 KV（running → done/error）。/run 和 cron 共用，
+// 都靠 waitUntil 在后台跑，不受客户端超时影响。
+async function runAndStore(env, opts) {
+  const started_at = new Date().toISOString();
+  await putResult(env, { status: 'running', started_at, dry_run: !!opts.dryRun, limit: opts.limit ?? null });
+  try {
+    const result = await runCuration(env, opts);
+    await putResult(env, { status: 'done', started_at, finished_at: new Date().toISOString(), result });
+  } catch (e) {
+    await putResult(env, { status: 'error', started_at, finished_at: new Date().toISOString(), error: String(e?.message || e) });
+    console.error('curation failed:', e?.stack || e);
+  }
+}
+
+async function putResult(env, obj) {
+  if (env.SEEN) await env.SEEN.put(RESULT_KEY, JSON.stringify(obj));
+}
+
 export default {
   // 定时入口（真正的生产路径）
   async scheduled(event, env, ctx) {
     // cron 路径默认按 DRY_RUN 环境变量：测试期设成 "true"，定时跑也不写 KV / 不开 PR。
     const dryRun = envFlag(env.DRY_RUN);
     const limit = int(env.MAX_CANDIDATES_PER_RUN, 10); // 子请求预算，见 runCuration / README
-    ctx.waitUntil(runCuration(env, { dryRun, limit }).catch((e) => {
-      console.error('curation failed:', e?.stack || e);
-    }));
+    ctx.waitUntil(runAndStore(env, { dryRun, limit }));
   },
 
   // 手动触发 / 健康检查。持有 PAT，所以 fetch 必须鉴权，别对公网裸奔。
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    const authed = env.TRIGGER_SECRET && url.searchParams.get('token') === env.TRIGGER_SECRET;
+
     if (url.pathname === '/' && request.method === 'GET') {
       return json({ ok: true, service: 'skills-atlas-curator' });
     }
+
+    // 取上一次（含正在进行的）运行结果。免疫模型慢：活在后台跑，这里只读 KV。
+    if (url.pathname === '/result' && request.method === 'GET') {
+      if (!authed) return json({ error: 'forbidden' }, 403);
+      const raw = env.SEEN ? await env.SEEN.get(RESULT_KEY) : null;
+      if (!raw) return json({ status: 'none', message: '还没运行过 /run' });
+      return new Response(raw, { status: 200, headers: { 'Content-Type': 'application/json' } });
+    }
+
     if (url.pathname === '/run' && request.method === 'POST') {
-      if (!env.TRIGGER_SECRET || url.searchParams.get('token') !== env.TRIGGER_SECRET) {
-        return json({ error: 'forbidden' }, 403);
-      }
+      if (!authed) return json({ error: 'forbidden' }, 403);
       // ?dry_run=true 显式优先；没传则回落到 DRY_RUN 环境变量。
       const q = url.searchParams.get('dry_run');
       const dryRun = q !== null ? envFlag(q) : envFlag(env.DRY_RUN);
       // ?limit=N 显式优先；没传则用 MAX_CANDIDATES_PER_RUN（默认 10）。0 = 不额外限。
       const ql = url.searchParams.get('limit');
       const limit = ql !== null ? int(ql, 10) : int(env.MAX_CANDIDATES_PER_RUN, 10);
-      try {
-        const result = await runCuration(env, { dryRun, limit });
-        return json({ ok: true, ...result });
-      } catch (e) {
-        return json({ ok: false, error: String(e?.message || e) }, 500);
+
+      // ?wait=1 → 老的同步模式（小 limit + 模型快时用）；默认走异步。
+      if (envFlag(url.searchParams.get('wait'))) {
+        try {
+          const result = await runCuration(env, { dryRun, limit });
+          return json({ ok: true, ...result });
+        } catch (e) {
+          return json({ ok: false, error: String(e?.message || e) }, 500);
+        }
       }
+
+      // 异步默认：后台跑，立即返回。结果稍后 GET /result 取。
+      const started_at = new Date().toISOString();
+      await putResult(env, { status: 'running', started_at, dry_run: dryRun, limit });
+      ctx.waitUntil(runAndStore(env, { dryRun, limit }));
+      return json({ ok: true, status: 'started', started_at, dry_run: dryRun, limit, hint: '稍后 GET /result?token=... 取结果' });
     }
+
     return json({ error: 'not found' }, 404);
   },
 };

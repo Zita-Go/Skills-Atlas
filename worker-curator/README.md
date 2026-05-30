@@ -50,17 +50,26 @@ wrangler deploy
 照常发现 + 调 LLM，但**不写 KV、不开 PR**（零副作用），`/run` 的响应里 `would_propose`
 会列出"它本来要提议什么"。看明白行为对了，再把 `DRY_RUN` 改成 `"false"` 重新 deploy。
 
+`/run` 是**异步**的：它把活丢到后台（`waitUntil`，和 cron 同机制）立即返回 `started`，
+所以**不受客户端超时影响**（free 模型慢也没关系）。结果写进 KV，用 `GET /result` 取。
+
 ```bash
-# 本地跑一次定时逻辑（默认 dry-run，不会真改 GitHub）
-npm run dev   # wrangler dev --test-scheduled
+BASE=https://skills-atlas-curator.<subdomain>.workers.dev
 
-# 线上手动触发一轮 —— 空跑，只返回 would_propose，不开 PR
-curl -X POST "https://skills-atlas-curator.<subdomain>.workers.dev/run?token=$TRIGGER_SECRET&dry_run=true"
+# 1) 触发一轮 dry-run（立即返回 {status:"started"}）
+curl -X POST "$BASE/run?token=$TRIGGER_SECRET&dry_run=true&limit=5"
 
-# 确认 OK 后，真跑一次（开 PR）。也可改 wrangler.toml 的 DRY_RUN=false 再 deploy
-curl -X POST "https://skills-atlas-curator.<subdomain>.workers.dev/run?token=$TRIGGER_SECRET&dry_run=false"
+# 2) 过一会儿取结果（status: running → done；done 时 result 里就是整轮输出）
+curl "$BASE/result?token=$TRIGGER_SECRET"
 
-# 看日志
+# 同步模式（小 limit + 模型快时图省事，会一直等到跑完）：加 &wait=1
+curl -X POST "$BASE/run?token=$TRIGGER_SECRET&dry_run=true&limit=2&wait=1"
+
+# 确认 OK 后真跑（开 PR）：dry_run=false，或改 wrangler.toml 的 DRY_RUN=false 再 deploy
+curl -X POST "$BASE/run?token=$TRIGGER_SECRET&dry_run=false"
+
+# 本地 / 看日志
+npm run dev    # wrangler dev --test-scheduled
 npm run tail
 ```
 
