@@ -534,6 +534,7 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 .source-link:hover .source-stars{color:#ffd86b}
 /* 用法 / 一键安装：source 行内动作按钮 + 许可证徽章 */
 .source-row{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}
+.card.clickable{cursor:pointer}
 .src-act{display:inline-flex;align-items:center;gap:4px;cursor:pointer;
   background:transparent;border:1px solid var(--border);
   padding:4px 9px;border-radius:99px;font-size:11px;color:var(--fg-dim);
@@ -1259,7 +1260,24 @@ function buildContent(){
         // data attributes for filtering
         const searchText = (row.skills.join(' ') + ' ' + row.group + ' ' + row.description + ' ' +
                             row.sources.map(s=>s.name).join(' ')).toLowerCase();
-        html += `<div class="card${row.chain?' chain':''}"
+        // 整卡可点的"主用法"：第一个有独立 SKILL.md 的 skill；否则退到第一来源的仓库 README
+        let cardP = null;
+        for(const sk of row.skills){
+          for(const s of row.sources){
+            const v = DATA.vendors[s.name];
+            const p = v && v.skill_docs && v.skill_docs[sk];
+            if(p){ cardP = { author:v.author, repo:v.repo, branch:v.default_branch||'main', docpath:p, url:v.url, name:s.name, skill:sk, license:(v.skill_licenses&&v.skill_licenses[sk])||v.license||'' }; break; }
+          }
+          if(cardP) break;
+        }
+        if(!cardP){
+          const s = sortedSources.find(x => x.author && x.repo);
+          if(s) cardP = { author:s.author, repo:s.repo, branch:s.default_branch||'main', docpath:s.doc_path||'', url:s.url, name:s.name, skill:'', license:s.license||'' };
+        }
+        const cardAct = cardP
+          ? ` data-act="usage" data-author="${escapeAttr(cardP.author)}" data-repo="${escapeAttr(cardP.repo)}" data-branch="${escapeAttr(cardP.branch)}" data-docpath="${escapeAttr(cardP.docpath)}" data-url="${escapeAttr(cardP.url)}" data-name="${escapeAttr(cardP.name)}" data-skill="${escapeAttr(cardP.skill)}" data-license="${escapeAttr(cardP.license)}"`
+          : '';
+        html += `<div class="card${row.chain?' chain':''}${cardP?' clickable':''}"${cardAct}
           data-search="${escapeAttr(searchText)}"
           data-chain="${row.chain}"
           data-skills="${row.skills.length}"
@@ -3195,6 +3213,7 @@ function setupUsage(){
 
   // 全局事件委托：卡片里的 📖 用法 / 📋 安装 按钮（兼容视图重渲染）
   document.body.addEventListener('click', e => {
+    if(e.target.closest('a')) return;   // 链接（来源/许可证/弹窗内）正常跳转，不触发卡片用法
     const b = e.target.closest('[data-act]');
     if(!b) return;
     if(b.dataset.act === 'copy') return copyText(b.dataset.cmd || '', b);
