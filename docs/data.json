@@ -21,7 +21,7 @@
               "group_en": "Core development workflow (superpowers)",
               "chain": true,
               "description": "brainstorming + writing-plans + executing-plans + subagent-driven-development + dispatching-parallel-agents 五件套：苏格拉底式精炼意图 → 拆 2-5 分钟微任务（每任务给精确文件路径+完整代码+验证）→ 批次执行 + 人工 checkpoint → 每任务派 fresh subagent + 双阶段 review（spec 合规 → 代码质量）→ 并行 subagent 编排",
-              "description_en": "brainstorming + writing-plans + executing-plans + subagent-driven-development + dispatching-parallel-agents five-piece set: Socratic refine intent → break into 2-5 min micro-tasks (each task given exact file path + full code + verification) → batch execution + human checkpoint → dispatch fresh subagent per task + two-phase review (spec compliance → code quality) → parallel subagent orchestration",
+              "description_en": "brainstorming + writing-plans + executing-plans + subagent-driven-development + dispatching-parallel-agents five-piece set: Socratically refine intent → break into 2-5 min micro-tasks (each task given exact file path + full code + verification) → batch execution + human checkpoint → dispatch fresh subagent per task + two-phase review (spec compliance → code quality) → parallel subagent orchestration",
               "sources": [
                 {
                   "name": "superpowers",
@@ -1020,7 +1020,7 @@
                 "xlsx"
               ],
               "group": "Office 四件套（Anthropic）",
-              "group_en": "Office four-piece suite (Anthropic)",
+              "group_en": "Office quartet (Anthropic)",
               "chain": false,
               "description": "docx（Word 读/改/生成含 letterhead/目录/追踪修订/图片）+ pdf（读/抽/合/拆/旋/水印/加密/表单/OCR）+ pptx（读/编辑/创建 + 10 套配色 + 字体规则 + subagent 视觉 QA）+ xlsx（强制金融建模色彩规范：蓝输入/黑公式/绿跨表/红外链）",
               "description_en": "docx (Word read/modify/generate with letterhead/table of contents/tracked changes/images) + pdf (read/extract/merge/split/rotate/watermark/encrypt/form/OCR) + pptx (read/edit/create + 10 color schemes + font rules + subagent visual QA) + xlsx (mandatory financial modeling color convention: blue inputs/black formulas/green cross-sheet/red external links)",
@@ -2337,7 +2337,7 @@
               "group_en": "Positioning / vision",
               "chain": false,
               "description": "Dean positioning-statement（Geoffrey Moore \"For/that need/is a/that/Unlike\" 框架）+ positioning-workshop（自适应问题引导多人完成定位）+ Pawel positioning-ideas（差异化定位创意）+ product-vision（鼓舞人心又可达成的 vision statement）+ Dean press-release（Amazon Working Backwards 写\"未来发布稿\"）",
-              "description_en": "Dean positioning-statement (Geoffrey Moore \"For/that need/is a/that/Unlike\" framework) + positioning-workshop (adaptive questions guiding multiple people through positioning) + Pawel positioning-ideas (differentiated positioning ideas) + product-vision (inspiring yet achievable vision statement) + Dean press-release (Amazon Working Backwards, write a \"future release\")",
+              "description_en": "Dean positioning-statement (Geoffrey Moore \"For/that need/is a/that/Unlike\" framework) + positioning-workshop (adaptive questions guiding multiple people through positioning) + Pawel positioning-ideas (differentiated positioning ideas) + product-vision (inspiring yet achievable vision statement) + Dean press-release (Amazon Working Backwards, write a \"future press release\")",
               "sources": [
                 {
                   "name": "Dean",
@@ -3629,7 +3629,7 @@
               "group_en": "Paid ads full account audit",
               "chain": false,
               "description": "AgriciDaniel/claude-ads（Google Ads / Meta Ads 全账户 audit，资深 PPC 人手要 4-6 小时的活让 agent 跑完）",
-              "description_en": "AgriciDaniel/claude-ads (Google Ads / Meta Ads full account audit, running the agent through what takes a senior PPC person 4-6 hours)",
+              "description_en": "AgriciDaniel/claude-ads (Google Ads / Meta Ads full account audit, letting the agent complete what would take a senior PPC specialist 4-6 hours by hand)",
               "sources": [
                 {
                   "name": "AgriciDaniel-ads",
@@ -3791,7 +3791,7 @@
               "group_en": "Lead Magnet",
               "chain": false,
               "description": "Corey lead-magnets（ebook/checklist/模板/报告 + 落地页 + 邮件抓取漏斗）+ founder-skills lead-magnet-generator（带 CTA 的 lead magnet：X/LinkedIn 快/详细版）",
-              "description_en": "Corey lead-magnets (ebook/checklist/template/report + landing page + email lead generation funnel) + founder-skills lead-magnet-generator (lead magnet with CTA: X/LinkedIn quick/detailed versions)",
+              "description_en": "Corey lead-magnets (ebook/checklist/template/report + landing page + email capture funnel) + founder-skills lead-magnet-generator (lead magnet with CTA: X/LinkedIn quick/detailed versions)",
               "sources": [
                 {
                   "name": "Corey",
@@ -5294,7 +5294,7 @@
               "group_en": "Platform single-point query",
               "chain": false,
               "description": "ReScienceLab reddit（Reddit JSON API 查内容）+ twitter（用 twitterapi.io 查 X）+ producthunt（查 PH 帖子/topic/user/collection）+ requesthunt（在 Reddit/X/GitHub 挖用户需求）",
-              "description_en": "ReScienceLab reddit (Reddit JSON API to query content) + twitter (use twitterapi.io to query X) + producthunt (query PH posts/topic/user/collection) + requesthunt (mine user demand on Reddit/X/GitHub)",
+              "description_en": "ReScienceLab reddit (Reddit JSON API to query content) + twitter (use twitterapi.io to query X) + producthunt (query PH posts/topic/user/collection) + requesthunt (mine user needs/requests on Reddit/X/GitHub)",
               "sources": [
                 {
                   "name": "ReScienceLab",
