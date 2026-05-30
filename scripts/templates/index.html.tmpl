@@ -1715,19 +1715,24 @@ function setupSearch(){
     clearBtn.style.display = has ? 'block' : 'none';
     if(kbdHint) kbdHint.style.display = has ? 'none' : 'block';
   };
+  const runSearch = (openTop) => {
+    if(currentView === 'graph' && graphFindFn) graphFindFn(currentSearch, !!openTop);
+    else applyFilter();
+  };
   inp.addEventListener('input', e => {
     currentSearch = e.target.value;
     updateUI();
-    applyFilter();
+    runSearch(false);
   });
   inp.addEventListener('keydown', e => {
-    if(e.key === 'Escape'){ inp.value=''; currentSearch=''; updateUI(); applyFilter(); inp.blur(); }
+    if(e.key === 'Escape'){ inp.value=''; currentSearch=''; updateUI(); runSearch(false); inp.blur(); }
+    else if(e.key === 'Enter' && currentView === 'graph'){ e.preventDefault(); runSearch(true); }  // 图视图：回车打开最佳匹配的详情
   });
   clearBtn.addEventListener('click', () => {
     inp.value = '';
     currentSearch = '';
     updateUI();
-    applyFilter();
+    runSearch(false);
     inp.focus();
   });
   // 全局 / 快捷键聚焦
@@ -1750,6 +1755,7 @@ function setupFilters(){
       // （仓库视图按仓库聚合，类型过滤不适用 —— 切到仓库视图时这些 pill 已隐藏）
       if(currentView === 'graph') buildGraph();
       else applyFilter();
+      syncGraphURL();
     });
   });
 }
@@ -1789,6 +1795,7 @@ function setupViewSwitch(){
       if(isRepo) buildRepoView();
       if(isGraph) buildGraph();
       syncSidebarForView();
+      syncGraphURL();
     });
   });
 }
@@ -1980,12 +1987,30 @@ function syncSidebarForView(){
 
 // === 力导向图（动态、可缩放、可拖拽） ===
 let _graphAnim = null;
+// 图视图的对外钩子（buildGraph 内部设置；搜索/深链从模块作用域调用）
+let graphFindFn = null;       // (query, openTop) => 高亮+居中匹配节点；openTop 时打开其抽屉
+let graphOpenNodeFn = null;   // (skillId) => 打开该节点抽屉（深链还原用）
+let graphSelectedId = null;   // 当前选中节点 id（深链用）
+// 把当前 视图/过滤/选中节点 同步进 URL query（保留 ?lang），用于可分享深链
+function syncGraphURL(){
+  try{
+    const u = new URL(location);
+    if(currentView === 'graph' || currentView === 'repo') u.searchParams.set('view', currentView);
+    else u.searchParams.delete('view');
+    if(currentView !== 'repo' && currentFilter && currentFilter !== 'all') u.searchParams.set('gfilter', currentFilter);
+    else u.searchParams.delete('gfilter');
+    if(currentView === 'graph' && graphSelectedId) u.searchParams.set('gnode', graphSelectedId);
+    else u.searchParams.delete('gnode');
+    history.replaceState(null, '', u);
+  }catch(_){}
+}
 function buildGraph(){
   const container = document.getElementById('graphView');
   if(container.dataset.built === currentFilter) return;   // 已按当前过滤构建，避免重复重绘
   container.dataset.built = currentFilter;
   if(_graphAnim){ cancelAnimationFrame(_graphAnim); _graphAnim = null; }  // 停掉上一次力导向循环
   container.innerHTML = '';                                // 清旧 svg/tooltip/控件/图例，重建
+  graphSelectedId = null;                                  // 重建后无选中节点
 
   // 按当前类型过滤：只保留匹配的 skill 组，图中即只剩对应类型的 skill
   const rows = getAllRows().filter(r => {
@@ -2164,7 +2189,7 @@ function buildGraph(){
     links.forEach((l, i) => linkEls[i].classList.remove('dim', 'highlight'));
   }
   function centerNode(n){ tx = W/2 - n.x * scale; ty = H/2 - n.y * scale; applyTransform(); }
-  function clearFocus(){ focusedNode = null; clearHighlight(); drawer.classList.remove('open'); }
+  function clearFocus(){ focusedNode = null; clearHighlight(); drawer.classList.remove('open'); graphSelectedId = null; syncGraphURL(); }
   function catLabelOf(h1zh){ const s = DATA.sections.find(x => x.title === h1zh); return s ? pickT(s.title_en, s.title) : h1zh; }
   function jumpToCard(skillName){
     document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
@@ -2173,7 +2198,7 @@ function buildGraph(){
     applyFilter();
   }
   function openDrawer(n){
-    focusedNode = n; setHighlight(n); centerNode(n);
+    focusedNode = n; graphSelectedId = n.id; setHighlight(n); centerNode(n);
     const groups = rows.filter(r => (r.skills || []).includes(n.id));
     const nbIds = [...(neighbors.get(n.id) || [])].sort();
     const srcSet = new Set(); groups.forEach(g => (g.sources || []).forEach(s => srcSet.add(s.name || s)));
@@ -2190,12 +2215,33 @@ function buildGraph(){
         `<div class="gd-sec"><h4>${EN ? 'Appears in' : '出现于'}</h4>${grpHtml}</div>` +
         (srcHtml ? `<div class="gd-sec"><h4>${EN ? 'Sources' : '来源仓库'}</h4><div class="gd-chips">${srcHtml}</div></div>` : '') +
       `</div>` +
-      `<div class="gd-foot"><button class="gd-btn primary" data-act="jump">${EN ? 'Open in cards →' : '在功能视图查看 →'}</button></div>`;
+      `<div class="gd-foot"><button class="gd-btn primary" data-act="jump">${EN ? 'Open in cards →' : '在功能视图查看 →'}</button>` +
+      `<button class="gd-btn" data-act="link" style="flex:0 0 auto" title="${EN ? 'Copy shareable link' : '复制可分享链接'}">🔗</button></div>`;
     drawer.classList.add('open');
     drawer.querySelector('.gd-close').addEventListener('click', clearFocus);
     drawer.querySelector('[data-act="jump"]').addEventListener('click', () => jumpToCard(n.id));
     drawer.querySelectorAll('.gd-chip[data-nb]').forEach(c => c.addEventListener('click', () => { const m = nodeMap.get(c.dataset.nb); if(m) openDrawer(m); }));
+    const lk = drawer.querySelector('[data-act="link"]');
+    if(lk) lk.addEventListener('click', () => {
+      try{ navigator.clipboard.writeText(location.href); }catch(_){}
+      const o = lk.textContent; lk.textContent = EN ? '✓ Copied' : '✓ 已复制'; setTimeout(() => { lk.textContent = o; }, 1200);
+    });
+    syncGraphURL();
   }
+  // 对外钩子：图内搜索定位 + 深链还原打开节点
+  graphFindFn = (q, openTop) => {
+    q = (q || '').trim().toLowerCase();
+    if(!q){ if(focusedNode) setHighlight(focusedNode); else clearHighlight(); return; }
+    const matches = nodes.filter(n => n.id.toLowerCase().includes(q));
+    if(!matches.length){ clearHighlight(); return; }
+    matches.sort((a, b) => (a.id.toLowerCase().startsWith(q) ? 0 : 1) - (b.id.toLowerCase().startsWith(q) ? 0 : 1) || b.count - a.count);
+    if(openTop){ openDrawer(matches[0]); return; }
+    const mset = new Set(matches);
+    nodes.forEach(m => { const on = mset.has(m); m._g.classList.toggle('highlight', on); m._g.classList.toggle('dim', !on); });
+    links.forEach((l, i) => linkEls[i].classList.add('dim'));
+    centerNode(matches[0]);
+  };
+  graphOpenNodeFn = (id) => { const m = nodeMap.get(id); if(m) openDrawer(m); };
 
   // 鼠标滚轮缩放
   svg.addEventListener('wheel', e => {
@@ -3772,6 +3818,23 @@ if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
 window.addEventListener('popstate', () => scrollToHashTarget('smooth'));
 // 深链 / 刷新：进页面后定位到 hash 小节
 if(location.hash){ requestAnimationFrame(() => scrollToHashTarget('auto')); }
+
+// 图视图深链还原：?view=graph/repo & gfilter=... & gnode=...（可分享/刷新保持）
+(function restoreGraphFromURL(){
+  const sp = new URLSearchParams(location.search);
+  const v = sp.get('view'), gf = sp.get('gfilter'), gn = sp.get('gnode');
+  if(gf && ['chain','multi-source','single-skill'].includes(gf)){
+    const pill = document.querySelector(`.toolbar .pill[data-filter="${gf}"]`);
+    if(pill) pill.click();   // 设过滤 + 应用（卡片或图）
+  }
+  if(v === 'graph' || v === 'repo'){
+    const btn = document.querySelector(`#viewSwitch .view-btn[data-view="${v}"]`);
+    if(btn) btn.click();     // 切视图（graph 会 buildGraph 并设置 graphOpenNodeFn）
+  }
+  if(v === 'graph' && gn){
+    requestAnimationFrame(() => { if(graphOpenNodeFn) graphOpenNodeFn(gn); });
+  }
+})();
 </script>
 </body>
 </html>
