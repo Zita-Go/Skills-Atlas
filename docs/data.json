@@ -42,10 +42,12 @@
                 }
               ],
               "use_case": "五步微任务拆解+并行执行+双层审查工作流",
+              "use_case_en": "Five-step micro-task decomposition, parallel execution, dual-layer review workflow",
               "personas": [
                 "工程"
               ],
               "when_to_use": "大功能需要精确分步时",
+              "when_to_use_en": "When large features need precise breakdown",
               "py": "he xin kai fa gong zuo liu （superpowers） brainstorming writing-plans executing-plans subagent-driven-development dispatching-parallel-agents  wu bu wei ren wu chai jie + bing xing zhi xing + shuang ceng shen cha gong zuo liu"
             },
             {
@@ -113,11 +115,13 @@
                 }
               ],
               "use_case": "反向盘问计划、风险压力测试、目标精确化",
+              "use_case_en": "Interrogate plan, stress-test risks, refine goals precisely",
               "personas": [
                 "工程",
                 "PM"
               ],
               "when_to_use": "决策前厘清意图/风险",
+              "when_to_use_en": "Before decisions to clarify intent and risks",
               "py": "yi tu cheng qing  / \" bi wen \" mo shi  grill-me pre-mortem define-goal  fan xiang pan wen ji hua 、 feng xian ya li ce shi 、 mu biao jing que hua"
             },
             {
@@ -167,11 +171,13 @@
                 }
               ],
               "use_case": "轻量SDD框架+单一上下文提议→评审→归档",
+              "use_case_en": "Lightweight SDD framework: propose, review, archive in single context",
               "personas": [
                 "工程",
                 "PM"
               ],
               "when_to_use": "小改动需要brief评审时",
+              "when_to_use_en": "Small changes needing brief review",
               "py": "qing liang  SDD  kuang jia  openspec get-shit-done  qing liang SDD kuang jia + dan yi shang xia wen ti yi → ping shen → gui dang"
             },
             {
@@ -203,10 +209,12 @@
                 }
               ],
               "use_case": "会话压缩handoff文档无缝接力多个agent",
+              "use_case_en": "Compress session into handoff doc for seamless agent relay",
               "personas": [
                 "工程"
               ],
               "when_to_use": "工作交接给另一agent时",
+              "when_to_use_en": "When handing work to another agent",
               "py": "hui hua jie li  /  shang xia wen  handoff handoff  hui hua ya suo handoff wen dang wu feng jie li duo ge agent"
             }
           ]
@@ -280,10 +288,12 @@
                 }
               ],
               "use_case": "三家TDD框架可选(严/轻/场景)",
+              "use_case_en": "Three TDD frameworks: strict, lightweight, scenario-based",
               "personas": [
                 "工程"
               ],
               "when_to_use": "新功能要求RED-GREEN流程",
+              "when_to_use_en": "New features requiring RED-GREEN workflow",
               "py": "TDD（ duo jia tong ming ban ben ） test-driven-development tdd test-scenarios  san jia TDD kuang jia ke xuan ( yan / qing / chang jing )"
             },
             {
@@ -351,10 +361,12 @@
                 }
               ],
               "use_case": "四阶段根因分析、复现最小化、防御深度",
+              "use_case_en": "Four-phase root cause, reproduce minimally, defense-in-depth",
               "personas": [
                 "工程"
               ],
               "when_to_use": "线上issue或复杂bug定位",
+              "when_to_use_en": "Production issues or complex bug locating",
               "py": "xi tong hua tiao shi  systematic-debugging diagnose sentry  si jie duan gen yin fen xi 、 fu xian zui xiao hua 、 fang yu shen du"
             },
             {
@@ -386,10 +398,12 @@
                 }
               ],
               "use_case": "完工前自检清单确保修复验证完整",
+              "use_case_en": "Pre-completion checklist ensuring fix verification is complete",
               "personas": [
                 "工程"
               ],
               "when_to_use": "改动前做最后验证",
+              "when_to_use_en": "Final verification before submitting changes",
               "py": "wan gong yan zheng  verification-before-completion  wan gong qian zi jian qing dan que bao xiu fu yan zheng wan zheng"
             },
             {
@@ -438,10 +452,12 @@
                 }
               ],
               "use_case": "跨浏览器UI测试含截图+网络拦截+错误捕获",
+              "use_case_en": "Cross-browser UI testing: screenshots, network interception, error capture",
               "personas": [
                 "工程"
               ],
               "when_to_use": "Web应用需要自动化UI测试",
+              "when_to_use_en": "Web apps needing automated UI testing",
               "py": "Web  ying yong  UI  ce shi  webapp-testing  kua liu lan qi UI ce shi han jie tu + wang luo lan jie + cuo wu bu huo"
             },
             {
@@ -474,10 +490,12 @@
                 }
               ],
               "use_case": "真实浏览器自动化+持久Playwright会话",
+              "use_case_en": "Real browser automation with persistent Playwright session",
               "personas": [
                 "工程"
               ],
               "when_to_use": "需要手工点击/填表的自动化",
+              "when_to_use_en": "Need interactive form filling or clicking automation",
               "py": "liu lan qi zi dong hua  playwright playwright-interactive  zhen shi liu lan qi zi dong hua + chi jiu Playwright hui hua"
             }
           ]
@@ -516,10 +534,12 @@
                 }
               ],
               "use_case": "提交前清单+接收反馈处理双向review",
+              "use_case_en": "Bidirectional code review: pre-submit checklist, feedback handling",
               "personas": [
                 "工程"
               ],
               "when_to_use": "CR前做检查/CR后改进",
+              "when_to_use_en": "Before code review and after feedback",
               "py": "Code Review  shuang xiang  requesting-code-review receiving-code-review  ti jiao qian qing dan + jie shou fan kui chu li shuang xiang review"
             },
             {
@@ -552,10 +572,12 @@
                 }
               ],
               "use_case": "定期拯救代码库+系统级解释视角",
+              "use_case_en": "Periodically rescue codebase, system-level explanation view",
               "personas": [
                 "工程"
               ],
               "when_to_use": "代码库开始杂乱时",
+              "when_to_use_en": "When codebase becomes messy",
               "py": "zhong gou  /  zheng jiu  ball-of-mud improve-codebase-architecture zoom-out  ding qi zheng jiu dai ma ku + xi tong ji jie shi shi jiao"
             },
             {
@@ -587,10 +609,12 @@
                 }
               ],
               "use_case": "语义级代码去重找同意图不同实现",
+              "use_case_en": "Semantic code deduplication: find same intent, different implementations",
               "personas": [
                 "工程"
               ],
               "when_to_use": "重构前扫重复逻辑",
+              "when_to_use_en": "Scan duplicate logic before refactoring",
               "py": "yu yi dai ma qu zhong  finding-duplicate-functions  yu yi ji dai ma qu zhong zhao tong yi tu bu tong shi xian"
             }
           ]
@@ -630,10 +654,12 @@
                 }
               ],
               "use_case": "PR评论定位+CI失败根因+draft→提交一气呵成",
+              "use_case_en": "Locate PR comments, fix CI failures, one-shot draft-to-submit",
               "personas": [
                 "工程"
               ],
               "when_to_use": "处理PR反馈或CI失败",
+              "when_to_use_en": "Handling PR feedback or CI failures",
               "py": "GitHub  san jian tao  gh-address-comments gh-fix-ci yeet PR ping lun ding wei +CI shi bai gen yin +draft→ ti jiao yi qi he cheng"
             },
             {
@@ -666,10 +692,12 @@
                 }
               ],
               "use_case": "隔离workspace+验证baseline+完成清理",
+              "use_case_en": "Isolated workspace, verify baseline, complete cleanup",
               "personas": [
                 "工程"
               ],
               "when_to_use": "并行多分支或试验分离",
+              "when_to_use_en": "Parallel branches or experiment isolation",
               "py": "Git  gong zuo liu  using-git-worktrees finishing-a-development-branch  ge li workspace+ yan zheng baseline+ wan cheng qing li"
             },
             {
@@ -700,10 +728,12 @@
                 }
               ],
               "use_case": "plugin拦截危险命令前确认防止误操作",
+              "use_case_en": "Plugin intercepts dangerous commands, confirm before executing",
               "personas": [
                 "工程"
               ],
               "when_to_use": "项目启用自动化保护",
+              "when_to_use_en": "Projects with automation protection enabled",
               "py": "wei xian ming ling lan jie  claude-code-safety-net plugin lan jie wei xian ming ling qian que ren fang zhi wu cao zuo"
             }
           ]
@@ -744,10 +774,12 @@
                 }
               ],
               "use_case": "四平台部署决策树(Vercel/Netlify/Render/CF)",
+              "use_case_en": "Four-platform deployment decision tree: Vercel, Netlify, Render, CF",
               "personas": [
                 "工程"
               ],
               "when_to_use": "App就绪需选平台部署",
+              "when_to_use_en": "App ready, select deployment platform",
               "py": "ping tai te hua bu shu （4  xuan  1  ping xing ti dai ） cloudflare-deploy netlify-deploy render-deploy vercel-deploy  si ping tai bu shu jue ce shu (Vercel/Netlify/Render/CF)"
             }
           ]
@@ -823,10 +855,12 @@
                 }
               ],
               "use_case": "Claude/Gemini/OpenAI三大厂SDK强制缓存",
+              "use_case_en": "Claude, Gemini, OpenAI SDK with mandatory prompt caching",
               "personas": [
                 "工程"
               ],
               "when_to_use": "集成模型API时",
+              "when_to_use_en": "Integrating model APIs",
               "py": "san da mo xing chang  SDK  zhi lian  claude-api gemini-api-dev gemini-live-api-dev gemini-interactions-api openai-docs Claude/Gemini/OpenAI san da chang SDK qiang zhi huan cun"
             },
             {
@@ -858,10 +892,12 @@
                 }
               ],
               "use_case": "MCP Server完整方法论研究→实现→测试→评估",
+              "use_case_en": "MCP Server: research, implement, test, evaluate methodology",
               "personas": [
                 "工程"
               ],
               "when_to_use": "开发新MCP Server",
+              "when_to_use_en": "Developing new MCP Server",
               "py": "MCP Server  kai fa  mcp-builder MCP Server wan zheng fang fa lun yan jiu → shi xian → ce shi → ping gu"
             },
             {
@@ -893,10 +929,12 @@
                 }
               ],
               "use_case": "ChatGPT Apps脚手架含SDK+MCP+UI骨架",
+              "use_case_en": "ChatGPT Apps scaffold: SDK, MCP server, UI skeleton",
               "personas": [
                 "工程"
               ],
               "when_to_use": "构建OpenAI平台应用",
+              "when_to_use_en": "Building OpenAI platform applications",
               "py": "OpenAI  ping tai kai fa  chatgpt-apps ChatGPT Apps jiao shou jia han SDK+MCP+UI gu jia"
             },
             {
@@ -927,10 +965,12 @@
                 }
               ],
               "use_case": "Chrome DevTools Protocol浏览器自动化CLI",
+              "use_case_en": "Browser automation CLI based on Chrome DevTools Protocol",
               "personas": [
                 "工程"
               ],
               "when_to_use": "需要浏览器自动化agent",
+              "when_to_use_en": "Need browser automation agent",
               "py": "liu lan qi  agent CLI agent-browser Chrome DevTools Protocol liu lan qi zi dong hua CLI"
             }
           ]
@@ -969,10 +1009,12 @@
                 }
               ],
               "use_case": ".NET 10/ASP.NET Core最新实践+Blazor/WinUI3",
+              "use_case_en": ".NET 10 / ASP.NET Core best practices, Blazor, WinUI 3",
               "personas": [
                 "工程"
               ],
               "when_to_use": "需要.NET或Windows应用",
+              "when_to_use_en": "Building .NET or Windows applications",
               "py": "Microsoft / .NET  zhan  aspnet-core winui-app .NET 10/ASP.NET Core zui xin shi jian +Blazor/WinUI3"
             },
             {
@@ -1004,10 +1046,12 @@
                 }
               ],
               "use_case": "Docker中运行无头Windows支持OpenSSH+Claude",
+              "use_case_en": "Headless Windows in Docker with OpenSSH, run Claude Code",
               "personas": [
                 "工程"
               ],
               "when_to_use": "需要Windows环境运行Claude",
+              "when_to_use_en": "Need Windows environment for Claude",
               "py": "Windows VM in Docker windows-vm Docker zhong yun xing wu tou Windows zhi chi OpenSSH+Claude"
             },
             {
@@ -1039,10 +1083,12 @@
                 }
               ],
               "use_case": "用tmux进入vim/rebase等交互式CLI工具",
+              "use_case_en": "Use tmux to control vim, rebase, interactive CLI tools",
               "personas": [
                 "工程"
               ],
               "when_to_use": "需要交互式命令行操作",
+              "when_to_use_en": "Need interactive command-line operations",
               "py": "tmux  cao kong jiao hu  CLI using-tmux-for-interactive-commands  yong tmux jin ru vim/rebase deng jiao hu shi CLI gong ju"
             }
           ]
@@ -1082,10 +1128,12 @@
                 }
               ],
               "use_case": "语言级安全编码+威胁建模+代码持有权图分析",
+              "use_case_en": "Language-level secure coding, threat modeling, ownership mapping",
               "personas": [
                 "工程"
               ],
               "when_to_use": "新项目安全审计或敏感代码",
+              "when_to_use_en": "Security audit or sensitive code",
               "py": "ying yong ceng an quan san jian tao  security-best-practices security-threat-model security-ownership-map  yu yan ji an quan bian ma + wei xie jian mo + dai ma chi you quan tu fen xi"
             },
             {
@@ -1116,10 +1164,12 @@
                 }
               ],
               "use_case": "35+安全plugin跨9领域(合约/审计/恶意代码等)",
+              "use_case_en": "35+ security plugins across 9 domains: contracts, audit, malware",
               "personas": [
                 "工程"
               ],
               "when_to_use": "专业级安全需求",
+              "when_to_use_en": "Professional-grade security requirements",
               "py": "zhuan ye ji an quan  Marketplace skills 35+ an quan plugin kua 9 ling yu ( he yue / shen ji / e yi dai ma deng )"
             },
             {
@@ -1151,10 +1201,12 @@
                 }
               ],
               "use_case": "生产Sentry issue只读查看+AI根因+修复方案",
+              "use_case_en": "Sentry issue read-only view, AI root cause, fix suggestions",
               "personas": [
                 "工程"
               ],
               "when_to_use": "生产问题诊断",
+              "when_to_use_en": "Production issue diagnosis",
               "py": "sheng chan jian kong  sentry  sheng chan Sentry issue zhi du cha kan +AI gen yin + xiu fu fang an"
             }
           ]
@@ -1202,12 +1254,14 @@
                 }
               ],
               "use_case": "Word/PDF/PPT/Excel的读改生成，含OCR、水印、表单、金融建模规范。",
+              "use_case_en": "Read, modify, generate Word/PDF/PPT/Excel with OCR, watermarks, forms, financial modeling standards.",
               "personas": [
                 "工程",
                 "PM",
                 "设计"
               ],
               "when_to_use": "需要程序化处理办公文件时",
+              "when_to_use_en": "Programmatically process office documents.",
               "py": "Office  si jian tao （Anthropic） docx pdf pptx xlsx Word/PDF/PPT/Excel de du gai sheng cheng ， han OCR、 shui yin 、 biao dan 、 jin rong jian mo gui fan 。"
             },
             {
@@ -1239,11 +1293,13 @@
                 }
               ],
               "use_case": "PDF高级操作：格式转换、拆合、OCR、PII脱敏、数字签名、表单填充。",
+              "use_case_en": "Advanced PDF operations: format conversion, merge/split, OCR, PII redaction, digital signature, form filling.",
               "personas": [
                 "工程",
                 "PM"
               ],
               "when_to_use": "PDF需要复杂处理或企业合规转换",
+              "when_to_use_en": "PDF requires complex processing or enterprise compliance.",
               "py": "PDF  zhong xing  API nutrient-agent-skill PDF gao ji cao zuo ： ge shi zhuan huan 、 chai he 、OCR、PII tuo min 、 shu zi qian ming 、 biao dan tian chong 。"
             },
             {
@@ -1274,11 +1330,13 @@
                 }
               ],
               "use_case": "一次性抽取90+文件格式+300+编程语言，省30-50%RAG token成本。",
+              "use_case_en": "Extract 90+ file formats and 300+ programming languages, save 30-50% RAG token cost.",
               "personas": [
                 "工程",
                 "研究"
               ],
               "when_to_use": "多格式混合数据需要高效抽取",
+              "when_to_use_en": "Multi-format mixed data needs efficient extraction.",
               "py": "duo ge shi chou qu yin qing  kreuzberg  yi ci xing chou qu 90+ wen jian ge shi +300+ bian cheng yu yan ， sheng 30-50%RAG token cheng ben 。"
             }
           ]
@@ -1316,11 +1374,13 @@
                 }
               ],
               "use_case": "8路并行翻译整本书，含词汇一致性和代词指代修复。",
+              "use_case_en": "Parallel translate entire books with vocabulary consistency and pronoun reference fixes.",
               "personas": [
                 "运营",
                 "创始人"
               ],
               "when_to_use": "要翻译完整出版物或长文档",
+              "when_to_use_en": "Translate complete publications or long documents.",
               "py": "zheng ben shu bing xing fan yi  translate-book 8 lu bing xing fan yi zheng ben shu ， han ci hui yi zhi xing he dai ci zhi dai xiu fu 。"
             }
           ]
@@ -1359,11 +1419,13 @@
                 }
               ],
               "use_case": "三阶段协作写PRD/RFC/设计文档，含上下文采集、结构迭代、读者测试。",
+              "use_case_en": "Three-phase collaborative writing of PRD/RFC/design docs with context collection, iteration, reader testing.",
               "personas": [
                 "PM",
                 "工程"
               ],
               "when_to_use": "多人协作起草正式文档",
+              "when_to_use_en": "Multiple people collaboratively draft formal documents.",
               "py": "xie zuo xie wen dang  doc-coauthoring internal-comms  san jie duan xie zuo xie PRD/RFC/ she ji wen dang ， han shang xia wen cai ji 、 jie gou die dai 、 du zhe ce shi 。"
             },
             {
@@ -1395,11 +1457,13 @@
                 }
               ],
               "use_case": "去除AI生成的模板词和不自然表达，提升文本可读度和人味。",
+              "use_case_en": "Remove AI template phrases and unnatural expressions, improve readability and human voice.",
               "personas": [
                 "营销",
                 "运营"
               ],
               "when_to_use": "AI生成内容需要人工润色",
+              "when_to_use_en": "AI-generated content needs human polish.",
               "py": "qu  AI  wei  /  ti gao zi ran du  humanizer  qu chu AI sheng cheng de mu ban ci he bu zi ran biao da ， ti sheng wen ben ke du du he ren wei 。"
             },
             {
@@ -1431,11 +1495,13 @@
                 }
               ],
               "use_case": "按Elements of Style原则改写，去冗、强化动词、修正被动语态。",
+              "use_case_en": "Rewrite per Elements of Style: eliminate redundancy, strengthen verbs, fix passive voice.",
               "personas": [
                 "营销",
                 "运营"
               ],
               "when_to_use": "文案需要大幅简化和精炼",
+              "when_to_use_en": "Copy needs substantial simplification and refinement.",
               "py": "jian jie hua gai xie  write-concisely  an Elements of Style yuan ze gai xie ， qu rong 、 qiang hua dong ci 、 xiu zheng bei dong yu tai 。"
             },
             {
@@ -1485,11 +1551,13 @@
                 }
               ],
               "use_case": "检查语法/逻辑/流畅度，给内容创作、21项审校诊断和改进。",
+              "use_case_en": "Check grammar/logic/fluency with 21-point proofreading diagnostics and improvements.",
               "personas": [
                 "营销",
                 "运营"
               ],
               "when_to_use": "文章发布前做语言质量审核",
+              "when_to_use_en": "Language quality review before article publication.",
               "py": "yu fa  /  wen feng shen cha  grammar-check huashu-skills  jian cha yu fa / luo ji / liu chang du ， gei nei rong chuang zuo 、21 xiang shen jiao zhen duan he gai jin 。"
             },
             {
@@ -1538,11 +1606,13 @@
                 }
               ],
               "use_case": "极简输出模式，省75%token同时保留技术准确度。",
+              "use_case_en": "Minimal output mode: save 75% tokens while preserving technical accuracy.",
               "personas": [
                 "工程",
                 "研究"
               ],
               "when_to_use": "需要高效回答，token或成本受限",
+              "when_to_use_en": "Need efficient answers with limited tokens or costs.",
               "py": "ji jian shu chu mo shi  caveman  ji jian shu chu mo shi ， sheng 75%token tong shi bao liu ji shu zhun que du 。"
             },
             {
@@ -1574,10 +1644,12 @@
                 }
               ],
               "use_case": "以600+ WPM速度快速读完Claude长回复，RSVP+ORP视觉优化。",
+              "use_case_en": "Speed-read Claude replies at 600+ WPM with RSVP and ORP visual optimization.",
               "personas": [
                 "通用"
               ],
               "when_to_use": "需要快速消化长篇回答",
+              "when_to_use_en": "Quickly digest long-form answers.",
               "py": "su du  Claude  hui fu  claude-speed-reader  yi 600+ WPM su du kuai su du wan Claude zhang hui fu ，RSVP+ORP shi jue you hua 。"
             }
           ]
@@ -1632,11 +1704,13 @@
                 }
               ],
               "use_case": "NotebookLM官方API+非官方Python API双路线，创建/查询/生成音频。",
+              "use_case_en": "NotebookLM official API and unofficial Python API: create, query, generate audio.",
               "personas": [
                 "研究",
                 "运营"
               ],
               "when_to_use": "从文献源生成Q&A或音频内容",
+              "when_to_use_en": "Generate Q&A or audio content from research sources.",
               "py": "NotebookLM  shuang lu xian  notebooklm-skill notebooklm-py NotebookLM guan fang API+ fei guan fang Python API shuang lu xian ， chuang jian / cha xun / sheng cheng yin pin 。"
             },
             {
@@ -1668,11 +1742,13 @@
                 }
               ],
               "use_case": "把项目代码/文档/PDF映射知识图谱，减少跨文件查询成本。",
+              "use_case_en": "Map project code/docs/PDFs to knowledge graph, reduce cross-file query cost.",
               "personas": [
                 "工程",
                 "PM"
               ],
               "when_to_use": "复杂项目需要一次性建立知识关联",
+              "when_to_use_en": "Complex projects need one-time knowledge linkage.",
               "py": "xiang mu zhi shi tu pu  graphify  ba xiang mu dai ma / wen dang /PDF ying she zhi shi tu pu ， jian shao kua wen jian cha xun cheng ben 。"
             },
             {
@@ -1704,11 +1780,13 @@
                 }
               ],
               "use_case": "PDF/MD转Obsidian学习库，含概念笔记、MOC、交互式测验和记忆追踪。",
+              "use_case_en": "Convert PDF/MD to Obsidian study vault: concept notes, MOC, interactive quizzes, memory tracking.",
               "personas": [
                 "研究",
                 "求职"
               ],
               "when_to_use": "需要结构化学习和知识固化",
+              "when_to_use_en": "Structured learning and knowledge retention needed.",
               "py": "Obsidian  xue xi jin ku  tutor-skills PDF/MD zhuan Obsidian xue xi ku ， han gai nian bi ji 、MOC、 jiao hu shi ce yan he ji yi zhui zong 。"
             },
             {
@@ -1740,10 +1818,12 @@
                 }
               ],
               "use_case": "用FOCUS方法摘要学术论文，便于后续交叉比较和综述。",
+              "use_case_en": "Summarize academic papers with FOCUS method for cross-paper comparison and reviews.",
               "personas": [
                 "研究"
               ],
               "when_to_use": "批量总结论文做文献综述",
+              "when_to_use_en": "Bulk summarize papers for literature reviews.",
               "py": "lun wen zhai yao （FOCUS  fang fa ） skill-focus  yong FOCUS fang fa zhai yao xue shu lun wen ， bian yu hou xu jiao cha bi jiao he zong shu 。"
             }
           ]
@@ -1784,11 +1864,13 @@
                 }
               ],
               "use_case": "Notion四件套：笔记转结构化页、会议议程、交叉调研、Spec转实现计划。",
+              "use_case_en": "Notion four-piece set: notes to structured pages, meeting agendas, cross-research, Spec to implementation plans.",
               "personas": [
                 "PM",
                 "工程"
               ],
               "when_to_use": "用Notion做知识管理和工作协作",
+              "when_to_use_en": "Use Notion for knowledge management and work collaboration.",
               "py": "Notion 4  lian gong zuo liu  notion-knowledge-capture notion-meeting-intelligence notion-research-documentation notion-spec-to-implementation Notion si jian tao ： bi ji zhuan jie gou hua ye 、 hui yi yi cheng 、 jiao cha diao yan 、Spec zhuan shi xian ji hua 。"
             },
             {
@@ -1820,11 +1902,13 @@
                 }
               ],
               "use_case": "Notion × Claude MCP工作流官方指南，自动化文档/会议/研究。",
+              "use_case_en": "Notion × Claude MCP workflow guide: automate documentation, meetings, research.",
               "personas": [
                 "PM",
                 "运营"
               ],
               "when_to_use": "要集成Notion与Claude自动化工作",
+              "when_to_use_en": "Integrate Notion with Claude for automated workflows.",
               "py": "Notion  guan fang  cookbook notion-cookbook Notion × Claude MCP gong zuo liu guan fang zhi nan ， zi dong hua wen dang / hui yi / yan jiu 。"
             }
           ]
@@ -1862,11 +1946,13 @@
                 }
               ],
               "use_case": "轻量分层记忆系统，core.md+topics/按需加载，纯grep检索。",
+              "use_case_en": "Lightweight tiered memory: core.md always loaded, topics/ on-demand, pure grep retrieval.",
               "personas": [
                 "工程",
                 "通用"
               ],
               "when_to_use": "需要跨会话记忆but避免向量库复杂度",
+              "when_to_use_en": "Cross-session memory without vector store complexity.",
               "py": "qing liang fen ceng ji yi  claude-memory-skill  qing liang fen ceng ji yi xi tong ，core.md+topics/ an xu jia zai ， chun grep jian suo 。"
             },
             {
@@ -1897,11 +1983,13 @@
                 }
               ],
               "use_case": "影子Sonnet+MCP双层记忆，search→context→recall三层工作流。",
+              "use_case_en": "Shadow Sonnet plus MCP dual-layer memory: search→context→recall three-tier workflow.",
               "personas": [
                 "工程",
                 "PM"
               ],
               "when_to_use": "长期项目需要token高效的记忆系统",
+              "when_to_use_en": "Long-term projects need token-efficient memory system.",
               "py": "ying zi  agent + MCP  ji yi  claude-mem  ying zi Sonnet+MCP shuang ceng ji yi ，search→context→recall san ceng gong zuo liu 。"
             },
             {
@@ -1933,10 +2021,12 @@
                 }
               ],
               "use_case": "利用auto-memory自动记录，做模式提升、skill抽取、记忆健康检查。",
+              "use_case_en": "Auto-memory recording: pattern improvement, skill extraction, memory health checks.",
               "personas": [
                 "工程"
               ],
               "when_to_use": "Claude Code项目要自我学习和模式优化",
+              "when_to_use_en": "Claude Code projects want self-learning and pattern optimization.",
               "py": "zi wo jing lian  agent self-improving-agent  li yong auto-memory zi dong ji lu ， zuo mo shi ti sheng 、skill chou qu 、 ji yi jian kang jian cha 。"
             }
           ]
@@ -2002,12 +2092,14 @@
                 }
               ],
               "use_case": "构建用户画像、分群和细分客户，支持决策导向",
+              "use_case_en": "Build user personas, segment customers, support decision-making",
               "personas": [
                 "PM",
                 "设计",
                 "研究"
               ],
               "when_to_use": "需要理解目标用户或细分市场时",
+              "when_to_use_en": "Understand target users or market segments",
               "py": "yong hu hua xiang  / persona user-personas user-segmentation market-segments ideal-customer-profile proto-persona  gou jian yong hu hua xiang 、 fen qun he xi fen ke hu ， zhi chi jue ce dao xiang"
             },
             {
@@ -2056,11 +2148,13 @@
                 }
               ],
               "use_case": "绘制用户与产品交互的全触点旅程，找关键痛点",
+              "use_case_en": "Map user-product interactions across touchpoints, identify pain points",
               "personas": [
                 "PM",
                 "设计"
               ],
               "when_to_use": "改进用户体验或优化转化流程",
+              "when_to_use_en": "Improve UX or optimize conversion flows",
               "py": "ke hu lv cheng tu  customer-journey-map  hui zhi yong hu yu chan pin jiao hu de quan chu dian lv cheng ， zhao guan jian tong dian"
             },
             {
@@ -2110,12 +2204,14 @@
                 }
               ],
               "use_case": "用 JTBD 框架识别用户真实需求，超越功能层需求",
+              "use_case_en": "Apply JTBD framework to uncover true user needs beyond features",
               "personas": [
                 "PM",
                 "设计",
                 "研究"
               ],
               "when_to_use": "深入理解用户何时、为何购买产品",
+              "when_to_use_en": "Understand when and why users buy",
               "py": "JTBD（Jobs-to-be-Done） jobs-to-be-done job-stories  yong  JTBD  kuang jia shi bie yong hu zhen shi xu qiu ， chao yue gong neng ceng xu qiu"
             },
             {
@@ -2184,11 +2280,13 @@
                 }
               ],
               "use_case": "设计、进行和总结客户访谈，提炼可行洞察",
+              "use_case_en": "Design, conduct, and summarize customer interviews for actionable insights",
               "personas": [
                 "PM",
                 "研究"
               ],
               "when_to_use": "需要用户直接反馈或验证假设时",
+              "when_to_use_en": "Get direct user feedback or validate assumptions",
               "py": "ke hu fang tan  interview-script summarize-interview discovery-interview-prep transcribe  she ji 、 jin xing he zong jie ke hu fang tan ， ti lian ke xing dong cha"
             },
             {
@@ -2221,11 +2319,13 @@
                 }
               ],
               "use_case": "分析用户反馈情感和优先级，识别高杠杆功能",
+              "use_case_en": "Analyze user feedback sentiment and priority, surface high-leverage features",
               "personas": [
                 "PM",
                 "运营"
               ],
               "when_to_use": "有大量用户反馈要整理排序",
+              "when_to_use_en": "Organize and prioritize large feedback volumes",
               "py": "fan kui qing gan fen xi  sentiment-analysis analyze-feature-requests  fen xi yong hu fan kui qing gan he you xian ji ， shi bie gao gang gan gong neng"
             }
           ]
@@ -2264,10 +2364,12 @@
                 }
               ],
               "use_case": "清晰陈述问题并画出问题框架，为方案寻找做准备",
+              "use_case_en": "Articulate problems and frame them for solution exploration",
               "personas": [
                 "PM"
               ],
               "when_to_use": "定义产品策略或新功能前",
+              "when_to_use_en": "Define strategy or new feature before scoping",
               "py": "wen ti chen shu  problem-statement problem-framing-canvas  qing xi chen shu wen ti bing hua chu wen ti kuang jia ， wei fang an xun zhao zuo zhun bei"
             },
             {
@@ -2301,10 +2403,12 @@
                 }
               ],
               "use_case": "识别和优先排序假设风险，指导实验验证",
+              "use_case_en": "Identify and prioritize assumption risks, guide experiment validation",
               "personas": [
                 "PM"
               ],
               "when_to_use": "启动新项目前做风险评估",
+              "when_to_use_en": "Assess risks before starting new projects",
               "py": "jia she shi bie  /  pai xu  identify-assumptions-existing identify-assumptions-new prioritize-assumptions  shi bie he you xian pai xu jia she feng xian ， zhi dao shi yan yan zheng"
             },
             {
@@ -2336,10 +2440,12 @@
                 }
               ],
               "use_case": "前置失败分析，在执行前发现隐藏风险",
+              "use_case_en": "Pre-mortem analysis to uncover hidden risks before execution",
               "personas": [
                 "PM"
               ],
               "when_to_use": "重大发布或决策前做压力测试",
+              "when_to_use_en": "Stress-test major launches or decisions",
               "py": "Pre-mortem pre-mortem  qian zhi shi bai fen xi ， zai zhi xing qian fa xian yin cang feng xian"
             }
           ]
@@ -2394,10 +2500,12 @@
                 }
               ],
               "use_case": "从需求出发，系统化拆解机会和方案，指导优先级",
+              "use_case_en": "Systematically decompose opportunities to solutions, guide prioritization",
               "personas": [
                 "PM"
               ],
               "when_to_use": "需要系统思考机会到方案的路径",
+              "when_to_use_en": "Think through opportunity-to-solution paths",
               "py": "OST（Opportunity Solution Tree） opportunity-solution-tree  cong xu qiu chu fa ， xi tong hua chai jie ji hui he fang an ， zhi dao you xian ji"
             },
             {
@@ -2431,12 +2539,14 @@
                 }
               ],
               "use_case": "多角度脑暴点子，快速生成方案创意和实验原型",
+              "use_case_en": "Multi-angle brainstorm for rapid ideation and prototype exploration",
               "personas": [
                 "PM",
                 "设计",
                 "工程"
               ],
               "when_to_use": "探索阶段或需要快速想法时",
+              "when_to_use_en": "Explore options or need quick ideas fast",
               "py": "nao bao dian zi （ shuang lu jing ） brainstorm-ideas-existing brainstorm-ideas-new brainstorm-experiments-existing  duo jiao du nao bao dian zi ， kuai su sheng cheng fang an chuang yi he shi yan yuan xing"
             },
             {
@@ -2486,11 +2596,13 @@
                 }
               ],
               "use_case": "快速造原型验证想法，不必等完整实现",
+              "use_case_en": "Rapidly prototype ideas without waiting for full implementation",
               "personas": [
                 "PM",
                 "设计"
               ],
               "when_to_use": "需要快速测试假设或概念",
+              "when_to_use_en": "Quick-test hypotheses or concepts",
               "py": "Prototype  xuan xing  prototype pol-probe-advisor  kuai su zao yuan xing yan zheng xiang fa ， bu bi deng wan zheng shi xian"
             },
             {
@@ -2523,10 +2635,12 @@
                 }
               ],
               "use_case": "分析 A/B 和群组数据，做数据驱动决策",
+              "use_case_en": "Analyze A/B and cohort data for data-driven decisions",
               "personas": [
                 "PM"
               ],
               "when_to_use": "有实验结果或用户行为数据要解读",
+              "when_to_use_en": "Interpret experiment results or user behavior",
               "py": "shi yan shu ju fen xi  ab-test-analysis cohort-analysis  fen xi  A/B  he qun zu shu ju ， zuo shu ju qu dong jue ce"
             },
             {
@@ -2560,11 +2674,13 @@
                 }
               ],
               "use_case": "系统化发现流程，从框架到验证完整闭环",
+              "use_case_en": "Structured discovery: framework to validation full closure",
               "personas": [
                 "PM",
                 "设计"
               ],
               "when_to_use": "做 3-4 周的结构化产品发现",
+              "when_to_use_en": "Run 3-4 week structured product discovery",
               "py": "Lean UX / Discovery  bian pai  discovery-process lean-ux-canvas storyboard  xi tong hua fa xian liu cheng ， cong kuang jia dao yan zheng wan zheng bi huan"
             }
           ]
@@ -2606,11 +2722,13 @@
                 }
               ],
               "use_case": "用不同 Canvas 工具规划商业模式和产品战略",
+              "use_case_en": "Plan business models and strategy with Canvas tools",
               "personas": [
                 "PM",
                 "创始人"
               ],
               "when_to_use": "规划产品或业务商业模式",
+              "when_to_use_en": "Define business model or product strategy",
               "py": "Canvas  quan tao  lean-canvas business-model startup-canvas product-strategy value-proposition  yong bu tong  Canvas  gong ju gui hua shang ye mo shi he chan pin zhan lve"
             },
             {
@@ -2663,10 +2781,12 @@
                 }
               ],
               "use_case": "分析外部环境（市场、竞争、趋势），找战略机会",
+              "use_case_en": "Analyze market, competition, trends for strategic opportunities",
               "personas": [
                 "PM"
               ],
               "when_to_use": "做战略规划或进入新市场",
+              "when_to_use_en": "Strategic planning or new market entry",
               "py": "wai bu huan jing fen xi  pestle-analysis pestel-analysis porters-five-forces swot-analysis ansoff-matrix  fen xi wai bu huan jing （ shi chang 、 jing zheng 、 qu shi ）， zhao zhan lve ji hui"
             },
             {
@@ -2716,11 +2836,13 @@
                 }
               ],
               "use_case": "估算市场规模，明确可达客户总数和可实现收入",
+              "use_case_en": "Estimate market size, addressable customers, and revenue potential",
               "personas": [
                 "PM",
                 "创始人"
               ],
               "when_to_use": "融资或战略决策前",
+              "when_to_use_en": "Before fundraising or strategic decisions",
               "py": "shi chang gui mo  tam-sam-som-calculator market-sizing  gu suan shi chang gui mo ， ming que ke da ke hu zong shu he ke shi xian shou ru"
             },
             {
@@ -2773,11 +2895,13 @@
                 }
               ],
               "use_case": "定义竞争定位和产品愿景，指导营销和工程",
+              "use_case_en": "Define positioning and vision to guide marketing and engineering",
               "personas": [
                 "PM",
                 "营销"
               ],
               "when_to_use": "启动新产品或品牌重塑",
+              "when_to_use_en": "Launch new product or rebrand",
               "py": "ding wei  /  yuan jing  positioning-statement positioning-workshop positioning-ideas product-vision press-release  ding yi jing zheng ding wei he chan pin yuan jing ， zhi dao ying xiao he gong cheng"
             },
             {
@@ -2828,10 +2952,12 @@
                 }
               ],
               "use_case": "系统化战略规划，从定位到路线图的完整编排",
+              "use_case_en": "Comprehensive strategy planning from positioning to roadmap",
               "personas": [
                 "PM"
               ],
               "when_to_use": "做 2-4 周的深度战略规划",
+              "when_to_use_en": "Execute 2-4 week deep strategic planning",
               "py": "zhan lve bian pai  workflow product-strategy-session roadmap-planning outcome-roadmap  xi tong hua zhan lve gui hua ， cong ding wei dao lu xian tu de wan zheng bian pai"
             }
           ]
@@ -2871,11 +2997,13 @@
                 }
               ],
               "use_case": "选第一个市场和 GTM 动作，加速从 0-1 获客",
+              "use_case_en": "Choose first market and GTM moves to accelerate zero-to-one growth",
               "personas": [
                 "PM",
                 "营销"
               ],
               "when_to_use": "新产品发布或进入新市场",
+              "when_to_use_en": "New product launch or market entry",
               "py": "tan tou shi chang  + GTM  dong zuo  beachhead-segment gtm-motions gtm-strategy  xuan di yi ge shi chang he  GTM  dong zuo ， jia su cong  0-1  huo ke"
             },
             {
@@ -2907,10 +3035,12 @@
                 }
               ],
               "use_case": "识别和优化自增长 loop，做长期留存和推荐",
+              "use_case_en": "Identify and optimize self-growth loops for retention and referral",
               "personas": [
                 "PM"
               ],
               "when_to_use": "优化用户留存和有机增长",
+              "when_to_use_en": "Improve retention and organic growth",
               "py": "zeng zhang  loop growth-loops  shi bie he you hua zi zeng zhang  loop， zuo chang qi liu cun he tui jian"
             },
             {
@@ -2942,10 +3072,12 @@
                 }
               ],
               "use_case": "选择和追踪北极星指标，对齐公司目标",
+              "use_case_en": "Select and track north star metric aligned to company goals",
               "personas": [
                 "PM"
               ],
               "when_to_use": "建立关键成功指标体系",
+              "when_to_use_en": "Build key success metrics framework",
               "py": "bei ji xing zhi biao  north-star-metric  xuan ze he zhui zong bei ji xing zhi biao ， dui qi gong si mu biao"
             }
           ]
@@ -3037,10 +3169,12 @@
                 }
               ],
               "use_case": "写结构化 PRD，澄清业务目标和技术需求",
+              "use_case_en": "Write structured PRDs clarifying business goals and tech requirements",
               "personas": [
                 "PM"
               ],
               "when_to_use": "向工程和设计团队交付需求",
+              "when_to_use_en": "Hand off requirements to engineering and design",
               "py": "PRD  xie zuo  create-prd prd-development to-prd prd-generator  xie jie gou hua  PRD， cheng qing ye wu mu biao he ji shu xu qiu"
             },
             {
@@ -3094,10 +3228,12 @@
                 }
               ],
               "use_case": "拆分需求为 User Story 和 Epic，指导实现",
+              "use_case_en": "Break down requirements into user stories and epics for engineering",
               "personas": [
                 "PM"
               ],
               "when_to_use": "准备工程需求或任务分解",
+              "when_to_use_en": "Prepare engineering requirements or task decomposition",
               "py": "User Story /  chai ren wu  user-stories wwas user-story user-story-splitting epic-breakdown-advisor epic-hypothesis  chai fen xu qiu wei  User Story  he  Epic， zhi dao shi xian"
             },
             {
@@ -3166,10 +3302,12 @@
                 }
               ],
               "use_case": "把 Spec 自动转工程任务，管理线性或 Jira",
+              "use_case_en": "Auto-convert specs to tasks in Linear or Jira",
               "personas": [
                 "PM"
               ],
               "when_to_use": "需求到工程系统的自动化转换",
+              "when_to_use_en": "Automate spec-to-engineering-system conversion",
               "py": "Spec →  gong cheng  notion-spec-to-implementation to-issues linear-claude-skill linear  ba  Spec  zi dong zhuan gong cheng ren wu ， guan li xian xing huo  Jira"
             }
           ]
@@ -3226,10 +3364,12 @@
                 }
               ],
               "use_case": "对比 9 种优先级框架，为功能排优先级",
+              "use_case_en": "Compare 9 prioritization frameworks for feature ranking",
               "personas": [
                 "PM"
               ],
               "when_to_use": "功能待办排优先级或路线图规划",
+              "when_to_use_en": "Prioritize backlog or plan roadmap",
               "py": "you xian ji kuang jia dui bi  prioritization-frameworks prioritization-advisor prioritize-features  dui bi  9  zhong you xian ji kuang jia ， wei gong neng pai you xian ji"
             },
             {
@@ -3263,11 +3403,13 @@
                 }
               ],
               "use_case": "评估投资回报和渠道 unit economics，优化资源配置",
+              "use_case_en": "Evaluate ROI and channel unit economics for resource allocation",
               "personas": [
                 "PM",
                 "运营"
               ],
               "when_to_use": "做成本效益分析或商业决策",
+              "when_to_use_en": "Cost-benefit analysis or business decisions",
               "py": "tou zi  / ROI feature-investment-advisor acquisition-channel-advisor finance-based-pricing-advisor  ping gu tou zi hui bao he qu dao  unit economics， you hua zi yuan pei zhi"
             }
           ]
@@ -3323,11 +3465,13 @@
                 }
               ],
               "use_case": "诊断 SaaS 业务健康度，找高优先级问题",
+              "use_case_en": "Diagnose SaaS health, identify high-priority problems",
               "personas": [
                 "PM",
                 "运营"
               ],
               "when_to_use": "业务增长遇瓶颈或需要健康检查",
+              "when_to_use_en": "Growth plateau or health checkup needed",
               "py": "SaaS  zhen duan  business-health-diagnostic pm-operator  zhen duan  SaaS  ye wu jian kang du ， zhao gao you xian ji wen ti"
             },
             {
@@ -3361,11 +3505,13 @@
                 }
               ],
               "use_case": "速查 SaaS 财务指标公式和基准，做数据驱动决策",
+              "use_case_en": "Quick SaaS metrics reference and benchmarks for data decisions",
               "personas": [
                 "PM",
                 "运营"
               ],
               "when_to_use": "分析 SaaS metrics 或财务规划",
+              "when_to_use_en": "Analyze SaaS metrics or financial planning",
               "py": "cai wu su cha  finance-metrics-quickref saas-economics-efficiency-metrics saas-revenue-growth-metrics  su cha  SaaS  cai wu zhi biao gong shi he ji zhun ， zuo shu ju qu dong jue ce"
             }
           ]
@@ -3405,10 +3551,12 @@
                 }
               ],
               "use_case": "制定团队 OKR 和 sprint 计划，做 retro",
+              "use_case_en": "Set team OKRs, plan sprints, run retrospectives",
               "personas": [
                 "PM"
               ],
               "when_to_use": "制定团队目标、规划迭代或复盘",
+              "when_to_use_en": "Define goals, plan iterations, or retro",
               "py": "OKR / Sprint brainstorm-okrs sprint-plan retro  zhi ding tuan dui  OKR  he  sprint  ji hua ， zuo  retro"
             },
             {
@@ -3459,10 +3607,12 @@
                 }
               ],
               "use_case": "记录会议、绘制利益相关者图，指导沟通策略",
+              "use_case_en": "Record meetings, map stakeholders, guide communication strategy",
               "personas": [
                 "PM"
               ],
               "when_to_use": "管理复杂干系人或会议纪要",
+              "when_to_use_en": "Manage complex stakeholders or meeting notes",
               "py": "hui yi  /  li yi xiang guan zhe  summarize-meeting stakeholder-map workshop-facilitation  ji lu hui yi 、 hui zhi li yi xiang guan zhe tu ， zhi dao gou tong ce lve"
             },
             {
@@ -3497,10 +3647,12 @@
                 }
               ],
               "use_case": "指导 PM 升职路径和领导力心态转变",
+              "use_case_en": "Guide PM advancement and leadership mindset shifts",
               "personas": [
                 "PM"
               ],
               "when_to_use": "晋升 Director 或更高管理层时",
+              "when_to_use_en": "Advance to Director or senior management",
               "py": "PM  sheng zhi  /  ling dao li  altitude-horizon-framework director-readiness-advisor vp-cpo-readiness-advisor executive-onboarding-playbook  zhi dao  PM  sheng zhi lu jing he ling dao li xin tai zhuan bian"
             }
           ]
@@ -3556,11 +3708,13 @@
                 }
               ],
               "use_case": "生成用户友好发布说明和产品下线公告",
+              "use_case_en": "Generate user-friendly release notes and product sunset announcements",
               "personas": [
                 "PM",
                 "营销"
               ],
               "when_to_use": "准备产品发布或功能下线沟通",
+              "when_to_use_en": "Prepare product launch or feature deprecation messaging",
               "py": "Release Notes / EOL release-notes eol-message  sheng cheng yong hu you hao fa bu shuo ming he chan pin xia xian gong gao"
             },
             {
@@ -3592,10 +3746,12 @@
                 }
               ],
               "use_case": "写企业内部沟通（进展、newsletter、incident）",
+              "use_case_en": "Write internal team communications: progress updates, newsletters, incidents",
               "personas": [
                 "PM"
               ],
               "when_to_use": "定期同步进度或处理突发情况",
+              "when_to_use_en": "Share status or handle emergencies regularly",
               "py": "qi ye nei bu gou tong  internal-comms  xie qi ye nei bu gou tong （ jin zhan 、newsletter、incident）"
             }
           ]
@@ -3633,10 +3789,12 @@
                 }
               ],
               "use_case": "诊断 AI 创新机会，评估自动化与重设计权衡",
+              "use_case_en": "Diagnose AI opportunities, evaluate automation vs. redesign tradeoffs",
               "personas": [
                 "PM"
               ],
               "when_to_use": "评估产品中的 AI 改造可行性",
+              "when_to_use_en": "Assess AI transformation feasibility in product",
               "py": "AI  zhuan xing zhen duan  ai-shaped-readiness-advisor  zhen duan  AI  chuang xin ji hui ， ping gu zi dong hua yu zhong she ji quan heng"
             },
             {
@@ -3668,10 +3826,12 @@
                 }
               ],
               "use_case": "文档化 AI 推荐功能，覆盖数据、算法、回退",
+              "use_case_en": "Document AI recommendations: data, algorithms, fallbacks",
               "personas": [
                 "PM"
               ],
               "when_to_use": "设计推荐或个性化功能",
+              "when_to_use_en": "Design recommendations or personalization features",
               "py": "AI  tui jian gong neng  doc recommendation-canvas  wen dang hua  AI  tui jian gong neng ， fu gai shu ju 、 suan fa 、 hui tui"
             },
             {
@@ -3703,11 +3863,13 @@
                 }
               ],
               "use_case": "深度调研竞对公司，分析定位、财务和市场",
+              "use_case_en": "Deep competitor research: positioning, financials, market dynamics",
               "personas": [
                 "PM",
                 "研究"
               ],
               "when_to_use": "竞品分析或进入新市场前",
+              "when_to_use_en": "Competitive analysis or new market entry",
               "py": "gong si diao yan  company-research  shen du diao yan jing dui gong si ， fen xi ding wei 、 cai wu he shi chang"
             },
             {
@@ -3739,10 +3901,12 @@
                 }
               ],
               "use_case": "PM skill 本身的元工作流，教写产品管理 skill",
+              "use_case_en": "Meta workflow for PM skill creation and improvement",
               "personas": [
                 "PM"
               ],
               "when_to_use": "创建或改进 PM 领域 skill",
+              "when_to_use_en": "Create or improve product management skills",
               "py": "yuan gong zuo liu  skill-authoring-workflow PM skill  ben shen de yuan gong zuo liu ， jiao xie chan pin guan li  skill"
             }
           ]
@@ -3792,11 +3956,13 @@
                 }
               ],
               "use_case": "技术/文案/程序化全方位优化搜索排名与流量",
+              "use_case_en": "Optimize search rankings and traffic via technical, copywriting, and programmatic methods.",
               "personas": [
                 "工程",
                 "营销"
               ],
               "when_to_use": "启动 SEO 策略或优化排名时",
+              "when_to_use_en": "When launching SEO strategy or improving rankings.",
               "py": "SEO  quan tao （Corey Haines 6  jian ） seo-audit ai-seo programmatic-seo schema site-architecture content-strategy  ji shu / wen an / cheng xu hua quan fang wei you hua sou suo pai ming yu liu liang"
             },
             {
@@ -3828,11 +3994,13 @@
                 }
               ],
               "use_case": "完整 SEO 仓库一站式处理优化与部署",
+              "use_case_en": "One-stop SEO repository for systematic optimization and deployment.",
               "personas": [
                 "工程",
                 "营销"
               ],
               "when_to_use": "需要系统化 SEO 改造时",
+              "when_to_use_en": "When requiring comprehensive SEO overhaul.",
               "py": "da xing  SEO  cang ku  claude-seo  wan zheng  SEO  cang ku yi zhan shi chu li you hua yu bu shu"
             },
             {
@@ -3864,10 +4032,12 @@
                 }
               ],
               "use_case": "针对生成式引擎优化内容排名策略",
+              "use_case_en": "Optimize content rankings for generative search engines like ChatGPT and Perplexity.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "面向 ChatGPT/Perplexity 等优化时",
+              "when_to_use_en": "When optimizing for generative search engines.",
               "py": "sheng cheng yin qing you hua  seo-geo  zhen dui sheng cheng shi yin qing you hua nei rong pai ming ce lve"
             }
           ]
@@ -3907,10 +4077,12 @@
                 }
               ],
               "use_case": "Landing/邮件/广告文案写作与编辑",
+              "use_case_en": "Write and edit landing page, email, and ad copy.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "需要撰写或改进营销文案时",
+              "when_to_use_en": "When creating or improving marketing copy.",
               "py": "wen an san jian tao  copywriting copy-editing marketing-psychology Landing/ you jian / guang gao wen an xie zuo yu bian ji"
             },
             {
@@ -3942,10 +4114,12 @@
                 }
               ],
               "use_case": "AIDA/PAS 框架广告与落地页文案",
+              "use_case_en": "Generate ad and landing page copy using AIDA/PAS frameworks.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "创建广告/邮件/landing 文案时",
+              "when_to_use_en": "When creating ads, email, or landing pages.",
               "py": "pin pai wen an  brand-copywriter AIDA/PAS  kuang jia guang gao yu luo di ye wen an"
             },
             {
@@ -3977,11 +4151,13 @@
                 }
               ],
               "use_case": "针对不同场景提炼产品价值主张表述",
+              "use_case_en": "Extract and unify product value propositions across contexts.",
               "personas": [
                 "PM",
                 "营销"
               ],
               "when_to_use": "需要统一产品价值说法时",
+              "when_to_use_en": "When standardizing product value messaging.",
               "py": "jia zhi zhu zhang  / Value Prop value-prop-statements  zhen dui bu tong chang jing ti lian chan pin jia zhi zhu zhang biao shu"
             },
             {
@@ -4013,11 +4189,13 @@
                 }
               ],
               "use_case": "基于品牌价值生成产品名称选项",
+              "use_case_en": "Generate product and feature names based on brand values.",
               "personas": [
                 "营销",
                 "创始人"
               ],
               "when_to_use": "给产品/功能取名时",
+              "when_to_use_en": "When naming products or features.",
               "py": "chan pin ming ming  product-name  ji yu pin pai jia zhi sheng cheng chan pin ming cheng xuan xiang"
             }
           ]
@@ -4056,10 +4234,12 @@
                 }
               ],
               "use_case": "生命周期邮件/冷邮件序列全套",
+              "use_case_en": "Create lifecycle and cold email sequences.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "规划邮件营销活动时",
+              "when_to_use_en": "When planning email marketing campaigns.",
               "py": "you jian quan tao  emails cold-email  sheng ming zhou qi you jian / leng you jian xu lie quan tao"
             },
             {
@@ -4091,10 +4271,12 @@
                 }
               ],
               "use_case": "短信营销/交易/序列含合规策略",
+              "use_case_en": "Execute SMS marketing, transactional messages, and sequences with compliance.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "执行短信营销时",
+              "when_to_use_en": "When running SMS marketing.",
               "py": "duan xin ying xiao  sms  duan xin ying xiao / jiao yi / xu lie han he gui ce lve"
             },
             {
@@ -4145,10 +4327,12 @@
                 }
               ],
               "use_case": "多平台社媒发帖与内容日历管理",
+              "use_case_en": "Manage multi-platform social media posting and content calendars.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "制定社媒内容策略时",
+              "when_to_use_en": "When planning social media content strategy.",
               "py": "she mei ping tai   xie zuo  social x-writer linkedin-writer  duo ping tai she mei fa tie yu nei rong ri li guan li"
             },
             {
@@ -4180,11 +4364,13 @@
                 }
               ],
               "use_case": "B2B 冷邮件/LinkedIn/X 外联模板库",
+              "use_case_en": "B2B cold email, LinkedIn, and X outreach template library.",
               "personas": [
                 "营销",
                 "创始人"
               ],
               "when_to_use": "进行 B2B 外联时",
+              "when_to_use_en": "When conducting B2B outreach.",
               "py": "B2B  wai lian  outreach-specialist B2B  leng you jian /LinkedIn/X  wai lian mu ban ku"
             }
           ]
@@ -4223,10 +4409,12 @@
                 }
               ],
               "use_case": "多平台广告策略/人群/投放预算优化",
+              "use_case_en": "Optimize multi-platform ad strategy, audiences, and budgets.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "管理付费广告投放时",
+              "when_to_use_en": "When managing paid advertising campaigns.",
               "py": "guang gao ce lve  /  chuang yi  ads ad-creative  duo ping tai guang gao ce lve / ren qun / tou fang yu suan you hua"
             },
             {
@@ -4258,10 +4446,12 @@
                 }
               ],
               "use_case": "Google/Meta 广告账户全面审计优化",
+              "use_case_en": "Audit and optimize Google and Meta ad accounts.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "诊断广告账户问题时",
+              "when_to_use_en": "When diagnosing ad account issues.",
               "py": "fu fei guang gao quan zhang hu shen ji  claude-ads Google/Meta  guang gao zhang hu quan mian shen ji you hua"
             },
             {
@@ -4293,10 +4483,12 @@
                 }
               ],
               "use_case": "App Store/Google Play 排名优化",
+              "use_case_en": "Improve App Store and Google Play rankings.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "提升应用市场可见性时",
+              "when_to_use_en": "When improving app store visibility.",
               "py": "App  shang dian you hua  aso App Store/Google Play  pai ming you hua"
             }
           ]
@@ -4338,11 +4530,13 @@
                 }
               ],
               "use_case": "落地页/弹窗/注册/付费流程优化诊断",
+              "use_case_en": "Diagnose and optimize landing pages, modals, signup, and checkout flows.",
               "personas": [
                 "营销",
                 "PM"
               ],
               "when_to_use": "提升转化率时",
+              "when_to_use_en": "When improving conversion rates.",
               "py": "CRO  yi zu  cro popups paywalls signup onboarding  luo di ye / dan chuang / zhu ce / fu fei liu cheng you hua zhen duan"
             },
             {
@@ -4374,10 +4568,12 @@
                 }
               ],
               "use_case": "13 项原则诊断落地页给对比改写",
+              "use_case_en": "Diagnose landing pages using 13 principles with comparative rewrites.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "需要系统化优化落地页时",
+              "when_to_use_en": "When systematically optimizing landing pages.",
               "py": "CRO  you hua da ji he  cro-optimization 13  xiang yuan ze zhen duan luo di ye gei dui bi gai xie"
             },
             {
@@ -4409,11 +4605,13 @@
                 }
               ],
               "use_case": "A/B 实验假设/样本量计算/结果评估",
+              "use_case_en": "Design A/B tests, calculate sample sizes, and evaluate results.",
               "personas": [
                 "营销",
                 "PM"
               ],
               "when_to_use": "设计转化测试时",
+              "when_to_use_en": "When designing conversion tests.",
               "py": "A/B  shi yan she ji  ab-testing A/B  shi yan jia she / yang ben liang ji suan / jie guo ping gu"
             }
           ]
@@ -4469,10 +4667,12 @@
                 }
               ],
               "use_case": "电子书/核查单/模板/报告作为线索磁铁",
+              "use_case_en": "Use ebooks, checklists, templates, and reports as lead magnets.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "构建线索生成漏斗时",
+              "when_to_use_en": "When building lead generation funnels.",
               "py": "Lead Magnet lead-magnets lead-magnet-generator  dian zi shu / he cha dan / mu ban / bao gao zuo wei xian suo ci tie"
             },
             {
@@ -4505,11 +4705,13 @@
                 }
               ],
               "use_case": "建立潜客名单并研究用户需求",
+              "use_case_en": "Build prospect lists and research user needs.",
               "personas": [
                 "营销",
                 "创始人"
               ],
               "when_to_use": "拓展客户群时",
+              "when_to_use_en": "When expanding customer base.",
               "py": "qian ke  /  ke hu yan jiu  prospecting customer-research  jian li qian ke ming dan bing yan jiu yong hu xu qiu"
             },
             {
@@ -4541,10 +4743,12 @@
                 }
               ],
               "use_case": "规划免费工具引流策略与转化路径",
+              "use_case_en": "Plan free tool distribution strategy and conversion paths.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "探索工具作为获客渠道时",
+              "when_to_use_en": "When exploring tools as customer acquisition channels.",
               "py": "mian fei gong ju yin liu  free-tools  gui hua mian fei gong ju yin liu ce lve yu zhuan hua lu jing"
             },
             {
@@ -4579,11 +4783,13 @@
                 }
               ],
               "use_case": "推荐/联盟/社区/合作等增长杠杆",
+              "use_case_en": "Explore referral, affiliate, community, and partnership growth levers.",
               "personas": [
                 "营销",
                 "创始人"
               ],
               "when_to_use": "探索非付费增长渠道时",
+              "when_to_use_en": "When exploring unpaid growth channels.",
               "py": "tui jian  /  lian meng  /  she qu  /  lian he  referrals directory-submissions community-marketing co-marketing  tui jian / lian meng / she qu / he zuo deng zeng zhang gang gan"
             }
           ]
@@ -4656,11 +4862,13 @@
                 }
               ],
               "use_case": "病毒化内容 hook 创意与低成本营销点子",
+              "use_case_en": "Generate viral content hooks and low-cost marketing ideas.",
               "personas": [
                 "营销",
                 "创始人"
               ],
               "when_to_use": "需要创意想法时",
+              "when_to_use_en": "When brainstorming creative ideas.",
               "py": "Hook /  chuang yi dian zi  viral-hook-creator marketing-ideas  bing du hua nei rong  hook  chuang yi yu di cheng ben ying xiao dian zi"
             }
           ]
@@ -4735,11 +4943,13 @@
                 }
               ],
               "use_case": "竞品分析/销售对比卡/竞争情报",
+              "use_case_en": "Competitor analysis, sales comparison cards, and competitive intelligence.",
               "personas": [
                 "营销",
                 "PM"
               ],
               "when_to_use": "了解竞争格局时",
+              "when_to_use_en": "When understanding competitive landscape.",
               "py": "jing pin fen xi  competitor-analysis competitive-battlecard competitor-profiling competitor-intel  jing pin fen xi / xiao shou dui bi ka / jing zheng qing bao"
             },
             {
@@ -4771,10 +4981,12 @@
                 }
               ],
               "use_case": "写竞品对比/替代页面做 SEO 和销售",
+              "use_case_en": "Create competitor comparison and alternative pages for SEO and sales.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "争取竞品客户时",
+              "when_to_use_en": "When pursuing competitor customers.",
               "py": "bi jiao  /  ti dai ye （SEO） competitors  xie jing pin dui bi / ti dai ye mian zuo  SEO  he xiao shou"
             }
           ]
@@ -4812,10 +5024,12 @@
                 }
               ],
               "use_case": "销售演讲稿/资料/异议处理工具集",
+              "use_case_en": "Sales presentations, collateral, and objection handling toolkit.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "支持销售团队时",
+              "when_to_use_en": "When supporting sales teams.",
               "py": "xiao shou fu zhu  sales-enablement  xiao shou yan jiang gao / zi liao / yi yi chu li gong ju ji"
             },
             {
@@ -4847,10 +5061,12 @@
                 }
               ],
               "use_case": "线索生命周期/评分/交接/CRM 字段规范",
+              "use_case_en": "Define lead lifecycle, scoring, routing, and CRM field standards.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "建立销售运营流程时",
+              "when_to_use_en": "When establishing sales operations workflows.",
               "py": "RevOps revops  xian suo sheng ming zhou qi / ping fen / jiao jie /CRM  zi duan gui fan"
             },
             {
@@ -4882,11 +5098,13 @@
                 }
               ],
               "use_case": "取消流程/拯救/催收/流失客户复活",
+              "use_case_en": "Manage cancellations, retention, collections, and win-back strategies.",
               "personas": [
                 "营销",
                 "PM"
               ],
               "when_to_use": "降低客户流失率时",
+              "when_to_use_en": "When reducing customer churn.",
               "py": "liu shi fang yu  churn-prevention  qu xiao liu cheng / zheng jiu / cui shou / liu shi ke hu fu huo"
             }
           ]
@@ -4961,12 +5179,14 @@
                 }
               ],
               "use_case": "定价模型/分层/年付折扣/变现策略",
+              "use_case_en": "Design pricing models, tiers, annual discounts, and monetization strategy.",
               "personas": [
                 "PM",
                 "营销",
                 "创始人"
               ],
               "when_to_use": "制定或调整定价时",
+              "when_to_use_en": "When setting or adjusting pricing.",
               "py": "ding jia ce lve  pricing-strategy pricing pricing-strategist monetization-strategy  ding jia mo xing / fen ceng / nian fu zhe kou / bian xian ce lve"
             }
           ]
@@ -5023,11 +5243,13 @@
                 }
               ],
               "use_case": "产品发布/GTM 策略/Product Hunt 上线战术",
+              "use_case_en": "Plan product launch, GTM strategy, and Product Hunt release tactics.",
               "personas": [
                 "营销",
                 "创始人"
               ],
               "when_to_use": "规划产品发布时",
+              "when_to_use_en": "When planning product launch.",
               "py": "fa bu  GTM launch go-to-market-plan product-hunt-launch-plan  chan pin fa bu /GTM  ce lve /Product Hunt  shang xian zhan shu"
             },
             {
@@ -5059,11 +5281,13 @@
                 }
               ],
               "use_case": "诊断增长瓶颈给高影响下一步建议",
+              "use_case_en": "Diagnose growth bottlenecks and recommend high-impact next steps.",
               "personas": [
                 "营销",
                 "创始人"
               ],
               "when_to_use": "需要战略方向时",
+              "when_to_use_en": "When needing strategic direction.",
               "py": "zhan lve gui hua  strategic-planning  zhen duan zeng zhang ping jing gei gao ying xiang xia yi bu jian yi"
             }
           ]
@@ -5101,10 +5325,12 @@
                 }
               ],
               "use_case": "企业营销流程 SOP 与员工培训文档",
+              "use_case_en": "Create marketing process SOPs and employee training documentation.",
               "personas": [
                 "营销"
               ],
               "when_to_use": "规范营销操作流程时",
+              "when_to_use_en": "When standardizing marketing workflows.",
               "py": "SOP sop-creator  qi ye ying xiao liu cheng  SOP  yu yuan gong pei xun wen dang"
             },
             {
@@ -5137,11 +5363,13 @@
                 }
               ],
               "use_case": "维护定位/ICP/信息库做其他 skill 基座",
+              "use_case_en": "Maintain positioning, ICP, and messaging library as foundation for other skills.",
               "personas": [
                 "营销",
                 "PM"
               ],
               "when_to_use": "启动营销工作前建基础",
+              "when_to_use_en": "Before launching marketing initiatives.",
               "py": "ji zuo shang xia wen  /  ce liang  product-marketing analytics  wei hu ding wei /ICP/ xin xi ku zuo qi ta  skill  ji zuo"
             }
           ]
@@ -5188,11 +5416,13 @@
                 }
               ],
               "use_case": "建立品牌视觉体系、配色、字体规范、海报设计",
+              "use_case_en": "Build brand visual systems, color palettes, typography specs, and poster designs.",
               "personas": [
                 "设计",
                 "PM"
               ],
               "when_to_use": "启动品牌或需要视觉规范时",
+              "when_to_use_en": "Launching a brand or establishing visual standards.",
               "py": "pin pai shi jue san jian tao  brand-guidelines theme-factory canvas-design  jian li pin pai shi jue ti xi 、 pei se 、 zi ti gui fan 、 hai bao she ji"
             }
           ]
@@ -5230,11 +5460,13 @@
                 }
               ],
               "use_case": "避免 AI slop，用明确美学方向写生产级 UI 代码",
+              "use_case_en": "Write production-grade UI code with explicit aesthetic direction to avoid AI slop.",
               "personas": [
                 "工程",
                 "设计"
               ],
               "when_to_use": "生成前端 UI 时指定美学风格",
+              "when_to_use_en": "Generating frontend UI with specific style requirements.",
               "py": "qian duan mei xue  frontend-design  bi mian  AI slop， yong ming que mei xue fang xiang xie sheng chan ji  UI  dai ma"
             },
             {
@@ -5267,11 +5499,13 @@
                 }
               ],
               "use_case": "优化前端可访问性、性能、React 最佳实践规范",
+              "use_case_en": "Optimize frontend accessibility, performance, and React best practices.",
               "personas": [
                 "工程",
                 "设计"
               ],
               "when_to_use": "前端代码评审或质量提升时",
+              "when_to_use_en": "Frontend code review or quality improvement.",
               "py": "Vercel  san jian tao  web-design-guidelines react-best-practices composition-patterns  you hua qian duan ke fang wen xing 、 xing neng 、React  zui jia shi jian gui fan"
             },
             {
@@ -5303,11 +5537,13 @@
                 }
               ],
               "use_case": "跨平台 UI/UX 组件库、视觉风格、设计原则指导",
+              "use_case_en": "Cross-platform UI/UX component libraries, visual styles, and design principles.",
               "personas": [
                 "设计",
                 "工程"
               ],
               "when_to_use": "设计组件库或多平台适配时",
+              "when_to_use_en": "Designing component libraries or multi-platform adaptation.",
               "py": "kua ping tai  UI/UX ui-ux-pro-max-skill  kua ping tai  UI/UX  zu jian ku 、 shi jue feng ge 、 she ji yuan ze zhi dao"
             }
           ]
@@ -5345,11 +5581,13 @@
                 }
               ],
               "use_case": "快速构建可交互 React + Tailwind 单文件 artifact",
+              "use_case_en": "Quickly build interactive React + Tailwind single-file artifacts.",
               "personas": [
                 "工程",
                 "设计"
               ],
               "when_to_use": "需要快速 demo 或原型时",
+              "when_to_use_en": "Needing quick demos or prototypes.",
               "py": "dan wen jian  React HTML artifact web-artifacts-builder  kuai su gou jian ke jiao hu  React + Tailwind  dan wen jian  artifact"
             }
           ]
@@ -5394,12 +5632,14 @@
                 }
               ],
               "use_case": "Figma 设计系统管理、设计稿转代码、设计库生成",
+              "use_case_en": "Figma design system management, design-to-code conversion, design library generation.",
               "personas": [
                 "设计",
                 "工程",
                 "PM"
               ],
               "when_to_use": "与 Figma 交互或实现设计时",
+              "when_to_use_en": "Interacting with Figma or implementing designs.",
               "py": "Figma 8  jian tao  figma figma-use figma-create-new-file figma-generate-design figma-generate-library figma-implement-design figma-code-connect-components figma-create-design-system-rules Figma  she ji xi tong guan li 、 she ji gao zhuan dai ma 、 she ji ku sheng cheng"
             }
           ]
@@ -5437,11 +5677,13 @@
                 }
               ],
               "use_case": "生成专业 PPTX：10 套配色、字体规范、视觉 QA",
+              "use_case_en": "Generate professional PPTX with 10 color schemes, typography specs, visual QA.",
               "personas": [
                 "PM",
                 "营销"
               ],
               "when_to_use": "需要制作幻灯片演示时",
+              "when_to_use_en": "Creating slide presentations.",
               "py": "PPTX  biao zhun sheng cheng  pptx  sheng cheng zhuan ye  PPTX：10  tao pei se 、 zi ti gui fan 、 shi jue  QA"
             },
             {
@@ -5473,11 +5715,13 @@
                 }
               ],
               "use_case": "文档转 PPT 视频：大纲提炼→AI 图生成→视频合成",
+              "use_case_en": "Convert documents to PPT videos: outline extraction → AI image generation → video synthesis.",
               "personas": [
                 "营销",
                 "PM"
               ],
               "when_to_use": "需要文档转视频演示时",
+              "when_to_use_en": "Transforming documents into video presentations.",
               "py": "PPT  shi pin liu shui xian  NanoBanana-PPT-Skills  wen dang zhuan  PPT  shi pin ： da gang ti lian →AI  tu sheng cheng → shi pin he cheng"
             },
             {
@@ -5509,11 +5753,13 @@
                 }
               ],
               "use_case": "零依赖 HTML 演示文稿：支持 16:9、12 风格、PDF 导出",
+              "use_case_en": "Zero-dependency HTML presentations: 16:9 support, 12 styles, PDF export.",
               "personas": [
                 "工程",
                 "设计"
               ],
               "when_to_use": "快速创建技术演讲幻灯片时",
+              "when_to_use_en": "Creating technical talk slides rapidly.",
               "py": "ling yi lai  HTML  yan shi  frontend-slides  ling yi lai  HTML  yan shi wen gao ： zhi chi  16:9、12  feng ge 、PDF  dao chu"
             },
             {
@@ -5545,11 +5791,13 @@
                 }
               ],
               "use_case": "HTML 原生设计：高保真原型、动画、MP4 导出",
+              "use_case_en": "HTML native design: high-fidelity prototypes, animations, MP4 export.",
               "personas": [
                 "设计",
                 "工程"
               ],
               "when_to_use": "设计高保真原型或动画时",
+              "when_to_use_en": "Designing high-fidelity prototypes or animations.",
               "py": "HTML-native  she ji  skill huashu-design HTML  yuan sheng she ji ： gao bao zhen yuan xing 、 dong hua 、MP4  dao chu"
             },
             {
@@ -5581,11 +5829,13 @@
                 }
               ],
               "use_case": "生成 Slack emoji 或动画素材（≤2MB GIF）",
+              "use_case_en": "Generate Slack emojis or animated assets (≤2MB GIF).",
               "personas": [
                 "设计",
                 "营销"
               ],
               "when_to_use": "制作 Slack 通讯素材时",
+              "when_to_use_en": "Creating Slack communication materials.",
               "py": "Slack  dong hua su cai  slack-gif-creator  sheng cheng  Slack emoji  huo dong hua su cai （≤2MB GIF）"
             }
           ]
@@ -5623,11 +5873,13 @@
                 }
               ],
               "use_case": "本地化设计工具：19 skill、32 原型模式、可扩展",
+              "use_case_en": "Offline design toolkit: 19 skills, 32 prototype patterns, extensible.",
               "personas": [
                 "设计",
                 "工程"
               ],
               "when_to_use": "需要离线设计工具或定制时",
+              "when_to_use_en": "Needing offline design tools or customization.",
               "py": "Claude Design  ben di hua ping ti  open-design  ben di hua she ji gong ju ：19 skill、32  yuan xing mo shi 、 ke kuo zhan"
             }
           ]
@@ -5665,11 +5917,13 @@
                 }
               ],
               "use_case": "生成算法驱动的生成艺术（p5.js、粒子系统）",
+              "use_case_en": "Generate algorithmic generative art (p5.js, particle systems).",
               "personas": [
                 "设计",
                 "研究"
               ],
               "when_to_use": "创建生成艺术或可视化时",
+              "when_to_use_en": "Creating generative art or visualizations.",
               "py": "suan fa yi shu  algorithmic-art  sheng cheng suan fa qu dong de sheng cheng yi shu （p5.js、 li zi xi tong ）"
             },
             {
@@ -5701,11 +5955,13 @@
                 }
               ],
               "use_case": "用 Gemini 3 Pro 生成 AI 图像",
+              "use_case_en": "Generate AI images using Gemini 3 Pro.",
               "personas": [
                 "设计",
                 "营销"
               ],
               "when_to_use": "需要 AI 图像生成时",
+              "when_to_use_en": "Needing AI image generation.",
               "py": "AI  chu tu （Nano Banana Pro） nanobanana  yong  Gemini 3 Pro  sheng cheng  AI  tu xiang"
             },
             {
@@ -5756,11 +6012,13 @@
                 }
               ],
               "use_case": "AI 生成 Logo、Banner、营销图（含去背、SVG）",
+              "use_case_en": "AI-generate logos, banners, marketing graphics (incl. background removal, SVG).",
               "personas": [
                 "设计",
                 "营销"
               ],
               "when_to_use": "需要快速生成品牌素材时",
+              "when_to_use_en": "Quick brand asset generation needed.",
               "py": "Logo / Banner  sheng cheng  logo-creator banner-creator image AI  sheng cheng  Logo、Banner、 ying xiao tu （ han qu bei 、SVG）"
             }
           ]
@@ -5798,11 +6056,13 @@
                 }
               ],
               "use_case": "跨 OS 截屏（含权限检查）",
+              "use_case_en": "Cross-OS screenshot capture (with permission checks).",
               "personas": [
                 "工程",
                 "通用"
               ],
               "when_to_use": "需要截屏或原生 UI 操作时",
+              "when_to_use_en": "Needing screenshots or native UI operations.",
               "py": "kua  OS  jie ping  screenshot  kua  OS  jie ping （ han quan xian jian cha ）"
             },
             {
@@ -5834,11 +6094,13 @@
                 }
               ],
               "use_case": "调用 Codex 内置工具生成 AI 位图",
+              "use_case_en": "Call Codex built-in tools to generate AI bitmaps.",
               "personas": [
                 "设计",
                 "工程"
               ],
               "when_to_use": "需要快速 AI 生成图像时",
+              "when_to_use_en": "Quick AI image generation needed.",
               "py": "AI  chu tu （Codex） imagegen  diao yong  Codex  nei zhi gong ju sheng cheng  AI  wei tu"
             },
             {
@@ -5870,11 +6132,13 @@
                 }
               ],
               "use_case": "端到端生成动画 sprite：8 状态行、QA、预览",
+              "use_case_en": "End-to-end animation sprite generation: 8-state rows, QA, preview.",
               "personas": [
                 "设计",
                 "工程"
               ],
               "when_to_use": "制作游戏或应用动画时",
+              "when_to_use_en": "Creating game or app animations.",
               "py": "dong hua  sprite  sheng cheng  hatch-pet  duan dao duan sheng cheng dong hua  sprite：8  zhuang tai xing 、QA、 yu lan"
             }
           ]
@@ -5919,12 +6183,14 @@
                 }
               ],
               "use_case": "YouTube 视频的自动剪辑、切分和多语言字幕处理",
+              "use_case_en": "Auto-clip YouTube videos, split into segments, process multilingual subtitles",
               "personas": [
                 "营销",
                 "创始人",
                 "运营"
               ],
               "when_to_use": "需要从长视频生成多个短视频片段且带字幕时",
+              "when_to_use_en": "Converting long videos into multiple short clips with subtitles",
               "py": "YouTube  jian ji liu shui xian  Youtube-clipper-skill YouTube  shi pin de zi dong jian ji 、 qie fen he duo yu yan zi mu chu li"
             },
             {
@@ -5955,12 +6221,14 @@
                 }
               ],
               "use_case": "从零生成或剪辑视频含配音字幕和动效",
+              "use_case_en": "Generate or edit videos from scratch with voiceover, subtitles, and effects",
               "personas": [
                 "营销",
                 "创始人",
                 "设计"
               ],
               "when_to_use": "制作广告或纪录片视频前期需要快速原型",
+              "when_to_use_en": "Quick prototyping for ads or documentaries before production",
               "py": "Agentic  shi pin sheng chan yin qing  OpenMontage  cong ling sheng cheng huo jian ji shi pin han pei yin zi mu he dong xiao"
             },
             {
@@ -5992,12 +6260,14 @@
                 }
               ],
               "use_case": "用 React 代码生成程序化视频和动画",
+              "use_case_en": "Generate programmatic videos and animations using React code",
               "personas": [
                 "工程",
                 "设计",
                 "营销"
               ],
               "when_to_use": "需要批量生成参数化视频或动画效果时",
+              "when_to_use_en": "Batch-generating parameterized videos or animation effects",
               "py": "Remotion  cheng xu hua shi pin  skills  yong  React  dai ma sheng cheng cheng xu hua shi pin he dong hua"
             },
             {
@@ -6029,12 +6299,14 @@
                 }
               ],
               "use_case": "为 YouTube/Shorts/Demo 编写和规划视频脚本",
+              "use_case_en": "Write and plan video scripts for YouTube/Shorts/product demos",
               "personas": [
                 "营销",
                 "创始人",
                 "运营"
               ],
               "when_to_use": "开始制作视频前梳理脚本和内容结构",
+              "when_to_use_en": "Structuring video scripts and content before production",
               "py": "duo qu dao shi pin jiao ben  video  wei  YouTube/Shorts/Demo  bian xie he gui hua shi pin jiao ben"
             }
           ]
@@ -6073,12 +6345,14 @@
                 }
               ],
               "use_case": "文本转语音和音频转录含说话人识别",
+              "use_case_en": "Convert text to speech and transcribe audio with speaker identification",
               "personas": [
                 "营销",
                 "运营",
                 "通用"
               ],
               "when_to_use": "需要生成配音或转录音频内容时",
+              "when_to_use_en": "Generating voiceovers or transcribing audio content",
               "py": "TTS /  zhuan xie  speech transcribe  wen ben zhuan yu yin he yin pin zhuan lu han shuo hua ren shi bie"
             }
           ]
@@ -6127,11 +6401,13 @@
                 }
               ],
               "use_case": "网页抓取：从 URL 到 markdown/HTML/数据",
+              "use_case_en": "Parse known URLs to extract markdown, HTML, or structured data.",
               "personas": [
                 "工程",
                 "通用"
               ],
               "when_to_use": "需要解析已知网页链接",
+              "when_to_use_en": "Extracting content from a specific webpage link.",
               "py": "Firecrawl  zhua qu liu shui xian  firecrawl-build firecrawl-build-onboarding firecrawl-build-scrape firecrawl-build-search firecrawl-build-interact  wang ye zhua qu ： cong  URL  dao  markdown/HTML/ shu ju"
             },
             {
@@ -6162,11 +6438,13 @@
                 }
               ],
               "use_case": "交互式网页自动化：点击、填表、登录",
+              "use_case_en": "Automate interactive web pages: click, fill forms, log in.",
               "personas": [
                 "工程",
                 "通用"
               ],
               "when_to_use": "需要操控动态页面提取数据",
+              "when_to_use_en": "Operating dynamic pages to extract data.",
               "py": "liu lan qi  agent CLI agent-browser  jiao hu shi wang ye zi dong hua ： dian ji 、 tian biao 、 deng lu"
             }
           ]
@@ -6204,12 +6482,14 @@
                 }
               ],
               "use_case": "多平台情报聚合：Reddit/X/HN 热点监控",
+              "use_case_en": "Aggregate multi-platform intelligence: monitor Reddit/X/HN trends.",
               "personas": [
                 "研究",
                 "营销",
                 "通用"
               ],
               "when_to_use": "跨平台搜集用户反馈或趋势信号",
+              "when_to_use_en": "Gathering cross-platform user feedback and trends.",
               "py": "duo yuan qing bao ju he  last30days-skill  duo ping tai qing bao ju he ：Reddit/X/HN  re dian jian kong"
             },
             {
@@ -6244,12 +6524,14 @@
                 }
               ],
               "use_case": "单平台内容查询：Reddit/X/PH 数据",
+              "use_case_en": "Query single-platform content: Reddit/X/ProductHunt data.",
               "personas": [
                 "营销",
                 "研究",
                 "通用"
               ],
               "when_to_use": "抓取特定平台的实时内容",
+              "when_to_use_en": "Scraping real-time content from specific platforms.",
               "py": "ping tai dan dian cha xun  reddit twitter producthunt requesthunt  dan ping tai nei rong cha xun ：Reddit/X/PH  shu ju"
             },
             {
@@ -6281,11 +6563,13 @@
                 }
               ],
               "use_case": "域名可用性查询与价格对比",
+              "use_case_en": "Check domain availability and compare registration prices.",
               "personas": [
                 "创始人",
                 "通用"
               ],
               "when_to_use": "找域名时查可用性和注册价格",
+              "when_to_use_en": "Looking up domains during domain name selection.",
               "py": "yu ming cha zhao  +  bi jia  domain-hunter  yu ming ke yong xing cha xun yu jia ge dui bi"
             }
           ]
@@ -6323,12 +6607,14 @@
                 }
               ],
               "use_case": "自然语言问询转 SQL 查询",
+              "use_case_en": "Convert natural language questions to SQL database queries.",
               "personas": [
                 "工程",
                 "PM",
                 "通用"
               ],
               "when_to_use": "用自然语言查询数据库",
+              "when_to_use_en": "Querying databases using plain English.",
               "py": "zi ran yu yan  → SQL sql-queries  zi ran yu yan wen xun zhuan  SQL  cha xun"
             },
             {
@@ -6360,11 +6646,13 @@
                 }
               ],
               "use_case": "设计指标 dashboard 与数据源",
+              "use_case_en": "Design metrics dashboards and define data sources.",
               "personas": [
                 "PM",
                 "工程"
               ],
               "when_to_use": "规划产品数据可视化指标",
+              "when_to_use_en": "Planning product data visualization metrics.",
               "py": "zhi biao  dashboard  she ji  metrics-dashboard  she ji zhi biao  dashboard  yu shu ju yuan"
             },
             {
@@ -6396,11 +6684,13 @@
                 }
               ],
               "use_case": "生成测试用假数据集合",
+              "use_case_en": "Generate realistic fake datasets for testing.",
               "personas": [
                 "工程",
                 "通用"
               ],
               "when_to_use": "需要逼真的 CSV/JSON 测试数据",
+              "when_to_use_en": "Creating test data: CSV/JSON.",
               "py": "ce shi  /  jia shu ju sheng cheng  dummy-dataset  sheng cheng ce shi yong jia shu ju ji he"
             }
           ]
@@ -6438,11 +6728,13 @@
                 }
               ],
               "use_case": "创建可复现的数据实验 notebook",
+              "use_case_en": "Create reproducible data experiment notebooks.",
               "personas": [
                 "研究",
                 "工程"
               ],
               "when_to_use": "记录数据分析过程和结果",
+              "when_to_use_en": "Documenting data analysis processes and results.",
               "py": "Jupyter Notebook jupyter-notebook  chuang jian ke fu xian de shu ju shi yan  notebook"
             }
           ]
@@ -6491,11 +6783,13 @@
                 }
               ],
               "use_case": "简历优化：ATS 过滤、成就量化、格式规范、领导力凸显",
+              "use_case_en": "Resume optimization: ATS filtering, achievement quantification, format standards, leadership emphasis",
               "personas": [
                 "求职",
                 "工程"
               ],
               "when_to_use": "投简历前最后检查",
+              "when_to_use_en": "Final check before submitting resume",
               "py": "Resume  you hua （5  jian ） resume-ats-optimizer resume-bullet-writer resume-quantifier resume-formatter resume-section-builder  jian li you hua ：ATS  guo lv 、 cheng jiu liang hua 、 ge shi gui fan 、 ling dao li tu xian"
             },
             {
@@ -6530,10 +6824,12 @@
                 }
               ],
               "use_case": "JD 评估与简历定向：职位匹配度、经验缺口、针对性改写",
+              "use_case_en": "Job description assessment and resume targeting: position fit, experience gaps, targeted rewrites",
               "personas": [
                 "求职"
               ],
               "when_to_use": "找到心仪职位时立即用",
+              "when_to_use_en": "Use immediately when finding target position",
               "py": "Job Search（4  jian ） job-description-analyzer resume-tailor resume-version-manager offer-comparison-analyzer JD  ping gu yu jian li ding xiang ： zhi wei pi pei du 、 jing yan que kou 、 zhen dui xing gai xie"
             },
             {
@@ -6568,10 +6864,12 @@
                 }
               ],
               "use_case": "辅助材料齐全：Cover letter 个性化、LinkedIn 优化、作品集案例",
+              "use_case_en": "Supporting materials complete: personalized cover letter, LinkedIn optimization, portfolio examples",
               "personas": [
                 "求职"
               ],
               "when_to_use": "完整申请材料包前准备",
+              "when_to_use_en": "Prepare before completing full application package",
               "py": "Supporting Docs（4  jian ） cover-letter-generator linkedin-profile-optimizer portfolio-case-study-writer reference-list-builder  fu zhu cai liao qi quan ：Cover letter  ge xing hua 、LinkedIn  you hua 、 zuo pin ji an li"
             },
             {
@@ -6607,10 +6905,12 @@
                 }
               ],
               "use_case": "角色特化简历：工程/PM/高管/学术/创意/转岗职场翻译",
+              "use_case_en": "Role-specific resumes: engineering/PM/executive/academic/creative/career-switcher translations",
               "personas": [
                 "求职"
               ],
               "when_to_use": "明确目标岗位属性后定向改写",
+              "when_to_use_en": "Rewrite targeted after clarifying target role",
               "py": "zhuan ye hua jian li  tech-resume-optimizer executive-resume-writer academic-cv-builder creative-portfolio-resume career-changer-translator  jue se te hua jian li ： gong cheng /PM/ gao guan / xue shu / chuang yi / zhuan gang zhi chang fan yi"
             },
             {
@@ -6642,11 +6942,13 @@
                 }
               ],
               "use_case": "简历结构审查：XYZ+S 公式、关键词覆盖、排版一致性检验",
+              "use_case_en": "Resume structure review: XYZ+S formula, keyword coverage, formatting consistency check",
               "personas": [
                 "求职",
                 "PM"
               ],
               "when_to_use": "草稿完成需专业反馈时",
+              "when_to_use_en": "Get professional feedback when draft is complete",
               "py": "PM  jian li shen cha  review-resume  jian li jie gou shen cha ：XYZ+S  gong shi 、 guan jian ci fu gai 、 pai ban yi zhi xing jian yan"
             }
           ]
@@ -6702,10 +7004,12 @@
                 }
               ],
               "use_case": "面试备考：从履历生成 STAR 故事、技能点练习题、常见问题",
+              "use_case_en": "Interview prep: generate STAR stories from background, skill practice questions, common scenarios",
               "personas": [
                 "求职"
               ],
               "when_to_use": "收到面试邀请后 1-2 周前",
+              "when_to_use_en": "1-2 weeks before interview after receiving invitation",
               "py": "mian shi zhun bei  interview-prep-generator interview-prep  mian shi bei kao ： cong lv li sheng cheng  STAR  gu shi 、 ji neng dian lian xi ti 、 chang jian wen ti"
             },
             {
@@ -6737,10 +7041,12 @@
                 }
               ],
               "use_case": "薪资谈判：市场行情、底线计算、谈判脚本、出价策略",
+              "use_case_en": "Salary negotiation: market rates, bottom-line calculation, negotiation scripts, offer strategies",
               "personas": [
                 "求职"
               ],
               "when_to_use": "收 offer 后谈判前必做",
+              "when_to_use_en": "Must-do before negotiating after receiving offer",
               "py": "xin zi tan pan  salary-negotiation-prep  xin zi tan pan ： shi chang hang qing 、 di xian ji suan 、 tan pan jiao ben 、 chu jia ce lve"
             },
             {
@@ -6794,10 +7100,12 @@
                 }
               ],
               "use_case": "求职批量自动化：JD 评分扫描、岗位活跃检测、投递追踪、重复数据清理",
+              "use_case_en": "Job search batch automation: JD scoring scanner, position activity tracking, application tracking, deduplication",
               "personas": [
                 "求职"
               ],
               "when_to_use": "大量投递时用 TUI 仪表板管理",
+              "when_to_use_en": "Use TUI dashboard to manage high-volume applications",
               "py": "qiu zhi zi dong hua xi tong  career-ops liveness scan batch pdf cv-sync-check  qiu zhi pi liang zi dong hua ：JD  ping fen sao miao 、 gang wei huo yue jian ce 、 tou di zhui zong 、 chong fu shu ju qing li"
             }
           ]
@@ -6836,10 +7144,12 @@
                 }
               ],
               "use_case": "法律文件起草：保密协议、隐私政策含监管条款",
+              "use_case_en": "Legal document drafting: non-disclosure agreements, privacy policies with compliance clauses",
               "personas": [
                 "创始人"
               ],
               "when_to_use": "接触候选人或收集数据时",
+              "when_to_use_en": "When contacting candidates or collecting data",
               "py": "NDA /  yin si zheng ce  draft-nda privacy-policy  fa lv wen jian qi cao ： bao mi xie yi 、 yin si zheng ce han jian guan tiao kuan"
             }
           ]
@@ -6886,10 +7196,12 @@
                 }
               ],
               "use_case": "接入 WhatsApp 消息、自动化应答、诊断投递问题",
+              "use_case_en": "Integrate WhatsApp messaging, automate replies, diagnose delivery issues.",
               "personas": [
                 "工程"
               ],
               "when_to_use": "需要在 Claude Code 中操作 WhatsApp",
+              "when_to_use_en": "Operating WhatsApp within Claude Code.",
               "py": "WhatsApp  san jian tao  integrate-whatsapp automate-whatsapp observe-whatsapp  jie ru  WhatsApp  xiao xi 、 zi dong hua ying da 、 zhen duan tou di wen ti"
             }
           ]
@@ -6945,11 +7257,13 @@
                 }
               ],
               "use_case": "在 Claude Code 中管理 Linear 工单、sprint、自动化同步",
+              "use_case_en": "Manage Linear tickets, sprints, and automate sync in Claude Code.",
               "personas": [
                 "工程",
                 "PM"
               ],
               "when_to_use": "任务库与代码改动需要同步关联",
+              "when_to_use_en": "Sync task backlog with code changes.",
               "py": "Linear  ren wu guan li  linear-claude-skill linear  zai  Claude Code  zhong guan li  Linear  gong dan 、sprint、 zi dong hua tong bu"
             }
           ]
@@ -6986,11 +7300,13 @@
                 }
               ],
               "use_case": "多 AI agent 协同编排、自动触发、远程控制、数据互联",
+              "use_case_en": "Orchestrate multi-AI agents, auto-trigger, remote control, data interop.",
               "personas": [
                 "工程",
                 "PM"
               ],
               "when_to_use": "搭建跨平台 agent 自动化系统",
+              "when_to_use_en": "Building cross-platform agent automation systems.",
               "py": "duo  agent  zhuo mian  app Dorothy  duo  AI agent  xie tong bian pai 、 zi dong chu fa 、 yuan cheng kong zhi 、 shu ju hu lian"
             }
           ]
@@ -7028,12 +7344,14 @@
                 }
               ],
               "use_case": "定时启动后台调研任务，不占用交互时间",
+              "use_case_en": "Schedule background research tasks without blocking interactive time.",
               "personas": [
                 "工程",
                 "PM",
                 "研究"
               ],
               "when_to_use": "需要长跑式研究在离线时段运行",
+              "when_to_use_en": "Run long-duration research during offline periods.",
               "py": "shui mian shi chang pao yan jiu  ARIS Auto-claude-code-research-in-sleep  ding shi qi dong hou tai diao yan ren wu ， bu zhan yong jiao hu shi jian"
             }
           ]
@@ -7078,10 +7396,12 @@
                 }
               ],
               "use_case": "集合化提供创始人常用的战略、销售、内容和工程技巧",
+              "use_case_en": "Provides founders curated strategy, sales, content, and engineering tactics.",
               "personas": [
                 "创始人"
               ],
               "when_to_use": "着手产品/市场定位或营销时",
+              "when_to_use_en": "When positioning product/market or planning marketing.",
               "py": "Founder  gong ju xiang  founder-skills  ji he hua ti gong chuang shi ren chang yong de zhan lve 、 xiao shou 、 nei rong he gong cheng ji qiao"
             },
             {
@@ -7113,10 +7433,12 @@
                 }
               ],
               "use_case": "用 YC CEO 开源个人工作流快速自动化日常决策和交付",
+              "use_case_en": "Automates daily decisions and delivery using YC CEO's open-source workflow.",
               "personas": [
                 "创始人"
               ],
               "when_to_use": "需要高频重复任务自动化",
+              "when_to_use_en": "When automating frequent repetitive tasks.",
               "py": "YC CEO  ge ren pei zhi  gstack  yong  YC CEO  kai yuan ge ren gong zuo liu kuai su zi dong hua ri chang jue ce he jiao fu"
             },
             {
@@ -7148,10 +7470,12 @@
                 }
               ],
               "use_case": "为独立创业者生成营销资产、调研增长杠杆、管理社交媒体",
+              "use_case_en": "Generates marketing assets, researches growth levers, manages social media for solopreneurs.",
               "personas": [
                 "创始人"
               ],
               "when_to_use": "缺少 PMF 前的多面手工作",
+              "when_to_use_en": "For pre-PMF solo founder generalist work.",
               "py": "Solopreneur  gong ju ji  opc-skills  wei du li chuang ye zhe sheng cheng ying xiao zi chan 、 diao yan zeng zhang gang gan 、 guan li she jiao mei ti"
             }
           ]
@@ -7191,11 +7515,13 @@
                 }
               ],
               "use_case": "用 Charlie Munger 心智模型规范现金管理和资本配置决策",
+              "use_case_en": "Applies Charlie Munger mental models to cash management and capital allocation decisions.",
               "personas": [
                 "创始人",
                 "运营"
               ],
               "when_to_use": "制定融资、招聘、烧钱策略时",
+              "when_to_use_en": "When setting fundraising, hiring, or burn-rate strategy.",
               "py": "Charlie Munger  feng ge  CFO charlie-cfo-skill working driver-based  yong  Charlie Munger  xin zhi mo xing gui fan xian jin guan li he zi ben pei zhi jue ce"
             }
           ]
@@ -7236,11 +7562,13 @@
                 }
               ],
               "use_case": "一键查 134 国税务、会计准则和合规要求，对接平台 API",
+              "use_case_en": "Query 134 countries' tax, accounting rules, and compliance requirements via platform API.",
               "personas": [
                 "运营",
                 "创始人"
               ],
               "when_to_use": "涉及多国业务或合规问题",
+              "when_to_use_en": "When dealing with multi-country ops or compliance.",
               "py": "duo guo hui ji  /  shui wu chao da ku （11  ling yu ） openaccountants integrations intelligence patterns  yi jian cha  134  guo shui wu 、 kuai ji zhun ze he he gui yao qiu ， dui jie ping tai  API"
             }
           ]
@@ -7285,11 +7613,13 @@
                 }
               ],
               "use_case": "从研究到论文发表的全流程辅助，涵盖选题、写作、审稿、修改。",
+              "use_case_en": "Full-pipeline paper guidance: topic selection, writing, peer review, revisions.",
               "personas": [
                 "研究",
                 "工程"
               ],
               "when_to_use": "论文从构思到投稿的各阶段。",
+              "when_to_use_en": "At each paper stage from conception to submission.",
               "py": "xue shu yan jiu liu shui xian  academic-research-skills  cong yan jiu dao lun wen fa biao de quan liu cheng fu zhu ， han gai xuan ti 、 xie zuo 、 shen gao 、 xiu gai 。"
             }
           ]
@@ -7327,12 +7657,14 @@
                 }
               ],
               "use_case": "科研、工程、分析、金融等领域的文献综述与数据处理。",
+              "use_case_en": "Literature review and data processing for research, engineering, analysis, finance.",
               "personas": [
                 "研究",
                 "工程",
                 "通用"
               ],
               "when_to_use": "需要文献综述或处理科研数据时。",
+              "when_to_use_en": "When synthesizing literature or handling research data.",
               "py": "Scientific Agent skill  ji  scientific-agent-skills  ke yan 、 gong cheng 、 fen xi 、 jin rong deng ling yu de wen xian zong shu yu shu ju chu li 。"
             }
           ]
@@ -7377,11 +7709,13 @@
                 }
               ],
               "use_case": "理解 LLM context 机制和 agent 架构的基础原理与优化方向",
+              "use_case_en": "Understand LLM context mechanisms and agent architecture fundamentals and optimization directions.",
               "personas": [
                 "工程",
                 "研究"
               ],
               "when_to_use": "设计多 agent 系统或优化长链路任务前",
+              "when_to_use_en": "Before designing multi-agent systems or optimizing long-chain tasks.",
               "py": "Context Engineering  di ji ke  context-fundamentals  li jie  LLM context  ji zhi he  agent  jia gou de ji chu yuan li yu you hua fang xiang"
             }
           ]
@@ -7422,10 +7756,12 @@
                 }
               ],
               "use_case": "识别并修复长会话中的 context degradation 问题，压缩/优化 token 效率",
+              "use_case_en": "Identify and fix context degradation in long conversations; compress and optimize token efficiency.",
               "personas": [
                 "工程"
               ],
               "when_to_use": "发现模型忘记早期信息或回复质量下降时",
+              "when_to_use_en": "When model forgets early context or response quality declines.",
               "py": "Context  sheng ming zhou qi  4  jian tao  context-degradation context-optimization context-compression filesystem-context  shi bie bing xiu fu zhang hui hua zhong de  context degradation  wen ti ， ya suo / you hua  token  xiao lv"
             }
           ]
@@ -7463,11 +7799,13 @@
                 }
               ],
               "use_case": "对比四大持久记忆系统，选择适合项目的语义记忆框架",
+              "use_case_en": "Compare four persistent memory systems; select semantic memory framework suited to project.",
               "personas": [
                 "工程",
                 "研究"
               ],
               "when_to_use": "需要 agent 跨会话保留记忆和学习时",
+              "when_to_use_en": "Agents need cross-session memory and learning retention.",
               "py": "chi jiu yu yi ji yi kuang jia xuan xing  memory-systems  dui bi si da chi jiu ji yi xi tong ， xuan ze shi he xiang mu di yu yi ji yi kuang jia"
             },
             {
@@ -7499,10 +7837,12 @@
                 }
               ],
               "use_case": "在 KV cache 层共享多 agent 记忆，降低重复计算成本",
+              "use_case_en": "Share multi-agent memory at KV cache layer to reduce duplicate computation cost.",
               "personas": [
                 "工程"
               ],
               "when_to_use": "多 agent 系统中有大量重复上下文时",
+              "when_to_use_en": "Multi-agent system has heavy repeated context.",
               "py": "KV cache  biao zheng ji gong xiang  latent-briefing  zai  KV cache  ceng gong xiang duo  agent  ji yi ， jiang di chong fu ji suan cheng ben"
             },
             {
@@ -7534,11 +7874,13 @@
                 }
               ],
               "use_case": "把语义上下文转化为 BDI 心智状态，增强 agent 推理能力",
+              "use_case_en": "Convert semantic context to BDI mental states; enhance agent reasoning capability.",
               "personas": [
                 "工程",
                 "研究"
               ],
               "when_to_use": "构建需要复杂推理的神经符号 agent 时",
+              "when_to_use_en": "Building neuro-symbolic agents requiring complex reasoning.",
               "py": "BDI  xin zhi zhuang tai  bdi-mental-states  ba yu yi shang xia wen zhuan hua wei  BDI  xin zhi zhuang tai ， zeng qiang  agent  tui li neng li"
             }
           ]
@@ -7576,10 +7918,12 @@
                 }
               ],
               "use_case": "对比三种多 agent 拓扑，选型 supervisor/swarm/hierarchical 架构",
+              "use_case_en": "Compare three multi-agent topologies; select supervisor/swarm/hierarchical architecture.",
               "personas": [
                 "工程"
               ],
               "when_to_use": "需要设计多 agent 协作系统的组织结构时",
+              "when_to_use_en": "Designing multi-agent collaboration system organization.",
               "py": "duo  agent  tuo pu xuan xing  multi-agent-patterns  dui bi san zhong duo  agent  tuo pu ， xuan xing  supervisor/swarm/hierarchical  jia gou"
             },
             {
@@ -7611,11 +7955,13 @@
                 }
               ],
               "use_case": "部署 agent 到远端 sandbox（Modal/Cloudflare）实现隔离运行",
+              "use_case_en": "Deploy agents to remote sandboxes (Modal/Cloudflare) for isolated execution.",
               "personas": [
                 "工程",
                 "运营"
               ],
               "when_to_use": "需要长时间运行 agent 或多用户共享时",
+              "when_to_use_en": "Agents need long-running execution or multi-user sharing.",
               "py": "yuan duan  sandbox agent  yun xing shi  hosted-agents  bu shu  agent  dao yuan duan  sandbox（Modal/Cloudflare） shi xian ge li yun xing"
             },
             {
@@ -7647,10 +7993,12 @@
                 }
               ],
               "use_case": "控制自主 agent 循环的编辑权限、回滚、日志等安全边界",
+              "use_case_en": "Control autonomous agent loop permissions, rollback, logs, and security boundaries.",
               "personas": [
                 "工程"
               ],
               "when_to_use": "上线自主 agent 前规范其行为边界",
+              "when_to_use_en": "Standardize autonomous agent behavior before production.",
               "py": "zi zhu  loop  kong zhi ping mian  harness-engineering  kong zhi zi zhu  agent  xun huan de bian ji quan xian 、 hui gun 、 ri zhi deng an quan bian jie"
             }
           ]
@@ -7688,10 +8036,12 @@
                 }
               ],
               "use_case": "按 agent 友好的原则重新设计工具接口和文档",
+              "use_case_en": "Redesign tool interfaces and docs per agent-friendly principles.",
               "personas": [
                 "工程"
               ],
               "when_to_use": "工具经常被 agent 误用或调用失败时",
+              "when_to_use_en": "Tools frequently misused or fail when called by agents.",
               "py": "Tool  she ji  tool-design  an  agent  you hao de yuan ze chong xin she ji gong ju jie kou he wen dang"
             },
             {
@@ -7723,11 +8073,13 @@
                 }
               ],
               "use_case": "建立多维 rubric 评测 agent 的因果、完整度、引用质量、工具效率",
+              "use_case_en": "Build multi-dimensional rubric to evaluate agents: causality, completeness, citation quality, tool efficiency.",
               "personas": [
                 "工程",
                 "研究"
               ],
               "when_to_use": "对比两个 agent 系统或优化基准时",
+              "when_to_use_en": "Comparing two agent systems or benchmarking optimization.",
               "py": "Agent  ping ce  evaluation  jian li duo wei  rubric  ping ce  agent  de yin guo 、 wan zheng du 、 yin yong zhi liang 、 gong ju xiao lv"
             },
             {
@@ -7759,11 +8111,13 @@
                 }
               ],
               "use_case": "用 LLM-as-judge 评估 agent 输出，规避位置/长度/自我增强偏置",
+              "use_case_en": "Use LLM-as-judge to score agent output; avoid position/length/self-enhancement bias.",
               "personas": [
                 "工程",
                 "研究"
               ],
               "when_to_use": "需要自动评分 agent 输出质量时",
+              "when_to_use_en": "Need automated agent output quality scoring.",
               "py": "jin jie  LLM-as-judge advanced-evaluation  yong  LLM-as-judge  ping gu  agent  shu chu ， gui bi wei zhi / chang du / zi wo zeng qiang pian zhi"
             },
             {
@@ -7795,11 +8149,13 @@
                 }
               ],
               "use_case": "从任务适配性检查到成本估算，系统性地交付 LLM agent 项目",
+              "use_case_en": "Systematically deliver LLM agent projects: task fitness check to cost estimation.",
               "personas": [
                 "工程",
                 "PM"
               ],
               "when_to_use": "启动新 agent 项目时评估可行性和成本",
+              "when_to_use_en": "Evaluate feasibility and cost before starting new agent project.",
               "py": "xiang mu ji fang fa lun  project-development  cong ren wu shi pei xing jian cha dao cheng ben gu suan ， xi tong xing di jiao fu  LLM agent  xiang mu"
             }
           ]
@@ -7897,11 +8253,13 @@
                 }
               ],
               "use_case": "创建和测试新skill的完整流程",
+              "use_case_en": "Complete workflow for creating and testing new skills",
               "personas": [
                 "工程",
                 "PM"
               ],
               "when_to_use": "需要写/优化skill时",
+              "when_to_use_en": "When writing or optimizing a skill",
               "py": "Skill  chuang jian qi  skill-creator writing-skills write-a-skill  chuang jian he ce shi xin skill de wan zheng liu cheng"
             }
           ]
@@ -7940,11 +8298,13 @@
                 }
               ],
               "use_case": "安装skill和在开放生态发现匹配topic的skill",
+              "use_case_en": "Install skills and discover ecosystem skills by topic match",
               "personas": [
                 "工程",
                 "通用"
               ],
               "when_to_use": "需要扩展工具集或找特定task的skill",
+              "when_to_use_en": "Expanding toolset or finding task-specific skills",
               "py": "Skill  an zhuang  /  fa xian  skill-installer skills  an zhuang skill he zai kai fang sheng tai fa xian pi pei topic de skill"
             },
             {
@@ -7977,10 +8337,12 @@
                 }
               ],
               "use_case": "把skill打包成plugin或CLI供他人使用",
+              "use_case_en": "Package skills as plugins or CLIs for distribution",
               "personas": [
                 "工程"
               ],
               "when_to_use": "要开源/分享自己的skill时",
+              "when_to_use_en": "Open-sourcing or sharing your own skill",
               "py": "Plugin / CLI  da bao  plugin-creator cli-creator  ba skill da bao cheng plugin huo CLI gong ta ren shi yong"
             },
             {
@@ -8012,10 +8374,12 @@
                 }
               ],
               "use_case": "迁移Claude Code的工作流到Codex agent",
+              "use_case_en": "Migrate Claude Code workflows to Codex agent platform",
               "personas": [
                 "工程"
               ],
               "when_to_use": "从Claude Code切换到Codex平台",
+              "when_to_use_en": "Switching from Claude Code to Codex",
               "py": "kua  agent  qian yi  migrate-to-codex  qian yi Claude Code de gong zuo liu dao Codex agent"
             }
           ]
@@ -8053,10 +8417,12 @@
                 }
               ],
               "use_case": "安装前审计skill权限和代码安全",
+              "use_case_en": "Audit skill permissions and code security before install",
               "personas": [
                 "工程"
               ],
               "when_to_use": "安装陌生来源的skill前",
+              "when_to_use_en": "Before installing skills from unknown sources",
               "py": "zhuang qian an quan men  openclaw-skills-security  an zhuang qian shen ji skill quan xian he dai ma an quan"
             }
           ]
@@ -8093,10 +8459,12 @@
                 }
               ],
               "use_case": "使用Anthropic官方高质量的plugin库",
+              "use_case_en": "Use Anthropic's official high-quality plugin library",
               "personas": [
                 "通用"
               ],
               "when_to_use": "优先装官方plugin而非社区版",
+              "when_to_use_en": "Prioritizing official plugins over community versions",
               "py": "Anthropic  guan fang  Marketplace claude-plugins-official  shi yong Anthropic guan fang gao zhi liang de plugin ku"
             }
           ]
@@ -8133,10 +8501,12 @@
                 }
               ],
               "use_case": "应用编程行为约束到CLAUDE.md",
+              "use_case_en": "Apply programming behavior constraints to CLAUDE.md",
               "personas": [
                 "工程"
               ],
               "when_to_use": "想固化编程最佳实践到提示",
+              "when_to_use_en": "Encoding best practices into prompts",
               "py": "CLAUDE.md  mu ban  andrej-karpathy-skills  ying yong bian cheng xing wei yue shu dao CLAUDE.md"
             }
           ]

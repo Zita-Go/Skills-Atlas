@@ -105,8 +105,10 @@ def build_sections(categories, skills, repos, usecases):
                         'description_en': s.get('description_en'),
                         'sources': sources_resolved,
                         'use_case': uc.get('use_case', ''),
+                        'use_case_en': uc.get('use_case_en', ''),
                         'personas': uc.get('personas', []),
                         'when_to_use': uc.get('when_to_use', ''),
+                        'when_to_use_en': uc.get('when_to_use_en', ''),
                         'py': to_pinyin(s['group'] + ' ' + ' '.join(s['skills'])
                                         + ' ' + uc.get('use_case', '')),
                     })

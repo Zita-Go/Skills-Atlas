@@ -987,11 +987,11 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
         <div><b id="heroChainCount">—</b><span data-i18n="stat_chain">强绑定工作流</span></div>
       </div>
       <div class="hero-start">
-        <span class="hero-start-q">不知从哪开始？</span>
-        <button class="start-chip" data-start="search">🔍 搜 skill / 描述 / 仓库</button>
-        <button class="start-chip" data-start="ai">✨ 描述需求，AI 推荐</button>
-        <button class="start-chip" data-start="browse">📂 浏览 13 大类</button>
-        <span class="hero-start-eg">例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」</span>
+        <span class="hero-start-q" data-i18n="hs_q">不知从哪开始？</span>
+        <button class="start-chip" data-start="search" data-i18n="hs_search">🔍 搜 skill / 描述 / 仓库</button>
+        <button class="start-chip" data-start="ai" data-i18n="hs_ai">✨ 描述需求，AI 推荐</button>
+        <button class="start-chip" data-start="browse" data-i18n="hs_browse">📂 浏览 13 大类</button>
+        <span class="hero-start-eg" data-i18n="hs_eg">例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」</span>
       </div>
     </div>
     <div class="hero-viz">
@@ -1157,6 +1157,8 @@ const I18N = {
     ai_empty_noquery: '请输入想做的事',
     mode_local: '本地匹配', mode_local_title: '当前用本地 TF-IDF + 同义词，未配置 LLM',
     usage_btn: '📖 用法', install_btn: '📋 安装', license_unknown: '未知',
+    hs_q: '不知从哪开始？', hs_search: '🔍 搜 skill / 描述 / 仓库', hs_ai: '✨ 描述需求，AI 推荐', hs_browse: '📂 浏览 13 大类',
+    hs_eg: '例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」',
     usage_open_gh: '在 GitHub 打开 ↗', usage_copy_cmd: '📋 复制安装命令',
     copied: '✓ 已复制', copy_failed: '复制失败',
   },
@@ -1208,6 +1210,8 @@ const I18N = {
     ai_empty_noquery: 'Please enter what you want to do',
     mode_local: 'Local match', mode_local_title: 'Using local TF-IDF + synonyms; no LLM configured',
     usage_btn: '📖 Usage', install_btn: '📋 Install', license_unknown: 'unknown',
+    hs_q: 'Not sure where to start?', hs_search: '🔍 Search skills / descriptions / repos', hs_ai: '✨ Describe your goal, AI picks', hs_browse: '📂 Browse 13 categories',
+    hs_eg: 'e.g. "build a SaaS landing page", "write a PRD", "scrape a website"',
     usage_open_gh: 'Open on GitHub ↗', usage_copy_cmd: '📋 Copy install command',
     copied: '✓ Copied', copy_failed: 'Copy failed',
   },
@@ -1398,21 +1402,25 @@ function toggleNav(section){
 // 许可证分级：宽松 / copyleft / 限制性(商用受限·非商用) / 未声明 —— 决定徽章样式与提示
 const LIC_COPYLEFT = ['GPL-3.0','GPL-2.0','AGPL-3.0','LGPL-3.0','MPL-2.0','CC-BY-SA-4.0'];
 const LIC_RESTRICT = ['Elastic-2.0','BUSL-1.1','SSPL-1.0','CC-BY-NC-4.0','CC-BY-NC-SA-4.0','PolyForm-Noncommercial-1.0.0'];
+const PERSONA_EN = {'工程':'Engineering','PM':'PM','设计':'Design','营销':'Marketing','创始人':'Founder','研究':'Research','运营':'Ops','求职':'Job-seeker','通用':'General'};
+function personaLabel(p){ return (LANG === 'en' && PERSONA_EN[p]) ? PERSONA_EN[p] : p; }
 function licMeta(spdx){
-  if(!spdx) return { cls:'unknown', label:'未声明', note:'上游未声明许可证，使用前请到仓库确认' };
-  if(LIC_RESTRICT.includes(spdx)) return { cls:'restrict', label:spdx, note:(/NC|PolyForm/.test(spdx)?'⚠ 非商用许可':'⚠ 商用受限') };
-  if(LIC_COPYLEFT.includes(spdx)) return { cls:'copyleft', label:spdx, note:'copyleft：衍生作品需以同协议开源' };
-  return { cls:'ok', label:spdx, note:'宽松开源协议' };
+  const en = LANG === 'en';
+  if(!spdx) return { cls:'unknown', label: en?'unknown':'未声明', note: en?'No upstream license declared; check the repo before use':'上游未声明许可证，使用前请到仓库确认' };
+  if(LIC_RESTRICT.includes(spdx)) return { cls:'restrict', label:spdx, note: en?(/NC|PolyForm/.test(spdx)?'⚠ Non-commercial only':'⚠ Commercial use restricted'):(/NC|PolyForm/.test(spdx)?'⚠ 非商用许可':'⚠ 商用受限') };
+  if(LIC_COPYLEFT.includes(spdx)) return { cls:'copyleft', label:spdx, note: en?'copyleft: derivatives must stay same license':'copyleft：衍生作品需以同协议开源' };
+  return { cls:'ok', label:spdx, note: en?'permissive open-source':'宽松开源协议' };
 }
 function installPrereq(cmd){
   if(!cmd) return '';
-  if(cmd.startsWith('npx ')) return '需 Node.js ≥18。粘到终端运行；skill 会装到 ~/.claude/skills/，用 skills list 验证。';
-  if(cmd.startsWith('npm ')) return '需 Node.js + npm。粘到终端运行。';
-  if(cmd.startsWith('pip ')) return '需 Python 3 + pip。粘到终端运行。';
-  if(cmd.startsWith('/plugin')) return '在 Claude Code 里运行此斜杠命令（先加 marketplace，再 /plugin install 选具体插件）。';
-  if(cmd.startsWith('git clone')) return '需 git。clone 后按仓库 README 使用。';
-  if(cmd.startsWith('#')) return '按提示手动操作。';
-  return '粘到终端运行。';
+  const en = LANG === 'en';
+  if(cmd.startsWith('npx ')) return en?'Needs Node.js ≥18. Paste in a terminal; installs to ~/.claude/skills/, verify with `skills list`.':'需 Node.js ≥18。粘到终端运行；skill 会装到 ~/.claude/skills/，用 skills list 验证。';
+  if(cmd.startsWith('npm ')) return en?'Needs Node.js + npm. Paste in a terminal.':'需 Node.js + npm。粘到终端运行。';
+  if(cmd.startsWith('pip ')) return en?'Needs Python 3 + pip. Paste in a terminal.':'需 Python 3 + pip。粘到终端运行。';
+  if(cmd.startsWith('/plugin')) return en?'Run this slash command inside Claude Code (add the marketplace, then /plugin install).':'在 Claude Code 里运行此斜杠命令（先加 marketplace，再 /plugin install 选具体插件）。';
+  if(cmd.startsWith('git clone')) return en?'Needs git. After cloning, follow the repo README.':'需 git。clone 后按仓库 README 使用。';
+  if(cmd.startsWith('#')) return en?'Follow the instruction manually.':'按提示手动操作。';
+  return en?'Paste in a terminal.':'粘到终端运行。';
 }
 function daysSince(iso){ try{ return Math.floor((Date.now() - new Date(iso).getTime())/864e5); }catch(_){ return null; } }
 // 搜索：每个词需命中（子串）或模糊子序列匹配（容错/拼音），多词 AND
@@ -1494,8 +1502,8 @@ function buildContent(){
 
         const maxStars = row.sources.reduce((m, s) => Math.max(m, s.stars || 0), 0);
         // data attributes for filtering
-        const searchText = (row.skills.join(' ') + ' ' + row.group + ' ' + row.description + ' ' +
-                            (row.use_case||'') + ' ' + (row.py||'') + ' ' +
+        const searchText = (row.skills.join(' ') + ' ' + row.group + ' ' + (row.group_en||'') + ' ' + row.description + ' ' +
+                            (row.use_case||'') + ' ' + (row.use_case_en||'') + ' ' + (row.py||'') + ' ' +
                             row.sources.map(s=>s.name).join(' ')).toLowerCase();
         // 整卡可点的"主用法"：第一个有独立 SKILL.md 的 skill；否则退到第一来源的仓库 README
         let cardP = null;
@@ -1524,9 +1532,11 @@ function buildContent(){
         html += `<div class="card-skills">${skillsHtml}</div>`;
         html += `<div class="card-group">${chainBadge}<span title="${escapeAttr(pickT(row.group_en, row.group))}">${escapeHtml(pickT(row.group_en, row.group))}</span></div>`;
         html += `</div>`;
-        if(row.use_case){
-          const pch = (row.personas||[]).map(p => `<span class="persona-chip">${escapeHtml(p)}</span>`).join('');
-          html += `<div class="card-uc">💡 ${escapeHtml(row.use_case)}${row.when_to_use?` <span class="card-when">· ${escapeHtml(row.when_to_use)}</span>`:''}${pch}</div>`;
+        const ucT = pickT(row.use_case_en, row.use_case);
+        if(ucT){
+          const pch = (row.personas||[]).map(p => `<span class="persona-chip">${escapeHtml(personaLabel(p))}</span>`).join('');
+          const whenT = pickT(row.when_to_use_en, row.when_to_use);
+          html += `<div class="card-uc">💡 ${escapeHtml(ucT)}${whenT?` <span class="card-when">· ${escapeHtml(whenT)}</span>`:''}${pch}</div>`;
         }
         html += `<div class="card-desc">${escapeHtml(pickT(row.description_en, row.description))}</div>`;
         html += `<div class="card-sources">${sourcesHtml}</div>`;
