@@ -354,6 +354,17 @@ body.embed .views-dock{display:none}   /* 嵌入是固定快照，不暴露视�
   background:var(--bg-card);border:1px solid var(--border);color:var(--fg-dim);
   padding:5px 11px;border-radius:99px;text-decoration:none;opacity:.85;backdrop-filter:blur(6px)}
 .embed-badge:hover{opacity:1;color:var(--accent);border-color:var(--accent)}
+/* 回到顶部悬浮按钮：cards/repo 视图向下滚动后出现（图谱视图不显示） */
+.to-top{position:fixed;right:20px;bottom:20px;z-index:60;width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--border-strong);background:var(--bg-card);color:var(--fg-dim);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);opacity:0;transform:translateY(12px) scale(.92);pointer-events:none;
+  transition:opacity .2s,transform .2s,border-color .15s,color .15s}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.to-top:active{transform:translateY(0) scale(.95)}
+.to-top svg{width:18px;height:18px}
+@media(max-width:760px){ .to-top{right:14px;bottom:14px;width:46px;height:46px} }
 
 /* 节点详情侧抽屉 */
 .graph-drawer{position:absolute;top:0;right:0;height:100%;width:300px;max-width:82%;
@@ -1130,6 +1141,10 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
   </div>
 </main>
 
+<button id="toTop" class="to-top" aria-label="回到顶部" title="回到顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
 <!-- ⌘K Spotlight -->
 <div class="spotlight-overlay hidden" id="spotlightOverlay">
   <div class="spotlight-modal">
@@ -1769,6 +1784,27 @@ function setupHero(){
   apply();
 }
 
+// 回到顶部：cards/repo 视图向下滚动 >600px 时出现（图谱视图自身不滚动，不显示）
+function setupBackToTop(){
+  const btn = document.getElementById('toTop');
+  if(!btn) return;
+  if(typeof LANG !== 'undefined' && LANG === 'en'){ btn.title = btn.ariaLabel = 'Back to top'; }
+  let ticking = false;
+  const upd = () => {
+    const y = window.scrollY || document.documentElement.scrollTop || 0;
+    btn.classList.toggle('show', y > 600 && currentView !== 'graph');
+    ticking = false;
+  };
+  window._toTopUpdate = upd;
+  window.addEventListener('scroll', () => { if(!ticking){ ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // 清掉 hash，避免 scrollspy/深链把页面又拽回某个小节
+    if(location.hash){ history.replaceState(null, '', location.pathname + location.search); }
+  });
+  upd();
+}
+
 function setupSearch(){
   const inp = document.getElementById('search');
   const clearBtn = document.getElementById('clearBtn');
@@ -1859,6 +1895,7 @@ function setupViewSwitch(){
       if(isGraph) buildGraph();
       syncSidebarForView();
       syncGraphURL();
+      if(window._toTopUpdate) window._toTopUpdate();   // 切视图后立即重判「回到顶部」显隐
     });
   });
 }
@@ -4066,6 +4103,7 @@ setupTheme();
 setupMenuBtn();
 setupScrollSpy();
 setupHero();
+setupBackToTop();
 // 落地"从哪开始"三入口
 document.querySelectorAll('.start-chip').forEach(c => c.addEventListener('click', () => {
   const a = c.dataset.start;
