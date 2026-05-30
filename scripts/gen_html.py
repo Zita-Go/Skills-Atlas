@@ -19,6 +19,24 @@ def load(name):
         return yaml.safe_load(f)
 
 
+def load_opt(name):
+    """可选数据文件，缺失返回 {}。"""
+    try:
+        return load(name) or {}
+    except FileNotFoundError:
+        return {}
+
+
+try:
+    from pypinyin import lazy_pinyin
+
+    def to_pinyin(s):
+        return ' '.join(lazy_pinyin(s or ''))
+except ImportError:  # pypinyin 可选：没装则不生成拼音索引（搜索仍可用）
+    def to_pinyin(s):
+        return ''
+
+
 def install_for(repo):
     """返回 {command, alt?, note?, kind}，前端直接用、不含分支逻辑。
     优先级：install_override > 按 type。
@@ -48,7 +66,7 @@ def install_for(repo):
     return out
 
 
-def build_sections(categories, skills, repos):
+def build_sections(categories, skills, repos, usecases):
     """把扁平 skills 列表按 category / subcategory 重新组织成嵌套结构（前端消费）"""
     repo_map = {r['id']: r for r in repos}
     sections = []
@@ -75,12 +93,18 @@ def build_sections(categories, skills, repos):
                             'doc_path': repo.get('doc_path'),
                             'install': install_for(repo),
                         })
+                    uc = usecases.get(s['id'], {}) or {}
                     h2['rows'].append({
                         'skills': s['skills'],
                         'group': s['group'],
                         'chain': s.get('chain', False),
                         'description': s['description'],
                         'sources': sources_resolved,
+                        'use_case': uc.get('use_case', ''),
+                        'personas': uc.get('personas', []),
+                        'when_to_use': uc.get('when_to_use', ''),
+                        'py': to_pinyin(s['group'] + ' ' + ' '.join(s['skills'])
+                                        + ' ' + uc.get('use_case', '')),
                     })
             if h2['rows']:
                 h1['subsections'].append(h2)
@@ -93,8 +117,9 @@ def main():
     categories = load('categories.yaml')
     skills = load('skills.yaml')
     repos = load('repositories.yaml')
+    usecases = load_opt('usecases.yaml')
 
-    sections = build_sections(categories, skills, repos)
+    sections = build_sections(categories, skills, repos, usecases)
     vendors = {r['id']: {
         'url': r['url'],
         'stars': r.get('stars'),

@@ -36,7 +36,13 @@
                     "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
                   }
                 }
-              ]
+              ],
+              "use_case": "五步微任务拆解+并行执行+双层审查工作流",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "大功能需要精确分步时",
+              "py": "he xin kai fa gong zuo liu （superpowers） brainstorming writing-plans executing-plans subagent-driven-development dispatching-parallel-agents  wu bu wei ren wu chai jie + bing xing zhi xing + shuang ceng shen cha gong zuo liu"
             },
             {
               "skills": [
@@ -99,7 +105,14 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "反向盘问计划、风险压力测试、目标精确化",
+              "personas": [
+                "工程",
+                "PM"
+              ],
+              "when_to_use": "决策前厘清意图/风险",
+              "py": "yi tu cheng qing  / \" bi wen \" mo shi  grill-me pre-mortem define-goal  fan xiang pan wen ji hua 、 feng xian ya li ce shi 、 mu biao jing que hua"
             },
             {
               "skills": [
@@ -144,7 +157,14 @@
                     "kind": "override"
                   }
                 }
-              ]
+              ],
+              "use_case": "轻量SDD框架+单一上下文提议→评审→归档",
+              "personas": [
+                "工程",
+                "PM"
+              ],
+              "when_to_use": "小改动需要brief评审时",
+              "py": "qing liang  SDD  kuang jia  openspec get-shit-done  qing liang SDD kuang jia + dan yi shang xia wen ti yi → ping shen → gui dang"
             },
             {
               "skills": [
@@ -171,7 +191,13 @@
                     "alt": "git clone https://github.com/mattpocock/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "会话压缩handoff文档无缝接力多个agent",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "工作交接给另一agent时",
+              "py": "hui hua jie li  /  shang xia wen  handoff handoff  hui hua ya suo handoff wen dang wu feng jie li duo ge agent"
             }
           ]
         },
@@ -239,7 +265,13 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "三家TDD框架可选(严/轻/场景)",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "新功能要求RED-GREEN流程",
+              "py": "TDD（ duo jia tong ming ban ben ） test-driven-development tdd test-scenarios  san jia TDD kuang jia ke xuan ( yan / qing / chang jing )"
             },
             {
               "skills": [
@@ -302,7 +334,13 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "四阶段根因分析、复现最小化、防御深度",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "线上issue或复杂bug定位",
+              "py": "xi tong hua tiao shi  systematic-debugging diagnose sentry  si jie duan gen yin fen xi 、 fu xian zui xiao hua 、 fang yu shen du"
             },
             {
               "skills": [
@@ -329,7 +367,13 @@
                     "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
                   }
                 }
-              ]
+              ],
+              "use_case": "完工前自检清单确保修复验证完整",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "改动前做最后验证",
+              "py": "wan gong yan zheng  verification-before-completion  wan gong qian zi jian qing dan que bao xiu fu yan zheng wan zheng"
             },
             {
               "skills": [
@@ -373,7 +417,13 @@
                     "alt": "git clone https://github.com/ComposioHQ/awesome-claude-skills ~/.claude/skills/awesome-claude-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "跨浏览器UI测试含截图+网络拦截+错误捕获",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "Web应用需要自动化UI测试",
+              "py": "Web  ying yong  UI  ce shi  webapp-testing  kua liu lan qi UI ce shi han jie tu + wang luo lan jie + cuo wu bu huo"
             },
             {
               "skills": [
@@ -401,7 +451,13 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "真实浏览器自动化+持久Playwright会话",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "需要手工点击/填表的自动化",
+              "py": "liu lan qi zi dong hua  playwright playwright-interactive  zhen shi liu lan qi zi dong hua + chi jiu Playwright hui hua"
             }
           ]
         },
@@ -434,7 +490,13 @@
                     "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
                   }
                 }
-              ]
+              ],
+              "use_case": "提交前清单+接收反馈处理双向review",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "CR前做检查/CR后改进",
+              "py": "Code Review  shuang xiang  requesting-code-review receiving-code-review  ti jiao qian qing dan + jie shou fan kui chu li shuang xiang review"
             },
             {
               "skills": [
@@ -462,7 +524,13 @@
                     "alt": "git clone https://github.com/mattpocock/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "定期拯救代码库+系统级解释视角",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "代码库开始杂乱时",
+              "py": "zhong gou  /  zheng jiu  ball-of-mud improve-codebase-architecture zoom-out  ding qi zheng jiu dai ma ku + xi tong ji jie shi shi jiao"
             },
             {
               "skills": [
@@ -489,7 +557,13 @@
                     "alt": "git clone https://github.com/obra/superpowers-lab ~/.claude/skills/superpowers-lab"
                   }
                 }
-              ]
+              ],
+              "use_case": "语义级代码去重找同意图不同实现",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "重构前扫重复逻辑",
+              "py": "yu yi dai ma qu zhong  finding-duplicate-functions  yu yi ji dai ma qu zhong zhao tong yi tu bu tong shi xian"
             }
           ]
         },
@@ -523,7 +597,13 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "PR评论定位+CI失败根因+draft→提交一气呵成",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "处理PR反馈或CI失败",
+              "py": "GitHub  san jian tao  gh-address-comments gh-fix-ci yeet PR ping lun ding wei +CI shi bai gen yin +draft→ ti jiao yi qi he cheng"
             },
             {
               "skills": [
@@ -551,7 +631,13 @@
                     "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
                   }
                 }
-              ]
+              ],
+              "use_case": "隔离workspace+验证baseline+完成清理",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "并行多分支或试验分离",
+              "py": "Git  gong zuo liu  using-git-worktrees finishing-a-development-branch  ge li workspace+ yan zheng baseline+ wan cheng qing li"
             },
             {
               "skills": [
@@ -577,7 +663,13 @@
                     "kind": "plugin"
                   }
                 }
-              ]
+              ],
+              "use_case": "plugin拦截危险命令前确认防止误操作",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "项目启用自动化保护",
+              "py": "wei xian ming ling lan jie  claude-code-safety-net plugin lan jie wei xian ming ling qian que ren fang zhi wu cao zuo"
             }
           ]
         },
@@ -612,7 +704,13 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "四平台部署决策树(Vercel/Netlify/Render/CF)",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "App就绪需选平台部署",
+              "py": "ping tai te hua bu shu （4  xuan  1  ping xing ti dai ） cloudflare-deploy netlify-deploy render-deploy vercel-deploy  si ping tai bu shu jue ce shu (Vercel/Netlify/Render/CF)"
             }
           ]
         },
@@ -682,7 +780,13 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "Claude/Gemini/OpenAI三大厂SDK强制缓存",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "集成模型API时",
+              "py": "san da mo xing chang  SDK  zhi lian  claude-api gemini-api-dev gemini-live-api-dev gemini-interactions-api openai-docs Claude/Gemini/OpenAI san da chang SDK qiang zhi huan cun"
             },
             {
               "skills": [
@@ -709,7 +813,13 @@
                     "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "MCP Server完整方法论研究→实现→测试→评估",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "开发新MCP Server",
+              "py": "MCP Server  kai fa  mcp-builder MCP Server wan zheng fang fa lun yan jiu → shi xian → ce shi → ping gu"
             },
             {
               "skills": [
@@ -736,7 +846,13 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "ChatGPT Apps脚手架含SDK+MCP+UI骨架",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "构建OpenAI平台应用",
+              "py": "OpenAI  ping tai kai fa  chatgpt-apps ChatGPT Apps jiao shou jia han SDK+MCP+UI gu jia"
             },
             {
               "skills": [
@@ -762,7 +878,13 @@
                     "kind": "cli"
                   }
                 }
-              ]
+              ],
+              "use_case": "Chrome DevTools Protocol浏览器自动化CLI",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "需要浏览器自动化agent",
+              "py": "liu lan qi  agent CLI agent-browser Chrome DevTools Protocol liu lan qi zi dong hua CLI"
             }
           ]
         },
@@ -795,7 +917,13 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": ".NET 10/ASP.NET Core最新实践+Blazor/WinUI3",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "需要.NET或Windows应用",
+              "py": "Microsoft / .NET  zhan  aspnet-core winui-app .NET 10/ASP.NET Core zui xin shi jian +Blazor/WinUI3"
             },
             {
               "skills": [
@@ -822,7 +950,13 @@
                     "alt": "git clone https://github.com/obra/superpowers-lab ~/.claude/skills/superpowers-lab"
                   }
                 }
-              ]
+              ],
+              "use_case": "Docker中运行无头Windows支持OpenSSH+Claude",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "需要Windows环境运行Claude",
+              "py": "Windows VM in Docker windows-vm Docker zhong yun xing wu tou Windows zhi chi OpenSSH+Claude"
             },
             {
               "skills": [
@@ -849,7 +983,13 @@
                     "alt": "git clone https://github.com/obra/superpowers-lab ~/.claude/skills/superpowers-lab"
                   }
                 }
-              ]
+              ],
+              "use_case": "用tmux进入vim/rebase等交互式CLI工具",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "需要交互式命令行操作",
+              "py": "tmux  cao kong jiao hu  CLI using-tmux-for-interactive-commands  yong tmux jin ru vim/rebase deng jiao hu shi CLI gong ju"
             }
           ]
         },
@@ -883,7 +1023,13 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "语言级安全编码+威胁建模+代码持有权图分析",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "新项目安全审计或敏感代码",
+              "py": "ying yong ceng an quan san jian tao  security-best-practices security-threat-model security-ownership-map  yu yan ji an quan bian ma + wei xie jian mo + dai ma chi you quan tu fen xi"
             },
             {
               "skills": [
@@ -909,7 +1055,13 @@
                     "kind": "marketplace"
                   }
                 }
-              ]
+              ],
+              "use_case": "35+安全plugin跨9领域(合约/审计/恶意代码等)",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "专业级安全需求",
+              "py": "zhuan ye ji an quan  Marketplace skills 35+ an quan plugin kua 9 ling yu ( he yue / shen ji / e yi dai ma deng )"
             },
             {
               "skills": [
@@ -936,7 +1088,13 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "生产Sentry issue只读查看+AI根因+修复方案",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "生产问题诊断",
+              "py": "sheng chan jian kong  sentry  sheng chan Sentry issue zhi du cha kan +AI gen yin + xiu fu fang an"
             }
           ]
         }
@@ -977,7 +1135,15 @@
                     "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "Word/PDF/PPT/Excel的读改生成，含OCR、水印、表单、金融建模规范。",
+              "personas": [
+                "工程",
+                "PM",
+                "设计"
+              ],
+              "when_to_use": "需要程序化处理办公文件时",
+              "py": "Office  si jian tao （Anthropic） docx pdf pptx xlsx Word/PDF/PPT/Excel de du gai sheng cheng ， han OCR、 shui yin 、 biao dan 、 jin rong jian mo gui fan 。"
             },
             {
               "skills": [
@@ -1004,7 +1170,14 @@
                     "alt": "git clone https://github.com/PSPDFKit-labs/nutrient-agent-skill ~/.claude/skills/nutrient-agent-skill"
                   }
                 }
-              ]
+              ],
+              "use_case": "PDF高级操作：格式转换、拆合、OCR、PII脱敏、数字签名、表单填充。",
+              "personas": [
+                "工程",
+                "PM"
+              ],
+              "when_to_use": "PDF需要复杂处理或企业合规转换",
+              "py": "PDF  zhong xing  API nutrient-agent-skill PDF gao ji cao zuo ： ge shi zhuan huan 、 chai he 、OCR、PII tuo min 、 shu zi qian ming 、 biao dan tian chong 。"
             },
             {
               "skills": [
@@ -1030,7 +1203,14 @@
                     "kind": "extraction-engine"
                   }
                 }
-              ]
+              ],
+              "use_case": "一次性抽取90+文件格式+300+编程语言，省30-50%RAG token成本。",
+              "personas": [
+                "工程",
+                "研究"
+              ],
+              "when_to_use": "多格式混合数据需要高效抽取",
+              "py": "duo ge shi chou qu yin qing  kreuzberg  yi ci xing chou qu 90+ wen jian ge shi +300+ bian cheng yu yan ， sheng 30-50%RAG token cheng ben 。"
             }
           ]
         },
@@ -1062,7 +1242,14 @@
                     "alt": "git clone https://github.com/deusyu/translate-book ~/.claude/skills/translate-book"
                   }
                 }
-              ]
+              ],
+              "use_case": "8路并行翻译整本书，含词汇一致性和代词指代修复。",
+              "personas": [
+                "运营",
+                "创始人"
+              ],
+              "when_to_use": "要翻译完整出版物或长文档",
+              "py": "zheng ben shu bing xing fan yi  translate-book 8 lu bing xing fan yi zheng ben shu ， han ci hui yi zhi xing he dai ci zhi dai xiu fu 。"
             }
           ]
         },
@@ -1095,7 +1282,14 @@
                     "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "三阶段协作写PRD/RFC/设计文档，含上下文采集、结构迭代、读者测试。",
+              "personas": [
+                "PM",
+                "工程"
+              ],
+              "when_to_use": "多人协作起草正式文档",
+              "py": "xie zuo xie wen dang  doc-coauthoring internal-comms  san jie duan xie zuo xie PRD/RFC/ she ji wen dang ， han shang xia wen cai ji 、 jie gou die dai 、 du zhe ce shi 。"
             },
             {
               "skills": [
@@ -1122,7 +1316,14 @@
                     "alt": "git clone https://github.com/blader/humanizer ~/.claude/skills/humanizer"
                   }
                 }
-              ]
+              ],
+              "use_case": "去除AI生成的模板词和不自然表达，提升文本可读度和人味。",
+              "personas": [
+                "营销",
+                "运营"
+              ],
+              "when_to_use": "AI生成内容需要人工润色",
+              "py": "qu  AI  wei  /  ti gao zi ran du  humanizer  qu chu AI sheng cheng de mu ban ci he bu zi ran biao da ， ti sheng wen ben ke du du he ren wei 。"
             },
             {
               "skills": [
@@ -1149,7 +1350,14 @@
                     "alt": "git clone https://github.com/NeoLabHQ/context-engineering-kit ~/.claude/skills/context-engineering-kit"
                   }
                 }
-              ]
+              ],
+              "use_case": "按Elements of Style原则改写，去冗、强化动词、修正被动语态。",
+              "personas": [
+                "营销",
+                "运营"
+              ],
+              "when_to_use": "文案需要大幅简化和精炼",
+              "py": "jian jie hua gai xie  write-concisely  an Elements of Style yuan ze gai xie ， qu rong 、 qiang hua dong ci 、 xiu zheng bei dong yu tai 。"
             },
             {
               "skills": [
@@ -1194,7 +1402,14 @@
                     "alt": "git clone https://github.com/alchaincyf/huashu-design ~/.claude/skills/huashu-design"
                   }
                 }
-              ]
+              ],
+              "use_case": "检查语法/逻辑/流畅度，给内容创作、21项审校诊断和改进。",
+              "personas": [
+                "营销",
+                "运营"
+              ],
+              "when_to_use": "文章发布前做语言质量审核",
+              "py": "yu fa  /  wen feng shen cha  grammar-check huashu-skills  jian cha yu fa / luo ji / liu chang du ， gei nei rong chuang zuo 、21 xiang shen jiao zhen duan he gai jin 。"
             },
             {
               "skills": [
@@ -1238,7 +1453,14 @@
                     "alt": "git clone https://github.com/mattpocock/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "极简输出模式，省75%token同时保留技术准确度。",
+              "personas": [
+                "工程",
+                "研究"
+              ],
+              "when_to_use": "需要高效回答，token或成本受限",
+              "py": "ji jian shu chu mo shi  caveman  ji jian shu chu mo shi ， sheng 75%token tong shi bao liu ji shu zhun que du 。"
             },
             {
               "skills": [
@@ -1265,7 +1487,13 @@
                     "alt": "git clone https://github.com/SeanZoR/claude-speed-reader ~/.claude/skills/claude-speed-reader"
                   }
                 }
-              ]
+              ],
+              "use_case": "以600+ WPM速度快速读完Claude长回复，RSVP+ORP视觉优化。",
+              "personas": [
+                "通用"
+              ],
+              "when_to_use": "需要快速消化长篇回答",
+              "py": "su du  Claude  hui fu  claude-speed-reader  yi 600+ WPM su du kuai su du wan Claude zhang hui fu ，RSVP+ORP shi jue you hua 。"
             }
           ]
         },
@@ -1314,7 +1542,14 @@
                     "kind": "python-library"
                   }
                 }
-              ]
+              ],
+              "use_case": "NotebookLM官方API+非官方Python API双路线，创建/查询/生成音频。",
+              "personas": [
+                "研究",
+                "运营"
+              ],
+              "when_to_use": "从文献源生成Q&A或音频内容",
+              "py": "NotebookLM  shuang lu xian  notebooklm-skill notebooklm-py NotebookLM guan fang API+ fei guan fang Python API shuang lu xian ， chuang jian / cha xun / sheng cheng yin pin 。"
             },
             {
               "skills": [
@@ -1341,7 +1576,14 @@
                     "alt": "git clone https://github.com/safishamsi/graphify ~/.claude/skills/graphify"
                   }
                 }
-              ]
+              ],
+              "use_case": "把项目代码/文档/PDF映射知识图谱，减少跨文件查询成本。",
+              "personas": [
+                "工程",
+                "PM"
+              ],
+              "when_to_use": "复杂项目需要一次性建立知识关联",
+              "py": "xiang mu zhi shi tu pu  graphify  ba xiang mu dai ma / wen dang /PDF ying she zhi shi tu pu ， jian shao kua wen jian cha xun cheng ben 。"
             },
             {
               "skills": [
@@ -1368,7 +1610,14 @@
                     "alt": "git clone https://github.com/bevibing/tutor-skills ~/.claude/skills/tutor-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "PDF/MD转Obsidian学习库，含概念笔记、MOC、交互式测验和记忆追踪。",
+              "personas": [
+                "研究",
+                "求职"
+              ],
+              "when_to_use": "需要结构化学习和知识固化",
+              "py": "Obsidian  xue xi jin ku  tutor-skills PDF/MD zhuan Obsidian xue xi ku ， han gai nian bi ji 、MOC、 jiao hu shi ce yan he ji yi zhui zong 。"
             },
             {
               "skills": [
@@ -1395,7 +1644,13 @@
                     "alt": "git clone https://github.com/stephenturner/skill-focus ~/.claude/skills/skill-focus"
                   }
                 }
-              ]
+              ],
+              "use_case": "用FOCUS方法摘要学术论文，便于后续交叉比较和综述。",
+              "personas": [
+                "研究"
+              ],
+              "when_to_use": "批量总结论文做文献综述",
+              "py": "lun wen zhai yao （FOCUS  fang fa ） skill-focus  yong FOCUS fang fa zhai yao xue shu lun wen ， bian yu hou xu jiao cha bi jiao he zong shu 。"
             }
           ]
         },
@@ -1430,7 +1685,14 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "Notion四件套：笔记转结构化页、会议议程、交叉调研、Spec转实现计划。",
+              "personas": [
+                "PM",
+                "工程"
+              ],
+              "when_to_use": "用Notion做知识管理和工作协作",
+              "py": "Notion 4  lian gong zuo liu  notion-knowledge-capture notion-meeting-intelligence notion-research-documentation notion-spec-to-implementation Notion si jian tao ： bi ji zhuan jie gou hua ye 、 hui yi yi cheng 、 jiao cha diao yan 、Spec zhuan shi xian ji hua 。"
             },
             {
               "skills": [
@@ -1457,7 +1719,14 @@
                     "alt": "git clone https://github.com/makenotion/notion-cookbook ~/.claude/skills/notion-cookbook"
                   }
                 }
-              ]
+              ],
+              "use_case": "Notion × Claude MCP工作流官方指南，自动化文档/会议/研究。",
+              "personas": [
+                "PM",
+                "运营"
+              ],
+              "when_to_use": "要集成Notion与Claude自动化工作",
+              "py": "Notion  guan fang  cookbook notion-cookbook Notion × Claude MCP gong zuo liu guan fang zhi nan ， zi dong hua wen dang / hui yi / yan jiu 。"
             }
           ]
         },
@@ -1489,7 +1758,14 @@
                     "alt": "git clone https://github.com/hanfang/claude-memory-skill ~/.claude/skills/claude-memory-skill"
                   }
                 }
-              ]
+              ],
+              "use_case": "轻量分层记忆系统，core.md+topics/按需加载，纯grep检索。",
+              "personas": [
+                "工程",
+                "通用"
+              ],
+              "when_to_use": "需要跨会话记忆but避免向量库复杂度",
+              "py": "qing liang fen ceng ji yi  claude-memory-skill  qing liang fen ceng ji yi xi tong ，core.md+topics/ an xu jia zai ， chun grep jian suo 。"
             },
             {
               "skills": [
@@ -1515,7 +1791,14 @@
                     "kind": "cli-mcp"
                   }
                 }
-              ]
+              ],
+              "use_case": "影子Sonnet+MCP双层记忆，search→context→recall三层工作流。",
+              "personas": [
+                "工程",
+                "PM"
+              ],
+              "when_to_use": "长期项目需要token高效的记忆系统",
+              "py": "ying zi  agent + MCP  ji yi  claude-mem  ying zi Sonnet+MCP shuang ceng ji yi ，search→context→recall san ceng gong zuo liu 。"
             },
             {
               "skills": [
@@ -1542,7 +1825,13 @@
                     "alt": "git clone https://github.com/alirezarezvani/claude-skills ~/.claude/skills/claude-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "利用auto-memory自动记录，做模式提升、skill抽取、记忆健康检查。",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "Claude Code项目要自我学习和模式优化",
+              "py": "zi wo jing lian  agent self-improving-agent  li yong auto-memory zi dong ji lu ， zuo mo shi ti sheng 、skill chou qu 、 ji yi jian kang jian cha 。"
             }
           ]
         }
@@ -1601,7 +1890,15 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "构建用户画像、分群和细分客户，支持决策导向",
+              "personas": [
+                "PM",
+                "设计",
+                "研究"
+              ],
+              "when_to_use": "需要理解目标用户或细分市场时",
+              "py": "yong hu hua xiang  / persona user-personas user-segmentation market-segments ideal-customer-profile proto-persona  gou jian yong hu hua xiang 、 fen qun he xi fen ke hu ， zhi chi jue ce dao xiang"
             },
             {
               "skills": [
@@ -1645,7 +1942,14 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "绘制用户与产品交互的全触点旅程，找关键痛点",
+              "personas": [
+                "PM",
+                "设计"
+              ],
+              "when_to_use": "改进用户体验或优化转化流程",
+              "py": "ke hu lv cheng tu  customer-journey-map  hui zhi yong hu yu chan pin jiao hu de quan chu dian lv cheng ， zhao guan jian tong dian"
             },
             {
               "skills": [
@@ -1690,7 +1994,15 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "用 JTBD 框架识别用户真实需求，超越功能层需求",
+              "personas": [
+                "PM",
+                "设计",
+                "研究"
+              ],
+              "when_to_use": "深入理解用户何时、为何购买产品",
+              "py": "JTBD（Jobs-to-be-Done） jobs-to-be-done job-stories  yong  JTBD  kuang jia shi bie yong hu zhen shi xu qiu ， chao yue gong neng ceng xu qiu"
             },
             {
               "skills": [
@@ -1754,7 +2066,14 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "设计、进行和总结客户访谈，提炼可行洞察",
+              "personas": [
+                "PM",
+                "研究"
+              ],
+              "when_to_use": "需要用户直接反馈或验证假设时",
+              "py": "ke hu fang tan  interview-script summarize-interview discovery-interview-prep transcribe  she ji 、 jin xing he zong jie ke hu fang tan ， ti lian ke xing dong cha"
             },
             {
               "skills": [
@@ -1782,7 +2101,14 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "分析用户反馈情感和优先级，识别高杠杆功能",
+              "personas": [
+                "PM",
+                "运营"
+              ],
+              "when_to_use": "有大量用户反馈要整理排序",
+              "py": "fan kui qing gan fen xi  sentiment-analysis analyze-feature-requests  fen xi yong hu fan kui qing gan he you xian ji ， shi bie gao gang gan gong neng"
             }
           ]
         },
@@ -1815,7 +2141,13 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "清晰陈述问题并画出问题框架，为方案寻找做准备",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "定义产品策略或新功能前",
+              "py": "wen ti chen shu  problem-statement problem-framing-canvas  qing xi chen shu wen ti bing hua chu wen ti kuang jia ， wei fang an xun zhao zuo zhun bei"
             },
             {
               "skills": [
@@ -1844,7 +2176,13 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "识别和优先排序假设风险，指导实验验证",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "启动新项目前做风险评估",
+              "py": "jia she shi bie  /  pai xu  identify-assumptions-existing identify-assumptions-new prioritize-assumptions  shi bie he you xian pai xu jia she feng xian ， zhi dao shi yan yan zheng"
             },
             {
               "skills": [
@@ -1871,7 +2209,13 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "前置失败分析，在执行前发现隐藏风险",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "重大发布或决策前做压力测试",
+              "py": "Pre-mortem pre-mortem  qian zhi shi bai fen xi ， zai zhi xing qian fa xian yin cang feng xian"
             }
           ]
         },
@@ -1920,7 +2264,13 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "从需求出发，系统化拆解机会和方案，指导优先级",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "需要系统思考机会到方案的路径",
+              "py": "OST（Opportunity Solution Tree） opportunity-solution-tree  cong xu qiu chu fa ， xi tong hua chai jie ji hui he fang an ， zhi dao you xian ji"
             },
             {
               "skills": [
@@ -1949,7 +2299,15 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "多角度脑暴点子，快速生成方案创意和实验原型",
+              "personas": [
+                "PM",
+                "设计",
+                "工程"
+              ],
+              "when_to_use": "探索阶段或需要快速想法时",
+              "py": "nao bao dian zi （ shuang lu jing ） brainstorm-ideas-existing brainstorm-ideas-new brainstorm-experiments-existing  duo jiao du nao bao dian zi ， kuai su sheng cheng fang an chuang yi he shi yan yuan xing"
             },
             {
               "skills": [
@@ -1994,7 +2352,14 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "快速造原型验证想法，不必等完整实现",
+              "personas": [
+                "PM",
+                "设计"
+              ],
+              "when_to_use": "需要快速测试假设或概念",
+              "py": "Prototype  xuan xing  prototype pol-probe-advisor  kuai su zao yuan xing yan zheng xiang fa ， bu bi deng wan zheng shi xian"
             },
             {
               "skills": [
@@ -2022,7 +2387,13 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "分析 A/B 和群组数据，做数据驱动决策",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "有实验结果或用户行为数据要解读",
+              "py": "shi yan shu ju fen xi  ab-test-analysis cohort-analysis  fen xi  A/B  he qun zu shu ju ， zuo shu ju qu dong jue ce"
             },
             {
               "skills": [
@@ -2051,7 +2422,14 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "系统化发现流程，从框架到验证完整闭环",
+              "personas": [
+                "PM",
+                "设计"
+              ],
+              "when_to_use": "做 3-4 周的结构化产品发现",
+              "py": "Lean UX / Discovery  bian pai  discovery-process lean-ux-canvas storyboard  xi tong hua fa xian liu cheng ， cong kuang jia dao yan zheng wan zheng bi huan"
             }
           ]
         },
@@ -2087,7 +2465,14 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "用不同 Canvas 工具规划商业模式和产品战略",
+              "personas": [
+                "PM",
+                "创始人"
+              ],
+              "when_to_use": "规划产品或业务商业模式",
+              "py": "Canvas  quan tao  lean-canvas business-model startup-canvas product-strategy value-proposition  yong bu tong  Canvas  gong ju gui hua shang ye mo shi he chan pin zhan lve"
             },
             {
               "skills": [
@@ -2135,7 +2520,13 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "分析外部环境（市场、竞争、趋势），找战略机会",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "做战略规划或进入新市场",
+              "py": "wai bu huan jing fen xi  pestle-analysis pestel-analysis porters-five-forces swot-analysis ansoff-matrix  fen xi wai bu huan jing （ shi chang 、 jing zheng 、 qu shi ）， zhao zhan lve ji hui"
             },
             {
               "skills": [
@@ -2180,7 +2571,14 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "估算市场规模，明确可达客户总数和可实现收入",
+              "personas": [
+                "PM",
+                "创始人"
+              ],
+              "when_to_use": "融资或战略决策前",
+              "py": "shi chang gui mo  tam-sam-som-calculator market-sizing  gu suan shi chang gui mo ， ming que ke da ke hu zong shu he ke shi xian shou ru"
             },
             {
               "skills": [
@@ -2228,7 +2626,14 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "定义竞争定位和产品愿景，指导营销和工程",
+              "personas": [
+                "PM",
+                "营销"
+              ],
+              "when_to_use": "启动新产品或品牌重塑",
+              "py": "ding wei  /  yuan jing  positioning-statement positioning-workshop positioning-ideas product-vision press-release  ding yi jing zheng ding wei he chan pin yuan jing ， zhi dao ying xiao he gong cheng"
             },
             {
               "skills": [
@@ -2274,7 +2679,13 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "系统化战略规划，从定位到路线图的完整编排",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "做 2-4 周的深度战略规划",
+              "py": "zhan lve bian pai  workflow product-strategy-session roadmap-planning outcome-roadmap  xi tong hua zhan lve gui hua ， cong ding wei dao lu xian tu de wan zheng bian pai"
             }
           ]
         },
@@ -2308,7 +2719,14 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "选第一个市场和 GTM 动作，加速从 0-1 获客",
+              "personas": [
+                "PM",
+                "营销"
+              ],
+              "when_to_use": "新产品发布或进入新市场",
+              "py": "tan tou shi chang  + GTM  dong zuo  beachhead-segment gtm-motions gtm-strategy  xuan di yi ge shi chang he  GTM  dong zuo ， jia su cong  0-1  huo ke"
             },
             {
               "skills": [
@@ -2335,7 +2753,13 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "识别和优化自增长 loop，做长期留存和推荐",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "优化用户留存和有机增长",
+              "py": "zeng zhang  loop growth-loops  shi bie he you hua zi zeng zhang  loop， zuo chang qi liu cun he tui jian"
             },
             {
               "skills": [
@@ -2362,7 +2786,13 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "选择和追踪北极星指标，对齐公司目标",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "建立关键成功指标体系",
+              "py": "bei ji xing zhi biao  north-star-metric  xuan ze he zhui zong bei ji xing zhi biao ， dui qi gong si mu biao"
             }
           ]
         },
@@ -2448,7 +2878,13 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "写结构化 PRD，澄清业务目标和技术需求",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "向工程和设计团队交付需求",
+              "py": "PRD  xie zuo  create-prd prd-development to-prd prd-generator  xie jie gou hua  PRD， cheng qing ye wu mu biao he ji shu xu qiu"
             },
             {
               "skills": [
@@ -2497,7 +2933,13 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "拆分需求为 User Story 和 Epic，指导实现",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "准备工程需求或任务分解",
+              "py": "User Story /  chai ren wu  user-stories wwas user-story user-story-splitting epic-breakdown-advisor epic-hypothesis  chai fen xu qiu wei  User Story  he  Epic， zhi dao shi xian"
             },
             {
               "skills": [
@@ -2561,7 +3003,13 @@
                     "alt": "git clone https://github.com/wrsmith108/linear-claude-skill ~/.claude/skills/linear-claude-skill"
                   }
                 }
-              ]
+              ],
+              "use_case": "把 Spec 自动转工程任务，管理线性或 Jira",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "需求到工程系统的自动化转换",
+              "py": "Spec →  gong cheng  notion-spec-to-implementation to-issues linear-claude-skill linear  ba  Spec  zi dong zhuan gong cheng ren wu ， guan li xian xing huo  Jira"
             }
           ]
         },
@@ -2612,7 +3060,13 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "对比 9 种优先级框架，为功能排优先级",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "功能待办排优先级或路线图规划",
+              "py": "you xian ji kuang jia dui bi  prioritization-frameworks prioritization-advisor prioritize-features  dui bi  9  zhong you xian ji kuang jia ， wei gong neng pai you xian ji"
             },
             {
               "skills": [
@@ -2641,7 +3095,14 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "评估投资回报和渠道 unit economics，优化资源配置",
+              "personas": [
+                "PM",
+                "运营"
+              ],
+              "when_to_use": "做成本效益分析或商业决策",
+              "py": "tou zi  / ROI feature-investment-advisor acquisition-channel-advisor finance-based-pricing-advisor  ping gu tou zi hui bao he qu dao  unit economics， you hua zi yuan pei zhi"
             }
           ]
         },
@@ -2691,7 +3152,14 @@
                     "alt": "git clone https://github.com/Digidai/product-manager-skills ~/.claude/skills/product-manager-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "诊断 SaaS 业务健康度，找高优先级问题",
+              "personas": [
+                "PM",
+                "运营"
+              ],
+              "when_to_use": "业务增长遇瓶颈或需要健康检查",
+              "py": "SaaS  zhen duan  business-health-diagnostic pm-operator  zhen duan  SaaS  ye wu jian kang du ， zhao gao you xian ji wen ti"
             },
             {
               "skills": [
@@ -2720,7 +3188,14 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "速查 SaaS 财务指标公式和基准，做数据驱动决策",
+              "personas": [
+                "PM",
+                "运营"
+              ],
+              "when_to_use": "分析 SaaS metrics 或财务规划",
+              "py": "cai wu su cha  finance-metrics-quickref saas-economics-efficiency-metrics saas-revenue-growth-metrics  su cha  SaaS  cai wu zhi biao gong shi he ji zhun ， zuo shu ju qu dong jue ce"
             }
           ]
         },
@@ -2754,7 +3229,13 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "制定团队 OKR 和 sprint 计划，做 retro",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "制定团队目标、规划迭代或复盘",
+              "py": "OKR / Sprint brainstorm-okrs sprint-plan retro  zhi ding tuan dui  OKR  he  sprint  ji hua ， zuo  retro"
             },
             {
               "skills": [
@@ -2800,7 +3281,13 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "记录会议、绘制利益相关者图，指导沟通策略",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "管理复杂干系人或会议纪要",
+              "py": "hui yi  /  li yi xiang guan zhe  summarize-meeting stakeholder-map workshop-facilitation  ji lu hui yi 、 hui zhi li yi xiang guan zhe tu ， zhi dao gou tong ce lve"
             },
             {
               "skills": [
@@ -2830,7 +3317,13 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "指导 PM 升职路径和领导力心态转变",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "晋升 Director 或更高管理层时",
+              "py": "PM  sheng zhi  /  ling dao li  altitude-horizon-framework director-readiness-advisor vp-cpo-readiness-advisor executive-onboarding-playbook  zhi dao  PM  sheng zhi lu jing he ling dao li xin tai zhuan bian"
             }
           ]
         },
@@ -2880,7 +3373,14 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "生成用户友好发布说明和产品下线公告",
+              "personas": [
+                "PM",
+                "营销"
+              ],
+              "when_to_use": "准备产品发布或功能下线沟通",
+              "py": "Release Notes / EOL release-notes eol-message  sheng cheng yong hu you hao fa bu shuo ming he chan pin xia xian gong gao"
             },
             {
               "skills": [
@@ -2907,7 +3407,13 @@
                     "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "写企业内部沟通（进展、newsletter、incident）",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "定期同步进度或处理突发情况",
+              "py": "qi ye nei bu gou tong  internal-comms  xie qi ye nei bu gou tong （ jin zhan 、newsletter、incident）"
             }
           ]
         },
@@ -2939,7 +3445,13 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "诊断 AI 创新机会，评估自动化与重设计权衡",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "评估产品中的 AI 改造可行性",
+              "py": "AI  zhuan xing zhen duan  ai-shaped-readiness-advisor  zhen duan  AI  chuang xin ji hui ， ping gu zi dong hua yu zhong she ji quan heng"
             },
             {
               "skills": [
@@ -2966,7 +3478,13 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "文档化 AI 推荐功能，覆盖数据、算法、回退",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "设计推荐或个性化功能",
+              "py": "AI  tui jian gong neng  doc recommendation-canvas  wen dang hua  AI  tui jian gong neng ， fu gai shu ju 、 suan fa 、 hui tui"
             },
             {
               "skills": [
@@ -2993,7 +3511,14 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "深度调研竞对公司，分析定位、财务和市场",
+              "personas": [
+                "PM",
+                "研究"
+              ],
+              "when_to_use": "竞品分析或进入新市场前",
+              "py": "gong si diao yan  company-research  shen du diao yan jing dui gong si ， fen xi ding wei 、 cai wu he shi chang"
             },
             {
               "skills": [
@@ -3020,7 +3545,13 @@
                     "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "PM skill 本身的元工作流，教写产品管理 skill",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "创建或改进 PM 领域 skill",
+              "py": "yuan gong zuo liu  skill-authoring-workflow PM skill  ben shen de yuan gong zuo liu ， jiao xie chan pin guan li  skill"
             }
           ]
         }
@@ -3063,7 +3594,14 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "技术/文案/程序化全方位优化搜索排名与流量",
+              "personas": [
+                "工程",
+                "营销"
+              ],
+              "when_to_use": "启动 SEO 策略或优化排名时",
+              "py": "SEO  quan tao （Corey Haines 6  jian ） seo-audit ai-seo programmatic-seo schema site-architecture content-strategy  ji shu / wen an / cheng xu hua quan fang wei you hua sou suo pai ming yu liu liang"
             },
             {
               "skills": [
@@ -3090,7 +3628,14 @@
                     "alt": "git clone https://github.com/AgriciDaniel/claude-seo ~/.claude/skills/claude-seo"
                   }
                 }
-              ]
+              ],
+              "use_case": "完整 SEO 仓库一站式处理优化与部署",
+              "personas": [
+                "工程",
+                "营销"
+              ],
+              "when_to_use": "需要系统化 SEO 改造时",
+              "py": "da xing  SEO  cang ku  claude-seo  wan zheng  SEO  cang ku yi zhan shi chu li you hua yu bu shu"
             },
             {
               "skills": [
@@ -3117,7 +3662,13 @@
                     "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "针对生成式引擎优化内容排名策略",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "面向 ChatGPT/Perplexity 等优化时",
+              "py": "sheng cheng yin qing you hua  seo-geo  zhen dui sheng cheng shi yin qing you hua nei rong pai ming ce lve"
             }
           ]
         },
@@ -3151,7 +3702,13 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "Landing/邮件/广告文案写作与编辑",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "需要撰写或改进营销文案时",
+              "py": "wen an san jian tao  copywriting copy-editing marketing-psychology Landing/ you jian / guang gao wen an xie zuo yu bian ji"
             },
             {
               "skills": [
@@ -3178,7 +3735,13 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "AIDA/PAS 框架广告与落地页文案",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "创建广告/邮件/landing 文案时",
+              "py": "pin pai wen an  brand-copywriter AIDA/PAS  kuang jia guang gao yu luo di ye wen an"
             },
             {
               "skills": [
@@ -3205,7 +3768,14 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "针对不同场景提炼产品价值主张表述",
+              "personas": [
+                "PM",
+                "营销"
+              ],
+              "when_to_use": "需要统一产品价值说法时",
+              "py": "jia zhi zhu zhang  / Value Prop value-prop-statements  zhen dui bu tong chang jing ti lian chan pin jia zhi zhu zhang biao shu"
             },
             {
               "skills": [
@@ -3232,7 +3802,14 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "基于品牌价值生成产品名称选项",
+              "personas": [
+                "营销",
+                "创始人"
+              ],
+              "when_to_use": "给产品/功能取名时",
+              "py": "chan pin ming ming  product-name  ji yu pin pai jia zhi sheng cheng chan pin ming cheng xuan xiang"
             }
           ]
         },
@@ -3265,7 +3842,13 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "生命周期邮件/冷邮件序列全套",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "规划邮件营销活动时",
+              "py": "you jian quan tao  emails cold-email  sheng ming zhou qi you jian / leng you jian xu lie quan tao"
             },
             {
               "skills": [
@@ -3292,7 +3875,13 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "短信营销/交易/序列含合规策略",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "执行短信营销时",
+              "py": "duan xin ying xiao  sms  duan xin ying xiao / jiao yi / xu lie han he gui ce lve"
             },
             {
               "skills": [
@@ -3338,7 +3927,13 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "多平台社媒发帖与内容日历管理",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "制定社媒内容策略时",
+              "py": "she mei ping tai   xie zuo  social x-writer linkedin-writer  duo ping tai she mei fa tie yu nei rong ri li guan li"
             },
             {
               "skills": [
@@ -3365,7 +3960,14 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "B2B 冷邮件/LinkedIn/X 外联模板库",
+              "personas": [
+                "营销",
+                "创始人"
+              ],
+              "when_to_use": "进行 B2B 外联时",
+              "py": "B2B  wai lian  outreach-specialist B2B  leng you jian /LinkedIn/X  wai lian mu ban ku"
             }
           ]
         },
@@ -3398,7 +4000,13 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "多平台广告策略/人群/投放预算优化",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "管理付费广告投放时",
+              "py": "guang gao ce lve  /  chuang yi  ads ad-creative  duo ping tai guang gao ce lve / ren qun / tou fang yu suan you hua"
             },
             {
               "skills": [
@@ -3425,7 +4033,13 @@
                     "alt": "git clone https://github.com/AgriciDaniel/claude-ads ~/.claude/skills/claude-ads"
                   }
                 }
-              ]
+              ],
+              "use_case": "Google/Meta 广告账户全面审计优化",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "诊断广告账户问题时",
+              "py": "fu fei guang gao quan zhang hu shen ji  claude-ads Google/Meta  guang gao zhang hu quan mian shen ji you hua"
             },
             {
               "skills": [
@@ -3452,7 +4066,13 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "App Store/Google Play 排名优化",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "提升应用市场可见性时",
+              "py": "App  shang dian you hua  aso App Store/Google Play  pai ming you hua"
             }
           ]
         },
@@ -3488,7 +4108,14 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "落地页/弹窗/注册/付费流程优化诊断",
+              "personas": [
+                "营销",
+                "PM"
+              ],
+              "when_to_use": "提升转化率时",
+              "py": "CRO  yi zu  cro popups paywalls signup onboarding  luo di ye / dan chuang / zhu ce / fu fei liu cheng you hua zhen duan"
             },
             {
               "skills": [
@@ -3515,7 +4142,13 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "13 项原则诊断落地页给对比改写",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "需要系统化优化落地页时",
+              "py": "CRO  you hua da ji he  cro-optimization 13  xiang yuan ze zhen duan luo di ye gei dui bi gai xie"
             },
             {
               "skills": [
@@ -3542,7 +4175,14 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "A/B 实验假设/样本量计算/结果评估",
+              "personas": [
+                "营销",
+                "PM"
+              ],
+              "when_to_use": "设计转化测试时",
+              "py": "A/B  shi yan she ji  ab-testing A/B  shi yan jia she / yang ben liang ji suan / jie guo ping gu"
             }
           ]
         },
@@ -3592,7 +4232,13 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "电子书/核查单/模板/报告作为线索磁铁",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "构建线索生成漏斗时",
+              "py": "Lead Magnet lead-magnets lead-magnet-generator  dian zi shu / he cha dan / mu ban / bao gao zuo wei xian suo ci tie"
             },
             {
               "skills": [
@@ -3620,7 +4266,14 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "建立潜客名单并研究用户需求",
+              "personas": [
+                "营销",
+                "创始人"
+              ],
+              "when_to_use": "拓展客户群时",
+              "py": "qian ke  /  ke hu yan jiu  prospecting customer-research  jian li qian ke ming dan bing yan jiu yong hu xu qiu"
             },
             {
               "skills": [
@@ -3647,7 +4300,13 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "规划免费工具引流策略与转化路径",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "探索工具作为获客渠道时",
+              "py": "mian fei gong ju yin liu  free-tools  gui hua mian fei gong ju yin liu ce lve yu zhuan hua lu jing"
             },
             {
               "skills": [
@@ -3677,7 +4336,14 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "推荐/联盟/社区/合作等增长杠杆",
+              "personas": [
+                "营销",
+                "创始人"
+              ],
+              "when_to_use": "探索非付费增长渠道时",
+              "py": "tui jian  /  lian meng  /  she qu  /  lian he  referrals directory-submissions community-marketing co-marketing  tui jian / lian meng / she qu / he zuo deng zeng zhang gang gan"
             }
           ]
         },
@@ -3744,7 +4410,14 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "病毒化内容 hook 创意与低成本营销点子",
+              "personas": [
+                "营销",
+                "创始人"
+              ],
+              "when_to_use": "需要创意想法时",
+              "py": "Hook /  chuang yi dian zi  viral-hook-creator marketing-ideas  bing du hua nei rong  hook  chuang yi yu di cheng ben ying xiao dian zi"
             }
           ]
         },
@@ -3813,7 +4486,14 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "竞品分析/销售对比卡/竞争情报",
+              "personas": [
+                "营销",
+                "PM"
+              ],
+              "when_to_use": "了解竞争格局时",
+              "py": "jing pin fen xi  competitor-analysis competitive-battlecard competitor-profiling competitor-intel  jing pin fen xi / xiao shou dui bi ka / jing zheng qing bao"
             },
             {
               "skills": [
@@ -3840,7 +4520,13 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "写竞品对比/替代页面做 SEO 和销售",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "争取竞品客户时",
+              "py": "bi jiao  /  ti dai ye （SEO） competitors  xie jing pin dui bi / ti dai ye mian zuo  SEO  he xiao shou"
             }
           ]
         },
@@ -3872,7 +4558,13 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "销售演讲稿/资料/异议处理工具集",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "支持销售团队时",
+              "py": "xiao shou fu zhu  sales-enablement  xiao shou yan jiang gao / zi liao / yi yi chu li gong ju ji"
             },
             {
               "skills": [
@@ -3899,7 +4591,13 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "线索生命周期/评分/交接/CRM 字段规范",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "建立销售运营流程时",
+              "py": "RevOps revops  xian suo sheng ming zhou qi / ping fen / jiao jie /CRM  zi duan gui fan"
             },
             {
               "skills": [
@@ -3926,7 +4624,14 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "取消流程/拯救/催收/流失客户复活",
+              "personas": [
+                "营销",
+                "PM"
+              ],
+              "when_to_use": "降低客户流失率时",
+              "py": "liu shi fang yu  churn-prevention  qu xiao liu cheng / zheng jiu / cui shou / liu shi ke hu fu huo"
             }
           ]
         },
@@ -3995,7 +4700,15 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "定价模型/分层/年付折扣/变现策略",
+              "personas": [
+                "PM",
+                "营销",
+                "创始人"
+              ],
+              "when_to_use": "制定或调整定价时",
+              "py": "ding jia ce lve  pricing-strategy pricing pricing-strategist monetization-strategy  ding jia mo xing / fen ceng / nian fu zhe kou / bian xian ce lve"
             }
           ]
         },
@@ -4046,7 +4759,14 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "产品发布/GTM 策略/Product Hunt 上线战术",
+              "personas": [
+                "营销",
+                "创始人"
+              ],
+              "when_to_use": "规划产品发布时",
+              "py": "fa bu  GTM launch go-to-market-plan product-hunt-launch-plan  chan pin fa bu /GTM  ce lve /Product Hunt  shang xian zhan shu"
             },
             {
               "skills": [
@@ -4073,7 +4793,14 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "诊断增长瓶颈给高影响下一步建议",
+              "personas": [
+                "营销",
+                "创始人"
+              ],
+              "when_to_use": "需要战略方向时",
+              "py": "zhan lve gui hua  strategic-planning  zhen duan zeng zhang ping jing gei gao ying xiang xia yi bu jian yi"
             }
           ]
         },
@@ -4105,7 +4832,13 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "企业营销流程 SOP 与员工培训文档",
+              "personas": [
+                "营销"
+              ],
+              "when_to_use": "规范营销操作流程时",
+              "py": "SOP sop-creator  qi ye ying xiao liu cheng  SOP  yu yuan gong pei xun wen dang"
             },
             {
               "skills": [
@@ -4133,7 +4866,14 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "维护定位/ICP/信息库做其他 skill 基座",
+              "personas": [
+                "营销",
+                "PM"
+              ],
+              "when_to_use": "启动营销工作前建基础",
+              "py": "ji zuo shang xia wen  /  ce liang  product-marketing analytics  wei hu ding wei /ICP/ xin xi ku zuo qi ta  skill  ji zuo"
             }
           ]
         }
@@ -4173,7 +4913,14 @@
                     "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "建立品牌视觉体系、配色、字体规范、海报设计",
+              "personas": [
+                "设计",
+                "PM"
+              ],
+              "when_to_use": "启动品牌或需要视觉规范时",
+              "py": "pin pai shi jue san jian tao  brand-guidelines theme-factory canvas-design  jian li pin pai shi jue ti xi 、 pei se 、 zi ti gui fan 、 hai bao she ji"
             }
           ]
         },
@@ -4205,7 +4952,14 @@
                     "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "避免 AI slop，用明确美学方向写生产级 UI 代码",
+              "personas": [
+                "工程",
+                "设计"
+              ],
+              "when_to_use": "生成前端 UI 时指定美学风格",
+              "py": "qian duan mei xue  frontend-design  bi mian  AI slop， yong ming que mei xue fang xiang xie sheng chan ji  UI  dai ma"
             },
             {
               "skills": [
@@ -4233,7 +4987,14 @@
                     "kind": "cli"
                   }
                 }
-              ]
+              ],
+              "use_case": "优化前端可访问性、性能、React 最佳实践规范",
+              "personas": [
+                "工程",
+                "设计"
+              ],
+              "when_to_use": "前端代码评审或质量提升时",
+              "py": "Vercel  san jian tao  web-design-guidelines react-best-practices composition-patterns  you hua qian duan ke fang wen xing 、 xing neng 、React  zui jia shi jian gui fan"
             },
             {
               "skills": [
@@ -4260,7 +5021,14 @@
                     "alt": "git clone https://github.com/nextlevelbuilder/ui-ux-pro-max-skill ~/.claude/skills/ui-ux-pro-max-skill"
                   }
                 }
-              ]
+              ],
+              "use_case": "跨平台 UI/UX 组件库、视觉风格、设计原则指导",
+              "personas": [
+                "设计",
+                "工程"
+              ],
+              "when_to_use": "设计组件库或多平台适配时",
+              "py": "kua ping tai  UI/UX ui-ux-pro-max-skill  kua ping tai  UI/UX  zu jian ku 、 shi jue feng ge 、 she ji yuan ze zhi dao"
             }
           ]
         },
@@ -4292,7 +5060,14 @@
                     "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "快速构建可交互 React + Tailwind 单文件 artifact",
+              "personas": [
+                "工程",
+                "设计"
+              ],
+              "when_to_use": "需要快速 demo 或原型时",
+              "py": "dan wen jian  React HTML artifact web-artifacts-builder  kuai su gou jian ke jiao hu  React + Tailwind  dan wen jian  artifact"
             }
           ]
         },
@@ -4331,7 +5106,15 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "Figma 设计系统管理、设计稿转代码、设计库生成",
+              "personas": [
+                "设计",
+                "工程",
+                "PM"
+              ],
+              "when_to_use": "与 Figma 交互或实现设计时",
+              "py": "Figma 8  jian tao  figma figma-use figma-create-new-file figma-generate-design figma-generate-library figma-implement-design figma-code-connect-components figma-create-design-system-rules Figma  she ji xi tong guan li 、 she ji gao zhuan dai ma 、 she ji ku sheng cheng"
             }
           ]
         },
@@ -4363,7 +5146,14 @@
                     "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "生成专业 PPTX：10 套配色、字体规范、视觉 QA",
+              "personas": [
+                "PM",
+                "营销"
+              ],
+              "when_to_use": "需要制作幻灯片演示时",
+              "py": "PPTX  biao zhun sheng cheng  pptx  sheng cheng zhuan ye  PPTX：10  tao pei se 、 zi ti gui fan 、 shi jue  QA"
             },
             {
               "skills": [
@@ -4390,7 +5180,14 @@
                     "alt": "git clone https://github.com/op7418/NanoBanana-PPT-Skills ~/.claude/skills/NanoBanana-PPT-Skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "文档转 PPT 视频：大纲提炼→AI 图生成→视频合成",
+              "personas": [
+                "营销",
+                "PM"
+              ],
+              "when_to_use": "需要文档转视频演示时",
+              "py": "PPT  shi pin liu shui xian  NanoBanana-PPT-Skills  wen dang zhuan  PPT  shi pin ： da gang ti lian →AI  tu sheng cheng → shi pin he cheng"
             },
             {
               "skills": [
@@ -4417,7 +5214,14 @@
                     "alt": "git clone https://github.com/zarazhangrui/frontend-slides ~/.claude/skills/frontend-slides"
                   }
                 }
-              ]
+              ],
+              "use_case": "零依赖 HTML 演示文稿：支持 16:9、12 风格、PDF 导出",
+              "personas": [
+                "工程",
+                "设计"
+              ],
+              "when_to_use": "快速创建技术演讲幻灯片时",
+              "py": "ling yi lai  HTML  yan shi  frontend-slides  ling yi lai  HTML  yan shi wen gao ： zhi chi  16:9、12  feng ge 、PDF  dao chu"
             },
             {
               "skills": [
@@ -4444,7 +5248,14 @@
                     "alt": "git clone https://github.com/alchaincyf/huashu-design ~/.claude/skills/huashu-design"
                   }
                 }
-              ]
+              ],
+              "use_case": "HTML 原生设计：高保真原型、动画、MP4 导出",
+              "personas": [
+                "设计",
+                "工程"
+              ],
+              "when_to_use": "设计高保真原型或动画时",
+              "py": "HTML-native  she ji  skill huashu-design HTML  yuan sheng she ji ： gao bao zhen yuan xing 、 dong hua 、MP4  dao chu"
             },
             {
               "skills": [
@@ -4471,7 +5282,14 @@
                     "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "生成 Slack emoji 或动画素材（≤2MB GIF）",
+              "personas": [
+                "设计",
+                "营销"
+              ],
+              "when_to_use": "制作 Slack 通讯素材时",
+              "py": "Slack  dong hua su cai  slack-gif-creator  sheng cheng  Slack emoji  huo dong hua su cai （≤2MB GIF）"
             }
           ]
         },
@@ -4503,7 +5321,14 @@
                     "alt": "git clone https://github.com/nexu-io/open-design ~/.claude/skills/open-design"
                   }
                 }
-              ]
+              ],
+              "use_case": "本地化设计工具：19 skill、32 原型模式、可扩展",
+              "personas": [
+                "设计",
+                "工程"
+              ],
+              "when_to_use": "需要离线设计工具或定制时",
+              "py": "Claude Design  ben di hua ping ti  open-design  ben di hua she ji gong ju ：19 skill、32  yuan xing mo shi 、 ke kuo zhan"
             }
           ]
         },
@@ -4535,7 +5360,14 @@
                     "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "生成算法驱动的生成艺术（p5.js、粒子系统）",
+              "personas": [
+                "设计",
+                "研究"
+              ],
+              "when_to_use": "创建生成艺术或可视化时",
+              "py": "suan fa yi shu  algorithmic-art  sheng cheng suan fa qu dong de sheng cheng yi shu （p5.js、 li zi xi tong ）"
             },
             {
               "skills": [
@@ -4562,7 +5394,14 @@
                     "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "用 Gemini 3 Pro 生成 AI 图像",
+              "personas": [
+                "设计",
+                "营销"
+              ],
+              "when_to_use": "需要 AI 图像生成时",
+              "py": "AI  chu tu （Nano Banana Pro） nanobanana  yong  Gemini 3 Pro  sheng cheng  AI  tu xiang"
             },
             {
               "skills": [
@@ -4608,7 +5447,14 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "AI 生成 Logo、Banner、营销图（含去背、SVG）",
+              "personas": [
+                "设计",
+                "营销"
+              ],
+              "when_to_use": "需要快速生成品牌素材时",
+              "py": "Logo / Banner  sheng cheng  logo-creator banner-creator image AI  sheng cheng  Logo、Banner、 ying xiao tu （ han qu bei 、SVG）"
             }
           ]
         },
@@ -4640,7 +5486,14 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "跨 OS 截屏（含权限检查）",
+              "personas": [
+                "工程",
+                "通用"
+              ],
+              "when_to_use": "需要截屏或原生 UI 操作时",
+              "py": "kua  OS  jie ping  screenshot  kua  OS  jie ping （ han quan xian jian cha ）"
             },
             {
               "skills": [
@@ -4667,7 +5520,14 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "调用 Codex 内置工具生成 AI 位图",
+              "personas": [
+                "设计",
+                "工程"
+              ],
+              "when_to_use": "需要快速 AI 生成图像时",
+              "py": "AI  chu tu （Codex） imagegen  diao yong  Codex  nei zhi gong ju sheng cheng  AI  wei tu"
             },
             {
               "skills": [
@@ -4694,7 +5554,14 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "端到端生成动画 sprite：8 状态行、QA、预览",
+              "personas": [
+                "设计",
+                "工程"
+              ],
+              "when_to_use": "制作游戏或应用动画时",
+              "py": "dong hua  sprite  sheng cheng  hatch-pet  duan dao duan sheng cheng dong hua  sprite：8  zhuang tai xing 、QA、 yu lan"
             }
           ]
         }
@@ -4732,7 +5599,15 @@
                     "alt": "git clone https://github.com/op7418/Youtube-clipper-skill ~/.claude/skills/Youtube-clipper-skill"
                   }
                 }
-              ]
+              ],
+              "use_case": "YouTube 视频的自动剪辑、切分和多语言字幕处理",
+              "personas": [
+                "营销",
+                "创始人",
+                "运营"
+              ],
+              "when_to_use": "需要从长视频生成多个短视频片段且带字幕时",
+              "py": "YouTube  jian ji liu shui xian  Youtube-clipper-skill YouTube  shi pin de zi dong jian ji 、 qie fen he duo yu yan zi mu chu li"
             },
             {
               "skills": [
@@ -4758,7 +5633,15 @@
                     "kind": "video-engine"
                   }
                 }
-              ]
+              ],
+              "use_case": "从零生成或剪辑视频含配音字幕和动效",
+              "personas": [
+                "营销",
+                "创始人",
+                "设计"
+              ],
+              "when_to_use": "制作广告或纪录片视频前期需要快速原型",
+              "py": "Agentic  shi pin sheng chan yin qing  OpenMontage  cong ling sheng cheng huo jian ji shi pin han pei yin zi mu he dong xiao"
             },
             {
               "skills": [
@@ -4785,7 +5668,15 @@
                     "alt": "git clone https://github.com/remotion-dev/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "用 React 代码生成程序化视频和动画",
+              "personas": [
+                "工程",
+                "设计",
+                "营销"
+              ],
+              "when_to_use": "需要批量生成参数化视频或动画效果时",
+              "py": "Remotion  cheng xu hua shi pin  skills  yong  React  dai ma sheng cheng cheng xu hua shi pin he dong hua"
             },
             {
               "skills": [
@@ -4812,7 +5703,15 @@
                     "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
                   }
                 }
-              ]
+              ],
+              "use_case": "为 YouTube/Shorts/Demo 编写和规划视频脚本",
+              "personas": [
+                "营销",
+                "创始人",
+                "运营"
+              ],
+              "when_to_use": "开始制作视频前梳理脚本和内容结构",
+              "py": "duo qu dao shi pin jiao ben  video  wei  YouTube/Shorts/Demo  bian xie he gui hua shi pin jiao ben"
             }
           ]
         },
@@ -4845,7 +5744,15 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "文本转语音和音频转录含说话人识别",
+              "personas": [
+                "营销",
+                "运营",
+                "通用"
+              ],
+              "when_to_use": "需要生成配音或转录音频内容时",
+              "py": "TTS /  zhuan xie  speech transcribe  wen ben zhuan yu yin he yin pin zhuan lu han shuo hua ren shi bie"
             }
           ]
         }
@@ -4887,7 +5794,14 @@
                     "alt": "git clone https://github.com/firecrawl/cli ~/.claude/skills/cli"
                   }
                 }
-              ]
+              ],
+              "use_case": "网页抓取：从 URL 到 markdown/HTML/数据",
+              "personas": [
+                "工程",
+                "通用"
+              ],
+              "when_to_use": "需要解析已知网页链接",
+              "py": "Firecrawl  zhua qu liu shui xian  firecrawl-build firecrawl-build-onboarding firecrawl-build-scrape firecrawl-build-search firecrawl-build-interact  wang ye zhua qu ： cong  URL  dao  markdown/HTML/ shu ju"
             },
             {
               "skills": [
@@ -4913,7 +5827,14 @@
                     "kind": "cli"
                   }
                 }
-              ]
+              ],
+              "use_case": "交互式网页自动化：点击、填表、登录",
+              "personas": [
+                "工程",
+                "通用"
+              ],
+              "when_to_use": "需要操控动态页面提取数据",
+              "py": "liu lan qi  agent CLI agent-browser  jiao hu shi wang ye zi dong hua ： dian ji 、 tian biao 、 deng lu"
             }
           ]
         },
@@ -4945,7 +5866,15 @@
                     "alt": "git clone https://github.com/mvanhorn/last30days-skill ~/.claude/skills/last30days-skill"
                   }
                 }
-              ]
+              ],
+              "use_case": "多平台情报聚合：Reddit/X/HN 热点监控",
+              "personas": [
+                "研究",
+                "营销",
+                "通用"
+              ],
+              "when_to_use": "跨平台搜集用户反馈或趋势信号",
+              "py": "duo yuan qing bao ju he  last30days-skill  duo ping tai qing bao ju he ：Reddit/X/HN  re dian jian kong"
             },
             {
               "skills": [
@@ -4975,7 +5904,15 @@
                     "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "单平台内容查询：Reddit/X/PH 数据",
+              "personas": [
+                "营销",
+                "研究",
+                "通用"
+              ],
+              "when_to_use": "抓取特定平台的实时内容",
+              "py": "ping tai dan dian cha xun  reddit twitter producthunt requesthunt  dan ping tai nei rong cha xun ：Reddit/X/PH  shu ju"
             },
             {
               "skills": [
@@ -5002,7 +5939,14 @@
                     "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "域名可用性查询与价格对比",
+              "personas": [
+                "创始人",
+                "通用"
+              ],
+              "when_to_use": "找域名时查可用性和注册价格",
+              "py": "yu ming cha zhao  +  bi jia  domain-hunter  yu ming ke yong xing cha xun yu jia ge dui bi"
             }
           ]
         },
@@ -5034,7 +5978,15 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "自然语言问询转 SQL 查询",
+              "personas": [
+                "工程",
+                "PM",
+                "通用"
+              ],
+              "when_to_use": "用自然语言查询数据库",
+              "py": "zi ran yu yan  → SQL sql-queries  zi ran yu yan wen xun zhuan  SQL  cha xun"
             },
             {
               "skills": [
@@ -5061,7 +6013,14 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "设计指标 dashboard 与数据源",
+              "personas": [
+                "PM",
+                "工程"
+              ],
+              "when_to_use": "规划产品数据可视化指标",
+              "py": "zhi biao  dashboard  she ji  metrics-dashboard  she ji zhi biao  dashboard  yu shu ju yuan"
             },
             {
               "skills": [
@@ -5088,7 +6047,14 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "生成测试用假数据集合",
+              "personas": [
+                "工程",
+                "通用"
+              ],
+              "when_to_use": "需要逼真的 CSV/JSON 测试数据",
+              "py": "ce shi  /  jia shu ju sheng cheng  dummy-dataset  sheng cheng ce shi yong jia shu ju ji he"
             }
           ]
         },
@@ -5120,7 +6086,14 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "创建可复现的数据实验 notebook",
+              "personas": [
+                "研究",
+                "工程"
+              ],
+              "when_to_use": "记录数据分析过程和结果",
+              "py": "Jupyter Notebook jupyter-notebook  chuang jian ke fu xian de shu ju shi yan  notebook"
             }
           ]
         }
@@ -5162,7 +6135,14 @@
                     "alt": "git clone https://github.com/Paramchoudhary/ResumeSkills ~/.claude/skills/ResumeSkills"
                   }
                 }
-              ]
+              ],
+              "use_case": "简历优化：ATS 过滤、成就量化、格式规范、领导力凸显",
+              "personas": [
+                "求职",
+                "工程"
+              ],
+              "when_to_use": "投简历前最后检查",
+              "py": "Resume  you hua （5  jian ） resume-ats-optimizer resume-bullet-writer resume-quantifier resume-formatter resume-section-builder  jian li you hua ：ATS  guo lv 、 cheng jiu liang hua 、 ge shi gui fan 、 ling dao li tu xian"
             },
             {
               "skills": [
@@ -5192,7 +6172,13 @@
                     "alt": "git clone https://github.com/Paramchoudhary/ResumeSkills ~/.claude/skills/ResumeSkills"
                   }
                 }
-              ]
+              ],
+              "use_case": "JD 评估与简历定向：职位匹配度、经验缺口、针对性改写",
+              "personas": [
+                "求职"
+              ],
+              "when_to_use": "找到心仪职位时立即用",
+              "py": "Job Search（4  jian ） job-description-analyzer resume-tailor resume-version-manager offer-comparison-analyzer JD  ping gu yu jian li ding xiang ： zhi wei pi pei du 、 jing yan que kou 、 zhen dui xing gai xie"
             },
             {
               "skills": [
@@ -5222,7 +6208,13 @@
                     "alt": "git clone https://github.com/Paramchoudhary/ResumeSkills ~/.claude/skills/ResumeSkills"
                   }
                 }
-              ]
+              ],
+              "use_case": "辅助材料齐全：Cover letter 个性化、LinkedIn 优化、作品集案例",
+              "personas": [
+                "求职"
+              ],
+              "when_to_use": "完整申请材料包前准备",
+              "py": "Supporting Docs（4  jian ） cover-letter-generator linkedin-profile-optimizer portfolio-case-study-writer reference-list-builder  fu zhu cai liao qi quan ：Cover letter  ge xing hua 、LinkedIn  you hua 、 zuo pin ji an li"
             },
             {
               "skills": [
@@ -5253,7 +6245,13 @@
                     "alt": "git clone https://github.com/Paramchoudhary/ResumeSkills ~/.claude/skills/ResumeSkills"
                   }
                 }
-              ]
+              ],
+              "use_case": "角色特化简历：工程/PM/高管/学术/创意/转岗职场翻译",
+              "personas": [
+                "求职"
+              ],
+              "when_to_use": "明确目标岗位属性后定向改写",
+              "py": "zhuan ye hua jian li  tech-resume-optimizer executive-resume-writer academic-cv-builder creative-portfolio-resume career-changer-translator  jue se te hua jian li ： gong cheng /PM/ gao guan / xue shu / chuang yi / zhuan gang zhi chang fan yi"
             },
             {
               "skills": [
@@ -5280,7 +6278,14 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "简历结构审查：XYZ+S 公式、关键词覆盖、排版一致性检验",
+              "personas": [
+                "求职",
+                "PM"
+              ],
+              "when_to_use": "草稿完成需专业反馈时",
+              "py": "PM  jian li shen cha  review-resume  jian li jie gou shen cha ：XYZ+S  gong shi 、 guan jian ci fu gai 、 pai ban yi zhi xing jian yan"
             }
           ]
         },
@@ -5330,7 +6335,13 @@
                     "alt": "git clone https://github.com/santifer/career-ops ~/.claude/skills/career-ops"
                   }
                 }
-              ]
+              ],
+              "use_case": "面试备考：从履历生成 STAR 故事、技能点练习题、常见问题",
+              "personas": [
+                "求职"
+              ],
+              "when_to_use": "收到面试邀请后 1-2 周前",
+              "py": "mian shi zhun bei  interview-prep-generator interview-prep  mian shi bei kao ： cong lv li sheng cheng  STAR  gu shi 、 ji neng dian lian xi ti 、 chang jian wen ti"
             },
             {
               "skills": [
@@ -5357,7 +6368,13 @@
                     "alt": "git clone https://github.com/Paramchoudhary/ResumeSkills ~/.claude/skills/ResumeSkills"
                   }
                 }
-              ]
+              ],
+              "use_case": "薪资谈判：市场行情、底线计算、谈判脚本、出价策略",
+              "personas": [
+                "求职"
+              ],
+              "when_to_use": "收 offer 后谈判前必做",
+              "py": "xin zi tan pan  salary-negotiation-prep  xin zi tan pan ： shi chang hang qing 、 di xian ji suan 、 tan pan jiao ben 、 chu jia ce lve"
             },
             {
               "skills": [
@@ -5406,7 +6423,13 @@
                     "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "求职批量自动化：JD 评分扫描、岗位活跃检测、投递追踪、重复数据清理",
+              "personas": [
+                "求职"
+              ],
+              "when_to_use": "大量投递时用 TUI 仪表板管理",
+              "py": "qiu zhi zi dong hua xi tong  career-ops liveness scan batch pdf cv-sync-check  qiu zhi pi liang zi dong hua ：JD  ping fen sao miao 、 gang wei huo yue jian ce 、 tou di zhui zong 、 chong fu shu ju qing li"
             }
           ]
         },
@@ -5439,7 +6462,13 @@
                     "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "法律文件起草：保密协议、隐私政策含监管条款",
+              "personas": [
+                "创始人"
+              ],
+              "when_to_use": "接触候选人或收集数据时",
+              "py": "NDA /  yin si zheng ce  draft-nda privacy-policy  fa lv wen jian qi cao ： bao mi xie yi 、 yin si zheng ce han jian guan tiao kuan"
             }
           ]
         }
@@ -5479,7 +6508,13 @@
                     "alt": "git clone https://github.com/gokapso/agent-skills ~/.claude/skills/agent-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "接入 WhatsApp 消息、自动化应答、诊断投递问题",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "需要在 Claude Code 中操作 WhatsApp",
+              "py": "WhatsApp  san jian tao  integrate-whatsapp automate-whatsapp observe-whatsapp  jie ru  WhatsApp  xiao xi 、 zi dong hua ying da 、 zhen duan tou di wen ti"
             }
           ]
         },
@@ -5529,7 +6564,14 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "在 Claude Code 中管理 Linear 工单、sprint、自动化同步",
+              "personas": [
+                "工程",
+                "PM"
+              ],
+              "when_to_use": "任务库与代码改动需要同步关联",
+              "py": "Linear  ren wu guan li  linear-claude-skill linear  zai  Claude Code  zhong guan li  Linear  gong dan 、sprint、 zi dong hua tong bu"
             }
           ]
         },
@@ -5560,7 +6602,14 @@
                     "kind": "desktop-app"
                   }
                 }
-              ]
+              ],
+              "use_case": "多 AI agent 协同编排、自动触发、远程控制、数据互联",
+              "personas": [
+                "工程",
+                "PM"
+              ],
+              "when_to_use": "搭建跨平台 agent 自动化系统",
+              "py": "duo  agent  zhuo mian  app Dorothy  duo  AI agent  xie tong bian pai 、 zi dong chu fa 、 yuan cheng kong zhi 、 shu ju hu lian"
             }
           ]
         },
@@ -5592,7 +6641,15 @@
                     "alt": "git clone https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep ~/.claude/skills/Auto-claude-code-research-in-sleep"
                   }
                 }
-              ]
+              ],
+              "use_case": "定时启动后台调研任务，不占用交互时间",
+              "personas": [
+                "工程",
+                "PM",
+                "研究"
+              ],
+              "when_to_use": "需要长跑式研究在离线时段运行",
+              "py": "shui mian shi chang pao yan jiu  ARIS Auto-claude-code-research-in-sleep  ding shi qi dong hou tai diao yan ren wu ， bu zhan yong jiao hu shi jian"
             }
           ]
         }
@@ -5630,7 +6687,13 @@
                     "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "集合化提供创始人常用的战略、销售、内容和工程技巧",
+              "personas": [
+                "创始人"
+              ],
+              "when_to_use": "着手产品/市场定位或营销时",
+              "py": "Founder  gong ju xiang  founder-skills  ji he hua ti gong chuang shi ren chang yong de zhan lve 、 xiao shou 、 nei rong he gong cheng ji qiao"
             },
             {
               "skills": [
@@ -5657,7 +6720,13 @@
                     "alt": "git clone https://github.com/garrytan/gstack ~/.claude/skills/gstack"
                   }
                 }
-              ]
+              ],
+              "use_case": "用 YC CEO 开源个人工作流快速自动化日常决策和交付",
+              "personas": [
+                "创始人"
+              ],
+              "when_to_use": "需要高频重复任务自动化",
+              "py": "YC CEO  ge ren pei zhi  gstack  yong  YC CEO  kai yuan ge ren gong zuo liu kuai su zi dong hua ri chang jue ce he jiao fu"
             },
             {
               "skills": [
@@ -5684,7 +6753,13 @@
                     "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "为独立创业者生成营销资产、调研增长杠杆、管理社交媒体",
+              "personas": [
+                "创始人"
+              ],
+              "when_to_use": "缺少 PMF 前的多面手工作",
+              "py": "Solopreneur  gong ju ji  opc-skills  wei du li chuang ye zhe sheng cheng ying xiao zi chan 、 diao yan zeng zhang gang gan 、 guan li she jiao mei ti"
             }
           ]
         },
@@ -5718,7 +6793,14 @@
                     "alt": "git clone https://github.com/EveryInc/charlie-cfo-skill ~/.claude/skills/charlie-cfo-skill"
                   }
                 }
-              ]
+              ],
+              "use_case": "用 Charlie Munger 心智模型规范现金管理和资本配置决策",
+              "personas": [
+                "创始人",
+                "运营"
+              ],
+              "when_to_use": "制定融资、招聘、烧钱策略时",
+              "py": "Charlie Munger  feng ge  CFO charlie-cfo-skill working driver-based  yong  Charlie Munger  xin zhi mo xing gui fan xian jin guan li he zi ben pei zhi jue ce"
             }
           ]
         },
@@ -5753,7 +6835,14 @@
                     "alt": "git clone https://github.com/openaccountants/openaccountants ~/.claude/skills/openaccountants"
                   }
                 }
-              ]
+              ],
+              "use_case": "一键查 134 国税务、会计准则和合规要求，对接平台 API",
+              "personas": [
+                "运营",
+                "创始人"
+              ],
+              "when_to_use": "涉及多国业务或合规问题",
+              "py": "duo guo hui ji  /  shui wu chao da ku （11  ling yu ） openaccountants integrations intelligence patterns  yi jian cha  134  guo shui wu 、 kuai ji zhun ze he he gui yao qiu ， dui jie ping tai  API"
             }
           ]
         }
@@ -5791,7 +6880,14 @@
                     "alt": "git clone https://github.com/imbad0202/academic-research-skills ~/.claude/skills/academic-research-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "从研究到论文发表的全流程辅助，涵盖选题、写作、审稿、修改。",
+              "personas": [
+                "研究",
+                "工程"
+              ],
+              "when_to_use": "论文从构思到投稿的各阶段。",
+              "py": "xue shu yan jiu liu shui xian  academic-research-skills  cong yan jiu dao lun wen fa biao de quan liu cheng fu zhu ， han gai xuan ti 、 xie zuo 、 shen gao 、 xiu gai 。"
             }
           ]
         },
@@ -5823,7 +6919,15 @@
                     "alt": "git clone https://github.com/K-Dense-AI/scientific-agent-skills ~/.claude/skills/scientific-agent-skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "科研、工程、分析、金融等领域的文献综述与数据处理。",
+              "personas": [
+                "研究",
+                "工程",
+                "通用"
+              ],
+              "when_to_use": "需要文献综述或处理科研数据时。",
+              "py": "Scientific Agent skill  ji  scientific-agent-skills  ke yan 、 gong cheng 、 fen xi 、 jin rong deng ling yu de wen xian zong shu yu shu ju chu li 。"
             }
           ]
         }
@@ -5861,7 +6965,14 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "理解 LLM context 机制和 agent 架构的基础原理与优化方向",
+              "personas": [
+                "工程",
+                "研究"
+              ],
+              "when_to_use": "设计多 agent 系统或优化长链路任务前",
+              "py": "Context Engineering  di ji ke  context-fundamentals  li jie  LLM context  ji zhi he  agent  jia gou de ji chu yuan li yu you hua fang xiang"
             }
           ]
         },
@@ -5896,7 +7007,13 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "识别并修复长会话中的 context degradation 问题，压缩/优化 token 效率",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "发现模型忘记早期信息或回复质量下降时",
+              "py": "Context  sheng ming zhou qi  4  jian tao  context-degradation context-optimization context-compression filesystem-context  shi bie bing xiu fu zhang hui hua zhong de  context degradation  wen ti ， ya suo / you hua  token  xiao lv"
             }
           ]
         },
@@ -5928,7 +7045,14 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "对比四大持久记忆系统，选择适合项目的语义记忆框架",
+              "personas": [
+                "工程",
+                "研究"
+              ],
+              "when_to_use": "需要 agent 跨会话保留记忆和学习时",
+              "py": "chi jiu yu yi ji yi kuang jia xuan xing  memory-systems  dui bi si da chi jiu ji yi xi tong ， xuan ze shi he xiang mu di yu yi ji yi kuang jia"
             },
             {
               "skills": [
@@ -5955,7 +7079,13 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "在 KV cache 层共享多 agent 记忆，降低重复计算成本",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "多 agent 系统中有大量重复上下文时",
+              "py": "KV cache  biao zheng ji gong xiang  latent-briefing  zai  KV cache  ceng gong xiang duo  agent  ji yi ， jiang di chong fu ji suan cheng ben"
             },
             {
               "skills": [
@@ -5982,7 +7112,14 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "把语义上下文转化为 BDI 心智状态，增强 agent 推理能力",
+              "personas": [
+                "工程",
+                "研究"
+              ],
+              "when_to_use": "构建需要复杂推理的神经符号 agent 时",
+              "py": "BDI  xin zhi zhuang tai  bdi-mental-states  ba yu yi shang xia wen zhuan hua wei  BDI  xin zhi zhuang tai ， zeng qiang  agent  tui li neng li"
             }
           ]
         },
@@ -6014,7 +7151,13 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "对比三种多 agent 拓扑，选型 supervisor/swarm/hierarchical 架构",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "需要设计多 agent 协作系统的组织结构时",
+              "py": "duo  agent  tuo pu xuan xing  multi-agent-patterns  dui bi san zhong duo  agent  tuo pu ， xuan xing  supervisor/swarm/hierarchical  jia gou"
             },
             {
               "skills": [
@@ -6041,7 +7184,14 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "部署 agent 到远端 sandbox（Modal/Cloudflare）实现隔离运行",
+              "personas": [
+                "工程",
+                "运营"
+              ],
+              "when_to_use": "需要长时间运行 agent 或多用户共享时",
+              "py": "yuan duan  sandbox agent  yun xing shi  hosted-agents  bu shu  agent  dao yuan duan  sandbox（Modal/Cloudflare） shi xian ge li yun xing"
             },
             {
               "skills": [
@@ -6068,7 +7218,13 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "控制自主 agent 循环的编辑权限、回滚、日志等安全边界",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "上线自主 agent 前规范其行为边界",
+              "py": "zi zhu  loop  kong zhi ping mian  harness-engineering  kong zhi zi zhu  agent  xun huan de bian ji quan xian 、 hui gun 、 ri zhi deng an quan bian jie"
             }
           ]
         },
@@ -6100,7 +7256,13 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "按 agent 友好的原则重新设计工具接口和文档",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "工具经常被 agent 误用或调用失败时",
+              "py": "Tool  she ji  tool-design  an  agent  you hao de yuan ze chong xin she ji gong ju jie kou he wen dang"
             },
             {
               "skills": [
@@ -6127,7 +7289,14 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "建立多维 rubric 评测 agent 的因果、完整度、引用质量、工具效率",
+              "personas": [
+                "工程",
+                "研究"
+              ],
+              "when_to_use": "对比两个 agent 系统或优化基准时",
+              "py": "Agent  ping ce  evaluation  jian li duo wei  rubric  ping ce  agent  de yin guo 、 wan zheng du 、 yin yong zhi liang 、 gong ju xiao lv"
             },
             {
               "skills": [
@@ -6154,7 +7323,14 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "用 LLM-as-judge 评估 agent 输出，规避位置/长度/自我增强偏置",
+              "personas": [
+                "工程",
+                "研究"
+              ],
+              "when_to_use": "需要自动评分 agent 输出质量时",
+              "py": "jin jie  LLM-as-judge advanced-evaluation  yong  LLM-as-judge  ping gu  agent  shu chu ， gui bi wei zhi / chang du / zi wo zeng qiang pian zhi"
             },
             {
               "skills": [
@@ -6181,7 +7357,14 @@
                     "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
                   }
                 }
-              ]
+              ],
+              "use_case": "从任务适配性检查到成本估算，系统性地交付 LLM agent 项目",
+              "personas": [
+                "工程",
+                "PM"
+              ],
+              "when_to_use": "启动新 agent 项目时评估可行性和成本",
+              "py": "xiang mu ji fang fa lun  project-development  cong ren wu shi pei xing jian cha dao cheng ben gu suan ， xi tong xing di jiao fu  LLM agent  xiang mu"
             }
           ]
         }
@@ -6272,7 +7455,14 @@
                     "alt": "git clone https://github.com/mattpocock/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "创建和测试新skill的完整流程",
+              "personas": [
+                "工程",
+                "PM"
+              ],
+              "when_to_use": "需要写/优化skill时",
+              "py": "Skill  chuang jian qi  skill-creator writing-skills write-a-skill  chuang jian he ce shi xin skill de wan zheng liu cheng"
             }
           ]
         },
@@ -6305,7 +7495,14 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "安装skill和在开放生态发现匹配topic的skill",
+              "personas": [
+                "工程",
+                "通用"
+              ],
+              "when_to_use": "需要扩展工具集或找特定task的skill",
+              "py": "Skill  an zhuang  /  fa xian  skill-installer skills  an zhuang skill he zai kai fang sheng tai fa xian pi pei topic de skill"
             },
             {
               "skills": [
@@ -6333,7 +7530,13 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "把skill打包成plugin或CLI供他人使用",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "要开源/分享自己的skill时",
+              "py": "Plugin / CLI  da bao  plugin-creator cli-creator  ba skill da bao cheng plugin huo CLI gong ta ren shi yong"
             },
             {
               "skills": [
@@ -6360,7 +7563,13 @@
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
                 }
-              ]
+              ],
+              "use_case": "迁移Claude Code的工作流到Codex agent",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "从Claude Code切换到Codex平台",
+              "py": "kua  agent  qian yi  migrate-to-codex  qian yi Claude Code de gong zuo liu dao Codex agent"
             }
           ]
         },
@@ -6392,7 +7601,13 @@
                     "alt": "git clone https://github.com/UseAI-pro/openclaw-skills-security ~/.claude/skills/openclaw-skills-security"
                   }
                 }
-              ]
+              ],
+              "use_case": "安装前审计skill权限和代码安全",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "安装陌生来源的skill前",
+              "py": "zhuang qian an quan men  openclaw-skills-security  an zhuang qian shen ji skill quan xian he dai ma an quan"
             }
           ]
         },
@@ -6423,7 +7638,13 @@
                     "kind": "marketplace"
                   }
                 }
-              ]
+              ],
+              "use_case": "使用Anthropic官方高质量的plugin库",
+              "personas": [
+                "通用"
+              ],
+              "when_to_use": "优先装官方plugin而非社区版",
+              "py": "Anthropic  guan fang  Marketplace claude-plugins-official  shi yong Anthropic guan fang gao zhi liang de plugin ku"
             }
           ]
         },
@@ -6454,7 +7675,13 @@
                     "kind": "claude-md-template"
                   }
                 }
-              ]
+              ],
+              "use_case": "应用编程行为约束到CLAUDE.md",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "想固化编程最佳实践到提示",
+              "py": "CLAUDE.md  mu ban  andrej-karpathy-skills  ying yong bian cheng xing wei yue shu dao CLAUDE.md"
             }
           ]
         }

@@ -536,6 +536,9 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 .source-row{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}
 .card.clickable{cursor:pointer}
 .card-desc,.card-skills,.card .skill-tag{user-select:text}
+.card-uc{font-size:12.5px;color:var(--accent);margin:2px 0 8px;line-height:1.6;display:flex;flex-wrap:wrap;gap:6px;align-items:center;user-select:text}
+.card-when{color:var(--fg-muted);font-size:11.5px}
+.persona-chip{font-size:10px;padding:1px 7px;border-radius:99px;background:var(--bg-elev);color:var(--fg-dim);border:1px solid var(--border)}
 .license-badge.ok{background:rgba(110,200,140,.12);color:#7fd99b;border-color:rgba(110,200,140,.3)}
 .license-badge.copyleft{background:rgba(255,180,90,.12);color:#ffc46b;border-color:rgba(255,180,90,.3)}
 .license-badge.restrict{background:rgba(255,110,120,.14);color:#ff8b94;border-color:rgba(255,110,120,.4);font-weight:700}
@@ -933,7 +936,7 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
   <div class="stat-row" id="statRow"></div>
   <div class="search-wrap">
     <span class="search-icon">⌕</span>
-    <input id="search" placeholder="搜 skill / 描述 / 仓库" autocomplete="off" />
+    <input id="search" placeholder="搜 skill / 描述 / 用例（支持拼音、多词）" autocomplete="off" />
     <span class="kbd-hint" id="kbdHint">/</span>
     <button class="clear-btn" id="clearBtn" aria-label="clear">×</button>
   </div>
@@ -1242,6 +1245,17 @@ function installPrereq(cmd){
   return '粘到终端运行。';
 }
 function daysSince(iso){ try{ return Math.floor((Date.now() - new Date(iso).getTime())/864e5); }catch(_){ return null; } }
+// 搜索：每个词需命中（子串）或模糊子序列匹配（容错/拼音），多词 AND
+function fuzzySub(hay, t){
+  if(t.length < 3) return false;
+  let i = 0;
+  for(let k = 0; k < hay.length; k++){ if(hay[k] === t[i] && ++i === t.length) return true; }
+  return false;
+}
+function matchSearch(hay, q){
+  if(!q) return true;
+  return q.split(/\s+/).filter(Boolean).every(t => hay.includes(t) || fuzzySub(hay, t));
+}
 
 function buildContent(){
   const root = document.getElementById('content');
@@ -1311,6 +1325,7 @@ function buildContent(){
         const maxStars = row.sources.reduce((m, s) => Math.max(m, s.stars || 0), 0);
         // data attributes for filtering
         const searchText = (row.skills.join(' ') + ' ' + row.group + ' ' + row.description + ' ' +
+                            (row.use_case||'') + ' ' + (row.py||'') + ' ' +
                             row.sources.map(s=>s.name).join(' ')).toLowerCase();
         // 整卡可点的"主用法"：第一个有独立 SKILL.md 的 skill；否则退到第一来源的仓库 README
         let cardP = null;
@@ -1339,6 +1354,10 @@ function buildContent(){
         html += `<div class="card-skills">${skillsHtml}</div>`;
         html += `<div class="card-group">${chainBadge}<span title="${escapeAttr(row.group)}">${escapeHtml(row.group)}</span></div>`;
         html += `</div>`;
+        if(row.use_case){
+          const pch = (row.personas||[]).map(p => `<span class="persona-chip">${escapeHtml(p)}</span>`).join('');
+          html += `<div class="card-uc">💡 ${escapeHtml(row.use_case)}${row.when_to_use?` <span class="card-when">· ${escapeHtml(row.when_to_use)}</span>`:''}${pch}</div>`;
+        }
         html += `<div class="card-desc">${escapeHtml(row.description)}</div>`;
         html += `<div class="card-sources">${sourcesHtml}</div>`;
         html += `</div>`;
@@ -1373,7 +1392,7 @@ function applyFilter(){
     if(currentFilter === 'multi-source' && parseInt(c.dataset.sources) < 2) visible = false;
     if(currentFilter === 'single-skill' && parseInt(c.dataset.skills) > 1) visible = false;
     // search
-    if(visible && q && !c.dataset.search.includes(q)) visible = false;
+    if(visible && q && !matchSearch(c.dataset.search, q)) visible = false;
     c.classList.toggle('hidden', !visible);
     if(visible) visibleCount++;
   });
