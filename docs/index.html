@@ -306,6 +306,41 @@ html.light .graph-controls .gc-btn{background:rgba(255,255,255,.85)}
 .graph-view .node.highlight .label{opacity:1;fill:var(--fg)}
 .graph-view .cluster-halo{fill:none;stroke:none;pointer-events:none}
 
+/* 节点详情侧抽屉 */
+.graph-drawer{position:absolute;top:0;right:0;height:100%;width:300px;max-width:82%;
+  background:var(--bg-elev);border-left:1px solid var(--border);
+  box-shadow:-8px 0 28px rgba(0,0,0,.28);
+  transform:translateX(100%);transition:transform .22s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;z-index:8;overflow:hidden}
+.graph-drawer.open{transform:none}
+/* 抽屉打开时把右上角控件左移，避免互相遮挡 */
+.graph-drawer.open ~ .graph-controls{transform:translateX(-308px);transition:transform .22s}
+@media(max-width:760px){ .graph-drawer.open ~ .graph-controls{transform:translateX(-268px)} }
+.graph-drawer .gd-head{padding:16px 16px 12px;border-bottom:1px solid var(--border)}
+.graph-drawer .gd-close{position:absolute;top:10px;right:10px;width:26px;height:26px;
+  border:0;background:var(--bg-card);color:var(--fg-muted);border-radius:6px;cursor:pointer;font-size:15px}
+.graph-drawer .gd-close:hover{color:var(--fg)}
+.graph-drawer .gd-title{font-family:var(--font-mono);font-size:15px;font-weight:700;color:var(--fg);
+  word-break:break-word;padding-right:28px;letter-spacing:-.01em}
+.graph-drawer .gd-sub{font-size:11.5px;color:var(--fg-muted);margin-top:4px}
+.graph-drawer .gd-body{padding:12px 16px 16px;overflow-y:auto;flex:1;font-size:12.5px}
+.graph-drawer .gd-sec{margin:0 0 14px}
+.graph-drawer .gd-sec h4{margin:0 0 6px;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--fg-muted);font-weight:600}
+.graph-drawer .gd-chips{display:flex;flex-wrap:wrap;gap:5px}
+.graph-drawer .gd-chip{font-family:var(--font-mono);font-size:11px;padding:2px 8px;border-radius:6px;
+  background:rgba(124,156,255,.10);color:var(--accent);border:1px solid rgba(124,156,255,.22);cursor:pointer;transition:all .12s}
+.graph-drawer .gd-chip:hover{background:rgba(124,156,255,.2)}
+.graph-drawer .gd-group{padding:6px 0;border-bottom:1px dashed var(--border);line-height:1.5;color:var(--fg-dim)}
+.graph-drawer .gd-group:last-child{border-bottom:0}
+.graph-drawer .gd-group .gd-cat{color:var(--fg-muted);font-size:10.5px}
+.graph-drawer .gd-foot{padding:12px 16px;border-top:1px solid var(--border);display:flex;gap:8px}
+.graph-drawer .gd-btn{flex:1;text-align:center;padding:8px 10px;border-radius:8px;font-size:12px;cursor:pointer;
+  border:1px solid var(--border);background:var(--bg-card);color:var(--fg);font-family:inherit;transition:all .12s}
+.graph-drawer .gd-btn.primary{background:var(--grad);color:#fff;border-color:transparent;font-weight:600}
+.graph-drawer .gd-btn:hover{transform:translateY(-1px)}
+@media(max-width:760px){ .graph-drawer{width:260px} }
+
 /* 大类色块图例 */
 .graph-view .legend-cats{margin-top:8px;display:grid;
   grid-template-columns:1fr 1fr;gap:3px 10px}
@@ -2096,6 +2131,11 @@ function buildGraph(){
   tooltip.className = 'tooltip';
   container.appendChild(tooltip);
 
+  // 节点详情侧抽屉
+  const drawer = document.createElement('div');
+  drawer.className = 'graph-drawer';
+  container.appendChild(drawer);
+
   // ==== Pan / Zoom ====
   let scale = 1, tx = 0, ty = 0;
   function applyTransform(){
@@ -2111,6 +2151,52 @@ function buildGraph(){
     return {x: (vx - tx) / scale, y: (vy - ty) / scale};
   }
   function worldToView(wx, wy){ return {x: wx * scale + tx, y: wy * scale + ty}; }
+
+  // ==== 详情抽屉 + 持久聚焦 ====
+  let focusedNode = null;
+  const EN = LANG === 'en';
+  function setHighlight(n){
+    const nb = neighbors.get(n.id) || new Set();
+    nodes.forEach(m => { const on = (m === n || nb.has(m.id)); m._g.classList.toggle('highlight', on); m._g.classList.toggle('dim', !on); });
+    links.forEach((l, i) => { const adj = (l.source === n.id || l.target === n.id); linkEls[i].classList.toggle('highlight', adj); linkEls[i].classList.toggle('dim', !adj); });
+  }
+  function clearHighlight(){
+    nodes.forEach(m => m._g.classList.remove('dim', 'highlight'));
+    links.forEach((l, i) => linkEls[i].classList.remove('dim', 'highlight'));
+  }
+  function centerNode(n){ tx = W/2 - n.x * scale; ty = H/2 - n.y * scale; applyTransform(); }
+  function clearFocus(){ focusedNode = null; clearHighlight(); drawer.classList.remove('open'); }
+  function catLabelOf(h1zh){ const s = DATA.sections.find(x => x.title === h1zh); return s ? pickT(s.title_en, s.title) : h1zh; }
+  function jumpToCard(skillName){
+    document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
+    const inp = document.getElementById('search');
+    if(inp){ inp.value = skillName; currentSearch = skillName; const cb = document.getElementById('clearBtn'); if(cb) cb.style.display = 'block'; const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'none'; }
+    applyFilter();
+  }
+  function openDrawer(n){
+    focusedNode = n; setHighlight(n); centerNode(n);
+    const groups = rows.filter(r => (r.skills || []).includes(n.id));
+    const nbIds = [...(neighbors.get(n.id) || [])].sort();
+    const srcSet = new Set(); groups.forEach(g => (g.sources || []).forEach(s => srcSet.add(s.name || s)));
+    const chip = (txt, act) => `<span class="gd-chip" data-nb="${escapeAttr(act)}">${escapeHtml(txt)}</span>`;
+    const nbHtml = nbIds.length ? nbIds.map(id => chip(id, id)).join('') : `<span style="color:var(--fg-muted)">${EN ? 'none' : '无'}</span>`;
+    const grpHtml = groups.map(g => `<div class="gd-group">${escapeHtml(pickT(g.group_en, g.group))}<div class="gd-cat">${escapeHtml(catLabelOf(g._h1))}</div></div>`).join('');
+    const srcHtml = [...srcSet].map(s => `<span class="gd-chip" style="cursor:default;background:var(--bg-card);color:var(--fg-dim);border-color:var(--border)">${escapeHtml(s)}</span>`).join('');
+    drawer.innerHTML =
+      `<div class="gd-head"><button class="gd-close" aria-label="close">×</button>` +
+      `<div class="gd-title">${escapeHtml(n.id)}</div>` +
+      `<div class="gd-sub">${escapeHtml(catLabelOf(n.h1))} · ${n.count} ${EN ? (n.count === 1 ? 'group' : 'groups') : '个分组'}${n.chain ? ' · <span style="color:var(--chain)">⛓</span>' : ''}</div></div>` +
+      `<div class="gd-body">` +
+        `<div class="gd-sec"><h4>${EN ? 'Used with' : '常搭配'}</h4><div class="gd-chips">${nbHtml}</div></div>` +
+        `<div class="gd-sec"><h4>${EN ? 'Appears in' : '出现于'}</h4>${grpHtml}</div>` +
+        (srcHtml ? `<div class="gd-sec"><h4>${EN ? 'Sources' : '来源仓库'}</h4><div class="gd-chips">${srcHtml}</div></div>` : '') +
+      `</div>` +
+      `<div class="gd-foot"><button class="gd-btn primary" data-act="jump">${EN ? 'Open in cards →' : '在功能视图查看 →'}</button></div>`;
+    drawer.classList.add('open');
+    drawer.querySelector('.gd-close').addEventListener('click', clearFocus);
+    drawer.querySelector('[data-act="jump"]').addEventListener('click', () => jumpToCard(n.id));
+    drawer.querySelectorAll('.gd-chip[data-nb]').forEach(c => c.addEventListener('click', () => { const m = nodeMap.get(c.dataset.nb); if(m) openDrawer(m); }));
+  }
 
   // 鼠标滚轮缩放
   svg.addEventListener('wheel', e => {
@@ -2129,16 +2215,21 @@ function buildGraph(){
   }, {passive: false});
 
   // 平移：在空白处按下
-  let panning = false, panStart = null;
+  let panning = false, panStart = null, panMoved = false;
   svg.addEventListener('pointerdown', e => {
     if(e.target.closest('.node')) return;
-    panning = true;
+    panning = true; panMoved = false;
     panStart = {x: e.clientX, y: e.clientY, tx, ty};
     container.classList.add('is-panning');
     svg.setPointerCapture(e.pointerId);
   });
+  // 点空白处（非拖拽）清除聚焦 / 关抽屉
+  svg.addEventListener('click', e => {
+    if(!e.target.closest('.node') && !panMoved && focusedNode) clearFocus();
+  });
   svg.addEventListener('pointermove', e => {
     if(!panning) return;
+    panMoved = true;
     const rect = svg.getBoundingClientRect();
     const dx = (e.clientX - panStart.x) / rect.width * W;
     const dy = (e.clientY - panStart.y) / rect.height * H;
@@ -2165,15 +2256,8 @@ function buildGraph(){
       energy = 1;  // 重新激活模拟
     });
     n._g.addEventListener('click', e => {
-      // 仅当没有真正发生拖动（移动距离很小）时才视为 click
-      if(!n._dragMoved){
-        document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
-        const inp = document.getElementById('search');
-        inp.value = n.id; currentSearch = n.id;
-        document.getElementById('clearBtn').style.display = 'block';
-        const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'none';
-        applyFilter();
-      }
+      // 仅当没有真正发生拖动（移动距离很小）时才视为 click → 打开详情抽屉 + 聚焦邻域（留在图内）
+      if(!n._dragMoved){ openDrawer(n); }
       n._dragMoved = false;
     });
     n._g.addEventListener('pointerenter', () => {
@@ -2190,8 +2274,8 @@ function buildGraph(){
       });
       // tooltip
       tooltip.innerHTML = `<b>${escapeHtml(n.id)}</b><br>
-        <span style="color:var(--fg-muted)">${escapeHtml(n.h1)}</span><br>
-        分组数: ${n.count}${n.chain ? ' · <span style="color:var(--chain)">⛓</span>' : ''}`;
+        <span style="color:var(--fg-muted)">${escapeHtml(catLabelOf(n.h1))}</span><br>
+        ${EN ? `in ${n.count} groups` : `分组数: ${n.count}`}${n.chain ? ' · <span style="color:var(--chain)">⛓</span>' : ''}`;
       tooltip.classList.add('visible');
     });
     n._g.addEventListener('pointermove', e => {
@@ -2201,8 +2285,7 @@ function buildGraph(){
     });
     n._g.addEventListener('pointerleave', () => {
       tooltip.classList.remove('visible');
-      nodes.forEach(m => m._g.classList.remove('dim', 'highlight'));
-      links.forEach((l, i) => linkEls[i].classList.remove('dim', 'highlight'));
+      if(focusedNode) setHighlight(focusedNode); else clearHighlight();  // 聚焦时离开 hover 不丢焦点
     });
   });
 
