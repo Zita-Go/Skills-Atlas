@@ -31,7 +31,8 @@ export default {
   async scheduled(event, env, ctx) {
     // cron 路径默认按 DRY_RUN 环境变量：测试期设成 "true"，定时跑也不写 KV / 不开 PR。
     const dryRun = envFlag(env.DRY_RUN);
-    ctx.waitUntil(runCuration(env, { dryRun }).catch((e) => {
+    const limit = int(env.MAX_CANDIDATES_PER_RUN, 10); // 子请求预算，见 runCuration / README
+    ctx.waitUntil(runCuration(env, { dryRun, limit }).catch((e) => {
       console.error('curation failed:', e?.stack || e);
     }));
   },
@@ -49,8 +50,11 @@ export default {
       // ?dry_run=true 显式优先；没传则回落到 DRY_RUN 环境变量。
       const q = url.searchParams.get('dry_run');
       const dryRun = q !== null ? envFlag(q) : envFlag(env.DRY_RUN);
+      // ?limit=N 显式优先；没传则用 MAX_CANDIDATES_PER_RUN（默认 10）。0 = 不额外限。
+      const ql = url.searchParams.get('limit');
+      const limit = ql !== null ? int(ql, 10) : int(env.MAX_CANDIDATES_PER_RUN, 10);
       try {
-        const result = await runCuration(env, { dryRun });
+        const result = await runCuration(env, { dryRun, limit });
         return json({ ok: true, ...result });
       } catch (e) {
         return json({ ok: false, error: String(e?.message || e) }, 500);
@@ -64,7 +68,7 @@ export default {
 // 主流程
 // ===========================================================================
 
-async function runCuration(env, { dryRun = false } = {}) {
+async function runCuration(env, { dryRun = false, limit = 0 } = {}) {
   const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
   if (dryRun) log('🧪 DRY RUN —— 照常发现 + 调 LLM，但不写 KV、不开 PR（零副作用）');
 
@@ -104,35 +108,46 @@ async function runCuration(env, { dryRun = false } = {}) {
   let candidates = [...seenMap.values()].sort((a, b) => b.stars - a.stars);
   const truncated = candidates.length > cfg.daily_cap;
   if (truncated) candidates = candidates.slice(0, cfg.daily_cap);
-  log(`candidates after dedup: ${candidates.length}${truncated ? ' (truncated)' : ''}`);
+  // 子请求预算：免费套餐每次调用上限 50 个 subrequest（搜索 + 每候选 2~4 次 LLM）。
+  // limit>0 时每轮只 LLM 处理前 N 个；剩下的不写 SEEN，下一轮自然接着处理。
+  const deferred = limit > 0 ? Math.max(0, candidates.length - limit) : 0;
+  if (deferred > 0) candidates = candidates.slice(0, limit);
+  log(`candidates after dedup: ${candidates.length}${truncated ? ' (daily_cap)' : ''}${deferred ? ` (+${deferred} 顺延下轮)` : ''}`);
 
   if (candidates.length === 0) {
-    return { today, dry_run: dryRun, candidates: 0, proposed: 0, rejected, pr: null };
+    return { today, dry_run: dryRun, candidates: 0, deferred, proposed: 0, rejected, pr: null };
   }
 
-  // ③ + ④ 逐个候选过 LLM：先 is-skill 过滤，留下来的再起草
+  // ③ + ④ 逐个候选过 LLM：先 is-skill 过滤，留下来的再起草。
+  // 单个候选失败（含撞子请求上限）只记 llm_error 跳过，不拖垮整批。
   const proposals = [];
   for (const cand of candidates) {
-    const verdict = await filterIsSkill(env, cfg.llm, cand);
-    if (!verdict.is_skill) {
-      bump(rejected, 'llm_not_skill');
-      // 非 skill 的也写 SEEN，省得明天再花 LLM 钱重判（dry-run 时不写，保证零副作用）
-      if (!dryRun) await markSeen(env, candKey(cand), { stage: 'filtered_out', reason: verdict.reason });
-      continue;
-    }
-    let draft = null;
     try {
-      draft = await draftSkill(env, cfg.llm, cand);
+      const verdict = await filterIsSkill(env, cfg.llm, cand);
+      if (!verdict.is_skill) {
+        bump(rejected, 'llm_not_skill');
+        // 非 skill 的也写 SEEN，省得明天再花 LLM 钱重判（dry-run 时不写，保证零副作用）
+        if (!dryRun) await markSeen(env, candKey(cand), { stage: 'filtered_out', reason: verdict.reason });
+        continue;
+      }
+      let draft = null;
+      try {
+        draft = await draftSkill(env, cfg.llm, cand);
+      } catch (e) {
+        log(`draft failed for ${candKey(cand)}: ${e}`);
+      }
+      proposals.push({ ...cand, llm: { ...verdict, ...(draft || {}), drafted: !!draft } });
+      if (!dryRun) await markSeen(env, candKey(cand), { stage: 'proposed' });
     } catch (e) {
-      log(`draft failed for ${candKey(cand)}: ${e}`);
+      // 不写 SEEN —— 让它下一轮还能再试
+      bump(rejected, 'llm_error');
+      log(`candidate ${candKey(cand)} failed: ${e}`);
     }
-    proposals.push({ ...cand, llm: { ...verdict, ...(draft || {}), drafted: !!draft } });
-    if (!dryRun) await markSeen(env, candKey(cand), { stage: 'proposed' });
   }
 
   log(`proposals: ${proposals.length}`);
   if (proposals.length === 0) {
-    return { today, dry_run: dryRun, candidates: candidates.length, proposed: 0, rejected, pr: null };
+    return { today, dry_run: dryRun, candidates: candidates.length, deferred, proposed: 0, rejected, pr: null };
   }
 
   // ⑤ 开 PR：草稿落到 proposed/<date>.json，PR body 给人审勾选
@@ -140,12 +155,12 @@ async function runCuration(env, { dryRun = false } = {}) {
     log(`🧪 DRY RUN —— 跳过开 PR；本应提议 ${proposals.length} 条（见 would_propose）`);
     return {
       today, dry_run: true,
-      candidates: candidates.length, proposed: proposals.length, rejected, pr: null,
+      candidates: candidates.length, deferred, proposed: proposals.length, rejected, pr: null,
       would_propose: proposals.map(summarizeProposal),
     };
   }
   const prUrl = await openProposalPR(env, today, proposals, { rejected, truncated });
-  return { today, dry_run: false, candidates: candidates.length, proposed: proposals.length, rejected, pr: prUrl };
+  return { today, dry_run: false, candidates: candidates.length, deferred, proposed: proposals.length, rejected, pr: prUrl };
 }
 
 // ===========================================================================

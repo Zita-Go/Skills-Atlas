@@ -31,7 +31,8 @@ wrangler kv namespace create SEEN
 # 2) 配 secrets（不要写进 wrangler.toml）
 wrangler secret put OPENROUTER_KEY   # 和 Worker A 同一把 OpenRouter key
 wrangler secret put GITHUB_PAT       # 细粒度 PAT，scope 仅 Zita-Go/Skills-Atlas
-                                     #   权限：Contents:write · Pull requests:write · Issues:write
+                                     #   权限：Contents:write · Pull requests:write
+                                     #   （当前代码只开 PR，不需要 Issues 权限）
 wrangler secret put TRIGGER_SECRET   # 手动 /run 触发口令（随机长串）
 
 # 3) 部署
@@ -61,10 +62,26 @@ npm run tail
 > dry-run 严格零副作用：既不开 PR，也**不写 KV `SEEN`** —— 否则空跑会把候选标记成"已见"，
 > 真跑时反而被跳过。所以可以放心反复 dry-run。
 
+## ⚠️ 子请求限额（Cloudflare 免费套餐）
+
+免费套餐**单次调用最多 50 个子请求**。一轮 = 配置拉取(3) + 搜索(~10) + 每候选 2~4 次 LLM。
+所以**别一次处理太多候选**，否则会报 `Too many subrequests`。
+
+- 由 `MAX_CANDIDATES_PER_RUN`（默认 `"10"`）控制每轮 LLM 处理的候选数，超出的不写 SEEN、
+  下一轮 cron 自然接着处理。
+- 临时覆盖：`/run?...&limit=2`（测试时设小，秒回）。
+- 想一次吃满 `daily_cap`：升级 **Workers Paid**（$5/月，1000 子请求/次），再把
+  `MAX_CANDIDATES_PER_RUN` 调大或设 `"0"`（不额外限）。
+
+```bash
+# 测试：只处理前 2 个候选，几秒返回，远低于 50 子请求
+curl -X POST ".../run?token=$TRIGGER_SECRET&dry_run=true&limit=2"
+```
+
 ## 安全要点
 
 - `GITHUB_PAT` 用**细粒度** token，仓库范围只勾 `Zita-Go/Skills-Atlas`，权限最小化到
-  Contents / Pull requests / Issues 写。**绝不**用经典 PAT 或全账号范围。
+  Contents / Pull requests 写（当前不需要 Issues）。**绝不**用经典 PAT 或全账号范围。
 - `fetch()` 的 `/run` 入口靠 `TRIGGER_SECRET` 鉴权；没配 secret 一律 403。Cron 是主路径。
 - LLM 全走 `:free` 模型；`OPENROUTER_KEY` 即使泄漏，损失也被免费层 + 模型链兜住。
 - curator **从不**直接写 `data/skills.yaml` / `repositories.yaml`——只写
