@@ -1473,7 +1473,7 @@ function buildNav(){
       const target = el.dataset.target;
       const targetEl = document.getElementById(target);
       if(targetEl){
-        targetEl.scrollIntoView({behavior:'smooth', block:'start'});
+        smoothScrollToEl(targetEl);
         pushHash(target);
       }
       // 展开自己（不折叠别人——避免用户已经展开的被关掉）
@@ -1496,7 +1496,7 @@ function buildNav(){
       const target = a.dataset.target;
       const targetEl = document.getElementById(target);
       if(targetEl){
-        targetEl.scrollIntoView({behavior:'smooth', block:'start'});
+        smoothScrollToEl(targetEl);
         pushHash(target);
       }
       nav.querySelectorAll('.nav-h2').forEach(x => x.classList.remove('active'));
@@ -2285,7 +2285,7 @@ function buildGraph(){
       const id = slugify(g._h1) + '--' + slugify(g._h2);
       setTimeout(() => {
         const el = document.getElementById(id);
-        if(el){ el.scrollIntoView({behavior: 'smooth', block: 'start'}); pushHash(id); }
+        if(el){ smoothScrollToEl(el); pushHash(id); }
       }, 100);
     }
   }
@@ -3155,7 +3155,7 @@ function setupAI(){
         applyFilter();
         setTimeout(() => {
           const el = document.getElementById(target);
-          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+          if(el) smoothScrollToEl(el);
         }, 100);
       });
     });
@@ -3457,7 +3457,7 @@ function setupSpotlight(){
     applyFilter();
     setTimeout(() => {
       const el = document.getElementById(`${tgt.h1Slug}--${tgt.h2Slug}`);
-      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      if(el) smoothScrollToEl(el);
     }, 80);
   }
   function jumpToSection(targetId, focusSkill){
@@ -3477,7 +3477,7 @@ function setupSpotlight(){
     setTimeout(() => {
       const el = document.getElementById(targetId);
       if(el){
-        el.scrollIntoView({behavior:'smooth', block:'start'});
+        smoothScrollToEl(el);
         pushHash(targetId);
       }
       // 同步侧栏高亮
@@ -3808,7 +3808,7 @@ function drawHeroChart(){
       + `<span class="hl-name">${escapeHtml(DATA.sections[i].icon || '·')}</span>`
       + `<b class="hl-count">${s.count}</b></button>`).join('');
   }
-  const jumpCat = idx => { const els = document.querySelectorAll('.section-h1'); if(els[idx]) els[idx].scrollIntoView({ behavior:'smooth', block:'start' }); };
+  const jumpCat = idx => { const els = document.querySelectorAll('.section-h1'); if(els[idx]) smoothScrollToEl(els[idx]); };
   svg.querySelectorAll('.hero-arc').forEach(a => a.addEventListener('click', () => jumpCat(+a.dataset.idx)));
   if(legend) legend.querySelectorAll('.hl-item').forEach(b => b.addEventListener('click', () => jumpCat(+b.dataset.idx)));
 }
@@ -4023,7 +4023,7 @@ setupHero();
 document.querySelectorAll('.start-chip').forEach(c => c.addEventListener('click', () => {
   const a = c.dataset.start;
   if(a === 'ai'){ const b = document.getElementById('aiBtn'); if(b) b.click(); }
-  else if(a === 'browse'){ const el = document.getElementById('content'); if(el) el.scrollIntoView({ behavior:'smooth' }); }
+  else if(a === 'browse'){ smoothScrollToEl(document.querySelector('.section-h1') || document.getElementById('content')); }
   else { const i = document.getElementById('search'); if(i){ i.focus(); i.scrollIntoView({ block:'center' }); } }
 }));
 setupJumpOffset();
@@ -4057,6 +4057,18 @@ function hashId(){
 function pushHash(id){
   if(hashId() !== id){ history.pushState(null, '', '#' + id); }
 }
+// 平滑跳转到某元素：若 hero 此刻是展开的，先「瞬时」收起它再滚。
+// hero 折叠用的是 display:none（高度瞬变 ~270px），若不先收起，平滑滚动途中
+// hero 一塌缩就会把目标过冲、标题被滑出视口顶部（用户反馈「划过了 / 看不见」）。
+function smoothScrollToEl(el, behavior){
+  if(!el) return;
+  const hero = document.querySelector('.hero');
+  const willCollapse = hero && !hero.classList.contains('collapsed') && !hero.classList.contains('hidden');
+  if(willCollapse) hero.classList.add('collapsed');
+  const go = () => el.scrollIntoView({behavior: behavior || 'smooth', block: 'start'});
+  if(willCollapse) requestAnimationFrame(go);   // 等收起后的回流定下来，再按新布局算滚动目标
+  else go();
+}
 // 滚到当前 hash 对应的小节（前进/后退、深链都走这里）
 function scrollToHashTarget(behavior){
   const id = hashId();
@@ -4068,7 +4080,7 @@ function scrollToHashTarget(behavior){
     const section = navH2.closest('.nav-section');
     if(section) section.classList.add('expanded');
   }
-  el.scrollIntoView({behavior: behavior || 'auto', block:'start'});
+  smoothScrollToEl(el, behavior || 'auto');
 }
 // 自己管理滚动，避免浏览器默认恢复跟 JS 平滑滚动打架
 if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
