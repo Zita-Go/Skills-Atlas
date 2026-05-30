@@ -1605,7 +1605,7 @@ function applyFilter(){
   if(countEl){
     const total = cards.length;
     if(currentSearch || currentFilter !== 'all'){
-      countEl.textContent = `${visibleCount} / ${total} 条结果`;
+      countEl.textContent = LANG === 'en' ? `${visibleCount} / ${total} results` : `${visibleCount} / ${total} 条结果`;
       countEl.style.color = visibleCount > 0 ? 'var(--fg-muted)' : 'var(--warn)';
     } else {
       countEl.textContent = '';
@@ -1653,6 +1653,11 @@ function setupFilters(){
       document.querySelectorAll('.toolbar .pill').forEach(x => x.classList.remove('active'));
       p.classList.add('active');
       currentFilter = p.dataset.filter;
+      // 过滤是「skill 组」维度的；在仓库/网络视图下点击会作用于隐藏的卡片视图而无反应，
+      // 故先切回功能视图再应用，保证有即时反馈。
+      if(currentView !== 'cards'){
+        document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
+      }
       applyFilter();
     });
   });
@@ -2340,11 +2345,12 @@ function buildGraph(){
   legend.className = 'legend';
   // 简短大类名（去掉"一、二、…"前缀；保留主题词）
   function shortCat(t){
-    return t.replace(/^[一二三四五六七八九十]+、\s*/, '').replace(/（[^）]*）/g, '');
+    return t.replace(/^[一二三四五六七八九十]+、\s*/, '').replace(/^\d+\.\s*/, '')
+            .replace(/（[^）]*）/g, '').replace(/\s*\([^)]*\)\s*$/g, '');
   }
   const catLegend = DATA.sections.map((s, i) => {
     const hue = accentHues[i % accentHues.length];
-    return `<div class="legend-cat"><span class="swatch" style="background:hsl(${hue},70%,64%);color:hsl(${hue},70%,64%)"></span><span>${escapeHtml(shortCat(s.title))}</span></div>`;
+    return `<div class="legend-cat"><span class="swatch" style="background:hsl(${hue},70%,64%);color:hsl(${hue},70%,64%)"></span><span>${escapeHtml(shortCat(pickT(s.title_en, s.title)))}</span></div>`;
   }).join('');
   legend.innerHTML = `<b>${t('graph_title')}</b>
     <div style="margin-top:4px">${t('graph_l_node')}</div>
