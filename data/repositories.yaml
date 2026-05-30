@@ -17,6 +17,7 @@
   last_commit: '2026-05-27'
   default_branch: main
   description: An agentic skills framework & software development methodology that works.
+  description_en: An agentic skills framework & software development methodology that works.
   license: MIT
   doc_path: README.md
   skill_docs:
@@ -44,6 +45,7 @@
   last_commit: '2026-05-28'
   default_branch: main
   description: Skills for Real Engineers. Straight from my .claude directory.
+  description_en: Skills for Real Engineers. Straight from my .claude directory.
   license: MIT
   doc_path: README.md
   skill_docs:
@@ -69,6 +71,7 @@
   last_commit: '2026-05-20'
   default_branch: main
   description: 'PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.'
+  description_en: 'PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.'
   license: MIT
   doc_path: README.md
   skill_docs:
@@ -147,6 +150,7 @@
   last_commit: '2026-05-21'
   default_branch: main
   description: Skills Catalog for Codex
+  description_en: Skills Catalog for Codex
   doc_path: README.md
   skill_docs:
     aspnet-core: skills/.curated/aspnet-core/SKILL.md
@@ -235,6 +239,7 @@
   last_commit: '2026-05-28'
   default_branch: main
   description: Spec-driven development (SDD) for AI coding assistants.
+  description_en: Spec-driven development (SDD) for AI coding assistants.
   license: MIT
   doc_path: README.md
   install_override:
@@ -250,6 +255,7 @@
   last_commit: '2026-05-27'
   default_branch: main
   description: A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.
+  description_en: A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.
   license: MIT
   doc_path: README.md
   install_override:
@@ -265,6 +271,7 @@
   last_commit: '2026-05-29'
   default_branch: main
   description: Public repository for Agent Skills
+  description_en: Public repository for Agent Skills
   doc_path: README.md
   skill_docs:
     algorithmic-art: skills/algorithmic-art/SKILL.md
@@ -296,6 +303,7 @@
   last_commit: '2026-05-22'
   default_branch: master
   description: A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows
+  description_en: A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows
   doc_path: README.md
   skill_docs:
     webapp-testing: webapp-testing/SKILL.md
@@ -311,6 +319,7 @@
   last_commit: '2026-03-23'
   default_branch: main
   description: Experimental skills for Claude Code Superpowers - new techniques and tools
+  description_en: Experimental skills for Claude Code Superpowers - new techniques and tools
   license: MIT
   doc_path: README.md
   skill_docs:
@@ -328,6 +337,7 @@
   last_commit: '2026-05-08'
   default_branch: main
   description: A coding agent hook that acts as a safety net, catching destructive git and filesystem commands before they execute. Supports Codex, Claude Code, OpenCode, Gemini CLI and Copilot CLI.
+  description_en: A coding agent hook that acts as a safety net, catching destructive git and filesystem commands before they execute. Supports Codex, Claude Code, OpenCode, Gemini CLI and Copilot CLI.
   license: MIT
   doc_path: README.md
 - id: Gemini
@@ -340,6 +350,7 @@
   last_commit: '2026-05-20'
   default_branch: main
   description: Skills for the Gemini API, SDK and model/agent interactions
+  description_en: Skills for the Gemini API, SDK and model/agent interactions
   license: Apache-2.0
   doc_path: README.md
   skill_docs:
@@ -357,6 +368,7 @@
   last_commit: '2026-05-27'
   default_branch: main
   description: Vercel's official collection of agent skills
+  description_en: Vercel's official collection of agent skills
   doc_path: README.md
   skill_docs:
     composition-patterns: skills/composition-patterns/SKILL.md
@@ -373,6 +385,7 @@
   last_commit: '2026-05-27'
   default_branch: main
   description: Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows
+  description_en: Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows
   license: CC-BY-SA-4.0
   doc_path: README.md
 - id: PSPDFKit-labs
@@ -385,6 +398,7 @@
   last_commit: '2026-03-23'
   default_branch: main
   description: Universal Agent Skill for document processing with Nutrient DWS API — works with Claude Code, Codex, Gemini CLI, Cursor, and 35+ more agents
+  description_en: Universal Agent Skill for document processing with Nutrient DWS API — works with Claude Code, Codex, Gemini CLI, Cursor, and 35+ more agents
   doc_path: README.md
 - id: kreuzberg-dev
   author: kreuzberg-dev
@@ -395,8 +409,8 @@
   stars: 8406
   last_commit: '2026-05-29'
   default_branch: main
-  description: A polyglot document intelligence framework with a Rust core. Extract text, metadata, images, and structured information from PDFs, Office documents, images, and 97+ formats. Available for
-    Rust, Python, Ruby, Java, Go, PHP, Elixir, C#, R, C, TypeScript (Node/Bun/Wasm/Deno)- or use via CLI, REST API, or MCP server.
+  description: A polyglot document intelligence framework with a Rust core. Extract text, metadata, images, and structured information from PDFs, Office documents, images, and 97+ formats. Available for Rust, Python, Ruby, Java, Go, PHP, Elixir, C#, R, C, TypeScript (Node/Bun/Wasm/Deno)- or use via CLI, REST API, or MCP server.
+  description_en: A polyglot document intelligence framework with a Rust core. Extract text, metadata, images, and structured information from PDFs, Office documents, images, and 97+ formats. Available for Rust, Python, Ruby, Java, Go, PHP, Elixir, C#, R, C, TypeScript (Node/Bun/Wasm/Deno)- or use via CLI, REST API, or MCP server.
   doc_path: README.md
   skill_docs:
     kreuzberg: skills/kreuzberg/SKILL.md
@@ -411,6 +425,7 @@
   last_commit: '2026-05-28'
   default_branch: main
   description: Claude Code skill that translates entire books (PDF/DOCX/EPUB) into any language using parallel subagents
+  description_en: Claude Code skill that translates entire books (PDF/DOCX/EPUB) into any language using parallel subagents
   license: MIT
 - id: blader
   author: blader
@@ -422,6 +437,7 @@
   last_commit: '2026-05-27'
   default_branch: main
   description: Claude Code skill that removes signs of AI-generated writing from text
+  description_en: Claude Code skill that removes signs of AI-generated writing from text
   license: MIT
 - id: NeoLabHQ
   author: NeoLabHQ
@@ -433,6 +449,7 @@
   last_commit: '2026-05-28'
   default_branch: master
   description: Hand-crafted Claude Code Skills focused on improving agent results quality. Compatible with OpenCode, Cursor, Antigravity, Gemini CLI, and others.
+  description_en: Hand-crafted Claude Code Skills focused on improving agent results quality. Compatible with OpenCode, Cursor, Antigravity, Gemini CLI, and others.
   license: GPL-3.0
   doc_path: README.md
   skill_docs:
@@ -448,6 +465,7 @@
   last_commit: '2026-05-28'
   default_branch: master
   description: Huashu Design · HTML-native design skill for Claude Code · Claude Code 里 HTML 原生的设计 skill · 高保真原型 / 幻灯片 / 动画 + 20 设计哲学 + 5 维评审 + MP4 导出 · Agent-agnostic
+  description_en: Huashu Design · HTML-native design skill for Claude Code · HTML-native design skill in Claude Code · high-fidelity prototypes / slides / animation + 20 design philosophies + 5-dimension review + MP4 export · Agent-agnostic
   license: MIT
 - id: JuliusBrussee
   author: JuliusBrussee
@@ -459,6 +477,7 @@
   last_commit: '2026-05-20'
   default_branch: main
   description: 🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman
+  description_en: 🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman
   license: MIT
   doc_path: README.md
 - id: SeanZoR
@@ -471,6 +490,7 @@
   last_commit: '2026-01-15'
   default_branch: main
   description: Speed read Claude's responses at 600+ WPM using RSVP with Spritz-style ORP highlighting
+  description_en: Speed read Claude's responses at 600+ WPM using RSVP with Spritz-style ORP highlighting
   license: MIT
   doc_path: README.md
 - id: PleasePrompto
@@ -482,8 +502,8 @@
   stars: 6702
   last_commit: '2025-11-21'
   default_branch: master
-  description: Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini.
-    Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base.
+  description: Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base.
+  description_en: Use this skill to enable Claude Code to communicate directly with your Google NotebookLM notebooks. Query your uploaded documents and get source-grounded, citation-backed answers from Gemini. Features browser automation, library management, persistent authentication, and answers exclusively from your own knowledge base.
   license: MIT
 - id: teng-lin
   author: teng-lin
@@ -494,8 +514,8 @@
   stars: 15444
   last_commit: '2026-05-29'
   default_branch: main
-  description: Unofficial Python API and agentic skill for Google NotebookLM. Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents
-    like Claude Code, Codex, and OpenClaw.
+  description: Unofficial Python API and agentic skill for Google NotebookLM. Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents like Claude Code, Codex, and OpenClaw.
+  description_en: Unofficial Python API and agentic skill for Google NotebookLM. Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI agents like Claude Code, Codex, and OpenClaw.
   license: MIT
 - id: safishamsi
   author: safishamsi
@@ -506,8 +526,8 @@
   stars: 55810
   last_commit: '2026-05-29'
   default_branch: v8
-  description: AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into
-    a queryable knowledge graph. App code + database schema + infrastructure in one graph.
+  description: AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.
+  description_en: AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos into a queryable knowledge graph. App code + database schema + infrastructure in one graph.
   license: MIT
   doc_path: README.md
   skill_docs:
@@ -523,6 +543,7 @@
   last_commit: '2026-02-28'
   default_branch: main
   description: A Claude Code skill that turns PDFs, docs, and codebases into Obsidian study vaults
+  description_en: A Claude Code skill that turns PDFs, docs, and codebases into Obsidian study vaults
   license: MIT
   doc_path: README.md
 - id: stephenturner
@@ -535,6 +556,7 @@
   last_commit: '2026-03-26'
   default_branch: main
   description: Summarize a paper with the FOCUS method
+  description_en: Summarize a paper with the FOCUS method
   license: MIT
 - id: makenotion
   author: makenotion
@@ -556,6 +578,7 @@
   last_commit: '2026-02-07'
   default_branch: main
   description: A minimal, low-friction memory system for Claude Code
+  description_en: A minimal, low-friction memory system for Claude Code
   license: MIT
   doc_path: README.md
 - id: thedotmack
@@ -567,8 +590,8 @@
   stars: 79485
   last_commit: '2026-05-29'
   default_branch: main
-  description: Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works
-    with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More
+  description: Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More
+  description_en: Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More
   license: Apache-2.0
   doc_path: README.md
 - id: alirezarezvani
@@ -580,8 +603,8 @@
   stars: 16477
   last_commit: '2026-05-29'
   default_branch: main
-  description: 337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding
-    agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills.
+  description: 337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills.
+  description_en: 337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills.
   license: MIT
   doc_path: README.md
 - id: Dean
@@ -594,6 +617,7 @@
   last_commit: '2026-05-20'
   default_branch: main
   description: Product Management skills framework built on battle-tested methods for Claude Code, Cowork, Codex, and AI agents.
+  description_en: Product Management skills framework built on battle-tested methods for Claude Code, Cowork, Codex, and AI agents.
   doc_path: README.md
   skill_docs:
     acquisition-channel-advisor: skills/acquisition-channel-advisor/SKILL.md
@@ -675,6 +699,7 @@
   last_commit: '2026-04-19'
   default_branch: main
   description: Agent skill for managing Linear issues, projects, and teams. MCP tools, SDK automation, GraphQL API patterns.
+  description_en: Agent skill for managing Linear issues, projects, and teams. MCP tools, SDK automation, GraphQL API patterns.
   license: MIT
 - id: Digidai
   author: Digidai
@@ -686,6 +711,7 @@
   last_commit: '2026-04-12'
   default_branch: main
   description: 'PM skill for Claude Code, Codex, Cursor, and Windsurf: diagnose SaaS metrics, critique PRDs, plan roadmaps, run discovery, and coach PM career transitions.'
+  description_en: 'PM skill for Claude Code, Codex, Cursor, and Windsurf: diagnose SaaS metrics, critique PRDs, plan roadmaps, run discovery, and coach PM career transitions.'
 - id: Corey
   author: coreyhaines31
   repo: marketingskills
@@ -696,6 +722,7 @@
   last_commit: '2026-05-28'
   default_branch: main
   description: Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.
+  description_en: Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.
   license: MIT
   doc_path: README.md
   skill_docs:
@@ -751,8 +778,8 @@
   stars: 7274
   last_commit: '2026-05-25'
   default_branch: main
-  description: Universal SEO skill for Claude Code. 25 sub-skills + 18 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, backlinks, local SEO, maps intelligence, semantic clustering, e-commerce
-    SEO, international SEO, Google APIs, and PDF/Excel reporting. Optional DataForSEO, Firecrawl, and Banana extensions.
+  description: Universal SEO skill for Claude Code. 25 sub-skills + 18 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, backlinks, local SEO, maps intelligence, semantic clustering, e-commerce SEO, international SEO, Google APIs, and PDF/Excel reporting. Optional DataForSEO, Firecrawl, and Banana extensions.
+  description_en: Universal SEO skill for Claude Code. 25 sub-skills + 18 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, backlinks, local SEO, maps intelligence, semantic clustering, e-commerce SEO, international SEO, Google APIs, and PDF/Excel reporting. Optional DataForSEO, Firecrawl, and Banana extensions.
   license: MIT
   doc_path: README.md
 - id: ReScienceLab
@@ -765,6 +792,7 @@
   last_commit: '2026-05-28'
   default_branch: main
   description: Agent Skills for Solopreneurs
+  description_en: Agent Skills for Solopreneurs
   license: Apache-2.0
   doc_path: README.md
   skill_docs:
@@ -797,6 +825,7 @@
   last_commit: '2026-04-03'
   default_branch: main
   description: An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms
+  description_en: An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms
   license: MIT
   doc_path: README.md
 - id: op7418-NB
@@ -817,6 +846,7 @@
   last_commit: '2026-05-26'
   default_branch: main
   description: Create beautiful slides on the web using a coding agent's frontend skills
+  description_en: Create beautiful slides on the web using a coding agent's frontend skills
   license: MIT
   skill_docs:
     frontend-slides: plugins/frontend-slides/skills/frontend-slides/SKILL.md
@@ -830,8 +860,8 @@
   stars: 55103
   last_commit: '2026-05-29'
   default_branch: main
-  description: 🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames
-    📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Claude Code / OpenClaw / Codex / Cursor / OpenCode / Qwen / Copilot / Hermes / Kimi & 17+ CLIs.
+  description: 🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Claude Code / OpenClaw / Codex / Cursor / OpenCode / Qwen / Copilot / Hermes / Kimi & 17+ CLIs.
+  description_en: 🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Claude Code / OpenClaw / Codex / Cursor / OpenCode / Qwen / Copilot / Hermes / Kimi & 17+ CLIs.
   license: Apache-2.0
   doc_path: README.md
 - id: op7418-YT
@@ -873,6 +903,7 @@
   last_commit: '2026-05-28'
   default_branch: main
   description: CLI and Agent Skill for Firecrawl - Add scrape, search, and browsing capabilities to your AI agents
+  description_en: CLI and Agent Skill for Firecrawl - Add scrape, search, and browsing capabilities to your AI agents
   doc_path: README.md
 - id: mvanhorn
   author: mvanhorn
@@ -884,6 +915,7 @@
   last_commit: '2026-05-22'
   default_branch: main
   description: AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary
+  description_en: AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary
   license: MIT
   doc_path: README.md
 - id: Paramchoudhary
@@ -895,8 +927,8 @@
   stars: 617
   last_commit: '2026-05-20'
   default_branch: main
-  description: A collection of AI agent skills focused on resume optimization, job applications, and career development. Built for job seekers, career changers, and professionals who want Claude Code to
-    help with resume writing, ATS optimization, interview prep, and strategic job search.
+  description: A collection of AI agent skills focused on resume optimization, job applications, and career development. Built for job seekers, career changers, and professionals who want Claude Code to help with resume writing, ATS optimization, interview prep, and strategic job search.
+  description_en: A collection of AI agent skills focused on resume optimization, job applications, and career development. Built for job seekers, career changers, and professionals who want Claude Code to help with resume writing, ATS optimization, interview prep, and strategic job search.
   license: MIT
   doc_path: README.md
   skill_docs:
@@ -924,6 +956,7 @@
   last_commit: '2026-05-25'
   default_branch: main
   description: AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.
+  description_en: AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.
   license: MIT
   doc_path: README.md
 - id: gokapso
@@ -936,6 +969,7 @@
   last_commit: '2026-05-23'
   default_branch: master
   description: Kapso agent skills for WhatsApp.
+  description_en: Kapso agent skills for WhatsApp.
   doc_path: README.md
   skill_docs:
     automate-whatsapp: skills/automate-whatsapp/SKILL.md
@@ -952,6 +986,7 @@
   last_commit: '2026-05-05'
   default_branch: main
   description: Dorothy, the wife your AI agents needs.
+  description_en: Dorothy, the wife your AI agents needs.
   license: MIT
   doc_path: README.md
 - id: wanshuiyin
@@ -963,8 +998,8 @@
   stars: 10962
   last_commit: '2026-05-29'
   default_branch: main
-  description: 'ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in
-    — works with Claude Code, Codex, OpenClaw, or any LLM agent.'
+  description: 'ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in — works with Claude Code, Codex, OpenClaw, or any LLM agent.'
+  description_en: 'ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cross-model review loops, idea discovery, and experiment automation. No framework, no lock-in — works with Claude Code, Codex, OpenClaw, or any LLM agent.'
   license: MIT
   doc_path: README.md
 - id: garrytan
@@ -977,6 +1012,7 @@
   last_commit: '2026-05-29'
   default_branch: main
   description: 'Use Garry Tan''s exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA'
+  description_en: 'Use Garry Tan''s exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA'
   license: MIT
 - id: EveryInc
   author: EveryInc
@@ -988,6 +1024,7 @@
   last_commit: '2026-01-29'
   default_branch: main
   description: Claude Code skill for bootstrapped CFO financial management. Named after Charlie Munger.
+  description_en: Claude Code skill for bootstrapped CFO financial management. Named after Charlie Munger.
   license: MIT
 - id: openaccountants
   author: openaccountants
@@ -999,6 +1036,7 @@
   last_commit: '2026-05-29'
   default_branch: main
   description: Open-source accounting and tax skills for AI. 133 countries + 51 US states. Upload to Claude/ChatGPT or connect via MCP. Verified by accountants.
+  description_en: Open-source accounting and tax skills for AI. 133 countries + 51 US states. Upload to Claude/ChatGPT or connect via MCP. Verified by accountants.
   license: AGPL-3.0
   doc_path: README.md
 - id: imbad0202
@@ -1011,6 +1049,7 @@
   last_commit: '2026-05-29'
   default_branch: main
   description: 'Academic Research Skills for Claude Code: research → write → review → revise → finalize'
+  description_en: 'Academic Research Skills for Claude Code: research → write → review → revise → finalize'
   doc_path: README.md
 - id: K-Dense-AI
   author: K-Dense-AI
@@ -1021,8 +1060,8 @@
   stars: 26482
   last_commit: '2026-05-28'
   default_branch: main
-  description: 'Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology,
-    chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Antigravity, and the open Agent Skills standard.'
+  description: 'Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Antigravity, and the open Agent Skills standard.'
+  description_en: 'Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 160,000+ scientists worldwide. 140 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Antigravity, and the open Agent Skills standard.'
   license: MIT
   doc_path: README.md
 - id: muratcankoylan
@@ -1034,8 +1073,8 @@
   stars: 16123
   last_commit: '2026-05-26'
   default_branch: main
-  description: A comprehensive collection of Agent Skills for context engineering, multi-agent architectures, and production agent systems. Use when building, optimizing, or debugging agent systems that
-    require effective context management.
+  description: A comprehensive collection of Agent Skills for context engineering, multi-agent architectures, and production agent systems. Use when building, optimizing, or debugging agent systems that require effective context management.
+  description_en: A comprehensive collection of Agent Skills for context engineering, multi-agent architectures, and production agent systems. Use when building, optimizing, or debugging agent systems that require effective context management.
   license: MIT
   skill_docs:
     advanced-evaluation: skills/advanced-evaluation/SKILL.md
@@ -1064,6 +1103,7 @@
   last_commit: '2026-03-10'
   default_branch: main
   description: Curated, security-first OpenClaw skills (Markdown-based). Security audit skills - detect prompt injection, supply chain attacks, credential leaks. Works with Codex CLI, Claude Code, any LLM.
+  description_en: Curated, security-first OpenClaw skills (Markdown-based). Security audit skills - detect prompt injection, supply chain attacks, credential leaks. Works with Codex CLI, Claude Code, any LLM.
   license: MIT
   doc_path: README.md
 - id: anthropics-marketplace
@@ -1076,6 +1116,7 @@
   last_commit: '2026-05-29'
   default_branch: main
   description: Official, Anthropic-managed directory of high quality Claude Code Plugins.
+  description_en: Official, Anthropic-managed directory of high quality Claude Code Plugins.
   license: Apache-2.0
   doc_path: README.md
 - id: multica-ai
@@ -1088,4 +1129,5 @@
   last_commit: '2026-04-20'
   default_branch: main
   description: A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.
+  description_en: A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.
   doc_path: README.md

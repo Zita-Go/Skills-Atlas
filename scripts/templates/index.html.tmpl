@@ -1085,6 +1085,19 @@ const I18N = {
     sp_move: '移动', sp_enter: '跳转', sp_esc: '关闭', sp_invoke: '唤起',
     ai_title: '✨ AI 推荐', ai_subtitle: '描述你想做的事，给你推荐 skill 组合',
     view_repo_link: '查看仓库',
+    chain_badge: '⛓ 强绑定', chain_word: '强绑定',
+    tone_label: '色温',
+    sr_groups: '分组', sr_skills: 'skill', sr_sources: '源',
+    rc_groups: '分组', rc_cross: '大类', rc_skill: 'skill', rc_versatile: '★ 多面手', count_unit: ' 个',
+    graph_title: '网络视图',
+    graph_l_node: '· 节点 = skill，大小 ∝ 出现次数',
+    graph_legend_chain: '· 红边 / 红圈 = ⛓ 强绑定',
+    graph_l_ctrl: '· 滚轮缩放 · 拖拽节点 · 双击钉住',
+    ai_empty_local: '没找到匹配的 skill。试试更宽泛的描述？',
+    ai_empty_local_hint: '没找到匹配的 skill（本地关键词匹配）。配置 LLM 后可获得更智能的推荐 → 点 ⚙',
+    ai_empty_llm: 'LLM 没找到匹配的 skill。试试更具体的目标？',
+    usage_notfound: '没找到 SKILL.md / README。',
+    usage_viewgh: '在 GitHub 查看 ↗',
   },
   en: {
     subtitle: 'AI Agent Skills, organized by function',
@@ -1101,6 +1114,19 @@ const I18N = {
     sp_move: 'Navigate', sp_enter: 'Jump', sp_esc: 'Close', sp_invoke: 'to open',
     ai_title: '✨ AI Pick', ai_subtitle: 'Describe what you want to do; get a skill combo',
     view_repo_link: 'View repo',
+    chain_badge: '⛓ Chained', chain_word: 'Chained',
+    tone_label: 'Hue',
+    sr_groups: 'groups', sr_skills: 'skills', sr_sources: 'repos',
+    rc_groups: 'groups', rc_cross: 'categories', rc_skill: 'skills', rc_versatile: '★ Versatile', count_unit: '',
+    graph_title: 'Network view',
+    graph_l_node: '· node = skill, size ∝ frequency',
+    graph_legend_chain: '· red edge / ring = ⛓ Chained',
+    graph_l_ctrl: '· scroll to zoom · drag nodes · double-click to pin',
+    ai_empty_local: 'No matching skill. Try a broader description?',
+    ai_empty_local_hint: 'No matching skill (local keyword match). Configure an LLM for smarter picks → click ⚙',
+    ai_empty_llm: 'The LLM found no matching skill. Try a more specific goal?',
+    usage_notfound: 'No SKILL.md / README found.',
+    usage_viewgh: 'View on GitHub ↗',
   },
 };
 function resolveLang(){
@@ -1285,7 +1311,7 @@ function buildContent(){
     // 统计该大类的 chain 卡片数（仅用于信息展示，不再绘制连线）
     const chainCount = h1.subsections.reduce((s, h2) => s + h2.rows.filter(r => r.chain).length, 0);
     html += `<section class="h1-wrap" data-h1-slug="${escapeAttr(slug)}" style="--cat-hue:${hue}" data-chain-count="${chainCount}">`;
-    html += `<h2 class="section-h1" id="${slug}"><span class="h1-icon">${icon}</span><span>${escapeHtml(pickT(h1.title_en, h1.title))}</span><span class="h1-tone" title="色温：${tone}">${tone}</span></h2>`;
+    html += `<h2 class="section-h1" id="${slug}"><span class="h1-icon">${icon}</span><span>${escapeHtml(pickT(h1.title_en, h1.title))}</span><span class="h1-tone" title="${t('tone_label')}: ${tone}">${tone}</span></h2>`;
     h1.subsections.forEach(h2 => {
       const subSlug = slugify(h2.title);
       const fullId = slug + '--' + subSlug;
@@ -1330,7 +1356,7 @@ function buildContent(){
           return `<span class="source-row">${link}${usageBtn}${copyBtn}${lic}</span>`;
         }).join('');
 
-        const chainBadge = row.chain ? '<span class="chain-badge">⛓ 强绑定</span>' : '';
+        const chainBadge = row.chain ? `<span class="chain-badge">${t('chain_badge')}</span>` : '';
 
         const maxStars = row.sources.reduce((m, s) => Math.max(m, s.stars || 0), 0);
         // data attributes for filtering
@@ -1379,9 +1405,9 @@ function buildContent(){
   document.getElementById('heroChainCount').textContent = totalChains;
 
   const sr = document.getElementById('statRow');
-  sr.innerHTML = `<span class="stat"><b>${totalGroups}</b> 分组</span>
-    <span class="stat"><b>${totalSkills}</b> skill</span>
-    <span class="stat"><b>${vendorSet.size}</b> 源</span>`;
+  sr.innerHTML = `<span class="stat"><b>${totalGroups}</b> ${t('sr_groups')}</span>
+    <span class="stat"><b>${totalSkills}</b> ${t('sr_skills')}</span>
+    <span class="stat"><b>${vendorSet.size}</b> ${t('sr_sources')}</span>`;
 
   // 渲染完成（连线已删除）
 }
@@ -1583,18 +1609,28 @@ function buildRepoView(){
     'desktop-app': 240, 'video-engine': 350, 'extraction-engine': 35,
     'marketplace': 320, 'claude-md-template': 45
   };
+  // 英文类型标签（loop 变量名为 t，会遮蔽 i18n 的 t()，故这里用直取 I18N[LANG] 的 _L / _labels）
+  const TYPE_LABEL_EN = {
+    'skill': 'Skill pack', 'skill-pack': 'Skill bundle', 'multi-skill-suite': 'Multi-skill suite',
+    'plugin': 'Plugin', 'cli': 'CLI tool', 'cli-framework': 'CLI framework', 'cli-mcp': 'CLI / MCP',
+    'sdd-framework': 'SDD framework', 'python-library': 'Python library', 'desktop-app': 'Desktop app',
+    'video-engine': 'Video engine', 'extraction-engine': 'Extraction engine', 'marketplace': 'Marketplace',
+    'claude-md-template': 'Claude.md template'
+  };
+  const _labels = (LANG === 'en') ? TYPE_LABEL_EN : TYPE_LABEL;
+  const _L = I18N[LANG] || I18N.zh;
 
   let html = '';
   typeOrder.forEach(t => {
     const repos = byType[t].sort((a, b) => (b.stars || 0) - (a.stars || 0) || a.id.localeCompare(b.id));
-    const label = TYPE_LABEL[t] || t;
+    const label = _labels[t] || t;
     const hue = TYPE_HUE[t] != null ? TYPE_HUE[t] : 220;
     const slug = 'repotype-' + slugify(t);
     html += `<section class="repo-type-group" id="${slug}" style="--cat-hue:${hue}">`;
     html += `<h3 class="repo-type-head">`;
     html += `<span>${escapeHtml(label)}</span>`;
     html += `<span class="type-badge">${escapeHtml(t)}</span>`;
-    html += `<span class="type-count">${repos.length} 个</span>`;
+    html += `<span class="type-count">${repos.length}${_L.count_unit}</span>`;
     html += `</h3>`;
     html += `<div class="repo-grid">`;
     repos.forEach(r => {
@@ -1602,10 +1638,10 @@ function buildRepoView(){
         ? `<span class="repo-card-stars">${starIcon}${formatStars(r.stars)}</span>` : '';
       // 隐藏值为 1 的分组/大类标签（无信息量）
       const tags = [
-        r._groups > 1 ? `<span class="repo-card-tag">${r._groups} 分组</span>` : '',
-        r._h1s > 1 ? `<span class="repo-card-tag">跨 ${r._h1s} 大类</span>` : '',
-        r.skill_group_count ? `<span class="repo-card-tag">${r.skill_group_count} skill</span>` : '',
-        r._groups >= 5 ? `<span class="repo-card-tag tag-hot">★ 多面手</span>` : ''
+        r._groups > 1 ? `<span class="repo-card-tag">${r._groups} ${_L.rc_groups}</span>` : '',
+        r._h1s > 1 ? `<span class="repo-card-tag">${LANG === 'en' ? r._h1s + ' ' + _L.rc_cross : '跨 ' + r._h1s + ' ' + _L.rc_cross}</span>` : '',
+        r.skill_group_count ? `<span class="repo-card-tag">${r.skill_group_count} ${_L.rc_skill}</span>` : '',
+        r._groups >= 5 ? `<span class="repo-card-tag tag-hot">${_L.rc_versatile}</span>` : ''
       ].filter(Boolean).join('');
       const author = r.author ? `<span class="author">${escapeHtml(r.author)}/</span>` : '';
       const repoName = r.repo || r.id;
@@ -1615,7 +1651,7 @@ function buildRepoView(){
       html += star;
       html += `</div>`;
       if(tags) html += `<div class="repo-card-meta">${tags}</div>`;
-      html += `<a class="repo-card-link" href="${escapeAttr(r.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${githubIcon}<span>${t('view_repo_link')}</span></a>`;
+      html += `<a class="repo-card-link" href="${escapeAttr(r.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${githubIcon}<span>${_L.view_repo_link}</span></a>`;
       html += `</div>`;
     });
     html += `</div></section>`;
@@ -1640,7 +1676,7 @@ function buildRepoView(){
   });
 
   // 同步侧边栏导航
-  buildRepoNav(typeOrder, byType, TYPE_LABEL);
+  buildRepoNav(typeOrder, byType, _labels);
 }
 
 // 在切到 repo 视图时把侧边栏 nav 切成仓库列表（单独一个 nav 容器，叠在原 nav 上方/替换）
@@ -2168,10 +2204,10 @@ function buildGraph(){
     const hue = accentHues[i % accentHues.length];
     return `<div class="legend-cat"><span class="swatch" style="background:hsl(${hue},70%,64%);color:hsl(${hue},70%,64%)"></span><span>${escapeHtml(shortCat(s.title))}</span></div>`;
   }).join('');
-  legend.innerHTML = `<b>网络视图</b>
-    <div style="margin-top:4px">· 节点 = skill，大小 ∝ 出现次数</div>
-    <div>· 红边 / 红圈 = ⛓ 强绑定</div>
-    <div style="color:var(--fg-muted)">· 滚轮缩放 · 拖拽节点 · 双击钉住</div>
+  legend.innerHTML = `<b>${t('graph_title')}</b>
+    <div style="margin-top:4px">${t('graph_l_node')}</div>
+    <div>${t('graph_legend_chain')}</div>
+    <div style="color:var(--fg-muted)">${t('graph_l_ctrl')}</div>
     <div class="legend-cats">${catLegend}</div>`;
   // legend 加宽
   legend.style.maxWidth = '300px';
@@ -2480,7 +2516,7 @@ function setupAI(){
 
   function renderResults(rows, source){
     if(!rows.length){
-      results.innerHTML = '<div class="ai-empty">没找到匹配的 skill。试试更宽泛的描述？</div>';
+      results.innerHTML = `<div class="ai-empty">${t('ai_empty_local')}</div>`;
       return;
     }
     results.innerHTML = rows.map(r => {
@@ -2535,7 +2571,7 @@ function setupAI(){
     // 没 LLM → 纯本地匹配
     if(!cfg){
       if(localScored.length === 0){
-        results.innerHTML = '<div class="ai-empty">没找到匹配的 skill（本地关键词匹配）。配置 LLM 后可获得更智能的推荐 → 点 ⚙</div>';
+        results.innerHTML = `<div class="ai-empty">${t('ai_empty_local_hint')}</div>`;
       } else {
         renderResults(localScored.slice(0, 12), 'local');
       }
@@ -2555,7 +2591,7 @@ function setupAI(){
           showStatus(`<span>LLM 说没匹配，回退本地 TF-IDF top 12</span>`);
           renderResults(localScored.slice(0, 12), 'local-fallback');
         } else {
-          results.innerHTML = '<div class="ai-empty">LLM 没找到匹配的 skill。试试更具体的目标？</div>';
+          results.innerHTML = `<div class="ai-empty">${t('ai_empty_llm')}</div>`;
         }
       } else {
         renderResults(reranked, 'llm');
@@ -2767,7 +2803,7 @@ function setupSpotlight(){
     const h2Slug = slugify(row._h2);
     items.push({
       kind: 'group', icon: row.chain ? '⛓' : '◇', label: row.group,
-      meta: `${row._h1} · ${row._h2}` + (row.chain ? ' · 强绑定' : ''),
+      meta: `${row._h1} · ${row._h2}` + (row.chain ? ' · ' + t('chain_word') : ''),
       hue: hueOf(row._h1),
       action: () => jumpToSection(`${h1Slug}--${h2Slug}`, row.skills[0])
     });
@@ -3314,8 +3350,8 @@ function setupUsage(){
       sub.textContent = `${d.author}/${d.repo} · ${path}`;
     }catch(err){
       const gh = d.url || `https://github.com/${d.author}/${d.repo}`;
-      body.innerHTML = '<div class="usage-state">没找到 SKILL.md / README。<br>' +
-        `<a href="${escapeAttr(gh)}" target="_blank" rel="noopener">在 GitHub 查看 ↗</a></div>`;
+      body.innerHTML = `<div class="usage-state">${t('usage_notfound')}<br>` +
+        `<a href="${escapeAttr(gh)}" target="_blank" rel="noopener">${t('usage_viewgh')}</a></div>`;
     }
   }
 }
