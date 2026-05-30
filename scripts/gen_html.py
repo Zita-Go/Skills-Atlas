@@ -71,10 +71,12 @@ def build_sections(categories, skills, repos, usecases):
     repo_map = {r['id']: r for r in repos}
     sections = []
     for cat in categories:
-        h1 = {'title': cat['title'], 'icon': cat.get('icon', '📌'),
+        h1 = {'title': cat['title'], 'title_en': cat.get('title_en'),
+              'icon': cat.get('icon', '📌'),
               'subsections': []}
         for sub in cat.get('subcategories', []):
-            h2 = {'title': sub['title'], 'rows': []}
+            h2 = {'title': sub['title'], 'title_en': sub.get('title_en'),
+                  'rows': []}
             for s in skills:
                 if s['category'] == cat['id'] and s['subcategory'] == sub['id']:
                     sources_resolved = []
@@ -97,8 +99,10 @@ def build_sections(categories, skills, repos, usecases):
                     h2['rows'].append({
                         'skills': s['skills'],
                         'group': s['group'],
+                        'group_en': s.get('group_en'),
                         'chain': s.get('chain', False),
                         'description': s['description'],
+                        'description_en': s.get('description_en'),
                         'sources': sources_resolved,
                         'use_case': uc.get('use_case', ''),
                         'personas': uc.get('personas', []),
@@ -122,6 +126,8 @@ def main():
     sections = build_sections(categories, skills, repos, usecases)
     vendors = {r['id']: {
         'url': r['url'],
+        'description': r.get('description'),
+        'description_en': r.get('description_en'),
         'stars': r.get('stars'),
         'last_commit': r.get('last_commit'),
         'type': r.get('type', 'skill'),

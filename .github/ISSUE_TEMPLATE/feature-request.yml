@@ -1,17 +1,17 @@
-name: 功能建议
-description: 给 Atlas 网站或数据结构提建议
+name: Feature request / 功能建议
+description: Suggest improvements to the Atlas website or data structure / 给 Atlas 网站或数据结构提建议
 labels: ["enhancement"]
 body:
   - type: textarea
     id: feature
     attributes:
-      label: 想加什么功能？
-      placeholder: 例如 - 给每个 skill 加 install 命令字段
+      label: What feature would you like to add? / 想加什么功能？
+      placeholder: e.g. add an install command field to each skill / 例如 - 给每个 skill 加 install 命令字段
     validations:
       required: true
   - type: textarea
     id: rationale
     attributes:
-      label: 为什么需要？
+      label: Why is it needed? / 为什么需要？
     validations:
       required: false

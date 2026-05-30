@@ -1,162 +1,164 @@
+**English** · [中文](README.zh-CN.md)
+
 <div align="center">
 
 # 🗺️ Skills Atlas
 
-**按功能分类的 AI Agent Skills 全景**
-不再问"有什么 skill"，而是"我要做 X 该用哪个 skill"。
+**A panorama of AI Agent Skills organized by function**
+Stop asking "what skills exist" and start asking "which skill should I use to do X".
 
 [![Skills](https://img.shields.io/badge/skills-369-blue)](data/skills.yaml)
 [![Repos](https://img.shields.io/badge/repositories-61-green)](data/repositories.yaml)
 [![Categories](https://img.shields.io/badge/categories-13_×_74-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[**🌐 在线访问**](https://zita-go.github.io/Skills-Atlas/) · [📦 数据下载](data/) · [🤝 贡献新 skill](CONTRIBUTING.md) · [💬 讨论区](../../discussions)
+[**🌐 Visit online**](https://zita-go.github.io/Skills-Atlas/?lang=en) · [📦 Data download](data/) · [🤝 Contribute a new skill](CONTRIBUTING.md) · [💬 Discussions](../../discussions)
 
 </div>
 
 ---
 
-## 为什么有这个项目
+## Why this project exists
 
-AI Agent Skills 生态在 2025 年爆发，但分散在 ~61 个 GitHub 仓库里。
-现有的 awesome 列表只列名字 + 一句话描述，**不知道哪几个能配合用**。
+The AI Agent Skills ecosystem exploded in 2025, but it's scattered across ~61 GitHub repositories.
+Existing awesome lists only give you names plus a one-line description — they **don't tell you which ones work together**.
 
-**Skills Atlas** 按"功能维度"重新组织：
-- 你想做 SEO？直接看 § 4.1，跨仓库的 6 个 SEO skill 一起呈现
-- 你想做完整的开发工作流？看 § 1.1，⛓ 强绑定标记会告诉你哪 5 个必须串起来用
-- 你想找文档处理工具？看 § 2.1，Office 4 件套 + PDF 重型 API + 多格式抽取引擎一目了然
+**Skills Atlas** reorganizes everything along a "functional dimension":
+- Want to do SEO? Jump straight to § 4.1, where 6 SEO skills across repos are presented together
+- Want a complete development workflow? See § 1.1, where the ⛓ strong-binding markers tell you which 5 must be chained together
+- Looking for document-processing tools? See § 2.1, where the Office 4-piece suite + the heavy-duty PDF API + the multi-format extraction engine are laid out at a glance
 
-## 数据规模
+## Data scale
 
-| 维度 | 数量 |
+| Dimension | Count |
 |---|---:|
-| 独立 skill | 369 |
-| 功能分组 | 185 |
-| 大类 / 子分组 | 13 / 74 |
-| 源仓库 | 61 |
-| ⛓ 强绑定工作流 | 18 |
+| Standalone skills | 369 |
+| Functional groups | 185 |
+| Categories / Subgroups | 13 / 74 |
+| Source repositories | 61 |
+| ⛓ Strong-binding workflows | 18 |
 
-## 怎么用
+## How to use
 
-### 在线访问
-👉 [打开网站](https://zita-go.github.io/Skills-Atlas/)
+### Visit online
+👉 [Open the website](https://zita-go.github.io/Skills-Atlas/?lang=en)
 
-### 离线（单文件 HTML）
+### Offline (single-file HTML)
 ```bash
 git clone https://github.com/Zita-Go/Skills-Atlas.git
 cd skills-atlas/docs
 python3 -m http.server 8000
-# 访问 http://localhost:8000
+# Visit http://localhost:8000
 ```
 
-或者直接双击 `docs/index.html` 用浏览器打开。
+Or just double-click `docs/index.html` to open it in a browser.
 
-### 当数据源用
+### Use it as a data source
 ```python
 import yaml
 skills = yaml.safe_load(open('data/skills.yaml'))
 repos = yaml.safe_load(open('data/repositories.yaml'))
 
-# 找所有强绑定 ⛓ 工作流
+# Find all strong-binding ⛓ workflows
 chains = [s for s in skills if s['chain']]
 print(f'{len(chains)} chain workflows')
 ```
 
-JSON 版本在 `docs/data.json`，给前端 / MCP server / API 消费。
+A JSON version lives at `docs/data.json`, for consumption by frontends / MCP servers / APIs.
 
-## 项目结构
+## Project structure
 
 ```
 skills-atlas/
-├── docs/                    # GitHub Pages 部署目录
-│   ├── index.html           # 🌟 单文件网站
-│   └── data.json            # 给前端 fetch 的结构化数据
-├── data/                    # 源数据（贡献者主要改这里）
-│   ├── categories.yaml      # 13 大类 / 74 子分组
-│   ├── skills.yaml          # 185 个 skill 分组
-│   └── repositories.yaml    # 61 个源仓库元数据
-├── scripts/                 # 数据处理脚本
-│   ├── parse_md.py          # md → yaml（首次迁移用）
-│   ├── gen_html.py          # yaml → html（修改 yaml 后重新生成）
-│   ├── validate.py          # 校验 yaml 完整性
-│   ├── fetch_metadata.py    # 同步 GitHub star（CI 用）
+├── docs/                    # GitHub Pages deployment directory
+│   ├── index.html           # 🌟 Single-file website
+│   └── data.json            # Structured data for frontends to fetch
+├── data/                    # Source data (contributors mainly edit here)
+│   ├── categories.yaml      # 13 categories / 74 subgroups
+│   ├── skills.yaml          # 185 skill groups
+│   └── repositories.yaml    # Metadata for 61 source repositories
+├── scripts/                 # Data-processing scripts
+│   ├── parse_md.py          # md → yaml (for the initial migration)
+│   ├── gen_html.py          # yaml → html (regenerate after editing yaml)
+│   ├── validate.py          # Validate yaml integrity
+│   ├── fetch_metadata.py    # Sync GitHub stars (used by CI)
 │   └── templates/
-│       └── index.html.tmpl  # HTML 模板
-├── docs-md/                 # 原始 md 文档（archive）
-└── .github/                 # CI / Issue / PR 模板
+│       └── index.html.tmpl  # HTML template
+├── docs-md/                 # Original md docs (archive)
+└── .github/                 # CI / Issue / PR templates
 ```
 
-## 自动发现流水线
+## Auto-discovery pipeline
 
-每天扫 GitHub Search，把新出现的 skill 仓库挂候选清单，让维护者人审入库。
+Every day it scans GitHub Search, queues newly appearing skill repositories onto a candidate list, and lets maintainers review them in by hand.
 
 ```
-.github/workflows/daily-discover.yml   # 每天 UTC 02:00 跑
-  └─ scripts/discover_candidates.py    # GitHub Search × N 条 → 跟主库 diff
+.github/workflows/daily-discover.yml   # Runs daily at 02:00 UTC
+  └─ scripts/discover_candidates.py    # GitHub Search × N queries → diff against the main repo
        ↓
-     data/_inbox/raw/YYYY-MM-DD.json   # 当日候选（自动 PR）
+     data/_inbox/raw/YYYY-MM-DD.json   # That day's candidates (automatic PR)
        ↓
-     scripts/render_candidate_issue.py # 渲染成 Issue body
+     scripts/render_candidate_issue.py # Render into an Issue body
        ↓
-     gh issue create --label discover-bot   # 人审入口
+     gh issue create --label discover-bot   # Human-review entry point
 ```
 
-人审决定哪些进 `data/repositories.yaml` + `data/skills.yaml`。**LLM 不会自动写入主数据**。
+Human review decides which ones go into `data/repositories.yaml` + `data/skills.yaml`. **The LLM never writes to the main data automatically**.
 
-| 阶段 | 状态 | 内容 |
+| Stage | Status | Content |
 |---|---|---|
-| **PR-1** | ✅ 已交付 | 纯发现 + Issue 输出（无 LLM） |
-| **PR-2** | 规划中 | OpenRouter 廉价模型做 is-skill-repo 过滤 |
-| **PR-3** | 规划中 | GPT-5.5 给候选起 type / 分类 / 中文描述草稿 |
+| **PR-1** | ✅ Delivered | Pure discovery + Issue output (no LLM) |
+| **PR-2** | Planned | Cheap OpenRouter model to do is-skill-repo filtering |
+| **PR-3** | Planned | GPT-5.5 drafts type / category / Chinese description for candidates |
 
-被 PR-1 拒掉的仓库可以追加进 `data/_inbox/blocklist.yaml`，下一次发现自动跳过。
+Repositories rejected by PR-1 can be appended to `data/_inbox/blocklist.yaml`, and the next discovery run skips them automatically.
 
-手动触发：
+Manual trigger:
 ```bash
 GITHUB_TOKEN=ghp_xxx python3 scripts/discover_candidates.py
 python3 scripts/render_candidate_issue.py --out /tmp/issue.md
 ```
 
-## 主要功能
+## Main features
 
-- **左侧导航** 13 大类可折叠展开 / 74 子分组直跳
-- **实时搜索** 支持 skill 名 / 描述 / 仓库 / 分组名全文搜
-- **3 种过滤** 全部 / ⛓ 强绑定 / 多源 / 单 skill
-- **暗 / 亮主题** 一键切换 + 记住偏好
-- **响应式设计** 移动端自动收侧边栏
-- **轻量** 仅字体走 jsdelivr CDN（含系统字体兜底），数据与脚本零运行时依赖
+- **Left navigation** 13 categories collapse/expand / jump directly to any of the 74 subgroups
+- **Live search** Full-text search over skill name / description / repository / group name
+- **3 filters** All / ⛓ Strong-binding / Multi-source / Single skill
+- **Dark / light theme** One-click toggle + remembers your preference
+- **Responsive design** The sidebar collapses automatically on mobile
+- **Lightweight** Only fonts go through the jsdelivr CDN (with a system-font fallback); the data and scripts have zero runtime dependencies
 
-## 贡献
+## Contributing
 
-欢迎贡献新 skill / 修复源仓库错误 / 改进描述 / 增加翻译。
+Contributions are welcome — new skills / fixes to source-repo errors / improved descriptions / added translations.
 
-详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-### 加一个新 skill 四步
+### Adding a new skill in four steps
 
-1. 编辑 `data/skills.yaml` 加一条
-2. 跑 `python3 scripts/validate.py` 校验
-3. 跑 `python3 scripts/gen_html.py` 重新生成网站
-4. 提 PR
+1. Edit `data/skills.yaml` and add an entry
+2. Run `python3 scripts/validate.py` to validate
+3. Run `python3 scripts/gen_html.py` to regenerate the website
+4. Open a PR
 
-## 相关项目 / 灵感来源
+## Related projects / inspiration
 
-本项目的 skill 数据源自下列优秀仓库（以下仅列贡献最多的几个，完整列表见 `data/repositories.yaml`）：
+This project's skill data is sourced from the excellent repositories below (only the top contributors are listed here; see `data/repositories.yaml` for the full list):
 
-- [obra/superpowers](https://github.com/obra/superpowers) - Claude Code 软件开发方法论
-- [phuryn/pm-skills](https://github.com/phuryn/pm-skills) - 65 个 PM skill
-- [openai/skills](https://github.com/openai/skills) - OpenAI Codex 41 skill
-- [anthropics/skills](https://github.com/anthropics/skills) - Anthropic 17 skill
-- [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) - 41 个营销 skill
-- [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) - 47 个 PM skill
-- [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) - 15 个 Context Engineering skill
+- [obra/superpowers](https://github.com/obra/superpowers) - Claude Code software-development methodology
+- [phuryn/pm-skills](https://github.com/phuryn/pm-skills) - 65 PM skills
+- [openai/skills](https://github.com/openai/skills) - OpenAI Codex 41 skills
+- [anthropics/skills](https://github.com/anthropics/skills) - Anthropic 17 skills
+- [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) - 41 marketing skills
+- [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) - 47 PM skills
+- [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) - 15 Context Engineering skills
 
 ## License
 
-[MIT](LICENSE) — 代码 / 数据 / 内容统一采用 MIT。你可以随便用、随便改、随便商业化，只要保留 attribution。
+[MIT](LICENSE) — code / data / content all use MIT uniformly. You can use it freely, modify it freely, and commercialize it freely, as long as you keep attribution.
 
-> 注意：本项目里收录的 skill 元数据 / 描述是我们整理的；但这些 skill 的真实 SKILL.md 内容仍在各自原仓库（见 `data/repositories.yaml`），各自遵循各自的 license。
+> Note: the skill metadata / descriptions collected in this project are curated by us; but the actual SKILL.md content of these skills still lives in their respective original repositories (see `data/repositories.yaml`), each under its own license.
 
-## 维护者
+## Maintainers
 
-由社区共同维护。本项目脱胎于一份内部资料整理工作；欢迎所有 skill 作者来 PR 完善自己仓库的描述。
+Maintained collectively by the community. This project grew out of an internal documentation-organization effort; all skill authors are welcome to PR improvements to their own repository's description.

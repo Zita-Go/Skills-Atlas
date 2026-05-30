@@ -1,31 +1,31 @@
-name: 修复源仓库错误
-description: 报告失效链接 / 改名 / 删除的仓库
+name: Fix source repository error / 修复源仓库错误
+description: Report a broken link, renamed, or deleted repository / 报告失效链接 / 改名 / 删除的仓库
 labels: ["bug", "source-fix"]
 body:
   - type: input
     id: vendor_id
     attributes:
       label: vendor id
-      description: data/repositories.yaml 里的 id 字段
-      placeholder: 例如 superpowers
+      description: The id field in data/repositories.yaml / data/repositories.yaml 里的 id 字段
+      placeholder: e.g. superpowers / 例如 superpowers
     validations:
       required: true
   - type: dropdown
     id: issue_type
     attributes:
-      label: 问题类型
+      label: Issue type / 问题类型
       options:
-        - 链接失效（404）
-        - 仓库改名 / 转移
-        - 仓库已删除 / 私有
-        - SKILL.md 路径变了
-        - 其它
+        - Broken link (404)
+        - Repo renamed / moved
+        - Repo deleted / private
+        - SKILL.md path changed
+        - Other
     validations:
       required: true
   - type: textarea
     id: details
     attributes:
-      label: 详情
-      placeholder: 新链接 / 替代品 / 解决建议...
+      label: Details / 详情
+      placeholder: New link / replacement / suggested resolution... / 新链接 / 替代品 / 解决建议...
     validations:
       required: true
