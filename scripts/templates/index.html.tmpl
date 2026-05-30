@@ -988,6 +988,35 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
 .repo-card-foot .rc-upd.fresh{color:#2ea043}
 html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
 .repo-card-foot .repo-card-link{margin-top:0;margin-left:auto;flex-shrink:0}
+/* 仓库目录汇总条 + 排序段控件 */
+.repo-summary{display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;
+  margin:0 0 22px;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);
+  background:var(--bg-card)}
+.repo-summary .rs-stats{display:flex;align-items:center;flex-wrap:wrap;gap:18px}
+.repo-summary .rs-stat{font-size:12px;color:var(--fg-muted);display:inline-flex;align-items:baseline;gap:5px}
+.repo-summary .rs-stat b{font-size:18px;font-weight:700;color:var(--fg);letter-spacing:-0.02em;font-family:var(--font-mono)}
+.repo-summary .rs-star{color:var(--warn);display:inline-flex;align-self:center}
+.repo-summary .rs-star svg{width:12px;height:12px}
+.repo-summary .rs-sort{margin-left:auto;display:flex;align-items:center;gap:8px}
+.repo-summary .rs-sort-label{font-size:11px;color:var(--fg-muted)}
+.rs-sort-pills{display:inline-flex;gap:2px;background:var(--bg-elev);
+  border:1px solid var(--border);border-radius:99px;padding:3px}
+.rs-sort-pills button{display:inline-flex;align-items:center;gap:5px;border:0;background:transparent;
+  color:var(--fg-dim);font-size:11.5px;font-family:var(--font-sans);font-weight:500;cursor:pointer;
+  padding:5px 11px;border-radius:99px;transition:background .14s,color .14s;white-space:nowrap}
+.rs-sort-pills button:hover{color:var(--fg)}
+.rs-sort-pills button.active{background:var(--grad);color:#fff}
+.rs-sort-pills button svg{width:12px;height:12px;flex-shrink:0}
+.rs-sort-pills button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:760px){
+  .repo-summary{gap:12px}
+  .repo-summary .rs-stats{gap:14px}
+  .repo-summary .rs-stat b{font-size:16px}
+  .repo-summary .rs-sort{margin-left:0;width:100%}
+  .rs-sort-pills{flex:1}
+  .rs-sort-pills button{flex:1;min-width:0;overflow:hidden;justify-content:center;padding:7px 6px}
+  .rs-sort-pills button span{overflow:hidden;text-overflow:ellipsis}
+}
 
 /* sidebar 仓库导航 */
 .nav-repo-type{margin-bottom:6px}
@@ -1995,7 +2024,7 @@ function buildRepoView(){
   const _labels = (LANG === 'en') ? TYPE_LABEL_EN : TYPE_LABEL;
   const _L = I18N[LANG] || I18N.zh;
   const _en = LANG === 'en';
-  const clockIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  const clockIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
   // last_commit("YYYY-MM-DD") → 相对时间（运行时按访客时钟算）；近 30 天视为「活跃」
   const _daysSince = ds => { const d = new Date(ds); if(isNaN(d)) return null; const n = Math.floor((Date.now() - d.getTime()) / 86400000); return n < 0 ? 0 : n; };
   const relTimeShort = ds => {
@@ -2007,65 +2036,111 @@ function buildRepoView(){
     const y = Math.floor(n / 365); return _en ? `${y}y ago` : `${y} 年前`;
   };
 
-  let html = '';
-  typeOrder.forEach(t => {
-    const repos = byType[t].sort((a, b) => (b.stars || 0) - (a.stars || 0) || a.id.localeCompare(b.id));
-    const label = _labels[t] || t;
-    const hue = TYPE_HUE[t] != null ? TYPE_HUE[t] : 220;
-    const slug = 'repotype-' + slugify(t);
-    html += `<section class="repo-type-group" id="${slug}" style="--cat-hue:${hue}">`;
-    html += `<h3 class="repo-type-head">`;
-    html += `<span>${escapeHtml(label)}</span>`;
-    html += `<span class="type-badge">${escapeHtml(t)}</span>`;
-    html += `<span class="type-count">${repos.length}${_L.count_unit}</span>`;
-    html += `</h3>`;
-    html += `<div class="repo-grid">`;
-    repos.forEach(r => {
-      const star = (r.stars != null && r.stars > 0)
-        ? `<span class="repo-card-stars">${starIcon}${formatStars(r.stars)}</span>` : '';
-      // 隐藏值为 1 的分组/大类标签（无信息量）
-      const tags = [
-        r._groups > 1 ? `<span class="repo-card-tag">${r._groups} ${_L.rc_groups}</span>` : '',
-        r._h1s > 1 ? `<span class="repo-card-tag">${LANG === 'en' ? r._h1s + ' ' + _L.rc_cross : '跨 ' + r._h1s + ' ' + _L.rc_cross}</span>` : '',
-        r.skill_group_count ? `<span class="repo-card-tag">${r.skill_group_count} ${_L.rc_skill}</span>` : '',
-        r._groups >= 5 ? `<span class="repo-card-tag tag-hot">${_L.rc_versatile}</span>` : ''
-      ].filter(Boolean).join('');
-      const author = r.author ? `<span class="author">${escapeHtml(r.author)}/</span>` : '';
-      const repoName = r.repo || r.id;
-      const desc = pickT(r.description_en, r.description) || '';
-      const lic = r.license ? `<span class="rc-lic">${escapeHtml(r.license)}</span>` : '';
-      const upd = relTimeShort(r.last_commit);
-      const fresh = (_daysSince(r.last_commit) ?? 999) < 30 ? ' fresh' : '';
-      const updHtml = upd ? `<span class="rc-upd${fresh}" title="${escapeAttr((_en ? 'last commit ' : '最近提交 ') + (r.last_commit || ''))}">${clockIcon}${upd}</span>` : '';
-      html += `<div class="repo-card" data-repo="${escapeAttr(r.id)}" style="--cat-hue:${hue}">`;
-      html += `<div class="repo-card-head">`;
-      html += `<div class="repo-card-name">${author}${escapeHtml(repoName)}</div>`;
-      html += star;
-      html += `</div>`;
-      if(desc) html += `<div class="repo-card-desc">${escapeHtml(desc)}</div>`;
-      if(tags) html += `<div class="repo-card-meta">${tags}</div>`;
-      html += `<div class="repo-card-foot">${lic}${updHtml}<a class="repo-card-link" href="${escapeAttr(r.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${githubIcon}<span>${_L.view_repo_link}</span></a></div>`;
-      html += `</div>`;
+  // ===== 顶部汇总条统计 =====
+  const allRepos = typeOrder.flatMap(t => byType[t]);
+  const totalRepos = allRepos.length;
+  const totalStars = allRepos.reduce((s, r) => s + (r.stars || 0), 0);
+  const catsCovered = new Set(getAllRows().map(r => r._h1)).size;
+
+  // ===== 排序：组内按所选键重排（默认星标，存 localStorage）=====
+  const SORTS = {
+    stars:    (a, b) => (b.stars || 0) - (a.stars || 0) || a.id.localeCompare(b.id),
+    recent:   (a, b) => { const la = a.last_commit || '', lb = b.last_commit || ''; if(la !== lb) return lb < la ? -1 : 1; return (b.stars || 0) - (a.stars || 0); },  // 新→旧（ISO 日期串较大者在前），无日期排最后
+    coverage: (a, b) => (b._groups - a._groups) || (b._rows - a._rows) || (b.stars || 0) - (a.stars || 0),
+  };
+  let sortKey = 'stars';
+  try{ const sv = localStorage.getItem('atlas:repo:sort'); if(sv && SORTS[sv]) sortKey = sv; }catch(_){}
+  const gridIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>';
+  const SORT_DEFS = [
+    { k: 'stars',    icon: starIcon,  label: _en ? 'Stars' : '星标' },
+    { k: 'recent',   icon: clockIcon, label: _en ? 'Recent' : '最近更新' },
+    { k: 'coverage', icon: gridIcon,  label: _en ? 'Coverage' : '覆盖最广' },
+  ];
+
+  let gridsEl = null;
+  function renderGrids(){
+    let html = '';
+    typeOrder.forEach(t => {
+      const repos = byType[t].slice().sort(SORTS[sortKey]);
+      const label = _labels[t] || t;
+      const hue = TYPE_HUE[t] != null ? TYPE_HUE[t] : 220;
+      const slug = 'repotype-' + slugify(t);
+      html += `<section class="repo-type-group" id="${slug}" style="--cat-hue:${hue}">`;
+      html += `<h3 class="repo-type-head"><span>${escapeHtml(label)}</span>`;
+      html += `<span class="type-badge">${escapeHtml(t)}</span>`;
+      html += `<span class="type-count">${repos.length}${_L.count_unit}</span></h3>`;
+      html += `<div class="repo-grid">`;
+      repos.forEach(r => {
+        const star = (r.stars != null && r.stars > 0)
+          ? `<span class="repo-card-stars">${starIcon}${formatStars(r.stars)}</span>` : '';
+        // 隐藏值为 1 的分组/大类标签（无信息量）
+        const tags = [
+          r._groups > 1 ? `<span class="repo-card-tag">${r._groups} ${_L.rc_groups}</span>` : '',
+          r._h1s > 1 ? `<span class="repo-card-tag">${_en ? r._h1s + ' ' + _L.rc_cross : '跨 ' + r._h1s + ' ' + _L.rc_cross}</span>` : '',
+          r.skill_group_count ? `<span class="repo-card-tag">${r.skill_group_count} ${_L.rc_skill}</span>` : '',
+          r._groups >= 5 ? `<span class="repo-card-tag tag-hot">${_L.rc_versatile}</span>` : ''
+        ].filter(Boolean).join('');
+        const author = r.author ? `<span class="author">${escapeHtml(r.author)}/</span>` : '';
+        const repoName = r.repo || r.id;
+        const desc = pickT(r.description_en, r.description) || '';
+        const lic = r.license ? `<span class="rc-lic">${escapeHtml(r.license)}</span>` : '';
+        const upd = relTimeShort(r.last_commit);
+        const fresh = (_daysSince(r.last_commit) ?? 999) < 30 ? ' fresh' : '';
+        const updHtml = upd ? `<span class="rc-upd${fresh}" title="${escapeAttr((_en ? 'last commit ' : '最近提交 ') + (r.last_commit || ''))}">${clockIcon}${upd}</span>` : '';
+        html += `<div class="repo-card" data-repo="${escapeAttr(r.id)}" style="--cat-hue:${hue}">`;
+        html += `<div class="repo-card-head"><div class="repo-card-name">${author}${escapeHtml(repoName)}</div>${star}</div>`;
+        if(desc) html += `<div class="repo-card-desc">${escapeHtml(desc)}</div>`;
+        if(tags) html += `<div class="repo-card-meta">${tags}</div>`;
+        html += `<div class="repo-card-foot">${lic}${updHtml}<a class="repo-card-link" href="${escapeAttr(r.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${githubIcon}<span>${_L.view_repo_link}</span></a></div>`;
+        html += `</div>`;
+      });
+      html += `</div></section>`;
     });
-    html += `</div></section>`;
+    gridsEl.innerHTML = html;
+  }
+
+  const statsHtml = `<div class="rs-stats">` +
+    `<span class="rs-stat"><b>${totalRepos}</b> ${_en ? 'repos' : '仓库'}</span>` +
+    `<span class="rs-stat"><b>${formatStars(totalStars)}</b> <span class="rs-star">${starIcon}</span> ${_en ? 'stars' : '星标'}</span>` +
+    `<span class="rs-stat"><b>${catsCovered}</b> ${_en ? 'categories' : '大类'}</span>` +
+    `</div>`;
+  const sortHtml = `<div class="rs-sort"><span class="rs-sort-label" id="rsSortLabel">${_en ? 'Sort' : '排序'}</span>` +
+    `<div class="rs-sort-pills" role="group" aria-labelledby="rsSortLabel">${SORT_DEFS.map(d => `<button type="button" data-sort="${d.k}" class="${d.k === sortKey ? 'active' : ''}" aria-pressed="${d.k === sortKey}" title="${escapeAttr(d.label)}">${d.icon}<span>${d.label}</span></button>`).join('')}</div></div>`;
+  container.innerHTML = `<div class="repo-summary">${statsHtml}${sortHtml}</div><div class="repo-grids"></div>`;
+  gridsEl = container.querySelector('.repo-grids');
+  renderGrids();
+
+  // 排序切换：仅重排网格（不重建汇总条 / 侧栏）；段控件支持 ←/→ 方向键切换
+  const sortBtns = [...container.querySelectorAll('.rs-sort-pills button')];
+  sortBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      if(btn.dataset.sort === sortKey) return;
+      sortKey = btn.dataset.sort;
+      try{ localStorage.setItem('atlas:repo:sort', sortKey); }catch(_){}
+      sortBtns.forEach(b => { const on = b === btn; b.classList.toggle('active', on); b.setAttribute('aria-pressed', on); });
+      renderGrids();
+    });
+    btn.addEventListener('keydown', e => {
+      let n = i;
+      if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = (i - 1 + sortBtns.length) % sortBtns.length;
+      else if(e.key === 'ArrowRight' || e.key === 'ArrowDown') n = (i + 1) % sortBtns.length;
+      else return;
+      e.preventDefault(); sortBtns[n].focus(); sortBtns[n].click();
+    });
   });
 
-  container.innerHTML = html;
-
-  // 点击仓库卡片：切回功能视图并把搜索锁到该仓库 id
-  container.querySelectorAll('.repo-card').forEach(c => {
-    c.addEventListener('click', () => {
-      const repoId = c.dataset.repo;
-      // 切到 cards 视图
-      document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
-      const inp = document.getElementById('search');
-      inp.value = repoId;
-      currentSearch = repoId;
-      document.getElementById('clearBtn').style.display = 'block';
-      const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'none';
-      applyFilter();
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    });
+  // 点击仓库卡片：切回功能视图并锁定搜索到该仓库（事件委托，重排后仍生效）
+  gridsEl.addEventListener('click', e => {
+    const card = e.target.closest('.repo-card');
+    if(!card) return;
+    const repoId = card.dataset.repo;
+    document.querySelector('#viewSwitch .view-btn[data-view="cards"]').click();
+    const inp = document.getElementById('search');
+    inp.value = repoId; currentSearch = repoId;
+    document.getElementById('clearBtn').style.display = 'block';
+    const kbd = document.getElementById('kbdHint'); if(kbd) kbd.style.display = 'none';
+    applyFilter();
+    window.scrollTo({top: 0, behavior: 'smooth'});
   });
 
   // 同步侧边栏导航
