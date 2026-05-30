@@ -3,1043 +3,1413 @@
 # 字段：use_case（一句话场景）/ personas（适合谁）/ when_to_use（何时用）
 academic-research--11-1--166:
   use_case: 从研究到论文发表的全流程辅助，涵盖选题、写作、审稿、修改。
+  use_case_en: Full-pipeline assistance from research to paper publication, covering topic selection, writing, review, and revision.
   personas:
   - 研究
   - 工程
   when_to_use: 论文从构思到投稿的各阶段。
+  when_to_use_en: Various stages of a paper from conception to submission.
 academic-research--11-2--167:
   use_case: 科研、工程、分析、金融等领域的文献综述与数据处理。
+  use_case_en: Literature review and data processing in fields such as scientific research, engineering, analysis, and finance.
   personas:
   - 研究
   - 工程
   - 通用
   when_to_use: 需要文献综述或处理科研数据时。
+  when_to_use_en: When a literature review or processing of research data is needed.
 agent-architecture--12-1--168:
   use_case: 理解 LLM context 机制和 agent 架构的基础原理与优化方向
+  use_case_en: Understand the fundamental principles of LLM context mechanisms and agent architecture, and directions for optimization.
   personas:
   - 工程
   - 研究
   when_to_use: 设计多 agent 系统或优化长链路任务前
+  when_to_use_en: Before designing multi-agent systems or optimizing long-chain tasks.
 agent-architecture--12-2--169:
   use_case: 识别并修复长会话中的 context degradation 问题，压缩/优化 token 效率
+  use_case_en: Identify and fix context degradation issues in long sessions, compressing/optimizing token efficiency.
   personas:
   - 工程
   when_to_use: 发现模型忘记早期信息或回复质量下降时
+  when_to_use_en: When the model forgets early information or response quality declines.
 agent-architecture--12-3--170:
   use_case: 对比四大持久记忆系统，选择适合项目的语义记忆框架
+  use_case_en: Compare the four major persistent memory systems and select a semantic memory framework suited to the project.
   personas:
   - 工程
   - 研究
   when_to_use: 需要 agent 跨会话保留记忆和学习时
+  when_to_use_en: When an agent needs to retain memory and learn across sessions.
 agent-architecture--12-3--171:
   use_case: 在 KV cache 层共享多 agent 记忆，降低重复计算成本
+  use_case_en: Share multi-agent memory at the KV cache layer to reduce redundant computation costs.
   personas:
   - 工程
   when_to_use: 多 agent 系统中有大量重复上下文时
+  when_to_use_en: When a multi-agent system has large amounts of duplicated context.
 agent-architecture--12-3--172:
   use_case: 把语义上下文转化为 BDI 心智状态，增强 agent 推理能力
+  use_case_en: Convert semantic context into BDI mental states to enhance agent reasoning capabilities.
   personas:
   - 工程
   - 研究
   when_to_use: 构建需要复杂推理的神经符号 agent 时
+  when_to_use_en: When building neuro-symbolic agents that require complex reasoning.
 agent-architecture--12-4--173:
   use_case: 对比三种多 agent 拓扑，选型 supervisor/swarm/hierarchical 架构
+  use_case_en: Compare three multi-agent topologies and select among supervisor/swarm/hierarchical architectures.
   personas:
   - 工程
   when_to_use: 需要设计多 agent 协作系统的组织结构时
+  when_to_use_en: When designing the organizational structure of a multi-agent collaboration system.
 agent-architecture--12-4--174:
   use_case: 部署 agent 到远端 sandbox（Modal/Cloudflare）实现隔离运行
+  use_case_en: Deploy agents to a remote sandbox (Modal/Cloudflare) for isolated execution.
   personas:
   - 工程
   - 运营
   when_to_use: 需要长时间运行 agent 或多用户共享时
+  when_to_use_en: When agents need to run for long periods or be shared across multiple users.
 agent-architecture--12-4--175:
   use_case: 控制自主 agent 循环的编辑权限、回滚、日志等安全边界
+  use_case_en: Control safety boundaries of autonomous agent loops such as edit permissions, rollback, and logging.
   personas:
   - 工程
   when_to_use: 上线自主 agent 前规范其行为边界
+  when_to_use_en: Before deploying autonomous agents, to define their behavioral boundaries.
 agent-architecture--12-5--176:
   use_case: 按 agent 友好的原则重新设计工具接口和文档
+  use_case_en: Redesign tool interfaces and documentation following agent-friendly principles.
   personas:
   - 工程
   when_to_use: 工具经常被 agent 误用或调用失败时
+  when_to_use_en: When tools are frequently misused or fail when called by agents.
 agent-architecture--12-5--177:
   use_case: 建立多维 rubric 评测 agent 的因果、完整度、引用质量、工具效率
+  use_case_en: Build a multi-dimensional rubric to evaluate agents on causality, completeness, citation quality, and tool efficiency.
   personas:
   - 工程
   - 研究
   when_to_use: 对比两个 agent 系统或优化基准时
+  when_to_use_en: When comparing two agent systems or optimizing benchmarks.
 agent-architecture--12-5--178:
   use_case: 用 LLM-as-judge 评估 agent 输出，规避位置/长度/自我增强偏置
+  use_case_en: Use LLM-as-judge to evaluate agent outputs while avoiding position/length/self-enhancement bias.
   personas:
   - 工程
   - 研究
   when_to_use: 需要自动评分 agent 输出质量时
+  when_to_use_en: When agent output quality needs to be scored automatically.
 agent-architecture--12-5--179:
   use_case: 从任务适配性检查到成本估算，系统性地交付 LLM agent 项目
+  use_case_en: Systematically deliver LLM agent projects, from task-fit checks to cost estimation.
   personas:
   - 工程
   - PM
   when_to_use: 启动新 agent 项目时评估可行性和成本
+  when_to_use_en: When launching a new agent project, to assess feasibility and cost.
 comms-integration--9-1--157:
   use_case: 接入 WhatsApp 消息、自动化应答、诊断投递问题
+  use_case_en: Integrate WhatsApp messaging, automate responses, and diagnose delivery issues.
   personas:
   - 工程
   when_to_use: 需要在 Claude Code 中操作 WhatsApp
+  when_to_use_en: When you need to operate WhatsApp within Claude Code.
 comms-integration--9-2--158:
   use_case: 在 Claude Code 中管理 Linear 工单、sprint、自动化同步
+  use_case_en: Manage Linear tickets, sprints, and automated sync within Claude Code.
   personas:
   - 工程
   - PM
   when_to_use: 任务库与代码改动需要同步关联
+  when_to_use_en: When the task tracker and code changes need to be kept in sync.
 comms-integration--9-3--159:
   use_case: 多 AI agent 协同编排、自动触发、远程控制、数据互联
+  use_case_en: Multi-AI-agent collaborative orchestration, automatic triggering, remote control, data interconnection
   personas:
   - 工程
   - PM
   when_to_use: 搭建跨平台 agent 自动化系统
+  when_to_use_en: Building a cross-platform agent automation system
 comms-integration--9-4--160:
   use_case: 定时启动后台调研任务，不占用交互时间
+  use_case_en: Schedule background research tasks to start on a timer, without occupying interactive time
   personas:
   - 工程
   - PM
   - 研究
   when_to_use: 需要长跑式研究在离线时段运行
+  when_to_use_en: Long-running research needs to run during offline periods
 data-scraping--7-1--139:
   use_case: 网页抓取：从 URL 到 markdown/HTML/数据
+  use_case_en: 'Web scraping: from URL to markdown/HTML/data'
   personas:
   - 工程
   - 通用
   when_to_use: 需要解析已知网页链接
+  when_to_use_en: Need to parse a known web page link
 data-scraping--7-1--140:
   use_case: 交互式网页自动化：点击、填表、登录
+  use_case_en: 'Interactive web automation: clicking, form filling, login'
   personas:
   - 工程
   - 通用
   when_to_use: 需要操控动态页面提取数据
+  when_to_use_en: Need to operate dynamic pages to extract data
 data-scraping--7-2--141:
   use_case: 多平台情报聚合：Reddit/X/HN 热点监控
+  use_case_en: 'Multi-platform intelligence aggregation: Reddit/X/HN hot-topic monitoring'
   personas:
   - 研究
   - 营销
   - 通用
   when_to_use: 跨平台搜集用户反馈或趋势信号
+  when_to_use_en: Cross-platform collection of user feedback or trend signals
 data-scraping--7-2--142:
   use_case: 单平台内容查询：Reddit/X/PH 数据
+  use_case_en: 'Single-platform content query: Reddit/X/PH data'
   personas:
   - 营销
   - 研究
   - 通用
   when_to_use: 抓取特定平台的实时内容
+  when_to_use_en: Scraping real-time content from a specific platform
 data-scraping--7-2--143:
   use_case: 域名可用性查询与价格对比
+  use_case_en: Domain availability lookup and price comparison
   personas:
   - 创始人
   - 通用
   when_to_use: 找域名时查可用性和注册价格
+  when_to_use_en: Checking availability and registration price when finding a domain
 data-scraping--7-3--144:
   use_case: 自然语言问询转 SQL 查询
+  use_case_en: Natural language query to SQL query
   personas:
   - 工程
   - PM
   - 通用
   when_to_use: 用自然语言查询数据库
+  when_to_use_en: Querying a database in natural language
 data-scraping--7-3--145:
   use_case: 设计指标 dashboard 与数据源
+  use_case_en: Designing metric dashboards and data sources
   personas:
   - PM
   - 工程
   when_to_use: 规划产品数据可视化指标
+  when_to_use_en: Planning product data visualization metrics
 data-scraping--7-3--146:
   use_case: 生成测试用假数据集合
+  use_case_en: Generating mock datasets for testing
   personas:
   - 工程
   - 通用
   when_to_use: 需要逼真的 CSV/JSON 测试数据
+  when_to_use_en: Need realistic CSV/JSON test data
 data-scraping--7-4--147:
   use_case: 创建可复现的数据实验 notebook
+  use_case_en: Creating reproducible data experiment notebooks
   personas:
   - 研究
   - 工程
   when_to_use: 记录数据分析过程和结果
+  when_to_use_en: Recording the data analysis process and results
 design-frontend--5-1--116:
   use_case: 建立品牌视觉体系、配色、字体规范、海报设计
+  use_case_en: Establishing a brand visual system, color palette, typography specs, poster design
   personas:
   - 设计
   - PM
   when_to_use: 启动品牌或需要视觉规范时
+  when_to_use_en: When launching a brand or needing visual specs
 design-frontend--5-2--117:
   use_case: 避免 AI slop，用明确美学方向写生产级 UI 代码
+  use_case_en: Avoiding AI slop, writing production-grade UI code with a clear aesthetic direction
   personas:
   - 工程
   - 设计
   when_to_use: 生成前端 UI 时指定美学风格
+  when_to_use_en: Specifying an aesthetic style when generating frontend UI
 design-frontend--5-2--118:
   use_case: 优化前端可访问性、性能、React 最佳实践规范
+  use_case_en: Optimizing frontend accessibility, performance, and React best-practice specs
   personas:
   - 工程
   - 设计
   when_to_use: 前端代码评审或质量提升时
+  when_to_use_en: During frontend code review or quality improvement
 design-frontend--5-2--119:
   use_case: 跨平台 UI/UX 组件库、视觉风格、设计原则指导
+  use_case_en: Cross-platform UI/UX component library, visual style, and design principle guidance
   personas:
   - 设计
   - 工程
   when_to_use: 设计组件库或多平台适配时
+  when_to_use_en: When designing a component library or adapting to multiple platforms
 design-frontend--5-3--120:
   use_case: 快速构建可交互 React + Tailwind 单文件 artifact
+  use_case_en: Quickly building interactive React + Tailwind single-file artifacts
   personas:
   - 工程
   - 设计
   when_to_use: 需要快速 demo 或原型时
+  when_to_use_en: When a quick demo or prototype is needed
 design-frontend--5-4--121:
   use_case: Figma 设计系统管理、设计稿转代码、设计库生成
+  use_case_en: Figma design system management, design-to-code, design library generation
   personas:
   - 设计
   - 工程
   - PM
   when_to_use: 与 Figma 交互或实现设计时
+  when_to_use_en: When interacting with Figma or implementing designs
 design-frontend--5-5--122:
   use_case: 生成专业 PPTX：10 套配色、字体规范、视觉 QA
+  use_case_en: 'Generate professional PPTX: 10 color palettes, font specs, visual QA'
   personas:
   - PM
   - 营销
   when_to_use: 需要制作幻灯片演示时
+  when_to_use_en: When you need to create slide presentations
 design-frontend--5-5--123:
   use_case: 文档转 PPT 视频：大纲提炼→AI 图生成→视频合成
+  use_case_en: 'Document-to-PPT video: outline extraction -> AI image generation -> video composition'
   personas:
   - 营销
   - PM
   when_to_use: 需要文档转视频演示时
+  when_to_use_en: When you need to convert documents into video presentations
 design-frontend--5-5--124:
   use_case: 零依赖 HTML 演示文稿：支持 16:9、12 风格、PDF 导出
+  use_case_en: 'Zero-dependency HTML presentations: 16:9 support, 12 styles, PDF export'
   personas:
   - 工程
   - 设计
   when_to_use: 快速创建技术演讲幻灯片时
+  when_to_use_en: When quickly creating technical talk slides
 design-frontend--5-5--125:
   use_case: HTML 原生设计：高保真原型、动画、MP4 导出
+  use_case_en: 'Native HTML design: high-fidelity prototypes, animations, MP4 export'
   personas:
   - 设计
   - 工程
   when_to_use: 设计高保真原型或动画时
+  when_to_use_en: When designing high-fidelity prototypes or animations
 design-frontend--5-5--126:
   use_case: 生成 Slack emoji 或动画素材（≤2MB GIF）
+  use_case_en: Generate Slack emoji or animated assets (<=2MB GIF)
   personas:
   - 设计
   - 营销
   when_to_use: 制作 Slack 通讯素材时
+  when_to_use_en: When creating Slack communication assets
 design-frontend--5-6--127:
   use_case: 本地化设计工具：19 skill、32 原型模式、可扩展
+  use_case_en: 'Localized design toolkit: 19 skills, 32 prototype patterns, extensible'
   personas:
   - 设计
   - 工程
   when_to_use: 需要离线设计工具或定制时
+  when_to_use_en: When you need an offline design toolkit or customization
 design-frontend--5-7--128:
   use_case: 生成算法驱动的生成艺术（p5.js、粒子系统）
+  use_case_en: Generate algorithm-driven generative art (p5.js, particle systems)
   personas:
   - 设计
   - 研究
   when_to_use: 创建生成艺术或可视化时
+  when_to_use_en: When creating generative art or visualizations
 design-frontend--5-7--129:
   use_case: 用 Gemini 3 Pro 生成 AI 图像
+  use_case_en: Generate AI images with Gemini 3 Pro
   personas:
   - 设计
   - 营销
   when_to_use: 需要 AI 图像生成时
+  when_to_use_en: When you need AI image generation
 design-frontend--5-7--130:
   use_case: AI 生成 Logo、Banner、营销图（含去背、SVG）
+  use_case_en: AI-generated logos, banners, marketing graphics (incl. background removal, SVG)
   personas:
   - 设计
   - 营销
   when_to_use: 需要快速生成品牌素材时
+  when_to_use_en: When you need to quickly generate brand assets
 design-frontend--5-8--131:
   use_case: 跨 OS 截屏（含权限检查）
+  use_case_en: Cross-OS screenshots (incl. permission checks)
   personas:
   - 工程
   - 通用
   when_to_use: 需要截屏或原生 UI 操作时
+  when_to_use_en: When you need screenshots or native UI operations
 design-frontend--5-8--132:
   use_case: 调用 Codex 内置工具生成 AI 位图
+  use_case_en: Invoke Codex built-in tools to generate AI bitmaps
   personas:
   - 设计
   - 工程
   when_to_use: 需要快速 AI 生成图像时
+  when_to_use_en: When you need fast AI image generation
 design-frontend--5-8--133:
   use_case: 端到端生成动画 sprite：8 状态行、QA、预览
+  use_case_en: 'End-to-end animated sprite generation: 8 state rows, QA, preview'
   personas:
   - 设计
   - 工程
   when_to_use: 制作游戏或应用动画时
+  when_to_use_en: When creating game or app animations
 docs-knowledge--2-1--027:
   use_case: Word/PDF/PPT/Excel的读改生成，含OCR、水印、表单、金融建模规范。
+  use_case_en: Read, edit, and generate Word/PDF/PPT/Excel, incl. OCR, watermarks, forms, financial modeling specs.
   personas:
   - 工程
   - PM
   - 设计
   when_to_use: 需要程序化处理办公文件时
+  when_to_use_en: When you need to process office files programmatically
 docs-knowledge--2-1--028:
   use_case: PDF高级操作：格式转换、拆合、OCR、PII脱敏、数字签名、表单填充。
+  use_case_en: 'Advanced PDF operations: format conversion, split/merge, OCR, PII redaction, digital signatures, form filling.'
   personas:
   - 工程
   - PM
   when_to_use: PDF需要复杂处理或企业合规转换
+  when_to_use_en: When PDFs need complex processing or enterprise compliance conversion
 docs-knowledge--2-1--029:
   use_case: 一次性抽取90+文件格式+300+编程语言，省30-50%RAG token成本。
+  use_case_en: One-shot extraction across 90+ file formats and 300+ programming languages, saving 30-50% RAG token cost.
   personas:
   - 工程
   - 研究
   when_to_use: 多格式混合数据需要高效抽取
+  when_to_use_en: When multi-format mixed data needs efficient extraction
 docs-knowledge--2-2--030:
   use_case: 8路并行翻译整本书，含词汇一致性和代词指代修复。
+  use_case_en: 8-way parallel translation of an entire book, including vocabulary consistency and pronoun reference fixes.
   personas:
   - 运营
   - 创始人
   when_to_use: 要翻译完整出版物或长文档
+  when_to_use_en: Translating a complete publication or long document
 docs-knowledge--2-3--031:
   use_case: 三阶段协作写PRD/RFC/设计文档，含上下文采集、结构迭代、读者测试。
+  use_case_en: Three-stage collaborative writing of PRD/RFC/design docs, including context gathering, structural iteration, and reader testing.
   personas:
   - PM
   - 工程
   when_to_use: 多人协作起草正式文档
+  when_to_use_en: Multi-person collaborative drafting of formal documents
 docs-knowledge--2-3--032:
   use_case: 去除AI生成的模板词和不自然表达，提升文本可读度和人味。
+  use_case_en: Remove AI-generated boilerplate words and unnatural phrasing to improve readability and human tone.
   personas:
   - 营销
   - 运营
   when_to_use: AI生成内容需要人工润色
+  when_to_use_en: AI-generated content needs human polishing
 docs-knowledge--2-3--033:
   use_case: 按Elements of Style原则改写，去冗、强化动词、修正被动语态。
+  use_case_en: Rewrite per Elements of Style principles, cutting redundancy, strengthening verbs, and fixing passive voice.
   personas:
   - 营销
   - 运营
   when_to_use: 文案需要大幅简化和精炼
+  when_to_use_en: Copy needs substantial simplification and tightening
 docs-knowledge--2-3--034:
   use_case: 检查语法/逻辑/流畅度，给内容创作、21项审校诊断和改进。
+  use_case_en: Check grammar/logic/fluency, providing content creation, a 21-item review diagnosis, and improvements.
   personas:
   - 营销
   - 运营
   when_to_use: 文章发布前做语言质量审核
+  when_to_use_en: Language quality review before publishing an article
 docs-knowledge--2-3--036:
   use_case: 极简输出模式，省75%token同时保留技术准确度。
+  use_case_en: Minimal output mode, saving 75% tokens while preserving technical accuracy.
   personas:
   - 工程
   - 研究
   when_to_use: 需要高效回答，token或成本受限
+  when_to_use_en: Need efficient answers with limited token or cost budget
 docs-knowledge--2-3--037:
   use_case: 以600+ WPM速度快速读完Claude长回复，RSVP+ORP视觉优化。
+  use_case_en: Quickly read through long Claude replies at 600+ WPM, with RSVP+ORP visual optimization.
   personas:
   - 通用
   when_to_use: 需要快速消化长篇回答
+  when_to_use_en: Need to quickly digest long answers
 docs-knowledge--2-4--038:
   use_case: NotebookLM官方API+非官方Python API双路线，创建/查询/生成音频。
+  use_case_en: Dual-route NotebookLM official API + unofficial Python API to create/query/generate audio.
   personas:
   - 研究
   - 运营
   when_to_use: 从文献源生成Q&A或音频内容
+  when_to_use_en: Generating Q&A or audio content from reference sources
 docs-knowledge--2-4--039:
   use_case: 把项目代码/文档/PDF映射知识图谱，减少跨文件查询成本。
+  use_case_en: Map project code/docs/PDF into a knowledge graph to reduce cross-file query cost.
   personas:
   - 工程
   - PM
   when_to_use: 复杂项目需要一次性建立知识关联
+  when_to_use_en: Complex projects need to establish knowledge links in one pass
 docs-knowledge--2-4--040:
   use_case: PDF/MD转Obsidian学习库，含概念笔记、MOC、交互式测验和记忆追踪。
+  use_case_en: Convert PDF/MD into an Obsidian study library, including concept notes, MOC, interactive quizzes, and memory tracking.
   personas:
   - 研究
   - 求职
   when_to_use: 需要结构化学习和知识固化
+  when_to_use_en: Need structured learning and knowledge consolidation
 docs-knowledge--2-4--041:
   use_case: 用FOCUS方法摘要学术论文，便于后续交叉比较和综述。
+  use_case_en: Summarize academic papers using the FOCUS method to facilitate later cross-comparison and review.
   personas:
   - 研究
   when_to_use: 批量总结论文做文献综述
+  when_to_use_en: Batch-summarizing papers for a literature review
 docs-knowledge--2-5--042:
   use_case: Notion四件套：笔记转结构化页、会议议程、交叉调研、Spec转实现计划。
+  use_case_en: 'Notion four-piece set: notes to structured pages, meeting agendas, cross-research, and Spec to implementation plan.'
   personas:
   - PM
   - 工程
   when_to_use: 用Notion做知识管理和工作协作
+  when_to_use_en: Using Notion for knowledge management and work collaboration
 docs-knowledge--2-5--043:
   use_case: Notion × Claude MCP工作流官方指南，自动化文档/会议/研究。
+  use_case_en: Official guide for the Notion × Claude MCP workflow, automating docs/meetings/research.
   personas:
   - PM
   - 运营
   when_to_use: 要集成Notion与Claude自动化工作
+  when_to_use_en: Integrating Notion with Claude to automate work
 docs-knowledge--2-6--044:
   use_case: 轻量分层记忆系统，core.md+topics/按需加载，纯grep检索。
+  use_case_en: Lightweight layered memory system, core.md+topics/ loaded on demand, pure grep retrieval.
   personas:
   - 工程
   - 通用
   when_to_use: 需要跨会话记忆but避免向量库复杂度
+  when_to_use_en: Need cross-session memory but want to avoid vector-store complexity
 docs-knowledge--2-6--045:
   use_case: 影子Sonnet+MCP双层记忆，search→context→recall三层工作流。
+  use_case_en: Shadow Sonnet + MCP dual-layer memory, with a search→context→recall three-layer workflow.
   personas:
   - 工程
   - PM
   when_to_use: 长期项目需要token高效的记忆系统
+  when_to_use_en: Long-term projects need a token-efficient memory system
 docs-knowledge--2-6--046:
   use_case: 利用auto-memory自动记录，做模式提升、skill抽取、记忆健康检查。
+  use_case_en: Use auto-memory for automatic logging, doing pattern improvement, skill extraction, and memory health checks.
   personas:
   - 工程
   when_to_use: Claude Code项目要自我学习和模式优化
+  when_to_use_en: Claude Code projects that need to self-learn and optimize patterns
 jobsearch--8-1--148:
   use_case: 简历优化：ATS 过滤、成就量化、格式规范、领导力凸显
+  use_case_en: 'Resume optimization: ATS filtering, achievement quantification, format standardization, leadership emphasis'
   personas:
   - 求职
   - 工程
   when_to_use: 投简历前最后检查
+  when_to_use_en: Final check before submitting your resume
 jobsearch--8-1--149:
   use_case: JD 评估与简历定向：职位匹配度、经验缺口、针对性改写
+  use_case_en: 'JD evaluation and resume targeting: job match level, experience gaps, targeted rewrites'
   personas:
   - 求职
   when_to_use: 找到心仪职位时立即用
+  when_to_use_en: Use immediately when you find a desirable position
 jobsearch--8-1--150:
   use_case: 辅助材料齐全：Cover letter 个性化、LinkedIn 优化、作品集案例
+  use_case_en: 'Complete supporting materials: Cover letter personalization, LinkedIn optimization, portfolio cases'
   personas:
   - 求职
   when_to_use: 完整申请材料包前准备
+  when_to_use_en: Preparation before a full application package
 jobsearch--8-1--151:
   use_case: 角色特化简历：工程/PM/高管/学术/创意/转岗职场翻译
+  use_case_en: 'Role-specialized resume: engineering/PM/executive/academic/creative/career-change job translation'
   personas:
   - 求职
   when_to_use: 明确目标岗位属性后定向改写
+  when_to_use_en: Targeted rewrite after clarifying the target role's attributes
 jobsearch--8-1--152:
   use_case: 简历结构审查：XYZ+S 公式、关键词覆盖、排版一致性检验
+  use_case_en: 'Resume structure review: XYZ+S formula, keyword coverage, layout consistency check'
   personas:
   - 求职
   - PM
   when_to_use: 草稿完成需专业反馈时
+  when_to_use_en: When the draft is complete and needs professional feedback
 jobsearch--8-2--153:
   use_case: 面试备考：从履历生成 STAR 故事、技能点练习题、常见问题
+  use_case_en: 'Interview preparation: generate STAR stories from your work history, skill-point practice questions, common questions'
   personas:
   - 求职
   when_to_use: 收到面试邀请后 1-2 周前
+  when_to_use_en: 1-2 weeks before, after receiving an interview invitation
 jobsearch--8-2--154:
   use_case: 薪资谈判：市场行情、底线计算、谈判脚本、出价策略
+  use_case_en: 'Salary negotiation: market rates, bottom-line calculation, negotiation scripts, offer strategy'
   personas:
   - 求职
   when_to_use: 收 offer 后谈判前必做
+  when_to_use_en: Must-do before negotiating after receiving an offer
 jobsearch--8-2--155:
   use_case: 求职批量自动化：JD 评分扫描、岗位活跃检测、投递追踪、重复数据清理
+  use_case_en: 'Job search batch automation: JD scoring scan, job activity detection, application tracking, duplicate data cleanup'
   personas:
   - 求职
   when_to_use: 大量投递时用 TUI 仪表板管理
+  when_to_use_en: Use a TUI dashboard to manage high-volume applications
 jobsearch--8-3--156:
   use_case: 法律文件起草：保密协议、隐私政策含监管条款
+  use_case_en: 'Legal document drafting: NDAs, privacy policies with regulatory clauses'
   personas:
   - 创始人
   when_to_use: 接触候选人或收集数据时
+  when_to_use_en: When contacting candidates or collecting data
 marketing-growth--4-1--084:
   use_case: 技术/文案/程序化全方位优化搜索排名与流量
+  use_case_en: Technical/copy/programmatic all-around optimization of search rankings and traffic
   personas:
   - 工程
   - 营销
   when_to_use: 启动 SEO 策略或优化排名时
+  when_to_use_en: When launching an SEO strategy or optimizing rankings
 marketing-growth--4-1--085:
   use_case: 完整 SEO 仓库一站式处理优化与部署
+  use_case_en: Complete SEO repo for one-stop optimization and deployment
   personas:
   - 工程
   - 营销
   when_to_use: 需要系统化 SEO 改造时
+  when_to_use_en: When you need a systematic SEO overhaul
 marketing-growth--4-1--086:
   use_case: 针对生成式引擎优化内容排名策略
+  use_case_en: Content ranking strategy optimized for generative engines
   personas:
   - 营销
   when_to_use: 面向 ChatGPT/Perplexity 等优化时
+  when_to_use_en: When optimizing for ChatGPT/Perplexity and similar
 marketing-growth--4-10--111:
   use_case: 定价模型/分层/年付折扣/变现策略
+  use_case_en: Pricing models/tiers/annual discounts/monetization strategy
   personas:
   - PM
   - 营销
   - 创始人
   when_to_use: 制定或调整定价时
+  when_to_use_en: When setting or adjusting pricing
 marketing-growth--4-11--112:
   use_case: 产品发布/GTM 策略/Product Hunt 上线战术
+  use_case_en: Product launch/GTM strategy/Product Hunt launch tactics
   personas:
   - 营销
   - 创始人
   when_to_use: 规划产品发布时
+  when_to_use_en: When planning a product launch
 marketing-growth--4-11--113:
   use_case: 诊断增长瓶颈给高影响下一步建议
+  use_case_en: Diagnose growth bottlenecks and give high-impact next-step recommendations
   personas:
   - 营销
   - 创始人
   when_to_use: 需要战略方向时
+  when_to_use_en: When you need strategic direction
 marketing-growth--4-12--114:
   use_case: 企业营销流程 SOP 与员工培训文档
+  use_case_en: Enterprise marketing process SOPs and employee training docs
   personas:
   - 营销
   when_to_use: 规范营销操作流程时
+  when_to_use_en: When standardizing marketing operating procedures
 marketing-growth--4-12--115:
   use_case: 维护定位/ICP/信息库做其他 skill 基座
+  use_case_en: Maintain positioning/ICP/information base as foundation for other skills
   personas:
   - 营销
   - PM
   when_to_use: 启动营销工作前建基础
+  when_to_use_en: Build the foundation before starting marketing work
 marketing-growth--4-2--087:
   use_case: Landing/邮件/广告文案写作与编辑
+  use_case_en: Writing and editing landing page/email/ad copy
   personas:
   - 营销
   when_to_use: 需要撰写或改进营销文案时
+  when_to_use_en: When you need to write or improve marketing copy
 marketing-growth--4-2--088:
   use_case: AIDA/PAS 框架广告与落地页文案
+  use_case_en: AIDA/PAS framework ad and landing page copy
   personas:
   - 营销
   when_to_use: 创建广告/邮件/landing 文案时
+  when_to_use_en: When creating ad/email/landing copy
 marketing-growth--4-2--089:
   use_case: 针对不同场景提炼产品价值主张表述
+  use_case_en: Distill product value proposition statements for different scenarios
   personas:
   - PM
   - 营销
   when_to_use: 需要统一产品价值说法时
+  when_to_use_en: When you need to unify how product value is stated
 marketing-growth--4-2--090:
   use_case: 基于品牌价值生成产品名称选项
+  use_case_en: Generate product name options based on brand values
   personas:
   - 营销
   - 创始人
   when_to_use: 给产品/功能取名时
+  when_to_use_en: When naming a product/feature
 marketing-growth--4-3--091:
   use_case: 生命周期邮件/冷邮件序列全套
+  use_case_en: Full suite of lifecycle email/cold email sequences
   personas:
   - 营销
   when_to_use: 规划邮件营销活动时
+  when_to_use_en: When planning email marketing campaigns
 marketing-growth--4-3--092:
   use_case: 短信营销/交易/序列含合规策略
+  use_case_en: SMS marketing/transactional/sequences with compliance strategy
   personas:
   - 营销
   when_to_use: 执行短信营销时
+  when_to_use_en: When running SMS marketing
 marketing-growth--4-3--093:
   use_case: 多平台社媒发帖与内容日历管理
+  use_case_en: Multi-platform social media posting and content calendar management
   personas:
   - 营销
   when_to_use: 制定社媒内容策略时
+  when_to_use_en: When defining a social media content strategy
 marketing-growth--4-3--094:
   use_case: B2B 冷邮件/LinkedIn/X 外联模板库
+  use_case_en: B2B cold email/LinkedIn/X outreach template library
   personas:
   - 营销
   - 创始人
   when_to_use: 进行 B2B 外联时
+  when_to_use_en: When doing B2B outreach
 marketing-growth--4-4--095:
   use_case: 多平台广告策略/人群/投放预算优化
+  use_case_en: Multi-platform ad strategy/audience/spend budget optimization
   personas:
   - 营销
   when_to_use: 管理付费广告投放时
+  when_to_use_en: When managing paid ad campaigns
 marketing-growth--4-4--096:
   use_case: Google/Meta 广告账户全面审计优化
+  use_case_en: Comprehensive audit and optimization of Google/Meta ad accounts
   personas:
   - 营销
   when_to_use: 诊断广告账户问题时
+  when_to_use_en: When diagnosing ad account issues
 marketing-growth--4-4--097:
   use_case: App Store/Google Play 排名优化
+  use_case_en: App Store/Google Play ranking optimization
   personas:
   - 营销
   when_to_use: 提升应用市场可见性时
+  when_to_use_en: When improving app store visibility
 marketing-growth--4-5--098:
   use_case: 落地页/弹窗/注册/付费流程优化诊断
+  use_case_en: Landing page/popup/signup/checkout flow optimization diagnosis
   personas:
   - 营销
   - PM
   when_to_use: 提升转化率时
+  when_to_use_en: When improving conversion rate
 marketing-growth--4-5--099:
   use_case: 13 项原则诊断落地页给对比改写
+  use_case_en: Diagnose landing pages against 13 principles with comparative rewrites
   personas:
   - 营销
   when_to_use: 需要系统化优化落地页时
+  when_to_use_en: When you need to systematically optimize a landing page
 marketing-growth--4-5--100:
   use_case: A/B 实验假设/样本量计算/结果评估
+  use_case_en: A/B experiment hypothesis/sample size calculation/result evaluation
   personas:
   - 营销
   - PM
   when_to_use: 设计转化测试时
+  when_to_use_en: When designing conversion tests
 marketing-growth--4-6--101:
   use_case: 电子书/核查单/模板/报告作为线索磁铁
+  use_case_en: Ebooks/checklists/templates/reports as lead magnets
   personas:
   - 营销
   when_to_use: 构建线索生成漏斗时
+  when_to_use_en: When building a lead generation funnel
 marketing-growth--4-6--102:
   use_case: 建立潜客名单并研究用户需求
+  use_case_en: Build a prospect list and research user needs
   personas:
   - 营销
   - 创始人
   when_to_use: 拓展客户群时
+  when_to_use_en: When expanding the customer base
 marketing-growth--4-6--103:
   use_case: 规划免费工具引流策略与转化路径
+  use_case_en: Plan a free-tool lead-generation strategy and conversion path
   personas:
   - 营销
   when_to_use: 探索工具作为获客渠道时
+  when_to_use_en: When exploring tools as an acquisition channel
 marketing-growth--4-6--104:
   use_case: 推荐/联盟/社区/合作等增长杠杆
+  use_case_en: Growth levers such as referral/affiliate/community/partnerships
   personas:
   - 营销
   - 创始人
   when_to_use: 探索非付费增长渠道时
+  when_to_use_en: When exploring non-paid growth channels
 marketing-growth--4-7--105:
   use_case: 病毒化内容 hook 创意与低成本营销点子
+  use_case_en: Viral content hook ideas and low-cost marketing ideas
   personas:
   - 营销
   - 创始人
   when_to_use: 需要创意想法时
+  when_to_use_en: When creative ideas are needed
 marketing-growth--4-8--106:
   use_case: 竞品分析/销售对比卡/竞争情报
+  use_case_en: Competitor analysis/sales battle cards/competitive intelligence
   personas:
   - 营销
   - PM
   when_to_use: 了解竞争格局时
+  when_to_use_en: When understanding the competitive landscape
 marketing-growth--4-8--107:
   use_case: 写竞品对比/替代页面做 SEO 和销售
+  use_case_en: Write competitor comparison/alternative pages for SEO and sales
   personas:
   - 营销
   when_to_use: 争取竞品客户时
+  when_to_use_en: When competing for competitors' customers
 marketing-growth--4-9--108:
   use_case: 销售演讲稿/资料/异议处理工具集
+  use_case_en: Sales pitch scripts/materials/objection-handling toolkit
   personas:
   - 营销
   when_to_use: 支持销售团队时
+  when_to_use_en: When supporting the sales team
 marketing-growth--4-9--109:
   use_case: 线索生命周期/评分/交接/CRM 字段规范
+  use_case_en: Lead lifecycle/scoring/handoff/CRM field conventions
   personas:
   - 营销
   when_to_use: 建立销售运营流程时
+  when_to_use_en: When building sales ops processes
 marketing-growth--4-9--110:
   use_case: 取消流程/拯救/催收/流失客户复活
+  use_case_en: Cancellation flow/save/dunning/churned-customer reactivation
   personas:
   - 营销
   - PM
   when_to_use: 降低客户流失率时
+  when_to_use_en: When reducing customer churn rate
 media--6-1--134:
   use_case: YouTube 视频的自动剪辑、切分和多语言字幕处理
+  use_case_en: Automatic editing, segmentation, and multilingual subtitle processing for YouTube videos
   personas:
   - 营销
   - 创始人
   - 运营
   when_to_use: 需要从长视频生成多个短视频片段且带字幕时
+  when_to_use_en: When you need to generate multiple short video clips with subtitles from a long video
 media--6-1--135:
   use_case: 从零生成或剪辑视频含配音字幕和动效
+  use_case_en: Generate or edit videos from scratch with voiceover, subtitles, and motion graphics
   personas:
   - 营销
   - 创始人
   - 设计
   when_to_use: 制作广告或纪录片视频前期需要快速原型
+  when_to_use_en: When you need rapid prototyping in the early stage of producing an ad or documentary video
 media--6-1--136:
   use_case: 用 React 代码生成程序化视频和动画
+  use_case_en: Generate programmatic videos and animations using React code
   personas:
   - 工程
   - 设计
   - 营销
   when_to_use: 需要批量生成参数化视频或动画效果时
+  when_to_use_en: When you need to batch-generate parameterized videos or animation effects
 media--6-1--137:
   use_case: 为 YouTube/Shorts/Demo 编写和规划视频脚本
+  use_case_en: Write and plan video scripts for YouTube/Shorts/Demo
   personas:
   - 营销
   - 创始人
   - 运营
   when_to_use: 开始制作视频前梳理脚本和内容结构
+  when_to_use_en: Organizing the script and content structure before starting video production
 media--6-2--138:
   use_case: 文本转语音和音频转录含说话人识别
+  use_case_en: Text-to-speech and audio transcription with speaker identification
   personas:
   - 营销
   - 运营
   - 通用
   when_to_use: 需要生成配音或转录音频内容时
+  when_to_use_en: When you need to generate voiceover or transcribe audio content
 meta-skill-mgmt--13-1--180:
   use_case: 创建和测试新skill的完整流程
+  use_case_en: Full workflow for creating and testing a new skill
   personas:
   - 工程
   - PM
   when_to_use: 需要写/优化skill时
+  when_to_use_en: When you need to write/optimize a skill
 meta-skill-mgmt--13-2--181:
   use_case: 安装skill和在开放生态发现匹配topic的skill
+  use_case_en: Install skills and discover skills matching a topic in the open ecosystem
   personas:
   - 工程
   - 通用
   when_to_use: 需要扩展工具集或找特定task的skill
+  when_to_use_en: When you need to extend the toolset or find a skill for a specific task
 meta-skill-mgmt--13-2--182:
   use_case: 把skill打包成plugin或CLI供他人使用
+  use_case_en: Package a skill into a plugin or CLI for others to use
   personas:
   - 工程
   when_to_use: 要开源/分享自己的skill时
+  when_to_use_en: When open-sourcing/sharing your own skill
 meta-skill-mgmt--13-2--183:
   use_case: 迁移Claude Code的工作流到Codex agent
+  use_case_en: Migrate Claude Code workflows to Codex agent
   personas:
   - 工程
   when_to_use: 从Claude Code切换到Codex平台
+  when_to_use_en: When switching from Claude Code to the Codex platform
 meta-skill-mgmt--13-3--184:
   use_case: 安装前审计skill权限和代码安全
+  use_case_en: Audit skill permissions and code security before installing
   personas:
   - 工程
   when_to_use: 安装陌生来源的skill前
+  when_to_use_en: Before installing a skill from an unknown source
 meta-skill-mgmt--13-4--185:
   use_case: 使用Anthropic官方高质量的plugin库
+  use_case_en: Use Anthropic's official high-quality plugin library
   personas:
   - 通用
   when_to_use: 优先装官方plugin而非社区版
+  when_to_use_en: Prefer installing official plugins over community versions
 meta-skill-mgmt--13-5--186:
   use_case: 应用编程行为约束到CLAUDE.md
+  use_case_en: Apply programming behavior constraints to CLAUDE.md
   personas:
   - 工程
   when_to_use: 想固化编程最佳实践到提示
+  when_to_use_en: When wanting to bake programming best practices into the prompt
 product-management--3-1--047:
   use_case: 构建用户画像、分群和细分客户，支持决策导向
+  use_case_en: Build user personas, cohorts, and customer segments to support decision-making
   personas:
   - PM
   - 设计
   - 研究
   when_to_use: 需要理解目标用户或细分市场时
+  when_to_use_en: When you need to understand target users or market segments
 product-management--3-1--048:
   use_case: 绘制用户与产品交互的全触点旅程，找关键痛点
+  use_case_en: Map the full touchpoint journey of user-product interactions to find key pain points
   personas:
   - PM
   - 设计
   when_to_use: 改进用户体验或优化转化流程
+  when_to_use_en: Improving user experience or optimizing the conversion flow
 product-management--3-1--049:
   use_case: 用 JTBD 框架识别用户真实需求，超越功能层需求
+  use_case_en: Use the JTBD framework to identify users' real needs, beyond feature-level requirements
   personas:
   - PM
   - 设计
   - 研究
   when_to_use: 深入理解用户何时、为何购买产品
+  when_to_use_en: Deeply understanding when and why users buy the product
 product-management--3-1--050:
   use_case: 设计、进行和总结客户访谈，提炼可行洞察
+  use_case_en: Design, conduct, and summarize customer interviews to distill actionable insights
   personas:
   - PM
   - 研究
   when_to_use: 需要用户直接反馈或验证假设时
+  when_to_use_en: When you need direct user feedback or to validate hypotheses
 product-management--3-1--051:
   use_case: 分析用户反馈情感和优先级，识别高杠杆功能
+  use_case_en: Analyze user feedback sentiment and priority to identify high-leverage features
   personas:
   - PM
   - 运营
   when_to_use: 有大量用户反馈要整理排序
+  when_to_use_en: When you have large volumes of user feedback to organize and rank
 product-management--3-10--078:
   use_case: 生成用户友好发布说明和产品下线公告
+  use_case_en: Generate user-friendly release notes and product sunset announcements
   personas:
   - PM
   - 营销
   when_to_use: 准备产品发布或功能下线沟通
+  when_to_use_en: Preparing product launch or feature sunset communications
 product-management--3-10--079:
   use_case: 写企业内部沟通（进展、newsletter、incident）
+  use_case_en: Write internal company communications (updates, newsletter, incident)
   personas:
   - PM
   when_to_use: 定期同步进度或处理突发情况
+  when_to_use_en: Regularly syncing progress or handling unexpected situations
 product-management--3-11--080:
   use_case: 诊断 AI 创新机会，评估自动化与重设计权衡
+  use_case_en: Diagnose AI innovation opportunities, evaluating automation vs. redesign trade-offs
   personas:
   - PM
   when_to_use: 评估产品中的 AI 改造可行性
+  when_to_use_en: Evaluating the feasibility of AI transformation in a product
 product-management--3-11--081:
   use_case: 文档化 AI 推荐功能，覆盖数据、算法、回退
+  use_case_en: Document AI recommendation features, covering data, algorithms, and fallbacks
   personas:
   - PM
   when_to_use: 设计推荐或个性化功能
+  when_to_use_en: Designing recommendation or personalization features
 product-management--3-11--082:
   use_case: 深度调研竞对公司，分析定位、财务和市场
+  use_case_en: Deeply research competitor companies, analyzing positioning, financials, and market
   personas:
   - PM
   - 研究
   when_to_use: 竞品分析或进入新市场前
+  when_to_use_en: Before competitive analysis or entering a new market
 product-management--3-11--083:
   use_case: PM skill 本身的元工作流，教写产品管理 skill
+  use_case_en: The PM skill's own meta-workflow, teaching how to write product management skills
   personas:
   - PM
   when_to_use: 创建或改进 PM 领域 skill
+  when_to_use_en: Creating or improving PM-domain skills
 product-management--3-2--052:
   use_case: 清晰陈述问题并画出问题框架，为方案寻找做准备
+  use_case_en: Clearly state the problem and frame it, preparing for solution discovery
   personas:
   - PM
   when_to_use: 定义产品策略或新功能前
+  when_to_use_en: Before defining product strategy or new features
 product-management--3-2--053:
   use_case: 识别和优先排序假设风险，指导实验验证
+  use_case_en: Identify and prioritize assumption risks, guiding experiment validation
   personas:
   - PM
   when_to_use: 启动新项目前做风险评估
+  when_to_use_en: Risk assessment before launching a new project
 product-management--3-2--054:
   use_case: 前置失败分析，在执行前发现隐藏风险
+  use_case_en: Pre-mortem failure analysis, surfacing hidden risks before execution
   personas:
   - PM
   when_to_use: 重大发布或决策前做压力测试
+  when_to_use_en: Stress testing before a major launch or decision
 product-management--3-3--055:
   use_case: 从需求出发，系统化拆解机会和方案，指导优先级
+  use_case_en: Starting from requirements, systematically break down opportunities and solutions to guide prioritization
   personas:
   - PM
   when_to_use: 需要系统思考机会到方案的路径
+  when_to_use_en: When you need to systematically think through the path from opportunity to solution
 product-management--3-3--056:
   use_case: 多角度脑暴点子，快速生成方案创意和实验原型
+  use_case_en: Brainstorm ideas from multiple angles, rapidly generating solution concepts and experiment prototypes
   personas:
   - PM
   - 设计
   - 工程
   when_to_use: 探索阶段或需要快速想法时
+  when_to_use_en: During exploration or when you need ideas quickly
 product-management--3-3--057:
   use_case: 快速造原型验证想法，不必等完整实现
+  use_case_en: Quickly build prototypes to validate ideas without waiting for full implementation
   personas:
   - PM
   - 设计
   when_to_use: 需要快速测试假设或概念
+  when_to_use_en: When you need to quickly test assumptions or concepts
 product-management--3-3--058:
   use_case: 分析 A/B 和群组数据，做数据驱动决策
+  use_case_en: Analyze A/B and cohort data to make data-driven decisions
   personas:
   - PM
   when_to_use: 有实验结果或用户行为数据要解读
+  when_to_use_en: When you have experiment results or user behavior data to interpret
 product-management--3-3--059:
   use_case: 系统化发现流程，从框架到验证完整闭环
+  use_case_en: Systematize the discovery process, a complete loop from framing to validation
   personas:
   - PM
   - 设计
   when_to_use: 做 3-4 周的结构化产品发现
+  when_to_use_en: Running a 3-4 week structured product discovery
 product-management--3-4--060:
   use_case: 用不同 Canvas 工具规划商业模式和产品战略
+  use_case_en: Use different Canvas tools to plan business models and product strategy
   personas:
   - PM
   - 创始人
   when_to_use: 规划产品或业务商业模式
+  when_to_use_en: Planning a product or business model
 product-management--3-4--061:
   use_case: 分析外部环境（市场、竞争、趋势），找战略机会
+  use_case_en: Analyze the external environment (market, competition, trends) to find strategic opportunities
   personas:
   - PM
   when_to_use: 做战略规划或进入新市场
+  when_to_use_en: Doing strategic planning or entering a new market
 product-management--3-4--062:
   use_case: 估算市场规模，明确可达客户总数和可实现收入
+  use_case_en: Estimate market size, clarifying total addressable customers and achievable revenue
   personas:
   - PM
   - 创始人
   when_to_use: 融资或战略决策前
+  when_to_use_en: Before fundraising or strategic decisions
 product-management--3-4--063:
   use_case: 定义竞争定位和产品愿景，指导营销和工程
+  use_case_en: Define competitive positioning and product vision to guide marketing and engineering
   personas:
   - PM
   - 营销
   when_to_use: 启动新产品或品牌重塑
+  when_to_use_en: Launching a new product or rebranding
 product-management--3-4--064:
   use_case: 系统化战略规划，从定位到路线图的完整编排
+  use_case_en: Systematize strategic planning, a complete orchestration from positioning to roadmap
   personas:
   - PM
   when_to_use: 做 2-4 周的深度战略规划
+  when_to_use_en: Running a 2-4 week deep strategic planning
 product-management--3-5--065:
   use_case: 选第一个市场和 GTM 动作，加速从 0-1 获客
+  use_case_en: Choose the first market and GTM motion, accelerating 0-1 customer acquisition
   personas:
   - PM
   - 营销
   when_to_use: 新产品发布或进入新市场
+  when_to_use_en: New product launch or entering a new market
 product-management--3-5--066:
   use_case: 识别和优化自增长 loop，做长期留存和推荐
+  use_case_en: Identify and optimize self-growth loops for long-term retention and referral
   personas:
   - PM
   when_to_use: 优化用户留存和有机增长
+  when_to_use_en: Optimizing user retention and organic growth
 product-management--3-5--067:
   use_case: 选择和追踪北极星指标，对齐公司目标
+  use_case_en: Select and track the North Star metric, aligning company goals
   personas:
   - PM
   when_to_use: 建立关键成功指标体系
+  when_to_use_en: Establishing a key success metrics system
 product-management--3-6--068:
   use_case: 写结构化 PRD，澄清业务目标和技术需求
+  use_case_en: Write structured PRDs, clarifying business goals and technical requirements
   personas:
   - PM
   when_to_use: 向工程和设计团队交付需求
+  when_to_use_en: Delivering requirements to engineering and design teams
 product-management--3-6--069:
   use_case: 拆分需求为 User Story 和 Epic，指导实现
+  use_case_en: Break requirements into User Stories and Epics to guide implementation
   personas:
   - PM
   when_to_use: 准备工程需求或任务分解
+  when_to_use_en: Preparing engineering requirements or task breakdown
 product-management--3-6--070:
   use_case: 把 Spec 自动转工程任务，管理线性或 Jira
+  use_case_en: Automatically convert Specs into engineering tasks, managing Linear or Jira
   personas:
   - PM
   when_to_use: 需求到工程系统的自动化转换
+  when_to_use_en: Automated conversion from requirements to engineering systems
 product-management--3-7--071:
   use_case: 对比 9 种优先级框架，为功能排优先级
+  use_case_en: Compare 9 prioritization frameworks to prioritize features
   personas:
   - PM
   when_to_use: 功能待办排优先级或路线图规划
+  when_to_use_en: Prioritizing the feature backlog or roadmap planning
 product-management--3-7--072:
   use_case: 评估投资回报和渠道 unit economics，优化资源配置
+  use_case_en: Evaluate ROI and channel unit economics to optimize resource allocation
   personas:
   - PM
   - 运营
   when_to_use: 做成本效益分析或商业决策
+  when_to_use_en: Doing cost-benefit analysis or business decisions
 product-management--3-8--073:
   use_case: 诊断 SaaS 业务健康度，找高优先级问题
+  use_case_en: Diagnose SaaS business health and find high-priority issues
   personas:
   - PM
   - 运营
   when_to_use: 业务增长遇瓶颈或需要健康检查
+  when_to_use_en: Hitting growth bottlenecks or needing a health check
 product-management--3-8--074:
   use_case: 速查 SaaS 财务指标公式和基准，做数据驱动决策
+  use_case_en: Quickly reference SaaS financial metric formulas and benchmarks for data-driven decisions
   personas:
   - PM
   - 运营
   when_to_use: 分析 SaaS metrics 或财务规划
+  when_to_use_en: Analyzing SaaS metrics or financial planning
 product-management--3-9--075:
   use_case: 制定团队 OKR 和 sprint 计划，做 retro
+  use_case_en: Set team OKRs and sprint plans, and run retros
   personas:
   - PM
   when_to_use: 制定团队目标、规划迭代或复盘
+  when_to_use_en: Setting team goals, planning iterations, or retrospectives
 product-management--3-9--076:
   use_case: 记录会议、绘制利益相关者图，指导沟通策略
+  use_case_en: Record meetings, draw stakeholder maps, and guide communication strategy
   personas:
   - PM
   when_to_use: 管理复杂干系人或会议纪要
+  when_to_use_en: Managing complex stakeholders or meeting notes
 product-management--3-9--077:
   use_case: 指导 PM 升职路径和领导力心态转变
+  use_case_en: Guide PM promotion paths and leadership mindset shifts
   personas:
   - PM
   when_to_use: 晋升 Director 或更高管理层时
+  when_to_use_en: When being promoted to Director or higher management
 software-engineering--1-1--001:
   use_case: 五步微任务拆解+并行执行+双层审查工作流
+  use_case_en: Five-step micro-task breakdown + parallel execution + two-tier review workflow
   personas:
   - 工程
   when_to_use: 大功能需要精确分步时
+  when_to_use_en: When large features need precise step-by-step execution
 software-engineering--1-1--002:
   use_case: 反向盘问计划、风险压力测试、目标精确化
+  use_case_en: Reverse-interrogate plans, stress-test risks, and sharpen goals
   personas:
   - 工程
   - PM
   when_to_use: 决策前厘清意图/风险
+  when_to_use_en: Clarifying intent/risk before decisions
 software-engineering--1-1--003:
   use_case: 轻量SDD框架+单一上下文提议→评审→归档
+  use_case_en: Lightweight SDD framework + single-context propose → review → archive
   personas:
   - 工程
   - PM
   when_to_use: 小改动需要brief评审时
+  when_to_use_en: When small changes need a brief review
 software-engineering--1-1--004:
   use_case: 会话压缩handoff文档无缝接力多个agent
+  use_case_en: Session-compaction handoff docs for seamless relay across multiple agents
   personas:
   - 工程
   when_to_use: 工作交接给另一agent时
+  when_to_use_en: When handing off work to another agent
 software-engineering--1-2--005:
   use_case: 三家TDD框架可选(严/轻/场景)
+  use_case_en: Three TDD frameworks to choose from (strict/light/scenario)
   personas:
   - 工程
   when_to_use: 新功能要求RED-GREEN流程
+  when_to_use_en: When new features require a RED-GREEN flow
 software-engineering--1-2--006:
   use_case: 四阶段根因分析、复现最小化、防御深度
+  use_case_en: Four-phase root cause analysis, repro minimization, and defense in depth
   personas:
   - 工程
   when_to_use: 线上issue或复杂bug定位
+  when_to_use_en: Diagnosing production issues or complex bugs
 software-engineering--1-2--007:
   use_case: 完工前自检清单确保修复验证完整
+  use_case_en: Pre-completion self-check checklist ensures fix verification is complete
   personas:
   - 工程
   when_to_use: 改动前做最后验证
+  when_to_use_en: Final verification before changes
 software-engineering--1-2--008:
   use_case: 跨浏览器UI测试含截图+网络拦截+错误捕获
+  use_case_en: Cross-browser UI testing with screenshots + network interception + error capture
   personas:
   - 工程
   when_to_use: Web应用需要自动化UI测试
+  when_to_use_en: Web app needs automated UI testing
 software-engineering--1-2--009:
   use_case: 真实浏览器自动化+持久Playwright会话
+  use_case_en: Real browser automation + persistent Playwright session
   personas:
   - 工程
   when_to_use: 需要手工点击/填表的自动化
+  when_to_use_en: Automation requiring manual clicks/form filling
 software-engineering--1-3--010:
   use_case: 提交前清单+接收反馈处理双向review
+  use_case_en: Pre-submit checklist + receiving feedback handling for bidirectional review
   personas:
   - 工程
   when_to_use: CR前做检查/CR后改进
+  when_to_use_en: Check before CR / improve after CR
 software-engineering--1-3--011:
   use_case: 定期拯救代码库+系统级解释视角
+  use_case_en: Periodic codebase rescue + system-level explanation perspective
   personas:
   - 工程
   when_to_use: 代码库开始杂乱时
+  when_to_use_en: When the codebase starts getting messy
 software-engineering--1-3--012:
   use_case: 语义级代码去重找同意图不同实现
+  use_case_en: Semantic-level code deduplication finds same intent with different implementations
   personas:
   - 工程
   when_to_use: 重构前扫重复逻辑
+  when_to_use_en: Scan for duplicate logic before refactoring
 software-engineering--1-4--013:
   use_case: PR评论定位+CI失败根因+draft→提交一气呵成
+  use_case_en: PR comment localization + CI failure root cause + draft→submit in one flow
   personas:
   - 工程
   when_to_use: 处理PR反馈或CI失败
+  when_to_use_en: Handling PR feedback or CI failures
 software-engineering--1-4--014:
   use_case: 隔离workspace+验证baseline+完成清理
+  use_case_en: Isolated workspace + baseline verification + cleanup on completion
   personas:
   - 工程
   when_to_use: 并行多分支或试验分离
+  when_to_use_en: Parallel multi-branch or experiment isolation
 software-engineering--1-4--015:
   use_case: plugin拦截危险命令前确认防止误操作
+  use_case_en: plugin intercepts dangerous commands and confirms before execution to prevent mistakes
   personas:
   - 工程
   when_to_use: 项目启用自动化保护
+  when_to_use_en: Project enables automation protection
 software-engineering--1-5--016:
   use_case: 四平台部署决策树(Vercel/Netlify/Render/CF)
+  use_case_en: Four-platform deployment decision tree (Vercel/Netlify/Render/CF)
   personas:
   - 工程
   when_to_use: App就绪需选平台部署
+  when_to_use_en: App is ready and needs platform selection for deployment
 software-engineering--1-6--017:
   use_case: Claude/Gemini/OpenAI三大厂SDK强制缓存
+  use_case_en: Enforced caching across the three major Claude/Gemini/OpenAI SDKs
   personas:
   - 工程
   when_to_use: 集成模型API时
+  when_to_use_en: When integrating model APIs
 software-engineering--1-6--018:
   use_case: MCP Server完整方法论研究→实现→测试→评估
+  use_case_en: Complete MCP Server methodology research→implement→test→evaluate
   personas:
   - 工程
   when_to_use: 开发新MCP Server
+  when_to_use_en: Developing a new MCP Server
 software-engineering--1-6--019:
   use_case: ChatGPT Apps脚手架含SDK+MCP+UI骨架
+  use_case_en: ChatGPT Apps scaffolding with SDK + MCP + UI skeleton
   personas:
   - 工程
   when_to_use: 构建OpenAI平台应用
+  when_to_use_en: Building OpenAI platform applications
 software-engineering--1-6--020:
   use_case: Chrome DevTools Protocol浏览器自动化CLI
+  use_case_en: Chrome DevTools Protocol browser automation CLI
   personas:
   - 工程
   when_to_use: 需要浏览器自动化agent
+  when_to_use_en: Need a browser automation agent
 software-engineering--1-7--021:
   use_case: .NET 10/ASP.NET Core最新实践+Blazor/WinUI3
+  use_case_en: .NET 10/ASP.NET Core latest practices + Blazor/WinUI3
   personas:
   - 工程
   when_to_use: 需要.NET或Windows应用
+  when_to_use_en: Need .NET or Windows applications
 software-engineering--1-7--022:
   use_case: Docker中运行无头Windows支持OpenSSH+Claude
+  use_case_en: Run headless Windows in Docker with OpenSSH + Claude support
   personas:
   - 工程
   when_to_use: 需要Windows环境运行Claude
+  when_to_use_en: Need a Windows environment to run Claude
 software-engineering--1-7--023:
   use_case: 用tmux进入vim/rebase等交互式CLI工具
+  use_case_en: Use tmux to enter interactive CLI tools like vim/rebase
   personas:
   - 工程
   when_to_use: 需要交互式命令行操作
+  when_to_use_en: Need interactive command-line operations
 software-engineering--1-8--024:
   use_case: 语言级安全编码+威胁建模+代码持有权图分析
+  use_case_en: Language-level secure coding + threat modeling + code ownership graph analysis
   personas:
   - 工程
   when_to_use: 新项目安全审计或敏感代码
+  when_to_use_en: Security audit for new projects or sensitive code
 software-engineering--1-8--025:
   use_case: 35+安全plugin跨9领域(合约/审计/恶意代码等)
+  use_case_en: 35+ security plugins across 9 domains (contracts/audits/malicious code, etc.)
   personas:
   - 工程
   when_to_use: 专业级安全需求
+  when_to_use_en: Professional-grade security needs
 software-engineering--1-8--026:
   use_case: 生产Sentry issue只读查看+AI根因+修复方案
+  use_case_en: Read-only viewing of production Sentry issues + AI root cause + fix recommendations
   personas:
   - 工程
   when_to_use: 生产问题诊断
+  when_to_use_en: Production issue diagnosis
 startup-finance--10-1--161:
   use_case: 集合化提供创始人常用的战略、销售、内容和工程技巧
+  use_case_en: Bundled provision of strategy, sales, content, and engineering techniques commonly used by founders
   personas:
   - 创始人
   when_to_use: 着手产品/市场定位或营销时
+  when_to_use_en: When working on product/market positioning or marketing
 startup-finance--10-1--162:
   use_case: 用 YC CEO 开源个人工作流快速自动化日常决策和交付
+  use_case_en: Use the YC CEO open-source personal workflow to quickly automate daily decisions and delivery
   personas:
   - 创始人
   when_to_use: 需要高频重复任务自动化
+  when_to_use_en: Need automation of high-frequency repetitive tasks
 startup-finance--10-1--163:
   use_case: 为独立创业者生成营销资产、调研增长杠杆、管理社交媒体
+  use_case_en: Generate marketing assets, research growth levers, and manage social media for solo founders
   personas:
   - 创始人
   when_to_use: 缺少 PMF 前的多面手工作
+  when_to_use_en: Generalist work before PMF
 startup-finance--10-2--164:
   use_case: 用 Charlie Munger 心智模型规范现金管理和资本配置决策
+  use_case_en: Use Charlie Munger mental models to standardize cash management and capital allocation decisions
   personas:
   - 创始人
   - 运营
   when_to_use: 制定融资、招聘、烧钱策略时
+  when_to_use_en: When formulating fundraising, hiring, and burn-rate strategies
 startup-finance--10-3--165:
   use_case: 一键查 134 国税务、会计准则和合规要求，对接平台 API
+  use_case_en: One-click lookup of tax, accounting standards, and compliance requirements across 134 countries, with platform API integration
   personas:
   - 运营
   - 创始人
   when_to_use: 涉及多国业务或合规问题
+  when_to_use_en: When involving multi-country business or compliance issues

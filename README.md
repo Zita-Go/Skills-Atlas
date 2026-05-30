@@ -90,7 +90,7 @@ skills-atlas/
 
 ## Auto-discovery pipeline
 
-Every day it scans GitHub Search, queues newly appearing skill repositories onto a candidate list, and lets maintainers review them in by hand.
+Every day it scans GitHub Search, queues newly appearing skill repositories onto a candidate list, and lets maintainers manually review and admit them.
 
 ```
 .github/workflows/daily-discover.yml   # Runs daily at 02:00 UTC
