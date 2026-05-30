@@ -114,8 +114,11 @@ async function runCuration(env, { dryRun = false, limit = 0 } = {}) {
   if (deferred > 0) candidates = candidates.slice(0, limit);
   log(`candidates after dedup: ${candidates.length}${truncated ? ' (daily_cap)' : ''}${deferred ? ` (+${deferred} 顺延下轮)` : ''}`);
 
+  // 被 LLM 刷掉（判非 skill / 调用出错）的候选，带名字 + 理由，便于人审校准过滤器。
+  const filteredOut = [];
+
   if (candidates.length === 0) {
-    return { today, dry_run: dryRun, candidates: 0, deferred, proposed: 0, rejected, pr: null };
+    return { today, dry_run: dryRun, candidates: 0, deferred, proposed: 0, rejected, filtered_out: filteredOut, pr: null };
   }
 
   // ③ + ④ 逐个候选过 LLM：先 is-skill 过滤，留下来的再起草。
@@ -126,6 +129,10 @@ async function runCuration(env, { dryRun = false, limit = 0 } = {}) {
       const verdict = await filterIsSkill(env, cfg.llm, cand);
       if (!verdict.is_skill) {
         bump(rejected, 'llm_not_skill');
+        filteredOut.push({
+          full_name: cand.full_name, stars: cand.stars,
+          confidence: verdict.confidence ?? null, reason: verdict.reason,
+        });
         // 非 skill 的也写 SEEN，省得明天再花 LLM 钱重判（dry-run 时不写，保证零副作用）
         if (!dryRun) await markSeen(env, candKey(cand), { stage: 'filtered_out', reason: verdict.reason });
         continue;
@@ -141,13 +148,14 @@ async function runCuration(env, { dryRun = false, limit = 0 } = {}) {
     } catch (e) {
       // 不写 SEEN —— 让它下一轮还能再试
       bump(rejected, 'llm_error');
+      filteredOut.push({ full_name: cand.full_name, stars: cand.stars, reason: `error: ${String(e?.message || e)}` });
       log(`candidate ${candKey(cand)} failed: ${e}`);
     }
   }
 
   log(`proposals: ${proposals.length}`);
   if (proposals.length === 0) {
-    return { today, dry_run: dryRun, candidates: candidates.length, deferred, proposed: 0, rejected, pr: null };
+    return { today, dry_run: dryRun, candidates: candidates.length, deferred, proposed: 0, rejected, filtered_out: filteredOut, pr: null };
   }
 
   // ⑤ 开 PR：草稿落到 proposed/<date>.json，PR body 给人审勾选
@@ -157,10 +165,11 @@ async function runCuration(env, { dryRun = false, limit = 0 } = {}) {
       today, dry_run: true,
       candidates: candidates.length, deferred, proposed: proposals.length, rejected, pr: null,
       would_propose: proposals.map(summarizeProposal),
+      filtered_out: filteredOut,
     };
   }
   const prUrl = await openProposalPR(env, today, proposals, { rejected, truncated });
-  return { today, dry_run: false, candidates: candidates.length, deferred, proposed: proposals.length, rejected, pr: prUrl };
+  return { today, dry_run: false, candidates: candidates.length, deferred, proposed: proposals.length, rejected, filtered_out: filteredOut, pr: prUrl };
 }
 
 // ===========================================================================
