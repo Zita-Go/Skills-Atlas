@@ -564,9 +564,9 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 }
 .hero-start-eg{font-size:11px;color:var(--fg-muted);flex-basis:100%;margin-top:2px}
 /* 右侧甜甜圈图例（可点跳分类） */
-.hero-viz{display:flex;gap:18px;align-items:center}
+.hero-viz{display:flex;flex-direction:column;gap:12px;align-items:center}
 #heroChart{flex-shrink:0}
-.hero-legend{display:grid;grid-template-columns:auto auto auto;gap:2px 4px;flex-shrink:0}
+.hero-legend{display:grid;grid-template-columns:repeat(3,auto);gap:2px 4px;flex-shrink:0;justify-content:center;max-width:100%}
 .hl-item{display:flex;align-items:center;gap:5px;background:none;border:0;color:var(--fg-dim);cursor:pointer;padding:3px 7px;border-radius:6px;font-size:11px;white-space:nowrap;transition:all .12s;font-family:inherit}
 .hl-item:hover{background:var(--bg-elev);color:var(--fg);transform:translateY(-1px)}
 .hl-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
@@ -718,7 +718,7 @@ html.light .hero::after{
   letter-spacing:-0.02em;margin-bottom:2px;
   background:var(--grad);-webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent}
-.hero-viz{position:relative;z-index:1;width:200px;height:200px;flex-shrink:0}
+.hero-viz{position:relative;z-index:1;flex-shrink:0;align-self:center}
 @media(max-width:760px){
   .hero{grid-template-columns:1fr;padding:24px}
   .hero h2{font-size:21px;line-height:1.35;text-wrap:balance}
