@@ -142,7 +142,18 @@ async function runCuration(env, { dryRun = false, limit = 0 } = {}) {
         if (!dryRun) await markSeen(env, candKey(cand), { stage: 'no_skill_files' });
         continue;
       }
-      const skills = await classifyRepoSkills(env, cfg.llm, cand, skillFiles, taxonomy);
+      const { is_collection, collection_reason, skills } = await classifyRepoSkills(env, cfg.llm, cand, skillFiles, taxonomy);
+      if (!is_collection) {
+        // 有 SKILL.md 但只是教程/演示/模板（玩具示例）→ 不当来源收
+        bump(rejected, 'not_a_collection');
+        filteredOut.push({
+          full_name: cand.full_name, stars: cand.stars,
+          skill_files: skillFiles.length,
+          reason: `非正经集合（教程/演示/模板）：${collection_reason || '玩具示例'}`,
+        });
+        if (!dryRun) await markSeen(env, candKey(cand), { stage: 'not_a_collection' });
+        continue;
+      }
       proposals.push({ repo: cand, skills });
       if (!dryRun) await markSeen(env, candKey(cand), { stage: 'proposed', skills: skills.length });
     } catch (e) {
@@ -462,15 +473,18 @@ async function classifyRepoSkills(env, llm, cand, skillFiles, subs) {
     {
       role: 'system',
       content:
-        '你在帮一个【按功能整理】的 AI skill 目录给新发现的 skill 归类。'
+        '你在帮一个【按功能整理】的 AI skill 目录给新发现的 skill 归类，同时把关质量。'
         + '目录的功能子分类（id: 标题）如下：\n' + taxonomyStr + '\n\n'
-        + '给定一个来源仓库和它里面的 skill 列表，为【每个 skill】判断它在功能上属于哪个子分类，并起一个简洁的功能"组名"。\n'
-        + '策略：只有当 skill【明确】属于某子分类才填该 id；只是字面沾边不算'
-        + '（例如"写文档/记录 ADR"不要塞进"2.1 Office 文档处理(处理 Word/PPT 文件)"）。\n'
+        + '第一步【仓库级判断】：这个仓库是不是一个值得收录的【正经 skill 集合】？'
+        + '如果它其实是教程 / 最佳实践文档 / 演示样例 / 模板脚手架（里面的 SKILL.md 只是玩具示例，'
+        + '比如 weather / time / hello-world 这类），判 is_collection=false，用一句中文说明 collection_reason，skills 留空。\n'
+        + '第二步（仅当 is_collection=true）：为【每个 skill】判断它在功能上属于哪个子分类，并起一个简洁的功能"组名"。\n'
+        + '分类策略：只有当 skill【明确】属于某子分类才填该 id；只是字面沾边不算'
+        + '（例如"写文档/记录 ADR"不要塞进"2.1 Office 文档处理(处理 Word/PPT 文件)"）。'
         + '拿不准 / 没有明确合适的子分类时：subcategory 留空 ""，并【新开一个组】'
         + '（宁可多开，回头人工合并），绝不硬塞进勉强的子分类。\n'
         + 'description_zh 只描述能从 skill 名/路径合理推断的内容，信息不足就给一句保守概述，【绝不编造数字或细节】。\n'
-        + '只输出 JSON：{"skills":[{"name":"<原样回填 skill 名>","subcategory":"4-1","group":"功能组名","description_zh":"...","what":"它能帮 agent 做什么(一句)"}]}',
+        + '只输出 JSON：{"is_collection":true,"collection_reason":"一句中文","skills":[{"name":"<原样回填 skill 名>","subcategory":"4-1","group":"功能组名","description_zh":"...","what":"它能帮 agent 做什么(一句)"}]}',
     },
     {
       role: 'user',
@@ -483,16 +497,18 @@ async function classifyRepoSkills(env, llm, cand, skillFiles, subs) {
     },
   ];
   const { text, model } = await llmComplete(env, llm, messages, { maxTokens: 1500 });
-  let arr = [];
+  let o = {};
   try {
-    const o = extractJSON(text);
-    arr = Array.isArray(o.skills) ? o.skills : [];
+    o = extractJSON(text);
   } catch (e) {
     log(`classify parse failed for ${cand.full_name}: ${e}`);
   }
+  // 仓库级判定：缺字段 / 解析失败时默认 true（保守放行进人审，不静默丢）
+  const isCollection = o.is_collection !== false;
+  const arr = Array.isArray(o.skills) ? o.skills : [];
   // 以仓库实际枚举到的 skill 为准，按 name 对齐 LLM 结果；子分类要在真 taxonomy 里才认。
   const byName = new Map(arr.map((x) => [String(x.name || ''), x]));
-  return skillFiles.map((sf) => {
+  const skills = skillFiles.map((sf) => {
     const x = byName.get(sf.name) || {};
     const sub = subs.find((s) => s.id === String(x.subcategory || ''));
     return {
@@ -507,6 +523,7 @@ async function classifyRepoSkills(env, llm, cand, skillFiles, subs) {
       drafted_by: model,
     };
   });
+  return { is_collection: isCollection, collection_reason: String(o.collection_reason || ''), skills };
 }
 
 // ===========================================================================
