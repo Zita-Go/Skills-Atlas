@@ -1070,7 +1070,7 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-head">
     <h1>🗺️ Skills Atlas</h1>
-    <button class="sidebar-toggle" id="sidebarToggle" title="收起目录" aria-label="收起目录">
+    <button class="sidebar-toggle" id="sidebarToggle" title="收起目录" aria-label="收起目录" data-i18n-title="tt_sidebar_collapse" data-i18n-aria="tt_sidebar_collapse">
       <svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg>
     </button>
   </div>
@@ -1085,7 +1085,7 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
   <div class="search-result-count" id="searchResultCount"></div>
   <nav id="nav"></nav>
 </aside>
-<button class="sidebar-rail" id="sidebarRail" title="展开目录" aria-label="展开目录">
+<button class="sidebar-rail" id="sidebarRail" title="展开目录" aria-label="展开目录" data-i18n-title="tt_sidebar_expand" data-i18n-aria="tt_sidebar_expand">
   <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
 </button>
 <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
@@ -1094,9 +1094,9 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
   <div class="toolbar">
     <button class="menu-btn" id="menuBtn">☰</button>
     <div class="view-switch" id="viewSwitch">
-      <button class="view-btn active" data-view="cards" title="按功能视图">⊞ <span class="vb-label" data-i18n="view_cards">功能</span></button>
-      <button class="view-btn" data-view="repo" title="按仓库视图">📦 <span class="vb-label" data-i18n="view_repo">仓库</span></button>
-      <button class="view-btn" data-view="graph" title="网络视图">◈ <span class="vb-label" data-i18n="view_graph">网络</span></button>
+      <button class="view-btn active" data-view="cards" title="按功能视图" data-i18n-title="tt_view_cards">⊞ <span class="vb-label" data-i18n="view_cards">功能</span></button>
+      <button class="view-btn" data-view="repo" title="按仓库视图" data-i18n-title="tt_view_repo">📦 <span class="vb-label" data-i18n="view_repo">仓库</span></button>
+      <button class="view-btn" data-view="graph" title="网络视图" data-i18n-title="tt_view_graph">◈ <span class="vb-label" data-i18n="view_graph">网络</span></button>
     </div>
     <span class="tb-divider" aria-hidden="true"></span>
     <span class="pill active" data-filter="all" data-i18n="f_all">全部</span>
@@ -1104,8 +1104,8 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
     <span class="pill" data-filter="multi-source" data-i18n="f_multi">多源</span>
     <span class="pill" data-filter="single-skill" data-i18n="f_single">单 skill</span>
     <div class="spacer"></div>
-    <button class="theme-toggle" id="spotlightBtn" title="Spotlight 搜索 (⌘K / Ctrl+K)">⌕ <span data-i18n="btn_search">搜索</span> <kbd class="ai-kbd">⌘K</kbd></button>
-    <button class="ai-btn" id="aiBtn" title="AI 推荐"><span data-i18n="btn_ai">✨ AI 推荐</span></button>
+    <button class="theme-toggle" id="spotlightBtn" title="Spotlight 搜索 (⌘K / Ctrl+K)" data-i18n-title="tt_search">⌕ <span data-i18n="btn_search">搜索</span> <kbd class="ai-kbd">⌘K</kbd></button>
+    <button class="ai-btn" id="aiBtn" title="AI 推荐" data-i18n-title="tt_ai"><span data-i18n="btn_ai">✨ AI 推荐</span></button>
     <button class="theme-toggle" id="langToggle" title="Switch language">EN</button>
     <button class="theme-toggle" id="themeToggle">🌙 暗色</button>
   </div>
@@ -1131,7 +1131,7 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
       <svg id="heroChart" viewBox="0 0 200 200" width="172" height="172"></svg>
       <div id="heroLegend" class="hero-legend"></div>
     </div>
-    <button id="heroToggle" class="hero-toggle" aria-label="collapse" title="收起 / 展开">▾</button>
+    <button id="heroToggle" class="hero-toggle" aria-label="collapse" title="收起 / 展开" data-i18n-title="tt_hero_toggle">▾</button>
   </div>
   <div id="content"></div>
   <div id="repoView" class="hidden repo-view"></div>
@@ -1176,7 +1176,7 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
         <div class="ai-subtitle" data-i18n="ai_subtitle">描述你想做的事，给你推荐 skill 组合</div>
       </div>
       <div class="ai-header-actions">
-        <button class="ai-icon-btn" id="aiSettingsBtn" title="LLM 设置（BYOK）" aria-label="settings">⚙</button>
+        <button class="ai-icon-btn" id="aiSettingsBtn" title="LLM 设置（BYOK）" aria-label="settings" data-i18n-title="tt_settings">⚙</button>
         <button class="ai-close" id="aiClose" aria-label="close">×</button>
       </div>
     </div>
@@ -1252,6 +1252,10 @@ const I18N = {
     subtitle: '按功能分类 · AI Agent Skills 全景',
     searchPh: '搜 skill / 描述 / 仓库',
     view_cards: '功能', view_repo: '仓库', view_graph: '网络',
+    tt_view_cards: '按功能视图', tt_view_repo: '按仓库视图', tt_view_graph: '网络视图',
+    tt_sidebar_collapse: '收起目录', tt_sidebar_expand: '展开目录',
+    tt_search: 'Spotlight 搜索 (⌘K / Ctrl+K)', tt_ai: 'AI 推荐',
+    tt_hero_toggle: '收起 / 展开', tt_settings: 'LLM 设置（BYOK）',
     f_all: '全部', f_chain: '⛓ 强绑定', f_multi: '多源', f_single: '单 skill',
     btn_search: '搜索', btn_ai: '✨ AI 推荐',
     theme_dark: '🌙 暗色', theme_light: '☀️ 亮色',
@@ -1305,6 +1309,10 @@ const I18N = {
     subtitle: 'AI Agent Skills, organized by function',
     searchPh: 'Search skills / descriptions / repos',
     view_cards: 'Function', view_repo: 'Repos', view_graph: 'Graph',
+    tt_view_cards: 'Function view', tt_view_repo: 'Repository view', tt_view_graph: 'Network view',
+    tt_sidebar_collapse: 'Collapse sidebar', tt_sidebar_expand: 'Expand sidebar',
+    tt_search: 'Spotlight search (⌘K / Ctrl+K)', tt_ai: 'AI recommend',
+    tt_hero_toggle: 'Collapse / expand', tt_settings: 'LLM settings (BYOK)',
     f_all: 'All', f_chain: '⛓ Chained', f_multi: 'Multi-source', f_single: 'Single skill',
     btn_search: 'Search', btn_ai: '✨ AI Pick',
     theme_dark: '🌙 Dark', theme_light: '☀️ Light',
@@ -1380,6 +1388,13 @@ function applyChrome(){
   // 示例 chip 的查询词（data-q）也随语言切换
   document.querySelectorAll('[data-i18n-q]').forEach(el => {
     const v = t(el.dataset.i18nQ); if(typeof v === 'string') el.dataset.q = v;
+  });
+  // 悬浮提示 / 无障碍标签也随语言切换（静态 chrome 按钮）
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const v = t(el.dataset.i18nTitle); if(typeof v === 'string') el.setAttribute('title', v);
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const v = t(el.dataset.i18nAria); if(typeof v === 'string') el.setAttribute('aria-label', v);
   });
   // <head>：标题 + meta（无 JS 时静态中文兜底，有 JS 时按语言切）
   document.title = t('page_title');
@@ -2673,19 +2688,19 @@ function buildGraph(){
   const ctrls = document.createElement('div');
   ctrls.className = 'graph-controls';
   ctrls.innerHTML = `
-    <button class="gc-btn" data-act="pause" title="暂停 / 继续">${ICON.pause}</button>
-    <button class="gc-btn" data-act="reset" title="重置布局">${ICON.reset}</button>
+    <button class="gc-btn" data-act="pause" title="${EN ? 'Pause / resume' : '暂停 / 继续'}">${ICON.pause}</button>
+    <button class="gc-btn" data-act="reset" title="${EN ? 'Reset layout' : '重置布局'}">${ICON.reset}</button>
     <div class="graph-zoom-row">
-      <button class="gc-btn" data-act="zoom-out" title="缩小">${ICON.zoomOut}</button>
-      <button class="gc-btn" data-act="zoom-in" title="放大">${ICON.zoomIn}</button>
+      <button class="gc-btn" data-act="zoom-out" title="${EN ? 'Zoom out' : '缩小'}">${ICON.zoomOut}</button>
+      <button class="gc-btn" data-act="zoom-in" title="${EN ? 'Zoom in' : '放大'}">${ICON.zoomIn}</button>
     </div>
-    <button class="gc-btn gc-zoom" data-act="zoom" title="重置缩放">100%</button>
-    <button class="gc-btn" data-act="labels" title="切换全部标签">${ICON.labels}</button>
+    <button class="gc-btn gc-zoom" data-act="zoom" title="${EN ? 'Reset zoom' : '重置缩放'}">100%</button>
+    <button class="gc-btn" data-act="labels" title="${EN ? 'Toggle all labels' : '切换全部标签'}">${ICON.labels}</button>
     <div class="graph-zoom-row">
-      <button class="gc-btn gc-zoom" data-act="export-png" title="导出 PNG / Export PNG">PNG</button>
-      <button class="gc-btn gc-zoom" data-act="export-svg" title="导出 SVG / Export SVG">SVG</button>
+      <button class="gc-btn gc-zoom" data-act="export-png" title="${EN ? 'Export PNG' : '导出 PNG'}">PNG</button>
+      <button class="gc-btn gc-zoom" data-act="export-svg" title="${EN ? 'Export SVG' : '导出 SVG'}">SVG</button>
     </div>
-    <button class="gc-btn gc-zoom" data-act="embed" title="复制嵌入代码 / Copy embed code">&lt;/&gt;</button>`;
+    <button class="gc-btn gc-zoom" data-act="embed" title="${EN ? 'Copy embed code' : '复制嵌入代码'}">&lt;/&gt;</button>`;
   container.appendChild(ctrls);
 
   function updateZoomLabel(){
