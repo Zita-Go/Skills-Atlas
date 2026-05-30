@@ -559,6 +559,26 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
   .skill-tag{padding-top:6px;padding-bottom:6px}
 }
 .hero-start-eg{font-size:11px;color:var(--fg-muted);flex-basis:100%;margin-top:2px}
+/* 右侧甜甜圈图例（可点跳分类） */
+.hero-viz{display:flex;gap:18px;align-items:center}
+#heroChart{flex-shrink:0}
+.hero-legend{display:grid;grid-template-columns:auto auto auto;gap:2px 4px;flex-shrink:0}
+.hl-item{display:flex;align-items:center;gap:5px;background:none;border:0;color:var(--fg-dim);cursor:pointer;padding:3px 7px;border-radius:6px;font-size:11px;white-space:nowrap;transition:all .12s;font-family:inherit}
+.hl-item:hover{background:var(--bg-elev);color:var(--fg);transform:translateY(-1px)}
+.hl-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.hl-name{font-size:13px;line-height:1}
+.hl-count{color:var(--fg-muted);font-family:var(--font-mono);font-size:10px}
+.hero-arc{transition:opacity .12s}.hero-arc:hover{opacity:1}
+/* hero 收起 */
+.hero{position:relative;transition:padding .2s}
+.hero-toggle{position:absolute;top:10px;right:12px;background:var(--bg-elev);border:1px solid var(--border);color:var(--fg-muted);width:26px;height:26px;border-radius:7px;cursor:pointer;font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center;transition:all .15s;z-index:2}
+.hero-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.hero.collapsed .hero-toggle{transform:rotate(180deg)}
+.hero.collapsed > .hero-text > p,.hero.collapsed .hero-start,.hero.collapsed > .hero-viz{display:none}
+.hero.collapsed{padding-top:12px;padding-bottom:8px}
+.hero.collapsed h2{font-size:18px;margin-bottom:8px}
+.hero.collapsed .hero-stats{margin-top:0}
+@media (max-width:880px){ .hero-legend{display:none} #heroChart{width:140px;height:140px} }
 .usage-install{padding:6px 28px 0;font-size:12.5px;line-height:1.65}
 .usage-install .ui-note{color:var(--fg-dim);margin:4px 0}
 .usage-install .ui-prereq{color:var(--fg-muted);margin:4px 0}
@@ -980,7 +1000,7 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
   <div class="hero">
     <div class="hero-text">
       <h2 data-i18n="hero_h2">按功能分类的 AI Agent Skills 全景</h2>
-      <p data-i18n="hero_p">不再问"有什么 skill"，而是"我要做 X 该用哪个 skill"。来自 62 个 GitHub 仓库的 370+ 独立 skill，重新归类到 13 大类 / 74 个功能分组，⛓ 标记表示必须串起来用的工作流。</p>
+      <p data-i18n="hero_p">按「我要做什么」找到对的 AI Agent Skill —— 点开即看用法、一键复制安装命令，不必跳去 GitHub。⛓ 标记的是必须串起来用的工作流。</p>
       <div class="hero-stats">
         <div><b id="heroSkillCount">—</b><span data-i18n="stat_skill">独立 skill</span></div>
         <div><b id="heroGroupCount">—</b><span data-i18n="stat_group">功能分组</span></div>
@@ -996,8 +1016,10 @@ html.light .repo-card-tag.tag-hot{color:hsl(340, 65%, 45%)}
       </div>
     </div>
     <div class="hero-viz">
-      <svg id="heroChart" viewBox="0 0 200 200" width="200" height="200"></svg>
+      <svg id="heroChart" viewBox="0 0 200 200" width="172" height="172"></svg>
+      <div id="heroLegend" class="hero-legend"></div>
     </div>
+    <button id="heroToggle" class="hero-toggle" aria-label="collapse" title="收起 / 展开">▾</button>
   </div>
   <div id="content"></div>
   <div id="repoView" class="hidden repo-view"></div>
@@ -1118,7 +1140,7 @@ const I18N = {
     btn_search: '搜索', btn_ai: '✨ AI 推荐',
     theme_dark: '🌙 暗色', theme_light: '☀️ 亮色',
     hero_h2: '按功能分类的 AI Agent Skills 全景',
-    hero_p: '不再问"有什么 skill"，而是"我要做 X 该用哪个 skill"。来自 62 个 GitHub 仓库的 370+ 独立 skill，重新归类到 13 大类 / 74 个功能分组，⛓ 标记表示必须串起来用的工作流。',
+    hero_p: '按「我要做什么」找到对的 AI Agent Skill —— 点开即看用法、一键复制安装命令，不必跳去 GitHub。⛓ 标记的是必须串起来用的工作流。',
     stat_skill: '独立 skill', stat_group: '功能分组', stat_vendor: '源仓库', stat_chain: '强绑定工作流',
     empty: '没有匹配的 skill，试试别的关键词',
     sp_ph: '搜 skill / 仓库 / 分组 / 大类…（fuzzy 匹配）',
@@ -1171,7 +1193,7 @@ const I18N = {
     btn_search: 'Search', btn_ai: '✨ AI Pick',
     theme_dark: '🌙 Dark', theme_light: '☀️ Light',
     hero_h2: 'AI Agent Skills, organized by function',
-    hero_p: 'Stop asking "what skills exist" — ask "which skill should I use to do X". 370+ skills from 62 GitHub repos, regrouped into 13 categories / 74 functional groups. ⛓ marks workflows meant to be chained together.',
+    hero_p: 'Find the right AI agent skill by what you want to do — read its usage and copy a one-click install right here, without the GitHub detour. ⛓ marks workflows meant to be chained.',
     stat_skill: 'skills', stat_group: 'groups', stat_vendor: 'source repos', stat_chain: 'chained workflows',
     empty: 'No matching skills — try another keyword',
     sp_ph: 'Search skills / repos / groups / categories… (fuzzy)',
@@ -1619,6 +1641,31 @@ function applyFilter(){
       countEl.textContent = '';
     }
   }
+  if(window._heroUpdate) window._heroUpdate();
+}
+
+function setupHero(){
+  const hero = document.querySelector('.hero');
+  if(!hero) return;
+  let manual = null;   // null = 自动；true/false = 手动覆盖（仅滚动回顶时清除）
+  const apply = () => {
+    const y = window.scrollY || document.documentElement.scrollTop || 0;
+    const auto = y > 200 || !!currentSearch || currentFilter !== 'all';
+    hero.classList.toggle('collapsed', manual === null ? auto : manual);
+  };
+  window._heroUpdate = apply;
+  const btn = document.getElementById('heroToggle');
+  if(btn) btn.addEventListener('click', () => { manual = !hero.classList.contains('collapsed'); apply(); });
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY || document.documentElement.scrollTop || 0;
+      if(y < 20 && !currentSearch && currentFilter === 'all') manual = null;
+      apply(); ticking = false;
+    });
+  }, { passive: true });
+  apply();
 }
 
 function setupSearch(){
@@ -3340,7 +3387,7 @@ function drawHeroChart(){
     const d = `M ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2}`
           + ` L ${x3} ${y3} A ${r2} ${r2} 0 ${large} 0 ${x4} ${y4} Z`;
     const hue = hues[i % hues.length];
-    arcs.push(`<path d="${d}" fill="hsl(${hue}, 70%, 65%)" opacity="0.85">
+    arcs.push(`<path class="hero-arc" data-idx="${i}" d="${d}" fill="hsl(${hue}, 70%, 65%)" opacity="0.85" style="cursor:pointer">
       <title>${pickT(s.title_en, s.title)}: ${s.count}</title></path>`);
     acc = end;
   });
@@ -3354,6 +3401,18 @@ function drawHeroChart(){
     style="letter-spacing:0.1em;text-transform:uppercase">groups</text>`);
 
   svg.innerHTML = arcs.join('');
+  // 图例（可点跳分类）+ 弧点击跳转
+  const legend = document.getElementById('heroLegend');
+  if(legend){
+    legend.innerHTML = slices.map((s, i) =>
+      `<button class="hl-item" data-idx="${i}" title="${escapeAttr(pickT(s.title_en, s.title))}">`
+      + `<span class="hl-dot" style="background:hsl(${hues[i % hues.length]},70%,65%)"></span>`
+      + `<span class="hl-name">${escapeHtml(DATA.sections[i].icon || '·')}</span>`
+      + `<b class="hl-count">${s.count}</b></button>`).join('');
+  }
+  const jumpCat = idx => { const els = document.querySelectorAll('.section-h1'); if(els[idx]) els[idx].scrollIntoView({ behavior:'smooth', block:'start' }); };
+  svg.querySelectorAll('.hero-arc').forEach(a => a.addEventListener('click', () => jumpCat(+a.dataset.idx)));
+  if(legend) legend.querySelectorAll('.hl-item').forEach(b => b.addEventListener('click', () => jumpCat(+b.dataset.idx)));
 }
 
 /* ===== 用法内联 + 一键安装命令 ===== */
@@ -3561,6 +3620,7 @@ setupUsage();
 setupTheme();
 setupMenuBtn();
 setupScrollSpy();
+setupHero();
 // 落地"从哪开始"三入口
 document.querySelectorAll('.start-chip').forEach(c => c.addEventListener('click', () => {
   const a = c.dataset.start;
