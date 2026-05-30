@@ -351,10 +351,15 @@ function isAcceptable(c, minStars) {
 // LLM —— 故障转移链（config.llm.models 顺序尝试，命中 fallback_on 就降级）
 // ===========================================================================
 
+// 运维健壮性参数走代码常量（不走 yaml）：超时/重试是"快速失败"策略，不是发现策略。
+// 单次调用最多 25s，且不在同模型重试 —— 失败就立刻降级/跳过，避免一个仓库拖垮整批。
+const LLM_TIMEOUT_MS = 25_000;
+const LLM_MAX_RETRIES = 0;
+
 async function llmComplete(env, llm, messages, { temperature = 0, maxTokens = 600 } = {}) {
   const fallbackOn = new Set(llm.fallback_on || [429, 500, 502, 503, 504, 'empty']);
-  const maxRetries = Number.isInteger(llm.max_retries_per_model) ? llm.max_retries_per_model : 1;
-  const timeoutMs = (llm.timeout_s || 60) * 1000;
+  const maxRetries = LLM_MAX_RETRIES;
+  const timeoutMs = LLM_TIMEOUT_MS;
   let lastErr = 'no models';
 
   for (const model of llm.models) {
@@ -467,7 +472,32 @@ async function loadTaxonomy(env) {
   return subs;
 }
 
+// 单次 classify 最多塞多少 skill。大仓库分块跑，避免一次请求太大让 free 模型吐空/卡死。
+const CLASSIFY_CHUNK = 10;
+
+function chunkArr(arr, n) {
+  const out = [];
+  for (let i = 0; i < arr.length; i += n) out.push(arr.slice(i, i + n));
+  return out;
+}
+
+// 编排：把仓库的 skill 分块，逐块 classify。
+// is_collection 只看第一块（代表性样本）：第一块判非集合就整库剔，省掉后续块。
 async function classifyRepoSkills(env, llm, cand, skillFiles, subs) {
+  const chunks = chunkArr(skillFiles, CLASSIFY_CHUNK);
+  let isCollection = true;
+  let collectionReason = '';
+  const skills = [];
+  for (let i = 0; i < chunks.length; i++) {
+    const r = await classifyChunk(env, llm, cand, chunks[i], subs);
+    if (i === 0) { isCollection = r.is_collection; collectionReason = r.collection_reason; }
+    if (!isCollection) break; // 第一块就判非正经集合 → 整库剔，不再跑后续块
+    skills.push(...r.skills);
+  }
+  return { is_collection: isCollection, collection_reason: collectionReason, skills };
+}
+
+async function classifyChunk(env, llm, cand, skillFiles, subs) {
   const taxonomyStr = subs.map((s) => `${s.id}: ${s.title}`).join('\n');
   const messages = [
     {
