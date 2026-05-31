@@ -731,13 +731,13 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 .hero-viz{display:flex;flex-direction:column;gap:8px;align-items:stretch;width:384px;flex-shrink:0}
 .hero-map{position:relative;width:100%;height:244px;border-radius:12px;overflow:hidden;
   background:var(--bg-elev);border:1px solid var(--border)}
-.hm-tile{position:absolute;border:0;border-radius:6px;cursor:pointer;overflow:hidden;
-  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:2px;
-  padding:5px 7px;text-align:left;font-family:inherit;line-height:1;color:var(--fg);
-  background:hsl(var(--h),62%,var(--l));box-shadow:0 0 0 1px hsla(var(--h),75%,calc(var(--l) + 10%),.5) inset;
+.hm-tile{position:absolute;border:0;border-radius:7px;cursor:pointer;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:3px;
+  padding:6px 8px;text-align:left;font-family:inherit;line-height:1;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);
   transition:filter .14s,transform .1s,box-shadow .14s}
-.hm-tile:hover{filter:brightness(1.18) saturate(1.1);z-index:3;
-  box-shadow:0 0 0 1.5px #fff inset, 0 2px 10px rgba(0,0,0,.35)}
+.hm-tile:hover{filter:brightness(1.12) saturate(1.06);z-index:3;
+  box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.85), 0 2px 12px rgba(0,0,0,.32)}
 .hm-tile .hm-ic{font-size:15px;line-height:1;filter:drop-shadow(0 1px 1px rgba(0,0,0,.4))}
 .hm-tile .hm-ic.tiny{font-size:11px}
 .hm-tile .hm-nm{font-size:10px;line-height:1.15;color:var(--txt);font-weight:700;
@@ -4047,11 +4047,15 @@ function buildHeroMap(){
   host.style.height = H + 'px';
   const N = DATA.sections.length;
   const short = t => t.replace(/^[一二三四五六七八九十]+、\s*/, '').replace(/^\d+[\.、]\s*/, '')
-                      .replace(/（[^）]*）/g, '').replace(/\s*\([^)]*\)\s*$/g, '').trim();
+                      .replace(/（[^）]*）/g, '').replace(/\s*\([^)]*\)\s*$/g, '').trim()
+                      .split(/\s*[\/／&]\s*/)[0].trim();   // 取首段，标签更短不易裁切
+  // 色相与 graph 一致（按序号等距），但 treemap 用统一饱和/亮度，整体更协调不刺眼
+  const SAT = 50, LIGHT = 52;
+  const lumOf = (h) => { h/=360; const a=SAT/100*Math.min(LIGHT/100,1-LIGHT/100); const f=n=>{const k=(n+h*12)%12; return LIGHT/100 - a*Math.max(-1,Math.min(k-3,9-k,1));};
+    const lin=c=>c<=.03928?c/12.92:Math.pow((c+.055)/1.055,2.4); return .2126*lin(f(0))+.7152*lin(f(8))+.0722*lin(f(4)); };
   const cats = DATA.sections.map((h1, i) => ({
     i, title: pickT(h1.title_en, h1.title), icon: h1.icon || H1_ICONS[h1.title] || '·',
-    // 与 graph/旧甜甜圈一致：色相按大类序号等距生成；亮度三档
-    v: h1.subsections.reduce((s, h2) => s + h2.rows.length, 0), hue: Math.round((i * 360 / N + 220) % 360), light: catLight(i)
+    v: h1.subsections.reduce((s, h2) => s + h2.rows.length, 0), hue: Math.round((i * 360 / N + 220) % 360)
   })).filter(c => c.v > 0).sort((a, b) => b.v - a.v);
   if(!cats.length) return;
   const rects = [];
@@ -4068,14 +4072,14 @@ function buildHeroMap(){
   })(cats, 0, 0, W, H, W >= H);
   const GAP = 3;
   host.innerHTML = rects.map(r => {
-    const tw = Math.max(0, r.w - GAP), th = Math.max(0, r.h - GAP), area = tw * th;
-    // 图标始终显示（小块用小号）；够大才加名称/数量
+    const tw = Math.max(0, r.w - GAP), th = Math.max(0, r.h - GAP);
+    // 图标始终显示（小块用小号）；名称只在够高够宽时出现（避免裁切/拥挤）；中等块显示数量
     const tiny = th < 30 || tw < 30;
     let label = `<span class="hm-ic${tiny ? ' tiny' : ''}">${r.icon}</span>`;
-    if(area > 4200 && tw > 70) label += `<span class="hm-nm">${escapeHtml(short(r.title))}</span><b class="hm-ct">${r.v}</b>`;
-    else if(tw > 36 && th > 30) label += `<b class="hm-ct sm">${r.v}</b>`;
-    const txt = r.light >= 56 ? '#0b0d12' : '#eef1f6';   // 浅块用深字、深块用浅字
-    return `<button class="hm-tile" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;--h:${r.hue};--l:${r.light}%;--txt:${txt}">${label}</button>`;
+    if(tw > 96 && th > 56) label += `<span class="hm-nm">${escapeHtml(short(r.title))}</span><b class="hm-ct">${r.v}</b>`;
+    else if(tw > 34 && th > 30) label += `<b class="hm-ct sm">${r.v}</b>`;
+    const txt = lumOf(r.hue) > 0.46 ? '#0b0d12' : '#f2f5fa';   // 按真实亮度选深/浅字
+    return `<button class="hm-tile" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;background:hsl(${r.hue},${SAT}%,${LIGHT}%);--txt:${txt}">${label}</button>`;
   }).join('');
   host.querySelectorAll('.hm-tile').forEach(tl => tl.addEventListener('click', () => {
     const el = document.querySelectorAll('.section-h1')[+tl.dataset.idx];
