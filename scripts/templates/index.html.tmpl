@@ -4081,19 +4081,41 @@ function buildHeroMap(pal){
   // 柔和中低饱和、高亮度；传 pal 时用于试色
   const HERO_HUES = [128, 24, 212, 168, 284, 44, 334, 244, 96, 192, 12, 264, 152, 36, 310, 204, 108, 296, 6, 180];
   cats.forEach((c, si) => { c.col = pal ? PAL[si % PAL.length] : `hsl(${HERO_HUES[si % HERO_HUES.length]}, 48%, 84%)`; });
-  const rects = [];
-  (function slice(items, x, y, w, h, horiz){
-    if(items.length === 1){ rects.push({ ...items[0], x, y, w, h }); return; }
+  // squarified treemap（平方化）：方块尽量接近正方形、紧密铺满——常规 treemap 的形状
+  const rects = (function squarify(items, X, Y, W, H){
+    const out = [];
     const total = items.reduce((s, o) => s + o.v, 0);
-    let acc = 0, k = 0;
-    while(k < items.length - 1 && acc + items[k].v < total / 2){ acc += items[k].v; k++; }
-    if(k === 0) k = 1;
-    const A = items.slice(0, k), B = items.slice(k);
-    const aFrac = A.reduce((s, o) => s + o.v, 0) / total;
-    if(horiz){ const w1 = w * aFrac; slice(A, x, y, w1, h, !horiz); slice(B, x + w1, y, w - w1, h, !horiz); }
-    else { const h1 = h * aFrac; slice(A, x, y, w, h1, !horiz); slice(B, x, y + h1, w, h - h1, !horiz); }
-  })(cats, 0, 0, W, H, W >= H);
-  const GAP = 3;
+    if(total <= 0) return out;
+    const scale = (W * H) / total;
+    const data = items.map(o => ({ o, a: o.v * scale }));
+    let x = X, y = Y, w = W, h = H;
+    const worst = (row, side) => {            // 行内最差长宽比，越接近 1 越方
+      let sum = 0, mx = -Infinity, mn = Infinity;
+      for(const r of row){ sum += r.a; if(r.a > mx) mx = r.a; if(r.a < mn) mn = r.a; }
+      const s2 = side * side, sum2 = sum * sum;
+      return Math.max(s2 * mx / sum2, sum2 / (s2 * mn));
+    };
+    const layout = (row) => {                 // 沿较短边把一行铺满
+      const sum = row.reduce((t, r) => t + r.a, 0);
+      if(w >= h){ const cw = sum / h; let oy = y;
+        for(const r of row){ const rh = r.a / cw; out.push({ ...r.o, x, y: oy, w: cw, h: rh }); oy += rh; }
+        x += cw; w -= cw;
+      } else { const rh = sum / w; let ox = x;
+        for(const r of row){ const rw = r.a / rh; out.push({ ...r.o, x: ox, y, w: rw, h: rh }); ox += rw; }
+        y += rh; h -= rh;
+      }
+    };
+    let row = [], i = 0;
+    while(i < data.length){
+      const side = Math.min(w, h);
+      if(!row.length){ row.push(data[i++]); continue; }
+      if(worst(row.concat(data[i]), side) <= worst(row, side)) row.push(data[i++]);
+      else { layout(row); row = []; }
+    }
+    if(row.length) layout(row);
+    return out;
+  })(cats, 0, 0, W, H);
+  const GAP = 2;
   host.innerHTML = rects.map(r => {
     const tw = Math.max(0, r.w - GAP), th = Math.max(0, r.h - GAP);
     // 图标始终显示（小块用小号）；名称只在够高够宽时出现（避免裁切/拥挤）；中等块显示数量
