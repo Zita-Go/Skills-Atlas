@@ -28,12 +28,19 @@ cd packages/skills-atlas-cli && npm link
 
 ## Install the plugin
 
+From GitHub (recommended — uses the marketplace at the repo root):
+
+```text
+/plugin marketplace add Zita-Go/Skills-Atlas
+/plugin install skills-atlas@skills-atlas
+```
+
+Or from a local checkout of this repo:
+
 ```text
 /plugin marketplace add <path-to>/skills-atlas/packages/skills-atlas-cli/plugin
 /plugin install skills-atlas@skills-atlas-cli
 ```
-
-(Or add it straight from GitHub once published: `/plugin marketplace add Zita-Go/Skills-Atlas`.)
 
 ## Manual alternative (no marketplace)
 
