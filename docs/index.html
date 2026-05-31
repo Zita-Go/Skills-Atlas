@@ -727,16 +727,24 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
   .skill-tag{min-height:34px;padding-top:6px;padding-bottom:6px;display:inline-flex;align-items:center}
 }
 .hero-start-eg{font-size:11px;color:var(--fg-muted);flex-basis:100%;margin-top:2px}
-/* 右侧甜甜圈图例（可点跳分类） */
-.hero-viz{display:flex;flex-direction:column;gap:12px;align-items:center}
-#heroChart{flex-shrink:0}
-.hero-legend{display:grid;grid-template-columns:repeat(3,auto);gap:2px 4px;flex-shrink:0;justify-content:center;max-width:100%}
-.hl-item{display:flex;align-items:center;gap:5px;background:none;border:0;color:var(--fg-dim);cursor:pointer;padding:3px 7px;border-radius:6px;font-size:11px;white-space:nowrap;transition:all .12s;font-family:inherit}
-.hl-item:hover{background:var(--bg-elev);color:var(--fg);transform:translateY(-1px)}
-.hl-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
-.hl-name{font-size:13px;line-height:1}
-.hl-count{color:var(--fg-muted);font-family:var(--font-mono);font-size:10px}
-.hero-arc{transition:opacity .12s}.hero-arc:hover{opacity:1}
+/* 右侧「技能地图」treemap（面积∝大类规模，点击跳分类） */
+.hero-viz{display:flex;flex-direction:column;gap:8px;align-items:stretch;width:316px;flex-shrink:0}
+.hero-map{position:relative;width:100%;height:188px;border-radius:12px;overflow:hidden;
+  background:var(--bg-elev);border:1px solid var(--border)}
+.hm-tile{position:absolute;border:0;border-radius:6px;cursor:pointer;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1px;
+  padding:5px 7px;text-align:left;font-family:inherit;line-height:1;
+  background:hsla(var(--h),58%,var(--l),.32);transition:background .14s,transform .1s,box-shadow .14s}
+.hm-tile:hover{background:hsla(var(--h),65%,var(--l),.62);z-index:3;
+  box-shadow:0 0 0 1px hsla(var(--h),70%,var(--l),.9) inset}
+.hm-tile .hm-ic{font-size:14px;line-height:1}
+.hm-tile .hm-nm{font-size:9.5px;line-height:1.15;color:var(--fg);font-weight:600;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;letter-spacing:-0.01em}
+.hm-tile .hm-ct{font-size:12px;font-weight:700;color:var(--fg);font-family:var(--font-mono)}
+.hm-tile .hm-ct.sm{font-size:10px}
+html.light .hm-tile{background:hsla(var(--h),55%,calc(var(--l) - 6%),.20)}
+html.light .hm-tile:hover{background:hsla(var(--h),60%,calc(var(--l) - 6%),.42)}
+.hero-map-cap{font-size:11px;color:var(--fg-muted);text-align:center;letter-spacing:.01em}
 /* hero 收起 */
 .hero{position:relative;transition:padding .2s}
 .hero-toggle{position:absolute;top:10px;right:12px;background:var(--bg-elev);border:1px solid var(--border);color:var(--fg-muted);width:26px;height:26px;border-radius:7px;cursor:pointer;font-size:13px;line-height:1;display:flex;align-items:center;justify-content:center;transition:all .15s;z-index:2}
@@ -1248,6 +1256,10 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
         <span class="hero-start-eg" data-i18n="hs_eg">例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」</span>
       </div>
     </div>
+    <div class="hero-viz">
+      <div id="heroMap" class="hero-map" role="img" aria-label="Skills by category"></div>
+      <div class="hero-map-cap" data-i18n="map_cap">按领域浏览 · 点击色块跳到该分类</div>
+    </div>
     <button id="heroToggle" class="hero-toggle" aria-label="collapse" title="收起 / 展开" data-i18n-title="tt_hero_toggle">▾</button>
   </div>
   <div id="content"></div>
@@ -1404,6 +1416,7 @@ const I18N = {
     hero_def: 'Agent Skill 是 Claude Code 里可复用的「能力包」——装一次，之后像 /写PRD 这样按斜杠命令调用。',
     hero_p: '按「我要做什么」找到对的 AI Agent Skill —— 点开即看完整 SKILL.md、一键复制安装命令。⛓ 标记的是必须串起来用的工作流。',
     stat_skill: '独立 skill', stat_group: '功能分组', stat_vendor: '源仓库', stat_chain: '强绑定工作流',
+    map_cap: '技能地图：色块越大该领域越多 · 点击跳到该分类',
     empty: '没有匹配的 skill，试试别的关键词',
     sp_ph: '搜 skill / 仓库 / 分组 / 大类…（fuzzy 匹配）',
     sp_empty_default: '输入关键词搜索 skill / 分组 / 大类 / 仓库', sp_empty_none: '没有匹配项，换个关键词试试',
@@ -1466,6 +1479,7 @@ const I18N = {
     hero_def: 'An Agent Skill is a reusable command that runs inside Claude Code — install one, then call it like /write-prd.',
     hero_p: 'Find the right one by what you want to do — read the full SKILL.md and copy a one-click install right here. ⛓ marks workflows meant to be chained.',
     stat_skill: 'skills', stat_group: 'groups', stat_vendor: 'source repos', stat_chain: 'chained workflows',
+    map_cap: 'Skill map: bigger tile = more in that area · click to jump',
     empty: 'No matching skills — try another keyword',
     sp_ph: 'Search skills / repos / groups / categories… (fuzzy)',
     sp_empty_default: 'Search skills / groups / categories / repos', sp_empty_none: 'No matches — try another keyword',
@@ -4024,71 +4038,45 @@ function setupScrollSpy(){
   document.querySelectorAll('.section-h2').forEach(h => observer.observe(h));
 }
 
-function drawHeroChart(){
-  const svg = document.getElementById('heroChart');
-  if(!svg) return;
-  // 统计每大类的 group 数
-  const slices = DATA.sections.map(h1 => ({
-    title: h1.title,
-    title_en: h1.title_en,
-    count: h1.subsections.reduce((sum, h2) => sum + h2.rows.length, 0)
+// Hero「技能地图」：按大类 group 数铺成 treemap（面积∝规模），点击跳到该分类。
+// 用递归二分（交替方向）布局，鲁棒且长宽比尚可；色块用各大类色相。
+function buildHeroMap(){
+  const host = document.getElementById('heroMap');
+  if(!host) return;
+  const W = Math.max(200, Math.round(host.clientWidth) || 280), H = 188;
+  host.style.height = H + 'px';
+  const short = t => t.replace(/^[一二三四五六七八九十]+、\s*/, '').replace(/^\d+[\.、]\s*/, '')
+                      .replace(/（[^）]*）/g, '').replace(/\s*\([^)]*\)\s*$/g, '').trim();
+  const cats = DATA.sections.map((h1, i) => ({
+    i, title: pickT(h1.title_en, h1.title), icon: h1.icon || H1_ICONS[h1.title] || '·',
+    v: h1.subsections.reduce((s, h2) => s + h2.rows.length, 0), hue: hueOf(h1.title), light: catLight(i)
+  })).filter(c => c.v > 0).sort((a, b) => b.v - a.v);
+  if(!cats.length) return;
+  const rects = [];
+  (function slice(items, x, y, w, h, horiz){
+    if(items.length === 1){ rects.push({ ...items[0], x, y, w, h }); return; }
+    const total = items.reduce((s, o) => s + o.v, 0);
+    let acc = 0, k = 0;
+    while(k < items.length - 1 && acc + items[k].v < total / 2){ acc += items[k].v; k++; }
+    if(k === 0) k = 1;
+    const A = items.slice(0, k), B = items.slice(k);
+    const aFrac = A.reduce((s, o) => s + o.v, 0) / total;
+    if(horiz){ const w1 = w * aFrac; slice(A, x, y, w1, h, !horiz); slice(B, x + w1, y, w - w1, h, !horiz); }
+    else { const h1 = h * aFrac; slice(A, x, y, w, h1, !horiz); slice(B, x, y + h1, w, h - h1, !horiz); }
+  })(cats, 0, 0, W, H, W >= H);
+  const GAP = 3;
+  host.innerHTML = rects.map(r => {
+    const tw = Math.max(0, r.w - GAP), th = Math.max(0, r.h - GAP), area = tw * th;
+    let label = '';
+    if(area > 3000) label = `<span class="hm-ic">${r.icon}</span><span class="hm-nm">${escapeHtml(short(r.title))}</span><b class="hm-ct">${r.v}</b>`;
+    else if(tw > 30 && th > 26) label = `<span class="hm-ic">${r.icon}</span><b class="hm-ct sm">${r.v}</b>`;
+    else if(tw > 18 && th > 16) label = `<span class="hm-ic">${r.icon}</span>`;
+    return `<button class="hm-tile" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;--h:${r.hue};--l:${r.light}%">${label}</button>`;
+  }).join('');
+  host.querySelectorAll('.hm-tile').forEach(tl => tl.addEventListener('click', () => {
+    const el = document.querySelectorAll('.section-h1')[+tl.dataset.idx];
+    if(el) smoothScrollToEl(el);
   }));
-  const total = slices.reduce((s, x) => s + x.count, 0);
-  if(total === 0) return;
-
-  // 各大类的渐变色（HSL 按数量等距分布）
-  // 与 graph 一致:按大类数等距生成色相,任意类数都不重复
-  const hues = DATA.sections.map((_, i) => Math.round((i * 360 / DATA.sections.length + 220) % 360));
-  const cx=100, cy=100, r=78, ringW=18;
-  const TAU = Math.PI * 2;
-  let acc = -Math.PI / 2;  // 从 12 点钟开始
-  const arcs = [];
-
-  slices.forEach((s, i) => {
-    const frac = s.count / total;
-    const angle = frac * TAU;
-    if(frac < 0.005) { acc += angle; return; }
-    const start = acc;
-    const end = acc + angle;
-    const large = angle > Math.PI ? 1 : 0;
-    const x1 = cx + r * Math.cos(start);
-    const y1 = cy + r * Math.sin(start);
-    const x2 = cx + r * Math.cos(end);
-    const y2 = cy + r * Math.sin(end);
-    const r2 = r - ringW;
-    const x3 = cx + r2 * Math.cos(end);
-    const y3 = cy + r2 * Math.sin(end);
-    const x4 = cx + r2 * Math.cos(start);
-    const y4 = cy + r2 * Math.sin(start);
-    const d = `M ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2}`
-          + ` L ${x3} ${y3} A ${r2} ${r2} 0 ${large} 0 ${x4} ${y4} Z`;
-    const hue = hues[i % hues.length];
-    arcs.push(`<path class="hero-arc" data-idx="${i}" d="${d}" fill="hsl(${hue}, 70%, ${catLight(i)}%)" opacity="0.85" style="cursor:pointer">
-      <title>${pickT(s.title_en, s.title)}: ${s.count}</title></path>`);
-    acc = end;
-  });
-
-  // 中心数字
-  arcs.push(`<text x="${cx}" y="${cy-6}" text-anchor="middle"
-    fill="var(--fg)" font-family="var(--font-sans)" font-size="32" font-weight="700"
-    style="letter-spacing:-0.02em">${total}</text>`);
-  arcs.push(`<text x="${cx}" y="${cy+14}" text-anchor="middle"
-    fill="var(--fg-muted)" font-family="var(--font-mono)" font-size="9" font-weight="500"
-    style="letter-spacing:0.1em;text-transform:uppercase">groups</text>`);
-
-  svg.innerHTML = arcs.join('');
-  // 图例（可点跳分类）+ 弧点击跳转
-  const legend = document.getElementById('heroLegend');
-  if(legend){
-    legend.innerHTML = slices.map((s, i) =>
-      `<button class="hl-item" data-idx="${i}" title="${escapeAttr(pickT(s.title_en, s.title))}">`
-      + `<span class="hl-dot" style="background:hsl(${hues[i % hues.length]},70%,${catLight(i)}%)"></span>`
-      + `<span class="hl-name">${escapeHtml(DATA.sections[i].icon || '·')}</span>`
-      + `<b class="hl-count">${s.count}</b></button>`).join('');
-  }
-  const jumpCat = idx => { const els = document.querySelectorAll('.section-h1'); if(els[idx]) smoothScrollToEl(els[idx]); };
-  svg.querySelectorAll('.hero-arc').forEach(a => a.addEventListener('click', () => jumpCat(+a.dataset.idx)));
-  if(legend) legend.querySelectorAll('.hl-item').forEach(b => b.addEventListener('click', () => jumpCat(+b.dataset.idx)));
 }
 
 /* ===== 用法内联 + 一键安装命令 ===== */
@@ -4309,6 +4297,7 @@ applyChrome();   // 先按当前语言刷静态界面文字
 setupLang();     // 语言切换按钮
 buildNav();
 buildContent();
+buildHeroMap();
 setupSearch();
 setupShareLink();
 setupCardSort();
