@@ -19,6 +19,15 @@ function stars(n) {
   return `★${n}`;
 }
 
+// A `git clone <repo> ~/.claude/skills/skills` alt double-nests a multi-skill
+// monorepo (skills end up at .claude/skills/skills/<name>/) and won't load —
+// drop that foot-gun; the `npx skills add` command is the correct path.
+function safeAlt(alt) {
+  if (!alt) return null;
+  if (/\.claude\/skills\/skills\b/.test(alt)) return null;
+  return alt;
+}
+
 // Language-aware field: prefer English when `en`, else the primary (Chinese).
 function text(obj, key, en) {
   if (!obj) return '';
@@ -104,7 +113,8 @@ function renderInfo(info, { en = false } = {}) {
       out.push(`      ${dim('path:')} ${s.path || dim('(whole-repo install — no per-skill folder)')}`);
       if (s.install && s.install.command) {
         out.push(`      ${dim('install:')} ${cyan(s.install.command)}`);
-        if (s.install.alt) out.push(`      ${dim('alt:')} ${s.install.alt}`);
+        const alt = safeAlt(s.install.alt);
+        if (alt) out.push(`      ${dim('alt:')} ${alt}`);
         if (s.install.note) out.push(`      ${dim('note:')} ${s.install.note}`);
       }
     }
@@ -113,5 +123,5 @@ function renderInfo(info, { en = false } = {}) {
 }
 
 module.exports = {
-  bold, dim, green, cyan, yellow, stars, text, renderRow, buildInfo, renderInfo,
+  bold, dim, green, cyan, yellow, stars, safeAlt, text, renderRow, buildInfo, renderInfo,
 };

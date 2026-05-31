@@ -4,10 +4,10 @@ const path = require('path');
 const { parse } = require('../args');
 const { loadData } = require('../data');
 const { buildIndices, vendorsFor, suggestSkills, skillDocPath } = require('../index-build');
-const { listSkillFiles, fetchRaw } = require('../github');
+const { listSkillFiles, fetchRaw, fetchSkillFolderTar } = require('../github');
 const fsu = require('../fsutil');
 const { confirm, choose } = require('../prompt');
-const { buildInfo, renderInfo, bold, dim, cyan, green, stars } = require('../format');
+const { buildInfo, renderInfo, bold, dim, cyan, green, stars, safeAlt } = require('../format');
 
 const HELP = `usage: skills-atlas install <skill> [options]
 
@@ -18,7 +18,10 @@ options:
   -f, --force        overwrite if already installed
   -y, --yes          non-interactive (auto-pick top source, assume yes)
       --dry-run      show what would download, write nothing
-      --json         machine-readable output`;
+      --json         machine-readable output
+
+Downloading uses the GitHub API (60 requests/hour unauthenticated). If you hit a
+rate limit, set GITHUB_TOKEN=<your token> to raise it to 5000/hour.`;
 
 function resolveGlobal(values) {
   if (values.project) return false;
@@ -94,7 +97,8 @@ module.exports = async function install(argv) {
     console.log(`\n'${name}' from ${bold(src.name)} (type=${src.type}) installs the whole repo, not a single folder.`);
     if (installCmd && installCmd.command) {
       console.log(`run:\n   ${cyan(installCmd.command)}`);
-      if (installCmd.alt) console.log(`alt:\n   ${installCmd.alt}`);
+      const alt = safeAlt(installCmd.alt);
+      if (alt) console.log(`alt:\n   ${alt}`);
       if (installCmd.note) console.log(dim('   ' + installCmd.note));
     } else {
       console.log(`see ${src.url}`);
@@ -124,35 +128,58 @@ module.exports = async function install(argv) {
     }
   }
 
-  // --- list the skill folder's files ---
-  let listing;
-  try {
-    listing = await listSkillFiles({ author, repo, branch, docPath });
-  } catch (e) {
-    console.error(`failed to read ${author}/${repo}: ${e.message}`);
-    process.exitCode = 1;
-    return;
-  }
-
+  // --- dry-run: preview the file list via the tree API (light) ---
   if (values['dry-run']) {
+    let listing;
+    try {
+      listing = await listSkillFiles({ author, repo, branch, docPath });
+    } catch (e) {
+      console.error(`failed to read ${author}/${repo}: ${e.message}`);
+      process.exitCode = 1;
+      return;
+    }
     console.log(`would install ${listing.files.length} file(s) to ${fsu.tildify(dest)} (branch ${listing.branchUsed}):`);
     listing.files.forEach(f => console.log(`  ${f.rel}`));
     if (listing.note) console.log(dim('  ' + listing.note));
+    console.log(dim('  (real install fetches the repo archive — no GitHub API rate limit)'));
     return;
   }
 
   // --- download into a tmp dir, then atomically swap into place ---
+  // Primary: one repo-archive download from codeload (not GitHub-API rate-limited);
+  // extract only this skill's folder. Fallback: tree API + raw per file.
   const tmp = fsu.mkdtemp();
+  let branchUsed, fileCount, note = null;
   try {
-    for (const f of listing.files) {
-      const buf = await fetchRaw(author, repo, listing.branchUsed, f.path);
-      fsu.writeFileMkdir(path.join(tmp, f.rel), buf);
+    let folder = null;
+    try {
+      folder = await fetchSkillFolderTar({ author, repo, branch, docPath });
+    } catch (e) {
+      note = `archive download failed (${e.message}); fell back to the GitHub API`;
     }
-    const hasSkillMd = listing.files.some(f => {
-      const rel = f.rel.toLowerCase();
-      return rel === 'skill.md' || rel.endsWith('/skill.md');
+
+    let rels;
+    if (folder && folder.files.length) {
+      branchUsed = folder.branchUsed;
+      for (const f of folder.files) fsu.writeFileMkdir(path.join(tmp, f.rel), f.data);
+      rels = folder.files.map(f => f.rel);
+    } else {
+      const listing = await listSkillFiles({ author, repo, branch, docPath });
+      branchUsed = listing.branchUsed;
+      if (listing.note) note = listing.note;
+      for (const f of listing.files) {
+        const buf = await fetchRaw(author, repo, listing.branchUsed, f.path);
+        fsu.writeFileMkdir(path.join(tmp, f.rel), buf);
+      }
+      rels = listing.files.map(f => f.rel);
+    }
+
+    const hasSkillMd = rels.some(rel => {
+      const r = rel.toLowerCase();
+      return r === 'skill.md' || r.endsWith('/skill.md');
     });
     if (!hasSkillMd) throw new Error('no SKILL.md found in downloaded folder');
+    fileCount = rels.length;
     fsu.swapDir(tmp, dest);
   } catch (e) {
     fsu.rmrf(tmp);
@@ -164,13 +191,13 @@ module.exports = async function install(argv) {
   if (values.json) {
     console.log(JSON.stringify({
       skill: name, mode: 'folder', source: src.name,
-      dest, files: listing.files.length, branch: listing.branchUsed,
+      dest, files: fileCount, branch: branchUsed,
     }));
     return;
   }
 
-  console.log(`\n${green('✓')} installed ${bold(skill)} → ${fsu.tildify(dest)}  ${dim(`(${listing.files.length} file(s) from ${src.name}@${listing.branchUsed})`)}`);
-  if (listing.note) console.log(dim('  ' + listing.note));
+  console.log(`\n${green('✓')} installed ${bold(skill)} → ${fsu.tildify(dest)}  ${dim(`(${fileCount} file(s) from ${src.name}@${branchUsed})`)}`);
+  if (note) console.log(dim('  ' + note));
 
   // usage guidance
   const infoObj = buildInfo(skill, { skillIndex: idx.skillIndex, vendors: data.vendors });

@@ -3,7 +3,8 @@
 const test = require('node:test');
 const assert = require('node:assert');
 
-const { tokenize, searchRows } = require('../src/search-core');
+const { tokenize, searchRows, runSearch } = require('../src/search-core');
+const { safeAlt } = require('../src/format');
 const { loadData } = require('../src/data');
 const { buildIndices } = require('../src/index-build');
 
@@ -71,4 +72,47 @@ test('more matched terms ranks higher (coverage)', () => {
   const ranked = searchRows(flatRows, { query: 'translate book' });
   assert.ok(ranked.length > 0);
   assert.ok(ranked[0].skills.includes('translate-book'));
+});
+
+// --- regression guards for the ranking / filter fixes ---
+
+test('golden: "test driven development" tops the TDD skill', () => {
+  const top = searchRows(flatRows, { query: 'test driven development' })[0];
+  assert.ok(top && top.skills.includes('test-driven-development'));
+});
+
+test('golden: "ui testing" tops webapp-testing', () => {
+  const top = searchRows(flatRows, { query: 'ui testing' })[0];
+  assert.ok(top && top.skills.includes('webapp-testing'));
+});
+
+test('plural tolerance: "unit tests" surfaces a test skill (tests→test)', () => {
+  assert.ok([...skillsFor('unit tests')].some(n => /test/.test(n)));
+});
+
+test('weak-match flag fires when the query is barely covered', () => {
+  assert.strictEqual(runSearch(flatRows, { query: 'helm chart' }).weak, true);
+});
+
+test('strong query is not flagged weak', () => {
+  assert.strictEqual(runSearch(flatRows, { query: 'test driven development' }).weak, false);
+});
+
+test('persona filter works in English (alias → canonical), equals Chinese count', () => {
+  const en = searchRows(flatRows, { query: '', persona: 'Engineering' }).length;
+  const zh = searchRows(flatRows, { query: '', persona: '工程' }).length;
+  assert.ok(en > 0 && en === zh);
+});
+
+test('persona aliases Design / Marketing / Founder resolve to non-empty', () => {
+  for (const p of ['Design', 'Marketing', 'Founder']) {
+    assert.ok(searchRows(flatRows, { query: '', persona: p }).length > 0, p);
+  }
+});
+
+test('safeAlt drops the ~/.claude/skills/skills double-nest foot-gun', () => {
+  assert.strictEqual(
+    safeAlt('git clone https://github.com/mattpocock/skills ~/.claude/skills/skills'), null);
+  const ok = 'git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers';
+  assert.strictEqual(safeAlt(ok), ok);
 });

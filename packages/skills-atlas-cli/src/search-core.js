@@ -64,51 +64,94 @@ function buildFields(r) {
 
 const maxStars = r => Math.max(0, ...(r.sources || []).map(s => s.stars || 0));
 
-// Relevance score for one row against the tokens. 0 = no match.
+// Does a field contain the token? Tolerates simple English plurals (tests → test).
+function fieldHas(field, t) {
+  if (field.includes(t)) return true;
+  if (t.length > 3 && t.endsWith('s') && field.includes(t.slice(0, -1))) return true;
+  return false;
+}
+
+// Relevance for one row. Returns { score, hits, coverage }. Coverage (fraction of
+// query tokens matched) dominates multi-word queries, so a single common token
+// can't make an unrelated row win.
 function scoreRow(r, tokens, fullQuery) {
   const f = buildFields(r);
-  let score = 0, hits = 0;
+  let base = 0, hits = 0;
   for (const t of tokens) {
     let w = 0;
-    if (f.name.includes(t)) w = 10;        // matches a skill name
-    else if (f.group.includes(t)) w = 6;   // matches the group title
-    else if (f.use.includes(t)) w = 4;     // matches use_case / when_to_use
-    else if (f.desc.includes(t)) w = 2;    // matches the long description
-    if (w) { score += w; hits++; }
+    if (fieldHas(f.name, t)) w = 10;        // matches a skill name
+    else if (fieldHas(f.group, t)) w = 6;   // matches the group title
+    else if (fieldHas(f.use, t)) w = 4;     // matches use_case / when_to_use
+    else if (fieldHas(f.desc, t)) w = 2;    // matches the long description
+    if (w) { base += w; hits++; }
   }
-  if (!hits) return 0;
-  const skillSet = new Set((r.skills || []).map(lc));
-  for (const t of tokens) if (skillSet.has(t)) score += 50;   // exact skill-name term
-  if (fullQuery && f.all.includes(fullQuery)) score += 30;    // whole phrase appears verbatim
-  score += hits * 3;                                          // coverage: more terms matched ranks higher
-  return score;
+  if (!hits) return { score: 0, hits: 0, coverage: 0 };
+
+  const coverage = hits / tokens.length;
+  let score = base;
+  // Exact skill-name term is a strong signal only for SHORT queries (you're
+  // naming the skill). On long queries one matching token must not dominate.
+  if (tokens.length <= 2) {
+    const skillSet = new Set((r.skills || []).map(lc));
+    for (const t of tokens) if (skillSet.has(t)) score += 50;
+  }
+  if (fullQuery && f.all.includes(fullQuery)) score += 30;        // whole phrase verbatim
+  if (tokens.length >= 2) score *= 0.25 + 0.75 * coverage * coverage; // coverage dominates
+  score += hits * 2;
+  return { score, hits, coverage };
 }
 
 const loose = (hay, needle) => lc(hay).includes(lc(needle));
 
-// Filter + rank rows. opts: { query, category, persona, type, chain }.
-function searchRows(rows, opts = {}) {
+// English aliases → the catalog's canonical (Chinese) persona values, so the
+// default-English `-p` filter actually returns results.
+const PERSONA_ALIAS = {
+  engineering: '工程', eng: '工程', dev: '工程', developer: '工程',
+  pm: 'PM', product: 'PM',
+  design: '设计', designer: '设计',
+  marketing: '营销', growth: '营销', sales: '营销',
+  research: '研究', researcher: '研究',
+  ops: '运营', operations: '运营',
+  founder: '创始人', startup: '创始人',
+  'job-seeking': '求职', jobseeker: '求职', job: '求职', career: '求职',
+  general: '通用',
+};
+
+function applyFilters(rows, opts) {
   let out = rows;
   if (opts.category) out = out.filter(r => loose(r._cat, opts.category) || loose(r._catEn, opts.category));
-  if (opts.persona) out = out.filter(r => (r.personas || []).some(p => loose(p, opts.persona)));
+  if (opts.persona) {
+    const want = PERSONA_ALIAS[lc(opts.persona)] || opts.persona;
+    out = out.filter(r => (r.personas || []).some(p => loose(p, want) || loose(p, opts.persona)));
+  }
   if (opts.type) out = out.filter(r => (r.sources || []).some(s => loose(s.type, opts.type)));
   if (opts.chain) out = out.filter(r => r.chain);
-
-  const query = lc(opts.query).trim();
-  if (!query) {
-    return out.slice().sort((a, b) => maxStars(b) - maxStars(a));
-  }
-
-  const tokens = tokenize(query);
-  if (!tokens.length) {
-    // query was all stopwords/punctuation — fall back to a plain substring match
-    return out.filter(r => buildFields(r).all.includes(query));
-  }
-  return out
-    .map(r => ({ r, s: scoreRow(r, tokens, query) }))
-    .filter(x => x.s > 0)
-    .sort((a, b) => (b.s - a.s) || (maxStars(b.r) - maxStars(a.r)))
-    .map(x => x.r);
+  return out;
 }
 
-module.exports = { tokenize, searchRows, scoreRow, buildFields, maxStars };
+// Filter + rank. Returns { rows, weak }: weak=true means the best match covers
+// little of the query (likely not what the user meant) — callers can warn.
+function runSearch(rows, opts = {}) {
+  const out = applyFilters(rows, opts);
+  const query = lc(opts.query).trim();
+  if (!query) {
+    return { rows: out.slice().sort((a, b) => maxStars(b) - maxStars(a)), weak: false };
+  }
+  const tokens = tokenize(query);
+  if (!tokens.length) {
+    return { rows: out.filter(r => buildFields(r).all.includes(query)), weak: false };
+  }
+  const scored = out
+    .map(r => ({ r, ...scoreRow(r, tokens, query) }))
+    .filter(x => x.score > 0)
+    .sort((a, b) => (b.score - a.score) || (maxStars(b.r) - maxStars(a.r)));
+  const weak = scored.length > 0 && tokens.length >= 2 && scored[0].coverage < 0.6;
+  return { rows: scored.map(x => x.r), weak };
+}
+
+// Back-compat: just the ranked rows.
+function searchRows(rows, opts = {}) {
+  return runSearch(rows, opts).rows;
+}
+
+module.exports = { tokenize, searchRows, runSearch, scoreRow, buildFields, maxStars, PERSONA_ALIAS };
