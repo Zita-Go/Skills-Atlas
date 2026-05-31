@@ -14,7 +14,7 @@
 
 ### Step 1: 找到正确的 category 和 subcategory
 
-打开 `data/categories.yaml` 看 13 大类 / 74 子分组，找到最贴近的归属。
+打开 `data/categories.yaml` 看 20 大类 / 115 子分组，找到最贴近的归属。
 
 如果觉得没有合适的子分组，**优先**先在现有 category 下加新 subcategory，少新增大类。
 
@@ -94,7 +94,7 @@ PR 描述简单写一下来源 + 为什么归到这个分类即可。
   description: 8 个 figma skill 必须串成完整生态：figma 是总入口...
 ```
 
-## 改 13 大类 / 74 子分组结构
+## 改 20 大类 / 115 子分组结构
 
 需要谨慎，因为会影响所有 skill 的 category / subcategory 字段。
 

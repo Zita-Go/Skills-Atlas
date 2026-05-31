@@ -17,11 +17,11 @@
   <text x="82" y="270" font-size="38" font-weight="700" fill="#eef1f7">按功能分类的 AI Agent Skills 全景</text>
   <text x="82" y="330" font-size="26" fill="#9aa3b2">不再问「有什么 skill」，而是「我要做 X 该用哪个」</text>
   <g font-family="ui-monospace, 'SF Mono', Menlo, monospace">
-    <text x="82" y="470" font-size="72" font-weight="800" fill="#eef1f7">369</text>
+    <text x="82" y="470" font-size="72" font-weight="800" fill="#eef1f7">826</text>
     <text x="82" y="510" font-size="22" fill="#6b7384" letter-spacing="2">SKILLS</text>
-    <text x="362" y="470" font-size="72" font-weight="800" fill="#eef1f7">61</text>
+    <text x="362" y="470" font-size="72" font-weight="800" fill="#eef1f7">111</text>
     <text x="362" y="510" font-size="22" fill="#6b7384" letter-spacing="2">REPOS</text>
-    <text x="582" y="470" font-size="72" font-weight="800" fill="#eef1f7">13</text>
+    <text x="582" y="470" font-size="72" font-weight="800" fill="#eef1f7">20</text>
     <text x="582" y="510" font-size="22" fill="#6b7384" letter-spacing="2">CATEGORIES</text>
     <text x="862" y="470" font-size="72" font-weight="800" fill="url(#accent)">18</text>
     <text x="862" y="510" font-size="22" fill="#6b7384" letter-spacing="2">⛓ WORKFLOWS</text>

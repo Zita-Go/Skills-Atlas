@@ -7,9 +7,9 @@
 **A panorama of AI Agent Skills organized by function**
 Stop asking "what skills exist" and start asking "which skill should I use to do X".
 
-[![Skills](https://img.shields.io/badge/skills-369-blue)](data/skills.yaml)
-[![Repos](https://img.shields.io/badge/repositories-61-green)](data/repositories.yaml)
-[![Categories](https://img.shields.io/badge/categories-13_×_74-orange)](data/categories.yaml)
+[![Skills](https://img.shields.io/badge/skills-826-blue)](data/skills.yaml)
+[![Repos](https://img.shields.io/badge/repositories-111-green)](data/repositories.yaml)
+[![Categories](https://img.shields.io/badge/categories-20_×_115-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [**🌐 Visit online**](https://zita-go.github.io/Skills-Atlas/?lang=en) · [📦 Data download](data/) · [🤝 Contribute a new skill](CONTRIBUTING.md) · [💬 Discussions](../../discussions)
@@ -20,7 +20,7 @@ Stop asking "what skills exist" and start asking "which skill should I use to do
 
 ## Why this project exists
 
-The AI Agent Skills ecosystem exploded in 2025, but it's scattered across ~61 GitHub repositories.
+The AI Agent Skills ecosystem exploded in 2025, but it's scattered across ~111 GitHub repositories.
 Existing awesome lists only give you names plus a one-line description — they **don't tell you which ones work together**.
 
 **Skills Atlas** reorganizes everything along a "functional dimension":
@@ -32,11 +32,13 @@ Existing awesome lists only give you names plus a one-line description — they 
 
 | Dimension | Count |
 |---|---:|
-| Standalone skills | 369 |
-| Functional groups | 185 |
-| Categories / Subgroups | 13 / 74 |
-| Source repositories | 61 |
+| Standalone skills | 826 |
+| Functional groups | 249 |
+| Categories / Subgroups | 20 / 115 |
+| Source repositories | 111 |
 | ⛓ Strong-binding workflows | 18 |
+
+Coverage spans **20 functional categories** — from software engineering, PM, marketing and design to the professional verticals **legal, healthcare, finance, DevOps/SRE, security, education and Web3**.
 
 ## How to use
 
@@ -74,9 +76,9 @@ skills-atlas/
 │   ├── index.html           # 🌟 Single-file website
 │   └── data.json            # Structured data for frontends to fetch
 ├── data/                    # Source data (contributors mainly edit here)
-│   ├── categories.yaml      # 13 categories / 74 subgroups
-│   ├── skills.yaml          # 185 skill groups
-│   └── repositories.yaml    # Metadata for 61 source repositories
+│   ├── categories.yaml      # 20 categories / 115 subgroups
+│   ├── skills.yaml          # 249 skill groups
+│   └── repositories.yaml    # Metadata for 111 source repositories
 ├── scripts/                 # Data-processing scripts
 │   ├── parse_md.py          # md → yaml (for the initial migration)
 │   ├── gen_html.py          # yaml → html (regenerate after editing yaml)
@@ -121,7 +123,7 @@ python3 scripts/render_candidate_issue.py --out /tmp/issue.md
 
 ## Main features
 
-- **Left navigation** 13 categories collapse/expand / jump directly to any of the 74 subgroups
+- **Left navigation** 20 categories collapse/expand / jump directly to any of the 115 subgroups
 - **Live search** Full-text search over skill name / description / repository / group name
 - **3 filters** All / ⛓ Strong-binding / Multi-source / Single skill
 - **Dark / light theme** One-click toggle + remembers your preference

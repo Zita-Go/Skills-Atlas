@@ -7,9 +7,9 @@
 **按功能分类的 AI Agent Skills 全景**
 不再问"有什么 skill"，而是"我要做 X 该用哪个 skill"。
 
-[![Skills](https://img.shields.io/badge/skills-369-blue)](data/skills.yaml)
-[![Repos](https://img.shields.io/badge/repositories-61-green)](data/repositories.yaml)
-[![Categories](https://img.shields.io/badge/categories-13_×_74-orange)](data/categories.yaml)
+[![Skills](https://img.shields.io/badge/skills-826-blue)](data/skills.yaml)
+[![Repos](https://img.shields.io/badge/repositories-111-green)](data/repositories.yaml)
+[![Categories](https://img.shields.io/badge/categories-20_×_115-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [**🌐 在线访问**](https://zita-go.github.io/Skills-Atlas/?lang=zh) · [📦 数据下载](data/) · [🤝 贡献新 skill](CONTRIBUTING.zh-CN.md) · [💬 讨论区](../../discussions)
@@ -20,7 +20,7 @@
 
 ## 为什么有这个项目
 
-AI Agent Skills 生态在 2025 年爆发，但分散在 ~61 个 GitHub 仓库里。
+AI Agent Skills 生态在 2025 年爆发，但分散在 ~111 个 GitHub 仓库里。
 现有的 awesome 列表只列名字 + 一句话描述，**不知道哪几个能配合用**。
 
 **Skills Atlas** 按"功能维度"重新组织：
@@ -32,11 +32,13 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~61 个 GitHub 仓库里
 
 | 维度 | 数量 |
 |---|---:|
-| 独立 skill | 369 |
-| 功能分组 | 185 |
-| 大类 / 子分组 | 13 / 74 |
-| 源仓库 | 61 |
+| 独立 skill | 826 |
+| 功能分组 | 249 |
+| 大类 / 子分组 | 20 / 115 |
+| 源仓库 | 111 |
 | ⛓ 强绑定工作流 | 18 |
+
+覆盖 **20 个功能大类** —— 从软件工程、产品、营销、设计,到 **法律、医疗、金融、DevOps/SRE、安全、教育、Web3** 等专业垂直领域。
 
 ## 怎么用
 
@@ -74,9 +76,9 @@ skills-atlas/
 │   ├── index.html           # 🌟 单文件网站
 │   └── data.json            # 给前端 fetch 的结构化数据
 ├── data/                    # 源数据（贡献者主要改这里）
-│   ├── categories.yaml      # 13 大类 / 74 子分组
-│   ├── skills.yaml          # 185 个 skill 分组
-│   └── repositories.yaml    # 61 个源仓库元数据
+│   ├── categories.yaml      # 20 大类 / 115 子分组
+│   ├── skills.yaml          # 249 个 skill 分组
+│   └── repositories.yaml    # 111 个源仓库元数据
 ├── scripts/                 # 数据处理脚本
 │   ├── parse_md.py          # md → yaml（首次迁移用）
 │   ├── gen_html.py          # yaml → html（修改 yaml 后重新生成）
@@ -121,7 +123,7 @@ python3 scripts/render_candidate_issue.py --out /tmp/issue.md
 
 ## 主要功能
 
-- **左侧导航** 13 大类可折叠展开 / 74 子分组直跳
+- **左侧导航** 20 大类可折叠展开 / 115 子分组直跳
 - **实时搜索** 支持 skill 名 / 描述 / 仓库 / 分组名全文搜
 - **3 种过滤** 全部 / ⛓ 强绑定 / 多源 / 单 skill
 - **暗 / 亮主题** 一键切换 + 记住偏好

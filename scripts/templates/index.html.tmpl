@@ -2397,7 +2397,7 @@ function buildGraph(){
   const W = 2400, H = 1600;
   const cx = W/2, cy = H/2;
 
-  // 类别中心：13 大类沿圆周分布（增大半径，让类簇彼此分开）
+  // 类别中心：各大类沿圆周分布（增大半径，让类簇彼此分开）
   const catCount = DATA.sections.length;
   const clusterR = Math.min(W, H) * 0.36;
   const catCenter = new Map();
@@ -4096,7 +4096,7 @@ function drawHeroChart(){
   const total = slices.reduce((s, x) => s + x.count, 0);
   if(total === 0) return;
 
-  // 13 大类的渐变色（HSL 平均分布）
+  // 各大类的渐变色（HSL 按数量等距分布）
   // 与 graph 一致:按大类数等距生成色相,任意类数都不重复
   const hues = DATA.sections.map((_, i) => Math.round((i * 360 / DATA.sections.length + 220) % 360));
   const cx=100, cy=100, r=78, ringW=18;

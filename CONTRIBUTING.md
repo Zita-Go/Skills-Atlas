@@ -14,7 +14,7 @@ Thanks for wanting to contribute to Skills Atlas! Here are the most common ways 
 
 ### Step 1: Find the correct category and subcategory
 
-Open `data/categories.yaml` to view the 13 categories / 74 subcategories, and find the closest fit.
+Open `data/categories.yaml` to view the 20 categories / 115 subcategories, and find the closest fit.
 
 If you feel there's no suitable subcategory, **prefer** adding a new subcategory under an existing category first, and avoid adding new top-level categories.
 
@@ -94,7 +94,7 @@ If you find a group of skills that **must be used together** to be effective (e.
   description: The 8 figma skills must be chained into a complete ecosystem: figma is the main entry point...
 ```
 
-## Changing the 13 categories / 74 subcategories structure
+## Changing the 20 categories / 115 subcategories structure
 
 Be careful, because this affects the category / subcategory fields of all skills.
 

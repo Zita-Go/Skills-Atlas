@@ -27,7 +27,7 @@ body:
   - type: dropdown
     id: category
     attributes:
-      label: Suggested category (one of the 13) / 推荐归类（13 大类之一）
+      label: Suggested category (one of the 20) / 推荐归类（20 大类之一）
       options:
         - Software Development & Engineering
         - Documentation & Knowledge Management
