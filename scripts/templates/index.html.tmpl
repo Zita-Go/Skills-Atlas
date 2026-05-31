@@ -184,7 +184,9 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
 .nav-h2.active .nav-h2-count{color:var(--accent)}
 
 /* Main */
-.main{padding:32px 40px 80px;max-width:none;overflow-x:hidden}
+/* overflow-x:clip 而非 hidden —— hidden 会把 overflow-y 逼成 auto，使 .main 变成滚动容器、
+   废掉子级 .toolbar 的 position:sticky（工具栏会跟着内容滑走）。clip 同样裁横向溢出但不建滚动容器，sticky 正常。 */
+.main{padding:32px 40px 80px;max-width:none;overflow-x:clip}
 .toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;
   margin-bottom:28px;padding:8px 0 18px;border-bottom:1px solid var(--border);
   position:sticky;top:0;z-index:20;
