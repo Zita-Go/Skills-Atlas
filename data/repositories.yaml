@@ -1202,6 +1202,7 @@
   last_commit: '2026-03-28'
   description: 按 PRISMA 2020 框架(全 27 项清单、六阶段)引导完成系统文献综述的 Claude skill。
   description_en: A Claude skill that walks you through writing a systematic literature review following the PRISMA 2020 framework.
+  license: MIT
 - id: renocrypt
   author: renocrypt
   repo: latex-arxiv-SKILL
@@ -1226,6 +1227,7 @@
   last_commit: '2026-05-29'
   description: 面向 Claude Code 的通用 LaTeX 文档 skill:27 模板 / 27 脚本 / 26 参考指南。
   description_en: 'Universal LaTeX document skill for Claude Code: 27 templates, 27 scripts, 26 reference guides. Made with Claude Code on ✦ HappyCapy AI ✦ platform'
+  license: MIT
 - id: luwill
   author: luwill
   repo: research-skills
@@ -1238,6 +1240,7 @@
   last_commit: '2026-05-11'
   description: 把常用科研经验与流程封装成的 Agent skill 集(医学影像综述、论文转幻灯、多智能体综述等)。
   description_en: Some commonly used research experiences and processes are encapsulated into Agent skills.
+  license: MIT
 - id: lingzhi227
   author: lingzhi227
   repo: agent-research-skills
@@ -1313,6 +1316,7 @@
   last_commit: '2026-05-27'
   description: 多领域 Claude skill 大仓(16 领域、338 skill);本目录引用其法律领域(合同/隐私/监管/风险/法务运营)。
   description_en: 338 AI skills across 16 domains. PM is the deepest (66 skills — discovery, execution, strategy frameworks, GTM, Jira/Linear/Notion). Plus engineering, marketing, C-level (CAIO/CDO/CCO/GC/VPE), compliance + audit-prep, new research/ domain, vertical advisors. 74 expert agents, 784+ stdlib Python tools. 11 AI assistants.
+  license: MIT + Commons Clause
 - id: anthropics-healthcare
   author: anthropics
   repo: healthcare
@@ -1387,6 +1391,7 @@
   last_commit: '2026-03-05'
   description: vectorbt 回测 Claude skill 包:策略搭建、回测、参数优化、绩效统计与对比。
   description_en: Agentic coding skills for backtesting trading strategies using VectorBT. Supports Indian, US, and Crypto markets    with realistic transaction cost modeling, TA-Lib indicators, QuantStats tearsheets, and 12 ready-made strategy      templates.
+  license: MIT
 - id: hashicorp
   author: hashicorp
   repo: agent-skills
@@ -1436,6 +1441,7 @@
   last_commit: '2026-04-11'
   description: DevOps Claude skill 市场:IaC-Terraform / K8s 排障 / GitOps(ArgoCD+Flux)/ CI-CD / 监控 / AWS 成本优化(FinOps)。
   description_en: A Claude Code Skills Marketplace for DevOps workflows
+  license: MIT
 - id: Jeffallan
   author: Jeffallan
   repo: claude-skills
@@ -1461,6 +1467,7 @@
   last_commit: '2026-05-30'
   description: Terraform 社区名人 Anton Babenko 的 Terraform skill。
   description_en: Terraform & OpenTofu Skill for AI Agents - testing, modules, CI/CD, and production patterns
+  license: Apache-2.0
 - id: foxj77
   author: foxj77
   repo: claude-code-skills
@@ -1525,6 +1532,7 @@
   last_commit: '2026-05-26'
   description: Bug Bounty 漏洞挖掘 skill(51 个):方法论、各漏洞类、云 IAM、企业 VPN 攻击、披露报告(仅限授权测试)。
   description_en: A Claude Code skill bundle for bug hunting and external red-team work - 51 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 vulnerability classes, plus enterprise identity + infrastructure attack matrices.
+  license: MIT
 - id: elementalsouls-osint
   author: elementalsouls
   repo: Claude-OSINT
@@ -1537,6 +1545,7 @@
   last_commit: '2026-05-22'
   description: 攻击性 OSINT 侦察 skill:OSINT 方法论与攻击面测绘(仅限授权测试)。
   description_en: Two paired Claude skills · 90+ recon modules · 48 secret-regex patterns · 80+ dorks · 9 read-only credential validators · 27 attack-path templates · 5,500+ lines of structured tradecraft. Drop-in SKILL.md files that turn Claude into a god-mode external recon operator for authorized red-team and bug-bounty engagements.
+  license: MIT
 - id: shuvonsec
   author: shuvonsec
   repo: claude-bug-bounty
@@ -1588,6 +1597,7 @@
   last_commit: '2026-05-27'
   description: 循证教学 Agent Skill 旗舰(165 个,CC BY-SA 4.0):课程设计与评估、自适应辅导、学习科学、AI 素养、EAL 语言发展等 20 个 domain。
   description_en: 165 evidence-based education skills for Claude, Codex, and any Agent Skills-compatible tool.
+  license: CC-BY-SA-4.0
 - id: dmccreary
   author: dmccreary
   repo: claude-skills
@@ -1599,6 +1609,7 @@
   stars: 72
   last_commit: '2026-05-29'
   description: 智能教材 Claude skill:learning graph 生成、章节/测验/词表内容生成、MicroSim 交互模拟、教育评估。
+  license: CC-BY-NC-SA-4.0
 - id: SYuan03
   author: SYuan03
   repo: Skill-Anything
@@ -1676,6 +1687,7 @@
   last_commit: '2026-04-07'
   description: SpoonOS Web3 skill 集:覆盖合约审计 / DeFi 安全 / 合约开发 / 链上数据 / NFT-DAO-交易。
   description_en: 'A curated collection of Claude Code skills for SpoonOS development and Web3 integrations. 57 Python scripts across 19 skills: SpoonOS Skills for Vibe Coding (build agents) + Web3 Skills for Skill Agent Integrations (DeFi, NFT, DAO, Security).'
+  license: MIT
 - id: elevenlabs
   author: elevenlabs
   repo: skills
@@ -1766,6 +1778,7 @@
   last_commit: '2026-02-26'
   description: Startup OS skill(54 个):销售/营销/产品/客户成功/视频/工程,创业运营一体。
   description_en: Startup OS - Collection of Claude Code skills
+  license: MIT
 - id: tjboudreaux
   author: tjboudreaux
   repo: cc-skills-vc-fundraising

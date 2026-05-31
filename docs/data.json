@@ -5930,7 +5930,7 @@
                   "author": "luwill",
                   "repo": "research-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add luwill/research-skills",
@@ -7998,7 +7998,7 @@
                   "author": "ncklrs",
                   "repo": "startup-os-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ncklrs/startup-os-skills",
@@ -8511,7 +8511,7 @@
                   "author": "keemanxp",
                   "repo": "slr-prisma",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add keemanxp/slr-prisma",
@@ -8588,7 +8588,7 @@
                   "author": "luwill",
                   "repo": "research-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add luwill/research-skills",
@@ -8671,7 +8671,7 @@
                   "author": "ndpvt-web",
                   "repo": "latex-document-skill",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add ndpvt-web/latex-document-skill",
@@ -8958,7 +8958,7 @@
                   "author": "luwill",
                   "repo": "research-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add luwill/research-skills",
@@ -9055,7 +9055,7 @@
                   "author": "luwill",
                   "repo": "research-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add luwill/research-skills",
@@ -10017,7 +10017,7 @@
                   "author": "borghei",
                   "repo": "Claude-Skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT + Commons Clause",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
@@ -10073,7 +10073,7 @@
                   "author": "borghei",
                   "repo": "Claude-Skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT + Commons Clause",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
@@ -10295,7 +10295,7 @@
                   "author": "borghei",
                   "repo": "Claude-Skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT + Commons Clause",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
@@ -10404,7 +10404,7 @@
                   "author": "borghei",
                   "repo": "Claude-Skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT + Commons Clause",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
@@ -10524,7 +10524,7 @@
                   "author": "borghei",
                   "repo": "Claude-Skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT + Commons Clause",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
@@ -10612,7 +10612,7 @@
                   "author": "borghei",
                   "repo": "Claude-Skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT + Commons Clause",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
@@ -10696,7 +10696,7 @@
                   "author": "luwill",
                   "repo": "research-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add luwill/research-skills",
@@ -11060,7 +11060,7 @@
                   "author": "marketcalls",
                   "repo": "vectorbt-backtesting-skills",
                   "default_branch": "master",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add marketcalls/vectorbt-backtesting-skills",
@@ -11561,7 +11561,7 @@
                   "author": "antonbabenko",
                   "repo": "terraform-skill",
                   "default_branch": "master",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add antonbabenko/terraform-skill",
@@ -11578,7 +11578,7 @@
                   "author": "ahmedasmar",
                   "repo": "devops-claude-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "/plugin marketplace add ahmedasmar/devops-claude-skills",
@@ -11645,7 +11645,7 @@
                   "author": "ahmedasmar",
                   "repo": "devops-claude-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "/plugin marketplace add ahmedasmar/devops-claude-skills",
@@ -11729,7 +11729,7 @@
                   "author": "ahmedasmar",
                   "repo": "devops-claude-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "/plugin marketplace add ahmedasmar/devops-claude-skills",
@@ -11809,7 +11809,7 @@
                   "author": "ahmedasmar",
                   "repo": "devops-claude-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "/plugin marketplace add ahmedasmar/devops-claude-skills",
@@ -12074,7 +12074,7 @@
                   "author": "elementalsouls",
                   "repo": "Claude-BugHunter",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add elementalsouls/Claude-BugHunter",
@@ -12091,7 +12091,7 @@
                   "author": "elementalsouls",
                   "repo": "Claude-OSINT",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add elementalsouls/Claude-OSINT",
@@ -12342,7 +12342,7 @@
                   "author": "GarethManning",
                   "repo": "education-agent-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "CC-BY-SA-4.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add GarethManning/education-agent-skills",
@@ -12359,7 +12359,7 @@
                   "author": "dmccreary",
                   "repo": "claude-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "CC-BY-NC-SA-4.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dmccreary/claude-skills",
@@ -12404,7 +12404,7 @@
                   "author": "GarethManning",
                   "repo": "education-agent-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "CC-BY-SA-4.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add GarethManning/education-agent-skills",
@@ -12449,7 +12449,7 @@
                   "author": "GarethManning",
                   "repo": "education-agent-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "CC-BY-SA-4.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add GarethManning/education-agent-skills",
@@ -12555,7 +12555,7 @@
                   "author": "dmccreary",
                   "repo": "claude-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "CC-BY-NC-SA-4.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dmccreary/claude-skills",
@@ -12572,7 +12572,7 @@
                   "author": "GarethManning",
                   "repo": "education-agent-skills",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "CC-BY-SA-4.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add GarethManning/education-agent-skills",
@@ -12660,7 +12660,7 @@
                   "author": "XSpoonAi",
                   "repo": "spoon-awesome-skill",
                   "default_branch": "master",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add XSpoonAi/spoon-awesome-skill",
@@ -12760,7 +12760,7 @@
                   "author": "XSpoonAi",
                   "repo": "spoon-awesome-skill",
                   "default_branch": "master",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add XSpoonAi/spoon-awesome-skill",
@@ -12820,7 +12820,7 @@
                   "author": "XSpoonAi",
                   "repo": "spoon-awesome-skill",
                   "default_branch": "master",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add XSpoonAi/spoon-awesome-skill",
@@ -12904,7 +12904,7 @@
                   "author": "XSpoonAi",
                   "repo": "spoon-awesome-skill",
                   "default_branch": "master",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add XSpoonAi/spoon-awesome-skill",
@@ -12971,7 +12971,7 @@
                   "author": "XSpoonAi",
                   "repo": "spoon-awesome-skill",
                   "default_branch": "master",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add XSpoonAi/spoon-awesome-skill",
@@ -14639,7 +14639,7 @@
       "author": "keemanxp",
       "repo": "slr-prisma",
       "default_branch": "main",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add keemanxp/slr-prisma",
@@ -14679,7 +14679,7 @@
       "author": "ndpvt-web",
       "repo": "latex-document-skill",
       "default_branch": "main",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add ndpvt-web/latex-document-skill",
@@ -14699,7 +14699,7 @@
       "author": "luwill",
       "repo": "research-skills",
       "default_branch": "main",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add luwill/research-skills",
@@ -14817,7 +14817,7 @@
       "author": "borghei",
       "repo": "Claude-Skills",
       "default_branch": "main",
-      "license": null,
+      "license": "MIT + Commons Clause",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add borghei/Claude-Skills",
@@ -14935,7 +14935,7 @@
       "author": "marketcalls",
       "repo": "vectorbt-backtesting-skills",
       "default_branch": "master",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add marketcalls/vectorbt-backtesting-skills",
@@ -15014,7 +15014,7 @@
       "author": "ahmedasmar",
       "repo": "devops-claude-skills",
       "default_branch": "main",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "/plugin marketplace add ahmedasmar/devops-claude-skills",
@@ -15053,7 +15053,7 @@
       "author": "antonbabenko",
       "repo": "terraform-skill",
       "default_branch": "master",
-      "license": null,
+      "license": "Apache-2.0",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add antonbabenko/terraform-skill",
@@ -15153,7 +15153,7 @@
       "author": "elementalsouls",
       "repo": "Claude-BugHunter",
       "default_branch": "main",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add elementalsouls/Claude-BugHunter",
@@ -15173,7 +15173,7 @@
       "author": "elementalsouls",
       "repo": "Claude-OSINT",
       "default_branch": "main",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add elementalsouls/Claude-OSINT",
@@ -15253,7 +15253,7 @@
       "author": "GarethManning",
       "repo": "education-agent-skills",
       "default_branch": "main",
-      "license": null,
+      "license": "CC-BY-SA-4.0",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add GarethManning/education-agent-skills",
@@ -15273,7 +15273,7 @@
       "author": "dmccreary",
       "repo": "claude-skills",
       "default_branch": "main",
-      "license": null,
+      "license": "CC-BY-NC-SA-4.0",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add dmccreary/claude-skills",
@@ -15391,7 +15391,7 @@
       "author": "XSpoonAi",
       "repo": "spoon-awesome-skill",
       "default_branch": "master",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add XSpoonAi/spoon-awesome-skill",
@@ -15530,7 +15530,7 @@
       "author": "ncklrs",
       "repo": "startup-os-skills",
       "default_branch": "main",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add ncklrs/startup-os-skills",
