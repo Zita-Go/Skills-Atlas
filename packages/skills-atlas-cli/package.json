@@ -1,0 +1,41 @@
+{
+  "name": "skills-atlas-cli",
+  "version": "0.1.0",
+  "description": "Search, install and learn AI agent skills from the terminal — powered by the Skills Atlas catalog.",
+  "bin": {
+    "skills-atlas": "bin/skills.js",
+    "sa": "bin/skills.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "data.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "test": "node --test",
+    "prepublishOnly": "node build.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "skills",
+    "agent-skills",
+    "claude-code",
+    "codex",
+    "cli",
+    "install",
+    "skills-atlas"
+  ],
+  "license": "MIT",
+  "homepage": "https://zita-go.github.io/Skills-Atlas/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zita-Go/Skills-Atlas.git",
+    "directory": "packages/skills-atlas-cli"
+  }
+}

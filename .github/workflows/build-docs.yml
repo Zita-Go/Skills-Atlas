@@ -1,0 +1,97 @@
+name: Build & Deploy Docs
+
+# 当 data/ 变化（或生成脚本 / 模板变化）push 到 main 时，自动重新生成 docs/
+# （data.json + index.html + sitemap/robots）并部署到 GitHub Pages。
+#
+# 目的：维护者只改 data/*.yaml 合并到 main，线上 data.json feed 就会自动刷新，
+# 无需本地手动跑 `python3 scripts/gen_html.py`。CLI 用户随后 `skills-atlas update`
+# 即可拿到新数据。
+#
+# 说明：
+#  - 用 GITHUB_TOKEN 推送的 commit 不会级联触发 deploy.yml，所以本流程自己部署。
+#  - 只在 docs 确有变化时才提交 + 部署；若 PR 已带上重新生成的 docs，则此处为
+#    no-op，由 deploy.yml（docs/** 触发）完成部署。
+#  - 只监听 data/** 与生成脚本，不监听 docs/**，故不会自触发死循环。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'scripts/gen_html.py'
+      - 'scripts/templates/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # 提交重新生成的 docs
+  pages: write      # 部署 Pages
+  id-token: write
+
+# 与 deploy.yml 共用同一并发组，避免两边同时部署 Pages 冲突。
+# cancel-in-progress: false —— 本流程会 commit + deploy，绝不能中途被取消
+# （否则可能"提交了 docs 但没部署"，feed 静默变旧）；多次触发改为排队，后到的
+# 用最新 main 重新生成即可。
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      # 检出分支尖端（不是触发时的 SHA），这样在排队场景下后到的 run 基于最新
+      # main 重新生成、commit 能直接 fast-forward；fetch-depth: 0 便于必要时 rebase。
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: pip install pyyaml 'pypinyin==0.55.0'
+
+      - name: Regenerate docs from data
+        id: regen
+        run: |
+          # 模板缺失时 gen_html.py 只写 data.json 就 return 0，会导致 data.json 与
+          # 过期的 index.html 不一致——这里硬性拦截，不让它静默半生成。
+          test -f scripts/templates/index.html.tmpl || { echo "::error::missing scripts/templates/index.html.tmpl"; exit 1; }
+          python3 scripts/gen_html.py
+          if [ -n "$(git status --porcelain -- docs/data.json docs/index.html docs/sitemap.xml docs/robots.txt)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "docs changed — will commit + deploy"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "docs already in sync with data — nothing to do (deploy.yml handles docs-included pushes)"
+          fi
+
+      - name: Commit regenerated docs
+        if: steps.regen.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data.json docs/index.html docs/sitemap.xml docs/robots.txt
+          git commit -m "chore(docs): auto-regenerate from data [skip ci]"
+          # 正常情况直接 fast-forward；若期间 main 被别的 push 推进了，rebase 后重试一次。
+          git push origin HEAD:main || {
+            echo "push rejected — rebasing onto latest main and retrying";
+            git pull --rebase origin main;
+            git push origin HEAD:main;
+          }
+
+      - name: Configure Pages
+        if: steps.regen.outputs.changed == 'true'
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        if: steps.regen.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs
+      - name: Deploy to Pages
+        id: deploy
+        if: steps.regen.outputs.changed == 'true'
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,13 @@
+{
+  "name": "skills-atlas-cli",
+  "owner": {
+    "name": "Skills Atlas contributors"
+  },
+  "plugins": [
+    {
+      "name": "skills-atlas",
+      "source": "./skills-atlas",
+      "description": "Search and install AI agent skills from the Skills Atlas catalog, in-conversation."
+    }
+  ]
+}

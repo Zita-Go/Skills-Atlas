@@ -27,11 +27,16 @@ jobs:
       - name: Re-render HTML to ensure parity
         run: |
           python3 scripts/gen_html.py
-          # 检查 git status 干净（即 PR 应该已经包含重新生成的 HTML）
           if [ -n "$(git status --porcelain docs/index.html docs/data.json)" ]; then
-            echo "❌ docs/index.html 或 docs/data.json 与当前 yaml 不一致"
-            echo "   请运行 python3 scripts/gen_html.py 后再提交"
-            git diff docs/index.html docs/data.json | head -30
-            exit 1
+            # PR 里仍要求带上重新生成的 docs（保持 diff 可审）；
+            # push 到 main 的 yaml-only 改动不算错——由 build-docs.yml 自动重生成 + 部署。
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              echo "❌ docs/index.html 或 docs/data.json 与当前 yaml 不一致"
+              echo "   请运行 python3 scripts/gen_html.py 后再提交（或合并到 main 后由 Build & Deploy Docs 自动生成）"
+              git diff docs/index.html docs/data.json | head -30
+              exit 1
+            fi
+            echo "ℹ️ docs 与 yaml 不一致；合并到 main 后由 'Build & Deploy Docs' 自动重生成并部署"
+          else
+            echo "✅ HTML 与 YAML 一致"
           fi
-          echo "✅ HTML 与 YAML 一致"

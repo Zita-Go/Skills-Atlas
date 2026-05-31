@@ -6,6 +6,8 @@ export interface Install {
 }
 
 export interface Source {
+  /** Vendor id — also the key into `SkillsAtlasData.vendors` for the full record
+   * (which additionally carries `skill_docs`: per-skill in-repo SKILL.md paths). */
   name: string;
   url: string;
   stars: number | null;

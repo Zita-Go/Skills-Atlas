@@ -68,6 +68,22 @@ print(f'{len(chains)} chain workflows')
 
 A JSON version lives at `docs/data.json`, for consumption by frontends / MCP servers / APIs.
 
+### Use it from the terminal (CLI + plugin)
+
+The [`skills-atlas-cli`](packages/skills-atlas-cli) package turns the catalog into
+a real tool — search, **install**, and usage guidance, from your shell:
+
+```bash
+npx skills-atlas-cli search seo
+npx skills-atlas-cli info brainstorming
+npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/brainstorming/
+```
+
+`install` reads each skill's recorded in-repo path and downloads **only that
+skill's folder** (not the whole repo) into `.claude/skills/`. A bundled
+[Claude Code plugin](packages/skills-atlas-cli/plugin) exposes the same as
+`/skills-atlas:skill-search` / `:skill-install` so Claude can do it in-conversation.
+
 ## Project structure
 
 ```
@@ -86,6 +102,9 @@ skills-atlas/
 │   ├── fetch_metadata.py    # Sync GitHub stars (used by CI)
 │   └── templates/
 │       └── index.html.tmpl  # HTML template
+├── packages/
+│   ├── skills-atlas-data/   # npm data package (canonical data.json + types)
+│   └── skills-atlas-cli/    # 🌟 terminal CLI: search / install / guidance + Claude Code plugin
 ├── docs-md/                 # Original md docs (archive)
 └── .github/                 # CI / Issue / PR templates
 ```

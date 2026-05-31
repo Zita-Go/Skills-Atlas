@@ -1,0 +1,10 @@
+{
+  "name": "skills-atlas",
+  "description": "Search and install AI agent skills from the Skills Atlas catalog, in-conversation.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Skills Atlas contributors"
+  },
+  "homepage": "https://zita-go.github.io/Skills-Atlas/",
+  "license": "MIT"
+}
