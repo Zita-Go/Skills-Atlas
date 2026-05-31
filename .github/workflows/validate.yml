@@ -6,11 +6,13 @@ on:
     paths:
       - 'data/**'
       - 'scripts/**'
+      - 'packages/skills-atlas-cli/**'
       - '.github/workflows/validate.yml'
   pull_request:
     paths:
       - 'data/**'
       - 'scripts/**'
+      - 'packages/skills-atlas-cli/**'
 
 jobs:
   validate:
@@ -40,3 +42,19 @@ jobs:
           else
             echo "✅ HTML 与 YAML 一致"
           fi
+
+  cli-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      # 零运行时依赖，无需 npm install。先 build 把 docs/data.json 拷成离线快照，
+      # 测试才能 loadData 到目录数据；再跑 node --test。
+      - name: Build offline snapshot
+        run: npm run build
+        working-directory: packages/skills-atlas-cli
+      - name: Run CLI tests
+        run: npm test
+        working-directory: packages/skills-atlas-cli
