@@ -669,6 +669,34 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 .start-chip{background:var(--bg-elev);border:1px solid var(--border);color:var(--fg-dim);
   padding:7px 14px;border-radius:99px;font-size:12.5px;cursor:pointer;transition:all .15s}
 .start-chip:hover{border-color:var(--accent);color:var(--accent);background:rgba(124,156,255,.08);transform:translateY(-1px)}
+/* 新手入口：高亮一档（强调色描边底色），引导第一次来的人先看 */
+.start-chip-learn{color:var(--accent);border-color:rgba(124,156,255,.45);background:rgba(124,156,255,.10);font-weight:600}
+/* hero 定义行：标题下的一句话「这是什么」 */
+.hero-definition{margin:8px 0 0;color:var(--fg);font-size:14px;line-height:1.6;max-width:600px;font-weight:500}
+.hero-definition code{font-family:var(--font-mono);font-size:.9em;background:var(--bg-elev);padding:1px 5px;border-radius:4px}
+/* 页脚：归属 / 信任 / 去深读 */
+.site-footer{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:40px 0 24px;
+  padding:16px 4px 0;border-top:1px solid var(--border);font-size:12px;color:var(--fg-muted);line-height:1.7}
+.site-footer .sf-brand{font-weight:600;color:var(--fg-dim)}
+.site-footer a{color:var(--fg-dim);text-decoration:none;border-bottom:1px solid transparent}
+.site-footer a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.site-footer .sf-sep{color:var(--border-strong)}
+.site-footer .sf-note{flex-basis:100%;color:var(--fg-muted);font-size:11.5px;margin-top:2px}
+body.embed .site-footer{display:none}
+/* 新手必看弹窗正文 */
+.howto-body{padding:6px 28px 26px;font-size:13.5px;line-height:1.7;color:var(--fg-dim)}
+.howto-body .howto-lead{color:var(--fg);margin:6px 0 14px}
+.howto-body .howto-steps{margin:0 0 14px;padding-left:0;list-style:none;counter-reset:ht}
+.howto-body .howto-steps li{position:relative;padding:7px 0 7px 34px;border-bottom:1px dashed var(--border)}
+.howto-body .howto-steps li:last-child{border-bottom:0}
+.howto-body .howto-steps li::before{counter-increment:ht;content:counter(ht);position:absolute;left:0;top:7px;
+  width:22px;height:22px;border-radius:50%;background:var(--grad);color:#fff;font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center}
+.howto-body code{font-family:var(--font-mono);font-size:.88em;background:var(--bg-elev);padding:1px 6px;border-radius:4px;color:var(--fg)}
+.howto-body .howto-note{color:var(--fg-muted);font-size:12.5px;margin:0 0 12px}
+.howto-body .howto-more{margin:0;font-size:12.5px}
+.howto-body .howto-more a{color:var(--accent);text-decoration:none}
+@media(max-width:480px){ .howto-body{padding-left:16px;padding-right:16px} }
 /* 性能：屏外卡片不渲染（首屏更快） */
 .card{content-visibility:auto;contain-intrinsic-size:auto 200px}
 /* 键盘焦点环（可访问性） */
@@ -1170,7 +1198,8 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
   <div class="hero">
     <div class="hero-text">
       <h2 data-i18n="hero_h2">按功能分类的 AI Agent Skills 全景</h2>
-      <p data-i18n="hero_p">按「我要做什么」找到对的 AI Agent Skill —— 点开即看用法、一键复制安装命令，不必跳去 GitHub。⛓ 标记的是必须串起来用的工作流。</p>
+      <p class="hero-definition" data-i18n="hero_def">Agent Skill 是 Claude Code 里可复用的「能力包」——装一次，之后像 /写PRD 这样按斜杠命令调用。</p>
+      <p data-i18n="hero_p">按「我要做什么」找到对的 AI Agent Skill —— 点开即看完整 SKILL.md、一键复制安装命令。⛓ 标记的是必须串起来用的工作流。</p>
       <div class="hero-stats">
         <div><b id="heroSkillCount">—</b><span data-i18n="stat_skill">独立 skill</span></div>
         <div><b id="heroGroupCount">—</b><span data-i18n="stat_group">功能分组</span></div>
@@ -1179,6 +1208,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
       </div>
       <div class="hero-start">
         <span class="hero-start-q" data-i18n="hs_q">不知从哪开始？</span>
+        <button class="start-chip start-chip-learn" data-start="learn" data-i18n="hs_learn">👋 新手必看</button>
         <button class="start-chip" data-start="search" data-i18n="hs_search">🔍 搜 skill / 描述 / 仓库</button>
         <button class="start-chip" data-start="ai" data-i18n="hs_ai">✨ 描述需求，AI 推荐</button>
         <button class="start-chip" data-start="browse" data-i18n="hs_browse">📂 浏览全部大类</button>
@@ -1198,11 +1228,34 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
     <div class="big" aria-hidden="true">🤔</div>
     <div data-i18n="empty">没有匹配的 skill，试试别的关键词</div>
   </div>
+  <footer class="site-footer">
+    <span class="sf-brand">🗺️ Skills Atlas</span>
+    <span class="sf-sep" aria-hidden="true">·</span>
+    <span data-i18n="footer_tag">社区整理的 AI Agent Skills 目录，非官方</span>
+    <span class="sf-sep" aria-hidden="true">·</span>
+    <a class="sf-learn" href="#" data-i18n="footer_learn">新手必看：什么是 Skill</a>
+    <span class="sf-sep" aria-hidden="true">·</span>
+    <a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">GitHub ↗</a>
+    <span class="sf-sep" aria-hidden="true">·</span>
+    <span class="sf-note" data-i18n="footer_license">站点 MIT；每个 skill 保留其上游许可证，安装前请在卡片上核对</span>
+  </footer>
 </main>
 
 <button id="toTop" class="to-top" aria-label="回到顶部" title="回到顶部">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
 </button>
+
+<!-- 新手必看：Agent Skill 是什么 / 怎么用 -->
+<div class="ai-overlay hidden" id="howtoOverlay">
+  <div class="ai-modal" role="dialog" aria-modal="true" aria-labelledby="howtoTitle">
+    <div class="ai-header">
+      <div><div class="ai-title" id="howtoTitle"><span data-i18n="howto_title">👋 什么是 Agent Skill</span></div>
+      <div class="ai-subtitle" data-i18n="howto_sub">30 秒搞懂这个站点怎么用</div></div>
+      <button class="ai-close" id="howtoClose" aria-label="关闭" data-i18n-aria="tt_close">×</button>
+    </div>
+    <div class="howto-body" id="howtoBody"></div>
+  </div>
+</div>
 
 <!-- ⌘K Spotlight -->
 <div class="spotlight-overlay hidden" id="spotlightOverlay">
@@ -1318,7 +1371,8 @@ const I18N = {
     btn_search: '搜索', btn_ai: '✨ AI 推荐',
     theme_dark: '🌙 暗色', theme_light: '☀️ 亮色',
     hero_h2: '按功能分类的 AI Agent Skills 全景',
-    hero_p: '按「我要做什么」找到对的 AI Agent Skill —— 点开即看用法、一键复制安装命令，不必跳去 GitHub。⛓ 标记的是必须串起来用的工作流。',
+    hero_def: 'Agent Skill 是 Claude Code 里可复用的「能力包」——装一次，之后像 /写PRD 这样按斜杠命令调用。',
+    hero_p: '按「我要做什么」找到对的 AI Agent Skill —— 点开即看完整 SKILL.md、一键复制安装命令。⛓ 标记的是必须串起来用的工作流。',
     stat_skill: '独立 skill', stat_group: '功能分组', stat_vendor: '源仓库', stat_chain: '强绑定工作流',
     empty: '没有匹配的 skill，试试别的关键词',
     sp_ph: '搜 skill / 仓库 / 分组 / 大类…（fuzzy 匹配）',
@@ -1350,7 +1404,7 @@ const I18N = {
     preset_ollama: 'Ollama (本机)',
     btn_test: '测试连接', btn_clear: '清空', btn_save: '保存',
     ai_model_label: '模型',
-    ai_input_ph: '例如：我想给 SaaS 做完整的 GTM 策略，包括竞品分析、定价、北极星指标和发布计划\n\n⌘/Ctrl + Enter 提交，或点右下「✨ 推荐」按钮',
+    ai_input_ph: '描述你要做的事，例如：「给项目写 PRD」「快速搭 SaaS 落地页」「自动化网页抓取」\n\n⌘/Ctrl + Enter 提交，或点右下「✨ 推荐」按钮',
     ai_submit: '✨ 推荐',
     chip1_label: '完整开发工作流', chip1_q: '完整开发工作流，包括 TDD 和 code review',
     chip2_label: 'SEO 全套', chip2_q: '做 SEO 全套，从审计到内容到结构化数据',
@@ -1362,6 +1416,7 @@ const I18N = {
     usage_btn: '📖 用法', install_btn: '📋 安装', license_unknown: '未知',
     hs_q: '不知从哪开始？', hs_search: '🔍 搜 skill / 描述 / 仓库', hs_ai: '✨ 描述需求，AI 推荐', hs_browse: '📂 浏览全部大类',
     hs_eg: '例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」',
+    hs_learn: '👋 新手必看', footer_tag: '社区整理的 AI Agent Skills 目录（非官方）', footer_learn: '新手必看：什么是 Skill', footer_license: '站点 MIT；每个 skill 保留其上游许可证，安装前请在卡片上核对', howto_title: '👋 什么是 Agent Skill', howto_sub: '30 秒搞懂这个站点怎么用', tt_close: '关闭',
     usage_open_gh: '在 GitHub 打开 ↗', usage_copy_cmd: '📋 复制安装命令',
     copied: '✓ 已复制', copy_failed: '复制失败',
   },
@@ -1377,7 +1432,8 @@ const I18N = {
     btn_search: 'Search', btn_ai: '✨ AI Pick',
     theme_dark: '🌙 Dark', theme_light: '☀️ Light',
     hero_h2: 'AI Agent Skills, organized by function',
-    hero_p: 'Find the right AI agent skill by what you want to do — read its usage and copy a one-click install right here, without the GitHub detour. ⛓ marks workflows meant to be chained.',
+    hero_def: 'An Agent Skill is a reusable command that runs inside Claude Code — install one, then call it like /write-prd.',
+    hero_p: 'Find the right one by what you want to do — read the full SKILL.md and copy a one-click install right here. ⛓ marks workflows meant to be chained.',
     stat_skill: 'skills', stat_group: 'groups', stat_vendor: 'source repos', stat_chain: 'chained workflows',
     empty: 'No matching skills — try another keyword',
     sp_ph: 'Search skills / repos / groups / categories… (fuzzy)',
@@ -1409,7 +1465,7 @@ const I18N = {
     preset_ollama: 'Ollama (local)',
     btn_test: 'Test', btn_clear: 'Clear', btn_save: 'Save',
     ai_model_label: 'Model',
-    ai_input_ph: 'e.g. I want a full GTM strategy for a SaaS — competitor analysis, pricing, north-star metric and launch plan\n\n⌘/Ctrl + Enter to submit, or click "✨ Recommend" at the bottom right',
+    ai_input_ph: 'Describe your task, e.g. "write a PRD", "build a SaaS landing page", "scrape a website"\n\n⌘/Ctrl + Enter to submit, or click "✨ Recommend" bottom-right',
     ai_submit: '✨ Recommend',
     chip1_label: 'Full dev workflow', chip1_q: 'full dev workflow including TDD and code review',
     chip2_label: 'Full SEO', chip2_q: 'full SEO suite, from audit to content to structured data',
@@ -1421,6 +1477,7 @@ const I18N = {
     usage_btn: '📖 Usage', install_btn: '📋 Install', license_unknown: 'unknown',
     hs_q: 'Not sure where to start?', hs_search: '🔍 Search skills / descriptions / repos', hs_ai: '✨ Describe your goal, AI picks', hs_browse: '📂 Browse all categories',
     hs_eg: 'e.g. "build a SaaS landing page", "write a PRD", "scrape a website"',
+    hs_learn: '👋 New to Skills?', footer_tag: 'A community catalog of AI Agent Skills (unofficial)', footer_learn: 'New here? What is a Skill', footer_license: 'Site MIT; each skill keeps its upstream license — check it on the card before installing', howto_title: '👋 What is an Agent Skill', howto_sub: 'Understand this site in 30 seconds', tt_close: 'Close',
     usage_open_gh: 'Open on GitHub ↗', usage_copy_cmd: '📋 Copy install command',
     copied: '✓ Copied', copy_failed: 'Copy failed',
   },
@@ -1645,7 +1702,7 @@ function licMeta(spdx){
 function installPrereq(cmd){
   if(!cmd) return '';
   const en = LANG === 'en';
-  if(cmd.startsWith('npx ')) return en?'Needs Node.js ≥18. Paste in a terminal; installs to ~/.claude/skills/, verify with `skills list`.':'需 Node.js ≥18。粘到终端运行；skill 会装到 ~/.claude/skills/，用 skills list 验证。';
+  if(cmd.startsWith('npx ')) return en?'Needs Node.js ≥18. Open a terminal on your machine and paste the command; it installs to ~/.claude/skills/. Then in Claude Code run `skills list` to confirm, and call the skill as a /slash-command.':'需 Node.js ≥18。在你电脑上打开终端粘贴运行；会装到 ~/.claude/skills/。然后在 Claude Code 里用 `skills list` 确认，并以 /斜杠命令 调用该 skill。';
   if(cmd.startsWith('npm ')) return en?'Needs Node.js + npm. Paste in a terminal.':'需 Node.js + npm。粘到终端运行。';
   if(cmd.startsWith('pip ')) return en?'Needs Python 3 + pip. Paste in a terminal.':'需 Python 3 + pip。粘到终端运行。';
   if(cmd.startsWith('/plugin')) return en?'Run this slash command inside Claude Code (add the marketplace, then /plugin install).':'在 Claude Code 里运行此斜杠命令（先加 marketplace，再 /plugin install 选具体插件）。';
@@ -1654,16 +1711,12 @@ function installPrereq(cmd){
   return en?'Paste in a terminal.':'粘到终端运行。';
 }
 function daysSince(iso){ try{ return Math.floor((Date.now() - new Date(iso).getTime())/864e5); }catch(_){ return null; } }
-// 搜索：每个词需命中（子串）或模糊子序列匹配（容错/拼音），多词 AND
-function fuzzySub(hay, t){
-  if(t.length < 3) return false;
-  let i = 0;
-  for(let k = 0; k < hay.length; k++){ if(hay[k] === t[i] && ++i === t.length) return true; }
-  return false;
-}
+// 过滤框搜索：每个词需子串命中（多词 AND）。
+// 不用模糊子序列——它会让「prd」这类 3 字母词命中几乎所有卡片（180/185），过滤失效；
+// 模糊/容错检索交给 ⌘K 聚光（fuzzyScore 排序），过滤框要可预期地收窄。
 function matchSearch(hay, q){
   if(!q) return true;
-  return q.split(/\s+/).filter(Boolean).every(t => hay.includes(t) || fuzzySub(hay, t));
+  return q.split(/\s+/).filter(Boolean).every(t => hay.includes(t));
 }
 
 function buildContent(){
@@ -4281,6 +4334,39 @@ setupSearch();
 setupFilters();
 setupViewSwitch();
 setupAI();
+// 新手必看弹窗：什么是 Agent Skill + 端到端怎么用（内容随语言重建，切语言会整页刷新）
+let openHowTo = () => {};
+function setupHowTo(){
+  const ov = document.getElementById('howtoOverlay');
+  const body = document.getElementById('howtoBody');
+  if(!ov || !body) return;
+  const EN = LANG === 'en';
+  body.innerHTML = EN
+    ? `<p class="howto-lead">An <b>Agent Skill</b> is a reusable, packaged capability for <b>Claude Code</b> (Anthropic's terminal/IDE coding agent) — install it once, then invoke it whenever you need it.</p>`
+      + `<ol class="howto-steps"><li><b>Find</b> a skill here by what you want to do, and copy its install command.</li>`
+      + `<li><b>Install</b> — paste it in a terminal on your machine (e.g. <code>npx skills add author/repo</code>).</li>`
+      + `<li><b>Use</b> — in Claude Code, run <code>skills list</code> to confirm, then call it as a <code>/slash-command</code>.</li></ol>`
+      + `<p class="howto-note"><b>⛓ Chained</b> skills are meant to run in sequence — one's output feeds the next.</p>`
+      + `<p class="howto-more">Every skill is sourced from a public GitHub repo and grouped by what it does. <a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">Project &amp; docs ↗</a></p>`
+    : `<p class="howto-lead"><b>Agent Skill</b> 是 <b>Claude Code</b>（Anthropic 的终端/IDE 编码 agent）里可复用的「能力包」——装一次，之后随时调用。</p>`
+      + `<ol class="howto-steps"><li><b>找</b>：在这里按「我要做什么」找到 skill，复制它的安装命令。</li>`
+      + `<li><b>装</b>：把命令粘到你电脑的终端运行（如 <code>npx skills add author/repo</code>）。</li>`
+      + `<li><b>用</b>：在 Claude Code 里运行 <code>skills list</code> 确认，再以 <code>/斜杠命令</code> 调用。</li></ol>`
+      + `<p class="howto-note"><b>⛓ 强绑定</b> 的 skill 需按顺序串起来用——前一个的产出喂给下一个。</p>`
+      + `<p class="howto-more">每个 skill 都来自公开 GitHub 仓库，按功能归类。<a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">项目主页 / 文档 ↗</a></p>`;
+  let ret = null;
+  const closeBtn = ov.querySelector('#howtoClose');
+  const close = () => { ov.classList.add('hidden'); document.documentElement.style.overflow = ''; if(ret && ret.focus) ret.focus(); };
+  openHowTo = () => { ret = document.activeElement; ov.classList.remove('hidden'); document.documentElement.style.overflow = 'hidden'; if(closeBtn) closeBtn.focus(); };
+  if(closeBtn) closeBtn.addEventListener('click', close);
+  ov.addEventListener('click', e => { if(e.target === ov) close(); });
+  document.addEventListener('keydown', e => { if(!ov.classList.contains('hidden') && e.key === 'Escape') close(); });
+  ov.addEventListener('focusout', () => {   // 焦点拉回（同 usage 弹窗）
+    if(ov.classList.contains('hidden')) return;
+    setTimeout(() => { if(!ov.classList.contains('hidden') && !ov.contains(document.activeElement) && closeBtn) closeBtn.focus(); }, 0);
+  });
+  document.querySelectorAll('.sf-learn').forEach(el => el.addEventListener('click', e => { e.preventDefault(); openHowTo(); }));
+}
 setupSpotlight();
 setupUsage();
 setupTheme();
@@ -4288,10 +4374,12 @@ setupMenuBtn();
 setupScrollSpy();
 setupHero();
 setupBackToTop();
+setupHowTo();
 // 落地"从哪开始"三入口
 document.querySelectorAll('.start-chip').forEach(c => c.addEventListener('click', () => {
   const a = c.dataset.start;
   if(a === 'ai'){ const b = document.getElementById('aiBtn'); if(b) b.click(); }
+  else if(a === 'learn'){ openHowTo(); }
   else if(a === 'browse'){ smoothScrollToEl(document.querySelector('.section-h1') || document.getElementById('content')); }
   else { const i = document.getElementById('search'); if(i){ i.focus(); i.scrollIntoView({ block:'center' }); } }
 }));
