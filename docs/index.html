@@ -1556,8 +1556,8 @@ function catLight(i){ return [68, 58, 49][i % 3]; }
 const CAT_SAT = 50, CAT_LIGHT = 71;
 function catHue(i){ return Math.round((i * 360 / DATA.sections.length + 220) % 360); }
 function catColor(i){ return `hsl(${catHue(i)}, ${CAT_SAT}%, ${CAT_LIGHT}%)`; }
-// Hero 技能地图专用调色板（与 graph 解耦，可单独调好看）
-let HERO_PALETTE = ['#7F3C8D','#11A579','#3969AC','#F2B701','#E73F74','#80BA5A','#E68310','#008695','#CF1C90','#F97B72','#4B4B8F'];
+// Hero 技能地图专用调色板（与 graph 解耦）：Carto 策展专业分类色，20 色覆盖全部大类
+let HERO_PALETTE = ['#7F3C8D','#11A579','#3969AC','#F2B701','#E73F74','#80BA5A','#E68310','#008695','#CF1C90','#F97B72','#4B4B8F','#E58606','#52BCA3','#99C945','#CC61B0','#24796C','#2F8AC4','#764E9F','#ED645A','#CC3A8E'];
 function hexLum(hex){ const m = hex.replace('#',''); const c = i => parseInt(m.slice(i, i+2), 16)/255;
   const f = v => v <= .03928 ? v/12.92 : Math.pow((v+.055)/1.055, 2.4); return .2126*f(c(0)) + .7152*f(c(2)) + .0722*f(c(4)); }
 function applyChrome(){
@@ -4078,10 +4078,8 @@ function buildHeroMap(pal){
     v: h1.subsections.reduce((s, h2) => s + h2.rows.length, 0)
   })).filter(c => c.v > 0).sort((a, b) => b.v - a.v);
   if(!cats.length) return;
-  // 默认：参考学术图的 绿/橙/蓝 专业色系——按面积排名取色（最大的几类先用 绿/橙/蓝），
-  // 柔和中低饱和、高亮度；传 pal 时用于试色
-  const HERO_HUES = [128, 24, 212, 168, 284, 44, 334, 244, 96, 192, 12, 264, 152, 36, 310, 204, 108, 296, 6, 180];
-  cats.forEach((c, si) => { c.col = pal ? PAL[si % PAL.length] : `hsl(${HERO_HUES[si % HERO_HUES.length]}, 48%, 84%)`; });
+  // 配色：按面积排名取 Carto 专业分类色（最大的类取 PAL[0]…）；文字明暗由 hexLum 自动选黑/白
+  cats.forEach((c, si) => { c.col = PAL[si % PAL.length]; });
   // squarified treemap（平方化）：方块尽量接近正方形、紧密铺满——常规 treemap 的形状
   const rects = (function squarify(items, X, Y, W, H){
     const out = [];
