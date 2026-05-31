@@ -7,7 +7,7 @@ const { buildIndices, vendorsFor, suggestSkills, skillDocPath } = require('../in
 const { listSkillFiles, fetchRaw, fetchSkillFolderTar } = require('../github');
 const fsu = require('../fsutil');
 const { confirm, choose } = require('../prompt');
-const { buildInfo, renderInfo, bold, dim, cyan, green, stars, safeAlt } = require('../format');
+const { buildInfo, infoForRow, renderInfo, bold, dim, cyan, green, stars, safeAlt } = require('../format');
 
 const HELP = `usage: skills-atlas install <skill> [options]
 
@@ -20,8 +20,9 @@ options:
       --dry-run      show what would download, write nothing
       --json         machine-readable output
 
-Downloading uses the GitHub API (60 requests/hour unauthenticated). If you hit a
-rate limit, set GITHUB_TOKEN=<your token> to raise it to 5000/hour.`;
+Downloads the repo archive (no GitHub API rate limit). Only if that fetch fails
+does it fall back to the GitHub API (60/h unauthenticated) — set GITHUB_TOKEN to
+raise that fallback to 5000/h.`;
 
 function resolveGlobal(values) {
   if (values.project) return false;
@@ -77,6 +78,17 @@ module.exports = async function install(argv) {
       return;
     }
     chosen = candidates[i];
+  }
+
+  // Heads-up when --yes auto-picked among semantically different groups.
+  if (values.yes && candidates.length > 1) {
+    const groups = [...new Set(candidates.map(c => c.row && c.row.group).filter(Boolean))];
+    if (groups.length > 1) {
+      const picked = chosen.row && chosen.row.group;
+      const otherGroups = groups.filter(g => g !== picked).join('; ');
+      const st = stars(chosen.source.stars);
+      console.error(dim(`note: '${name}' exists in ${groups.length} groups; auto-picked ${chosen.source.name}${st ? ' ' + st : ''} (${picked || '?'}). also in: ${otherGroups} — use --source to choose.`));
+    }
   }
 
   const v = chosen.vendor || {};
@@ -138,6 +150,15 @@ module.exports = async function install(argv) {
       process.exitCode = 1;
       return;
     }
+    if (values.json) {
+      console.log(JSON.stringify({
+        skill: name, mode: 'folder', dest,
+        files: listing.files.length,
+        scripts: fsu.scriptFiles(listing.files.map(f => f.rel)).length,
+        branch: listing.branchUsed, dryRun: true,
+      }));
+      return;
+    }
     console.log(`would install ${listing.files.length} file(s) to ${fsu.tildify(dest)} (branch ${listing.branchUsed}):`);
     listing.files.forEach(f => console.log(`  ${f.rel}`));
     if (listing.note) console.log(dim('  ' + listing.note));
@@ -149,7 +170,7 @@ module.exports = async function install(argv) {
   // Primary: one repo-archive download from codeload (not GitHub-API rate-limited);
   // extract only this skill's folder. Fallback: tree API + raw per file.
   const tmp = fsu.mkdtemp();
-  let branchUsed, fileCount, note = null;
+  let branchUsed, fileCount, note = null, scripts = [];
   try {
     let folder = null;
     try {
@@ -180,6 +201,7 @@ module.exports = async function install(argv) {
     });
     if (!hasSkillMd) throw new Error('no SKILL.md found in downloaded folder');
     fileCount = rels.length;
+    scripts = fsu.scriptFiles(rels);
     fsu.swapDir(tmp, dest);
   } catch (e) {
     fsu.rmrf(tmp);
@@ -191,16 +213,23 @@ module.exports = async function install(argv) {
   if (values.json) {
     console.log(JSON.stringify({
       skill: name, mode: 'folder', source: src.name,
-      dest, files: fileCount, branch: branchUsed,
+      dest, files: fileCount, scripts: scripts.length, branch: branchUsed,
     }));
     return;
   }
 
   console.log(`\n${green('✓')} installed ${bold(skill)} → ${fsu.tildify(dest)}  ${dim(`(${fileCount} file(s) from ${src.name}@${branchUsed})`)}`);
   if (note) console.log(dim('  ' + note));
+  console.log(dim(`  source: ${src.name}@${branchUsed} — branch HEAD, not a pinned commit; review before use`));
+  if (scripts.length) {
+    const show = scripts.slice(0, 6).join(', ') + (scripts.length > 6 ? ', …' : '');
+    console.log(dim(`  ⚠ includes ${scripts.length} script file(s): ${show}`));
+  }
 
-  // usage guidance
-  const infoObj = buildInfo(skill, { skillIndex: idx.skillIndex, vendors: data.vendors });
-  console.log(renderInfo(infoObj, { en: !values.zh }));
+  // usage guidance — scoped by row identity to the exact group you installed from
+  const guide = chosen.row
+    ? infoForRow(skill, chosen.row, data.vendors)
+    : buildInfo(skill, { skillIndex: idx.skillIndex, vendors: data.vendors });
+  console.log(renderInfo(guide, { en: !values.zh, all: true }));
   console.log(dim('\nStart a new Claude Code session to load the skill, then invoke it by name.'));
 };

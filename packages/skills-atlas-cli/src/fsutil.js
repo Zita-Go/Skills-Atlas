@@ -46,7 +46,15 @@ function tildify(p) {
   return p.startsWith(home) ? '~' + p.slice(home.length) : p;
 }
 
+// Executable/script files in a skill folder, by extension (for the install
+// transparency heads-up). Conservative: extension-based, won't catch every
+// extensionless executable, so the provenance note is always shown regardless.
+const SCRIPT_RE = /\.(sh|bash|zsh|fish|command|js|cjs|mjs|ts|tsx|jsx|py|rb|pl|ps1|psm1|bat|cmd)$/i;
+function scriptFiles(rels) {
+  return (rels || []).filter(r => SCRIPT_RE.test(r));
+}
+
 module.exports = {
   installTargetDir, dirExists, ensureDir, mkdtemp,
-  writeFileMkdir, rmrf, swapDir, tildify,
+  writeFileMkdir, rmrf, swapDir, tildify, scriptFiles,
 };

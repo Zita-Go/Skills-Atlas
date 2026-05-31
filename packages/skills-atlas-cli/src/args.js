@@ -19,6 +19,7 @@ const ALL = {
   json: { type: 'boolean' },
   en: { type: 'boolean' },
   zh: { type: 'boolean' },
+  all: { type: 'boolean' },
   help: { type: 'boolean', short: 'h' },
 };
 

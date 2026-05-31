@@ -55,47 +55,70 @@ const PERSONA_EN = {
   '研究': 'Research', '营销': 'Marketing', '设计': 'Design', '运营': 'Ops', '通用': 'General',
 };
 
-// Structured info for a skill (also used as the machine-readable --json shape).
-function buildInfo(skillName, { skillIndex, vendors }) {
-  const rows = rowsFor(skillIndex, skillName);
+// Rank a row best-first: top stars, then total stars, then source count — so a
+// star tie (one popular source shared across namesake groups) breaks meaningfully.
+function rowRank(r) {
+  const ss = (r.sources || []).map(s => s.stars || 0);
+  return { max: Math.max(0, ...ss), sum: ss.reduce((a, b) => a + b, 0), n: ss.length };
+}
+
+// The per-group info object for one row.
+function groupOf(r, skillName, vendors) {
   return {
-    skill: skillName,
-    found: rows.length > 0,
-    groups: rows.map(r => ({
-      group: r.group,
-      group_en: r.group_en,
-      category: r._cat,
-      category_en: r._catEn,
-      chain: r.chain,
-      description: r.description,
-      description_en: r.description_en,
-      use_case: r.use_case,
-      use_case_en: r.use_case_en,
-      when_to_use: r.when_to_use,
-      when_to_use_en: r.when_to_use_en,
-      personas: r.personas || [],
-      sources: (r.sources || []).map(s => {
-        const v = vendors[s.name] || {};
-        const docPath = skillDocPath(v, skillName);
-        return {
-          id: s.name,
-          url: s.url,
-          stars: s.stars,
-          license: (v.skill_licenses && v.skill_licenses[skillName]) || s.license || null,
-          type: s.type,
-          path: docPath || null,
-          install: s.install || v.install || null,
-        };
-      }),
-    })),
+    group: r.group,
+    group_en: r.group_en,
+    category: r._cat,
+    category_en: r._catEn,
+    chain: r.chain,
+    description: r.description,
+    description_en: r.description_en,
+    use_case: r.use_case,
+    use_case_en: r.use_case_en,
+    when_to_use: r.when_to_use,
+    when_to_use_en: r.when_to_use_en,
+    personas: r.personas || [],
+    sources: (r.sources || []).map(s => {
+      const v = vendors[s.name] || {};
+      const docPath = skillDocPath(v, skillName);
+      return {
+        id: s.name,
+        url: s.url,
+        stars: s.stars,
+        license: (v.skill_licenses && v.skill_licenses[skillName]) || s.license || null,
+        type: s.type,
+        path: docPath || null,
+        install: s.install || v.install || null,
+      };
+    }),
   };
 }
 
-function renderInfo(info, { en = false } = {}) {
+// Structured info for a skill (also the machine-readable --json shape). Groups
+// are ordered best-first so the most relevant one leads.
+function buildInfo(skillName, { skillIndex, vendors }) {
+  const rows = rowsFor(skillIndex, skillName).slice().sort((a, b) => {
+    const A = rowRank(a), B = rowRank(b);
+    return B.max - A.max || B.sum - A.sum || B.n - A.n;
+  });
+  return {
+    skill: skillName,
+    found: rows.length > 0,
+    groups: rows.map(r => groupOf(r, skillName, vendors)),
+  };
+}
+
+// Single-group info for one specific row (scoped post-install guidance — scopes
+// by row identity, so two namesake rows with the same group name don't both show).
+function infoForRow(skillName, row, vendors) {
+  return { skill: skillName, found: true, groups: [groupOf(row, skillName, vendors)] };
+}
+
+function renderInfo(info, { en = false, all = false } = {}) {
   const pick = (zh, e) => (en ? (e || zh) : (zh || e)) || '';
   const out = [];
   out.push(`\n${bold(green(info.skill))}${info.groups.some(g => g.chain) ? ' ' + cyan('⛓') : ''}`);
-  for (const g of info.groups) {
+  const shown = all ? info.groups : info.groups.slice(0, 1);
+  for (const g of shown) {
     out.push(`  ${dim('group:')} ${pick(g.group, g.group_en)}  ${dim('[' + pick(g.category, g.category_en) + ']')}`);
     const desc = pick(g.description, g.description_en);
     if (desc) out.push(`  ${desc}`);
@@ -119,9 +142,15 @@ function renderInfo(info, { en = false } = {}) {
       }
     }
   }
+  if (!all && info.groups.length > 1) {
+    const others = info.groups.slice(1).map(g => pick(g.group, g.group_en));
+    out.push(dim(`  + ${others.length} other group(s) with a same-named skill: ${others.join('; ')}`));
+    out.push(dim(`    (run \`skills-atlas info ${info.skill} --all\` to expand)`));
+  }
   return out.join('\n');
 }
 
 module.exports = {
-  bold, dim, green, cyan, yellow, stars, safeAlt, text, renderRow, buildInfo, renderInfo,
+  bold, dim, green, cyan, yellow, stars, safeAlt, text, renderRow,
+  buildInfo, infoForRow, renderInfo,
 };

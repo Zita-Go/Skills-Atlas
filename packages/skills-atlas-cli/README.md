@@ -59,16 +59,21 @@ After installing a skill, start a new Claude Code session to load it.
 
 ## How install works
 
-Every skill records the **exact in-repo path** of its `SKILL.md`. `install` reads
-that, lists the skill's folder via one GitHub API call, then downloads each file
-(preserving subfolders) into `<target>/.claude/skills/<skill>/`.
+The real value is the **catalog**: `search` / `info` / `categories` work fully
+offline and map *which* skill fits — function-organized, bilingual, tagged with
+use-case / when-to-use / personas / ⛓ chains. That's what `npx skills add` and
+GitHub search don't give you.
 
-- Unlike `git clone`, it fetches **only that skill's folder**, not the whole repo.
+On top of that, `install` can place a skill straight into `.claude/skills/`:
+
+- For a repo that exposes a **per-skill folder**, it downloads only that folder
+  (via the repo archive — **no GitHub API rate limit**) into
+  `<target>/.claude/skills/<skill>/`, not the whole repo.
 - Several sources? The best installable one is auto-picked — `--source <id>` to
   choose, `--yes` for non-interactive runs.
-- Whole-repo / marketplace sources (no per-skill folder) → `install` prints the
-  exact command to run instead (e.g. `npx skills add owner/repo`).
-- Set `GITHUB_TOKEN` to raise the GitHub API rate limit (60/h → 5000/h).
+- Other sources (whole-repo / marketplace) print their official command instead
+  (e.g. `npx skills add owner/repo`).
+- `GITHUB_TOKEN` is only needed if you fall back to the API and hit its 60/h limit.
 
 ## Keeping the catalog fresh
 

@@ -5,13 +5,14 @@ const { loadData } = require('../data');
 const { buildIndices, suggestSkills } = require('../index-build');
 const { buildInfo, renderInfo } = require('../format');
 
-const HELP = `usage: skills-atlas info <skill> [--json] [--zh]
+const HELP = `usage: skills-atlas info <skill> [--all] [--json] [--zh]
 
 Show a skill's description, use case, when-to-use, personas, source repo(s)
-(stars / license / type), the in-repo SKILL.md path, and the install command.`;
+(stars / license / type), the in-repo SKILL.md path, and the install command.
+Leads with the most relevant group; --all expands same-named skills in others.`;
 
 module.exports = async function info(argv) {
-  const { values, positionals } = parse(argv, ['json']);
+  const { values, positionals } = parse(argv, ['json', 'all']);
   if (values.help) { console.log(HELP); return; }
 
   const name = positionals[0];
@@ -42,5 +43,5 @@ module.exports = async function info(argv) {
     console.log(JSON.stringify(infoObj, null, 2));
     return;
   }
-  console.log(renderInfo(infoObj, { en: !values.zh }));
+  console.log(renderInfo(infoObj, { en: !values.zh, all: values.all }));
 };

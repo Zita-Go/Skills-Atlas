@@ -88,12 +88,27 @@ function levenshtein(a, b) {
 
 // Nearest skill names for a not-found query.
 function suggestSkills(skillIndex, query, max = 5) {
-  const q = String(query).toLowerCase();
+  const q = String(query).toLowerCase().trim();
+  if (!q) return [];
   const names = [...skillIndex.keys()];
+
+  // 1) substring either way — high-signal.
   const sub = names.filter(n => n.includes(q) || q.includes(n));
   if (sub.length) return sub.slice(0, max);
+
+  // 2) share a meaningful word with the query (helps multi-word misses).
+  const qtokens = q.split(/[^a-z0-9一-鿿]+/)
+    .filter(t => (/[一-鿿]/.test(t) ? t.length >= 2 : t.length >= 3));
+  if (qtokens.length) {
+    const overlap = names.filter(n => qtokens.some(t => n.includes(t)));
+    if (overlap.length) return overlap.slice(0, max);
+  }
+
+  // 3) fuzzy, but GATED to close edits only — return nothing rather than noise.
+  const limit = Math.max(1, Math.floor(q.length * 0.34));
   return names
     .map(n => [n, levenshtein(q, n)])
+    .filter(([, d]) => d <= limit)
     .sort((a, b) => a[1] - b[1])
     .slice(0, max)
     .map(s => s[0]);

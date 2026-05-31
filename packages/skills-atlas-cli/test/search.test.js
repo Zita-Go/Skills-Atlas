@@ -4,12 +4,13 @@ const test = require('node:test');
 const assert = require('node:assert');
 
 const { tokenize, searchRows, runSearch } = require('../src/search-core');
-const { safeAlt } = require('../src/format');
+const { safeAlt, buildInfo, infoForRow, renderInfo } = require('../src/format');
+const { scriptFiles } = require('../src/fsutil');
 const { loadData } = require('../src/data');
-const { buildIndices } = require('../src/index-build');
+const { buildIndices, suggestSkills, rowsFor } = require('../src/index-build');
 
 const { data } = loadData({ quiet: true });
-const { flatRows } = buildIndices(data);
+const { flatRows, skillIndex } = buildIndices(data);
 
 // helper: which skill names does a query surface?
 const skillsFor = q => new Set(searchRows(flatRows, { query: q }).flatMap(r => r.skills));
@@ -115,4 +116,53 @@ test('safeAlt drops the ~/.claude/skills/skills double-nest foot-gun', () => {
     safeAlt('git clone https://github.com/mattpocock/skills ~/.claude/skills/skills'), null);
   const ok = 'git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers';
   assert.strictEqual(safeAlt(ok), ok);
+});
+
+test('suggestSkills: gated — no far-fetched Levenshtein noise', () => {
+  const s = suggestSkills(skillIndex, 'blender');
+  for (const garbage of ['linear', 'fletcher', 'teaser', 'sentry']) {
+    assert.ok(!s.includes(garbage), `should not suggest ${garbage}`);
+  }
+});
+
+test('suggestSkills: a typo resolves to the real skill', () => {
+  assert.ok(suggestSkills(skillIndex, 'brainstoming').includes('brainstorming'));
+});
+
+test('info groups are ordered best-first (composite rank strictly non-increasing)', () => {
+  const info = buildInfo('pdf', { skillIndex, vendors: data.vendors });
+  assert.ok(info.groups.length > 1, 'pdf appears in multiple groups');
+  const rank = g => {
+    const ss = g.sources.map(s => s.stars || 0);
+    return [Math.max(0, ...ss), ss.reduce((a, b) => a + b, 0), ss.length];
+  };
+  for (let i = 1; i < info.groups.length; i++) {
+    const A = rank(info.groups[i - 1]), B = rank(info.groups[i]);
+    const cmp = (A[0] - B[0]) || (A[1] - B[1]) || (A[2] - B[2]);
+    assert.ok(cmp >= 0, `group ${i - 1} must rank >= group ${i}`);
+  }
+});
+
+test('renderInfo: multi-group skill collapses by default, expands with --all', () => {
+  const info = buildInfo('pdf', { skillIndex, vendors: data.vendors });
+  assert.match(renderInfo(info, { en: true }), /other group/);
+  assert.doesNotMatch(renderInfo(info, { en: true, all: true }), /other group/);
+});
+
+test('renderInfo: single-group skill has no collapse line', () => {
+  const info = buildInfo('brainstorming', { skillIndex, vendors: data.vendors });
+  assert.strictEqual(info.groups.length, 1);
+  assert.doesNotMatch(renderInfo(info, { en: true }), /other group/);
+});
+
+test('infoForRow scopes to exactly one group (by row identity)', () => {
+  const rows = rowsFor(skillIndex, 'pdf');
+  const one = infoForRow('pdf', rows[0], data.vendors);
+  assert.strictEqual(one.groups.length, 1);
+  assert.strictEqual(one.groups[0].group, rows[0].group);
+});
+
+test('scriptFiles flags scripts, ignores docs/data', () => {
+  const got = scriptFiles(['SKILL.md', 'scripts/run.sh', 'helper.cjs', 'tool.py', 'notes.txt', 'x.tsx', 'data.json']);
+  assert.deepStrictEqual(got.sort(), ['helper.cjs', 'scripts/run.sh', 'tool.py', 'x.tsx'].sort());
 });
