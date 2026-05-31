@@ -377,7 +377,7 @@
 - id: devops-infra
   title: 十七、DevOps / SRE / 基础设施
   title_en: 17. DevOps / SRE / Infrastructure
-  icon: 🛰️
+  icon: ☁️
   subcategories:
   - id: 17-1
     title: 17.1 IaC（Terraform / Pulumi / Packer）
@@ -428,7 +428,7 @@
 - id: web3-blockchain
   title: 二十、Web3 / 区块链
   title_en: 20. Web3 / Blockchain
-  icon: ⛓️
+  icon: 🪙
   subcategories:
   - id: 20-1
     title: 20.1 智能合约审计 / 漏洞检测
