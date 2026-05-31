@@ -4077,8 +4077,8 @@ function buildHeroMap(pal){
     v: h1.subsections.reduce((s, h2) => s + h2.rows.length, 0)
   })).filter(c => c.v > 0).sort((a, b) => b.v - a.v);
   if(!cats.length) return;
-  // 默认：浅色系（高亮度、略降饱和，更高级不糖果）；传 pal 时用于试色
-  cats.forEach((c, si) => { c.col = pal ? PAL[si % PAL.length] : `hsl(${catHue(c.i)}, 44%, 75%)`; });
+  // 默认：浅而亮（高亮度 + 高饱和 → 明快不发灰）；传 pal 时用于试色
+  cats.forEach((c, si) => { c.col = pal ? PAL[si % PAL.length] : `hsl(${catHue(c.i)}, 85%, 80%)`; });
   const rects = [];
   (function slice(items, x, y, w, h, horiz){
     if(items.length === 1){ rects.push({ ...items[0], x, y, w, h }); return; }
@@ -4095,26 +4095,49 @@ function buildHeroMap(pal){
   host.innerHTML = rects.map(r => {
     const tw = Math.max(0, r.w - GAP), th = Math.max(0, r.h - GAP);
     // 图标始终显示（小块用小号）；名称只在够高够宽时出现（避免裁切/拥挤）；中等块显示数量
-    const tiny = th < 30 || tw < 30;
+    const tiny = th < 28 || tw < 30;
     const nm = escapeHtml(r.abbr || short(r.title));   // 简称
+    const ic = `<span class="hm-ic${tiny ? ' tiny' : ''}">${r.icon}</span>`;
+    // 先尽量都带上名称；放不下的由 fitHeroTiles() 在渲染后按实测宽度裁掉
     let label, row = false;
-    if(th > 54 && tw > 58){            // 够高：纵向 图标 / 名称 / 数量
-      label = `<span class="hm-ic">${r.icon}</span><span class="hm-nm">${nm}</span><b class="hm-ct">${r.v}</b>`;
-    } else if(th >= 34 && tw > 96){    // 又宽又矮：横向 图标 名称 …… 数量（避免三行挤压）
+    if(tiny){                          // 极小块：仅图标
+      label = ic;
+    } else if(th > 54){                // 够高：纵向 图标 / 名称 / 数量
+      label = `${ic}<span class="hm-nm">${nm}</span><b class="hm-ct">${r.v}</b>`;
+    } else if(tw > 52){                // 矮但够宽：横排 图标 名称 数量（窄了优先保名称，详见 fitHeroTiles）
       row = true;
-      label = `<span class="hm-ic">${r.icon}</span><span class="hm-nm">${nm}</span><b class="hm-ct">${r.v}</b>`;
-    } else if(tw > 32 && th > 28){     // 中小块：图标 + 数量
-      label = `<span class="hm-ic${tiny ? ' tiny' : ''}">${r.icon}</span><b class="hm-ct sm">${r.v}</b>`;
-    } else {                           // 极小块：仅图标
-      label = `<span class="hm-ic${tiny ? ' tiny' : ''}">${r.icon}</span>`;
+      label = `${ic}<span class="hm-nm">${nm}</span><b class="hm-ct sm">${r.v}</b>`;
+    } else {                           // 矮且窄：纵向 图标 + 数量（无名称）
+      label = `${ic}<b class="hm-ct sm">${r.v}</b>`;
     }
     const txt = (r.col.charAt(0) === '#' && hexLum(r.col) <= 0.5) ? '#f4f7fb' : '#15171c';
     return `<button class="hm-tile${row ? ' row' : ''}" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;--tile:${r.col};--txt:${txt}">${label}</button>`;
   }).join('');
+  fitHeroTiles(host);
   host.querySelectorAll('.hm-tile').forEach(tl => tl.addEventListener('click', () => {
     const el = document.querySelectorAll('.section-h1')[+tl.dataset.idx];
     if(el) smoothScrollToEl(el);
   }));
+}
+
+// 渲染后按实测宽度收尾：能放下就保留名称，放不下时——纵向只删名称(保数量)，
+// 横向优先保名称(先删数量再试)，名称仍放不下才退回 图标+数量。
+function fitHeroTiles(host){
+  const trunc = el => el.scrollWidth > el.offsetWidth + 1;
+  host.querySelectorAll('.hm-tile').forEach(t => {
+    const nm = t.querySelector('.hm-nm');
+    if(!nm) return;
+    const ct = t.querySelector('.hm-ct');
+    if(t.classList.contains('row')){           // 横排：名称与数量争抢宽度，优先名称
+      if(trunc(nm) && ct) ct.style.display = 'none';   // 先让出数量的位置
+      if(trunc(nm)){                                    // 仍放不下 → 放弃名称，回到 图标+数量
+        nm.remove();
+        if(ct){ ct.style.display = ''; }
+      }
+    } else if(trunc(nm)){                       // 纵向：名称独占一行，放不下只删名称
+      nm.remove();
+    }
+  });
 }
 
 /* ===== 用法内联 + 一键安装命令 ===== */
