@@ -75,6 +75,8 @@ A JSON version lives at `docs/data.json`, for consumption by frontends / MCP ser
 The [`skills-atlas-cli`](packages/skills-atlas-cli) package turns the catalog into
 a real tool — search, **install**, and usage guidance, from your shell:
 
+<a href="packages/skills-atlas-cli"><img src="docs/cli-demo.png" alt="skills-atlas: search → info → install a skill" width="760"></a>
+
 ```bash
 npx skills-atlas-cli search seo
 npx skills-atlas-cli info brainstorming
