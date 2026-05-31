@@ -1546,7 +1546,7 @@ function pickT(en, zh){ return (LANG === 'en' && en) ? en : zh; }
 // 大类色：色相等距 + 亮度三档轮换，相邻大类既差色相又差明暗、更易区分
 function catLight(i){ return [68, 58, 49][i % 3]; }
 // 全站统一的大类配色：按序号等距色相 + 统一较浅饱和/亮度（柔和、协调；graph 与技能地图共用）
-const CAT_SAT = 52, CAT_LIGHT = 64;
+const CAT_SAT = 50, CAT_LIGHT = 71;
 function catHue(i){ return Math.round((i * 360 / DATA.sections.length + 220) % 360); }
 function catColor(i){ return `hsl(${catHue(i)}, ${CAT_SAT}%, ${CAT_LIGHT}%)`; }
 function applyChrome(){
@@ -1596,6 +1596,9 @@ function setupLang(){
   });
 }
 const H1_ICONS = {"一、软件开发与工程": "⚙️", "二、文档与知识管理": "📄", "三、产品管理（PM）": "🎯", "四、营销 / 增长 / 销售": "📣", "五、设计 / 视觉 / 前端": "🎨", "六、媒体生产": "🎬", "七、数据 / 抓取 / 情报": "🔍", "八、求职 / 个人办公": "💼", "九、通信 / 工具集成": "🔗", "十、创业 / 财务 / 合规": "💰", "十一、学术 / 科研 / 长跑研究": "🔬", "十二、Agent 架构 / Context Engineering": "🧠", "十三、元能力 / Skill 治理": "🛠️"};
+// 大类简称（中/英）：用于 treemap、图例等空间紧张处；未命中则回退到 shortCat
+const CAT_ABBR = {"一、软件开发与工程":["开发","Engineering"],"二、文档与知识管理":["文档","Docs"],"三、产品管理（PM）":["产品","Product"],"四、营销 / 增长 / 销售":["营销","Marketing"],"五、设计 / 视觉 / 前端":["设计","Design"],"六、媒体生产":["媒体","Media"],"七、数据 / 抓取 / 情报":["数据","Data"],"八、求职 / 个人办公":["求职","Job"],"九、通信 / 工具集成":["集成","Integrations"],"十、创业 / 财务 / 合规":["创业","Startup"],"十一、学术 / 科研 / 长跑研究":["科研","Research"],"十二、Agent 架构 / Context Engineering":["Agent","Agent"],"十三、元能力 / Skill 治理":["元能力","Meta"],"十四、法律 / 法务 / 合规":["法律","Legal"],"十五、医疗 / 临床 / 生命科学":["医疗","Medical"],"十六、金融 / 交易 / 投资":["金融","Finance"],"十七、DevOps / SRE / 基础设施":["DevOps","DevOps"],"十八、安全运营 / 攻防":["安全","Security"],"十九、教育 / 教学 / 学习":["教育","Education"],"二十、Web3 / 区块链":["Web3","Web3"]};
+function catAbbr(h1title){ const a = CAT_ABBR[h1title]; return a ? (LANG === 'en' ? a[1] : a[0]) : null; }
 
 // 各大类色温（hue 0-360）：暖色端（橙/红）= 营销 / 创业 / 求职 / 媒体；冷色端（蓝/青/紫）= 工程 / 数据 / Agent
 const CAT_HUE = {
@@ -3061,7 +3064,7 @@ function buildGraph(){
   }
   const catLegend = DATA.sections.map((s, i) => {
     const hue = accentHues[i % accentHues.length];
-    return `<div class="legend-cat" data-ci="${i}" title="${escapeAttr(pickT(s.title_en, s.title))}"><span class="swatch" style="background:hsl(${hue},${CAT_SAT}%,${CAT_LIGHT}%);color:hsl(${hue},${CAT_SAT}%,${CAT_LIGHT}%)"></span><span>${escapeHtml(shortCat(pickT(s.title_en, s.title)))}</span></div>`;
+    return `<div class="legend-cat" data-ci="${i}" title="${escapeAttr(pickT(s.title_en, s.title))}"><span class="swatch" style="background:hsl(${hue},${CAT_SAT}%,${CAT_LIGHT}%);color:hsl(${hue},${CAT_SAT}%,${CAT_LIGHT}%)"></span><span>${escapeHtml(catAbbr(s.title) || shortCat(pickT(s.title_en, s.title)))}</span></div>`;
   }).join('');
   legend.innerHTML = `<b>${t('graph_title')}</b>
     <div style="margin-top:4px">${t('graph_l_node')}</div>
@@ -4059,7 +4062,7 @@ function buildHeroMap(){
                       .split(/\s*[\/／&]\s*/)[0].trim();   // 取首段，标签更短不易裁切
   // 配色与 graph 统一：catColor(大类序号) —— 柔和较浅、协调，深浅底通用
   const cats = DATA.sections.map((h1, i) => ({
-    i, title: pickT(h1.title_en, h1.title), icon: h1.icon || H1_ICONS[h1.title] || '·',
+    i, title: pickT(h1.title_en, h1.title), abbr: catAbbr(h1.title), icon: h1.icon || H1_ICONS[h1.title] || '·',
     v: h1.subsections.reduce((s, h2) => s + h2.rows.length, 0)
   })).filter(c => c.v > 0).sort((a, b) => b.v - a.v);
   if(!cats.length) return;
@@ -4080,9 +4083,10 @@ function buildHeroMap(){
     const tw = Math.max(0, r.w - GAP), th = Math.max(0, r.h - GAP);
     // 图标始终显示（小块用小号）；名称只在够高够宽时出现（避免裁切/拥挤）；中等块显示数量
     const tiny = th < 30 || tw < 30;
+    const nm = r.abbr || short(r.title);   // 简称（更短，更多色块能完整显示名称）
     let label = `<span class="hm-ic${tiny ? ' tiny' : ''}">${r.icon}</span>`;
-    if(tw > 96 && th > 56) label += `<span class="hm-nm">${escapeHtml(short(r.title))}</span><b class="hm-ct">${r.v}</b>`;
-    else if(tw > 34 && th > 30) label += `<b class="hm-ct sm">${r.v}</b>`;
+    if(tw > 56 && th > 42) label += `<span class="hm-nm">${escapeHtml(nm)}</span><b class="hm-ct">${r.v}</b>`;
+    else if(tw > 30 && th > 26) label += `<b class="hm-ct sm">${r.v}</b>`;
     return `<button class="hm-tile" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;background:${catColor(r.i)};--txt:#15171c">${label}</button>`;
   }).join('');
   host.querySelectorAll('.hm-tile').forEach(tl => tl.addEventListener('click', () => {
