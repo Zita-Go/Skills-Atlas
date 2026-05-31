@@ -41,11 +41,11 @@
   category: software-engineering
   subcategory: 1-1
   chain: false
-  description: openspec（Fission-AI/OpenSpec：openspec init 把"提议变更 → 评审 → 归档"接入 Claude Code/Cursor/Codex）；get-shit-done（gsd-build：把 meta-prompt + context engineering + SDD 串成统一框架，对标 BMAD/Spec-Kit 但更精简）
-  description_en: 'openspec (Fission-AI/OpenSpec: openspec init wires "proposed change → review → archive" into Claude Code/Cursor/Codex); get-shit-done (gsd-build: chains meta-prompt + context engineering + SDD into a unified framework, comparable to BMAD/Spec-Kit but leaner)'
+  description: openspec（Fission-AI/OpenSpec：openspec init 把"提议变更 → 评审 → 归档"接入 Claude Code/Cursor/Codex）；get-shit-done（open-gsd：把 meta-prompt + context engineering + SDD 串成统一框架，对标 BMAD/Spec-Kit 但更精简）
+  description_en: 'openspec (Fission-AI/OpenSpec: openspec init wires "proposed change → review → archive" into Claude Code/Cursor/Codex); get-shit-done (open-gsd: chains meta-prompt + context engineering + SDD into a unified framework, comparable to BMAD/Spec-Kit but leaner)'
   sources:
   - Fission-AI
-  - gsd-build
+  - open-gsd
 - id: software-engineering--1-1--004
   skills:
   - handoff

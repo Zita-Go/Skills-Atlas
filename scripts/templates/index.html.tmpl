@@ -4332,8 +4332,16 @@ function setupUsage(){
     if(cmd){
       let ih = `<div class="ui-cmd"><code>${escapeHtml(cmd)}</code><button class="src-act" data-act="copy" data-cmd="${escapeAttr(cmd)}">${LANG === 'en' ? '📋 Copy' : '📋 复制'}</button></div>`;
       ih += '<div class="ui-prereq">' + escapeHtml(installPrereq(cmd)) + '</div>';
-      ih += `<div class="ui-use">▶ <b>${LANG === 'en' ? 'Use it' : '用法'}:</b> ${LANG === 'en' ? 'Claude Code auto-discovers it — Claude invokes it automatically when relevant, or type <code>/skill-name</code> (its folder name) to run it manually.' : '装好后 Claude Code 自动发现：相关时由 Claude 自动调用；也可输入 <code>/skill名</code>（即目录名）手动触发。'}</div>`;
-      if(inst.note) ih += '<div class="ui-note">ℹ️ ' + escapeHtml(inst.note) + '</div>';
+      // 「用法」按命令类型分流：只有真 skill（npx skills add）才显示自动发现 / 斜杠调用那套；
+      // 插件给插件用法；其余（npm/pip/git clone 等非 skill 工具）不显示 skill 用法，按 README 用。
+      if(cmd.startsWith('npx skills')){
+        ih += `<div class="ui-use">▶ <b>${LANG === 'en' ? 'Use it' : '用法'}:</b> ${LANG === 'en' ? 'Claude Code auto-discovers it — Claude invokes it automatically when relevant, or type <code>/skill-name</code> (its folder name) to run it manually.' : '装好后 Claude Code 自动发现：相关时由 Claude 自动调用；也可输入 <code>/skill名</code>（即目录名）手动触发。'}</div>`;
+      } else if(cmd.startsWith('/plugin')){
+        ih += `<div class="ui-use">▶ <b>${LANG === 'en' ? 'Use it' : '用法'}:</b> ${LANG === 'en' ? 'After adding the marketplace, run <code>/plugin install</code> to pick the plugin; its commands then show up as <code>/commands</code>.' : '加完 marketplace 后运行 <code>/plugin install</code> 选择插件；插件的命令会以 <code>/斜杠命令</code> 形式出现。'}</div>`;
+      } else {
+        ih += `<div class="ui-use">▶ <b>${LANG === 'en' ? 'Use it' : '用法'}:</b> ${LANG === 'en' ? 'Not a Claude skill — a standalone tool. Follow the repo README after installing.' : '这不是 Claude skill，而是独立工具，装好后按仓库 README 使用。'}</div>`;
+      }
+      if(inst.note) ih += '<div class="ui-note">ℹ️ ' + escapeHtml(pickT(inst.note_en, inst.note)) + '</div>';
       if(inst.alt) ih += `<details class="ui-alt"><summary>${LANG === 'en' ? 'Alternative command' : '备选命令'}</summary><code>${escapeHtml(inst.alt)}</code> <button class="src-act" data-act="copy" data-cmd="${escapeAttr(inst.alt)}">${LANG === 'en' ? 'Copy' : '复制'}</button></details>`;
       installEl.innerHTML = ih;
       installEl.style.display = '';

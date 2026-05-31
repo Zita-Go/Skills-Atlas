@@ -51,7 +51,10 @@ def install_for(repo):
         return None
     ov = repo.get('install_override')
     if isinstance(ov, dict) and ov.get('command'):
-        return {'command': ov['command'], 'note': ov.get('note', ''), 'kind': 'override'}
+        out = {'command': ov['command'], 'note': ov.get('note', ''), 'kind': 'override'}
+        if ov.get('note_en'):
+            out['note_en'] = ov['note_en']
+        return out
     author, name = repo.get('author'), repo.get('repo')
     if not (author and name):
         return None

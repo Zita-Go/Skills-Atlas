@@ -236,22 +236,24 @@
   install_override:
     command: npm install -g @fission-ai/openspec@latest
     note: SDD 框架（非 skill）；装后用 openspec init 接入 Claude Code/Cursor/Codex
-- id: gsd-build
-  author: gsd-build
-  repo: get-shit-done
-  url: https://github.com/gsd-build/get-shit-done
+    note_en: SDD framework (not a skill); after install, run `openspec init` to wire it into your project
+- id: open-gsd
+  author: open-gsd
+  repo: gsd-core
+  url: https://github.com/open-gsd/gsd-core
   type: sdd-framework
   skill_group_count: 1
-  stars: 63783
-  last_commit: '2026-05-27'
-  default_branch: main
-  description: 轻量而强大的元提示 / 上下文工程 / 规格驱动开发系统(TÂCHES 为 Claude Code 打造)。
-  description_en: A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.
+  stars: 1907
+  last_commit: '2026-05-31'
+  default_branch: next
+  description: 规格驱动开发(SDD)/上下文工程框架：清晰规格 + 受控上下文 + 发布前验证，装后以 /gsd-* 斜杠命令驱动整套流程；由 open-gsd 社区治理延续维护。
+  description_en: 'Spec-driven development (SDD) and context-engineering framework: clear specs, controlled context, verify-before-release; driven by /gsd-* slash commands after install. Maintained as a community continuation under open-gsd governance.'
   license: MIT
   doc_path: README.md
   install_override:
-    command: npm install -g get-shit-done-cc
-    note: 元提示/SDD 框架（非 skill）；详见仓库 README
+    command: npx @opengsd/gsd-core@latest
+    note: SDD 框架（命令包，非单个 skill）：装后用 /gsd-* 斜杠命令驱动
+    note_en: 'SDD framework (command pack, not a single skill): drive it via the /gsd-* slash commands after install'
 - id: Anthropic
   author: anthropics
   repo: skills
