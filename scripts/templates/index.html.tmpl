@@ -1918,14 +1918,16 @@ function buildContent(){
 function applyFilter(){
   const cards = document.querySelectorAll('.card');
   const q = currentSearch.toLowerCase();
-  let visibleCount = 0;
+  let visibleCount = 0, filterCount = 0;   // filterCount = 仅过滤(不含搜索)的基数
   cards.forEach(c => {
-    let visible = true;
     // filter
-    if(currentFilter === 'chain' && c.dataset.chain !== 'true') visible = false;
-    if(currentFilter === 'multi-source' && parseInt(c.dataset.sources) < 2) visible = false;
-    if(currentFilter === 'single-skill' && parseInt(c.dataset.skills) > 1) visible = false;
+    let passFilter = true;
+    if(currentFilter === 'chain' && c.dataset.chain !== 'true') passFilter = false;
+    if(currentFilter === 'multi-source' && parseInt(c.dataset.sources) < 2) passFilter = false;
+    if(currentFilter === 'single-skill' && parseInt(c.dataset.skills) > 1) passFilter = false;
+    if(passFilter) filterCount++;
     // search
+    let visible = passFilter;
     if(visible && q && !matchSearch(c.dataset.search, q)) visible = false;
     c.classList.toggle('hidden', !visible);
     if(visible) visibleCount++;
@@ -1966,10 +1968,14 @@ function applyFilter(){
   // 更新结果计数
   const countEl = document.getElementById('searchResultCount');
   if(countEl){
-    const total = cards.length;
-    if(currentSearch || currentFilter !== 'all'){
-      countEl.textContent = LANG === 'en' ? `${visibleCount} / ${total} results` : `${visibleCount} / ${total} 条结果`;
+    if(currentSearch){
+      // 搜索中（可能叠加过滤）：命中数 / 过滤基数（无过滤时基数=全部）
+      countEl.textContent = LANG === 'en' ? `${visibleCount} / ${filterCount} results` : `${visibleCount} / ${filterCount} 条结果`;
       countEl.style.color = visibleCount > 0 ? 'var(--fg-muted)' : 'var(--warn)';
+    } else if(currentFilter !== 'all'){
+      // 仅过滤、无搜索：直接给过滤后的条数（避免出现误导性的「18 / 249」）
+      countEl.textContent = LANG === 'en' ? `${visibleCount} results` : `${visibleCount} 条结果`;
+      countEl.style.color = 'var(--fg-muted)';
     } else {
       countEl.textContent = '';
     }
