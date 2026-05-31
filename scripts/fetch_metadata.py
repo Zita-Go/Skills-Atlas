@@ -48,7 +48,9 @@ def main():
         r['stars'] = info.get('stargazers_count', 0)
         r['last_commit'] = (info.get('pushed_at') or '')[:10]
         r['default_branch'] = info.get('default_branch', 'main')
-        if info.get('description'):
+        # 只在「未做双语策展」(无 description_en)时用 GitHub 描述填 description；
+        # 已策展的仓保留人工中文 description，避免每周 update-stars 把它覆盖回英文。
+        if info.get('description') and not r.get('description_en'):
             r['description'] = info['description']
         # SPDX 许可证；NOASSERTION / null 视为未知，不写
         lic = (info.get('license') or {}).get('spdx_id')

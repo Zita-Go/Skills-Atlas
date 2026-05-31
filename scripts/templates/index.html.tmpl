@@ -1181,7 +1181,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
         <span class="hero-start-q" data-i18n="hs_q">不知从哪开始？</span>
         <button class="start-chip" data-start="search" data-i18n="hs_search">🔍 搜 skill / 描述 / 仓库</button>
         <button class="start-chip" data-start="ai" data-i18n="hs_ai">✨ 描述需求，AI 推荐</button>
-        <button class="start-chip" data-start="browse" data-i18n="hs_browse">📂 浏览 13 大类</button>
+        <button class="start-chip" data-start="browse" data-i18n="hs_browse">📂 浏览全部大类</button>
         <span class="hero-start-eg" data-i18n="hs_eg">例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」</span>
       </div>
     </div>
@@ -1360,7 +1360,7 @@ const I18N = {
     ai_empty_noquery: '请输入想做的事',
     mode_local: '本地匹配', mode_local_title: '当前用本地 TF-IDF + 同义词，未配置 LLM',
     usage_btn: '📖 用法', install_btn: '📋 安装', license_unknown: '未知',
-    hs_q: '不知从哪开始？', hs_search: '🔍 搜 skill / 描述 / 仓库', hs_ai: '✨ 描述需求，AI 推荐', hs_browse: '📂 浏览 13 大类',
+    hs_q: '不知从哪开始？', hs_search: '🔍 搜 skill / 描述 / 仓库', hs_ai: '✨ 描述需求，AI 推荐', hs_browse: '📂 浏览全部大类',
     hs_eg: '例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」',
     usage_open_gh: '在 GitHub 打开 ↗', usage_copy_cmd: '📋 复制安装命令',
     copied: '✓ 已复制', copy_failed: '复制失败',
@@ -1419,7 +1419,7 @@ const I18N = {
     ai_empty_noquery: 'Please enter what you want to do',
     mode_local: 'Local match', mode_local_title: 'Using local TF-IDF + synonyms; no LLM configured',
     usage_btn: '📖 Usage', install_btn: '📋 Install', license_unknown: 'unknown',
-    hs_q: 'Not sure where to start?', hs_search: '🔍 Search skills / descriptions / repos', hs_ai: '✨ Describe your goal, AI picks', hs_browse: '📂 Browse 13 categories',
+    hs_q: 'Not sure where to start?', hs_search: '🔍 Search skills / descriptions / repos', hs_ai: '✨ Describe your goal, AI picks', hs_browse: '📂 Browse all categories',
     hs_eg: 'e.g. "build a SaaS landing page", "write a PRD", "scrape a website"',
     usage_open_gh: 'Open on GitHub ↗', usage_copy_cmd: '📋 Copy install command',
     copied: '✓ Copied', copy_failed: 'Copy failed',
@@ -1500,7 +1500,14 @@ const CAT_HUE = {
   "十、创业 / 财务 / 合规": 45,     // warm gold
   "十一、学术 / 科研 / 长跑研究": 155, // cool green
   "十二、Agent 架构 / Context Engineering": 255, // cool purple
-  "十三、元能力 / Skill 治理": 200  // cool steel
+  "十三、元能力 / Skill 治理": 200, // cool steel
+  "十四、法律 / 法务 / 合规": 265, // cool indigo-violet
+  "十五、医疗 / 临床 / 生命科学": 168, // teal-green
+  "十六、金融 / 交易 / 投资": 135, // green
+  "十七、DevOps / SRE / 基础设施": 110, // yellow-green
+  "十八、安全运营 / 攻防": 5, // red
+  "十九、教育 / 教学 / 学习": 60, // amber
+  "二十、Web3 / 区块链": 290  // purple-magenta
 };
 const CAT_TONE = {
   "一、软件开发与工程": "cool",
@@ -1515,7 +1522,14 @@ const CAT_TONE = {
   "十、创业 / 财务 / 合规": "warm",
   "十一、学术 / 科研 / 长跑研究": "cool",
   "十二、Agent 架构 / Context Engineering": "cool",
-  "十三、元能力 / Skill 治理": "cool"
+  "十三、元能力 / Skill 治理": "cool",
+  "十四、法律 / 法务 / 合规": "cool",
+  "十五、医疗 / 临床 / 生命科学": "cool",
+  "十六、金融 / 交易 / 投资": "cool",
+  "十七、DevOps / SRE / 基础设施": "cool",
+  "十八、安全运营 / 攻防": "warm",
+  "十九、教育 / 教学 / 学习": "warm",
+  "二十、Web3 / 区块链": "cool"
 };
 function hueOf(h1Title){ return CAT_HUE[h1Title] != null ? CAT_HUE[h1Title] : 220; }
 function toneOf(h1Title){ return CAT_TONE[h1Title] || "neutral"; }
@@ -1553,7 +1567,7 @@ function buildNav(){
   const nav = document.getElementById('nav');
   let html = '';
   DATA.sections.forEach((h1, i) => {
-    const icon = H1_ICONS[h1.title] || '📌';
+    const icon = h1.icon || H1_ICONS[h1.title] || '📌';
     const slug = slugify(h1.title);
     const totalRows = h1.subsections.reduce((sum, h2) => sum + h2.rows.length, 0);
     html += `<div class="nav-section" data-h1="${escapeAttr(slug)}">`;
@@ -1659,7 +1673,7 @@ function buildContent(){
   const vendorSet = new Set();
 
   DATA.sections.forEach(h1 => {
-    const icon = H1_ICONS[h1.title] || '📌';
+    const icon = h1.icon || H1_ICONS[h1.title] || '📌';
     const slug = slugify(h1.title);
     const hue = hueOf(h1.title);
     const tone = toneOf(h1.title);
@@ -2266,7 +2280,7 @@ function buildGraph(){
   // 节点：每个 unique skill；边：同一 row 内 skill 两两相连
   const nodeMap = new Map();
   const links = [];
-  const accentHues = [220, 250, 280, 310, 340, 10, 40, 70, 100, 130, 160, 190, 205];
+  const accentHues = [220, 250, 280, 310, 340, 10, 40, 70, 100, 130, 160, 190, 205, 25, 55, 85, 115, 145, 175, 295, 325, 355];
   const catIdx = new Map(DATA.sections.map((s, i) => [s.title, i]));
 
   rows.forEach(row => {
@@ -3646,7 +3660,7 @@ function setupSpotlight(){
   // 3) 大类 / 子分组
   DATA.sections.forEach(h1 => {
     items.push({
-      kind: 'category', icon: H1_ICONS[h1.title] || '📌', label: pickT(h1.title_en, h1.title),
+      kind: 'category', icon: h1.icon || H1_ICONS[h1.title] || '📌', label: pickT(h1.title_en, h1.title),
       meta: EN ? `category · ${h1.subsections.length} subgroups` : `大类 · ${h1.subsections.length} 子分组`,
       hue: hueOf(h1.title),
       action: () => jumpToSection(slugify(h1.title))

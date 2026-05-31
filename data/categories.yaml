@@ -171,6 +171,9 @@
   - id: 6-2
     title: 6.2 音频 / TTS / 转写
     title_en: 6.2 Audio / TTS / transcription
+  - id: 6-3
+    title: 6.3 音乐生成 / 制作
+    title_en: 6.3 Music generation / production
 - id: data-scraping
   title: 七、数据 / 抓取 / 情报
   title_en: 7. Data / Scraping / Intelligence
@@ -233,6 +236,9 @@
   - id: 10-3
     title: 10.3 会计 / 税务 / 跨国合规
     title_en: 10.3 Accounting / tax / cross-border compliance
+  - id: 10-4
+    title: 10.4 募资 / 投资人关系
+    title_en: 10.4 Fundraising / investor relations
 - id: academic-research
   title: 十一、学术 / 科研 / 长跑研究
   title_en: 11. Academia / Scientific Research / Long-running Research
@@ -244,6 +250,18 @@
   - id: 11-2
     title: 11.2 科研 / 工程 / 分析
     title_en: 11.2 Scientific research / engineering / analysis
+  - id: 11-3
+    title: 11.3 文献检索 / 系统综述
+    title_en: 11.3 Literature search / systematic review
+  - id: 11-4
+    title: 11.4 学术投稿 / LaTeX / 排版
+    title_en: 11.4 Submission / LaTeX / typesetting
+  - id: 11-5
+    title: 11.5 同行评审 / 论文质量
+    title_en: 11.5 Peer review / paper quality
+  - id: 11-6
+    title: 11.6 研究选题 / 假设 / 构思
+    title_en: 11.6 Research ideation / hypothesis
 - id: agent-architecture
   title: 十二、Agent 架构 / Context Engineering
   title_en: 12. Agent Architecture / Context Engineering
@@ -287,3 +305,143 @@
   - id: 强绑定-工作流清单功能维度共-18-套
     title: 强绑定 ⛓ 工作流清单（功能维度共 18 套）
     title_en: Chained ⛓ workflow checklist (18 sets across functional dimensions)
+- id: legal-compliance
+  title: 十四、法律 / 法务 / 合规
+  title_en: 14. Legal / Compliance
+  icon: ⚖️
+  subcategories:
+  - id: 14-1
+    title: 14.1 合同 / NDA / 供应商审查
+    title_en: 14.1 Contracts / NDA / vendor review
+  - id: 14-2
+    title: 14.2 公司法 / M&A / 尽调
+    title_en: 14.2 Corporate / M&A / diligence
+  - id: 14-3
+    title: 14.3 诉讼支持
+    title_en: 14.3 Litigation support
+  - id: 14-4
+    title: 14.4 知识产权
+    title_en: 14.4 Intellectual property
+  - id: 14-5
+    title: 14.5 隐私 / 数据合规
+    title_en: 14.5 Privacy / data compliance
+  - id: 14-6
+    title: 14.6 劳动 / 雇佣法
+    title_en: 14.6 Employment law
+  - id: 14-7
+    title: 14.7 监管 / AI 治理
+    title_en: 14.7 Regulatory / AI governance
+  - id: 14-8
+    title: 14.8 法务运营 / 文书
+    title_en: 14.8 Legal ops / drafting
+- id: medical-clinical
+  title: 十五、医疗 / 临床 / 生命科学
+  title_en: 15. Medical / Clinical / Life Sciences
+  icon: 🏥
+  subcategories:
+  - id: 15-1
+    title: 15.1 临床文书 / 决策支持
+    title_en: 15.1 Clinical documentation / decision support
+  - id: 15-2
+    title: 15.2 医疗互操作 / 合规(FHIR / HIPAA)
+    title_en: 15.2 Interoperability / compliance (FHIR / HIPAA)
+  - id: 15-3
+    title: 15.3 医保编码 / 事前授权
+    title_en: 15.3 Coding / prior authorization
+- id: finance-trading
+  title: 十六、金融 / 交易 / 投资
+  title_en: 16. Finance / Trading / Investment
+  icon: 📈
+  subcategories:
+  - id: 16-1
+    title: 16.1 行情数据 / 市场情报
+    title_en: 16.1 Market data / intelligence
+  - id: 16-2
+    title: 16.2 技术分析 / 量化 / 回测
+    title_en: 16.2 Technical analysis / quant / backtesting
+  - id: 16-3
+    title: 16.3 组合 / 风险管理
+    title_en: 16.3 Portfolio / risk management
+  - id: 16-4
+    title: 16.4 股票研究 / 估值 / 投行 / PE
+    title_en: 16.4 Equity research / valuation / IB / PE
+  - id: 16-5
+    title: 16.5 财富管理 / 顾问 / 合规
+    title_en: 16.5 Wealth management / advisory / compliance
+  - id: 16-6
+    title: 16.6 衍生品 / 固定收益
+    title_en: 16.6 Derivatives / fixed income
+  - id: 16-7
+    title: 16.7 基金运营 / 中后台
+    title_en: 16.7 Fund administration / back-office
+- id: devops-infra
+  title: 十七、DevOps / SRE / 基础设施
+  title_en: 17. DevOps / SRE / Infrastructure
+  icon: 🛰️
+  subcategories:
+  - id: 17-1
+    title: 17.1 IaC（Terraform / Pulumi / Packer）
+    title_en: 17.1 IaC (Terraform / Pulumi / Packer)
+  - id: 17-2
+    title: 17.2 Kubernetes / GitOps / CI-CD
+    title_en: 17.2 Kubernetes / GitOps / CI-CD
+  - id: 17-3
+    title: 17.3 可观测性 / 监控
+    title_en: 17.3 Observability / monitoring
+  - id: 17-4
+    title: 17.4 SRE / 事故响应 / SLO / FinOps
+    title_en: 17.4 SRE / incident response / SLO / FinOps
+- id: security-offensive
+  title: 十八、安全运营 / 攻防
+  title_en: 18. Security Operations / Offensive
+  icon: 🛡️
+  subcategories:
+  - id: 18-1
+    title: 18.1 渗透测试(Web / API / 基础设施)
+    title_en: 18.1 Penetration testing (Web / API / infra)
+  - id: 18-2
+    title: 18.2 红队 / 攻击链 / 后渗透
+    title_en: 18.2 Red team / attack chains / post-exploitation
+  - id: 18-3
+    title: 18.3 漏洞挖掘 / Bug Bounty / OSINT
+    title_en: 18.3 Bug hunting / bug bounty / OSINT
+  - id: 18-4
+    title: 18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析
+    title_en: 18.4 Blue team / SOC / threat hunting / malware analysis
+- id: education-learning
+  title: 十九、教育 / 教学 / 学习
+  title_en: 19. Education / Teaching / Learning
+  icon: 🎓
+  subcategories:
+  - id: 19-1
+    title: 19.1 课程设计 / 教案 / 评估
+    title_en: 19.1 Curriculum / lesson planning / assessment
+  - id: 19-2
+    title: 19.2 自适应辅导 / 苏格拉底教学
+    title_en: 19.2 Adaptive tutoring / Socratic teaching
+  - id: 19-3
+    title: 19.3 学习科学 / 复习工具
+    title_en: 19.3 Learning science / study tools
+  - id: 19-4
+    title: 19.4 智能教材 / 学习图谱
+    title_en: 19.4 Intelligent textbooks / learning graphs
+- id: web3-blockchain
+  title: 二十、Web3 / 区块链
+  title_en: 20. Web3 / Blockchain
+  icon: ⛓️
+  subcategories:
+  - id: 20-1
+    title: 20.1 智能合约审计 / 漏洞检测
+    title_en: 20.1 Smart contract audit / vulnerability detection
+  - id: 20-2
+    title: 20.2 DeFi 协议安全 / 链上分析
+    title_en: 20.2 DeFi protocol security / on-chain analysis
+  - id: 20-3
+    title: 20.3 合约开发 / 工具链
+    title_en: 20.3 Contract development / tooling
+  - id: 20-4
+    title: 20.4 链上数据 / 浏览器 / RPC
+    title_en: 20.4 On-chain data / explorers / RPC
+  - id: 20-5
+    title: 20.5 Web3 应用 / NFT / DAO / 交易
+    title_en: 20.5 Web3 apps / NFT / DAO / trading

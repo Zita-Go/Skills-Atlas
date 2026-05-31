@@ -355,15 +355,17 @@
   - pdf
   - pptx
   - xlsx
-  group: Office 四件套（Anthropic）
-  group_en: Office quartet (Anthropic)
+  - markitdown
+  group: Office 文档四件套
+  group_en: Office docs (Word / PPT / Excel / PDF)
   category: docs-knowledge
   subcategory: 2-1
   chain: false
-  description: docx（Word 读/改/生成含 letterhead/目录/追踪修订/图片）+ pdf（读/抽/合/拆/旋/水印/加密/表单/OCR）+ pptx（读/编辑/创建 + 10 套配色 + 字体规则 + subagent 视觉 QA）+ xlsx（强制金融建模色彩规范：蓝输入/黑公式/绿跨表/红外链）
-  description_en: 'docx (Word read/modify/generate with letterhead/table of contents/tracked changes/images) + pdf (read/extract/merge/split/rotate/watermark/encrypt/form/OCR) + pptx (read/edit/create + 10 color schemes + font rules + subagent visual QA) + xlsx (mandatory financial modeling color convention: blue inputs/black formulas/green cross-sheet/red external links)'
+  description: Word/PPT/Excel/PDF 读写处理(Anthropic 官方 + K-Dense 科研写作插件,含 Markdown 转换 markitdown)。
+  description_en: 'Read/write Word/PPT/Excel/PDF (Anthropic official + K-Dense scientific-writer plugin, incl. markitdown Markdown conversion).'
   sources:
   - Anthropic
+  - K-Dense-writer
 - id: docs-knowledge--2-1--028
   skills:
   - nutrient-agent-skill
@@ -2454,3 +2456,1273 @@
   description_en: multica-ai/andrej-karpathy-skills (repo contains only a single CLAUDE.md file, hardening the 4 coding behavior constraints Karpathy posted on X into a prompt; technically not an Agent Skill but a CLAUDE.md prompt template)
   sources:
   - multica-ai
+- id: academic-research--11-1--187
+  skills:
+  - academic-writing
+  - scientific-writing
+  - econ-write
+  - academic-paper-writer
+  - paper-writing-section
+  - related-work-writing
+  group: 学术 / 科研论文写作
+  group_en: Academic / scientific paper writing
+  category: academic-research
+  subcategory: 11-1
+  chain: false
+  description: IMRaD 结构、章节起草、相关工作与领域(经济等)专用写作。
+  description_en: IMRaD structure, section drafting, related-work and domain-specific (e.g. econ) academic writing.
+  sources:
+  - franklee16
+  - K-Dense-writer
+  - lingzhi227
+- id: academic-research--11-1--188
+  skills:
+  - review-response
+  - revision-coordinator
+  - paper-revision
+  - rebuttal-writing
+  group: 审稿回复 / 修订 / Rebuttal
+  group_en: Review response / revision / rebuttal
+  category: academic-research
+  subcategory: 11-1
+  chain: false
+  description: 为 R&R(修改重投)起草回复信、统筹修订流程、撰写 rebuttal。
+  description_en: Draft R&R response letters, coordinate revisions, and write rebuttals.
+  sources:
+  - franklee16
+  - lingzhi227
+- id: academic-research--11-1--189
+  skills:
+  - research-grants
+  group: 科研基金 / Grant 申请
+  group_en: Grant / research funding proposals
+  category: academic-research
+  subcategory: 11-1
+  chain: false
+  description: NSF / NIH / DOE / DARPA 等机构格式的科研基金申请书撰写。
+  description_en: Grant-proposal writing in NSF / NIH / DOE / DARPA agency formats.
+  sources:
+  - franklee16
+  - K-Dense-writer
+- id: academic-research--11-2--190
+  skills:
+  - experiment-design
+  - experiment-code
+  - code-debugging
+  - algorithm-design
+  - paper-to-code
+  - symbolic-equation
+  group: 实验设计 / 科研编码 / 复现
+  group_en: Experiment design / research coding / reproduction
+  category: academic-research
+  subcategory: 11-2
+  chain: false
+  description: 实验设计、算法/符号推导、把论文转成可复现代码并调试。
+  description_en: Experiment design, algorithm/symbolic derivation, turning papers into reproducible code and debugging.
+  sources:
+  - lingzhi227
+- id: academic-research--11-3--191
+  skills:
+  - slr-prisma
+  group: 系统综述(PRISMA)
+  group_en: Systematic review (PRISMA)
+  category: academic-research
+  subcategory: 11-3
+  chain: false
+  description: 按 PRISMA 2020 全 27 项清单走系统文献综述,产出期刊格式 Word 稿 + 流程图。
+  description_en: Systematic literature review following the full PRISMA 2020 27-item checklist, producing a journal-format Word manuscript + flow diagram.
+  sources:
+  - keemanxp
+- id: academic-research--11-3--192
+  skills:
+  - lit-review
+  - deep-research
+  - academic-researcher
+  - literature-search
+  - literature-review
+  - github-research
+  - survey-generation
+  - literature-scout
+  - research-lookup
+  group: 深度文献检索 / 综述
+  group_en: Deep literature search / review
+  category: academic-research
+  subcategory: 11-3
+  chain: false
+  description: 多源文献检索、研究空白识别、多智能体综述生成(含 GitHub 检索)。
+  description_en: Multi-source literature search, research-gap identification, and multi-agent survey generation (incl. GitHub search).
+  sources:
+  - franklee16
+  - lingzhi227
+  - luwill
+  - K-Dense-writer
+- id: academic-research--11-4--193
+  skills:
+  - arxiv-paper-writer
+  - latex-rhythm-refiner
+  - latex-document
+  - latex-tables
+  - latex-posters
+  - make-poster
+  - latex-formatting
+  - paper-compilation
+  - paper-assembly
+  - venue-templates
+  group: LaTeX / arXiv 论文排版
+  group_en: LaTeX / arXiv typesetting
+  category: academic-research
+  subcategory: 11-4
+  chain: false
+  description: IEEEtran/arXiv 两栏排版、LaTeX 表格/海报、按会议模板编译组装(renocrypt 为 Codex 优先)。
+  description_en: IEEEtran/arXiv two-column typesetting, LaTeX tables/posters, venue-template compilation & assembly (renocrypt is Codex-first).
+  sources:
+  - renocrypt
+  - ndpvt-web
+  - franklee16
+  - lingzhi227
+  - K-Dense-writer
+- id: academic-research--11-4--194
+  skills:
+  - citation-management
+  - crossref
+  - backward-traceability
+  group: 引文 / 参考文献管理
+  group_en: Citation / reference management
+  category: academic-research
+  subcategory: 11-4
+  chain: false
+  description: 引文工作流、CrossRef API 集成、引用可回溯性校验。
+  description_en: Citation workflows, CrossRef API integration, and citation back-traceability checks.
+  sources:
+  - franklee16
+  - K-Dense-writer
+  - lingzhi227
+- id: academic-research--11-4--195
+  skills:
+  - paper-2-web
+  group: 论文转网页 / 产出
+  group_en: Paper-to-web / output
+  category: academic-research
+  subcategory: 11-4
+  chain: false
+  description: 把学术论文转成网页格式发布。
+  description_en: Convert academic papers into web-page format for publishing.
+  sources:
+  - franklee16
+  - K-Dense-writer
+- id: academic-research--11-5--196
+  skills:
+  - peer-review
+  - referee2
+  - fact-checker
+  - consistency-checker
+  - fletcher
+  - scientific-critical-thinking
+  - scholar-evaluation
+  - academic
+  - self-review
+  - quality-editor
+  group: 论文同行评审 / 质量审查
+  group_en: Peer review / paper quality
+  category: academic-research
+  subcategory: 11-5
+  chain: false
+  description: 多阶段/多智能体同行评审、事实核查、一致性与去熟悉化质询、投稿前自审。
+  description_en: Multi-stage/multi-agent peer review, fact-checking, consistency & de-familiarization scrutiny, and pre-submission self-review.
+  sources:
+  - franklee16
+  - K-Dense-writer
+  - andrehuang
+  - lingzhi227
+  - luwill
+- id: academic-research--11-6--197
+  skills:
+  - hypothesis-generation
+  - scientific-brainstorming
+  - research-ideation
+  - idea-generation
+  - novelty-assessment
+  - research-planning
+  - research-proposal
+  group: 研究选题 / 假设 / 构思
+  group_en: Research ideation / hypothesis
+  category: academic-research
+  subcategory: 11-6
+  chain: false
+  description: 从观察出发构建可检验假设、科研头脑风暴、新颖性评估与研究计划/提案。
+  description_en: Build testable hypotheses from observations, scientific brainstorming, novelty assessment, and research planning/proposals.
+  sources:
+  - franklee16
+  - K-Dense-writer
+  - lingzhi227
+  - luwill
+- id: design-frontend--5-5--198
+  skills:
+  - beamer-presentation
+  - scientific-slides
+  - academic-pptx-skill
+  - paper-slide-deck
+  - slide-generation
+  - pptx-posters
+  - beautiful_deck
+  group: 学术演示 / Beamer / 论文转 PPT
+  group_en: Academic slides / Beamer / paper-to-deck
+  category: design-frontend
+  subcategory: 5-5
+  chain: false
+  description: LaTeX Beamer / 科学幻灯片、论文转 PPT、海报式 PPTX。
+  description_en: LaTeX Beamer / scientific slide decks, paper-to-deck, and poster-style PPTX.
+  sources:
+  - franklee16
+  - K-Dense-writer
+  - lingzhi227
+  - luwill
+- id: data-scraping--7-3--199
+  skills:
+  - data-analysis
+  - exploratory-data-analysis
+  - r-analyst
+  - r-econometrics
+  - python-panel-data
+  - stata
+  - stata-analyst
+  - csv-data-summarizer
+  group: 统计 / 计量数据分析(R / Stata / Python)
+  group_en: Statistical / econometric analysis (R / Stata / Python)
+  category: data-scraping
+  subcategory: 7-3
+  chain: false
+  description: R/Stata/Python 的探索性分析、回归、面板/计量(DiD/IV/匹配)与数据清洗。
+  description_en: Exploratory analysis, regression, panel/econometrics (DiD/IV/matching) and data cleaning in R/Stata/Python.
+  sources:
+  - franklee16
+  - lingzhi227
+- id: data-scraping--7-3--200
+  skills:
+  - fred-economic-data
+  - sec-edgar-parser
+  - api-data-fetcher
+  group: 经济 / 金融数据源(FRED / SEC EDGAR)
+  group_en: Economic / financial data sources (FRED / SEC EDGAR)
+  category: data-scraping
+  subcategory: 7-3
+  chain: false
+  description: 接 FRED 80 万+ 经济时间序列、解析 SEC EDGAR 公司申报、通用 API 取数。
+  description_en: Pull FRED 800k+ economic time series, parse SEC EDGAR filings, and generic API data fetching.
+  sources:
+  - franklee16
+- id: data-scraping--7-3--201
+  skills:
+  - matplotlib
+  - scientific-visualization
+  - econ-visualization
+  - tikz
+  - figure-generation
+  - table-generation
+  - scientific-schematics
+  group: 科学 / 出版级数据可视化
+  group_en: Scientific / publication-grade data visualization
+  category: data-scraping
+  subcategory: 7-3
+  chain: false
+  description: 期刊风格、色盲友好的科学图表(matplotlib/TikZ)、出版级图表/表格与示意图。
+  description_en: Journal-style, colorblind-friendly scientific charts (matplotlib/TikZ), publication-grade figures/tables and schematics.
+  sources:
+  - franklee16
+  - K-Dense-writer
+  - lingzhi227
+- id: legal-compliance--14-1--202
+  skills:
+  - nda-review
+  - saas-msa-review
+  - vendor-agreement-review
+  - contract-review
+  - review-contract
+  - triage-nda
+  - tabular-document-review
+  group: 合同 / NDA / 供应商协议审查
+  group_en: Contract / NDA / vendor agreement review
+  category: legal-compliance
+  subcategory: 14-1
+  chain: false
+  description: 入站 NDA/供应商协议/SaaS 订阅的分级审查与 redline:自动识别协议类型、对照 playbook 标偏离、CUAD 41 风险类目。
+  description_en: 'Triage & redline of inbound NDAs / vendor agreements / SaaS subscriptions: detect agreement type, flag deviations vs playbook, CUAD 41-risk taxonomy.'
+  sources:
+  - claude-for-legal
+  - evolsb
+  - zubair-trabzada
+  - knowledge-work-plugins
+  - borghei
+- id: legal-compliance--14-1--203
+  skills:
+  - custom-nda-generator
+  - terms-of-service-generator
+  - privacy-policy
+  - service-agreement
+  - privacy-notice-generator
+  group: 合同 / 法律文书生成
+  group_en: Contract / legal document generation
+  category: legal-compliance
+  subcategory: 14-1
+  chain: false
+  description: 生成 NDA、服务条款、隐私政策、服务协议、隐私告知等法律文书初稿。
+  description_en: Generate first drafts of NDAs, terms of service, privacy policies, service agreements and privacy notices.
+  sources:
+  - zubair-trabzada
+  - borghei
+- id: legal-compliance--14-2--204
+  skills:
+  - diligence-issue-extraction
+  - tabular-review
+  - deal-team-summary
+  - closing-checklist
+  - material-contract-schedule
+  - integration-management
+  - board-minutes
+  - written-consent
+  - entity-compliance
+  group: 公司法 / M&A 尽调 / 治理
+  group_en: Corporate / M&A diligence / governance
+  category: legal-compliance
+  subcategory: 14-2
+  chain: false
+  description: VDR 尽调问题抽取、表格化审查、交割清单、重大合同附表、交割后整合、董事会纪要/一致同意、实体合规追踪。
+  description_en: VDR diligence extraction, tabular review, closing checklists, material-contract schedules, post-close integration, board minutes/written consents, entity-compliance tracking.
+  sources:
+  - claude-for-legal
+- id: legal-compliance--14-3--205
+  skills:
+  - brief-section-drafter
+  - demand-draft
+  - deposition-prep
+  - claim-chart
+  - chronology
+  - privilege-log-review
+  - subpoena-triage
+  - legal-hold
+  group: 诉讼支持(诉状 / 取证 / 特权日志)
+  group_en: Litigation support (briefs / discovery / privilege log)
+  category: legal-compliance
+  subcategory: 14-3
+  chain: false
+  description: 诉状章节起草、催告函、庭询准备、索赔对照表、时间线、特权日志审查、传票分流、诉讼保全。
+  description_en: Brief-section drafting, demand letters, deposition prep, claim charts, chronologies, privilege-log review, subpoena triage and legal holds.
+  sources:
+  - claude-for-legal
+- id: legal-compliance--14-4--206
+  skills:
+  - clearance
+  - cease-desist
+  - fto-triage
+  - infringement-triage
+  - oss-review
+  - ip-clause-review
+  - takedown
+  - invention-intake
+  - portfolio
+  group: 知识产权(清查 / 侵权 / OSS / DMCA)
+  group_en: Intellectual property (clearance / infringement / OSS / DMCA)
+  category: legal-compliance
+  subcategory: 14-4
+  chain: false
+  description: 商标清查、停止侵权函、FTO/侵权分流、开源许可审查、IP 条款审查、DMCA 下架、发明披露、组合管理。
+  description_en: Trademark clearance, cease-and-desist, FTO/infringement triage, OSS-license review, IP-clause review, DMCA takedowns, invention intake and portfolio management.
+  sources:
+  - claude-for-legal
+- id: legal-compliance--14-5--207
+  skills:
+  - dpa-review
+  - dsar-response
+  - pia-generation
+  - data-breach-response
+  - dpia-assessment
+  - privacy-compliance
+  group: 隐私 / 数据合规(DPA / DSAR / PIA / GDPR)
+  group_en: Privacy / data compliance (DPA / DSAR / PIA / GDPR)
+  category: legal-compliance
+  subcategory: 14-5
+  chain: false
+  description: DPA 审查、DSAR 响应、PIA/DPIA 影响评估、数据泄露响应、GDPR/CCPA 隐私合规核查。
+  description_en: DPA review, DSAR responses, PIA/DPIA assessments, data-breach response, and GDPR/CCPA privacy-compliance checks.
+  sources:
+  - claude-for-legal
+  - zubair-trabzada
+  - borghei
+- id: legal-compliance--14-6--208
+  skills:
+  - hiring-review
+  - termination-review
+  - worker-classification
+  - wage-hour-qa
+  - handbook-updates
+  - internal-investigation
+  - international-expansion
+  group: 劳动 / 雇佣法(招聘 / 解雇 / 调查 / 手册)
+  group_en: Employment law (hiring / termination / investigations / handbooks)
+  category: legal-compliance
+  subcategory: 14-6
+  chain: false
+  description: 录用通知/限制性条款审查、解雇审查、用工分类、工时/工资问答、员工手册更新、内部调查、国际用工扩张。
+  description_en: Offer/restrictive-covenant review, termination review, worker classification, wage-hour Q&A, handbook updates, internal investigations and international hiring expansion.
+  sources:
+  - claude-for-legal
+- id: legal-compliance--14-7--209
+  skills:
+  - reg-feed-watcher
+  - policy-diff
+  - policy-redraft
+  - gap-surfacer
+  - comments
+  - statute-analysis
+  - whistleblower-compliance
+  group: 监管追踪 / 法规差距
+  group_en: Regulatory tracking / gap analysis
+  category: legal-compliance
+  subcategory: 14-7
+  chain: false
+  description: 法规订阅监测、政策 diff/重写、合规差距识别、监管意见提交、法条分析、举报人合规。
+  description_en: Regulatory-feed monitoring, policy diff/redraft, compliance-gap surfacing, regulatory comments, statute analysis and whistleblower compliance.
+  sources:
+  - claude-for-legal
+  - borghei
+- id: legal-compliance--14-7--210
+  skills:
+  - ai-inventory
+  - aia-generation
+  - reg-gap-analysis
+  - use-case-triage
+  - vendor-ai-review
+  - policy-starter
+  group: AI 治理 / AI 法合规(EU AI Act)
+  group_en: AI governance / AI-law compliance (EU AI Act)
+  category: legal-compliance
+  subcategory: 14-7
+  chain: false
+  description: EU AI Act 系统清单与风险分级、AI 影响评估(AIA)、AI 法规差距、用例分级、供应商 AI 条款审查、AI 政策起草。
+  description_en: EU AI Act system inventory & risk tiering, AI impact assessments, AI-reg gap analysis, use-case triage, vendor-AI-clause review and AI-policy drafting.
+  sources:
+  - claude-for-legal
+- id: legal-compliance--14-8--211
+  skills:
+  - client-intake
+  - client-letter
+  - plain-language-letters
+  - memo
+  - form-generation
+  - marketing-claims-review
+  - legal-canned-responses
+  - legal-meeting-briefing
+  - brief
+  group: 法务运营 / 文书 / 法援诊所
+  group_en: Legal ops / drafting / clinic
+  category: legal-compliance
+  subcategory: 14-8
+  chain: false
+  description: 客户接案/信函、通俗化法律信、备忘录、表单生成、营销声明审查、标准回复、会议简报、综合法务助手。
+  description_en: Client intake/letters, plain-language legal letters, memos, form generation, marketing-claims review, canned responses, meeting briefings and a general legal assistant.
+  sources:
+  - claude-for-legal
+  - knowledge-work-plugins
+  - borghei
+- id: legal-compliance--14-8--212
+  skills:
+  - legal-risk-assessment
+  - deep-risk-analysis
+  - mediation-analysis
+  - vendor-due-diligence
+  - legal-red-team
+  group: 法律风险评估 / 争议
+  group_en: Legal risk assessment / disputes
+  category: legal-compliance
+  subcategory: 14-8
+  chain: false
+  description: 法律风险评估、深度风险分析、调解分析、供应商尽调、法律红队对抗审查。
+  description_en: Legal risk assessment, deep risk analysis, mediation analysis, vendor due diligence and legal red-teaming.
+  sources:
+  - claude-for-legal
+  - knowledge-work-plugins
+  - zubair-trabzada
+  - borghei
+- id: medical-clinical--15-1--216
+  skills:
+  - clinical-reports
+  - clinical-decision-support
+  - treatment-plans
+  - clinical-trial-protocol-skill
+  - medical-imaging-review
+  group: 临床文书 / 决策支持 / 试验方案
+  group_en: Clinical docs / decision support / trial protocols
+  category: medical-clinical
+  subcategory: 15-1
+  chain: false
+  description: 病例/诊断/出院报告(SOAP/CARE)、GRADE 证据治疗推荐、临床试验方案(FDA/NIH)、医学影像综述。
+  description_en: Case/diagnostic/discharge reports (SOAP/CARE), GRADE evidence-based treatment recommendations, clinical-trial protocols (FDA/NIH), and medical-imaging reviews.
+  sources:
+  - K-Dense-writer
+  - anthropics-healthcare
+  - luwill
+- id: medical-clinical--15-2--217
+  skills:
+  - fhir-developer-skill
+  group: 医疗互操作 / FHIR 开发
+  group_en: Healthcare interop / FHIR development
+  category: medical-clinical
+  subcategory: 15-2
+  chain: false
+  description: HL7 FHIR R4 端点开发(Patient/Observation/Encounter 资源、SMART on FHIR、编码系统 LOINC/SNOMED/ICD-10)。
+  description_en: HL7 FHIR R4 endpoint development (Patient/Observation/Encounter resources, SMART on FHIR, LOINC/SNOMED/ICD-10 coding systems).
+  sources:
+  - anthropics-healthcare
+- id: medical-clinical--15-3--218
+  skills:
+  - prior-auth-review-skill
+  group: 医保编码 / 事前授权 / 理赔
+  group_en: Payer coding / prior authorization / claims
+  category: medical-clinical
+  subcategory: 15-3
+  chain: false
+  description: 医保支付方事前授权(prior auth)审查:解析临床文档、按 CMS Coverage/ICD-10/CPT 校验医疗必要性、生成带依据的授权决定。
+  description_en: 'Payer prior-authorization review: parse clinical docs, verify medical necessity against CMS Coverage/ICD-10/CPT, and generate evidence-backed authorization decisions.'
+  sources:
+  - anthropics-healthcare
+- id: finance-trading--16-1--219
+  skills:
+  - stock-quote
+  - stock-performance
+  - sector-performance-snapshot
+  - ohlcv-processing
+  - trading-visualization
+  - market-data
+  - macro-rates-monitor
+  - commodities
+  - currencies-and-fx
+  group: 行情数据 / 市场情报
+  group_en: Market data / intelligence
+  category: finance-trading
+  subcategory: 16-1
+  chain: false
+  description: 股票/行业行情、OHLCV 处理、宏观利率监测、商品/外汇/参考数据与可视化。
+  description_en: Stock/sector quotes, OHLCV processing, macro-rates monitoring, commodities/FX/reference data and visualization.
+  sources:
+  - OctagonAI
+  - agiprolabs
+  - JoelLewis
+  - anthropics-financial-services
+- id: finance-trading--16-2--220
+  skills:
+  - pandas-ta
+  - ta-lib
+  - custom-indicators
+  group: 技术分析 / 指标
+  group_en: Technical analysis / indicators
+  category: finance-trading
+  subcategory: 16-2
+  chain: false
+  description: pandas-ta / TA-Lib 技术指标与自定义指标计算。
+  description_en: Technical indicators via pandas-ta / TA-Lib and custom indicators.
+  sources:
+  - agiprolabs
+  - JoelLewis
+- id: finance-trading--16-2--221
+  skills:
+  - regime-detection
+  - volatility-modeling
+  - cointegration-analysis
+  - mean-reversion
+  - correlation-analysis
+  - signal-classification
+  - feature-engineering
+  - sentiment-analysis
+  group: 量化方法 / ML 信号
+  group_en: Quant methods / ML signals
+  category: finance-trading
+  subcategory: 16-2
+  chain: false
+  description: 状态识别、波动率建模、协整/均值回归、相关性,以及 ML 信号分类/特征工程/情绪。
+  description_en: Regime detection, volatility modeling, cointegration/mean-reversion, correlation, plus ML signal classification/feature-engineering/sentiment.
+  sources:
+  - agiprolabs
+  - JoelLewis
+- id: finance-trading--16-2--222
+  skills:
+  - vectorbt
+  - backtrader
+  - strategy-framework
+  - walk-forward-validation
+  - slippage-modeling
+  - exit-strategies
+  - backtest
+  - optimize
+  group: 回测 / 策略框架
+  group_en: Backtesting / strategy frameworks
+  category: finance-trading
+  subcategory: 16-2
+  chain: false
+  description: vectorbt / Backtrader 回测、策略框架、walk-forward 验证、滑点建模、参数优化。
+  description_en: vectorbt / Backtrader backtesting, strategy frameworks, walk-forward validation, slippage modeling and parameter optimization.
+  sources:
+  - agiprolabs
+  - marketcalls
+- id: finance-trading--16-3--223
+  skills:
+  - position-sizing
+  - kelly-criterion
+  - risk-management
+  - portfolio-analytics
+  - asset-allocation
+  - performance-attribution
+  - diversification
+  - historical-risk
+  - forward-risk
+  - portfolio-rebalance
+  group: 组合 / 风险管理
+  group_en: Portfolio / risk management
+  category: finance-trading
+  subcategory: 16-3
+  chain: false
+  description: 仓位 sizing(Kelly)、风控、资产配置、业绩归因、分散化与税务感知再平衡。
+  description_en: Position sizing (Kelly), risk management, asset allocation, performance attribution, diversification and tax-aware rebalancing.
+  sources:
+  - agiprolabs
+  - JoelLewis
+  - anthropics-financial-services
+- id: finance-trading--16-4--224
+  skills:
+  - dcf-model
+  - comps-analysis
+  - 3-statement-model
+  - earnings-analysis
+  - initiating-coverage
+  - sector-overview
+  - income-statement
+  - balance-sheet
+  - cash-flow-statement
+  - financial-metrics-analysis
+  - analyst-estimates
+  - sec-risk-factors
+  group: 股票研究 / 估值 / 财报
+  group_en: Equity research / valuation / filings
+  category: finance-trading
+  subcategory: 16-4
+  chain: false
+  description: DCF/可比公司/三表估值、财报前后分析、首次覆盖研报、SEC 财报与风险因子解析。
+  description_en: DCF/comps/3-statement valuation, earnings analysis, initiating-coverage reports, and SEC financial-statement & risk-factor parsing.
+  sources:
+  - anthropics-financial-services
+  - OctagonAI
+- id: finance-trading--16-4--225
+  skills:
+  - cim-builder
+  - pitch-deck
+  - teaser
+  - buyer-list
+  - lbo-model
+  - merger-model
+  - returns-analysis
+  - deal-screening
+  - dd-checklist
+  - ic-memo
+  - unit-economics
+  - value-creation-plan
+  group: 投行 / PE / M&A
+  group_en: Investment banking / PE / M&A
+  category: finance-trading
+  subcategory: 16-4
+  chain: false
+  description: 路演簿/CIM/teaser、LBO/并购模型、IRR/MOIC 回报、尽调清单、投委会备忘、单位经济与投后增值。
+  description_en: Pitch decks/CIMs/teasers, LBO/merger models, IRR/MOIC returns, diligence checklists, IC memos, unit economics and value-creation plans.
+  sources:
+  - anthropics-financial-services
+- id: finance-trading--16-5--226
+  skills:
+  - financial-plan
+  - portfolio-rebalance
+  - tax-loss-harvesting
+  - investment-proposal
+  - client-report
+  - know-your-customer
+  - anti-money-laundering
+  - reg-bi
+  - fiduciary-standards
+  - investment-policy
+  - tax-efficiency
+  group: 财富管理 / 顾问 / 合规(KYC/AML)
+  group_en: Wealth management / advisory / compliance (KYC/AML)
+  category: finance-trading
+  subcategory: 16-5
+  chain: false
+  description: 退休/教育/遗产规划、税损收割、投资建议书与客户报告、KYC/AML/Reg-BI/fiduciary 合规。
+  description_en: Retirement/education/estate planning, tax-loss harvesting, investment proposals & client reports, and KYC/AML/Reg-BI/fiduciary compliance.
+  sources:
+  - anthropics-financial-services
+  - JoelLewis
+- id: finance-trading--16-6--227
+  skills:
+  - options-pricing
+  - option-vol-analysis
+  - swap-curve-strategy
+  - fx-carry-trade
+  - bond-futures-basis
+  - fixed-income
+  - fixed-income-corporate
+  - fixed-income-sovereign
+  - bond-relative-value
+  group: 衍生品 / 固定收益
+  group_en: Derivatives / fixed income
+  category: finance-trading
+  subcategory: 16-6
+  chain: false
+  description: 期权定价/波动率、利率互换曲线、FX carry、债期基差、公司/主权债与相对价值。
+  description_en: Options pricing/vol, swap-curve strategy, FX carry, bond-futures basis, corporate/sovereign fixed income and relative value.
+  sources:
+  - agiprolabs
+  - JoelLewis
+  - anthropics-financial-services
+- id: finance-trading--16-7--228
+  skills:
+  - nav-tieout
+  - gl-recon
+  - break-trace
+  - accrual-schedule
+  - roll-forward
+  - reconciliation
+  - settlement-clearing
+  - stp-automation
+  - margin-operations
+  group: 基金运营 / 中后台
+  group_en: Fund administration / back-office
+  category: finance-trading
+  subcategory: 16-7
+  chain: false
+  description: 基金 NAV 对账、总账/子账对账、差异溯源、计提表、清算交收与 STP 自动化。
+  description_en: Fund NAV tie-outs, GL/sub-ledger reconciliation, break tracing, accrual schedules, settlement/clearing and STP automation.
+  sources:
+  - anthropics-financial-services
+  - JoelLewis
+- id: devops-infra--17-1--229
+  skills:
+  - terraform-style-guide
+  - terraform-test
+  - terraform-stacks
+  - new-terraform-provider
+  - refactor-module
+  - aws-ami-builder
+  - pulumi-best-practices
+  - pulumi-component
+  - cloudformation-to-pulumi
+  - terraform-skill
+  - iac-terraform
+  group: IaC（Terraform / Pulumi / Packer）
+  group_en: IaC (Terraform / Pulumi / Packer)
+  category: devops-infra
+  subcategory: 17-1
+  chain: false
+  description: Terraform 风格/测试/Stacks/provider 开发、Pulumi 编写与迁移、Packer 镜像构建、IaC 重构。
+  description_en: Terraform style/test/Stacks/provider development, Pulumi authoring & migration, Packer image builds, and IaC refactoring.
+  sources:
+  - hashicorp
+  - pulumi
+  - antonbabenko
+  - ahmedasmar
+- id: devops-infra--17-2--230
+  skills:
+  - flux-operations
+  - flux-gitops-patterns
+  - k8s-platform-operations
+  - k8s-security-hardening
+  - cert-manager-troubleshooting
+  - k8s-network-troubleshooting
+  - k8s-troubleshooter
+  - gitops-workflows
+  - ci-cd
+  - kubernetes-specialist
+  - devops-engineer
+  group: Kubernetes / GitOps / CI-CD
+  group_en: Kubernetes / GitOps / CI-CD
+  category: devops-infra
+  subcategory: 17-2
+  chain: false
+  description: K8s 平台运维/排障/安全加固、Flux/ArgoCD GitOps、cert-manager、CI/CD 流水线。
+  description_en: K8s platform ops/troubleshooting/security hardening, Flux/ArgoCD GitOps, cert-manager, and CI/CD pipelines.
+  sources:
+  - foxj77
+  - ahmedasmar
+  - Jeffallan
+- id: devops-infra--17-3--231
+  skills:
+  - grafana-oss
+  - dashboarding
+  - promql
+  - opentelemetry
+  - loki
+  - alloy
+  - beyla
+  - infrastructure
+  - app-observability
+  - monitoring-observability
+  - monitoring-expert
+  group: 可观测性 / 监控（LGTM / Prometheus / OTel）
+  group_en: Observability / monitoring (LGTM / Prometheus / OTel)
+  category: devops-infra
+  subcategory: 17-3
+  chain: false
+  description: Grafana 仪表盘/PromQL、LGTM 栈(Loki/Tempo/Mimir)、OpenTelemetry 埋点、基础设施与应用可观测性。
+  description_en: Grafana dashboards/PromQL, the LGTM stack (Loki/Tempo/Mimir), OpenTelemetry instrumentation, and infra/app observability.
+  sources:
+  - grafana
+  - ahmedasmar
+  - Jeffallan
+- id: devops-infra--17-4--232
+  skills:
+  - alerting-irm
+  - oncall-irm
+  - adaptive-metrics
+  - cost-management
+  - prometheus-cardinality-troubleshooter
+  - aws-cost-optimization
+  - sre-engineer
+  group: SRE / 事故响应 / SLO / FinOps
+  group_en: SRE / incident response / SLO / FinOps
+  category: devops-infra
+  subcategory: 17-4
+  chain: false
+  description: 告警/事故响应管理(IRM)、值班、SLO、Prometheus 基数排障,以及云成本优化(FinOps)。
+  description_en: Alerting/incident-response management (IRM), on-call, SLOs, Prometheus cardinality troubleshooting, and cloud cost optimization (FinOps).
+  sources:
+  - grafana
+  - ahmedasmar
+  - Jeffallan
+- id: security-offensive--18-1--233
+  skills:
+  - injection
+  - client-side
+  - server-side
+  - authentication
+  - api-security
+  - web-app-logic
+  - cloud-containers
+  - web-pentest
+  - recon
+  - vulnerability-scanning
+  - web-application-security-testing
+  group: 渗透测试(Web / API / 基础设施)
+  group_en: Penetration testing (Web / API / infra)
+  category: security-offensive
+  subcategory: 18-1
+  chain: false
+  description: 面向授权测试:Web/API/基础设施渗透——注入、认证、API 安全、业务逻辑、云容器,覆盖 OWASP Top10。
+  description_en: 'For authorized testing: Web/API/infra pentesting — injection, auth, API security, business-logic, cloud-containers, covering OWASP Top10.'
+  sources:
+  - transilienceai
+  - briiirussell
+  - Masriyan
+- id: security-offensive--18-2--234
+  skills:
+  - sql-injection-union
+  - xss-stored
+  - ssrf
+  - deserialization-java
+  - jwt-attacks
+  - request-smuggling
+  - kerberos-roasting
+  - pass-the-hash
+  - adcs-template-abuse
+  - credential-dumping
+  - ad-persistence
+  - red-team-operations
+  - attack-path-stitcher
+  - red-team-engagement
+  group: 红队 / 攻击链 / 后渗透
+  group_en: Red team / attack chains / post-exploitation
+  category: security-offensive
+  subcategory: 18-2
+  chain: false
+  description: 面向授权红队演练:Web 漏洞利用全谱 + Active Directory 攻击(Kerberos/ADCS/横移提权/持久化)、攻击链编排、交战规划。
+  description_en: 'For authorized red-team engagements: full Web-exploitation spectrum + Active Directory attacks (Kerberos/ADCS/lateral movement/persistence), attack-path orchestration and engagement planning.'
+  sources:
+  - blacklanternsecurity
+  - Masriyan
+  - transilienceai
+  - briiirussell
+- id: security-offensive--18-3--235
+  skills:
+  - bug-bounty
+  - bb-methodology
+  - bugcrowd-reporting
+  - cloud-iam-deep
+  - web2-recon
+  - web2-vuln-classes
+  - triage-validation
+  - report-writing
+  - osint-methodology
+  - offensive-osint
+  - osint-recon
+  - hackerone
+  group: 漏洞挖掘 / Bug Bounty / OSINT
+  group_en: Bug hunting / bug bounty / OSINT
+  category: security-offensive
+  subcategory: 18-3
+  chain: false
+  description: 漏洞赏金方法论与侦察(subfinder/httpx/nuclei)、OSINT 攻击面测绘、triage 验证与披露报告(HackerOne/Bugcrowd)。
+  description_en: Bug-bounty methodology & recon (subfinder/httpx/nuclei), OSINT attack-surface mapping, triage validation and disclosure reporting (HackerOne/Bugcrowd).
+  sources:
+  - elementalsouls-bughunter
+  - elementalsouls-osint
+  - shuvonsec
+  - briiirussell
+  - transilienceai
+- id: security-offensive--18-4--236
+  skills:
+  - soc-operations
+  - siem-detection
+  - threat-hunting
+  - incident-triage
+  - disk-forensics
+  - breach-patterns
+  - threat-hunting-ioc
+  - incident-response-forensics
+  - csoc-operations
+  - dfir
+  - ti-ingest
+  - cve-risk-score
+  group: 蓝队 / SOC / 威胁狩猎 / 检测工程
+  group_en: Blue team / SOC / threat hunting / detection engineering
+  category: security-offensive
+  subcategory: 18-4
+  chain: false
+  description: 蓝队防御:SOC 运营、SIEM 检测工程、威胁狩猎/IOC、事件响应取证(DFIR)、威胁情报与 CVE 风险评分。
+  description_en: 'Blue-team defense: SOC operations, SIEM detection engineering, threat hunting/IOC, incident-response forensics (DFIR), threat intel and CVE risk scoring.'
+  sources:
+  - briiirussell
+  - Masriyan
+  - transilienceai
+- id: security-offensive--18-4--237
+  skills:
+  - malware-analysis
+  - malware-triage
+  - malware-dynamic-analysis
+  - specialized-file-analyzer
+  - detection-engineer
+  - malware-report-writer
+  group: 恶意代码分析 / 逆向
+  group_en: Malware analysis / reverse engineering
+  category: security-offensive
+  subcategory: 18-4
+  chain: false
+  description: 恶意代码分级与静/动态分析(REMnux/FlareVM)、逆向与二进制分析、检测规则工程与分析报告。
+  description_en: Malware triage and static/dynamic analysis (REMnux/FlareVM), reverse engineering & binary analysis, detection-rule engineering and analysis reports.
+  sources:
+  - gl0bal01
+  - Masriyan
+- id: education-learning--19-1--238
+  skills:
+  - Backwards Design Unit Planner
+  - Criterion-Referenced Rubric Generator
+  - Competency Unpacker
+  - Differentiation Adapter
+  - Project Brief Designer
+  - Scope and Sequence Designer
+  - Vocabulary Tiering Tool
+  - quiz-generator
+  - faq-generator
+  - glossary-generator
+  group: 课程设计 / 教案 / 评估
+  group_en: Curriculum / lesson planning / assessment
+  category: education-learning
+  subcategory: 19-1
+  chain: false
+  description: 逆向设计单元、标准参照量规、胜任力拆解、差异化教学、PBL 任务书、范围与顺序、EAL 语言支撑、测验/词表生成。
+  description_en: Backwards-design units, criterion-referenced rubrics, competency unpacking, differentiation, PBL briefs, scope-and-sequence, EAL language scaffolds, and quiz/glossary generation.
+  sources:
+  - GarethManning
+  - dmccreary
+- id: education-learning--19-2--239
+  skills:
+  - Adaptive Hint Sequence Designer
+  - Intelligent Tutoring Dialogue Designer
+  - AI Socratic Dialogue Designer
+  - AI Output Critical Audit Designer
+  - Prompt Literacy Sequence Designer
+  group: 自适应辅导 / 苏格拉底教学
+  group_en: Adaptive tutoring / Socratic teaching
+  category: education-learning
+  subcategory: 19-2
+  chain: false
+  description: 带持久学生画像的自适应数学家教、逐级提示、智能辅导对话脚本、苏格拉底式质询与 AI 素养。
+  description_en: Adaptive math tutoring with persistent student profiles, graduated hints, intelligent-tutoring dialogue scripts, Socratic questioning and AI literacy.
+  sources:
+  - GarethManning
+- id: education-learning--19-3--240
+  skills:
+  - Retrieval Practice Question Generator
+  - Interleaving Unit Planner
+  - Dual Coding Designer
+  - Cognitive Load Analyser
+  - skill-anything
+  group: 学习科学 / 复习工具(flashcard / 间隔重复)
+  group_en: Learning science / study tools (flashcards / spaced repetition)
+  category: education-learning
+  subcategory: 19-3
+  chain: false
+  description: 提取练习、交错/双编码、认知负荷分析,任意素材→学习包/quiz/flashcard、Anki 卡与复习笔记生成。
+  description_en: Retrieval practice, interleaving/dual-coding, cognitive-load analysis, any-source→study-pack/quiz/flashcards, Anki cards and revision notes.
+  sources:
+  - GarethManning
+  - SYuan03
+- id: education-learning--19-4--241
+  skills:
+  - learning-graph-generator
+  - init-textbook
+  - microsim-generator
+  - book-chapter-generator
+  - Cognitive Tutoring Architecture Designer
+  - AI Feedback Design Principles
+  - Formative Assessment Loop Designer for AI Systems
+  group: 智能教材 / 学习图谱 / EdTech 设计
+  group_en: Intelligent textbooks / learning graphs / EdTech design
+  category: education-learning
+  subcategory: 19-4
+  chain: false
+  description: 智能教材生成、学习图谱、MicroSim 交互模拟、认知辅导架构、AI 反馈与形成性评估循环设计。
+  description_en: Intelligent-textbook generation, learning graphs, interactive MicroSims, cognitive-tutoring architecture, and AI-feedback / formative-assessment loop design.
+  sources:
+  - dmccreary
+  - GarethManning
+- id: education-learning--19-3--242
+  skills:
+  - bar-prep-questions
+  - case-brief
+  - irac-practice
+  - legal-writing
+  - socratic-drill
+  - study-plan
+  - flashcards
+  - outline-builder
+  - cold-call-prep
+  group: 法学院 / 法考备考
+  group_en: Law school / bar exam prep
+  category: education-learning
+  subcategory: 19-3
+  chain: false
+  description: 法学院学习与法考备考:案例摘要、IRAC 练习、苏格拉底问答演练、法律写作、大纲/抽认卡与备考计划(来自 claude-for-legal 的 law-student 模块)。
+  description_en: 'Law-school study and bar-exam prep: case briefs, IRAC practice, Socratic cold-call drills, legal writing, outlines/flashcards and study plans (from claude-for-legals law-student module).'
+  sources:
+  - claude-for-legal
+- id: web3-blockchain--20-1--243
+  skills:
+  - audit-reentrancy
+  - audit-signature
+  - audit-state-validation
+  - audit-math-precision
+  - behavioral-state-analysis
+  - semantic-guard-analysis
+  - state-invariant-detection
+  - proxy-upgrade-safety
+  - security-audit
+  group: 智能合约审计 / 漏洞检测
+  group_en: Smart contract audit / vulnerability detection
+  category: web3-blockchain
+  subcategory: 20-1
+  chain: false
+  description: Solidity/EVM 合约系统化审计:重入/签名重放/状态校验/精度/代理升级/状态不变量,370 项清单与行为意图建模。
+  description_en: 'Systematic Solidity/EVM contract audits: reentrancy/signature-replay/state-validation/precision/proxy-upgrade/state-invariants, 370-item checklists and behavioral-intent modeling.'
+  sources:
+  - auditmos
+  - quillai-network
+  - XSpoonAi
+  - trailofbits
+- id: web3-blockchain--20-2--244
+  skills:
+  - audit-lending
+  - audit-liquidation
+  - audit-oracle
+  - audit-slippage
+  - audit-staking
+  - oracle-flashloan-analysis
+  - lp-math
+  - impermanent-loss
+  - mev-analysis
+  - whale-tracking
+  - dex-pool-analysis
+  - token-economics
+  group: DeFi 协议安全 / 链上分析
+  group_en: DeFi protocol security / on-chain analysis
+  category: web3-blockchain
+  subcategory: 20-2
+  chain: false
+  description: DeFi 机制安全(借贷/清算/预言机/滑点/质押/闪电贷攻击链)与链上分析(LP 数学/无常损失/MEV/巨鲸追踪/池子分析)。
+  description_en: DeFi mechanism security (lending/liquidation/oracle/slippage/staking/flash-loan attack chains) and on-chain analysis (LP math/impermanent loss/MEV/whale tracking/pool analysis).
+  sources:
+  - auditmos
+  - quillai-network
+  - XSpoonAi
+  - agiprolabs
+- id: web3-blockchain--20-3--245
+  skills:
+  - contract-deployer
+  - Account Abstraction Paymaster
+  - solana-toolkit
+  group: 合约开发 / 工具链
+  group_en: Contract development / tooling
+  category: web3-blockchain
+  subcategory: 20-3
+  chain: false
+  description: 智能合约开发工具链:合约部署、Gas 优化、账户抽象,以及 Solana 等链开发工具。
+  description_en: 'Smart-contract dev tooling: deployment, gas optimization, account abstraction, and Solana-chain dev tools.'
+  sources:
+  - XSpoonAi
+- id: web3-blockchain--20-4--246
+  skills:
+  - blockscout-analysis
+  - web3-dev
+  - quicknode-skill
+  - onchain-data-analysis
+  - gas-oracle
+  - crypto-market-intel
+  - coingecko-api
+  - dexscreener-api
+  - helius-api
+  - defillama-api
+  group: 链上数据 / 浏览器 / RPC
+  group_en: On-chain data / explorers / RPC
+  category: web3-blockchain
+  subcategory: 20-4
+  chain: false
+  description: 区块链浏览器(Blockscout)与 RPC(QuickNode)集成、链上数据分析、Gas 预言机、行情数据 API(CoinGecko/DexScreener/Helius/DefiLlama)。
+  description_en: Blockchain explorer (Blockscout) & RPC (QuickNode) integration, on-chain data analysis, gas oracles, and market-data APIs (CoinGecko/DexScreener/Helius/DefiLlama).
+  sources:
+  - blockscout
+  - quiknode-labs
+  - XSpoonAi
+  - agiprolabs
+- id: web3-blockchain--20-5--247
+  skills:
+  - nft-minter-basic
+  - nft-metadata-pinner
+  - nft-market-analysis
+  - dao-proposal-starter
+  - web3-dao-tooling
+  - cross-chain-bridge
+  - web3-identity-auth
+  - dex-execution
+  - copy-trading
+  - solana-tx-building
+  group: Web3 应用 / NFT / DAO / 交易
+  group_en: Web3 apps / NFT / DAO / trading
+  category: web3-blockchain
+  subcategory: 20-5
+  chain: false
+  description: NFT 铸造/元数据/行情、DAO 提案与治理工具、跨链桥、Web3 身份认证,以及 DEX 执行/跟单/Solana 交易构建。
+  description_en: NFT minting/metadata/analytics, DAO proposal & governance tooling, cross-chain bridges, Web3 identity auth, plus DEX execution/copy-trading/Solana tx building.
+  sources:
+  - XSpoonAi
+  - agiprolabs
+- id: media--6-2--248
+  skills:
+  - text-to-speech
+  - speech-to-text
+  - voice-changer
+  - voice-isolator
+  - sound-effects
+  - speech-engine
+  - agents
+  group: ElevenLabs 语音全家桶(TTS/STT/变声/音效)
+  group_en: ElevenLabs voice suite (TTS/STT/voice-changer/SFX)
+  category: media
+  subcategory: 6-2
+  chain: false
+  description: ElevenLabs 官方:文本转语音(70+语言)、Scribe 转写、人声变声/分离、音效生成、实时语音对话 agent。
+  description_en: 'ElevenLabs official: text-to-speech (70+ langs), Scribe transcription, voice changer/isolator, sound-effects, and real-time voice-agent conversations.'
+  sources:
+  - elevenlabs
+- id: media--6-3--249
+  skills:
+  - music
+  - lyric-writer
+  - album-conceptualizer
+  - mix-engineer
+  - mastering-engineer
+  - genre-creator
+  - release-director
+  group: AI 音乐生成 / 制作(Suno 流水线)
+  group_en: AI music generation / production (Suno pipeline)
+  category: media
+  subcategory: 6-3
+  chain: false
+  description: ElevenLabs 音乐生成 + Suno 全流程音乐制作(作词/专辑策划/混音/母带 -14LUFS/发布),50+ skill。
+  description_en: ElevenLabs music generation + a full Suno music-production pipeline (lyrics/album concept/mixing/mastering at -14 LUFS/release), 50+ skills.
+  sources:
+  - elevenlabs
+  - bitwize-music-studio
+- id: media--6-1--250
+  skills:
+  - heygen-avatar
+  - heygen-video
+  - heygen-translate
+  group: 数字人口播 / 跨语言配音
+  group_en: AI avatar presenters / cross-lingual dubbing
+  category: media
+  subcategory: 6-1
+  chain: false
+  description: HeyGen 官方:创建数字人形象、v3 流水线生成口播视频、跨语言翻译配音并重新对口型。
+  description_en: 'HeyGen official: create avatars, generate talking-head videos via the v3 pipeline, and translate/dub videos across languages with re-lip-sync.'
+  sources:
+  - heygen-com
+- id: media--6-1--251
+  skills:
+  - Video Editing
+  - ffmpeg
+  - remotion
+  - moviepy
+  - playwright-recording
+  group: 本地视频剪辑 / 视频工具链(FFmpeg / Remotion)
+  group_en: Local video editing / toolchain (FFmpeg / Remotion)
+  category: media
+  subcategory: 6-1
+  chain: false
+  description: 纯本地 FFmpeg+Whisper 剪辑(trim/jump-cut/字幕/变速)与 Remotion/MoviePy 视频生成工具链。
+  description_en: Local FFmpeg+Whisper editing (trim/jump-cut/subtitles/speed) and a Remotion/MoviePy video-generation toolchain.
+  sources:
+  - 6missedcalls
+  - digitalsamba
+- id: startup-finance--10-1--252
+  skills:
+  - startup-context
+  - mvp-scoping
+  - prd-writing
+  - user-research-synthesis
+  - roadmap-planning
+  - cold-outreach
+  - sales-script
+  - market-research
+  - gtm-leader
+  - competitive-strategist
+  group: 创始人全栈工具箱
+  group_en: Founder full-stack toolkit
+  category: startup-finance
+  subcategory: 10-1
+  chain: false
+  description: 创始人一站式:MVP 范围/PRD/用户研究/路线图、冷启动外联/销售脚本、GTM 与竞争策略,跨销售/产品/增长。
+  description_en: 'One-stop for founders: MVP scoping/PRD/user research/roadmap, cold outreach/sales scripts, GTM and competitive strategy across sales/product/growth.'
+  sources:
+  - shawnpang
+  - ncklrs
+- id: startup-finance--10-4--253
+  skills:
+  - pitch-deck
+  - investor-research
+  - data-room
+  - fundraising-email
+  - board-update
+  - fundraising-narrative
+  - investor-relations
+  group: 募资 / Pitch / 投资人关系
+  group_en: Fundraising / pitch / investor relations
+  category: startup-finance
+  subcategory: 10-4
+  chain: false
+  description: 路演 PPT、投资人调研、data room、募资邮件/叙事、董事会更新与投资人关系(grounded in Sequoia/a16z/YC)。
+  description_en: Pitch decks, investor research, data rooms, fundraising emails/narratives, board updates and investor relations (grounded in Sequoia/a16z/YC).
+  sources:
+  - shawnpang
+  - tjboudreaux
