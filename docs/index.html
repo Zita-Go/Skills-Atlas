@@ -1771,7 +1771,7 @@ function licMeta(spdx){
 function installPrereq(cmd){
   if(!cmd) return '';
   const en = LANG === 'en';
-  if(cmd.startsWith('npx ')) return en?'Needs Node.js ≥18. Open a terminal and paste the command; it installs to ~/.claude/skills/.':'需 Node.js ≥18。在终端粘贴运行；会装到 ~/.claude/skills/。';
+  if(cmd.startsWith('npx ')) return en?'Needs Node.js ≥18. Paste in a terminal; by default it installs to THIS project (./.claude/skills/) — add -g to install globally (~/.claude/skills/). It will ask which agent & scope.':'需 Node.js ≥18。在终端粘贴运行；默认装到「当前项目」的 ./.claude/skills/，加 -g 才装到全局 ~/.claude/skills/。会交互询问装到哪个 agent / 哪个范围。';
   if(cmd.startsWith('npm ')) return en?'Needs Node.js + npm. Paste in a terminal.':'需 Node.js + npm。粘到终端运行。';
   if(cmd.startsWith('pip ')) return en?'Needs Python 3 + pip. Paste in a terminal.':'需 Python 3 + pip。粘到终端运行。';
   if(cmd.startsWith('/plugin')) return en?'Run this slash command inside Claude Code (add the marketplace, then /plugin install).':'在 Claude Code 里运行此斜杠命令（先加 marketplace，再 /plugin install 选具体插件）。';
@@ -4333,7 +4333,7 @@ function setupUsage(){
     if(cmd){
       let ih = `<div class="ui-cmd"><code>${escapeHtml(cmd)}</code><button class="src-act" data-act="copy" data-cmd="${escapeAttr(cmd)}">${LANG === 'en' ? '📋 Copy' : '📋 复制'}</button></div>`;
       ih += '<div class="ui-prereq">' + escapeHtml(installPrereq(cmd)) + '</div>';
-      ih += `<div class="ui-use">▶ <b>${LANG === 'en' ? 'Use it' : '用法'}:</b> ${LANG === 'en' ? 'in Claude Code run <code>skills list</code> to confirm, then call it as a <code>/slash-command</code>.' : '在 Claude Code 里运行 <code>skills list</code> 确认，再以 <code>/斜杠命令</code> 调用。'}</div>`;
+      ih += `<div class="ui-use">▶ <b>${LANG === 'en' ? 'Use it' : '用法'}:</b> ${LANG === 'en' ? 'Claude Code auto-discovers it — Claude invokes it automatically when relevant, or type <code>/skill-name</code> (its folder name) to run it manually.' : '装好后 Claude Code 自动发现：相关时由 Claude 自动调用；也可输入 <code>/skill名</code>（即目录名）手动触发。'}</div>`;
       if(inst.note) ih += '<div class="ui-note">ℹ️ ' + escapeHtml(inst.note) + '</div>';
       if(inst.alt) ih += `<details class="ui-alt"><summary>${LANG === 'en' ? 'Alternative command' : '备选命令'}</summary><code>${escapeHtml(inst.alt)}</code> <button class="src-act" data-act="copy" data-cmd="${escapeAttr(inst.alt)}">${LANG === 'en' ? 'Copy' : '复制'}</button></details>`;
       installEl.innerHTML = ih;
@@ -4377,13 +4377,13 @@ function setupHowTo(){
     ? `<p class="howto-lead">An <b>Agent Skill</b> is a reusable, packaged capability for <b>Claude Code</b> (Anthropic's terminal/IDE coding agent) — install it once, then invoke it whenever you need it.</p>`
       + `<ol class="howto-steps"><li><b>Find</b> a skill here by what you want to do, and copy its install command.</li>`
       + `<li><b>Install</b> — paste it in a terminal on your machine (e.g. <code>npx skills add author/repo</code>).</li>`
-      + `<li><b>Use</b> — in Claude Code, run <code>skills list</code> to confirm, then call it as a <code>/slash-command</code>.</li></ol>`
+      + `<li><b>Use</b> — Claude Code auto-discovers it: Claude uses it automatically when relevant, or type <code>/skill-name</code> to run it. Type <code>/</code> to see all skills.</li></ol>`
       + `<p class="howto-note"><b>⛓ Chained</b> skills are meant to run in sequence — one's output feeds the next.</p>`
       + `<p class="howto-more">Every skill is sourced from a public GitHub repo and grouped by what it does. <a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">Project &amp; docs ↗</a></p>`
     : `<p class="howto-lead"><b>Agent Skill</b> 是 <b>Claude Code</b>（Anthropic 的终端/IDE 编码 agent）里可复用的「能力包」——装一次，之后随时调用。</p>`
       + `<ol class="howto-steps"><li><b>找</b>：在这里按「我要做什么」找到 skill，复制它的安装命令。</li>`
       + `<li><b>装</b>：把命令粘到你电脑的终端运行（如 <code>npx skills add author/repo</code>）。</li>`
-      + `<li><b>用</b>：在 Claude Code 里运行 <code>skills list</code> 确认，再以 <code>/斜杠命令</code> 调用。</li></ol>`
+      + `<li><b>用</b>：Claude Code 会自动发现 —— 相关时自动调用；也可输入 <code>/skill名</code> 手动触发，输入 <code>/</code> 可列出全部。</li></ol>`
       + `<p class="howto-note"><b>⛓ 强绑定</b> 的 skill 需按顺序串起来用——前一个的产出喂给下一个。</p>`
       + `<p class="howto-more">每个 skill 都来自公开 GitHub 仓库，按功能归类。<a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">项目主页 / 文档 ↗</a></p>`;
   let ret = null;
