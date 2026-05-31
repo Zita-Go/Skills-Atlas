@@ -2381,7 +2381,7 @@ function buildRepoNav(typeOrder, byType, TYPE_LABEL){
       e.preventDefault();
       const target = a.dataset.target;
       const el = document.getElementById(target);
-      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      if(el) smoothScrollToEl(el);   // 走统一的逐帧重算平滑，避免原生 smooth 落点漂移
       navRepo.querySelectorAll('.nav-repo-item').forEach(x => x.classList.remove('active'));
       a.classList.add('active');
     });
@@ -4392,17 +4392,37 @@ function hashId(){
 function pushHash(id){
   if(hashId() !== id){ history.pushState(null, '', '#' + id); }
 }
-// 平滑跳转到某元素：若 hero 此刻是展开的，先「瞬时」收起它再滚。
-// hero 折叠用的是 display:none（高度瞬变 ~270px），若不先收起，平滑滚动途中
-// hero 一塌缩就会把目标过冲、标题被滑出视口顶部（用户反馈「划过了 / 看不见」）。
+function jumpOffsetPx(){
+  return parseInt(getComputedStyle(document.documentElement).getPropertyValue('--jump-offset')) || 80;
+}
+// 跳转到某元素，落点对齐 sticky 顶栏下方（--jump-offset）。
+// 关键：不能用原生 scrollIntoView / scrollTo({behavior:'smooth'}) —— 平滑动画跨多帧，而
+// 动画途中布局会变（hero 折叠的 padding 过渡、Web 字体回流、scroll-spy 展开侧栏），原生平滑
+// 锁定的是动画开始时算好的旧目标偏移，于是过冲 / 不到位（实测落点偏差可达数千 px，标题被划出
+// 视口或埋到顶栏后；深链路径用 'auto' 瞬时跳所以一直是对的）。
+// 解法：自实现 rAF 平滑，每帧用元素「实时」位置重算目标、跟住布局变化，收尾再精确吸附。
 function smoothScrollToEl(el, behavior){
   if(!el) return;
   const hero = document.querySelector('.hero');
   const willCollapse = hero && !hero.classList.contains('collapsed') && !hero.classList.contains('hidden');
   if(willCollapse) hero.classList.add('collapsed');
-  const go = () => el.scrollIntoView({behavior: behavior || 'smooth', block: 'start'});
-  if(willCollapse) requestAnimationFrame(go);   // 等收起后的回流定下来，再按新布局算滚动目标
-  else go();
+  const targetY = () => Math.max(0, el.getBoundingClientRect().top + window.scrollY - jumpOffsetPx());
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(behavior === 'auto' || reduce){
+    requestAnimationFrame(() => window.scrollTo(0, targetY()));   // 等 hero 收起的回流定下来再瞬时定位
+    return;
+  }
+  const startY = window.scrollY, dur = 380;
+  let startT = null;
+  function frame(now){
+    if(startT === null) startT = now;
+    const p = Math.min(1, (now - startT) / dur);
+    const e = p < 0.5 ? 2*p*p : 1 - Math.pow(-2*p + 2, 2) / 2;   // easeInOutQuad
+    window.scrollTo(0, startY + (targetY() - startY) * e);        // 目标逐帧重算
+    if(p < 1) requestAnimationFrame(frame);
+    else window.scrollTo(0, targetY());                           // 收尾精确吸附
+  }
+  requestAnimationFrame(frame);
 }
 // 滚到当前 hash 对应的小节（前进/后退、深链都走这里）
 function scrollToHashTarget(behavior){
