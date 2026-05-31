@@ -46,13 +46,19 @@ skills-atlas info brainstorming
 # 📥 Install it (into .claude/skills/)
 skills-atlas install brainstorming             # → ~/.claude/skills/   (default, all projects)
 skills-atlas install brainstorming --project   # → ./.claude/skills/   (this project only)
+skills-atlas install brainstorming --chain     # install the whole ⛓ workflow it belongs to
 skills-atlas install brainstorming --dry-run   # preview the files, write nothing
 
-# 🗂️ Browse & refresh
+# 🗂️ Manage & browse
+skills-atlas installed                         # what you've installed (global + project)
 skills-atlas categories                        # the 20 top-level categories
 skills-atlas list marketing                    # skill groups within a category
 skills-atlas update                            # pull the latest catalog
 ```
+
+**⛓ Workflows, not just skills.** Many skills belong to a curated chain (e.g.
+`brainstorming → writing-plans → executing-plans → …`). `install <skill> --chain`
+installs the whole pipeline in one archive download, ready to run in order.
 
 Output is English by default; add `--zh` for Chinese, or `--json` to any command for machine-readable output.
 After installing a skill, start a new Claude Code session to load it.

@@ -4,8 +4,9 @@ const path = require('path');
 const { parse } = require('../args');
 const { loadData } = require('../data');
 const { buildIndices, vendorsFor, suggestSkills, skillDocPath } = require('../index-build');
-const { listSkillFiles, fetchRaw, fetchSkillFolderTar } = require('../github');
+const { listSkillFiles, getSkillFolder } = require('../github');
 const fsu = require('../fsutil');
+const manifest = require('../manifest');
 const { confirm, choose } = require('../prompt');
 const { buildInfo, infoForRow, renderInfo, bold, dim, cyan, green, stars, safeAlt } = require('../format');
 
@@ -17,6 +18,7 @@ options:
   -s, --source <id>  pick a source when a skill has several
   -f, --force        overwrite if already installed
   -y, --yes          non-interactive (auto-pick top source, assume yes)
+      --chain        install the whole ⛓ workflow this skill belongs to
       --dry-run      show what would download, write nothing
       --json         machine-readable output
 
@@ -30,9 +32,84 @@ function resolveGlobal(values) {
   return true; // default: global
 }
 
+const hasSkillMd = rels => rels.some(r => {
+  const x = r.toLowerCase();
+  return x === 'skill.md' || x.endsWith('/skill.md');
+});
+
+// Download one skill's folder and atomically install it; records the manifest.
+// Returns { dest, fileCount, scripts, branchUsed, note }. Throws on failure.
+async function installFolder({ author, repo, branch, docPath, dest, targetRoot, skillName, src, row }) {
+  const folder = await getSkillFolder({ author, repo, branch, docPath });
+  const tmp = fsu.mkdtemp();
+  try {
+    for (const f of folder.files) fsu.writeFileMkdir(path.join(tmp, f.rel), f.data);
+    const rels = folder.files.map(f => f.rel);
+    if (!hasSkillMd(rels)) throw new Error('no SKILL.md found in downloaded folder');
+    fsu.swapDir(tmp, dest);
+    const scripts = fsu.scriptFiles(rels);
+    manifest.record(targetRoot, {
+      skill: skillName, source: src.name, repo, branch: folder.branchUsed,
+      group: row && row.group, category: row && row._cat,
+      files: rels.length, scripts: scripts.length, installedAt: new Date().toISOString(),
+    });
+    return { dest, fileCount: rels.length, scripts, branchUsed: folder.branchUsed, note: folder.note };
+  } catch (e) {
+    fsu.rmrf(tmp);
+    throw e;
+  }
+}
+
+// Install every installable skill in a chain (workflow). One archive download
+// serves them all (github archive cache).
+async function installChain({ row, vendor, src, targetRoot, values }) {
+  const author = vendor.author || src.author;
+  const repo = vendor.repo || src.repo;
+  const branch = vendor.default_branch || src.default_branch || 'main';
+
+  const items = [], skipped = [];
+  for (const sk of row.skills || []) {
+    const dp = skillDocPath(vendor, sk);
+    if (dp) items.push({ name: sk, docPath: dp }); else skipped.push(sk);
+  }
+  if (!items.length) {
+    console.error(`no installable skills in this chain from ${src.name}.`);
+    process.exitCode = 1;
+    return;
+  }
+
+  if (!values.json) console.log(`\ninstalling ${items.length}-skill chain from ${bold(src.name)}: ${dim(items.map(i => i.name).join(' → '))}`);
+  const installed = [], failed = [];
+  for (const it of items) {
+    const dest = path.join(targetRoot, it.name);
+    if (fsu.dirExists(dest) && !values.force) {
+      if (!values.json) console.log(dim(`  • ${it.name} — already installed (use --force to overwrite)`));
+      installed.push(it.name);
+      continue;
+    }
+    try {
+      const r = await installFolder({ author, repo, branch, docPath: it.docPath, dest, targetRoot, skillName: it.name, src, row });
+      if (!values.json) console.log(`  ${green('✓')} ${it.name}  ${dim(`(${r.fileCount} files)`)}`);
+      installed.push(it.name);
+    } catch (e) {
+      if (!values.json) console.log(dim(`  ✗ ${it.name} — ${e.message}`));
+      failed.push(it.name);
+    }
+  }
+
+  if (values.json) {
+    console.log(JSON.stringify({ mode: 'chain', group: row.group, dest: targetRoot, installed, failed, skipped }));
+    return;
+  }
+  if (skipped.length) console.log(dim(`  (skipped ${skipped.length}: ${skipped.join(', ')} — no per-skill folder)`));
+  console.log(`\n${green('✓')} chain ready — ${installed.length} skill(s) in ${fsu.tildify(targetRoot)}`);
+  console.log(dim(`  run in order: ${(row.skills || []).join(' → ')}`));
+  console.log(dim('\nStart a new Claude Code session to load them, then run the workflow in order.'));
+}
+
 module.exports = async function install(argv) {
   const { values, positionals } = parse(argv,
-    ['global', 'project', 'source', 'force', 'yes', 'dry-run', 'json']);
+    ['global', 'project', 'source', 'force', 'yes', 'chain', 'dry-run', 'json']);
   if (values.help) { console.log(HELP); return; }
 
   const name = positionals[0];
@@ -125,6 +202,21 @@ module.exports = async function install(argv) {
   }
 
   const targetRoot = fsu.installTargetDir({ global: resolveGlobal(values) });
+  const isChain = Boolean(chosen.row && chosen.row.chain && (chosen.row.skills || []).length >= 2);
+
+  // --- chain: install the whole workflow ---
+  if (values.chain) {
+    if (!isChain) {
+      console.log(dim(`'${skill}' isn't part of a multi-skill chain; installing it alone.`));
+    } else if (values['dry-run']) {
+      console.log(`would install the ${chosen.row.skills.length}-skill chain: ${chosen.row.skills.join(' → ')}`);
+      return;
+    } else {
+      await installChain({ row: chosen.row, vendor: v, src, targetRoot, values });
+      return;
+    }
+  }
+
   const dest = path.join(targetRoot, skill); // folder = skill name (strips repo nesting)
 
   // --- already installed? ---
@@ -166,45 +258,11 @@ module.exports = async function install(argv) {
     return;
   }
 
-  // --- download into a tmp dir, then atomically swap into place ---
-  // Primary: one repo-archive download from codeload (not GitHub-API rate-limited);
-  // extract only this skill's folder. Fallback: tree API + raw per file.
-  const tmp = fsu.mkdtemp();
-  let branchUsed, fileCount, note = null, scripts = [];
+  // --- single skill: download (archive → API fallback), record, report ---
+  let result;
   try {
-    let folder = null;
-    try {
-      folder = await fetchSkillFolderTar({ author, repo, branch, docPath });
-    } catch (e) {
-      note = `archive download failed (${e.message}); fell back to the GitHub API`;
-    }
-
-    let rels;
-    if (folder && folder.files.length) {
-      branchUsed = folder.branchUsed;
-      for (const f of folder.files) fsu.writeFileMkdir(path.join(tmp, f.rel), f.data);
-      rels = folder.files.map(f => f.rel);
-    } else {
-      const listing = await listSkillFiles({ author, repo, branch, docPath });
-      branchUsed = listing.branchUsed;
-      if (listing.note) note = listing.note;
-      for (const f of listing.files) {
-        const buf = await fetchRaw(author, repo, listing.branchUsed, f.path);
-        fsu.writeFileMkdir(path.join(tmp, f.rel), buf);
-      }
-      rels = listing.files.map(f => f.rel);
-    }
-
-    const hasSkillMd = rels.some(rel => {
-      const r = rel.toLowerCase();
-      return r === 'skill.md' || r.endsWith('/skill.md');
-    });
-    if (!hasSkillMd) throw new Error('no SKILL.md found in downloaded folder');
-    fileCount = rels.length;
-    scripts = fsu.scriptFiles(rels);
-    fsu.swapDir(tmp, dest);
+    result = await installFolder({ author, repo, branch, docPath, dest, targetRoot, skillName: skill, src, row: chosen.row });
   } catch (e) {
-    fsu.rmrf(tmp);
     console.error(`install failed: ${e.message}`);
     process.exitCode = 1;
     return;
@@ -212,18 +270,21 @@ module.exports = async function install(argv) {
 
   if (values.json) {
     console.log(JSON.stringify({
-      skill: name, mode: 'folder', source: src.name,
-      dest, files: fileCount, scripts: scripts.length, branch: branchUsed,
+      skill, mode: 'folder', source: src.name,
+      dest: result.dest, files: result.fileCount, scripts: result.scripts.length, branch: result.branchUsed,
     }));
     return;
   }
 
-  console.log(`\n${green('✓')} installed ${bold(skill)} → ${fsu.tildify(dest)}  ${dim(`(${fileCount} file(s) from ${src.name}@${branchUsed})`)}`);
-  if (note) console.log(dim('  ' + note));
-  console.log(dim(`  source: ${src.name}@${branchUsed} — branch HEAD, not a pinned commit; review before use`));
-  if (scripts.length) {
-    const show = scripts.slice(0, 6).join(', ') + (scripts.length > 6 ? ', …' : '');
-    console.log(dim(`  ⚠ includes ${scripts.length} script file(s): ${show}`));
+  console.log(`\n${green('✓')} installed ${bold(skill)} → ${fsu.tildify(result.dest)}  ${dim(`(${result.fileCount} file(s) from ${src.name}@${result.branchUsed})`)}`);
+  if (result.note) console.log(dim('  ' + result.note));
+  console.log(dim(`  source: ${src.name}@${result.branchUsed} — branch HEAD, not a pinned commit; review before use`));
+  if (result.scripts.length) {
+    const show = result.scripts.slice(0, 6).join(', ') + (result.scripts.length > 6 ? ', …' : '');
+    console.log(dim(`  ⚠ includes ${result.scripts.length} script file(s): ${show}`));
+  }
+  if (isChain) {
+    console.log(dim(`  ⛓ part of a ${chosen.row.skills.length}-skill workflow — install all: skills-atlas install ${skill} --chain`));
   }
 
   // usage guidance — scoped by row identity to the exact group you installed from

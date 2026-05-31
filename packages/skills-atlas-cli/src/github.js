@@ -180,12 +180,19 @@ function extractTarGz(gzBuf, folderPath) {
   return out;
 }
 
+// One archive per repo@ref per process — so installing a whole chain (many
+// skills from one repo) downloads the archive ONCE.
+const _archiveCache = new Map();
 async function fetchArchive(author, repo, ref) {
+  const key = `${author}/${repo}@${ref}`;
+  if (_archiveCache.has(key)) return _archiveCache.get(key);
   const url = `https://codeload.github.com/${author}/${repo}/tar.gz/${ref}`;
   const res = await fetchT(url, { headers: { 'User-Agent': UA } });
   if (res.status === 404) { const e = new Error(`archive not found: ${ref}`); e.code = 'NOT_FOUND'; throw e; }
   if (!res.ok) throw new Error(`codeload HTTP ${res.status}`);
-  return Buffer.from(await res.arrayBuffer());
+  const buf = Buffer.from(await res.arrayBuffer());
+  _archiveCache.set(key, buf);
+  return buf;
 }
 
 // Resolve a skill's folder via the repo archive. Returns { files:[{rel,data}],
@@ -212,4 +219,27 @@ async function fetchSkillFolderTar({ author, repo, branch, docPath }) {
   return { files, branchUsed, source: 'archive' };
 }
 
-module.exports = { listSkillFiles, fetchRaw, fetchTree, fetchSkillFolderTar, extractTarGz };
+// Resolve a skill's folder CONTENTS — archive first (no API budget), tree+raw
+// fallback. Returns { files:[{rel,data}], branchUsed, source, note }.
+async function getSkillFolder({ author, repo, branch, docPath }) {
+  let archiveErr = null;
+  try {
+    const folder = await fetchSkillFolderTar({ author, repo, branch, docPath });
+    if (folder && folder.files.length) {
+      return { files: folder.files, branchUsed: folder.branchUsed, source: 'archive', note: null };
+    }
+  } catch (e) {
+    archiveErr = e.message;
+  }
+  const listing = await listSkillFiles({ author, repo, branch, docPath });
+  const files = [];
+  for (const f of listing.files) {
+    files.push({ rel: f.rel, data: await fetchRaw(author, repo, listing.branchUsed, f.path) });
+  }
+  const note = archiveErr ? `archive unavailable (${archiveErr}); used the GitHub API` : listing.note;
+  return { files, branchUsed: listing.branchUsed, source: 'api', note };
+}
+
+module.exports = {
+  listSkillFiles, fetchRaw, fetchTree, fetchSkillFolderTar, extractTarGz, getSkillFolder,
+};

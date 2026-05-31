@@ -166,3 +166,13 @@ test('scriptFiles flags scripts, ignores docs/data', () => {
   const got = scriptFiles(['SKILL.md', 'scripts/run.sh', 'helper.cjs', 'tool.py', 'notes.txt', 'x.tsx', 'data.json']);
   assert.deepStrictEqual(got.sort(), ['helper.cjs', 'scripts/run.sh', 'tool.py', 'x.tsx'].sort());
 });
+
+test('a known ⛓ chain is detected and folder-installable', () => {
+  const { skillDocPath, vendorsFor } = require('../src/index-build');
+  const chain = flatRows.find(r => r.chain && (r.skills || []).includes('brainstorming'));
+  assert.ok(chain, 'the core dev workflow chain exists');
+  assert.ok(chain.skills.length >= 2, 'chain has multiple skills');
+  const v = vendorsFor(skillIndex, 'brainstorming')[0].vendor;
+  // every chain member resolves to a per-skill folder in that vendor
+  for (const sk of chain.skills) assert.ok(skillDocPath(v, sk), `${sk} folder-installable`);
+});
