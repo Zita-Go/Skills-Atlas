@@ -1544,6 +1544,10 @@ function t(key){ const v = (I18N[LANG] || {})[key]; return v != null ? v : (I18N
 function pickT(en, zh){ return (LANG === 'en' && en) ? en : zh; }
 // 大类色：色相等距 + 亮度三档轮换，相邻大类既差色相又差明暗、更易区分
 function catLight(i){ return [68, 58, 49][i % 3]; }
+// 全站统一的大类配色：按序号等距色相 + 统一较浅饱和/亮度（柔和、协调；graph 与技能地图共用）
+const CAT_SAT = 52, CAT_LIGHT = 64;
+function catHue(i){ return Math.round((i * 360 / DATA.sections.length + 220) % 360); }
+function catColor(i){ return `hsl(${catHue(i)}, ${CAT_SAT}%, ${CAT_LIGHT}%)`; }
 function applyChrome(){
   document.documentElement.lang = (LANG === 'en' ? 'en' : 'zh-CN');
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -2536,8 +2540,8 @@ function buildGraph(){
     const halo = document.createElementNS(svgNS, 'circle');
     halo.setAttribute('cx', c.x); halo.setAttribute('cy', c.y);
     halo.setAttribute('r', 200);
-    halo.setAttribute('fill', `hsla(${hue}, 70%, 60%, .035)`);
-    halo.setAttribute('stroke', `hsla(${hue}, 70%, 60%, .12)`);
+    halo.setAttribute('fill', `hsla(${hue}, ${CAT_SAT}%, ${CAT_LIGHT}%, .04)`);
+    halo.setAttribute('stroke', `hsla(${hue}, ${CAT_SAT}%, ${CAT_LIGHT}%, .13)`);
     halo.setAttribute('stroke-width', 1);
     halo.setAttribute('stroke-dasharray', '3 6');
     halo.classList.add('cluster-halo');
@@ -2570,10 +2574,10 @@ function buildGraph(){
     g.classList.add('node');
     g.dataset.id = n.id;
     // 把节点 hue 写到 currentColor 上，hover 时 drop-shadow 用 currentColor
-    g.style.color = `hsl(${n.hue}, 70%, ${catLight(n.catI)}%)`;
+    g.style.color = `hsl(${n.hue}, ${CAT_SAT}%, ${CAT_LIGHT}%)`;
     const c = document.createElementNS(svgNS, 'circle');
     c.setAttribute('r', n.r);
-    c.setAttribute('fill', `hsl(${n.hue}, 70%, ${catLight(n.catI)}%)`);
+    c.setAttribute('fill', `hsl(${n.hue}, ${CAT_SAT}%, ${CAT_LIGHT}%)`);
     c.setAttribute('stroke', n.chain ? 'var(--chain)' : 'var(--graph-node-stroke)');
     c.setAttribute('stroke-width', n.chain ? 2 : 1);
     g.appendChild(c);
@@ -3056,7 +3060,7 @@ function buildGraph(){
   }
   const catLegend = DATA.sections.map((s, i) => {
     const hue = accentHues[i % accentHues.length];
-    return `<div class="legend-cat" data-ci="${i}" title="${escapeAttr(pickT(s.title_en, s.title))}"><span class="swatch" style="background:hsl(${hue},70%,${catLight(i)}%);color:hsl(${hue},70%,${catLight(i)}%)"></span><span>${escapeHtml(shortCat(pickT(s.title_en, s.title)))}</span></div>`;
+    return `<div class="legend-cat" data-ci="${i}" title="${escapeAttr(pickT(s.title_en, s.title))}"><span class="swatch" style="background:hsl(${hue},${CAT_SAT}%,${CAT_LIGHT}%);color:hsl(${hue},${CAT_SAT}%,${CAT_LIGHT}%)"></span><span>${escapeHtml(shortCat(pickT(s.title_en, s.title)))}</span></div>`;
   }).join('');
   legend.innerHTML = `<b>${t('graph_title')}</b>
     <div style="margin-top:4px">${t('graph_l_node')}</div>
@@ -4052,16 +4056,11 @@ function buildHeroMap(){
   const short = t => t.replace(/^[一二三四五六七八九十]+、\s*/, '').replace(/^\d+[\.、]\s*/, '')
                       .replace(/（[^）]*）/g, '').replace(/\s*\([^)]*\)\s*$/g, '').trim()
                       .split(/\s*[\/／&]\s*/)[0].trim();   // 取首段，标签更短不易裁切
-  // 策展定性配色（Carto "Bold"，去掉灰）：中间调、协调、深浅底都成立；色块有标签，循环可接受
-  const PALETTE = ['#7F3C8D','#11A579','#3969AC','#F2B701','#E73F74','#80BA5A','#E68310','#008695','#CF1C90','#F97B72','#4B4B8F'];
-  const hexLum = (hex) => { const m = hex.replace('#',''); const c = i => parseInt(m.slice(i, i+2), 16)/255;
-    const f = v => v <= .03928 ? v/12.92 : Math.pow((v+.055)/1.055, 2.4);
-    return .2126*f(c(0)) + .7152*f(c(2)) + .0722*f(c(4)); };
+  // 配色与 graph 统一：catColor(大类序号) —— 柔和较浅、协调，深浅底通用
   const cats = DATA.sections.map((h1, i) => ({
     i, title: pickT(h1.title_en, h1.title), icon: h1.icon || H1_ICONS[h1.title] || '·',
     v: h1.subsections.reduce((s, h2) => s + h2.rows.length, 0)
   })).filter(c => c.v > 0).sort((a, b) => b.v - a.v);
-  cats.forEach((c, si) => { c.col = PALETTE[si % PALETTE.length]; });   // 按大小序上色，相邻对比更清
   if(!cats.length) return;
   const rects = [];
   (function slice(items, x, y, w, h, horiz){
@@ -4083,8 +4082,7 @@ function buildHeroMap(){
     let label = `<span class="hm-ic${tiny ? ' tiny' : ''}">${r.icon}</span>`;
     if(tw > 96 && th > 56) label += `<span class="hm-nm">${escapeHtml(short(r.title))}</span><b class="hm-ct">${r.v}</b>`;
     else if(tw > 34 && th > 30) label += `<b class="hm-ct sm">${r.v}</b>`;
-    const txt = hexLum(r.col) > 0.42 ? '#0b0d12' : '#f4f7fb';   // 按色块真实亮度选深/浅字
-    return `<button class="hm-tile" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;background:${r.col};--txt:${txt}">${label}</button>`;
+    return `<button class="hm-tile" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;background:${catColor(r.i)};--txt:#15171c">${label}</button>`;
   }).join('');
   host.querySelectorAll('.hm-tile').forEach(tl => tl.addEventListener('click', () => {
     const el = document.querySelectorAll('.section-h1')[+tl.dataset.idx];
