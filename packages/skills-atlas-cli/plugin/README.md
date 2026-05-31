@@ -17,13 +17,10 @@ to find or install a skill.
 
 ## Prerequisite
 
-The CLI must be on your `PATH`:
+Install the CLI — the plugin's commands call it:
 
 ```bash
-# once published:
 npm i -g skills-atlas-cli
-# or, for local dev from this repo:
-cd packages/skills-atlas-cli && npm link
 ```
 
 ## Install the plugin
