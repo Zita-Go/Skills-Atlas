@@ -1265,7 +1265,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
       </div>
     </div>
     <div class="hero-viz">
-      <div id="heroMap" class="hero-map" role="img" aria-label="Skills by category"></div>
+      <div id="heroMap" class="hero-map" role="group" aria-label="Skill map" data-i18n-aria="map_label"></div>
       <div class="hero-map-cap" data-i18n="map_cap">按领域浏览 · 点击色块跳到该分类</div>
     </div>
     <button id="heroToggle" class="hero-toggle" aria-label="collapse" title="收起 / 展开" data-i18n-title="tt_hero_toggle">▾</button>
@@ -1425,6 +1425,7 @@ const I18N = {
     hero_p: '按「我要做什么」搜索或浏览，点开就地读完整 SKILL.md。⛓ 标记的是需串起来用的工作流。',
     stat_skill: '独立 skill', stat_group: '功能分组', stat_vendor: '源仓库', stat_chain: '强绑定工作流',
     map_cap: '技能地图：色块越大该领域越多 · 点击跳到该分类',
+    map_label: '技能地图：按领域分类，点击色块可跳到对应分类',
     empty: '没有匹配的 skill，试试别的关键词',
     sp_ph: '搜 skill / 仓库 / 分组 / 大类…（fuzzy 匹配）',
     sp_empty_default: '输入关键词搜索 skill / 分组 / 大类 / 仓库', sp_empty_none: '没有匹配项，换个关键词试试',
@@ -1488,6 +1489,7 @@ const I18N = {
     hero_p: 'Search or browse by what you want to do, and read each skill\'s full SKILL.md right here. ⛓ = workflows meant to be chained.',
     stat_skill: 'skills', stat_group: 'groups', stat_vendor: 'source repos', stat_chain: 'chained workflows',
     map_cap: 'Skill map: bigger tile = more in that area · click to jump',
+    map_label: 'Skill map: categories by area — click a tile to jump to that category',
     empty: 'No matching skills — try another keyword',
     sp_ph: 'Search skills / repos / groups / categories… (fuzzy)',
     sp_empty_default: 'Search skills / groups / categories / repos', sp_empty_none: 'No matches — try another keyword',
@@ -1551,10 +1553,6 @@ function t(key){ const v = (I18N[LANG] || {})[key]; return v != null ? v : (I18N
 function pickT(en, zh){ return (LANG === 'en' && en) ? en : zh; }
 // 大类色：色相等距 + 亮度三档轮换，相邻大类既差色相又差明暗、更易区分
 function catLight(i){ return [68, 58, 49][i % 3]; }
-// 全站统一的大类配色：按序号等距色相 + 统一较浅饱和/亮度（柔和、协调；graph 与技能地图共用）
-const CAT_SAT = 50, CAT_LIGHT = 71;
-function catHue(i){ return Math.round((i * 360 / DATA.sections.length + 220) % 360); }
-function catColor(i){ return `hsl(${catHue(i)}, ${CAT_SAT}%, ${CAT_LIGHT}%)`; }
 // Hero 技能地图专用调色板（与 graph 解耦）：Carto 策展专业分类色，20 色覆盖全部大类
 let HERO_PALETTE = ['#7F3C8D','#11A579','#3969AC','#F2B701','#E73F74','#80BA5A','#E68310','#008695','#CF1C90','#F97B72','#4B4B8F','#E58606','#52BCA3','#99C945','#CC61B0','#24796C','#2F8AC4','#764E9F','#ED645A','#CC3A8E'];
 function hexLum(hex){ const m = hex.replace('#',''); const c = i => parseInt(m.slice(i, i+2), 16)/255;
@@ -4071,7 +4069,6 @@ function buildHeroMap(pal){
   const short = t => t.replace(/^[一二三四五六七八九十]+、\s*/, '').replace(/^\d+[\.、]\s*/, '')
                       .replace(/（[^）]*）/g, '').replace(/\s*\([^)]*\)\s*$/g, '').trim()
                       .split(/\s*[\/／&]\s*/)[0].trim();   // 取首段，标签更短不易裁切
-  // 配色与 graph 统一：catColor(大类序号) —— 柔和较浅、协调，深浅底通用
   const cats = DATA.sections.map((h1, i) => ({
     i, title: pickT(h1.title_en, h1.title), abbr: catAbbr(h1.title), icon: h1.icon || H1_ICONS[h1.title] || '·',
     v: h1.subsections.reduce((s, h2) => s + h2.rows.length, 0)
@@ -4110,7 +4107,9 @@ function buildHeroMap(pal){
     } else {                           // 矮且窄：纵向 图标 + 数量（无名称）
       label = `${ic}<b class="hm-ct sm">${r.v}</b>`;
     }
-    const txt = (r.col.charAt(0) === '#' && hexLum(r.col) <= 0.5) ? '#f4f7fb' : '#15171c';
+    // 文字取黑/白：阈值用 WCAG 最优交叉点 0.18（而非 0.5）；深字用近黑 #0a0c10 以兜住
+    // #008695 这类中明度色——保证每块文字对比度都 ≥4.5:1（AA）
+    const txt = (r.col.charAt(0) === '#' && hexLum(r.col) <= 0.18) ? '#f4f7fb' : '#0a0c10';
     return `<button class="hm-tile${row ? ' row' : ''}" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;--tile:${r.col};--txt:${txt}">${label}</button>`;
   }).join('');
   fitHeroTiles(host);
