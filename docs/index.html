@@ -749,6 +749,10 @@ html.light .hm-tile{box-shadow:0 1px 3px rgba(20,30,60,.12), inset 0 1px 0 rgba(
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;letter-spacing:-0.01em}
 .hm-tile .hm-ct{font-size:13px;font-weight:800;color:var(--txt);font-family:var(--font-mono)}
 .hm-tile .hm-ct.sm{font-size:11px}
+/* 又宽又矮的色块：横排 图标 名称 …… 数量，避免三行纵向挤压/重叠 */
+.hm-tile.row{flex-direction:row;align-items:center;gap:7px}
+.hm-tile.row .hm-nm{flex:1 1 auto;min-width:0}
+.hm-tile.row .hm-ct{flex:0 0 auto;margin-left:auto}
 .hero-map-cap{font-size:11px;color:var(--fg-muted);text-align:center;letter-spacing:.01em}
 /* hero 收起 */
 .hero{position:relative;transition:padding .2s}
@@ -4093,12 +4097,20 @@ function buildHeroMap(pal){
     const tw = Math.max(0, r.w - GAP), th = Math.max(0, r.h - GAP);
     // 图标始终显示（小块用小号）；名称只在够高够宽时出现（避免裁切/拥挤）；中等块显示数量
     const tiny = th < 30 || tw < 30;
-    const nm = r.abbr || short(r.title);   // 简称（更短，更多色块能完整显示名称）
-    let label = `<span class="hm-ic${tiny ? ' tiny' : ''}">${r.icon}</span>`;
-    if(tw > 56 && th > 42) label += `<span class="hm-nm">${escapeHtml(nm)}</span><b class="hm-ct">${r.v}</b>`;
-    else if(tw > 30 && th > 26) label += `<b class="hm-ct sm">${r.v}</b>`;
+    const nm = escapeHtml(r.abbr || short(r.title));   // 简称
+    let label, row = false;
+    if(th > 54 && tw > 58){            // 够高：纵向 图标 / 名称 / 数量
+      label = `<span class="hm-ic">${r.icon}</span><span class="hm-nm">${nm}</span><b class="hm-ct">${r.v}</b>`;
+    } else if(th >= 34 && tw > 96){    // 又宽又矮：横向 图标 名称 …… 数量（避免三行挤压）
+      row = true;
+      label = `<span class="hm-ic">${r.icon}</span><span class="hm-nm">${nm}</span><b class="hm-ct">${r.v}</b>`;
+    } else if(tw > 32 && th > 28){     // 中小块：图标 + 数量
+      label = `<span class="hm-ic${tiny ? ' tiny' : ''}">${r.icon}</span><b class="hm-ct sm">${r.v}</b>`;
+    } else {                           // 极小块：仅图标
+      label = `<span class="hm-ic${tiny ? ' tiny' : ''}">${r.icon}</span>`;
+    }
     const txt = (r.col.charAt(0) === '#' && hexLum(r.col) <= 0.5) ? '#f4f7fb' : '#15171c';
-    return `<button class="hm-tile" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;--tile:${r.col};--txt:${txt}">${label}</button>`;
+    return `<button class="hm-tile${row ? ' row' : ''}" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;--tile:${r.col};--txt:${txt}">${label}</button>`;
   }).join('');
   host.querySelectorAll('.hm-tile').forEach(tl => tl.addEventListener('click', () => {
     const el = document.querySelectorAll('.section-h1')[+tl.dataset.idx];
