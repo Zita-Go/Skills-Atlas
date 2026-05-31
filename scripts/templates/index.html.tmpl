@@ -1413,7 +1413,7 @@ const I18N = {
     theme_dark: '🌙 暗色', theme_light: '☀️ 亮色',
     hero_h2: '按功能分类的 AI Agent Skills 全景',
     hero_def: 'Agent Skill 是 Claude Code 里可复用的「能力包」——装一次，之后像 /写PRD 这样按斜杠命令调用。',
-    hero_p: '按「我要做什么」找到对的 AI Agent Skill —— 点开即看完整 SKILL.md、一键复制安装命令。⛓ 标记的是必须串起来用的工作流。',
+    hero_p: '按「我要做什么」搜索或浏览，点开就地读完整 SKILL.md。⛓ 标记的是需串起来用的工作流。',
     stat_skill: '独立 skill', stat_group: '功能分组', stat_vendor: '源仓库', stat_chain: '强绑定工作流',
     map_cap: '技能地图：色块越大该领域越多 · 点击跳到该分类',
     empty: '没有匹配的 skill，试试别的关键词',
@@ -1476,7 +1476,7 @@ const I18N = {
     theme_dark: '🌙 Dark', theme_light: '☀️ Light',
     hero_h2: 'AI Agent Skills, organized by function',
     hero_def: 'An Agent Skill is a reusable command that runs inside Claude Code — install one, then call it like /write-prd.',
-    hero_p: 'Find the right one by what you want to do — read the full SKILL.md and copy a one-click install right here. ⛓ marks workflows meant to be chained.',
+    hero_p: 'Search or browse by what you want to do, and read each skill\'s full SKILL.md right here. ⛓ = workflows meant to be chained.',
     stat_skill: 'skills', stat_group: 'groups', stat_vendor: 'source repos', stat_chain: 'chained workflows',
     map_cap: 'Skill map: bigger tile = more in that area · click to jump',
     empty: 'No matching skills — try another keyword',
@@ -4042,7 +4042,10 @@ function setupScrollSpy(){
 function buildHeroMap(){
   const host = document.getElementById('heroMap');
   if(!host) return;
-  const W = Math.max(240, Math.round(host.clientWidth) || 360), H = 244;
+  // 高度对齐左侧文字栏，消除右侧留白（地图也随之更大）
+  const txtH = (document.querySelector('.hero-text') || {}).offsetHeight || 0;
+  const W = Math.max(240, Math.round(host.clientWidth) || 360);
+  const H = Math.max(244, Math.min(360, txtH ? txtH - 28 : 244));
   host.style.height = H + 'px';
   const N = DATA.sections.length;
   const short = t => t.replace(/^[一二三四五六七八九十]+、\s*/, '').replace(/^\d+[\.、]\s*/, '')
