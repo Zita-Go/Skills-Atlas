@@ -242,10 +242,10 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
   margin-left:4px;letter-spacing:.02em;vertical-align:middle}
 @media(max-width:760px){
   .ai-btn .ai-kbd{display:none}
-  /* 窄屏不再隐藏视图切换器（否则仓库/网络视图无法进入），改为只留图标 */
-  .vb-label{display:none}
-  .view-btn{padding:8px 11px}
-  .view-btn .vb-emoji{font-size:18px}
+  /* 窄屏保留视图切换器；标签也保留（小字），避免只剩图标看不懂是什么视图 */
+  .vb-label{font-size:10.5px}
+  .view-btn{padding:7px 9px;gap:4px}
+  .view-btn .vb-emoji{font-size:15px}
   .tb-divider{display:none}
   /* 窄屏精简顶栏：搜索只留放大镜图标；语言/主题移入侧栏（汉堡菜单），腾出竖向空间 */
   #spotlightBtn [data-i18n="btn_search"],#spotlightBtn .ai-kbd{display:none}
@@ -1015,7 +1015,7 @@ html.light .section-h1 .h1-tone{
   border-radius:var(--radius);padding:14px 16px;cursor:pointer;
   box-shadow:var(--shadow);
   transition:transform .18s, box-shadow .18s, border-color .18s;
-  position:relative;overflow:hidden}
+  position:relative;overflow:hidden;scroll-margin-top:var(--jump-offset)}
 .repo-card::before{
   content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
   background:linear-gradient(180deg,
@@ -1439,7 +1439,7 @@ const I18N = {
     graph_title: '网络视图',
     graph_l_node: '· 节点 = skill，大小 ∝ 出现次数',
     graph_legend_chain: '· 红边 / 红圈 = ⛓ 强绑定',
-    graph_l_ctrl: '· 滚轮缩放 · 拖拽节点 · 双击钉住',
+    graph_l_ctrl: '· 悬停看名字 · 点击看详情 · 滚轮缩放 · 拖拽平移',
     ai_empty_local: '没找到匹配的 skill。试试更宽泛的描述？',
     ai_empty_local_hint: '没找到匹配的 skill（本地关键词匹配）。配置 LLM 后可获得更智能的推荐 → 点 ⚙',
     ai_empty_llm: 'LLM 没找到匹配的 skill。试试更具体的目标？',
@@ -1503,7 +1503,7 @@ const I18N = {
     graph_title: 'Network view',
     graph_l_node: '· node = skill, size ∝ frequency',
     graph_legend_chain: '· red edge / ring = ⛓ Chained',
-    graph_l_ctrl: '· scroll to zoom · drag nodes · double-click to pin',
+    graph_l_ctrl: '· hover = name · click = details · scroll = zoom · drag = pan',
     ai_empty_local: 'No matching skill. Try a broader description?',
     ai_empty_local_hint: 'No matching skill (local keyword match). Configure an LLM for smarter picks → click ⚙',
     ai_empty_llm: 'The LLM found no matching skill. Try a more specific goal?',
@@ -2087,6 +2087,7 @@ function setupSearch(){
   const runSearch = (openTop) => {
     if(currentView === 'graph' && graphFindFn) graphFindFn(currentSearch, !!openTop);
     else applyFilter();
+    if(window._heroUpdate) window._heroUpdate();   // 搜索即收起 hero，结果上浮（不必等滚动）
   };
   inp.addEventListener('input', e => {
     currentSearch = e.target.value;
@@ -2302,7 +2303,7 @@ function buildRepoView(){
         const upd = relTimeShort(r.last_commit);
         const fresh = (_daysSince(r.last_commit) ?? 999) < 30 ? ' fresh' : '';
         const updHtml = upd ? `<span class="rc-upd${fresh}" title="${escapeAttr((_en ? 'last commit ' : '最近提交 ') + (r.last_commit || ''))}">${clockIcon}${upd}</span>` : '';
-        html += `<div class="repo-card" data-repo="${escapeAttr(r.id)}" style="--cat-hue:${hue}">`;
+        html += `<div class="repo-card" id="repocard-${escapeAttr(r.id)}" data-repo="${escapeAttr(r.id)}" style="--cat-hue:${hue}">`;
         html += `<div class="repo-card-head"><div class="repo-card-name">${author}${escapeHtml(repoName)}</div>${star}</div>`;
         if(desc) html += `<div class="repo-card-desc">${escapeHtml(desc)}</div>`;
         if(tags) html += `<div class="repo-card-meta">${tags}</div>`;
@@ -2387,8 +2388,8 @@ function buildRepoNav(typeOrder, byType, TYPE_LABEL){
     html += `<span class="badge">${byType[t].length}</span>`;
     html += `</div>`;
     html += `<div class="nav-repo-list">`;
-    byType[t].slice(0, 30).forEach(r => {
-      html += `<a class="nav-repo-item" data-repo="${escapeAttr(r.id)}" data-target="${slug}" title="${escapeAttr(r.author + '/' + (r.repo || r.id))}">${escapeHtml(r.id)}</a>`;
+    byType[t].forEach(r => {   // 列全（曾 .slice(0,30) 静默截断，超出的仓无法从侧栏导航到）
+      html += `<a class="nav-repo-item" data-repo="${escapeAttr(r.id)}" data-target="repocard-${escapeAttr(r.id)}" title="${escapeAttr(r.author + '/' + (r.repo || r.id))}">${escapeHtml(r.id)}</a>`;
     });
     html += `</div></div>`;
   });
@@ -4344,10 +4345,19 @@ function setupUsage(){
       } else if(cmd.startsWith('/plugin')){
         ih += `<div class="ui-use">▶ <b>${LANG === 'en' ? 'Use it' : '用法'}:</b> ${LANG === 'en' ? 'After adding the marketplace, run <code>/plugin install</code> to pick the plugin; its commands then show up as <code>/commands</code>.' : '加完 marketplace 后运行 <code>/plugin install</code> 选择插件；插件的命令会以 <code>/斜杠命令</code> 形式出现。'}</div>`;
       } else {
-        ih += `<div class="ui-use">▶ <b>${LANG === 'en' ? 'Use it' : '用法'}:</b> ${LANG === 'en' ? 'Not a Claude skill — a standalone tool. Follow the repo README after installing.' : '这不是 Claude skill，而是独立工具，装好后按仓库 README 使用。'}</div>`;
+        ih += `<div class="ui-use">▶ <b>${LANG === 'en' ? 'Use it' : '用法'}:</b> ${LANG === 'en' ? 'Standalone install — follow the repo README to set it up and use it (see the note below).' : '独立安装方式 —— 按仓库 README 完成安装与使用（详见下方说明）。'}</div>`;
       }
       if(inst.note) ih += '<div class="ui-note">ℹ️ ' + escapeHtml(pickT(inst.note_en, inst.note)) + '</div>';
-      if(inst.alt) ih += `<details class="ui-alt"><summary>${LANG === 'en' ? 'Alternative command' : '备选命令'}</summary><code>${escapeHtml(inst.alt)}</code> <button class="src-act" data-act="copy" data-cmd="${escapeAttr(inst.alt)}">${LANG === 'en' ? 'Copy' : '复制'}</button></details>`;
+      if(inst.alt){
+        const isPlugin = inst.alt.startsWith('/plugin');
+        const altSummary = isPlugin
+          ? (LANG === 'en' ? 'Install as a plugin instead (full package: skills + agents + commands)' : '改用插件方式安装（完整包：skills + agents + 命令）')
+          : (LANG === 'en' ? 'Alternative command' : '备选命令');
+        const altHint = isPlugin
+          ? `<div style="margin-top:4px;color:var(--fg-muted);font-size:11.5px">${LANG === 'en' ? 'One-time marketplace add, then run <code>/plugin install</code> to pick it.' : '一次性加 marketplace，再 <code>/plugin install</code> 选中它。'}</div>`
+          : '';
+        ih += `<details class="ui-alt"><summary>${altSummary}</summary><code>${escapeHtml(inst.alt)}</code> <button class="src-act" data-act="copy" data-cmd="${escapeAttr(inst.alt)}">${LANG === 'en' ? 'Copy' : '复制'}</button>${altHint}</details>`;
+      }
       installEl.innerHTML = ih;
       installEl.style.display = '';
     } else installEl.style.display = 'none';

@@ -26,6 +26,7 @@
     writing-plans: skills/writing-plans/SKILL.md
     writing-skills: skills/writing-skills/SKILL.md
   skill_docs_generated_at: '2026-05-30'
+  plugin_marketplace: true
 - id: mattpocock
   author: mattpocock
   repo: skills
@@ -131,6 +132,7 @@
     value-proposition: pm-product-strategy/skills/value-proposition/SKILL.md
     wwas: pm-execution/skills/wwas/SKILL.md
   skill_docs_generated_at: '2026-05-30'
+  plugin_marketplace: true
 - id: Codex
   author: openai
   repo: skills
@@ -286,6 +288,7 @@
     xlsx: skills/xlsx/SKILL.md
   skill_docs_generated_at: '2026-05-30'
   license: Apache-2.0
+  plugin_marketplace: true
 - id: ComposioHQ
   author: ComposioHQ
   repo: awesome-claude-skills
@@ -302,6 +305,7 @@
     webapp-testing: webapp-testing/SKILL.md
   skill_docs_generated_at: '2026-05-30'
   license: Apache-2.0
+  plugin_marketplace: true
 - id: superpowers-lab
   author: obra
   repo: superpowers-lab
@@ -451,6 +455,7 @@
   skill_docs:
     write-concisely: plugins/docs/skills/write-concisely/SKILL.md
   skill_docs_generated_at: '2026-05-30'
+  plugin_marketplace: true
 - id: alchaincyf
   author: alchaincyf
   repo: huashu-design
@@ -476,6 +481,7 @@
   description_en: 🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman
   license: MIT
   doc_path: README.md
+  plugin_marketplace: true
 - id: SeanZoR
   author: SeanZoR
   repo: claude-speed-reader
@@ -580,6 +586,10 @@
   description_en: A minimal, low-friction memory system for Claude Code
   license: MIT
   doc_path: README.md
+  install_override:
+    command: git clone https://github.com/hanfang/claude-memory-skill.git && bash claude-memory-skill/install.sh
+    note: Claude Code 记忆系统：克隆后跑 install.sh 装入 ~/.claude（skill 文件是 mem.md，非标准 SKILL.md，故用脚本而非 npx skills add）
+    note_en: 'Claude Code memory system: clone, then run install.sh (its skill file is mem.md, not a standard SKILL.md, so it installs via the script rather than npx skills add)'
 - id: thedotmack
   author: thedotmack
   repo: claude-mem
@@ -606,6 +616,7 @@
   description_en: 337 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 330+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills.
   license: MIT
   doc_path: README.md
+  plugin_marketplace: true
 - id: Dean
   author: deanpeters
   repo: Product-Manager-Skills
@@ -662,6 +673,7 @@
     workshop-facilitation: skills/workshop-facilitation/SKILL.md
   skill_docs_generated_at: '2026-05-30'
   license: CC-BY-NC-SA-4.0
+  plugin_marketplace: true
 - id: founder-skills
   author: ognjengt
   repo: founder-skills
@@ -692,6 +704,7 @@
   default_branch: main
   description: 面向创始人的 Claude skills 集合。
   description_en: Claude skills for founders
+  plugin_marketplace: true
 - id: wrsmith108
   author: wrsmith108
   repo: linear-claude-skill
@@ -773,6 +786,7 @@
     social: skills/social/SKILL.md
     video: skills/video/SKILL.md
   skill_docs_generated_at: '2026-05-30'
+  plugin_marketplace: true
 - id: AgriciDaniel-seo
   author: AgriciDaniel
   repo: claude-seo
@@ -786,6 +800,7 @@
   description_en: Universal SEO skill for Claude Code. 25 sub-skills + 18 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, backlinks, local SEO, maps intelligence, semantic clustering, e-commerce SEO, international SEO, Google APIs, and PDF/Excel reporting. Optional DataForSEO, Firecrawl, and Banana extensions.
   license: MIT
   doc_path: README.md
+  plugin_marketplace: true
 - id: ReScienceLab
   author: ReScienceLab
   repo: opc-skills
@@ -809,6 +824,7 @@
     requesthunt: skills/requesthunt/SKILL.md
     twitter: skills/twitter/SKILL.md
   skill_docs_generated_at: '2026-05-30'
+  plugin_marketplace: true
 - id: AgriciDaniel-ads
   author: AgriciDaniel
   repo: claude-ads
@@ -822,6 +838,7 @@
   default_branch: main
   description: 面向 Claude Code 的付费广告全面审计与优化 skill：横跨 Google、Meta、YouTube、LinkedIn、TikTok、Microsoft、Apple Ads 的 250+ 项检查，含加权评分、并行 agent、行业模板与 AI 创意生成。
   description_en: Comprehensive paid advertising audit & optimization skill for Claude Code. 250+ checks across Google, Meta, YouTube, LinkedIn, TikTok, Microsoft & Apple Ads with weighted scoring, parallel agents, industry templates, and AI creative generation.
+  plugin_marketplace: true
 - id: nextlevelbuilder
   author: nextlevelbuilder
   repo: ui-ux-pro-max-skill
@@ -835,6 +852,7 @@
   description_en: An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms
   license: MIT
   doc_path: README.md
+  plugin_marketplace: true
 - id: op7418-NB
   author: op7418
   repo: NanoBanana-PPT-Skills
@@ -862,6 +880,7 @@
   skill_docs:
     frontend-slides: plugins/frontend-slides/skills/frontend-slides/SKILL.md
   skill_docs_generated_at: '2026-05-30'
+  plugin_marketplace: true
 - id: nexu-io
   author: nexu-io
   repo: open-design
@@ -926,6 +945,7 @@
   description: Firecrawl 的 CLI 与 agent skill —— 给 AI agent 加抓取/搜索/浏览能力。
   description_en: CLI and Agent Skill for Firecrawl - Add scrape, search, and browsing capabilities to your AI agents
   doc_path: README.md
+  plugin_marketplace: true
 - id: mvanhorn
   author: mvanhorn
   repo: last30days-skill
@@ -939,6 +959,7 @@
   description_en: AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary
   license: MIT
   doc_path: README.md
+  plugin_marketplace: true
 - id: Paramchoudhary
   author: Paramchoudhary
   repo: ResumeSkills
@@ -980,6 +1001,7 @@
   description_en: AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.
   license: MIT
   doc_path: README.md
+  plugin_marketplace: true
 - id: gokapso
   author: gokapso
   repo: agent-skills
@@ -1073,6 +1095,7 @@
   description_en: 'Academic Research Skills for Claude Code: research → write → review → revise → finalize'
   doc_path: README.md
   license: CC-BY-NC-4.0
+  plugin_marketplace: true
 - id: K-Dense-AI
   author: K-Dense-AI
   repo: scientific-agent-skills
@@ -1115,6 +1138,7 @@
     project-development: skills/project-development/SKILL.md
     tool-design: skills/tool-design/SKILL.md
   skill_docs_generated_at: '2026-05-30'
+  plugin_marketplace: true
 - id: UseAI-pro
   author: UseAI-pro
   repo: openclaw-skills-security
@@ -1319,6 +1343,7 @@
   description: 多领域 Claude skill 大仓(16 领域、338 skill);本目录引用其法律领域(合同/隐私/监管/风险/法务运营)。
   description_en: 338 AI skills across 16 domains. PM is the deepest (66 skills — discovery, execution, strategy frameworks, GTM, Jira/Linear/Notion). Plus engineering, marketing, C-level (CAIO/CDO/CCO/GC/VPE), compliance + audit-prep, new research/ domain, vertical advisors. 74 expert agents, 784+ stdlib Python tools. 11 AI assistants.
   license: MIT + Commons Clause
+  plugin_marketplace: true
 - id: anthropics-healthcare
   author: anthropics
   repo: healthcare
@@ -1330,6 +1355,7 @@
   stars: 282
   last_commit: '2026-05-29'
   description: Anthropic 官方 Claude for Healthcare:FHIR 端点开发、医保事前授权审查、临床试验方案(FDA/NIH);另带 CMS/ICD-10/NPI/PubMed 等数据连接器。
+  description_en: "Anthropic's official Claude for Healthcare: FHIR endpoint development, prior-authorization review, clinical-trial protocols (FDA/NIH); plus CMS/ICD-10/NPI/PubMed data connectors."
 - id: anthropics-financial-services
   author: anthropics
   repo: financial-services
@@ -1342,6 +1368,7 @@
   last_commit: '2026-05-29'
   license: Apache-2.0
   description: Anthropic 官方金融服务 skill 市场:投行/股票研究/PE/财富管理/基金运营等垂直 plugin + LSEG/S&P 数据连接器。
+  description_en: "Anthropic's official financial-services skill marketplace: vertical plugins for investment banking / equity research / PE / wealth management / fund ops, plus LSEG and S&P data connectors."
 - id: agiprolabs
   author: agiprolabs
   repo: claude-trading-skills
@@ -1355,6 +1382,7 @@
   description: 量化交易 Agent Skill 集(62 个):行情/技术分析/回测/组合风险/量化方法/期权固收(另含大量加密/DeFi skill)。
   license: MIT
   description_en: 62 trading, DeFi, and quantitative finance Agent Skills. Works with Claude Code, Cursor, Codex, Gemini CLI, and 30+ other tools.
+  plugin_marketplace: true
 - id: JoelLewis
   author: JoelLewis
   repo: finance_skills
@@ -1368,6 +1396,7 @@
   description: 机构级金融 skill 套件(84 个):财富管理/证券合规(KYC/AML/Reg-BI)/组合风险/交易运营/数据集成。
   license: MIT
   description_en: Claude Code skill plugins for financial services — 81 skills across 7 domain plugins covering investment management, compliance, advisory practice, trading, and operations.
+  plugin_marketplace: true
 - id: OctagonAI
   author: OctagonAI
   repo: skills
@@ -1419,6 +1448,8 @@
   last_commit: '2026-05-28'
   license: Apache-2.0
   description: Grafana 官方可观测性 skill(39 个):Grafana/PromQL/LGTM 栈(Loki/Tempo/Mimir)/OpenTelemetry/告警/IRM/FinOps/k6。
+  description_en: "Grafana's official observability skills (39): Grafana / PromQL / the LGTM stack (Loki/Tempo/Mimir) / OpenTelemetry / alerting / IRM / FinOps / k6."
+  plugin_marketplace: true
 - id: pulumi
   author: pulumi
   repo: agent-skills
@@ -1431,6 +1462,8 @@
   last_commit: '2026-05-29'
   license: Apache-2.0
   description: Pulumi 官方 IaC skill:Pulumi 编写规范、组件、Automation API、ESC,以及从 Terraform/CDK/CloudFormation/ARM 迁移。
+  description_en: "Pulumi's official IaC skills: Pulumi authoring conventions, components, Automation API, ESC, and migration from Terraform / CDK / CloudFormation / ARM."
+  plugin_marketplace: true
 - id: ahmedasmar
   author: ahmedasmar
   repo: devops-claude-skills
@@ -1457,6 +1490,7 @@
   description: 多领域 Claude skill 仓(66 个/12 类);本目录引用其 DevOps/SRE 类:devops-engineer / sre-engineer(SLO)/ kubernetes-specialist / monitoring-expert。
   license: MIT
   description_en: 66 Specialized Skills for Full-Stack Developers. Transform Claude Code into your expert pair programmer.
+  plugin_marketplace: true
 - id: antonbabenko
   author: antonbabenko
   repo: terraform-skill
@@ -1509,6 +1543,7 @@
   description: 渗透测试全生命周期 skill+agent(覆盖 OWASP Top10、CTF、/pentest /hackerone),含蓝队 DFIR/威胁情报(仅限授权测试)。
   license: MIT
   description_en: Open-source Claude Code skills, agents, and slash commands for AI-powered penetration testing, bug bounty hunting, and security research
+  plugin_marketplace: true
 - id: Masriyan
   author: Masriyan
   repo: Claude-Code-CyberSecurity-Skill
@@ -1574,6 +1609,7 @@
   description: 网络安全 red/blue/purple skill:渗透/红队 + SOC 运营/SIEM 检测/威胁狩猎/取证(仅限授权测试)。
   license: MIT
   description_en: Cybersecurity skills for AI coding agents (Claude Code, Cursor, Codex)
+  plugin_marketplace: true
 - id: gl0bal01
   author: gl0bal01
   repo: malware-analysis-claude-skills
@@ -1600,6 +1636,7 @@
   description: 循证教学 Agent Skill 旗舰(165 个,CC BY-SA 4.0):课程设计与评估、自适应辅导、学习科学、AI 素养、EAL 语言发展等 20 个 domain。
   description_en: 165 evidence-based education skills for Claude, Codex, and any Agent Skills-compatible tool.
   license: CC-BY-SA-4.0
+  plugin_marketplace: true
 - id: dmccreary
   author: dmccreary
   repo: claude-skills
@@ -1612,11 +1649,12 @@
   last_commit: '2026-05-29'
   description: 智能教材 Claude skill:learning graph 生成、章节/测验/词表内容生成、MicroSim 交互模拟、教育评估。
   license: CC-BY-NC-SA-4.0
+  description_en: 'Intelligent-textbook Claude skills: learning-graph generation, chapter/quiz/glossary content generation, MicroSim interactive simulations, and educational assessment.'
 - id: SYuan03
   author: SYuan03
   repo: Skill-Anything
   url: https://github.com/SYuan03/Skill-Anything
-  type: skill
+  type: python-library
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
@@ -1625,6 +1663,10 @@
   description: Skill-Anything:把任意素材转成 12 段学习指南 + quiz + flashcard + 间隔重复,可导出 SKILL.md。
   license: MIT
   description_en: Any source (PDF, video, web, audio, text) to interactive learning package with quizzes, flashcards and spaced repetition. One command, 12-section study guide.
+  install_override:
+    command: git clone https://github.com/SYuan03/Skill-Anything.git && cd Skill-Anything && pip install -e ".[all]"
+    note: Python CLI（非 Claude skill 本体；PyPI 未发布需源码装）：装后用 sa auto <素材> 生成学习包，可选导出 SKILL.md
+    note_en: 'Python CLI (not a Claude skill itself; not on PyPI, install from source): after install run `sa auto <source>` to build study packs; can optionally export a SKILL.md'
 - id: auditmos
   author: auditmos
   repo: skills
@@ -1664,6 +1706,7 @@
   description: Blockscout 区块链浏览器 / API 集成 skill,做链上数据分析与 Web3 开发。
   license: MIT
   description_en: A collection of AI agent skills for working with the Blockscout ecosystem — blockchain explorers, APIs, and supporting services.
+  plugin_marketplace: true
 - id: quiknode-labs
   author: quiknode-labs
   repo: blockchain-skills
@@ -1677,6 +1720,7 @@
   description: QuickNode 区块链 RPC / 数据 skill。
   license: MIT
   description_en: Blockchain skills you can use with your coding agent, such as Claude Code, OpenCode, Codex, Cursor and more.
+  plugin_marketplace: true
 - id: XSpoonAi
   author: XSpoonAi
   repo: spoon-awesome-skill
@@ -1716,6 +1760,7 @@
   description: HeyGen 官方数字人 skill(3 个):创建 avatar、生成口播视频、跨语言翻译配音换嘴型。
   license: MIT
   description_en: HeyGen AI agent skills — avatar creation and video production via the v3 Video Agent pipeline
+  plugin_marketplace: true
 - id: bitwize-music-studio
   author: bitwize-music-studio
   repo: claude-ai-music-skills
@@ -1794,3 +1839,4 @@
   description: VC 募资 Claude skill:募资叙事、投资人关系(grounded in Sequoia/a16z/YC)。
   license: MIT
   description_en: AI-powered pitch analysis, fundraising strategy, and investor relations for startup founders -- a Claude Code plugin grounded in first principles from Sequoia, a16z, Benchmark, and YC
+  plugin_marketplace: true

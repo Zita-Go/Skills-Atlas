@@ -37,7 +37,7 @@
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
+                    "alt": "/plugin marketplace add obra/superpowers"
                   }
                 }
               ],
@@ -93,7 +93,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -251,7 +251,7 @@
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
+                    "alt": "/plugin marketplace add obra/superpowers"
                   }
                 },
                 {
@@ -285,7 +285,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -324,7 +324,7 @@
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
+                    "alt": "/plugin marketplace add obra/superpowers"
                   }
                 },
                 {
@@ -395,7 +395,7 @@
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
+                    "alt": "/plugin marketplace add obra/superpowers"
                   }
                 }
               ],
@@ -432,7 +432,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 },
                 {
@@ -449,7 +449,7 @@
                   "install": {
                     "command": "npx skills add ComposioHQ/awesome-claude-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ComposioHQ/awesome-claude-skills ~/.claude/skills/awesome-claude-skills"
+                    "alt": "/plugin marketplace add ComposioHQ/awesome-claude-skills"
                   }
                 }
               ],
@@ -531,7 +531,7 @@
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
+                    "alt": "/plugin marketplace add obra/superpowers"
                   }
                 }
               ],
@@ -689,7 +689,7 @@
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
+                    "alt": "/plugin marketplace add obra/superpowers"
                   }
                 }
               ],
@@ -818,7 +818,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 },
                 {
@@ -889,7 +889,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 }
               ],
@@ -1252,7 +1252,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 },
                 {
@@ -1433,7 +1433,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 }
               ],
@@ -1509,7 +1509,7 @@
                   "install": {
                     "command": "npx skills add NeoLabHQ/context-engineering-kit",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/NeoLabHQ/context-engineering-kit ~/.claude/skills/context-engineering-kit"
+                    "alt": "/plugin marketplace add NeoLabHQ/context-engineering-kit"
                   }
                 }
               ],
@@ -1548,7 +1548,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -1603,7 +1603,7 @@
                   "install": {
                     "command": "npx skills add JuliusBrussee/caveman",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/JuliusBrussee/caveman ~/.claude/skills/caveman"
+                    "alt": "/plugin marketplace add JuliusBrussee/caveman"
                   }
                 },
                 {
@@ -1958,9 +1958,10 @@
                   "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
-                    "command": "npx skills add hanfang/claude-memory-skill",
-                    "kind": "skill",
-                    "alt": "git clone https://github.com/hanfang/claude-memory-skill ~/.claude/skills/claude-memory-skill"
+                    "command": "git clone https://github.com/hanfang/claude-memory-skill.git && bash claude-memory-skill/install.sh",
+                    "note": "Claude Code 记忆系统：克隆后跑 install.sh 装入 ~/.claude（skill 文件是 mem.md，非标准 SKILL.md，故用脚本而非 npx skills add）",
+                    "kind": "override",
+                    "note_en": "Claude Code memory system: clone, then run install.sh (its skill file is mem.md, not a standard SKILL.md, so it installs via the script rather than npx skills add)"
                   }
                 }
               ],
@@ -2035,7 +2036,7 @@
                   "install": {
                     "command": "npx skills add alirezarezvani/claude-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/alirezarezvani/claude-skills ~/.claude/skills/claude-skills"
+                    "alt": "/plugin marketplace add alirezarezvani/claude-skills"
                   }
                 }
               ],
@@ -2089,7 +2090,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -2106,7 +2107,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -2145,7 +2146,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 },
                 {
@@ -2162,7 +2163,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -2201,7 +2202,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 },
                 {
@@ -2218,7 +2219,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -2260,7 +2261,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -2277,7 +2278,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 },
                 {
@@ -2333,7 +2334,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -2378,7 +2379,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -2417,7 +2418,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -2454,7 +2455,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -2497,7 +2498,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 },
                 {
@@ -2514,7 +2515,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -2553,7 +2554,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -2610,7 +2611,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -2649,7 +2650,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -2688,7 +2689,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -2736,7 +2737,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -2778,7 +2779,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -2795,7 +2796,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -2833,7 +2834,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 },
                 {
@@ -2850,7 +2851,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -2892,7 +2893,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 },
                 {
@@ -2909,7 +2910,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -2949,7 +2950,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 },
                 {
@@ -2966,7 +2967,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -3011,7 +3012,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -3049,7 +3050,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -3086,7 +3087,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -3132,7 +3133,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -3149,7 +3150,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 },
                 {
@@ -3183,7 +3184,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -3225,7 +3226,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -3242,7 +3243,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -3361,7 +3362,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -3378,7 +3379,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -3417,7 +3418,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -3462,7 +3463,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 },
                 {
@@ -3519,7 +3520,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -3565,7 +3566,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -3604,7 +3605,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -3621,7 +3622,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -3661,7 +3662,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -3705,7 +3706,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -3722,7 +3723,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -3760,7 +3761,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 }
               ],
@@ -3803,7 +3804,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -3840,7 +3841,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -3877,7 +3878,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -3915,7 +3916,7 @@
                   "install": {
                     "command": "npx skills add deanpeters/Product-Manager-Skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+                    "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
                   }
                 }
               ],
@@ -3970,7 +3971,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4008,7 +4009,7 @@
                   "install": {
                     "command": "npx skills add AgriciDaniel/claude-seo",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/AgriciDaniel/claude-seo ~/.claude/skills/claude-seo"
+                    "alt": "/plugin marketplace add AgriciDaniel/claude-seo"
                   }
                 }
               ],
@@ -4046,7 +4047,7 @@
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
+                    "alt": "/plugin marketplace add ReScienceLab/opc-skills"
                   }
                 }
               ],
@@ -4091,7 +4092,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4128,7 +4129,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -4165,7 +4166,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -4203,7 +4204,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -4248,7 +4249,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4285,7 +4286,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4324,7 +4325,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 },
                 {
@@ -4341,7 +4342,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -4378,7 +4379,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -4423,7 +4424,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4460,7 +4461,7 @@
                   "install": {
                     "command": "npx skills add AgriciDaniel/claude-ads",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/AgriciDaniel/claude-ads ~/.claude/skills/claude-ads"
+                    "alt": "/plugin marketplace add AgriciDaniel/claude-ads"
                   }
                 }
               ],
@@ -4497,7 +4498,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4544,7 +4545,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4582,7 +4583,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -4619,7 +4620,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4664,7 +4665,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 },
                 {
@@ -4681,7 +4682,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -4719,7 +4720,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4757,7 +4758,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4797,7 +4798,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4842,7 +4843,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 },
                 {
@@ -4859,7 +4860,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -4876,7 +4877,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -4923,7 +4924,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -4940,7 +4941,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 },
                 {
@@ -4957,7 +4958,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -4995,7 +4996,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -5038,7 +5039,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -5075,7 +5076,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -5112,7 +5113,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -5159,7 +5160,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 },
                 {
@@ -5176,7 +5177,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 },
                 {
@@ -5193,7 +5194,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -5240,7 +5241,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 },
                 {
@@ -5257,7 +5258,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -5295,7 +5296,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -5339,7 +5340,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -5377,7 +5378,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -5430,7 +5431,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 }
               ],
@@ -5474,7 +5475,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 }
               ],
@@ -5551,7 +5552,7 @@
                   "install": {
                     "command": "npx skills add nextlevelbuilder/ui-ux-pro-max-skill",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/nextlevelbuilder/ui-ux-pro-max-skill ~/.claude/skills/ui-ux-pro-max-skill"
+                    "alt": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill"
                   }
                 }
               ],
@@ -5595,7 +5596,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 }
               ],
@@ -5691,7 +5692,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 }
               ],
@@ -5767,7 +5768,7 @@
                   "install": {
                     "command": "npx skills add zarazhangrui/frontend-slides",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/zarazhangrui/frontend-slides ~/.claude/skills/frontend-slides"
+                    "alt": "/plugin marketplace add zarazhangrui/frontend-slides"
                   }
                 }
               ],
@@ -5843,7 +5844,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 }
               ],
@@ -6022,7 +6023,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 }
               ],
@@ -6060,7 +6061,7 @@
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
+                    "alt": "/plugin marketplace add ReScienceLab/opc-skills"
                   }
                 }
               ],
@@ -6100,7 +6101,7 @@
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
+                    "alt": "/plugin marketplace add ReScienceLab/opc-skills"
                   }
                 },
                 {
@@ -6117,7 +6118,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -6404,7 +6405,7 @@
                   "install": {
                     "command": "npx skills add coreyhaines31/marketingskills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+                    "alt": "/plugin marketplace add coreyhaines31/marketingskills"
                   }
                 }
               ],
@@ -6445,7 +6446,7 @@
                   "install": {
                     "command": "npx skills add heygen-com/skills",
                     "kind": "skill-pack",
-                    "alt": "git clone https://github.com/heygen-com/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add heygen-com/skills"
                   }
                 }
               ],
@@ -6703,7 +6704,7 @@
                   "install": {
                     "command": "npx skills add firecrawl/cli",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/firecrawl/cli ~/.claude/skills/cli"
+                    "alt": "/plugin marketplace add firecrawl/cli"
                   }
                 }
               ],
@@ -6784,7 +6785,7 @@
                   "install": {
                     "command": "npx skills add mvanhorn/last30days-skill",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/mvanhorn/last30days-skill ~/.claude/skills/last30days-skill"
+                    "alt": "/plugin marketplace add mvanhorn/last30days-skill"
                   }
                 }
               ],
@@ -6826,7 +6827,7 @@
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
+                    "alt": "/plugin marketplace add ReScienceLab/opc-skills"
                   }
                 }
               ],
@@ -6865,7 +6866,7 @@
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
+                    "alt": "/plugin marketplace add ReScienceLab/opc-skills"
                   }
                 }
               ],
@@ -6909,7 +6910,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -6948,7 +6949,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -6986,7 +6987,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -7414,7 +7415,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -7476,7 +7477,7 @@
                   "install": {
                     "command": "npx skills add santifer/career-ops",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/santifer/career-ops ~/.claude/skills/career-ops"
+                    "alt": "/plugin marketplace add santifer/career-ops"
                   }
                 }
               ],
@@ -7555,7 +7556,7 @@
                   "install": {
                     "command": "npx skills add santifer/career-ops",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/santifer/career-ops ~/.claude/skills/career-ops"
+                    "alt": "/plugin marketplace add santifer/career-ops"
                   }
                 },
                 {
@@ -7572,7 +7573,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 }
               ],
@@ -7616,7 +7617,7 @@
                   "install": {
                     "command": "npx skills add phuryn/pm-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+                    "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
                 }
               ],
@@ -7868,7 +7869,7 @@
                   "install": {
                     "command": "npx skills add ognjengt/founder-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+                    "alt": "/plugin marketplace add ognjengt/founder-skills"
                   }
                 }
               ],
@@ -7942,7 +7943,7 @@
                   "install": {
                     "command": "npx skills add ReScienceLab/opc-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
+                    "alt": "/plugin marketplace add ReScienceLab/opc-skills"
                   }
                 }
               ],
@@ -8162,7 +8163,7 @@
                   "install": {
                     "command": "npx skills add tjboudreaux/cc-skills-vc-fundraising",
                     "kind": "skill-pack",
-                    "alt": "git clone https://github.com/tjboudreaux/cc-skills-vc-fundraising ~/.claude/skills/cc-skills-vc-fundraising"
+                    "alt": "/plugin marketplace add tjboudreaux/cc-skills-vc-fundraising"
                   }
                 }
               ],
@@ -8210,7 +8211,7 @@
                   "install": {
                     "command": "npx skills add imbad0202/academic-research-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/imbad0202/academic-research-skills ~/.claude/skills/academic-research-skills"
+                    "alt": "/plugin marketplace add imbad0202/academic-research-skills"
                   }
                 }
               ],
@@ -9110,7 +9111,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9157,7 +9158,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9200,7 +9201,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9238,7 +9239,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9275,7 +9276,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9319,7 +9320,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9356,7 +9357,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9394,7 +9395,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9437,7 +9438,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9474,7 +9475,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9512,7 +9513,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9550,7 +9551,7 @@
                   "install": {
                     "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+                    "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
                   }
                 }
               ],
@@ -9603,7 +9604,7 @@
                   "install": {
                     "command": "npx skills add anthropics/skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add anthropics/skills"
                   }
                 },
                 {
@@ -9637,7 +9638,7 @@
                   "install": {
                     "command": "npx skills add obra/superpowers",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
+                    "alt": "/plugin marketplace add obra/superpowers"
                   }
                 },
                 {
@@ -10024,7 +10025,7 @@
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/borghei/Claude-Skills ~/.claude/skills/Claude-Skills"
+                    "alt": "/plugin marketplace add borghei/Claude-Skills"
                   }
                 }
               ],
@@ -10080,7 +10081,7 @@
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/borghei/Claude-Skills ~/.claude/skills/Claude-Skills"
+                    "alt": "/plugin marketplace add borghei/Claude-Skills"
                   }
                 }
               ],
@@ -10302,7 +10303,7 @@
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/borghei/Claude-Skills ~/.claude/skills/Claude-Skills"
+                    "alt": "/plugin marketplace add borghei/Claude-Skills"
                   }
                 }
               ],
@@ -10411,7 +10412,7 @@
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/borghei/Claude-Skills ~/.claude/skills/Claude-Skills"
+                    "alt": "/plugin marketplace add borghei/Claude-Skills"
                   }
                 }
               ],
@@ -10531,7 +10532,7 @@
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/borghei/Claude-Skills ~/.claude/skills/Claude-Skills"
+                    "alt": "/plugin marketplace add borghei/Claude-Skills"
                   }
                 }
               ],
@@ -10619,7 +10620,7 @@
                   "install": {
                     "command": "npx skills add borghei/Claude-Skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/borghei/Claude-Skills ~/.claude/skills/Claude-Skills"
+                    "alt": "/plugin marketplace add borghei/Claude-Skills"
                   }
                 }
               ],
@@ -10856,7 +10857,7 @@
                   "install": {
                     "command": "npx skills add agiprolabs/claude-trading-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/agiprolabs/claude-trading-skills ~/.claude/skills/claude-trading-skills"
+                    "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
                   }
                 },
                 {
@@ -10873,7 +10874,7 @@
                   "install": {
                     "command": "npx skills add JoelLewis/finance_skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/JoelLewis/finance_skills ~/.claude/skills/finance_skills"
+                    "alt": "/plugin marketplace add JoelLewis/finance_skills"
                   }
                 },
                 {
@@ -10932,7 +10933,7 @@
                   "install": {
                     "command": "npx skills add agiprolabs/claude-trading-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/agiprolabs/claude-trading-skills ~/.claude/skills/claude-trading-skills"
+                    "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
                   }
                 },
                 {
@@ -10949,7 +10950,7 @@
                   "install": {
                     "command": "npx skills add JoelLewis/finance_skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/JoelLewis/finance_skills ~/.claude/skills/finance_skills"
+                    "alt": "/plugin marketplace add JoelLewis/finance_skills"
                   }
                 }
               ],
@@ -10991,7 +10992,7 @@
                   "install": {
                     "command": "npx skills add agiprolabs/claude-trading-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/agiprolabs/claude-trading-skills ~/.claude/skills/claude-trading-skills"
+                    "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
                   }
                 },
                 {
@@ -11008,7 +11009,7 @@
                   "install": {
                     "command": "npx skills add JoelLewis/finance_skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/JoelLewis/finance_skills ~/.claude/skills/finance_skills"
+                    "alt": "/plugin marketplace add JoelLewis/finance_skills"
                   }
                 }
               ],
@@ -11050,7 +11051,7 @@
                   "install": {
                     "command": "npx skills add agiprolabs/claude-trading-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/agiprolabs/claude-trading-skills ~/.claude/skills/claude-trading-skills"
+                    "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
                   }
                 },
                 {
@@ -11117,7 +11118,7 @@
                   "install": {
                     "command": "npx skills add agiprolabs/claude-trading-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/agiprolabs/claude-trading-skills ~/.claude/skills/claude-trading-skills"
+                    "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
                   }
                 },
                 {
@@ -11134,7 +11135,7 @@
                   "install": {
                     "command": "npx skills add JoelLewis/finance_skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/JoelLewis/finance_skills ~/.claude/skills/finance_skills"
+                    "alt": "/plugin marketplace add JoelLewis/finance_skills"
                   }
                 },
                 {
@@ -11330,7 +11331,7 @@
                   "install": {
                     "command": "npx skills add JoelLewis/finance_skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/JoelLewis/finance_skills ~/.claude/skills/finance_skills"
+                    "alt": "/plugin marketplace add JoelLewis/finance_skills"
                   }
                 }
               ],
@@ -11379,7 +11380,7 @@
                   "install": {
                     "command": "npx skills add agiprolabs/claude-trading-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/agiprolabs/claude-trading-skills ~/.claude/skills/claude-trading-skills"
+                    "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
                   }
                 },
                 {
@@ -11396,7 +11397,7 @@
                   "install": {
                     "command": "npx skills add JoelLewis/finance_skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/JoelLewis/finance_skills ~/.claude/skills/finance_skills"
+                    "alt": "/plugin marketplace add JoelLewis/finance_skills"
                   }
                 },
                 {
@@ -11477,7 +11478,7 @@
                   "install": {
                     "command": "npx skills add JoelLewis/finance_skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/JoelLewis/finance_skills ~/.claude/skills/finance_skills"
+                    "alt": "/plugin marketplace add JoelLewis/finance_skills"
                   }
                 }
               ],
@@ -11551,7 +11552,7 @@
                   "install": {
                     "command": "npx skills add pulumi/agent-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/pulumi/agent-skills ~/.claude/skills/agent-skills"
+                    "alt": "/plugin marketplace add pulumi/agent-skills"
                   }
                 },
                 {
@@ -11668,7 +11669,7 @@
                   "install": {
                     "command": "npx skills add Jeffallan/claude-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/Jeffallan/claude-skills ~/.claude/skills/claude-skills"
+                    "alt": "/plugin marketplace add Jeffallan/claude-skills"
                   }
                 }
               ],
@@ -11719,7 +11720,7 @@
                   "install": {
                     "command": "npx skills add grafana/skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/grafana/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add grafana/skills"
                   }
                 },
                 {
@@ -11752,7 +11753,7 @@
                   "install": {
                     "command": "npx skills add Jeffallan/claude-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/Jeffallan/claude-skills ~/.claude/skills/claude-skills"
+                    "alt": "/plugin marketplace add Jeffallan/claude-skills"
                   }
                 }
               ],
@@ -11799,7 +11800,7 @@
                   "install": {
                     "command": "npx skills add grafana/skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/grafana/skills ~/.claude/skills/skills"
+                    "alt": "/plugin marketplace add grafana/skills"
                   }
                 },
                 {
@@ -11832,7 +11833,7 @@
                   "install": {
                     "command": "npx skills add Jeffallan/claude-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/Jeffallan/claude-skills ~/.claude/skills/claude-skills"
+                    "alt": "/plugin marketplace add Jeffallan/claude-skills"
                   }
                 }
               ],
@@ -11890,7 +11891,7 @@
                   "install": {
                     "command": "npx skills add transilienceai/communitytools",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/transilienceai/communitytools ~/.claude/skills/communitytools"
+                    "alt": "/plugin marketplace add transilienceai/communitytools"
                   }
                 },
                 {
@@ -11907,7 +11908,7 @@
                   "install": {
                     "command": "npx skills add briiirussell/cybersecurity-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/briiirussell/cybersecurity-skills ~/.claude/skills/cybersecurity-skills"
+                    "alt": "/plugin marketplace add briiirussell/cybersecurity-skills"
                   }
                 },
                 {
@@ -12012,7 +12013,7 @@
                   "install": {
                     "command": "npx skills add transilienceai/communitytools",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/transilienceai/communitytools ~/.claude/skills/communitytools"
+                    "alt": "/plugin marketplace add transilienceai/communitytools"
                   }
                 },
                 {
@@ -12029,7 +12030,7 @@
                   "install": {
                     "command": "npx skills add briiirussell/cybersecurity-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/briiirussell/cybersecurity-skills ~/.claude/skills/cybersecurity-skills"
+                    "alt": "/plugin marketplace add briiirussell/cybersecurity-skills"
                   }
                 }
               ],
@@ -12132,7 +12133,7 @@
                   "install": {
                     "command": "npx skills add briiirussell/cybersecurity-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/briiirussell/cybersecurity-skills ~/.claude/skills/cybersecurity-skills"
+                    "alt": "/plugin marketplace add briiirussell/cybersecurity-skills"
                   }
                 },
                 {
@@ -12149,7 +12150,7 @@
                   "install": {
                     "command": "npx skills add transilienceai/communitytools",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/transilienceai/communitytools ~/.claude/skills/communitytools"
+                    "alt": "/plugin marketplace add transilienceai/communitytools"
                   }
                 }
               ],
@@ -12201,7 +12202,7 @@
                   "install": {
                     "command": "npx skills add briiirussell/cybersecurity-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/briiirussell/cybersecurity-skills ~/.claude/skills/cybersecurity-skills"
+                    "alt": "/plugin marketplace add briiirussell/cybersecurity-skills"
                   }
                 },
                 {
@@ -12235,7 +12236,7 @@
                   "install": {
                     "command": "npx skills add transilienceai/communitytools",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/transilienceai/communitytools ~/.claude/skills/communitytools"
+                    "alt": "/plugin marketplace add transilienceai/communitytools"
                   }
                 }
               ],
@@ -12349,7 +12350,7 @@
                   "install": {
                     "command": "npx skills add GarethManning/education-agent-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/GarethManning/education-agent-skills ~/.claude/skills/education-agent-skills"
+                    "alt": "/plugin marketplace add GarethManning/education-agent-skills"
                   }
                 },
                 {
@@ -12411,7 +12412,7 @@
                   "install": {
                     "command": "npx skills add GarethManning/education-agent-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/GarethManning/education-agent-skills ~/.claude/skills/education-agent-skills"
+                    "alt": "/plugin marketplace add GarethManning/education-agent-skills"
                   }
                 }
               ],
@@ -12456,7 +12457,7 @@
                   "install": {
                     "command": "npx skills add GarethManning/education-agent-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/GarethManning/education-agent-skills ~/.claude/skills/education-agent-skills"
+                    "alt": "/plugin marketplace add GarethManning/education-agent-skills"
                   }
                 },
                 {
@@ -12464,16 +12465,17 @@
                   "url": "https://github.com/SYuan03/Skill-Anything",
                   "stars": 265,
                   "last_commit": "2026-04-16",
-                  "type": "skill",
+                  "type": "python-library",
                   "author": "SYuan03",
                   "repo": "Skill-Anything",
                   "default_branch": "main",
                   "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
-                    "command": "npx skills add SYuan03/Skill-Anything",
-                    "kind": "skill",
-                    "alt": "git clone https://github.com/SYuan03/Skill-Anything ~/.claude/skills/Skill-Anything"
+                    "command": "git clone https://github.com/SYuan03/Skill-Anything.git && cd Skill-Anything && pip install -e \".[all]\"",
+                    "note": "Python CLI（非 Claude skill 本体；PyPI 未发布需源码装）：装后用 sa auto <素材> 生成学习包，可选导出 SKILL.md",
+                    "kind": "override",
+                    "note_en": "Python CLI (not a Claude skill itself; not on PyPI, install from source): after install run `sa auto <source>` to build study packs; can optionally export a SKILL.md"
                   }
                 }
               ],
@@ -12579,7 +12581,7 @@
                   "install": {
                     "command": "npx skills add GarethManning/education-agent-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/GarethManning/education-agent-skills ~/.claude/skills/education-agent-skills"
+                    "alt": "/plugin marketplace add GarethManning/education-agent-skills"
                   }
                 }
               ],
@@ -12784,7 +12786,7 @@
                   "install": {
                     "command": "npx skills add agiprolabs/claude-trading-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/agiprolabs/claude-trading-skills ~/.claude/skills/claude-trading-skills"
+                    "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
                   }
                 }
               ],
@@ -12877,7 +12879,7 @@
                   "install": {
                     "command": "npx skills add blockscout/agent-skills",
                     "kind": "skill-pack",
-                    "alt": "git clone https://github.com/blockscout/agent-skills ~/.claude/skills/agent-skills"
+                    "alt": "/plugin marketplace add blockscout/agent-skills"
                   }
                 },
                 {
@@ -12894,7 +12896,7 @@
                   "install": {
                     "command": "npx skills add quiknode-labs/blockchain-skills",
                     "kind": "skill",
-                    "alt": "git clone https://github.com/quiknode-labs/blockchain-skills ~/.claude/skills/blockchain-skills"
+                    "alt": "/plugin marketplace add quiknode-labs/blockchain-skills"
                   }
                 },
                 {
@@ -12928,7 +12930,7 @@
                   "install": {
                     "command": "npx skills add agiprolabs/claude-trading-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/agiprolabs/claude-trading-skills ~/.claude/skills/claude-trading-skills"
+                    "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
                   }
                 }
               ],
@@ -12995,7 +12997,7 @@
                   "install": {
                     "command": "npx skills add agiprolabs/claude-trading-skills",
                     "kind": "multi-skill-suite",
-                    "alt": "git clone https://github.com/agiprolabs/claude-trading-skills ~/.claude/skills/claude-trading-skills"
+                    "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
                   }
                 }
               ],
@@ -13027,7 +13029,7 @@
       "install": {
         "command": "npx skills add obra/superpowers",
         "kind": "skill",
-        "alt": "git clone https://github.com/obra/superpowers ~/.claude/skills/superpowers"
+        "alt": "/plugin marketplace add obra/superpowers"
       },
       "skill_docs": {
         "brainstorming": "skills/brainstorming/SKILL.md",
@@ -13093,7 +13095,7 @@
       "install": {
         "command": "npx skills add phuryn/pm-skills",
         "kind": "skill",
-        "alt": "git clone https://github.com/phuryn/pm-skills ~/.claude/skills/pm-skills"
+        "alt": "/plugin marketplace add phuryn/pm-skills"
       },
       "skill_docs": {
         "ab-test-analysis": "pm-data-analytics/skills/ab-test-analysis/SKILL.md",
@@ -13316,7 +13318,7 @@
       "install": {
         "command": "npx skills add anthropics/skills",
         "kind": "skill",
-        "alt": "git clone https://github.com/anthropics/skills ~/.claude/skills/skills"
+        "alt": "/plugin marketplace add anthropics/skills"
       },
       "skill_docs": {
         "algorithmic-art": "skills/algorithmic-art/SKILL.md",
@@ -13354,7 +13356,7 @@
       "install": {
         "command": "npx skills add ComposioHQ/awesome-claude-skills",
         "kind": "skill",
-        "alt": "git clone https://github.com/ComposioHQ/awesome-claude-skills ~/.claude/skills/awesome-claude-skills"
+        "alt": "/plugin marketplace add ComposioHQ/awesome-claude-skills"
       },
       "skill_docs": {
         "webapp-testing": "webapp-testing/SKILL.md"
@@ -13566,7 +13568,7 @@
       "install": {
         "command": "npx skills add NeoLabHQ/context-engineering-kit",
         "kind": "skill",
-        "alt": "git clone https://github.com/NeoLabHQ/context-engineering-kit ~/.claude/skills/context-engineering-kit"
+        "alt": "/plugin marketplace add NeoLabHQ/context-engineering-kit"
       },
       "skill_docs": {
         "write-concisely": "plugins/docs/skills/write-concisely/SKILL.md"
@@ -13608,7 +13610,7 @@
       "install": {
         "command": "npx skills add JuliusBrussee/caveman",
         "kind": "skill",
-        "alt": "git clone https://github.com/JuliusBrussee/caveman ~/.claude/skills/caveman"
+        "alt": "/plugin marketplace add JuliusBrussee/caveman"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -13767,9 +13769,10 @@
       "license": "MIT",
       "doc_path": "README.md",
       "install": {
-        "command": "npx skills add hanfang/claude-memory-skill",
-        "kind": "skill",
-        "alt": "git clone https://github.com/hanfang/claude-memory-skill ~/.claude/skills/claude-memory-skill"
+        "command": "git clone https://github.com/hanfang/claude-memory-skill.git && bash claude-memory-skill/install.sh",
+        "note": "Claude Code 记忆系统：克隆后跑 install.sh 装入 ~/.claude（skill 文件是 mem.md，非标准 SKILL.md，故用脚本而非 npx skills add）",
+        "kind": "override",
+        "note_en": "Claude Code memory system: clone, then run install.sh (its skill file is mem.md, not a standard SKILL.md, so it installs via the script rather than npx skills add)"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -13808,7 +13811,7 @@
       "install": {
         "command": "npx skills add alirezarezvani/claude-skills",
         "kind": "skill",
-        "alt": "git clone https://github.com/alirezarezvani/claude-skills ~/.claude/skills/claude-skills"
+        "alt": "/plugin marketplace add alirezarezvani/claude-skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -13828,7 +13831,7 @@
       "install": {
         "command": "npx skills add deanpeters/Product-Manager-Skills",
         "kind": "skill",
-        "alt": "git clone https://github.com/deanpeters/Product-Manager-Skills ~/.claude/skills/Product-Manager-Skills"
+        "alt": "/plugin marketplace add deanpeters/Product-Manager-Skills"
       },
       "skill_docs": {
         "acquisition-channel-advisor": "skills/acquisition-channel-advisor/SKILL.md",
@@ -13890,7 +13893,7 @@
       "install": {
         "command": "npx skills add ognjengt/founder-skills",
         "kind": "skill",
-        "alt": "git clone https://github.com/ognjengt/founder-skills ~/.claude/skills/founder-skills"
+        "alt": "/plugin marketplace add ognjengt/founder-skills"
       },
       "skill_docs": {
         "brand-copywriter": "skills/brand-copywriter/SKILL.md",
@@ -13966,7 +13969,7 @@
       "install": {
         "command": "npx skills add coreyhaines31/marketingskills",
         "kind": "skill",
-        "alt": "git clone https://github.com/coreyhaines31/marketingskills ~/.claude/skills/marketingskills"
+        "alt": "/plugin marketplace add coreyhaines31/marketingskills"
       },
       "skill_docs": {
         "ab-testing": "skills/ab-testing/SKILL.md",
@@ -14029,7 +14032,7 @@
       "install": {
         "command": "npx skills add AgriciDaniel/claude-seo",
         "kind": "skill",
-        "alt": "git clone https://github.com/AgriciDaniel/claude-seo ~/.claude/skills/claude-seo"
+        "alt": "/plugin marketplace add AgriciDaniel/claude-seo"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -14049,7 +14052,7 @@
       "install": {
         "command": "npx skills add ReScienceLab/opc-skills",
         "kind": "skill",
-        "alt": "git clone https://github.com/ReScienceLab/opc-skills ~/.claude/skills/opc-skills"
+        "alt": "/plugin marketplace add ReScienceLab/opc-skills"
       },
       "skill_docs": {
         "banner-creator": "skills/banner-creator/SKILL.md",
@@ -14078,7 +14081,7 @@
       "install": {
         "command": "npx skills add AgriciDaniel/claude-ads",
         "kind": "skill",
-        "alt": "git clone https://github.com/AgriciDaniel/claude-ads ~/.claude/skills/claude-ads"
+        "alt": "/plugin marketplace add AgriciDaniel/claude-ads"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -14098,7 +14101,7 @@
       "install": {
         "command": "npx skills add nextlevelbuilder/ui-ux-pro-max-skill",
         "kind": "skill",
-        "alt": "git clone https://github.com/nextlevelbuilder/ui-ux-pro-max-skill ~/.claude/skills/ui-ux-pro-max-skill"
+        "alt": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -14138,7 +14141,7 @@
       "install": {
         "command": "npx skills add zarazhangrui/frontend-slides",
         "kind": "skill",
-        "alt": "git clone https://github.com/zarazhangrui/frontend-slides ~/.claude/skills/frontend-slides"
+        "alt": "/plugin marketplace add zarazhangrui/frontend-slides"
       },
       "skill_docs": {
         "frontend-slides": "plugins/frontend-slides/skills/frontend-slides/SKILL.md"
@@ -14239,7 +14242,7 @@
       "install": {
         "command": "npx skills add firecrawl/cli",
         "kind": "skill",
-        "alt": "git clone https://github.com/firecrawl/cli ~/.claude/skills/cli"
+        "alt": "/plugin marketplace add firecrawl/cli"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -14259,7 +14262,7 @@
       "install": {
         "command": "npx skills add mvanhorn/last30days-skill",
         "kind": "skill",
-        "alt": "git clone https://github.com/mvanhorn/last30days-skill ~/.claude/skills/last30days-skill"
+        "alt": "/plugin marketplace add mvanhorn/last30days-skill"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -14313,7 +14316,7 @@
       "install": {
         "command": "npx skills add santifer/career-ops",
         "kind": "skill",
-        "alt": "git clone https://github.com/santifer/career-ops ~/.claude/skills/career-ops"
+        "alt": "/plugin marketplace add santifer/career-ops"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -14456,7 +14459,7 @@
       "install": {
         "command": "npx skills add imbad0202/academic-research-skills",
         "kind": "multi-skill-suite",
-        "alt": "git clone https://github.com/imbad0202/academic-research-skills ~/.claude/skills/academic-research-skills"
+        "alt": "/plugin marketplace add imbad0202/academic-research-skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -14496,7 +14499,7 @@
       "install": {
         "command": "npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering",
         "kind": "skill",
-        "alt": "git clone https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering ~/.claude/skills/Agent-Skills-for-Context-Engineering"
+        "alt": "/plugin marketplace add muratcankoylan/Agent-Skills-for-Context-Engineering"
       },
       "skill_docs": {
         "advanced-evaluation": "skills/advanced-evaluation/SKILL.md",
@@ -14826,7 +14829,7 @@
       "install": {
         "command": "npx skills add borghei/Claude-Skills",
         "kind": "multi-skill-suite",
-        "alt": "git clone https://github.com/borghei/Claude-Skills ~/.claude/skills/Claude-Skills"
+        "alt": "/plugin marketplace add borghei/Claude-Skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -14834,7 +14837,7 @@
     "anthropics-healthcare": {
       "url": "https://github.com/anthropics/healthcare",
       "description": "Anthropic 官方 Claude for Healthcare:FHIR 端点开发、医保事前授权审查、临床试验方案(FDA/NIH);另带 CMS/ICD-10/NPI/PubMed 等数据连接器。",
-      "description_en": null,
+      "description_en": "Anthropic's official Claude for Healthcare: FHIR endpoint development, prior-authorization review, clinical-trial protocols (FDA/NIH); plus CMS/ICD-10/NPI/PubMed data connectors.",
       "stars": 282,
       "last_commit": "2026-05-29",
       "type": "marketplace",
@@ -14853,7 +14856,7 @@
     "anthropics-financial-services": {
       "url": "https://github.com/anthropics/financial-services",
       "description": "Anthropic 官方金融服务 skill 市场:投行/股票研究/PE/财富管理/基金运营等垂直 plugin + LSEG/S&P 数据连接器。",
-      "description_en": null,
+      "description_en": "Anthropic's official financial-services skill marketplace: vertical plugins for investment banking / equity research / PE / wealth management / fund ops, plus LSEG and S&P data connectors.",
       "stars": 28842,
       "last_commit": "2026-05-29",
       "type": "marketplace",
@@ -14884,7 +14887,7 @@
       "install": {
         "command": "npx skills add agiprolabs/claude-trading-skills",
         "kind": "multi-skill-suite",
-        "alt": "git clone https://github.com/agiprolabs/claude-trading-skills ~/.claude/skills/claude-trading-skills"
+        "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -14904,7 +14907,7 @@
       "install": {
         "command": "npx skills add JoelLewis/finance_skills",
         "kind": "multi-skill-suite",
-        "alt": "git clone https://github.com/JoelLewis/finance_skills ~/.claude/skills/finance_skills"
+        "alt": "/plugin marketplace add JoelLewis/finance_skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -14971,7 +14974,7 @@
     "grafana": {
       "url": "https://github.com/grafana/skills",
       "description": "Grafana 官方可观测性 skill(39 个):Grafana/PromQL/LGTM 栈(Loki/Tempo/Mimir)/OpenTelemetry/告警/IRM/FinOps/k6。",
-      "description_en": null,
+      "description_en": "Grafana's official observability skills (39): Grafana / PromQL / the LGTM stack (Loki/Tempo/Mimir) / OpenTelemetry / alerting / IRM / FinOps / k6.",
       "stars": 137,
       "last_commit": "2026-05-28",
       "type": "multi-skill-suite",
@@ -14983,7 +14986,7 @@
       "install": {
         "command": "npx skills add grafana/skills",
         "kind": "multi-skill-suite",
-        "alt": "git clone https://github.com/grafana/skills ~/.claude/skills/skills"
+        "alt": "/plugin marketplace add grafana/skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -14991,7 +14994,7 @@
     "pulumi": {
       "url": "https://github.com/pulumi/agent-skills",
       "description": "Pulumi 官方 IaC skill:Pulumi 编写规范、组件、Automation API、ESC,以及从 Terraform/CDK/CloudFormation/ARM 迁移。",
-      "description_en": null,
+      "description_en": "Pulumi's official IaC skills: Pulumi authoring conventions, components, Automation API, ESC, and migration from Terraform / CDK / CloudFormation / ARM.",
       "stars": 54,
       "last_commit": "2026-05-29",
       "type": "multi-skill-suite",
@@ -15003,7 +15006,7 @@
       "install": {
         "command": "npx skills add pulumi/agent-skills",
         "kind": "multi-skill-suite",
-        "alt": "git clone https://github.com/pulumi/agent-skills ~/.claude/skills/agent-skills"
+        "alt": "/plugin marketplace add pulumi/agent-skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -15042,7 +15045,7 @@
       "install": {
         "command": "npx skills add Jeffallan/claude-skills",
         "kind": "multi-skill-suite",
-        "alt": "git clone https://github.com/Jeffallan/claude-skills ~/.claude/skills/claude-skills"
+        "alt": "/plugin marketplace add Jeffallan/claude-skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -15122,7 +15125,7 @@
       "install": {
         "command": "npx skills add transilienceai/communitytools",
         "kind": "multi-skill-suite",
-        "alt": "git clone https://github.com/transilienceai/communitytools ~/.claude/skills/communitytools"
+        "alt": "/plugin marketplace add transilienceai/communitytools"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -15222,7 +15225,7 @@
       "install": {
         "command": "npx skills add briiirussell/cybersecurity-skills",
         "kind": "multi-skill-suite",
-        "alt": "git clone https://github.com/briiirussell/cybersecurity-skills ~/.claude/skills/cybersecurity-skills"
+        "alt": "/plugin marketplace add briiirussell/cybersecurity-skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -15262,7 +15265,7 @@
       "install": {
         "command": "npx skills add GarethManning/education-agent-skills",
         "kind": "multi-skill-suite",
-        "alt": "git clone https://github.com/GarethManning/education-agent-skills ~/.claude/skills/education-agent-skills"
+        "alt": "/plugin marketplace add GarethManning/education-agent-skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -15270,7 +15273,7 @@
     "dmccreary": {
       "url": "https://github.com/dmccreary/claude-skills",
       "description": "智能教材 Claude skill:learning graph 生成、章节/测验/词表内容生成、MicroSim 交互模拟、教育评估。",
-      "description_en": null,
+      "description_en": "Intelligent-textbook Claude skills: learning-graph generation, chapter/quiz/glossary content generation, MicroSim interactive simulations, and educational assessment.",
       "stars": 72,
       "last_commit": "2026-05-29",
       "type": "multi-skill-suite",
@@ -15293,16 +15296,17 @@
       "description_en": "Any source (PDF, video, web, audio, text) to interactive learning package with quizzes, flashcards and spaced repetition. One command, 12-section study guide.",
       "stars": 265,
       "last_commit": "2026-04-16",
-      "type": "skill",
+      "type": "python-library",
       "author": "SYuan03",
       "repo": "Skill-Anything",
       "default_branch": "main",
       "license": "MIT",
       "doc_path": "README.md",
       "install": {
-        "command": "npx skills add SYuan03/Skill-Anything",
-        "kind": "skill",
-        "alt": "git clone https://github.com/SYuan03/Skill-Anything ~/.claude/skills/Skill-Anything"
+        "command": "git clone https://github.com/SYuan03/Skill-Anything.git && cd Skill-Anything && pip install -e \".[all]\"",
+        "note": "Python CLI（非 Claude skill 本体；PyPI 未发布需源码装）：装后用 sa auto <素材> 生成学习包，可选导出 SKILL.md",
+        "kind": "override",
+        "note_en": "Python CLI (not a Claude skill itself; not on PyPI, install from source): after install run `sa auto <source>` to build study packs; can optionally export a SKILL.md"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -15360,7 +15364,7 @@
       "install": {
         "command": "npx skills add blockscout/agent-skills",
         "kind": "skill-pack",
-        "alt": "git clone https://github.com/blockscout/agent-skills ~/.claude/skills/agent-skills"
+        "alt": "/plugin marketplace add blockscout/agent-skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -15380,7 +15384,7 @@
       "install": {
         "command": "npx skills add quiknode-labs/blockchain-skills",
         "kind": "skill",
-        "alt": "git clone https://github.com/quiknode-labs/blockchain-skills ~/.claude/skills/blockchain-skills"
+        "alt": "/plugin marketplace add quiknode-labs/blockchain-skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -15440,7 +15444,7 @@
       "install": {
         "command": "npx skills add heygen-com/skills",
         "kind": "skill-pack",
-        "alt": "git clone https://github.com/heygen-com/skills ~/.claude/skills/skills"
+        "alt": "/plugin marketplace add heygen-com/skills"
       },
       "skill_docs": null,
       "skill_licenses": null
@@ -15559,7 +15563,7 @@
       "install": {
         "command": "npx skills add tjboudreaux/cc-skills-vc-fundraising",
         "kind": "skill-pack",
-        "alt": "git clone https://github.com/tjboudreaux/cc-skills-vc-fundraising ~/.claude/skills/cc-skills-vc-fundraising"
+        "alt": "/plugin marketplace add tjboudreaux/cc-skills-vc-fundraising"
       },
       "skill_docs": null,
       "skill_licenses": null

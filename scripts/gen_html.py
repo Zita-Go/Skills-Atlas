@@ -64,7 +64,11 @@ def install_for(repo):
     if typ == 'claude-md-template':
         return {'command': '# 把该仓库的 CLAUDE.md 复制到你的项目根目录', 'kind': typ}
     out = {'command': f'npx skills add {author}/{name}', 'kind': typ}
-    if typ in ('skill', 'skill-pack', 'multi-skill-suite'):
+    # 仓库同时是 Claude Code 插件（含 .claude-plugin/marketplace.json）：备选给官方插件装法
+    # （主命令仍 npx skills add 抓 skill 子集；插件装拿完整包：skills + agents + 命令）。
+    if repo.get('plugin_marketplace'):
+        out['alt'] = f'/plugin marketplace add {author}/{name}'
+    elif typ in ('skill', 'skill-pack', 'multi-skill-suite'):
         out['alt'] = f'git clone {repo.get("url", "")} ~/.claude/skills/{name}'
     return out
 
