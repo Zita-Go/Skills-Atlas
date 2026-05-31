@@ -151,6 +151,10 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
 .search-result-count{font-size:11px;color:var(--fg-muted);
   margin-bottom:14px;padding-left:2px;min-height:14px;
   font-family:var(--font-mono);letter-spacing:.02em}
+.share-link-btn{display:inline-flex;align-items:center;gap:5px;margin:-6px 0 14px;
+  background:var(--bg-elev);border:1px solid var(--border);color:var(--fg-dim);
+  font-size:11px;padding:5px 10px;border-radius:8px;cursor:pointer;transition:all .12s;font-family:inherit}
+.share-link-btn:hover{border-color:var(--accent);color:var(--accent)}
 
 .nav-section{margin-bottom:6px}
 .nav-h1{display:flex;align-items:center;gap:8px;padding:8px 10px;
@@ -216,6 +220,13 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
 .tb-divider{width:1px;align-self:stretch;min-height:20px;
   background:var(--border);margin:2px 4px;flex:0 0 auto}
 .tb-filters{display:flex;align-items:center;gap:8px}
+.tb-sort{display:inline-flex;align-items:center;gap:4px;font-size:11.5px}
+.tb-sort .tb-sort-label{color:var(--fg-muted);margin-right:2px}
+.tb-sort .cs-btn{border:1px solid var(--border);background:var(--bg-card);color:var(--fg-dim);
+  font-size:11.5px;font-family:inherit;padding:4px 10px;border-radius:99px;cursor:pointer;transition:all .12s}
+.tb-sort .cs-btn:hover{color:var(--fg);border-color:var(--border-strong)}
+.tb-sort .cs-btn.active{background:var(--grad);color:#fff;border-color:transparent}
+@media(max-width:760px){ .tb-sort{display:none} }
 
 /* AI 推荐按钮 */
 .ai-btn{background:var(--grad);color:#fff;border:0;display:inline-flex;align-items:center;gap:5px;
@@ -363,17 +374,6 @@ html.light .graph-view .link.dim{stroke-opacity:.07}
 /* chain 边流光：把视线引向强绑定关系（reduced-motion 下被全局规则停掉）*/
 .graph-view .link.chain{stroke-dasharray:7 7;animation:chainflow 1.5s linear infinite}
 @keyframes chainflow{to{stroke-dashoffset:-14}}
-/* 嵌入模式：隐藏侧栏/工具栏/hero，只留全屏图 + Powered-by 角标 */
-body.embed .sidebar, body.embed .sidebar-rail, body.embed .sidebar-backdrop,
-body.embed .toolbar, body.embed .hero{display:none !important}
-body.embed .app{grid-template-columns:1fr}
-body.embed .main{padding:0;height:100vh}
-body.embed #graphView, body.embed .graph-view{height:100vh;min-height:100vh}
-body.embed .views-dock{display:none}   /* 嵌入是固定快照，不暴露视图切换；避免与角标重叠 */
-.embed-badge{position:fixed;left:12px;bottom:12px;z-index:50;font-size:11px;font-weight:500;
-  background:var(--bg-card);border:1px solid var(--border);color:var(--fg-dim);
-  padding:5px 11px;border-radius:99px;text-decoration:none;opacity:.85;backdrop-filter:blur(6px)}
-.embed-badge:hover{opacity:1;color:var(--accent);border-color:var(--accent)}
 /* 回到顶部悬浮按钮：cards/repo 视图向下滚动后出现（图谱视图不显示） */
 .to-top{position:fixed;right:20px;bottom:20px;z-index:60;width:42px;height:42px;border-radius:50%;
   border:1px solid var(--border-strong);background:var(--bg-card);color:var(--fg-dim);
@@ -703,7 +703,6 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 .site-footer a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 .site-footer .sf-sep{color:var(--border-strong)}
 .site-footer .sf-note{flex-basis:100%;color:var(--fg-muted);font-size:11.5px;margin-top:2px}
-body.embed .site-footer{display:none}
 /* 新手必看弹窗正文 */
 .howto-body{padding:6px 28px 26px;font-size:13.5px;line-height:1.7;color:var(--fg-dim)}
 .howto-body .howto-lead{color:var(--fg);margin:6px 0 14px}
@@ -750,6 +749,8 @@ body.embed .site-footer{display:none}
 .usage-install{padding:6px 28px 0;font-size:12.5px;line-height:1.65}
 .usage-install .ui-note{color:var(--fg-dim);margin:4px 0}
 .usage-install .ui-prereq{color:var(--fg-muted);margin:4px 0}
+.usage-install .ui-use{color:var(--fg);margin:6px 0 2px}
+.usage-install .ui-use code{font-family:var(--font-mono);background:var(--bg-elev);padding:1px 5px;border-radius:4px;font-size:.9em}
 .usage-install .ui-alt{margin:6px 0;color:var(--fg-dim)}
 .usage-install .ui-alt summary{cursor:pointer;color:var(--accent);font-size:12px}
 .usage-install code{font-family:var(--font-mono);background:var(--bg-elev);padding:2px 6px;border-radius:4px;font-size:11.5px}
@@ -1194,6 +1195,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
     <button class="clear-btn" id="clearBtn" aria-label="clear">×</button>
   </div>
   <div class="search-result-count" id="searchResultCount"></div>
+  <button class="share-link-btn hidden" id="shareLink" data-i18n="btn_share" data-i18n-title="tt_share" title="复制当前筛选结果的链接">🔗 复制结果链接</button>
   <nav id="nav"></nav>
 </aside>
 <button class="sidebar-rail" id="sidebarRail" title="展开目录" aria-label="展开目录" data-i18n-title="tt_sidebar_expand" data-i18n-aria="tt_sidebar_expand">
@@ -1213,8 +1215,12 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
     <div class="tb-filters">
       <span class="pill active" data-filter="all" data-i18n="f_all">全部</span>
       <span class="pill" data-filter="chain" data-i18n="f_chain" data-i18n-title="tt_chain" title="强绑定：需按顺序串起来用">⛓ 强绑定</span>
-      <span class="pill" data-filter="multi-source" data-i18n="f_multi">多源</span>
-      <span class="pill" data-filter="single-skill" data-i18n="f_single">单 skill</span>
+    </div>
+    <div class="tb-sort" id="cardSort" role="group" aria-label="排序">
+      <span class="tb-sort-label" data-i18n="sort_label">排序</span>
+      <button class="cs-btn active" data-sort="default" data-i18n="sort_default">默认</button>
+      <button class="cs-btn" data-sort="stars" data-i18n="sort_stars">最热</button>
+      <button class="cs-btn" data-sort="recent" data-i18n="sort_recent">最近更新</button>
     </div>
     <div class="spacer"></div>
     <button class="theme-toggle" id="spotlightBtn" title="Spotlight 搜索 (⌘K / Ctrl+K)" data-i18n-title="tt_search"><svg class="tb-search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span data-i18n="btn_search">搜索</span> <kbd class="ai-kbd">⌘K</kbd></button>
@@ -1236,15 +1242,10 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
       <div class="hero-start">
         <span class="hero-start-q" data-i18n="hs_q">不知从哪开始？</span>
         <button class="start-chip start-chip-learn" data-start="learn" data-i18n="hs_learn">👋 新手必看</button>
-        <button class="start-chip" data-start="search" data-i18n="hs_search">🔍 搜 skill / 描述 / 仓库</button>
         <button class="start-chip start-chip-ai" data-start="ai" data-i18n="hs_ai">✨ 描述需求，AI 推荐</button>
         <button class="start-chip" data-start="browse" data-i18n="hs_browse">📂 浏览全部大类</button>
         <span class="hero-start-eg" data-i18n="hs_eg">例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」</span>
       </div>
-    </div>
-    <div class="hero-viz">
-      <svg id="heroChart" viewBox="0 0 200 200" width="172" height="172"></svg>
-      <div id="heroLegend" class="hero-legend"></div>
     </div>
     <button id="heroToggle" class="hero-toggle" aria-label="collapse" title="收起 / 展开" data-i18n-title="tt_hero_toggle">▾</button>
   </div>
@@ -1395,7 +1396,8 @@ const I18N = {
     tt_search: 'Spotlight 搜索 (⌘K / Ctrl+K)', tt_ai: 'AI 推荐', tt_menu: '菜单',
     tt_hero_toggle: '收起 / 展开', tt_settings: 'LLM 设置（BYOK）',
     f_all: '全部', f_chain: '⛓ 强绑定', f_multi: '多源', f_single: '单 skill',
-    btn_search: '搜索', btn_ai: 'AI 推荐',
+    sort_label: '排序', sort_default: '默认', sort_stars: '最热', sort_recent: '最近更新',
+    btn_search: '搜索', btn_ai: 'AI 推荐', btn_share: '🔗 复制结果链接', tt_share: '复制当前搜索/筛选结果的链接，发给同事',
     theme_dark: '🌙 暗色', theme_light: '☀️ 亮色',
     hero_h2: '按功能分类的 AI Agent Skills 全景',
     hero_def: 'Agent Skill 是 Claude Code 里可复用的「能力包」——装一次，之后像 /写PRD 这样按斜杠命令调用。',
@@ -1456,7 +1458,8 @@ const I18N = {
     tt_search: 'Spotlight search (⌘K / Ctrl+K)', tt_ai: 'AI recommend', tt_menu: 'Menu',
     tt_hero_toggle: 'Collapse / expand', tt_settings: 'LLM settings (BYOK)',
     f_all: 'All', f_chain: '⛓ Chained', f_multi: 'Multi-source', f_single: 'Single skill',
-    btn_search: 'Search', btn_ai: 'AI Pick',
+    sort_label: 'Sort', sort_default: 'Default', sort_stars: 'Popular', sort_recent: 'Recent',
+    btn_search: 'Search', btn_ai: 'AI Pick', btn_share: '🔗 Copy results link', tt_share: 'Copy a link to the current search/filter results',
     theme_dark: '🌙 Dark', theme_light: '☀️ Light',
     hero_h2: 'AI Agent Skills, organized by function',
     hero_def: 'An Agent Skill is a reusable command that runs inside Claude Code — install one, then call it like /write-prd.',
@@ -1649,6 +1652,7 @@ const starIcon = '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true
 
 let currentFilter = 'all';
 let currentSearch = '';
+let currentSort = 'default';   // 功能视图卡片排序：default(策展) / stars / recent
 
 function buildNav(){
   const nav = document.getElementById('nav');
@@ -1732,7 +1736,7 @@ function licMeta(spdx){
 function installPrereq(cmd){
   if(!cmd) return '';
   const en = LANG === 'en';
-  if(cmd.startsWith('npx ')) return en?'Needs Node.js ≥18. Open a terminal on your machine and paste the command; it installs to ~/.claude/skills/. Then in Claude Code run `skills list` to confirm, and call the skill as a /slash-command.':'需 Node.js ≥18。在你电脑上打开终端粘贴运行；会装到 ~/.claude/skills/。然后在 Claude Code 里用 `skills list` 确认，并以 /斜杠命令 调用该 skill。';
+  if(cmd.startsWith('npx ')) return en?'Needs Node.js ≥18. Open a terminal and paste the command; it installs to ~/.claude/skills/.':'需 Node.js ≥18。在终端粘贴运行；会装到 ~/.claude/skills/。';
   if(cmd.startsWith('npm ')) return en?'Needs Node.js + npm. Paste in a terminal.':'需 Node.js + npm。粘到终端运行。';
   if(cmd.startsWith('pip ')) return en?'Needs Python 3 + pip. Paste in a terminal.':'需 Python 3 + pip。粘到终端运行。';
   if(cmd.startsWith('/plugin')) return en?'Run this slash command inside Claude Code (add the marketplace, then /plugin install).':'在 Claude Code 里运行此斜杠命令（先加 marketplace，再 /plugin install 选具体插件）。';
@@ -1752,6 +1756,7 @@ function matchSearch(hay, q){
 function buildContent(){
   const root = document.getElementById('content');
   let html = '';
+  let _ord = 0;   // 卡片原始（策展）顺序，用于「默认」排序复位
   let totalSkills = 0, totalGroups = 0, totalChains = 0;
   const vendorSet = new Set();
 
@@ -1815,6 +1820,7 @@ function buildContent(){
         const chainBadge = row.chain ? `<span class="chain-badge" title="${escapeAttr(t('tt_chain'))}">${t('chain_badge')}</span>` : '';
 
         const maxStars = row.sources.reduce((m, s) => Math.max(m, s.stars || 0), 0);
+        const maxUpd = row.sources.reduce((m, s) => (s.last_commit && s.last_commit > m ? s.last_commit : m), '');
         // data attributes for filtering
         const searchText = (row.skills.join(' ') + ' ' + row.group + ' ' + (row.group_en||'') + ' ' + row.description + ' ' +
                             (row.use_case||'') + ' ' + (row.use_case_en||'') + ' ' + (row.py||'') + ' ' +
@@ -1841,7 +1847,9 @@ function buildContent(){
           data-chain="${row.chain}"
           data-skills="${row.skills.length}"
           data-sources="${sourceCount}"
-          data-stars="${maxStars}">`;
+          data-stars="${maxStars}"
+          data-updated="${escapeAttr(maxUpd)}"
+          data-ord="${_ord++}">`;
         html += `<div class="card-head">`;
         html += `<div class="card-group">${chainBadge}<span title="${escapeAttr(pickT(row.group_en, row.group))}">${escapeHtml(pickT(row.group_en, row.group))}</span></div>`;
         html += `<div class="card-skills">${skillsHtml}</div>`;
@@ -1919,6 +1927,8 @@ function applyFilter(){
       visible.sort((a,b) => (parseInt(b.dataset.stars)||0) - (parseInt(a.dataset.stars)||0));
       visible.forEach(c => wrap.appendChild(c));
     });
+  } else {
+    applySort();   // 无搜索时按当前排序（默认/最热/最近）重排
   }
 
   // 更新结果计数
@@ -1932,7 +1942,54 @@ function applyFilter(){
       countEl.textContent = '';
     }
   }
+  // 有搜索/过滤时才显示「复制结果链接」
+  const shareBtn = document.getElementById('shareLink');
+  if(shareBtn) shareBtn.classList.toggle('hidden', !(currentSearch || currentFilter !== 'all'));
   if(window._heroUpdate) window._heroUpdate();
+}
+
+// 功能视图卡片排序：在每个小节内按所选键重排（default 复位到策展顺序）
+function applySort(){
+  document.querySelectorAll('.cards').forEach(wrap => {
+    const cards = [...wrap.querySelectorAll('.card')];
+    cards.sort((a, b) => {
+      if(currentSort === 'stars') return (parseInt(b.dataset.stars)||0) - (parseInt(a.dataset.stars)||0) || ((parseInt(a.dataset.ord)||0) - (parseInt(b.dataset.ord)||0));
+      if(currentSort === 'recent') return (b.dataset.updated||'').localeCompare(a.dataset.updated||'') || ((parseInt(a.dataset.ord)||0) - (parseInt(b.dataset.ord)||0));
+      return (parseInt(a.dataset.ord)||0) - (parseInt(b.dataset.ord)||0);
+    });
+    cards.forEach(c => wrap.appendChild(c));
+  });
+}
+function setupCardSort(){
+  const bar = document.getElementById('cardSort');
+  if(!bar) return;
+  bar.querySelectorAll('.cs-btn').forEach(btn => btn.addEventListener('click', () => {
+    if(btn.dataset.sort === currentSort) return;
+    currentSort = btn.dataset.sort;
+    bar.querySelectorAll('.cs-btn').forEach(b => b.classList.toggle('active', b === btn));
+    applySort();
+  }));
+}
+
+// 把当前 视图+过滤+搜索 串进 URL，便于把"筛选后的结果"分享给同事
+function buildShareURL(){
+  const u = new URL(location); u.search = '';
+  if(currentView && currentView !== 'cards') u.searchParams.set('view', currentView);
+  if(currentFilter && currentFilter !== 'all') u.searchParams.set('gfilter', currentFilter);
+  if(currentSearch) u.searchParams.set('q', currentSearch);
+  return u.toString();
+}
+function setupShareLink(){
+  const btn = document.getElementById('shareLink');
+  if(!btn) return;
+  btn.addEventListener('click', () => {
+    const url = buildShareURL();
+    try{ navigator.clipboard.writeText(url); }catch(_){
+      const ta = document.createElement('textarea'); ta.value = url; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} ta.remove();
+    }
+    flashBtn(btn, t('copied'));
+  });
 }
 
 function setupHero(){
@@ -2064,8 +2121,10 @@ function setupViewSwitch(){
       document.querySelector('.hero').classList.toggle('hidden', !isCards);
       document.getElementById('repoView').classList.toggle('hidden', !isRepo);
       document.getElementById('graphView').classList.toggle('hidden', !isGraph);
-      // 类型过滤（强绑定/多源/单 skill）只在功能/网络视图适用；仓库视图按仓库聚合，隐藏这些 pill
+      // 类型过滤（强绑定）只在功能/网络视图适用；仓库视图按仓库聚合，隐藏这些 pill
       document.querySelectorAll('.toolbar .pill, .toolbar .tb-divider').forEach(el => el.classList.toggle('hidden', isRepo));
+      // 卡片排序只在功能视图显示
+      const cardSort = document.getElementById('cardSort'); if(cardSort) cardSort.classList.toggle('hidden', !isCards);
       if(isRepo) buildRepoView();
       if(isGraph) buildGraph();
       syncSidebarForView();
@@ -2330,7 +2389,6 @@ let _graphAnim = null;
 let graphFindFn = null;       // (query, openTop) => 高亮+居中匹配节点；openTop 时打开其抽屉
 let graphOpenNodeFn = null;   // (skillId) => 打开该节点抽屉（深链还原用）
 let graphSelectedId = null;   // 当前选中节点 id（深链用）
-let _pendingGraphView = null; // 跨重建的「保存视图」还原（切过滤会重建图、闭包失效）
 // 把当前 视图/过滤/选中节点 同步进 URL query（保留 ?lang），用于可分享深链
 function syncGraphURL(){
   try{
@@ -2919,12 +2977,7 @@ function buildGraph(){
       <button class="gc-btn" data-act="zoom-in" title="${EN ? 'Zoom in' : '放大'}">${ICON.zoomIn}</button>
     </div>
     <button class="gc-btn gc-zoom" data-act="zoom" title="${EN ? 'Reset zoom' : '重置缩放'}">100%</button>
-    <button class="gc-btn" data-act="labels" title="${EN ? 'Toggle all labels' : '切换全部标签'}">${ICON.labels}</button>
-    <div class="graph-zoom-row">
-      <button class="gc-btn gc-zoom" data-act="export-png" title="${EN ? 'Export PNG' : '导出 PNG'}">PNG</button>
-      <button class="gc-btn gc-zoom" data-act="export-svg" title="${EN ? 'Export SVG' : '导出 SVG'}">SVG</button>
-    </div>
-    <button class="gc-btn gc-zoom" data-act="embed" title="${EN ? 'Copy embed code' : '复制嵌入代码'}">&lt;/&gt;</button>`;
+    <button class="gc-btn" data-act="labels" title="${EN ? 'Toggle all labels' : '切换全部标签'}">${ICON.labels}</button>`;
   container.appendChild(ctrls);
 
   function updateZoomLabel(){
@@ -2977,58 +3030,6 @@ function buildGraph(){
     nodes.forEach(n => n._t.classList.toggle('always', allLabels || alwaysLabelSet.has(n.id)));
   });
 
-  // ==== 导出 PNG / SVG（自动取景整图；解析 CSS 变量为具体色，保证独立文件可渲染）====
-  function _download(blob, name){
-    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name;
-    document.body.appendChild(a); a.click();
-    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
-  }
-  function _exportSVGString(){
-    const clone = svg.cloneNode(true);
-    const o = svg.querySelectorAll('*'), c = clone.querySelectorAll('*');
-    const props = ['fill','stroke','stroke-width','stroke-opacity','opacity','stroke-dasharray','stroke-linecap','stroke-linejoin'];
-    for(let i = 0; i < o.length; i++){
-      const cs = getComputedStyle(o[i]);
-      props.forEach(pp => { const v = cs.getPropertyValue(pp); if(v) c[i].setAttribute(pp, v); });
-    }
-    // 自动取景：所有节点包围盒 + padding
-    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-    nodes.forEach(n => { minX = Math.min(minX, n.x - n.r - 14); minY = Math.min(minY, n.y - n.r - 14); maxX = Math.max(maxX, n.x + n.r + 14); maxY = Math.max(maxY, n.y + n.r + 14); });
-    const vbW = maxX - minX, vbH = maxY - minY;
-    clone.setAttribute('viewBox', `${minX} ${minY} ${vbW} ${vbH}`);
-    clone.setAttribute('width', Math.round(vbW)); clone.setAttribute('height', Math.round(vbH));
-    const vp = clone.querySelector('.viewport'); if(vp) vp.setAttribute('transform', 'translate(0,0) scale(1)');
-    const bgc = getComputedStyle(document.body).backgroundColor || '#0b0d10';
-    const r = document.createElementNS(svgNS, 'rect');
-    r.setAttribute('x', minX); r.setAttribute('y', minY); r.setAttribute('width', vbW); r.setAttribute('height', vbH); r.setAttribute('fill', bgc);
-    clone.insertBefore(r, vp);   // 纯色背景置底
-    return { xml: '<?xml version="1.0" encoding="UTF-8"?>\n' + new XMLSerializer().serializeToString(clone), w: vbW, h: vbH, bg: bgc };
-  }
-  function exportGraph(format){
-    const { xml, w, h, bg } = _exportSVGString();
-    if(format === 'svg'){ _download(new Blob([xml], {type: 'image/svg+xml;charset=utf-8'}), 'skills-atlas-graph.svg'); return; }
-    const scale = 2, img = new Image();
-    img.onload = () => {
-      const cv = document.createElement('canvas'); cv.width = Math.round(w * scale); cv.height = Math.round(h * scale);
-      const cx2 = cv.getContext('2d'); cx2.fillStyle = bg; cx2.fillRect(0, 0, cv.width, cv.height);
-      cx2.drawImage(img, 0, 0, cv.width, cv.height);
-      cv.toBlob(bl => { if(bl) _download(bl, 'skills-atlas-graph.png'); }, 'image/png');
-    };
-    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(xml);
-  }
-  ctrls.querySelector('[data-act="export-png"]').addEventListener('click', () => exportGraph('png'));
-  ctrls.querySelector('[data-act="export-svg"]').addEventListener('click', () => exportGraph('svg'));
-  // 复制嵌入代码：当前 视图/过滤/选中节点 + embed=1 的 iframe 片段
-  ctrls.querySelector('[data-act="embed"]').addEventListener('click', e => {
-    const u = new URL(location);
-    u.searchParams.set('embed', '1'); u.searchParams.set('view', 'graph');
-    if(currentFilter && currentFilter !== 'all') u.searchParams.set('gfilter', currentFilter); else u.searchParams.delete('gfilter');
-    if(graphSelectedId) u.searchParams.set('gnode', graphSelectedId); else u.searchParams.delete('gnode');
-    const code = `<iframe src="${u.toString()}" width="100%" height="620" style="border:1px solid var(--border,#e6e8ec);border-radius:12px" loading="lazy" title="Skills Atlas"></iframe>`;
-    try{ navigator.clipboard.writeText(code); }catch(_){}
-    const btn = e.currentTarget, o = btn.textContent; btn.textContent = '✓'; setTimeout(() => { btn.innerHTML = '&lt;/&gt;'; }, 1200);
-  });
-
   // 图例
   const legend = document.createElement('div');
   legend.className = 'legend';
@@ -3053,90 +3054,28 @@ function buildGraph(){
   // 图例分类可点：单独聚焦该类簇（高亮本类节点 + 类内连线，居中），再点同一项取消
   legend.querySelectorAll('.legend-cat').forEach(el => el.addEventListener('click', () => focusCategory(+el.dataset.ci)));
 
-  // ==== 视图坞：策展预设 + 已保存视图（商用差异化③）====
-  // 最高连接度节点（当前过滤范围内）→「最常联用」预设
+  // ==== 视图坞：策展预设（全部 / 强绑定 / 最常联用）====
   let hubId = null, hubDeg = -1;
   neighbors.forEach((set, id) => { if(set.size > hubDeg){ hubDeg = set.size; hubId = id; } });
   const PRESETS = [
-    { f: 'all',          label: EN ? '🌐 All' : '🌐 全部' },
-    { f: 'chain',        label: EN ? '⛓ Chained' : '⛓ 强绑定' },
-    { f: 'multi-source', label: EN ? '🔱 Multi-source' : '🔱 多源' },
+    { f: 'all',   label: EN ? '🌐 All' : '🌐 全部' },
+    { f: 'chain', label: EN ? '⛓ Chained' : '⛓ 强绑定' },
   ];
-  const VKEY = 'atlas:graph:views';
-  const loadViews = () => { try{ return JSON.parse(localStorage.getItem(VKEY)) || []; }catch(_){ return []; } };
-  const storeViews = a => { try{ localStorage.setItem(VKEY, JSON.stringify(a.slice(0, 8))); }catch(_){} };
-
   const dock = document.createElement('div');
   dock.className = 'views-dock';
   const presetChips = PRESETS.map(p =>
     `<button class="vd-chip${p.f === currentFilter ? ' active' : ''}" data-preset="${p.f}">${p.label}</button>`).join('');
   const hubChip = hubId ? `<button class="vd-chip" data-preset="hub" title="${escapeAttr(hubId)}">${EN ? '🔥 Most connected' : '🔥 最常联用'}</button>` : '';
-  dock.innerHTML =
-    `<div class="vd-row vd-presets"><span class="vd-label">${EN ? 'Views' : '视图'}</span>${presetChips}${hubChip}</div>` +
-    `<div class="vd-row vd-saved"></div>`;
+  dock.innerHTML = `<div class="vd-row vd-presets"><span class="vd-label">${EN ? 'Views' : '视图'}</span>${presetChips}${hubChip}</div>`;
   container.appendChild(dock);
-
-  // 还原一个已保存视图：跨过滤需先重建图（闭包会失效），用 _pendingGraphView 接力
-  function applyViewHere(v){
-    if(typeof v.scale === 'number'){ scale = Math.max(0.3, Math.min(4, v.scale)); tx = v.tx; ty = v.ty; applyTransform(); updateZoomLabel(); }
-    if(v.nodeId && nodeMap.has(v.nodeId)) openDrawer(nodeMap.get(v.nodeId));
-  }
-  function restoreView(v){
-    const f = v.filter || 'all';
-    if(f !== currentFilter){
-      _pendingGraphView = v;
-      const pill = document.querySelector(`.toolbar .pill[data-filter="${f}"]`);
-      if(pill){ pill.click(); return; }            // 同步重建图 → 新实例消费 _pendingGraphView
-      _pendingGraphView = null;
-    }
-    applyViewHere(v);
-  }
-  function renderSaved(){
-    const saved = loadViews();
-    const row = dock.querySelector('.vd-saved');
-    if(!saved.length){
-      row.innerHTML = `<button class="vd-chip vd-save" data-act="save-view">${EN ? '★ Save view' : '★ 保存视图'}</button>`;
-    } else {
-      row.innerHTML = saved.map((v, i) =>
-        `<button class="vd-chip" data-saved="${i}" title="${escapeAttr((v.filter||'all') + (v.nodeId ? ' · ' + v.nodeId : ''))}">${escapeHtml(v.name)}<span class="vd-x" data-del="${i}" title="${EN ? 'Remove' : '删除'}">×</span></button>`).join('') +
-        `<button class="vd-chip vd-save" data-act="save-view">${EN ? '★ Save' : '★ 保存'}</button>`;
-    }
-  }
-  renderSaved();
-
   dock.addEventListener('click', e => {
     const presetBtn = e.target.closest('[data-preset]');
-    if(presetBtn){
-      const f = presetBtn.dataset.preset;
-      if(f === 'hub'){ if(hubId && nodeMap.has(hubId)) openDrawer(nodeMap.get(hubId)); return; }
-      const pill = document.querySelector(`.toolbar .pill[data-filter="${f}"]`);
-      if(pill) pill.click();   // 复用工具栏过滤逻辑（重建图 + 同步 URL）
-      return;
-    }
-    const del = e.target.closest('[data-del]');
-    if(del){
-      e.stopPropagation();
-      const arr = loadViews(); arr.splice(+del.dataset.del, 1); storeViews(arr); renderSaved();
-      return;
-    }
-    const savedBtn = e.target.closest('[data-saved]');
-    if(savedBtn){ const v = loadViews()[+savedBtn.dataset.saved]; if(v) restoreView(v); return; }
-    if(e.target.closest('[data-act="save-view"]')){
-      const arr = loadViews();
-      const selName = graphSelectedId || (PRESETS.find(p => p.f === currentFilter) || {}).label || (EN ? 'View' : '视图');
-      let name = selName.replace(/^[^\w一-鿿]+/, '').trim() || (EN ? 'View' : '视图');
-      let nm = name, k = 2; while(arr.some(v => v.name === nm)) nm = `${name} ${k++}`;
-      arr.unshift({ name: nm, filter: currentFilter, nodeId: graphSelectedId, scale, tx, ty });
-      storeViews(arr); renderSaved();
-      return;
-    }
+    if(!presetBtn) return;
+    const f = presetBtn.dataset.preset;
+    if(f === 'hub'){ if(hubId && nodeMap.has(hubId)) openDrawer(nodeMap.get(hubId)); return; }
+    const pill = document.querySelector(`.toolbar .pill[data-filter="${f}"]`);
+    if(pill) pill.click();   // 复用工具栏过滤逻辑（重建图 + 同步 URL）
   });
-
-  // 消费跨重建的待还原视图（restoreView 触发的 pill.click 重建后落到这里）
-  if(_pendingGraphView){
-    const pv = _pendingGraphView; _pendingGraphView = null;
-    requestAnimationFrame(() => applyViewHere(pv));
-  }
 }
 
 // === AI 推荐（轻量 TF-IDF + 同义词扩展） ===
@@ -4343,6 +4282,7 @@ function setupUsage(){
     if(cmd){
       let ih = `<div class="ui-cmd"><code>${escapeHtml(cmd)}</code><button class="src-act" data-act="copy" data-cmd="${escapeAttr(cmd)}">${LANG === 'en' ? '📋 Copy' : '📋 复制'}</button></div>`;
       ih += '<div class="ui-prereq">' + escapeHtml(installPrereq(cmd)) + '</div>';
+      ih += `<div class="ui-use">▶ <b>${LANG === 'en' ? 'Use it' : '用法'}:</b> ${LANG === 'en' ? 'in Claude Code run <code>skills list</code> to confirm, then call it as a <code>/slash-command</code>.' : '在 Claude Code 里运行 <code>skills list</code> 确认，再以 <code>/斜杠命令</code> 调用。'}</div>`;
       if(inst.note) ih += '<div class="ui-note">ℹ️ ' + escapeHtml(inst.note) + '</div>';
       if(inst.alt) ih += `<details class="ui-alt"><summary>${LANG === 'en' ? 'Alternative command' : '备选命令'}</summary><code>${escapeHtml(inst.alt)}</code> <button class="src-act" data-act="copy" data-cmd="${escapeAttr(inst.alt)}">${LANG === 'en' ? 'Copy' : '复制'}</button></details>`;
       installEl.innerHTML = ih;
@@ -4368,8 +4308,9 @@ applyChrome();   // 先按当前语言刷静态界面文字
 setupLang();     // 语言切换按钮
 buildNav();
 buildContent();
-drawHeroChart();
 setupSearch();
+setupShareLink();
+setupCardSort();
 setupFilters();
 setupViewSwitch();
 setupAI();
@@ -4488,25 +4429,18 @@ if(location.hash){ requestAnimationFrame(() => scrollToHashTarget('auto')); }
 // 图视图深链还原：?view=graph/repo & gfilter=... & gnode=...（可分享/刷新保持）
 (function restoreGraphFromURL(){
   const sp = new URLSearchParams(location.search);
-  const embed = sp.get('embed') === '1';
-  const v = sp.get('view') || (embed ? 'graph' : null), gf = sp.get('gfilter'), gn = sp.get('gnode');
-  // 嵌入模式：隐藏侧栏/工具栏/hero，只留图 + 「Powered by」角标（可点回完整站）
-  if(embed){
-    document.body.classList.add('embed');
-    const badge = document.createElement('a');
-    badge.className = 'embed-badge';
-    const full = new URL(location); full.searchParams.delete('embed');
-    badge.href = full.toString(); badge.target = '_blank'; badge.rel = 'noopener';
-    badge.textContent = 'Powered by Skills Atlas';
-    document.body.appendChild(badge);
-  }
-  if(gf && ['chain','multi-source','single-skill'].includes(gf)){
-    const pill = document.querySelector(`.toolbar .pill[data-filter="${gf}"]`);
+  const v = sp.get('view'), gf = sp.get('gfilter'), gn = sp.get('gnode'), q = sp.get('q');
+  if(gf === 'chain'){
+    const pill = document.querySelector(`.toolbar .pill[data-filter="chain"]`);
     if(pill) pill.click();   // 设过滤 + 应用（卡片或图）
   }
   if(v === 'graph' || v === 'repo'){
     const btn = document.querySelector(`#viewSwitch .view-btn[data-view="${v}"]`);
     if(btn) btn.click();     // 切视图（graph 会 buildGraph 并设置 graphOpenNodeFn）
+  }
+  if(q){   // 还原搜索词（分享链接），走与输入框一致的检索管道
+    const inp = document.getElementById('search');
+    if(inp){ inp.value = q; inp.dispatchEvent(new Event('input', { bubbles: true })); }
   }
   if(v === 'graph' && gn){
     requestAnimationFrame(() => { if(graphOpenNodeFn) graphOpenNodeFn(gn); });
