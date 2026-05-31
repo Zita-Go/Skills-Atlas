@@ -18,11 +18,12 @@ const ALL = {
   'dry-run': { type: 'boolean' },
   json: { type: 'boolean' },
   en: { type: 'boolean' },
+  zh: { type: 'boolean' },
   help: { type: 'boolean', short: 'h' },
 };
 
 function parse(argv, allowed) {
-  const options = { help: ALL.help, en: ALL.en };
+  const options = { help: ALL.help, en: ALL.en, zh: ALL.zh };
   for (const k of allowed) {
     if (!ALL[k]) throw new Error(`unknown option spec: ${k}`);
     options[k] = ALL[k];

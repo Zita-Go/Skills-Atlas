@@ -41,6 +41,11 @@ function renderRow(r, { en = false } = {}) {
   return lines.join('\n');
 }
 
+const PERSONA_EN = {
+  'PM': 'PM', '创始人': 'Founder', '工程': 'Engineering', '求职': 'Job-seeking',
+  '研究': 'Research', '营销': 'Marketing', '设计': 'Design', '运营': 'Ops', '通用': 'General',
+};
+
 // Structured info for a skill (also used as the machine-readable --json shape).
 function buildInfo(skillName, { skillIndex, vendors }) {
   const rows = rowsFor(skillIndex, skillName);
@@ -51,11 +56,14 @@ function buildInfo(skillName, { skillIndex, vendors }) {
       group: r.group,
       group_en: r.group_en,
       category: r._cat,
+      category_en: r._catEn,
       chain: r.chain,
       description: r.description,
       description_en: r.description_en,
       use_case: r.use_case,
+      use_case_en: r.use_case_en,
       when_to_use: r.when_to_use,
+      when_to_use_en: r.when_to_use_en,
       personas: r.personas || [],
       sources: (r.sources || []).map(s => {
         const v = vendors[s.name] || {};
@@ -75,15 +83,20 @@ function buildInfo(skillName, { skillIndex, vendors }) {
 }
 
 function renderInfo(info, { en = false } = {}) {
+  const pick = (zh, e) => (en ? (e || zh) : (zh || e)) || '';
   const out = [];
   out.push(`\n${bold(green(info.skill))}${info.groups.some(g => g.chain) ? ' ' + cyan('⛓') : ''}`);
   for (const g of info.groups) {
-    out.push(`  ${dim('group:')} ${en ? (g.group_en || g.group) : g.group}  ${dim('[' + g.category + ']')}`);
-    const desc = en ? (g.description_en || g.description) : (g.description || g.description_en);
+    out.push(`  ${dim('group:')} ${pick(g.group, g.group_en)}  ${dim('[' + pick(g.category, g.category_en) + ']')}`);
+    const desc = pick(g.description, g.description_en);
     if (desc) out.push(`  ${desc}`);
-    if (g.use_case) out.push(`  ${dim('use case:')} ${g.use_case}`);
-    if (g.when_to_use) out.push(`  ${dim('when:')} ${g.when_to_use}`);
-    if (g.personas && g.personas.length) out.push(`  ${dim('personas:')} ${g.personas.join(' / ')}`);
+    const uc = pick(g.use_case, g.use_case_en);
+    if (uc) out.push(`  ${dim('use case:')} ${uc}`);
+    const wt = pick(g.when_to_use, g.when_to_use_en);
+    if (wt) out.push(`  ${dim('when:')} ${wt}`);
+    if (g.personas && g.personas.length) {
+      out.push(`  ${dim('personas:')} ${g.personas.map(p => en ? (PERSONA_EN[p] || p) : p).join(' / ')}`);
+    }
     out.push(`  ${dim('sources:')}`);
     for (const s of g.sources) {
       out.push(`    • ${bold(s.id)} ${yellow(stars(s.stars))} ${dim(s.type || '')} ${s.license ? dim('(' + s.license + ')') : ''}`);

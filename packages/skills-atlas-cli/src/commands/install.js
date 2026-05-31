@@ -174,6 +174,6 @@ module.exports = async function install(argv) {
 
   // usage guidance
   const infoObj = buildInfo(skill, { skillIndex: idx.skillIndex, vendors: data.vendors });
-  console.log(renderInfo(infoObj, { en: Boolean(values.en) }));
+  console.log(renderInfo(infoObj, { en: !values.zh }));
   console.log(dim('\nStart a new Claude Code session to load the skill, then invoke it by name.'));
 };

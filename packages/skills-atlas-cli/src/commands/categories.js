@@ -9,9 +9,9 @@ const loose = (hay, needle) =>
 
 async function categories(argv) {
   const { values } = parse(argv, ['json']);
-  if (values.help) { console.log('usage: skills-atlas categories [--json] [--en]'); return; }
+  if (values.help) { console.log('usage: skills-atlas categories [--json] [--zh]'); return; }
 
-  const en = Boolean(values.en);
+  const en = !values.zh;
   const { data } = loadData({ quiet: values.json });
   const cats = data.sections.map(s => ({
     title: en ? (s.title_en || s.title) : s.title,
@@ -27,9 +27,9 @@ async function categories(argv) {
 
 async function list(argv) {
   const { values, positionals } = parse(argv, ['category', 'json']);
-  if (values.help) { console.log('usage: skills-atlas list [category] [--json] [--en]'); return; }
+  if (values.help) { console.log('usage: skills-atlas list [category] [--json] [--zh]'); return; }
 
-  const en = Boolean(values.en);
+  const en = !values.zh;
   const filter = (positionals.join(' ') || values.category || '').trim();
   const { data } = loadData({ quiet: values.json });
 

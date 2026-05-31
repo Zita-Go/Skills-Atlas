@@ -22,7 +22,7 @@ commands:
   categories         list the top-level categories
   list [category]    list skill groups (optionally within one category)
 
-global flags: --en (English output), --json (machine output), -h/--help
+global flags: --zh (中文 output; English by default), --json (machine output), -h/--help
 docs: https://zita-go.github.io/Skills-Atlas/`;
 
 async function main() {

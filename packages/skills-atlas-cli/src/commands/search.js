@@ -18,7 +18,7 @@ filters:
       --chain          only ⛓ strong-binding workflow chains
       --limit <n>      max results (default 15)
       --json           machine-readable output
-      --en             English output`;
+      --zh             中文输出 (output is English by default)`;
 
 function jsonRow(r) {
   return {
@@ -44,7 +44,7 @@ module.exports = async function search(argv) {
     return;
   }
 
-  const en = Boolean(values.en);
+  const en = !values.zh; // English by default; --zh for Chinese
   const { data } = loadData({ quiet: values.json });
   const { flatRows } = buildIndices(data);
 

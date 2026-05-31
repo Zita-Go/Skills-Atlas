@@ -5,7 +5,7 @@ const { loadData } = require('../data');
 const { buildIndices, suggestSkills } = require('../index-build');
 const { buildInfo, renderInfo } = require('../format');
 
-const HELP = `usage: skills-atlas info <skill> [--json] [--en]
+const HELP = `usage: skills-atlas info <skill> [--json] [--zh]
 
 Show a skill's description, use case, when-to-use, personas, source repo(s)
 (stars / license / type), the in-repo SKILL.md path, and the install command.`;
@@ -42,5 +42,5 @@ module.exports = async function info(argv) {
     console.log(JSON.stringify(infoObj, null, 2));
     return;
   }
-  console.log(renderInfo(infoObj, { en: Boolean(values.en) }));
+  console.log(renderInfo(infoObj, { en: !values.zh }));
 };
