@@ -4047,18 +4047,19 @@ function buildHeroMap(){
   const W = Math.max(240, Math.round(host.clientWidth) || 360);
   const H = Math.max(244, Math.min(360, txtH ? txtH - 28 : 244));
   host.style.height = H + 'px';
-  const N = DATA.sections.length;
   const short = t => t.replace(/^[一二三四五六七八九十]+、\s*/, '').replace(/^\d+[\.、]\s*/, '')
                       .replace(/（[^）]*）/g, '').replace(/\s*\([^)]*\)\s*$/g, '').trim()
                       .split(/\s*[\/／&]\s*/)[0].trim();   // 取首段，标签更短不易裁切
-  // 色相与 graph 一致（按序号等距），但 treemap 用统一饱和/亮度，整体更协调不刺眼
-  const SAT = 50, LIGHT = 52;
-  const lumOf = (h) => { h/=360; const a=SAT/100*Math.min(LIGHT/100,1-LIGHT/100); const f=n=>{const k=(n+h*12)%12; return LIGHT/100 - a*Math.max(-1,Math.min(k-3,9-k,1));};
-    const lin=c=>c<=.03928?c/12.92:Math.pow((c+.055)/1.055,2.4); return .2126*lin(f(0))+.7152*lin(f(8))+.0722*lin(f(4)); };
+  // 策展定性配色（Carto "Bold"，去掉灰）：中间调、协调、深浅底都成立；色块有标签，循环可接受
+  const PALETTE = ['#7F3C8D','#11A579','#3969AC','#F2B701','#E73F74','#80BA5A','#E68310','#008695','#CF1C90','#F97B72','#4B4B8F'];
+  const hexLum = (hex) => { const m = hex.replace('#',''); const c = i => parseInt(m.slice(i, i+2), 16)/255;
+    const f = v => v <= .03928 ? v/12.92 : Math.pow((v+.055)/1.055, 2.4);
+    return .2126*f(c(0)) + .7152*f(c(2)) + .0722*f(c(4)); };
   const cats = DATA.sections.map((h1, i) => ({
     i, title: pickT(h1.title_en, h1.title), icon: h1.icon || H1_ICONS[h1.title] || '·',
-    v: h1.subsections.reduce((s, h2) => s + h2.rows.length, 0), hue: Math.round((i * 360 / N + 220) % 360)
+    v: h1.subsections.reduce((s, h2) => s + h2.rows.length, 0)
   })).filter(c => c.v > 0).sort((a, b) => b.v - a.v);
+  cats.forEach((c, si) => { c.col = PALETTE[si % PALETTE.length]; });   // 按大小序上色，相邻对比更清
   if(!cats.length) return;
   const rects = [];
   (function slice(items, x, y, w, h, horiz){
@@ -4080,8 +4081,8 @@ function buildHeroMap(){
     let label = `<span class="hm-ic${tiny ? ' tiny' : ''}">${r.icon}</span>`;
     if(tw > 96 && th > 56) label += `<span class="hm-nm">${escapeHtml(short(r.title))}</span><b class="hm-ct">${r.v}</b>`;
     else if(tw > 34 && th > 30) label += `<b class="hm-ct sm">${r.v}</b>`;
-    const txt = lumOf(r.hue) > 0.46 ? '#0b0d12' : '#f2f5fa';   // 按真实亮度选深/浅字
-    return `<button class="hm-tile" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;background:hsl(${r.hue},${SAT}%,${LIGHT}%);--txt:${txt}">${label}</button>`;
+    const txt = hexLum(r.col) > 0.42 ? '#0b0d12' : '#f4f7fb';   // 按色块真实亮度选深/浅字
+    return `<button class="hm-tile" data-idx="${r.i}" title="${escapeAttr(r.title + ' · ' + r.v + (LANG === 'en' ? ' groups' : ' 个分组'))}" style="left:${(r.x + GAP / 2).toFixed(1)}px;top:${(r.y + GAP / 2).toFixed(1)}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px;background:${r.col};--txt:${txt}">${label}</button>`;
   }).join('');
   host.querySelectorAll('.hm-tile').forEach(tl => tl.addEventListener('click', () => {
     const el = document.querySelectorAll('.section-h1')[+tl.dataset.idx];
