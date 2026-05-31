@@ -1496,6 +1496,8 @@ let LANG = resolveLang();
 function t(key){ const v = (I18N[LANG] || {})[key]; return v != null ? v : (I18N.zh[key] || ''); }
 // 数据文案：英文为空则回退中文（slug/id 永远用中文，保证锚点/跳转稳定）
 function pickT(en, zh){ return (LANG === 'en' && en) ? en : zh; }
+// 大类色：色相等距 + 亮度三档轮换，相邻大类既差色相又差明暗、更易区分
+function catLight(i){ return [68, 58, 49][i % 3]; }
 function applyChrome(){
   document.documentElement.lang = (LANG === 'en' ? 'en' : 'zh-CN');
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -2333,7 +2335,8 @@ function buildGraph(){
   // 节点：每个 unique skill；边：同一 row 内 skill 两两相连
   const nodeMap = new Map();
   const links = [];
-  const accentHues = [220, 250, 280, 310, 340, 10, 40, 70, 100, 130, 160, 190, 205, 25, 55, 85, 115, 145, 175, 295, 325, 355];
+  // 按大类数等距生成色相(任意类数都不重复;cat0 从蓝 220 起)
+  const accentHues = DATA.sections.map((_, i) => Math.round((i * 360 / DATA.sections.length + 220) % 360));
   const catIdx = new Map(DATA.sections.map((s, i) => [s.title, i]));
 
   rows.forEach(row => {
@@ -2465,10 +2468,10 @@ function buildGraph(){
     g.classList.add('node');
     g.dataset.id = n.id;
     // 把节点 hue 写到 currentColor 上，hover 时 drop-shadow 用 currentColor
-    g.style.color = `hsl(${n.hue}, 70%, 64%)`;
+    g.style.color = `hsl(${n.hue}, 70%, ${catLight(n.catI)}%)`;
     const c = document.createElementNS(svgNS, 'circle');
     c.setAttribute('r', n.r);
-    c.setAttribute('fill', `hsl(${n.hue}, 70%, 64%)`);
+    c.setAttribute('fill', `hsl(${n.hue}, 70%, ${catLight(n.catI)}%)`);
     c.setAttribute('stroke', n.chain ? 'var(--chain)' : 'var(--graph-node-stroke)');
     c.setAttribute('stroke-width', n.chain ? 2 : 1);
     g.appendChild(c);
@@ -3008,7 +3011,7 @@ function buildGraph(){
   }
   const catLegend = DATA.sections.map((s, i) => {
     const hue = accentHues[i % accentHues.length];
-    return `<div class="legend-cat" data-ci="${i}" title="${escapeAttr(pickT(s.title_en, s.title))}"><span class="swatch" style="background:hsl(${hue},70%,64%);color:hsl(${hue},70%,64%)"></span><span>${escapeHtml(shortCat(pickT(s.title_en, s.title)))}</span></div>`;
+    return `<div class="legend-cat" data-ci="${i}" title="${escapeAttr(pickT(s.title_en, s.title))}"><span class="swatch" style="background:hsl(${hue},70%,${catLight(i)}%);color:hsl(${hue},70%,${catLight(i)}%)"></span><span>${escapeHtml(shortCat(pickT(s.title_en, s.title)))}</span></div>`;
   }).join('');
   legend.innerHTML = `<b>${t('graph_title')}</b>
     <div style="margin-top:4px">${t('graph_l_node')}</div>
@@ -4059,7 +4062,8 @@ function drawHeroChart(){
   if(total === 0) return;
 
   // 13 大类的渐变色（HSL 平均分布）
-  const hues = [220, 250, 280, 310, 340, 10, 40, 70, 100, 130, 160, 190, 205];
+  // 与 graph 一致:按大类数等距生成色相,任意类数都不重复
+  const hues = DATA.sections.map((_, i) => Math.round((i * 360 / DATA.sections.length + 220) % 360));
   const cx=100, cy=100, r=78, ringW=18;
   const TAU = Math.PI * 2;
   let acc = -Math.PI / 2;  // 从 12 点钟开始
@@ -4084,7 +4088,7 @@ function drawHeroChart(){
     const d = `M ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2}`
           + ` L ${x3} ${y3} A ${r2} ${r2} 0 ${large} 0 ${x4} ${y4} Z`;
     const hue = hues[i % hues.length];
-    arcs.push(`<path class="hero-arc" data-idx="${i}" d="${d}" fill="hsl(${hue}, 70%, 65%)" opacity="0.85" style="cursor:pointer">
+    arcs.push(`<path class="hero-arc" data-idx="${i}" d="${d}" fill="hsl(${hue}, 70%, ${catLight(i)}%)" opacity="0.85" style="cursor:pointer">
       <title>${pickT(s.title_en, s.title)}: ${s.count}</title></path>`);
     acc = end;
   });
@@ -4103,7 +4107,7 @@ function drawHeroChart(){
   if(legend){
     legend.innerHTML = slices.map((s, i) =>
       `<button class="hl-item" data-idx="${i}" title="${escapeAttr(pickT(s.title_en, s.title))}">`
-      + `<span class="hl-dot" style="background:hsl(${hues[i % hues.length]},70%,65%)"></span>`
+      + `<span class="hl-dot" style="background:hsl(${hues[i % hues.length]},70%,${catLight(i)}%)"></span>`
       + `<span class="hl-name">${escapeHtml(DATA.sections[i].icon || '·')}</span>`
       + `<b class="hl-count">${s.count}</b></button>`).join('');
   }
