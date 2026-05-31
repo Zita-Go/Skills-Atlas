@@ -1,394 +1,1567 @@
 {
-  "generated_at": "2026-05-31T09:00:41+00:00",
+  "generated_at": "2026-05-31T11:20:08+00:00",
   "date": "2026-05-31",
-  "proposed_count": 3,
+  "proposed_count": 6,
   "meta": {
     "rejected": {
       "already_in_repos_yaml": 33,
-      "looks_tutorial": 1,
-      "no_skill_files": 3,
-      "not_a_collection": 1
+      "seen_recently": 10,
+      "no_skill_files": 2
     },
     "filtered_out": [
       {
-        "full_name": "shanraisshan/claude-code-best-practice",
-        "reason": "仓库名像教程/演示/模板"
-      },
-      {
-        "full_name": "VoltAgent/awesome-openclaw-skills",
+        "full_name": "Leey21/awesome-ai-research-writing",
         "reason": "无 SKILL.md —— 非原始来源"
       },
       {
-        "full_name": "1c7/chinese-independent-developer",
-        "reason": "无 SKILL.md —— 非原始来源"
-      },
-      {
-        "full_name": "CherryHQ/cherry-studio",
-        "reason": "非正经集合：该仓库本身是一款 AI 生产力桌面应用（Cherry Studio），附带的 skill 均为项目自身的开发内部工具（PR 测试、skill 脚手架创建），并非面向通用 AI agent 使用的正经技能集合，不具收录价值。"
-      },
-      {
-        "full_name": "hesreallyhim/awesome-claude-code",
+        "full_name": "VoltAgent/awesome-agent-skills",
         "reason": "无 SKILL.md —— 非原始来源"
       }
     ]
   },
-  "proposals": [
+  "skills_yaml_draft": [
     {
-      "repo": {
-        "author": "code-yeongyu",
-        "repo": "oh-my-openagent",
-        "full_name": "code-yeongyu/oh-my-openagent",
-        "url": "https://github.com/code-yeongyu/oh-my-openagent",
-        "stars": 60366,
-        "pushed_at": "2026-05-31",
-        "default_branch": "dev",
-        "github_description": "omo; the best agent harness - previously oh-my-opencode",
-        "topics": [
-          "ai",
-          "ai-agents",
-          "amp",
-          "anthropic",
-          "chatgpt",
-          "claude",
-          "claude-code",
-          "claude-skills",
-          "cursor",
-          "gemini",
-          "ide",
-          "openai",
-          "opencode",
-          "orchestration",
-          "tui",
-          "typescript"
-        ],
-        "language": "TypeScript",
-        "is_fork": false,
-        "archived": false,
-        "disabled": false,
-        "matched_query": "topic-claude-skills"
-      },
       "skills": [
-        {
-          "name": "get-unpublished-changes",
-          "path": ".agents/skills/get-unpublished-changes/SKILL.md",
-          "subcategory": "1-4",
-          "subcategory_title": "1.4 Git / PR / CI 协作",
-          "category": "software-engineering",
-          "group": "版本变更分析",
-          "description_zh": "比较代码库 HEAD 与最新发布版本，列出所有未发布变更，分组为功能、修复等类型，注意 breaking changes 并推荐版本 bump。",
-          "what": "自动化变更日志生成和版本推荐。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "github-triage",
-          "path": ".agents/skills/github-triage/SKILL.md",
-          "subcategory": "9-2",
-          "subcategory_title": "9.2 项目管理 / Issue 追踪",
-          "category": "comms-integration",
-          "group": "GitHub 分类分析",
-          "description_zh": "以只读方式分析 GitHub issues 和 PRs，为每个项目创建后台任务进行分类，生成证据支持的报告文件，禁止任何 GitHub 写操作。",
-          "what": "自动化 GitHub issues 和 PRs 的分类和分析。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "hyperplan",
-          "path": ".agents/skills/hyperplan/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "",
-          "description_zh": "",
-          "what": "",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "omomomo",
-          "path": ".agents/skills/omomomo/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "",
-          "description_zh": "",
-          "what": "",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "pre-publish-review",
-          "path": ".agents/skills/pre-publish-review/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "",
-          "description_zh": "",
-          "what": "",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "publish",
-          "path": ".agents/skills/publish/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "",
-          "description_zh": "",
-          "what": "",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "remove-deadcode",
-          "path": ".agents/skills/remove-deadcode/SKILL.md",
-          "subcategory": "1-3",
-          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
-          "category": "software-engineering",
-          "group": "代码清理",
-          "description_zh": "通过并行深度代理自动扫描和移除死代码，使用 LSP 验证和原子提交确保安全清理。",
-          "what": "自动化扫描和移除未使用代码。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "security-research",
-          "path": ".agents/skills/security-research/SKILL.md",
-          "subcategory": "1-8",
-          "subcategory_title": "1.8 安全审计 / 威胁建模",
-          "category": "software-engineering",
-          "group": "安全审计",
-          "description_zh": "并行安全审计代码库，证明漏洞可利用性，分类根因并校准严重性，用于安全研究。",
-          "what": "团队模式的安全漏洞研究和审计。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "work-with-pr",
-          "path": ".agents/skills/work-with-pr/SKILL.md",
-          "subcategory": "1-4",
-          "subcategory_title": "1.4 Git / PR / CI 协作",
-          "category": "software-engineering",
-          "group": "PR 生命周期管理",
-          "description_zh": "自动化完整的 PR 工作流：从隔离工作树设置、代码实现、原子提交、PR 创建，到通过 CI、代码审查和 Cubic 机器人的验证循环，直到合并。",
-          "what": "管理从代码实现到 PR 合并的完整工作流。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "comment-checker",
-          "path": "packages/omo-codex/plugin/components/comment-checker/skills/comment-checker/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "代码编辑反馈检查",
-          "description_zh": "在代码编辑后自动检查评论反馈，帮助 agent 理解和修复标记的问题，确保代码质量。",
-          "what": "集成编辑工具后的反馈检查机制。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "lsp",
-          "path": "packages/omo-codex/plugin/components/lsp/skills/lsp/SKILL.md",
-          "subcategory": "12-4",
-          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
-          "category": "agent-architecture",
-          "group": "Agent Harness 工具",
-          "description_zh": "帮助AI agent通过语言服务器协议进行代码诊断、定义查找、符号引用和重命名等操作，集成到Codex工作区中。",
-          "what": "提供LSP工具用于代码编辑辅助。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "rules",
-          "path": "packages/omo-codex/plugin/components/rules/skills/rules/SKILL.md",
-          "subcategory": "12-4",
-          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
-          "category": "agent-architecture",
-          "group": "Agent Harness 工具",
-          "description_zh": "帮助AI agent自动加载和管理项目规则（如AGENTS.md等），在会话中注入指令以定制agent行为和上下文。",
-          "what": "自动注入项目规则以定制agent行为。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "ulw-loop",
-          "path": "packages/omo-codex/plugin/components/ulw-loop/skills/ulw-loop/SKILL.md",
-          "subcategory": "12-4",
-          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
-          "category": "agent-architecture",
-          "group": "Agent Harness 工作流",
-          "description_zh": "帮助 AI agent 系统性分解任务，通过证据驱动的循环执行和 QA 验证，管理长时间运行的目标。",
-          "what": "用于目标驱动的长时间任务执行和编排。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "debugging",
-          "path": "packages/omo-codex/plugin/skills/debugging/SKILL.md",
-          "subcategory": "1-2",
-          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
-          "category": "software-engineering",
-          "group": "调试与验证",
-          "description_zh": "为 AI agent 提供假设驱动的调试工具，用于调查任何语言或二进制的运行时问题，确认根因并修复。",
-          "what": "用于跨语言的运行时调试和问题排查。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "frontend-ui-ux",
-          "path": "packages/omo-codex/plugin/skills/frontend-ui-ux/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "",
-          "description_zh": "",
-          "what": "",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "init-deep",
-          "path": "packages/omo-codex/plugin/skills/init-deep/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "",
-          "description_zh": "",
-          "what": "",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "programming",
-          "path": "packages/omo-codex/plugin/skills/programming/SKILL.md",
-          "subcategory": "1-2",
-          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
-          "category": "software-engineering",
-          "group": "编程纪律与TDD",
-          "description_zh": "为 Python、Rust、TypeScript、Go 提供严格的类型安全编码规范、现代工具链选型和 TDD 工作流，指导 agent 按工程纪律写代码。",
-          "what": "跨语言类型严格编码规范与 TDD 工作流索引",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "refactor",
-          "path": "packages/omo-codex/plugin/skills/refactor/SKILL.md",
-          "subcategory": "1-3",
-          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
-          "category": "software-engineering",
-          "group": "代码重构",
-          "description_zh": "提供智能重构指令，帮助 agent 对代码进行提取、简化、现代化改造，并适配不同 Agent 平台（OpenCode/Codex）的工具调用差异。",
-          "what": "智能代码重构与多平台适配",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "remove-ai-slops",
-          "path": "packages/omo-codex/plugin/skills/remove-ai-slops/SKILL.md",
-          "subcategory": "1-3",
-          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
-          "category": "software-engineering",
-          "group": "代码清理",
-          "description_zh": "帮助AI agent清理代码中的AI生成异味，通过回归测试锁定行为，然后使用并行深度代理批量处理，覆盖10种异味类别，确保代码质量。",
-          "what": "移除AI生成代码中的低质量模式和异味。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "review-work",
-          "path": "packages/omo-codex/plugin/skills/review-work/SKILL.md",
-          "subcategory": "1-3",
-          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
-          "category": "software-engineering",
-          "group": "实现审查",
-          "description_zh": "帮助AI agent在完成实现后启动5个并行子代理进行审查，包括目标验证、代码质量、安全检查等，必须全部通过才算审查通过。",
-          "what": "在代码实现后进行并行审查以确保正确性和质量。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "start-work",
-          "path": "packages/omo-codex/plugin/skills/start-work/SKILL.md",
-          "subcategory": "12-4",
-          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
-          "category": "agent-architecture",
-          "group": "Agent 执行与协调",
-          "description_zh": "在AI agent编排环境中执行工作计划，管理状态、证据记录和子代理协调，支持并行任务与停机钩子续接。",
-          "what": "执行AI agent工作计划并管理子代理协调。",
-          "chain": true,
-          "chain_group": "规划-执行工作流"
-        },
-        {
-          "name": "ulw-plan",
-          "path": "packages/omo-codex/plugin/skills/ulw-plan/SKILL.md",
-          "subcategory": "1-1",
-          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
-          "category": "software-engineering",
-          "group": "战略规划",
-          "description_zh": "通过苏格拉底式访谈、代码库探索和差距分析，生成决策完整的工作计划，用于AI agent任务分解和战略规划。",
-          "what": "生成AI agent执行的工作计划。",
-          "chain": true,
-          "chain_group": "规划-执行工作流"
-        },
-        {
-          "name": "agent-browser",
-          "path": "src/features/builtin-skills/agent-browser/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "浏览器自动化",
-          "description_zh": "自动化浏览器交互，支持网页导航、元素操作、表单填写、截图和数据提取，用于 web 测试和自动化任务。",
-          "what": "浏览器自动化命令行工具，用于网页交互和数据提取。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "dev-browser",
-          "path": "src/features/builtin-skills/dev-browser/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "浏览器自动化",
-          "description_zh": "提供持久页面状态的浏览器自动化，支持网页导航、表单填写、截图和数据提取，适用于复杂的浏览器工作流。",
-          "what": "持久状态的浏览器自动化工具，用于网页导航和表单填写。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "git-master",
-          "path": "src/features/builtin-skills/git-master/SKILL.md",
-          "subcategory": "1-4",
-          "subcategory_title": "1.4 Git / PR / CI 协作",
-          "category": "software-engineering",
-          "group": "Git 协作",
-          "description_zh": "帮助 AI agent 执行 Git 版本控制操作，包括原子提交、rebase/squash 和历史搜索，优化代码协作与历史查询流程。",
-          "what": "Git 操作专家 agent",
-          "chain": false,
-          "chain_group": ""
-        }
+        "00-andruia-consultant",
+        "acceptance-orchestrator"
+      ],
+      "group": "核心开发工作流（superpowers）",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "协调编码任务从问题接收到部署验证的端到端工作流，通过状态机管理确保验收标准得到验证，减少人工干预。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
       ]
     },
     {
+      "skills": [
+        "007",
+        "gws-modelarmor-create-template"
+      ],
+      "group": "应用层安全三件套",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "帮助 agent 通过 CLI 创建 Google Model Armor 安全模板，用于防护 AI 模型攻击如越狱。",
+      "sources": [
+        "googleworkspace/cli",
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "10-andruia-skill-smith"
+      ],
+      "group": "Skill 创建器",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "帮助 agent 设计、编写和部署新技能到仓库中，遵循 Diamond Standard，确保技能结构规范且角色专业。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "20-andruia-niche-intelligence"
+      ],
+      "group": "利基情报注入",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "分析项目的特定行业利基，注入领域知识、法规和标准，提升产品垂直领导力，适用于 Fintech、EdTech 等细分市场。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "3d-web-experience"
+      ],
+      "group": "3D 网页体验构建",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 AI agent 构建交互式 3D 网页体验，涵盖 Three.js、React Three Fiber、WebGL 等技术栈，用于产品配置器、沉浸式网站等场景。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ab-test-setup"
+      ],
+      "group": "A/B 实验设计",
+      "category": "marketing-growth",
+      "subcategory": "4-5",
+      "chain": false,
+      "description": "指导 AI agent 结构化设置 A/B 测试，包括假设锁定、指标定义、统计功效检查和执行准备，确保测试严谨有效。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "accessibility-compliance-accessibility-audit"
+      ],
+      "group": "无障碍审计与合规",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "作为无障碍专家，执行 WCAG 合规审计，识别数字产品可访问性障碍并提供修复指导，确保包容性用户体验。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "active-directory-attacks"
+      ],
+      "group": "红队 / 攻击链 / 后渗透",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "针对微软Active Directory环境的红队攻击技术手册，覆盖侦察、凭证窃取、Kerberos攻击、横向移动、权限提升及域控接管全流程。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "activecampaign-automation"
+      ],
+      "group": "销售辅助 / RevOps / 留存",
+      "category": "marketing-growth",
+      "subcategory": "4-9",
+      "chain": false,
+      "description": "通过Rube MCP自动化ActiveCampaign CRM操作，管理联系人、标签、列表订阅、自动化流程注册及任务，实现营销自动化运维。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ad-creative"
+      ],
+      "group": "广告策略 / 创意 / 付费广告全账户审计 / App 商店优化",
+      "category": "marketing-growth",
+      "subcategory": "4-4",
+      "chain": false,
+      "description": "帮助agent创建、迭代和规模化付费广告创意，针对Google Ads、Meta、LinkedIn、TikTok等平台，基于性能数据优化点击和转化。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "address-github-comments",
+        "block-no-verify-hook",
+        "github-actions-templates"
+      ],
+      "group": "GitHub 三件套 / Git 工作流 / 危险命令拦截",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "配置 PreToolUse hook 来拦截并阻止 AI 代理使用 --no-verify 等跳过 git pre-commit hooks 的命令，保障代码提交质量与安全。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills",
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "adhx"
+      ],
+      "group": "多源情报聚合 / 平台单点查询 / 域名查找 + 比价",
+      "category": "data-scraping",
+      "subcategory": "7-2",
+      "chain": false,
+      "description": "从 X/Twitter 获取帖子结构化 JSON 数据，包括内容和互动指标，无需爬虫，用于 LLM 分析。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "advanced-evaluation",
+        "agent-evaluation",
+        "agent-orchestration-improve-agent",
+        "acreadiness-policy",
+        "arize-experiment"
+      ],
+      "group": "Tool 设计 / Agent 评测 / 进阶 LLM-as-judge / 项目级方法论",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "通过 ax CLI 创建、运行和分析 Arize 实验，评估和比较 AI 模型性能，支持数据集导出和结果对比。",
+      "sources": [
+        "github/awesome-copilot",
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "advogado-criminal"
+      ],
+      "group": "劳动 / 雇佣法(招聘 / 解雇 / 调查 / 手册)",
+      "category": "legal-compliance",
+      "subcategory": "14-6",
+      "chain": false,
+      "description": "巴西刑事律师专家，专精 Maria da Penha 家暴法、家庭暴力、女性凶杀、刑事诉讼、保护令及警方调查程序。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "advogado-especialista"
+      ],
+      "group": "法务运营 / 文书 / 法援诊所 / 法律风险评估 / 争议",
+      "category": "legal-compliance",
+      "subcategory": "14-8",
+      "chain": false,
+      "description": "巴西全领域法律专家，涵盖家事、刑事、劳动、税务、消费、房产、商事、民事及宪法等九大法域。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "aegisops-ai"
+      ],
+      "group": "DevSecOps & FinOps 审计守卫",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮agent自动化审计Linux内核补丁的安全性、Terraform成本漂移和K8s合规，集成安全与财务检查，用于高风险审计。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agent-framework-azure-ai-py"
+      ],
+      "group": "Microsoft Agent SDK 开发",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "使用Microsoft Agent Framework Python SDK在Azure AI Foundry上构建持久代理，支持工具调用、对话持久化和流式运行。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agent-manager-skill",
+        "agentflow"
+      ],
+      "group": "多 agent 桌面 app",
+      "category": "comms-integration",
+      "subcategory": "9-3",
+      "chain": false,
+      "description": "通过看板编排自主 AI 开发管道，管理多 worker 分发、确定性质量门、对抗性审查、成本跟踪和崩溃恢复执行。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agent-memory-mcp"
+      ],
+      "group": "轻量分层记忆 / 影子 agent + MCP 记忆 / 自我精炼 agent",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "为AI代理提供基于MCP的持久记忆系统，支持搜索和写入长期知识，帮助代理在项目间保持上下文和知识管理。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agent-memory-systems"
+      ],
+      "group": "持久语义记忆框架选型 / KV cache 表征级共享 / BDI 心智状态",
+      "category": "agent-architecture",
+      "subcategory": "12-3",
+      "chain": false,
+      "description": "介绍AI代理记忆系统的架构原理，涵盖短期上下文窗口、长期向量存储和认知组织，帮助设计和优化记忆方案。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agent-orchestration-multi-agent-optimize"
+      ],
+      "group": "多 agent 拓扑 / 远端 sandbox / Harness",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "优化多 agent 系统的协调、工作负载分配和成本，通过编排策略提升整体性能。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agent-orchestrator",
+        "team-communication-protocols",
+        "team-composition-patterns",
+        "ai-team-orchestration"
+      ],
+      "group": "多 agent 拓扑选型 / 远端 sandbox agent 运行时 / 自主 loop 控制平面",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "元技能，用于编排生态系统中的所有 agents，自动扫描 skills 并按能力匹配，协调多技能工作流和注册管理。",
+      "sources": [
+        "github/awesome-copilot",
+        "sickn33/antigravity-awesome-skills",
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "agent-tool-builder"
+      ],
+      "group": "三大模型厂 SDK 直连 / MCP Server 开发 / OpenAI 平台开发 / 浏览器 agent CLI",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "专注于 AI agent 工具设计，涵盖 JSON Schema、错误处理和 MCP 标准，帮助构建高效可靠的交互工具。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agentfolio"
+      ],
+      "group": "Agent 发现与研究",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "使用 AgentFolio 目录发现和研究跨生态系统的自主 AI 代理、工具，便于比较、获取灵感和市场分析。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agentic-actions-auditor",
+        "secrets-management"
+      ],
+      "group": "应用层安全三件套 / 专业级安全 Marketplace / 生产监控",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "帮助 agent 实现安全的 secrets 管理，用于 CI/CD 管道，避免硬编码敏感信息，支持自动轮换和访问控制。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills",
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "agentmail"
+      ],
+      "group": "邮件全套 / 短信营销 / 社媒平台 写作 / B2B 外联",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "为 AI 代理提供真实邮件地址和 REST API，支持创建账户、发送接收邮件、管理 webhook 和监控信用平衡。",
+      "sources": [
+        "sickn33/antigravity-awesome-skills"
+      ]
+    },
+    {
+      "skills": [
+        "screen-reader-testing",
+        "wcag-audit-patterns"
+      ],
+      "group": "可访问性测试与审计",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助AI代理使用VoiceOver、NVDA、JAWS等屏幕阅读器测试web应用，验证ARIA实现和辅助技术支持，确保可访问性合规。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "multi-reviewer-patterns"
+      ],
+      "group": "Code Review 双向 / 重构 / 拯救 ball-of-mud / 语义代码去重",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "帮助 agent 协调并行的代码审查任务，从安全、性能、架构和测试等维度分析代码，去重发现并校准严重性，生成综合报告。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "parallel-debugging"
+      ],
+      "group": "TDD（多家同名版本） / 系统化调试 / 完工验证 / Web 应用 UI 测试 / 浏览器自动化",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 使用竞争假设和并行调查框架调试复杂问题，系统化收集证据并仲裁根因，避免确认偏误。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "parallel-feature-development"
+      ],
+      "group": "多 agent 拓扑选型",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "为多 agent 并行开发大功能提供文件所有权划分、冲突规避规则和集成策略（垂直切片 vs 水平分层）。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "task-coordination-strategies"
+      ],
+      "group": "项目级方法论",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "将复杂任务分解为可并行单元，设计依赖图，编写带验收标准的任务描述，并监控/再平衡 agent 团队负载。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "fastapi-templates"
+      ],
+      "group": "API 项目模板",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 快速搭建生产就绪的 FastAPI 项目，包含异步模式、依赖注入和全面错误处理，用于构建高性能 API 和微服务。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "api-design-principles"
+      ],
+      "group": "API 设计教育",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 agent 掌握 REST 和 GraphQL API 设计原则，以构建直观、可扩展和可维护的 API，提升开发者体验和文档质量。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "architecture-patterns",
+        "cqrs-implementation",
+        "planning-with-files-de",
+        "planning-with-files-es"
+      ],
+      "group": "核心开发工作流",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "实现 Manus 风格的文件规划系统，通过创建 markdown 文件组织和跟踪复杂任务进度，支持会话自动恢复，提升多步骤项目效率。",
+      "sources": [
+        "OthmanAdi/planning-with-files",
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "event-store-design"
+      ],
+      "group": "event-store-design",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "microservices-patterns"
+      ],
+      "group": "microservices-patterns",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "projection-patterns",
+        "saga-orchestration"
+      ],
+      "group": "后端架构模式",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "构建事件流的读取模型和投影，用于实现 CQRS 读取端、物化视图或优化事件源系统的查询性能。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "temporal-python-testing"
+      ],
+      "group": "系统化调试",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 AI agent 测试 Temporal 工作流，使用 pytest 进行单元、集成和重放测试，确保工作流的可靠性和确定性。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "workflow-orchestration-patterns"
+      ],
+      "group": "工作流编排模式",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 AI agent 设计分布式系统中的耐用工作流，使用 Temporal 实现 saga 模式、状态管理和确定性约束。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "defi-protocol-templates",
+        "web3-testing"
+      ],
+      "group": "合约开发 / 工具链",
+      "category": "web3-blockchain",
+      "subcategory": "20-3",
+      "chain": false,
+      "description": "帮助 agent 使用 Hardhat 和 Foundry 进行智能合约的全面测试，包括单元测试、集成测试和主网分叉验证，确保合约安全可靠。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "nft-standards"
+      ],
+      "group": "Web3 应用 / NFT / DAO / 交易",
+      "category": "web3-blockchain",
+      "subcategory": "20-5",
+      "chain": false,
+      "description": "帮助 AI agent 实现 NFT 标准如 ERC-721 和 ERC-1155，包括元数据处理、铸造策略和市场集成功能。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "solidity-security"
+      ],
+      "group": "智能合约审计 / 漏洞检测",
+      "category": "web3-blockchain",
+      "subcategory": "20-1",
+      "chain": false,
+      "description": "指导 AI agent 编写安全的智能合约，审计现有合约，防止重入攻击等常见漏洞，并优化 Gas 使用。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "brand-landingpage"
+      ],
+      "group": "品牌视觉三件套",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "指导 agent 通过品牌访谈收集设计需求，生成并迭代设计着陆页，输出部署就绪的 HTML 文件，用于产品营销。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "data-storytelling"
+      ],
+      "group": "数据叙事 / 商业演示",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "将原始数据转化为引人入胜的故事，通过可视化、上下文和结构化叙事驱动决策，适用于分析报告和演示。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "kpi-dashboard-design"
+      ],
+      "group": "SaaS 诊断 / 财务速查",
+      "category": "product-management",
+      "subcategory": "3-8",
+      "chain": false,
+      "description": "设计有效的KPI仪表板，涵盖指标选择、可视化最佳实践和实时监控模式，用于SaaS指标追踪如MRR、流失率等。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "deployment-pipeline-design",
+        "gitlab-ci-patterns"
+      ],
+      "group": "Kubernetes / GitOps / CI-CD",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "帮助 agent 构建高效的 GitLab CI/CD 管道，包括多阶段工作流、缓存和部署策略，用于自动化测试和部署。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "acreadiness-assess",
+        "acreadiness-generate-instructions"
+      ],
+      "group": "acreadiness-workflow",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": true,
+      "description": "通过 AgentRC 指令命令生成定制的 AI 代理指令文件，如 .github/copilot-instructions.md，用于配置和优化 AI 代理。",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "arize-ai-provider-integration"
+      ],
+      "group": "arize-ai-provider-integration",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "arize-annotation"
+      ],
+      "group": "arize-annotation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "arize-dataset",
+        "arize-evaluator"
+      ],
+      "group": "Agent 评测工具",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "帮助 agent 设计、创建和运行 LLM-as-judge 评估器，用于评分 AI 模型输出，支持连续监控和任务管理。",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "arize-instrumentation",
+        "arize-trace"
+      ],
+      "group": "可观测性 / 监控（LGTM / Prometheus / OTel）",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 agent 下载、导出和检查 Arize 跟踪数据，以理解 LLM 应用行为或调试运行时问题，支持按 ID 导出跟踪、跨度和会话。",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "arize-link"
+      ],
+      "group": "AI 可观测性 / Arize",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "为 Arize 生成深度链接，跳转查看 trace、span、session 等 AI 可观测资源，便于团队共享调试上下文",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "arize-prompt-optimization"
+      ],
+      "group": "Prompt 优化 / 调试",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "基于生产环境 trace 数据、评估结果和标注，数据驱动优化 LLM 提示词，提升输出质量",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "automate-this"
+      ],
+      "group": "自动化脚本生成",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "分析屏幕录制的视频文件，提取视觉帧和音频，重建手动步骤流程，并生成针对用户机器的多层级自动化脚本。",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "suggest-awesome-github-copilot-agents"
+      ],
+      "group": "suggest-awesome-github-copilot-agents",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "suggest-awesome-github-copilot-instructions"
+      ],
+      "group": "suggest-awesome-github-copilot-instructions",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "suggest-awesome-github-copilot-skills"
+      ],
+      "group": "Skill 安装 / 发现 / Plugin / CLI 打包 / 跨 agent 迁移",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "分析当前仓库上下文和聊天历史，从 awesome-copilot 仓库中建议相关 GitHub Copilot 技能，并识别本地过时技能。",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "az-cost-optimize"
+      ],
+      "group": "SRE / 事故响应 / SLO / FinOps",
+      "category": "devops-infra",
+      "subcategory": "17-4",
+      "chain": false,
+      "description": "分析 Azure 资源和 IaC 文件，识别成本优化机会，并自动创建 GitHub issues 以便跟踪和实施优化。",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "azure-pricing"
+      ],
+      "group": "azure-pricing",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "azure-resource-health-diagnose"
+      ],
+      "group": "azure-resource-health-diagnose",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "import-infrastructure-as-code"
+      ],
+      "group": "import-infrastructure-as-code",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "remember-interactive-programming"
+      ],
+      "group": "remember-interactive-programming",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "content-management-systems"
+      ],
+      "group": "CMS 开发",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 处理内容管理系统开发任务，包括主题定制、插件开发、内容模型设计等，覆盖 WordPress、Shopify 等主流平台。",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "markdown-to-html"
+      ],
+      "group": "文档转换工具",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "协助 agent 将 Markdown 文件转换为 HTML 格式，支持 CLI 和 Node.js 工作流，用于 Web 内容生成和静态站点构建。",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "quasi-coder"
+      ],
+      "group": "准代码解释",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 将简写、准代码或自然语言描述解释并实现为生产级代码，弥合技术差距。",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "context-map",
+        "what-context-needed"
+      ],
+      "group": "Context Engineering 地基课",
+      "category": "agent-architecture",
+      "subcategory": "12-1",
+      "chain": false,
+      "description": "在回答问题前让 AI agent 先列出需要查看的文件清单及相关性说明，避免遗漏关键上下文导致回答不准确。",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "refactor-plan"
+      ],
+      "group": "重构 / 拯救 ball-of-mud",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "在多文件重构前先调研代码库现状、识别依赖与耦合，按安全顺序输出分阶段变更计划，等待确认后再执行。",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "integrate-context-matic"
+      ],
+      "group": "integrate-context-matic",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "onboard-context-matic"
+      ],
+      "group": "onboard-context-matic",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "github/awesome-copilot"
+      ]
+    },
+    {
+      "skills": [
+        "add-atomic-chat-tool",
+        "add-gcal-tool",
+        "add-ollama-tool"
+      ],
+      "group": "MCP Server 开发",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "将 Google Calendar 作为 MCP 工具接入 agent，支持多日历多账户的事件查询、创建与忙闲查询，通过 OneCLI 网关注入 OAuth 令牌，容器不接触原始凭证。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-codex"
+      ],
+      "group": "OpenAI 平台开发",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "将 Codex（CLI + AppServer）作为替代 agent 提供商接入 NanoClaw，支持规划、工具编排、MCP 工具、会话恢复及原生压缩，摆脱 Anthropic 锁定。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-dashboard"
+      ],
+      "group": "可观测性 / 监控",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "为 NanoClaw 添加本地监控仪表板，实时显示 agent 组、会话、频道、用户、token 使用、上下文窗口、消息活动和日志。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-deltachat"
+      ],
+      "group": "即时通讯集成",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "集成 DeltaChat 消息频道，通过邮件实现端到端加密的即时通讯，支持自动加密和消息传递。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-discord",
+        "add-emacs"
+      ],
+      "group": "通道集成扩展",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为 NanoClaw agent 添加 Discord 通道集成，通过 Chat SDK 实现 bot 消息通信和交互，支持用户通过 Discord 与 agent 对话。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-gchat"
+      ],
+      "group": "Google Chat 通道接入",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为 NanoClaw agent 添加 Google Chat 消息通道适配器，通过 Chat SDK bridge 接收和回复 Google Chat 消息，含完整安装与凭据配置指引。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-github"
+      ],
+      "group": "add-github",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-gmail-tool"
+      ],
+      "group": "add-gmail-tool",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-imessage"
+      ],
+      "group": "iMessage 集成",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "帮助 AI agent 添加 iMessage 消息通道到 NanoClaw，支持 macOS 本地或远程 API 模式，实现跨平台通讯集成。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-karpathy-llm-wiki"
+      ],
+      "group": "项目知识图谱",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "帮助 AI agent 在 NanoClaw 群组中设置持久 wiki 知识库，基于 Karpathy 的 LLM Wiki 模式，支持多种来源用于知识管理。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-linear"
+      ],
+      "group": "Linear 任务管理",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "为 NanoClaw 添加 Linear 项目管理集成，让 agent 自动参与 issue 评论线程，支持 OAuth 或 Personal API Key 认证。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-macos-statusbar"
+      ],
+      "group": "macOS 状态栏集成",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为 NanoClaw 添加 macOS 菜单栏状态指示器，显示运行状态（绿点/红点）并提供启动、停止、重启控制，仅限 macOS。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-matrix"
+      ],
+      "group": "消息通道集成",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为 AI 代理添加 Matrix 消息通道支持，通过 Chat SDK 桥接实现跨平台通讯集成，运行于安全容器中。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-mnemon"
+      ],
+      "group": "持久记忆",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "安装持久化记忆系统，让代理在回应前自动回忆相关上下文，并在每次交互后存储新见解，提升连续对话能力。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-ollama-provider"
+      ],
+      "group": "Agent 平台配置",
+      "category": "comms-integration",
+      "subcategory": "9-3",
+      "chain": false,
+      "description": "将 NanoClaw 容器 agent 组的 LLM 后端从 Anthropic API 切换到本地 Ollama 实例，通过 env var 覆盖和容器配置实现，无需改动 provider 代码。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-opencode",
+        "add-parallel"
+      ],
+      "group": "Agent 与 MCP 集成",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "将 OpenCode 作为 agent provider 集成到 NanoClaw，支持多种模型如 OpenRouter、OpenAI 等，扩展 agent 的能力与灵活性。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-resend"
+      ],
+      "group": "邮件通道集成",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助代理集成 Resend 邮件通道，实现异步邮件对话功能，扩展通信渠道。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-rtk"
+      ],
+      "group": "Tool 设计",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "帮助代理安装 rtk token 压缩工具，优化 Bash 命令执行，节省 60-90% token 使用。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-signal"
+      ],
+      "group": "Signal 消息集成",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为AI代理添加Signal消息通道集成，通过signal-cli TCP daemon实现JSON-RPC通信，无需外部桥接，使用Node.js内置模块完成安装和配置。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-slack"
+      ],
+      "group": "Slack 消息集成",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为AI代理添加Slack工作区集成，通过Chat SDK桥接实现消息发送和接收，包括OAuth配置和权限设置步骤。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-teams"
+      ],
+      "group": "add-teams",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-telegram"
+      ],
+      "group": "add-telegram",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-vercel",
+        "vercel-cli"
+      ],
+      "group": "Vercel部署链",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": true,
+      "description": "为NanoClaw agent容器安装Vercel CLI并配置凭证注入，使其能自动部署web应用到Vercel平台。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-webex",
+        "add-wechat"
+      ],
+      "group": "即时通讯渠道集成",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "帮助 AI 代理集成 Cisco Webex 消息平台，通过 Chat SDK 实现消息收发和自动化交互。",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "gws-admin-reports",
+        "gws-calendar-agenda",
+        "gws-drive",
+        "gws-events-renew",
+        "gws-gmail",
+        "gws-keep"
+      ],
+      "group": "Google Workspace CLI 集成",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "Agent 通过 gws CLI 调用 Google Drive v3 API，管理文件、文件夹、共享云端硬盘，执行上传、列出、移动、权限管理等操作。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-calendar-insert",
+        "gws-calendar"
+      ],
+      "group": "Google Calendar 工作流",
+      "category": "",
+      "subcategory": "",
+      "chain": true,
+      "description": "帮助 AI agent 通过 CLI 快速创建 Google Calendar 事件，支持设置摘要、时间、地点、描述、与会者和自动添加 Google Meet 链接。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-chat-send",
+        "gws-chat"
+      ],
+      "group": "Google Chat CLI技能",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "管理Google Chat空间和消息，包括创建自定义表情等操作，支持AI agent进行聊天管理。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-classroom"
+      ],
+      "group": "Google Workspace 教育管理",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 通过命令行管理 Google Classroom 的课程、学生名册和作业，支持创建、删除、查询等操作。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-docs-write"
+      ],
+      "group": "Office 文档四件套 / PDF 重型 API / 多格式抽取引擎",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 agent 向 Google Docs 文档追加指定文本内容，支持通过 CLI 命令执行。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-docs"
+      ],
+      "group": "Google Workspace 文档处理",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "通过 CLI 命令读取和写入 Google Docs 文档，支持批量更新、创建和获取文档内容。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-drive-upload"
+      ],
+      "group": "Google Drive 文件管理",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "自动上传文件到 Google Drive，并设置元数据如父文件夹和文件名，支持 MIME 类型检测。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-events-subscribe",
+        "gws-events"
+      ],
+      "group": "gws-events-workflow",
+      "category": "",
+      "subcategory": "",
+      "chain": true,
+      "description": "订阅 Google Workspace 事件并以 NDJSON 流式传输，帮助 agent 实时监控工作区变化如聊天消息，实现自动化事件驱动。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-forms"
+      ],
+      "group": "表单管理",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助AI agent自动化读写Google Forms，支持创建、获取、更新表单及管理响应，用于数据收集和流程自动化。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-gmail-forward"
+      ],
+      "group": "邮件操作",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助AI agent自动化转发Gmail消息，支持指定收件人、附件、CC/BCC和草稿保存，提高邮件处理效率。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-gmail-read",
+        "gws-gmail-reply-all"
+      ],
+      "group": "Gmail CLI 操作",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "通过CLI读取Gmail邮件消息，支持提取正文、头部信息，便于AI agent自动化处理邮件内容。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-gmail-reply",
+        "gws-gmail-send"
+      ],
+      "group": "邮件全套",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "通过 Google Workspace CLI 帮助 AI agent 自动回复 Gmail 消息，支持线程处理、附件添加和多种邮件选项，提升邮件处理效率。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-gmail-triage",
+        "gws-gmail-watch"
+      ],
+      "group": "Google Workspace CLI 技能",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助AI agent实时监控Gmail新邮件，以NDJSON格式流式输出，用于自动化邮件处理工作流。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-meet"
+      ],
+      "group": "Google Workspace 会议管理",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 通过 Google Workspace CLI 管理 Google Meet 会议，包括查询历史会议记录、创建和更新会议空间。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-modelarmor-sanitize-prompt",
+        "gws-modelarmor-sanitize-response"
+      ],
+      "group": "Model Armor 安全过滤",
+      "category": "",
+      "subcategory": "",
+      "chain": true,
+      "description": "通过Google Model Armor模板清理用户输入提示，防止有害内容传递给AI模型，增强交互安全性。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-modelarmor"
+      ],
+      "group": "Google Workspace CLI 工具",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "提供 Google Model Armor 内容安全过滤能力，支持创建安全模板、对用户输入和模型输出进行安全审查。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-people"
+      ],
+      "group": "Google Workspace CLI 工具",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "提供 Google 通讯录管理能力，支持联系人、联系人分组的增删改查操作。",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "planning-with-files",
+        "planning-with-files-ar"
+      ],
+      "group": "轻量 SDD 框架",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "实现 Manus 风格的文件式规划，通过创建和维护 task_plan.md、findings.md 和 progress.md 文件，帮助 AI agent 组织复杂多步骤任务、跟踪进度，并支持会话中断后自动恢复（阿拉伯语版本）。",
+      "sources": [
+        "OthmanAdi/planning-with-files"
+      ]
+    },
+    {
+      "skills": [
+        "planning-with-files-zh",
+        "planning-with-files-zht"
+      ],
+      "group": "会话接力",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "基于 Manus 风格的文件规划系统，通过创建 task_plan.md、findings.md 和 progress.md 来组织和跟踪复杂任务，支持会话自动恢复。",
+      "sources": [
+        "OthmanAdi/planning-with-files"
+      ]
+    }
+  ],
+  "proposals": [
+    {
       "repo": {
-        "author": "addyosmani",
-        "repo": "agent-skills",
-        "full_name": "addyosmani/agent-skills",
-        "url": "https://github.com/addyosmani/agent-skills",
-        "stars": 47269,
-        "pushed_at": "2026-05-28",
+        "author": "sickn33",
+        "repo": "antigravity-awesome-skills",
+        "full_name": "sickn33/antigravity-awesome-skills",
+        "url": "https://github.com/sickn33/antigravity-awesome-skills",
+        "stars": 39242,
+        "pushed_at": "2026-05-31",
         "default_branch": "main",
-        "github_description": "Production-grade engineering skills for AI coding agents.",
+        "github_description": "Installable GitHub library of 1,400+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill collections.",
         "topics": [
           "agent-skills",
+          "agentic-skills",
+          "ai-agent-skills",
+          "ai-agents",
+          "ai-coding",
+          "ai-workflows",
           "antigravity",
-          "antigravity-ide",
+          "antigravity-skills",
           "claude-code",
+          "claude-code-skills",
+          "codex-cli",
+          "codex-skills",
           "cursor",
-          "skills"
+          "cursor-skills",
+          "developer-tools",
+          "gemini-cli",
+          "gemini-skills",
+          "kiro",
+          "mcp",
+          "skill-library"
         ],
-        "language": "Shell",
+        "language": "Python",
         "is_fork": false,
         "archived": false,
         "disabled": false,
@@ -396,278 +1569,362 @@
       },
       "skills": [
         {
-          "name": "api-and-interface-design",
-          "path": "skills/api-and-interface-design/SKILL.md",
-          "subcategory": "1-6",
-          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
-          "category": "software-engineering",
-          "group": "API设计指南",
-          "description_zh": "指导AI代理设计稳定、易用的API和接口，基于Hyrum's Law等核心原则，避免实现细节泄露和依赖隐式行为。",
-          "what": "设计稳定API和接口的指南",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "browser-testing-with-devtools",
-          "path": "skills/browser-testing-with-devtools/SKILL.md",
-          "subcategory": "1-2",
-          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
-          "category": "software-engineering",
-          "group": "浏览器测试与调试",
-          "description_zh": "通过Chrome DevTools MCP在真实浏览器中测试，帮助AI代理检查DOM、捕获控制台错误、分析网络请求和性能数据。",
-          "what": "使用DevTools进行浏览器测试",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "ci-cd-and-automation",
-          "path": "skills/ci-cd-and-automation/SKILL.md",
-          "subcategory": "1-4",
-          "subcategory_title": "1.4 Git / PR / CI 协作",
-          "category": "software-engineering",
-          "group": "CI/CD自动化",
-          "description_zh": "自动化CI/CD流水线设置，包括质量门、测试运行器和部署策略，确保代码变更安全合并并快速部署。",
-          "what": "自动化构建和部署流水线",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "code-review-and-quality",
-          "path": "skills/code-review-and-quality/SKILL.md",
-          "subcategory": "1-3",
-          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
-          "category": "software-engineering",
-          "group": "代码审查",
-          "description_zh": "进行多维度代码审查，覆盖正确性、可读性、架构、安全和性能，提升代码质量并确保变更符合规范。",
-          "what": "执行多维度代码质量审查",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "code-simplification",
-          "path": "skills/code-simplification/SKILL.md",
-          "subcategory": "1-3",
-          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
-          "category": "software-engineering",
-          "group": "代码重构与简化",
-          "description_zh": "帮助代理简化代码以提高可读性和可维护性，适用于重构、代码审查及减少复杂性等场景。",
-          "what": "代码简化与重构工具",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "context-engineering",
-          "path": "skills/context-engineering/SKILL.md",
-          "subcategory": "12-2",
-          "subcategory_title": "12.2 Context 生命周期管理",
-          "category": "agent-architecture",
-          "group": "上下文工程优化",
-          "description_zh": "帮助代理优化上下文设置，通过结构化信息（如规则文件、架构文档）提高输出质量，适用于新会话或输出质量下降时。",
-          "what": "代理上下文优化工具",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "debugging-and-error-recovery",
-          "path": "skills/debugging-and-error-recovery/SKILL.md",
-          "subcategory": "1-2",
-          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
-          "category": "software-engineering",
-          "group": "调试与错误恢复",
-          "description_zh": "指导 AI 代理进行系统性调试，包括复现问题、诊断根因、修复并防止复发，适用于测试失败、构建错误等场景。",
-          "what": "系统性调试和错误恢复指导",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "deprecation-and-migration",
-          "path": "skills/deprecation-and-migration/SKILL.md",
-          "subcategory": "1-3",
-          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
-          "category": "software-engineering",
-          "group": "弃用与迁移管理",
-          "description_zh": "帮助 AI 代理管理代码弃用和系统迁移，通过结构化流程移除旧功能、迁移用户，减少维护负担。",
-          "what": "代码弃用和迁移管理",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "documentation-and-adrs",
-          "path": "skills/documentation-and-adrs/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "工程文档与 ADR",
-          "description_zh": "帮助 AI 代理记录架构决策、公共 API 变更等上下文，通过 ADR 解释决策原因和考虑的替代方案，便于未来理解代码库。",
-          "what": "记录决策和文档，解释为什么做出特定选择。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "doubt-driven-development",
-          "path": "skills/doubt-driven-development/SKILL.md",
-          "subcategory": "1-2",
-          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
-          "category": "software-engineering",
-          "group": "决策验证与审查",
-          "description_zh": "让 AI 代理在开发中对非平凡决策进行实时对抗性审查，避免假设错误，确保高风险场景下的代码正确性和可靠性。",
-          "what": "对非平凡决策进行对抗性审查以确保正确性。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "frontend-ui-engineering",
-          "path": "skills/frontend-ui-engineering/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "",
-          "description_zh": "",
-          "what": "",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "git-workflow-and-versioning",
-          "path": "skills/git-workflow-and-versioning/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "",
-          "description_zh": "",
-          "what": "",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "idea-refine",
-          "path": "skills/idea-refine/SKILL.md",
-          "subcategory": "3-2",
-          "subcategory_title": "3.2 问题框定 / 假设管理",
-          "category": "product-management",
-          "group": "想法提炼",
-          "description_zh": "通过结构化的发散和收敛思考，帮助AI代理将原始想法提炼为清晰、可操作的概念，并输出包含问题陈述和MVP范围的一页纸文档。",
-          "what": "将模糊想法转化为可执行方案。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "incremental-implementation",
-          "path": "skills/incremental-implementation/SKILL.md",
-          "subcategory": "1-2",
-          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
-          "category": "software-engineering",
-          "group": "增量实现",
-          "description_zh": "指导AI代理采用薄垂直切片方式增量实现功能，每个切片都经过实现、测试、验证和提交，确保系统始终处于可工作状态。",
-          "what": "增量式代码实现与测试。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "interview-me",
-          "path": "skills/interview-me/SKILL.md",
-          "subcategory": "3-2",
-          "subcategory_title": "3.2 问题框定 / 假设管理",
-          "category": "product-management",
-          "group": "需求澄清",
-          "description_zh": "通过逐个问题访谈，帮助 AI agent 在规划或编码前澄清用户真实意图，避免需求误解和错误构建。",
-          "what": "访谈式需求澄清工具。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "performance-optimization",
-          "path": "skills/performance-optimization/SKILL.md",
-          "subcategory": "1-3",
-          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
-          "category": "software-engineering",
-          "group": "性能优化",
-          "description_zh": "通过测量、识别瓶颈和修复，优化应用性能，确保符合 Core Web Vitals 标准，避免性能回归。",
-          "what": "应用性能优化工具。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "planning-and-task-breakdown",
-          "path": "skills/planning-and-task-breakdown/SKILL.md",
+          "name": "00-andruia-consultant",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/00-andruia-consultant/SKILL.md",
           "subcategory": "1-1",
           "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
           "category": "software-engineering",
-          "group": "计划与任务分解",
-          "description_zh": "帮助AI代理将复杂需求或规格说明分解为有序、可验证的小任务，便于并行工作、估算范围和提高实现可靠性。",
-          "what": "将需求分解为可实施任务",
+          "group": "核心开发工作流（superpowers）",
+          "description_zh": "用于项目初期的诊断和路线图规划，确定项目类型并制定技术方案。",
+          "what": "项目诊断与技术路线图规划。",
           "chain": false,
           "chain_group": ""
         },
         {
-          "name": "security-and-hardening",
-          "path": "skills/security-and-hardening/SKILL.md",
+          "name": "007",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/007/SKILL.md",
           "subcategory": "1-8",
           "subcategory_title": "1.8 安全审计 / 威胁建模",
           "category": "software-engineering",
-          "group": "安全加固",
-          "description_zh": "帮助AI代理在处理用户输入、认证、数据存储和外部集成时，实施安全编码实践，如输入验证、密码哈希和安全头设置，以防止漏洞。",
-          "what": "实施安全编码实践",
+          "group": "应用层安全三件套",
+          "description_zh": "提供安全审计、威胁建模、红蓝队演练和代码审查，适用于任何项目的安全加固。",
+          "what": "全面安全审计与威胁建模。",
           "chain": false,
           "chain_group": ""
         },
         {
-          "name": "shipping-and-launch",
-          "path": "skills/shipping-and-launch/SKILL.md",
+          "name": "10-andruia-skill-smith",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/10-andruia-skill-smith/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器",
+          "description_zh": "帮助 agent 设计、编写和部署新技能到仓库中，遵循 Diamond Standard，确保技能结构规范且角色专业。",
+          "what": "设计、编写和部署新技能",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "20-andruia-niche-intelligence",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/20-andruia-niche-intelligence/SKILL.md",
           "subcategory": "",
           "subcategory_title": "",
           "category": "",
-          "group": "发布管理",
-          "description_zh": "帮助 AI agent 准备生产部署，包括预发布检查清单、监控设置、分阶段部署和回滚策略，确保安全发布。",
-          "what": "生产部署的完整准备流程",
+          "group": "利基情报注入",
+          "description_zh": "分析项目的特定行业利基，注入领域知识、法规和标准，提升产品垂直领导力，适用于 Fintech、EdTech 等细分市场。",
+          "what": "注入领域情报",
           "chain": false,
           "chain_group": ""
         },
         {
-          "name": "source-driven-development",
-          "path": "skills/source-driven-development/SKILL.md",
+          "name": "3d-web-experience",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/3d-web-experience/SKILL.md",
           "subcategory": "",
           "subcategory_title": "",
           "category": "",
-          "group": "文档驱动开发",
-          "description_zh": "帮助 AI agent 在编写框架特定代码时，基于官方文档进行验证和引用，确保代码正确性和遵循当前最佳实践。",
-          "what": "基于官方文档的代码实现",
+          "group": "3D 网页体验构建",
+          "description_zh": "帮助 AI agent 构建交互式 3D 网页体验，涵盖 Three.js、React Three Fiber、WebGL 等技术栈，用于产品配置器、沉浸式网站等场景。",
+          "what": "构建 3D 网页体验",
           "chain": false,
           "chain_group": ""
         },
         {
-          "name": "spec-driven-development",
-          "path": "skills/spec-driven-development/SKILL.md",
+          "name": "ab-test-setup",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/ab-test-setup/SKILL.md",
+          "subcategory": "4-5",
+          "subcategory_title": "4.5 CRO / 转化优化",
+          "category": "marketing-growth",
+          "group": "A/B 实验设计",
+          "description_zh": "指导 AI agent 结构化设置 A/B 测试，包括假设锁定、指标定义、统计功效检查和执行准备，确保测试严谨有效。",
+          "what": "设置 A/B 测试指南",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "acceptance-orchestrator",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/acceptance-orchestrator/SKILL.md",
           "subcategory": "1-1",
           "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
           "category": "software-engineering",
-          "group": "计划规范",
-          "description_zh": "指导AI代理在编码前创建结构化规范，通过门控工作流（指定、计划、任务、实现）确保需求明确，适用于新项目或重大变更。",
-          "what": "创建规范在编码之前，定义构建内容和完成标准。",
+          "group": "核心开发工作流（superpowers）",
+          "description_zh": "协调编码任务从问题接收到部署验证的端到端工作流，通过状态机管理确保验收标准得到验证，减少人工干预。",
+          "what": "端到端编码工作流编排",
           "chain": false,
           "chain_group": ""
         },
         {
-          "name": "test-driven-development",
-          "path": "skills/test-driven-development/SKILL.md",
-          "subcategory": "1-2",
-          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "name": "accessibility-compliance-accessibility-audit",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/accessibility-compliance-accessibility-audit/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "无障碍审计与合规",
+          "description_zh": "作为无障碍专家，执行 WCAG 合规审计，识别数字产品可访问性障碍并提供修复指导，确保包容性用户体验。",
+          "what": "WCAG 无障碍审计与合规",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "active-directory-attacks",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/active-directory-attacks/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "description_zh": "针对微软Active Directory环境的红队攻击技术手册，覆盖侦察、凭证窃取、Kerberos攻击、横向移动、权限提升及域控接管全流程。",
+          "what": "AD域环境红队攻击技术参考",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "activecampaign-automation",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/activecampaign-automation/SKILL.md",
+          "subcategory": "4-9",
+          "subcategory_title": "4.9 销售辅助 / RevOps / 留存",
+          "category": "marketing-growth",
+          "group": "销售辅助 / RevOps / 留存",
+          "description_zh": "通过Rube MCP自动化ActiveCampaign CRM操作，管理联系人、标签、列表订阅、自动化流程注册及任务，实现营销自动化运维。",
+          "what": "通过MCP自动化ActiveCampaign CRM操作",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "ad-creative",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/ad-creative/SKILL.md",
+          "subcategory": "4-4",
+          "subcategory_title": "4.4 付费广告 / ASO",
+          "category": "marketing-growth",
+          "group": "广告策略 / 创意 / 付费广告全账户审计 / App 商店优化",
+          "description_zh": "帮助agent创建、迭代和规模化付费广告创意，针对Google Ads、Meta、LinkedIn、TikTok等平台，基于性能数据优化点击和转化。",
+          "what": "生成和优化付费广告创意",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "address-github-comments",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/address-github-comments/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
           "category": "software-engineering",
-          "group": "测试驱动开发",
-          "description_zh": "指导AI代理遵循TDD循环（红、绿、重构），先写失败测试再实现代码，确保代码正确性，适用于逻辑实现或bug修复。",
-          "what": "以测试驱动开发，先写失败测试再编码。",
+          "group": "GitHub 三件套 / Git 工作流 / 危险命令拦截",
+          "description_zh": "帮助agent使用gh CLI系统化处理GitHub Pull Request的评论和issue反馈，进行分类、应用修复并响应。",
+          "what": "处理GitHub PR评论和反馈",
           "chain": false,
           "chain_group": ""
         },
         {
-          "name": "using-agent-skills",
-          "path": "skills/using-agent-skills/SKILL.md",
-          "subcategory": "13-2",
-          "subcategory_title": "13.2 安装 / 发现 / 打包",
-          "category": "meta-skill-mgmt",
-          "group": "技能发现",
-          "description_zh": "帮助 AI agent 在会话开始时自动发现并应用正确的工程技能，基于开发阶段和任务类型进行技能调用。",
-          "what": "技能发现与调用元技能",
+          "name": "adhx",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/adhx/SKILL.md",
+          "subcategory": "7-2",
+          "subcategory_title": "7.2 跨平台社交 / 趋势监测",
+          "category": "data-scraping",
+          "group": "多源情报聚合 / 平台单点查询 / 域名查找 + 比价",
+          "description_zh": "从 X/Twitter 获取帖子结构化 JSON 数据，包括内容和互动指标，无需爬虫，用于 LLM 分析。",
+          "what": "获取 X/Twitter 帖子结构化数据。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "advanced-evaluation",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/advanced-evaluation/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Tool 设计 / Agent 评测 / 进阶 LLM-as-judge / 项目级方法论",
+          "description_zh": "提供 LLM-as-judge 的生产级评估技术，包括直接评分、比较和偏见缓解，用于构建可靠评估系统。",
+          "what": "评估 LLM 输出的生产级技术。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "advogado-criminal",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/advogado-criminal/SKILL.md",
+          "subcategory": "14-6",
+          "subcategory_title": "14.6 劳动 / 雇佣法",
+          "category": "legal-compliance",
+          "group": "劳动 / 雇佣法(招聘 / 解雇 / 调查 / 手册)",
+          "description_zh": "巴西刑事律师专家，专精 Maria da Penha 家暴法、家庭暴力、女性凶杀、刑事诉讼、保护令及警方调查程序。",
+          "what": "为 agent 提供巴西刑事法律领域（尤其家暴与女性保护法）的专业法律分析与文书能力。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "advogado-especialista",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/advogado-especialista/SKILL.md",
+          "subcategory": "14-8",
+          "subcategory_title": "14.8 法务运营 / 文书",
+          "category": "legal-compliance",
+          "group": "法务运营 / 文书 / 法援诊所 / 法律风险评估 / 争议",
+          "description_zh": "巴西全领域法律专家，涵盖家事、刑事、劳动、税务、消费、房产、商事、民事及宪法等九大法域。",
+          "what": "为 agent 提供巴西全法域综合法律咨询能力，相当于一个精英律所的完整知识库。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "aegisops-ai",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/aegisops-ai/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "DevSecOps & FinOps 审计守卫",
+          "description_zh": "帮agent自动化审计Linux内核补丁的安全性、Terraform成本漂移和K8s合规，集成安全与财务检查，用于高风险审计。",
+          "what": "自动化DevSecOps与FinOps审计",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agent-evaluation",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agent-evaluation/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Tool 设计 / Agent 评测 / 进阶 LLM-as-judge / 项目级方法论",
+          "description_zh": "帮agent测试和基准测试LLM代理，包括行为测试、能力评估、可靠性指标和生产监控，支持代理性能优化。",
+          "what": "LLM代理测试与基准评估",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agent-framework-azure-ai-py",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agent-framework-azure-ai-py/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Microsoft Agent SDK 开发",
+          "description_zh": "使用Microsoft Agent Framework Python SDK在Azure AI Foundry上构建持久代理，支持工具调用、对话持久化和流式运行。",
+          "what": "在Azure平台上开发持久AI代理",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agent-manager-skill",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agent-manager-skill/SKILL.md",
+          "subcategory": "9-3",
+          "subcategory_title": "9.3 桌面 Agent 编排平台",
+          "category": "comms-integration",
+          "group": "多 agent 桌面 app",
+          "description_zh": "通过tmux会话管理多个本地CLI代理的启停、监控和任务分配，支持cron定时调度，适用于并行代理运维。",
+          "what": "管理多代理运行环境与任务调度",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agent-memory-mcp",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agent-memory-mcp/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "轻量分层记忆 / 影子 agent + MCP 记忆 / 自我精炼 agent",
+          "description_zh": "为AI代理提供基于MCP的持久记忆系统，支持搜索和写入长期知识，帮助代理在项目间保持上下文和知识管理。",
+          "what": "MCP持久记忆服务器",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agent-memory-systems",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agent-memory-systems/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "持久语义记忆框架选型 / KV cache 表征级共享 / BDI 心智状态",
+          "description_zh": "介绍AI代理记忆系统的架构原理，涵盖短期上下文窗口、长期向量存储和认知组织，帮助设计和优化记忆方案。",
+          "what": "代理记忆架构知识",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agent-orchestration-improve-agent",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agent-orchestration-improve-agent/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Tool 设计 / Agent 评测 / 进阶 LLM-as-judge / 项目级方法论",
+          "description_zh": "系统改进现有代理的性能，通过分析失败模式、提示工程和迭代测试，实现可靠优化。",
+          "what": "系统优化现有 agent 的性能和可靠性。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agent-orchestration-multi-agent-optimize",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agent-orchestration-multi-agent-optimize/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多 agent 拓扑 / 远端 sandbox / Harness",
+          "description_zh": "优化多 agent 系统的协调、工作负载分配和成本，通过编排策略提升整体性能。",
+          "what": "优化多 agent 系统的协调、吞吐量和成本效率。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agent-orchestrator",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agent-orchestrator/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多 agent 拓扑选型 / 远端 sandbox agent 运行时 / 自主 loop 控制平面",
+          "description_zh": "元技能，用于编排生态系统中的所有 agents，自动扫描 skills 并按能力匹配，协调多技能工作流和注册管理。",
+          "what": "编排多 agent 工作流和 skill 管理",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agent-tool-builder",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agent-tool-builder/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "三大模型厂 SDK 直连 / MCP Server 开发 / OpenAI 平台开发 / 浏览器 agent CLI",
+          "description_zh": "专注于 AI agent 工具设计，涵盖 JSON Schema、错误处理和 MCP 标准，帮助构建高效可靠的交互工具。",
+          "what": "设计和构建 agent 工具的 schema 和错误处理",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agentflow",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agentflow/SKILL.md",
+          "subcategory": "9-3",
+          "subcategory_title": "9.3 桌面 Agent 编排平台",
+          "category": "comms-integration",
+          "group": "多 agent 桌面 app",
+          "description_zh": "通过看板编排自主 AI 开发管道，管理多 worker 分发、确定性质量门、对抗性审查、成本跟踪和崩溃恢复执行。",
+          "what": "编排 AI 开发管道并确保质量与成本控制。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agentfolio",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agentfolio/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Agent 发现与研究",
+          "description_zh": "使用 AgentFolio 目录发现和研究跨生态系统的自主 AI 代理、工具，便于比较、获取灵感和市场分析。",
+          "what": "发现和比较跨生态的 AI 代理工具。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agentic-actions-auditor",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agentic-actions-auditor/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "应用层安全三件套 / 专业级安全 Marketplace / 生产监控",
+          "description_zh": "提供静态安全分析指导，用于审计调用 AI 编码代理的 GitHub Actions 工作流，检测攻击向量和配置风险。",
+          "what": "静态安全分析指导 for GitHub Actions with AI agents.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agentmail",
+          "path": "plugins/antigravity-awesome-skills-claude/skills/agentmail/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "邮件全套 / 短信营销 / 社媒平台 写作 / B2B 外联",
+          "description_zh": "为 AI 代理提供真实邮件地址和 REST API，支持创建账户、发送接收邮件、管理 webhook 和监控信用平衡。",
+          "what": "邮件基础设施 for AI agents with real email addresses.",
           "chain": false,
           "chain_group": ""
         }
@@ -675,32 +1932,810 @@
     },
     {
       "repo": {
-        "author": "Lum1104",
-        "repo": "Understand-Anything",
-        "full_name": "Lum1104/Understand-Anything",
-        "url": "https://github.com/Lum1104/Understand-Anything",
-        "stars": 46379,
-        "pushed_at": "2026-05-26",
+        "author": "wshobson",
+        "repo": "agents",
+        "full_name": "wshobson/agents",
+        "url": "https://github.com/wshobson/agents",
+        "stars": 36173,
+        "pushed_at": "2026-05-29",
         "default_branch": "main",
-        "github_description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
+        "github_description": "Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, and Gemini CLI",
         "topics": [
-          "antigravity-skills",
-          "business-knowledge",
+          "agent-skills",
+          "agentic-ai",
+          "agents",
+          "ai-agents",
+          "anthropic",
+          "automation",
+          "claude-code",
+          "claude-code-plugins",
+          "codex-cli",
+          "copilot",
+          "cursor",
+          "cursor-rules",
+          "developer-tools",
+          "gemini-cli",
+          "mcp",
+          "multi-agent",
+          "opencode",
+          "orchestration",
+          "prompt-engineering",
+          "workflows"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "screen-reader-testing",
+          "path": "plugins/accessibility-compliance/skills/screen-reader-testing/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "可访问性测试与审计",
+          "description_zh": "帮助AI代理使用VoiceOver、NVDA、JAWS等屏幕阅读器测试web应用，验证ARIA实现和辅助技术支持，确保可访问性合规。",
+          "what": "测试web应用与屏幕阅读器的兼容性",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "wcag-audit-patterns",
+          "path": "plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "可访问性测试与审计",
+          "description_zh": "指导AI代理进行WCAG 2.2可访问性审计，包括自动化测试、手动验证和修复策略，用于修复违规和满足法规要求。",
+          "what": "进行WCAG 2.2可访问性审计",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "multi-reviewer-patterns",
+          "path": "plugins/agent-teams/skills/multi-reviewer-patterns/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Code Review 双向 / 重构 / 拯救 ball-of-mud / 语义代码去重",
+          "description_zh": "帮助 agent 协调并行的代码审查任务，从安全、性能、架构和测试等维度分析代码，去重发现并校准严重性，生成综合报告。",
+          "what": "并行代码审查协调",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "parallel-debugging",
+          "path": "plugins/agent-teams/skills/parallel-debugging/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "TDD（多家同名版本） / 系统化调试 / 完工验证 / Web 应用 UI 测试 / 浏览器自动化",
+          "description_zh": "帮助 agent 使用竞争假设和并行调查框架调试复杂问题，系统化收集证据并仲裁根因，避免确认偏误。",
+          "what": "竞争假设调试框架",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "parallel-feature-development",
+          "path": "plugins/agent-teams/skills/parallel-feature-development/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多 agent 拓扑选型",
+          "description_zh": "为多 agent 并行开发大功能提供文件所有权划分、冲突规避规则和集成策略（垂直切片 vs 水平分层）。",
+          "what": "将大功能拆分为多 agent 并行开发流，定义文件所有权与集成策略",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "task-coordination-strategies",
+          "path": "plugins/agent-teams/skills/task-coordination-strategies/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "项目级方法论",
+          "description_zh": "将复杂任务分解为可并行单元，设计依赖图，编写带验收标准的任务描述，并监控/再平衡 agent 团队负载。",
+          "what": "分解复杂任务为可并行单元，管理依赖图与 agent 团队负载均衡",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "team-communication-protocols",
+          "path": "plugins/agent-teams/skills/team-communication-protocols/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多 agent 拓扑选型 / 远端 sandbox agent 运行时 / 自主 loop 控制平面",
+          "description_zh": "为代理团队提供结构化通信协议，涵盖消息类型选择、计划审批工作流、关机程序及反模式，以优化团队协作和协调。",
+          "what": "代理团队通信协议指南",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "team-composition-patterns",
+          "path": "plugins/agent-teams/skills/team-composition-patterns/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多 agent 拓扑选型 / 远端 sandbox agent 运行时 / 自主 loop 控制平面",
+          "description_zh": "指导如何设计代理团队组成，提供团队大小启发式、预设配置模板和代理类型选择，以构建高效多代理系统。",
+          "what": "代理团队组成设计模式",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "fastapi-templates",
+          "path": "plugins/api-scaffolding/skills/fastapi-templates/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "API 项目模板",
+          "description_zh": "帮助 agent 快速搭建生产就绪的 FastAPI 项目，包含异步模式、依赖注入和全面错误处理，用于构建高性能 API 和微服务。",
+          "what": "FastAPI 项目模板生成",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "api-design-principles",
+          "path": "plugins/backend-development/skills/api-design-principles/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "API 设计教育",
+          "description_zh": "指导 agent 掌握 REST 和 GraphQL API 设计原则，以构建直观、可扩展和可维护的 API，提升开发者体验和文档质量。",
+          "what": "API 设计原则指南",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "architecture-patterns",
+          "path": "plugins/backend-development/skills/architecture-patterns/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "核心开发工作流",
+          "description_zh": "指导AI agent实现后端架构模式，如Clean Architecture和DDD，帮助设计可维护、可测试的系统。",
+          "what": "实现后端架构模式",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "cqrs-implementation",
+          "path": "plugins/backend-development/skills/cqrs-implementation/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "核心开发工作流",
+          "description_zh": "帮助AI agent实现CQRS模式，分离命令和查询，构建可扩展的后端架构。",
+          "what": "实现CQRS模式",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "event-store-design",
+          "path": "plugins/backend-development/skills/event-store-design/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "event-store-design",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "microservices-patterns",
+          "path": "plugins/backend-development/skills/microservices-patterns/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "microservices-patterns",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "projection-patterns",
+          "path": "plugins/backend-development/skills/projection-patterns/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "后端架构模式",
+          "description_zh": "构建事件流的读取模型和投影，用于实现 CQRS 读取端、物化视图或优化事件源系统的查询性能。",
+          "what": "构建事件流的读取模型和投影。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "saga-orchestration",
+          "path": "plugins/backend-development/skills/saga-orchestration/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "后端架构模式",
+          "description_zh": "实现分布式事务和跨聚合工作流的 saga 模式，管理补偿逻辑和失败处理。",
+          "what": "实现分布式事务的 saga 模式。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "temporal-python-testing",
+          "path": "plugins/backend-development/skills/temporal-python-testing/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "系统化调试",
+          "description_zh": "帮助 AI agent 测试 Temporal 工作流，使用 pytest 进行单元、集成和重放测试，确保工作流的可靠性和确定性。",
+          "what": "Provide testing strategies for Temporal workflows using pytest.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "workflow-orchestration-patterns",
+          "path": "plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "工作流编排模式",
+          "description_zh": "帮助 AI agent 设计分布式系统中的耐用工作流，使用 Temporal 实现 saga 模式、状态管理和确定性约束。",
+          "what": "Design durable workflow orchestration patterns with Temporal.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "block-no-verify-hook",
+          "path": "plugins/block-no-verify/skills/block-no-verify-hook/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "GitHub 三件套 / Git 工作流 / 危险命令拦截",
+          "description_zh": "配置 PreToolUse hook 来拦截并阻止 AI 代理使用 --no-verify 等跳过 git pre-commit hooks 的命令，保障代码提交质量与安全。",
+          "what": "配置 Git hook 以防止 AI 代理绕过 pre-commit 检查。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "defi-protocol-templates",
+          "path": "plugins/blockchain-web3/skills/defi-protocol-templates/SKILL.md",
+          "subcategory": "20-3",
+          "subcategory_title": "20.3 合约开发 / 工具链",
+          "category": "web3-blockchain",
+          "group": "合约开发 / 工具链",
+          "description_zh": "提供 DeFi 协议的生产就绪模板，包括质押、AMM、治理和借贷系统，帮助快速构建去中心化金融应用。",
+          "what": "提供 DeFi 协议的代码模板，加速去中心化金融开发。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nft-standards",
+          "path": "plugins/blockchain-web3/skills/nft-standards/SKILL.md",
+          "subcategory": "20-5",
+          "subcategory_title": "20.5 Web3 应用 / NFT / DAO / 交易",
+          "category": "web3-blockchain",
+          "group": "Web3 应用 / NFT / DAO / 交易",
+          "description_zh": "帮助 AI agent 实现 NFT 标准如 ERC-721 和 ERC-1155，包括元数据处理、铸造策略和市场集成功能。",
+          "what": "实现 NFT 标准和市场集成。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "solidity-security",
+          "path": "plugins/blockchain-web3/skills/solidity-security/SKILL.md",
+          "subcategory": "20-1",
+          "subcategory_title": "20.1 智能合约审计 / 漏洞检测",
+          "category": "web3-blockchain",
+          "group": "智能合约审计 / 漏洞检测",
+          "description_zh": "指导 AI agent 编写安全的智能合约，审计现有合约，防止重入攻击等常见漏洞，并优化 Gas 使用。",
+          "what": "智能合约安全审计和最佳实践。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "web3-testing",
+          "path": "plugins/blockchain-web3/skills/web3-testing/SKILL.md",
+          "subcategory": "20-3",
+          "subcategory_title": "20.3 合约开发 / 工具链",
+          "category": "web3-blockchain",
+          "group": "合约开发 / 工具链",
+          "description_zh": "帮助 agent 使用 Hardhat 和 Foundry 进行智能合约的全面测试，包括单元测试、集成测试和主网分叉验证，确保合约安全可靠。",
+          "what": "智能合约测试与验证",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "brand-landingpage",
+          "path": "plugins/brand-landingpage/skills/brand-landingpage/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "品牌视觉三件套",
+          "description_zh": "指导 agent 通过品牌访谈收集设计需求，生成并迭代设计着陆页，输出部署就绪的 HTML 文件，用于产品营销。",
+          "what": "品牌着陆页设计与生成",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "data-storytelling",
+          "path": "plugins/business-analytics/skills/data-storytelling/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "数据叙事 / 商业演示",
+          "description_zh": "将原始数据转化为引人入胜的故事，通过可视化、上下文和结构化叙事驱动决策，适用于分析报告和演示。",
+          "what": "将数据转化为叙事性报告和演示",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kpi-dashboard-design",
+          "path": "plugins/business-analytics/skills/kpi-dashboard-design/SKILL.md",
+          "subcategory": "3-8",
+          "subcategory_title": "3.8 SaaS 健康 / 财务指标 / 单位经济",
+          "category": "product-management",
+          "group": "SaaS 诊断 / 财务速查",
+          "description_zh": "设计有效的KPI仪表板，涵盖指标选择、可视化最佳实践和实时监控模式，用于SaaS指标追踪如MRR、流失率等。",
+          "what": "设计用于SaaS指标的KPI仪表板",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "deployment-pipeline-design",
+          "path": "plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "Kubernetes / GitOps / CI-CD",
+          "description_zh": "设计多阶段CI/CD管道，包含审批门和安全检查，支持零停机部署、金丝雀发布及环境推广工作流。",
+          "what": "设计CI/CD部署管道",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "github-actions-templates",
+          "path": "plugins/cicd-automation/skills/github-actions-templates/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "GitHub 三件套 / Git 工作流 / 危险命令拦截",
+          "description_zh": "创建生产就绪的GitHub Actions工作流模板，用于自动测试、构建和部署应用程序。",
+          "what": "生成GitHub Actions工作流模板",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gitlab-ci-patterns",
+          "path": "plugins/cicd-automation/skills/gitlab-ci-patterns/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "Kubernetes / GitOps / CI-CD",
+          "description_zh": "帮助 agent 构建高效的 GitLab CI/CD 管道，包括多阶段工作流、缓存和部署策略，用于自动化测试和部署。",
+          "what": "构建 GitLab CI/CD 管道",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "secrets-management",
+          "path": "plugins/cicd-automation/skills/secrets-management/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "应用层安全三件套 / 专业级安全 Marketplace / 生产监控",
+          "description_zh": "帮助 agent 实现安全的 secrets 管理，用于 CI/CD 管道，避免硬编码敏感信息，支持自动轮换和访问控制。",
+          "what": "管理 CI/CD 中的 secrets 安全",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "github",
+        "repo": "awesome-copilot",
+        "full_name": "github/awesome-copilot",
+        "url": "https://github.com/github/awesome-copilot",
+        "stars": 34170,
+        "pushed_at": "2026-05-29",
+        "default_branch": "main",
+        "github_description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
+        "topics": [
+          "agent-skills",
+          "agents",
+          "ai",
+          "awesome",
+          "custom-agents",
+          "github-copilot",
+          "hacktoberfest",
+          "prompt-engineering"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "acreadiness-assess",
+          "path": "plugins/acreadiness-cockpit/skills/acreadiness-assess/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Agent 评测",
+          "description_zh": "运行 AgentRC 就绪性评估，生成静态 HTML 报告，用于评估和审计仓库的 AI 就绪性，支持自定义策略。",
+          "what": "评估仓库 AI 就绪性并生成报告。",
+          "chain": true,
+          "chain_group": "acreadiness-workflow"
+        },
+        {
+          "name": "acreadiness-generate-instructions",
+          "path": "plugins/acreadiness-cockpit/skills/acreadiness-generate-instructions/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器",
+          "description_zh": "通过 AgentRC 指令命令生成定制的 AI 代理指令文件，如 .github/copilot-instructions.md，用于配置和优化 AI 代理。",
+          "what": "生成 AI 代理指令文件。",
+          "chain": true,
+          "chain_group": "acreadiness-workflow"
+        },
+        {
+          "name": "acreadiness-policy",
+          "path": "plugins/acreadiness-cockpit/skills/acreadiness-policy/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Tool 设计 / Agent 评测 / 进阶 LLM-as-judge / 项目级方法论",
+          "description_zh": "帮助用户管理和应用代理就绪策略，用于自定义评分、禁用检查、设置阈值和CI门控，支持组织标准化。",
+          "what": "管理代理就绪策略和评分配置",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "ai-team-orchestration",
+          "path": "plugins/ai-team-orchestration/skills/ai-team-orchestration/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多 agent 拓扑选型 / 远端 sandbox agent 运行时 / 自主 loop 控制平面",
+          "description_zh": "引导和运行多代理AI开发团队，支持项目规划、并行团队设置、冲刺计划和工作流恢复，优化协作效率。",
+          "what": "编排多代理AI开发团队和冲刺计划",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "arize-ai-provider-integration",
+          "path": "plugins/arize-ax/skills/arize-ai-provider-integration/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "arize-ai-provider-integration",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "arize-annotation",
+          "path": "plugins/arize-ax/skills/arize-annotation/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "arize-annotation",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "arize-dataset",
+          "path": "plugins/arize-ax/skills/arize-dataset/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Agent 评测工具",
+          "description_zh": "帮助 agent 创建、管理和查询 Arize 数据集，用于评估和实验，支持数据集 CRUD、版本控制和导出。",
+          "what": "管理 Arize 数据集和示例用于评估",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "arize-evaluator",
+          "path": "plugins/arize-ax/skills/arize-evaluator/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Agent 评测工具",
+          "description_zh": "帮助 agent 设计、创建和运行 LLM-as-judge 评估器，用于评分 AI 模型输出，支持连续监控和任务管理。",
+          "what": "运行 LLM-as-judge 评估工作流",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "arize-experiment",
+          "path": "plugins/arize-ax/skills/arize-experiment/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Tool 设计 / Agent 评测 / 进阶 LLM-as-judge / 项目级方法论",
+          "description_zh": "通过 ax CLI 创建、运行和分析 Arize 实验，评估和比较 AI 模型性能，支持数据集导出和结果对比。",
+          "what": "管理 Arize 实验以评估和比较模型性能。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "arize-instrumentation",
+          "path": "plugins/arize-ax/skills/arize-instrumentation/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "可观测性 / 监控（LGTM / Prometheus / OTel）",
+          "description_zh": "为 LLM 应用添加 Arize AX 跟踪，通过两阶段 agent 辅助流程分析代码库并自动 instrument，实现可观测性。",
+          "what": "为 LLM 应用添加 Arize AX 跟踪以设置监控。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "arize-link",
+          "path": "plugins/arize-ax/skills/arize-link/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "AI 可观测性 / Arize",
+          "description_zh": "为 Arize 生成深度链接，跳转查看 trace、span、session 等 AI 可观测资源，便于团队共享调试上下文",
+          "what": "生成 Arize UI 深度链接，便于团队共享 AI 可观测资源",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "arize-prompt-optimization",
+          "path": "plugins/arize-ax/skills/arize-prompt-optimization/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Prompt 优化 / 调试",
+          "description_zh": "基于生产环境 trace 数据、评估结果和标注，数据驱动优化 LLM 提示词，提升输出质量",
+          "what": "用生产 trace 数据驱动 LLM 提示词的优化与调试",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "arize-trace",
+          "path": "plugins/arize-ax/skills/arize-trace/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "可观测性 / 监控（LGTM / Prometheus / OTel）",
+          "description_zh": "帮助 agent 下载、导出和检查 Arize 跟踪数据，以理解 LLM 应用行为或调试运行时问题，支持按 ID 导出跟踪、跨度和会话。",
+          "what": "检查 LLM 应用跟踪和调试",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "automate-this",
+          "path": "plugins/automate-this/skills/automate-this/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "自动化脚本生成",
+          "description_zh": "分析屏幕录制的视频文件，提取视觉帧和音频，重建手动步骤流程，并生成针对用户机器的多层级自动化脚本。",
+          "what": "从视频录制生成自动化脚本",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "suggest-awesome-github-copilot-agents",
+          "path": "plugins/awesome-copilot/skills/suggest-awesome-github-copilot-agents/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "suggest-awesome-github-copilot-agents",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "suggest-awesome-github-copilot-instructions",
+          "path": "plugins/awesome-copilot/skills/suggest-awesome-github-copilot-instructions/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "suggest-awesome-github-copilot-instructions",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "suggest-awesome-github-copilot-skills",
+          "path": "plugins/awesome-copilot/skills/suggest-awesome-github-copilot-skills/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 安装 / 发现 / Plugin / CLI 打包 / 跨 agent 迁移",
+          "description_zh": "分析当前仓库上下文和聊天历史，从 awesome-copilot 仓库中建议相关 GitHub Copilot 技能，并识别本地过时技能。",
+          "what": "建议和管理 GitHub Copilot 技能。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "az-cost-optimize",
+          "path": "plugins/azure-cloud-development/skills/az-cost-optimize/SKILL.md",
+          "subcategory": "17-4",
+          "subcategory_title": "17.4 SRE / 事故响应 / SLO / FinOps",
+          "category": "devops-infra",
+          "group": "SRE / 事故响应 / SLO / FinOps",
+          "description_zh": "分析 Azure 资源和 IaC 文件，识别成本优化机会，并自动创建 GitHub issues 以便跟踪和实施优化。",
+          "what": "优化 Azure 成本并创建跟踪 issues。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "azure-pricing",
+          "path": "plugins/azure-cloud-development/skills/azure-pricing/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "azure-pricing",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "azure-resource-health-diagnose",
+          "path": "plugins/azure-cloud-development/skills/azure-resource-health-diagnose/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "azure-resource-health-diagnose",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "import-infrastructure-as-code",
+          "path": "plugins/azure-cloud-development/skills/import-infrastructure-as-code/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "import-infrastructure-as-code",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "remember-interactive-programming",
+          "path": "plugins/clojure-interactive-programming/skills/remember-interactive-programming/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "remember-interactive-programming",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "content-management-systems",
+          "path": "plugins/cms-development/skills/content-management-systems/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "CMS 开发",
+          "description_zh": "帮助 agent 处理内容管理系统开发任务，包括主题定制、插件开发、内容模型设计等，覆盖 WordPress、Shopify 等主流平台。",
+          "what": "构建和修改多平台内容管理系统。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "markdown-to-html",
+          "path": "plugins/cms-development/skills/markdown-to-html/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "文档转换工具",
+          "description_zh": "协助 agent 将 Markdown 文件转换为 HTML 格式，支持 CLI 和 Node.js 工作流，用于 Web 内容生成和静态站点构建。",
+          "what": "将 Markdown 文件转换为 HTML 格式。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "quasi-coder",
+          "path": "plugins/cms-development/skills/quasi-coder/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "准代码解释",
+          "description_zh": "帮助 agent 将简写、准代码或自然语言描述解释并实现为生产级代码，弥合技术差距。",
+          "what": "将模糊的代码描述转化为可执行的代码。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "context-map",
+          "path": "plugins/context-engineering/skills/context-map/SKILL.md",
+          "subcategory": "12-1",
+          "subcategory_title": "12.1 Context 概念基础",
+          "category": "agent-architecture",
+          "group": "Context Engineering 地基课",
+          "description_zh": "在实施任务前分析代码库，生成文件映射、依赖关系、测试和模式参考，辅助任务规划。",
+          "what": "生成代码上下文地图以指导开发实现。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "refactor-plan",
+          "path": "plugins/context-engineering/skills/refactor-plan/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "重构 / 拯救 ball-of-mud",
+          "description_zh": "在多文件重构前先调研代码库现状、识别依赖与耦合，按安全顺序输出分阶段变更计划，等待确认后再执行。",
+          "what": "为多文件重构生成详细执行计划（含风险、回滚、验证步骤）",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "what-context-needed",
+          "path": "plugins/context-engineering/skills/what-context-needed/SKILL.md",
+          "subcategory": "12-1",
+          "subcategory_title": "12.1 Context 概念基础",
+          "category": "agent-architecture",
+          "group": "Context Engineering 地基课",
+          "description_zh": "在回答问题前让 AI agent 先列出需要查看的文件清单及相关性说明，避免遗漏关键上下文导致回答不准确。",
+          "what": "让 AI 在回答前主动声明所需上下文/文件清单",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "integrate-context-matic",
+          "path": "plugins/context-matic/skills/integrate-context-matic/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "integrate-context-matic",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "onboard-context-matic",
+          "path": "plugins/context-matic/skills/onboard-context-matic/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "onboard-context-matic",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "nanocoai",
+        "repo": "nanoclaw",
+        "full_name": "nanocoai/nanoclaw",
+        "url": "https://github.com/nanocoai/nanoclaw",
+        "stars": 29551,
+        "pushed_at": "2026-05-30",
+        "default_branch": "main",
+        "github_description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
+        "topics": [
+          "ai-agents",
+          "ai-assistant",
           "claude-code",
           "claude-skills",
-          "codebase-analysis",
-          "codex",
-          "codex-skills",
-          "developer-tools-ai-agent",
-          "gemini-cli-skills",
-          "karpathy-llm-wiki",
-          "knowledge-base",
-          "knowledge-graph",
-          "memory",
-          "opencode-skills",
-          "pi-agent",
-          "understandcode",
-          "vibe-coding"
+          "openclaw"
         ],
         "language": "TypeScript",
         "is_fork": false,
@@ -710,100 +2745,873 @@
       },
       "skills": [
         {
-          "name": "understand-chat",
-          "path": "understand-anything-plugin/skills/understand-chat/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "代码知识图谱",
-          "description_zh": "通过查询知识图谱，帮助 agent 理解代码库结构并回答相关问题。",
-          "what": "基于知识图谱的代码问答工具。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "understand-dashboard",
-          "path": "understand-anything-plugin/skills/understand-dashboard/SKILL.md",
-          "subcategory": "",
-          "subcategory_title": "",
-          "category": "",
-          "group": "代码知识图谱",
-          "description_zh": "可视化代码库的知识图谱，帮助 agent 和用户探索和理解代码结构。",
-          "what": "知识图谱的交互式可视化仪表板。",
-          "chain": false,
-          "chain_group": ""
-        },
-        {
-          "name": "understand-diff",
-          "path": "understand-anything-plugin/skills/understand-diff/SKILL.md",
-          "subcategory": "1-4",
-          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "name": "add-atomic-chat-tool",
+          "path": ".claude/skills/add-atomic-chat-tool/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
           "category": "software-engineering",
-          "group": "代码变更分析",
-          "description_zh": "基于知识图谱分析 git 差异或 PR，识别变更内容、受影响组件和潜在风险。",
-          "what": "分析代码变更与知识图谱关联",
+          "group": "MCP Server 开发",
+          "description_zh": "为容器 agent 添加 Atomic Chat MCP 服务器，使其可调用本地桌面应用提供的 OpenAI 兼容模型（列表查询、推理生成），实现推理分流。",
+          "what": "将本地 Atomic Chat 桌面应用的模型通过 MCP 协议接入容器 agent，使其可作为工具调用本地模型",
           "chain": false,
           "chain_group": ""
         },
         {
-          "name": "understand-domain",
-          "path": "understand-anything-plugin/skills/understand-domain/SKILL.md",
-          "subcategory": "2-4",
-          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
-          "category": "docs-knowledge",
-          "group": "领域知识提取",
-          "description_zh": "从代码库提取业务领域知识，生成交互式流程图，支持知识图谱复用或独立扫描。",
-          "what": "提取领域知识并生成流程图",
+          "name": "add-codex",
+          "path": ".claude/skills/add-codex/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "OpenAI 平台开发",
+          "description_zh": "将 Codex（CLI + AppServer）作为替代 agent 提供商接入 NanoClaw，支持规划、工具编排、MCP 工具、会话恢复及原生压缩，摆脱 Anthropic 锁定。",
+          "what": "为 NanoClaw 容器 agent 添加 Codex 作为完整替代 agent 后端，替换 Claude Agent SDK",
           "chain": false,
           "chain_group": ""
         },
         {
-          "name": "understand-explain",
-          "path": "understand-anything-plugin/skills/understand-explain/SKILL.md",
+          "name": "add-dashboard",
+          "path": ".claude/skills/add-dashboard/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "可观测性 / 监控",
+          "description_zh": "为 NanoClaw 添加本地监控仪表板，实时显示 agent 组、会话、频道、用户、token 使用、上下文窗口、消息活动和日志。",
+          "what": "添加监控仪表板",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-deltachat",
+          "path": ".claude/skills/add-deltachat/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "即时通讯集成",
+          "description_zh": "集成 DeltaChat 消息频道，通过邮件实现端到端加密的即时通讯，支持自动加密和消息传递。",
+          "what": "集成 DeltaChat 频道",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-discord",
+          "path": ".claude/skills/add-discord/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "通道集成扩展",
+          "description_zh": "为 NanoClaw agent 添加 Discord 通道集成，通过 Chat SDK 实现 bot 消息通信和交互，支持用户通过 Discord 与 agent 对话。",
+          "what": "添加 Discord bot 集成",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-emacs",
+          "path": ".claude/skills/add-emacs/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "通道集成扩展",
+          "description_zh": "帮助 agent 在 Emacs 编辑器中集成，通过本地 HTTP 桥接实现交互式聊天、代码审查和 org-mode 笔记管理，无需外部服务。",
+          "what": "添加 Emacs 通道集成",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-gcal-tool",
+          "path": ".claude/skills/add-gcal-tool/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "MCP Server 开发",
+          "description_zh": "将 Google Calendar 作为 MCP 工具接入 agent，支持多日历多账户的事件查询、创建与忙闲查询，通过 OneCLI 网关注入 OAuth 令牌，容器不接触原始凭证。",
+          "what": "为 agent 接入 Google Calendar MCP 工具（多日历/多账户）",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-gchat",
+          "path": ".claude/skills/add-gchat/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "Google Chat 通道接入",
+          "description_zh": "为 NanoClaw agent 添加 Google Chat 消息通道适配器，通过 Chat SDK bridge 接收和回复 Google Chat 消息，含完整安装与凭据配置指引。",
+          "what": "为 agent 接入 Google Chat 消息通道",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-github",
+          "path": ".claude/skills/add-github/SKILL.md",
           "subcategory": "",
           "subcategory_title": "",
           "category": "",
-          "group": "知识图与代码理解",
-          "description_zh": "帮助AI代理深入解释代码库中的特定文件、函数或模块，利用知识图结构进行交互式探索和查询。",
-          "what": "提供代码组件的详细解释和知识图导航。",
+          "group": "add-github",
+          "description_zh": "",
+          "what": "",
           "chain": false,
           "chain_group": ""
         },
         {
-          "name": "understand-knowledge",
-          "path": "understand-anything-plugin/skills/understand-knowledge/SKILL.md",
+          "name": "add-gmail-tool",
+          "path": ".claude/skills/add-gmail-tool/SKILL.md",
           "subcategory": "",
           "subcategory_title": "",
           "category": "",
-          "group": "知识图与代码理解",
-          "description_zh": "分析Karpathy模式知识库，生成交互式知识图，支持实体提取、关系发现和主题聚类，便于AI代理探索和提问。",
-          "what": "从知识库生成交互式知识图并进行分析。",
+          "group": "add-gmail-tool",
+          "description_zh": "",
+          "what": "",
           "chain": false,
           "chain_group": ""
         },
         {
-          "name": "understand-onboard",
-          "path": "understand-anything-plugin/skills/understand-onboard/SKILL.md",
-          "subcategory": "2-4",
-          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
-          "category": "docs-knowledge",
-          "group": "知识图谱工具",
-          "description_zh": "从项目知识图谱生成全面的新成员入职指南，帮助 AI agent 快速理解项目结构和组件关系。",
-          "what": "生成入职指南",
-          "chain": true,
-          "chain_group": "知识图谱工作流"
+          "name": "add-imessage",
+          "path": ".claude/skills/add-imessage/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "iMessage 集成",
+          "description_zh": "帮助 AI agent 添加 iMessage 消息通道到 NanoClaw，支持 macOS 本地或远程 API 模式，实现跨平台通讯集成。",
+          "what": "添加 iMessage 频道集成到 NanoClaw",
+          "chain": false,
+          "chain_group": ""
         },
         {
-          "name": "understand",
-          "path": "understand-anything-plugin/skills/understand/SKILL.md",
+          "name": "add-karpathy-llm-wiki",
+          "path": ".claude/skills/add-karpathy-llm-wiki/SKILL.md",
           "subcategory": "2-4",
           "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
           "category": "docs-knowledge",
-          "group": "知识图谱工具",
-          "description_zh": "分析代码库并生成交互式知识图谱文件，使 AI agent 能探索项目架构、组件和依赖关系。",
-          "what": "分析代码库生成知识图谱",
+          "group": "项目知识图谱",
+          "description_zh": "帮助 AI agent 在 NanoClaw 群组中设置持久 wiki 知识库，基于 Karpathy 的 LLM Wiki 模式，支持多种来源用于知识管理。",
+          "what": "设置基于 Karpathy 模式的持久 wiki 知识库",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-linear",
+          "path": ".claude/skills/add-linear/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Linear 任务管理",
+          "description_zh": "为 NanoClaw 添加 Linear 项目管理集成，让 agent 自动参与 issue 评论线程，支持 OAuth 或 Personal API Key 认证。",
+          "what": "集成 Linear 项目管理工具到 AI agent。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-macos-statusbar",
+          "path": ".claude/skills/add-macos-statusbar/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "macOS 状态栏集成",
+          "description_zh": "为 NanoClaw 添加 macOS 菜单栏状态指示器，显示运行状态（绿点/红点）并提供启动、停止、重启控制，仅限 macOS。",
+          "what": "添加 macOS 菜单栏状态指示器到 NanoClaw。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-matrix",
+          "path": ".claude/skills/add-matrix/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "消息通道集成",
+          "description_zh": "为 AI 代理添加 Matrix 消息通道支持，通过 Chat SDK 桥接实现跨平台通讯集成，运行于安全容器中。",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-mnemon",
+          "path": ".claude/skills/add-mnemon/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "持久记忆",
+          "description_zh": "安装持久化记忆系统，让代理在回应前自动回忆相关上下文，并在每次交互后存储新见解，提升连续对话能力。",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-ollama-provider",
+          "path": ".claude/skills/add-ollama-provider/SKILL.md",
+          "subcategory": "9-3",
+          "subcategory_title": "9.3 桌面 Agent 编排平台",
+          "category": "comms-integration",
+          "group": "Agent 平台配置",
+          "description_zh": "将 NanoClaw 容器 agent 组的 LLM 后端从 Anthropic API 切换到本地 Ollama 实例，通过 env var 覆盖和容器配置实现，无需改动 provider 代码。",
+          "what": "通过环境变量覆盖将 agent 组路由到本地 Ollama 模型",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-ollama-tool",
+          "path": ".claude/skills/add-ollama-tool/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "MCP Server 开发",
+          "description_zh": "为容器 agent 添加基于 stdio 的 Ollama MCP 服务器，暴露本地模型为调用工具（生成、列表），可选开启模型管理功能（拉取、删除、详情）。",
+          "what": "添加 MCP server 使 agent 能调用和管理本地 Ollama 模型",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-opencode",
+          "path": ".claude/skills/add-opencode/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Agent 与 MCP 集成",
+          "description_zh": "将 OpenCode 作为 agent provider 集成到 NanoClaw，支持多种模型如 OpenRouter、OpenAI 等，扩展 agent 的能力与灵活性。",
+          "what": "集成 OpenCode agent provider。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-parallel",
+          "path": ".claude/skills/add-parallel/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Agent 与 MCP 集成",
+          "description_zh": "添加 Parallel AI MCP 集成，提供快速搜索和深度研究功能，增强 agent 的网络研究与分析能力。",
+          "what": "添加 MCP 集成用于研究。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-resend",
+          "path": ".claude/skills/add-resend/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "邮件通道集成",
+          "description_zh": "帮助代理集成 Resend 邮件通道，实现异步邮件对话功能，扩展通信渠道。",
+          "what": "添加 Resend 邮件集成",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-rtk",
+          "path": ".claude/skills/add-rtk/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Tool 设计",
+          "description_zh": "帮助代理安装 rtk token 压缩工具，优化 Bash 命令执行，节省 60-90% token 使用。",
+          "what": "安装 token 压缩代理",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-signal",
+          "path": ".claude/skills/add-signal/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "Signal 消息集成",
+          "description_zh": "为AI代理添加Signal消息通道集成，通过signal-cli TCP daemon实现JSON-RPC通信，无需外部桥接，使用Node.js内置模块完成安装和配置。",
+          "what": "集成Signal消息应用到AI代理系统。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-slack",
+          "path": ".claude/skills/add-slack/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "Slack 消息集成",
+          "description_zh": "为AI代理添加Slack工作区集成，通过Chat SDK桥接实现消息发送和接收，包括OAuth配置和权限设置步骤。",
+          "what": "集成Slack工作区到AI代理系统。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-teams",
+          "path": ".claude/skills/add-teams/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "add-teams",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-telegram",
+          "path": ".claude/skills/add-telegram/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "add-telegram",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-vercel",
+          "path": ".claude/skills/add-vercel/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "平台特化部署（4 选 1 平行替代）",
+          "description_zh": "为NanoClaw agent容器安装Vercel CLI并配置凭证注入，使其能自动部署web应用到Vercel平台。",
+          "what": "安装Vercel CLI和配置凭证以启用部署能力。",
           "chain": true,
-          "chain_group": "知识图谱工作流"
+          "chain_group": "Vercel部署链"
+        },
+        {
+          "name": "vercel-cli",
+          "path": ".claude/skills/add-vercel/container-skills/vercel-cli/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "平台特化部署（4 选 1 平行替代）",
+          "description_zh": "指导agent使用Vercel CLI进行web应用部署，包括认证、生产部署和状态检查。",
+          "what": "使用Vercel CLI命令部署和管理Vercel项目。",
+          "chain": true,
+          "chain_group": "Vercel部署链"
+        },
+        {
+          "name": "add-webex",
+          "path": ".claude/skills/add-webex/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "即时通讯渠道集成",
+          "description_zh": "帮助 AI 代理集成 Cisco Webex 消息平台，通过 Chat SDK 实现消息收发和自动化交互。",
+          "what": "添加 Webex 频道集成",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-wechat",
+          "path": ".claude/skills/add-wechat/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "即时通讯渠道集成",
+          "description_zh": "帮助 AI 代理集成微信个人账号，通过 iLink Bot API 实现消息收发，无需付费或违反 ToS。",
+          "what": "添加 WeChat 频道集成",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "googleworkspace",
+        "repo": "cli",
+        "full_name": "googleworkspace/cli",
+        "url": "https://github.com/googleworkspace/cli",
+        "stars": 26699,
+        "pushed_at": "2026-05-12",
+        "default_branch": "main",
+        "github_description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
+        "topics": [
+          "agent-skills",
+          "ai-agent",
+          "automation",
+          "cli",
+          "discovery-api",
+          "gemini-cli-extension",
+          "google-admin",
+          "google-api",
+          "google-calendar",
+          "google-chat",
+          "google-docs",
+          "google-drive",
+          "google-sheets",
+          "google-workspace",
+          "oauth2",
+          "rust"
+        ],
+        "language": "Rust",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "gws-admin-reports",
+          "path": "skills/gws-admin-reports/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 集成",
+          "description_zh": "通过 CLI 查询 Google Workspace 审计日志与使用报告，支持账户活动列表、推送通知和客户/实体用量统计。",
+          "what": "封装 Google Workspace Admin SDK reports_v1 API，让 AI agent 以 CLI 方式获取审计日志和使用报告。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-calendar-agenda",
+          "path": "skills/gws-calendar-agenda/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 集成",
+          "description_zh": "让 AI agent 通过 CLI 快速查看 Google Calendar 即将到来的日程，支持按今天/本周/天数筛选与日历过滤。",
+          "what": "封装 Google Calendar +agenda 命令，提供跨日历的只读日程概览查询能力。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-calendar-insert",
+          "path": "skills/gws-calendar-insert/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 技能",
+          "description_zh": "帮助 AI agent 通过 CLI 快速创建 Google Calendar 事件，支持设置摘要、时间、地点、描述、与会者和自动添加 Google Meet 链接。",
+          "what": "创建 Google Calendar 事件",
+          "chain": true,
+          "chain_group": "Google Calendar 工作流"
+        },
+        {
+          "name": "gws-calendar",
+          "path": "skills/gws-calendar/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 技能",
+          "description_zh": "为 AI agent 提供 Google Calendar 全面管理能力，包括事件创建、日历配置、访问控制（ACL）和列表操作，是 CLI 工具的总入口。",
+          "what": "管理 Google Calendar",
+          "chain": true,
+          "chain_group": "Google Calendar 工作流"
+        },
+        {
+          "name": "gws-chat-send",
+          "path": "skills/gws-chat-send/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "Google Chat CLI技能",
+          "description_zh": "通过命令行发送消息到指定的Google Chat空间，帮助AI agent实现自动化通信。",
+          "what": "发送消息到Google Chat空间",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-chat",
+          "path": "skills/gws-chat/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "Google Chat CLI技能",
+          "description_zh": "管理Google Chat空间和消息，包括创建自定义表情等操作，支持AI agent进行聊天管理。",
+          "what": "管理Google Chat空间和消息",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-classroom",
+          "path": "skills/gws-classroom/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace 教育管理",
+          "description_zh": "帮助 agent 通过命令行管理 Google Classroom 的课程、学生名册和作业，支持创建、删除、查询等操作。",
+          "what": "管理 Google Classroom 课程和作业。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-docs-write",
+          "path": "skills/gws-docs-write/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套 / PDF 重型 API / 多格式抽取引擎",
+          "description_zh": "帮助 agent 向 Google Docs 文档追加指定文本内容，支持通过 CLI 命令执行。",
+          "what": "追加文本到 Google Docs 文档。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-docs",
+          "path": "skills/gws-docs/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Google Workspace 文档处理",
+          "description_zh": "通过 CLI 命令读取和写入 Google Docs 文档，支持批量更新、创建和获取文档内容。",
+          "what": "读写 Google Docs 文档",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-drive-upload",
+          "path": "skills/gws-drive-upload/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Drive 文件管理",
+          "description_zh": "自动上传文件到 Google Drive，并设置元数据如父文件夹和文件名，支持 MIME 类型检测。",
+          "what": "上传文件到 Google Drive",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-drive",
+          "path": "skills/gws-drive/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 集成",
+          "description_zh": "Agent 通过 gws CLI 调用 Google Drive v3 API，管理文件、文件夹、共享云端硬盘，执行上传、列出、移动、权限管理等操作。",
+          "what": "Google Drive 文件与文件夹管理的 CLI skill",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-events-renew",
+          "path": "skills/gws-events-renew/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 集成",
+          "description_zh": "Agent 通过 gws CLI 续订或重新激活 Google Workspace Events 订阅，支持单个或按时间窗口批量续订，防止订阅过期。",
+          "what": "Google Workspace Events 订阅续订的 CLI skill",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-events-subscribe",
+          "path": "skills/gws-events-subscribe/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace 事件集成",
+          "description_zh": "订阅 Google Workspace 事件并以 NDJSON 流式传输，帮助 agent 实时监控工作区变化如聊天消息，实现自动化事件驱动。",
+          "what": "订阅 Workspace 事件流并流式输出",
+          "chain": true,
+          "chain_group": "gws-events-workflow"
+        },
+        {
+          "name": "gws-events",
+          "path": "skills/gws-events/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace 事件集成",
+          "description_zh": "管理 Google Workspace 事件订阅和 API 资源，提供事件处理的入口命令，用于创建、删除和查询订阅。",
+          "what": "事件订阅管理入口命令",
+          "chain": true,
+          "chain_group": "gws-events-workflow"
+        },
+        {
+          "name": "gws-forms",
+          "path": "skills/gws-forms/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "表单管理",
+          "description_zh": "帮助AI agent自动化读写Google Forms，支持创建、获取、更新表单及管理响应，用于数据收集和流程自动化。",
+          "what": "自动化Google Forms的创建和操作。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-forward",
+          "path": "skills/gws-gmail-forward/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "邮件操作",
+          "description_zh": "帮助AI agent自动化转发Gmail消息，支持指定收件人、附件、CC/BCC和草稿保存，提高邮件处理效率。",
+          "what": "自动化Gmail消息转发。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-read",
+          "path": "skills/gws-gmail-read/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Gmail CLI 操作",
+          "description_zh": "通过CLI读取Gmail邮件消息，支持提取正文、头部信息，便于AI agent自动化处理邮件内容。",
+          "what": "读取Gmail邮件并提取内容。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-reply-all",
+          "path": "skills/gws-gmail-reply-all/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Gmail CLI 操作",
+          "description_zh": "通过CLI自动回复Gmail邮件，支持全部回复并自动处理线程，便于AI agent进行邮件交互。",
+          "what": "回复Gmail邮件并处理线程。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-reply",
+          "path": "skills/gws-gmail-reply/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "邮件全套",
+          "description_zh": "通过 Google Workspace CLI 帮助 AI agent 自动回复 Gmail 消息，支持线程处理、附件添加和多种邮件选项，提升邮件处理效率。",
+          "what": "CLI 命令用于自动回复 Gmail 消息",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-send",
+          "path": "skills/gws-gmail-send/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "邮件全套",
+          "description_zh": "通过 Google Workspace CLI 帮助 AI agent 自动发送电子邮件，支持抄送、密送、HTML 内容和附件等选项，简化邮件发送流程。",
+          "what": "CLI 命令用于自动发送电子邮件",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-triage",
+          "path": "skills/gws-gmail-triage/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 技能",
+          "description_zh": "帮助AI agent快速查看Gmail未读邮件的发送者、主题和日期摘要，进行邮件分诊。",
+          "what": "显示Gmail未读邮件摘要",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-watch",
+          "path": "skills/gws-gmail-watch/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 技能",
+          "description_zh": "帮助AI agent实时监控Gmail新邮件，以NDJSON格式流式输出，用于自动化邮件处理工作流。",
+          "what": "监控Gmail新邮件并流式输出",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail",
+          "path": "skills/gws-gmail/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 集成",
+          "description_zh": "通过 CLI 命令管理 Gmail 邮件，支持发送、阅读、回复、转发和监控新邮件，自动化邮件处理任务。",
+          "what": "Gmail 邮件管理 CLI 工具",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-keep",
+          "path": "skills/gws-keep/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 集成",
+          "description_zh": "通过 CLI 命令管理 Google Keep 笔记，支持创建、删除、获取笔记及其附件，简化笔记管理。",
+          "what": "Google Keep 笔记管理 CLI 工具",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-meet",
+          "path": "skills/gws-meet/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace 会议管理",
+          "description_zh": "帮助 agent 通过 Google Workspace CLI 管理 Google Meet 会议，包括查询历史会议记录、创建和更新会议空间。",
+          "what": "管理 Google Meet 会议",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-modelarmor-create-template",
+          "path": "skills/gws-modelarmor-create-template/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "应用层安全三件套",
+          "description_zh": "帮助 agent 通过 CLI 创建 Google Model Armor 安全模板，用于防护 AI 模型攻击如越狱。",
+          "what": "创建 AI 模型安全模板",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-modelarmor-sanitize-prompt",
+          "path": "skills/gws-modelarmor-sanitize-prompt/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "AI 内容安全过滤",
+          "description_zh": "通过Google Model Armor模板清理用户输入提示，防止有害内容传递给AI模型，增强交互安全性。",
+          "what": "清理用户提示以确保安全输入",
+          "chain": true,
+          "chain_group": "Model Armor 安全过滤"
+        },
+        {
+          "name": "gws-modelarmor-sanitize-response",
+          "path": "skills/gws-modelarmor-sanitize-response/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "AI 内容安全过滤",
+          "description_zh": "通过Google Model Armor模板清理AI模型输出响应，过滤有害或不当内容，保障输出安全。",
+          "what": "清理模型响应以确保安全输出",
+          "chain": true,
+          "chain_group": "Model Armor 安全过滤"
+        },
+        {
+          "name": "gws-modelarmor",
+          "path": "skills/gws-modelarmor/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "Google Workspace CLI 工具",
+          "description_zh": "提供 Google Model Armor 内容安全过滤能力，支持创建安全模板、对用户输入和模型输出进行安全审查。",
+          "what": "AI agent 通过 CLI 调用 Google Model Armor API 进行内容安全过滤",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-people",
+          "path": "skills/gws-people/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "Google Workspace CLI 工具",
+          "description_zh": "提供 Google 通讯录管理能力，支持联系人、联系人分组的增删改查操作。",
+          "what": "AI agent 通过 CLI 管理 Google People API 中的联系人和分组",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "OthmanAdi",
+        "repo": "planning-with-files",
+        "full_name": "OthmanAdi/planning-with-files",
+        "url": "https://github.com/OthmanAdi/planning-with-files",
+        "stars": 22387,
+        "pushed_at": "2026-05-26",
+        "default_branch": "master",
+        "github_description": "Claude Code skill implementing Manus-style persistent markdown planning — the workflow pattern behind the $2B acquisition.",
+        "topics": [
+          "adal",
+          "agent-skills",
+          "antigravity",
+          "claude",
+          "claude-code",
+          "claude-skills",
+          "copilot",
+          "copilot-skills",
+          "hermes",
+          "hermes-agent",
+          "hermes-skill",
+          "kilocode",
+          "manus",
+          "mastra",
+          "openclaw",
+          "openclaw-skills",
+          "pi",
+          "pi-agent",
+          "planning"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "planning-with-files",
+          "path": ".codebuddy/skills/planning-with-files/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "轻量 SDD 框架",
+          "description_zh": "实现 Manus 风格的文件式规划，通过创建和维护 task_plan.md、findings.md 和 progress.md 文件，帮助 AI agent 组织复杂多步骤任务、跟踪进度，并支持会话中断后自动恢复。",
+          "what": "文件式任务规划与进度跟踪",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "planning-with-files-ar",
+          "path": "skills/planning-with-files-ar/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "轻量 SDD 框架",
+          "description_zh": "实现 Manus 风格的文件式规划，通过创建和维护 task_plan.md、findings.md 和 progress.md 文件，帮助 AI agent 组织复杂多步骤任务、跟踪进度，并支持会话中断后自动恢复（阿拉伯语版本）。",
+          "what": "文件式任务规划与进度跟踪（阿拉伯语）",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "planning-with-files-de",
+          "path": "skills/planning-with-files-de/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "核心开发工作流",
+          "description_zh": "实现 Manus 风格的文件规划系统，通过创建 markdown 文件组织和跟踪复杂任务进度，支持会话自动恢复，提升多步骤项目效率。",
+          "what": "基于文件的持久化计划与会话管理工具",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "planning-with-files-es",
+          "path": "skills/planning-with-files-es/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "核心开发工作流",
+          "description_zh": "实现 Manus 风格的文件规划系统，通过创建 markdown 文件组织和跟踪复杂任务进度，支持会话自动恢复，提升多步骤项目效率。",
+          "what": "基于文件的持久化计划与会话管理工具",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "planning-with-files-zh",
+          "path": "skills/planning-with-files-zh/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "会话接力",
+          "description_zh": "基于 Manus 风格的文件规划系统，通过创建 task_plan.md、findings.md 和 progress.md 来组织和跟踪复杂任务，支持会话自动恢复。",
+          "what": "为 AI agent 提供基于文件的任务规划和进度跟踪系统。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "planning-with-files-zht",
+          "path": "skills/planning-with-files-zht/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "会话接力",
+          "description_zh": "基于 Manus 风格的文件规划系统（繁体中文），用于组织和跟踪复杂任务的进度，支持会话自动恢复。",
+          "what": "为 AI agent 提供基于文件的任务规划和进度跟踪系统（繁体中文版）。",
+          "chain": false,
+          "chain_group": ""
         }
       ]
     }
