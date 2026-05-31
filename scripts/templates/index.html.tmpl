@@ -4077,8 +4077,8 @@ function buildHeroMap(pal){
     v: h1.subsections.reduce((s, h2) => s + h2.rows.length, 0)
   })).filter(c => c.v > 0).sort((a, b) => b.v - a.v);
   if(!cats.length) return;
-  // 默认：浅而亮（高亮度 + 高饱和 → 明快不发灰）；传 pal 时用于试色
-  cats.forEach((c, si) => { c.col = pal ? PAL[si % PAL.length] : `hsl(${catHue(c.i)}, 85%, 80%)`; });
+  // 默认：浅而亮——靠高亮度而非高饱和（明亮通透、不糖果、不发灰）；传 pal 时用于试色
+  cats.forEach((c, si) => { c.col = pal ? PAL[si % PAL.length] : `hsl(${catHue(c.i)}, 54%, 84%)`; });
   const rects = [];
   (function slice(items, x, y, w, h, horiz){
     if(items.length === 1){ rects.push({ ...items[0], x, y, w, h }); return; }
