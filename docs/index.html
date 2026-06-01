@@ -61,6 +61,10 @@ html.light{
 button,a,summary,[role="button"],input,select,textarea{touch-action:manipulation}
 /* 数字等宽对齐：统计数字 / 计数 / 地图计数（tabular-nums，避免数字跳动） */
 .hero-stats > div b,.sidebar .stat b,.nav-h1 .count,.type-count,.hm-tile .hm-ct{font-variant-numeric:tabular-nums}
+/* 跳到主内容：键盘/读屏用户跳过侧栏与工具栏，平时藏起、聚焦时滑入 */
+.skip-link{position:fixed;left:10px;top:-48px;z-index:200;background:var(--accent);color:#fff;
+  padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;transition:top .15s}
+.skip-link:focus{top:10px;outline:2px solid var(--fg);outline-offset:2px}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);
   font-family:var(--font-sans);
   font-size:14px;line-height:1.65;
@@ -1197,6 +1201,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Dataset", "name": "Skills Atlas", "alternateName": "按功能分类的 AI Agent Skills 全景", "description": "A functional panorama of AI Agent Skills — 826 skills in 249 groups across 20 categories.", "url": "https://zita-go.github.io/Skills-Atlas/", "keywords": ["AI agent skills", "Claude Code", "Codex", "SKILL.md", "skill directory"], "license": "https://opensource.org/licenses/MIT", "creator": {"@type": "Organization", "name": "Skills Atlas contributors"}, "distribution": {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zita-go.github.io/Skills-Atlas/data.json"}}</script>
 </head>
 <body>
+<a class="skip-link" href="#main" data-i18n="skip_link">跳到主内容</a>
 <div class="app" id="app">
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-head">
@@ -1217,7 +1222,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
     <span class="kbd-hint" id="kbdHint">/</span>
     <button class="clear-btn" id="clearBtn" aria-label="clear">×</button>
   </div>
-  <div class="search-result-count" id="searchResultCount"></div>
+  <div class="search-result-count" id="searchResultCount" aria-live="polite" role="status"></div>
   <button class="share-link-btn hidden" id="shareLink" data-i18n="btn_share" data-i18n-title="tt_share" title="复制当前筛选结果的链接">🔗 复制结果链接</button>
   <nav id="nav"></nav>
 </aside>
@@ -1226,7 +1231,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
 </button>
 <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
 
-<main class="main">
+<main class="main" id="main" tabindex="-1">
   <div class="toolbar">
     <button class="menu-btn" id="menuBtn" aria-label="菜单" data-i18n-aria="tt_menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     <div class="view-switch" id="viewSwitch">
@@ -1401,7 +1406,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
         </button>
       </div>
     </div>
-    <div class="ai-status hidden" id="aiStatus"></div>
+    <div class="ai-status hidden" id="aiStatus" aria-live="polite" role="status"></div>
     <div class="ai-results" id="aiResults"></div>
   </div>
 </div>
@@ -1432,6 +1437,7 @@ const I18N = {
     stat_skill: '独立 skill', stat_group: '功能分组', stat_vendor: '源仓库', stat_chain: '强绑定工作流',
     map_cap: '技能地图：色块越大该领域越多 · 点击跳到该分类',
     map_label: '技能地图：按领域分类，点击色块可跳到对应分类',
+    skip_link: '跳到主内容',
     empty: '没有匹配的 skill，试试别的关键词',
     sp_ph: '搜 skill / 仓库 / 分组 / 大类…（fuzzy 匹配）',
     sp_empty_default: '输入关键词搜索 skill / 分组 / 大类 / 仓库', sp_empty_none: '没有匹配项，换个关键词试试',
@@ -1496,6 +1502,7 @@ const I18N = {
     stat_skill: 'skills', stat_group: 'groups', stat_vendor: 'source repos', stat_chain: 'chained workflows',
     map_cap: 'Skill map: bigger tile = more in that area · click to jump',
     map_label: 'Skill map: categories by area — click a tile to jump to that category',
+    skip_link: 'Skip to content',
     empty: 'No matching skills — try another keyword',
     sp_ph: 'Search skills / repos / groups / categories… (fuzzy)',
     sp_empty_default: 'Search skills / groups / categories / repos', sp_empty_none: 'No matches — try another keyword',
