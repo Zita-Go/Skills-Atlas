@@ -84,10 +84,18 @@ skills-atlas doctor                            # health check: orphans, drift, l
 skills-atlas kit                               # detect this project & install the right skills for it
 skills-atlas sync                              # reproduce a project's kit (skills-atlas.kit.json)
 
-# 🌐 Catalog
+# 🤖 Autopilot & capability gaps   (opt-in)
+skills-atlas hook on                           # Claude proactively offers a fitting skill as you work
+skills-atlas gaps                              # Claude spots kinds of work you keep doing without a skill
+
+# 🌐 Catalog & sources
 skills-atlas categories                        # the 20 top-level categories
 skills-atlas list marketing                    # skill groups within a category
+skills-atlas registry add <url|path>           # add a private org catalog source (merges into search/install)
 skills-atlas update                            # pull the latest catalog
+
+# 🔌 Integrations
+skills-atlas mcp                               # run as an MCP server (any MCP client: Claude Desktop, …)
 ```
 
 **⛓ Workflows, not just skills.** Many skills belong to a curated chain (e.g.

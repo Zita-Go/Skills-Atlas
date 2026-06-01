@@ -58,10 +58,15 @@ npx skills-atlas-cli info brainstorming
 npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/brainstorming/
 ```
 
-`install` 按每个 skill 记录的仓内路径，**只下载那一个 skill 的文件夹**（不是整个仓库）到
-`.claude/skills/`。它是个小型包管理器：`use`（装上并立即激活）、`installed`、`outdated`、
-`upgrade`、`remove`、`doctor`。还附带一个 [Claude Code 插件](packages/skills-atlas-cli/plugin)，
-把同样的能力暴露成 `/skills-atlas:skill-search` / `:skill-install`，让 Claude 在对话里直接做。
+`install` **只下载那一个 skill 的文件夹**（不是整个仓库）到 `.claude/skills/`。这个 CLI 已经长成一整套工具:
+
+- **包管理器** —— `use`（装上并立即激活）、`installed`、`outdated`、`upgrade`、`remove`、`doctor`。
+- **项目套件** —— `kit` 识别你的项目(前端 / 后端 / 数据 / 基础设施)装一整套对口 skill;`sync` 从可提交的 `skills-atlas.kit.json` 复现。
+- **私有源** —— `registry add <你的 data.json>` 把组织内部 skill 合并进搜索 / 安装(同名私有优先)。
+- **Claude Code 里** —— 附带[插件](packages/skills-atlas-cli/plugin)(`/skills-atlas:skill-search` / `:skill-install`)。
+- **任意 MCP 客户端** —— `skills-atlas mcp` 起一个零依赖 MCP server(search / info / install / categories),给 Claude Desktop 等 agent 用。
+
+→ [CLI 完整文档](packages/skills-atlas-cli)
 
 ### 🤖 自动驾驶 —— 让合适的 skill 主动找你
 
@@ -77,6 +82,8 @@ skills-atlas hook on
 > 🤖 *"这正是 **pre-mortem** 这个 skill 的拿手活 —— 上线前把计划的失败模式压测一遍。**现在就用** · 看看细节 · 跳过？"*
 
 默认关闭 · 全程本地匹配（prompt 不外传）· 绝不自动安装。[它怎么工作 →](packages/skills-atlas-cli)
+
+**🔭 能力缺口。** `skills-atlas gaps` 把你**最近的活动**(读 Claude Code 本地已有的 transcript —— 不存不外传)摆给 **Claude**,让它发现"你反复在做、却没装对应 skill"的那类活,并推荐。
 
 ### 在线访问
 👉 [打开网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)

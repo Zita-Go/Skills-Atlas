@@ -62,12 +62,16 @@ npx skills-atlas-cli info brainstorming
 npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/brainstorming/
 ```
 
-`install` reads each skill's recorded in-repo path and downloads **only that
-skill's folder** (not the whole repo) into `.claude/skills/`. It's a small package
-manager: `use` (install + activate now), `installed`, `outdated`, `upgrade`,
-`remove`, `doctor`. A bundled [Claude Code plugin](packages/skills-atlas-cli/plugin)
-exposes the same as `/skills-atlas:skill-search` / `:skill-install` so Claude can
-do it in-conversation.
+`install` downloads **only that skill's folder** (not the whole repo) into
+`.claude/skills/`. The CLI has grown into a full toolkit:
+
+- **Package manager** — `use` (install + activate now), `installed`, `outdated`, `upgrade`, `remove`, `doctor`.
+- **Project kits** — `kit` detects your project (frontend / backend / data / infra) and installs a tailored set; `sync` reproduces it from a committable `skills-atlas.kit.json`.
+- **Private sources** — `registry add <your data.json>` merges your org's internal skills into search / install (private wins a name clash).
+- **In Claude Code** — a bundled [plugin](packages/skills-atlas-cli/plugin) (`/skills-atlas:skill-search` / `:skill-install`).
+- **Any MCP client** — `skills-atlas mcp` runs a zero-dep MCP server (search / info / install / categories) for Claude Desktop and other agents.
+
+→ [full CLI docs](packages/skills-atlas-cli)
 
 ### 🤖 Autopilot — let the right skill find you
 
@@ -83,6 +87,10 @@ skills-atlas hook on
 > 🤖 *"That's exactly what the **pre-mortem** skill does — it stress-tests your plan before launch. **Use it now** · see details · skip?"*
 
 Off by default · matched locally (nothing leaves your machine) · never auto-installs. [How it works →](packages/skills-atlas-cli)
+
+**🔭 Capability gaps.** `skills-atlas gaps` shows Claude your *recent activity* (read
+from Claude Code's own local transcripts — nothing stored or sent) so **Claude** can
+spot the recurring kinds of work no installed skill covers yet, and recommend one.
 
 ### Visit online
 👉 [Open the website](https://zita-go.github.io/Skills-Atlas/?lang=en)
