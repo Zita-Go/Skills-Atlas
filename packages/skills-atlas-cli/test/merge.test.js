@@ -33,4 +33,12 @@ test('no overlays → base-equivalent', () => {
   assert.strictEqual(m.sections.length, 1);
 });
 
+test('vendorsFor ranks a private source first for a same-name skill', () => {
+  const { buildIndices, vendorsFor } = require('../src/index-build');
+  const m = mergeCatalogs(base, [priv]);
+  const { skillIndex } = buildIndices(m);
+  const vs = vendorsFor(skillIndex, 'shared');
+  assert.strictEqual(vs[0].source.name, 'privv', 'private vendor ranks first');
+});
+
 module.exports = { base, priv }; // reused by the vendorsFor test (Task 4)

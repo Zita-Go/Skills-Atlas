@@ -53,6 +53,9 @@ function vendorsFor(skillIndex, skillName) {
     if (id && !seen.has(id)) seen.set(id, e);
   }
   return [...seen.values()].sort((a, b) => {
+    const pa = a.vendor && a.vendor._private ? 1 : 0;
+    const pb = b.vendor && b.vendor._private ? 1 : 0;
+    if (pa !== pb) return pb - pa;               // private sources first (registry override)
     const da = skillDocPath(a.vendor, a.skill) ? 1 : 0;
     const db = skillDocPath(b.vendor, b.skill) ? 1 : 0;
     if (da !== db) return db - da;
