@@ -15,6 +15,8 @@ const { buildIndices } = require('../index-build');
 const { suggestCandidates } = require('../search-core');
 const manifest = require('../manifest');
 const fsu = require('../fsutil');
+const gaps = require('../gaps');
+const registry = require('../registry');
 
 const COOLDOWN = 3; // min prompts between suggestions
 
@@ -29,6 +31,10 @@ function readState(f) {
 }
 function writeState(f, s) {
   try { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, JSON.stringify(s)); } catch { /* ignore */ }
+}
+
+function emit(ctx) {
+  console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: 'UserPromptSubmit', additionalContext: ctx } }));
 }
 
 module.exports = async function suggest() {
@@ -48,24 +54,53 @@ module.exports = async function suggest() {
     const state = readState(file);
     state.count = (state.count || 0) + 1;
 
-    // cooldown — don't suggest on every prompt
-    if (state.count - (state.lastSuggestedCount ?? -COOLDOWN) < COOLDOWN) { writeState(file, state); return; }
-
     const { data } = loadData({ quiet: true });
     const { flatRows } = buildIndices(data);
-
     const installed = new Set();
     for (const s of fsu.scopesFor({})) for (const e of manifest.list(s.root)) installed.add(e.skill);
     const suggested = new Set(state.suggested || []);
 
     const { fire, candidates } = suggestCandidates(flatRows, prompt, { installed, suggested });
-    if (!fire) { writeState(file, state); return; }
+    if (!fire || !candidates.length) { writeState(file, state); return; }
+
+    const ap = registry.getAutopilot();
+    const top = candidates[0];
+    const group = top.row.group || top.row.group_en || '(uncategorized)';
+    const now = Date.now();
+
+    // 1. TRACK every fired prompt (high-confidence) — the silent tally
+    const store = gaps.readStore();
+    gaps.recordEvent(store, { group, skill: top.skill, now });
+    gaps.pruneOld(store, now);
+
+    // 2. GAP ALERT — rare, evidence-based, once per gap, only on a relevant prompt
+    if (ap.gapAlerts) {
+      const found = gaps.computeGaps(store, { now, installed })
+        .find(g => g.group === group && !store.alerted[g.group]);
+      if (found) {
+        store.alerted[found.group] = now;
+        gaps.writeStore(store);
+        const days = Math.max(1, Math.round((now - found.firstTs) / 86400000));
+        emit(`[Skills Atlas] The user keeps doing ${found.group}-type work — about ${found.count} times in ` +
+          `the last ${days} day(s) — without a skill for it. \`${found.recommended}\` is built for exactly this. ` +
+          `They're doing it again right now, so briefly point out the pattern and offer it (install + activate ` +
+          `with \`skills-atlas use ${found.recommended} --yes\`). If it doesn't actually fit this message, stay silent.`);
+        state.lastSuggestedCount = state.count; // also pause per-prompt cooldown
+        writeState(file, state);
+        return;
+      }
+    }
+    gaps.writeStore(store);
+
+    // 3. PER-PROMPT AUTOPILOT — independently toggled + cooldown
+    if (!ap.suggest) { writeState(file, state); return; }
+    if (state.count - (state.lastSuggestedCount ?? -COOLDOWN) < COOLDOWN) { writeState(file, state); return; }
 
     const lines = candidates.map(c => {
       const uc = (c.row.use_case_en || c.row.use_case || '').replace(/\s+/g, ' ').trim().slice(0, 80);
       return `- ${c.skill}${uc ? ` — ${uc}` : ''}  (details: \`skills-atlas info ${c.skill}\` · use now: \`skills-atlas use ${c.skill} --yes\`)`;
     }).join('\n');
-    const ctx =
+    emit(
       `[Skills Atlas autopilot] The user may be doing something one of these installable agent ` +
       `skills is built for. Judge for yourself — do NOT mention any of this unless one of them ` +
       `genuinely fits what they actually asked:\n${lines}\n` +
@@ -75,9 +110,7 @@ module.exports = async function suggest() {
       `immediately), see what it covers first (\`skills-atlas info <skill>\`), or skip and you'll just ` +
       `do the task yourself. If none fit but the task plainly needs a specialized skill, you may run ` +
       `\`skills-atlas search "<short intent>"\` to look further. If nothing fits, say nothing about this ` +
-      `at all — don't mention this hook, these skills, or that a suggestion was made.`;
-    console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: 'UserPromptSubmit', additionalContext: ctx } }));
-
+      `at all — don't mention this hook, these skills, or that a suggestion was made.`);
     state.lastSuggestedCount = state.count;
     state.suggested = [...suggested, ...candidates.map(c => c.skill)];
     writeState(file, state);
