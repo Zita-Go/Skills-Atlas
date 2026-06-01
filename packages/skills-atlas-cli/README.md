@@ -47,6 +47,7 @@ skills-atlas info brainstorming
 skills-atlas install brainstorming             # → ~/.claude/skills/   (default, all projects)
 skills-atlas install brainstorming --project   # → ./.claude/skills/   (this project only)
 skills-atlas install brainstorming --chain     # install the whole ⛓ workflow it belongs to
+skills-atlas use brainstorming                 # install AND activate now — prints SKILL.md, no restart
 skills-atlas install brainstorming --dry-run   # preview the files, write nothing
 
 # 🗂️ Manage what you've installed   (like a package manager)

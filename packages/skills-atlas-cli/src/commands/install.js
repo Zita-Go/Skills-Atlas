@@ -1,7 +1,12 @@
 'use strict';
 
+const fs = require('fs');
 const path = require('path');
 const { parse } = require('../args');
+
+const readSkillMd = dest => {
+  try { return fs.readFileSync(path.join(dest, 'SKILL.md'), 'utf8'); } catch { return null; }
+};
 const { loadData } = require('../data');
 const { buildIndices, vendorsFor, suggestSkills, skillDocPath } = require('../index-build');
 const { listSkillFiles } = require('../github');
@@ -81,7 +86,7 @@ async function installChain({ row, vendor, src, targetRoot, values }) {
 
 module.exports = async function install(argv) {
   const { values, positionals } = parse(argv,
-    ['global', 'project', 'source', 'force', 'yes', 'chain', 'dry-run', 'json']);
+    ['global', 'project', 'source', 'force', 'yes', 'chain', 'inline', 'dry-run', 'json']);
   if (values.help) { console.log(HELP); return; }
 
   const name = positionals[0];
@@ -241,10 +246,12 @@ module.exports = async function install(argv) {
   }
 
   if (values.json) {
-    console.log(JSON.stringify({
+    const out = {
       skill, mode: 'folder', source: src.name,
       dest: result.dest, files: result.fileCount, scripts: result.scripts.length, branch: result.branchUsed,
-    }));
+    };
+    if (values.inline) out.skillMd = readSkillMd(result.dest);
+    console.log(JSON.stringify(out));
     return;
   }
 
@@ -264,5 +271,16 @@ module.exports = async function install(argv) {
     ? infoForRow(skill, chosen.row, data.vendors)
     : buildInfo(skill, { skillIndex: idx.skillIndex, vendors: data.vendors });
   console.log(renderInfo(guide, { en: !values.zh, all: true }));
-  console.log(dim('\nStart a new Claude Code session to load the skill, then invoke it by name.'));
+
+  if (values.inline) {
+    const body = readSkillMd(result.dest);
+    if (body) {
+      console.log('\n' + dim('─── SKILL.md (active for this task — follow it now) ───'));
+      console.log(body.trim());
+      console.log(dim('─── end SKILL.md ───'));
+    }
+    console.log(dim('\n(the folder is also installed for future sessions)'));
+  } else {
+    console.log(dim('\nStart a new Claude Code session to load the skill, then invoke it by name.'));
+  }
 };

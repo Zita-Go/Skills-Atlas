@@ -20,6 +20,7 @@ const ALL = {
   en: { type: 'boolean' },
   zh: { type: 'boolean' },
   all: { type: 'boolean' },
+  inline: { type: 'boolean' },
   help: { type: 'boolean', short: 'h' },
 };
 

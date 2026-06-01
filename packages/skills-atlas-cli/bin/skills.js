@@ -13,7 +13,9 @@ const update = require('../src/commands/update');
 const { categories, list } = require('../src/commands/categories');
 
 const VERSION = require('../package.json').version;
-const commands = { search, info, install, installed, upgrade, remove, outdated, doctor, update, categories, list };
+// `use` = install + activate inline (emit the SKILL.md so an agent follows it now).
+const use = argv => install([...argv, '--inline']);
+const commands = { search, info, install, use, installed, upgrade, remove, outdated, doctor, update, categories, list };
 
 const HELP = `skills-atlas — search, install & manage AI agent skills
 
@@ -23,6 +25,7 @@ find & install:
   search <query>     find skills (filters: -c category, -p persona, -t type, --chain)
   info <skill>       show description, usage guidance, sources & install command
   install <skill>    download into .claude/skills/ (--chain for the whole workflow)
+  use <skill>        install AND activate it for the current session now (inline)
 
 manage what you've installed:
   installed          list installed skills (global + project)
