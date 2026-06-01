@@ -72,7 +72,21 @@ function removeCachedSource(url) {
   try { fs.rmSync(sourceCachePath(url), { force: true }); } catch { /* ignore */ }
 }
 
+// Autopilot toggles (per-prompt suggest + proactive gap alerts) share this
+// config.json; read-modify-write the full object so registry `sources` is preserved.
+function getAutopilot() {
+  const c = readConfig();
+  return { suggest: true, gapAlerts: true, ...(c.autopilot || {}) };
+}
+function setAutopilot(patch) {
+  const c = readConfig();
+  c.autopilot = { ...getAutopilot(), ...patch };
+  writeConfig(c);
+  return c.autopilot;
+}
+
 module.exports = {
   configDir, configFile, readConfig, writeConfig, addSource, removeSource, listSources,
   effectiveSources, sourceCachePath, cacheSource, readCachedSource, removeCachedSource,
+  getAutopilot, setAutopilot,
 };
