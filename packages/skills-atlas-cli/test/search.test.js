@@ -167,39 +167,46 @@ test('scriptFiles flags scripts, ignores docs/data', () => {
   assert.deepStrictEqual(got.sort(), ['helper.cjs', 'scripts/run.sh', 'tool.py', 'x.tsx'].sort());
 });
 
-test('pickSuggestion: a task-y prompt yields a confident, on-point suggestion', () => {
-  const { pickSuggestion } = require('../src/search-core');
-  const r = pickSuggestion(flatRows, 'help me set up test driven development for my project');
-  assert.ok(r && r.skill, 'suggests a skill for a strong, multi-token match');
-  assert.match(r.skill, /test|tdd/i, 'picks the on-point skill (name-weighted)');
+test('nameWordHit: word-aware, not substring (line≠guidelines), stem/plural tolerant', () => {
+  const { nameWordHit } = require('../src/search-core');
+  assert.ok(!nameWordHit('brand-guidelines', 'line'), 'line must NOT match guide-LINE-s');
+  assert.ok(!nameWordHit('linear', 'line'), 'line must NOT match linear (coincidental prefix)');
+  assert.ok(nameWordHit('systematic-debugging', 'debug'), 'debug ~ debugging (stem)');
+  assert.ok(nameWordHit('test-driven-development', 'tests'), 'tests ~ test (plural)');
+  assert.ok(nameWordHit('pre-mortem', 'mortem'), 'exact segment');
 });
 
-test('pickSuggestion: a vague / non-task prompt suggests nothing', () => {
-  const { pickSuggestion } = require('../src/search-core');
-  assert.strictEqual(pickSuggestion(flatRows, 'hi there, thanks so much'), null);
-});
-
-test('pickSuggestion: common two-word phrases never mis-fire to an unrelated skill', () => {
-  const { pickSuggestion } = require('../src/search-core');
-  // these are ordinary task phrases that co-occur in some verbose row, but name
-  // nothing — either suggest nothing, or a skill whose NAME overlaps the prompt.
-  for (const p of ['improve performance', 'format the document', 'build the app',
-                   'review the changes', 'design a system', 'write some tests']) {
-    const r = pickSuggestion(flatRows, p);
-    if (r) {
-      const toks = p.toLowerCase().split(/\s+/);
-      assert.ok(toks.some(t => r.skill.toLowerCase().includes(t)),
-        `"${p}" → ${r.skill} must share a word with the prompt (no blind mispick)`);
-    }
+test('suggestCandidates: a strong task prompt fires with the right skill in the shortlist', () => {
+  const { suggestCandidates } = require('../src/search-core');
+  const cases = [
+    ['help me set up test driven development for this project', 'test-driven-development'],
+    ["I need to debug this systematically, it's a heisenbug", 'systematic-debugging'],
+    ['run a pre-mortem before we launch', 'pre-mortem'],
+    ['translate this whole pdf into chinese', 'translate-book'],
+  ];
+  for (const [prompt, want] of cases) {
+    const r = suggestCandidates(flatRows, prompt);
+    assert.ok(r.fire, `should fire: ${prompt}`);
+    assert.ok(r.candidates.some(c => c.skill === want), `${prompt} → shortlist should include ${want} (got ${r.candidates.map(c => c.skill)})`);
   }
 });
 
-test('pickSuggestion: skips already-installed skills', () => {
-  const { pickSuggestion } = require('../src/search-core');
-  const r1 = pickSuggestion(flatRows, 'test driven development workflow');
-  assert.ok(r1);
-  const r2 = pickSuggestion(flatRows, 'test driven development workflow', { installed: new Set([r1.skill]) });
-  if (r2) assert.notStrictEqual(r2.skill, r1.skill, 'does not re-suggest the installed one');
+test('suggestCandidates: stays silent on greetings and generic dev actions (no name anchor)', () => {
+  const { suggestCandidates } = require('../src/search-core');
+  for (const p of ['thanks so much, that worked', 'hi there', 'fix the typo on line 42',
+                   'rename this variable to userId', 'make this page load faster',
+                   'design a system for notifications', 'build the app and ship it']) {
+    assert.strictEqual(suggestCandidates(flatRows, p).fire, false, `should be silent: ${p}`);
+  }
+});
+
+test('suggestCandidates: never re-suggests an installed or already-suggested skill', () => {
+  const { suggestCandidates } = require('../src/search-core');
+  const base = suggestCandidates(flatRows, 'help me set up test driven development');
+  assert.ok(base.candidates.length);
+  const first = base.candidates[0].skill;
+  const r = suggestCandidates(flatRows, 'help me set up test driven development', { installed: new Set([first]) });
+  assert.ok(!r.candidates.some(c => c.skill === first), 'installed skill is filtered out of the shortlist');
 });
 
 test('a known ⛓ chain is detected and folder-installable', () => {

@@ -154,43 +154,118 @@ function searchRows(rows, opts = {}) {
   return runSearch(rows, opts).rows;
 }
 
-// Autopilot: pick the single best skill to proactively suggest for a free-text
-// prompt, or null. Conservative on purpose — requires a STRONG, multi-signal
-// match (an exact skill-name token, OR ≥2 distinct query tokens hitting the
-// high-signal fields name/group/use_case), so a single common word can't
-// trigger it. Skips already-installed and already-suggested skills.
-function pickSuggestion(rows, prompt, { installed = new Set(), suggested = new Set() } = {}) {
-  const tokens = tokenize(lc(prompt));
-  if (tokens.length < 2) return null; // too vague to suggest confidently
-  const inName = (name, ts) => { const n = lc(name); return ts.filter(t => n.includes(t)).length; };
+// Generic words that, on their OWN, must not make the autopilot fire: common
+// English verbs/nouns that often appear inside skill names but carry no domain
+// intent ("fix the typo", "build the app", "design a system" → stay quiet). They
+// can still ride along in a multi-word match; they just can't trigger alone.
+const ANCHOR_STOP = new Set([
+  'fix', 'make', 'build', 'create', 'add', 'remove', 'delete', 'update', 'change',
+  'changes', 'set', 'run', 'clean', 'rename', 'move', 'copy', 'write', 'review',
+  'improve', 'optimize', 'check', 'format', 'handle', 'manage', 'generate', 'edit',
+  'open', 'start', 'stop', 'ship', 'render', 'page', 'file', 'files', 'line', 'load',
+  'code', 'app', 'apps', 'work', 'thing', 'things', 'stuff', 'data', 'system',
+  'design', 'document', 'component', 'components', 'feature', 'features', 'variable',
+  'function', 'project', 'task', 'tool', 'name', 'names',
+]);
 
-  let best = null;
-  for (const r of rows) {
-    const f = buildFields(r);
-    const skillSet = new Set((r.skills || []).map(lc));
-    let nameHits = 0, otherHits = 0, exact = false;
-    for (const t of tokens) {
-      if (skillSet.has(t)) exact = true;
-      if (fieldHas(f.name, t)) nameHits++;          // skill-name match = strongest signal
-      else if (fieldHas(f.group, t) || fieldHas(f.use, t)) otherHits++;
-    }
-    // Require a skill-NAME signal (or an exact name token). Two ordinary words
-    // co-occurring in some row's verbose prose is NOT enough — that's the noise.
-    if (!exact && !(nameHits >= 1 && nameHits + otherHits >= 2)) continue;
-    const score = nameHits * 15 + otherHits * 6 + (exact ? 50 : 0) + maxStars(r) / 1e7;
-    if (!best || score > best.score) best = { row: r, score };
+// Word-aware skill-NAME match: return the matched name segment (or null). Stricter
+// than substring — generic fragments must NOT match inside a name ("line" ≠
+// "guide-LINE-s"). Stem matching only for tokens/segments ≥5 chars so
+// "debug"~"debugging" matches but "line"~"linear" does not. Plural-tolerant.
+function matchedSegment(skillName, token) {
+  const segs = lc(skillName).split(/[^a-z0-9]+/).filter(Boolean);
+  let hit = null;
+  for (const seg of segs) {
+    if (seg === token) return seg;                                  // exact wins
+    if ((token.length >= 5 && seg.startsWith(token)) ||             // debug → debugging
+        (seg.length >= 5 && token.startsWith(seg)) ||               // requesting ← request
+        (token.length > 3 && token.endsWith('s') && seg === token.slice(0, -1)) || // tests → test
+        (seg.length > 3 && seg.endsWith('s') && token === seg.slice(0, -1))) hit = seg; // test → tests
   }
-  if (!best) return null;
+  return hit;
+}
+const nameWordHit = (skillName, token) => matchedSegment(skillName, token) !== null;
 
-  // pick the most on-point skill in the winning row that isn't already in play
-  const cand = (best.row.skills || []).filter(s => !installed.has(s) && !suggested.has(s));
-  if (!cand.length) return null;
-  cand.sort((a, b) => inName(b, tokens) - inName(a, tokens));
-  // the suggested skill's own name must overlap the prompt, else it's a mispick
-  if (inName(cand[0], tokens) === 0) return null;
-  return { skill: cand[0], row: best.row };
+// Document frequency of each name segment across all skills (memoized per rows
+// array). Distinctive segments ("brainstorm", "mortem", "figma") appear in few
+// skills → high IDF; generic ones ("user", "test") in many → low IDF.
+const _dfCache = new WeakMap();
+function segmentDf(rows) {
+  let info = _dfCache.get(rows);
+  if (info) return info;
+  const df = new Map();
+  let n = 0;
+  for (const r of rows) for (const s of r.skills || []) {
+    n++;
+    for (const seg of new Set(lc(s).split(/[^a-z0-9]+/).filter(Boolean))) df.set(seg, (df.get(seg) || 0) + 1);
+  }
+  info = { df, n: n || 1 };
+  _dfCache.set(rows, info);
+  return info;
+}
+const idfOf = (info, seg) => Math.log(1 + info.n / ((info.df.get(seg) || 0) + 1));
+
+const FIRE_IDF = 4.2; // a single distinctive name word must clear this to fire alone
+
+// Autopilot recall: collect a SHORTLIST of catalog skills that may fit a free-text
+// prompt, for Claude to judge (we do recall; Claude does precision). Returns
+// { fire, candidates: [{skill, row}], weak }. Sources, in order:
+//   1. skill-NAME matches, scored by summed IDF of the matched words and sorted
+//      so the most distinctive multi-word match leads (paper-slide-deck beats a
+//      one-word "research" match), then
+//   2. the general ranked search (runSearch) fills remaining slots.
+// `fire` is true only when there's a distinctive anchor (a rare name word, or ≥2
+// matched name words) or an otherwise strong (non-weak) match — so the hook stays
+// quiet on greetings and generic dev actions ("fix the typo", "build the app").
+function suggestCandidates(rows, prompt, { installed = new Set(), suggested = new Set(), limit = 5 } = {}) {
+  const tokens = tokenize(lc(prompt));
+  if (tokens.length < 2) return { fire: false, candidates: [], weak: false };
+  const taken = new Set([...installed, ...suggested]);
+  const info = segmentDf(rows);
+
+  // 1. name anchors — ONLY contentful (non-generic) name words count, weighted by
+  // distinctiveness. A skill matched purely by a generic word ("optimize",
+  // "design", "system") is not an anchor at all, so generic words can neither
+  // fire the hook nor crowd the shortlist.
+  const anchors = [];
+  for (const r of rows) for (const s of r.skills || []) {
+    if (taken.has(s)) continue;
+    let weight = 0, strong = 0;
+    const usedSeg = new Set();
+    for (const t of tokens) {
+      const seg = matchedSegment(s, t);
+      if (!seg || usedSeg.has(seg)) continue;
+      usedSeg.add(seg);
+      if (ANCHOR_STOP.has(t) || ANCHOR_STOP.has(seg)) continue; // generic word — ignore
+      strong++;
+      weight += idfOf(info, seg);
+    }
+    if (strong) anchors.push({ skill: s, row: r, weight, strong });
+  }
+  anchors.sort((a, b) => b.weight - a.weight || maxStars(b.row) - maxStars(a.row));
+
+  const out = [];
+  const seen = new Set(taken);
+  const push = (skill, row) => { if (!seen.has(skill)) { seen.add(skill); out.push({ skill, row }); } };
+  for (const a of anchors) { if (out.length >= limit) break; push(a.skill, a.row); }
+
+  // 2. fill from the general ranked search (one primary skill per row)
+  const { rows: ranked, weak } = runSearch(rows, { query: prompt });
+  for (const r of ranked) {
+    if (out.length >= limit) break;
+    const s = (r.skills || []).find(x => !seen.has(x));
+    if (s) push(s, r);
+  }
+
+  // fire decision: only on a real name anchor — two contentful name words, OR one
+  // distinctive (high-IDF) one. A prompt with mere prose overlap and no name
+  // signal stays silent (better a miss than noise on every generic prompt); the
+  // ranked search still ENRICHES the shortlist once an anchor has fired.
+  const fire = out.length > 0 && anchors.some(a => a.strong >= 2 || a.weight >= FIRE_IDF);
+  return { fire, candidates: out.slice(0, limit), weak };
 }
 
 module.exports = {
-  tokenize, searchRows, runSearch, scoreRow, buildFields, maxStars, pickSuggestion, PERSONA_ALIAS,
+  tokenize, searchRows, runSearch, scoreRow, buildFields, maxStars,
+  nameWordHit, matchedSegment, suggestCandidates, PERSONA_ALIAS,
 };

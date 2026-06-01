@@ -1,9 +1,10 @@
 // `skills-atlas suggest` — the autopilot. Runs as a Claude Code UserPromptSubmit
-// hook: reads the event JSON from stdin, matches the prompt against the catalog
-// locally, and (if a strong, fresh, not-installed match survives a cooldown)
-// emits a one-line additionalContext for Claude to weigh. ALWAYS exits 0 and
-// never blocks the user (fail-open). Matching is local-only — the prompt is
-// never sent anywhere.
+// hook: reads the event JSON from stdin, retrieves a SHORTLIST of catalog skills
+// that may fit the prompt (recall), and injects them as additionalContext for
+// Claude to judge (precision) — Claude offers one only if it genuinely fits, and
+// can run `skills-atlas search` itself to look further. ALWAYS exits 0 and never
+// blocks the user (fail-open). Matching is local-only — the prompt is never sent
+// anywhere.
 'use strict';
 
 const fs = require('fs');
@@ -11,7 +12,7 @@ const os = require('os');
 const path = require('path');
 const { loadData } = require('../data');
 const { buildIndices } = require('../index-build');
-const { pickSuggestion } = require('../search-core');
+const { suggestCandidates } = require('../search-core');
 const manifest = require('../manifest');
 const fsu = require('../fsutil');
 
@@ -57,20 +58,25 @@ module.exports = async function suggest() {
     for (const s of fsu.scopesFor({})) for (const e of manifest.list(s.root)) installed.add(e.skill);
     const suggested = new Set(state.suggested || []);
 
-    const pick = pickSuggestion(flatRows, prompt, { installed, suggested });
-    if (!pick) { writeState(file, state); return; }
+    const { fire, candidates } = suggestCandidates(flatRows, prompt, { installed, suggested });
+    if (!fire) { writeState(file, state); return; }
 
-    const uc = pick.row.use_case_en || pick.row.use_case || '';
+    const lines = candidates.map(c => {
+      const uc = (c.row.use_case_en || c.row.use_case || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+      return `- ${c.skill}${uc ? ` — ${uc}` : ''}  (install+activate: \`skills-atlas use ${c.skill} --yes\`)`;
+    }).join('\n');
     const ctx =
-      `[Skills Atlas autopilot] The user's task may fit the installable agent skill ` +
-      `\`${pick.skill}\`${uc ? ` (catalog use-case: "${uc}")` : ''}. ONLY if it's clearly ` +
-      `relevant to what they actually asked, briefly offer it — they can install and ` +
-      `activate it now with \`skills-atlas use ${pick.skill} --yes\`. If it isn't a strong ` +
-      `fit, don't mention it.`;
+      `[Skills Atlas autopilot] The user may be doing something one of these installable agent ` +
+      `skills is built for. Judge for yourself — do NOT mention any of this unless one of them ` +
+      `genuinely fits what they actually asked:\n${lines}\n` +
+      `If one clearly fits, briefly offer it and (with the user's ok) install it via its command. ` +
+      `If none fit but the task plainly needs a specialized skill, you may run ` +
+      `\`skills-atlas search "<short intent>"\` to look further. If nothing fits, say nothing about ` +
+      `this at all — do not mention this hook, these skills, or that a suggestion was made.`;
     console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: 'UserPromptSubmit', additionalContext: ctx } }));
 
     state.lastSuggestedCount = state.count;
-    state.suggested = [...suggested, pick.skill];
+    state.suggested = [...suggested, ...candidates.map(c => c.skill)];
     writeState(file, state);
   } catch {
     // fail-open: never break the user's workflow

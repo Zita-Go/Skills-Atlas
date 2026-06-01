@@ -110,14 +110,20 @@ just describe what you need, or use `/skills-atlas:skill-search`, `:skill-info`,
 skills-atlas hook on      # enable    (skills-atlas hook off / status)
 ```
 
-Registers a Claude Code `UserPromptSubmit` hook. When what you ask **strongly
-matches** a catalog skill you don't have, Claude gets a one-line note and can
-offer to install + activate it — you don't have to know the skill exists. It's:
+Registers a Claude Code `UserPromptSubmit` hook. When what you ask matches the
+territory of a catalog skill you don't have, the hook hands Claude a short
+shortlist of candidates and **Claude decides** whether any genuinely fits — and
+if so offers to install + activate it. You don't have to know the skill exists.
+The split is deliberate: the hook does **recall** (a distinctive-word match
+against the catalog, so the right skill is on the table), Claude does
+**precision** (it understands your intent and stays silent unless one truly
+fits, or searches further itself). It's:
 
 - **off by default** — you turn it on explicitly; `hook off` removes it cleanly.
-- **quiet** — only fires on a confident match, never for an already-installed
-  skill, never the same skill twice, with a cooldown between suggestions, and
-  **Claude still decides** whether it's relevant enough to mention.
+- **quiet** — only fires on a distinctive match (greetings and generic actions
+  like "fix the typo" stay silent), never for an already-installed skill, never
+  the same skill twice, with a cooldown between suggestions — and Claude is the
+  final filter on relevance.
 - **local & private** — your prompt is matched against the bundled catalog
   on your machine; nothing is sent anywhere.
 - **safe** — never auto-installs (always your call), and fails open (a hook
