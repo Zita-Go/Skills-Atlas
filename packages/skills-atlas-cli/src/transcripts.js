@@ -10,12 +10,28 @@ const os = require('os');
 const path = require('path');
 
 const DAY = 86400000;
+const MAX_BYTES = 1_500_000; // cap per-file read (hook runs under a 5s timeout); recent prompts are at the file's tail
 const projectsDir = () => path.join(os.homedir(), '.claude', 'projects');
 
 function fromFile(file, sinceMs) {
   const out = [];
   let text;
-  try { text = fs.readFileSync(file, 'utf8'); } catch { return out; }
+  try {
+    const st = fs.statSync(file);
+    if (st.size <= MAX_BYTES) {
+      text = fs.readFileSync(file, 'utf8');
+    } else {
+      // tail-read only the last MAX_BYTES, then drop the partial first line
+      const fd = fs.openSync(file, 'r');
+      try {
+        const b = Buffer.alloc(MAX_BYTES);
+        fs.readSync(fd, b, 0, MAX_BYTES, st.size - MAX_BYTES);
+        text = b.toString('utf8');
+      } finally { fs.closeSync(fd); }
+      const nl = text.indexOf('\n');
+      text = nl >= 0 ? text.slice(nl + 1) : text;
+    }
+  } catch { return out; }
   for (const line of text.split('\n')) {
     if (!line) continue;
     let o; try { o = JSON.parse(line); } catch { continue; }
@@ -24,8 +40,8 @@ function fromFile(file, sinceMs) {
     if (!m || m.role !== 'user' || typeof m.content !== 'string') continue;
     const t = m.content.trim();
     if (!t || t.startsWith('<') || t.includes('<command-name>') || t.includes('<local-command')) continue;
-    const ts = Date.parse(o.timestamp) || 0;
-    if (sinceMs && ts && ts < sinceMs) continue;
+    const ts = Date.parse(o.timestamp);
+    if (!Number.isFinite(ts) || (sinceMs && ts < sinceMs)) continue; // drop missing/unparseable/out-of-window
     out.push({ text: t, ts, cwd: o.cwd || null });
   }
   return out;
