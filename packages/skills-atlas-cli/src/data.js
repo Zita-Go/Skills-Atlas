@@ -9,6 +9,9 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
+const registry = require('./registry');
+const { mergeCatalogs } = require('./merge');
+
 const PUBLIC_URL = 'https://zita-go.github.io/Skills-Atlas/data.json';
 const UA = 'skills-atlas-cli';
 const STALE_DAYS = 30;
@@ -75,13 +78,15 @@ function maybeStaleNudge(fromCache) {
 
 function loadData({ quiet = false } = {}) {
   const cached = tryReadJSON(cacheFile());
-  if (isValid(cached)) {
-    if (!quiet) maybeStaleNudge(true);
-    return { data: cached, source: 'cache', fromCache: true };
-  }
-  const b = loadBundled();
-  if (!quiet) maybeStaleNudge(false);
-  return { ...b, fromCache: false };
+  let base, info;
+  if (isValid(cached)) { base = cached; info = { source: 'cache', fromCache: true }; if (!quiet) maybeStaleNudge(true); }
+  else { const b = loadBundled(); base = b.data; info = { source: b.source, fromCache: false }; if (!quiet) maybeStaleNudge(false); }
+
+  const overlays = registry.effectiveSources()
+    .map(s => registry.readCachedSource(s.url))
+    .filter(isValid);
+  if (!overlays.length) return { data: base, ...info };
+  return { data: mergeCatalogs(base, overlays), source: `${info.source}+${overlays.length}private`, fromCache: info.fromCache };
 }
 
 function ensureDir(d) {
@@ -147,4 +152,40 @@ async function refreshData() {
   };
 }
 
-module.exports = { loadData, refreshData, counts, cacheDir, PUBLIC_URL };
+// Fetch (or read, for a local path / file:// URL) a private catalog source and
+// validate it. Honors SKILLS_ATLAS_TOKEN (Bearer) and SKILLS_ATLAS_TIMEOUT_MS.
+async function fetchSource(src) {
+  if (!/^https?:\/\//i.test(src)) {                  // local file path or file:// URL
+    const p = src.replace(/^file:\/\//, '');
+    let d;
+    try { d = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) { throw new Error(`${src}: ${e.message}`); }
+    if (!isValid(d)) throw new Error(`${src}: not a valid catalog (sections/vendors)`);
+    return d;
+  }
+  const headers = { 'User-Agent': UA, Accept: 'application/json' };
+  if (process.env.SKILLS_ATLAS_TOKEN) headers.Authorization = `Bearer ${process.env.SKILLS_ATLAS_TOKEN}`;
+  const ac = new AbortController();
+  const timeoutMs = Number(process.env.SKILLS_ATLAS_TIMEOUT_MS) || 25000;
+  const timer = setTimeout(() => ac.abort(), timeoutMs);
+  let res;
+  try { res = await fetch(src, { headers, signal: ac.signal }); }
+  catch (e) { throw new Error(e.name === 'AbortError' ? `timed out fetching ${src}` : `network error fetching ${src}: ${e.message}`); }
+  finally { clearTimeout(timer); }
+  if (!res.ok) throw new Error(`fetch failed: HTTP ${res.status} ${res.statusText} (${src})`);
+  let d;
+  try { d = JSON.parse(await res.text()); } catch { throw new Error(`${src}: not valid JSON`); }
+  if (!isValid(d)) throw new Error(`${src}: not a valid catalog (sections/vendors)`);
+  return d;
+}
+
+// Refresh every configured private source into its local cache (best-effort).
+async function refreshSources() {
+  const out = [];
+  for (const s of registry.effectiveSources()) {
+    try { const d = await fetchSource(s.url); registry.cacheSource(s.url, d); out.push({ url: s.url, ok: true, counts: counts(d) }); }
+    catch (e) { out.push({ url: s.url, ok: false, error: e.message }); }
+  }
+  return out;
+}
+
+module.exports = { loadData, refreshData, fetchSource, refreshSources, counts, cacheDir, PUBLIC_URL };
