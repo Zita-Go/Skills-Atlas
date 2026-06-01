@@ -3,16 +3,39 @@
 [![npm](https://img.shields.io/npm/v/skills-atlas-cli)](https://www.npmjs.com/package/skills-atlas-cli)
 [![license](https://img.shields.io/npm/l/skills-atlas-cli)](https://github.com/Zita-Go/Skills-Atlas/blob/main/LICENSE)
 
-**Stop guessing which agent skill to use.** Find, install, and learn the right
-specialized skill for the task — in seconds, straight into Claude Code.
+**Find, install, and use the right AI agent skill for any task — from your terminal,
+straight into Claude Code.** Stop guessing which skill fits or copy-pasting from
+random repos: search a curated catalog of **800+ skills** and drop the right one into
+`.claude/skills/` in seconds.
 
-Powered by the [**Skills Atlas**](https://zita-go.github.io/Skills-Atlas/) catalog:
-hundreds of Claude Code / Codex skills across 100+ source repos, organized by what
-they actually do.
+> **New to "skills"?** A skill is a reusable `SKILL.md` instruction pack that teaches
+> Claude Code a specialized workflow — systematic debugging, pre-mortems, SEO audits,
+> PDF translation, and hundreds more. This tool finds and installs them for you.
 
 <img src="https://raw.githubusercontent.com/Zita-Go/Skills-Atlas/main/docs/cli-demo.png" alt="skills-atlas: search then install a skill" width="760">
 
-## 🌐 Browse the whole catalog online
+## Quickstart
+
+```bash
+npm install -g skills-atlas-cli      # adds `skills-atlas` (alias: sa) — or prefix any command with `npx`
+
+skills-atlas search "stress test my launch plan"   # → pre-mortem tops the results
+skills-atlas use pre-mortem                          # install it + print its SKILL.md so Claude applies it now
+```
+
+Done — `pre-mortem` is in `~/.claude/skills/` and auto-loads in new Claude Code
+sessions. Want the right skill to find **you**? Run `skills-atlas hook on`, and Claude
+offers a fitting one as you work (off by default, fully local).
+
+## Three ways to use it
+
+| Mode | Best when | Get going |
+|---|---|---|
+| **Manual** | browse and grab skills yourself | `skills-atlas search <task>` → `skills-atlas use <skill>` |
+| **In Claude Code** | just ask Claude in-conversation | install the [plugin](#in-claude-code), then describe your task |
+| **🤖 Autopilot** | let the right skill find *you* | `skills-atlas hook on` — Claude offers a fitting skill as you work |
+
+## 🌐 Browse the catalog online
 
 <table>
 <tr>
@@ -22,38 +45,7 @@ they actually do.
 </table>
 
 **[→ zita-go.github.io/Skills-Atlas](https://zita-go.github.io/Skills-Atlas/)** —
-explore by category, then install what you find with the CLI.
-
-## Install
-
-```bash
-npm install -g skills-atlas-cli      # adds the `skills-atlas` command (alias: `sa`)
-```
-
-Or run it without installing: `npx skills-atlas-cli search seo`
-
-## How you'll use it
-
-Three ways to reach the same catalog — pick whichever fits the moment:
-
-| Mode | Best when | Get going |
-|---|---|---|
-| **Manual** | you want to browse and grab skills yourself | `skills-atlas search <task>` → `skills-atlas use <skill>` |
-| **In Claude Code** | you'd rather just ask Claude in-conversation | install the [plugin](#in-claude-code), then describe your task |
-| **🤖 Autopilot** | you want the right skill to find *you* | `skills-atlas hook on` — Claude offers a fitting skill as you work |
-
-**60-second quickstart:**
-
-```bash
-npm install -g skills-atlas-cli
-skills-atlas search "stress test my launch plan"   # → pre-mortem tops the results
-skills-atlas use pre-mortem                         # install + activate now (prints its SKILL.md)
-skills-atlas hook on                                # optional — let the right skill find you from here on
-```
-
-`use` drops the skill into `~/.claude/skills/` and prints it for the task at hand; it
-auto-loads in new Claude Code sessions. With autopilot on, you don't even need to
-`search` — describe your task and Claude surfaces the skill if one fits.
+explore visually by category, then install what you find with the CLI.
 
 ## Usage
 
