@@ -20,8 +20,7 @@ const transcripts = require('../transcripts');
 const gapstate = require('../gapstate');
 
 const COOLDOWN = 3; // min prompts between suggestions
-const GAP_EVERY = 12;                 // earliest a gap nudge may fire (per session)
-const NUDGE_COOLDOWN_MS = 24 * 3600000; // and at most one gap nudge per day (across sessions)
+const GAP_EVERY = 12; // a gap nudge is only considered at every Nth prompt (per session)
 
 function stateFile(sessionId) {
   const base = process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache');
@@ -58,12 +57,14 @@ module.exports = async function suggest() {
     state.count = (state.count || 0) + 1;
     const ap = registry.getAutopilot();
 
-    // --- Proactive gap nudge: periodic + throttled to once/day; Claude judges ---
+    // --- Proactive gap nudge: periodic, and refired when the recurring work shifts
+    // to something new (anti-spam floor + activity fingerprint, not a daily clock) ---
     if (ap.gapAlerts && state.count % GAP_EVERY === 0) {
-      const gs = gapstate.read();
-      if (Date.now() - (gs.lastNudge || 0) >= NUDGE_COOLDOWN_MS) {
-        const recent = transcripts.recentPrompts({ max: 20 });
-        if (recent.length >= 8) {
+      const recent = transcripts.recentPrompts({ max: 20 });
+      if (recent.length >= 8) {
+        const gs = gapstate.read();
+        const { fire, sig } = gapstate.shouldNudge(gs, recent, Date.now());
+        if (fire) {
           const dismissed = gs.dismissed || [];
           const lines = recent.map(r => `- ${r.text.replace(/\s+/g, ' ').slice(0, 100)}`).join('\n');
           const days = Math.max(1, Math.round((Date.now() - recent[recent.length - 1].ts) / 86400000));
@@ -73,7 +74,7 @@ module.exports = async function suggest() {
             `\`skills-atlas info <skill>\` and install with \`skills-atlas use <skill> --yes\`.` +
             (dismissed.length ? ` Already dismissed (skip): ${dismissed.join(', ')}.` : '') +
             ` If nothing clearly recurs or it doesn't fit right now, stay silent.`);
-          gapstate.touchNudge();
+          gapstate.touchNudge(sig);
           writeState(file, state);
           return;
         }
