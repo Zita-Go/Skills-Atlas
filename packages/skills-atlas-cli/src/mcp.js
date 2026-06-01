@@ -20,7 +20,7 @@ function fmtSearch(data, { query, limit }) {
   const { flatRows } = buildIndices(data);
   const { rows } = runSearch(flatRows, { query });
   if (!rows.length) return `No skills match "${query}".`;
-  const n = Math.min(rows.length, limit || 10);
+  const n = Math.min(rows.length, (Number.isInteger(limit) && limit > 0) ? limit : 10);
   const out = rows.slice(0, n).map(r => {
     const src = [...(r.sources || [])].sort((a, b) => (b.stars || 0) - (a.stars || 0))[0] || {};
     const uc = r.use_case_en || r.use_case || '';
@@ -107,7 +107,7 @@ async function doInstall(data, { skill, scope, source, dry_run }) {
 
 function toolDefs() {
   return [
-    { name: 'search_skills', description: 'Search the Skills Atlas catalog of AI agent skills by keyword or short task description.', inputSchema: { type: 'object', properties: { query: { type: 'string', description: 'keywords or a short task description' }, limit: { type: 'integer', description: 'max results (default 10)' } }, required: ['query'] } },
+    { name: 'search_skills', description: 'Search the Skills Atlas catalog of AI agent skills by keyword or short task description.', inputSchema: { type: 'object', properties: { query: { type: 'string', description: 'keywords or a short task description' }, limit: { type: 'integer', minimum: 1, description: 'max results (default 10)' } }, required: ['query'] } },
     { name: 'skill_info', description: 'Show what a catalog skill does, when to use it, its sources, and how to install it.', inputSchema: { type: 'object', properties: { skill: { type: 'string' } }, required: ['skill'] } },
     { name: 'install_skill', description: 'Install a skill from the catalog into .claude/skills/.', inputSchema: { type: 'object', properties: { skill: { type: 'string' }, scope: { type: 'string', enum: ['global', 'project'], description: 'default global (~/.claude/skills)' }, source: { type: 'string', description: 'pick a source when several provide the skill' }, dry_run: { type: 'boolean' } }, required: ['skill'] } },
     { name: 'list_categories', description: "List the catalog's top-level categories, or the skill groups within one.", inputSchema: { type: 'object', properties: { category: { type: 'string', description: 'optional — drill into one category' } } } },
@@ -157,7 +157,9 @@ async function handle(req, { data }) {
 }
 
 function start() {
-  const data = loadData({ quiet: true }).data;
+  let data;
+  try { data = loadData({ quiet: true }).data; }
+  catch (e) { process.stderr.write(`skills-atlas mcp: ${e.message}\n`); process.exit(1); return; }
   let buf = '';
   let queue = Promise.resolve();
   process.stdin.setEncoding('utf8');
