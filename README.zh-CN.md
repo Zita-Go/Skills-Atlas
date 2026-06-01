@@ -45,7 +45,7 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~111 个 GitHub 仓库�
 
 ## 怎么用
 
-### 从终端使用 —— CLI · 插件 · 自动驾驶
+### 从终端使用 —— CLI · 插件
 
 **真正"用上"一个 skill 最快的方式。**[`skills-atlas-cli`](packages/skills-atlas-cli) 把目录
 变成真正的工具 —— 在终端里直接搜索、**安装**、使用 skill：
@@ -63,16 +63,20 @@ npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/bra
 `upgrade`、`remove`、`doctor`。还附带一个 [Claude Code 插件](packages/skills-atlas-cli/plugin)，
 把同样的能力暴露成 `/skills-atlas:skill-search` / `:skill-install`，让 Claude 在对话里直接做。
 
-**🤖 自动驾驶（可选开启）。** 开一次，合适的 skill 就会主动来找*你*：
+### 🤖 自动驾驶 —— 让合适的 skill 主动找你
+
+你不该为了用上一个 skill，得先知道它存在。把自动驾驶打开，只要任务命中某个 skill，Claude 就会主动
+端出来 —— 还讲清楚为什么，一条命令就用上：
 
 ```bash
-skills-atlas hook on          # 注册一个 Claude Code UserPromptSubmit 钩子
+skills-atlas hook on
 ```
 
-当你说的话命中了某个你还没装的 catalog skill 的领域，钩子会把一份按"独特性"排序的候选短名单递给
-Claude，**由 Claude 判断**有没有真的合适 —— 合适就当场提议安装 + 激活，不合适就闭嘴。这个分工是
-刻意的：钩子负责*召回*（找候选），Claude 负责*精挑*（理解意图）。它**默认关闭**、**全程本地**（你的
-prompt 绝不外传）、**fail-open**（钩子出错绝不挡你的 prompt）。随时 `skills-atlas hook off` 移除。
+> 🗣️ *"上线前先做个 pre-mortem 把风险过一遍"*
+>
+> 🤖 *"这正是 **pre-mortem** 这个 skill 的拿手活 —— 上线前把计划的失败模式压测一遍。**现在就用** · 看看细节 · 跳过？"*
+
+默认关闭 · 全程本地匹配（prompt 不外传）· 绝不自动安装。[它怎么工作 →](packages/skills-atlas-cli)
 
 ### 在线访问
 👉 [打开网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)

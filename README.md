@@ -48,7 +48,7 @@ Coverage spans **20 functional categories** — from software engineering, PM, m
 
 ## How to use
 
-### Use it from the terminal — CLI · plugin · autopilot
+### Use it from the terminal — CLI · plugin
 
 **The fastest way to actually use a skill.** The [`skills-atlas-cli`](packages/skills-atlas-cli)
 package turns the catalog into a real tool — search, **install**, and use skills straight from
@@ -69,19 +69,20 @@ manager: `use` (install + activate now), `installed`, `outdated`, `upgrade`,
 exposes the same as `/skills-atlas:skill-search` / `:skill-install` so Claude can
 do it in-conversation.
 
-**🤖 Autopilot (opt-in).** Turn it on once and the right skill finds *you*:
+### 🤖 Autopilot — let the right skill find you
+
+You shouldn't have to know a skill exists to use it. Turn autopilot on, and whenever
+your task matches one, Claude surfaces it — explained, one command to apply:
 
 ```bash
-skills-atlas hook on          # registers a Claude Code UserPromptSubmit hook
+skills-atlas hook on
 ```
 
-When your prompt matches the territory of a catalog skill you don't have, a hook
-hands Claude a short, distinctiveness-ranked shortlist and **Claude decides**
-whether one genuinely fits — offering to install + activate it on the spot, or
-staying silent. The split is deliberate: the hook does *recall* (find candidates),
-Claude does *precision* (understand intent). It's **off by default**, fully
-**local** (your prompt never leaves the machine), and **fails open** (a hook error
-never blocks your prompt). Remove it anytime with `skills-atlas hook off`.
+> 🗣️ *"run a pre-mortem before we launch"*
+>
+> 🤖 *"That's exactly what the **pre-mortem** skill does — it stress-tests your plan before launch. **Use it now** · see details · skip?"*
+
+Off by default · matched locally (nothing leaves your machine) · never auto-installs. [How it works →](packages/skills-atlas-cli)
 
 ### Visit online
 👉 [Open the website](https://zita-go.github.io/Skills-Atlas/?lang=en)
