@@ -2695,19 +2695,19 @@ function buildGraph(){
     _focusPinned.forEach(m => { m.fx = null; m.fy = null; });   // 释放上一次聚焦的钉住
     const nbList = nodes.filter(m => m.id !== n.id && (neighbors.get(n.id) || new Set()).has(m.id));
     const grp = [n, ...nbList];
-    // 标签盒（世界单位）：标签居于节点正下方，宽≈字数×字宽(~9.5px mono)
-    const halfW = m => Math.max(m.r, m.id.length * 3.0 + 3);
-    const HH = 8;                          // 标签盒半高
-    const lcy = m => m.y + m.r + 13;       // 标签中心 y
-    // 最小位移消重叠：中心节点不动，邻居仅在与他人标签重叠时被推开一点点（保留相对布局）
-    for(let it = 0; it < 24; it++){
+    // 占位盒（世界单位）= 节点圆 ∪ 其正下方标签：去重叠时同时避免「标签互叠」和「圆压住别的标签」
+    const bhw = m => Math.max(m.r, m.id.length * 3.0 + 3);   // 盒半宽（标签≈字数×字宽 9.5px mono）
+    const bhh = m => m.r + 13;                                // 盒半高（圆 + 下方标签）
+    const bcy = m => m.y + 13;                                // 盒中心 y（圆心下移半个标签区）
+    // 最小位移消重叠：中心节点不动，其余仅在占位盒相交时沿穿透更小的轴被推开一点（保留相对布局）
+    for(let it = 0; it < 30; it++){
       let moved = false;
       for(let i = 0; i < grp.length; i++){
         for(let j = i + 1; j < grp.length; j++){
           const a = grp[i], b = grp[j];
-          const ox = (halfW(a) + halfW(b) + 5) - Math.abs(a.x - b.x);
-          const oy = (HH * 2 + 4) - Math.abs(lcy(a) - lcy(b));
-          if(ox <= 0 || oy <= 0) continue;            // 标签盒不重叠
+          const ox = (bhw(a) + bhw(b) + 5) - Math.abs(a.x - b.x);
+          const oy = (bhh(a) + bhh(b) + 3) - Math.abs(bcy(a) - bcy(b));
+          if(ox <= 0 || oy <= 0) continue;            // 占位盒不相交
           moved = true;
           const am = a !== n, bm = b !== n;
           if(!am && !bm) continue;
@@ -2715,7 +2715,7 @@ function buildGraph(){
             const s = (ox + 0.5) / (am && bm ? 2 : 1) * ((a.x - b.x) < 0 ? -1 : 1);
             if(am) a.x += s; if(bm) b.x -= s;
           } else {
-            const s = (oy + 0.5) / (am && bm ? 2 : 1) * ((lcy(a) - lcy(b)) < 0 ? -1 : 1);
+            const s = (oy + 0.5) / (am && bm ? 2 : 1) * ((bcy(a) - bcy(b)) < 0 ? -1 : 1);
             if(am) a.y += s; if(bm) b.y -= s;
           }
         }
@@ -2726,7 +2726,7 @@ function buildGraph(){
     _focusPinned = grp;
     // 相机包围盒：含标签横向延展 + 下方标签高度
     let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-    grp.forEach(m => { minX = Math.min(minX, m.x - halfW(m)); maxX = Math.max(maxX, m.x + halfW(m));
+    grp.forEach(m => { minX = Math.min(minX, m.x - bhw(m)); maxX = Math.max(maxX, m.x + bhw(m));
                        minY = Math.min(minY, m.y - m.r); maxY = Math.max(maxY, m.y + m.r + 26); });
     const padX = 60, padY = 70;
     const bw = (maxX - minX) + padX * 2, bh = (maxY - minY) + padY * 2;
