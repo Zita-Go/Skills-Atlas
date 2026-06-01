@@ -32,6 +32,29 @@ npm install -g skills-atlas-cli      # adds the `skills-atlas` command (alias: `
 
 Or run it without installing: `npx skills-atlas-cli search seo`
 
+## How you'll use it
+
+Three ways to reach the same catalog — pick whichever fits the moment:
+
+| Mode | Best when | Get going |
+|---|---|---|
+| **Manual** | you want to browse and grab skills yourself | `skills-atlas search <task>` → `skills-atlas use <skill>` |
+| **In Claude Code** | you'd rather just ask Claude in-conversation | install the [plugin](#in-claude-code), then describe your task |
+| **🤖 Autopilot** | you want the right skill to find *you* | `skills-atlas hook on` — Claude offers a fitting skill as you work |
+
+**60-second quickstart:**
+
+```bash
+npm install -g skills-atlas-cli
+skills-atlas search "stress test my launch plan"   # → pre-mortem tops the results
+skills-atlas use pre-mortem                         # install + activate now (prints its SKILL.md)
+skills-atlas hook on                                # optional — let the right skill find you from here on
+```
+
+`use` drops the skill into `~/.claude/skills/` and prints it for the task at hand; it
+auto-loads in new Claude Code sessions. With autopilot on, you don't even need to
+`search` — describe your task and Claude surfaces the skill if one fits.
+
 ## Usage
 
 ```bash
