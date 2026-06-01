@@ -12,7 +12,7 @@ Stop asking "what skills exist" and start asking "which skill should I use to do
 [![Categories](https://img.shields.io/badge/categories-20_×_115-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[**🌐 Visit online**](https://zita-go.github.io/Skills-Atlas/?lang=en) · [📦 Data download](data/) · [🤝 Contribute a new skill](CONTRIBUTING.md) · [💬 Discussions](../../discussions)
+[**🌐 Visit online**](https://zita-go.github.io/Skills-Atlas/?lang=en) · [**⌨️ Use it as a tool**](packages/skills-atlas-cli) · [📦 Data download](data/) · [🤝 Contribute a new skill](CONTRIBUTING.md) · [💬 Discussions](../../discussions)
 
 <a href="https://zita-go.github.io/Skills-Atlas/?lang=en"><img src="docs/screenshot-dark.png" alt="Skills Atlas — browse the catalog online" width="760"></a>
 
@@ -30,6 +30,10 @@ Existing awesome lists only give you names plus a one-line description — they 
 - Want a complete development workflow? See § 1.1, where the ⛓ strong-binding markers tell you which 5 must be chained together
 - Looking for document-processing tools? See § 2.1, where the Office 4-piece suite + the heavy-duty PDF API + the multi-format extraction engine are laid out at a glance
 
+And it's not just a catalog to read: a [terminal CLI + Claude Code plugin](packages/skills-atlas-cli)
+lets you **search, install, and use** any of these skills — with an opt-in autopilot that
+surfaces the right one as you work.
+
 ## Data scale
 
 | Dimension | Count |
@@ -44,36 +48,11 @@ Coverage spans **20 functional categories** — from software engineering, PM, m
 
 ## How to use
 
-### Visit online
-👉 [Open the website](https://zita-go.github.io/Skills-Atlas/?lang=en)
+### Use it from the terminal — CLI · plugin · autopilot
 
-### Offline (single-file HTML)
-```bash
-git clone https://github.com/Zita-Go/Skills-Atlas.git
-cd skills-atlas/docs
-python3 -m http.server 8000
-# Visit http://localhost:8000
-```
-
-Or just double-click `docs/index.html` to open it in a browser.
-
-### Use it as a data source
-```python
-import yaml
-skills = yaml.safe_load(open('data/skills.yaml'))
-repos = yaml.safe_load(open('data/repositories.yaml'))
-
-# Find all strong-binding ⛓ workflows
-chains = [s for s in skills if s['chain']]
-print(f'{len(chains)} chain workflows')
-```
-
-A JSON version lives at `docs/data.json`, for consumption by frontends / MCP servers / APIs.
-
-### Use it from the terminal (CLI + plugin)
-
-The [`skills-atlas-cli`](packages/skills-atlas-cli) package turns the catalog into
-a real tool — search, **install**, and usage guidance, from your shell:
+**The fastest way to actually use a skill.** The [`skills-atlas-cli`](packages/skills-atlas-cli)
+package turns the catalog into a real tool — search, **install**, and use skills straight from
+your shell:
 
 <a href="packages/skills-atlas-cli"><img src="docs/cli-demo.png" alt="skills-atlas: search → info → install a skill" width="760"></a>
 
@@ -104,6 +83,31 @@ Claude does *precision* (understand intent). It's **off by default**, fully
 **local** (your prompt never leaves the machine), and **fails open** (a hook error
 never blocks your prompt). Remove it anytime with `skills-atlas hook off`.
 
+### Visit online
+👉 [Open the website](https://zita-go.github.io/Skills-Atlas/?lang=en)
+
+### Offline (single-file HTML)
+```bash
+git clone https://github.com/Zita-Go/Skills-Atlas.git
+cd skills-atlas/docs
+python3 -m http.server 8000
+# Visit http://localhost:8000
+```
+
+Or just double-click `docs/index.html` to open it in a browser.
+
+### Use it as a data source
+```python
+import yaml
+skills = yaml.safe_load(open('data/skills.yaml'))
+repos = yaml.safe_load(open('data/repositories.yaml'))
+
+# Find all strong-binding ⛓ workflows
+chains = [s for s in skills if s['chain']]
+print(f'{len(chains)} chain workflows')
+```
+
+A JSON version lives at `docs/data.json`, for consumption by frontends / MCP servers / APIs.
 ## Project structure
 
 ```
