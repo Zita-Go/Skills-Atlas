@@ -179,6 +179,13 @@ unless one truly fits, or searches further itself). It's:
 - **safe** — never auto-installs (always your call), and fails open (a hook
   error never blocks your prompt).
 
+**🔭 Capability gaps.** While autopilot is on, it quietly notices the *kinds of work*
+you keep doing without a matching skill. `skills-atlas gaps` reports them with
+evidence ("8× over 12 days") and the skill that fits; it also nudges once, with that
+evidence, when a pattern is clear. Tracking is local (aggregate counts only — never
+your prompts), and the two layers are independent — `skills-atlas hook suggest on|off`
+(per-prompt) and `skills-atlas hook gaps on|off` (the proactive nudge).
+
 ## License
 
 MIT. Each installed skill keeps its own source repository's license.

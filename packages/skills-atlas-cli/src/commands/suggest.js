@@ -65,7 +65,7 @@ module.exports = async function suggest() {
 
     const ap = registry.getAutopilot();
     const top = candidates[0];
-    const group = top.row.group || top.row.group_en || '(uncategorized)';
+    const group = top.row.group_en || top.row.group || '(uncategorized)'; // English-default label
     const now = Date.now();
 
     // 1. TRACK every fired prompt (high-confidence) — the silent tally
