@@ -14,13 +14,14 @@ const sync = require('../src/commands/sync');
 const registry = require('../src/commands/registry');
 const suggest = require('../src/commands/suggest');
 const hook = require('../src/commands/hook');
+const gaps = require('../src/commands/gaps');
 const update = require('../src/commands/update');
 const { categories, list } = require('../src/commands/categories');
 
 const VERSION = require('../package.json').version;
 // `use` = install + activate inline (emit the SKILL.md so an agent follows it now).
 const use = argv => install([...argv, '--inline']);
-const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, update, categories, list, registry };
+const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, gaps, update, categories, list, registry };
 
 const HELP = `skills-atlas — search, install & manage AI agent skills
 
@@ -43,6 +44,7 @@ manage what you've installed:
 
 autopilot (opt-in):
   hook on|off|status proactively suggest a skill in Claude when your prompt fits one
+  gaps               kinds of work you keep doing without a skill (run: skills-atlas hook on)
 
 catalog:
   update             refresh the catalog from the public data feed
