@@ -11,6 +11,7 @@ const outdated = require('../src/commands/outdated');
 const doctor = require('../src/commands/doctor');
 const kit = require('../src/commands/kit');
 const sync = require('../src/commands/sync');
+const registry = require('../src/commands/registry');
 const suggest = require('../src/commands/suggest');
 const hook = require('../src/commands/hook');
 const update = require('../src/commands/update');
@@ -19,7 +20,7 @@ const { categories, list } = require('../src/commands/categories');
 const VERSION = require('../package.json').version;
 // `use` = install + activate inline (emit the SKILL.md so an agent follows it now).
 const use = argv => install([...argv, '--inline']);
-const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, update, categories, list };
+const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, update, categories, list, registry };
 
 const HELP = `skills-atlas — search, install & manage AI agent skills
 
@@ -47,6 +48,7 @@ catalog:
   update             refresh the catalog from the public data feed
   categories         list the top-level categories
   list [category]    list skill groups (optionally within one category)
+  registry           add/list/remove a private catalog source (org-internal skills)
 
 global flags: --zh (中文 output; English by default), --json (machine output), -h/--help
 docs: https://zita-go.github.io/Skills-Atlas/`;
