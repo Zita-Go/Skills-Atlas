@@ -1,41 +1,96 @@
-name: Weekly Star Sync
+name: Daily Metadata Sync
+
+# 每天从 GitHub 同步各源仓的 star / last_commit / (检测到的) license，重新生成 docs
+# 并直接部署到 Pages —— 全自动、零人工合 PR。
+#
+# 为什么不再开 PR：本同步是纯机械的（数据来自 GitHub API，无人工判断），且
+# fetch_metadata 已有护栏：
+#   · description 仅当仓库无 description_en 时才用 GitHub 描述覆盖（已策展的中文不动）；
+#   · license 仅当 GitHub 检测到 SPDX 时才写（手工解析的 unknown/自定义协议不会被刷回）；
+#   · 仓库 404/失败时跳过、不清空。
+# 因此可以安全地直接提交。
+#
+# 为什么自己一条龙（而不是只提交 data 让 build-docs 接力）：用 GITHUB_TOKEN 推送的
+# commit 不会级联触发其它 workflow（防递归），所以本流程自己 fetch→生成→提交→部署。
+# commit 打 [skip ci] 进一步确保不二次触发 build-docs / deploy。
 
 on:
   schedule:
-    - cron: '0 0 * * 1'  # 每周一 UTC 00:00
+    - cron: '0 0 * * *'   # 每天 UTC 00:00
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: write   # 提交刷新后的 data + docs
+  pages: write      # 部署 Pages
+  id-token: write
+
+# 与 build-docs.yml / deploy.yml 共用并发组，避免同时部署 Pages 冲突；
+# cancel-in-progress: false —— 提交+部署的流程绝不能中途被取消。
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   sync:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0   # 便于 push 被抢先时 rebase 重试
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install pyyaml 'pypinyin==0.55.0'
-      - name: Fetch metadata
+      - name: Install deps
+        run: pip install pyyaml 'pypinyin==0.55.0'
+
+      - name: Fetch metadata (stars / last_commit / license)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/fetch_metadata.py
-      - name: Re-render HTML
-        run: python3 scripts/gen_html.py
-      - name: Create PR if changed
-        uses: peter-evans/create-pull-request@v6
+
+      - name: Regenerate docs
+        id: regen
+        run: |
+          test -f scripts/templates/index.html.tmpl || { echo "::error::missing scripts/templates/index.html.tmpl"; exit 1; }
+          python3 scripts/gen_html.py
+          if [ -n "$(git status --porcelain -- data/repositories.yaml docs/)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "metadata changed — will commit + deploy"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "no metadata changes today — nothing to do"
+          fi
+
+      - name: Commit + push (data + regenerated docs)
+        if: steps.regen.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/repositories.yaml docs/data.json docs/index.html docs/sitemap.xml docs/robots.txt
+          git commit -m "chore: daily metadata sync (stars / last_commit) [skip ci]"
+          # 正常 fast-forward；若期间 main 被别的 push 推进，rebase 后用最新模板/数据重生成再推。
+          git push origin HEAD:main || {
+            echo "push rejected — rebasing onto latest main and retrying";
+            git pull --rebase origin main;
+            python3 scripts/gen_html.py;
+            git add data/repositories.yaml docs/data.json docs/index.html docs/sitemap.xml docs/robots.txt;
+            git commit --amend --no-edit;
+            git push origin HEAD:main;
+          }
+
+      - name: Configure Pages
+        if: steps.regen.outputs.changed == 'true'
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        if: steps.regen.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'chore: weekly star + metadata sync'
-          title: 'chore: weekly star sync'
-          body: |
-            自动同步源仓库的 star / last_commit / description。
-            此 PR 仅当数据有变化时创建。
-          branch: chore/weekly-sync
-          delete-branch: true
-          add-paths: |
-            data/repositories.yaml
-            docs/data.json
-            docs/index.html
+          path: ./docs
+      - name: Deploy to Pages
+        id: deploy
+        if: steps.regen.outputs.changed == 'true'
+        uses: actions/deploy-pages@v4
