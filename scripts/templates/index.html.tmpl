@@ -2625,7 +2625,7 @@ function buildGraph(){
     t.textContent = n.id;
     g.appendChild(t);
     nodeGroup.appendChild(g);
-    n._g = g; n._c = c; n._t = t;
+    n._g = g; n._c = c; n._t = t; n._hi = hi;
     return g;
   });
   viewport.appendChild(nodeGroup);
@@ -2670,7 +2670,35 @@ function buildGraph(){
     links.forEach((l, i) => linkEls[i].classList.remove('dim', 'highlight'));
   }
   function centerNode(n){ tx = W/2 - n.x * scale; ty = H/2 - n.y * scale; applyTransform(); }
-  function clearFocus(){ focusedNode = null; clearHighlight(); drawer.classList.remove('open'); graphSelectedId = null; syncGraphURL(); }
+  // 平滑移动相机（scale/tx/ty 缓动），用于聚焦局部图与还原
+  let _camAnim = null;
+  function animateCamera(ts, ttx, tty, dur){
+    if(_camAnim) cancelAnimationFrame(_camAnim);
+    if(typeof REDUCE !== 'undefined' && REDUCE){ scale = ts; tx = ttx; ty = tty; applyTransform(); updateZoomLabel(); return; }
+    const s0 = scale, x0 = tx, y0 = ty, t0 = performance.now(); dur = dur || 340;
+    const ease = p => 1 - Math.pow(1 - p, 3);
+    (function step(now){
+      const p = Math.min(1, (now - t0) / dur), k = ease(p);
+      scale = s0 + (ts - s0) * k; tx = x0 + (ttx - x0) * k; ty = y0 + (tty - y0) * k;
+      applyTransform(); updateZoomLabel();
+      _camAnim = p < 1 ? requestAnimationFrame(step) : null;
+    })(performance.now());
+  }
+  // 点击节点：放大为「局部图」——把该节点 + 其邻居一起框进视口（标签随之放大可读）
+  function focusLocalGraph(n){
+    const ids = new Set([n.id]); (neighbors.get(n.id) || new Set()).forEach(id => ids.add(id));
+    const grp = nodes.filter(m => ids.has(m.id));
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    grp.forEach(m => { minX = Math.min(minX, m.x - m.r); maxX = Math.max(maxX, m.x + m.r);
+                       minY = Math.min(minY, m.y - m.r); maxY = Math.max(maxY, m.y + m.r); });
+    const padX = 90, padY = 130;   // 给节点标签留白
+    const bw = (maxX - minX) + padX * 2, bh = (maxY - minY) + padY * 2;
+    const cxw = (minX + maxX) / 2, cyw = (minY + maxY) / 2;
+    let s = Math.min(W / bw, H / bh);
+    s = Math.max(1.4, Math.min(4, s));   // 至少放大到可读，最多到全局上限
+    animateCamera(s, W / 2 - cxw * s, H / 2 - cyw * s);
+  }
+  function clearFocus(){ focusedNode = null; clearHighlight(); drawer.classList.remove('open'); graphSelectedId = null; syncGraphURL(); animateCamera(1, 0, 0); }
   // 图例分类聚焦：高亮该大类全部节点 + 类内连线，淡化其余，并居中到类簇
   function clearCategoryFocus(){
     if(focusedCat === null) return;
@@ -2710,7 +2738,7 @@ function buildGraph(){
   }
   function openDrawer(n){
     clearCategoryFocus();   // 节点聚焦与分类聚焦互斥
-    focusedNode = n; graphSelectedId = n.id; setHighlight(n); centerNode(n);
+    focusedNode = n; graphSelectedId = n.id; setHighlight(n); focusLocalGraph(n);
     const groups = rows.filter(r => (r.skills || []).includes(n.id));
     const primary = groups[0] || {};
     const descr = pickT(primary.description_en, primary.description) || '';
@@ -2772,6 +2800,19 @@ function buildGraph(){
   // 鼠标滚轮缩放
   svg.addEventListener('wheel', e => {
     e.preventDefault();
+    // 滚轮悬停在某个节点上 → 只放大「该节点本身」的大小，不缩放视图、不聚焦局部图
+    const nodeEl = e.target.closest && e.target.closest('.node');
+    if(nodeEl){
+      const n = nodeMap.get(nodeEl.dataset.id);
+      if(n){
+        n._rScale = Math.max(1, Math.min(6, (n._rScale || 1) * Math.exp(-e.deltaY * 0.0015)));
+        const r = n.r * n._rScale;
+        n._c.setAttribute('r', r);
+        if(n._hi) n._hi.setAttribute('r', r);
+        n._t.setAttribute('y', r + 11);
+        return;
+      }
+    }
     const rect = svg.getBoundingClientRect();
     const vx = (e.clientX - rect.left) / rect.width * W;
     const vy = (e.clientY - rect.top) / rect.height * H;
