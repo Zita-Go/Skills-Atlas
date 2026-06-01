@@ -104,6 +104,25 @@ just describe what you need, or use `/skills-atlas:skill-search`, `:skill-info`,
 /plugin install skills-atlas@skills-atlas
 ```
 
+## Autopilot (opt-in) — the right skill finds you
+
+```bash
+skills-atlas hook on      # enable    (skills-atlas hook off / status)
+```
+
+Registers a Claude Code `UserPromptSubmit` hook. When what you ask **strongly
+matches** a catalog skill you don't have, Claude gets a one-line note and can
+offer to install + activate it — you don't have to know the skill exists. It's:
+
+- **off by default** — you turn it on explicitly; `hook off` removes it cleanly.
+- **quiet** — only fires on a confident match, never for an already-installed
+  skill, never the same skill twice, with a cooldown between suggestions, and
+  **Claude still decides** whether it's relevant enough to mention.
+- **local & private** — your prompt is matched against the bundled catalog
+  on your machine; nothing is sent anywhere.
+- **safe** — never auto-installs (always your call), and fails open (a hook
+  error never blocks your prompt).
+
 ## License
 
 MIT. Each installed skill keeps its own source repository's license.

@@ -154,4 +154,43 @@ function searchRows(rows, opts = {}) {
   return runSearch(rows, opts).rows;
 }
 
-module.exports = { tokenize, searchRows, runSearch, scoreRow, buildFields, maxStars, PERSONA_ALIAS };
+// Autopilot: pick the single best skill to proactively suggest for a free-text
+// prompt, or null. Conservative on purpose — requires a STRONG, multi-signal
+// match (an exact skill-name token, OR ≥2 distinct query tokens hitting the
+// high-signal fields name/group/use_case), so a single common word can't
+// trigger it. Skips already-installed and already-suggested skills.
+function pickSuggestion(rows, prompt, { installed = new Set(), suggested = new Set() } = {}) {
+  const tokens = tokenize(lc(prompt));
+  if (tokens.length < 2) return null; // too vague to suggest confidently
+  const inName = (name, ts) => { const n = lc(name); return ts.filter(t => n.includes(t)).length; };
+
+  let best = null;
+  for (const r of rows) {
+    const f = buildFields(r);
+    const skillSet = new Set((r.skills || []).map(lc));
+    let nameHits = 0, otherHits = 0, exact = false;
+    for (const t of tokens) {
+      if (skillSet.has(t)) exact = true;
+      if (fieldHas(f.name, t)) nameHits++;          // skill-name match = strongest signal
+      else if (fieldHas(f.group, t) || fieldHas(f.use, t)) otherHits++;
+    }
+    // Require a skill-NAME signal (or an exact name token). Two ordinary words
+    // co-occurring in some row's verbose prose is NOT enough — that's the noise.
+    if (!exact && !(nameHits >= 1 && nameHits + otherHits >= 2)) continue;
+    const score = nameHits * 15 + otherHits * 6 + (exact ? 50 : 0) + maxStars(r) / 1e7;
+    if (!best || score > best.score) best = { row: r, score };
+  }
+  if (!best) return null;
+
+  // pick the most on-point skill in the winning row that isn't already in play
+  const cand = (best.row.skills || []).filter(s => !installed.has(s) && !suggested.has(s));
+  if (!cand.length) return null;
+  cand.sort((a, b) => inName(b, tokens) - inName(a, tokens));
+  // the suggested skill's own name must overlap the prompt, else it's a mispick
+  if (inName(cand[0], tokens) === 0) return null;
+  return { skill: cand[0], row: best.row };
+}
+
+module.exports = {
+  tokenize, searchRows, runSearch, scoreRow, buildFields, maxStars, pickSuggestion, PERSONA_ALIAS,
+};

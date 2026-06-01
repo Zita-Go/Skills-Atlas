@@ -167,6 +167,41 @@ test('scriptFiles flags scripts, ignores docs/data', () => {
   assert.deepStrictEqual(got.sort(), ['helper.cjs', 'scripts/run.sh', 'tool.py', 'x.tsx'].sort());
 });
 
+test('pickSuggestion: a task-y prompt yields a confident, on-point suggestion', () => {
+  const { pickSuggestion } = require('../src/search-core');
+  const r = pickSuggestion(flatRows, 'help me set up test driven development for my project');
+  assert.ok(r && r.skill, 'suggests a skill for a strong, multi-token match');
+  assert.match(r.skill, /test|tdd/i, 'picks the on-point skill (name-weighted)');
+});
+
+test('pickSuggestion: a vague / non-task prompt suggests nothing', () => {
+  const { pickSuggestion } = require('../src/search-core');
+  assert.strictEqual(pickSuggestion(flatRows, 'hi there, thanks so much'), null);
+});
+
+test('pickSuggestion: common two-word phrases never mis-fire to an unrelated skill', () => {
+  const { pickSuggestion } = require('../src/search-core');
+  // these are ordinary task phrases that co-occur in some verbose row, but name
+  // nothing — either suggest nothing, or a skill whose NAME overlaps the prompt.
+  for (const p of ['improve performance', 'format the document', 'build the app',
+                   'review the changes', 'design a system', 'write some tests']) {
+    const r = pickSuggestion(flatRows, p);
+    if (r) {
+      const toks = p.toLowerCase().split(/\s+/);
+      assert.ok(toks.some(t => r.skill.toLowerCase().includes(t)),
+        `"${p}" → ${r.skill} must share a word with the prompt (no blind mispick)`);
+    }
+  }
+});
+
+test('pickSuggestion: skips already-installed skills', () => {
+  const { pickSuggestion } = require('../src/search-core');
+  const r1 = pickSuggestion(flatRows, 'test driven development workflow');
+  assert.ok(r1);
+  const r2 = pickSuggestion(flatRows, 'test driven development workflow', { installed: new Set([r1.skill]) });
+  if (r2) assert.notStrictEqual(r2.skill, r1.skill, 'does not re-suggest the installed one');
+});
+
 test('a known ⛓ chain is detected and folder-installable', () => {
   const { skillDocPath, vendorsFor } = require('../src/index-build');
   const chain = flatRows.find(r => r.chain && (r.skills || []).includes('brainstorming'));
