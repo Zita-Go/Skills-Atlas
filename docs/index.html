@@ -378,7 +378,10 @@ html.light .graph-view .link.dim{stroke-opacity:.07}
 .graph-view .label.always{opacity:.85}
 /* 标签现在在独立顶层（不再是 .node 的子元素），用标签自身的 class 控制显隐 */
 .graph-view .label.lit{opacity:1;fill:var(--fg)}
-.graph-view .label.faded{opacity:.12}
+/* 聚焦时非聚焦节点的标签整体隐藏（圆仍淡显作背景）→ 只剩局部图标签，杜绝与背景标签重叠 */
+.graph-view .label.faded{opacity:0}
+/* 贪心去重叠：聚焦后仍与他者重叠的标签直接隐藏，保证零视觉重叠（节点圆仍在） */
+.graph-view .label.dropped{opacity:0}
 .graph-view .cluster-halo{fill:none;stroke:none;pointer-events:none}
 .graph-view .graph-bg{pointer-events:none}
 .graph-view .node-hi{pointer-events:none}
@@ -2678,24 +2681,40 @@ function buildGraph(){
     paintLabels();
   }
   function clearHighlight(){
-    nodes.forEach(m => m._g.classList.remove('dim', 'highlight'));
+    nodes.forEach(m => { m._g.classList.remove('dim', 'highlight'); m._t.classList.remove('dropped'); });
     links.forEach((l, i) => linkEls[i].classList.remove('dim', 'highlight'));
     paintLabels();
   }
   function centerNode(n){ tx = W/2 - n.x * scale; ty = H/2 - n.y * scale; applyTransform(); }
   // 平滑移动相机（scale/tx/ty 缓动），用于聚焦局部图与还原
   let _camAnim = null;
-  function animateCamera(ts, ttx, tty, dur){
+  function animateCamera(ts, ttx, tty, dur, onDone){
     if(_camAnim) cancelAnimationFrame(_camAnim);
-    if(typeof REDUCE !== 'undefined' && REDUCE){ scale = ts; tx = ttx; ty = tty; applyTransform(); updateZoomLabel(); return; }
+    if(typeof REDUCE !== 'undefined' && REDUCE){ scale = ts; tx = ttx; ty = tty; applyTransform(); updateZoomLabel(); if(onDone) onDone(); return; }
     const s0 = scale, x0 = tx, y0 = ty, t0 = performance.now(); dur = dur || 340;
     const ease = p => 1 - Math.pow(1 - p, 3);
     (function step(now){
       const p = Math.min(1, (now - t0) / dur), k = ease(p);
       scale = s0 + (ts - s0) * k; tx = x0 + (ttx - x0) * k; ty = y0 + (tty - y0) * k;
       applyTransform(); updateZoomLabel();
-      _camAnim = p < 1 ? requestAnimationFrame(step) : null;
+      if(p < 1){ _camAnim = requestAnimationFrame(step); } else { _camAnim = null; if(onDone) onDone(); }
     })(performance.now());
+  }
+  // 相机定格后，按屏幕实际位置贪心去重叠：保留优先级高者（中心→分组数高），仍重叠的标签隐藏 → 画面零文字重叠
+  function declutterLabels(){
+    const lits = nodes.filter(m => m._g.classList.contains('highlight'));
+    const center = _focusPinned[0];
+    lits.sort((a, b) => (a === center ? -1 : b === center ? 1 : 0) || (b.count - a.count));
+    const placed = [];
+    lits.forEach(m => {
+      m._t.classList.remove('dropped');
+      const r = m._t.getBoundingClientRect();
+      if(!r.width) return;
+      // 充 3px 间隙：要求标签之间留白，杜绝贴边/亚像素残留重叠
+      const box = { left: r.left - 3, right: r.right + 3, top: r.top - 2, bottom: r.bottom + 2 };
+      if(placed.some(q => !(box.right <= q.left || q.right <= box.left || box.bottom <= q.top || q.bottom <= box.top))) m._t.classList.add('dropped');
+      else placed.push(box);
+    });
   }
   // 点击节点：放大为「局部图」。保留邻居在它们原本的位置/邻接关系，只把"标签真正重叠"的
   // 邻居沿穿透最小的方向轻推开（最小位移），不做放射状重排、不过度撑开；再把整团框进视口。
@@ -2704,27 +2723,29 @@ function buildGraph(){
     _focusPinned.forEach(m => { m.fx = null; m.fy = null; });   // 释放上一次聚焦的钉住
     const nbList = nodes.filter(m => m.id !== n.id && (neighbors.get(n.id) || new Set()).has(m.id));
     const grp = [n, ...nbList];
-    // 标签盒（世界单位）：标签居于节点正下方，宽≈字数×字宽(~9.5px mono)
-    const halfW = m => Math.max(m.r, m.id.length * 3.0 + 3);
-    const HH = 8;                          // 标签盒半高
-    const lcy = m => m.y + m.r + 13;       // 标签中心 y
-    // 最小位移消重叠：中心节点不动，邻居仅在「标签互叠」时被推开一点点（保留相对布局/邻接关系）
-    for(let it = 0; it < 24; it++){
+    // 用实测渲染尺寸量每个标签盒（含描边留边），保证去重叠与最终画面一致
+    grp.forEach(m => {
+      let bb = null; try { bb = m._t.getBBox(); } catch(e){}
+      if(bb && bb.width){ m._lhw = bb.width / 2 + 4; m._lhh = bb.height / 2 + 3; m._loff = (bb.y + bb.height / 2) - m.y; }
+      else { m._lhw = Math.max(m.r, m.id.length * 3 + 3); m._lhh = 8; m._loff = m.r + 8; }
+    });
+    // 最小位移消重叠：中心节点固定（点中的点保持居中），邻居仅在「标签互叠」时沿穿透更小的轴轻推
+    for(let it = 0; it < 40; it++){
       let moved = false;
       for(let i = 0; i < grp.length; i++){
         for(let j = i + 1; j < grp.length; j++){
           const a = grp[i], b = grp[j];
-          const ox = (halfW(a) + halfW(b) + 5) - Math.abs(a.x - b.x);
-          const oy = (HH * 2 + 4) - Math.abs(lcy(a) - lcy(b));
+          const ox = (a._lhw + b._lhw + 6) - Math.abs(a.x - b.x);
+          const oy = (a._lhh + b._lhh + 4) - Math.abs((a.y + a._loff) - (b.y + b._loff));
           if(ox <= 0 || oy <= 0) continue;            // 标签盒不重叠
           moved = true;
-          const am = a !== n, bm = b !== n;
-          if(!am && !bm) continue;
-          if(ox <= oy){                                // 沿穿透更小的轴推（位移最小）
-            const s = (ox + 0.5) / (am && bm ? 2 : 1) * ((a.x - b.x) < 0 ? -1 : 1);
+          const am = a !== n, bm = b !== n; if(!am && !bm) continue;
+          if(ox <= oy){
+            const s = (ox / (am && bm ? 2 : 1) + 0.4) * ((a.x - b.x) < 0 ? -1 : 1);
             if(am) a.x += s; if(bm) b.x -= s;
           } else {
-            const s = (oy + 0.5) / (am && bm ? 2 : 1) * ((lcy(a) - lcy(b)) < 0 ? -1 : 1);
+            const dyc = (a.y + a._loff) - (b.y + b._loff);
+            const s = (oy / (am && bm ? 2 : 1) + 0.4) * (dyc < 0 ? -1 : 1);
             if(am) a.y += s; if(bm) b.y -= s;
           }
         }
@@ -2733,17 +2754,17 @@ function buildGraph(){
     }
     grp.forEach(m => { m.fx = m.x; m.fy = m.y; });   // 钉住去重叠后的位置
     _focusPinned = grp;
-    // 相机包围盒：含标签横向延展 + 下方标签高度
-    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-    grp.forEach(m => { minX = Math.min(minX, m.x - halfW(m)); maxX = Math.max(maxX, m.x + halfW(m));
-                       minY = Math.min(minY, m.y - m.r); maxY = Math.max(maxY, m.y + m.r + 26); });
-    const padX = 60, padY = 70;
-    const bw = (maxX - minX) + padX * 2, bh = (maxY - minY) + padY * 2;
-    const cxw = (minX + maxX) / 2, cyw = (minY + maxY) / 2;
-    let s = Math.min(W / bw, H / bh);
-    s = Math.max(1.3, Math.min(4, s));   // 至少放大到可读，最多到全局上限
+    // 相机：以「点中的节点」为中心（保持居中、且整体略偏左避开右侧抽屉），缩放到能容下邻域
+    let maxD = 1;
+    grp.forEach(m => { maxD = Math.max(maxD, Math.hypot(m.x - n.x, m.y - n.y) + Math.max(m._lhw, m._lhh) + 20); });
+    const s = Math.max(1.3, Math.min(4, (Math.min(W, H) / 2 - 70) / maxD));
     render();                            // 立即按新位置画一帧，避免相机动画期间还在旧位
-    animateCamera(s, W / 2 - cxw * s, H / 2 - cyw * s);
+    // 相机定格后做屏幕级贪心去重叠（保证零视觉重叠；放不下的标签隐藏）。延一帧 + 力导向静止后各跑一次，
+    // 兜住相机/模拟收尾时的亚像素位移（第二次仅在没有新的相机动画时跑，避免打断下一次聚焦）。
+    animateCamera(s, W * 0.42 - n.x * s, H / 2 - n.y * s, 340, () => {
+      requestAnimationFrame(declutterLabels);
+      setTimeout(() => { if(!_camAnim) declutterLabels(); }, 280);
+    });
   }
   function unpinFocus(){
     if(!_focusPinned.length) return;
