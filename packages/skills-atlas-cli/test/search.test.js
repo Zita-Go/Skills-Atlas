@@ -61,6 +61,16 @@ test('renderRow: shows recency, an installed ✓, and the install shape', () => 
   assert.match(out, /single-skill/, 'alpha has a per-skill folder → single-skill install');
 });
 
+test('perSkillBlurb: pinpoints one skill in an enumerated group description', () => {
+  const { perSkillBlurb } = require('../src/format');
+  const desc = 'mattpocock grill-me (interrogate your plan) + Pawel pre-mortem ("assume it failed") + Codex define-goal (rewrite vague intent into a verifiable goal)';
+  assert.match(perSkillBlurb('define-goal', desc), /rewrite vague intent/);
+  assert.match(perSkillBlurb('grill-me', desc), /interrogate your plan/);
+  assert.strictEqual(perSkillBlurb('pre-mortem', 'one coherent sentence, no enumeration'), '', 'no " + " → fall back');
+  assert.strictEqual(perSkillBlurb('webapp-testing', 'A webapp-testing + B webapp-testing (does it)'), '',
+    'ambiguous (2 segments) → fall back rather than guess');
+});
+
 test('renderInfo: marks an installed skill, plain otherwise', () => {
   const info = buildInfo('brainstorming', { skillIndex, vendors: data.vendors });
   assert.match(renderInfo(info, { en: true, installed: ['global'] }), /✓ installed/);

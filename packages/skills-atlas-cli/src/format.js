@@ -150,17 +150,40 @@ function infoForRow(skillName, row, vendors) {
   return { skill: skillName, found: true, groups: [groupOf(row, skillName, vendors)] };
 }
 
-function renderInfo(info, { en = false, all = false, installed = null } = {}) {
+// Multi-skill groups share one description that often enumerates each skill as
+// "<vendor> <skill> (<detail>) + …". Pull out the segment for THIS skill so info
+// pinpoints what it does, not just the whole group. Conservative: only fire when
+// the skill matches exactly one segment (otherwise we'd guess wrong).
+function perSkillBlurb(skill, desc) {
+  if (!skill || !desc) return '';
+  const segs = String(desc).split(' + ');
+  if (segs.length < 2) return '';
+  const re = new RegExp('\\b' + String(skill).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+  const hits = segs.filter(s => re.test(s));
+  if (hits.length !== 1) return '';
+  const seg = hits[0].trim();
+  return /[(（]/.test(seg) ? seg : '';   // only worth showing if it carries a detail
+}
+
+// `skillDesc` is the authoritative one-liner from the skill's own SKILL.md (read
+// locally when installed); it wins over the heuristic catalog-segment extraction.
+function renderInfo(info, { en = false, all = false, installed = null, skillDesc = '' } = {}) {
   const pick = (zh, e) => (en ? (e || zh) : (zh || e)) || '';
   const out = [];
   const instTag = installed && installed.length
     ? ` ${green('✓ installed')} ${dim('[' + installed.join('+') + ']')}` : '';
   out.push(`\n${bold(green(info.skill))}${info.groups.some(g => g.chain) ? ' ' + cyan('⛓') : ''}${instTag}`);
   const shown = all ? info.groups : info.groups.slice(0, 1);
+  let firstGroup = true;
   for (const g of shown) {
     out.push(`  ${dim('group:')} ${pick(g.group, g.group_en)}  ${dim('[' + pick(g.category, g.category_en) + ']')}`);
     const desc = pick(g.description, g.description_en);
-    if (desc) out.push(`  ${desc}`);
+    const blurb = (firstGroup && skillDesc) ? skillDesc : perSkillBlurb(info.skill, desc);
+    firstGroup = false;
+    const distinguished = blurb && blurb !== desc;
+    if (distinguished) out.push(`  ${dim('this skill:')} ${blurb}`);
+    // Only call it "group does:" when a per-skill line is shown above it to contrast.
+    if (desc) out.push(distinguished ? `  ${dim('group does:')} ${desc}` : `  ${desc}`);
     const uc = pick(g.use_case, g.use_case_en);
     if (uc) out.push(`  ${dim('use case:')} ${uc}`);
     const wt = pick(g.when_to_use, g.when_to_use_en);
@@ -192,6 +215,6 @@ function renderInfo(info, { en = false, all = false, installed = null } = {}) {
 }
 
 module.exports = {
-  bold, dim, green, cyan, yellow, stars, recency, safeAlt, text, renderRow,
+  bold, dim, green, cyan, yellow, stars, recency, perSkillBlurb, safeAlt, text, renderRow,
   buildInfo, infoForRow, renderInfo, PERSONA_EN,
 };
