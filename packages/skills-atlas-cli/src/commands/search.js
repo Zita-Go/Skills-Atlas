@@ -5,6 +5,8 @@ const { loadData } = require('../data');
 const { buildIndices, suggestSkills } = require('../index-build');
 const { runSearch } = require('../search-core');
 const { renderRow, dim } = require('../format');
+const fsu = require('../fsutil');
+const manifest = require('../manifest');
 
 const HELP = `usage: skills-atlas search <query...> [filters]
 
@@ -86,7 +88,9 @@ module.exports = async function search(argv) {
   if (weak) {
     console.log(dim('\n⚠ partial match — results may cover only part of your query; the top ones can still help, or try different words.'));
   }
-  shown.forEach(r => console.log(renderRow(r, { en })));
+  const installedSet = new Set();
+  for (const s of fsu.scopesFor({})) for (const e of manifest.list(s.root)) installedSet.add(e.skill);
+  shown.forEach(r => console.log(renderRow(r, { en, installed: installedSet, vendors: data.vendors })));
   const truncated = rows.length > limit;
   console.log(`\n${rows.length} match(es)${truncated ? `, showing ${limit}` : ''}.`);
   if (truncated) console.log(dim(`see the rest with --limit ${rows.length}${values.category ? '' : ', or narrow with -c <category>'}.`));

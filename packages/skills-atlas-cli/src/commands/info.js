@@ -4,6 +4,8 @@ const { parse } = require('../args');
 const { loadData } = require('../data');
 const { buildIndices, suggestSkills } = require('../index-build');
 const { buildInfo, renderInfo, dim } = require('../format');
+const fsu = require('../fsutil');
+const manifest = require('../manifest');
 
 const HELP = `usage: skills-atlas info <skill> [--all] [--json] [--zh]
 
@@ -44,5 +46,7 @@ module.exports = async function info(argv) {
     console.log(JSON.stringify(infoObj, null, 2));
     return;
   }
-  console.log(renderInfo(infoObj, { en: !values.zh, all: values.all }));
+  const installed = [];
+  for (const s of fsu.scopesFor({})) if (manifest.list(s.root).some(e => e.skill === infoObj.skill)) installed.push(s.name);
+  console.log(renderInfo(infoObj, { en: !values.zh, all: values.all, installed }));
 };

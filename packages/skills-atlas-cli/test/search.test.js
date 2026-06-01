@@ -40,6 +40,33 @@ test('renderRow: collapses a long skill list (+N more)', () => {
   assert.ok(!out.includes('skill-9'), 'skills beyond the cap are hidden');
 });
 
+test('recency: parses last_commit and flags stale (>1y)', () => {
+  const { recency } = require('../src/format');
+  const now = Date.parse('2026-06-01');
+  assert.deepStrictEqual(recency('2026-05-28', now), { date: '2026-05-28', days: 4, stale: false });
+  assert.strictEqual(recency('2024-01-01', now).stale, true);
+  assert.strictEqual(recency(null), null);
+  assert.strictEqual(recency('not-a-date'), null);
+});
+
+test('renderRow: shows recency, an installed ✓, and the install shape', () => {
+  const { renderRow } = require('../src/format');
+  const row = { group: 'G', group_en: 'G', _cat: 'C', _catEn: 'C', chain: false,
+    skills: ['alpha', 'beta'],
+    sources: [{ name: 'acme', stars: 1234, last_commit: '2026-05-20', install: { command: 'npx x' } }] };
+  const vendors = { acme: { skill_docs: { alpha: 'skills/alpha/SKILL.md' } } };
+  const out = renderRow(row, { en: true, installed: new Set(['alpha']), vendors });
+  assert.match(out, /updated 2026-05-20/);
+  assert.match(out, /alpha ✓/, 'installed skill is ticked');
+  assert.match(out, /single-skill/, 'alpha has a per-skill folder → single-skill install');
+});
+
+test('renderInfo: marks an installed skill, plain otherwise', () => {
+  const info = buildInfo('brainstorming', { skillIndex, vendors: data.vendors });
+  assert.match(renderInfo(info, { en: true, installed: ['global'] }), /✓ installed/);
+  assert.doesNotMatch(renderInfo(info, { en: true }), /✓ installed/);
+});
+
 test('tokenize: English stopwords removed', () => {
   const t = tokenize('i want to translate a whole pdf');
   assert.ok(!t.includes('i') && !t.includes('to') && !t.includes('want'));

@@ -19,6 +19,17 @@ function stars(n) {
   return `★${n}`;
 }
 
+// Repo freshness from a source's `last_commit` ("2026-05-28"). Returns null if
+// absent/unparseable. `stale` flags a repo untouched for over a year — so a popular
+// but abandoned source no longer looks identical to an actively maintained one.
+function recency(lastCommit, now = Date.now()) {
+  if (!lastCommit) return null;
+  const t = Date.parse(lastCommit);
+  if (!Number.isFinite(t)) return null;
+  const days = Math.floor((now - t) / 86400000);
+  return { date: String(lastCommit).slice(0, 10), days, stale: days > 365 };
+}
+
 // A `git clone <repo> ~/.claude/skills/skills` alt double-nests a multi-skill
 // monorepo (skills end up at .claude/skills/skills/<name>/) and won't load —
 // drop that foot-gun; the `npx skills add` command is the correct path.
@@ -34,8 +45,10 @@ function text(obj, key, en) {
   return en ? (obj[key + '_en'] || obj[key] || '') : (obj[key] || obj[key + '_en'] || '');
 }
 
-// One search/list result line block.
-function renderRow(r, { en = false } = {}) {
+// One search/list result line block. `installed` (a Set of skill names) marks what
+// you already have; `vendors` lets the source line say whether install is a clean
+// single-skill folder or a whole-repo command.
+function renderRow(r, { en = false, installed = null, vendors = null } = {}) {
   const chain = r.chain ? cyan('⛓ ') : '';
   const cat = en ? (r._catEn || r._cat) : r._cat;
   const lines = [`\n${chain}${bold(text(r, 'group', en))}   ${dim('[' + cat + ']')}`];
@@ -43,14 +56,22 @@ function renderRow(r, { en = false } = {}) {
   if (uc) lines.push(`  💡 ${uc}`);
   const SK_MAX = 8;
   const sk = r.skills || [];
+  const tick = s => (installed && installed.has(s)) ? green(s + ' ✓') : green(s);
   const skStr = sk.length > SK_MAX
-    ? green(sk.slice(0, SK_MAX).join(', ')) + dim(` +${sk.length - SK_MAX} more`)
-    : green(sk.join(', '));
+    ? sk.slice(0, SK_MAX).map(tick).join(dim(', ')) + dim(` +${sk.length - SK_MAX} more`)
+    : sk.map(tick).join(dim(', '));
   lines.push(`  ${dim('skills:')} ${skStr}`);
   const best = [...(r.sources || [])].sort((a, b) => (b.stars || 0) - (a.stars || 0))[0];
   if (best) {
+    const rec = recency(best.last_commit);
+    const recStr = rec ? `  updated ${rec.date}${rec.stale ? ' ⚠' : ''}` : '';
+    let kind = '';
+    if (vendors) {
+      const v = vendors[best.name];
+      kind = (v && skillDocPath(v, sk[0])) ? '  [single-skill]' : '  [whole-repo]';
+    }
     const inst = best.install && best.install.command ? ` — ${best.install.command}` : '';
-    lines.push(`  ${dim('via')} ${best.name} ${yellow(stars(best.stars))}${dim(inst)}`);
+    lines.push(`  ${dim('via')} ${best.name} ${yellow(stars(best.stars))}${dim(recStr)}${dim(kind)}${dim(inst)}`);
   }
   return lines.join('\n');
 }
@@ -89,6 +110,7 @@ function groupOf(r, skillName, vendors) {
         id: s.name,
         url: s.url,
         stars: s.stars,
+        last_commit: s.last_commit || v.last_commit || null,
         license: (v.skill_licenses && v.skill_licenses[skillName]) || s.license || null,
         type: s.type,
         path: docPath || null,
@@ -128,10 +150,12 @@ function infoForRow(skillName, row, vendors) {
   return { skill: skillName, found: true, groups: [groupOf(row, skillName, vendors)] };
 }
 
-function renderInfo(info, { en = false, all = false } = {}) {
+function renderInfo(info, { en = false, all = false, installed = null } = {}) {
   const pick = (zh, e) => (en ? (e || zh) : (zh || e)) || '';
   const out = [];
-  out.push(`\n${bold(green(info.skill))}${info.groups.some(g => g.chain) ? ' ' + cyan('⛓') : ''}`);
+  const instTag = installed && installed.length
+    ? ` ${green('✓ installed')} ${dim('[' + installed.join('+') + ']')}` : '';
+  out.push(`\n${bold(green(info.skill))}${info.groups.some(g => g.chain) ? ' ' + cyan('⛓') : ''}${instTag}`);
   const shown = all ? info.groups : info.groups.slice(0, 1);
   for (const g of shown) {
     out.push(`  ${dim('group:')} ${pick(g.group, g.group_en)}  ${dim('[' + pick(g.category, g.category_en) + ']')}`);
@@ -146,7 +170,9 @@ function renderInfo(info, { en = false, all = false } = {}) {
     }
     out.push(`  ${dim('sources:')}`);
     for (const s of g.sources) {
-      out.push(`    • ${bold(s.id)} ${yellow(stars(s.stars))} ${dim(s.type || '')} ${s.license ? dim('(' + s.license + ')') : ''}`);
+      const rec = recency(s.last_commit);
+      const recStr = rec ? `  ${dim('updated ' + rec.date)}${rec.stale ? ' ' + yellow('⚠ stale') : ''}` : '';
+      out.push(`    • ${bold(s.id)} ${yellow(stars(s.stars))} ${dim(s.type || '')} ${s.license ? dim('(' + s.license + ')') : ''}${recStr}`);
       out.push(`      ${dim(s.url)}`);
       out.push(`      ${dim('path:')} ${s.path || dim('(whole-repo install — no per-skill folder)')}`);
       if (s.install && s.install.command) {
@@ -166,6 +192,6 @@ function renderInfo(info, { en = false, all = false } = {}) {
 }
 
 module.exports = {
-  bold, dim, green, cyan, yellow, stars, safeAlt, text, renderRow,
+  bold, dim, green, cyan, yellow, stars, recency, safeAlt, text, renderRow,
   buildInfo, infoForRow, renderInfo, PERSONA_EN,
 };
