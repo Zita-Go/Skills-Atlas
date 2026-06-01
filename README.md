@@ -84,9 +84,25 @@ npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/bra
 ```
 
 `install` reads each skill's recorded in-repo path and downloads **only that
-skill's folder** (not the whole repo) into `.claude/skills/`. A bundled
-[Claude Code plugin](packages/skills-atlas-cli/plugin) exposes the same as
-`/skills-atlas:skill-search` / `:skill-install` so Claude can do it in-conversation.
+skill's folder** (not the whole repo) into `.claude/skills/`. It's a small package
+manager: `use` (install + activate now), `installed`, `outdated`, `upgrade`,
+`remove`, `doctor`. A bundled [Claude Code plugin](packages/skills-atlas-cli/plugin)
+exposes the same as `/skills-atlas:skill-search` / `:skill-install` so Claude can
+do it in-conversation.
+
+**🤖 Autopilot (opt-in).** Turn it on once and the right skill finds *you*:
+
+```bash
+skills-atlas hook on          # registers a Claude Code UserPromptSubmit hook
+```
+
+When your prompt matches the territory of a catalog skill you don't have, a hook
+hands Claude a short, distinctiveness-ranked shortlist and **Claude decides**
+whether one genuinely fits — offering to install + activate it on the spot, or
+staying silent. The split is deliberate: the hook does *recall* (find candidates),
+Claude does *precision* (understand intent). It's **off by default**, fully
+**local** (your prompt never leaves the machine), and **fails open** (a hook error
+never blocks your prompt). Remove it anytime with `skills-atlas hook off`.
 
 ## Project structure
 
