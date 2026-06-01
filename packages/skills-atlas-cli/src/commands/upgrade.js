@@ -32,8 +32,15 @@ module.exports = async function upgrade(argv) {
     for (const n of names) targets.push({ scope: s, name: n, entry: m.skills[n] });
   }
   if (!targets.length) {
-    if (values.json) { console.log('[]'); return; }
-    console.log(positionals[0] ? `'${positionals[0]}' is not installed by skills-atlas.` : 'nothing installed to upgrade.');
+    if (values.json) { console.log('[]'); if (positionals[0]) process.exitCode = 1; return; }
+    if (positionals[0]) {
+      // A named skill that isn't installed is a user error → non-zero, like `remove`.
+      console.log(`'${positionals[0]}' is not installed by skills-atlas.`);
+      console.log(dim('see what is: skills-atlas installed'));
+      process.exitCode = 1;
+    } else {
+      console.log('nothing installed to upgrade.');
+    }
     return;
   }
 

@@ -55,3 +55,19 @@ test('unknown method → -32601; unknown tool → isError; missing arg → isErr
   assert.strictEqual((await call('tools/call', { name: 'nope', arguments: {} })).result.isError, true);
   assert.strictEqual((await call('tools/call', { name: 'search_skills', arguments: {} })).result.isError, true);
 });
+
+test('internal error on a request with id → -32603 (never hangs the client)', async () => {
+  // malformed data makes the tool call throw inside callTool; handle must still respond
+  const r = await handle({ jsonrpc: '2.0', id: 42, method: 'tools/call', params: { name: 'list_categories', arguments: {} } }, { data: {} });
+  assert.strictEqual(r.id, 42);
+  assert.strictEqual(r.error.code, -32603);
+});
+
+test('search_skills: invalid limit → isError; truncation shows a "see all" hint', async () => {
+  const bad = await call('tools/call', { name: 'search_skills', arguments: { query: 'seo', limit: -5 } });
+  assert.strictEqual(bad.result.isError, true);
+  assert.match(bad.result.content[0].text, /limit/i);
+  const trunc = await call('tools/call', { name: 'search_skills', arguments: { query: 'seo', limit: 1 } });
+  assert.strictEqual(trunc.result.isError, false);
+  assert.match(trunc.result.content[0].text, /to see all/);
+});

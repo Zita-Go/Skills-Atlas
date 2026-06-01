@@ -45,10 +45,16 @@ module.exports = async function hook(argv) {
     const ap = registry.getAutopilot();
     if (values.json) { console.log(JSON.stringify({ enabled: on, suggest: ap.suggest, gapAlerts: ap.gapAlerts, settings: p })); return; }
     console.log(`autopilot hook: ${on ? green('on') : dim('off')}   ${dim(p)}`);
-    console.log(`  per-prompt suggest: ${ap.suggest ? green('on') : dim('off')}   ${dim('(skills-atlas hook suggest on|off)')}`);
-    console.log(`  gap alerts:         ${ap.gapAlerts ? green('on') : dim('off')}   ${dim('(skills-atlas hook gaps on|off)')}`);
-    if (on) console.log(dim('  review gaps: skills-atlas gaps'));
-    if (!on) console.log(dim('enable: skills-atlas hook on'));
+    if (on) {
+      console.log(`  per-prompt suggest: ${ap.suggest ? green('on') : dim('off')}   ${dim('(skills-atlas hook suggest on|off)')}`);
+      console.log(`  gap alerts:         ${ap.gapAlerts ? green('on') : dim('off')}   ${dim('(skills-atlas hook gaps on|off)')}`);
+      console.log(dim('  review gaps: skills-atlas gaps'));
+    } else {
+      // Hook isn't registered, so these sub-toggles don't do anything yet — don't
+      // imply the autopilot is running. Show them dimmed with the caveat.
+      console.log(dim(`  (suggest ${ap.suggest ? 'on' : 'off'}, gap alerts ${ap.gapAlerts ? 'on' : 'off'} — they take effect once you run 'skills-atlas hook on')`));
+      console.log(dim('enable: skills-atlas hook on'));
+    }
     return;
   }
 

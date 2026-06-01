@@ -31,8 +31,17 @@ function tryReadJSON(p) {
   }
 }
 
+// Structural validation, not just "has the two top keys". The catalog is iterated
+// as sections[].subsections[].rows[] everywhere (counts/merge/search), so a source
+// missing that shape (e.g. an old `subgroups`/`groups` schema) must be rejected
+// HERE — both to fail `registry add` cleanly and to keep a stale bad cache from
+// being merged as an overlay and crashing every downstream command.
 function isValid(d) {
-  return d && Array.isArray(d.sections) && d.vendors && typeof d.vendors === 'object';
+  return !!d
+    && Array.isArray(d.sections)
+    && d.sections.every(s => s && Array.isArray(s.subsections)
+      && s.subsections.every(ss => ss && Array.isArray(ss.rows)))
+    && !!d.vendors && typeof d.vendors === 'object';
 }
 
 function counts(d) {
@@ -188,4 +197,4 @@ async function refreshSources() {
   return out;
 }
 
-module.exports = { loadData, refreshData, fetchSource, refreshSources, counts, cacheDir, PUBLIC_URL };
+module.exports = { loadData, refreshData, fetchSource, refreshSources, counts, isValid, cacheDir, PUBLIC_URL };

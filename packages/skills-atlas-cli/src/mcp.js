@@ -29,7 +29,8 @@ function fmtSearch(data, { query, limit }) {
       (uc ? `\n  ${uc}` : '') +
       (src.name ? `\n  via ${src.name} ★${src.stars || 0}${cmd ? ` — ${cmd}` : ''}` : '');
   });
-  return `${rows.length} result(s) for "${query}" (showing ${n}):\n\n${out.join('\n\n')}`;
+  const more = n < rows.length ? `\n\n(showing ${n} of ${rows.length}; pass limit:${rows.length} to see all)` : '';
+  return `${rows.length} result(s) for "${query}" (showing ${n}):\n\n${out.join('\n\n')}${more}`;
 }
 
 function fmtInfo(data, { skill }) {
@@ -108,7 +109,7 @@ async function doInstall(data, { skill, scope, source, dry_run }) {
 function toolDefs() {
   return [
     { name: 'search_skills', description: 'Search the Skills Atlas catalog of AI agent skills by keyword or short task description.', inputSchema: { type: 'object', properties: { query: { type: 'string', description: 'keywords or a short task description' }, limit: { type: 'integer', minimum: 1, description: 'max results (default 10)' } }, required: ['query'] } },
-    { name: 'skill_info', description: 'Show what a catalog skill does, when to use it, its sources, and how to install it.', inputSchema: { type: 'object', properties: { skill: { type: 'string' } }, required: ['skill'] } },
+    { name: 'skill_info', description: 'Show what a catalog skill does, when to use it, its sources, and how to install it.', inputSchema: { type: 'object', properties: { skill: { type: 'string', description: 'exact skill name (e.g. brainstorming); fuzzy matching and typo correction are applied' } }, required: ['skill'] } },
     { name: 'install_skill', description: 'Install a skill from the catalog into .claude/skills/.', inputSchema: { type: 'object', properties: { skill: { type: 'string' }, scope: { type: 'string', enum: ['global', 'project'], description: 'default global (~/.claude/skills)' }, source: { type: 'string', description: 'pick a source when several provide the skill' }, dry_run: { type: 'boolean' } }, required: ['skill'] } },
     { name: 'list_categories', description: "List the catalog's top-level categories, or the skill groups within one.", inputSchema: { type: 'object', properties: { category: { type: 'string', description: 'optional — drill into one category' } } } },
   ];
@@ -119,6 +120,8 @@ async function callTool(name, args, data) {
   switch (name) {
     case 'search_skills':
       if (!args.query) return { text: 'missing required "query".', isError: true };
+      if (args.limit !== undefined && (!Number.isInteger(args.limit) || args.limit < 1))
+        return { text: `invalid "limit": ${JSON.stringify(args.limit)} (must be a positive integer).`, isError: true };
       return { text: fmtSearch(data, args) };
     case 'skill_info':
       if (!args.skill) return { text: 'missing required "skill".', isError: true };
@@ -138,21 +141,26 @@ async function handle(req, { data }) {
   const ok = result => ({ jsonrpc: '2.0', id, result });
   const err = (code, message) => ({ jsonrpc: '2.0', id, error: { code, message } });
   if (!req || req.jsonrpc !== '2.0') return id === undefined ? null : err(-32600, 'Invalid Request');
-  switch (req.method) {
-    case 'initialize':
-      return ok({ protocolVersion: (req.params && req.params.protocolVersion) || PROTOCOL, capabilities: { tools: {} }, serverInfo: { name: 'skills-atlas', version: VERSION } });
-    case 'notifications/initialized':
-    case 'initialized':
-      return null;
-    case 'tools/list':
-      return ok({ tools: toolDefs() });
-    case 'tools/call': {
-      const p = req.params || {};
-      const r = await callTool(p.name, p.arguments, data);
-      return ok({ content: [{ type: 'text', text: r.text }], isError: Boolean(r.isError) });
+  try {
+    switch (req.method) {
+      case 'initialize':
+        return ok({ protocolVersion: (req.params && req.params.protocolVersion) || PROTOCOL, capabilities: { tools: {} }, serverInfo: { name: 'skills-atlas', version: VERSION } });
+      case 'notifications/initialized':
+      case 'initialized':
+        return null;
+      case 'tools/list':
+        return ok({ tools: toolDefs() });
+      case 'tools/call': {
+        const p = req.params || {};
+        const r = await callTool(p.name, p.arguments, data);
+        return ok({ content: [{ type: 'text', text: r.text }], isError: Boolean(r.isError) });
+      }
+      default:
+        return id === undefined ? null : err(-32601, 'Method not found');
     }
-    default:
-      return id === undefined ? null : err(-32601, 'Method not found');
+  } catch (e) {
+    // A request with an id MUST get a response — never leave the client hanging.
+    return id === undefined ? null : err(-32603, (e && e.message) || 'Internal error');
   }
 }
 

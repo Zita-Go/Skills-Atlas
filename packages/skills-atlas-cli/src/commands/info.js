@@ -3,7 +3,7 @@
 const { parse } = require('../args');
 const { loadData } = require('../data');
 const { buildIndices, suggestSkills } = require('../index-build');
-const { buildInfo, renderInfo } = require('../format');
+const { buildInfo, renderInfo, dim } = require('../format');
 
 const HELP = `usage: skills-atlas info <skill> [--all] [--json] [--zh]
 
@@ -18,6 +18,7 @@ module.exports = async function info(argv) {
   const name = positionals[0];
   if (!name) {
     console.error('usage: skills-atlas info <skill>');
+    console.error(dim('find a skill name first: skills-atlas search <keyword>'));
     process.exitCode = 1;
     return;
   }

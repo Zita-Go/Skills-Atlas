@@ -21,6 +21,7 @@ const ALL = {
   zh: { type: 'boolean' },
   all: { type: 'boolean' },
   inline: { type: 'boolean' },
+  verbose: { type: 'boolean' },
   archetype: { type: 'string' },
   update: { type: 'boolean' },
   name: { type: 'string' },

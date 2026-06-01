@@ -25,6 +25,7 @@ options:
   -y, --yes          non-interactive (auto-pick top source, assume yes)
       --chain        install the whole ⛓ workflow this skill belongs to
       --dry-run      show what would download, write nothing
+      --verbose      with \`use\`: also print the full SKILL.md to the terminal
       --json         machine-readable output
 
 Downloads the repo archive (no GitHub API rate limit). Only if that fetch fails
@@ -86,12 +87,13 @@ async function installChain({ row, vendor, src, targetRoot, values }) {
 
 module.exports = async function install(argv) {
   const { values, positionals } = parse(argv,
-    ['global', 'project', 'source', 'force', 'yes', 'chain', 'inline', 'dry-run', 'json']);
+    ['global', 'project', 'source', 'force', 'yes', 'chain', 'inline', 'dry-run', 'verbose', 'json']);
   if (values.help) { console.log(HELP); return; }
 
   const name = positionals[0];
   if (!name) {
     console.error('usage: skills-atlas install <skill> [--global|--project] [--source <id>] [--force] [--yes]');
+    console.error(dim('find a skill first: skills-atlas search <keyword>'));
     process.exitCode = 1;
     return;
   }
@@ -126,23 +128,26 @@ module.exports = async function install(argv) {
       `${c.source.name}  ${stars(c.source.stars)}  ${c.source.type || ''}  ${(c.source.install && c.source.install.command) || ''}`);
     const i = await choose(`'${name}' is available from ${candidates.length} sources:`, labels);
     if (i < 0) {
-      console.error(`multiple sources for '${name}'. re-run with --source <id> or --yes.`);
-      console.error(`sources: ${candidates.map(c => c.source.name).join(', ')}`);
+      // Non-interactive without a pick: show each source so the user can decide
+      // (stars / type / install command), instead of just listing bare names.
+      console.error(`'${name}' has ${candidates.length} sources — pick one with --source <id>, or --yes to auto-pick the top:`);
+      candidates.forEach(c => console.error(dim(
+        `  ${c.source.name}  ${stars(c.source.stars)}  ${c.source.type || ''}` +
+        `${(c.source.install && c.source.install.command) ? '  → ' + c.source.install.command : ''}`)));
       process.exitCode = 2;
       return;
     }
     chosen = candidates[i];
   }
 
-  // Heads-up when --yes auto-picked among semantically different groups.
-  if (values.yes && candidates.length > 1) {
-    const groups = [...new Set(candidates.map(c => c.row && c.row.group).filter(Boolean))];
-    if (groups.length > 1) {
-      const picked = chosen.row && chosen.row.group;
-      const otherGroups = groups.filter(g => g !== picked).join('; ');
-      const st = stars(chosen.source.stars);
-      console.error(dim(`note: '${name}' exists in ${groups.length} groups; auto-picked ${chosen.source.name}${st ? ' ' + st : ''} (${picked || '?'}). also in: ${otherGroups} — use --source to choose.`));
-    }
+  // Heads-up whenever --yes auto-picked among several sources — say which one and
+  // what else was available, so a silent pick of a lower-star (but installable)
+  // source over a higher-star whole-repo one is never a surprise.
+  if (values.yes && candidates.length > 1 && !values.json) {
+    const st = stars(chosen.source.stars);
+    const grp = chosen.row && chosen.row.group;
+    const others = candidates.filter(c => c !== chosen).map(c => c.source.name).join(', ');
+    console.error(dim(`note: '${name}' has ${candidates.length} sources; auto-picked ${chosen.source.name}${st ? ' ' + st : ''}${grp ? ` (${grp})` : ''}. also from: ${others} — use --source <id> to choose.`));
   }
 
   const v = chosen.vendor || {};
@@ -274,13 +279,19 @@ module.exports = async function install(argv) {
 
   if (values.inline) {
     const body = readSkillMd(result.dest);
-    if (body) {
+    const mdPath = fsu.tildify(path.join(result.dest, 'SKILL.md'));
+    // Claude (and any piped caller) needs the full SKILL.md inline to apply the
+    // skill right now; a human at a terminal just needs the digest — the file is
+    // on disk and auto-loads, so dumping ~200 lines would only bury the next step.
+    const full = body && (values.verbose || !process.stdout.isTTY);
+    if (full) {
       console.log('\n' + dim('─── SKILL.md — the skill\'s own instructions; apply them to the task now ───'));
       console.log(body.trim());
       console.log(dim('─── end SKILL.md ───'));
     }
-    console.log(`\n${green('✓')} ${bold(skill)} is now active — use the instructions above for the task at hand.`);
+    console.log(`\n${green('✓')} ${bold(skill)} is now active — ${full ? 'use the instructions above' : 'follow its SKILL.md'} for the task at hand.`);
     console.log(dim(`  installed at ${fsu.tildify(result.dest)} (auto-loads in new sessions) · what it does: skills-atlas info ${skill} · remove: skills-atlas remove ${skill}`));
+    if (body && !full) console.log(dim(`  full instructions: ${mdPath}  (or re-run with --verbose)`));
   } else {
     console.log(`\n${bold(skill)} is installed but not loaded yet. To use it:`);
     console.log(dim(`  • now, in this session:  skills-atlas use ${skill}`));

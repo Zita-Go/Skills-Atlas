@@ -34,8 +34,8 @@ module.exports = async function doctor(argv) {
       const dir = path.join(root, skill);
       if (!fsu.dirExists(dir)) { findings.push({ scope: s.name, skill, level: 'warn', msg: 'recorded but folder missing on disk' }); continue; }
       if (!fs.existsSync(path.join(dir, 'SKILL.md'))) findings.push({ scope: s.name, skill, level: 'error', msg: 'no SKILL.md in folder' });
-      if (!data.vendors[e.source] || !rowsFor(idx.skillIndex, skill).length) findings.push({ scope: s.name, skill, level: 'info', msg: 'no longer in the catalog' });
-      if (e.scripts) findings.push({ scope: s.name, skill, level: 'info', msg: `ships ${e.scripts} script file(s) — review` });
+      if (!data.vendors[e.source] || !rowsFor(idx.skillIndex, skill).length) findings.push({ scope: s.name, skill, level: 'info', msg: `no longer in the catalog (keep it, or: skills-atlas remove ${skill})` });
+      if (e.scripts) findings.push({ scope: s.name, skill, level: 'info', msg: `ships ${e.scripts} script file(s) — review before trusting: ${fsu.tildify(dir)}` });
       const vendor = data.vendors[e.source];
       if (vendor && vendor.license && RISKY_LICENSE.test(vendor.license)) findings.push({ scope: s.name, skill, level: 'warn', msg: `license: ${vendor.license}` });
     }

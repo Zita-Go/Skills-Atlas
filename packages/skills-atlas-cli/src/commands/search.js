@@ -12,7 +12,8 @@ Matches by words, not whole-string: multiple keywords and loose phrases work
 (e.g. "pdf 翻译", "translate a whole pdf"). Ranked by how much of the query hits.
 
 filters:
-  -c, --category <s>   match a top-level category (loose, zh or en)
+  -c, --category <s>   match a top-level category (loose; zh or en; e.g. -c marketing).
+                       run \`skills-atlas categories\` for the exact names
   -p, --persona <s>    match a persona — English or Chinese, e.g.
                        engineering, pm, design, marketing, research, ops,
                        founder, job-seeking, general (工程/PM/设计/营销/...)
@@ -73,15 +74,18 @@ module.exports = async function search(argv) {
       const { skillIndex } = buildIndices(data);
       const sugg = suggestSkills(skillIndex, query);
       if (sugg.length) console.log(dim(`did you mean: ${sugg.join(', ')}`));
-      console.log(dim('try fewer / different words, or `skills-atlas categories` to browse.'));
     }
+    if (values.category) console.log(dim(`if -c "${values.category}" isn't matching, run \`skills-atlas categories\` for the exact names.`));
+    console.log(dim('try fewer / different words, or `skills-atlas categories` to browse.'));
     return;
   }
 
   if (weak) {
-    console.log(dim('\n⚠ weak matches — none of the results cover your whole query; try different words.'));
+    console.log(dim('\n⚠ partial match — results may cover only part of your query; the top ones can still help, or try different words.'));
   }
   shown.forEach(r => console.log(renderRow(r, { en })));
-  const more = rows.length > limit ? `, showing ${limit}` : '';
-  console.log(`\n${rows.length} match(es)${more}.`);
+  const truncated = rows.length > limit;
+  console.log(`\n${rows.length} match(es)${truncated ? `, showing ${limit}` : ''}.`);
+  if (truncated) console.log(dim(`see the rest with --limit ${rows.length}${values.category ? '' : ', or narrow with -c <category>'}.`));
+  console.log(dim('next: skills-atlas info <skill> to learn more, or skills-atlas use <skill> to install it.'));
 };
