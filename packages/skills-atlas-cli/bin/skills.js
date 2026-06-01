@@ -16,12 +16,13 @@ const suggest = require('../src/commands/suggest');
 const hook = require('../src/commands/hook');
 const gaps = require('../src/commands/gaps');
 const update = require('../src/commands/update');
+const mcp = require('../src/commands/mcp');
 const { categories, list } = require('../src/commands/categories');
 
 const VERSION = require('../package.json').version;
 // `use` = install + activate inline (emit the SKILL.md so an agent follows it now).
 const use = argv => install([...argv, '--inline']);
-const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, gaps, update, categories, list, registry };
+const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, gaps, update, categories, list, registry, mcp };
 
 const HELP = `skills-atlas — search, install & manage AI agent skills
 
@@ -51,6 +52,9 @@ catalog:
   categories         list the top-level categories
   list [category]    list skill groups (optionally within one category)
   registry           add/list/remove a private catalog source (org-internal skills)
+
+integrations:
+  mcp                run as an MCP server (search/info/install/categories for any MCP client)
 
 global flags: --zh (中文 output; English by default), --json (machine output), -h/--help
 docs: https://zita-go.github.io/Skills-Atlas/`;
