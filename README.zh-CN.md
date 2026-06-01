@@ -20,21 +20,21 @@
 
 ## 快速上手
 
-**skill** 是一个可复用的 `SKILL.md` 指令包,教 Claude Code 一套专门工作流——系统化调试、
-事前复盘(pre-mortem)、SEO 审计、PDF 翻译,等等几百种。**Skills Atlas** 就是一个精选了 800+ 个
-这类 skill 的目录。两种用法:
+**skill** 是一个可复用的 `SKILL.md` 指令包,教 Claude Code 一套专门工作流:系统化调试、
+事前复盘(pre-mortem)、SEO 审计、PDF 翻译,等等几百种。**Skills Atlas** 精选了 800+ 个
+这类 skill。拿到对的那一个,有两种方式:
 
-- **可视化浏览** → [zita-go.github.io/Skills-Atlas](https://zita-go.github.io/Skills-Atlas/?lang=zh)
-- **从终端几秒装一个**:
+1. **🔍 找到并装上。** 在[网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)浏览,或在终端搜索,几秒装好。
+2. **🤖 让它来找你。** 打开自动驾驶,Claude 在你工作时主动端出合适的 skill,不用搜。
 
 ```bash
 npm install -g skills-atlas-cli
-skills-atlas search "stress test my launch plan"   # → pre-mortem 排在最前
+skills-atlas search "stress test my launch plan"   # pre-mortem 排在最前
 skills-atlas use pre-mortem                          # 装上,Claude 立即用上
+skills-atlas hook on                                 # 可选:打开自动驾驶,下次免搜索
 ```
 
-工具完整文档:[**`skills-atlas-cli`**](packages/skills-atlas-cli)。想让 Claude 替你挑?
-`skills-atlas hook on`——合适的 skill 会在你工作时主动找你。
+工具完整文档:[**`skills-atlas-cli`**](packages/skills-atlas-cli)。
 
 ## 为什么有这个项目
 
@@ -47,7 +47,7 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~111 个 GitHub 仓库�
 - 你想找文档处理工具？看 § 2.1，Office 4 件套 + PDF 重型 API + 多格式抽取引擎一目了然
 
 而且它不只是一个用来看的目录：一个[终端 CLI + Claude Code 插件](packages/skills-atlas-cli)让你直接
-**搜索、安装、使用**这些 skill —— 还带一个可选的自动驾驶，在你工作时主动把合适的 skill 递到你面前。
+**搜索、安装、使用**这些 skill，还带一个可选的自动驾驶，在你工作时主动把合适的 skill 递到你面前。
 
 ## 数据规模
 
@@ -59,14 +59,14 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~111 个 GitHub 仓库�
 | 源仓库 | 111 |
 | ⛓ 强绑定工作流 | 18 |
 
-覆盖 **20 个功能大类** —— 从软件工程、产品、营销、设计,到 **法律、医疗、金融、DevOps/SRE、安全、教育、Web3** 等专业垂直领域。
+覆盖 **20 个功能大类**,从软件工程、产品、营销、设计,到 **法律、医疗、金融、DevOps/SRE、安全、教育、Web3** 等专业垂直领域。
 
 ## 怎么用
 
-### 从终端使用 —— CLI · 插件
+### 从终端找到并安装(CLI + 插件)
 
 **真正"用上"一个 skill 最快的方式。**[`skills-atlas-cli`](packages/skills-atlas-cli) 把目录
-变成真正的工具 —— 在终端里直接搜索、**安装**、使用 skill：
+变成真正的工具:在终端里直接搜索、**安装**、使用 skill：
 
 <a href="packages/skills-atlas-cli"><img src="docs/cli-demo.png" alt="skills-atlas：搜索 → 查看 → 安装一个 skill" width="760"></a>
 
@@ -78,18 +78,18 @@ npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/bra
 
 `install` **只下载那一个 skill 的文件夹**（不是整个仓库）到 `.claude/skills/`。这个 CLI 已经长成一整套工具:
 
-- **包管理器** —— `use`（装上并立即激活）、`installed`、`outdated`、`upgrade`、`remove`、`doctor`。
-- **项目套件** —— `kit` 识别你的项目(前端 / 后端 / 数据 / 基础设施)装一整套对口 skill;`sync` 从可提交的 `skills-atlas.kit.json` 复现。
-- **私有源** —— `registry add <你的 data.json>` 把组织内部 skill 合并进搜索 / 安装(同名私有优先)。
-- **Claude Code 里** —— 附带[插件](packages/skills-atlas-cli/plugin)(`/skills-atlas:skill-search` / `:skill-install`)。
-- **任意 MCP 客户端** —— `skills-atlas mcp` 起一个零依赖 MCP server(search / info / install / categories),给 Claude Desktop 等 agent 用。
+- **包管理器。** `use`（装上并立即激活）、`installed`、`outdated`、`upgrade`、`remove`、`doctor`。
+- **项目套件。** `kit` 识别你的项目(前端 / 后端 / 数据 / 基础设施)装一整套对口 skill;`sync` 从可提交的 `skills-atlas.kit.json` 复现。
+- **私有源。** `registry add <你的 data.json>` 把组织内部 skill 合并进搜索 / 安装(同名私有优先)。
+- **Claude Code 里。** 附带[插件](packages/skills-atlas-cli/plugin)(`/skills-atlas:skill-search` / `:skill-install`)。
+- **任意 MCP 客户端。** `skills-atlas mcp` 起一个零依赖 MCP server(search / info / install / categories),给 Claude Desktop 等 agent 用。
 
 → [CLI 完整文档](packages/skills-atlas-cli)
 
-### 🤖 自动驾驶 —— 让合适的 skill 主动找你
+### 🤖 自动驾驶:让合适的 skill 主动找你
 
 你不该为了用上一个 skill，得先知道它存在。把自动驾驶打开，只要任务命中某个 skill，Claude 就会主动
-端出来 —— 还讲清楚为什么，一条命令就用上：
+端出来，还讲清楚为什么，一条命令就用上：
 
 ```bash
 skills-atlas hook on
@@ -97,11 +97,11 @@ skills-atlas hook on
 
 > 🗣️ *"上线前先做个 pre-mortem 把风险过一遍"*
 >
-> 🤖 *"这正是 **pre-mortem** 这个 skill 的拿手活 —— 上线前把计划的失败模式压测一遍。**现在就用** · 看看细节 · 跳过？"*
+> 🤖 *"这正是 **pre-mortem** 这个 skill 的拿手活:上线前把计划的失败模式压测一遍。**现在就用**,看看细节,还是跳过？"*
 
-默认关闭 · 全程本地匹配（prompt 不外传）· 绝不自动安装。[它怎么工作 →](packages/skills-atlas-cli)
+默认关闭,全程本地匹配（prompt 不外传）,绝不自动安装。[它怎么工作 →](packages/skills-atlas-cli)
 
-**🔭 能力缺口。** `skills-atlas gaps` 把你**最近的活动**(读 Claude Code 本地已有的 transcript —— 不存不外传)摆给 **Claude**,让它发现"你反复在做、却没装对应 skill"的那类活,并推荐。
+**🔭 能力缺口。** `skills-atlas gaps` 把你**最近的活动**(读 Claude Code 本地已有的 transcript,不存不外传)摆给 **Claude**,让它发现"你反复在做、却没装对应 skill"的那类活,并推荐。
 
 ### 在线访问
 👉 [打开网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)
@@ -218,7 +218,7 @@ python3 scripts/render_candidate_issue.py --out /tmp/issue.md
 
 ## License
 
-[MIT](LICENSE) — 代码 / 数据 / 内容统一采用 MIT。你可以随便用、随便改、随便商业化，只要保留 attribution。
+[MIT](LICENSE)。代码 / 数据 / 内容统一采用 MIT。你可以随便用、随便改、随便商业化，只要保留 attribution。
 
 > 注意：本项目里收录的 skill 元数据 / 描述是我们整理的；但这些 skill 的真实 SKILL.md 内容仍在各自原仓库（见 `data/repositories.yaml`），各自遵循各自的 license。
 

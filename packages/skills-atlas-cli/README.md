@@ -3,37 +3,32 @@
 [![npm](https://img.shields.io/npm/v/skills-atlas-cli)](https://www.npmjs.com/package/skills-atlas-cli)
 [![license](https://img.shields.io/npm/l/skills-atlas-cli)](https://github.com/Zita-Go/Skills-Atlas/blob/main/LICENSE)
 
-**Find, install, and use the right AI agent skill for any task — from your terminal,
-straight into Claude Code.** Stop guessing which skill fits or copy-pasting from
-random repos: search a curated catalog of **800+ skills** and drop the right one into
-`.claude/skills/` in seconds.
+**Find, install, and use the right AI agent skill for any task, right inside Claude
+Code.** Stop guessing which skill fits or copy-pasting from random repos. Search a
+curated catalog of **800+ skills** and drop the right one into `.claude/skills/` in seconds.
 
 > **New to "skills"?** A skill is a reusable `SKILL.md` instruction pack that teaches
-> Claude Code a specialized workflow — systematic debugging, pre-mortems, SEO audits,
+> Claude Code a specialized workflow: systematic debugging, pre-mortems, SEO audits,
 > PDF translation, and hundreds more. This tool finds and installs them for you.
+
+### Two ways to get the right skill
+
+1. **🔍 Find and install it.** Search the catalog, then `use` it. It's live in Claude Code in seconds.
+2. **🤖 Let it find you.** Turn on autopilot and Claude offers the fitting skill as you work, no searching.
 
 <img src="https://raw.githubusercontent.com/Zita-Go/Skills-Atlas/main/docs/cli-demo.png" alt="skills-atlas: search then install a skill" width="760">
 
 ## Quickstart
 
 ```bash
-npm install -g skills-atlas-cli      # adds `skills-atlas` (alias: sa) — or prefix any command with `npx`
+npm install -g skills-atlas-cli      # adds the `skills-atlas` command (alias sa). Or run any command with `npx`.
 
-skills-atlas search "stress test my launch plan"   # → pre-mortem tops the results
-skills-atlas use pre-mortem                          # install it + print its SKILL.md so Claude applies it now
+skills-atlas search "stress test my launch plan"   # pre-mortem tops the results
+skills-atlas use pre-mortem                          # installs it, prints its SKILL.md so Claude applies it now
+skills-atlas hook on                                 # optional: turn on autopilot, skip the search next time
 ```
 
-Done — `pre-mortem` is in `~/.claude/skills/` and auto-loads in new Claude Code
-sessions. Want the right skill to find **you**? Run `skills-atlas hook on`, and Claude
-offers a fitting one as you work (off by default, fully local).
-
-## Three ways to use it
-
-| Mode | Best when | Get going |
-|---|---|---|
-| **Manual** | browse and grab skills yourself | `skills-atlas search <task>` → `skills-atlas use <skill>` |
-| **In Claude Code** | just ask Claude in-conversation | install the [plugin](#in-claude-code), then describe your task |
-| **🤖 Autopilot** | let the right skill find *you* | `skills-atlas hook on` — Claude offers a fitting skill as you work |
+Now `pre-mortem` lives in `~/.claude/skills/` and auto-loads in new Claude Code sessions.
 
 ## 🌐 Browse the catalog online
 
@@ -44,8 +39,7 @@ offers a fitting one as you work (off by default, fully local).
 </tr>
 </table>
 
-**[→ zita-go.github.io/Skills-Atlas](https://zita-go.github.io/Skills-Atlas/)** —
-explore visually by category, then install what you find with the CLI.
+Explore the catalog visually at **[zita-go.github.io/Skills-Atlas](https://zita-go.github.io/Skills-Atlas/)**, then install what you find with the CLI.
 
 ## Usage
 
@@ -62,7 +56,7 @@ skills-atlas info brainstorming
 skills-atlas install brainstorming             # → ~/.claude/skills/   (default, all projects)
 skills-atlas install brainstorming --project   # → ./.claude/skills/   (this project only)
 skills-atlas install brainstorming --chain     # install the whole ⛓ workflow it belongs to
-skills-atlas use brainstorming                 # install AND activate now — prints SKILL.md, no restart
+skills-atlas use brainstorming                 # install + activate now (prints SKILL.md, no restart)
 skills-atlas install brainstorming --dry-run   # preview the files, write nothing
 
 # 🗂️ Manage what you've installed   (like a package manager)
@@ -95,8 +89,8 @@ skills-atlas mcp                               # run as an MCP server (any MCP c
 installs the whole pipeline in one archive download, ready to run in order.
 
 **📦 Project kits.** `skills-atlas kit` detects what this project is (frontend / backend /
-data / infra) and installs a tailored set — a universal dev workflow plus archetype
-add-ons — into `./.claude/skills/`, then writes a committable `skills-atlas.kit.json`.
+data / infra) and installs a tailored set (a universal dev workflow plus archetype
+add-ons) into `./.claude/skills/`, then writes a committable `skills-atlas.kit.json`.
 A teammate runs `skills-atlas sync` to reproduce it exactly.
 
 Output is English by default; add `--zh` for Chinese, or `--json` to any command for machine-readable output.
@@ -105,16 +99,16 @@ After installing a skill, start a new Claude Code session to load it.
 ## How install works
 
 The real value is the **catalog**: `search` / `info` / `categories` work fully
-offline and map *which* skill fits — function-organized, bilingual, tagged with
+offline and map *which* skill fits. It's function-organized, bilingual, tagged with
 use-case / when-to-use / personas / ⛓ chains. That's what `npx skills add` and
 GitHub search don't give you.
 
 On top of that, `install` can place a skill straight into `.claude/skills/`:
 
 - For a repo that exposes a **per-skill folder**, it downloads only that folder
-  (via the repo archive — **no GitHub API rate limit**) into
+  (via the repo archive, with **no GitHub API rate limit**) into
   `<target>/.claude/skills/<skill>/`, not the whole repo.
-- Several sources? The best installable one is auto-picked — `--source <id>` to
+- Several sources? The best installable one is auto-picked. Pass `--source <id>` to
   choose, `--yes` for non-interactive runs.
 - Other sources (whole-repo / marketplace) print their official command instead
   (e.g. `npx skills add owner/repo`).
@@ -127,8 +121,8 @@ the latest from the public feed (cached under `~/.cache/skills-atlas/`).
 
 ## Private / org catalog sources
 
-Point the CLI at your organization's own catalog — a `data.json` in the same
-schema — so internal skills show up in `search` / `info` / `install` / `kit`
+Point the CLI at your organization's own catalog (a `data.json` in the same
+schema) so internal skills show up in `search` / `info` / `install` / `kit`
 alongside the public Atlas:
 
 ```bash
@@ -144,8 +138,8 @@ auth, set `SKILLS_ATLAS_TOKEN` (sent as a Bearer header); in CI,
 
 ## In Claude Code
 
-A thin [Claude Code plugin](./plugin) lets Claude do all of this in-conversation —
-just describe what you need, or use `/skills-atlas:skill-search`, `:skill-info`,
+A thin [Claude Code plugin](./plugin) lets Claude do all of this in-conversation.
+Just describe what you need, or use `/skills-atlas:skill-search`, `:skill-info`,
 `:skill-install`:
 
 ```text
@@ -164,10 +158,10 @@ the catalog. Add it to your client's config:
 ```
 
 It exposes four tools: **search_skills**, **skill_info**, **install_skill**, and
-**list_categories** — discover, inspect, install, and browse the catalog from
+**list_categories**. Discover, inspect, install, and browse the catalog from
 anywhere.
 
-## Autopilot (opt-in) — the right skill finds you
+## Autopilot (opt-in): the right skill finds you
 
 ```bash
 skills-atlas hook on      # enable    (skills-atlas hook off / status)
@@ -175,29 +169,29 @@ skills-atlas hook on      # enable    (skills-atlas hook off / status)
 
 Registers a Claude Code `UserPromptSubmit` hook. When what you ask matches the
 territory of a catalog skill you don't have, the hook hands Claude a short
-shortlist of candidates and **Claude decides** whether any genuinely fits — and
-if so, explains **what it does and why it fits your task**, then offers a choice:
+shortlist of candidates and **Claude decides** whether any genuinely fits. If it
+does, Claude explains **what it does and why it fits your task**, then offers a choice:
 use it now, see what it covers first (`skills-atlas info`), or skip. You don't
 have to know the skill exists. The split is deliberate: the hook does **recall**
 (a distinctive-word match against the catalog, so the right skill is on the
 table), Claude does **precision** (it understands your intent and stays silent
 unless one truly fits, or searches further itself). It's:
 
-- **off by default** — you turn it on explicitly; `hook off` removes it cleanly.
-- **quiet** — only fires on a distinctive match (greetings and generic actions
+- **Off by default.** You turn it on explicitly; `hook off` removes it cleanly.
+- **Quiet.** Only fires on a distinctive match (greetings and generic actions
   like "fix the typo" stay silent), never for an already-installed skill, never
-  the same skill twice, with a cooldown between suggestions — and Claude is the
+  the same skill twice, with a cooldown between suggestions. Claude is the
   final filter on relevance.
-- **local & private** — your prompt is matched against the bundled catalog
+- **Local and private.** Your prompt is matched against the bundled catalog
   on your machine; nothing is sent anywhere.
-- **safe** — never auto-installs (always your call), and fails open (a hook
+- **Safe.** Never auto-installs (always your call), and fails open (a hook
   error never blocks your prompt).
 
 **🔭 Capability gaps.** `skills-atlas gaps` shows Claude your *recent activity* and
 lets **Claude** spot the recurring kinds of work you keep doing that no installed
-skill covers yet — then recommend one, with the pattern as evidence. We don't guess
+skill covers yet, then recommend one with the pattern as evidence. We don't guess
 with heuristics; we just give Claude the memory it lacks (your recent prompts, read
-from Claude Code's own local transcripts — **nothing is stored or sent**) plus the
+from Claude Code's own local transcripts; **nothing is stored or sent**) plus the
 catalog. With the hook on, it also nudges in-conversation now and then. The two
 layers are independent: `skills-atlas hook suggest on|off` (per-prompt) and
 `skills-atlas hook gaps on|off` (the proactive nudge).
