@@ -15,10 +15,12 @@ const { buildIndices } = require('../index-build');
 const { suggestCandidates } = require('../search-core');
 const manifest = require('../manifest');
 const fsu = require('../fsutil');
-const gaps = require('../gaps');
 const registry = require('../registry');
+const transcripts = require('../transcripts');
+const gapstate = require('../gapstate');
 
 const COOLDOWN = 3; // min prompts between suggestions
+const GAP_EVERY = 12;
 
 function stateFile(sessionId) {
   const base = process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache');
@@ -53,6 +55,30 @@ module.exports = async function suggest() {
     const file = stateFile(event.session_id || event.sessionId);
     const state = readState(file);
     state.count = (state.count || 0) + 1;
+    const ap = registry.getAutopilot();
+
+    // --- Proactive gap nudge: periodic, transcript-based; Claude judges ---
+    if (ap.gapAlerts && state.count % GAP_EVERY === 0) {
+      const recent = transcripts.recentPrompts({ max: 20 });
+      if (recent.length >= 8) {
+        const dismissed = (gapstate.read().dismissed) || [];
+        const lines = recent.map(r => `- ${r.text.replace(/\s+/g, ' ').slice(0, 100)}`).join('\n');
+        const days = Math.max(1, Math.round((Date.now() - recent[recent.length - 1].ts) / 86400000));
+        emit(`[Skills Atlas — capability gaps] The user's recent requests (${recent.length} over ~${days} day(s), newest first):\n${lines}\n` +
+          `If a recurring KIND of work stands out that an installable catalog skill is built for and they haven't ` +
+          `installed (ignore one-offs), name the pattern with rough frequency as evidence and recommend it — verify with ` +
+          `\`skills-atlas info <skill>\` and install with \`skills-atlas use <skill> --yes\`.` +
+          (dismissed.length ? ` Already dismissed (skip): ${dismissed.join(', ')}.` : '') +
+          ` If nothing clearly recurs or it doesn't fit right now, stay silent.`);
+        gapstate.touchNudge();
+        writeState(file, state);
+        return;
+      }
+    }
+
+    // --- Per-prompt autopilot (gated by the suggest toggle + cooldown) ---
+    if (!ap.suggest) { writeState(file, state); return; }
+    if (state.count - (state.lastSuggestedCount ?? -COOLDOWN) < COOLDOWN) { writeState(file, state); return; }
 
     const { data } = loadData({ quiet: true });
     const { flatRows } = buildIndices(data);
@@ -62,39 +88,6 @@ module.exports = async function suggest() {
 
     const { fire, candidates } = suggestCandidates(flatRows, prompt, { installed, suggested });
     if (!fire || !candidates.length) { writeState(file, state); return; }
-
-    const ap = registry.getAutopilot();
-    const top = candidates[0];
-    const group = top.row.group_en || top.row.group || '(uncategorized)'; // English-default label
-    const now = Date.now();
-
-    // 1. TRACK every fired prompt (high-confidence) — the silent tally
-    const store = gaps.readStore();
-    gaps.recordEvent(store, { group, skill: top.skill, now });
-    gaps.pruneOld(store, now);
-
-    // 2. GAP ALERT — rare, evidence-based, once per gap, only on a relevant prompt
-    if (ap.gapAlerts) {
-      const found = gaps.computeGaps(store, { now, installed })
-        .find(g => g.group === group && !store.alerted[g.group]);
-      if (found) {
-        store.alerted[found.group] = now;
-        gaps.writeStore(store);
-        const days = Math.max(1, Math.round((now - found.firstTs) / 86400000));
-        emit(`[Skills Atlas] The user keeps doing ${found.group}-type work — about ${found.count} times in ` +
-          `the last ${days} day(s) — without a skill for it. \`${found.recommended}\` is built for exactly this. ` +
-          `They're doing it again right now, so briefly point out the pattern and offer it (install + activate ` +
-          `with \`skills-atlas use ${found.recommended} --yes\`). If it doesn't actually fit this message, stay silent.`);
-        state.lastSuggestedCount = state.count; // also pause per-prompt cooldown
-        writeState(file, state);
-        return;
-      }
-    }
-    gaps.writeStore(store);
-
-    // 3. PER-PROMPT AUTOPILOT — independently toggled + cooldown
-    if (!ap.suggest) { writeState(file, state); return; }
-    if (state.count - (state.lastSuggestedCount ?? -COOLDOWN) < COOLDOWN) { writeState(file, state); return; }
 
     const lines = candidates.map(c => {
       const uc = (c.row.use_case_en || c.row.use_case || '').replace(/\s+/g, ' ').trim().slice(0, 80);
