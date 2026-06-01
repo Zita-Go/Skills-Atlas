@@ -12,7 +12,7 @@
 [![Categories](https://img.shields.io/badge/categories-20_×_115-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[**🌐 在线访问**](https://zita-go.github.io/Skills-Atlas/?lang=zh) · [📦 数据下载](data/) · [🤝 贡献新 skill](CONTRIBUTING.zh-CN.md) · [💬 讨论区](../../discussions)
+[**🌐 在线访问**](https://zita-go.github.io/Skills-Atlas/?lang=zh) · [**⌨️ 当工具用**](packages/skills-atlas-cli) · [📦 数据下载](data/) · [🤝 贡献新 skill](CONTRIBUTING.zh-CN.md) · [💬 讨论区](../../discussions)
 
 </div>
 
@@ -28,6 +28,9 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~111 个 GitHub 仓库�
 - 你想做完整的开发工作流？看 § 1.1，⛓ 强绑定标记会告诉你哪 5 个必须串起来用
 - 你想找文档处理工具？看 § 2.1，Office 4 件套 + PDF 重型 API + 多格式抽取引擎一目了然
 
+而且它不只是一个用来看的目录：一个[终端 CLI + Claude Code 插件](packages/skills-atlas-cli)让你直接
+**搜索、安装、使用**这些 skill —— 还带一个可选的自动驾驶，在你工作时主动把合适的 skill 递到你面前。
+
 ## 数据规模
 
 | 维度 | 数量 |
@@ -41,6 +44,35 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~111 个 GitHub 仓库�
 覆盖 **20 个功能大类** —— 从软件工程、产品、营销、设计,到 **法律、医疗、金融、DevOps/SRE、安全、教育、Web3** 等专业垂直领域。
 
 ## 怎么用
+
+### 从终端使用 —— CLI · 插件 · 自动驾驶
+
+**真正"用上"一个 skill 最快的方式。**[`skills-atlas-cli`](packages/skills-atlas-cli) 把目录
+变成真正的工具 —— 在终端里直接搜索、**安装**、使用 skill：
+
+<a href="packages/skills-atlas-cli"><img src="docs/cli-demo.png" alt="skills-atlas：搜索 → 查看 → 安装一个 skill" width="760"></a>
+
+```bash
+npx skills-atlas-cli search seo
+npx skills-atlas-cli info brainstorming
+npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/brainstorming/
+```
+
+`install` 按每个 skill 记录的仓内路径，**只下载那一个 skill 的文件夹**（不是整个仓库）到
+`.claude/skills/`。它是个小型包管理器：`use`（装上并立即激活）、`installed`、`outdated`、
+`upgrade`、`remove`、`doctor`。还附带一个 [Claude Code 插件](packages/skills-atlas-cli/plugin)，
+把同样的能力暴露成 `/skills-atlas:skill-search` / `:skill-install`，让 Claude 在对话里直接做。
+
+**🤖 自动驾驶（可选开启）。** 开一次，合适的 skill 就会主动来找*你*：
+
+```bash
+skills-atlas hook on          # 注册一个 Claude Code UserPromptSubmit 钩子
+```
+
+当你说的话命中了某个你还没装的 catalog skill 的领域，钩子会把一份按"独特性"排序的候选短名单递给
+Claude，**由 Claude 判断**有没有真的合适 —— 合适就当场提议安装 + 激活，不合适就闭嘴。这个分工是
+刻意的：钩子负责*召回*（找候选），Claude 负责*精挑*（理解意图）。它**默认关闭**、**全程本地**（你的
+prompt 绝不外传）、**fail-open**（钩子出错绝不挡你的 prompt）。随时 `skills-atlas hook off` 移除。
 
 ### 在线访问
 👉 [打开网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)
