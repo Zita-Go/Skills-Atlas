@@ -8,7 +8,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const { parse } = require('../args');
-const { green, dim, yellow } = require('../format');
+const { green, dim } = require('../format');
 const registry = require('../registry');
 
 const HOOK_CMD = 'skills-atlas suggest';
@@ -43,21 +43,11 @@ module.exports = async function hook(argv) {
     let on = false;
     try { on = ((readSettings(p).hooks || {}).UserPromptSubmit || []).some(isOurs); } catch { /* invalid → off */ }
     const ap = registry.getAutopilot();
-    let gapCount = 0;
-    try {
-      const gaps = require('../gaps');
-      const manifest = require('../manifest');
-      const fsu = require('../fsutil');
-      const inst = new Set();
-      for (const sc of fsu.scopesFor({})) for (const e of manifest.list(sc.root)) inst.add(e.skill);
-      const now = Date.now();
-      gapCount = gaps.computeGaps(gaps.pruneOld(gaps.readStore(), now), { now, installed: inst }).length;
-    } catch { /* ignore */ }
-    if (values.json) { console.log(JSON.stringify({ enabled: on, suggest: ap.suggest, gapAlerts: ap.gapAlerts, gaps: gapCount, settings: p })); return; }
+    if (values.json) { console.log(JSON.stringify({ enabled: on, suggest: ap.suggest, gapAlerts: ap.gapAlerts, settings: p })); return; }
     console.log(`autopilot hook: ${on ? green('on') : dim('off')}   ${dim(p)}`);
     console.log(`  per-prompt suggest: ${ap.suggest ? green('on') : dim('off')}   ${dim('(skills-atlas hook suggest on|off)')}`);
     console.log(`  gap alerts:         ${ap.gapAlerts ? green('on') : dim('off')}   ${dim('(skills-atlas hook gaps on|off)')}`);
-    if (gapCount) console.log(`  ${yellow('●')} ${gapCount} capability gap(s) detected — ${dim('skills-atlas gaps')}`);
+    if (on) console.log(dim('  review gaps: skills-atlas gaps'));
     if (!on) console.log(dim('enable: skills-atlas hook on'));
     return;
   }
