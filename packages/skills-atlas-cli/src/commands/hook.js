@@ -8,7 +8,8 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const { parse } = require('../args');
-const { green, dim } = require('../format');
+const { green, dim, yellow } = require('../format');
+const registry = require('../registry');
 
 const HOOK_CMD = 'skills-atlas suggest';
 const settingsPath = () => path.join(os.homedir(), '.claude', 'settings.json');
@@ -22,21 +23,47 @@ const isOurs = e => e && Array.isArray(e.hooks)
 
 module.exports = async function hook(argv) {
   const { values, positionals } = parse(argv, ['json']);
-  if (values.help) { console.log('usage: skills-atlas hook <on|off|status>'); return; }
+  if (values.help) { console.log('usage: skills-atlas hook <on|off|status|suggest on|off|gaps on|off>'); return; }
   const sub = positionals[0] || 'status';
   const p = settingsPath();
+
+  if (sub === 'suggest' || sub === 'gaps') {
+    const onoff = positionals[1];
+    if (onoff !== 'on' && onoff !== 'off') {
+      console.error(`usage: skills-atlas hook ${sub} <on|off>`); process.exitCode = 1; return;
+    }
+    const key = sub === 'suggest' ? 'suggest' : 'gapAlerts';
+    registry.setAutopilot({ [key]: onoff === 'on' });
+    const label = sub === 'suggest' ? 'per-prompt autopilot' : 'gap alerts';
+    console.log(`${green('✓')} ${label}: ${onoff === 'on' ? green('on') : dim('off')}`);
+    return;
+  }
 
   if (sub === 'status') {
     let on = false;
     try { on = ((readSettings(p).hooks || {}).UserPromptSubmit || []).some(isOurs); } catch { /* invalid → off */ }
-    if (values.json) { console.log(JSON.stringify({ enabled: on, settings: p })); return; }
-    console.log(`autopilot: ${on ? green('on') : dim('off')}   ${dim(p)}`);
+    const ap = registry.getAutopilot();
+    let gapCount = 0;
+    try {
+      const gaps = require('../gaps');
+      const manifest = require('../manifest');
+      const fsu = require('../fsutil');
+      const inst = new Set();
+      for (const sc of fsu.scopesFor({})) for (const e of manifest.list(sc.root)) inst.add(e.skill);
+      const now = Date.now();
+      gapCount = gaps.computeGaps(gaps.pruneOld(gaps.readStore(), now), { now, installed: inst }).length;
+    } catch { /* ignore */ }
+    if (values.json) { console.log(JSON.stringify({ enabled: on, suggest: ap.suggest, gapAlerts: ap.gapAlerts, gaps: gapCount, settings: p })); return; }
+    console.log(`autopilot hook: ${on ? green('on') : dim('off')}   ${dim(p)}`);
+    console.log(`  per-prompt suggest: ${ap.suggest ? green('on') : dim('off')}   ${dim('(skills-atlas hook suggest on|off)')}`);
+    console.log(`  gap alerts:         ${ap.gapAlerts ? green('on') : dim('off')}   ${dim('(skills-atlas hook gaps on|off)')}`);
+    if (gapCount) console.log(`  ${yellow('●')} ${gapCount} capability gap(s) detected — ${dim('skills-atlas gaps')}`);
     if (!on) console.log(dim('enable: skills-atlas hook on'));
     return;
   }
 
   if (sub !== 'on' && sub !== 'off') {
-    console.error('usage: skills-atlas hook <on|off|status>');
+    console.error('usage: skills-atlas hook <on|off|status|suggest on|off|gaps on|off>');
     process.exitCode = 1;
     return;
   }
