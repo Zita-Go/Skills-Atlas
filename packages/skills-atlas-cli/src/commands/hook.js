@@ -23,18 +23,18 @@ const isOurs = e => e && Array.isArray(e.hooks)
 
 module.exports = async function hook(argv) {
   const { values, positionals } = parse(argv, ['json']);
-  if (values.help) { console.log('usage: skills-atlas hook <on|off|status|suggest on|off|gaps on|off>'); return; }
+  if (values.help) { console.log('usage: skills-atlas hook <on|off|status|suggest on|off|gaps on|off|prune on|off>'); return; }
   const sub = positionals[0] || 'status';
   const p = settingsPath();
 
-  if (sub === 'suggest' || sub === 'gaps') {
+  if (sub === 'suggest' || sub === 'gaps' || sub === 'prune') {
     const onoff = positionals[1];
     if (onoff !== 'on' && onoff !== 'off') {
       console.error(`usage: skills-atlas hook ${sub} <on|off>`); process.exitCode = 1; return;
     }
-    const key = sub === 'suggest' ? 'suggest' : 'gapAlerts';
+    const key = sub === 'suggest' ? 'suggest' : sub === 'gaps' ? 'gapAlerts' : 'prune';
     registry.setAutopilot({ [key]: onoff === 'on' });
-    const label = sub === 'suggest' ? 'per-prompt autopilot' : 'gap alerts';
+    const label = sub === 'suggest' ? 'per-prompt autopilot' : sub === 'gaps' ? 'gap alerts' : 'prune suggestions';
     console.log(`${green('✓')} ${label}: ${onoff === 'on' ? green('on') : dim('off')}`);
     return;
   }
@@ -48,11 +48,12 @@ module.exports = async function hook(argv) {
     if (on) {
       console.log(`  per-prompt suggest: ${ap.suggest ? green('on') : dim('off')}   ${dim('(skills-atlas hook suggest on|off)')}`);
       console.log(`  gap alerts:         ${ap.gapAlerts ? green('on') : dim('off')}   ${dim('(skills-atlas hook gaps on|off)')}`);
-      console.log(dim('  review gaps: skills-atlas gaps'));
+      console.log(`  prune suggestions:  ${ap.prune ? green('on') : dim('off')}   ${dim('(skills-atlas hook prune on|off)')}`);
+      console.log(dim('  review: skills-atlas gaps  ·  skills-atlas prune'));
     } else {
       // Hook isn't registered, so these sub-toggles don't do anything yet — don't
       // imply the autopilot is running. Show them dimmed with the caveat.
-      console.log(dim(`  (suggest ${ap.suggest ? 'on' : 'off'}, gap alerts ${ap.gapAlerts ? 'on' : 'off'} — they take effect once you run 'skills-atlas hook on')`));
+      console.log(dim(`  (suggest ${ap.suggest ? 'on' : 'off'}, gap alerts ${ap.gapAlerts ? 'on' : 'off'}, prune ${ap.prune ? 'on' : 'off'} — they take effect once you run 'skills-atlas hook on')`));
       console.log(dim('enable: skills-atlas hook on'));
     }
     return;

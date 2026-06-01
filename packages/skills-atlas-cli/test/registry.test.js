@@ -53,9 +53,9 @@ test('malformed config.json → treated as empty', () => {
 
 test('autopilot toggles default on and persist, preserving sources', () => {
   const r = isolate();
-  assert.deepStrictEqual(r.getAutopilot(), { suggest: true, gapAlerts: true });
+  assert.deepStrictEqual(r.getAutopilot(), { suggest: true, gapAlerts: true, prune: false });
   r.addSource('https://a/data.json');
   r.setAutopilot({ suggest: false });
-  assert.deepStrictEqual(r.getAutopilot(), { suggest: false, gapAlerts: true });
+  assert.deepStrictEqual(r.getAutopilot(), { suggest: false, gapAlerts: true, prune: false });
   assert.strictEqual(r.listSources().length, 1, 'sources preserved');
 });

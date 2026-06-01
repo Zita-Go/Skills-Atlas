@@ -18,6 +18,8 @@ const fsu = require('../fsutil');
 const registry = require('../registry');
 const transcripts = require('../transcripts');
 const gapstate = require('../gapstate');
+const prunestate = require('../prunestate');
+const prune = require('./prune');
 
 const COOLDOWN = 3; // min prompts between suggestions
 const GAP_EVERY = 12; // a gap nudge is only considered at every Nth prompt (per session)
@@ -77,6 +79,26 @@ module.exports = async function suggest() {
           gapstate.touchNudge(sig);
           writeState(file, state);
           return;
+        }
+      }
+    }
+
+    // --- Proactive prune nudge: installed skills that may no longer fit the user's
+    // work. Offset from the gap check so the two never fire on the same prompt. ---
+    if (ap.prune && state.count % GAP_EVERY === Math.floor(GAP_EVERY / 2)) {
+      const recent = transcripts.recentPrompts({ max: 30 });
+      if (recent.length >= 8) {
+        const ps = prunestate.read();
+        const { fire, sig } = gapstate.shouldNudge(ps, recent, Date.now());
+        if (fire) {
+          const { data } = loadData({ quiet: true });
+          const installed = prune.reviewList(data, ps.dismissed || [], Date.now());
+          if (installed.length) {
+            emit(prune.digestText(installed, recent, ps.dismissed || []));
+            prunestate.touchNudge(sig);
+            writeState(file, state);
+            return;
+          }
         }
       }
     }

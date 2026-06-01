@@ -76,7 +76,7 @@ function removeCachedSource(url) {
 // config.json; read-modify-write the full object so registry `sources` is preserved.
 function getAutopilot() {
   const c = readConfig();
-  return { suggest: true, gapAlerts: true, ...(c.autopilot || {}) };
+  return { suggest: true, gapAlerts: true, prune: false, ...(c.autopilot || {}) };
 }
 function setAutopilot(patch) {
   const c = readConfig();
