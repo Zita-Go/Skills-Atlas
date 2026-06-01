@@ -253,6 +253,37 @@ test('suggestCandidates: stays silent on greetings and generic dev actions (no n
   }
 });
 
+// --- bilingual: a Chinese prompt fires via the curated Chinese content (skill names
+// are English and can't match CJK tokens) without breaking the English silence. ---
+test('suggestCandidates: Chinese task prompts fire with the right skill in the shortlist', () => {
+  const { suggestCandidates } = require('../src/search-core');
+  const cases = [
+    ['帮我系统性地调试这个崩溃', 'systematic-debugging'],
+    ['把这本书完整翻译成中文', 'translate-book'],
+    ['帮我做个竞品分析', 'competitor-analysis'],
+    ['帮我写个用户调研访谈提纲', 'interview-script'],
+  ];
+  for (const [p, want] of cases) {
+    const r = suggestCandidates(flatRows, p);
+    assert.ok(r.fire, `should fire (zh): ${p}`);
+    assert.ok(r.candidates.some(c => c.skill === want), `${p} → shortlist should include ${want} (got ${r.candidates.map(c => c.skill)})`);
+  }
+});
+
+test('suggestCandidates: generic / greeting Chinese stays silent', () => {
+  const { suggestCandidates } = require('../src/search-core');
+  for (const p of ['你好呀', '谢谢，搞定了', '帮我看看这个', '帮我改一下这个功能的代码',
+                   '把这行删掉', '运行一下看看结果', '这个东西怎么用']) {
+    assert.strictEqual(suggestCandidates(flatRows, p).fire, false, `should be silent (zh): ${p}`);
+  }
+});
+
+test('suggestCandidates: the CJK path leaves pure-English behavior unchanged', () => {
+  const { suggestCandidates } = require('../src/search-core');
+  assert.ok(suggestCandidates(flatRows, 'run a pre-mortem before we launch').fire);
+  assert.strictEqual(suggestCandidates(flatRows, 'fix the typo on line 42').fire, false);
+});
+
 test('suggestCandidates: never re-suggests an installed or already-suggested skill', () => {
   const { suggestCandidates } = require('../src/search-core');
   const base = suggestCandidates(flatRows, 'help me set up test driven development');

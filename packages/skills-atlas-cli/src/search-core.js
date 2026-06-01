@@ -215,6 +215,43 @@ const idfOf = (info, seg) => Math.log(1 + info.n / ((info.df.get(seg) || 0) + 1)
 
 const FIRE_IDF = 4.2; // a single distinctive name word must clear this to fire alone
 
+// --- CJK content anchors -----------------------------------------------------
+// Skill names are English, so a Chinese prompt's tokens never match a name anchor
+// and the hook never fires (even when the right skill is recalled). For CJK tokens
+// we anchor instead on the curated *Chinese* content (use_case / group / when), with
+// the same "distinctive enough to fire" gate. This path is CJK-token-gated, so pure
+// English queries are completely unaffected.
+const isCjk = t => /[一-鿿]/.test(t);
+const CJK_FIRE_IDF = 4.2;     // a single distinctive CJK content word must clear this to fire alone
+const CJK_DISTINCT_IDF = 3.5; // and only words this distinctive (~≤10 rows) count toward "strong",
+                              // so two generic words (风险 + 分析) can't fire — only specific ones
+
+// Generic Chinese words that must not fire on their own — the CJK analog of
+// ANCHOR_STOP (casual verbs + generic nouns that carry no domain intent).
+const CJK_ANCHOR_STOP = new Set([
+  '看看', '看下', '看一', '帮忙', '处理', '解决', '完成', '搞定', '试试', '弄一', '做个', '做一',
+  '写个', '写一', '加个', '改改', '改一', '删掉', '运行', '创建', '生成', '修改', '优化', '检查',
+  '一下', '一个', '这个', '那个', '东西', '问题', '代码', '文件', '内容', '功能', '项目', '任务',
+  '系统', '方法', '工具', '数据', '需要', '想要', '怎么', '如何', '可以', '应该', '一些', '这些',
+]);
+
+// CJK bigrams in a row's curated short content (NOT the long description — keep it
+// distinctive). Used both to build the corpus DF and to match a query.
+const rowCjkContent = r =>
+  tokenize(lc([r.use_case, r.group, r.when_to_use].filter(Boolean).join(' '))).filter(isCjk);
+
+const _cjkDfCache = new WeakMap();
+function cjkContentDf(rows) {
+  let info = _cjkDfCache.get(rows);
+  if (info) return info;
+  const df = new Map();
+  let n = 0;
+  for (const r of rows) { n++; for (const t of new Set(rowCjkContent(r))) df.set(t, (df.get(t) || 0) + 1); }
+  info = { df, n: n || 1 };
+  _cjkDfCache.set(rows, info);
+  return info;
+}
+
 // Autopilot recall: collect a SHORTLIST of catalog skills that may fit a free-text
 // prompt, for Claude to judge (we do recall; Claude does precision). Returns
 // { fire, candidates: [{skill, row}], weak }. Sources, in order:
@@ -252,10 +289,40 @@ function suggestCandidates(rows, prompt, { installed = new Set(), suggested = ne
   }
   anchors.sort((a, b) => b.weight - a.weight || maxStars(b.row) - maxStars(a.row));
 
+  // 1b. CJK content anchors — for the Chinese tokens (skill names can't match them),
+  // anchor on distinctive matches in the row's curated Chinese content.
+  const cjkTokens = tokens.filter(t => isCjk(t) && !CJK_ANCHOR_STOP.has(t));
+  const cjkAnchors = [];
+  if (cjkTokens.length) {
+    const cdf = cjkContentDf(rows);
+    for (const r of rows) {
+      const content = new Set(rowCjkContent(r));
+      let weight = 0, strong = 0;
+      for (const t of new Set(cjkTokens)) {
+        if (!content.has(t)) continue;
+        const idf = idfOf(cdf, t);
+        weight += idf;
+        if (idf >= CJK_DISTINCT_IDF) strong++; // only distinctive words count as "strong"
+      }
+      if (strong || weight >= CJK_FIRE_IDF) cjkAnchors.push({ row: r, weight, strong });
+    }
+    // Prefer rows that match MORE distinctive query words (coverage) over a single
+    // incidental high-IDF hit, so the on-topic skill leads the shortlist.
+    cjkAnchors.sort((a, b) => b.strong - a.strong || b.weight - a.weight || maxStars(b.row) - maxStars(a.row));
+  }
+  const cjkQualifies = a => a.strong >= 2 || a.weight >= CJK_FIRE_IDF;
+
   const out = [];
   const seen = new Set(taken);
   const push = (skill, row) => { if (!seen.has(skill)) { seen.add(skill); out.push({ skill, row }); } };
   for (const a of anchors) { if (out.length >= limit) break; push(a.skill, a.row); }
+  // Only distinctive CJK anchors become candidates; runSearch backfills the rest.
+  for (const a of cjkAnchors) {
+    if (out.length >= limit) break;
+    if (!cjkQualifies(a)) continue;
+    const s = (a.row.skills || []).find(x => !seen.has(x));
+    if (s) push(s, a.row);
+  }
 
   // 2. fill remaining slots from the general ranked search — but only with rows
   // that are actually on-topic (a name/group hit, or strong coverage). A lone
@@ -276,7 +343,10 @@ function suggestCandidates(rows, prompt, { installed = new Set(), suggested = ne
   // distinctive (high-IDF) one. A prompt with mere prose overlap and no name
   // signal stays silent (better a miss than noise on every generic prompt); the
   // ranked search still ENRICHES the shortlist once an anchor has fired.
-  const fire = out.length > 0 && anchors.some(a => a.strong >= 2 || a.weight >= FIRE_IDF);
+  const fire = out.length > 0 && (
+    anchors.some(a => a.strong >= 2 || a.weight >= FIRE_IDF) ||
+    cjkAnchors.some(cjkQualifies)
+  );
   return { fire, candidates: out.slice(0, limit), weak };
 }
 
