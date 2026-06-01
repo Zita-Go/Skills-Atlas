@@ -376,8 +376,9 @@ html.light .graph-view .link.dim{stroke-opacity:.07}
   paint-order:stroke;stroke:var(--bg);stroke-width:3;stroke-linejoin:round;
   opacity:0;transition:opacity .15s}
 .graph-view .label.always{opacity:.85}
-.graph-view .node:hover .label,
-.graph-view .node.highlight .label{opacity:1;fill:var(--fg)}
+/* 标签现在在独立顶层（不再是 .node 的子元素），用标签自身的 class 控制显隐 */
+.graph-view .label.lit{opacity:1;fill:var(--fg)}
+.graph-view .label.faded{opacity:.12}
 .graph-view .cluster-halo{fill:none;stroke:none;pointer-events:none}
 .graph-view .graph-bg{pointer-events:none}
 .graph-view .node-hi{pointer-events:none}
@@ -2598,8 +2599,9 @@ function buildGraph(){
   });
   viewport.appendChild(linkGroup);
 
-  // 节点（每个 g 包含 circle + label）
+  // 节点（每个 g 含 circle；label 单独放顶层 labelGroup，保证文字永远画在所有节点圆之上）
   const nodeGroup = document.createElementNS(svgNS, 'g');
+  const labelGroup = document.createElementNS(svgNS, 'g');   // 标签顶层
   // 决定哪些 label 常驻：仅 top-15（按 count），避免过密
   const sortedByCount = [...nodes].sort((a,b)=> b.count - a.count);
   const alwaysLabelSet = new Set(sortedByCount.slice(0, 15).map(n => n.id));
@@ -2624,15 +2626,15 @@ function buildGraph(){
     const t = document.createElementNS(svgNS, 'text');
     t.classList.add('label');
     if(alwaysLabelSet.has(n.id)) t.classList.add('always');
-    t.setAttribute('y', n.r + 11);
     t.setAttribute('text-anchor', 'middle');
     t.textContent = n.id;
-    g.appendChild(t);
+    labelGroup.appendChild(t);          // 标签进顶层（位置在 render() 里按世界坐标设置）
     nodeGroup.appendChild(g);
     n._g = g; n._c = c; n._t = t;
     return g;
   });
   viewport.appendChild(nodeGroup);
+  viewport.appendChild(labelGroup);   // 标签层在节点层之上 → 文字永不被节点圆遮住
 
   // tooltip
   const tooltip = document.createElement('div');
@@ -2664,14 +2666,20 @@ function buildGraph(){
   let focusedNode = null;
   let focusedCat = null;
   const EN = LANG === 'en';
+  // 顶层标签的显隐随节点状态同步：高亮→显示(lit)、淡化→淡(faded)、其余→看 .always
+  function paintLabels(){
+    nodes.forEach(m => { const cl = m._g.classList; m._t.classList.toggle('lit', cl.contains('highlight')); m._t.classList.toggle('faded', cl.contains('dim')); });
+  }
   function setHighlight(n){
     const nb = neighbors.get(n.id) || new Set();
     nodes.forEach(m => { const on = (m === n || nb.has(m.id)); m._g.classList.toggle('highlight', on); m._g.classList.toggle('dim', !on); });
     links.forEach((l, i) => { const adj = (l.source === n.id || l.target === n.id); linkEls[i].classList.toggle('highlight', adj); linkEls[i].classList.toggle('dim', !adj); });
+    paintLabels();
   }
   function clearHighlight(){
     nodes.forEach(m => m._g.classList.remove('dim', 'highlight'));
     links.forEach((l, i) => linkEls[i].classList.remove('dim', 'highlight'));
+    paintLabels();
   }
   function centerNode(n){ tx = W/2 - n.x * scale; ty = H/2 - n.y * scale; applyTransform(); }
   // 平滑移动相机（scale/tx/ty 缓动），用于聚焦局部图与还原
@@ -2695,19 +2703,19 @@ function buildGraph(){
     _focusPinned.forEach(m => { m.fx = null; m.fy = null; });   // 释放上一次聚焦的钉住
     const nbList = nodes.filter(m => m.id !== n.id && (neighbors.get(n.id) || new Set()).has(m.id));
     const grp = [n, ...nbList];
-    // 占位盒（世界单位）= 节点圆 ∪ 其正下方标签：去重叠时同时避免「标签互叠」和「圆压住别的标签」
-    const bhw = m => Math.max(m.r, m.id.length * 3.0 + 3);   // 盒半宽（标签≈字数×字宽 9.5px mono）
-    const bhh = m => m.r + 13;                                // 盒半高（圆 + 下方标签）
-    const bcy = m => m.y + 13;                                // 盒中心 y（圆心下移半个标签区）
-    // 最小位移消重叠：中心节点不动，其余仅在占位盒相交时沿穿透更小的轴被推开一点（保留相对布局）
-    for(let it = 0; it < 30; it++){
+    // 标签盒（世界单位）：标签居于节点正下方，宽≈字数×字宽(~9.5px mono)
+    const halfW = m => Math.max(m.r, m.id.length * 3.0 + 3);
+    const HH = 8;                          // 标签盒半高
+    const lcy = m => m.y + m.r + 13;       // 标签中心 y
+    // 最小位移消重叠：中心节点不动，邻居仅在「标签互叠」时被推开一点点（保留相对布局/邻接关系）
+    for(let it = 0; it < 24; it++){
       let moved = false;
       for(let i = 0; i < grp.length; i++){
         for(let j = i + 1; j < grp.length; j++){
           const a = grp[i], b = grp[j];
-          const ox = (bhw(a) + bhw(b) + 5) - Math.abs(a.x - b.x);
-          const oy = (bhh(a) + bhh(b) + 3) - Math.abs(bcy(a) - bcy(b));
-          if(ox <= 0 || oy <= 0) continue;            // 占位盒不相交
+          const ox = (halfW(a) + halfW(b) + 5) - Math.abs(a.x - b.x);
+          const oy = (HH * 2 + 4) - Math.abs(lcy(a) - lcy(b));
+          if(ox <= 0 || oy <= 0) continue;            // 标签盒不重叠
           moved = true;
           const am = a !== n, bm = b !== n;
           if(!am && !bm) continue;
@@ -2715,7 +2723,7 @@ function buildGraph(){
             const s = (ox + 0.5) / (am && bm ? 2 : 1) * ((a.x - b.x) < 0 ? -1 : 1);
             if(am) a.x += s; if(bm) b.x -= s;
           } else {
-            const s = (oy + 0.5) / (am && bm ? 2 : 1) * ((bcy(a) - bcy(b)) < 0 ? -1 : 1);
+            const s = (oy + 0.5) / (am && bm ? 2 : 1) * ((lcy(a) - lcy(b)) < 0 ? -1 : 1);
             if(am) a.y += s; if(bm) b.y -= s;
           }
         }
@@ -2726,7 +2734,7 @@ function buildGraph(){
     _focusPinned = grp;
     // 相机包围盒：含标签横向延展 + 下方标签高度
     let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-    grp.forEach(m => { minX = Math.min(minX, m.x - bhw(m)); maxX = Math.max(maxX, m.x + bhw(m));
+    grp.forEach(m => { minX = Math.min(minX, m.x - halfW(m)); maxX = Math.max(maxX, m.x + halfW(m));
                        minY = Math.min(minY, m.y - m.r); maxY = Math.max(maxY, m.y + m.r + 26); });
     const padX = 60, padY = 70;
     const bw = (maxX - minX) + padX * 2, bh = (maxY - minY) + padY * 2;
@@ -2754,6 +2762,7 @@ function buildGraph(){
     if(focusedNode){ focusedNode = null; drawer.classList.remove('open'); graphSelectedId = null; }  // 与节点聚焦互斥
     focusedCat = i;
     nodes.forEach(m => { const on = (m.catI === i); m._g.classList.toggle('highlight', on); m._g.classList.toggle('dim', !on); });
+    paintLabels();
     links.forEach((l, idx) => {
       const sa = nodeMap.get(l.source), ta = nodeMap.get(l.target);
       const inCat = !!(sa && ta && sa.catI === i && ta.catI === i);
@@ -2837,6 +2846,7 @@ function buildGraph(){
     const mset = new Set(matches);
     nodes.forEach(m => { const on = mset.has(m); m._g.classList.toggle('highlight', on); m._g.classList.toggle('dim', !on); });
     links.forEach((l, i) => linkEls[i].classList.add('dim'));
+    paintLabels();
     centerNode(matches[0]);
   };
   graphOpenNodeFn = (id) => { const m = nodeMap.get(id); if(m) openDrawer(m); };
@@ -2914,6 +2924,7 @@ function buildGraph(){
         if(adj) linkEls[i].classList.add('highlight'), linkEls[i].classList.remove('dim');
         else linkEls[i].classList.add('dim'), linkEls[i].classList.remove('highlight');
       });
+      paintLabels();
       // tooltip
       tooltip.innerHTML = `<b>${escapeHtml(n.id)}</b><br>
         <span style="color:var(--fg-muted)">${escapeHtml(catLabelOf(n.h1))}</span><br>
@@ -3031,6 +3042,7 @@ function buildGraph(){
   function render(){
     nodes.forEach(n => {
       n._g.setAttribute('transform', `translate(${n.x},${n.y})`);
+      n._t.setAttribute('x', n.x); n._t.setAttribute('y', n.y + n.r + 11);   // 标签层用世界坐标
     });
     links.forEach((l, i) => {
       const a = nodeMap.get(l.source), b = nodeMap.get(l.target);
