@@ -184,6 +184,9 @@ module.exports = async function install(argv) {
   }
 
   const targetRoot = fsu.installTargetDir({ global: resolveGlobal(values) });
+  // Global installs read best as ~/…; a --project path is shorter and clearer as a
+  // relative ./.claude/skills/<skill> than a long absolute path.
+  const showPath = pth => resolveGlobal(values) ? fsu.tildify(pth) : './' + path.relative(process.cwd(), pth);
   const isChain = Boolean(chosen.row && chosen.row.chain && (chosen.row.skills || []).length >= 2);
 
   // --- chain: install the whole workflow ---
@@ -233,7 +236,7 @@ module.exports = async function install(argv) {
       }));
       return;
     }
-    console.log(`would install ${listing.files.length} file(s) to ${fsu.tildify(dest)} (branch ${listing.branchUsed}):`);
+    console.log(`would install ${listing.files.length} file(s) to ${showPath(dest)} (branch ${listing.branchUsed}):`);
     listing.files.forEach(f => console.log(`  ${f.rel}`));
     if (listing.note) console.log(dim('  ' + listing.note));
     console.log(dim('  (real install fetches the repo archive — no GitHub API rate limit)'));
@@ -260,7 +263,7 @@ module.exports = async function install(argv) {
     return;
   }
 
-  console.log(`\n${green('✓')} installed ${bold(skill)} → ${fsu.tildify(result.dest)}  ${dim(`(${result.fileCount} file(s) from ${src.name}@${result.branchUsed})`)}`);
+  console.log(`\n${green('✓')} installed ${bold(skill)} → ${showPath(result.dest)}  ${dim(`(${result.fileCount} file(s) from ${src.name}@${result.branchUsed})`)}`);
   if (result.note) console.log(dim('  ' + result.note));
   console.log(dim(`  source: ${src.name}@${result.branchUsed} — branch HEAD, not a pinned commit; review before use`));
   if (result.scripts.length) {
@@ -279,7 +282,7 @@ module.exports = async function install(argv) {
 
   if (values.inline) {
     const body = readSkillMd(result.dest);
-    const mdPath = fsu.tildify(path.join(result.dest, 'SKILL.md'));
+    const mdPath = showPath(path.join(result.dest, 'SKILL.md'));
     // Claude (and any piped caller) needs the full SKILL.md inline to apply the
     // skill right now; a human at a terminal just needs the digest — the file is
     // on disk and auto-loads, so dumping ~200 lines would only bury the next step.
@@ -290,7 +293,7 @@ module.exports = async function install(argv) {
       console.log(dim('─── end SKILL.md ───'));
     }
     console.log(`\n${green('✓')} ${bold(skill)} is now active — ${full ? 'use the instructions above' : 'follow its SKILL.md'} for the task at hand.`);
-    console.log(dim(`  installed at ${fsu.tildify(result.dest)} (auto-loads in new sessions) · what it does: skills-atlas info ${skill} · remove: skills-atlas remove ${skill}`));
+    console.log(dim(`  installed at ${showPath(result.dest)} (auto-loads in new sessions) · what it does: skills-atlas info ${skill} · remove: skills-atlas remove ${skill}`));
     if (body && !full) console.log(dim(`  full instructions: ${mdPath}  (or re-run with --verbose)`));
   } else {
     console.log(`\n${bold(skill)} is installed but not loaded yet. To use it:`);

@@ -41,7 +41,12 @@ function renderRow(r, { en = false } = {}) {
   const lines = [`\n${chain}${bold(text(r, 'group', en))}   ${dim('[' + cat + ']')}`];
   const uc = text(r, 'use_case', en);
   if (uc) lines.push(`  💡 ${uc}`);
-  lines.push(`  ${dim('skills:')} ${green(r.skills.join(', '))}`);
+  const SK_MAX = 8;
+  const sk = r.skills || [];
+  const skStr = sk.length > SK_MAX
+    ? green(sk.slice(0, SK_MAX).join(', ')) + dim(` +${sk.length - SK_MAX} more`)
+    : green(sk.join(', '));
+  lines.push(`  ${dim('skills:')} ${skStr}`);
   const best = [...(r.sources || [])].sort((a, b) => (b.stars || 0) - (a.stars || 0))[0];
   if (best) {
     const inst = best.install && best.install.command ? ` — ${best.install.command}` : '';
@@ -162,5 +167,5 @@ function renderInfo(info, { en = false, all = false } = {}) {
 
 module.exports = {
   bold, dim, green, cyan, yellow, stars, safeAlt, text, renderRow,
-  buildInfo, infoForRow, renderInfo,
+  buildInfo, infoForRow, renderInfo, PERSONA_EN,
 };

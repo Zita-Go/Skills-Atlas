@@ -24,6 +24,22 @@ test('tokenize: ASCII words + CJK bigrams, stopwords dropped', () => {
   assert.ok(!t.includes('帮我'), 'drops all-stopword bigram 帮我');
 });
 
+test('tokenize: strips leading interrogative/filler phrases (en + zh)', () => {
+  assert.ok(!tokenize('如何重构代码').includes('何重'), 'no bridging bigram from the 如何 prefix');
+  assert.deepStrictEqual(new Set(tokenize('如何重构代码')), new Set(tokenize('重构代码')),
+    '如何… tokenizes the same as the bare query');
+  assert.deepStrictEqual(new Set(tokenize('how do i translate a pdf')), new Set(tokenize('translate a pdf')));
+});
+
+test('renderRow: collapses a long skill list (+N more)', () => {
+  const { renderRow } = require('../src/format');
+  const row = { group: 'G', group_en: 'G', _cat: 'C', _catEn: 'C', chain: false,
+    skills: Array.from({ length: 11 }, (_, i) => 'skill-' + i), sources: [] };
+  const out = renderRow(row, { en: true });
+  assert.match(out, /\+3 more/);
+  assert.ok(!out.includes('skill-9'), 'skills beyond the cap are hidden');
+});
+
 test('tokenize: English stopwords removed', () => {
   const t = tokenize('i want to translate a whole pdf');
   assert.ok(!t.includes('i') && !t.includes('to') && !t.includes('want'));

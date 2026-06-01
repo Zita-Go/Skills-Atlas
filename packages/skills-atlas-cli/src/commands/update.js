@@ -28,6 +28,7 @@ module.exports = async function update(argv) {
     }
   } catch (e) {
     console.error(`update failed: ${e.message}`);
+    console.error('your existing catalog is unchanged and still usable offline.');
     process.exitCode = 1;
   }
 };

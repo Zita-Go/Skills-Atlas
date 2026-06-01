@@ -63,7 +63,10 @@ module.exports = async function search(argv) {
   const shown = rows.slice(0, limit);
 
   if (values.json) {
-    console.log(JSON.stringify(shown.map(jsonRow), null, 2));
+    console.log(JSON.stringify({
+      query, total: rows.length, shown: shown.length, weak,
+      results: shown.map(jsonRow),
+    }, null, 2));
     return;
   }
 

@@ -77,6 +77,7 @@ module.exports = async function hook(argv) {
     if (arr.some(isOurs)) { console.log(dim('autopilot already on.')); return; }
     settings.hooks.UserPromptSubmit = [...arr, { matcher: '*', hooks: [{ type: 'command', command: HOOK_CMD, timeout: 5 }] }];
   } else {
+    if (!arr.some(isOurs)) { console.log(dim('autopilot already off.')); return; }
     const kept = arr.filter(e => !isOurs(e));
     if (kept.length) settings.hooks.UserPromptSubmit = kept;
     else delete settings.hooks.UserPromptSubmit;
@@ -86,7 +87,9 @@ module.exports = async function hook(argv) {
   try {
     fs.mkdirSync(path.dirname(p), { recursive: true });
     if (fs.existsSync(p) && !fs.existsSync(`${p}.bak`)) fs.copyFileSync(p, `${p}.bak`); // keep the pristine original
-    fs.writeFileSync(p, JSON.stringify(settings, null, 2) + '\n');
+    // Removing our only setting? Don't leave a bare `{}` behind — drop the file.
+    if (sub === 'off' && !Object.keys(settings).length && fs.existsSync(p)) fs.rmSync(p, { force: true });
+    else fs.writeFileSync(p, JSON.stringify(settings, null, 2) + '\n');
   } catch (e) { console.error(`failed to write ${p}: ${e.message}`); process.exitCode = 1; return; }
 
   if (values.json) { console.log(JSON.stringify({ enabled: sub === 'on', settings: p })); return; }

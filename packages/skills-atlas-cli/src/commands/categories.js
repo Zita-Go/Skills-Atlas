@@ -31,11 +31,17 @@ async function list(argv) {
 
   const en = !values.zh;
   const filter = (positionals.join(' ') || values.category || '').trim();
+  // A bare number means "that numbered category" — match the "N." prefix exactly,
+  // so `list 4` doesn't also pull in "14." via loose substring.
+  const numFilter = /^\d+$/.test(filter) ? new RegExp(`^${filter}\\b`) : null;
   const { data } = loadData({ quiet: values.json });
 
   const out = [];
   for (const s of data.sections) {
-    if (filter && !(loose(s.title, filter) || loose(s.title_en, filter))) continue;
+    const hit = !filter
+      || (numFilter ? (numFilter.test(s.title_en || '') || numFilter.test(s.title || ''))
+        : (loose(s.title, filter) || loose(s.title_en, filter)));
+    if (!hit) continue;
     out.push({
       section: en ? (s.title_en || s.title) : s.title,
       groups: s.subsections.flatMap(ss => ss.rows.map(r => ({

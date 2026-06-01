@@ -23,8 +23,16 @@ const STOP = new Set([
   '在', '是', '就', '也', '都', '还', '让', '跟', '对', '向', '我们', '帮我', '我想',
 ]);
 
+// Leading interrogative / filler phrases ("如何…", "how do i…", "i want to…") add
+// noise tokens — including a bridging CJK bigram ("如何重构" → keeps "何重") — that
+// dilute coverage and wrongly flag a good query as weak. Strip them up front.
+const LEAD_FILLER_EN = /^(?:\s*(?:how\s+(?:do|can|should)\s+(?:i|we|you)|how\s+to|i\s+(?:want|need|wanna)\s+to|i\s+would\s+like\s+to|can\s+you|could\s+you|please|help\s+me|let'?s)\s+)+/;
+const LEAD_FILLER_ZH = /^(?:如何|怎么样|怎样|怎么|请问|帮我看看|帮我|我想要|我想|我要|我需要|麻烦)+/;
+const stripLeadingFillers = q => q.replace(LEAD_FILLER_EN, '').replace(LEAD_FILLER_ZH, '');
+
 // Split a (lowercased) query into search terms.
 function tokenize(query) {
+  query = stripLeadingFillers(query);
   const out = new Set();
   const re = /[a-z0-9]+|[一-鿿]+/g;
   let m;
@@ -249,12 +257,19 @@ function suggestCandidates(rows, prompt, { installed = new Set(), suggested = ne
   const push = (skill, row) => { if (!seen.has(skill)) { seen.add(skill); out.push({ skill, row }); } };
   for (const a of anchors) { if (out.length >= limit) break; push(a.skill, a.row); }
 
-  // 2. fill from the general ranked search (one primary skill per row)
+  // 2. fill remaining slots from the general ranked search — but only with rows
+  // that are actually on-topic (a name/group hit, or strong coverage). A lone
+  // description-word match must not pad the shortlist with off-topic skills
+  // (e.g. "product-marketing" riding into a "debug this crash" prompt).
   const { rows: ranked, weak } = runSearch(rows, { query: prompt });
   for (const r of ranked) {
     if (out.length >= limit) break;
     const s = (r.skills || []).find(x => !seen.has(x));
-    if (s) push(s, r);
+    if (!s) continue;
+    const f = buildFields(r);
+    const nameOrGroup = tokens.some(t => fieldHas(f.name, t) || fieldHas(f.group, t));
+    if (!nameOrGroup && scoreRow(r, tokens, lc(prompt)).coverage < 0.6) continue;
+    push(s, r);
   }
 
   // fire decision: only on a real name anchor — two contentful name words, OR one

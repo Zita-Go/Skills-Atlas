@@ -72,7 +72,10 @@ function loadBundled() {
     'or run `skills-atlas update` to fetch the catalog.');
 }
 
+const nudgeFile = () => path.join(cacheDir(), 'nudge.json');
+
 // One-line stderr nudge when the catalog is the bundled snapshot or a stale cache.
+// Throttled to once per day so it informs without nagging on every command.
 function maybeStaleNudge(fromCache) {
   const meta = tryReadJSON(metaFile());
   let stale = true;
@@ -80,9 +83,14 @@ function maybeStaleNudge(fromCache) {
     const ageDays = (Date.now() - Date.parse(meta.fetchedAt)) / 86400000;
     stale = !(ageDays >= 0 && ageDays < STALE_DAYS);
   }
-  if (stale) {
-    process.stderr.write("tip: run 'skills-atlas update' to refresh the catalog\n");
-  }
+  if (!stale) return;
+  try {
+    const n = tryReadJSON(nudgeFile());
+    if (n && n.at && (Date.now() - Date.parse(n.at)) < 86400000) return; // shown within the day
+    fs.mkdirSync(cacheDir(), { recursive: true });
+    fs.writeFileSync(nudgeFile(), JSON.stringify({ at: new Date().toISOString() }));
+  } catch { /* throttle I/O is best-effort */ }
+  process.stderr.write("tip: run 'skills-atlas update' to refresh the catalog\n");
 }
 
 function loadData({ quiet = false } = {}) {

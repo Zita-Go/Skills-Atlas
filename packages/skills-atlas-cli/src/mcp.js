@@ -8,7 +8,7 @@ const path = require('path');
 const { loadData } = require('./data');
 const { buildIndices, vendorsFor, skillDocPath, suggestSkills } = require('./index-build');
 const { runSearch } = require('./search-core');
-const { buildInfo } = require('./format');
+const { buildInfo, PERSONA_EN } = require('./format');
 const fsu = require('./fsutil');
 const { installFolder } = require('./installer');
 
@@ -45,7 +45,7 @@ function fmtInfo(data, { skill }) {
   const desc = g.description_en || g.description; if (desc) lines.push(desc);
   const uc = g.use_case_en || g.use_case; if (uc) lines.push(`use case: ${uc}`);
   const wt = g.when_to_use_en || g.when_to_use; if (wt) lines.push(`when: ${wt}`);
-  if (g.personas && g.personas.length) lines.push(`personas: ${g.personas.join(', ')}`);
+  if (g.personas && g.personas.length) lines.push(`personas: ${g.personas.map(p => PERSONA_EN[p] || p).join(', ')}`);
   lines.push('sources:');
   for (const s of g.sources) {
     lines.push(`  - ${s.id} ★${s.stars || 0}${s.license ? ` (${s.license})` : ''}  ${s.path || '(whole-repo install)'}`);
@@ -108,7 +108,7 @@ async function doInstall(data, { skill, scope, source, dry_run }) {
 
 function toolDefs() {
   return [
-    { name: 'search_skills', description: 'Search the Skills Atlas catalog of AI agent skills by keyword or short task description.', inputSchema: { type: 'object', properties: { query: { type: 'string', description: 'keywords or a short task description' }, limit: { type: 'integer', minimum: 1, description: 'max results (default 10)' } }, required: ['query'] } },
+    { name: 'search_skills', description: 'Search the Skills Atlas catalog of AI agent skills by keyword or short task description. To install a result, call install_skill with the skill name — do not run the npx/install command shown in the results (that is the source reference, often a whole-repo install).', inputSchema: { type: 'object', properties: { query: { type: 'string', description: 'keywords or a short task description' }, limit: { type: 'integer', minimum: 1, description: 'max results (default 10)' } }, required: ['query'] } },
     { name: 'skill_info', description: 'Show what a catalog skill does, when to use it, its sources, and how to install it.', inputSchema: { type: 'object', properties: { skill: { type: 'string', description: 'exact skill name (e.g. brainstorming); fuzzy matching and typo correction are applied' } }, required: ['skill'] } },
     { name: 'install_skill', description: 'Install a skill from the catalog into .claude/skills/.', inputSchema: { type: 'object', properties: { skill: { type: 'string' }, scope: { type: 'string', enum: ['global', 'project'], description: 'default global (~/.claude/skills)' }, source: { type: 'string', description: 'pick a source when several provide the skill' }, dry_run: { type: 'boolean' } }, required: ['skill'] } },
     { name: 'list_categories', description: "List the catalog's top-level categories, or the skill groups within one.", inputSchema: { type: 'object', properties: { category: { type: 'string', description: 'optional — drill into one category' } } } },
