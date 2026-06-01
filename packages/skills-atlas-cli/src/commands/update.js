@@ -6,7 +6,10 @@ const { refreshData, refreshSources } = require('../data');
 module.exports = async function update(argv) {
   const { values } = parse(argv, ['json']);
   if (values.help) {
-    console.log('usage: skills-atlas update\n\nRefresh the local catalog cache from the public data feed.');
+    console.log('usage: skills-atlas update\n\n' +
+      'Refresh the local catalog cache from the public data feed.\n' +
+      'The catalog also auto-refreshes in the background (~daily) so new skills appear\n' +
+      'on their own; set SKILLS_ATLAS_NO_REFRESH=1 (or SKILLS_ATLAS_OFFLINE=1) to disable.');
     return;
   }
 

@@ -73,6 +73,9 @@ async function main() {
     process.exitCode = 1;
     return;
   }
+  // Opportunistic, non-blocking background catalog refresh so new skills appear over
+  // time without a manual `update`. Skipped for `update` itself; fully fail-silent.
+  if (sub !== 'update') { try { require('../src/data').maybeBackgroundRefresh(); } catch { /* ignore */ } }
   await cmd(rest);
 }
 

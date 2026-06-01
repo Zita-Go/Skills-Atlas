@@ -93,6 +93,37 @@ function maybeStaleNudge(fromCache) {
   process.stderr.write("tip: run 'skills-atlas update' to refresh the catalog\n");
 }
 
+const REFRESH_AFTER_MS = 24 * 3600000; // auto-refresh once the cache is a day old
+const refreshStampFile = () => path.join(cacheDir(), 'autorefresh.json');
+
+// Pure decision: should we kick off a background refresh now? (cache stale/absent,
+// not throttled, not opted out). Injectable for tests.
+function shouldAutoRefresh({ meta, stamp, env, now }) {
+  if (env.SKILLS_ATLAS_NO_REFRESH || env.SKILLS_ATLAS_OFFLINE || env.SKILLS_ATLAS_BG_REFRESH) return false;
+  const t = meta && meta.fetchedAt ? Date.parse(meta.fetchedAt) : NaN;
+  const ageMs = Number.isFinite(t) ? now - t : Infinity;       // absent/bad meta → treat as stale
+  if (ageMs < REFRESH_AFTER_MS) return false;
+  const st = stamp && stamp.at ? Date.parse(stamp.at) : NaN;
+  if (Number.isFinite(st) && (now - st) < REFRESH_AFTER_MS) return false; // already tried today
+  return true;
+}
+
+// Fire-and-forget: if the catalog is old (or absent) and we haven't tried today,
+// spawn a DETACHED background `update` so new skills appear next time. Never blocks,
+// never errors out. Opt out with SKILLS_ATLAS_NO_REFRESH / SKILLS_ATLAS_OFFLINE.
+function maybeBackgroundRefresh() {
+  try {
+    if (!shouldAutoRefresh({ meta: tryReadJSON(metaFile()), stamp: tryReadJSON(refreshStampFile()), env: process.env, now: Date.now() })) return;
+    ensureDir(cacheDir());
+    fs.writeFileSync(refreshStampFile(), JSON.stringify({ at: new Date().toISOString() })); // stamp first → no double-spawn
+    const { spawn } = require('child_process');
+    const child = spawn(process.execPath, [path.join(__dirname, '..', 'bin', 'skills.js'), 'update'], {
+      detached: true, stdio: 'ignore', env: { ...process.env, SKILLS_ATLAS_BG_REFRESH: '1' },
+    });
+    child.unref();
+  } catch { /* fully fail-silent — never affect the foreground command */ }
+}
+
 function loadData({ quiet = false } = {}) {
   const cached = tryReadJSON(cacheFile());
   let base, info;
@@ -205,4 +236,4 @@ async function refreshSources() {
   return out;
 }
 
-module.exports = { loadData, refreshData, fetchSource, refreshSources, counts, isValid, cacheDir, PUBLIC_URL };
+module.exports = { loadData, refreshData, fetchSource, refreshSources, counts, isValid, shouldAutoRefresh, maybeBackgroundRefresh, cacheDir, PUBLIC_URL };

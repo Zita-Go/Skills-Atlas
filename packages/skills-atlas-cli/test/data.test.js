@@ -16,6 +16,20 @@ test('isValid: structural — rejects old/partial schema, accepts a minimal vali
   assert.strictEqual(isValid(null), false);
 });
 
+test('shouldAutoRefresh: stale/absent → yes; fresh / throttled / opted-out → no', () => {
+  const { shouldAutoRefresh } = require('../src/data');
+  const now = Date.parse('2026-06-01T00:00:00Z');
+  const DAY = 86400000;
+  const ago = ms => new Date(now - ms).toISOString();
+  assert.strictEqual(shouldAutoRefresh({ meta: null, stamp: null, env: {}, now }), true, 'absent cache → refresh');
+  assert.strictEqual(shouldAutoRefresh({ meta: { fetchedAt: ago(2 * DAY) }, stamp: null, env: {}, now }), true, 'stale → refresh');
+  assert.strictEqual(shouldAutoRefresh({ meta: { fetchedAt: ago(3600000) }, stamp: null, env: {}, now }), false, 'fresh → no');
+  assert.strictEqual(shouldAutoRefresh({ meta: { fetchedAt: ago(5 * DAY) }, stamp: { at: ago(3600000) }, env: {}, now }), false, 'tried recently → throttled');
+  assert.strictEqual(shouldAutoRefresh({ meta: null, stamp: null, env: { SKILLS_ATLAS_NO_REFRESH: '1' }, now }), false, 'opt-out');
+  assert.strictEqual(shouldAutoRefresh({ meta: null, stamp: null, env: { SKILLS_ATLAS_OFFLINE: '1' }, now }), false, 'offline');
+  assert.strictEqual(shouldAutoRefresh({ meta: null, stamp: null, env: { SKILLS_ATLAS_BG_REFRESH: '1' }, now }), false, 'no recursion from the bg process');
+});
+
 test('loadData drops a cached source with a broken schema (no cascade crash)', () => {
   const home = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-data-'));
   const saved = { c: process.env.XDG_CONFIG_HOME, k: process.env.XDG_CACHE_HOME, s: process.env.SKILLS_ATLAS_SOURCES };
