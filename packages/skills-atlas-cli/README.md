@@ -179,12 +179,14 @@ unless one truly fits, or searches further itself). It's:
 - **safe** — never auto-installs (always your call), and fails open (a hook
   error never blocks your prompt).
 
-**🔭 Capability gaps.** While autopilot is on, it quietly notices the *kinds of work*
-you keep doing without a matching skill. `skills-atlas gaps` reports them with
-evidence ("8× over 12 days") and the skill that fits; it also nudges once, with that
-evidence, when a pattern is clear. Tracking is local (aggregate counts only — never
-your prompts), and the two layers are independent — `skills-atlas hook suggest on|off`
-(per-prompt) and `skills-atlas hook gaps on|off` (the proactive nudge).
+**🔭 Capability gaps.** `skills-atlas gaps` shows Claude your *recent activity* and
+lets **Claude** spot the recurring kinds of work you keep doing that no installed
+skill covers yet — then recommend one, with the pattern as evidence. We don't guess
+with heuristics; we just give Claude the memory it lacks (your recent prompts, read
+from Claude Code's own local transcripts — **nothing is stored or sent**) plus the
+catalog. With the hook on, it also nudges in-conversation now and then. The two
+layers are independent: `skills-atlas hook suggest on|off` (per-prompt) and
+`skills-atlas hook gaps on|off` (the proactive nudge).
 
 ## License
 
