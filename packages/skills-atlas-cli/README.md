@@ -125,6 +125,23 @@ On top of that, `install` can place a skill straight into `.claude/skills/`:
 The catalog ships inside the package and works offline. `skills-atlas update` pulls
 the latest from the public feed (cached under `~/.cache/skills-atlas/`).
 
+## Private / org catalog sources
+
+Point the CLI at your organization's own catalog — a `data.json` in the same
+schema — so internal skills show up in `search` / `info` / `install` / `kit`
+alongside the public Atlas:
+
+```bash
+skills-atlas registry add https://skills.acme.internal/data.json   # or a local path
+skills-atlas registry list
+skills-atlas registry remove https://skills.acme.internal/data.json
+```
+
+Private skills **merge** with the public catalog (a private source wins a same-name
+clash). Sources are cached locally and merged offline. For a private URL behind
+auth, set `SKILLS_ATLAS_TOKEN` (sent as a Bearer header); in CI,
+`SKILLS_ATLAS_SOURCES=url1,url2` adds sources without touching config.
+
 ## In Claude Code
 
 A thin [Claude Code plugin](./plugin) lets Claude do all of this in-conversation —
