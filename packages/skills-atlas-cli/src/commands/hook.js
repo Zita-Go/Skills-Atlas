@@ -69,7 +69,13 @@ module.exports = async function hook(argv) {
   if (values.json) { console.log(JSON.stringify({ enabled: sub === 'on', settings: p })); return; }
   console.log(`${green('✓')} autopilot ${sub === 'on' ? 'enabled' : 'disabled'}  ${dim(p)}`);
   if (sub === 'on') {
-    console.log(dim('Claude now gets a one-line skill suggestion when your prompt strongly matches a catalog skill.'));
-    console.log(dim('needs `skills-atlas` on PATH (npm i -g skills-atlas-cli). turn off: skills-atlas hook off'));
+    console.log('\nHow it works: when what you ask lines up with a skill you don\'t have yet, Claude');
+    console.log('quietly gets a shortlist and — only if one truly fits — explains it and offers a choice:');
+    console.log(dim('  you:    "run a pre-mortem before we launch"'));
+    console.log(dim('  claude: "that\'s exactly what the pre-mortem skill does — it stress-tests your plan'));
+    console.log(dim('           before launch. use it now / see what it covers / skip?"'));
+    console.log(dim('\nIt stays silent on greetings and generic asks, never repeats a skill, and Claude makes'));
+    console.log(dim('the final call on relevance. Nothing leaves your machine.'));
+    console.log(dim('\nneeds `skills-atlas` on PATH (npm i -g skills-atlas-cli).  turn off: skills-atlas hook off'));
   }
 };

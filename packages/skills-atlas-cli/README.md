@@ -113,11 +113,12 @@ skills-atlas hook on      # enable    (skills-atlas hook off / status)
 Registers a Claude Code `UserPromptSubmit` hook. When what you ask matches the
 territory of a catalog skill you don't have, the hook hands Claude a short
 shortlist of candidates and **Claude decides** whether any genuinely fits — and
-if so offers to install + activate it. You don't have to know the skill exists.
-The split is deliberate: the hook does **recall** (a distinctive-word match
-against the catalog, so the right skill is on the table), Claude does
-**precision** (it understands your intent and stays silent unless one truly
-fits, or searches further itself). It's:
+if so, explains **what it does and why it fits your task**, then offers a choice:
+use it now, see what it covers first (`skills-atlas info`), or skip. You don't
+have to know the skill exists. The split is deliberate: the hook does **recall**
+(a distinctive-word match against the catalog, so the right skill is on the
+table), Claude does **precision** (it understands your intent and stays silent
+unless one truly fits, or searches further itself). It's:
 
 - **off by default** — you turn it on explicitly; `hook off` removes it cleanly.
 - **quiet** — only fires on a distinctive match (greetings and generic actions

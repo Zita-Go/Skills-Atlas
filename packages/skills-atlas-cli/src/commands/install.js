@@ -275,12 +275,16 @@ module.exports = async function install(argv) {
   if (values.inline) {
     const body = readSkillMd(result.dest);
     if (body) {
-      console.log('\n' + dim('─── SKILL.md (active for this task — follow it now) ───'));
+      console.log('\n' + dim('─── SKILL.md — the skill\'s own instructions; apply them to the task now ───'));
       console.log(body.trim());
       console.log(dim('─── end SKILL.md ───'));
     }
-    console.log(dim('\n(the folder is also installed for future sessions)'));
+    console.log(`\n${green('✓')} ${bold(skill)} is now active — use the instructions above for the task at hand.`);
+    console.log(dim(`  installed at ${fsu.tildify(result.dest)} (auto-loads in new sessions) · what it does: skills-atlas info ${skill} · remove: skills-atlas remove ${skill}`));
   } else {
-    console.log(dim('\nStart a new Claude Code session to load the skill, then invoke it by name.'));
+    console.log(`\n${bold(skill)} is installed but not loaded yet. To use it:`);
+    console.log(dim(`  • now, in this session:  skills-atlas use ${skill}`));
+    console.log(dim('  • or start a new Claude Code session — it auto-loads from ~/.claude/skills/'));
+    console.log(dim(`  what it does: skills-atlas info ${skill} · remove: skills-atlas remove ${skill}`));
   }
 };

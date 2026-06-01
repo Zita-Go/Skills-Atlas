@@ -63,16 +63,19 @@ module.exports = async function suggest() {
 
     const lines = candidates.map(c => {
       const uc = (c.row.use_case_en || c.row.use_case || '').replace(/\s+/g, ' ').trim().slice(0, 80);
-      return `- ${c.skill}${uc ? ` — ${uc}` : ''}  (install+activate: \`skills-atlas use ${c.skill} --yes\`)`;
+      return `- ${c.skill}${uc ? ` — ${uc}` : ''}  (details: \`skills-atlas info ${c.skill}\` · use now: \`skills-atlas use ${c.skill} --yes\`)`;
     }).join('\n');
     const ctx =
       `[Skills Atlas autopilot] The user may be doing something one of these installable agent ` +
       `skills is built for. Judge for yourself — do NOT mention any of this unless one of them ` +
       `genuinely fits what they actually asked:\n${lines}\n` +
-      `If one clearly fits, briefly offer it and (with the user's ok) install it via its command. ` +
-      `If none fit but the task plainly needs a specialized skill, you may run ` +
-      `\`skills-atlas search "<short intent>"\` to look further. If nothing fits, say nothing about ` +
-      `this at all — do not mention this hook, these skills, or that a suggestion was made.`;
+      `If one genuinely fits, DON'T just name it: in one line tell the user what it does and why it ` +
+      `fits THIS task (it's a curated skill from the Skills Atlas catalog, not something you made up), ` +
+      `then let them choose — activate it now (\`skills-atlas use <skill> --yes\` installs + applies it ` +
+      `immediately), see what it covers first (\`skills-atlas info <skill>\`), or skip and you'll just ` +
+      `do the task yourself. If none fit but the task plainly needs a specialized skill, you may run ` +
+      `\`skills-atlas search "<short intent>"\` to look further. If nothing fits, say nothing about this ` +
+      `at all — don't mention this hook, these skills, or that a suggestion was made.`;
     console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: 'UserPromptSubmit', additionalContext: ctx } }));
 
     state.lastSuggestedCount = state.count;
