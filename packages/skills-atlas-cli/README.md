@@ -80,6 +80,10 @@ skills-atlas upgrade brainstorming             # re-fetch to latest (--all; won'
 skills-atlas remove brainstorming              # delete it
 skills-atlas doctor                            # health check: orphans, drift, license/script risks
 
+# 📦 Set up a whole project at once
+skills-atlas kit                               # detect this project & install the right skills for it
+skills-atlas sync                              # reproduce a project's kit (skills-atlas.kit.json)
+
 # 🌐 Catalog
 skills-atlas categories                        # the 20 top-level categories
 skills-atlas list marketing                    # skill groups within a category
@@ -89,6 +93,11 @@ skills-atlas update                            # pull the latest catalog
 **⛓ Workflows, not just skills.** Many skills belong to a curated chain (e.g.
 `brainstorming → writing-plans → executing-plans → …`). `install <skill> --chain`
 installs the whole pipeline in one archive download, ready to run in order.
+
+**📦 Project kits.** `skills-atlas kit` detects what this project is (frontend / backend /
+data / infra) and installs a tailored set — a universal dev workflow plus archetype
+add-ons — into `./.claude/skills/`, then writes a committable `skills-atlas.kit.json`.
+A teammate runs `skills-atlas sync` to reproduce it exactly.
 
 Output is English by default; add `--zh` for Chinese, or `--json` to any command for machine-readable output.
 After installing a skill, start a new Claude Code session to load it.
