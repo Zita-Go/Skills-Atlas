@@ -3263,11 +3263,21 @@ function setCurrentModel(id){
 }
 
 function buildLLMPrompt(query, candidates){
+  const EN = LANG === 'en';
   const lines = candidates.map((r, i) => {
     const skills = r.skills.join(' / ');
-    const desc = (r.description || '').slice(0, 140);
-    return `${i+1}. [${r._h1.split('、').slice(-1)[0]} / ${r._h2}] ${r.group} — ${skills}${desc?' :: '+desc:''}`;
+    const cat = (EN ? (r._h1en || r._h1) : r._h1).split(/[、.]/).slice(-1)[0].trim();
+    const sub = EN ? (r._h2en || r._h2) : r._h2;
+    const grp = EN ? (r.group_en || r.group) : r.group;
+    const desc = ((EN ? (r.description_en || r.description) : r.description) || '').slice(0, 140);
+    return `${i+1}. [${cat} / ${sub}] ${grp} — ${skills}${desc?' :: '+desc:''}`;
   }).join('\n');
+  if(EN){
+    return [
+      {role: 'system', content: 'You are a skill recommendation assistant. Given the user\'s goal, pick the 6-12 most relevant skill combos from the candidate list, ordered by relevance (high to low), and give a one-line reason for each. Output ONLY JSON — no markdown, no surrounding text. Format: {"results":[{"index":<1-based candidate number>,"reason":"<a short reason, 10-30 words, written IN ENGLISH>"}]}. If nothing is relevant, return {"results":[]}.'},
+      {role: 'user', content: `Goal: ${query}\n\nCandidate skill combos:\n${lines}\n\nReturn JSON.`}
+    ];
+  }
   return [
     {role: 'system', content: '你是一个 skill 推荐助手。用户给出一个目标，你从候选列表里挑出最相关的 6-12 个 skill 组合，按相关性从高到低排序，并给每个解释一句为什么。**严格只输出 JSON**，不要 markdown，不要前后缀文字。格式：{"results":[{"index":<候选序号 1-based>,"reason":"<10-30 字中文解释>"}]}。如果完全找不到相关项，返回 {"results":[]}。'},
     {role: 'user', content: `目标：${query}\n\n候选 skill 组合：\n${lines}\n\n返回 JSON。`}
@@ -3452,8 +3462,8 @@ function setupAI(){
           <div class="ai-result-skills">${skills}${r.chain?'<span class="chain-badge">⛓</span>':''}</div>
           ${scoreHtml}
         </div>
-        <div class="ai-result-group">${escapeHtml(r._h1)} · ${escapeHtml(r._h2)} · ${escapeHtml(r.group)}</div>
-        <div class="ai-result-desc">${escapeHtml(r.description)}</div>
+        <div class="ai-result-group">${escapeHtml(pickT(r._h1en, r._h1))} · ${escapeHtml(pickT(r._h2en, r._h2))} · ${escapeHtml(pickT(r.group_en, r.group))}</div>
+        <div class="ai-result-desc">${escapeHtml(pickT(r.description_en, r.description))}</div>
         ${reasonHtml}
       </div>`;
     }).join('');
