@@ -62,10 +62,8 @@ module.exports = async function kit(argv) {
   }
   const installable = items.filter(i => i.installable && !i.installed);
 
-  if (values.json) {
-    console.log(JSON.stringify({ archetypes, scope: global ? 'global' : 'project', skills: items.map(i => ({ name: i.name, group: i.group, installed: i.installed, installable: i.installable })) }, null, 2));
-    if (values['dry-run']) return;
-  } else {
+  // human proposal (machine mode prints one JSON object at the end instead)
+  if (!values.json) {
     console.log(`\nDetected: ${bold(archetypes.join(' + '))}  ${dim(signals.join('; '))}`);
     console.log(`Proposed kit — ${installable.length} new skill(s) → ${fsu.tildify(targetRoot)}\n`);
     let group = null;
@@ -75,17 +73,28 @@ module.exports = async function kit(argv) {
       console.log(`    • ${i.name.padEnd(26)} ${dim(i.reason)} ${mark}`);
     }
   }
+  const proposal = { archetypes, scope: global ? 'global' : 'project',
+    skills: items.map(i => ({ name: i.name, group: i.group, installed: i.installed, installable: i.installable })) };
 
-  if (values['dry-run']) { console.log(dim('\n(dry run — nothing written)')); return; }
-  if (!installable.length) { console.log(green('\n✓ nothing to install — kit already satisfied.')); return; }
+  if (values['dry-run']) {
+    if (values.json) console.log(JSON.stringify(proposal, null, 2));
+    else console.log(dim('\n(dry run — nothing written)'));
+    return;
+  }
+  if (!installable.length) {
+    if (values.json) console.log(JSON.stringify({ ...proposal, manifest: null, installedNow: [], failed: [] }, null, 2));
+    else console.log(green('\n✓ nothing to install — kit already satisfied.'));
+    return;
+  }
 
-  if (!values.yes) {
+  if (!values.yes && !values.json) {
     const ok = await confirm(`\nInstall ${installable.length} skill(s) and write ${km.FILE}?`, true);
     if (!ok) { console.log('aborted.'); return; }
   }
 
   // 3. install (best-effort, like the chain installer)
   const recorded = [];
+  const installedNow = [], failed = [];
   for (const i of installable) {
     const v = i.chosen.vendor, src = i.chosen.source;
     const dest = path.join(targetRoot, i.name);
@@ -96,15 +105,17 @@ module.exports = async function kit(argv) {
         docPath: i.docPath, dest, targetRoot, skillName: i.name,
         source: src.name, group: i.chosen.row && i.chosen.row.group, category: i.chosen.row && i.chosen.row._cat,
       });
-      console.log(`  ${green('✓')} ${i.name} ${dim(`(${r.fileCount} files)`)}`);
+      if (!values.json) console.log(`  ${green('✓')} ${i.name} ${dim(`(${r.fileCount} files)`)}`);
       recorded.push({ name: i.name, source: src.name, ref: r.branchUsed, hash: r.hash, group: i.group });
+      installedNow.push(i.name);
     } catch (e) {
-      console.log(`  ${dim('✗ ' + i.name + ' — ' + e.message)}`);
+      if (!values.json) console.log(`  ${dim('✗ ' + i.name + ' — ' + e.message)}`);
+      failed.push({ name: i.name, error: e.message });
     }
   }
 
   // include already-installed kit members in the manifest too (so it's complete)
-  for (const i of items.filter(x => x.installed && x.installable)) {
+  for (const i of items.filter(x => x.installed)) {
     const rec = require('../manifest').read(targetRoot).skills[i.name] || {};
     recorded.push({ name: i.name, source: rec.source || null, ref: rec.branch || null, hash: rec.hash || null, group: i.group });
   }
@@ -112,8 +123,14 @@ module.exports = async function kit(argv) {
   // 4. write the committable kit manifest
   const manifest = { version: 1, archetypes, scope: global ? 'global' : 'project', skills: recorded };
   km.write(projectRoot, manifest);
+  if (failed.length) process.exitCode = 1; // surface partial/total install failure to callers/CI
 
-  console.log(`\n${green('✓')} kit ready — ${recorded.length} skill(s); wrote ${cyan(km.FILE)}`);
-  console.log(dim(`  teammates can reproduce it with: skills-atlas sync`));
-  console.log(dim('  start a new Claude Code session to load the skills.'));
+  if (values.json) {
+    console.log(JSON.stringify({ ...proposal, manifest: km.FILE, installedNow, failed }, null, 2));
+  } else {
+    console.log(`\n${green('✓')} kit ready — ${recorded.length} skill(s); wrote ${cyan(km.FILE)}`);
+    if (failed.length) console.log(dim(`  ${failed.length} failed to install — see above.`));
+    console.log(dim(`  teammates can reproduce it with: skills-atlas sync`));
+    console.log(dim('  start a new Claude Code session to load the skills.'));
+  }
 };

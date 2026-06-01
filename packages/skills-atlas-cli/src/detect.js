@@ -20,7 +20,7 @@ function detect(dir = process.cwd()) {
     const deps = { ...(pkg.dependencies || {}), ...(pkg.devDependencies || {}) };
     const names = Object.keys(deps);
     const anyDep = res => names.some(d => res.some(re => re.test(d)));
-    if (anyDep([/^react$/, /^vue$/, /^svelte$/, /^next$/, /^nuxt$/, /^vite$/, /^@angular\//, /^solid-js$/]))
+    if (anyDep([/^react(-dom)?$/, /^vue$/, /^svelte$/, /^next$/, /^nuxt$/, /^vite$/, /^@angular\//, /^solid-js$/]))
       add('web-frontend', 'package.json: a frontend framework (react/vue/next/…)');
     if (anyDep([/^express$/, /^fastify$/, /^@nestjs\//, /^koa$/, /^hapi$/]))
       add('backend-service', 'package.json: a web-server framework');

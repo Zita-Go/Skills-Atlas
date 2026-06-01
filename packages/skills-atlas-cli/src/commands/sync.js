@@ -78,6 +78,7 @@ module.exports = async function sync(argv) {
   }
 
   if (values.update) km.write(projectRoot, manifest);
+  if (results.some(r => r.status === 'failed')) process.exitCode = 1; // CI-visible failure
 
   if (values.json) { console.log(JSON.stringify(results, null, 2)); return; }
   for (const r of results) {
