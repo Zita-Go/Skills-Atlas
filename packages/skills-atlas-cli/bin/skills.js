@@ -9,6 +9,8 @@ const upgrade = require('../src/commands/upgrade');
 const remove = require('../src/commands/remove');
 const outdated = require('../src/commands/outdated');
 const doctor = require('../src/commands/doctor');
+const kit = require('../src/commands/kit');
+const sync = require('../src/commands/sync');
 const suggest = require('../src/commands/suggest');
 const hook = require('../src/commands/hook');
 const update = require('../src/commands/update');
@@ -17,7 +19,7 @@ const { categories, list } = require('../src/commands/categories');
 const VERSION = require('../package.json').version;
 // `use` = install + activate inline (emit the SKILL.md so an agent follows it now).
 const use = argv => install([...argv, '--inline']);
-const commands = { search, info, install, use, installed, upgrade, remove, outdated, doctor, suggest, hook, update, categories, list };
+const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, update, categories, list };
 
 const HELP = `skills-atlas — search, install & manage AI agent skills
 
@@ -35,6 +37,8 @@ manage what you've installed:
   upgrade [skill]    re-fetch to the latest (--all; refuses to clobber local edits)
   remove <skill>     delete an installed skill
   doctor             health check: orphans, drift, missing SKILL.md, license/script risks
+  kit                set up the right skills for THIS project (detect + install)
+  sync               reproduce a project's kit from skills-atlas.kit.json
 
 autopilot (opt-in):
   hook on|off|status proactively suggest a skill in Claude when your prompt fits one
