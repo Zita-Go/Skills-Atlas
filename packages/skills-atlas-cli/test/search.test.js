@@ -253,6 +253,22 @@ test('suggestCandidates: stays silent on greetings and generic dev actions (no n
   }
 });
 
+// --- opaque names: ~a third of skills have names that don't contain their function
+// (grill-me, sentry, …); a query describing what you WANT must still find them. ---
+test('suggestCandidates: opaque-named skills fire by FUNCTION, not just name', () => {
+  const { suggestCandidates } = require('../src/search-core');
+  const cases = [
+    ['help me interrogate and stress-test my launch plan', 'grill-me'],
+    ['i have a heisenbug, help me find the root cause', 'systematic-debugging'],
+    ['uncover hidden risks before a big release', 'pre-mortem'],
+  ];
+  for (const [p, want] of cases) {
+    const r = suggestCandidates(flatRows, p);
+    assert.ok(r.fire, `should fire by function: ${p}`);
+    assert.ok(r.candidates.some(c => c.skill === want), `${p} → shortlist should include ${want} (got ${r.candidates.map(c => c.skill)})`);
+  }
+});
+
 // --- bilingual: a Chinese prompt fires via the curated Chinese content (skill names
 // are English and can't match CJK tokens) without breaking the English silence. ---
 test('suggestCandidates: Chinese task prompts fire with the right skill in the shortlist', () => {
