@@ -153,6 +153,20 @@ just describe what you need, or use `/skills-atlas:skill-search`, `:skill-info`,
 /plugin install skills-atlas@skills-atlas
 ```
 
+## In any MCP client
+
+`skills-atlas mcp` runs a zero-dependency [MCP](https://modelcontextprotocol.io)
+server over stdio, so any MCP-capable client (Claude Desktop, other agents) can use
+the catalog. Add it to your client's config:
+
+```json
+{ "mcpServers": { "skills-atlas": { "command": "npx", "args": ["-y", "skills-atlas-cli", "mcp"] } } }
+```
+
+It exposes four tools: **search_skills**, **skill_info**, **install_skill**, and
+**list_categories** — discover, inspect, install, and browse the catalog from
+anywhere.
+
 ## Autopilot (opt-in) — the right skill finds you
 
 ```bash
