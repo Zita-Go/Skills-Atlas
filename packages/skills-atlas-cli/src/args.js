@@ -23,6 +23,7 @@ const ALL = {
   inline: { type: 'boolean' },
   archetype: { type: 'string' },
   update: { type: 'boolean' },
+  name: { type: 'string' },
   help: { type: 'boolean', short: 'h' },
 };
 
