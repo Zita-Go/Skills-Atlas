@@ -4,9 +4,9 @@ const path = require('path');
 const { parse } = require('../args');
 const { loadData } = require('../data');
 const { buildIndices, vendorsFor, suggestSkills, skillDocPath } = require('../index-build');
-const { listSkillFiles, getSkillFolder } = require('../github');
+const { listSkillFiles } = require('../github');
 const fsu = require('../fsutil');
-const manifest = require('../manifest');
+const { installFolder } = require('../installer');
 const { confirm, choose } = require('../prompt');
 const { buildInfo, infoForRow, renderInfo, bold, dim, cyan, green, stars, safeAlt } = require('../format');
 
@@ -30,34 +30,6 @@ function resolveGlobal(values) {
   if (values.project) return false;
   if (values.global) return true;
   return true; // default: global
-}
-
-const hasSkillMd = rels => rels.some(r => {
-  const x = r.toLowerCase();
-  return x === 'skill.md' || x.endsWith('/skill.md');
-});
-
-// Download one skill's folder and atomically install it; records the manifest.
-// Returns { dest, fileCount, scripts, branchUsed, note }. Throws on failure.
-async function installFolder({ author, repo, branch, docPath, dest, targetRoot, skillName, src, row }) {
-  const folder = await getSkillFolder({ author, repo, branch, docPath });
-  const tmp = fsu.mkdtemp();
-  try {
-    for (const f of folder.files) fsu.writeFileMkdir(path.join(tmp, f.rel), f.data);
-    const rels = folder.files.map(f => f.rel);
-    if (!hasSkillMd(rels)) throw new Error('no SKILL.md found in downloaded folder');
-    fsu.swapDir(tmp, dest);
-    const scripts = fsu.scriptFiles(rels);
-    manifest.record(targetRoot, {
-      skill: skillName, source: src.name, repo, branch: folder.branchUsed,
-      group: row && row.group, category: row && row._cat,
-      files: rels.length, scripts: scripts.length, installedAt: new Date().toISOString(),
-    });
-    return { dest, fileCount: rels.length, scripts, branchUsed: folder.branchUsed, note: folder.note };
-  } catch (e) {
-    fsu.rmrf(tmp);
-    throw e;
-  }
 }
 
 // Install every installable skill in a chain (workflow). One archive download
@@ -88,7 +60,7 @@ async function installChain({ row, vendor, src, targetRoot, values }) {
       continue;
     }
     try {
-      const r = await installFolder({ author, repo, branch, docPath: it.docPath, dest, targetRoot, skillName: it.name, src, row });
+      const r = await installFolder({ author, repo, branch, docPath: it.docPath, dest, targetRoot, skillName: it.name, source: src.name, group: row && row.group, category: row && row._cat });
       if (!values.json) console.log(`  ${green('✓')} ${it.name}  ${dim(`(${r.fileCount} files)`)}`);
       installed.push(it.name);
     } catch (e) {
@@ -261,7 +233,7 @@ module.exports = async function install(argv) {
   // --- single skill: download (archive → API fallback), record, report ---
   let result;
   try {
-    result = await installFolder({ author, repo, branch, docPath, dest, targetRoot, skillName: skill, src, row: chosen.row });
+    result = await installFolder({ author, repo, branch, docPath, dest, targetRoot, skillName: skill, source: src.name, group: chosen.row && chosen.row.group, category: chosen.row && chosen.row._cat });
   } catch (e) {
     console.error(`install failed: ${e.message}`);
     process.exitCode = 1;

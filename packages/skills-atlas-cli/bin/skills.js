@@ -5,21 +5,33 @@ const search = require('../src/commands/search');
 const info = require('../src/commands/info');
 const install = require('../src/commands/install');
 const installed = require('../src/commands/installed');
+const upgrade = require('../src/commands/upgrade');
+const remove = require('../src/commands/remove');
+const outdated = require('../src/commands/outdated');
+const doctor = require('../src/commands/doctor');
 const update = require('../src/commands/update');
 const { categories, list } = require('../src/commands/categories');
 
 const VERSION = require('../package.json').version;
-const commands = { search, info, install, installed, update, categories, list };
+const commands = { search, info, install, installed, upgrade, remove, outdated, doctor, update, categories, list };
 
-const HELP = `skills-atlas — search, install & learn AI agent skills
+const HELP = `skills-atlas — search, install & manage AI agent skills
 
 usage: skills-atlas <command> [args]
 
-commands:
+find & install:
   search <query>     find skills (filters: -c category, -p persona, -t type, --chain)
   info <skill>       show description, usage guidance, sources & install command
-  install <skill>    download the skill into .claude/skills/ (--chain for the whole workflow)
-  installed          list skills you've installed (global + project)
+  install <skill>    download into .claude/skills/ (--chain for the whole workflow)
+
+manage what you've installed:
+  installed          list installed skills (global + project)
+  outdated           show which installed skills have a newer upstream version
+  upgrade [skill]    re-fetch to the latest (--all; refuses to clobber local edits)
+  remove <skill>     delete an installed skill
+  doctor             health check: orphans, drift, missing SKILL.md, license/script risks
+
+catalog:
   update             refresh the catalog from the public data feed
   categories         list the top-level categories
   list [category]    list skill groups (optionally within one category)

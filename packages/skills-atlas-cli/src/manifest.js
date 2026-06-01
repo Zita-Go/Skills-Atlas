@@ -37,6 +37,7 @@ function record(root, entry) {
     category: entry.category || null,
     files: entry.files ?? null,
     scripts: entry.scripts ?? 0,
+    hash: entry.hash || null,
     installedAt: entry.installedAt || null,
   };
   write(root, m);

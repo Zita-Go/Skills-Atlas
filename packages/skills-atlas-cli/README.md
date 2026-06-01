@@ -49,8 +49,14 @@ skills-atlas install brainstorming --project   # → ./.claude/skills/   (this p
 skills-atlas install brainstorming --chain     # install the whole ⛓ workflow it belongs to
 skills-atlas install brainstorming --dry-run   # preview the files, write nothing
 
-# 🗂️ Manage & browse
-skills-atlas installed                         # what you've installed (global + project)
+# 🗂️ Manage what you've installed   (like a package manager)
+skills-atlas installed                         # list installed (global + project)
+skills-atlas outdated                          # which have a newer upstream version
+skills-atlas upgrade brainstorming             # re-fetch to latest (--all; won't clobber local edits)
+skills-atlas remove brainstorming              # delete it
+skills-atlas doctor                            # health check: orphans, drift, license/script risks
+
+# 🌐 Catalog
 skills-atlas categories                        # the 20 top-level categories
 skills-atlas list marketing                    # skill groups within a category
 skills-atlas update                            # pull the latest catalog

@@ -45,3 +45,20 @@ test('manifest is resilient to a corrupt file', () => {
   assert.strictEqual(manifest.list(root).length, 1);
   fs.rmSync(root, { recursive: true, force: true });
 });
+
+test('hashFiles is order-independent; hashDir round-trips (upgrade drift guard)', () => {
+  const { hashFiles, hashDir } = require('../src/fsutil');
+  const a = [{ rel: 'SKILL.md', data: Buffer.from('x') }, { rel: 'scripts/a.js', data: Buffer.from('y') }];
+  const b = [{ rel: 'scripts/a.js', data: Buffer.from('y') }, { rel: 'SKILL.md', data: Buffer.from('x') }];
+  assert.strictEqual(hashFiles(a), hashFiles(b), 'stable regardless of input order');
+
+  const d = tmp();
+  fs.writeFileSync(path.join(d, 'SKILL.md'), 'x');
+  fs.mkdirSync(path.join(d, 'scripts'));
+  fs.writeFileSync(path.join(d, 'scripts/a.js'), 'y');
+  assert.strictEqual(hashDir(d), hashFiles(a), 'on-disk hash matches downloaded hash');
+  // an edit changes the hash
+  fs.writeFileSync(path.join(d, 'SKILL.md'), 'EDITED');
+  assert.notStrictEqual(hashDir(d), hashFiles(a));
+  fs.rmSync(d, { recursive: true, force: true });
+});

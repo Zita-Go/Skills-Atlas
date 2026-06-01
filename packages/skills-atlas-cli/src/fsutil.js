@@ -4,11 +4,21 @@
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
+const crypto = require('crypto');
 
 // Where skills get installed. Global => ~/.claude/skills, project => ./.claude/skills.
 function installTargetDir({ global }) {
   const root = global ? os.homedir() : process.cwd();
   return path.join(root, '.claude', 'skills');
+}
+
+// Scopes to act on from --global / --project flags (default: both).
+function scopesFor(values) {
+  const g = { name: 'global', root: installTargetDir({ global: true }) };
+  const p = { name: 'project', root: installTargetDir({ global: false }) };
+  if (values.project && !values.global) return [p];
+  if (values.global && !values.project) return [g];
+  return [g, p];
 }
 
 function dirExists(p) {
@@ -54,7 +64,31 @@ function scriptFiles(rels) {
   return (rels || []).filter(r => SCRIPT_RE.test(r));
 }
 
+// Stable content hash of a folder, for drift detection on upgrade.
+function hashFiles(files) {
+  const h = crypto.createHash('sha256');
+  for (const f of [...files].sort((a, b) => (a.rel < b.rel ? -1 : 1))) {
+    h.update(f.rel); h.update('\0'); h.update(f.data); h.update('\0');
+  }
+  return h.digest('hex').slice(0, 16);
+}
+
+// Same hash, read from an installed directory on disk.
+function hashDir(dir) {
+  const files = [];
+  const walk = (d, base) => {
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      const rel = base ? `${base}/${e.name}` : e.name;
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) walk(p, rel);
+      else files.push({ rel, data: fs.readFileSync(p) });
+    }
+  };
+  walk(dir, '');
+  return hashFiles(files);
+}
+
 module.exports = {
-  installTargetDir, dirExists, ensureDir, mkdtemp,
-  writeFileMkdir, rmrf, swapDir, tildify, scriptFiles,
+  installTargetDir, scopesFor, dirExists, ensureDir, mkdtemp,
+  writeFileMkdir, rmrf, swapDir, tildify, scriptFiles, hashFiles, hashDir,
 };
