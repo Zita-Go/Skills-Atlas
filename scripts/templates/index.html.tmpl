@@ -1841,7 +1841,7 @@ function buildContent(){
             : '';
           const lm = licMeta(s.license);
           const lic = s.license
-            ? `<a class="license-badge ${lm.cls}" href="${escapeAttr(s.url)}/blob/${escapeAttr(s.default_branch||'main')}/LICENSE" target="_blank" rel="noopener" title="${escapeAttr(lm.label + '：' + lm.note)}">${escapeHtml(s.license)}${lm.cls==='restrict'?' ⚠':''}</a>`
+            ? `<a class="license-badge ${lm.cls}" href="${escapeAttr(s.url)}" target="_blank" rel="noopener" title="${escapeAttr(lm.label + '：' + lm.note)}">${escapeHtml(s.license)}${lm.cls==='restrict'?' ⚠':''}</a>`
             : `<span class="license-badge unknown" title="${escapeAttr(LANG === 'en' ? 'No upstream license declared — check the repo before use' : '上游未声明许可证 / 待同步，使用前请到仓库确认')}">${LANG === 'en' ? 'unknown' : '未声明'}</span>`;
           const days = s.last_commit ? daysSince(s.last_commit) : null;
           const staleHtml = (days != null && days > 90)
@@ -4332,7 +4332,7 @@ function setupUsage(){
       licEl.textContent = lm.label + (lm.cls === 'restrict' ? ' ⚠' : '');
       licEl.className = 'license-badge ' + lm.cls;
       licEl.title = lm.note;
-      licEl.href = `${d.url || ('https://github.com/' + d.author + '/' + d.repo)}/blob/${d.branch || 'main'}/LICENSE`;
+      licEl.href = d.url || ('https://github.com/' + d.author + '/' + d.repo);   // 链到仓库主页（侧栏显示协议）；旧版写死 /blob/<branch>/LICENSE 在无根 LICENSE 的仓会 404
       licEl.style.display = '';
     } else licEl.style.display = 'none';
     if(cmd){
