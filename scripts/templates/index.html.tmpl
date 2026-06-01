@@ -355,6 +355,10 @@ html.light .graph-controls .gc-btn{background:rgba(255,255,255,.85)}
 .graph-view .node.dragging{cursor:grabbing}
 .graph-view .node.dim{opacity:.15}
 .graph-view .node.dim circle{filter:none}
+/* 鼠标悬停放大该节点本身：缩放圆形（fill-box 让 transform-origin 落在圆心，不动 g 的 translate 定位） */
+.graph-view .node circle{transform-box:fill-box;transform-origin:center;transition:transform .14s}
+.graph-view .node:hover circle{transform:scale(1.8)}
+@media (prefers-reduced-motion: reduce){ .graph-view .node circle{transition:none} }
 .graph-view .node.highlight circle{stroke:var(--accent);stroke-width:3;
   filter:drop-shadow(0 0 8px rgba(124,156,255,.6))}
 .graph-view .link{stroke-opacity:.5;stroke-linecap:round;fill:none;
@@ -2625,7 +2629,7 @@ function buildGraph(){
     t.textContent = n.id;
     g.appendChild(t);
     nodeGroup.appendChild(g);
-    n._g = g; n._c = c; n._t = t; n._hi = hi;
+    n._g = g; n._c = c; n._t = t;
     return g;
   });
   viewport.appendChild(nodeGroup);
@@ -2684,21 +2688,41 @@ function buildGraph(){
       _camAnim = p < 1 ? requestAnimationFrame(step) : null;
     })(performance.now());
   }
-  // 点击节点：放大为「局部图」——把该节点 + 其邻居一起框进视口（标签随之放大可读）
+  // 点击节点：放大为「局部图」——把该节点放中心，邻居按放射状均匀摊开（拉开过近的节点，
+  // 避免标签重叠），再把整团框进视口（标签随之放大可读）。聚焦的节点被 pin 住，清除时解锁。
+  let _focusPinned = [];
   function focusLocalGraph(n){
-    const ids = new Set([n.id]); (neighbors.get(n.id) || new Set()).forEach(id => ids.add(id));
-    const grp = nodes.filter(m => ids.has(m.id));
+    _focusPinned.forEach(m => { m.fx = null; m.fy = null; });   // 释放上一次聚焦的钉住
+    const nbList = nodes.filter(m => m.id !== n.id && (neighbors.get(n.id) || new Set()).has(m.id));
+    const N = nbList.length;
+    n.fx = n.x; n.fy = n.y;                       // 中心节点钉在原地
+    // 半径随邻居数增大（拉开间距），但封顶以保证相机仍能放到足够大、标签可读
+    const R = Math.max(150, Math.min(330, 70 + N * 40));
+    nbList.forEach((m, i) => {
+      const a = -Math.PI / 2 + (i / Math.max(1, N)) * Math.PI * 2;
+      m.fx = m.x = n.x + Math.cos(a) * R;
+      m.fy = m.y = n.y + Math.sin(a) * R;
+    });
+    _focusPinned = [n, ...nbList];
+    const grp = _focusPinned;
     let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
     grp.forEach(m => { minX = Math.min(minX, m.x - m.r); maxX = Math.max(maxX, m.x + m.r);
                        minY = Math.min(minY, m.y - m.r); maxY = Math.max(maxY, m.y + m.r); });
-    const padX = 90, padY = 130;   // 给节点标签留白
+    const padX = 130, padY = 150;   // 给节点标签留白
     const bw = (maxX - minX) + padX * 2, bh = (maxY - minY) + padY * 2;
     const cxw = (minX + maxX) / 2, cyw = (minY + maxY) / 2;
     let s = Math.min(W / bw, H / bh);
     s = Math.max(1.4, Math.min(4, s));   // 至少放大到可读，最多到全局上限
+    render();                            // 立即按新位置画一帧，避免相机动画期间还在旧位
     animateCamera(s, W / 2 - cxw * s, H / 2 - cyw * s);
   }
-  function clearFocus(){ focusedNode = null; clearHighlight(); drawer.classList.remove('open'); graphSelectedId = null; syncGraphURL(); animateCamera(1, 0, 0); }
+  function unpinFocus(){
+    if(!_focusPinned.length) return;
+    _focusPinned.forEach(m => { m.fx = null; m.fy = null; });
+    _focusPinned = [];
+    energy = 1; wake();                  // 解锁后让力导向把节点自然收回原布局
+  }
+  function clearFocus(){ focusedNode = null; clearHighlight(); drawer.classList.remove('open'); graphSelectedId = null; syncGraphURL(); unpinFocus(); animateCamera(1, 0, 0); }
   // 图例分类聚焦：高亮该大类全部节点 + 类内连线，淡化其余，并居中到类簇
   function clearCategoryFocus(){
     if(focusedCat === null) return;
@@ -2797,22 +2821,9 @@ function buildGraph(){
   };
   graphOpenNodeFn = (id) => { const m = nodeMap.get(id); if(m) openDrawer(m); };
 
-  // 鼠标滚轮缩放
+  // 鼠标滚轮缩放（全局视图缩放；放大单个节点改用「悬停」，见 CSS .node:hover circle）
   svg.addEventListener('wheel', e => {
     e.preventDefault();
-    // 滚轮悬停在某个节点上 → 只放大「该节点本身」的大小，不缩放视图、不聚焦局部图
-    const nodeEl = e.target.closest && e.target.closest('.node');
-    if(nodeEl){
-      const n = nodeMap.get(nodeEl.dataset.id);
-      if(n){
-        n._rScale = Math.max(1, Math.min(6, (n._rScale || 1) * Math.exp(-e.deltaY * 0.0015)));
-        const r = n.r * n._rScale;
-        n._c.setAttribute('r', r);
-        if(n._hi) n._hi.setAttribute('r', r);
-        n._t.setAttribute('y', r + 11);
-        return;
-      }
-    }
     const rect = svg.getBoundingClientRect();
     const vx = (e.clientX - rect.left) / rect.width * W;
     const vy = (e.clientY - rect.top) / rect.height * H;
