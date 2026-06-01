@@ -93,10 +93,20 @@ function groupOf(r, skillName, vendors) {
   };
 }
 
+// Is this row backed by a private (registry) source? Private vendors are tagged
+// `_private` by mergeCatalogs, so on a same-name clash the org's own version leads.
+function isPrivateRow(r, vendors) {
+  return (r.sources || []).some(s => vendors[s.name] && vendors[s.name]._private);
+}
+
 // Structured info for a skill (also the machine-readable --json shape). Groups
-// are ordered best-first so the most relevant one leads.
+// are ordered best-first — private (registry) groups first, then by stars — so the
+// most relevant one leads (consistent with vendorsFor's install resolution).
 function buildInfo(skillName, { skillIndex, vendors }) {
   const rows = rowsFor(skillIndex, skillName).slice().sort((a, b) => {
+    const pa = isPrivateRow(a, vendors) ? 1 : 0;
+    const pb = isPrivateRow(b, vendors) ? 1 : 0;
+    if (pa !== pb) return pb - pa;               // private (registry) groups first
     const A = rowRank(a), B = rowRank(b);
     return B.max - A.max || B.sum - A.sum || B.n - A.n;
   });

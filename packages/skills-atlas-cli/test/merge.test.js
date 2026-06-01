@@ -41,4 +41,13 @@ test('vendorsFor ranks a private source first for a same-name skill', () => {
   assert.strictEqual(vs[0].source.name, 'privv', 'private vendor ranks first');
 });
 
+test('buildInfo leads with the private group on a same-name clash', () => {
+  const { buildIndices } = require('../src/index-build');
+  const { buildInfo } = require('../src/format');
+  const m = mergeCatalogs(base, [priv]);
+  const { skillIndex } = buildIndices(m);
+  const info = buildInfo('shared', { skillIndex, vendors: m.vendors });
+  assert.strictEqual(info.groups[0].sources[0].id, 'privv', 'private group leads despite fewer stars');
+});
+
 module.exports = { base, priv }; // reused by the vendorsFor test (Task 4)
