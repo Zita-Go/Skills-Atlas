@@ -18,6 +18,24 @@
 
 ---
 
+## 快速上手
+
+**skill** 是一个可复用的 `SKILL.md` 指令包,教 Claude Code 一套专门工作流——系统化调试、
+事前复盘(pre-mortem)、SEO 审计、PDF 翻译,等等几百种。**Skills Atlas** 就是一个精选了 800+ 个
+这类 skill 的目录。两种用法:
+
+- **可视化浏览** → [zita-go.github.io/Skills-Atlas](https://zita-go.github.io/Skills-Atlas/?lang=zh)
+- **从终端几秒装一个**:
+
+```bash
+npm install -g skills-atlas-cli
+skills-atlas search "stress test my launch plan"   # → pre-mortem 排在最前
+skills-atlas use pre-mortem                          # 装上,Claude 立即用上
+```
+
+工具完整文档:[**`skills-atlas-cli`**](packages/skills-atlas-cli)。想让 Claude 替你挑?
+`skills-atlas hook on`——合适的 skill 会在你工作时主动找你。
+
 ## 为什么有这个项目
 
 AI Agent Skills 生态在 2025 年爆发，但分散在 ~111 个 GitHub 仓库里。

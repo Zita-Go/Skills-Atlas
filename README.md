@@ -20,6 +20,24 @@ Stop asking "what skills exist" and start asking "which skill should I use to do
 
 ---
 
+## Quick start
+
+A **skill** is a reusable `SKILL.md` instruction pack that teaches Claude Code a
+specialized workflow — systematic debugging, pre-mortems, SEO audits, PDF translation,
+and hundreds more. **Skills Atlas** is a curated catalog of 800+ of them. Two ways in:
+
+- **Browse visually** → [zita-go.github.io/Skills-Atlas](https://zita-go.github.io/Skills-Atlas/?lang=en)
+- **Grab one from your terminal** in seconds:
+
+```bash
+npm install -g skills-atlas-cli
+skills-atlas search "stress test my launch plan"   # → pre-mortem tops the results
+skills-atlas use pre-mortem                          # install it + Claude applies it now
+```
+
+Full tool docs: [**`skills-atlas-cli`**](packages/skills-atlas-cli). Prefer Claude to
+pick for you? `skills-atlas hook on` — and the right skill finds you as you work.
+
 ## Why this project exists
 
 The AI Agent Skills ecosystem exploded in 2025, but it's scattered across ~111 GitHub repositories.
