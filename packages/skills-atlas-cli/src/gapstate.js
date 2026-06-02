@@ -13,6 +13,7 @@ const { tokenize } = require('./search-core');
 // user on their NEXT task), plus a long fallback so a persistent gap can resurface.
 const MIN_INTERVAL_MS = 90 * 60 * 1000;          // ~90 min: never two nudges in a burst
 const REFRESH_INTERVAL_MS = 12 * 60 * 60 * 1000; // ~12 h: an unchanged gap may resurface
+const CRAFT_COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000; // ~7 d: never re-surface the SAME craft pattern
 
 function file() {
   const base = process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache');
@@ -34,6 +35,28 @@ function clear() { write({ dismissed: [], lastNudge: 0, lastSig: [] }); }
 function writePending(p) { const s = read(); s.pending = { ...p, at: new Date().toISOString() }; write(s); }
 function clearPending() { const s = read(); delete s.pending; write(s); }
 function markAnalyze() { const s = read(); s.analyzeAt = new Date().toISOString(); write(s); }
+
+// --- CRAFT (feature ②): a detected, craftable workflow the user can codify. ---
+// Fingerprint the pattern (not the DELTA tail) so the same craft isn't re-nagged.
+function craftFingerprint(line) {
+  const core = String(line || '').replace(/^CRAFT:\s*/i, '').split('|')[0];
+  return tokenize(core.toLowerCase()).sort().slice(0, 12).join(' ');
+}
+// Was this exact craft pattern surfaced within the cooldown? (the Cursor-failure guard)
+function craftOnCooldown(fp, now = Date.now()) {
+  const lc = read().lastCraft;
+  return !!(lc && lc.fp === fp && now - Date.parse(lc.at) < CRAFT_COOLDOWN_MS);
+}
+// Stash the craftable pattern for the `craft` command, and remember we surfaced it.
+function writeCraft({ line, pattern, fp }) {
+  const s = read();
+  const at = new Date().toISOString();
+  s.craft = { line, pattern, at };
+  s.lastCraft = { fp, at };
+  write(s);
+}
+function readCraft() { return read().craft || null; }
+function clearCraft() { const s = read(); delete s.craft; write(s); }
 
 // A coarse fingerprint of recent work: the most frequent contentful tokens across
 // recent prompts. When this set shifts, the user has moved to a new kind of work.
@@ -72,6 +95,7 @@ function shouldNudge(state, recent, now) {
 module.exports = {
   file, read, write, dismiss, isDismissed, touchNudge, clear,
   writePending, clearPending, markAnalyze,
+  craftFingerprint, craftOnCooldown, writeCraft, readCraft, clearCraft,
   activitySignature, signatureShifted, shouldNudge,
-  MIN_INTERVAL_MS, REFRESH_INTERVAL_MS,
+  MIN_INTERVAL_MS, REFRESH_INTERVAL_MS, CRAFT_COOLDOWN_MS,
 };

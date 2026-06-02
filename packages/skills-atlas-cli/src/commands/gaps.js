@@ -34,6 +34,7 @@ const INSTRUCTION = dismissed =>
   ` If nothing clearly recurs, say there are no gaps.`;
 
 const { runSearch } = require('../search-core');
+const craftPrompts = require('../craft-prompts');
 
 // Lexical recall over the AGGREGATED recent activity → candidate skills the user
 // hasn't installed. The signal is stronger than any single prompt; the model
@@ -61,17 +62,30 @@ function digest(recent, dismissed, candidates = []) {
   return `[Skills Atlas — capability gaps] The user's recent requests (${recent.length} over ~${days} day(s), newest first):\n${activityLines(recent)}${candidateLines(candidates)}\n\n${INSTRUCTION(dismissed)}`;
 }
 
-// The prompt handed to the small BACKGROUND model. It returns NONE or one line.
-function analysisPrompt(recent, candidates, dismissed, lang) {
+// The prompt handed to the small BACKGROUND model. Adversarially hardened (see
+// craft-prompts.js). Emits exactly one of NONE / EXISTING <skill> / CRAFT: <pattern>.
+// `extra.installed` (names) and `extra.claudeMd` (excerpt) make Gate 4 real at
+// detection time — the small model can't see the filesystem, so we feed it in.
+function analysisPrompt(recent, candidates, dismissed, lang, extra = {}) {
   const langName = lang === 'zh' ? '简体中文' : 'English';
-  return 'You look at a developer\'s recent activity and spot ONE recurring kind of work that an installable "skill" would help with but they haven\'t set up.\n\n' +
-    `Recent requests (newest first):\n${activityLines(recent)}\n` +
-    (candidates.length ? `\nInstallable catalog skills that may be relevant:\n${candidates.map(c => `- ${c.skill}: ${c.use}`).join('\n')}\n` : '') +
-    (dismissed.length ? `\nAlready dismissed (never suggest): ${dismissed.join(', ')}\n` : '') +
-    `\nIf there is a CLEAR recurring need that ONE of the listed skills covers, reply with a single line in ${langName}:\n` +
-    '  <skill-name> — one short sentence naming the recurring pattern (with rough frequency) and why that skill helps.\n' +
-    'Otherwise reply with exactly: NONE\n' +
-    'Output ONLY that one line (or NONE), nothing else.';
+  return craftPrompts.detectionPrompt({
+    activity: activityLines(recent),
+    candidates: candidates.length ? candidates.map(c => `- ${c.skill}: ${c.use}`).join('\n') : '(none matched)',
+    dismissed: dismissed.length ? dismissed.join(', ') : '(none)',
+    installed: (extra.installed && extra.installed.length) ? extra.installed.join(', ') : '(none)',
+    claudeMd: extra.claudeMd ? String(extra.claudeMd).replace(/\s+/g, ' ').trim().slice(0, 800) : '(none found)',
+    lang: langName,
+  });
+}
+
+// Fuller per-prompt evidence for `craft` — detection truncates each prompt to ~100
+// chars, but the corrections that prove the user's delta need more room (~400).
+function craftEvidence(recent, { chars = 400, max = 24 } = {}) {
+  return recent.slice(0, max).map(r => `  - ${r.text.replace(/\s+/g, ' ').trim().slice(0, chars)}`).join('\n');
+}
+// The instruction injected into the MAIN agent when the user runs `craft`.
+function craftInstruction(pattern, recent, opts) {
+  return craftPrompts.craftPrompt({ pattern, evidence: craftEvidence(recent, opts) });
 }
 
 module.exports = async function gapsCmd(argv) {
@@ -112,3 +126,5 @@ module.exports = async function gapsCmd(argv) {
 module.exports.candidatePool = candidatePool;
 module.exports.digest = digest;
 module.exports.analysisPrompt = analysisPrompt;
+module.exports.craftEvidence = craftEvidence;
+module.exports.craftInstruction = craftInstruction;

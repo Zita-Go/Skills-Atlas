@@ -60,3 +60,31 @@ test('shouldNudge: floor blocks, shift refires, persistence falls back', () => {
   // same activity but past the 12h fallback → resurface
   assert.strictEqual(g.shouldNudge({ lastNudge: 0, lastSig: sig }, recent, 13 * H).fire, true);
 });
+
+test('craftFingerprint: stable across runs, ignores the DELTA tail', () => {
+  const g = fresh();
+  const a = g.craftFingerprint('CRAFT: run the release checklist ~4 times | DELTA: uses make ship');
+  const b = g.craftFingerprint('CRAFT: run the release checklist ~4 times | DELTA: totally different tail');
+  assert.deepStrictEqual(a, b, 'fingerprint is from the pattern, not the DELTA');
+  assert.ok(a.length, 'non-empty');
+});
+
+test('craft cooldown: same pattern within ~7d suppressed, different free, expires', () => {
+  const g = fresh();
+  const fp = g.craftFingerprint('CRAFT: cut a release | DELTA: make ship');
+  assert.strictEqual(g.craftOnCooldown(fp), false, 'nothing recorded yet');
+  g.writeCraft({ line: 'CRAFT: cut a release | DELTA: make ship', pattern: 'cut a release', fp });
+  assert.strictEqual(g.craftOnCooldown(fp), true, 'same fp just surfaced → on cooldown');
+  assert.strictEqual(g.craftOnCooldown('some-other-fp'), false, 'a different craft is free');
+  const at = Date.parse(g.read().lastCraft.at);
+  assert.strictEqual(g.craftOnCooldown(fp, at + g.CRAFT_COOLDOWN_MS + 1), false, 'expired past the window');
+});
+
+test('writeCraft / readCraft / clearCraft round-trip', () => {
+  const g = fresh();
+  assert.strictEqual(g.readCraft(), null);
+  g.writeCraft({ line: 'CRAFT: x | DELTA: y', pattern: 'x', fp: 'x' });
+  assert.strictEqual(g.readCraft().pattern, 'x');
+  g.clearCraft();
+  assert.strictEqual(g.readCraft(), null);
+});

@@ -76,9 +76,17 @@ module.exports = async function suggest() {
           gapstate.clearPending();
           const txt = (pending.text || '').trim();
           if (txt && !/^NONE\b/i.test(txt)) {
-            const body = pending.source === 'fallback'
-              ? txt // already a full digest for the main agent to judge
-              : `[Skills Atlas — capability gaps] ${txt}\nOffer this to the user only if it genuinely fits — verify with \`skills-atlas info <skill>\`, install with \`skills-atlas use <skill> --yes --project\`; otherwise stay silent.`;
+            let body;
+            if (/^CRAFT:/i.test(txt)) {
+              // Feature ②: a craftable workflow no skill covers. Restrained, decline-easy offer.
+              const pat = txt.replace(/^CRAFT:\s*/i, '').split('|')[0].trim();
+              body = `[Skills Atlas autopilot] The user keeps doing a multi-step workflow that no installed or catalog skill covers: ${pat}. ` +
+                `ONLY if this genuinely fits what they're actually doing, offer once — in one easy-to-decline line — to codify it into a reusable skill built from their OWN steps: they can run \`skills-atlas craft\` and you'll draft a SKILL.md from their workflow for them to review (nothing is written until they run it; it's a draft they keep or delete). If it doesn't clearly fit, say nothing about this at all.`;
+            } else {
+              body = pending.source === 'fallback'
+                ? txt // already a full digest for the main agent to judge
+                : `[Skills Atlas — capability gaps] ${txt}\nOffer this to the user only if it genuinely fits — verify with \`skills-atlas info <skill>\`, install with \`skills-atlas use <skill> --yes --project\`; otherwise stay silent.`;
+            }
             emit(body + langHint(ap.replyLang));
             gapstate.touchNudge(gapstate.activitySignature(recent));
             writeState(file, state);

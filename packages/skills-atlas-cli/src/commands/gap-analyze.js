@@ -7,6 +7,9 @@
 'use strict';
 
 const { spawn } = require('child_process');
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
 const { parse } = require('../args');
 const { loadData } = require('../data');
 const { buildIndices } = require('../index-build');
@@ -21,6 +24,17 @@ const { dim, green } = require('../format');
 const CLAUDE_BIN = process.env.SKILLS_ATLAS_CLAUDE_BIN || 'claude';
 const TIMEOUT_MS = Number(process.env.SKILLS_ATLAS_GAP_TIMEOUT_MS) || 90000;
 
+// Project + global CLAUDE.md, lightly, so the detector's Gate 4 ("already covered by
+// a rule?") is real — the small model can't read the filesystem itself.
+function readClaudeMd() {
+  let out = '';
+  for (const f of [path.join(process.cwd(), 'CLAUDE.md'), path.join(os.homedir(), '.claude', 'CLAUDE.md')]) {
+    try { out += fs.readFileSync(f, 'utf8') + '\n'; } catch { /* none here */ }
+    if (out.length > 1200) break;
+  }
+  return out.slice(0, 1200);
+}
+
 function gather() {
   const recent = transcripts.recentPrompts({ max: 20 });
   const gs = gapstate.read();
@@ -31,7 +45,7 @@ function gather() {
   for (const s of fsu.scopesFor({})) for (const e of manifest.list(s.root)) installed.add(e.skill);
   const candidates = gaps.candidatePool(flatRows, recent, { installed, dismissed });
   const ap = registry.getAutopilot();
-  return { recent, dismissed, candidates, model: ap.gapModel, lang: ap.replyLang };
+  return { recent, dismissed, candidates, installed: [...installed], claudeMd: readClaudeMd(), model: ap.gapModel, lang: ap.replyLang };
 }
 
 // Run `claude -p --model <model>` with the prompt on stdin. Reuses Claude Code's
@@ -76,7 +90,7 @@ module.exports = async function gapAnalyze(argv) {
       if (values.show || values.once) console.error(dim(`not enough recent activity (${g.recent.length} < 8) — nothing to analyze.`));
       return;
     }
-    const prompt = gaps.analysisPrompt(g.recent, g.candidates, g.dismissed, g.lang);
+    const prompt = gaps.analysisPrompt(g.recent, g.candidates, g.dismissed, g.lang, { installed: g.installed, claudeMd: g.claudeMd });
 
     if (values.show) {
       console.log(dim(`# would run: ${CLAUDE_BIN} -p --model ${g.model}   (prompt piped on stdin)\n`));
@@ -86,8 +100,22 @@ module.exports = async function gapAnalyze(argv) {
 
     const r = await runClaude(prompt, g.model);
     if (r.ok) {
-      gapstate.writePending({ text: r.text, source: g.model });
-      if (values.once) console.log(`${green('✓')} ${g.model} →\n${r.text}`);
+      if (/^CRAFT:/i.test(r.text)) {
+        // A craftable workflow. Suppress if we already surfaced this exact pattern
+        // recently (don't re-nag — the Cursor failure); otherwise stash it for `craft`.
+        const fp = gapstate.craftFingerprint(r.text);
+        if (gapstate.craftOnCooldown(fp)) {
+          gapstate.writePending({ text: 'NONE', source: g.model });
+          if (values.once) console.error(dim('CRAFT matches a pattern surfaced within ~7d — staying silent (no re-nag).'));
+        } else {
+          gapstate.writeCraft({ line: r.text, pattern: r.text.replace(/^CRAFT:\s*/i, '').split('|')[0].trim(), fp });
+          gapstate.writePending({ text: r.text, source: g.model });
+          if (values.once) console.log(`${green('✓')} ${g.model} →\n${r.text}`);
+        }
+      } else {
+        gapstate.writePending({ text: r.text, source: g.model });
+        if (values.once) console.log(`${green('✓')} ${g.model} →\n${r.text}`);
+      }
     } else {
       // fail-open: stash the local inline digest so the hook still surfaces SOMETHING
       // (the previous behavior, just one tick later) instead of going silent.
