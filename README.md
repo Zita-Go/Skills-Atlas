@@ -83,6 +83,8 @@ The smoothest way: install the plugin and let Skills Atlas work **in the convers
 no switching to a terminal. Its **autopilot is on by default**, so as you work Claude
 surfaces the skill that fits; slash commands cover everything else.
 
+<a href="packages/skills-atlas-cli/plugin"><img src="docs/plugin-demo.png" alt="Skills Atlas plugin — the autopilot surfaces a fitting skill right in your Claude Code conversation" width="820"></a>
+
 ```text
 npm i -g skills-atlas-cli                      # the engine (Node 18+)
 /plugin marketplace add Zita-Go/Skills-Atlas   # then, inside Claude Code:

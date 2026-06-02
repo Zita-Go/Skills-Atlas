@@ -149,6 +149,9 @@ npm i -g skills-atlas-cli                      # the engine (Node 18+)
 
 Restart Claude Code, run `/skills-atlas:setup`, and you're set. → [**plugin docs**](./plugin)
 
+<img src="https://raw.githubusercontent.com/Zita-Go/Skills-Atlas/main/docs/plugin-demo.png" alt="Skills Atlas plugin — the autopilot surfaces a fitting skill in-conversation" width="820">
+
+
 ## In any MCP client
 
 `skills-atlas mcp` runs an [MCP](https://modelcontextprotocol.io) server so any

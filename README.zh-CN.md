@@ -77,6 +77,8 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~115 个 GitHub 仓库�
 最顺手的方式：装上插件，让 Skills Atlas **在对话里**干活 —— 不用切到终端。它的**自动驾驶默认开启**，
 你干活时 Claude 主动端出合适的 skill；其余的交给斜杠命令。
 
+<a href="packages/skills-atlas-cli/plugin"><img src="docs/plugin-demo.png" alt="Skills Atlas 插件——autopilot 在对话里主动端出合适的 skill" width="820"></a>
+
 ```text
 npm i -g skills-atlas-cli                      # 引擎(Node 18+)
 /plugin marketplace add Zita-Go/Skills-Atlas   # 然后在 Claude Code 里:

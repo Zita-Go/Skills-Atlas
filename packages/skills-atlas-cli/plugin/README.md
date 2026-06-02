@@ -4,6 +4,8 @@ Discover, install, manage, and **grow** agent skills **from inside a Claude Code
 conversation**. A thin wrapper around the [`skills-atlas-cli`](../) tool — no logic is
 duplicated; everything shells out to the CLI.
 
+<img src="https://raw.githubusercontent.com/Zita-Go/Skills-Atlas/main/docs/plugin-demo.png" alt="Skills Atlas plugin — the autopilot surfaces a fitting skill in-conversation" width="820">
+
 ## What you get
 
 **An autopilot, on by default.** Installing the plugin registers a UserPromptSubmit hook
