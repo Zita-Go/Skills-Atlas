@@ -119,6 +119,49 @@ PR 描述简单写一下来源 + 为什么归到这个分类即可。
 | 加新 skill | PR 直接改 yaml；或 issue → "add-skill" 模板 |
 | 功能建议 | issue → "feature-request" 模板 |
 
+## 项目结构
+
+```
+skills-atlas/
+├── docs/                    # GitHub Pages 网站
+│   ├── index.html           # 单文件网站
+│   └── data.json            # 给前端 fetch 的结构化数据
+├── data/                    # 源数据（在这里改）
+│   ├── categories.yaml      # 20 大类 / 115 子分组
+│   ├── skills.yaml          # 249 个 skill 分组
+│   └── repositories.yaml    # 111 个源仓库元数据
+├── scripts/                 # parse_md / gen_html / validate / fetch_metadata
+├── packages/
+│   ├── skills-atlas-data/   # npm 数据包（canonical data.json + types）
+│   └── skills-atlas-cli/    # 终端 CLI + Claude Code 插件
+└── .github/                 # CI / Issue / PR 模板
+```
+
+## 新 skill 怎么被发现
+
+每天一个 workflow 扫 GitHub Search，把新出现的 skill 仓库挂候选清单，渲染成 Issue 让维护者人审。
+**LLM 不会自动写入主数据**——由人决定哪些进 `data/repositories.yaml` + `data/skills.yaml`。
+
+```
+.github/workflows/daily-discover.yml   # 每天 UTC 02:00
+  └─ scripts/discover_candidates.py    # GitHub Search → 跟主库 diff
+       ↓ data/_inbox/raw/YYYY-MM-DD.json（自动 PR）
+       ↓ scripts/render_candidate_issue.py → gh issue create --label discover-bot
+```
+
+被拒的仓库追加进 `data/_inbox/blocklist.yaml`，下次自动跳过。
+
+## 直接用目录数据
+
+目录是开放数据。JSON 版本在 `docs/data.json`（给前端 / MCP server / API）；源 YAML 在 `data/`：
+
+```python
+import yaml
+skills = yaml.safe_load(open('data/skills.yaml'))
+chains = [s for s in skills if s['chain']]   # 所有 ⛓ 强绑定工作流
+print(f'{len(chains)} chain workflows')
+```
+
 ## Code of Conduct
 
 参与本项目即视为同意 [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md)。

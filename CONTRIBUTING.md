@@ -119,6 +119,52 @@ We will gradually improve i18n support.
 | Add a new skill | PR editing the yaml directly; or issue → "add-skill" template |
 | Feature suggestion | issue → "feature-request" template |
 
+## Repository layout
+
+```
+skills-atlas/
+├── docs/                    # GitHub Pages site
+│   ├── index.html           # single-file website
+│   └── data.json            # structured data for frontends to fetch
+├── data/                    # source data (edit here)
+│   ├── categories.yaml      # 20 categories / 115 subgroups
+│   ├── skills.yaml          # 249 skill groups
+│   └── repositories.yaml    # metadata for 111 source repositories
+├── scripts/                 # parse_md / gen_html / validate / fetch_metadata
+├── packages/
+│   ├── skills-atlas-data/   # npm data package (canonical data.json + types)
+│   └── skills-atlas-cli/    # terminal CLI + Claude Code plugin
+└── .github/                 # CI / Issue / PR templates
+```
+
+## How new skills are discovered
+
+Every day a workflow scans GitHub Search, queues newly-appearing skill repos onto a
+candidate list, and renders them into an Issue for maintainers to review. **The LLM
+never writes to the main data automatically** — humans decide what goes into
+`data/repositories.yaml` + `data/skills.yaml`.
+
+```
+.github/workflows/daily-discover.yml   # daily at 02:00 UTC
+  └─ scripts/discover_candidates.py    # GitHub Search → diff against the repo
+       ↓ data/_inbox/raw/YYYY-MM-DD.json (auto PR)
+       ↓ scripts/render_candidate_issue.py → gh issue create --label discover-bot
+```
+
+Rejected repos go in `data/_inbox/blocklist.yaml` and are skipped next run.
+
+## Use the catalog data directly
+
+The catalog is open data. A JSON build lives at `docs/data.json` (for frontends / MCP
+servers / APIs); the source YAML is under `data/`:
+
+```python
+import yaml
+skills = yaml.safe_load(open('data/skills.yaml'))
+chains = [s for s in skills if s['chain']]   # all ⛓ strong-binding workflows
+print(f'{len(chains)} chain workflows')
+```
+
 ## Code of Conduct
 
 By participating in this project, you agree to the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
