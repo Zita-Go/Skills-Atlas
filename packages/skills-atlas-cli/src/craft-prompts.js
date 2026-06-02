@@ -112,7 +112,7 @@ Frontmatter (YAML between --- fences — name and description are required; allo
   - If unsure whether a command is safe, leave allowed-tools off. Prompting is the safe default.
 
 Body (Markdown — encode ONLY the user-specific delta):
-- Open with WHEN THIS APPLIES: a line or two on the situation that triggers this procedure, and — ONLY if the evidence shows it — when it does NOT apply (exceptions, variants it doesn't cover). Do not invent boundaries the evidence doesn't show.
+- Open with WHEN THIS APPLIES: a line or two on the situation that triggers this procedure, in the user's actual trigger nouns. By DEFAULT do NOT write a "does not apply" / exceptions line at all — add one ONLY when the user's evidence explicitly drew that boundary. A "does not cover X" for an X the evidence never mentions (standups, hotfixes, other services…) is an invented boundary — leave it out.
 - Then the CORE: the user's ACTUAL procedure as a clear ORDERED workflow or checklist — their real steps, in their order, with their exact commands / paths / file names / flags / formats inlined verbatim from the evidence. Where the user kept correcting or re-instructing something, make that an explicit, prominent step — those corrections are the whole point. For each rule, give its RATIONALE (the WHY) ONLY when the evidence states it or a project file you read confirms it — that is what lets the reader generalize; when you do not actually know why, state it as the user's standing requirement (e.g. "the user requires X — reason not stated") rather than guessing.
 - If the user has a fixed output format or checklist, reproduce it as a template/code block exactly as they use it.
 - Briefly note WHICH repeated requests (or which grounding file) each convention came from, so the user can confirm you did not invent it.
@@ -124,7 +124,7 @@ HARD CONSTRAINTS — the firewall against correct-but-useless output:
 - Specific is the goal; brittle is a bug. Stay narrow and specific to THIS user — a general skill just duplicates what the assistant already knows — but never reduce a step to a literal string with no intent.
 - Challenge every token. Assume the reader is already a capable agent who knows generic best practice; write only what is specific to THIS user and THIS procedure. Keep SKILL.md tight and well under ~500 lines; most crafted skills are far shorter.
 - Use progressive disclosure: push long reference material into a sibling file (one level deep) only if genuinely needed; most crafted skills are a single SKILL.md.
-- Do not invent conventions the user has not shown. If unsure whether a step is theirs or generic, leave it out or mark it clearly for them to confirm.
+- Do not invent conventions, rules, or boundaries the user has not shown — not even helpful-seeming ones. A plausible addition the evidence never stated (e.g. "keep all four sections even when empty", "add a '- None this week' placeholder", "this doesn't apply to standups") is an invention even though it sounds reasonable and useful. Include ONLY what the evidence shows; if unsure whether a step is theirs or generic, leave it out or mark it clearly for them to confirm.
 - Never fabricate a RATIONALE. A plausible-sounding "because the project wraps X / for safety / to keep things consistent" that the evidence and the files do not actually support is exactly the kind of invention this forbids — it reads as fact but is a guess. State the why only when it is real; otherwise present the rule plainly as the user's requirement, reason unconfirmed.
 
 === STEP 4 — SHOW YOUR WORK ===
