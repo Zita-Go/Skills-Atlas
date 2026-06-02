@@ -5,13 +5,25 @@
 // engine is installed; if the CLI isn't on PATH, it shows a friendly "install the engine"
 // notice (verbatim, via systemMessage) and does NOT mark the user onboarded — so the real
 // welcome ("Nicely done…") still fires the first session AFTER they install the CLI.
+//
+// The one-time welcome is gated by a single GLOBAL marker, so we only let it fire on the
+// session-start moments the user is actually looking at a fresh screen — `startup` and
+// `clear`. We skip `resume` and `compact`: those happen mid-work and would silently
+// "consume" the one-shot before the user ever sees it. (The UserPromptSubmit fallback in
+// `skills-atlas suggest` catches the install-mid-session case.)
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
+// Read the SessionStart event (stdin) to check `source`. Reading it here also lets us run
+// the CLI without inheriting stdin. No event / unparseable → treat as a fresh start.
+let source = '';
+try { source = String(JSON.parse(fs.readFileSync(0, 'utf8')).source || '').toLowerCase(); } catch { /* no event → fresh start */ }
+if (source === 'resume' || source === 'compact') process.exit(0); // never burn the one-shot mid-work
+
 // CLI present → it prints its own one-time welcome (inherited stdout). Missing → ENOENT.
-const r = spawnSync('skills-atlas', ['setup', '--session-start'], { stdio: 'inherit' });
+const r = spawnSync('skills-atlas', ['setup', '--session-start'], { stdio: ['ignore', 'inherit', 'inherit'] });
 
 if (r.error && r.error.code === 'ENOENT') {
   // Remember the install prompt was shown, so the eventual welcome reads "Nicely done".

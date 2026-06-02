@@ -54,12 +54,47 @@ test('setup (manual): status + what-you-can-do + Settings', async () => {
   assert.strictEqual((await capture(() => setup(['--session-start']))).trim(), '', 'a manual run suppresses the auto welcome');
 });
 
-test('welcome.js: shows the engine-not-installed nudge + remembers it when the CLI is missing', () => {
+const welcomeJs = path.join(__dirname, '..', 'plugin', 'skills-atlas', 'hooks', 'welcome.js');
+
+test('welcome.js: engine-not-installed nudge on startup + remembers it when the CLI is missing', () => {
   const cache = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-wc-'));
   const noPath = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-nopath-'));
-  const welcome = path.join(__dirname, '..', 'plugin', 'skills-atlas', 'hooks', 'welcome.js');
-  const out = execFileSync(process.execPath, [welcome], { env: { ...process.env, PATH: noPath, XDG_CACHE_HOME: cache }, encoding: 'utf8' });
+  const out = execFileSync(process.execPath, [welcomeJs], { input: '{"source":"startup"}', env: { ...process.env, PATH: noPath, XDG_CACHE_HOME: cache }, encoding: 'utf8' });
   const j = JSON.parse(out);
   assert.ok(/Almost there/.test(j.systemMessage), 'engine-not-installed nudge');
   assert.ok(fs.existsSync(path.join(cache, 'skills-atlas', 'install-prompt-shown')), 'remembers it was shown (→ next welcome says Nicely done)');
+});
+
+test('welcome.js: stays silent on resume/compact (never burns the one-shot mid-work)', () => {
+  for (const source of ['resume', 'compact']) {
+    const cache = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-wc-'));
+    const noPath = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-nopath-'));
+    const out = execFileSync(process.execPath, [welcomeJs], { input: JSON.stringify({ source }), env: { ...process.env, PATH: noPath, XDG_CACHE_HOME: cache }, encoding: 'utf8' });
+    assert.strictEqual(out.trim(), '', `no output on ${source}`);
+    assert.ok(!fs.existsSync(path.join(cache, 'skills-atlas', 'install-prompt-shown')), `no marker written on ${source}`);
+  }
+});
+
+test('buildWelcome: returns the welcome once (consume marks onboarded), then null', () => {
+  const { setup } = isolate();
+  const ap = { replyLang: 'en', enabled: true };
+  const first = setup.buildWelcome(ap, { consume: true });
+  assert.ok(first && /Skills Atlas is on/.test(first) && /language/.test(first), 'welcome text the first time');
+  assert.strictEqual(setup.buildWelcome(ap, { consume: true }), null, 'null once the one-shot is consumed');
+});
+
+test('suggest (UserPromptSubmit): first-run welcome fallback fires once, then not again', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-sg-'));
+  const env = { ...process.env, XDG_CACHE_HOME: path.join(dir, 'c'), XDG_CONFIG_HOME: path.join(dir, 'cfg') };
+  delete env.SKILLS_ATLAS_SUBCALL;
+  const bin = path.join(__dirname, '..', 'bin', 'skills.js');
+  const event = JSON.stringify({ prompt: 'help me set up a project', session_id: 'fallback-test' });
+  const sysMsg = out => (out.split('\n').filter(Boolean).map(l => { try { return JSON.parse(l); } catch { return null; } }).find(j => j && j.systemMessage) || {}).systemMessage || '';
+
+  const out1 = execFileSync(process.execPath, [bin, 'suggest'], { input: event, env, encoding: 'utf8' });
+  assert.ok(/Skills Atlas is on/.test(sysMsg(out1)), 'welcome on the very first prompt');
+  assert.ok(fs.existsSync(path.join(dir, 'c', 'skills-atlas', 'onboarded')), 'marked onboarded after the fallback');
+
+  const out2 = execFileSync(process.execPath, [bin, 'suggest'], { input: event, env, encoding: 'utf8' });
+  assert.ok(!/Skills Atlas is on/.test(out2), 'no repeat welcome on the next prompt');
 });

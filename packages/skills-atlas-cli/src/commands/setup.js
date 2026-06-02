@@ -34,6 +34,20 @@ function welcomeSettings(ap) {
     'More: /skills-atlas:setup';
 }
 
+// The one-time welcome text, or null if the user was already onboarded. Gated by the global
+// `onboarded` marker so it shows exactly once; with { consume: true } it claims that one
+// shot (marks onboarded). Shared by the SessionStart hook (`setup --session-start`) and the
+// UserPromptSubmit fallback in `suggest` — which catches the case where the plugin was
+// installed mid-session and no fresh session-start has fired the welcome yet.
+function buildWelcome(ap, { consume = false } = {}) {
+  if (exists(onboardedFile())) return null;
+  if (consume) touch(onboardedFile());
+  const intro = installPromptShown()
+    ? '🎉 Nicely done — Skills Atlas is configured and on. It\'ll quietly flag a ready-made skill when one fits, and offer to turn repeated workflows into skills of your own.'
+    : '✨ Skills Atlas is on. While you work, it keeps an eye out and quietly flags a ready-made skill the moment one fits — and if you catch yourself doing the same dance over and over, it\'ll offer to turn it into a skill of your own.';
+  return intro + '\n\n' + welcomeSettings(ap);
+}
+
 module.exports = async function setup(argv) {
   const { values } = parse(argv, ['session-start', 'json', 'reset']);
   if (values.help) {
@@ -54,12 +68,8 @@ module.exports = async function setup(argv) {
   // to the user verbatim), then stay silent forever. "Nicely done" variant if the user
   // came here after the engine-not-installed notice; otherwise the fresh-install greeting. ---
   if (values['session-start']) {
-    if (exists(onboardedFile())) return; // already welcomed → silent
-    touch(onboardedFile());
-    const intro = installPromptShown()
-      ? '🎉 Nicely done — Skills Atlas is configured and on. It\'ll quietly flag a ready-made skill when one fits, and offer to turn repeated workflows into skills of your own.'
-      : '✨ Skills Atlas is on. While you work, it keeps an eye out and quietly flags a ready-made skill the moment one fits — and if you catch yourself doing the same dance over and over, it\'ll offer to turn it into a skill of your own.';
-    const msg = intro + '\n\n' + welcomeSettings(ap);
+    const msg = buildWelcome(ap, { consume: true });
+    if (msg === null) return; // already welcomed → silent
     console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: 'SessionStart' }, systemMessage: msg, suppressOutput: true }));
     return;
   }
@@ -83,3 +93,6 @@ module.exports = async function setup(argv) {
   console.log(`  fine-tune   /skills-atlas:skill-autopilot suggest|gaps|prune on|off  ${dim('· model')}`);
   console.log(dim('\nThe autopilot also suggests skills proactively as you work — each judged for fit. Nothing leaves your machine.'));
 };
+
+// Reused by `suggest`'s first-run fallback (see src/commands/suggest.js).
+module.exports.buildWelcome = buildWelcome;
