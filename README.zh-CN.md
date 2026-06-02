@@ -99,9 +99,9 @@ skills-atlas hook on
 >
 > 🤖 *"这正是 **pre-mortem** 这个 skill 的拿手活:上线前把计划的失败模式压测一遍。**现在就用**,看看细节,还是跳过？"*
 
-默认关闭,全程本地匹配（prompt 不外传）,绝不自动安装。[它怎么工作 →](packages/skills-atlas-cli)
+默认关闭,逐条建议在本地匹配(prompt 不外传),绝不自动安装。可配回复语言(`hook lang en|zh`)等。[它怎么工作 →](packages/skills-atlas-cli)
 
-**🔭 能力缺口。** `skills-atlas gaps` 把你**最近的活动**(读 Claude Code 本地已有的 transcript,不存不外传)摆给 **Claude**,让它发现"你反复在做、却没装对应 skill"的那类活,并推荐。
+**🔭 能力缺口 & 🧹 清理。** `skills-atlas gaps` 读你**最近的活动**(Claude Code 本地的 transcript),由一个**后台子 agent**——你选的小模型(`hook model`,默认 Haiku,复用你的 Claude Code 登录)——发现"你反复在做、却没装对应 skill"的那类活并推荐;它会把最近的 prompt 交给那个模型判断(同你已在用的 Claude Code 同一家)。`skills-atlas prune` 反向:把你用不上的已装 skill 挑出来建议删。[详情 →](packages/skills-atlas-cli)
 
 ### 在线访问
 👉 [打开网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)

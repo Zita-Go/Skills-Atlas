@@ -105,11 +105,14 @@ skills-atlas hook on
 >
 > 🤖 *"That's exactly what the **pre-mortem** skill does: it stress-tests your plan before launch. **Use it now**, see details, or skip?"*
 
-Off by default, matched locally (nothing leaves your machine), never auto-installs. [How it works →](packages/skills-atlas-cli)
+Off by default, the per-prompt match runs locally, never auto-installs. Configure the
+reply language (`hook lang en|zh`) and more. [How it works →](packages/skills-atlas-cli)
 
-**🔭 Capability gaps.** `skills-atlas gaps` shows Claude your *recent activity* (read
-from Claude Code's own local transcripts; nothing stored or sent) so **Claude** can
-spot the recurring kinds of work no installed skill covers yet, and recommend one.
+**🔭 Capability gaps & 🧹 cleanup.** `skills-atlas gaps` reads your *recent activity*
+(from Claude Code's local transcripts) and a **background sub-agent** — a small model
+of your choice (`hook model`, default Haiku), reusing your Claude Code login — spots
+the recurring work no installed skill covers and recommends one. `skills-atlas prune`
+does the reverse: flags installed skills you no longer use. [Details →](packages/skills-atlas-cli)
 
 ### Visit online
 👉 [Open the website](https://zita-go.github.io/Skills-Atlas/?lang=en)

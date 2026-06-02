@@ -70,9 +70,12 @@ skills-atlas doctor                            # health check: orphans, drift, l
 skills-atlas kit                               # detect this project & install the right skills for it
 skills-atlas sync                              # reproduce a project's kit (skills-atlas.kit.json)
 
-# 🤖 Autopilot & capability gaps   (opt-in)
+# 🤖 Autopilot, gaps & cleanup   (opt-in)
 skills-atlas hook on                           # Claude proactively offers a fitting skill as you work
+skills-atlas hook lang en|zh                   # language the autopilot replies in (default English)
+skills-atlas hook model                        # pick the model for background gap analysis (default Haiku)
 skills-atlas gaps                              # Claude spots kinds of work you keep doing without a skill
+skills-atlas prune                             # Claude flags installed skills you no longer use
 
 # 🌐 Catalog & sources
 skills-atlas categories                        # the 20 top-level categories
@@ -167,34 +170,49 @@ anywhere.
 skills-atlas hook on      # enable    (skills-atlas hook off / status)
 ```
 
-Registers a Claude Code `UserPromptSubmit` hook. When what you ask matches the
-territory of a catalog skill you don't have, the hook hands Claude a short
-shortlist of candidates and **Claude decides** whether any genuinely fits. If it
-does, Claude explains **what it does and why it fits your task**, then offers a choice:
-use it now, see what it covers first (`skills-atlas info`), or skip. You don't
-have to know the skill exists. The split is deliberate: the hook does **recall**
-(a distinctive-word match against the catalog, so the right skill is on the
-table), Claude does **precision** (it understands your intent and stays silent
-unless one truly fits, or searches further itself). It's:
+Registers a Claude Code `UserPromptSubmit` hook. When what you ask lines up with the
+territory of a catalog skill you don't have, the hook hands Claude a short shortlist
+and **Claude decides** whether any genuinely fits — if so it explains **what it does
+and why it fits your task** and offers a choice: use it now, see what it covers first
+(`skills-atlas info`), or skip. The split is deliberate: the hook does **recall** (a
+distinctive-word match against skill names *and* their curated function text, English
+or Chinese), Claude does **precision** (it stays silent unless one truly fits). It's:
 
-- **Off by default.** You turn it on explicitly; `hook off` removes it cleanly.
-- **Quiet.** Only fires on a distinctive match (greetings and generic actions
-  like "fix the typo" stay silent), never for an already-installed skill, never
-  the same skill twice, with a cooldown between suggestions. Claude is the
-  final filter on relevance.
-- **Local and private.** Your prompt is matched against the bundled catalog
-  on your machine; nothing is sent anywhere.
-- **Safe.** Never auto-installs (always your call), and fails open (a hook
-  error never blocks your prompt).
+- **Off by default.** Turn it on explicitly; `hook off` removes it cleanly.
+- **Quiet.** Fires only on a distinctive match — greetings and generic actions
+  ("implement the function", "fix the typo") stay silent — never for an installed
+  skill, never the same one twice, with a cooldown. Claude is the final filter.
+- **Local for the per-prompt match.** Your prompt is matched against the on-machine
+  catalog; the per-prompt suggestion sends nothing anywhere.
+- **Safe.** Never auto-installs, and fails open (a hook error never blocks your prompt).
 
-**🔭 Capability gaps.** `skills-atlas gaps` shows Claude your *recent activity* and
-lets **Claude** spot the recurring kinds of work you keep doing that no installed
-skill covers yet, then recommend one with the pattern as evidence. We don't guess
-with heuristics; we just give Claude the memory it lacks (your recent prompts, read
-from Claude Code's own local transcripts; **nothing is stored or sent**) plus the
-catalog. With the hook on, it also nudges in-conversation now and then. The two
-layers are independent: `skills-atlas hook suggest on|off` (per-prompt) and
-`skills-atlas hook gaps on|off` (the proactive nudge).
+**🔭 Capability gaps & 🧹 cleanup.** Two slower, proactive layers read your *recent
+activity* (from Claude Code's own local transcripts) and let a model judge:
+
+- `skills-atlas gaps` — spots recurring kinds of work no installed skill covers yet
+  and recommends one. To keep this off the main agent's back, a **background
+  sub-agent** does the judging: a small model (default `claude-haiku-4-5`) gets your
+  recent prompts plus a candidate shortlist and returns a one-line suggestion that the
+  hook surfaces next turn. The model call uses `claude -p`, which **reuses your Claude
+  Code login** (no API key) — so your recent prompts go to that model (the same
+  provider Claude Code already uses); if `claude` isn't available it falls back to a
+  fully-local digest. Pick the model with `skills-atlas hook model`.
+- `skills-atlas prune` — flags installed skills that no longer fit your recent work and
+  offers to remove them (never auto-removes; skills installed in the last 2 weeks are
+  left alone).
+
+Each layer is an independent toggle, and you can set the reply language:
+
+```bash
+skills-atlas hook suggest on|off    # per-prompt suggestions
+skills-atlas hook gaps on|off       # gap recommendations          (on by default)
+skills-atlas hook prune on|off      # removal suggestions          (off by default)
+skills-atlas hook model [name]      # model for the background gap/prune analysis (default Haiku)
+skills-atlas hook lang en|zh        # language the autopilot replies in           (default English)
+```
+
+The catalog also auto-refreshes in the background (~daily) so new skills appear on
+their own; set `SKILLS_ATLAS_NO_REFRESH=1` to keep it fully offline.
 
 ## License
 
