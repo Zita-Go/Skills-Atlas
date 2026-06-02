@@ -1,7 +1,9 @@
 // `skills-atlas setup` — post-install onboarding + status. Run manually anytime
 // (`skills-atlas setup`), or automatically once at session start via the plugin's
 // SessionStart hook (`setup --session-start`). The one-time welcome is gated by a
-// marker so it shows once, then stays silent. All local; nothing is sent.
+// marker so it shows once, then stays silent. The session-start welcome is delivered
+// via `systemMessage`, which the user sees VERBATIM (the model never sees it / can't
+// paraphrase it). All local; nothing is sent.
 'use strict';
 
 const fs = require('fs');
@@ -11,13 +13,25 @@ const { parse } = require('../args');
 const registry = require('../registry');
 const { green, dim, bold } = require('../format');
 
-function markerFile() {
+function cacheFile(name) {
   const base = process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache');
-  return path.join(base, 'skills-atlas', 'onboarded');
+  return path.join(base, 'skills-atlas', name);
 }
-const onboarded = () => { try { return fs.existsSync(markerFile()); } catch { return false; } };
-function markOnboarded() {
-  try { fs.mkdirSync(path.dirname(markerFile()), { recursive: true }); fs.writeFileSync(markerFile(), new Date().toISOString() + '\n'); } catch { /* best-effort */ }
+const exists = f => { try { return fs.existsSync(f); } catch { return false; } };
+function touch(f) {
+  try { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, new Date().toISOString() + '\n'); } catch { /* best-effort */ }
+}
+const onboardedFile = () => cacheFile('onboarded');
+// Set by the plugin's welcome.js when the "engine not installed" notice was shown — so
+// the eventual real welcome says "Nicely done" instead of the fresh-install greeting.
+const installPromptShown = () => exists(cacheFile('install-prompt-shown'));
+
+// The two settings worth surfacing up front (the rest live in the full `setup` view).
+function welcomeSettings(ap) {
+  return 'Settings:\n' +
+    `  language   /skills-atlas:skill-autopilot lang en|zh   (now: ${ap.replyLang})\n` +
+    `  autopilot  /skills-atlas:skill-autopilot on|off        (${ap.enabled !== false ? 'on' : 'off'})\n\n` +
+    'More: /skills-atlas:setup';
 }
 
 module.exports = async function setup(argv) {
@@ -29,32 +43,31 @@ module.exports = async function setup(argv) {
     return;
   }
   if (values.reset) {
-    try { fs.rmSync(markerFile(), { force: true }); } catch { /* ignore */ }
+    try { fs.rmSync(onboardedFile(), { force: true }); fs.rmSync(cacheFile('install-prompt-shown'), { force: true }); } catch { /* ignore */ }
     console.log(`${green('✓')} onboarding reset — the welcome will show once more next session.`);
     return;
   }
 
   const ap = registry.getAutopilot();
 
-  // --- Auto path (SessionStart hook): emit a ONE-TIME welcome as injected context, then stay silent forever. ---
+  // --- Auto path (SessionStart hook): emit a ONE-TIME welcome via systemMessage (shown
+  // to the user verbatim), then stay silent forever. "Nicely done" variant if the user
+  // came here after the engine-not-installed notice; otherwise the fresh-install greeting. ---
   if (values['session-start']) {
-    if (onboarded()) return; // already welcomed → silent
-    markOnboarded();
-    const ctx =
-      '[Skills Atlas — first run] The Skills Atlas plugin is now active in this project. In ONE short, ' +
-      'friendly line, let the user know: its autopilot is on — it quietly suggests an installable catalog ' +
-      'skill when one genuinely fits what they are doing, and can turn a workflow they keep repeating into a ' +
-      'skill via /skills-atlas:skill-craft. They can search/install skills anytime, run /skills-atlas:setup ' +
-      'to see everything, or /skills-atlas:skill-autopilot off to silence it. Say this once now; do NOT ' +
-      'repeat it in later turns, and do not let it derail what the user actually asked.';
-    console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: 'SessionStart', additionalContext: ctx } }));
+    if (exists(onboardedFile())) return; // already welcomed → silent
+    touch(onboardedFile());
+    const intro = installPromptShown()
+      ? '🎉 Nicely done — Skills Atlas is configured and on. It\'ll quietly flag a ready-made skill when one fits, and offer to turn repeated workflows into skills of your own.'
+      : '✨ Skills Atlas is on. While you work, it keeps an eye out and quietly flags a ready-made skill the moment one fits — and if you catch yourself doing the same dance over and over, it\'ll offer to turn it into a skill of your own.';
+    const msg = intro + '\n\n' + welcomeSettings(ap);
+    console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: 'SessionStart' }, systemMessage: msg, suppressOutput: true }));
     return;
   }
 
-  // --- Manual path: human-readable status + what-you-can-do. (Reaching here = the CLI is installed.) ---
-  markOnboarded(); // running setup yourself counts as onboarded
+  // --- Manual path: human-readable status + what-you-can-do + full settings. ---
+  touch(onboardedFile()); // running setup yourself counts as onboarded
   if (values.json) {
-    console.log(JSON.stringify({ installed: true, autopilot: ap.enabled !== false, suggest: ap.suggest, gapAlerts: ap.gapAlerts, prune: ap.prune }));
+    console.log(JSON.stringify({ installed: true, autopilot: ap.enabled !== false, suggest: ap.suggest, gapAlerts: ap.gapAlerts, prune: ap.prune, replyLang: ap.replyLang }));
     return;
   }
   console.log(`${green('✓')} Skills Atlas is installed and ready.`);
@@ -64,5 +77,9 @@ module.exports = async function setup(argv) {
   console.log(`  ${green('set up a project')}  /skills-atlas:skill-kit   (detects the project type, proposes a kit)`);
   console.log(`  ${green('codify a workflow')} /skills-atlas:skill-craft   (turns something you keep doing into a skill)`);
   console.log(`  ${green('review')}            /skills-atlas:skill-gaps  ·  :skill-prune  ·  :skill-installed`);
+  console.log(`\n${bold('Settings')} ${dim('(optional)')}`);
+  console.log(`  language    /skills-atlas:skill-autopilot lang en|zh     ${dim('(now: ' + ap.replyLang + ')')}`);
+  console.log(`  autopilot   /skills-atlas:skill-autopilot on|off          ${dim('(' + (ap.enabled !== false ? 'on' : 'off') + ')')}`);
+  console.log(`  fine-tune   /skills-atlas:skill-autopilot suggest|gaps|prune on|off  ${dim('· model')}`);
   console.log(dim('\nThe autopilot also suggests skills proactively as you work — each judged for fit. Nothing leaves your machine.'));
 };

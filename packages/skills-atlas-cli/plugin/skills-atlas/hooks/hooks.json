@@ -4,7 +4,7 @@
       { "type": "command", "command": "skills-atlas suggest", "timeout": 5 }
     ],
     "SessionStart": [
-      { "type": "command", "command": "skills-atlas setup --session-start", "timeout": 5 }
+      { "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/hooks/welcome.js"], "timeout": 10 }
     ]
   }
 }
