@@ -36,16 +36,19 @@
   skills:
   - openspec
   - get-shit-done
+  - spec-driven-development
+  - planning-and-task-breakdown
   group: 轻量 SDD 框架
   group_en: Lightweight SDD frameworks
   category: software-engineering
   subcategory: 1-1
   chain: false
-  description: openspec（Fission-AI/OpenSpec：openspec init 把"提议变更 → 评审 → 归档"接入 Claude Code/Cursor/Codex）；get-shit-done（open-gsd：把 meta-prompt + context engineering + SDD 串成统一框架，对标 BMAD/Spec-Kit 但更精简）
-  description_en: 'openspec (Fission-AI/OpenSpec: openspec init wires "proposed change → review → archive" into Claude Code/Cursor/Codex); get-shit-done (open-gsd: chains meta-prompt + context engineering + SDD into a unified framework, comparable to BMAD/Spec-Kit but leaner)'
+  description: openspec（Fission-AI/OpenSpec：openspec init 把"提议变更 → 评审 → 归档"接入 Claude Code/Cursor/Codex）；get-shit-done（open-gsd：把 meta-prompt + context engineering + SDD 串成统一框架，对标 BMAD/Spec-Kit 但更精简）；另含 addyosmani spec-driven-development（门控工作流定义需求 / 计划 / 任务）+ planning-and-task-breakdown（大任务拆解为可实施小任务）
+  description_en: 'openspec (Fission-AI/OpenSpec: openspec init wires "proposed change → review → archive" into Claude Code/Cursor/Codex); get-shit-done (open-gsd: chains meta-prompt + context engineering + SDD into a unified framework, comparable to BMAD/Spec-Kit but leaner); plus addyosmani spec-driven-development (gated workflow defining requirements / plan / tasks) and planning-and-task-breakdown (decompose large tasks into small implementable units)'
   sources:
   - Fission-AI
   - open-gsd
+  - addyosmani
 - id: software-engineering--1-1--004
   skills:
   - handoff
@@ -68,28 +71,35 @@
   category: software-engineering
   subcategory: 1-2
   chain: false
-  description: superpowers test-driven-development（最严，强制 RED-GREEN-REFACTOR）+ mattpocock tdd（最轻，单 vertical slice）+ Pawel test-scenarios（从 user story 生成全面测试场景）。三家可选
-  description_en: superpowers test-driven-development (strictest, enforces RED-GREEN-REFACTOR) + mattpocock tdd (lightest, single vertical slice) + Pawel test-scenarios (generate comprehensive test scenarios from user story). Three sources to choose from
+  description: superpowers test-driven-development（最严，强制 RED-GREEN-REFACTOR）+ mattpocock tdd（最轻，单 vertical slice）+ Pawel test-scenarios（从 user story 生成全面测试场景）。三家可选；另含 addyosmani test-driven-development（又一同名版本，红-绿-重构）
+  description_en: superpowers test-driven-development (strictest, enforces RED-GREEN-REFACTOR) + mattpocock tdd (lightest, single vertical slice) + Pawel test-scenarios (generate comprehensive test scenarios from user story). Three sources to choose from; plus addyosmani test-driven-development (another same-name version, red-green-refactor)
   sources:
   - superpowers
   - mattpocock
   - Pawel
+  - addyosmani
 - id: software-engineering--1-2--006
   skills:
   - systematic-debugging
   - diagnose
   - sentry
+  - debugging
+  - debugging-and-error-recovery
+  - parallel-debugging
   group: 系统化调试
   group_en: Systematic debugging
   category: software-engineering
   subcategory: 1-2
   chain: false
-  description: superpowers systematic-debugging 4 阶段根因（含 root-cause-tracing / defense-in-depth / condition-based-waiting）+ mattpocock diagnose（复现→最小化→假设→注入观测→修→回归测试）+ Codex sentry（看生产 issue + AI 根因 + AI 修复方案，PII 自脱敏）
-  description_en: superpowers systematic-debugging 4-phase root cause (incl. root-cause-tracing / defense-in-depth / condition-based-waiting) + mattpocock diagnose (reproduce → minimize → hypothesis → inject observation → fix → regression test) + Codex sentry (view production issue + AI root cause + AI fix, PII auto-redacted)
+  description: superpowers systematic-debugging 4 阶段根因（含 root-cause-tracing / defense-in-depth / condition-based-waiting）+ mattpocock diagnose（复现→最小化→假设→注入观测→修→回归测试）+ Codex sentry（看生产 issue + AI 根因 + AI 修复方案，PII 自脱敏）；另含 debugging / debugging-and-error-recovery（假设驱动根因诊断）与 parallel-debugging（竞争假设法 ACH 并行排查、跨模块仲裁）
+  description_en: superpowers systematic-debugging 4-phase root cause (incl. root-cause-tracing / defense-in-depth / condition-based-waiting) + mattpocock diagnose (reproduce → minimize → hypothesis → inject observation → fix → regression test) + Codex sentry (view production issue + AI root cause + AI fix, PII auto-redacted); plus debugging / debugging-and-error-recovery (hypothesis-driven root-cause diagnosis) and parallel-debugging (parallel investigation via Analysis of Competing Hypotheses with cross-module arbitration)
   sources:
   - superpowers
   - mattpocock
   - Codex
+  - oh-my-openagent
+  - addyosmani
+  - wshobson
 - id: software-engineering--1-2--007
   skills:
   - verification-before-completion
@@ -184,27 +194,35 @@
   skills:
   - using-git-worktrees
   - finishing-a-development-branch
+  - git-master
+  - git-workflow-and-versioning
+  - gitlab-ci-patterns
   group: Git 工作流
   group_en: Git workflow
   category: software-engineering
   subcategory: 1-4
   chain: false
-  description: superpowers using-git-worktrees（在新 branch 创隔离 workspace + 跑 setup + 验证 baseline）+ finishing-a-development-branch（验证完成→选 merge/PR/keep/discard→清理 worktree）
-  description_en: superpowers using-git-worktrees (create isolated workspace on a new branch + run setup + verify baseline) + finishing-a-development-branch (verify completion → choose merge/PR/keep/discard → clean up worktree)
+  description: superpowers using-git-worktrees（在新 branch 创隔离 workspace + 跑 setup + 验证 baseline）+ finishing-a-development-branch（验证完成→选 merge/PR/keep/discard→清理 worktree）；另含 git-master（原子提交 / 变基 / 冲突解决 / 历史搜索）、git-workflow-and-versioning（分支与版本规范）、gitlab-ci-patterns（GitLab CI 多阶段管道）
+  description_en: superpowers using-git-worktrees (create isolated workspace on a new branch + run setup + verify baseline) + finishing-a-development-branch (verify completion → choose merge/PR/keep/discard → clean up worktree); plus git-master (atomic commits / rebase / conflict resolution / history search), git-workflow-and-versioning (branch & versioning conventions) and gitlab-ci-patterns (multi-stage GitLab CI pipelines)
   sources:
   - superpowers
+  - oh-my-openagent
+  - addyosmani
+  - wshobson
 - id: software-engineering--1-4--015
   skills:
   - claude-code-safety-net
+  - block-no-verify-hook
   group: 危险命令拦截
   group_en: Dangerous command blocking
   category: software-engineering
   subcategory: 1-4
   chain: false
-  description: kenryu42 claude-code-safety-net（plugin 不是 skill）：hook 进 PreToolUse 事件，在 Claude 跑 git push --force / reset --hard / rm -rf / clean -f 等危险命令前拦截等用户确认
-  description_en: 'kenryu42 claude-code-safety-net (plugin, not skill): hook into PreToolUse event, block dangerous commands like git push --force / reset --hard / rm -rf / clean -f before Claude runs them, awaiting user confirmation'
+  description: kenryu42 claude-code-safety-net（plugin 不是 skill）：hook 进 PreToolUse 事件，在 Claude 跑 git push --force / reset --hard / rm -rf / clean -f 等危险命令前拦截等用户确认；另含 block-no-verify-hook：用 PreToolUse hook 拦截含 --no-verify 等绕过标志的 git 命令
+  description_en: 'kenryu42 claude-code-safety-net (plugin, not skill): hook into PreToolUse event, block dangerous commands like git push --force / reset --hard / rm -rf / clean -f before Claude runs them, awaiting user confirmation; plus block-no-verify-hook: a PreToolUse hook intercepting git commands with bypass flags like --no-verify'
   sources:
   - kenryu42
+  - wshobson
 - id: software-engineering--1-5--016
   skills:
   - cloudflare-deploy
@@ -1557,15 +1575,17 @@
 - id: design-frontend--5-2--117
   skills:
   - frontend-design
+  - frontend-ui-ux
   group: 前端美学
   group_en: frontend aesthetics
   category: design-frontend
   subcategory: 5-2
   chain: false
-  description: Anthropic frontend-design（让 Claude 跳出 AI slop，用极简 / 野兽 / 复古未来主义等明确美学方向写生产级 UI）
-  description_en: 'Anthropic frontend-design (get Claude out of AI slop, write production-grade UI with an explicit aesthetic direction: minimalist / brutalist / retro-futurist, etc.)'
+  description: Anthropic frontend-design（让 Claude 跳出 AI slop，用极简 / 野兽 / 复古未来主义等明确美学方向写生产级 UI）；另含 frontend-ui-ux：设计师转开发者，无设计稿也能产出美观 UI/UX
+  description_en: 'Anthropic frontend-design (get Claude out of AI slop, write production-grade UI with an explicit aesthetic direction: minimalist / brutalist / retro-futurist, etc.); plus frontend-ui-ux: a designer-turned-developer that produces beautiful UI/UX even without a mockup'
   sources:
   - Anthropic
+  - oh-my-openagent
 - id: design-frontend--5-2--118
   skills:
   - web-design-guidelines
@@ -1913,15 +1933,17 @@
 - id: data-scraping--7-3--145
   skills:
   - metrics-dashboard
+  - kpi-dashboard-design
   group: 指标 dashboard 设计
   group_en: Metrics dashboard design
   category: data-scraping
   subcategory: 7-3
   chain: false
-  description: Pawel metrics-dashboard（产品指标 dashboard + 数据源 + 告警阈值）
-  description_en: Pawel metrics-dashboard (product metrics dashboard + data sources + alert threshold)
+  description: Pawel metrics-dashboard（产品指标 dashboard + 数据源 + 告警阈值）；另含 kpi-dashboard-design：指标选择、可视化最佳实践与实时监控模式
+  description_en: 'Pawel metrics-dashboard (product metrics dashboard + data sources + alert threshold); plus kpi-dashboard-design: metric selection, visualization best practices and real-time monitoring patterns'
   sources:
   - Pawel
+  - wshobson
 - id: data-scraping--7-3--146
   skills:
   - dummy-dataset
@@ -3358,19 +3380,21 @@
   - offensive-osint
   - osint-recon
   - hackerone
+  - security-research
   group: 漏洞挖掘 / Bug Bounty / OSINT
   group_en: Bug hunting / bug bounty / OSINT
   category: security-offensive
   subcategory: 18-3
   chain: false
-  description: 漏洞赏金方法论与侦察(subfinder/httpx/nuclei)、OSINT 攻击面测绘、triage 验证与披露报告(HackerOne/Bugcrowd)。
-  description_en: Bug-bounty methodology & recon (subfinder/httpx/nuclei), OSINT attack-surface mapping, triage validation and disclosure reporting (HackerOne/Bugcrowd).
+  description: 漏洞赏金方法论与侦察(subfinder/httpx/nuclei)、OSINT 攻击面测绘、triage 验证与披露报告(HackerOne/Bugcrowd)。；另含 security-research：编排多 agent 并行安全审计、验证可利用性（预发布安全检查 / 威胁模型验证）
+  description_en: 'Bug-bounty methodology & recon (subfinder/httpx/nuclei), OSINT attack-surface mapping, triage validation and disclosure reporting (HackerOne/Bugcrowd).; plus security-research: orchestrate multiple agents for parallel security audits and exploitability verification (pre-release security checks / threat-model validation)'
   sources:
   - elementalsouls-bughunter
   - elementalsouls-osint
   - shuvonsec
   - briiirussell
   - transilienceai
+  - oh-my-openagent
 - id: security-offensive--18-4--236
   skills:
   - soc-operations
@@ -3519,18 +3543,20 @@
   - state-invariant-detection
   - proxy-upgrade-safety
   - security-audit
+  - solidity-security
   group: 智能合约审计 / 漏洞检测
   group_en: Smart contract audit / vulnerability detection
   category: web3-blockchain
   subcategory: 20-1
   chain: false
-  description: Solidity/EVM 合约系统化审计:重入/签名重放/状态校验/精度/代理升级/状态不变量,370 项清单与行为意图建模。
-  description_en: 'Systematic Solidity/EVM contract audits: reentrancy/signature-replay/state-validation/precision/proxy-upgrade/state-invariants, 370-item checklists and behavioral-intent modeling.'
+  description: Solidity/EVM 合约系统化审计:重入/签名重放/状态校验/精度/代理升级/状态不变量,370 项清单与行为意图建模。；另含 solidity-security：智能合约安全最佳实践与漏洞防护，用于编写 / 审计 Solidity
+  description_en: 'Systematic Solidity/EVM contract audits: reentrancy/signature-replay/state-validation/precision/proxy-upgrade/state-invariants, 370-item checklists and behavioral-intent modeling.; plus solidity-security: smart-contract security best practices and vulnerability prevention for writing / auditing Solidity'
   sources:
   - auditmos
   - quillai-network
   - XSpoonAi
   - trailofbits
+  - wshobson
 - id: web3-blockchain--20-2--244
   skills:
   - audit-lending
@@ -3607,16 +3633,18 @@
   - dex-execution
   - copy-trading
   - solana-tx-building
+  - nft-standards
   group: Web3 应用 / NFT / DAO / 交易
   group_en: Web3 apps / NFT / DAO / trading
   category: web3-blockchain
   subcategory: 20-5
   chain: false
-  description: NFT 铸造/元数据/行情、DAO 提案与治理工具、跨链桥、Web3 身份认证,以及 DEX 执行/跟单/Solana 交易构建。
-  description_en: NFT minting/metadata/analytics, DAO proposal & governance tooling, cross-chain bridges, Web3 identity auth, plus DEX execution/copy-trading/Solana tx building.
+  description: NFT 铸造/元数据/行情、DAO 提案与治理工具、跨链桥、Web3 身份认证,以及 DEX 执行/跟单/Solana 交易构建。；另含 nft-standards：实现 ERC-721 / ERC-1155、元数据 / 铸造 / 市场集成
+  description_en: 'NFT minting/metadata/analytics, DAO proposal & governance tooling, cross-chain bridges, Web3 identity auth, plus DEX execution/copy-trading/Solana tx building.; plus nft-standards: implement ERC-721 / ERC-1155 with metadata, minting and marketplace integration'
   sources:
   - XSpoonAi
   - agiprolabs
+  - wshobson
 - id: media--6-2--248
   skills:
   - text-to-speech
@@ -3726,3 +3754,602 @@
   sources:
   - shawnpang
   - tjboudreaux
+- id: software-engineering--1-4--254
+  skills:
+  - get-unpublished-changes
+  group: 版本管理 / Changelog
+  group_en: Version management / Changelog
+  category: software-engineering
+  subcategory: 1-4
+  chain: false
+  description: 对比 HEAD 与最新 npm 发布版本，读取实际 diff 生成结构化 changelog，按 feat/fix/refactor 分组并推荐版本号。
+  description_en: Diff HEAD against the latest npm-published version, read the actual diff to generate a structured changelog, group changes by feat/fix/refactor, and recommend a version number.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-4--255
+  skills:
+  - github-triage
+  group: GitHub Issue/PR 分析
+  group_en: GitHub Issue/PR triage
+  category: software-engineering
+  subcategory: 1-4
+  chain: false
+  description: 只读模式批量分析所有 open issues 和 PRs，为每项启动并行子 agent，输出带 GitHub 链接证据的分类报告，不做任何修改操作。
+  description_en: Read-only batch analysis of all open issues and PRs, spawning a parallel sub-agent for each item, producing a categorized report backed by GitHub-link evidence without making any changes.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-1--256
+  skills:
+  - hyperplan
+  group: 对抗性多 agent 规划
+  group_en: Adversarial multi-agent planning
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 帮 agent 通过 5 个对抗性成员进行严格辩论，蒸馏可辩护见解，生成严谨的可执行计划。
+  description_en: Have an agent run a rigorous debate among five adversarial members to distill defensible insights and produce a tight, executable plan.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-3--257
+  skills:
+  - pre-publish-review
+  group: 多 Agent 发布审查门禁
+  group_en: Multi-agent pre-publish review gate
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: npm 发布前三层审查门禁：自动检测未发布变更、最多 10 个 ultrabrain agent 逐变更深度分析、5 agent 全局代码质量/安全审查、1 oracle 综合发布就绪性评估与版本风险判断。
+  description_en: 'A three-layer review gate before an npm publish: auto-detect unpublished changes, deep per-change analysis by up to 10 "ultrabrain" agents, a 5-agent global code-quality/security review, and a final single-oracle release-readiness and version-risk assessment.'
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-3--258
+  skills:
+  - remove-deadcode
+  group: 死代码安全移除
+  group_en: Safe dead-code removal
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 通过 LSP 验证和并行深度 agent 安全移除项目中未使用的代码。
+  description_en: Safely remove unused code from a project via LSP verification and parallel deep agents.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-4--259
+  skills:
+  - work-with-pr
+  group: PR 全生命周期自动化
+  group_en: Full PR lifecycle automation
+  category: software-engineering
+  subcategory: 1-4
+  chain: false
+  description: 自动化完整 PR 生命周期，从工作区设置、实现、创建 PR 到验证循环（CI、审查、批准），直到合并完成并清理。
+  description_en: Automate the full PR lifecycle — from workspace setup, implementation and PR creation through the verification loop (CI, review, approval) until merge and cleanup.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-3--260
+  skills:
+  - comment-checker
+  group: 注释质量自动检查
+  group_en: Automatic comment-quality check
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 编辑代码后自动检查注释质量，阻断问题补丁并要求修复或解释，保障代码审查效率。
+  description_en: After code edits, automatically check comment quality, blocking problematic patches and requiring a fix or explanation to keep reviews efficient.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-3--261
+  skills:
+  - lsp
+  group: LSP 语言服务集成
+  group_en: LSP language-service integration
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 提供 LSP 工具集，支持诊断、定义跳转、引用查找、符号搜索和安全重命名等代码导航能力。
+  description_en: Provide an LSP toolset for code navigation — diagnostics, go-to-definition, find-references, symbol search and safe rename.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-1--262
+  skills:
+  - ulw-loop
+  group: 系统化工作流循环（ultrawork）
+  group_en: Systematic workflow loop (ultrawork)
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 提供目标导向的 ultrawork 循环，系统化分解任务为证据绑定的步骤，支持手动 QA 和检查点执行。
+  description_en: A goal-directed "ultrawork" loop that systematically decomposes a task into evidence-bound steps, supporting manual QA and checkpointed execution.
+  sources:
+  - oh-my-openagent
+- id: agent-architecture--12-2--263
+  skills:
+  - init-deep
+  group: Agent 知识库初始化（AGENTS.md）
+  group_en: Agent knowledge-base init (AGENTS.md)
+  category: agent-architecture
+  subcategory: 12-2
+  chain: false
+  description: 初始化层次化的 AGENTS.md 知识库，为 agent 建立结构化上下文基础，便于后续复杂任务编排和执行。
+  description_en: Initialize a hierarchical AGENTS.md knowledge base to establish a structured context foundation for the agent, easing later orchestration of complex tasks.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-3--264
+  skills:
+  - programming
+  group: 多语言编程规范与工具链
+  group_en: Multi-language coding standards & toolchain
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 强制应用于多语言代码编写，确保严格类型、现代工具链和代码质量，涵盖 Python、Rust、TypeScript 等。
+  description_en: Enforced across multi-language code-writing to guarantee strict typing, a modern toolchain and code quality — covering Python, Rust, TypeScript and more.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-3--265
+  skills:
+  - refactor
+  - remove-ai-slops
+  group: 智能重构 / 清理 AI 代码气味
+  group_en: Smart refactoring / removing AI code smells
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 智能重构命令（支持 refactor/cleanup/extract 等触发词）执行代码重构；并通过回归测试锁定行为后批量移除 AI 生成的代码气味，覆盖 10 类代码问题。
+  description_en: A smart refactoring command (triggered by refactor/cleanup/extract and more) executes code refactors; plus removal of AI-generated code smells — locking behavior with regression tests, then batch-cleaning and verifying across 10 categories of issues.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-3--266
+  skills:
+  - review-work
+  - code-review-and-quality
+  group: 实现后并行 Code Review（多子代理）
+  group_en: Post-implementation parallel code review
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 实现完成后的多维并行代码审查：review-work 启动 5 个并行子代理做目标约束验证、代码质量、安全审查、QA 与上下文挖掘；code-review-and-quality 从正确性、可读性、架构、安全与性能多维评审，确保合并前达标。
+  description_en: 'Multi-dimensional parallel code review after implementation: review-work spawns five parallel sub-agents for goal-constraint verification, code quality, security review, QA and context mining; code-review-and-quality evaluates correctness, readability, architecture, security and performance to ensure merge-readiness.'
+  sources:
+  - oh-my-openagent
+  - addyosmani
+- id: software-engineering--1-1--267
+  skills:
+  - start-work
+  group: 工作计划执行循环
+  group_en: Work-plan execution loop
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 执行 Prometheus 工作计划，管理 Boulder 状态、证据更新、工作树纪律和并行子代理，支持计划恢复和连续执行，适用于开发工作流。
+  description_en: Execute a Prometheus work plan — managing Boulder state, evidence updates, worktree discipline and parallel sub-agents, with plan resume and continuous execution for development workflows.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-1--268
+  skills:
+  - ulw-plan
+  group: 战略规划工作流
+  group_en: Strategic planning workflow
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 通过苏格拉底式访谈、代码库探索和差距分析，为复杂任务生成决策完整的工作计划。
+  description_en: Generate a decision-complete work plan for complex tasks through Socratic interviewing, codebase exploration and gap analysis.
+  sources:
+  - oh-my-openagent
+- id: software-engineering--1-2--269
+  skills:
+  - agent-browser
+  - browser-testing-with-devtools
+  group: 浏览器自动化 / DevTools 测试
+  group_en: Browser automation / DevTools testing
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 浏览器自动化与真实浏览器调试：agent-browser 自动化网页导航、表单填写、截图与数据提取；browser-testing-with-devtools 用 Chrome DevTools 在真实浏览器中测试调试，检查 DOM、网络请求与性能分析等运行时数据。
+  description_en: 'Browser automation and real-browser debugging: agent-browser automates navigation, form filling, screenshots and data extraction; browser-testing-with-devtools uses Chrome DevTools to test and debug in a real browser, inspecting DOM, network requests and performance/runtime data.'
+  sources:
+  - oh-my-openagent
+  - addyosmani
+- id: docs-knowledge--2-4--270
+  skills:
+  - understand-chat
+  - understand-dashboard
+  - understand-diff
+  - understand-domain
+  - understand-explain
+  - understand-knowledge
+  group: 项目知识图谱工具集
+  group_en: Project knowledge-graph toolset
+  category: docs-knowledge
+  subcategory: 2-4
+  chain: false
+  description: Understand-Anything 的代码知识图谱工具集：图谱问答（chat）、Web 仪表板可视化（dashboard）、git diff 影响与风险分析（diff）、业务域流图提取（domain）、文件/函数深度解释（explain）与 Karpathy 式 LLM 知识库实体/关系聚类（knowledge）。
+  description_en: 'Understand-Anything''s code knowledge-graph toolset: graph-grounded Q&A (chat), web-dashboard visualization (dashboard), git-diff impact & risk analysis (diff), business-domain flow extraction (domain), deep file/function explanation (explain), and Karpathy-style LLM knowledge-base entity/relation clustering (knowledge).'
+  sources:
+  - understand-anything
+- id: docs-knowledge--2-4--271
+  skills:
+  - understand
+  - understand-onboard
+  group: 知识图谱驱动的入职流程
+  group_en: Knowledge-graph-driven onboarding
+  category: docs-knowledge
+  subcategory: 2-4
+  chain: true
+  description: 基于代码库构建可交互知识图谱（understand），再据图谱生成新成员入职指南（understand-onboard），帮助快速理解项目结构、架构与关键组件 —— 两步强绑定的入职工作流。
+  description_en: Build an interactive knowledge graph of the codebase (understand), then generate a new-hire onboarding guide from it (understand-onboard) — a two-step chained workflow for quickly grasping project structure, architecture and key components.
+  sources:
+  - understand-anything
+- id: software-engineering--1-6--272
+  skills:
+  - api-and-interface-design
+  - api-design-principles
+  group: API 与接口设计
+  group_en: API & interface design
+  category: software-engineering
+  subcategory: 1-6
+  chain: false
+  description: 设计稳定、易用、可扩展的 API 与接口：确保模块间清晰通信、防止误用（api-and-interface-design），并遵循 REST/GraphQL 资源建模、HTTP 语义与 schema 设计的最佳实践与反模式（api-design-principles），适用于 REST、GraphQL 或模块边界。
+  description_en: 'Design stable, ergonomic, scalable APIs and interfaces: ensure clear inter-module communication and prevent misuse (api-and-interface-design), following REST/GraphQL resource modeling, HTTP semantics and schema-design best practices and pitfalls (api-design-principles) — for REST, GraphQL or module boundaries.'
+  sources:
+  - addyosmani
+  - wshobson
+- id: software-engineering--1-4--273
+  skills:
+  - ci-cd-and-automation
+  group: CI/CD 自动化
+  group_en: CI/CD automation
+  category: software-engineering
+  subcategory: 1-4
+  chain: false
+  description: 帮助 AI agent 自动化 CI/CD 流水线配置，确保代码变更通过质量门（如测试、检查）后才能部署，提高开发流程的可靠性和效率。
+  description_en: Automate CI/CD pipeline configuration so changes deploy only after passing quality gates (tests, checks), improving the reliability and efficiency of the dev workflow.
+  sources:
+  - addyosmani
+- id: software-engineering--1-3--274
+  skills:
+  - code-simplification
+  group: 代码简化
+  group_en: Code simplification
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 帮助 agent 简化代码以提高可读性和可维护性，而不改变行为，适用于重构和代码审查场景。
+  description_en: Simplify code to improve readability and maintainability without changing behavior — for refactoring and code-review scenarios.
+  sources:
+  - addyosmani
+- id: agent-architecture--12-1--275
+  skills:
+  - context-engineering
+  group: 上下文工程优化
+  group_en: Context-engineering optimization
+  category: agent-architecture
+  subcategory: 12-1
+  chain: false
+  description: 优化 agent 上下文设置，确保在正确时间提供正确信息，以提高输出质量和减少幻觉。
+  description_en: Optimize an agent's context so the right information is present at the right time, improving output quality and reducing hallucination.
+  sources:
+  - addyosmani
+- id: software-engineering--1-3--276
+  skills:
+  - deprecation-and-migration
+  group: 代码废弃与迁移管理
+  group_en: Deprecation & migration management
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 管理代码废弃和用户迁移，帮助 agent 安全移除旧系统并将用户迁移到新实现，减少维护成本。
+  description_en: Manage code deprecation and user migration — safely removing legacy systems and migrating users to new implementations to cut maintenance cost.
+  sources:
+  - addyosmani
+- id: software-engineering--1-3--277
+  skills:
+  - doubt-driven-development
+  group: 质疑驱动 / 对抗性审查
+  group_en: Doubt-driven / adversarial review
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 在任何非平凡决策落地前，注入一个偏向「证伪」的新鲜上下文审阅者进行对抗性交叉审查，防止长期会话中积累的假设被默认为事实，适用于高风险、不可逆或安全性敏感的场景。
+  description_en: Before any non-trivial decision lands, inject a fresh-context reviewer biased toward falsification for adversarial cross-review, preventing assumptions accumulated over a long session from being treated as fact — for high-risk, irreversible or security-sensitive situations.
+  sources:
+  - addyosmani
+- id: design-frontend--5-2--278
+  skills:
+  - frontend-ui-engineering
+  group: 前端工程规范
+  group_en: Frontend engineering standards
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 帮助 AI agent 构建生产质量、可访问、高性能且视觉精致的用户界面，遵循设计系统，避免 AI 生成的通用外观。
+  description_en: Help an agent build production-quality, accessible, performant and visually polished UIs that follow a design system and avoid a generic AI-generated look.
+  sources:
+  - addyosmani
+- id: product-management--3-2--279
+  skills:
+  - idea-refine
+  group: 想法精炼 / MVP 定义
+  group_en: Idea refinement / MVP definition
+  category: product-management
+  subcategory: 3-2
+  chain: false
+  description: 帮助 AI agent 通过结构化的发散和收敛思维，将模糊想法细化为可执行的概念，包括假设测试和 MVP 定义。
+  description_en: Help an agent refine a vague idea into an executable concept through structured divergent and convergent thinking, including hypothesis testing and MVP definition.
+  sources:
+  - addyosmani
+- id: software-engineering--1-2--280
+  skills:
+  - incremental-implementation
+  group: 增量实现 / 持续验证
+  group_en: Incremental implementation / continuous verification
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 指导 AI agent 以增量方式实现功能，每步实现、测试和验证，确保系统始终保持可工作状态。
+  description_en: Guide an agent to implement features incrementally — implementing, testing and verifying at each step so the system always stays in a working state.
+  sources:
+  - addyosmani
+- id: software-engineering--1-1--281
+  skills:
+  - interview-me
+  group: 意图澄清
+  group_en: Intent clarification
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 通过逐步访谈提取用户真实需求，在计划或代码存在前澄清意图，避免构建错误解决方案。
+  description_en: Extract the user's true requirements through a step-by-step interview, clarifying intent before any plan or code exists to avoid building the wrong solution.
+  sources:
+  - addyosmani
+- id: software-engineering--1-3--282
+  skills:
+  - performance-optimization
+  group: 性能优化
+  group_en: Performance optimization
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 基于测量和 Core Web Vitals 优化应用性能，识别瓶颈并提供修复策略，避免过早优化。
+  description_en: Optimize application performance based on measurement and Core Web Vitals, identifying bottlenecks and offering fix strategies while avoiding premature optimization.
+  sources:
+  - addyosmani
+- id: software-engineering--1-8--283
+  skills:
+  - security-and-hardening
+  - secrets-management
+  group: 应用层安全（加固 + 密钥管理）
+  group_en: Application security (hardening + secrets management)
+  category: software-engineering
+  subcategory: 1-8
+  chain: false
+  description: 应用层安全实践：输入校验、加密存储、安全响应头以防 XSS/SQL 注入等漏洞（security-and-hardening）；集成 Vault、AWS Secrets Manager 等安全管理 CI/CD 环境中的敏感信息（secrets-management）。
+  description_en: 'Application-layer security practices: validate input, encrypt storage and set secure response headers to prevent XSS, SQL injection and similar flaws (security-and-hardening); integrate Vault, AWS Secrets Manager and the like to safely manage secrets in CI/CD environments (secrets-management).'
+  sources:
+  - addyosmani
+  - wshobson
+- id: software-engineering--1-5--284
+  skills:
+  - shipping-and-launch
+  group: 生产部署与监控
+  group_en: Production launch & monitoring
+  category: software-engineering
+  subcategory: 1-5
+  chain: false
+  description: 帮助 agent 准备生产部署，提供预发布检查清单、监控设置和回滚策略，确保安全、可观测的发布流程。
+  description_en: Help an agent prepare a production deployment with a pre-launch checklist, monitoring setup and rollback strategy for a safe, observable release.
+  sources:
+  - addyosmani
+- id: software-engineering--1-1--285
+  skills:
+  - source-driven-development
+  group: 源文档驱动开发
+  group_en: Source-documentation-driven development
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 帮助 agent 基于官方文档编写代码，确保实现权威、模式正确，避免过时模式，提升代码质量和可信度。
+  description_en: Help an agent write code grounded in official documentation — ensuring authoritative, pattern-correct implementations, avoiding outdated patterns and raising code quality and trustworthiness.
+  sources:
+  - addyosmani
+- id: meta-skill-mgmt--13-2--286
+  skills:
+  - using-agent-skills
+  group: Skill 自动发现与调用
+  group_en: Skill auto-discovery & invocation
+  category: meta-skill-mgmt
+  subcategory: 13-2
+  chain: false
+  description: 帮助 AI agent 在会话开始时发现并调用合适的技能，根据开发阶段自动匹配。
+  description_en: Help an agent discover and invoke the right skills at the start of a session, matching them automatically to the current development stage.
+  sources:
+  - addyosmani
+- id: software-engineering--1-2--287
+  skills:
+  - screen-reader-testing
+  - wcag-audit-patterns
+  group: 无障碍测试（屏幕阅读器 + WCAG）
+  group_en: Accessibility testing (screen reader + WCAG)
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: Web 应用无障碍测试：验证屏幕阅读器（VoiceOver、NVDA 等）兼容性并调试辅助技术问题（screen-reader-testing）；按 WCAG 2.2 做自动化测试、手动验证与修复策略以确保合规（wcag-audit-patterns）。
+  description_en: 'Web accessibility testing: verify screen-reader (VoiceOver, NVDA, etc.) compatibility and debug assistive-technology issues (screen-reader-testing); run WCAG 2.2 automated tests, manual verification and remediation to ensure compliance (wcag-audit-patterns).'
+  sources:
+  - wshobson
+- id: software-engineering--1-3--288
+  skills:
+  - multi-reviewer-patterns
+  group: 多 reviewer 协调与发现去重
+  group_en: Multi-reviewer orchestration & finding dedup
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 协调多个 agent 并行执行代码审查，自动去重发现、校准严重等级并生成统一报告，支持安全、性能、架构、测试等多维度 review。
+  description_en: Coordinate multiple agents to run code reviews in parallel, automatically deduplicating findings, calibrating severity and producing a unified report across security, performance, architecture and testing dimensions.
+  sources:
+  - wshobson
+- id: agent-architecture--12-4--289
+  skills:
+  - parallel-feature-development
+  - task-coordination-strategies
+  group: 多代理并行开发协调
+  group_en: Multi-agent parallel development coordination
+  category: agent-architecture
+  subcategory: 12-4
+  chain: true
+  description: 多代理并行开发的协调工作流：用文件所有权策略避免冲突、让多代理同时实现不同层或组件（parallel-feature-development）；并把复杂任务拆成可并行单元、设计依赖图、监控与平衡负载（task-coordination-strategies）。
+  description_en: 'A coordination workflow for multi-agent parallel development: use file-ownership strategies to avoid conflicts so agents implement different layers/components simultaneously (parallel-feature-development), and decompose complex tasks into parallel units with dependency graphs, monitoring and load balancing (task-coordination-strategies).'
+  sources:
+  - wshobson
+- id: agent-architecture--12-4--290
+  skills:
+  - team-composition-patterns
+  - team-communication-protocols
+  group: 多 agent 团队组成与通信协议
+  group_en: Multi-agent team composition & communication protocols
+  category: agent-architecture
+  subcategory: 12-4
+  chain: false
+  description: 为 agent 团队设计最优组成（大小启发式、预设配置、agent 类型选择、显示模式）以适配任务复杂度（team-composition-patterns），并提供结构化通信协议（消息类型、计划批准、关闭流程、防反模式）优化协调（team-communication-protocols）。
+  description_en: Design optimal agent-team composition (size heuristics, presets, agent-type selection, display modes) to match task complexity (team-composition-patterns), and provide structured communication protocols (message types, plan approval, shutdown flow, anti-pattern guards) to optimize coordination (team-communication-protocols).
+  sources:
+  - wshobson
+- id: software-engineering--1-6--291
+  skills:
+  - fastapi-templates
+  group: FastAPI 项目脚手架
+  group_en: FastAPI project scaffolding
+  category: software-engineering
+  subcategory: 1-6
+  chain: false
+  description: 搭建生产级 FastAPI 项目脚手架：推荐目录结构、async 模式、依赖注入、完善的错误处理与测试配置，用于新建 FastAPI 应用或后端 API 项目。
+  description_en: 'Scaffold production-grade FastAPI projects: recommended directory structure, async patterns, dependency injection, comprehensive error handling and testing configuration — for new FastAPI applications or backend API projects.'
+  sources:
+  - wshobson
+- id: software-engineering--1-6--292
+  skills:
+  - architecture-patterns
+  - microservices-patterns
+  group: 后端架构 / 微服务设计
+  group_en: Backend architecture / microservices design
+  category: software-engineering
+  subcategory: 1-6
+  chain: false
+  description: 设计与实现可维护、可测试的后端系统：Clean Architecture、Hexagonal Architecture 与 DDD（architecture-patterns）；以及微服务架构的服务分解、同步/异步通信、分布式数据管理、韧性模式与服务发现（microservices-patterns）。
+  description_en: 'Design and implement maintainable, testable backend systems: Clean Architecture, Hexagonal Architecture and DDD (architecture-patterns); plus microservice service decomposition, sync/async communication, distributed data management, resilience patterns and service discovery (microservices-patterns).'
+  sources:
+  - wshobson
+- id: software-engineering--1-6--293
+  skills:
+  - cqrs-implementation
+  - event-store-design
+  - projection-patterns
+  - saga-orchestration
+  group: 事件溯源 / CQRS / Saga
+  group_en: Event sourcing / CQRS / Saga
+  category: software-engineering
+  subcategory: 1-6
+  chain: false
+  description: 事件驱动后端模式：CQRS 读写分离（cqrs-implementation）、event store 设计（流模式/快照/查询优化/扩展，event-store-design）、CQRS 读模型与投影优化查询（projection-patterns）、Saga 编排分布式事务与补偿操作确保最终一致性（saga-orchestration）。
+  description_en: 'Event-driven backend patterns: CQRS read/write separation (cqrs-implementation), event-store design (stream patterns, snapshots, query optimization, scaling — event-store-design), CQRS read models and projections for query performance (projection-patterns), and Saga orchestration of distributed transactions with compensating actions for eventual consistency (saga-orchestration).'
+  sources:
+  - wshobson
+- id: software-engineering--1-2--294
+  skills:
+  - temporal-python-testing
+  group: Temporal 工作流测试
+  group_en: Temporal workflow testing
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 指导 AI agent 使用 pytest 对 Temporal 工作流进行单元测试、集成测试和回放测试，涵盖时间跳跃、mock 策略与 CI/CD 集成。
+  description_en: Guide an agent to unit-, integration- and replay-test Temporal workflows with pytest — covering time-skipping, mocking strategies and CI/CD integration.
+  sources:
+  - wshobson
+- id: software-engineering--1-6--295
+  skills:
+  - workflow-orchestration-patterns
+  group: 分布式工作流编排（Temporal）
+  group_en: Distributed workflow orchestration (Temporal)
+  category: software-engineering
+  subcategory: 1-6
+  chain: false
+  description: 指导 AI agent 用 Temporal 设计分布式持久化工作流，涵盖 workflow/activity 分离、Saga 模式、状态管理与确定性约束。
+  description_en: Guide an agent to design durable distributed workflows with Temporal — covering workflow/activity separation, the Saga pattern, state management and determinism constraints.
+  sources:
+  - wshobson
+- id: web3-blockchain--20-3--296
+  skills:
+  - defi-protocol-templates
+  group: DeFi 合约开发 / 工具链
+  group_en: DeFi contract development / tooling
+  category: web3-blockchain
+  subcategory: 20-3
+  chain: false
+  description: 提供 DeFi 协议的生产级 Solidity 模板，涵盖质押、AMM、治理、借贷和闪电贷，供 agent 直接生成完整合约代码。
+  description_en: Provide production-grade Solidity templates for DeFi protocols — staking, AMM, governance, lending and flash loans — for an agent to generate complete contract code directly.
+  sources:
+  - wshobson
+- id: web3-blockchain--20-3--297
+  skills:
+  - web3-testing
+  group: Web3 智能合约测试
+  group_en: Web3 smart-contract testing
+  category: web3-blockchain
+  subcategory: 20-3
+  chain: false
+  description: 为 Solidity 智能合约提供 Hardhat/Foundry 全面测试指导，覆盖单元测试、集成测试、Gas 优化、模糊测试和主网 fork，用于合约开发与 DeFi 协议验证。
+  description_en: Provide comprehensive Hardhat/Foundry testing guidance for Solidity contracts — unit, integration, gas optimization, fuzzing and mainnet-fork tests — for contract development and DeFi protocol validation.
+  sources:
+  - wshobson
+- id: design-frontend--5-3--298
+  skills:
+  - brand-landingpage
+  group: 品牌着陆页设计
+  group_en: Brand landing-page design
+  category: design-frontend
+  subcategory: 5-3
+  chain: false
+  description: 通过品牌身份访谈引导用户确定视觉方向，再用 Stitch 生成并迭代打磨部署就绪的单页着陆页 HTML，适合尚无设计稿的产品营销页。
+  description_en: Guide the user through a brand-identity interview to set a visual direction, then use Stitch to generate and iteratively polish a deploy-ready single-page landing-page HTML — ideal for product marketing pages with no existing design.
+  sources:
+  - wshobson
+- id: data-scraping--7-3--299
+  skills:
+  - data-storytelling
+  group: 数据叙事与可视化
+  group_en: Data storytelling & visualization
+  category: data-scraping
+  subcategory: 7-3
+  chain: false
+  description: 帮助 agent 将数据转化为引人入胜的叙事，用于制作商业演示、数据报告和投资者呈现。
+  description_en: Help an agent turn data into a compelling narrative — for business presentations, data reports and investor decks.
+  sources:
+  - wshobson
+- id: devops-infra--17-2--300
+  skills:
+  - deployment-pipeline-design
+  - github-actions-templates
+  group: CI/CD 管道 / GitHub Actions 模板
+  group_en: CI/CD pipelines / GitHub Actions templates
+  category: devops-infra
+  subcategory: 17-2
+  chain: false
+  description: 设计与实现多阶段 CI/CD 管道：审批门、安全检查与零停机部署策略（deployment-pipeline-design），并提供生产就绪的 GitHub Actions 工作流模板用于自动化测试、构建与部署（github-actions-templates）。
+  description_en: Design and implement multi-stage CI/CD pipelines with approval gates, security checks and zero-downtime deployment strategies (deployment-pipeline-design), plus production-ready GitHub Actions workflow templates to automate testing, building and deployment (github-actions-templates).
+  sources:
+  - wshobson
+- id: software-engineering--1-1--301
+  skills:
+  - documentation-and-adrs
+  group: 架构决策记录（ADR）
+  group_en: Architecture Decision Records (ADR)
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 在做出架构决策、修改公共 API 或交付功能时记录 ADR，捕获决策背后的「为什么」、约束与权衡，供未来工程师和 agent 理解代码库上下文。
+  description_en: Record an Architecture Decision Record (ADR) when making an architecture decision, changing a public API or shipping a feature — capturing the "why", constraints and trade-offs so future engineers and agents understand the codebase context.
+  sources:
+  - addyosmani
