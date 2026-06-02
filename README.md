@@ -30,6 +30,8 @@ and hundreds more. **Skills Atlas** is a curated catalog of 800+ of them.
 skills right inside a conversation, with an **autopilot that's on by default**: as you
 work, Claude quietly surfaces the skill that fits, no searching.
 
+<a href="packages/skills-atlas-cli/plugin"><img src="docs/plugin-demo.png" alt="Skills Atlas plugin — the autopilot surfaces a fitting skill right in your Claude Code conversation" width="820"></a>
+
 ```text
 npm i -g skills-atlas-cli                      # the engine (Node 18+)
 /plugin marketplace add Zita-Go/Skills-Atlas   # then, inside Claude Code:
@@ -77,22 +79,11 @@ Coverage spans **20 functional categories**, from software engineering, PM, mark
 
 ## How to use
 
-### 🧩 Inside Claude Code — the plugin (recommended)
+### 🧩 In Claude Code — the plugin (recommended)
 
-The smoothest way: install the plugin and let Skills Atlas work **in the conversation** —
-no switching to a terminal. Its **autopilot is on by default**, so as you work Claude
-surfaces the skill that fits; slash commands cover everything else.
-
-<a href="packages/skills-atlas-cli/plugin"><img src="docs/plugin-demo.png" alt="Skills Atlas plugin — the autopilot surfaces a fitting skill right in your Claude Code conversation" width="820"></a>
-
-```text
-npm i -g skills-atlas-cli                      # the engine (Node 18+)
-/plugin marketplace add Zita-Go/Skills-Atlas   # then, inside Claude Code:
-/plugin install skills-atlas@skills-atlas
-```
-
-Restart Claude Code (or `/reload-plugins`), then run **`/skills-atlas:setup`**. Then just
-describe what you need, or reach for a command:
+Once it's installed (see [Quick start](#quick-start) above), there's not much to do: the
+**autopilot is on by default**, so Claude surfaces the fitting skill as you work. When you'd
+rather drive, the slash commands cover the rest:
 
 | Command | What it does |
 |---|---|

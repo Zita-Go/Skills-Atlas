@@ -26,6 +26,8 @@
 **最省事的用法是 Claude Code 插件** 🧩 —— 在对话里直接发现、安装、甚至**孵化**新 skill，
 还自带一个**默认开启的自动驾驶**：你干活时，Claude 主动把合适的 skill 递到面前，不用搜。
 
+<a href="packages/skills-atlas-cli/plugin"><img src="docs/plugin-demo.png" alt="Skills Atlas 插件——autopilot 在对话里主动端出合适的 skill" width="820"></a>
+
 ```text
 npm i -g skills-atlas-cli                      # 引擎(Node 18+)
 /plugin marketplace add Zita-Go/Skills-Atlas   # 然后在 Claude Code 里:
@@ -74,18 +76,7 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~115 个 GitHub 仓库�
 
 ### 🧩 在 Claude Code 里 —— 插件（推荐）
 
-最顺手的方式：装上插件，让 Skills Atlas **在对话里**干活 —— 不用切到终端。它的**自动驾驶默认开启**，
-你干活时 Claude 主动端出合适的 skill；其余的交给斜杠命令。
-
-<a href="packages/skills-atlas-cli/plugin"><img src="docs/plugin-demo.png" alt="Skills Atlas 插件——autopilot 在对话里主动端出合适的 skill" width="820"></a>
-
-```text
-npm i -g skills-atlas-cli                      # 引擎(Node 18+)
-/plugin marketplace add Zita-Go/Skills-Atlas   # 然后在 Claude Code 里:
-/plugin install skills-atlas@skills-atlas
-```
-
-重启 Claude Code（或 `/reload-plugins`），先跑 **`/skills-atlas:setup`**。之后直接说需求，或用命令：
+装好之后（见上面的 [快速上手](#快速上手)）几乎不用操心：**自动驾驶默认开启**，你干活时 Claude 主动端出合适的 skill。想自己掌舵时，斜杠命令管够：
 
 | 命令 | 作用 |
 |---|---|
