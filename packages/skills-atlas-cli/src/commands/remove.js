@@ -40,12 +40,9 @@ module.exports = async function remove(argv) {
   if (fsu.dirExists(dest)) fsu.rmrf(dest);
   manifest.remove(root, name);
 
-  // learn: removing a skill soon after installing it is a "regret" signal.
-  try {
-    const fb = require('../feedback');
-    const ageDays = tracked && tracked.installedAt ? (Date.now() - Date.parse(tracked.installedAt)) / 86400000 : Infinity;
-    if (Number.isFinite(ageDays) && ageDays < fb.REGRET_DAYS) fb.record({ skill: name, signal: 'regret' });
-  } catch { /* ignore */ }
+  // NB: removal is deliberately NOT a feedback signal — cleaning up a finished
+  // project's skills must not bury something you may want again. Only an explicit
+  // `feedback dismiss` suppresses.
 
   if (values.json) { console.log(JSON.stringify({ removed: name, dest })); return; }
   console.log(`${green('✓')} removed ${name}  ${dim(fsu.tildify(dest))}`);

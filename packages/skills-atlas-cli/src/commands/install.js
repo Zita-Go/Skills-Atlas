@@ -253,7 +253,7 @@ module.exports = async function install(argv) {
     return;
   }
 
-  // learn: installing clears any prior suppression (you changed your mind about it).
+  // installing clears any prior dismiss (you changed your mind about this skill).
   try { require('../feedback').record({ skill, signal: 'accepted' }); } catch { /* ignore */ }
 
   if (values.json) {

@@ -310,7 +310,7 @@ test('suggestCandidates: the CJK path leaves pure-English behavior unchanged', (
   assert.strictEqual(suggestCandidates(flatRows, 'fix the typo on line 42').fire, false);
 });
 
-test('suggestCandidates: a suppressed (dismissed/regretted) skill is never suggested', () => {
+test('suggestCandidates: a suppressed (dismissed) skill is never suggested', () => {
   const { suggestCandidates } = require('../src/search-core');
   const base = suggestCandidates(flatRows, 'help me set up test driven development');
   assert.ok(base.candidates.length);

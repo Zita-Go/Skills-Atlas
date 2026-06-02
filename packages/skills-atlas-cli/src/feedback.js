@@ -1,17 +1,15 @@
-// Local suppression memory for the autopilot: skills you've explicitly dismissed, or
-// installed and then quickly removed, are never suggested again. The LATEST action
-// wins, so deliberately re-installing one un-suppresses it. All local (~/.cache),
-// private. (Richer "preference" learning is deferred to where it can actually change
-// an outcome — e.g. generative gap-filling — not a score that nudges nothing.)
+// Local suppression memory for the autopilot: a skill you've explicitly dismissed is
+// never suggested again — until you install it (the LATEST action wins, so re-adding
+// it clears the dismiss). Removal is deliberately NOT a signal: cleaning up a finished
+// project's skills shouldn't bury something you may want again. All local, private.
 'use strict';
 
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-const REGRET_DAYS = 7;   // install → remove within this window counts as a regret
 const MAX_EVENTS = 500;
-const SIGNALS = new Set(['accepted', 'regret', 'dismissed']);
+const SIGNALS = new Set(['accepted', 'dismissed']);
 
 function file() {
   const base = process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache');
@@ -33,8 +31,8 @@ function record(ev) {
 }
 function clear() { write({ events: [] }); }
 
-// Pure: skills to suppress = those whose MOST RECENT action was a dismiss or a regret.
-// (An 'accepted' afterwards clears it — you changed your mind.)
+// Pure: skills to suppress = those whose MOST RECENT action was a dismiss.
+// (An 'accepted' afterwards clears it — you installed it, so you changed your mind.)
 function profile(events) {
   const latest = new Map();
   for (const e of events || []) {
@@ -43,9 +41,9 @@ function profile(events) {
     if (!prev || Date.parse(e.at) >= Date.parse(prev.at)) latest.set(e.skill, e);
   }
   const suppressed = new Set();
-  for (const [skill, e] of latest) if (e.signal === 'dismissed' || e.signal === 'regret') suppressed.add(skill);
+  for (const [skill, e] of latest) if (e.signal === 'dismissed') suppressed.add(skill);
   return { suppressed, isSuppressed: s => suppressed.has(s) };
 }
 function current() { return profile(read().events); }
 
-module.exports = { file, read, write, record, clear, profile, current, REGRET_DAYS };
+module.exports = { file, read, write, record, clear, profile, current };

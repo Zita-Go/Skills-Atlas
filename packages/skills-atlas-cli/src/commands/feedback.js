@@ -1,6 +1,6 @@
 // `skills-atlas feedback` — the autopilot's local suppression list: skills you've
-// dismissed or installed-then-quickly-removed are never suggested again. Show / add
-// to / reset it. All local; nothing is sent anywhere.
+// explicitly dismissed are never suggested again. Show / add to / reset it.
+// All local; nothing is sent anywhere.
 'use strict';
 
 const { parse } = require('../args');
@@ -9,8 +9,9 @@ const { green, dim } = require('../format');
 
 const HELP = `usage: skills-atlas feedback [dismiss <skill> | reset]
 
-Skills the autopilot won't suggest again — because you dismissed them or installed
-then quickly removed them. Local only; nothing is sent. Re-installing one clears it.
+Skills the autopilot won't suggest again — the ones you've dismissed. Local only;
+nothing is sent. Installing a skill clears its dismiss. (Removing a skill does NOT
+suppress it — that's just cleanup.)
 
   feedback                  show the suppression list
   feedback dismiss <skill>  never suggest a skill again
@@ -42,7 +43,7 @@ module.exports = async function feedbackCmd(argv) {
     return;
   }
   if (!prof.suppressed.size) {
-    console.log(dim('nothing suppressed — dismiss a suggestion, or remove a skill you just installed,\nand the autopilot stops offering it.'));
+    console.log(dim('nothing suppressed — run `skills-atlas feedback dismiss <skill>` and the\nautopilot stops offering that skill.'));
     return;
   }
   console.log(`\n${green("won't suggest again")} (${prof.suppressed.size}): ${[...prof.suppressed].join(', ')}`);
