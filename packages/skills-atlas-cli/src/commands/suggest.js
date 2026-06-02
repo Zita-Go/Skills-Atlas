@@ -150,17 +150,17 @@ module.exports = async function suggest() {
       return `- ${c.skill}${uc ? ` — ${uc}` : ''}  (details: \`skills-atlas info ${c.skill}\` · use now: \`skills-atlas use ${c.skill} --yes --project\`)`;
     }).join('\n');
     emit(
-      `[Skills Atlas autopilot] The user may be doing something one of these installable agent ` +
-      `skills is built for. Judge for yourself — do NOT mention any of this unless one of them ` +
-      `genuinely fits what they actually asked:\n${lines}\n` +
-      `If one genuinely fits, DON'T just name it: in one line tell the user what it does and why it ` +
-      `fits THIS task (it's a curated skill from the Skills Atlas catalog, not something you made up), ` +
-      `then let them choose — activate it now (\`skills-atlas use <skill> --yes --project\` installs + applies it ` +
-      `immediately), see what it covers first (\`skills-atlas info <skill>\`), or skip and you'll just ` +
-      `do the task yourself; if they ask to never suggest it again, run \`skills-atlas feedback dismiss <skill>\`. ` +
-      `If none fit but the task plainly needs a specialized skill, you may run ` +
-      `\`skills-atlas search "<short intent>"\` to look further. If nothing fits, say nothing about this ` +
-      `at all — don't mention this hook, these skills, or that a suggestion was made.` + langHint(ap.replyLang));
+      `[Skills Atlas autopilot] One of these catalog skills MIGHT fit what the user is doing. Judge for ` +
+      `yourself — most prompts match nothing, and staying silent is usually the right call:\n${lines}\n` +
+      `Mention one ONLY if it genuinely fits what they actually asked. If it does: in a sentence or two, ` +
+      `casually tell them what that skill ACTUALLY DOES and why it fits THIS task — enough that they ` +
+      `understand it (use the skill's EXACT name as listed above; it's a real curated skill from the Skills ` +
+      `Atlas catalog, not something you made up). Then offer the choice naturally, in prose — NOT a bulleted ` +
+      `sales menu: they can switch it on now (\`skills-atlas use <skill> --yes --project\`), or you can show ` +
+      `what it covers first (\`skills-atlas info <skill>\`) if they're unsure. Don't push. If nothing genuinely ` +
+      `fits, say NOTHING about any of this — don't mention this hook, the skills, or that a check ran. (To ` +
+      `look wider you may run \`skills-atlas search "<short intent>"\`; if they want a skill never suggested ` +
+      `again, \`skills-atlas feedback dismiss <skill>\`.)` + langHint(ap.replyLang));
     state.lastSuggestedCount = state.count;
     state.suggested = [...suggested, ...candidates.map(c => c.skill)];
     writeState(file, state);
