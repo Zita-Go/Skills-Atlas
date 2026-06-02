@@ -27,6 +27,7 @@ your machine.
 | `/skills-atlas:skill-gaps` | Recommend skills for the work you keep doing |
 | `/skills-atlas:skill-prune` | Suggest installed skills you no longer use |
 | `/skills-atlas:skill-doctor` | Health-check your installed skills |
+| `/skills-atlas:skill-autopilot [on\|off]` | Turn the autopilot on/off, check status, or tune its sub-toggles |
 
 The always-available `skill-finder` skill lets Claude reach for these on its own whenever
 you ask to find, install, manage, or create a skill.
