@@ -315,7 +315,7 @@ test('suggestCandidates: a suppressed (dismissed/regretted) skill is never sugge
   const base = suggestCandidates(flatRows, 'help me set up test driven development');
   assert.ok(base.candidates.length);
   const top = base.candidates[0].skill;
-  const fb = { suppressed: new Set([top]), affinity: () => 1, isSuppressed: s => s === top };
+  const fb = { suppressed: new Set([top]), isSuppressed: s => s === top };
   const r = suggestCandidates(flatRows, 'help me set up test driven development', { feedback: fb });
   assert.ok(!r.candidates.some(c => c.skill === top), `suppressed ${top} filtered out`);
 });

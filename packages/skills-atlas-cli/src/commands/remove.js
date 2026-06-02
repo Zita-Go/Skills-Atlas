@@ -44,7 +44,7 @@ module.exports = async function remove(argv) {
   try {
     const fb = require('../feedback');
     const ageDays = tracked && tracked.installedAt ? (Date.now() - Date.parse(tracked.installedAt)) / 86400000 : Infinity;
-    if (Number.isFinite(ageDays) && ageDays < fb.REGRET_DAYS) fb.record({ skill: name, category: tracked.category, signal: 'regret' });
+    if (Number.isFinite(ageDays) && ageDays < fb.REGRET_DAYS) fb.record({ skill: name, signal: 'regret' });
   } catch { /* ignore */ }
 
   if (values.json) { console.log(JSON.stringify({ removed: name, dest })); return; }

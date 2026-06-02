@@ -1,18 +1,18 @@
-// `skills-atlas feedback` — show what the autopilot learned from your actions
-// (so suggestions sharpen the more you use it), and let you dismiss / reset it.
-// All local; nothing is sent anywhere.
+// `skills-atlas feedback` — the autopilot's local suppression list: skills you've
+// dismissed or installed-then-quickly-removed are never suggested again. Show / add
+// to / reset it. All local; nothing is sent anywhere.
 'use strict';
 
 const { parse } = require('../args');
 const feedback = require('../feedback');
-const { green, dim, bold } = require('../format');
+const { green, dim } = require('../format');
 
 const HELP = `usage: skills-atlas feedback [dismiss <skill> | reset]
 
-What the autopilot has learned from your installs/removes — locally — to make its
-suggestions sharper. Nothing is sent anywhere.
+Skills the autopilot won't suggest again — because you dismissed them or installed
+then quickly removed them. Local only; nothing is sent. Re-installing one clears it.
 
-  feedback                  show what it learned
+  feedback                  show the suppression list
   feedback dismiss <skill>  never suggest a skill again
   feedback reset            forget everything
   --json`;
@@ -38,21 +38,13 @@ module.exports = async function feedbackCmd(argv) {
   const events = feedback.read().events;
   const prof = feedback.profile(events);
   if (values.json) {
-    console.log(JSON.stringify({ actions: events.length, categories: [...prof.catNet], suppressed: [...prof.suppressed] }, null, 2));
+    console.log(JSON.stringify({ actions: events.length, suppressed: [...prof.suppressed] }, null, 2));
     return;
   }
-  if (!events.length) {
-    console.log(dim('no feedback yet — as you install / remove / dismiss skills, it learns what you like.'));
+  if (!prof.suppressed.size) {
+    console.log(dim('nothing suppressed — dismiss a suggestion, or remove a skill you just installed,\nand the autopilot stops offering it.'));
     return;
   }
-  console.log(`\n${bold('learned from')} ${events.length} action(s):`);
-  // The one thing that actually shapes suggestions: skills you've rejected.
-  if (prof.suppressed.size) console.log(`  ${green("won't suggest again:")} ${[...prof.suppressed].join(', ')}`);
-  // Observed lean (informational — what you've installed vs regretted, by area).
-  const cats = [...prof.catNet.entries()].filter(([, n]) => Math.abs(n) > 0.05).sort((a, b) => b[1] - a[1]);
-  if (cats.length) {
-    console.log(dim('  you tend to:'));
-    for (const [cat, net] of cats) console.log(dim(`    ${net >= 0 ? 'install ' : 'avoid   '} ${cat}`));
-  }
-  console.log(dim('\nreset with: skills-atlas feedback reset'));
+  console.log(`\n${green("won't suggest again")} (${prof.suppressed.size}): ${[...prof.suppressed].join(', ')}`);
+  console.log(dim(`from ${events.length} recorded action(s).  re-install one to clear it, or: skills-atlas feedback reset`));
 };

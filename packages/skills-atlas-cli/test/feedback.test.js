@@ -11,43 +11,29 @@ function fresh() {
   return require('../src/feedback');
 }
 const NOW = Date.parse('2026-06-01T00:00:00Z');
-const ev = (skill, category, signal, daysAgo = 0) =>
-  ({ skill, category, signal, at: new Date(NOW - daysAgo * 86400000).toISOString() });
+const ev = (skill, signal, daysAgo = 0) => ({ skill, signal, at: new Date(NOW - daysAgo * 86400000).toISOString() });
 
-test('profile: accepted lifts a category, regret/dismissed suppress', () => {
+test('profile: dismiss / regret suppress; accept does not', () => {
   const fb = fresh();
-  const p = fb.profile([
-    ev('a', 'cat-x', 'accepted'), ev('b', 'cat-x', 'accepted'),
-    ev('c', 'cat-y', 'regret'), ev('d', 'cat-z', 'dismissed'),
-  ], NOW);
-  assert.ok(p.affinity('cat-x') > 1, 'liked category lifted');
-  assert.ok(p.affinity('cat-y') < 1, 'regretted category sinks');
-  assert.strictEqual(p.affinity('cat-unseen'), 1, 'unseen category neutral');
-  assert.ok(p.isSuppressed('c') && p.isSuppressed('d'), 'regret + dismiss suppressed');
-  assert.ok(!p.isSuppressed('a'), 'accepted not suppressed');
+  const p = fb.profile([ev('a', 'dismissed'), ev('b', 'regret'), ev('c', 'accepted')]);
+  assert.ok(p.isSuppressed('a') && p.isSuppressed('b'), 'dismiss + regret suppressed');
+  assert.ok(!p.isSuppressed('c'), 'accepted not suppressed');
+  assert.deepStrictEqual([...p.suppressed].sort(), ['a', 'b']);
 });
 
-test('profile: bounded multiplier + most-recent-signal wins', () => {
+test('profile: the latest action wins', () => {
   const fb = fresh();
-  const many = Array.from({ length: 20 }, (_, i) => ev('s' + i, 'cat', 'accepted'));
-  assert.ok(fb.profile(many, NOW).affinity('cat') <= 1.4 + 1e-9, 'affinity is capped');
-  const p = fb.profile([ev('x', 'c', 'dismissed', 2), ev('x', 'c', 'accepted', 0)], NOW);
-  assert.ok(!p.isSuppressed('x'), 'a later accept un-suppresses');
+  assert.ok(!fb.profile([ev('x', 'dismissed', 2), ev('x', 'accepted', 0)]).isSuppressed('x'), 'a later accept un-suppresses');
+  assert.ok(fb.profile([ev('y', 'accepted', 2), ev('y', 'dismissed', 0)]).isSuppressed('y'), 'a later dismiss re-suppresses');
 });
 
-test('profile: old signals decay toward neutral', () => {
-  const fb = fresh();
-  const old = fb.profile([ev('a', 'c', 'accepted', 400)], NOW).affinity('c');
-  const recent = fb.profile([ev('a', 'c', 'accepted', 0)], NOW).affinity('c');
-  assert.ok(old < recent, 'an old signal is weaker than a fresh one');
-});
-
-test('record / read round-trip + clear', () => {
+test('record / read round-trip + clear; invalid events ignored', () => {
   const fb = fresh();
   assert.deepStrictEqual(fb.read().events, []);
-  fb.record({ skill: 'a', category: 'c', signal: 'accepted' });
-  fb.record({ skill: 'b', signal: 'dismissed' });
-  fb.record({ skill: 'z', signal: 'bogus' }); // invalid signal → ignored
+  fb.record({ skill: 'a', signal: 'dismissed' });
+  fb.record({ skill: 'b', signal: 'accepted' });
+  fb.record({ skill: 'z', signal: 'bogus' }); // not a known signal → ignored
+  fb.record({ signal: 'dismissed' });          // no skill → ignored
   assert.strictEqual(fb.read().events.length, 2);
   fb.clear();
   assert.deepStrictEqual(fb.read().events, []);
