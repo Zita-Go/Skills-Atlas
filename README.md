@@ -4,8 +4,9 @@
 
 # 🗺️ Skills Atlas
 
-**A panorama of AI Agent Skills organized by function**
-Stop asking "what skills exist" and start asking "which skill should I use to do X".
+**The right ready-made skill for any task in Claude Code — found, installed, and surfaced as you work.**
+
+900+ skills, gathered from across the ecosystem and organized by what they do.
 
 [![Skills](https://img.shields.io/badge/skills-906-blue)](data/skills.yaml)
 [![Repos](https://img.shields.io/badge/repositories-115-green)](data/repositories.yaml)
@@ -20,70 +21,59 @@ Stop asking "what skills exist" and start asking "which skill should I use to do
 
 ---
 
+## Why
+
+Agent skills exploded in 2025 — but they're scattered across ~115 GitHub repos, and awesome-lists
+only give you names, never which ones actually **work together**. Skills Atlas gathers them and
+organizes everything **by function**, so you find a skill by the job at hand: the SEO skills from
+different repos side by side, the dev-workflow skills marked **must-chain** (⛓), the document suite
+at a glance. **297 functional groups across 20 categories** — software, PM, marketing and design,
+plus the pro verticals (legal, healthcare, finance, DevOps, security, …) — searchable
+[online](https://zita-go.github.io/Skills-Atlas/?lang=en) or from your shell.
+
 ## Quick start
 
-A **skill** is a reusable `SKILL.md` instruction pack that teaches Claude Code a
-specialized workflow: systematic debugging, pre-mortems, SEO audits, PDF translation,
-and hundreds more. **Skills Atlas** is a curated catalog of 800+ of them.
+Use it as a **Claude Code plugin** — discover, install, and *grow* skills inside the conversation,
+with the autopilot on by default.
 
-**The easiest way to use it is the Claude Code plugin** 🧩 — discover, install, and *grow*
-skills right inside a conversation, with an **autopilot that's on by default**: as you
-work, Claude quietly surfaces the skill that fits, no searching.
+**1. In your terminal** — install the engine (Node 18+):
 
-<a href="packages/skills-atlas-cli/plugin"><img src="docs/plugin-demo.png" alt="Skills Atlas plugin — the autopilot surfaces a fitting skill right in your Claude Code conversation" width="820"></a>
+```bash
+npm i -g skills-atlas-cli
+```
+
+**2. In Claude Code** — add the plugin:
 
 ```text
-npm i -g skills-atlas-cli                      # the engine (Node 18+)
-/plugin marketplace add Zita-Go/Skills-Atlas   # then, inside Claude Code:
+/plugin marketplace add Zita-Go/Skills-Atlas
 /plugin install skills-atlas@skills-atlas
 ```
 
-Restart Claude Code, then just say what you're doing — Skills Atlas takes it from there.
-Run `/skills-atlas:setup` anytime to see what you've got. → [**plugin docs**](packages/skills-atlas-cli/plugin)
+Restart Claude Code, then just describe what you're doing — the autopilot takes it from there. Run
+`/skills-atlas:setup` to see what you've got, or skip to [**How to use**](#how-to-use).
 
-**Prefer the terminal?** The same power is a standalone CLI:
+## 🤖 The autopilot: the right skill finds you
 
-```bash
-npm install -g skills-atlas-cli
-skills-atlas search "stress test my launch plan"   # pre-mortem tops the results
-skills-atlas use pre-mortem                          # install it, Claude applies it now
-```
+You shouldn't have to remember a skill exists to use it. With the plugin the autopilot is **on by
+default**: whenever your task lines up with a skill you don't have, Claude surfaces it — explains
+what it does and why it fits — and lets you switch it on, see what it covers, or skip.
 
-Full docs: the [**🧩 Claude Code plugin**](packages/skills-atlas-cli/plugin) (recommended), or the standalone [**⌨️ `skills-atlas-cli`**](packages/skills-atlas-cli).
+<a href="packages/skills-atlas-cli/plugin"><img src="docs/plugin-demo.png" alt="Skills Atlas plugin — the autopilot surfaces a fitting skill right in your Claude Code conversation" width="820"></a>
 
-## Why this project exists
+The per-prompt match runs **locally** and **never auto-installs**; a hiccup never blocks your
+prompt. Toggle or tune it with `/skills-atlas:skill-autopilot [on|off]`. Two more proactive helpers,
+same idea:
 
-The AI Agent Skills ecosystem exploded in 2025, but it's scattered across ~115 GitHub repositories.
-Existing awesome lists only give you names plus a one-line description, and they **don't tell you which ones work together**.
-
-**Skills Atlas** reorganizes everything along a "functional dimension":
-- Want to do SEO? Jump straight to § 4.1, where 6 SEO skills across repos are presented together
-- Want a complete development workflow? See § 1.1, where the ⛓ strong-binding markers tell you which 5 must be chained together
-- Looking for document-processing tools? See § 2.1, where the Office 4-piece suite + the heavy-duty PDF API + the multi-format extraction engine are laid out at a glance
-
-And it's not just a catalog to read: a [Claude Code plugin + terminal CLI](packages/skills-atlas-cli/plugin)
-lets you **search, install, and use** any of these skills, with an autopilot (on by default
-in the plugin) that surfaces the right one as you work.
-
-## Data scale
-
-| Dimension | Count |
-|---|---:|
-| Standalone skills | 906 |
-| Functional groups | 297 |
-| Categories / Subgroups | 20 / 116 |
-| Source repositories | 115 |
-| ⛓ Strong-binding workflows | 20 |
-
-Coverage spans **20 functional categories**, from software engineering, PM, marketing and design to the professional verticals **legal, healthcare, finance, DevOps/SRE, security, education and Web3**.
+- **🔭 `/skills-atlas:skill-gaps`** — spots recurring work no installed skill covers, and recommends one.
+- **🧹 `/skills-atlas:skill-prune`** — flags installed skills you no longer use.
 
 ## How to use
 
-### 🧩 In Claude Code — the plugin (recommended)
+Already set up? Here's the reference.
 
-Once it's installed (see [Quick start](#quick-start) above), there's not much to do: the
-**autopilot is on by default**, so Claude surfaces the fitting skill as you work. When you'd
-rather drive, the slash commands cover the rest:
+### In Claude Code — the plugin
+
+Just describe what you need, or reach for a command:
 
 | Command | What it does |
 |---|---|
@@ -97,55 +87,28 @@ rather drive, the slash commands cover the rest:
 
 → [**full plugin docs**](packages/skills-atlas-cli/plugin)
 
-### ⌨️ Or from the terminal (CLI)
+### From the terminal — the CLI
 
-The [`skills-atlas-cli`](packages/skills-atlas-cli) package is also a standalone tool —
-the same engine the plugin runs on. Search, **install**, and use skills straight from
-your shell:
-
-<a href="packages/skills-atlas-cli"><img src="docs/cli-demo.png" alt="skills-atlas: search → info → install a skill" width="760"></a>
+The same engine, for the shell. Install once (`npm i -g skills-atlas-cli`), then:
 
 ```bash
-npx skills-atlas-cli search seo
-npx skills-atlas-cli info brainstorming
-npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/brainstorming/
+skills-atlas search seo               # find a skill (ranked by relevance + stars)
+skills-atlas info brainstorming       # what it does + when to use it
+skills-atlas install brainstorming    # drop just its folder into .claude/skills/
+skills-atlas use brainstorming        # install + apply now, no restart
+skills-atlas kit                      # detect this project, install a tailored set
 ```
 
-`install` downloads **only that skill's folder** (not the whole repo) into
-`.claude/skills/`. The CLI has grown into a full toolkit:
+*(No global install? Prefix any command with `npx skills-atlas-cli …`.)*
 
-- **Package manager.** `use` (install + activate now), `installed`, `outdated`, `upgrade`, `remove`, `doctor`.
-- **Project kits.** `kit` detects your project (frontend / backend / data / infra) and installs a tailored set; `sync` reproduces it from a committable `skills-atlas.kit.json`.
-- **Private sources.** `registry add <your data.json>` merges your org's internal skills into search / install (private wins a name clash).
-- **In Claude Code.** A bundled [plugin](packages/skills-atlas-cli/plugin) (`/skills-atlas:skill-search` / `:skill-install`).
-- **Any MCP client.** `skills-atlas mcp` runs an MCP server (search / info / install / categories) for Claude Desktop and other agents.
+**Where skills land:** a skill installed for **this project** lives in `./.claude/skills/`
+(committable — it travels with the repo); a **global** one lives in `~/.claude/skills/` (follows you
+everywhere). The plugin, autopilot and `kit` default to the project; the CLI's `install` / `use`
+default to global. Override either with `--project` / `--global`.
 
-**Where skills land:** running `install` / `use` yourself installs **globally** (`~/.claude/skills/`, every project); skills from autopilot, the plugin, or `kit` go into **this project** (`./.claude/skills/`, committable). Override with `--global` / `--project`.
-
-→ [full CLI docs](packages/skills-atlas-cli)
-
-### 🤖 Autopilot: let the right skill find you
-
-You shouldn't have to know a skill exists to use it. **With the plugin, autopilot is on by
-default** — whenever your task lines up with a skill you don't have, Claude surfaces it,
-explained, with one command to apply:
-
-> 🗣️ *"run a pre-mortem before we launch"*
->
-> 🤖 *"That's exactly what the **pre-mortem** skill does: it stress-tests your plan before launch. **Use it now**, see details, or skip?"*
-
-The per-prompt match runs locally and never auto-installs. (Using the standalone CLI?
-Turn it on with `skills-atlas hook on`.) Configure the reply language and more —
-[how it works →](packages/skills-atlas-cli/plugin)
-
-**🔭 Capability gaps & 🧹 cleanup.** `skills-atlas gaps` reads your *recent activity*
-(from Claude Code's local transcripts) and a **background sub-agent** — a small model
-of your choice (`hook model`, default Haiku), reusing your Claude Code login — spots
-the recurring work no installed skill covers and recommends one. `skills-atlas prune`
-does the reverse: flags installed skills you no longer use. [Details →](packages/skills-atlas-cli)
-
-### Visit online
-👉 [Open the website](https://zita-go.github.io/Skills-Atlas/?lang=en)
+Beyond that, the CLI is a full package manager (`installed`, `upgrade`, `remove`, `doctor`), merges
+your org's private catalog (`registry add`), and runs as an MCP server for any client.
+→ [**full CLI docs**](packages/skills-atlas-cli)
 
 ## Contributing
 
@@ -153,21 +116,21 @@ New skills, fixes, better descriptions, translations — all welcome. See **[CON
 
 ## Related projects / inspiration
 
-This project's skill data is sourced from the excellent repositories below (only the top contributors are listed here; see `data/repositories.yaml` for the full list):
+This project's skill data is sourced from the excellent repositories below (top contributors only; full list in `data/repositories.yaml`):
 
-- [obra/superpowers](https://github.com/obra/superpowers) - Claude Code software-development methodology
-- [phuryn/pm-skills](https://github.com/phuryn/pm-skills) - 65 PM skills
-- [openai/skills](https://github.com/openai/skills) - OpenAI Codex 41 skills
-- [anthropics/skills](https://github.com/anthropics/skills) - Anthropic 17 skills
-- [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) - 41 marketing skills
-- [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) - 47 PM skills
-- [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) - 15 Context Engineering skills
+- [obra/superpowers](https://github.com/obra/superpowers) — Claude Code software-development methodology
+- [phuryn/pm-skills](https://github.com/phuryn/pm-skills) — 65 PM skills
+- [openai/skills](https://github.com/openai/skills) — OpenAI Codex 41 skills
+- [anthropics/skills](https://github.com/anthropics/skills) — Anthropic 17 skills
+- [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) — 41 marketing skills
+- [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) — 47 PM skills
+- [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) — 15 Context Engineering skills
 
 ## License
 
-[MIT](LICENSE). Code / data / content all use MIT uniformly. You can use it freely, modify it freely, and commercialize it freely, as long as you keep attribution.
+[MIT](LICENSE) — use, modify, and commercialize freely, with attribution.
 
-> Note: the skill metadata / descriptions collected in this project are curated by us; but the actual SKILL.md content of these skills still lives in their respective original repositories (see `data/repositories.yaml`), each under its own license.
+> The skill metadata / descriptions here are curated by us; each skill's actual `SKILL.md` lives in its origin repo (see `data/repositories.yaml`), under its own license.
 
 ## Maintainers
 
