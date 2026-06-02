@@ -78,7 +78,7 @@ module.exports = async function suggest() {
           if (txt && !/^NONE\b/i.test(txt)) {
             const body = pending.source === 'fallback'
               ? txt // already a full digest for the main agent to judge
-              : `[Skills Atlas — capability gaps] ${txt}\nOffer this to the user only if it genuinely fits — verify with \`skills-atlas info <skill>\`, install with \`skills-atlas use <skill> --yes\`; otherwise stay silent.`;
+              : `[Skills Atlas — capability gaps] ${txt}\nOffer this to the user only if it genuinely fits — verify with \`skills-atlas info <skill>\`, install with \`skills-atlas use <skill> --yes --project\`; otherwise stay silent.`;
             emit(body + langHint(ap.replyLang));
             gapstate.touchNudge(gapstate.activitySignature(recent));
             writeState(file, state);
@@ -136,7 +136,7 @@ module.exports = async function suggest() {
 
     const lines = candidates.map(c => {
       const uc = (c.row.use_case_en || c.row.use_case || '').replace(/\s+/g, ' ').trim().slice(0, 80);
-      return `- ${c.skill}${uc ? ` — ${uc}` : ''}  (details: \`skills-atlas info ${c.skill}\` · use now: \`skills-atlas use ${c.skill} --yes\`)`;
+      return `- ${c.skill}${uc ? ` — ${uc}` : ''}  (details: \`skills-atlas info ${c.skill}\` · use now: \`skills-atlas use ${c.skill} --yes --project\`)`;
     }).join('\n');
     emit(
       `[Skills Atlas autopilot] The user may be doing something one of these installable agent ` +
@@ -144,7 +144,7 @@ module.exports = async function suggest() {
       `genuinely fits what they actually asked:\n${lines}\n` +
       `If one genuinely fits, DON'T just name it: in one line tell the user what it does and why it ` +
       `fits THIS task (it's a curated skill from the Skills Atlas catalog, not something you made up), ` +
-      `then let them choose — activate it now (\`skills-atlas use <skill> --yes\` installs + applies it ` +
+      `then let them choose — activate it now (\`skills-atlas use <skill> --yes --project\` installs + applies it ` +
       `immediately), see what it covers first (\`skills-atlas info <skill>\`), or skip and you'll just ` +
       `do the task yourself. If none fit but the task plainly needs a specialized skill, you may run ` +
       `\`skills-atlas search "<short intent>"\` to look further. If nothing fits, say nothing about this ` +

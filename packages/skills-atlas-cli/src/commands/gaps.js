@@ -29,7 +29,7 @@ const INSTRUCTION = dismissed =>
   `is built for and they haven't installed. For each real recurring need (ignore one-offs and ` +
   `anything already covered): state the pattern + rough frequency as evidence, then recommend the ` +
   `skill — verify it exists with \`skills-atlas search "<intent>"\` or \`skills-atlas info <skill>\`, ` +
-  `and install with \`skills-atlas use <skill> --yes\`.` +
+  `and install with \`skills-atlas use <skill> --yes --project\`.` +
   (dismissed.length ? ` Already dismissed (skip these): ${dismissed.join(', ')}.` : '') +
   ` If nothing clearly recurs, say there are no gaps.`;
 

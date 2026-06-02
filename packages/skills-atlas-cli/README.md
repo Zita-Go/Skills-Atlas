@@ -96,6 +96,12 @@ data / infra) and installs a tailored set (a universal dev workflow plus archety
 add-ons) into `./.claude/skills/`, then writes a committable `skills-atlas.kit.json`.
 A teammate runs `skills-atlas sync` to reproduce it exactly.
 
+**Where skills land.** Running `install` / `use` yourself installs **globally**
+(`~/.claude/skills/`, every project) — for general workflows you want everywhere. Skills
+suggested by autopilot, installed via the Claude Code plugin, or set up by `kit` go into
+**this project** (`./.claude/skills/`, committable for teammates). Override either way
+with `--global` / `--project`.
+
 Output is English by default; add `--zh` for Chinese.
 After installing a skill, start a new Claude Code session to load it.
 

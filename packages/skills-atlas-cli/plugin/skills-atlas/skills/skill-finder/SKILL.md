@@ -24,9 +24,10 @@ install them.
   `install` command, the `use_case` / `when_to_use`.
 - If `search` returns no matches, **say so** and propose different queries — do
   **not** fall back to skills you "know" from elsewhere.
-- To install, always go through `skills-atlas install <skill> --yes`. The CLI
-  installs **only** catalog skills; a name that isn't in the catalog returns
-  `not found` with suggestions — relay those instead of guessing.
+- To install, always go through `skills-atlas install <skill> --yes --project`
+  (in-conversation installs go into the current project). The CLI installs **only**
+  catalog skills; a name that isn't in the catalog returns `not found` with
+  suggestions — relay those instead of guessing.
 - If results look stale or a skill seems missing, run `skills-atlas update` first,
   then search again.
 
@@ -34,7 +35,7 @@ install them.
 
 - **Search**:  `skills-atlas search "<query>" --json` — filters: `-c <category>`, `-p <persona>`, `-t <type>`, `--chain`
 - **Details**: `skills-atlas info "<skill>" --json`
-- **Install**: `skills-atlas install "<skill>" --yes` — `--global` (default → `~/.claude/skills/`) or `--project` (→ `./.claude/skills/`); add `--force` to overwrite
+- **Install**: `skills-atlas install "<skill>" --yes --project` → this project's `./.claude/skills/` (the default for in-conversation installs); for a skill the user wants in **every** project, use `--global` instead (→ `~/.claude/skills/`); add `--force` to overwrite
 - **Refresh**: `skills-atlas update` (refresh the local catalog from the public feed)
 
 ## How to help
@@ -42,8 +43,8 @@ install them.
 1. Turn the user's need into a short search query (plus filters), run `search`,
    and present the top matches **from the JSON** — what each does and its exact
    install command.
-2. On request, install with `skills-atlas install <skill> --yes`. If a skill has
-   several sources, the CLI auto-picks the best installable one; pass
+2. On request, install with `skills-atlas install <skill> --yes --project`. If a
+   skill has several sources, the CLI auto-picks the best installable one; pass
    `--source <id>` to choose.
 3. Some sources have no per-skill folder (marketplace / CLI-framework types). For
    those, the CLI prints the exact whole-repo install command — relay it instead
