@@ -12,6 +12,11 @@ const green = s => wrap('32', s);
 const cyan = s => wrap('36', s);
 const yellow = s => wrap('33', s);
 
+// The language the autopilot asks Claude to reply in (default English).
+function langHint(lang) {
+  return lang === 'zh' ? ' Reply to the user in 简体中文.' : ' Reply to the user in English.';
+}
+
 function stars(n) {
   if (n == null) return '';
   if (n >= 10000) return `★${Math.round(n / 1000)}k`;
@@ -215,6 +220,6 @@ function renderInfo(info, { en = false, all = false, installed = null, skillDesc
 }
 
 module.exports = {
-  bold, dim, green, cyan, yellow, stars, recency, perSkillBlurb, safeAlt, text, renderRow,
+  bold, dim, green, cyan, yellow, stars, recency, perSkillBlurb, langHint, safeAlt, text, renderRow,
   buildInfo, infoForRow, renderInfo, PERSONA_EN,
 };

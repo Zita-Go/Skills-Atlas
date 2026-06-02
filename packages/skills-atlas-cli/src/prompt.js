@@ -34,4 +34,4 @@ async function choose(title, labels) {
   return Number.isInteger(n) && n >= 1 && n <= labels.length ? n - 1 : -1;
 }
 
-module.exports = { isInteractive, confirm, choose };
+module.exports = { isInteractive, confirm, choose, ask };

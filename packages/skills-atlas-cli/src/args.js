@@ -22,6 +22,8 @@ const ALL = {
   all: { type: 'boolean' },
   inline: { type: 'boolean' },
   verbose: { type: 'boolean' },
+  show: { type: 'boolean' },
+  once: { type: 'boolean' },
   archetype: { type: 'string' },
   update: { type: 'boolean' },
   name: { type: 'string' },

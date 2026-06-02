@@ -15,6 +15,7 @@ const registry = require('../src/commands/registry');
 const suggest = require('../src/commands/suggest');
 const hook = require('../src/commands/hook');
 const gaps = require('../src/commands/gaps');
+const gapAnalyze = require('../src/commands/gap-analyze');
 const prune = require('../src/commands/prune');
 const update = require('../src/commands/update');
 const mcp = require('../src/commands/mcp');
@@ -23,7 +24,7 @@ const { categories, list } = require('../src/commands/categories');
 const VERSION = require('../package.json').version;
 // `use` = install + activate inline (emit the SKILL.md so an agent follows it now).
 const use = argv => install([...argv, '--inline']);
-const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, gaps, prune, update, categories, list, registry, mcp };
+const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, gaps, 'gap-analyze': gapAnalyze, prune, update, categories, list, registry, mcp };
 
 const HELP = `skills-atlas — search, install & manage AI agent skills
 
@@ -75,7 +76,9 @@ async function main() {
   }
   // Opportunistic, non-blocking background catalog refresh so new skills appear over
   // time without a manual `update`. Skipped for `update` itself; fully fail-silent.
-  if (sub !== 'update') { try { require('../src/data').maybeBackgroundRefresh(); } catch { /* ignore */ } }
+  if (sub !== 'update' && sub !== 'gap-analyze' && !process.env.SKILLS_ATLAS_SUBCALL) {
+    try { require('../src/data').maybeBackgroundRefresh(); } catch { /* ignore */ }
+  }
   await cmd(rest);
 }
 

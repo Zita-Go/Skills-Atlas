@@ -30,6 +30,11 @@ function isDismissed(x) { return read().dismissed.includes(x); }
 function touchNudge(sig) { const s = read(); s.lastNudge = Date.now(); if (sig) s.lastSig = sig; write(s); }
 function clear() { write({ dismissed: [], lastNudge: 0, lastSig: [] }); }
 
+// A pending result from the background gap sub-agent, surfaced by the hook next tick.
+function writePending(p) { const s = read(); s.pending = { ...p, at: new Date().toISOString() }; write(s); }
+function clearPending() { const s = read(); delete s.pending; write(s); }
+function markAnalyze() { const s = read(); s.analyzeAt = new Date().toISOString(); write(s); }
+
 // A coarse fingerprint of recent work: the most frequent contentful tokens across
 // recent prompts. When this set shifts, the user has moved to a new kind of work.
 function activitySignature(prompts, topN = 8) {
@@ -66,6 +71,7 @@ function shouldNudge(state, recent, now) {
 
 module.exports = {
   file, read, write, dismiss, isDismissed, touchNudge, clear,
+  writePending, clearPending, markAnalyze,
   activitySignature, signatureShifted, shouldNudge,
   MIN_INTERVAL_MS, REFRESH_INTERVAL_MS,
 };

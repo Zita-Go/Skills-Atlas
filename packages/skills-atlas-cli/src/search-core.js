@@ -174,6 +174,12 @@ const ANCHOR_STOP = new Set([
   'code', 'app', 'apps', 'work', 'thing', 'things', 'stuff', 'data', 'system',
   'design', 'document', 'component', 'components', 'feature', 'features', 'variable',
   'function', 'project', 'task', 'tool', 'name', 'names',
+  // more generic dev verbs/nouns that name some skill but carry no specific intent
+  'implement', 'deploy', 'analyze', 'analyse', 'summarize', 'summarise', 'parse',
+  'mock', 'validate', 'wire', 'seed', 'style', 'test', 'tests', 'report', 'reports',
+  'service', 'services', 'schema', 'docs', 'doc', 'dashboard', 'endpoint', 'endpoints',
+  'response', 'request', 'api', 'query', 'queries', 'button', 'form', 'forms',
+  'readme', 'changelog', 'database', 'config', 'setup', 'install', 'deployment',
 ]);
 
 // Word-aware skill-NAME match: return the matched name segment (or null). Stricter
@@ -213,8 +219,6 @@ function segmentDf(rows) {
 }
 const idfOf = (info, seg) => Math.log(1 + info.n / ((info.df.get(seg) || 0) + 1));
 
-const FIRE_IDF = 4.2; // a single distinctive name word must clear this to fire alone
-
 // --- Content anchors (match by FUNCTION, not just name) ----------------------
 // ~a third of catalog skills have opaque names (sentry/grill-me/get-shit-done) that
 // don't contain their function, and Chinese prompts never match an English name at
@@ -224,6 +228,10 @@ const FIRE_IDF = 4.2; // a single distinctive name word must clear this to fire 
 // generic prose overlap stays silent.
 const CONTENT_FIRE_IDF = 4.6;     // weight bar when only one distinctive word matched (+ a 2nd word)
 const CONTENT_DISTINCT_IDF = 3.5; // a word this distinctive (~≤10 rows) counts toward "strong"
+// A single skill-NAME word fires alone only if it's ALSO this distinctive in the
+// content corpus — i.e. a real specialized term, not a generic dev verb that merely
+// happens to appear in some skill's name ("style"/"implement"/"docs"/"deploy").
+const SOLO_NAME_IDF = 4.5;
 
 // Generic Chinese words that must not fire on their own — the CJK analog of
 // ANCHOR_STOP (casual verbs + generic nouns that carry no domain intent).
@@ -272,10 +280,11 @@ function suggestCandidates(rows, prompt, { installed = new Set(), suggested = ne
   // distinctiveness. A skill matched purely by a generic word ("optimize",
   // "design", "system") is not an anchor at all, so generic words can neither
   // fire the hook nor crowd the shortlist.
+  const cdf = contentDf(rows);
   const anchors = [];
   for (const r of rows) for (const s of r.skills || []) {
     if (taken.has(s)) continue;
-    let weight = 0, strong = 0;
+    let weight = 0, strong = 0, specific = 0;
     const usedSeg = new Set();
     for (const t of tokens) {
       const seg = matchedSegment(s, t);
@@ -284,8 +293,9 @@ function suggestCandidates(rows, prompt, { installed = new Set(), suggested = ne
       if (ANCHOR_STOP.has(t) || ANCHOR_STOP.has(seg)) continue; // generic word — ignore
       strong++;
       weight += idfOf(info, seg);
+      if (idfOf(cdf, t) >= SOLO_NAME_IDF) specific++; // distinctive enough to fire on its own
     }
-    if (strong) anchors.push({ skill: s, row: r, weight, strong });
+    if (strong) anchors.push({ skill: s, row: r, weight, strong, specific });
   }
   anchors.sort((a, b) => b.weight - a.weight || maxStars(b.row) - maxStars(a.row));
 
@@ -295,7 +305,6 @@ function suggestCandidates(rows, prompt, { installed = new Set(), suggested = ne
   const contentTokens = tokens.filter(t => !ANCHOR_STOP.has(t) && !CJK_ANCHOR_STOP.has(t));
   const contentAnchors = [];
   if (contentTokens.length) {
-    const cdf = contentDf(rows);
     for (const r of rows) {
       const content = new Set(rowContent(r));
       let weight = 0, strong = 0, matched = 0;
@@ -353,7 +362,7 @@ function suggestCandidates(rows, prompt, { installed = new Set(), suggested = ne
   // signal stays silent (better a miss than noise on every generic prompt); the
   // ranked search still ENRICHES the shortlist once an anchor has fired.
   const fire = out.length > 0 && (
-    anchors.some(a => a.strong >= 2 || a.weight >= FIRE_IDF) ||
+    anchors.some(a => a.strong >= 2 || a.specific >= 1) ||
     contentAnchors.some(contentQualifies)
   );
   return { fire, candidates: out.slice(0, limit), weak };

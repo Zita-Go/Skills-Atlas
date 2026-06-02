@@ -76,7 +76,12 @@ function removeCachedSource(url) {
 // config.json; read-modify-write the full object so registry `sources` is preserved.
 function getAutopilot() {
   const c = readConfig();
-  return { suggest: true, gapAlerts: true, prune: false, ...(c.autopilot || {}) };
+  return {
+    suggest: true, gapAlerts: true, prune: false,
+    gapModel: 'claude-haiku-4-5', // model for the background gap/prune analysis
+    replyLang: 'en',              // language the autopilot asks Claude to reply in
+    ...(c.autopilot || {}),
+  };
 }
 function setAutopilot(patch) {
   const c = readConfig();

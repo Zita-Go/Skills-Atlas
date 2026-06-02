@@ -253,6 +253,16 @@ test('suggestCandidates: stays silent on greetings and generic dev actions (no n
   }
 });
 
+test('suggestCandidates: routine dev one-liners do not over-fire on a generic name word', () => {
+  const { suggestCandidates } = require('../src/search-core');
+  for (const p of ['implement the function', 'write the docs', 'deploy to production',
+                   'design the schema', 'generate the report', 'style the button',
+                   'mock the service', 'test the api', 'document the api',
+                   'analyze the data', 'summarize this thread', 'parse the response']) {
+    assert.strictEqual(suggestCandidates(flatRows, p).fire, false, `generic action should stay silent: ${p}`);
+  }
+});
+
 // --- opaque names: ~a third of skills have names that don't contain their function
 // (grill-me, sentry, …); a query describing what you WANT must still find them. ---
 test('suggestCandidates: opaque-named skills fire by FUNCTION, not just name', () => {

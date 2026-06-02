@@ -20,6 +20,7 @@ const transcripts = require('../transcripts');
 const gapstate = require('../gapstate');
 const prunestate = require('../prunestate');
 const prune = require('./prune');
+const { langHint } = require('../format');
 
 const COOLDOWN = 3; // min prompts between suggestions
 const GAP_EVERY = 12; // a gap nudge is only considered at every Nth prompt (per session)
@@ -43,6 +44,9 @@ function emit(ctx) {
 
 module.exports = async function suggest() {
   try {
+    // Recursion guard: when the background gap sub-agent runs `claude -p`, that
+    // invocation fires this hook too — bail immediately so we never loop.
+    if (process.env.SKILLS_ATLAS_SUBCALL) return;
     if (process.stdin.isTTY) {
       console.error('skills-atlas suggest is a UserPromptSubmit hook (reads the event JSON from stdin).');
       console.error('enable the autopilot with:  skills-atlas hook on');
@@ -59,26 +63,40 @@ module.exports = async function suggest() {
     state.count = (state.count || 0) + 1;
     const ap = registry.getAutopilot();
 
-    // --- Proactive gap nudge: periodic, and refired when the recurring work shifts
-    // to something new (anti-spam floor + activity fingerprint, not a daily clock) ---
+    // --- Proactive gap nudge: a background sub-agent (gap-analyze) does the actual
+    // judging off the main agent's back; here we (a) surface a ready verdict, or
+    // (b) kick off a fresh analysis for next time. Never burdens this prompt. ---
     if (ap.gapAlerts && state.count % GAP_EVERY === 0) {
       const recent = transcripts.recentPrompts({ max: 20 });
       if (recent.length >= 8) {
         const gs = gapstate.read();
-        const { fire, sig } = gapstate.shouldNudge(gs, recent, Date.now());
-        if (fire) {
-          const dismissed = gs.dismissed || [];
-          const lines = recent.map(r => `- ${r.text.replace(/\s+/g, ' ').slice(0, 100)}`).join('\n');
-          const days = Math.max(1, Math.round((Date.now() - recent[recent.length - 1].ts) / 86400000));
-          emit(`[Skills Atlas — capability gaps] The user's recent requests (${recent.length} over ~${days} day(s), newest first):\n${lines}\n` +
-            `If a recurring KIND of work stands out that an installable catalog skill is built for and they haven't ` +
-            `installed (ignore one-offs), name the pattern with rough frequency as evidence and recommend it — verify with ` +
-            `\`skills-atlas info <skill>\` and install with \`skills-atlas use <skill> --yes\`.` +
-            (dismissed.length ? ` Already dismissed (skip): ${dismissed.join(', ')}.` : '') +
-            ` If nothing clearly recurs or it doesn't fit right now, stay silent.`);
-          gapstate.touchNudge(sig);
-          writeState(file, state);
-          return;
+        const pending = gs.pending;
+        const fresh = pending && pending.at && (Date.now() - Date.parse(pending.at) < 6 * 3600000);
+        if (fresh) {
+          gapstate.clearPending();
+          const txt = (pending.text || '').trim();
+          if (txt && !/^NONE\b/i.test(txt)) {
+            const body = pending.source === 'fallback'
+              ? txt // already a full digest for the main agent to judge
+              : `[Skills Atlas — capability gaps] ${txt}\nOffer this to the user only if it genuinely fits — verify with \`skills-atlas info <skill>\`, install with \`skills-atlas use <skill> --yes\`; otherwise stay silent.`;
+            emit(body + langHint(ap.replyLang));
+            gapstate.touchNudge(gapstate.activitySignature(recent));
+            writeState(file, state);
+            return;
+          }
+          // NONE → nothing to surface; fall through to the rest.
+        } else {
+          const { fire } = gapstate.shouldNudge(gs, recent, Date.now());
+          const analyzeStale = !gs.analyzeAt || (Date.now() - Date.parse(gs.analyzeAt) > 30 * 60000);
+          if (fire && analyzeStale) {
+            gapstate.markAnalyze();
+            try {
+              const child = require('child_process').spawn(
+                process.execPath, [path.join(__dirname, '..', '..', 'bin', 'skills.js'), 'gap-analyze'],
+                { detached: true, stdio: 'ignore', env: { ...process.env } });
+              child.unref();
+            } catch { /* fail-open */ }
+          }
         }
       }
     }
@@ -94,7 +112,7 @@ module.exports = async function suggest() {
           const { data } = loadData({ quiet: true });
           const installed = prune.reviewList(data, ps.dismissed || [], Date.now());
           if (installed.length) {
-            emit(prune.digestText(installed, recent, ps.dismissed || []));
+            emit(prune.digestText(installed, recent, ps.dismissed || []) + langHint(ap.replyLang));
             prunestate.touchNudge(sig);
             writeState(file, state);
             return;
@@ -130,7 +148,7 @@ module.exports = async function suggest() {
       `immediately), see what it covers first (\`skills-atlas info <skill>\`), or skip and you'll just ` +
       `do the task yourself. If none fit but the task plainly needs a specialized skill, you may run ` +
       `\`skills-atlas search "<short intent>"\` to look further. If nothing fits, say nothing about this ` +
-      `at all — don't mention this hook, these skills, or that a suggestion was made.`);
+      `at all — don't mention this hook, these skills, or that a suggestion was made.` + langHint(ap.replyLang));
     state.lastSuggestedCount = state.count;
     state.suggested = [...suggested, ...candidates.map(c => c.skill)];
     writeState(file, state);

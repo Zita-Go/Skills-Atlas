@@ -11,7 +11,8 @@ const fsu = require('../fsutil');
 const manifest = require('../manifest');
 const transcripts = require('../transcripts');
 const prunestate = require('../prunestate');
-const { dim, green } = require('../format');
+const registry = require('../registry');
+const { dim, green, langHint } = require('../format');
 
 const FRESH_DAYS = 14; // never suggest removing something installed this recently
 
@@ -99,7 +100,7 @@ module.exports = async function pruneCmd(argv) {
     console.log(dim('see what you have: skills-atlas installed'));
     return;
   }
-  console.log('\n' + digestText(installed, recent, dismissed));
+  console.log('\n' + digestText(installed, recent, dismissed) + langHint(registry.getAutopilot().replyLang));
 };
 
 module.exports.reviewList = reviewList;
