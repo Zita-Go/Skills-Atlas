@@ -3386,8 +3386,8 @@
   category: security-offensive
   subcategory: 18-3
   chain: false
-  description: 漏洞赏金方法论与侦察(subfinder/httpx/nuclei)、OSINT 攻击面测绘、triage 验证与披露报告(HackerOne/Bugcrowd)。；另含 security-research：编排多 agent 并行安全审计、验证可利用性（预发布安全检查 / 威胁模型验证）
-  description_en: 'Bug-bounty methodology & recon (subfinder/httpx/nuclei), OSINT attack-surface mapping, triage validation and disclosure reporting (HackerOne/Bugcrowd).; plus security-research: orchestrate multiple agents for parallel security audits and exploitability verification (pre-release security checks / threat-model validation)'
+  description: 漏洞赏金方法论与侦察(subfinder/httpx/nuclei)、OSINT 攻击面测绘、triage 验证与披露报告(HackerOne/Bugcrowd)；另含 security-research：编排多 agent 并行安全审计、验证可利用性（预发布安全检查 / 威胁模型验证）
+  description_en: 'Bug-bounty methodology & recon (subfinder/httpx/nuclei), OSINT attack-surface mapping, triage validation and disclosure reporting (HackerOne/Bugcrowd); plus security-research: orchestrate multiple agents for parallel security audits and exploitability verification (pre-release security checks / threat-model validation)'
   sources:
   - elementalsouls-bughunter
   - elementalsouls-osint
