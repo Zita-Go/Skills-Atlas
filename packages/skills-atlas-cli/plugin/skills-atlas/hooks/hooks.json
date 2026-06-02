@@ -3,7 +3,7 @@
     "UserPromptSubmit": [
       {
         "hooks": [
-          { "type": "command", "command": "if command -v skills-atlas >/dev/null 2>&1; then skills-atlas suggest; fi", "timeout": 5 }
+          { "type": "command", "command": "if command -v skills-atlas >/dev/null 2>&1; then skills-atlas suggest; else node \"${CLAUDE_PLUGIN_ROOT}/hooks/prompt-hook.js\"; fi", "timeout": 10 }
         ]
       }
     ],

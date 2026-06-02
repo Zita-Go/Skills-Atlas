@@ -55,6 +55,7 @@ test('setup (manual): status + what-you-can-do + Settings', async () => {
 });
 
 const welcomeJs = path.join(__dirname, '..', 'plugin', 'skills-atlas', 'hooks', 'welcome.js');
+const promptHookJs = path.join(__dirname, '..', 'plugin', 'skills-atlas', 'hooks', 'prompt-hook.js');
 
 test('welcome.js: engine-not-installed nudge on startup + remembers it when the CLI is missing', () => {
   const cache = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-wc-'));
@@ -73,6 +74,28 @@ test('welcome.js: stays silent on resume/compact (never burns the one-shot mid-w
     assert.strictEqual(out.trim(), '', `no output on ${source}`);
     assert.ok(!fs.existsSync(path.join(cache, 'skills-atlas', 'install-prompt-shown')), `no marker written on ${source}`);
   }
+});
+
+test('prompt-hook.js: nudges to install the engine once per session, then stays silent', () => {
+  const cache = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-ph-'));
+  const env = { ...process.env, XDG_CACHE_HOME: cache };
+  const ev = JSON.stringify({ session_id: 'sess-1' });
+  const first = execFileSync(process.execPath, [promptHookJs], { input: ev, env, encoding: 'utf8' });
+  assert.ok(/Almost there/.test(JSON.parse(first).systemMessage), 'install nudge on the first prompt of the session');
+  const second = execFileSync(process.execPath, [promptHookJs], { input: ev, env, encoding: 'utf8' });
+  assert.strictEqual(second.trim(), '', 'silent on later prompts in the same session');
+  const other = execFileSync(process.execPath, [promptHookJs], { input: JSON.stringify({ session_id: 'sess-2' }), env, encoding: 'utf8' });
+  assert.ok(/Almost there/.test(JSON.parse(other).systemMessage), 'nudges again in a different session');
+});
+
+test('engine nudge fires once per session across SessionStart + UserPromptSubmit (no double-notify)', () => {
+  const cache = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-co-'));
+  const noPath = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-np-'));
+  const env = { ...process.env, PATH: noPath, XDG_CACHE_HOME: cache };
+  const ss = execFileSync(process.execPath, [welcomeJs], { input: JSON.stringify({ source: 'startup', session_id: 'sX' }), env, encoding: 'utf8' });
+  assert.ok(/Almost there/.test(JSON.parse(ss).systemMessage), 'SessionStart shows the nudge first');
+  const ups = execFileSync(process.execPath, [promptHookJs], { input: JSON.stringify({ session_id: 'sX' }), env, encoding: 'utf8' });
+  assert.strictEqual(ups.trim(), '', 'UserPromptSubmit stays silent — already nudged this session');
 });
 
 test('buildWelcome: returns the welcome once (consume marks onboarded), then null', () => {
