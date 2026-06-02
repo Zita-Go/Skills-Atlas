@@ -1,6 +1,6 @@
 {
   "name": "skills-atlas-cli",
-  "version": "0.14.1",
+  "version": "0.14.2",
   "description": "Search, install and learn AI agent skills from the terminal — powered by the Skills Atlas catalog.",
   "bin": {
     "skills-atlas": "bin/skills.js",
@@ -15,6 +15,7 @@
   "scripts": {
     "build": "node build.js",
     "test": "node --test",
+    "postinstall": "node src/postinstall.js",
     "prepublishOnly": "node build.js"
   },
   "engines": {
