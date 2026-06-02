@@ -127,13 +127,15 @@
             {
               "skills": [
                 "openspec",
-                "get-shit-done"
+                "get-shit-done",
+                "spec-driven-development",
+                "planning-and-task-breakdown"
               ],
               "group": "轻量 SDD 框架",
               "group_en": "Lightweight SDD frameworks",
               "chain": false,
-              "description": "openspec（Fission-AI/OpenSpec：openspec init 把\"提议变更 → 评审 → 归档\"接入 Claude Code/Cursor/Codex）；get-shit-done（open-gsd：把 meta-prompt + context engineering + SDD 串成统一框架，对标 BMAD/Spec-Kit 但更精简）",
-              "description_en": "openspec (Fission-AI/OpenSpec: openspec init wires \"proposed change → review → archive\" into Claude Code/Cursor/Codex); get-shit-done (open-gsd: chains meta-prompt + context engineering + SDD into a unified framework, comparable to BMAD/Spec-Kit but leaner)",
+              "description": "openspec（Fission-AI/OpenSpec：openspec init 把\"提议变更 → 评审 → 归档\"接入 Claude Code/Cursor/Codex）；get-shit-done（open-gsd：把 meta-prompt + context engineering + SDD 串成统一框架，对标 BMAD/Spec-Kit 但更精简）；另含 addyosmani spec-driven-development（门控工作流定义需求 / 计划 / 任务）+ planning-and-task-breakdown（大任务拆解为可实施小任务）",
+              "description_en": "openspec (Fission-AI/OpenSpec: openspec init wires \"proposed change → review → archive\" into Claude Code/Cursor/Codex); get-shit-done (open-gsd: chains meta-prompt + context engineering + SDD into a unified framework, comparable to BMAD/Spec-Kit but leaner); plus addyosmani spec-driven-development (gated workflow defining requirements / plan / tasks) and planning-and-task-breakdown (decompose large tasks into small implementable units)",
               "sources": [
                 {
                   "name": "Fission-AI",
@@ -170,6 +172,23 @@
                     "kind": "override",
                     "note_en": "SDD framework (command pack, not a single skill): drive it via the /gsd-* slash commands after install"
                   }
+                },
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
                 }
               ],
               "use_case": "轻量SDD框架+单一上下文提议→评审→归档",
@@ -180,7 +199,7 @@
               ],
               "when_to_use": "小改动需要brief评审时",
               "when_to_use_en": "Small changes needing brief review",
-              "py": "qing liang  SDD  kuang jia  openspec get-shit-done  qing liang SDD kuang jia + dan yi shang xia wen ti yi → ping shen → gui dang"
+              "py": "qing liang  SDD  kuang jia  openspec get-shit-done spec-driven-development planning-and-task-breakdown  qing liang SDD kuang jia + dan yi shang xia wen ti yi → ping shen → gui dang"
             },
             {
               "skills": [
@@ -218,6 +237,251 @@
               "when_to_use": "工作交接给另一agent时",
               "when_to_use_en": "When handing work to another agent",
               "py": "hui hua jie li  /  shang xia wen  handoff handoff  hui hua ya suo handoff wen dang wu feng jie li duo ge agent"
+            },
+            {
+              "skills": [
+                "hyperplan"
+              ],
+              "group": "对抗性多 agent 规划",
+              "group_en": "Adversarial multi-agent planning",
+              "chain": false,
+              "description": "帮 agent 通过 5 个对抗性成员进行严格辩论，蒸馏可辩护见解，生成严谨的可执行计划。",
+              "description_en": "Have an agent run a rigorous debate among five adversarial members to distill defensible insights and produce a tight, executable plan.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "dui kang xing duo  agent  gui hua  hyperplan "
+            },
+            {
+              "skills": [
+                "ulw-loop"
+              ],
+              "group": "系统化工作流循环（ultrawork）",
+              "group_en": "Systematic workflow loop (ultrawork)",
+              "chain": false,
+              "description": "提供目标导向的 ultrawork 循环，系统化分解任务为证据绑定的步骤，支持手动 QA 和检查点执行。",
+              "description_en": "A goal-directed \"ultrawork\" loop that systematically decomposes a task into evidence-bound steps, supporting manual QA and checkpointed execution.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "xi tong hua gong zuo liu xun huan （ultrawork） ulw-loop "
+            },
+            {
+              "skills": [
+                "start-work"
+              ],
+              "group": "工作计划执行循环",
+              "group_en": "Work-plan execution loop",
+              "chain": false,
+              "description": "执行 Prometheus 工作计划，管理 Boulder 状态、证据更新、工作树纪律和并行子代理，支持计划恢复和连续执行，适用于开发工作流。",
+              "description_en": "Execute a Prometheus work plan — managing Boulder state, evidence updates, worktree discipline and parallel sub-agents, with plan resume and continuous execution for development workflows.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "gong zuo ji hua zhi xing xun huan  start-work "
+            },
+            {
+              "skills": [
+                "ulw-plan"
+              ],
+              "group": "战略规划工作流",
+              "group_en": "Strategic planning workflow",
+              "chain": false,
+              "description": "通过苏格拉底式访谈、代码库探索和差距分析，为复杂任务生成决策完整的工作计划。",
+              "description_en": "Generate a decision-complete work plan for complex tasks through Socratic interviewing, codebase exploration and gap analysis.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "zhan lve gui hua gong zuo liu  ulw-plan "
+            },
+            {
+              "skills": [
+                "interview-me"
+              ],
+              "group": "意图澄清",
+              "group_en": "Intent clarification",
+              "chain": false,
+              "description": "通过逐步访谈提取用户真实需求，在计划或代码存在前澄清意图，避免构建错误解决方案。",
+              "description_en": "Extract the user's true requirements through a step-by-step interview, clarifying intent before any plan or code exists to avoid building the wrong solution.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "yi tu cheng qing  interview-me "
+            },
+            {
+              "skills": [
+                "source-driven-development"
+              ],
+              "group": "源文档驱动开发",
+              "group_en": "Source-documentation-driven development",
+              "chain": false,
+              "description": "帮助 agent 基于官方文档编写代码，确保实现权威、模式正确，避免过时模式，提升代码质量和可信度。",
+              "description_en": "Help an agent write code grounded in official documentation — ensuring authoritative, pattern-correct implementations, avoiding outdated patterns and raising code quality and trustworthiness.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "yuan wen dang qu dong kai fa  source-driven-development "
+            },
+            {
+              "skills": [
+                "documentation-and-adrs"
+              ],
+              "group": "架构决策记录（ADR）",
+              "group_en": "Architecture Decision Records (ADR)",
+              "chain": false,
+              "description": "在做出架构决策、修改公共 API 或交付功能时记录 ADR，捕获决策背后的「为什么」、约束与权衡，供未来工程师和 agent 理解代码库上下文。",
+              "description_en": "Record an Architecture Decision Record (ADR) when making an architecture decision, changing a public API or shipping a feature — capturing the \"why\", constraints and trade-offs so future engineers and agents understand the codebase context.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "jia gou jue ce ji lu （ADR） documentation-and-adrs "
             }
           ]
         },
@@ -234,8 +498,8 @@
               "group": "TDD（多家同名版本）",
               "group_en": "TDD (same-name versions from multiple sources)",
               "chain": false,
-              "description": "superpowers test-driven-development（最严，强制 RED-GREEN-REFACTOR）+ mattpocock tdd（最轻，单 vertical slice）+ Pawel test-scenarios（从 user story 生成全面测试场景）。三家可选",
-              "description_en": "superpowers test-driven-development (strictest, enforces RED-GREEN-REFACTOR) + mattpocock tdd (lightest, single vertical slice) + Pawel test-scenarios (generate comprehensive test scenarios from user story). Three sources to choose from",
+              "description": "superpowers test-driven-development（最严，强制 RED-GREEN-REFACTOR）+ mattpocock tdd（最轻，单 vertical slice）+ Pawel test-scenarios（从 user story 生成全面测试场景）。三家可选；另含 addyosmani test-driven-development（又一同名版本，红-绿-重构）",
+              "description_en": "superpowers test-driven-development (strictest, enforces RED-GREEN-REFACTOR) + mattpocock tdd (lightest, single vertical slice) + Pawel test-scenarios (generate comprehensive test scenarios from user story). Three sources to choose from; plus addyosmani test-driven-development (another same-name version, red-green-refactor)",
               "sources": [
                 {
                   "name": "superpowers",
@@ -287,6 +551,23 @@
                     "kind": "skill",
                     "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
+                },
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
                 }
               ],
               "use_case": "三家TDD框架可选(严/轻/场景)",
@@ -302,13 +583,16 @@
               "skills": [
                 "systematic-debugging",
                 "diagnose",
-                "sentry"
+                "sentry",
+                "debugging",
+                "debugging-and-error-recovery",
+                "parallel-debugging"
               ],
               "group": "系统化调试",
               "group_en": "Systematic debugging",
               "chain": false,
-              "description": "superpowers systematic-debugging 4 阶段根因（含 root-cause-tracing / defense-in-depth / condition-based-waiting）+ mattpocock diagnose（复现→最小化→假设→注入观测→修→回归测试）+ Codex sentry（看生产 issue + AI 根因 + AI 修复方案，PII 自脱敏）",
-              "description_en": "superpowers systematic-debugging 4-phase root cause (incl. root-cause-tracing / defense-in-depth / condition-based-waiting) + mattpocock diagnose (reproduce → minimize → hypothesis → inject observation → fix → regression test) + Codex sentry (view production issue + AI root cause + AI fix, PII auto-redacted)",
+              "description": "superpowers systematic-debugging 4 阶段根因（含 root-cause-tracing / defense-in-depth / condition-based-waiting）+ mattpocock diagnose（复现→最小化→假设→注入观测→修→回归测试）+ Codex sentry（看生产 issue + AI 根因 + AI 修复方案，PII 自脱敏）；另含 debugging / debugging-and-error-recovery（假设驱动根因诊断）与 parallel-debugging（竞争假设法 ACH 并行排查、跨模块仲裁）",
+              "description_en": "superpowers systematic-debugging 4-phase root cause (incl. root-cause-tracing / defense-in-depth / condition-based-waiting) + mattpocock diagnose (reproduce → minimize → hypothesis → inject observation → fix → regression test) + Codex sentry (view production issue + AI root cause + AI fix, PII auto-redacted); plus debugging / debugging-and-error-recovery (hypothesis-driven root-cause diagnosis) and parallel-debugging (parallel investigation via Analysis of Competing Hypotheses with cross-module arbitration)",
               "sources": [
                 {
                   "name": "superpowers",
@@ -360,6 +644,56 @@
                     "kind": "skill",
                     "alt": "git clone https://github.com/openai/skills ~/.claude/skills/skills"
                   }
+                },
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                },
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                },
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
                 }
               ],
               "use_case": "四阶段根因分析、复现最小化、防御深度",
@@ -369,7 +703,7 @@
               ],
               "when_to_use": "线上issue或复杂bug定位",
               "when_to_use_en": "Production issues or complex bug locating",
-              "py": "xi tong hua tiao shi  systematic-debugging diagnose sentry  si jie duan gen yin fen xi 、 fu xian zui xiao hua 、 fang yu shen du"
+              "py": "xi tong hua tiao shi  systematic-debugging diagnose sentry debugging debugging-and-error-recovery parallel-debugging  si jie duan gen yin fen xi 、 fu xian zui xiao hua 、 fang yu shen du"
             },
             {
               "skills": [
@@ -499,6 +833,163 @@
               "when_to_use": "需要手工点击/填表的自动化",
               "when_to_use_en": "Need interactive form filling or clicking automation",
               "py": "liu lan qi zi dong hua  playwright playwright-interactive  zhen shi liu lan qi zi dong hua + chi jiu Playwright hui hua"
+            },
+            {
+              "skills": [
+                "agent-browser",
+                "browser-testing-with-devtools"
+              ],
+              "group": "浏览器自动化 / DevTools 测试",
+              "group_en": "Browser automation / DevTools testing",
+              "chain": false,
+              "description": "浏览器自动化与真实浏览器调试：agent-browser 自动化网页导航、表单填写、截图与数据提取；browser-testing-with-devtools 用 Chrome DevTools 在真实浏览器中测试调试，检查 DOM、网络请求与性能分析等运行时数据。",
+              "description_en": "Browser automation and real-browser debugging: agent-browser automates navigation, form filling, screenshots and data extraction; browser-testing-with-devtools uses Chrome DevTools to test and debug in a real browser, inspecting DOM, network requests and performance/runtime data.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                },
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "liu lan qi zi dong hua  / DevTools  ce shi  agent-browser browser-testing-with-devtools "
+            },
+            {
+              "skills": [
+                "incremental-implementation"
+              ],
+              "group": "增量实现 / 持续验证",
+              "group_en": "Incremental implementation / continuous verification",
+              "chain": false,
+              "description": "指导 AI agent 以增量方式实现功能，每步实现、测试和验证，确保系统始终保持可工作状态。",
+              "description_en": "Guide an agent to implement features incrementally — implementing, testing and verifying at each step so the system always stays in a working state.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "zeng liang shi xian  /  chi xu yan zheng  incremental-implementation "
+            },
+            {
+              "skills": [
+                "screen-reader-testing",
+                "wcag-audit-patterns"
+              ],
+              "group": "无障碍测试（屏幕阅读器 + WCAG）",
+              "group_en": "Accessibility testing (screen reader + WCAG)",
+              "chain": false,
+              "description": "Web 应用无障碍测试：验证屏幕阅读器（VoiceOver、NVDA 等）兼容性并调试辅助技术问题（screen-reader-testing）；按 WCAG 2.2 做自动化测试、手动验证与修复策略以确保合规（wcag-audit-patterns）。",
+              "description_en": "Web accessibility testing: verify screen-reader (VoiceOver, NVDA, etc.) compatibility and debug assistive-technology issues (screen-reader-testing); run WCAG 2.2 automated tests, manual verification and remediation to ensure compliance (wcag-audit-patterns).",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "wu zhang ai ce shi （ ping mu yue du qi  + WCAG） screen-reader-testing wcag-audit-patterns "
+            },
+            {
+              "skills": [
+                "temporal-python-testing"
+              ],
+              "group": "Temporal 工作流测试",
+              "group_en": "Temporal workflow testing",
+              "chain": false,
+              "description": "指导 AI agent 使用 pytest 对 Temporal 工作流进行单元测试、集成测试和回放测试，涵盖时间跳跃、mock 策略与 CI/CD 集成。",
+              "description_en": "Guide an agent to unit-, integration- and replay-test Temporal workflows with pytest — covering time-skipping, mocking strategies and CI/CD integration.",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Temporal  gong zuo liu ce shi  temporal-python-testing "
             }
           ]
         },
@@ -618,6 +1109,444 @@
               "when_to_use": "重构前扫重复逻辑",
               "when_to_use_en": "Scan duplicate logic before refactoring",
               "py": "yu yi dai ma qu zhong  finding-duplicate-functions  yu yi ji dai ma qu zhong zhao tong yi tu bu tong shi xian"
+            },
+            {
+              "skills": [
+                "pre-publish-review"
+              ],
+              "group": "多 Agent 发布审查门禁",
+              "group_en": "Multi-agent pre-publish review gate",
+              "chain": false,
+              "description": "npm 发布前三层审查门禁：自动检测未发布变更、最多 10 个 ultrabrain agent 逐变更深度分析、5 agent 全局代码质量/安全审查、1 oracle 综合发布就绪性评估与版本风险判断。",
+              "description_en": "A three-layer review gate before an npm publish: auto-detect unpublished changes, deep per-change analysis by up to 10 \"ultrabrain\" agents, a 5-agent global code-quality/security review, and a final single-oracle release-readiness and version-risk assessment.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "duo  Agent  fa bu shen cha men jin  pre-publish-review "
+            },
+            {
+              "skills": [
+                "remove-deadcode"
+              ],
+              "group": "死代码安全移除",
+              "group_en": "Safe dead-code removal",
+              "chain": false,
+              "description": "通过 LSP 验证和并行深度 agent 安全移除项目中未使用的代码。",
+              "description_en": "Safely remove unused code from a project via LSP verification and parallel deep agents.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "si dai ma an quan yi chu  remove-deadcode "
+            },
+            {
+              "skills": [
+                "comment-checker"
+              ],
+              "group": "注释质量自动检查",
+              "group_en": "Automatic comment-quality check",
+              "chain": false,
+              "description": "编辑代码后自动检查注释质量，阻断问题补丁并要求修复或解释，保障代码审查效率。",
+              "description_en": "After code edits, automatically check comment quality, blocking problematic patches and requiring a fix or explanation to keep reviews efficient.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "zhu shi zhi liang zi dong jian cha  comment-checker "
+            },
+            {
+              "skills": [
+                "lsp"
+              ],
+              "group": "LSP 语言服务集成",
+              "group_en": "LSP language-service integration",
+              "chain": false,
+              "description": "提供 LSP 工具集，支持诊断、定义跳转、引用查找、符号搜索和安全重命名等代码导航能力。",
+              "description_en": "Provide an LSP toolset for code navigation — diagnostics, go-to-definition, find-references, symbol search and safe rename.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "LSP  yu yan fu wu ji cheng  lsp "
+            },
+            {
+              "skills": [
+                "programming"
+              ],
+              "group": "多语言编程规范与工具链",
+              "group_en": "Multi-language coding standards & toolchain",
+              "chain": false,
+              "description": "强制应用于多语言代码编写，确保严格类型、现代工具链和代码质量，涵盖 Python、Rust、TypeScript 等。",
+              "description_en": "Enforced across multi-language code-writing to guarantee strict typing, a modern toolchain and code quality — covering Python, Rust, TypeScript and more.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "duo yu yan bian cheng gui fan yu gong ju lian  programming "
+            },
+            {
+              "skills": [
+                "refactor",
+                "remove-ai-slops"
+              ],
+              "group": "智能重构 / 清理 AI 代码气味",
+              "group_en": "Smart refactoring / removing AI code smells",
+              "chain": false,
+              "description": "智能重构命令（支持 refactor/cleanup/extract 等触发词）执行代码重构；并通过回归测试锁定行为后批量移除 AI 生成的代码气味，覆盖 10 类代码问题。",
+              "description_en": "A smart refactoring command (triggered by refactor/cleanup/extract and more) executes code refactors; plus removal of AI-generated code smells — locking behavior with regression tests, then batch-cleaning and verifying across 10 categories of issues.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "zhi neng zhong gou  /  qing li  AI  dai ma qi wei  refactor remove-ai-slops "
+            },
+            {
+              "skills": [
+                "review-work",
+                "code-review-and-quality"
+              ],
+              "group": "实现后并行 Code Review（多子代理）",
+              "group_en": "Post-implementation parallel code review",
+              "chain": false,
+              "description": "实现完成后的多维并行代码审查：review-work 启动 5 个并行子代理做目标约束验证、代码质量、安全审查、QA 与上下文挖掘；code-review-and-quality 从正确性、可读性、架构、安全与性能多维评审，确保合并前达标。",
+              "description_en": "Multi-dimensional parallel code review after implementation: review-work spawns five parallel sub-agents for goal-constraint verification, code quality, security review, QA and context mining; code-review-and-quality evaluates correctness, readability, architecture, security and performance to ensure merge-readiness.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                },
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "shi xian hou bing xing  Code Review（ duo zi dai li ） review-work code-review-and-quality "
+            },
+            {
+              "skills": [
+                "code-simplification"
+              ],
+              "group": "代码简化",
+              "group_en": "Code simplification",
+              "chain": false,
+              "description": "帮助 agent 简化代码以提高可读性和可维护性，而不改变行为，适用于重构和代码审查场景。",
+              "description_en": "Simplify code to improve readability and maintainability without changing behavior — for refactoring and code-review scenarios.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "dai ma jian hua  code-simplification "
+            },
+            {
+              "skills": [
+                "deprecation-and-migration"
+              ],
+              "group": "代码废弃与迁移管理",
+              "group_en": "Deprecation & migration management",
+              "chain": false,
+              "description": "管理代码废弃和用户迁移，帮助 agent 安全移除旧系统并将用户迁移到新实现，减少维护成本。",
+              "description_en": "Manage code deprecation and user migration — safely removing legacy systems and migrating users to new implementations to cut maintenance cost.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "dai ma fei qi yu qian yi guan li  deprecation-and-migration "
+            },
+            {
+              "skills": [
+                "doubt-driven-development"
+              ],
+              "group": "质疑驱动 / 对抗性审查",
+              "group_en": "Doubt-driven / adversarial review",
+              "chain": false,
+              "description": "在任何非平凡决策落地前，注入一个偏向「证伪」的新鲜上下文审阅者进行对抗性交叉审查，防止长期会话中积累的假设被默认为事实，适用于高风险、不可逆或安全性敏感的场景。",
+              "description_en": "Before any non-trivial decision lands, inject a fresh-context reviewer biased toward falsification for adversarial cross-review, preventing assumptions accumulated over a long session from being treated as fact — for high-risk, irreversible or security-sensitive situations.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "zhi yi qu dong  /  dui kang xing shen cha  doubt-driven-development "
+            },
+            {
+              "skills": [
+                "performance-optimization"
+              ],
+              "group": "性能优化",
+              "group_en": "Performance optimization",
+              "chain": false,
+              "description": "基于测量和 Core Web Vitals 优化应用性能，识别瓶颈并提供修复策略，避免过早优化。",
+              "description_en": "Optimize application performance based on measurement and Core Web Vitals, identifying bottlenecks and offering fix strategies while avoiding premature optimization.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "xing neng you hua  performance-optimization "
+            },
+            {
+              "skills": [
+                "multi-reviewer-patterns"
+              ],
+              "group": "多 reviewer 协调与发现去重",
+              "group_en": "Multi-reviewer orchestration & finding dedup",
+              "chain": false,
+              "description": "协调多个 agent 并行执行代码审查，自动去重发现、校准严重等级并生成统一报告，支持安全、性能、架构、测试等多维度 review。",
+              "description_en": "Coordinate multiple agents to run code reviews in parallel, automatically deduplicating findings, calibrating severity and producing a unified report across security, performance, architecture and testing dimensions.",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "duo  reviewer  xie tiao yu fa xian qu zhong  multi-reviewer-patterns "
             }
           ]
         },
@@ -667,13 +1596,16 @@
             {
               "skills": [
                 "using-git-worktrees",
-                "finishing-a-development-branch"
+                "finishing-a-development-branch",
+                "git-master",
+                "git-workflow-and-versioning",
+                "gitlab-ci-patterns"
               ],
               "group": "Git 工作流",
               "group_en": "Git workflow",
               "chain": false,
-              "description": "superpowers using-git-worktrees（在新 branch 创隔离 workspace + 跑 setup + 验证 baseline）+ finishing-a-development-branch（验证完成→选 merge/PR/keep/discard→清理 worktree）",
-              "description_en": "superpowers using-git-worktrees (create isolated workspace on a new branch + run setup + verify baseline) + finishing-a-development-branch (verify completion → choose merge/PR/keep/discard → clean up worktree)",
+              "description": "superpowers using-git-worktrees（在新 branch 创隔离 workspace + 跑 setup + 验证 baseline）+ finishing-a-development-branch（验证完成→选 merge/PR/keep/discard→清理 worktree）；另含 git-master（原子提交 / 变基 / 冲突解决 / 历史搜索）、git-workflow-and-versioning（分支与版本规范）、gitlab-ci-patterns（GitLab CI 多阶段管道）",
+              "description_en": "superpowers using-git-worktrees (create isolated workspace on a new branch + run setup + verify baseline) + finishing-a-development-branch (verify completion → choose merge/PR/keep/discard → clean up worktree); plus git-master (atomic commits / rebase / conflict resolution / history search), git-workflow-and-versioning (branch & versioning conventions) and gitlab-ci-patterns (multi-stage GitLab CI pipelines)",
               "sources": [
                 {
                   "name": "superpowers",
@@ -691,6 +1623,56 @@
                     "kind": "skill",
                     "alt": "/plugin marketplace add obra/superpowers"
                   }
+                },
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                },
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                },
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
                 }
               ],
               "use_case": "隔离workspace+验证baseline+完成清理",
@@ -700,17 +1682,18 @@
               ],
               "when_to_use": "并行多分支或试验分离",
               "when_to_use_en": "Parallel branches or experiment isolation",
-              "py": "Git  gong zuo liu  using-git-worktrees finishing-a-development-branch  ge li workspace+ yan zheng baseline+ wan cheng qing li"
+              "py": "Git  gong zuo liu  using-git-worktrees finishing-a-development-branch git-master git-workflow-and-versioning gitlab-ci-patterns  ge li workspace+ yan zheng baseline+ wan cheng qing li"
             },
             {
               "skills": [
-                "claude-code-safety-net"
+                "claude-code-safety-net",
+                "block-no-verify-hook"
               ],
               "group": "危险命令拦截",
               "group_en": "Dangerous command blocking",
               "chain": false,
-              "description": "kenryu42 claude-code-safety-net（plugin 不是 skill）：hook 进 PreToolUse 事件，在 Claude 跑 git push --force / reset --hard / rm -rf / clean -f 等危险命令前拦截等用户确认",
-              "description_en": "kenryu42 claude-code-safety-net (plugin, not skill): hook into PreToolUse event, block dangerous commands like git push --force / reset --hard / rm -rf / clean -f before Claude runs them, awaiting user confirmation",
+              "description": "kenryu42 claude-code-safety-net（plugin 不是 skill）：hook 进 PreToolUse 事件，在 Claude 跑 git push --force / reset --hard / rm -rf / clean -f 等危险命令前拦截等用户确认；另含 block-no-verify-hook：用 PreToolUse hook 拦截含 --no-verify 等绕过标志的 git 命令",
+              "description_en": "kenryu42 claude-code-safety-net (plugin, not skill): hook into PreToolUse event, block dangerous commands like git push --force / reset --hard / rm -rf / clean -f before Claude runs them, awaiting user confirmation; plus block-no-verify-hook: a PreToolUse hook intercepting git commands with bypass flags like --no-verify",
               "sources": [
                 {
                   "name": "kenryu42",
@@ -727,6 +1710,22 @@
                     "command": "/plugin marketplace add kenryu42/claude-code-safety-net",
                     "kind": "plugin"
                   }
+                },
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
                 }
               ],
               "use_case": "plugin拦截危险命令前确认防止误操作",
@@ -736,7 +1735,147 @@
               ],
               "when_to_use": "项目启用自动化保护",
               "when_to_use_en": "Projects with automation protection enabled",
-              "py": "wei xian ming ling lan jie  claude-code-safety-net plugin lan jie wei xian ming ling qian que ren fang zhi wu cao zuo"
+              "py": "wei xian ming ling lan jie  claude-code-safety-net block-no-verify-hook plugin lan jie wei xian ming ling qian que ren fang zhi wu cao zuo"
+            },
+            {
+              "skills": [
+                "get-unpublished-changes"
+              ],
+              "group": "版本管理 / Changelog",
+              "group_en": "Version management / Changelog",
+              "chain": false,
+              "description": "对比 HEAD 与最新 npm 发布版本，读取实际 diff 生成结构化 changelog，按 feat/fix/refactor 分组并推荐版本号。",
+              "description_en": "Diff HEAD against the latest npm-published version, read the actual diff to generate a structured changelog, group changes by feat/fix/refactor, and recommend a version number.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "ban ben guan li  / Changelog get-unpublished-changes "
+            },
+            {
+              "skills": [
+                "github-triage"
+              ],
+              "group": "GitHub Issue/PR 分析",
+              "group_en": "GitHub Issue/PR triage",
+              "chain": false,
+              "description": "只读模式批量分析所有 open issues 和 PRs，为每项启动并行子 agent，输出带 GitHub 链接证据的分类报告，不做任何修改操作。",
+              "description_en": "Read-only batch analysis of all open issues and PRs, spawning a parallel sub-agent for each item, producing a categorized report backed by GitHub-link evidence without making any changes.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "GitHub Issue/PR  fen xi  github-triage "
+            },
+            {
+              "skills": [
+                "work-with-pr"
+              ],
+              "group": "PR 全生命周期自动化",
+              "group_en": "Full PR lifecycle automation",
+              "chain": false,
+              "description": "自动化完整 PR 生命周期，从工作区设置、实现、创建 PR 到验证循环（CI、审查、批准），直到合并完成并清理。",
+              "description_en": "Automate the full PR lifecycle — from workspace setup, implementation and PR creation through the verification loop (CI, review, approval) until merge and cleanup.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "PR  quan sheng ming zhou qi zi dong hua  work-with-pr "
+            },
+            {
+              "skills": [
+                "ci-cd-and-automation"
+              ],
+              "group": "CI/CD 自动化",
+              "group_en": "CI/CD automation",
+              "chain": false,
+              "description": "帮助 AI agent 自动化 CI/CD 流水线配置，确保代码变更通过质量门（如测试、检查）后才能部署，提高开发流程的可靠性和效率。",
+              "description_en": "Automate CI/CD pipeline configuration so changes deploy only after passing quality gates (tests, checks), improving the reliability and efficiency of the dev workflow.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "CI/CD  zi dong hua  ci-cd-and-automation "
             }
           ]
         },
@@ -783,6 +1922,41 @@
               "when_to_use": "App就绪需选平台部署",
               "when_to_use_en": "App ready, select deployment platform",
               "py": "ping tai te hua bu shu （4  xuan  1  ping xing ti dai ） cloudflare-deploy netlify-deploy render-deploy vercel-deploy  si ping tai bu shu jue ce shu (Vercel/Netlify/Render/CF)"
+            },
+            {
+              "skills": [
+                "shipping-and-launch"
+              ],
+              "group": "生产部署与监控",
+              "group_en": "Production launch & monitoring",
+              "chain": false,
+              "description": "帮助 agent 准备生产部署，提供预发布检查清单、监控设置和回滚策略，确保安全、可观测的发布流程。",
+              "description_en": "Help an agent prepare a production deployment with a pre-launch checklist, monitoring setup and rollback strategy for a safe, observable release.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "sheng chan bu shu yu jian kong  shipping-and-launch "
             }
           ]
         },
@@ -974,6 +2148,92 @@
               "when_to_use": "需要浏览器自动化agent",
               "when_to_use_en": "Need browser automation agent",
               "py": "liu lan qi  agent CLI agent-browser Chrome DevTools Protocol liu lan qi zi dong hua CLI"
+            },
+            {
+              "skills": [
+                "api-and-interface-design",
+                "api-design-principles"
+              ],
+              "group": "API 与接口设计",
+              "group_en": "API & interface design",
+              "chain": false,
+              "description": "设计稳定、易用、可扩展的 API 与接口：确保模块间清晰通信、防止误用（api-and-interface-design），并遵循 REST/GraphQL 资源建模、HTTP 语义与 schema 设计的最佳实践与反模式（api-design-principles），适用于 REST、GraphQL 或模块边界。",
+              "description_en": "Design stable, ergonomic, scalable APIs and interfaces: ensure clear inter-module communication and prevent misuse (api-and-interface-design), following REST/GraphQL resource modeling, HTTP semantics and schema-design best practices and pitfalls (api-design-principles) — for REST, GraphQL or module boundaries.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                },
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "API  yu jie kou she ji  api-and-interface-design api-design-principles "
+            },
+            {
+              "skills": [
+                "fastapi-templates"
+              ],
+              "group": "FastAPI 项目脚手架",
+              "group_en": "FastAPI project scaffolding",
+              "chain": false,
+              "description": "搭建生产级 FastAPI 项目脚手架：推荐目录结构、async 模式、依赖注入、完善的错误处理与测试配置，用于新建 FastAPI 应用或后端 API 项目。",
+              "description_en": "Scaffold production-grade FastAPI projects: recommended directory structure, async patterns, dependency injection, comprehensive error handling and testing configuration — for new FastAPI applications or backend API projects.",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "FastAPI  xiang mu jiao shou jia  fastapi-templates "
             }
           ]
         },
@@ -1210,6 +2470,170 @@
               "when_to_use": "生产问题诊断",
               "when_to_use_en": "Production issue diagnosis",
               "py": "sheng chan jian kong  sentry  sheng chan Sentry issue zhi du cha kan +AI gen yin + xiu fu fang an"
+            },
+            {
+              "skills": [
+                "security-and-hardening",
+                "secrets-management"
+              ],
+              "group": "应用层安全（加固 + 密钥管理）",
+              "group_en": "Application security (hardening + secrets management)",
+              "chain": false,
+              "description": "应用层安全实践：输入校验、加密存储、安全响应头以防 XSS/SQL 注入等漏洞（security-and-hardening）；集成 Vault、AWS Secrets Manager 等安全管理 CI/CD 环境中的敏感信息（secrets-management）。",
+              "description_en": "Application-layer security practices: validate input, encrypt storage and set secure response headers to prevent XSS, SQL injection and similar flaws (security-and-hardening); integrate Vault, AWS Secrets Manager and the like to safely manage secrets in CI/CD environments (secrets-management).",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                },
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "ying yong ceng an quan （ jia gu  +  mi yao guan li ） security-and-hardening secrets-management "
+            }
+          ]
+        },
+        {
+          "title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "title_en": "1.9 Backend architecture / microservices / distributed systems",
+          "rows": [
+            {
+              "skills": [
+                "architecture-patterns",
+                "microservices-patterns"
+              ],
+              "group": "后端架构 / 微服务设计",
+              "group_en": "Backend architecture / microservices design",
+              "chain": false,
+              "description": "设计与实现可维护、可测试的后端系统：Clean Architecture、Hexagonal Architecture 与 DDD（architecture-patterns）；以及微服务架构的服务分解、同步/异步通信、分布式数据管理、韧性模式与服务发现（microservices-patterns）。",
+              "description_en": "Design and implement maintainable, testable backend systems: Clean Architecture, Hexagonal Architecture and DDD (architecture-patterns); plus microservice service decomposition, sync/async communication, distributed data management, resilience patterns and service discovery (microservices-patterns).",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "hou duan jia gou  /  wei fu wu she ji  architecture-patterns microservices-patterns "
+            },
+            {
+              "skills": [
+                "cqrs-implementation",
+                "event-store-design",
+                "projection-patterns",
+                "saga-orchestration"
+              ],
+              "group": "事件溯源 / CQRS / Saga",
+              "group_en": "Event sourcing / CQRS / Saga",
+              "chain": false,
+              "description": "事件驱动后端模式：CQRS 读写分离（cqrs-implementation）、event store 设计（流模式/快照/查询优化/扩展，event-store-design）、CQRS 读模型与投影优化查询（projection-patterns）、Saga 编排分布式事务与补偿操作确保最终一致性（saga-orchestration）。",
+              "description_en": "Event-driven backend patterns: CQRS read/write separation (cqrs-implementation), event-store design (stream patterns, snapshots, query optimization, scaling — event-store-design), CQRS read models and projections for query performance (projection-patterns), and Saga orchestration of distributed transactions with compensating actions for eventual consistency (saga-orchestration).",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "shi jian su yuan  / CQRS / Saga cqrs-implementation event-store-design projection-patterns saga-orchestration "
+            },
+            {
+              "skills": [
+                "workflow-orchestration-patterns"
+              ],
+              "group": "分布式工作流编排（Temporal）",
+              "group_en": "Distributed workflow orchestration (Temporal)",
+              "chain": false,
+              "description": "指导 AI agent 用 Temporal 设计分布式持久化工作流，涵盖 workflow/activity 分离、Saga 模式、状态管理与确定性约束。",
+              "description_en": "Guide an agent to design durable distributed workflows with Temporal — covering workflow/activity separation, the Saga pattern, state management and determinism constraints.",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "fen bu shi gong zuo liu bian pai （Temporal） workflow-orchestration-patterns "
             }
           ]
         }
@@ -1844,6 +3268,82 @@
               "when_to_use": "批量总结论文做文献综述",
               "when_to_use_en": "Bulk summarize papers for literature reviews.",
               "py": "lun wen zhai yao （FOCUS  fang fa ） skill-focus  yong FOCUS fang fa zhai yao xue shu lun wen ， bian yu hou xu jiao cha bi jiao he zong shu 。"
+            },
+            {
+              "skills": [
+                "understand-chat",
+                "understand-dashboard",
+                "understand-diff",
+                "understand-domain",
+                "understand-explain",
+                "understand-knowledge"
+              ],
+              "group": "项目知识图谱工具集",
+              "group_en": "Project knowledge-graph toolset",
+              "chain": false,
+              "description": "Understand-Anything 的代码知识图谱工具集：图谱问答（chat）、Web 仪表板可视化（dashboard）、git diff 影响与风险分析（diff）、业务域流图提取（domain）、文件/函数深度解释（explain）与 Karpathy 式 LLM 知识库实体/关系聚类（knowledge）。",
+              "description_en": "Understand-Anything's code knowledge-graph toolset: graph-grounded Q&A (chat), web-dashboard visualization (dashboard), git-diff impact & risk analysis (diff), business-domain flow extraction (domain), deep file/function explanation (explain), and Karpathy-style LLM knowledge-base entity/relation clustering (knowledge).",
+              "sources": [
+                {
+                  "name": "understand-anything",
+                  "url": "https://github.com/Lum1104/Understand-Anything",
+                  "stars": 49118,
+                  "last_commit": "2026-06-01",
+                  "type": "skill-pack",
+                  "author": "Lum1104",
+                  "repo": "Understand-Anything",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add Lum1104/Understand-Anything",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/Lum1104/Understand-Anything ~/.claude/skills/Understand-Anything"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "xiang mu zhi shi tu pu gong ju ji  understand-chat understand-dashboard understand-diff understand-domain understand-explain understand-knowledge "
+            },
+            {
+              "skills": [
+                "understand",
+                "understand-onboard"
+              ],
+              "group": "知识图谱驱动的入职流程",
+              "group_en": "Knowledge-graph-driven onboarding",
+              "chain": true,
+              "description": "基于代码库构建可交互知识图谱（understand），再据图谱生成新成员入职指南（understand-onboard），帮助快速理解项目结构、架构与关键组件 —— 两步强绑定的入职工作流。",
+              "description_en": "Build an interactive knowledge graph of the codebase (understand), then generate a new-hire onboarding guide from it (understand-onboard) — a two-step chained workflow for quickly grasping project structure, architecture and key components.",
+              "sources": [
+                {
+                  "name": "understand-anything",
+                  "url": "https://github.com/Lum1104/Understand-Anything",
+                  "stars": 49118,
+                  "last_commit": "2026-06-01",
+                  "type": "skill-pack",
+                  "author": "Lum1104",
+                  "repo": "Understand-Anything",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add Lum1104/Understand-Anything",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/Lum1104/Understand-Anything ~/.claude/skills/Understand-Anything"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "zhi shi tu pu qu dong de ru zhi liu cheng  understand understand-onboard "
             }
           ]
         },
@@ -2467,6 +3967,41 @@
               "when_to_use": "重大发布或决策前做压力测试",
               "when_to_use_en": "Stress-test major launches or decisions",
               "py": "Pre-mortem pre-mortem  qian zhi shi bai fen xi ， zai zhi xing qian fa xian yin cang feng xian"
+            },
+            {
+              "skills": [
+                "idea-refine"
+              ],
+              "group": "想法精炼 / MVP 定义",
+              "group_en": "Idea refinement / MVP definition",
+              "chain": false,
+              "description": "帮助 AI agent 通过结构化的发散和收敛思维，将模糊想法细化为可执行的概念，包括假设测试和 MVP 定义。",
+              "description_en": "Help an agent refine a vague idea into an executable concept through structured divergent and convergent thinking, including hypothesis testing and MVP definition.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "xiang fa jing lian  / MVP  ding yi  idea-refine "
             }
           ]
         },
@@ -5453,13 +6988,14 @@
           "rows": [
             {
               "skills": [
-                "frontend-design"
+                "frontend-design",
+                "frontend-ui-ux"
               ],
               "group": "前端美学",
               "group_en": "frontend aesthetics",
               "chain": false,
-              "description": "Anthropic frontend-design（让 Claude 跳出 AI slop，用极简 / 野兽 / 复古未来主义等明确美学方向写生产级 UI）",
-              "description_en": "Anthropic frontend-design (get Claude out of AI slop, write production-grade UI with an explicit aesthetic direction: minimalist / brutalist / retro-futurist, etc.)",
+              "description": "Anthropic frontend-design（让 Claude 跳出 AI slop，用极简 / 野兽 / 复古未来主义等明确美学方向写生产级 UI）；另含 frontend-ui-ux：设计师转开发者，无设计稿也能产出美观 UI/UX",
+              "description_en": "Anthropic frontend-design (get Claude out of AI slop, write production-grade UI with an explicit aesthetic direction: minimalist / brutalist / retro-futurist, etc.); plus frontend-ui-ux: a designer-turned-developer that produces beautiful UI/UX even without a mockup",
               "sources": [
                 {
                   "name": "Anthropic",
@@ -5477,6 +7013,23 @@
                     "kind": "skill",
                     "alt": "/plugin marketplace add anthropics/skills"
                   }
+                },
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
                 }
               ],
               "use_case": "避免 AI slop，用明确美学方向写生产级 UI 代码",
@@ -5487,7 +7040,7 @@
               ],
               "when_to_use": "生成前端 UI 时指定美学风格",
               "when_to_use_en": "Generating frontend UI with specific style requirements.",
-              "py": "qian duan mei xue  frontend-design  bi mian  AI slop， yong ming que mei xue fang xiang xie sheng chan ji  UI  dai ma"
+              "py": "qian duan mei xue  frontend-design frontend-ui-ux  bi mian  AI slop， yong ming que mei xue fang xiang xie sheng chan ji  UI  dai ma"
             },
             {
               "skills": [
@@ -5565,6 +7118,41 @@
               "when_to_use": "设计组件库或多平台适配时",
               "when_to_use_en": "Designing component libraries or multi-platform adaptation.",
               "py": "kua ping tai  UI/UX ui-ux-pro-max-skill  kua ping tai  UI/UX  zu jian ku 、 shi jue feng ge 、 she ji yuan ze zhi dao"
+            },
+            {
+              "skills": [
+                "frontend-ui-engineering"
+              ],
+              "group": "前端工程规范",
+              "group_en": "Frontend engineering standards",
+              "chain": false,
+              "description": "帮助 AI agent 构建生产质量、可访问、高性能且视觉精致的用户界面，遵循设计系统，避免 AI 生成的通用外观。",
+              "description_en": "Help an agent build production-quality, accessible, performant and visually polished UIs that follow a design system and avoid a generic AI-generated look.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "qian duan gong cheng gui fan  frontend-ui-engineering "
             }
           ]
         },
@@ -5609,6 +7197,40 @@
               "when_to_use": "需要快速 demo 或原型时",
               "when_to_use_en": "Needing quick demos or prototypes.",
               "py": "dan wen jian  React HTML artifact web-artifacts-builder  kuai su gou jian ke jiao hu  React + Tailwind  dan wen jian  artifact"
+            },
+            {
+              "skills": [
+                "brand-landingpage"
+              ],
+              "group": "品牌着陆页设计",
+              "group_en": "Brand landing-page design",
+              "chain": false,
+              "description": "通过品牌身份访谈引导用户确定视觉方向，再用 Stitch 生成并迭代打磨部署就绪的单页着陆页 HTML，适合尚无设计稿的产品营销页。",
+              "description_en": "Guide the user through a brand-identity interview to set a visual direction, then use Stitch to generate and iteratively polish a deploy-ready single-page landing-page HTML — ideal for product marketing pages with no existing design.",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "pin pai zhuo lu ye she ji  brand-landingpage "
             }
           ]
         },
@@ -6927,13 +8549,14 @@
             },
             {
               "skills": [
-                "metrics-dashboard"
+                "metrics-dashboard",
+                "kpi-dashboard-design"
               ],
               "group": "指标 dashboard 设计",
               "group_en": "Metrics dashboard design",
               "chain": false,
-              "description": "Pawel metrics-dashboard（产品指标 dashboard + 数据源 + 告警阈值）",
-              "description_en": "Pawel metrics-dashboard (product metrics dashboard + data sources + alert threshold)",
+              "description": "Pawel metrics-dashboard（产品指标 dashboard + 数据源 + 告警阈值）；另含 kpi-dashboard-design：指标选择、可视化最佳实践与实时监控模式",
+              "description_en": "Pawel metrics-dashboard (product metrics dashboard + data sources + alert threshold); plus kpi-dashboard-design: metric selection, visualization best practices and real-time monitoring patterns",
               "sources": [
                 {
                   "name": "Pawel",
@@ -6951,6 +8574,22 @@
                     "kind": "skill",
                     "alt": "/plugin marketplace add phuryn/pm-skills"
                   }
+                },
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
                 }
               ],
               "use_case": "设计指标 dashboard 与数据源",
@@ -6961,7 +8600,7 @@
               ],
               "when_to_use": "规划产品数据可视化指标",
               "when_to_use_en": "Planning product data visualization metrics.",
-              "py": "zhi biao  dashboard  she ji  metrics-dashboard  she ji zhi biao  dashboard  yu shu ju yuan"
+              "py": "zhi biao  dashboard  she ji  metrics-dashboard kpi-dashboard-design  she ji zhi biao  dashboard  yu shu ju yuan"
             },
             {
               "skills": [
@@ -7170,6 +8809,40 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "ke xue  /  chu ban ji shu ju ke shi hua  matplotlib scientific-visualization econ-visualization tikz figure-generation table-generation scientific-schematics "
+            },
+            {
+              "skills": [
+                "data-storytelling"
+              ],
+              "group": "数据叙事与可视化",
+              "group_en": "Data storytelling & visualization",
+              "chain": false,
+              "description": "帮助 agent 将数据转化为引人入胜的叙事，用于制作商业演示、数据报告和投资者呈现。",
+              "description_en": "Help an agent turn data into a compelling narrative — for business presentations, data reports and investor decks.",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "shu ju xu shi yu ke shi hua  data-storytelling "
             }
           ]
         },
@@ -9124,6 +10797,41 @@
               "when_to_use": "设计多 agent 系统或优化长链路任务前",
               "when_to_use_en": "Before designing multi-agent systems or optimizing long-chain tasks.",
               "py": "Context Engineering  di ji ke  context-fundamentals  li jie  LLM context  ji zhi he  agent  jia gou de ji chu yuan li yu you hua fang xiang"
+            },
+            {
+              "skills": [
+                "context-engineering"
+              ],
+              "group": "上下文工程优化",
+              "group_en": "Context-engineering optimization",
+              "chain": false,
+              "description": "优化 agent 上下文设置，确保在正确时间提供正确信息，以提高输出质量和减少幻觉。",
+              "description_en": "Optimize an agent's context so the right information is present at the right time, improving output quality and reducing hallucination.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "shang xia wen gong cheng you hua  context-engineering "
             }
           ]
         },
@@ -9170,6 +10878,41 @@
               "when_to_use": "发现模型忘记早期信息或回复质量下降时",
               "when_to_use_en": "When model forgets early context or response quality declines.",
               "py": "Context  sheng ming zhou qi  4  jian tao  context-degradation context-optimization context-compression filesystem-context  shi bie bing xiu fu zhang hui hua zhong de  context degradation  wen ti ， ya suo / you hua  token  xiao lv"
+            },
+            {
+              "skills": [
+                "init-deep"
+              ],
+              "group": "Agent 知识库初始化（AGENTS.md）",
+              "group_en": "Agent knowledge-base init (AGENTS.md)",
+              "chain": false,
+              "description": "初始化层次化的 AGENTS.md 知识库，为 agent 建立结构化上下文基础，便于后续复杂任务编排和执行。",
+              "description_en": "Initialize a hierarchical AGENTS.md knowledge base to establish a structured context foundation for the agent, easing later orchestration of complex tasks.",
+              "sources": [
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Agent  zhi shi ku chu shi hua （AGENTS.md） init-deep "
             }
           ]
         },
@@ -9407,6 +11150,76 @@
               "when_to_use": "上线自主 agent 前规范其行为边界",
               "when_to_use_en": "Standardize autonomous agent behavior before production.",
               "py": "zi zhu  loop  kong zhi ping mian  harness-engineering  kong zhi zi zhu  agent  xun huan de bian ji quan xian 、 hui gun 、 ri zhi deng an quan bian jie"
+            },
+            {
+              "skills": [
+                "parallel-feature-development",
+                "task-coordination-strategies"
+              ],
+              "group": "多代理并行开发协调",
+              "group_en": "Multi-agent parallel development coordination",
+              "chain": true,
+              "description": "多代理并行开发的协调工作流：用文件所有权策略避免冲突、让多代理同时实现不同层或组件（parallel-feature-development）；并把复杂任务拆成可并行单元、设计依赖图、监控与平衡负载（task-coordination-strategies）。",
+              "description_en": "A coordination workflow for multi-agent parallel development: use file-ownership strategies to avoid conflicts so agents implement different layers/components simultaneously (parallel-feature-development), and decompose complex tasks into parallel units with dependency graphs, monitoring and load balancing (task-coordination-strategies).",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "duo dai li bing xing kai fa xie tiao  parallel-feature-development task-coordination-strategies "
+            },
+            {
+              "skills": [
+                "team-composition-patterns",
+                "team-communication-protocols"
+              ],
+              "group": "多 agent 团队组成与通信协议",
+              "group_en": "Multi-agent team composition & communication protocols",
+              "chain": false,
+              "description": "为 agent 团队设计最优组成（大小启发式、预设配置、agent 类型选择、显示模式）以适配任务复杂度（team-composition-patterns），并提供结构化通信协议（消息类型、计划批准、关闭流程、防反模式）优化协调（team-communication-protocols）。",
+              "description_en": "Design optimal agent-team composition (size heuristics, presets, agent-type selection, display modes) to match task complexity (team-composition-patterns), and provide structured communication protocols (message types, plan approval, shutdown flow, anti-pattern guards) to optimize coordination (team-communication-protocols).",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "duo  agent  tuan dui zu cheng yu tong xin xie yi  team-composition-patterns team-communication-protocols "
             }
           ]
         },
@@ -9788,6 +11601,41 @@
               "when_to_use": "从Claude Code切换到Codex平台",
               "when_to_use_en": "Switching from Claude Code to Codex",
               "py": "kua  agent  qian yi  migrate-to-codex  qian yi Claude Code de gong zuo liu dao Codex agent"
+            },
+            {
+              "skills": [
+                "using-agent-skills"
+              ],
+              "group": "Skill 自动发现与调用",
+              "group_en": "Skill auto-discovery & invocation",
+              "chain": false,
+              "description": "帮助 AI agent 在会话开始时发现并调用合适的技能，根据开发阶段自动匹配。",
+              "description_en": "Help an agent discover and invoke the right skills at the start of a session, matching them automatically to the current development stage.",
+              "sources": [
+                {
+                  "name": "addyosmani",
+                  "url": "https://github.com/addyosmani/agent-skills",
+                  "stars": 47663,
+                  "last_commit": "2026-05-28",
+                  "type": "skill-pack",
+                  "author": "addyosmani",
+                  "repo": "agent-skills",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add addyosmani/agent-skills",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Skill  zi dong fa xian yu diao yong  using-agent-skills "
             }
           ]
         },
@@ -11679,6 +13527,41 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "Kubernetes / GitOps / CI-CD flux-operations flux-gitops-patterns k8s-platform-operations k8s-security-hardening cert-manager-troubleshooting k8s-network-troubleshooting k8s-troubleshooter gitops-workflows ci-cd kubernetes-specialist devops-engineer "
+            },
+            {
+              "skills": [
+                "deployment-pipeline-design",
+                "github-actions-templates"
+              ],
+              "group": "CI/CD 管道 / GitHub Actions 模板",
+              "group_en": "CI/CD pipelines / GitHub Actions templates",
+              "chain": false,
+              "description": "设计与实现多阶段 CI/CD 管道：审批门、安全检查与零停机部署策略（deployment-pipeline-design），并提供生产就绪的 GitHub Actions 工作流模板用于自动化测试、构建与部署（github-actions-templates）。",
+              "description_en": "Design and implement multi-stage CI/CD pipelines with approval gates, security checks and zero-downtime deployment strategies (deployment-pipeline-design), plus production-ready GitHub Actions workflow templates to automate testing, building and deployment (github-actions-templates).",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "CI/CD  guan dao  / GitHub Actions  mu ban  deployment-pipeline-design github-actions-templates "
             }
           ]
         },
@@ -12060,13 +13943,14 @@
                 "osint-methodology",
                 "offensive-osint",
                 "osint-recon",
-                "hackerone"
+                "hackerone",
+                "security-research"
               ],
               "group": "漏洞挖掘 / Bug Bounty / OSINT",
               "group_en": "Bug hunting / bug bounty / OSINT",
               "chain": false,
-              "description": "漏洞赏金方法论与侦察(subfinder/httpx/nuclei)、OSINT 攻击面测绘、triage 验证与披露报告(HackerOne/Bugcrowd)。",
-              "description_en": "Bug-bounty methodology & recon (subfinder/httpx/nuclei), OSINT attack-surface mapping, triage validation and disclosure reporting (HackerOne/Bugcrowd).",
+              "description": "漏洞赏金方法论与侦察(subfinder/httpx/nuclei)、OSINT 攻击面测绘、triage 验证与披露报告(HackerOne/Bugcrowd)；另含 security-research：编排多 agent 并行安全审计、验证可利用性（预发布安全检查 / 威胁模型验证）",
+              "description_en": "Bug-bounty methodology & recon (subfinder/httpx/nuclei), OSINT attack-surface mapping, triage validation and disclosure reporting (HackerOne/Bugcrowd); plus security-research: orchestrate multiple agents for parallel security audits and exploitability verification (pre-release security checks / threat-model validation)",
               "sources": [
                 {
                   "name": "elementalsouls-bughunter",
@@ -12152,6 +14036,23 @@
                     "kind": "multi-skill-suite",
                     "alt": "/plugin marketplace add transilienceai/communitytools"
                   }
+                },
+                {
+                  "name": "oh-my-openagent",
+                  "url": "https://github.com/code-yeongyu/oh-my-openagent",
+                  "stars": 60624,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "code-yeongyu",
+                  "repo": "oh-my-openagent",
+                  "default_branch": "dev",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "npx skills add code-yeongyu/oh-my-openagent",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+                  }
                 }
               ],
               "use_case": "",
@@ -12159,7 +14060,7 @@
               "personas": [],
               "when_to_use": "",
               "when_to_use_en": "",
-              "py": "lou dong wa jue  / Bug Bounty / OSINT bug-bounty bb-methodology bugcrowd-reporting cloud-iam-deep web2-recon web2-vuln-classes triage-validation report-writing osint-methodology offensive-osint osint-recon hackerone "
+              "py": "lou dong wa jue  / Bug Bounty / OSINT bug-bounty bb-methodology bugcrowd-reporting cloud-iam-deep web2-recon web2-vuln-classes triage-validation report-writing osint-methodology offensive-osint osint-recon hackerone security-research "
             }
           ]
         },
@@ -12615,13 +14516,14 @@
                 "semantic-guard-analysis",
                 "state-invariant-detection",
                 "proxy-upgrade-safety",
-                "security-audit"
+                "security-audit",
+                "solidity-security"
               ],
               "group": "智能合约审计 / 漏洞检测",
               "group_en": "Smart contract audit / vulnerability detection",
               "chain": false,
-              "description": "Solidity/EVM 合约系统化审计:重入/签名重放/状态校验/精度/代理升级/状态不变量,370 项清单与行为意图建模。",
-              "description_en": "Systematic Solidity/EVM contract audits: reentrancy/signature-replay/state-validation/precision/proxy-upgrade/state-invariants, 370-item checklists and behavioral-intent modeling.",
+              "description": "Solidity/EVM 合约系统化审计:重入/签名重放/状态校验/精度/代理升级/状态不变量,370 项清单与行为意图建模；另含 solidity-security：智能合约安全最佳实践与漏洞防护，用于编写 / 审计 Solidity",
+              "description_en": "Systematic Solidity/EVM contract audits: reentrancy/signature-replay/state-validation/precision/proxy-upgrade/state-invariants, 370-item checklists and behavioral-intent modeling; plus solidity-security: smart-contract security best practices and vulnerability prevention for writing / auditing Solidity",
               "sources": [
                 {
                   "name": "auditmos",
@@ -12687,6 +14589,22 @@
                     "command": "/plugin marketplace add trailofbits/skills",
                     "kind": "marketplace"
                   }
+                },
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
                 }
               ],
               "use_case": "",
@@ -12694,7 +14612,7 @@
               "personas": [],
               "when_to_use": "",
               "when_to_use_en": "",
-              "py": "zhi neng he yue shen ji  /  lou dong jian ce  audit-reentrancy audit-signature audit-state-validation audit-math-precision behavioral-state-analysis semantic-guard-analysis state-invariant-detection proxy-upgrade-safety security-audit "
+              "py": "zhi neng he yue shen ji  /  lou dong jian ce  audit-reentrancy audit-signature audit-state-validation audit-math-precision behavioral-state-analysis semantic-guard-analysis state-invariant-detection proxy-upgrade-safety security-audit solidity-security "
             }
           ]
         },
@@ -12839,6 +14757,74 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "he yue kai fa  /  gong ju lian  contract-deployer Account Abstraction Paymaster solana-toolkit "
+            },
+            {
+              "skills": [
+                "defi-protocol-templates"
+              ],
+              "group": "DeFi 合约开发 / 工具链",
+              "group_en": "DeFi contract development / tooling",
+              "chain": false,
+              "description": "提供 DeFi 协议的生产级 Solidity 模板，涵盖质押、AMM、治理、借贷和闪电贷，供 agent 直接生成完整合约代码。",
+              "description_en": "Provide production-grade Solidity templates for DeFi protocols — staking, AMM, governance, lending and flash loans — for an agent to generate complete contract code directly.",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "DeFi  he yue kai fa  /  gong ju lian  defi-protocol-templates "
+            },
+            {
+              "skills": [
+                "web3-testing"
+              ],
+              "group": "Web3 智能合约测试",
+              "group_en": "Web3 smart-contract testing",
+              "chain": false,
+              "description": "为 Solidity 智能合约提供 Hardhat/Foundry 全面测试指导，覆盖单元测试、集成测试、Gas 优化、模糊测试和主网 fork，用于合约开发与 DeFi 协议验证。",
+              "description_en": "Provide comprehensive Hardhat/Foundry testing guidance for Solidity contracts — unit, integration, gas optimization, fuzzing and mainnet-fork tests — for contract development and DeFi protocol validation.",
+              "sources": [
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Web3  zhi neng he yue ce shi  web3-testing "
             }
           ]
         },
@@ -12958,13 +14944,14 @@
                 "web3-identity-auth",
                 "dex-execution",
                 "copy-trading",
-                "solana-tx-building"
+                "solana-tx-building",
+                "nft-standards"
               ],
               "group": "Web3 应用 / NFT / DAO / 交易",
               "group_en": "Web3 apps / NFT / DAO / trading",
               "chain": false,
-              "description": "NFT 铸造/元数据/行情、DAO 提案与治理工具、跨链桥、Web3 身份认证,以及 DEX 执行/跟单/Solana 交易构建。",
-              "description_en": "NFT minting/metadata/analytics, DAO proposal & governance tooling, cross-chain bridges, Web3 identity auth, plus DEX execution/copy-trading/Solana tx building.",
+              "description": "NFT 铸造/元数据/行情、DAO 提案与治理工具、跨链桥、Web3 身份认证,以及 DEX 执行/跟单/Solana 交易构建；另含 nft-standards：实现 ERC-721 / ERC-1155、元数据 / 铸造 / 市场集成",
+              "description_en": "NFT minting/metadata/analytics, DAO proposal & governance tooling, cross-chain bridges, Web3 identity auth, plus DEX execution/copy-trading/Solana tx building; plus nft-standards: implement ERC-721 / ERC-1155 with metadata, minting and marketplace integration",
               "sources": [
                 {
                   "name": "XSpoonAi",
@@ -12999,6 +14986,22 @@
                     "kind": "multi-skill-suite",
                     "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
                   }
+                },
+                {
+                  "name": "wshobson",
+                  "url": "https://github.com/wshobson/agents",
+                  "stars": 36250,
+                  "last_commit": "2026-06-01",
+                  "type": "marketplace",
+                  "author": "wshobson",
+                  "repo": "agents",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": "README.md",
+                  "install": {
+                    "command": "/plugin marketplace add wshobson/agents",
+                    "kind": "marketplace"
+                  }
                 }
               ],
               "use_case": "",
@@ -13006,7 +15009,7 @@
               "personas": [],
               "when_to_use": "",
               "when_to_use_en": "",
-              "py": "Web3  ying yong  / NFT / DAO /  jiao yi  nft-minter-basic nft-metadata-pinner nft-market-analysis dao-proposal-starter web3-dao-tooling cross-chain-bridge web3-identity-auth dex-execution copy-trading solana-tx-building "
+              "py": "Web3  ying yong  / NFT / DAO /  jiao yi  nft-minter-basic nft-metadata-pinner nft-market-analysis dao-proposal-starter web3-dao-tooling cross-chain-bridge web3-identity-auth dex-execution copy-trading solana-tx-building nft-standards "
             }
           ]
         }
@@ -15566,6 +17569,171 @@
         "alt": "/plugin marketplace add tjboudreaux/cc-skills-vc-fundraising"
       },
       "skill_docs": null,
+      "skill_licenses": null
+    },
+    "oh-my-openagent": {
+      "url": "https://github.com/code-yeongyu/oh-my-openagent",
+      "description": "omo —— 面向复杂代码库的 agent harness（「镐子」），复杂软件工程的一体化 skill 套件。",
+      "description_en": "omo — the agent harness (\"pickaxe\") for complex codebases; an all-in-one skill suite for complex software engineering.",
+      "stars": 60624,
+      "last_commit": "2026-06-02",
+      "type": "multi-skill-suite",
+      "author": "code-yeongyu",
+      "repo": "oh-my-openagent",
+      "default_branch": "dev",
+      "license": null,
+      "doc_path": "README.md",
+      "install": {
+        "command": "npx skills add code-yeongyu/oh-my-openagent",
+        "kind": "multi-skill-suite",
+        "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
+      },
+      "skill_docs": {
+        "get-unpublished-changes": ".agents/skills/get-unpublished-changes/SKILL.md",
+        "github-triage": ".agents/skills/github-triage/SKILL.md",
+        "hyperplan": ".agents/skills/hyperplan/SKILL.md",
+        "pre-publish-review": ".agents/skills/pre-publish-review/SKILL.md",
+        "git-master": "src/features/builtin-skills/git-master/SKILL.md",
+        "remove-deadcode": ".agents/skills/remove-deadcode/SKILL.md",
+        "security-research": ".agents/skills/security-research/SKILL.md",
+        "work-with-pr": ".agents/skills/work-with-pr/SKILL.md",
+        "comment-checker": "packages/omo-codex/plugin/components/comment-checker/skills/comment-checker/SKILL.md",
+        "lsp": "packages/omo-codex/plugin/components/lsp/skills/lsp/SKILL.md",
+        "ulw-loop": "packages/omo-codex/plugin/components/ulw-loop/skills/ulw-loop/SKILL.md",
+        "debugging": "packages/omo-codex/plugin/skills/debugging/SKILL.md",
+        "frontend-ui-ux": "packages/omo-codex/plugin/skills/frontend-ui-ux/SKILL.md",
+        "init-deep": "packages/omo-codex/plugin/skills/init-deep/SKILL.md",
+        "programming": "packages/omo-codex/plugin/skills/programming/SKILL.md",
+        "refactor": "packages/omo-codex/plugin/skills/refactor/SKILL.md",
+        "remove-ai-slops": "packages/omo-codex/plugin/skills/remove-ai-slops/SKILL.md",
+        "review-work": "packages/omo-codex/plugin/skills/review-work/SKILL.md",
+        "start-work": "packages/omo-codex/plugin/skills/start-work/SKILL.md",
+        "ulw-plan": "packages/omo-codex/plugin/skills/ulw-plan/SKILL.md",
+        "agent-browser": "src/features/builtin-skills/agent-browser/SKILL.md"
+      },
+      "skill_licenses": null
+    },
+    "understand-anything": {
+      "url": "https://github.com/Lum1104/Understand-Anything",
+      "description": "把任意代码变成可探索、可搜索、可问答的交互式知识图谱；支持 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等。",
+      "description_en": "Turn any code into an interactive knowledge graph you can explore, search and ask questions about; works with Claude Code, Codex, Cursor, Copilot, Gemini CLI and more.",
+      "stars": 49118,
+      "last_commit": "2026-06-01",
+      "type": "skill-pack",
+      "author": "Lum1104",
+      "repo": "Understand-Anything",
+      "default_branch": "main",
+      "license": null,
+      "doc_path": "README.md",
+      "install": {
+        "command": "npx skills add Lum1104/Understand-Anything",
+        "kind": "skill-pack",
+        "alt": "git clone https://github.com/Lum1104/Understand-Anything ~/.claude/skills/Understand-Anything"
+      },
+      "skill_docs": {
+        "understand-chat": "understand-anything-plugin/skills/understand-chat/SKILL.md",
+        "understand-dashboard": "understand-anything-plugin/skills/understand-dashboard/SKILL.md",
+        "understand-diff": "understand-anything-plugin/skills/understand-diff/SKILL.md",
+        "understand-domain": "understand-anything-plugin/skills/understand-domain/SKILL.md",
+        "understand-explain": "understand-anything-plugin/skills/understand-explain/SKILL.md",
+        "understand-knowledge": "understand-anything-plugin/skills/understand-knowledge/SKILL.md",
+        "understand": "understand-anything-plugin/skills/understand/SKILL.md",
+        "understand-onboard": "understand-anything-plugin/skills/understand-onboard/SKILL.md"
+      },
+      "skill_licenses": null
+    },
+    "addyosmani": {
+      "url": "https://github.com/addyosmani/agent-skills",
+      "description": "面向 AI 编码 agent 的生产级工程 skill 集。",
+      "description_en": "Production-grade engineering skills for AI coding agents.",
+      "stars": 47663,
+      "last_commit": "2026-05-28",
+      "type": "skill-pack",
+      "author": "addyosmani",
+      "repo": "agent-skills",
+      "default_branch": "main",
+      "license": null,
+      "doc_path": "README.md",
+      "install": {
+        "command": "npx skills add addyosmani/agent-skills",
+        "kind": "skill-pack",
+        "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
+      },
+      "skill_docs": {
+        "git-workflow-and-versioning": "skills/git-workflow-and-versioning/SKILL.md",
+        "debugging-and-error-recovery": "skills/debugging-and-error-recovery/SKILL.md",
+        "code-review-and-quality": "skills/code-review-and-quality/SKILL.md",
+        "browser-testing-with-devtools": "skills/browser-testing-with-devtools/SKILL.md",
+        "api-and-interface-design": "skills/api-and-interface-design/SKILL.md",
+        "ci-cd-and-automation": "skills/ci-cd-and-automation/SKILL.md",
+        "code-simplification": "skills/code-simplification/SKILL.md",
+        "context-engineering": "skills/context-engineering/SKILL.md",
+        "deprecation-and-migration": "skills/deprecation-and-migration/SKILL.md",
+        "doubt-driven-development": "skills/doubt-driven-development/SKILL.md",
+        "frontend-ui-engineering": "skills/frontend-ui-engineering/SKILL.md",
+        "idea-refine": "skills/idea-refine/SKILL.md",
+        "incremental-implementation": "skills/incremental-implementation/SKILL.md",
+        "interview-me": "skills/interview-me/SKILL.md",
+        "performance-optimization": "skills/performance-optimization/SKILL.md",
+        "spec-driven-development": "skills/spec-driven-development/SKILL.md",
+        "planning-and-task-breakdown": "skills/planning-and-task-breakdown/SKILL.md",
+        "security-and-hardening": "skills/security-and-hardening/SKILL.md",
+        "shipping-and-launch": "skills/shipping-and-launch/SKILL.md",
+        "source-driven-development": "skills/source-driven-development/SKILL.md",
+        "test-driven-development": "skills/test-driven-development/SKILL.md",
+        "using-agent-skills": "skills/using-agent-skills/SKILL.md",
+        "documentation-and-adrs": "skills/documentation-and-adrs/SKILL.md"
+      },
+      "skill_licenses": null
+    },
+    "wshobson": {
+      "url": "https://github.com/wshobson/agents",
+      "description": "面向 Claude Code、Codex CLI、Cursor、OpenCode、Gemini CLI 的多 harness agentic 插件市场。",
+      "description_en": "Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode and Gemini CLI.",
+      "stars": 36250,
+      "last_commit": "2026-06-01",
+      "type": "marketplace",
+      "author": "wshobson",
+      "repo": "agents",
+      "default_branch": "main",
+      "license": null,
+      "doc_path": "README.md",
+      "install": {
+        "command": "/plugin marketplace add wshobson/agents",
+        "kind": "marketplace"
+      },
+      "skill_docs": {
+        "gitlab-ci-patterns": "plugins/cicd-automation/skills/gitlab-ci-patterns/SKILL.md",
+        "parallel-debugging": "plugins/agent-teams/skills/parallel-debugging/SKILL.md",
+        "api-design-principles": "plugins/backend-development/skills/api-design-principles/SKILL.md",
+        "secrets-management": "plugins/cicd-automation/skills/secrets-management/SKILL.md",
+        "screen-reader-testing": "plugins/accessibility-compliance/skills/screen-reader-testing/SKILL.md",
+        "wcag-audit-patterns": "plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md",
+        "multi-reviewer-patterns": "plugins/agent-teams/skills/multi-reviewer-patterns/SKILL.md",
+        "parallel-feature-development": "plugins/agent-teams/skills/parallel-feature-development/SKILL.md",
+        "task-coordination-strategies": "plugins/agent-teams/skills/task-coordination-strategies/SKILL.md",
+        "team-composition-patterns": "plugins/agent-teams/skills/team-composition-patterns/SKILL.md",
+        "team-communication-protocols": "plugins/agent-teams/skills/team-communication-protocols/SKILL.md",
+        "fastapi-templates": "plugins/api-scaffolding/skills/fastapi-templates/SKILL.md",
+        "architecture-patterns": "plugins/backend-development/skills/architecture-patterns/SKILL.md",
+        "microservices-patterns": "plugins/backend-development/skills/microservices-patterns/SKILL.md",
+        "cqrs-implementation": "plugins/backend-development/skills/cqrs-implementation/SKILL.md",
+        "event-store-design": "plugins/backend-development/skills/event-store-design/SKILL.md",
+        "projection-patterns": "plugins/backend-development/skills/projection-patterns/SKILL.md",
+        "saga-orchestration": "plugins/backend-development/skills/saga-orchestration/SKILL.md",
+        "temporal-python-testing": "plugins/backend-development/skills/temporal-python-testing/SKILL.md",
+        "workflow-orchestration-patterns": "plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md",
+        "block-no-verify-hook": "plugins/block-no-verify/skills/block-no-verify-hook/SKILL.md",
+        "defi-protocol-templates": "plugins/blockchain-web3/skills/defi-protocol-templates/SKILL.md",
+        "nft-standards": "plugins/blockchain-web3/skills/nft-standards/SKILL.md",
+        "solidity-security": "plugins/blockchain-web3/skills/solidity-security/SKILL.md",
+        "web3-testing": "plugins/blockchain-web3/skills/web3-testing/SKILL.md",
+        "brand-landingpage": "plugins/brand-landingpage/skills/brand-landingpage/SKILL.md",
+        "data-storytelling": "plugins/business-analytics/skills/data-storytelling/SKILL.md",
+        "kpi-dashboard-design": "plugins/business-analytics/skills/kpi-dashboard-design/SKILL.md",
+        "deployment-pipeline-design": "plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md",
+        "github-actions-templates": "plugins/cicd-automation/skills/github-actions-templates/SKILL.md"
+      },
       "skill_licenses": null
     }
   }

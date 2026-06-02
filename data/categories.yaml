@@ -29,6 +29,9 @@
   - id: 1-8
     title: 1.8 安全审计 / 威胁建模
     title_en: 1.8 Security audit / threat modeling
+  - id: 1-9
+    title: 1.9 后端架构 / 微服务 / 分布式系统
+    title_en: 1.9 Backend architecture / microservices / distributed systems
 - id: docs-knowledge
   title: 二、文档与知识管理
   title_en: 2. Documentation & Knowledge Management

@@ -1876,3 +1876,138 @@
   license: MIT
   description_en: AI-powered pitch analysis, fundraising strategy, and investor relations for startup founders -- a Claude Code plugin grounded in first principles from Sequoia, a16z, Benchmark, and YC
   plugin_marketplace: true
+- id: oh-my-openagent
+  author: code-yeongyu
+  repo: oh-my-openagent
+  url: https://github.com/code-yeongyu/oh-my-openagent
+  type: multi-skill-suite
+  skill_group_count: 20
+  stars: 60624
+  last_commit: '2026-06-02'
+  default_branch: dev
+  description: omo —— 面向复杂代码库的 agent harness（「镐子」），复杂软件工程的一体化 skill 套件。
+  description_en: omo — the agent harness ("pickaxe") for complex codebases; an all-in-one skill suite for complex software engineering.
+  doc_path: README.md
+  skill_docs:
+    get-unpublished-changes: .agents/skills/get-unpublished-changes/SKILL.md
+    github-triage: .agents/skills/github-triage/SKILL.md
+    hyperplan: .agents/skills/hyperplan/SKILL.md
+    pre-publish-review: .agents/skills/pre-publish-review/SKILL.md
+    git-master: src/features/builtin-skills/git-master/SKILL.md
+    remove-deadcode: .agents/skills/remove-deadcode/SKILL.md
+    security-research: .agents/skills/security-research/SKILL.md
+    work-with-pr: .agents/skills/work-with-pr/SKILL.md
+    comment-checker: packages/omo-codex/plugin/components/comment-checker/skills/comment-checker/SKILL.md
+    lsp: packages/omo-codex/plugin/components/lsp/skills/lsp/SKILL.md
+    ulw-loop: packages/omo-codex/plugin/components/ulw-loop/skills/ulw-loop/SKILL.md
+    debugging: packages/omo-codex/plugin/skills/debugging/SKILL.md
+    frontend-ui-ux: packages/omo-codex/plugin/skills/frontend-ui-ux/SKILL.md
+    init-deep: packages/omo-codex/plugin/skills/init-deep/SKILL.md
+    programming: packages/omo-codex/plugin/skills/programming/SKILL.md
+    refactor: packages/omo-codex/plugin/skills/refactor/SKILL.md
+    remove-ai-slops: packages/omo-codex/plugin/skills/remove-ai-slops/SKILL.md
+    review-work: packages/omo-codex/plugin/skills/review-work/SKILL.md
+    start-work: packages/omo-codex/plugin/skills/start-work/SKILL.md
+    ulw-plan: packages/omo-codex/plugin/skills/ulw-plan/SKILL.md
+    agent-browser: src/features/builtin-skills/agent-browser/SKILL.md
+- id: understand-anything
+  author: Lum1104
+  repo: Understand-Anything
+  url: https://github.com/Lum1104/Understand-Anything
+  type: skill-pack
+  skill_group_count: 2
+  stars: 49118
+  last_commit: '2026-06-01'
+  default_branch: main
+  description: 把任意代码变成可探索、可搜索、可问答的交互式知识图谱；支持 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等。
+  description_en: Turn any code into an interactive knowledge graph you can explore, search and ask questions about; works with Claude Code, Codex, Cursor, Copilot, Gemini CLI and more.
+  doc_path: README.md
+  skill_docs:
+    understand-chat: understand-anything-plugin/skills/understand-chat/SKILL.md
+    understand-dashboard: understand-anything-plugin/skills/understand-dashboard/SKILL.md
+    understand-diff: understand-anything-plugin/skills/understand-diff/SKILL.md
+    understand-domain: understand-anything-plugin/skills/understand-domain/SKILL.md
+    understand-explain: understand-anything-plugin/skills/understand-explain/SKILL.md
+    understand-knowledge: understand-anything-plugin/skills/understand-knowledge/SKILL.md
+    understand: understand-anything-plugin/skills/understand/SKILL.md
+    understand-onboard: understand-anything-plugin/skills/understand-onboard/SKILL.md
+- id: addyosmani
+  author: addyosmani
+  repo: agent-skills
+  url: https://github.com/addyosmani/agent-skills
+  type: skill-pack
+  skill_group_count: 22
+  stars: 47663
+  last_commit: '2026-05-28'
+  default_branch: main
+  description: 面向 AI 编码 agent 的生产级工程 skill 集。
+  description_en: Production-grade engineering skills for AI coding agents.
+  doc_path: README.md
+  skill_docs:
+    git-workflow-and-versioning: skills/git-workflow-and-versioning/SKILL.md
+    debugging-and-error-recovery: skills/debugging-and-error-recovery/SKILL.md
+    code-review-and-quality: skills/code-review-and-quality/SKILL.md
+    browser-testing-with-devtools: skills/browser-testing-with-devtools/SKILL.md
+    api-and-interface-design: skills/api-and-interface-design/SKILL.md
+    ci-cd-and-automation: skills/ci-cd-and-automation/SKILL.md
+    code-simplification: skills/code-simplification/SKILL.md
+    context-engineering: skills/context-engineering/SKILL.md
+    deprecation-and-migration: skills/deprecation-and-migration/SKILL.md
+    doubt-driven-development: skills/doubt-driven-development/SKILL.md
+    frontend-ui-engineering: skills/frontend-ui-engineering/SKILL.md
+    idea-refine: skills/idea-refine/SKILL.md
+    incremental-implementation: skills/incremental-implementation/SKILL.md
+    interview-me: skills/interview-me/SKILL.md
+    performance-optimization: skills/performance-optimization/SKILL.md
+    spec-driven-development: skills/spec-driven-development/SKILL.md
+    planning-and-task-breakdown: skills/planning-and-task-breakdown/SKILL.md
+    security-and-hardening: skills/security-and-hardening/SKILL.md
+    shipping-and-launch: skills/shipping-and-launch/SKILL.md
+    source-driven-development: skills/source-driven-development/SKILL.md
+    test-driven-development: skills/test-driven-development/SKILL.md
+    using-agent-skills: skills/using-agent-skills/SKILL.md
+    documentation-and-adrs: skills/documentation-and-adrs/SKILL.md
+- id: wshobson
+  author: wshobson
+  repo: agents
+  url: https://github.com/wshobson/agents
+  type: marketplace
+  skill_group_count: 22
+  stars: 36250
+  last_commit: '2026-06-01'
+  default_branch: main
+  description: 面向 Claude Code、Codex CLI、Cursor、OpenCode、Gemini CLI 的多 harness agentic 插件市场。
+  description_en: Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode and Gemini CLI.
+  doc_path: README.md
+  skill_docs:
+    gitlab-ci-patterns: plugins/cicd-automation/skills/gitlab-ci-patterns/SKILL.md
+    parallel-debugging: plugins/agent-teams/skills/parallel-debugging/SKILL.md
+    api-design-principles: plugins/backend-development/skills/api-design-principles/SKILL.md
+    secrets-management: plugins/cicd-automation/skills/secrets-management/SKILL.md
+    screen-reader-testing: plugins/accessibility-compliance/skills/screen-reader-testing/SKILL.md
+    wcag-audit-patterns: plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md
+    multi-reviewer-patterns: plugins/agent-teams/skills/multi-reviewer-patterns/SKILL.md
+    parallel-feature-development: plugins/agent-teams/skills/parallel-feature-development/SKILL.md
+    task-coordination-strategies: plugins/agent-teams/skills/task-coordination-strategies/SKILL.md
+    team-composition-patterns: plugins/agent-teams/skills/team-composition-patterns/SKILL.md
+    team-communication-protocols: plugins/agent-teams/skills/team-communication-protocols/SKILL.md
+    fastapi-templates: plugins/api-scaffolding/skills/fastapi-templates/SKILL.md
+    architecture-patterns: plugins/backend-development/skills/architecture-patterns/SKILL.md
+    microservices-patterns: plugins/backend-development/skills/microservices-patterns/SKILL.md
+    cqrs-implementation: plugins/backend-development/skills/cqrs-implementation/SKILL.md
+    event-store-design: plugins/backend-development/skills/event-store-design/SKILL.md
+    projection-patterns: plugins/backend-development/skills/projection-patterns/SKILL.md
+    saga-orchestration: plugins/backend-development/skills/saga-orchestration/SKILL.md
+    temporal-python-testing: plugins/backend-development/skills/temporal-python-testing/SKILL.md
+    workflow-orchestration-patterns: plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md
+    block-no-verify-hook: plugins/block-no-verify/skills/block-no-verify-hook/SKILL.md
+    defi-protocol-templates: plugins/blockchain-web3/skills/defi-protocol-templates/SKILL.md
+    nft-standards: plugins/blockchain-web3/skills/nft-standards/SKILL.md
+    solidity-security: plugins/blockchain-web3/skills/solidity-security/SKILL.md
+    web3-testing: plugins/blockchain-web3/skills/web3-testing/SKILL.md
+    brand-landingpage: plugins/brand-landingpage/skills/brand-landingpage/SKILL.md
+    data-storytelling: plugins/business-analytics/skills/data-storytelling/SKILL.md
+    kpi-dashboard-design: plugins/business-analytics/skills/kpi-dashboard-design/SKILL.md
+    deployment-pipeline-design: plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md
+    github-actions-templates: plugins/cicd-automation/skills/github-actions-templates/SKILL.md
+  plugin_marketplace: true
