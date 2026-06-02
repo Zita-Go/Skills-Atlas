@@ -1,4 +1,4 @@
-[English](CONTRIBUTING.md) · **中文**
+[English](CONTRIBUTING.md) | **中文**
 
 # 贡献指南
 
@@ -12,13 +12,13 @@
 
 ## 加一个新 skill
 
-### Step 1: 找到正确的 category 和 subcategory
+### Step 1：找到正确的 category 和 subcategory
 
 打开 `data/categories.yaml` 看 20 大类 / 116 子分组，找到最贴近的归属。
 
 如果觉得没有合适的子分组，**优先**先在现有 category 下加新 subcategory，少新增大类。
 
-### Step 2: 在 `data/skills.yaml` 加一条
+### Step 2：在 `data/skills.yaml` 加一条
 
 ```yaml
 - id: <category>--<subcategory>--<3-digit-counter>
@@ -36,7 +36,7 @@
 `id` 用 `python3 scripts/parse_md.py` 重新生成 md 时会自动按顺序排号；
 但你直接改 yaml 时也可以用任意有意义的字符串（保证全局唯一即可）。
 
-### Step 3: 如果 source 是新仓库，加到 `data/repositories.yaml`
+### Step 3：如果 source 是新仓库，加到 `data/repositories.yaml`
 
 ```yaml
 - id: <vendor-id>           # skills.yaml 里 sources 用的就是这个 id
@@ -66,14 +66,14 @@
 | `video-engine` | 视频引擎（如 OpenMontage） |
 | `sdd-framework` | Spec-Driven Development 框架 |
 
-### Step 4: 校验 + 重新生成 HTML
+### Step 4：校验 + 重新生成 HTML
 
 ```bash
 python3 scripts/validate.py     # 必须显示 "All checks passed"
 python3 scripts/gen_html.py     # 重新生成 docs/index.html + docs/data.json
 ```
 
-### Step 5: 提 PR
+### Step 5：提 PR
 
 PR 标题格式：`feat: add <skill-name> from <vendor>`
 PR 描述简单写一下来源 + 为什么归到这个分类即可。

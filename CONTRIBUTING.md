@@ -1,4 +1,4 @@
-**English** · [中文](CONTRIBUTING.zh-CN.md)
+**English** | [中文](CONTRIBUTING.zh-CN.md)
 
 # Contributing Guide
 
