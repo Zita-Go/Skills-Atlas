@@ -4228,20 +4228,20 @@
   description_en: 'Scaffold production-grade FastAPI projects: recommended directory structure, async patterns, dependency injection, comprehensive error handling and testing configuration — for new FastAPI applications or backend API projects.'
   sources:
   - wshobson
-- id: software-engineering--1-6--292
+- id: software-engineering--1-9--292
   skills:
   - architecture-patterns
   - microservices-patterns
   group: 后端架构 / 微服务设计
   group_en: Backend architecture / microservices design
   category: software-engineering
-  subcategory: 1-6
+  subcategory: 1-9
   chain: false
   description: 设计与实现可维护、可测试的后端系统：Clean Architecture、Hexagonal Architecture 与 DDD（architecture-patterns）；以及微服务架构的服务分解、同步/异步通信、分布式数据管理、韧性模式与服务发现（microservices-patterns）。
   description_en: 'Design and implement maintainable, testable backend systems: Clean Architecture, Hexagonal Architecture and DDD (architecture-patterns); plus microservice service decomposition, sync/async communication, distributed data management, resilience patterns and service discovery (microservices-patterns).'
   sources:
   - wshobson
-- id: software-engineering--1-6--293
+- id: software-engineering--1-9--293
   skills:
   - cqrs-implementation
   - event-store-design
@@ -4250,7 +4250,7 @@
   group: 事件溯源 / CQRS / Saga
   group_en: Event sourcing / CQRS / Saga
   category: software-engineering
-  subcategory: 1-6
+  subcategory: 1-9
   chain: false
   description: 事件驱动后端模式：CQRS 读写分离（cqrs-implementation）、event store 设计（流模式/快照/查询优化/扩展，event-store-design）、CQRS 读模型与投影优化查询（projection-patterns）、Saga 编排分布式事务与补偿操作确保最终一致性（saga-orchestration）。
   description_en: 'Event-driven backend patterns: CQRS read/write separation (cqrs-implementation), event-store design (stream patterns, snapshots, query optimization, scaling — event-store-design), CQRS read models and projections for query performance (projection-patterns), and Saga orchestration of distributed transactions with compensating actions for eventual consistency (saga-orchestration).'
@@ -4268,13 +4268,13 @@
   description_en: Guide an agent to unit-, integration- and replay-test Temporal workflows with pytest — covering time-skipping, mocking strategies and CI/CD integration.
   sources:
   - wshobson
-- id: software-engineering--1-6--295
+- id: software-engineering--1-9--295
   skills:
   - workflow-orchestration-patterns
   group: 分布式工作流编排（Temporal）
   group_en: Distributed workflow orchestration (Temporal)
   category: software-engineering
-  subcategory: 1-6
+  subcategory: 1-9
   chain: false
   description: 指导 AI agent 用 Temporal 设计分布式持久化工作流，涵盖 workflow/activity 分离、Saga 模式、状态管理与确定性约束。
   description_en: Guide an agent to design durable distributed workflows with Temporal — covering workflow/activity separation, the Saga pattern, state management and determinism constraints.
