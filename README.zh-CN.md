@@ -82,7 +82,9 @@ npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/bra
 - **项目套件。** `kit` 识别你的项目(前端 / 后端 / 数据 / 基础设施)装一整套对口 skill;`sync` 从可提交的 `skills-atlas.kit.json` 复现。
 - **私有源。** `registry add <你的 data.json>` 把组织内部 skill 合并进搜索 / 安装(同名私有优先)。
 - **Claude Code 里。** 附带[插件](packages/skills-atlas-cli/plugin)(`/skills-atlas:skill-search` / `:skill-install`)。
-- **任意 MCP 客户端。** `skills-atlas mcp` 起一个零依赖 MCP server(search / info / install / categories),给 Claude Desktop 等 agent 用。
+- **任意 MCP 客户端。** `skills-atlas mcp` 起一个 MCP server(search / info / install / categories),给 Claude Desktop 等 agent 用。
+
+**skill 装到哪儿:** 你自己敲 `install` / `use` → **全局**(`~/.claude/skills/`,处处可用);autopilot、插件、`kit` 装的 → **这个项目**(`./.claude/skills/`,可提交给队友)。随时用 `--global` / `--project` 覆盖。
 
 → [CLI 完整文档](packages/skills-atlas-cli)
 

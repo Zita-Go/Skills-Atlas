@@ -88,7 +88,9 @@ npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/bra
 - **Project kits.** `kit` detects your project (frontend / backend / data / infra) and installs a tailored set; `sync` reproduces it from a committable `skills-atlas.kit.json`.
 - **Private sources.** `registry add <your data.json>` merges your org's internal skills into search / install (private wins a name clash).
 - **In Claude Code.** A bundled [plugin](packages/skills-atlas-cli/plugin) (`/skills-atlas:skill-search` / `:skill-install`).
-- **Any MCP client.** `skills-atlas mcp` runs a zero-dep MCP server (search / info / install / categories) for Claude Desktop and other agents.
+- **Any MCP client.** `skills-atlas mcp` runs an MCP server (search / info / install / categories) for Claude Desktop and other agents.
+
+**Where skills land:** running `install` / `use` yourself installs **globally** (`~/.claude/skills/`, every project); skills from autopilot, the plugin, or `kit` go into **this project** (`./.claude/skills/`, committable). Override with `--global` / `--project`.
 
 → [full CLI docs](packages/skills-atlas-cli)
 
