@@ -100,9 +100,16 @@ If the procedure is real but one key convention is unclear from the evidence and
 === STEP 3 — WRITE THE SKILL.md ===
 Write exactly ONE file: ./.claude/skills/<name>/SKILL.md (create the folder). Touch nothing else; do not run git; do not install or enable anything. You are the author — do not depend on any external skill-creator. Follow Anthropic's skill conventions exactly.
 
-Frontmatter (YAML between --- fences, only these two keys):
+LANGUAGE: write the SKILL.md in ENGLISH — it is agent-facing technical instruction and must read consistently with the catalog and the user's other installed skills, regardless of what language the conversation is in. Preserve the user's exact tokens and the corrections you quote VERBATIM — never translate a command, path, flag, format name, or a quoted correction. (Only your explanation to the user in STEP 4 is in the user's own language.)
+
+Frontmatter (YAML between --- fences — name and description are required; allowed-tools is optional and security-sensitive):
 - name: lowercase-with-hyphens, <=64 chars, in GERUND / action form naming the procedure (e.g. running-release-checks, preparing-pr-descriptions). It MUST match the <name> folder.
 - description: third person, one or two sentences stating WHAT the skill does AND WHEN to use it, with concrete trigger terms drawn from the user's ACTUAL nouns in the evidence (their service/file/tool/format names), not the bare category word — so it auto-loads at the right moment. (e.g. "Runs the project's pre-release checklist. Use when cutting a release, tagging a version, or before publishing.")
+- allowed-tools (OPTIONAL — pre-approves listed commands to run WITHOUT a confirmation prompt while the skill is active). This is a real trust escalation, so it is tightly bounded — when in doubt, OMIT it (most crafted skills should have none):
+  - Include ONLY the specific, NON-destructive commands the procedure actually runs, each scoped narrowly to that exact command — e.g. \`allowed-tools: Bash(./scripts/preflight.sh:*)\`.
+  - NEVER a wildcard or broad scope: no \`Bash(*)\`, no bare \`Bash(git:*)\` (that would silently pre-approve git push --force / reset --hard).
+  - NEVER pre-approve a destructive or outbound command — git push, deploy, kubectl apply, terraform apply, rm, database migrations, anything with --force — these MUST keep prompting; leave them out entirely.
+  - If unsure whether a command is safe, leave allowed-tools off. Prompting is the safe default.
 
 Body (Markdown — encode ONLY the user-specific delta):
 - Open with one line on when this applies.
@@ -120,7 +127,7 @@ HARD CONSTRAINTS — the firewall against correct-but-useless output:
 - Do not invent conventions the user has not shown. If unsure whether a step is theirs or generic, leave it out or mark it clearly for them to confirm.
 
 === STEP 4 — SHOW YOUR WORK ===
-Print the path you wrote and the full SKILL.md contents. Tell the user this is a DRAFT distilled from their own usage: review and edit it, it loads automatically next session, and deleting the folder discards it. In one line, state the specific user-delta you encoded (and where it came from) so they can sanity-check you captured the right thing. Do not commit it or take any further action unless they ask. Reply in the user's language.`;
+Print the path you wrote and the full SKILL.md contents. Tell the user this is a DRAFT distilled from their own usage: review and edit it, it loads automatically next session, and deleting the folder discards it. In one line, state the specific user-delta you encoded (and where it came from) so they can sanity-check you captured the right thing. If you added an allowed-tools line, call it out EXPLICITLY — list exactly which commands you pre-approved to run without prompting, and confirm you left out every destructive/outbound one — so the user consciously accepts it. Do not commit it or take any further action unless they ask. Reply in the user's language.`;
 
 const fill = (tpl, map) =>
   Object.keys(map).reduce((s, k) => s.split('{{' + k + '}}').join(map[k]), tpl);
