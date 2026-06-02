@@ -73,7 +73,7 @@ skills-atlas sync                              # reproduce a project's kit (skil
 # 🤖 Autopilot, gaps & cleanup   (opt-in)
 skills-atlas hook on                           # Claude proactively offers a fitting skill as you work
 skills-atlas hook lang en|zh                   # language the autopilot replies in (default English)
-skills-atlas hook model                        # pick the model for background gap analysis (default Haiku)
+skills-atlas hook model                        # which model powers gaps/cleanup (default Haiku)
 skills-atlas gaps                              # Claude spots kinds of work you keep doing without a skill
 skills-atlas prune                             # Claude flags installed skills you no longer use
 
@@ -89,44 +89,31 @@ skills-atlas mcp                               # run as an MCP server (any MCP c
 
 **⛓ Workflows, not just skills.** Many skills belong to a curated chain (e.g.
 `brainstorming → writing-plans → executing-plans → …`). `install <skill> --chain`
-installs the whole pipeline in one archive download, ready to run in order.
+installs the whole pipeline in one step, ready to run in order.
 
 **📦 Project kits.** `skills-atlas kit` detects what this project is (frontend / backend /
 data / infra) and installs a tailored set (a universal dev workflow plus archetype
 add-ons) into `./.claude/skills/`, then writes a committable `skills-atlas.kit.json`.
 A teammate runs `skills-atlas sync` to reproduce it exactly.
 
-Output is English by default; add `--zh` for Chinese, or `--json` to any command for machine-readable output.
+Output is English by default; add `--zh` for Chinese.
 After installing a skill, start a new Claude Code session to load it.
 
-## How install works
+## Why a catalog
 
-The real value is the **catalog**: `search` / `info` / `categories` work fully
-offline and map *which* skill fits. It's function-organized, bilingual, tagged with
-use-case / when-to-use / personas / ⛓ chains. That's what `npx skills add` and
-GitHub search don't give you.
+`search` / `info` / `categories` work fully offline and tell you *which* skill fits —
+organized by function, bilingual, tagged with use-case, when-to-use, personas and ⛓
+chains. `install` then drops just that skill's folder into `.claude/skills/` (not the
+whole repo); when several repos offer the same skill, the best one is picked for you.
 
-On top of that, `install` can place a skill straight into `.claude/skills/`:
+The catalog ships with the tool and works offline, and refreshes itself in the
+background so new skills show up on their own. Run `skills-atlas update` to pull the
+latest on demand.
 
-- For a repo that exposes a **per-skill folder**, it downloads only that folder
-  (via the repo archive, with **no GitHub API rate limit**) into
-  `<target>/.claude/skills/<skill>/`, not the whole repo.
-- Several sources? The best installable one is auto-picked. Pass `--source <id>` to
-  choose, `--yes` for non-interactive runs.
-- Other sources (whole-repo / marketplace) print their official command instead
-  (e.g. `npx skills add owner/repo`).
-- `GITHUB_TOKEN` is only needed if you fall back to the API and hit its 60/h limit.
+## Your org's private skills
 
-## Keeping the catalog fresh
-
-The catalog ships inside the package and works offline. `skills-atlas update` pulls
-the latest from the public feed (cached under `~/.cache/skills-atlas/`).
-
-## Private / org catalog sources
-
-Point the CLI at your organization's own catalog (a `data.json` in the same
-schema) so internal skills show up in `search` / `info` / `install` / `kit`
-alongside the public Atlas:
+Point the CLI at your organization's own catalog so internal skills show up in
+`search` / `info` / `install` / `kit` alongside the public Atlas:
 
 ```bash
 skills-atlas registry add https://skills.acme.internal/data.json   # or a local path
@@ -134,10 +121,7 @@ skills-atlas registry list
 skills-atlas registry remove https://skills.acme.internal/data.json
 ```
 
-Private skills **merge** with the public catalog (a private source wins a same-name
-clash). Sources are cached locally and merged offline. For a private URL behind
-auth, set `SKILLS_ATLAS_TOKEN` (sent as a Bearer header); in CI,
-`SKILLS_ATLAS_SOURCES=url1,url2` adds sources without touching config.
+Private skills merge with the public catalog (your own wins a name clash) and are cached locally.
 
 ## In Claude Code
 
@@ -152,9 +136,9 @@ Just describe what you need, or use `/skills-atlas:skill-search`, `:skill-info`,
 
 ## In any MCP client
 
-`skills-atlas mcp` runs a zero-dependency [MCP](https://modelcontextprotocol.io)
-server over stdio, so any MCP-capable client (Claude Desktop, other agents) can use
-the catalog. Add it to your client's config:
+`skills-atlas mcp` runs an [MCP](https://modelcontextprotocol.io) server so any
+MCP-capable client (Claude Desktop, other agents) can use the catalog. Add it to your
+client's config:
 
 ```json
 { "mcpServers": { "skills-atlas": { "command": "npx", "args": ["-y", "skills-atlas-cli", "mcp"] } } }
@@ -167,52 +151,35 @@ anywhere.
 ## Autopilot (opt-in): the right skill finds you
 
 ```bash
-skills-atlas hook on      # enable    (skills-atlas hook off / status)
+skills-atlas hook on      # turn it on   (hook off / hook status)
 ```
 
-Registers a Claude Code `UserPromptSubmit` hook. When what you ask lines up with the
-territory of a catalog skill you don't have, the hook hands Claude a short shortlist
-and **Claude decides** whether any genuinely fits — if so it explains **what it does
-and why it fits your task** and offers a choice: use it now, see what it covers first
-(`skills-atlas info`), or skip. The split is deliberate: the hook does **recall** (a
-distinctive-word match against skill names *and* their curated function text, English
-or Chinese), Claude does **precision** (it stays silent unless one truly fits). It's:
+With autopilot on, whenever what you're doing lines up with a catalog skill you don't
+have, Claude offers it — explained, with one tap to use it now, see what it covers, or
+skip. You don't have to know the skill exists. It's **off by default**, **quiet** (stays
+silent on greetings and generic asks, never repeats itself, never suggests a skill you
+already have), and **safe** (never auto-installs; a hiccup never blocks your prompt).
 
-- **Off by default.** Turn it on explicitly; `hook off` removes it cleanly.
-- **Quiet.** Fires only on a distinctive match — greetings and generic actions
-  ("implement the function", "fix the typo") stay silent — never for an installed
-  skill, never the same one twice, with a cooldown. Claude is the final filter.
-- **Local for the per-prompt match.** Your prompt is matched against the on-machine
-  catalog; the per-prompt suggestion sends nothing anywhere.
-- **Safe.** Never auto-installs, and fails open (a hook error never blocks your prompt).
+Two more proactive helpers:
 
-**🔭 Capability gaps & 🧹 cleanup.** Two slower, proactive layers read your *recent
-activity* (from Claude Code's own local transcripts) and let a model judge:
+- **🔭 Capability gaps** — `skills-atlas gaps` notices the recurring kinds of work you
+  keep doing without a skill, and recommends one.
+- **🧹 Cleanup** — `skills-atlas prune` flags installed skills you no longer use and
+  offers to remove them (never on its own; recent installs are left alone).
 
-- `skills-atlas gaps` — spots recurring kinds of work no installed skill covers yet
-  and recommends one. To keep this off the main agent's back, a **background
-  sub-agent** does the judging: a small model (default `claude-haiku-4-5`) gets your
-  recent prompts plus a candidate shortlist and returns a one-line suggestion that the
-  hook surfaces next turn. The model call uses `claude -p`, which **reuses your Claude
-  Code login** (no API key) — so your recent prompts go to that model (the same
-  provider Claude Code already uses); if `claude` isn't available it falls back to a
-  fully-local digest. Pick the model with `skills-atlas hook model`.
-- `skills-atlas prune` — flags installed skills that no longer fit your recent work and
-  offers to remove them (never auto-removes; skills installed in the last 2 weeks are
-  left alone).
-
-Each layer is an independent toggle, and you can set the reply language:
+Tune it to taste:
 
 ```bash
-skills-atlas hook suggest on|off    # per-prompt suggestions
-skills-atlas hook gaps on|off       # gap recommendations          (on by default)
-skills-atlas hook prune on|off      # removal suggestions          (off by default)
-skills-atlas hook model [name]      # model for the background gap/prune analysis (default Haiku)
-skills-atlas hook lang en|zh        # language the autopilot replies in           (default English)
+skills-atlas hook suggest on|off    # the per-prompt suggestions
+skills-atlas hook gaps on|off       # gap recommendations            (on by default)
+skills-atlas hook prune on|off      # cleanup suggestions            (off by default)
+skills-atlas hook model [name]      # which model powers gaps/cleanup   (default Haiku)
+skills-atlas hook lang en|zh        # the language it replies in        (default English)
 ```
 
-The catalog also auto-refreshes in the background (~daily) so new skills appear on
-their own; set `SKILLS_ATLAS_NO_REFRESH=1` to keep it fully offline.
+The per-prompt suggestions are matched on your own machine and sent nowhere. The gaps
+and cleanup helpers hand your recent activity to the model you picked (the same provider
+Claude Code already uses) to judge it.
 
 ## License
 
