@@ -1,4 +1,4 @@
-**English** · [中文](README.zh-CN.md)
+**English** | [中文](README.zh-CN.md)
 
 <div align="center">
 
@@ -12,7 +12,7 @@ Stop asking "what skills exist" and start asking "which skill should I use to do
 [![Categories](https://img.shields.io/badge/categories-20_×_116-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[**🧩 Claude Code plugin**](packages/skills-atlas-cli/plugin) · [**⌨️ CLI**](packages/skills-atlas-cli) · [🌐 Visit online](https://zita-go.github.io/Skills-Atlas/?lang=en) · [📦 Data download](data/) · [🤝 Contribute a new skill](CONTRIBUTING.md) · [💬 Discussions](../../discussions)
+[**🧩 Claude Code plugin**](packages/skills-atlas-cli/plugin) | [**⌨️ CLI**](packages/skills-atlas-cli) | [🌐 Visit online](https://zita-go.github.io/Skills-Atlas/?lang=en) | [📦 Data download](data/) | [🤝 Contribute a new skill](CONTRIBUTING.md) | [💬 Discussions](../../discussions)
 
 <a href="https://zita-go.github.io/Skills-Atlas/?lang=en"><img src="docs/screenshot-dark.png" alt="Skills Atlas — browse the catalog online" width="760"></a>
 
@@ -47,7 +47,7 @@ skills-atlas search "stress test my launch plan"   # pre-mortem tops the results
 skills-atlas use pre-mortem                          # install it, Claude applies it now
 ```
 
-Full docs: [**🧩 Claude Code plugin**](packages/skills-atlas-cli/plugin) · [**⌨️ `skills-atlas-cli`**](packages/skills-atlas-cli).
+Full docs: the [**🧩 Claude Code plugin**](packages/skills-atlas-cli/plugin) (recommended), or the standalone [**⌨️ `skills-atlas-cli`**](packages/skills-atlas-cli).
 
 ## Why this project exists
 
@@ -98,7 +98,8 @@ describe what you need, or reach for a command:
 | `/skills-atlas:skill-install <skill>` | Install + activate it in this project |
 | `/skills-atlas:skill-kit` | Detect the project type and set up a curated kit |
 | `/skills-atlas:skill-craft` | Turn a workflow you keep repeating into a new skill |
-| `/skills-atlas:skill-gaps` · `:skill-prune` | Recommend skills for your work · flag unused ones |
+| `/skills-atlas:skill-gaps` | Recommend skills for the work you keep doing |
+| `/skills-atlas:skill-prune` | Flag installed skills you no longer use |
 | `/skills-atlas:skill-autopilot [on\|off]` | Toggle / tune the autopilot |
 
 → [**full plugin docs**](packages/skills-atlas-cli/plugin)
