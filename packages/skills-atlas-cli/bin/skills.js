@@ -18,6 +18,7 @@ const gaps = require('../src/commands/gaps');
 const gapAnalyze = require('../src/commands/gap-analyze');
 const craft = require('../src/commands/craft');
 const prune = require('../src/commands/prune');
+const setup = require('../src/commands/setup');
 const feedback = require('../src/commands/feedback');
 const update = require('../src/commands/update');
 const mcp = require('../src/commands/mcp');
@@ -26,7 +27,7 @@ const { categories, list } = require('../src/commands/categories');
 const VERSION = require('../package.json').version;
 // `use` = install + activate inline (emit the SKILL.md so an agent follows it now).
 const use = argv => install([...argv, '--inline']);
-const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, gaps, 'gap-analyze': gapAnalyze, craft, prune, feedback, update, categories, list, registry, mcp };
+const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, gaps, 'gap-analyze': gapAnalyze, craft, prune, feedback, setup, update, categories, list, registry, mcp };
 
 const HELP = `skills-atlas — search, install & manage AI agent skills
 
@@ -46,6 +47,9 @@ manage what you've installed:
   doctor             health check: orphans, drift, missing SKILL.md, license/script risks
   kit                set up the right skills for THIS project (detect + install)
   sync               reproduce a project's kit from skills-atlas.kit.json
+
+getting started:
+  setup              what you've got + how to use it (run after installing the plugin)
 
 autopilot (opt-in):
   hook on|off|status proactively suggest a skill in Claude when your prompt fits one
@@ -80,7 +84,7 @@ async function main() {
   }
   // Opportunistic, non-blocking background catalog refresh so new skills appear over
   // time without a manual `update`. Skipped for `update` itself; fully fail-silent.
-  if (sub !== 'update' && sub !== 'gap-analyze' && !process.env.SKILLS_ATLAS_SUBCALL) {
+  if (sub !== 'update' && sub !== 'gap-analyze' && sub !== 'setup' && !process.env.SKILLS_ATLAS_SUBCALL) {
     try { require('../src/data').maybeBackgroundRefresh(); } catch { /* ignore */ }
   }
   await cmd(rest);

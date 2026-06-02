@@ -24,6 +24,8 @@ const ALL = {
   verbose: { type: 'boolean' },
   show: { type: 'boolean' },
   once: { type: 'boolean' },
+  'session-start': { type: 'boolean' },
+  reset: { type: 'boolean' },
   archetype: { type: 'string' },
   update: { type: 'boolean' },
   name: { type: 'string' },

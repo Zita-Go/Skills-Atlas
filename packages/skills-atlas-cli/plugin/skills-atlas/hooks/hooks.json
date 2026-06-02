@@ -2,6 +2,9 @@
   "hooks": {
     "UserPromptSubmit": [
       { "type": "command", "command": "skills-atlas suggest", "timeout": 5 }
+    ],
+    "SessionStart": [
+      { "type": "command", "command": "skills-atlas setup --session-start", "timeout": 5 }
     ]
   }
 }

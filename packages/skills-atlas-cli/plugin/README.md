@@ -28,35 +28,37 @@ your machine.
 | `/skills-atlas:skill-prune` | Suggest installed skills you no longer use |
 | `/skills-atlas:skill-doctor` | Health-check your installed skills |
 | `/skills-atlas:skill-autopilot [on\|off]` | Turn the autopilot on/off, check status, or tune its sub-toggles |
+| `/skills-atlas:setup` | See what you've got + how to use it — **run this first after installing** |
 
 The always-available `skill-finder` skill lets Claude reach for these on its own whenever
 you ask to find, install, manage, or create a skill.
 
-## Prerequisite
+## Install
 
-The plugin's commands and hook call the CLI — install it:
+The plugin's commands and autopilot call the `skills-atlas` CLI, so install it **first**:
 
 ```bash
-npm i -g skills-atlas-cli
+npm i -g skills-atlas-cli        # step 1 — the engine (needs Node 18+)
 ```
 
-## Install the plugin
-
-From GitHub (recommended):
+Then add the plugin, inside Claude Code:
 
 ```text
-/plugin marketplace add Zita-Go/Skills-Atlas
-/plugin install skills-atlas@skills-atlas
+/plugin marketplace add Zita-Go/Skills-Atlas     # step 2
+/plugin install skills-atlas@skills-atlas         # step 3
 ```
 
-Or from a local checkout of this repo:
+Run `/reload-plugins` (or start a new session), then **`/skills-atlas:setup`** — it
+confirms the engine is wired and shows what you can do. The autopilot is on by default,
+and the first session also greets you automatically.
+
+<details><summary>Install from a local checkout instead</summary>
 
 ```text
 /plugin marketplace add <path-to>/skills-atlas/packages/skills-atlas-cli/plugin
 /plugin install skills-atlas@skills-atlas
 ```
-
-Run `/reload-plugins` (or start a new session) so the hook, commands, and skill load.
+</details>
 
 ## Manual alternative (no marketplace)
 
