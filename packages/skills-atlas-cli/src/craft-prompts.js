@@ -112,8 +112,8 @@ Frontmatter (YAML between --- fences — name and description are required; allo
   - If unsure whether a command is safe, leave allowed-tools off. Prompting is the safe default.
 
 Body (Markdown — encode ONLY the user-specific delta):
-- Open with one line on when this applies.
-- Then the CORE: the user's ACTUAL procedure as a clear ORDERED workflow or checklist — their real steps, in their order, with their exact commands / paths / file names / flags / formats inlined verbatim from the evidence. Where the user kept correcting or re-instructing something, make that an explicit, prominent step — those corrections are the whole point.
+- Open with WHEN THIS APPLIES: a line or two on the situation that triggers this procedure, and — ONLY if the evidence shows it — when it does NOT apply (exceptions, variants it doesn't cover). Do not invent boundaries the evidence doesn't show.
+- Then the CORE: the user's ACTUAL procedure as a clear ORDERED workflow or checklist — their real steps, in their order, with their exact commands / paths / file names / flags / formats inlined verbatim from the evidence. Where the user kept correcting or re-instructing something, make that an explicit, prominent step — those corrections are the whole point. For each rule, give its RATIONALE (the WHY) ONLY when the evidence states it or a project file you read confirms it — that is what lets the reader generalize; when you do not actually know why, state it as the user's standing requirement (e.g. "the user requires X — reason not stated") rather than guessing.
 - If the user has a fixed output format or checklist, reproduce it as a template/code block exactly as they use it.
 - Briefly note WHICH repeated requests (or which grounding file) each convention came from, so the user can confirm you did not invent it.
 - End with a one-line provenance note, e.g.: "_Locally crafted by Skills Atlas, distilled from your own repeated workflow — review and edit freely; delete the folder to remove it._"
@@ -125,6 +125,7 @@ HARD CONSTRAINTS — the firewall against correct-but-useless output:
 - Challenge every token. Assume the reader is already a capable agent who knows generic best practice; write only what is specific to THIS user and THIS procedure. Keep SKILL.md tight and well under ~500 lines; most crafted skills are far shorter.
 - Use progressive disclosure: push long reference material into a sibling file (one level deep) only if genuinely needed; most crafted skills are a single SKILL.md.
 - Do not invent conventions the user has not shown. If unsure whether a step is theirs or generic, leave it out or mark it clearly for them to confirm.
+- Never fabricate a RATIONALE. A plausible-sounding "because the project wraps X / for safety / to keep things consistent" that the evidence and the files do not actually support is exactly the kind of invention this forbids — it reads as fact but is a guess. State the why only when it is real; otherwise present the rule plainly as the user's requirement, reason unconfirmed.
 
 === STEP 4 — SHOW YOUR WORK ===
 Print the path you wrote and the full SKILL.md contents. Tell the user this is a DRAFT distilled from their own usage: review and edit it, it loads automatically next session, and deleting the folder discards it. In one line, state the specific user-delta you encoded (and where it came from) so they can sanity-check you captured the right thing. If you added an allowed-tools line, call it out EXPLICITLY — list exactly which commands you pre-approved to run without prompting, and confirm you left out every destructive/outbound one — so the user consciously accepts it. Do not commit it or take any further action unless they ask. Reply in the user's language.`;
