@@ -1,0 +1,2081 @@
+{
+  "generated_at": "2026-06-02T05:50:20+00:00",
+  "date": "2026-06-02",
+  "proposed_count": 4,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 33,
+      "looks_tutorial": 1,
+      "looks_aggregator": 3,
+      "no_skill_files": 1,
+      "not_a_collection": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "shanraisshan/claude-code-best-practice",
+        "reason": "仓库名像教程/演示/模板"
+      },
+      {
+        "full_name": "VoltAgent/awesome-openclaw-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "1c7/chinese-independent-developer",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "CherryHQ/cherry-studio",
+        "reason": "非正经集合：该仓库主要是Cherry Studio项目的内部开发工具和模板脚手架（如PR测试、创建新skill），而非通用的AI agent skill集合。"
+      },
+      {
+        "full_name": "hesreallyhim/awesome-claude-code",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "sickn33/antigravity-awesome-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "get-unpublished-changes"
+      ],
+      "group": "版本管理 / Changelog",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "对比 HEAD 与最新 npm 发布版本，读取实际 diff 生成结构化 changelog，按 feat/fix/refactor 分组并推荐版本号",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "github-triage"
+      ],
+      "group": "GitHub Issue/PR 分析",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "只读模式批量分析所有 open issues 和 PRs，为每项启动并行子 agent，输出带 GitHub 链接证据的分类报告，不做任何修改操作",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "hyperplan"
+      ],
+      "group": "对抗性多 agent 规划",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮 agent 通过 5 个对抗性成员进行严格辩论，蒸馏可辩护见解，生成严谨的可执行计划。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "omomomo"
+      ],
+      "group": "彩蛋 / 元信息",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮 agent 以彩蛋形式展示 Oh My OpenAgent 的功能和集成信息。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "opencode-qa"
+      ],
+      "group": "Agent 平台 QA 工具链",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "为 opencode 编码 agent 平台提供全方位 QA 测试工具链，包括 CLI/终端验证、插件 hook 与事件流（SSE）检测、tmux 下 TUI 冒烟测试、以及 SQLite 会话数据库的按 ID/标题/消息内容查询与检查。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "pre-publish-review"
+      ],
+      "group": "多 Agent 发布审查门禁",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "npm 发布前三层审查门禁：自动检测未发布变更、最多 10 个 ultrabrain agent 逐变更深度分析、5 agent 全局代码质量/安全审查、1 oracle 综合发布就绪性评估与版本风险判断。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "publish",
+        "git-master",
+        "git-workflow-and-versioning",
+        "gitlab-ci-patterns"
+      ],
+      "group": "Git 工作流",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "帮助 AI agent 结构化 Git 工作流实践，确保代码变更可管理、可审查、可回滚，支持持续集成和高效协作。",
+      "sources": [
+        "addyosmani/agent-skills",
+        "code-yeongyu/oh-my-openagent",
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "remove-deadcode"
+      ],
+      "group": "重构 / 拯救 ball-of-mud / 语义代码去重",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "通过 LSP 验证和并行深度 agent 安全移除项目中未使用的代码。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "security-research"
+      ],
+      "group": "漏洞挖掘 / Bug Bounty / OSINT",
+      "category": "security-offensive",
+      "subcategory": "18-3",
+      "chain": false,
+      "description": "编排多个agent进行并行安全审计，识别漏洞并验证可利用性，用于预发布安全检查和威胁模型验证。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "work-with-pr"
+      ],
+      "group": "GitHub 三件套 / Git 工作流 / 危险命令拦截",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "自动化完整PR生命周期，从工作区设置、实现、创建PR到验证循环（CI、审查、批准），直到合并完成并清理。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "comment-checker"
+      ],
+      "group": "代码质量自动检查",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "编辑代码后自动检查注释质量，阻断问题补丁并要求修复或解释，保障代码审查效率。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "lsp"
+      ],
+      "group": "LSP 语言服务集成",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "提供 LSP 工具集，支持诊断、定义跳转、引用查找、符号搜索和安全重命名等代码导航能力。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "rules"
+      ],
+      "group": "上下文规则注入",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "自动注入项目规则到 Codex agent 会话，支持多种规则文件位置和环境变量配置，实现上下文自动管理。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "ulw-loop"
+      ],
+      "group": "系统化工作流循环",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "提供目标导向的 ultrawork 循环，系统化分解任务为证据绑定的步骤，支持手动 QA 和检查点执行。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "debugging",
+        "debugging-and-error-recovery",
+        "parallel-debugging"
+      ],
+      "group": "系统化调试",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "引导系统化根因调试，当测试失败、构建中断或行为不符预期时，帮助agent结构化诊断并修复问题，避免猜测。",
+      "sources": [
+        "addyosmani/agent-skills",
+        "code-yeongyu/oh-my-openagent",
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "frontend-ui-ux"
+      ],
+      "group": "前端美学",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "设计师转开发者角色，即使没有设计模型也能创建令人惊叹的UI/UX界面，注重美观和用户体验。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "init-deep"
+      ],
+      "group": "Agent知识库初始化（AGENTS.md）",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "初始化层次化的AGENTS.md知识库，为agent建立结构化上下文基础，便于后续复杂任务编排和执行。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "programming"
+      ],
+      "group": "多语言编程规范与工具链",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "强制应用于多语言代码编写，确保严格类型、现代工具链和代码质量，涵盖Python、Rust、TypeScript等。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "refactor",
+        "remove-ai-slops"
+      ],
+      "group": "重构",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "智能重构命令，支持多种触发词如 refactor、cleanup、extract 等，帮助 agent 执行代码重构操作。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "review-work",
+        "code-review-and-quality"
+      ],
+      "group": "Code Review 双向",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "在实现工作完成后，启动5个并行子代理进行目标约束验证、代码质量检查、安全审查、QA执行和上下文挖掘，确保所有审查项通过。",
+      "sources": [
+        "addyosmani/agent-skills",
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "start-work",
+        "documentation-and-adrs"
+      ],
+      "group": "核心开发工作流（superpowers）",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "帮助 agent 在做出架构决策、修改公共 API 或交付功能时，记录 Architecture Decision Record（ADR），捕获决策背后的「为什么」、约束和权衡，供未来工程师和 agent 理解代码库上下文。",
+      "sources": [
+        "addyosmani/agent-skills",
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "ulw-plan"
+      ],
+      "group": "战略规划工作流",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "通过苏格拉底式访谈、代码库探索和差距分析，为复杂任务生成决策完整的工作计划。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "agent-browser",
+        "browser-testing-with-devtools"
+      ],
+      "group": "浏览器自动化",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 使用 Chrome DevTools 在真实浏览器中测试和调试，检查 DOM、网络请求、性能分析等运行时数据。",
+      "sources": [
+        "addyosmani/agent-skills",
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "dev-browser"
+      ],
+      "group": "Web 应用 UI 测试 / 浏览器自动化",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 自动化浏览器操作，如导航网页、填写表单、截图、提取数据和测试 Web 应用，支持状态持久化。",
+      "sources": [
+        "code-yeongyu/oh-my-openagent"
+      ]
+    },
+    {
+      "skills": [
+        "understand-chat",
+        "understand-dashboard",
+        "understand-diff",
+        "understand-domain",
+        "understand-explain",
+        "understand-knowledge"
+      ],
+      "group": "项目知识图谱",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "分析代码变更（git diffs）与现有知识图谱，识别受影响组件和潜在风险，辅助 AI agent 进行代码审查和影响评估。",
+      "sources": [
+        "Lum1104/Understand-Anything"
+      ]
+    },
+    {
+      "skills": [
+        "understand-onboard",
+        "understand"
+      ],
+      "group": "知识图谱驱动的入职流程",
+      "category": "",
+      "subcategory": "",
+      "chain": true,
+      "description": "根据项目知识图谱生成新成员入职指南，帮助快速理解项目结构和关键组件。",
+      "sources": [
+        "Lum1104/Understand-Anything"
+      ]
+    },
+    {
+      "skills": [
+        "api-and-interface-design"
+      ],
+      "group": "API 和接口设计",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 设计稳定、易用的 API 和接口，确保代码模块间清晰通信，防止误用，适用于 REST、GraphQL 或模块边界。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ci-cd-and-automation"
+      ],
+      "group": "CI/CD 自动化",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "帮助AI agent自动化CI/CD流水线配置，确保代码变更通过质量门（如测试、检查）后才能部署，提高开发流程的可靠性和效率。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "code-simplification"
+      ],
+      "group": "代码简化",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "帮助代理简化代码以提高可读性和可维护性，而不改变行为，适用于重构和代码审查场景。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "context-engineering"
+      ],
+      "group": "上下文工程优化",
+      "category": "agent-architecture",
+      "subcategory": "12-1",
+      "chain": false,
+      "description": "优化代理上下文设置，确保在正确时间提供正确信息，以提高输出质量和减少幻觉。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "deprecation-and-migration"
+      ],
+      "group": "代码生命周期管理",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "管理代码废弃和用户迁移，帮助agent安全移除旧系统并将用户迁移到新实现，减少维护成本。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "doubt-driven-development"
+      ],
+      "group": "质疑驱动 / 对抗性审查",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "在任何非平凡决策落地前，注入一个偏向「证伪」的新鲜上下文审阅者进行对抗性交叉审查，防止长期会话中积累的假设被默认为事实，适用于高风险、不可逆或安全性敏感的场景。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "frontend-ui-engineering"
+      ],
+      "group": "前端工程规范",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 AI agent 构建生产质量、可访问、高性能且视觉精致的用户界面，遵循设计系统，避免 AI 生成的通用外观。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "idea-refine"
+      ],
+      "group": "问题陈述 / 假设识别 / 排序 / Pre-mortem",
+      "category": "product-management",
+      "subcategory": "3-2",
+      "chain": false,
+      "description": "帮助AI代理通过结构化的发散和收敛思维，将模糊想法细化为可执行的概念，包括假设测试和MVP定义。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "incremental-implementation"
+      ],
+      "group": "TDD / 测试 / 验证",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "指导AI代理以增量方式实现功能，每步实现、测试和验证，确保系统始终保持可工作状态。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "interview-me"
+      ],
+      "group": "意图澄清",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "通过逐步访谈提取用户真实需求，在计划或代码存在前澄清意图，避免构建错误解决方案。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "performance-optimization"
+      ],
+      "group": "性能优化",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "基于测量和 Core Web Vitals 优化应用性能，识别瓶颈并提供修复策略，避免过早优化。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "planning-and-task-breakdown",
+        "spec-driven-development"
+      ],
+      "group": "轻量 SDD 框架",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "在编码前创建结构化规范，通过门控工作流定义需求、计划和任务，确保构建目标明确，避免猜测。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "security-and-hardening",
+        "secrets-management"
+      ],
+      "group": "应用层安全三件套",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "实现安全的 secrets 管理，集成 Vault、AWS Secrets Manager 等工具，保护 CI/CD 环境中的敏感信息。",
+      "sources": [
+        "addyosmani/agent-skills",
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "shipping-and-launch"
+      ],
+      "group": "生产部署与监控",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助代理准备生产部署，提供预发布检查清单、监控设置和回滚策略，确保安全、可观测的发布流程。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "source-driven-development"
+      ],
+      "group": "源文档驱动开发",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助代理基于官方文档编写代码，确保实现权威、模式正确，避免过时模式，提升代码质量和可信度。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "test-driven-development"
+      ],
+      "group": "TDD（多家同名版本）",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "通过先写失败测试再编码的方式驱动开发，确保代码正确性，适用于实现逻辑、修复 bug 和更改行为。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "using-agent-skills"
+      ],
+      "group": "Skill 安装 / 发现 / Plugin / CLI 打包 / 跨 agent 迁移",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "帮助 AI agent 在会话开始时发现并调用合适的技能，根据开发阶段自动匹配。",
+      "sources": [
+        "addyosmani/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "screen-reader-testing",
+        "wcag-audit-patterns"
+      ],
+      "group": "Web 应用 UI 测试",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 测试 Web 应用的屏幕阅读器兼容性，包括 VoiceOver、NVDA 等，验证无障碍支持和调试辅助技术问题。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "multi-reviewer-patterns"
+      ],
+      "group": "多维度并行 Code Review",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "协调多个 agent 并行执行代码审查，自动去重发现、校准严重等级并生成统一报告，支持安全、性能、架构、测试等多维度 review。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "parallel-feature-development",
+        "task-coordination-strategies"
+      ],
+      "group": "multi-agent-coordination",
+      "category": "",
+      "subcategory": "",
+      "chain": true,
+      "description": "帮助 AI 代理协调并行功能开发，通过文件所有权策略避免冲突，实现多代理同时实现不同层或组件。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "team-communication-protocols",
+        "team-composition-patterns"
+      ],
+      "group": "多 agent 团队协调",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "设计最优 agent 团队组成，提供大小启发式、预设配置、agent 类型选择和显示模式配置，以适配不同任务复杂度。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "fastapi-templates"
+      ],
+      "group": "fastapi-templates",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "api-design-principles"
+      ],
+      "group": "api-design-principles",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "architecture-patterns",
+        "cqrs-implementation"
+      ],
+      "group": "后端架构设计",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助AI代理设计和实现Clean Architecture、Hexagonal Architecture和Domain-Driven Design，用于构建可维护、可测试的后端系统。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "event-store-design",
+        "microservices-patterns"
+      ],
+      "group": "后端架构设计模式",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 agent 设计和实现事件溯源系统的 event store，涵盖架构选型、流模式、快照、查询优化与规模扩展策略。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "projection-patterns",
+        "saga-orchestration"
+      ],
+      "group": "后端架构模式",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助代理实现事件溯源系统中的 CQRS 读模型和投影，优化查询性能，适用于构建实时仪表盘或搜索索引。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "temporal-python-testing"
+      ],
+      "group": "Temporal 工作流测试",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "指导 AI agent 使用 pytest 对 Temporal 工作流进行单元测试、集成测试和回放测试，涵盖时间跳跃、mock 策略与 CI/CD 集成。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "workflow-orchestration-patterns"
+      ],
+      "group": "分布式工作流编排模式",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 AI agent 用 Temporal 设计分布式持久化工作流，涵盖 workflow/activity 分离、Saga 模式、状态管理与确定性约束。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "block-no-verify-hook"
+      ],
+      "group": "危险命令拦截",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "配置 PreToolUse hook，拦截 AI agent 执行含 --no-verify 等绕过标志的 git 命令，强制 pre-commit 检查不被跳过。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "defi-protocol-templates"
+      ],
+      "group": "合约开发 / 工具链",
+      "category": "web3-blockchain",
+      "subcategory": "20-3",
+      "chain": false,
+      "description": "提供 DeFi 协议的生产级 Solidity 模板，涵盖质押、AMM、治理、借贷和闪电贷，供 agent 直接生成完整合约代码。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "nft-standards"
+      ],
+      "group": "Web3 应用 / NFT / DAO / 交易",
+      "category": "web3-blockchain",
+      "subcategory": "20-5",
+      "chain": false,
+      "description": "帮助 agent 实现 NFT 标准（ERC-721、ERC-1155），处理元数据、铸造策略和市场集成，用于构建数字资产系统。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "solidity-security"
+      ],
+      "group": "智能合约审计 / 漏洞检测",
+      "category": "web3-blockchain",
+      "subcategory": "20-1",
+      "chain": false,
+      "description": "帮助 agent 掌握智能合约安全最佳实践，防止常见漏洞，用于编写和审计 Solidity 合约。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "web3-testing"
+      ],
+      "group": "Web3 智能合约测试",
+      "category": "web3-blockchain",
+      "subcategory": "20-3",
+      "chain": false,
+      "description": "为 Solidity 智能合约提供 Hardhat/Foundry 全面测试指导，覆盖单元测试、集成测试、Gas 优化、模糊测试和主网 fork，用于合约开发与 DeFi 协议验证。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "brand-landingpage"
+      ],
+      "group": "品牌着陆页设计",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "通过品牌身份访谈引导用户确定视觉方向，再用 Stitch 生成并迭代打磨部署就绪的单页着陆页 HTML，适合尚无设计稿的产品营销页。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "data-storytelling"
+      ],
+      "group": "数据叙事与可视化",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 将数据转化为引人入胜的叙事，用于制作商业演示、数据报告和投资者呈现。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "kpi-dashboard-design"
+      ],
+      "group": "指标 dashboard 设计",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 设计有效的 KPI 仪表板，包括指标选择、可视化最佳实践和实时监控模式。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    },
+    {
+      "skills": [
+        "deployment-pipeline-design",
+        "github-actions-templates"
+      ],
+      "group": "Kubernetes / GitOps / CI-CD",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "为AI代理提供生产就绪的GitHub Actions工作流模板，用于自动化测试、构建和部署应用。",
+      "sources": [
+        "wshobson/agents"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "code-yeongyu",
+        "repo": "oh-my-openagent",
+        "full_name": "code-yeongyu/oh-my-openagent",
+        "url": "https://github.com/code-yeongyu/oh-my-openagent",
+        "stars": 60624,
+        "pushed_at": "2026-06-02",
+        "default_branch": "dev",
+        "github_description": "omo; the one and only agent harness for complex codebases; the pickaxe for complex software engineering",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "anthropic",
+          "chatgpt",
+          "claude",
+          "claude-skills",
+          "codex",
+          "cursor",
+          "gemini",
+          "ide",
+          "openai",
+          "opencode",
+          "orchestration",
+          "tui",
+          "typescript"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "get-unpublished-changes",
+          "path": ".agents/skills/get-unpublished-changes/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "版本管理 / Changelog",
+          "description_zh": "对比 HEAD 与最新 npm 发布版本，读取实际 diff 生成结构化 changelog，按 feat/fix/refactor 分组并推荐版本号",
+          "what": "自动生成未发布变更的 changelog 并推荐版本号",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "github-triage",
+          "path": ".agents/skills/github-triage/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "GitHub Issue/PR 分析",
+          "description_zh": "只读模式批量分析所有 open issues 和 PRs，为每项启动并行子 agent，输出带 GitHub 链接证据的分类报告，不做任何修改操作",
+          "what": "并行分析 GitHub issues/PRs 并生成只读分类报告",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "hyperplan",
+          "path": ".agents/skills/hyperplan/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "对抗性多 agent 规划",
+          "description_zh": "帮 agent 通过 5 个对抗性成员进行严格辩论，蒸馏可辩护见解，生成严谨的可执行计划。",
+          "what": "执行对抗性多 agent 规划以提高计划质量。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "omomomo",
+          "path": ".agents/skills/omomomo/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "彩蛋 / 元信息",
+          "description_zh": "帮 agent 以彩蛋形式展示 Oh My OpenAgent 的功能和集成信息。",
+          "what": "作为彩蛋展示平台介绍。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "opencode-qa",
+          "path": ".agents/skills/opencode-qa/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Agent 平台 QA 工具链",
+          "description_zh": "为 opencode 编码 agent 平台提供全方位 QA 测试工具链，包括 CLI/终端验证、插件 hook 与事件流（SSE）检测、tmux 下 TUI 冒烟测试、以及 SQLite 会话数据库的按 ID/标题/消息内容查询与检查。",
+          "what": "QA 测试 opencode agent 平台的 CLI、插件 hook、TUI 和会话数据库",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "pre-publish-review",
+          "path": ".agents/skills/pre-publish-review/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "多 Agent 发布审查门禁",
+          "description_zh": "npm 发布前三层审查门禁：自动检测未发布变更、最多 10 个 ultrabrain agent 逐变更深度分析、5 agent 全局代码质量/安全审查、1 oracle 综合发布就绪性评估与版本风险判断。",
+          "what": "16 agent 协作的 npm 发布前多层代码审查与发布就绪性评估",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "publish",
+          "path": ".agents/skills/publish/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "description_zh": "自动化 npm 包发布流程，包括版本管理、GitHub Actions CI/CD 和 Discord 公告。",
+          "what": "自动化 npm 包发布，涵盖版本管理、CI/CD 和社交通知。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "remove-deadcode",
+          "path": ".agents/skills/remove-deadcode/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "重构 / 拯救 ball-of-mud / 语义代码去重",
+          "description_zh": "通过 LSP 验证和并行深度 agent 安全移除项目中未使用的代码。",
+          "what": "安全移除死代码，使用 LSP 验证确保无误删。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "security-research",
+          "path": ".agents/skills/security-research/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "漏洞挖掘 / Bug Bounty / OSINT",
+          "description_zh": "编排多个agent进行并行安全审计，识别漏洞并验证可利用性，用于预发布安全检查和威胁模型验证。",
+          "what": "并行安全审计技能，编排漏洞猎人和PoC工程师。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "work-with-pr",
+          "path": ".agents/skills/work-with-pr/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "GitHub 三件套 / Git 工作流 / 危险命令拦截",
+          "description_zh": "自动化完整PR生命周期，从工作区设置、实现、创建PR到验证循环（CI、审查、批准），直到合并完成并清理。",
+          "what": "完整的PR生命周期管理技能。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "comment-checker",
+          "path": "packages/omo-codex/plugin/components/comment-checker/skills/comment-checker/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "代码质量自动检查",
+          "description_zh": "编辑代码后自动检查注释质量，阻断问题补丁并要求修复或解释，保障代码审查效率。",
+          "what": "PostToolUse 钩子拦截编辑操作，对注释做自动质量门禁并阻断有风险的补丁。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "lsp",
+          "path": "packages/omo-codex/plugin/components/lsp/skills/lsp/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "LSP 语言服务集成",
+          "description_zh": "提供 LSP 工具集，支持诊断、定义跳转、引用查找、符号搜索和安全重命名等代码导航能力。",
+          "what": "通过 MCP 工具接口暴露语言服务器协议能力，为 agent 提供符号级代码智能。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "rules",
+          "path": "packages/omo-codex/plugin/components/rules/skills/rules/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "上下文规则注入",
+          "description_zh": "自动注入项目规则到 Codex agent 会话，支持多种规则文件位置和环境变量配置，实现上下文自动管理。",
+          "what": "自动注入项目规则到 agent 会话。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "ulw-loop",
+          "path": "packages/omo-codex/plugin/components/ulw-loop/skills/ulw-loop/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "系统化工作流循环",
+          "description_zh": "提供目标导向的 ultrawork 循环，系统化分解任务为证据绑定的步骤，支持手动 QA 和检查点执行。",
+          "what": "系统化工作流循环用于任务分解和 QA。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "debugging",
+          "path": "packages/omo-codex/plugin/skills/debugging/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "系统化调试",
+          "description_zh": "用于跨语言或二进制的运行时调试，采用假设驱动循环，支持崩溃、内存泄漏、异步错误等问题的诊断和修复。",
+          "what": "假设驱动的调试代理，处理各种运行时问题。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "frontend-ui-ux",
+          "path": "packages/omo-codex/plugin/skills/frontend-ui-ux/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "前端美学",
+          "description_zh": "设计师转开发者角色，即使没有设计模型也能创建令人惊叹的UI/UX界面，注重美观和用户体验。",
+          "what": "前端UI/UX设计代理，打造精美界面。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "init-deep",
+          "path": "packages/omo-codex/plugin/skills/init-deep/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Agent知识库初始化（AGENTS.md）",
+          "description_zh": "初始化层次化的AGENTS.md知识库，为agent建立结构化上下文基础，便于后续复杂任务编排和执行。",
+          "what": "初始化agent知识库",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "programming",
+          "path": "packages/omo-codex/plugin/skills/programming/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "多语言编程规范与工具链",
+          "description_zh": "强制应用于多语言代码编写，确保严格类型、现代工具链和代码质量，涵盖Python、Rust、TypeScript等。",
+          "what": "规范多语言编程",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "refactor",
+          "path": "packages/omo-codex/plugin/skills/refactor/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "重构",
+          "description_zh": "智能重构命令，支持多种触发词如 refactor、cleanup、extract 等，帮助 agent 执行代码重构操作。",
+          "what": "智能代码重构工具",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "remove-ai-slops",
+          "path": "packages/omo-codex/plugin/skills/remove-ai-slops/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "重构",
+          "description_zh": "移除 AI 生成的代码气味，通过回归测试锁定行为，批量清理并验证，覆盖 10 类代码问题。",
+          "what": "AI 代码气味清理工具",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "review-work",
+          "path": "packages/omo-codex/plugin/skills/review-work/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Code Review 双向",
+          "description_zh": "在实现工作完成后，启动5个并行子代理进行目标约束验证、代码质量检查、安全审查、QA执行和上下文挖掘，确保所有审查项通过。",
+          "what": "审查实现工作，启动并行子代理验证目标、代码质量、安全等。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "start-work",
+          "path": "packages/omo-codex/plugin/skills/start-work/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "核心开发工作流（superpowers）",
+          "description_zh": "执行Prometheus工作计划，管理Boulder状态、证据更新、工作树纪律和并行子代理，支持计划恢复和连续执行，适用于开发工作流。",
+          "what": "执行工作计划，管理状态和并行子代理，支持恢复。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "ulw-plan",
+          "path": "packages/omo-codex/plugin/skills/ulw-plan/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "战略规划工作流",
+          "description_zh": "通过苏格拉底式访谈、代码库探索和差距分析，为复杂任务生成决策完整的工作计划。",
+          "what": "Strategic planning consultant that produces decision-complete work plans through Socratic interview and codebase exploration.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "agent-browser",
+          "path": "src/features/builtin-skills/agent-browser/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "浏览器自动化",
+          "description_zh": "自动化浏览器交互，支持网页测试、表单填写、截图和数据提取等 web 操作。",
+          "what": "Automates browser interactions for web testing, form filling, screenshots, and data extraction.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "dev-browser",
+          "path": "src/features/builtin-skills/dev-browser/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Web 应用 UI 测试 / 浏览器自动化",
+          "description_zh": "帮助 agent 自动化浏览器操作，如导航网页、填写表单、截图、提取数据和测试 Web 应用，支持状态持久化。",
+          "what": "浏览器自动化工具",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "git-master",
+          "path": "src/features/builtin-skills/git-master/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "description_zh": "作为 Git 专家，帮助执行原子提交、变基操作、冲突解决和历史代码搜索，优化代码版本管理流程。",
+          "what": "Git 操作专家",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "Lum1104",
+        "repo": "Understand-Anything",
+        "full_name": "Lum1104/Understand-Anything",
+        "url": "https://github.com/Lum1104/Understand-Anything",
+        "stars": 49118,
+        "pushed_at": "2026-06-01",
+        "default_branch": "main",
+        "github_description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
+        "topics": [
+          "antigravity-skills",
+          "business-knowledge",
+          "claude-code",
+          "claude-skills",
+          "codebase-analysis",
+          "codex",
+          "codex-skills",
+          "developer-tools-ai-agent",
+          "gemini-cli-skills",
+          "karpathy-llm-wiki",
+          "knowledge-base",
+          "knowledge-graph",
+          "memory",
+          "opencode-skills",
+          "pi-agent",
+          "understandcode",
+          "vibe-coding"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "understand-chat",
+          "path": "understand-anything-plugin/skills/understand-chat/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱",
+          "description_zh": "基于代码库的知识图谱，帮助agent回答关于代码的问题，支持高效搜索和理解代码结构。",
+          "what": "使用知识图谱查询代码库信息",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "understand-dashboard",
+          "path": "understand-anything-plugin/skills/understand-dashboard/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱",
+          "description_zh": "启动交互式Web仪表板，可视化项目的知识图谱，帮助agent探索和展示代码结构。",
+          "what": "可视化代码知识图谱",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "understand-diff",
+          "path": "understand-anything-plugin/skills/understand-diff/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱",
+          "description_zh": "分析代码变更（git diffs）与现有知识图谱，识别受影响组件和潜在风险，辅助 AI agent 进行代码审查和影响评估。",
+          "what": "分析代码变更与知识图谱，评估影响和风险。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "understand-domain",
+          "path": "understand-anything-plugin/skills/understand-domain/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱",
+          "description_zh": "从代码库中提取业务域知识（如域、流程、步骤），生成交互式域流图，帮助 AI agent 快速理解领域逻辑和业务流程。",
+          "what": "从代码提取业务域知识并生成交互流程图。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "understand-explain",
+          "path": "understand-anything-plugin/skills/understand-explain/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱",
+          "description_zh": "帮助 agent 深度理解代码文件、函数或模块，通过解析知识图谱 JSON 结构提供详细解释和高效读取指导。",
+          "what": "深度解释代码组件。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "understand-knowledge",
+          "path": "understand-anything-plugin/skills/understand-knowledge/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱",
+          "description_zh": "帮助 agent 分析 Karpathy 模式的 LLM 知识库，提取实体、隐含关系和主题聚类，生成可探索的交互式知识图谱。",
+          "what": "分析知识库生成知识图谱。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "understand-onboard",
+          "path": "understand-anything-plugin/skills/understand-onboard/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "代码知识图谱",
+          "description_zh": "根据项目知识图谱生成新成员入职指南，帮助快速理解项目结构和关键组件。",
+          "what": "生成项目入职指南",
+          "chain": true,
+          "chain_group": "知识图谱驱动的入职流程"
+        },
+        {
+          "name": "understand",
+          "path": "understand-anything-plugin/skills/understand/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "代码知识图谱",
+          "description_zh": "分析代码库并生成交互式知识图谱，用于探索架构、组件关系和依赖。",
+          "what": "生成代码知识图谱",
+          "chain": true,
+          "chain_group": "知识图谱驱动的入职流程"
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "addyosmani",
+        "repo": "agent-skills",
+        "full_name": "addyosmani/agent-skills",
+        "url": "https://github.com/addyosmani/agent-skills",
+        "stars": 47663,
+        "pushed_at": "2026-05-28",
+        "default_branch": "main",
+        "github_description": "Production-grade engineering skills for AI coding agents.",
+        "topics": [
+          "agent-skills",
+          "antigravity",
+          "antigravity-ide",
+          "claude-code",
+          "cursor",
+          "skills"
+        ],
+        "language": "Shell",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "api-and-interface-design",
+          "path": "skills/api-and-interface-design/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "API 和接口设计",
+          "description_zh": "帮助 agent 设计稳定、易用的 API 和接口，确保代码模块间清晰通信，防止误用，适用于 REST、GraphQL 或模块边界。",
+          "what": "Design stable APIs and interfaces for code modules.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "browser-testing-with-devtools",
+          "path": "skills/browser-testing-with-devtools/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "浏览器自动化",
+          "description_zh": "帮助 agent 使用 Chrome DevTools 在真实浏览器中测试和调试，检查 DOM、网络请求、性能分析等运行时数据。",
+          "what": "Test and debug in real browsers via Chrome DevTools MCP.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "ci-cd-and-automation",
+          "path": "skills/ci-cd-and-automation/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "CI/CD 自动化",
+          "description_zh": "帮助AI agent自动化CI/CD流水线配置，确保代码变更通过质量门（如测试、检查）后才能部署，提高开发流程的可靠性和效率。",
+          "what": "Automates CI/CD pipeline setup and quality gates.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "code-review-and-quality",
+          "path": "skills/code-review-and-quality/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Code Review 双向",
+          "description_zh": "帮助AI agent执行多维代码审查，评估代码的正确性、可读性、架构、安全性和性能，确保代码在合并前符合质量标准。",
+          "what": "Conducts multi-axis code review for quality assurance.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "code-simplification",
+          "path": "skills/code-simplification/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "代码简化",
+          "description_zh": "帮助代理简化代码以提高可读性和可维护性，而不改变行为，适用于重构和代码审查场景。",
+          "what": "简化代码以提高清晰度和可维护性。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "context-engineering",
+          "path": "skills/context-engineering/SKILL.md",
+          "subcategory": "12-1",
+          "subcategory_title": "12.1 Context 概念基础",
+          "category": "agent-architecture",
+          "group": "上下文工程优化",
+          "description_zh": "优化代理上下文设置，确保在正确时间提供正确信息，以提高输出质量和减少幻觉。",
+          "what": "优化 AI 代理的上下文管理。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "debugging-and-error-recovery",
+          "path": "skills/debugging-and-error-recovery/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "系统化调试",
+          "description_zh": "引导系统化根因调试，当测试失败、构建中断或行为不符预期时，帮助agent结构化诊断并修复问题，避免猜测。",
+          "what": "系统化调试流程",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "deprecation-and-migration",
+          "path": "skills/deprecation-and-migration/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "代码生命周期管理",
+          "description_zh": "管理代码废弃和用户迁移，帮助agent安全移除旧系统并将用户迁移到新实现，减少维护成本。",
+          "what": "代码废弃与迁移管理",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "documentation-and-adrs",
+          "path": "skills/documentation-and-adrs/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "核心开发工作流（superpowers）",
+          "description_zh": "帮助 agent 在做出架构决策、修改公共 API 或交付功能时，记录 Architecture Decision Record（ADR），捕获决策背后的「为什么」、约束和权衡，供未来工程师和 agent 理解代码库上下文。",
+          "what": "记录架构决策与 ADR 的工程文档 skill",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "doubt-driven-development",
+          "path": "skills/doubt-driven-development/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "质疑驱动 / 对抗性审查",
+          "description_zh": "在任何非平凡决策落地前，注入一个偏向「证伪」的新鲜上下文审阅者进行对抗性交叉审查，防止长期会话中积累的假设被默认为事实，适用于高风险、不可逆或安全性敏感的场景。",
+          "what": "对非平凡决策进行新鲜上下文对抗性审查的方法论",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "frontend-ui-engineering",
+          "path": "skills/frontend-ui-engineering/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "前端工程规范",
+          "description_zh": "帮助 AI agent 构建生产质量、可访问、高性能且视觉精致的用户界面，遵循设计系统，避免 AI 生成的通用外观。",
+          "what": "构建生产质量的用户界面，强调设计系统和非 AI 美学。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "git-workflow-and-versioning",
+          "path": "skills/git-workflow-and-versioning/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "description_zh": "帮助 AI agent 结构化 Git 工作流实践，确保代码变更可管理、可审查、可回滚，支持持续集成和高效协作。",
+          "what": "结构化 Git 工作流，包括 trunk-based development 和提交纪律。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "idea-refine",
+          "path": "skills/idea-refine/SKILL.md",
+          "subcategory": "3-2",
+          "subcategory_title": "3.2 问题框定 / 假设管理",
+          "category": "product-management",
+          "group": "问题陈述 / 假设识别 / 排序 / Pre-mortem",
+          "description_zh": "帮助AI代理通过结构化的发散和收敛思维，将模糊想法细化为可执行的概念，包括假设测试和MVP定义。",
+          "what": "细化原始想法为行动概念。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "incremental-implementation",
+          "path": "skills/incremental-implementation/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "TDD / 测试 / 验证",
+          "description_zh": "指导AI代理以增量方式实现功能，每步实现、测试和验证，确保系统始终保持可工作状态。",
+          "what": "增量实现并验证代码更改。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "interview-me",
+          "path": "skills/interview-me/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "意图澄清",
+          "description_zh": "通过逐步访谈提取用户真实需求，在计划或代码存在前澄清意图，避免构建错误解决方案。",
+          "what": "访谈式需求澄清工具。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "performance-optimization",
+          "path": "skills/performance-optimization/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "性能优化",
+          "description_zh": "基于测量和 Core Web Vitals 优化应用性能，识别瓶颈并提供修复策略，避免过早优化。",
+          "what": "应用性能优化工具。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "planning-and-task-breakdown",
+          "path": "skills/planning-and-task-breakdown/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "轻量 SDD 框架",
+          "description_zh": "将规范或大任务分解为可实施的小任务，便于估计范围、并行工作和验证。",
+          "what": "将工作分解为有序任务",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "security-and-hardening",
+          "path": "skills/security-and-hardening/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "应用层安全三件套",
+          "description_zh": "实施安全开发实践，验证输入、加密存储、设置安全头，防止 XSS、SQL 注入等漏洞。",
+          "what": "实施安全编码和防护措施",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "shipping-and-launch",
+          "path": "skills/shipping-and-launch/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "生产部署与监控",
+          "description_zh": "帮助代理准备生产部署，提供预发布检查清单、监控设置和回滚策略，确保安全、可观测的发布流程。",
+          "what": "准备生产部署和发布",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "source-driven-development",
+          "path": "skills/source-driven-development/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "源文档驱动开发",
+          "description_zh": "帮助代理基于官方文档编写代码，确保实现权威、模式正确，避免过时模式，提升代码质量和可信度。",
+          "what": "基于官方文档的代码开发",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "spec-driven-development",
+          "path": "skills/spec-driven-development/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "轻量 SDD 框架",
+          "description_zh": "在编码前创建结构化规范，通过门控工作流定义需求、计划和任务，确保构建目标明确，避免猜测。",
+          "what": "结构化规范创建工具，用于 AI 代理在开发前定义需求。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "test-driven-development",
+          "path": "skills/test-driven-development/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "TDD（多家同名版本）",
+          "description_zh": "通过先写失败测试再编码的方式驱动开发，确保代码正确性，适用于实现逻辑、修复 bug 和更改行为。",
+          "what": "测试驱动开发工具，用于 AI 代理通过测试确保代码质量。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "using-agent-skills",
+          "path": "skills/using-agent-skills/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 安装 / 发现 / Plugin / CLI 打包 / 跨 agent 迁移",
+          "description_zh": "帮助 AI agent 在会话开始时发现并调用合适的技能，根据开发阶段自动匹配。",
+          "what": "根据开发阶段发现并调用合适的 agent 技能。",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "wshobson",
+        "repo": "agents",
+        "full_name": "wshobson/agents",
+        "url": "https://github.com/wshobson/agents",
+        "stars": 36250,
+        "pushed_at": "2026-06-01",
+        "default_branch": "main",
+        "github_description": "Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, and Gemini CLI",
+        "topics": [
+          "agent-skills",
+          "agentic-ai",
+          "agents",
+          "ai-agents",
+          "anthropic",
+          "automation",
+          "claude-code",
+          "claude-code-plugins",
+          "codex-cli",
+          "copilot",
+          "cursor",
+          "cursor-rules",
+          "developer-tools",
+          "gemini-cli",
+          "mcp",
+          "multi-agent",
+          "opencode",
+          "orchestration",
+          "prompt-engineering",
+          "workflows"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "screen-reader-testing",
+          "path": "plugins/accessibility-compliance/skills/screen-reader-testing/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Web 应用 UI 测试",
+          "description_zh": "帮助 agent 测试 Web 应用的屏幕阅读器兼容性，包括 VoiceOver、NVDA 等，验证无障碍支持和调试辅助技术问题。",
+          "what": "测试 Web 应用的屏幕阅读器兼容性。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "wcag-audit-patterns",
+          "path": "plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Web 应用 UI 测试",
+          "description_zh": "指导 agent 进行 WCAG 2.2 无障碍审计，提供自动化测试、手动验证和修复策略，确保网站合规和可访问性。",
+          "what": "进行 WCAG 2.2 无障碍审计和修复。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "multi-reviewer-patterns",
+          "path": "plugins/agent-teams/skills/multi-reviewer-patterns/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "多维度并行 Code Review",
+          "description_zh": "协调多个 agent 并行执行代码审查，自动去重发现、校准严重等级并生成统一报告，支持安全、性能、架构、测试等多维度 review。",
+          "what": "多 reviewer 并行代码审查的协调与报告模式",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "parallel-debugging",
+          "path": "plugins/agent-teams/skills/parallel-debugging/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "系统化调试",
+          "description_zh": "用竞争假设方法（ACH）并行调查复杂 bug，系统化收集证据、避免确认偏差，跨模块进行根因仲裁分析。",
+          "what": "基于竞争假设的并行调试与根因分析框架",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "parallel-feature-development",
+          "path": "plugins/agent-teams/skills/parallel-feature-development/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "多代理协调与并行开发",
+          "description_zh": "帮助 AI 代理协调并行功能开发，通过文件所有权策略避免冲突，实现多代理同时实现不同层或组件。",
+          "what": "并行功能开发的文件所有权与集成策略",
+          "chain": true,
+          "chain_group": "multi-agent-coordination"
+        },
+        {
+          "name": "task-coordination-strategies",
+          "path": "plugins/agent-teams/skills/task-coordination-strategies/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "多代理协调与并行开发",
+          "description_zh": "帮助 AI 代理分解复杂任务为可并行单元，设计依赖图，监控和平衡工作负载，优化多代理团队协作。",
+          "what": "任务分解、依赖图与工作负载协调",
+          "chain": true,
+          "chain_group": "multi-agent-coordination"
+        },
+        {
+          "name": "team-communication-protocols",
+          "path": "plugins/agent-teams/skills/team-communication-protocols/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "多 agent 团队协调",
+          "description_zh": "为 agent 团队提供结构化通信协议，包括消息类型选择、计划批准工作流、关闭流程及防反模式，以优化团队协调效率。",
+          "what": "规范 agent 团队间的消息传递、计划审批和关闭流程。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "team-composition-patterns",
+          "path": "plugins/agent-teams/skills/team-composition-patterns/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "多 agent 团队协调",
+          "description_zh": "设计最优 agent 团队组成，提供大小启发式、预设配置、agent 类型选择和显示模式配置，以适配不同任务复杂度。",
+          "what": "指导如何根据任务复杂度配置 agent 团队规模和角色。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "fastapi-templates",
+          "path": "plugins/api-scaffolding/skills/fastapi-templates/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "fastapi-templates",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "api-design-principles",
+          "path": "plugins/backend-development/skills/api-design-principles/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "api-design-principles",
+          "description_zh": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "architecture-patterns",
+          "path": "plugins/backend-development/skills/architecture-patterns/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "后端架构设计",
+          "description_zh": "帮助AI代理设计和实现Clean Architecture、Hexagonal Architecture和Domain-Driven Design，用于构建可维护、可测试的后端系统。",
+          "what": "指导后端架构模式设计。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "cqrs-implementation",
+          "path": "plugins/backend-development/skills/cqrs-implementation/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "后端架构设计",
+          "description_zh": "帮助AI代理实现CQRS模式，分离读写操作，优化查询性能，构建事件驱动系统。",
+          "what": "实现CQRS架构模式。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "event-store-design",
+          "path": "plugins/backend-development/skills/event-store-design/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "后端架构设计模式",
+          "description_zh": "指导 agent 设计和实现事件溯源系统的 event store，涵盖架构选型、流模式、快照、查询优化与规模扩展策略。",
+          "what": "为事件溯源系统设计 event store 架构与持久化模式",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "microservices-patterns",
+          "path": "plugins/backend-development/skills/microservices-patterns/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "后端架构设计模式",
+          "description_zh": "指导 agent 设计微服务架构，涵盖服务分解、同步/异步通信、分布式数据管理、韧性模式与服务发现等。",
+          "what": "为分布式系统设计微服务架构与相关模式",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "projection-patterns",
+          "path": "plugins/backend-development/skills/projection-patterns/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "后端架构模式",
+          "description_zh": "帮助代理实现事件溯源系统中的 CQRS 读模型和投影，优化查询性能，适用于构建实时仪表盘或搜索索引。",
+          "what": "构建读模型和投影从事件流以优化查询。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "saga-orchestration",
+          "path": "plugins/backend-development/skills/saga-orchestration/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "后端架构模式",
+          "description_zh": "帮助代理实现分布式事务和跨微服务工作流，使用 saga 模式管理补偿操作，确保事务最终一致性。",
+          "what": "实现 saga 模式用于分布式事务和工作流协调。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "temporal-python-testing",
+          "path": "plugins/backend-development/skills/temporal-python-testing/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Temporal 工作流测试",
+          "description_zh": "指导 AI agent 使用 pytest 对 Temporal 工作流进行单元测试、集成测试和回放测试，涵盖时间跳跃、mock 策略与 CI/CD 集成。",
+          "what": "Temporal Python 工作流的测试策略与实操指南",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "workflow-orchestration-patterns",
+          "path": "plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "分布式工作流编排模式",
+          "description_zh": "指导 AI agent 用 Temporal 设计分布式持久化工作流，涵盖 workflow/activity 分离、Saga 模式、状态管理与确定性约束。",
+          "what": "基于 Temporal 的分布式持久化工作流架构设计模式",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "block-no-verify-hook",
+          "path": "plugins/block-no-verify/skills/block-no-verify-hook/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "危险命令拦截",
+          "description_zh": "配置 PreToolUse hook，拦截 AI agent 执行含 --no-verify 等绕过标志的 git 命令，强制 pre-commit 检查不被跳过。",
+          "what": "阻止 AI agent 用 --no-verify 绕过 git pre-commit 钩子",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "defi-protocol-templates",
+          "path": "plugins/blockchain-web3/skills/defi-protocol-templates/SKILL.md",
+          "subcategory": "20-3",
+          "subcategory_title": "20.3 合约开发 / 工具链",
+          "category": "web3-blockchain",
+          "group": "合约开发 / 工具链",
+          "description_zh": "提供 DeFi 协议的生产级 Solidity 模板，涵盖质押、AMM、治理、借贷和闪电贷，供 agent 直接生成完整合约代码。",
+          "what": "提供 DeFi 协议（质押/AMM/治理/借贷）的生产级 Solidity 模板",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nft-standards",
+          "path": "plugins/blockchain-web3/skills/nft-standards/SKILL.md",
+          "subcategory": "20-5",
+          "subcategory_title": "20.5 Web3 应用 / NFT / DAO / 交易",
+          "category": "web3-blockchain",
+          "group": "Web3 应用 / NFT / DAO / 交易",
+          "description_zh": "帮助 agent 实现 NFT 标准（ERC-721、ERC-1155），处理元数据、铸造策略和市场集成，用于构建数字资产系统。",
+          "what": "实现 NFT 标准和市场集成。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "solidity-security",
+          "path": "plugins/blockchain-web3/skills/solidity-security/SKILL.md",
+          "subcategory": "20-1",
+          "subcategory_title": "20.1 智能合约审计 / 漏洞检测",
+          "category": "web3-blockchain",
+          "group": "智能合约审计 / 漏洞检测",
+          "description_zh": "帮助 agent 掌握智能合约安全最佳实践，防止常见漏洞，用于编写和审计 Solidity 合约。",
+          "what": "智能合约安全审计和防护。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "web3-testing",
+          "path": "plugins/blockchain-web3/skills/web3-testing/SKILL.md",
+          "subcategory": "20-3",
+          "subcategory_title": "20.3 合约开发 / 工具链",
+          "category": "web3-blockchain",
+          "group": "Web3 智能合约测试",
+          "description_zh": "为 Solidity 智能合约提供 Hardhat/Foundry 全面测试指导，覆盖单元测试、集成测试、Gas 优化、模糊测试和主网 fork，用于合约开发与 DeFi 协议验证。",
+          "what": "用 Hardhat 和 Foundry 对 Solidity 智能合约做全面测试（单元/集成/fuzz/主网 fork/Gas 优化）",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "brand-landingpage",
+          "path": "plugins/brand-landingpage/skills/brand-landingpage/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "品牌着陆页设计",
+          "description_zh": "通过品牌身份访谈引导用户确定视觉方向，再用 Stitch 生成并迭代打磨部署就绪的单页着陆页 HTML，适合尚无设计稿的产品营销页。",
+          "what": "对无视觉方向的用户进行品牌访谈后生成并迭代部署就绪的着陆页",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "data-storytelling",
+          "path": "plugins/business-analytics/skills/data-storytelling/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "数据叙事与可视化",
+          "description_zh": "帮助 agent 将数据转化为引人入胜的叙事，用于制作商业演示、数据报告和投资者呈现。",
+          "what": "将数据故事化，驱动决策和行动。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kpi-dashboard-design",
+          "path": "plugins/business-analytics/skills/kpi-dashboard-design/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "指标 dashboard 设计",
+          "description_zh": "帮助 agent 设计有效的 KPI 仪表板，包括指标选择、可视化最佳实践和实时监控模式。",
+          "what": "设计 KPI 仪表板以监控和展示业务指标。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "deployment-pipeline-design",
+          "path": "plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "Kubernetes / GitOps / CI-CD",
+          "description_zh": "帮助AI代理设计和实现多阶段CI/CD管道，包括审批门、安全检查和零停机部署策略。",
+          "what": "设计多阶段CI/CD管道。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "github-actions-templates",
+          "path": "plugins/cicd-automation/skills/github-actions-templates/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "Kubernetes / GitOps / CI-CD",
+          "description_zh": "为AI代理提供生产就绪的GitHub Actions工作流模板，用于自动化测试、构建和部署应用。",
+          "what": "创建GitHub Actions工作流模板。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gitlab-ci-patterns",
+          "path": "plugins/cicd-automation/skills/gitlab-ci-patterns/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "description_zh": "帮助构建高效的 GitLab CI/CD 管道，支持多阶段工作流、缓存、分布式 runner 和自动化部署。",
+          "what": "构建 GitLab CI/CD 管道",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "secrets-management",
+          "path": "plugins/cicd-automation/skills/secrets-management/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "应用层安全三件套",
+          "description_zh": "实现安全的 secrets 管理，集成 Vault、AWS Secrets Manager 等工具，保护 CI/CD 环境中的敏感信息。",
+          "what": "安全管理 CI/CD secrets",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    }
+  ]
+}
