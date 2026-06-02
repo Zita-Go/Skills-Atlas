@@ -253,8 +253,8 @@ module.exports = async function install(argv) {
     return;
   }
 
-  // installing clears any prior dismiss (you changed your mind about this skill).
-  try { require('../feedback').record({ skill, signal: 'accepted' }); } catch { /* ignore */ }
+  // installing clears any prior suppression (global dismiss + this project's removal).
+  try { require('../feedback').installed(skill); } catch { /* ignore */ }
 
   if (values.json) {
     const out = {

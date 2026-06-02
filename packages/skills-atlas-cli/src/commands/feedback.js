@@ -1,6 +1,6 @@
-// `skills-atlas feedback` — the autopilot's local suppression list: skills you've
-// explicitly dismissed are never suggested again. Show / add to / reset it.
-// All local; nothing is sent anywhere.
+// `skills-atlas feedback` — the autopilot's local suppression list. Two scopes:
+// skills you've dismissed (never suggested, anywhere) and skills you've removed from
+// THIS project (not suggested here). Show / add to / reset it. Nothing is sent.
 'use strict';
 
 const { parse } = require('../args');
@@ -9,13 +9,15 @@ const { green, dim } = require('../format');
 
 const HELP = `usage: skills-atlas feedback [dismiss <skill> | reset]
 
-Skills the autopilot won't suggest again — the ones you've dismissed. Local only;
-nothing is sent. Installing a skill clears its dismiss. (Removing a skill does NOT
-suppress it — that's just cleanup.)
+Skills the autopilot won't suggest again. Two kinds, local only — nothing is sent:
+  • dismissed — you said "never suggest this"; applies in every project
+  • removed   — you removed it from THIS project; suppressed here only
+Installing a skill clears both. (Removing one from the global scope is just an
+uninstall — it does not suppress; use 'dismiss' for a blanket no.)
 
-  feedback                  show the suppression list
-  feedback dismiss <skill>  never suggest a skill again
-  feedback reset            forget everything
+  feedback                  show the suppression list (this project + global)
+  feedback dismiss <skill>  never suggest a skill again, in any project
+  feedback reset            forget everything (global + this project)
   --json`;
 
 module.exports = async function feedbackCmd(argv) {
@@ -31,21 +33,21 @@ module.exports = async function feedbackCmd(argv) {
   if (sub === 'dismiss') {
     const x = positionals.slice(1).join(' ');
     if (!x) { console.error('usage: skills-atlas feedback dismiss <skill>'); process.exitCode = 1; return; }
-    feedback.record({ skill: x, signal: 'dismissed' });
-    console.log(values.json ? JSON.stringify({ dismissed: x }) : `${green('✓')} won't suggest ${x} again.`);
+    feedback.dismiss(x);
+    console.log(values.json ? JSON.stringify({ dismissed: x }) : `${green('✓')} won't suggest ${x} again (any project).`);
     return;
   }
 
-  const events = feedback.read().events;
-  const prof = feedback.profile(events);
+  const cur = feedback.current();
   if (values.json) {
-    console.log(JSON.stringify({ actions: events.length, suppressed: [...prof.suppressed] }, null, 2));
+    console.log(JSON.stringify({ dismissed: [...cur.global], removedHere: [...cur.project] }, null, 2));
     return;
   }
-  if (!prof.suppressed.size) {
-    console.log(dim('nothing suppressed — run `skills-atlas feedback dismiss <skill>` and the\nautopilot stops offering that skill.'));
+  if (!cur.global.size && !cur.project.size) {
+    console.log(dim('nothing suppressed — run `skills-atlas feedback dismiss <skill>`, or remove a\nskill from this project, and the autopilot stops offering it.'));
     return;
   }
-  console.log(`\n${green("won't suggest again")} (${prof.suppressed.size}): ${[...prof.suppressed].join(', ')}`);
-  console.log(dim(`from ${events.length} recorded action(s).  re-install one to clear it, or: skills-atlas feedback reset`));
+  if (cur.global.size) console.log(`\n${green("won't suggest anywhere")} (${cur.global.size}): ${[...cur.global].join(', ')}`);
+  if (cur.project.size) console.log(`${green("won't suggest in this project")} (${cur.project.size}): ${[...cur.project].join(', ')}`);
+  console.log(dim('re-install one to clear it, or: skills-atlas feedback reset'));
 };

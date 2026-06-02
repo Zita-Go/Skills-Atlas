@@ -40,9 +40,10 @@ module.exports = async function remove(argv) {
   if (fsu.dirExists(dest)) fsu.rmrf(dest);
   manifest.remove(root, name);
 
-  // NB: removal is deliberately NOT a feedback signal — cleaning up a finished
-  // project's skills must not bury something you may want again. Only an explicit
-  // `feedback dismiss` suppresses.
+  // Removing a PROJECT skill is a "not in this project" signal — suppress it here only,
+  // never across projects (it may be useful elsewhere). Removing a GLOBAL skill is just
+  // uninstalling; for a blanket "never suggest this", use `feedback dismiss`.
+  if (!global) { try { require('../feedback').removedInProject(name); } catch { /* ignore */ } }
 
   if (values.json) { console.log(JSON.stringify({ removed: name, dest })); return; }
   console.log(`${green('✓')} removed ${name}  ${dim(fsu.tildify(dest))}`);
