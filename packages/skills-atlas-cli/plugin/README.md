@@ -9,9 +9,9 @@ duplicated; everything shells out to the CLI.
 **An autopilot, on by default.** Installing the plugin registers a UserPromptSubmit hook
 so Claude quietly suggests a catalog skill when your prompt lines up with one you don't
 have, surfaces recurring capability gaps, and offers to codify a workflow you keep
-repeating — each judged for fit before anything shows. Turn it off with
-`skills-atlas hook off`; see controls with `skills-atlas hook status`. Nothing leaves
-your machine.
+repeating — each judged for fit before anything shows. Toggle or tune it with
+`/skills-atlas:skill-autopilot [on|off]` (or `skills-atlas hook off` from the shell).
+Nothing leaves your machine.
 
 **Slash commands:**
 

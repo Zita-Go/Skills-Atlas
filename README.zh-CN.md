@@ -12,7 +12,7 @@
 [![Categories](https://img.shields.io/badge/categories-20_×_116-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[**🌐 在线访问**](https://zita-go.github.io/Skills-Atlas/?lang=zh) · [**⌨️ 当工具用**](packages/skills-atlas-cli) · [📦 数据下载](data/) · [🤝 贡献新 skill](CONTRIBUTING.zh-CN.md) · [💬 讨论区](../../discussions)
+[**🧩 Claude Code 插件**](packages/skills-atlas-cli/plugin) · [**⌨️ CLI**](packages/skills-atlas-cli) · [🌐 在线访问](https://zita-go.github.io/Skills-Atlas/?lang=zh) · [📦 数据下载](data/) · [🤝 贡献新 skill](CONTRIBUTING.zh-CN.md) · [💬 讨论区](../../discussions)
 
 </div>
 
@@ -21,20 +21,29 @@
 ## 快速上手
 
 **skill** 是一个可复用的 `SKILL.md` 指令包,教 Claude Code 一套专门工作流:系统化调试、
-事前复盘(pre-mortem)、SEO 审计、PDF 翻译,等等几百种。**Skills Atlas** 精选了 800+ 个
-这类 skill。拿到对的那一个,有两种方式:
+事前复盘(pre-mortem)、SEO 审计、PDF 翻译,等等几百种。**Skills Atlas** 精选了 800+ 个这类 skill。
 
-1. **🔍 找到并装上。** 在[网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)浏览,或在终端搜索,几秒装好。
-2. **🤖 让它来找你。** 打开自动驾驶,Claude 在你工作时主动端出合适的 skill,不用搜。
+**最省事的用法是 Claude Code 插件** 🧩 —— 在对话里直接发现、安装、甚至**孵化**新 skill,
+还自带一个**默认开启的自动驾驶**:你干活时,Claude 主动把合适的 skill 递到面前,不用搜。
+
+```text
+npm i -g skills-atlas-cli                      # 引擎(Node 18+)
+/plugin marketplace add Zita-Go/Skills-Atlas   # 然后在 Claude Code 里:
+/plugin install skills-atlas@skills-atlas
+```
+
+重启 Claude Code,然后直接说你要做什么,剩下交给 Skills Atlas。随时 `/skills-atlas:setup`
+看你装了什么。→ [**插件文档**](packages/skills-atlas-cli/plugin)
+
+**更喜欢终端?** 同样的能力也是一个独立 CLI:
 
 ```bash
 npm install -g skills-atlas-cli
 skills-atlas search "stress test my launch plan"   # pre-mortem 排在最前
 skills-atlas use pre-mortem                          # 装上,Claude 立即用上
-skills-atlas hook on                                 # 可选:打开自动驾驶,下次免搜索
 ```
 
-工具完整文档:[**`skills-atlas-cli`**](packages/skills-atlas-cli)。
+完整文档:[**🧩 Claude Code 插件**](packages/skills-atlas-cli/plugin) · [**⌨️ `skills-atlas-cli`**](packages/skills-atlas-cli)。
 
 ## 为什么有这个项目
 
@@ -46,8 +55,8 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~115 个 GitHub 仓库�
 - 你想做完整的开发工作流？看 § 1.1，⛓ 强绑定标记会告诉你哪 5 个必须串起来用
 - 你想找文档处理工具？看 § 2.1，Office 4 件套 + PDF 重型 API + 多格式抽取引擎一目了然
 
-而且它不只是一个用来看的目录：一个[终端 CLI + Claude Code 插件](packages/skills-atlas-cli)让你直接
-**搜索、安装、使用**这些 skill，还带一个可选的自动驾驶，在你工作时主动把合适的 skill 递到你面前。
+而且它不只是一个用来看的目录：一个[Claude Code 插件 + 终端 CLI](packages/skills-atlas-cli/plugin)让你直接
+**搜索、安装、使用**这些 skill，还带一个自动驾驶(插件里默认开启),在你工作时主动把合适的 skill 递到你面前。
 
 ## 数据规模
 
@@ -63,10 +72,34 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~115 个 GitHub 仓库�
 
 ## 怎么用
 
-### 从终端找到并安装(CLI + 插件)
+### 🧩 在 Claude Code 里 —— 插件(推荐)
 
-**真正"用上"一个 skill 最快的方式。**[`skills-atlas-cli`](packages/skills-atlas-cli) 把目录
-变成真正的工具:在终端里直接搜索、**安装**、使用 skill：
+最顺手的方式:装上插件,让 Skills Atlas **在对话里**干活 —— 不用切到终端。它的**自动驾驶默认开启**,
+你干活时 Claude 主动端出合适的 skill;其余的交给斜杠命令。
+
+```text
+npm i -g skills-atlas-cli                      # 引擎(Node 18+)
+/plugin marketplace add Zita-Go/Skills-Atlas   # 然后在 Claude Code 里:
+/plugin install skills-atlas@skills-atlas
+```
+
+重启 Claude Code(或 `/reload-plugins`),先跑 **`/skills-atlas:setup`**。之后直接说需求,或用命令:
+
+| 命令 | 作用 |
+|---|---|
+| `/skills-atlas:skill-search <query>` | 在目录里找 skill |
+| `/skills-atlas:skill-install <skill>` | 装上并在本项目激活 |
+| `/skills-atlas:skill-kit` | 识别项目类型,配一套对口 skill |
+| `/skills-atlas:skill-craft` | 把你反复做的工作流孵化成新 skill |
+| `/skills-atlas:skill-gaps` · `:skill-prune` | 推荐缺的 skill · 标出用不上的 |
+| `/skills-atlas:skill-autopilot [on\|off]` | 开关 / 微调自动驾驶 |
+
+→ [**插件完整文档**](packages/skills-atlas-cli/plugin)
+
+### ⌨️ 或者从终端(CLI)
+
+[`skills-atlas-cli`](packages/skills-atlas-cli) 也是个独立工具 —— 插件跑的就是它这套引擎。
+在终端里直接搜索、**安装**、使用 skill：
 
 <a href="packages/skills-atlas-cli"><img src="docs/cli-demo.png" alt="skills-atlas：搜索 → 查看 → 安装一个 skill" width="760"></a>
 
@@ -90,18 +123,15 @@ npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/bra
 
 ### 🤖 自动驾驶:让合适的 skill 主动找你
 
-你不该为了用上一个 skill，得先知道它存在。把自动驾驶打开，只要任务命中某个 skill，Claude 就会主动
-端出来，还讲清楚为什么，一条命令就用上：
-
-```bash
-skills-atlas hook on
-```
+你不该为了用上一个 skill,得先知道它存在。**用插件的话,自动驾驶默认就开着** —— 只要任务命中某个你还没装的
+skill,Claude 就会主动端出来、讲清楚为什么,一条命令就用上:
 
 > 🗣️ *"上线前先做个 pre-mortem 把风险过一遍"*
 >
 > 🤖 *"这正是 **pre-mortem** 这个 skill 的拿手活:上线前把计划的失败模式压测一遍。**现在就用**,看看细节,还是跳过？"*
 
-默认关闭,逐条建议在本地匹配(prompt 不外传),绝不自动安装。可配回复语言(`hook lang en|zh`)等。[它怎么工作 →](packages/skills-atlas-cli)
+逐条建议在本地匹配(prompt 不外传),绝不自动安装。(用独立 CLI?用 `skills-atlas hook on` 打开。)
+可配回复语言等 —— [它怎么工作 →](packages/skills-atlas-cli/plugin)
 
 **🔭 能力缺口 & 🧹 清理。** `skills-atlas gaps` 读你**最近的活动**(Claude Code 本地的 transcript),由一个**后台子 agent**——你选的小模型(`hook model`,默认 Haiku,复用你的 Claude Code 登录)——发现"你反复在做、却没装对应 skill"的那类活并推荐;它会把最近的 prompt 交给那个模型判断(同你已在用的 Claude Code 同一家)。`skills-atlas prune` 反向:把你用不上的已装 skill 挑出来建议删。[详情 →](packages/skills-atlas-cli)
 

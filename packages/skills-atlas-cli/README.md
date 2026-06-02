@@ -7,6 +7,11 @@
 Code.** Stop guessing which skill fits or copy-pasting from random repos. Search a
 curated catalog of **800+ skills** and drop the right one into `.claude/skills/` in seconds.
 
+> 🧩 **Using Claude Code? The easiest way is the [Skills Atlas plugin](./plugin).** It runs
+> on this CLI and brings everything into the conversation — an **autopilot that's on by
+> default** (the right skill finds you as you work) plus slash commands. Install this CLI as
+> the engine, then add the plugin (two lines). → [**plugin docs**](./plugin)
+
 > **New to "skills"?** A skill is a reusable `SKILL.md` instruction pack that teaches
 > Claude Code a specialized workflow: systematic debugging, pre-mortems, SEO audits,
 > PDF translation, and hundreds more. This tool finds and installs them for you.
@@ -129,16 +134,20 @@ skills-atlas registry remove https://skills.acme.internal/data.json
 
 Private skills merge with the public catalog (your own wins a name clash) and are cached locally.
 
-## In Claude Code
+## In Claude Code — the plugin (recommended)
 
-A thin [Claude Code plugin](./plugin) lets Claude do all of this in-conversation.
-Just describe what you need, or use `/skills-atlas:skill-search`, `:skill-info`,
-`:skill-install`:
+The **[Skills Atlas plugin](./plugin)** wraps this CLI so Claude does it all
+in-conversation: an **autopilot on by default** that surfaces the fitting skill as you
+work, plus slash commands (`/skills-atlas:skill-search`, `:skill-install`, `:skill-kit`,
+`:skill-craft`, …). Install this CLI first (the engine), then add the plugin:
 
 ```text
-/plugin marketplace add Zita-Go/Skills-Atlas
+npm i -g skills-atlas-cli                      # the engine (Node 18+)
+/plugin marketplace add Zita-Go/Skills-Atlas   # then, inside Claude Code:
 /plugin install skills-atlas@skills-atlas
 ```
+
+Restart Claude Code, run `/skills-atlas:setup`, and you're set. → [**plugin docs**](./plugin)
 
 ## In any MCP client
 

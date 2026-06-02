@@ -12,7 +12,7 @@ Stop asking "what skills exist" and start asking "which skill should I use to do
 [![Categories](https://img.shields.io/badge/categories-20_×_116-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[**🌐 Visit online**](https://zita-go.github.io/Skills-Atlas/?lang=en) · [**⌨️ Use it as a tool**](packages/skills-atlas-cli) · [📦 Data download](data/) · [🤝 Contribute a new skill](CONTRIBUTING.md) · [💬 Discussions](../../discussions)
+[**🧩 Claude Code plugin**](packages/skills-atlas-cli/plugin) · [**⌨️ CLI**](packages/skills-atlas-cli) · [🌐 Visit online](https://zita-go.github.io/Skills-Atlas/?lang=en) · [📦 Data download](data/) · [🤝 Contribute a new skill](CONTRIBUTING.md) · [💬 Discussions](../../discussions)
 
 <a href="https://zita-go.github.io/Skills-Atlas/?lang=en"><img src="docs/screenshot-dark.png" alt="Skills Atlas — browse the catalog online" width="760"></a>
 
@@ -24,20 +24,30 @@ Stop asking "what skills exist" and start asking "which skill should I use to do
 
 A **skill** is a reusable `SKILL.md` instruction pack that teaches Claude Code a
 specialized workflow: systematic debugging, pre-mortems, SEO audits, PDF translation,
-and hundreds more. **Skills Atlas** is a curated catalog of 800+ of them, with two
-ways to get the right one:
+and hundreds more. **Skills Atlas** is a curated catalog of 800+ of them.
 
-1. **🔍 Find and install it.** Browse [online](https://zita-go.github.io/Skills-Atlas/?lang=en) or search from your terminal, then install in seconds.
-2. **🤖 Let it find you.** Turn on autopilot and Claude surfaces the fitting skill as you work, no searching.
+**The easiest way to use it is the Claude Code plugin** 🧩 — discover, install, and *grow*
+skills right inside a conversation, with an **autopilot that's on by default**: as you
+work, Claude quietly surfaces the skill that fits, no searching.
+
+```text
+npm i -g skills-atlas-cli                      # the engine (Node 18+)
+/plugin marketplace add Zita-Go/Skills-Atlas   # then, inside Claude Code:
+/plugin install skills-atlas@skills-atlas
+```
+
+Restart Claude Code, then just say what you're doing — Skills Atlas takes it from there.
+Run `/skills-atlas:setup` anytime to see what you've got. → [**plugin docs**](packages/skills-atlas-cli/plugin)
+
+**Prefer the terminal?** The same power is a standalone CLI:
 
 ```bash
 npm install -g skills-atlas-cli
 skills-atlas search "stress test my launch plan"   # pre-mortem tops the results
 skills-atlas use pre-mortem                          # install it, Claude applies it now
-skills-atlas hook on                                 # optional: autopilot surfaces skills as you work
 ```
 
-Full tool docs: [**`skills-atlas-cli`**](packages/skills-atlas-cli).
+Full docs: [**🧩 Claude Code plugin**](packages/skills-atlas-cli/plugin) · [**⌨️ `skills-atlas-cli`**](packages/skills-atlas-cli).
 
 ## Why this project exists
 
@@ -49,9 +59,9 @@ Existing awesome lists only give you names plus a one-line description, and they
 - Want a complete development workflow? See § 1.1, where the ⛓ strong-binding markers tell you which 5 must be chained together
 - Looking for document-processing tools? See § 2.1, where the Office 4-piece suite + the heavy-duty PDF API + the multi-format extraction engine are laid out at a glance
 
-And it's not just a catalog to read: a [terminal CLI + Claude Code plugin](packages/skills-atlas-cli)
-lets you **search, install, and use** any of these skills, with an opt-in autopilot that
-surfaces the right one as you work.
+And it's not just a catalog to read: a [Claude Code plugin + terminal CLI](packages/skills-atlas-cli/plugin)
+lets you **search, install, and use** any of these skills, with an autopilot (on by default
+in the plugin) that surfaces the right one as you work.
 
 ## Data scale
 
@@ -67,10 +77,36 @@ Coverage spans **20 functional categories**, from software engineering, PM, mark
 
 ## How to use
 
-### Find and install from the terminal (CLI + plugin)
+### 🧩 Inside Claude Code — the plugin (recommended)
 
-**The fastest way to actually use a skill.** The [`skills-atlas-cli`](packages/skills-atlas-cli)
-package turns the catalog into a real tool: search, **install**, and use skills straight from
+The smoothest way: install the plugin and let Skills Atlas work **in the conversation** —
+no switching to a terminal. Its **autopilot is on by default**, so as you work Claude
+surfaces the skill that fits; slash commands cover everything else.
+
+```text
+npm i -g skills-atlas-cli                      # the engine (Node 18+)
+/plugin marketplace add Zita-Go/Skills-Atlas   # then, inside Claude Code:
+/plugin install skills-atlas@skills-atlas
+```
+
+Restart Claude Code (or `/reload-plugins`), then run **`/skills-atlas:setup`**. Then just
+describe what you need, or reach for a command:
+
+| Command | What it does |
+|---|---|
+| `/skills-atlas:skill-search <query>` | Find a skill in the catalog |
+| `/skills-atlas:skill-install <skill>` | Install + activate it in this project |
+| `/skills-atlas:skill-kit` | Detect the project type and set up a curated kit |
+| `/skills-atlas:skill-craft` | Turn a workflow you keep repeating into a new skill |
+| `/skills-atlas:skill-gaps` · `:skill-prune` | Recommend skills for your work · flag unused ones |
+| `/skills-atlas:skill-autopilot [on\|off]` | Toggle / tune the autopilot |
+
+→ [**full plugin docs**](packages/skills-atlas-cli/plugin)
+
+### ⌨️ Or from the terminal (CLI)
+
+The [`skills-atlas-cli`](packages/skills-atlas-cli) package is also a standalone tool —
+the same engine the plugin runs on. Search, **install**, and use skills straight from
 your shell:
 
 <a href="packages/skills-atlas-cli"><img src="docs/cli-demo.png" alt="skills-atlas: search → info → install a skill" width="760"></a>
@@ -96,19 +132,17 @@ npx skills-atlas-cli install brainstorming --global   # → ~/.claude/skills/bra
 
 ### 🤖 Autopilot: let the right skill find you
 
-You shouldn't have to know a skill exists to use it. Turn autopilot on, and whenever
-your task matches one, Claude surfaces it, explained, with one command to apply:
-
-```bash
-skills-atlas hook on
-```
+You shouldn't have to know a skill exists to use it. **With the plugin, autopilot is on by
+default** — whenever your task lines up with a skill you don't have, Claude surfaces it,
+explained, with one command to apply:
 
 > 🗣️ *"run a pre-mortem before we launch"*
 >
 > 🤖 *"That's exactly what the **pre-mortem** skill does: it stress-tests your plan before launch. **Use it now**, see details, or skip?"*
 
-Off by default, the per-prompt match runs locally, never auto-installs. Configure the
-reply language (`hook lang en|zh`) and more. [How it works →](packages/skills-atlas-cli)
+The per-prompt match runs locally and never auto-installs. (Using the standalone CLI?
+Turn it on with `skills-atlas hook on`.) Configure the reply language and more —
+[how it works →](packages/skills-atlas-cli/plugin)
 
 **🔭 Capability gaps & 🧹 cleanup.** `skills-atlas gaps` reads your *recent activity*
 (from Claude Code's local transcripts) and a **background sub-agent** — a small model
