@@ -7,9 +7,9 @@
 **A panorama of AI Agent Skills organized by function**
 Stop asking "what skills exist" and start asking "which skill should I use to do X".
 
-[![Skills](https://img.shields.io/badge/skills-826-blue)](data/skills.yaml)
-[![Repos](https://img.shields.io/badge/repositories-111-green)](data/repositories.yaml)
-[![Categories](https://img.shields.io/badge/categories-20_×_115-orange)](data/categories.yaml)
+[![Skills](https://img.shields.io/badge/skills-906-blue)](data/skills.yaml)
+[![Repos](https://img.shields.io/badge/repositories-115-green)](data/repositories.yaml)
+[![Categories](https://img.shields.io/badge/categories-20_×_116-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [**🌐 Visit online**](https://zita-go.github.io/Skills-Atlas/?lang=en) · [**⌨️ Use it as a tool**](packages/skills-atlas-cli) · [📦 Data download](data/) · [🤝 Contribute a new skill](CONTRIBUTING.md) · [💬 Discussions](../../discussions)
@@ -41,7 +41,7 @@ Full tool docs: [**`skills-atlas-cli`**](packages/skills-atlas-cli).
 
 ## Why this project exists
 
-The AI Agent Skills ecosystem exploded in 2025, but it's scattered across ~111 GitHub repositories.
+The AI Agent Skills ecosystem exploded in 2025, but it's scattered across ~115 GitHub repositories.
 Existing awesome lists only give you names plus a one-line description, and they **don't tell you which ones work together**.
 
 **Skills Atlas** reorganizes everything along a "functional dimension":
@@ -57,11 +57,11 @@ surfaces the right one as you work.
 
 | Dimension | Count |
 |---|---:|
-| Standalone skills | 826 |
-| Functional groups | 249 |
-| Categories / Subgroups | 20 / 115 |
-| Source repositories | 111 |
-| ⛓ Strong-binding workflows | 18 |
+| Standalone skills | 906 |
+| Functional groups | 297 |
+| Categories / Subgroups | 20 / 116 |
+| Source repositories | 115 |
+| ⛓ Strong-binding workflows | 20 |
 
 Coverage spans **20 functional categories**, from software engineering, PM, marketing and design to the professional verticals **legal, healthcare, finance, DevOps/SRE, security, education and Web3**.
 

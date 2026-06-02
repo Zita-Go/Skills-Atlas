@@ -7,9 +7,9 @@
 **按功能分类的 AI Agent Skills 全景**
 不再问"有什么 skill"，而是"我要做 X 该用哪个 skill"。
 
-[![Skills](https://img.shields.io/badge/skills-826-blue)](data/skills.yaml)
-[![Repos](https://img.shields.io/badge/repositories-111-green)](data/repositories.yaml)
-[![Categories](https://img.shields.io/badge/categories-20_×_115-orange)](data/categories.yaml)
+[![Skills](https://img.shields.io/badge/skills-906-blue)](data/skills.yaml)
+[![Repos](https://img.shields.io/badge/repositories-115-green)](data/repositories.yaml)
+[![Categories](https://img.shields.io/badge/categories-20_×_116-orange)](data/categories.yaml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [**🌐 在线访问**](https://zita-go.github.io/Skills-Atlas/?lang=zh) · [**⌨️ 当工具用**](packages/skills-atlas-cli) · [📦 数据下载](data/) · [🤝 贡献新 skill](CONTRIBUTING.zh-CN.md) · [💬 讨论区](../../discussions)
@@ -38,7 +38,7 @@ skills-atlas hook on                                 # 可选:打开自动驾驶
 
 ## 为什么有这个项目
 
-AI Agent Skills 生态在 2025 年爆发，但分散在 ~111 个 GitHub 仓库里。
+AI Agent Skills 生态在 2025 年爆发，但分散在 ~115 个 GitHub 仓库里。
 现有的 awesome 列表只列名字 + 一句话描述，**不知道哪几个能配合用**。
 
 **Skills Atlas** 按"功能维度"重新组织：
@@ -53,11 +53,11 @@ AI Agent Skills 生态在 2025 年爆发，但分散在 ~111 个 GitHub 仓库�
 
 | 维度 | 数量 |
 |---|---:|
-| 独立 skill | 826 |
-| 功能分组 | 249 |
-| 大类 / 子分组 | 20 / 115 |
-| 源仓库 | 111 |
-| ⛓ 强绑定工作流 | 18 |
+| 独立 skill | 906 |
+| 功能分组 | 297 |
+| 大类 / 子分组 | 20 / 116 |
+| 源仓库 | 115 |
+| ⛓ 强绑定工作流 | 20 |
 
 覆盖 **20 个功能大类**,从软件工程、产品、营销、设计,到 **法律、医疗、金融、DevOps/SRE、安全、教育、Web3** 等专业垂直领域。
 
