@@ -7,7 +7,7 @@
     {
       "name": "skills-atlas",
       "source": "./packages/skills-atlas-cli/plugin/skills-atlas",
-      "description": "Search and install AI agent skills from the Skills Atlas catalog, in-conversation. Requires the skills-atlas-cli CLI on PATH (npm i -g skills-atlas-cli)."
+      "description": "Discover, install, manage, and grow agent skills from the Skills Atlas catalog, in-conversation — with an autopilot on by default. Requires skills-atlas-cli on PATH (npm i -g skills-atlas-cli)."
     }
   ]
 }
