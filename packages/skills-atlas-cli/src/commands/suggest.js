@@ -56,28 +56,29 @@ module.exports = async function suggest() {
     let event = {};
     try { event = JSON.parse(fs.readFileSync(0, 'utf8')); } catch { /* not JSON → bail */ }
     const prompt = event.prompt || '';
-    if (!prompt || prompt.length < 8) return;
+    if (!prompt) return;
+
+    // First-run welcome fallback: if the plugin was installed mid-session (so no fresh
+    // SessionStart has fired the welcome yet), surface the one-time welcome on the user's
+    // next prompt — verbatim, via systemMessage. This MUST run ahead of the suggestion's
+    // min-length gate below: onboarding shouldn't depend on how long the prompt is (a short
+    // "hi" should still get the welcome). Shares the global `onboarded` marker with the
+    // SessionStart hook, so the welcome shows exactly once across both paths.
+    try {
+      const welcome = require('./setup').buildWelcome(registry.getAutopilot(), { consume: true });
+      if (welcome) {
+        console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: 'UserPromptSubmit' }, systemMessage: welcome, suppressOutput: true }));
+        return;
+      }
+    } catch { /* fail-open */ }
+
+    // The proactive suggestion (below) needs a meatier prompt to match against.
+    if (prompt.length < 8) return;
 
     const file = stateFile(event.session_id || event.sessionId);
     const state = readState(file);
     state.count = (state.count || 0) + 1;
     const ap = registry.getAutopilot();
-
-    // First-run welcome fallback: if the plugin was installed mid-session (so no fresh
-    // SessionStart has fired the welcome yet), surface the one-time welcome here on the
-    // user's next prompt — verbatim, via systemMessage. Shares the global `onboarded`
-    // marker with the SessionStart hook, so the welcome shows exactly once across both
-    // paths. Runs ahead of the master switch: onboarding should land even with the
-    // proactive autopilot turned off.
-    try {
-      const welcome = require('./setup').buildWelcome(ap, { consume: true });
-      if (welcome) {
-        console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: 'UserPromptSubmit' }, systemMessage: welcome, suppressOutput: true }));
-        writeState(file, state);
-        return;
-      }
-    } catch { /* fail-open */ }
-
     // Master switch (default ON). The plugin ships the hook so this fires on every
     // prompt; `skills-atlas hook off` flips enabled=false and we no-op immediately.
     if (ap.enabled === false) return;

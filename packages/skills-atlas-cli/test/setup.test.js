@@ -83,16 +83,18 @@ test('buildWelcome: returns the welcome once (consume marks onboarded), then nul
   assert.strictEqual(setup.buildWelcome(ap, { consume: true }), null, 'null once the one-shot is consumed');
 });
 
-test('suggest (UserPromptSubmit): first-run welcome fallback fires once, then not again', () => {
+test('suggest (UserPromptSubmit): first-run welcome fallback fires once — even on a SHORT prompt — then not again', () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-sg-'));
   const env = { ...process.env, XDG_CACHE_HOME: path.join(dir, 'c'), XDG_CONFIG_HOME: path.join(dir, 'cfg') };
   delete env.SKILLS_ATLAS_SUBCALL;
   const bin = path.join(__dirname, '..', 'bin', 'skills.js');
-  const event = JSON.stringify({ prompt: 'help me set up a project', session_id: 'fallback-test' });
+  // A short prompt (< 8 chars) that the suggestion min-length gate would drop — the welcome
+  // must still fire (regression: the fallback used to sit behind that gate).
+  const event = JSON.stringify({ prompt: 'hi', session_id: 'fallback-test' });
   const sysMsg = out => (out.split('\n').filter(Boolean).map(l => { try { return JSON.parse(l); } catch { return null; } }).find(j => j && j.systemMessage) || {}).systemMessage || '';
 
   const out1 = execFileSync(process.execPath, [bin, 'suggest'], { input: event, env, encoding: 'utf8' });
-  assert.ok(/Skills Atlas is on/.test(sysMsg(out1)), 'welcome on the very first prompt');
+  assert.ok(/Skills Atlas is on/.test(sysMsg(out1)), 'welcome on the very first prompt, even though it is short');
   assert.ok(fs.existsSync(path.join(dir, 'c', 'skills-atlas', 'onboarded')), 'marked onboarded after the fallback');
 
   const out2 = execFileSync(process.execPath, [bin, 'suggest'], { input: event, env, encoding: 'utf8' });
