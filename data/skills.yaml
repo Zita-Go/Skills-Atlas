@@ -3549,8 +3549,8 @@
   category: web3-blockchain
   subcategory: 20-1
   chain: false
-  description: Solidity/EVM 合约系统化审计:重入/签名重放/状态校验/精度/代理升级/状态不变量,370 项清单与行为意图建模。；另含 solidity-security：智能合约安全最佳实践与漏洞防护，用于编写 / 审计 Solidity
-  description_en: 'Systematic Solidity/EVM contract audits: reentrancy/signature-replay/state-validation/precision/proxy-upgrade/state-invariants, 370-item checklists and behavioral-intent modeling.; plus solidity-security: smart-contract security best practices and vulnerability prevention for writing / auditing Solidity'
+  description: Solidity/EVM 合约系统化审计:重入/签名重放/状态校验/精度/代理升级/状态不变量,370 项清单与行为意图建模；另含 solidity-security：智能合约安全最佳实践与漏洞防护，用于编写 / 审计 Solidity
+  description_en: 'Systematic Solidity/EVM contract audits: reentrancy/signature-replay/state-validation/precision/proxy-upgrade/state-invariants, 370-item checklists and behavioral-intent modeling; plus solidity-security: smart-contract security best practices and vulnerability prevention for writing / auditing Solidity'
   sources:
   - auditmos
   - quillai-network
@@ -3639,8 +3639,8 @@
   category: web3-blockchain
   subcategory: 20-5
   chain: false
-  description: NFT 铸造/元数据/行情、DAO 提案与治理工具、跨链桥、Web3 身份认证,以及 DEX 执行/跟单/Solana 交易构建。；另含 nft-standards：实现 ERC-721 / ERC-1155、元数据 / 铸造 / 市场集成
-  description_en: 'NFT minting/metadata/analytics, DAO proposal & governance tooling, cross-chain bridges, Web3 identity auth, plus DEX execution/copy-trading/Solana tx building.; plus nft-standards: implement ERC-721 / ERC-1155 with metadata, minting and marketplace integration'
+  description: NFT 铸造/元数据/行情、DAO 提案与治理工具、跨链桥、Web3 身份认证,以及 DEX 执行/跟单/Solana 交易构建；另含 nft-standards：实现 ERC-721 / ERC-1155、元数据 / 铸造 / 市场集成
+  description_en: 'NFT minting/metadata/analytics, DAO proposal & governance tooling, cross-chain bridges, Web3 identity auth, plus DEX execution/copy-trading/Solana tx building; plus nft-standards: implement ERC-721 / ERC-1155 with metadata, minting and marketplace integration'
   sources:
   - XSpoonAi
   - agiprolabs

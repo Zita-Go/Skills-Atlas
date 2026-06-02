@@ -13949,8 +13949,8 @@
               "group": "漏洞挖掘 / Bug Bounty / OSINT",
               "group_en": "Bug hunting / bug bounty / OSINT",
               "chain": false,
-              "description": "漏洞赏金方法论与侦察(subfinder/httpx/nuclei)、OSINT 攻击面测绘、triage 验证与披露报告(HackerOne/Bugcrowd)。；另含 security-research：编排多 agent 并行安全审计、验证可利用性（预发布安全检查 / 威胁模型验证）",
-              "description_en": "Bug-bounty methodology & recon (subfinder/httpx/nuclei), OSINT attack-surface mapping, triage validation and disclosure reporting (HackerOne/Bugcrowd).; plus security-research: orchestrate multiple agents for parallel security audits and exploitability verification (pre-release security checks / threat-model validation)",
+              "description": "漏洞赏金方法论与侦察(subfinder/httpx/nuclei)、OSINT 攻击面测绘、triage 验证与披露报告(HackerOne/Bugcrowd)；另含 security-research：编排多 agent 并行安全审计、验证可利用性（预发布安全检查 / 威胁模型验证）",
+              "description_en": "Bug-bounty methodology & recon (subfinder/httpx/nuclei), OSINT attack-surface mapping, triage validation and disclosure reporting (HackerOne/Bugcrowd); plus security-research: orchestrate multiple agents for parallel security audits and exploitability verification (pre-release security checks / threat-model validation)",
               "sources": [
                 {
                   "name": "elementalsouls-bughunter",
@@ -14522,8 +14522,8 @@
               "group": "智能合约审计 / 漏洞检测",
               "group_en": "Smart contract audit / vulnerability detection",
               "chain": false,
-              "description": "Solidity/EVM 合约系统化审计:重入/签名重放/状态校验/精度/代理升级/状态不变量,370 项清单与行为意图建模。；另含 solidity-security：智能合约安全最佳实践与漏洞防护，用于编写 / 审计 Solidity",
-              "description_en": "Systematic Solidity/EVM contract audits: reentrancy/signature-replay/state-validation/precision/proxy-upgrade/state-invariants, 370-item checklists and behavioral-intent modeling.; plus solidity-security: smart-contract security best practices and vulnerability prevention for writing / auditing Solidity",
+              "description": "Solidity/EVM 合约系统化审计:重入/签名重放/状态校验/精度/代理升级/状态不变量,370 项清单与行为意图建模；另含 solidity-security：智能合约安全最佳实践与漏洞防护，用于编写 / 审计 Solidity",
+              "description_en": "Systematic Solidity/EVM contract audits: reentrancy/signature-replay/state-validation/precision/proxy-upgrade/state-invariants, 370-item checklists and behavioral-intent modeling; plus solidity-security: smart-contract security best practices and vulnerability prevention for writing / auditing Solidity",
               "sources": [
                 {
                   "name": "auditmos",
@@ -14950,8 +14950,8 @@
               "group": "Web3 应用 / NFT / DAO / 交易",
               "group_en": "Web3 apps / NFT / DAO / trading",
               "chain": false,
-              "description": "NFT 铸造/元数据/行情、DAO 提案与治理工具、跨链桥、Web3 身份认证,以及 DEX 执行/跟单/Solana 交易构建。；另含 nft-standards：实现 ERC-721 / ERC-1155、元数据 / 铸造 / 市场集成",
-              "description_en": "NFT minting/metadata/analytics, DAO proposal & governance tooling, cross-chain bridges, Web3 identity auth, plus DEX execution/copy-trading/Solana tx building.; plus nft-standards: implement ERC-721 / ERC-1155 with metadata, minting and marketplace integration",
+              "description": "NFT 铸造/元数据/行情、DAO 提案与治理工具、跨链桥、Web3 身份认证,以及 DEX 执行/跟单/Solana 交易构建；另含 nft-standards：实现 ERC-721 / ERC-1155、元数据 / 铸造 / 市场集成",
+              "description_en": "NFT minting/metadata/analytics, DAO proposal & governance tooling, cross-chain bridges, Web3 identity auth, plus DEX execution/copy-trading/Solana tx building; plus nft-standards: implement ERC-721 / ERC-1155 with metadata, minting and marketplace integration",
               "sources": [
                 {
                   "name": "XSpoonAi",
