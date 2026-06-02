@@ -50,7 +50,7 @@ npm i -g skills-atlas-cli
 
 <a href="packages/skills-atlas-cli/plugin"><img src="docs/plugin-demo.png" alt="Skills Atlas 插件——autopilot 在对话里主动端出合适的 skill" width="820"></a>
 
-逐条匹配在**本地**完成、**绝不自动安装**，出岔子也不会卡住你的 prompt。用 `/skills-atlas:skill-autopilot [on|off]` 开关或微调。还有两个同样主动的帮手：
+逐条匹配在**本地**完成、**绝不自动安装**，出岔子也不会卡住你的 prompt。用 `/skills-atlas:skill-autopilot [on|off]` 开关或微调（只用 CLI、没插件的话用 `skills-atlas hook on`）。还有两个同样主动的帮手：
 
 - **🔭 `/skills-atlas:skill-gaps`** —— 发现你反复在做、却没 skill 覆盖的那类活，并推荐一个。
 - **🧹 `/skills-atlas:skill-prune`** —— 把你已装但用不上的 skill 挑出来。
@@ -82,7 +82,7 @@ npm i -g skills-atlas-cli
 ```bash
 skills-atlas search seo               # 找 skill(按相关度 + stars 排序)
 skills-atlas info brainstorming       # 它干嘛 + 什么时候用
-skills-atlas install brainstorming    # 只把它那个文件夹放进 .claude/skills/
+skills-atlas install brainstorming    # 把它那个文件夹放进 ~/.claude/skills/ (默认全局)
 skills-atlas use brainstorming        # 装上并立即生效,不用重启
 skills-atlas kit                      # 识别当前项目,装一套对口的
 ```
@@ -91,7 +91,7 @@ skills-atlas kit                      # 识别当前项目,装一套对口的
 
 **skill 装到哪儿：** 装到**本项目**的在 `./.claude/skills/`（可提交 —— 跟着仓库走）；**全局**的在 `~/.claude/skills/`（走到哪跟到哪）。插件、自动驾驶和 `kit` 默认装到项目；CLI 的 `install` / `use` 默认装到全局。两边都能用 `--project` / `--global` 覆盖。
 
-除此之外，CLI 还是个完整的包管理器（`installed`、`upgrade`、`remove`、`doctor`），能并入你组织的私有目录（`registry add`），也能作为 MCP server 给任意客户端用。→ [**CLI 完整文档**](packages/skills-atlas-cli)
+除此之外，CLI 还是个完整的包管理器（`installed`、`outdated`、`upgrade`、`remove`、`doctor`），能从可提交的 `skills-atlas.kit.json` 复现一个项目的 skill 集（`sync`），能并入你组织的私有目录（`registry add`，同名时私有优先），也能作为 MCP server 给任意客户端用。→ [**CLI 完整文档**](packages/skills-atlas-cli)
 
 ## 贡献
 

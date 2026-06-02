@@ -61,11 +61,11 @@ what it does and why it fits — and lets you switch it on, see what it covers, 
 <a href="packages/skills-atlas-cli/plugin"><img src="docs/plugin-demo.png" alt="Skills Atlas plugin — the autopilot surfaces a fitting skill right in your Claude Code conversation" width="820"></a>
 
 The per-prompt match runs **locally** and **never auto-installs**; a hiccup never blocks your
-prompt. Toggle or tune it with `/skills-atlas:skill-autopilot [on|off]`. Two more proactive helpers,
+prompt. Toggle or tune it with `/skills-atlas:skill-autopilot [on|off]` — or, CLI-only (no plugin), `skills-atlas hook on`. Two more proactive helpers,
 same idea:
 
 - **🔭 `/skills-atlas:skill-gaps`** — spots recurring work no installed skill covers, and recommends one.
-- **🧹 `/skills-atlas:skill-prune`** — flags installed skills you no longer use.
+- **🧹 `/skills-atlas:skill-prune`** — offers to clear out skills you've stopped using.
 
 ## How to use
 
@@ -94,7 +94,7 @@ The same engine, for the shell. Install once (`npm i -g skills-atlas-cli`), then
 ```bash
 skills-atlas search seo               # find a skill (ranked by relevance + stars)
 skills-atlas info brainstorming       # what it does + when to use it
-skills-atlas install brainstorming    # drop just its folder into .claude/skills/
+skills-atlas install brainstorming    # drop its folder into ~/.claude/skills/ (global by default)
 skills-atlas use brainstorming        # install + apply now, no restart
 skills-atlas kit                      # detect this project, install a tailored set
 ```
@@ -106,8 +106,9 @@ skills-atlas kit                      # detect this project, install a tailored 
 everywhere). The plugin, autopilot and `kit` default to the project; the CLI's `install` / `use`
 default to global. Override either with `--project` / `--global`.
 
-Beyond that, the CLI is a full package manager (`installed`, `upgrade`, `remove`, `doctor`), merges
-your org's private catalog (`registry add`), and runs as an MCP server for any client.
+Beyond that, the CLI is a full package manager (`installed`, `outdated`, `upgrade`, `remove`, `doctor`),
+reproduces a project's skill set from a committable `skills-atlas.kit.json` (`sync`), merges your org's
+private catalog (`registry add` — a private skill wins a name clash), and runs as an MCP server for any client.
 → [**full CLI docs**](packages/skills-atlas-cli)
 
 ## Contributing
