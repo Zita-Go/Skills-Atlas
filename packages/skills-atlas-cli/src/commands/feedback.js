@@ -46,14 +46,13 @@ module.exports = async function feedbackCmd(argv) {
     return;
   }
   console.log(`\n${bold('learned from')} ${events.length} action(s):`);
-  const cats = [...prof.catNet.entries()].sort((a, b) => b[1] - a[1]);
+  // The one thing that actually shapes suggestions: skills you've rejected.
+  if (prof.suppressed.size) console.log(`  ${green("won't suggest again:")} ${[...prof.suppressed].join(', ')}`);
+  // Observed lean (informational — what you've installed vs regretted, by area).
+  const cats = [...prof.catNet.entries()].filter(([, n]) => Math.abs(n) > 0.05).sort((a, b) => b[1] - a[1]);
   if (cats.length) {
-    console.log(dim('  category affinity (nudges ranking):'));
-    for (const [cat] of cats) {
-      const m = prof.affinity(cat);
-      console.log(`    ${m >= 1 ? green('↑') : dim('↓')} ${cat}  ${dim('×' + m.toFixed(2))}`);
-    }
+    console.log(dim('  you tend to:'));
+    for (const [cat, net] of cats) console.log(dim(`    ${net >= 0 ? 'install ' : 'avoid   '} ${cat}`));
   }
-  if (prof.suppressed.size) console.log(dim(`  won't suggest: ${[...prof.suppressed].join(', ')}`));
   console.log(dim('\nreset with: skills-atlas feedback reset'));
 };

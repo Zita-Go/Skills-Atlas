@@ -366,16 +366,10 @@ function suggestCandidates(rows, prompt, { installed = new Set(), suggested = ne
     anchors.some(a => a.strong >= 2 || a.specific >= 1) ||
     contentAnchors.some(contentQualifies)
   );
-  // Gentle nudge by learned category affinity — a disliked category sinks a little,
-  // a liked one rises a little. Bounded (never reorders far); fire is unaffected.
-  let candidates = out;
-  if (feedback && out.length > 1) {
-    candidates = out
-      .map((c, i) => ({ c, key: feedback.affinity(c.row._cat) / (i + 1) }))
-      .sort((a, b) => b.key - a.key)
-      .map(x => x.c);
-  }
-  return { fire, candidates: candidates.slice(0, limit), weak };
+  // NB: feedback only SUPPRESSES (via `taken` above) — that changes which skills make
+  // the shortlist. We deliberately don't reorder the final ≤5: Claude reads all of them
+  // and picks by fit, so reordering them would do nothing.
+  return { fire, candidates: out.slice(0, limit), weak };
 }
 
 module.exports = {
