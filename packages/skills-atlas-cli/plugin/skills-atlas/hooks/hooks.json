@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          { "type": "command", "command": "skills-atlas suggest", "timeout": 5 }
+        ]
+      }
+    ]
+  }
+}

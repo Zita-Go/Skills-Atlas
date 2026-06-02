@@ -62,6 +62,9 @@ module.exports = async function suggest() {
     const state = readState(file);
     state.count = (state.count || 0) + 1;
     const ap = registry.getAutopilot();
+    // Master switch (default ON). The plugin ships the hook so this fires on every
+    // prompt; `skills-atlas hook off` flips enabled=false and we no-op immediately.
+    if (ap.enabled === false) return;
 
     // --- Proactive gap nudge: a background sub-agent (gap-analyze) does the actual
     // judging off the main agent's back; here we (a) surface a ready verdict, or

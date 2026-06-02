@@ -78,24 +78,19 @@ module.exports = async function hook(argv) {
   }
 
   if (sub === 'status') {
-    let on = false;
-    try { on = ((readSettings(p).hooks || {}).UserPromptSubmit || []).some(isOurs); } catch { /* invalid → off */ }
+    let settingsHook = false;
+    try { settingsHook = ((readSettings(p).hooks || {}).UserPromptSubmit || []).some(isOurs); } catch { /* invalid → treat as none */ }
     const ap = registry.getAutopilot();
-    if (values.json) { console.log(JSON.stringify({ enabled: on, suggest: ap.suggest, gapAlerts: ap.gapAlerts, prune: ap.prune, gapModel: ap.gapModel, replyLang: ap.replyLang, settings: p })); return; }
-    console.log(`autopilot hook: ${on ? green('on') : dim('off')}   ${dim(p)}`);
-    if (on) {
-      console.log(`  per-prompt suggest: ${ap.suggest ? green('on') : dim('off')}   ${dim('(skills-atlas hook suggest on|off)')}`);
-      console.log(`  gap alerts:         ${ap.gapAlerts ? green('on') : dim('off')}   ${dim('(skills-atlas hook gaps on|off)')}`);
-      console.log(`  prune suggestions:  ${ap.prune ? green('on') : dim('off')}   ${dim('(skills-atlas hook prune on|off)')}`);
-      console.log(`  analysis model:     ${dim(ap.gapModel)}   ${dim('(skills-atlas hook model)')}`);
-      console.log(`  reply language:     ${dim(ap.replyLang)}   ${dim('(skills-atlas hook lang en|zh)')}`);
-      console.log(dim('  review: skills-atlas gaps  ·  skills-atlas prune'));
-    } else {
-      // Hook isn't registered, so these sub-toggles don't do anything yet — don't
-      // imply the autopilot is running. Show them dimmed with the caveat.
-      console.log(dim(`  (suggest ${ap.suggest ? 'on' : 'off'}, gap alerts ${ap.gapAlerts ? 'on' : 'off'}, prune ${ap.prune ? 'on' : 'off'} — they take effect once you run 'skills-atlas hook on')`));
-      console.log(dim('enable: skills-atlas hook on'));
-    }
+    const on = ap.enabled !== false;
+    if (values.json) { console.log(JSON.stringify({ enabled: on, settingsHook, suggest: ap.suggest, gapAlerts: ap.gapAlerts, prune: ap.prune, gapModel: ap.gapModel, replyLang: ap.replyLang, settings: p })); return; }
+    console.log(`autopilot: ${on ? green('on') : dim('off')}   ${dim('(skills-atlas hook on|off — on by default)')}`);
+    console.log(dim(`  hook source: ${settingsHook ? 'settings.json' : 'the plugin (or run `skills-atlas hook on` if you use the CLI without the plugin)'}`));
+    console.log(`  per-prompt suggest: ${ap.suggest ? green('on') : dim('off')}   ${dim('(skills-atlas hook suggest on|off)')}`);
+    console.log(`  gap alerts:         ${ap.gapAlerts ? green('on') : dim('off')}   ${dim('(skills-atlas hook gaps on|off)')}`);
+    console.log(`  prune suggestions:  ${ap.prune ? green('on') : dim('off')}   ${dim('(skills-atlas hook prune on|off)')}`);
+    console.log(`  analysis model:     ${dim(ap.gapModel)}   ${dim('(skills-atlas hook model)')}`);
+    console.log(`  reply language:     ${dim(ap.replyLang)}   ${dim('(skills-atlas hook lang en|zh)')}`);
+    console.log(dim('  review: skills-atlas gaps  ·  skills-atlas prune'));
     return;
   }
 
@@ -105,37 +100,44 @@ module.exports = async function hook(argv) {
     return;
   }
 
-  let settings;
+  let settings, changed = false;
   try { settings = readSettings(p); }
   catch (e) { console.error(`${p} is not valid JSON — fix it first (${e.message}).`); process.exitCode = 1; return; }
 
-  // Coerce defensively: a user's settings could have `hooks` as a non-object or
-  // `UserPromptSubmit` as a non-array. Don't crash on it — start from a clean shape.
+  // Master switch first: it gates the autopilot whether the hook is shipped by the
+  // plugin or registered here in settings.json. Default is ON.
+  registry.setAutopilot({ enabled: sub === 'on' });
+
+  // Keep settings.json in sync so CLI-only users (no plugin) get the hook registered /
+  // removed. Plugin users already have the hook; the identical command string is
+  // de-duplicated by Claude Code, so there is no double-fire. Coerce defensively.
   if (!settings.hooks || typeof settings.hooks !== 'object' || Array.isArray(settings.hooks)) settings.hooks = {};
   const arr = Array.isArray(settings.hooks.UserPromptSubmit) ? settings.hooks.UserPromptSubmit : [];
-
-  if (sub === 'on') {
-    if (arr.some(isOurs)) { console.log(dim('autopilot already on.')); return; }
+  if (sub === 'on' && !arr.some(isOurs)) {
     settings.hooks.UserPromptSubmit = [...arr, { matcher: '*', hooks: [{ type: 'command', command: HOOK_CMD, timeout: 5 }] }];
-  } else {
-    if (!arr.some(isOurs)) { console.log(dim('autopilot already off.')); return; }
+    changed = true;
+  } else if (sub === 'off' && arr.some(isOurs)) {
     const kept = arr.filter(e => !isOurs(e));
     if (kept.length) settings.hooks.UserPromptSubmit = kept;
     else delete settings.hooks.UserPromptSubmit;
     if (!Object.keys(settings.hooks).length) delete settings.hooks;
+    changed = true;
   }
 
-  try {
-    fs.mkdirSync(path.dirname(p), { recursive: true });
-    if (fs.existsSync(p) && !fs.existsSync(`${p}.bak`)) fs.copyFileSync(p, `${p}.bak`); // keep the pristine original
-    // Removing our only setting? Don't leave a bare `{}` behind — drop the file.
-    if (sub === 'off' && !Object.keys(settings).length && fs.existsSync(p)) fs.rmSync(p, { force: true });
-    else fs.writeFileSync(p, JSON.stringify(settings, null, 2) + '\n');
-  } catch (e) { console.error(`failed to write ${p}: ${e.message}`); process.exitCode = 1; return; }
+  if (changed) {
+    try {
+      fs.mkdirSync(path.dirname(p), { recursive: true });
+      if (fs.existsSync(p) && !fs.existsSync(`${p}.bak`)) fs.copyFileSync(p, `${p}.bak`); // keep the pristine original
+      // Removing our only setting? Don't leave a bare `{}` behind — drop the file.
+      if (sub === 'off' && !Object.keys(settings).length && fs.existsSync(p)) fs.rmSync(p, { force: true });
+      else fs.writeFileSync(p, JSON.stringify(settings, null, 2) + '\n');
+    } catch (e) { console.error(`failed to write ${p}: ${e.message}`); process.exitCode = 1; return; }
+  }
 
   if (values.json) { console.log(JSON.stringify({ enabled: sub === 'on', settings: p })); return; }
-  console.log(`${green('✓')} autopilot ${sub === 'on' ? 'enabled' : 'disabled'}  ${dim(p)}`);
+  console.log(`${green('✓')} autopilot ${sub === 'on' ? green('on') : dim('off')}`);
   if (sub === 'on') {
+    console.log(dim('  (on by default once the plugin is installed; this also registers the CLI hook for non-plugin use.)'));
     console.log('\nHow it works: when what you ask lines up with a skill you don\'t have yet, Claude');
     console.log('quietly gets a shortlist and — only if one truly fits — explains it and offers a choice:');
     console.log(dim('  you:    "run a pre-mortem before we launch"'));
@@ -144,5 +146,7 @@ module.exports = async function hook(argv) {
     console.log(dim('\nIt stays silent on greetings and generic asks, never repeats a skill, and Claude makes'));
     console.log(dim('the final call on relevance. Nothing leaves your machine.'));
     console.log(dim('\nneeds `skills-atlas` on PATH (npm i -g skills-atlas-cli).  turn off: skills-atlas hook off'));
+  } else {
+    console.log(dim('  the autopilot stays silent (the plugin hook, if installed, no-ops).  turn back on: skills-atlas hook on'));
   }
 };

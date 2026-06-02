@@ -77,6 +77,7 @@ function removeCachedSource(url) {
 function getAutopilot() {
   const c = readConfig();
   return {
+    enabled: true,                // master switch (default ON); the plugin ships the hook, this gates it
     suggest: true, gapAlerts: true, prune: false,
     gapModel: 'claude-haiku-4-5', // model for the background gap/prune analysis
     replyLang: 'en',              // language the autopilot asks Claude to reply in

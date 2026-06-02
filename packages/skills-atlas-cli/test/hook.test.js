@@ -12,8 +12,9 @@ const hasOurs = s => ((s.hooks || {}).UserPromptSubmit || [])
 
 test('hook on/off edits settings.json idempotently, preserves other settings, removes cleanly', async () => {
   const home = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-home-'));
-  const oldHome = process.env.HOME;
+  const oldHome = process.env.HOME, oldXdg = process.env.XDG_CONFIG_HOME;
   process.env.HOME = home;
+  process.env.XDG_CONFIG_HOME = path.join(home, '.config'); // isolate registry config (hook on/off now writes the master flag)
   const log = console.log, errfn = console.error;
   console.log = () => {}; console.error = () => {};
   try {
@@ -39,14 +40,16 @@ test('hook on/off edits settings.json idempotently, preserves other settings, re
   } finally {
     console.log = log; console.error = errfn;
     process.env.HOME = oldHome;
+    if (oldXdg === undefined) delete process.env.XDG_CONFIG_HOME; else process.env.XDG_CONFIG_HOME = oldXdg;
     fs.rmSync(home, { recursive: true, force: true });
   }
 });
 
 test('hook on degrades gracefully on malformed settings shapes (never crashes)', async () => {
   const home = fs.mkdtempSync(path.join(os.tmpdir(), 'sa-home-'));
-  const oldHome = process.env.HOME;
+  const oldHome = process.env.HOME, oldXdg = process.env.XDG_CONFIG_HOME;
   process.env.HOME = home;
+  process.env.XDG_CONFIG_HOME = path.join(home, '.config'); // isolate registry config (hook on/off now writes the master flag)
   const log = console.log, errfn = console.error;
   console.log = () => {}; console.error = () => {};
   try {
@@ -61,6 +64,7 @@ test('hook on degrades gracefully on malformed settings shapes (never crashes)',
   } finally {
     console.log = log; console.error = errfn;
     process.env.HOME = oldHome;
+    if (oldXdg === undefined) delete process.env.XDG_CONFIG_HOME; else process.env.XDG_CONFIG_HOME = oldXdg;
     fs.rmSync(home, { recursive: true, force: true });
   }
 });

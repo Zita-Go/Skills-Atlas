@@ -53,7 +53,7 @@ test('malformed config.json → treated as empty', () => {
 
 test('autopilot toggles default on and persist, preserving sources', () => {
   const r = isolate();
-  const defaults = { suggest: true, gapAlerts: true, prune: false, gapModel: 'claude-haiku-4-5', replyLang: 'en' };
+  const defaults = { enabled: true, suggest: true, gapAlerts: true, prune: false, gapModel: 'claude-haiku-4-5', replyLang: 'en' };
   assert.deepStrictEqual(r.getAutopilot(), defaults);
   r.addSource('https://a/data.json');
   r.setAutopilot({ suggest: false });
