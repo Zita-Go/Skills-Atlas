@@ -310,6 +310,16 @@ test('suggestCandidates: the CJK path leaves pure-English behavior unchanged', (
   assert.strictEqual(suggestCandidates(flatRows, 'fix the typo on line 42').fire, false);
 });
 
+test('suggestCandidates: a suppressed (dismissed/regretted) skill is never suggested', () => {
+  const { suggestCandidates } = require('../src/search-core');
+  const base = suggestCandidates(flatRows, 'help me set up test driven development');
+  assert.ok(base.candidates.length);
+  const top = base.candidates[0].skill;
+  const fb = { suppressed: new Set([top]), affinity: () => 1, isSuppressed: s => s === top };
+  const r = suggestCandidates(flatRows, 'help me set up test driven development', { feedback: fb });
+  assert.ok(!r.candidates.some(c => c.skill === top), `suppressed ${top} filtered out`);
+});
+
 test('suggestCandidates: never re-suggests an installed or already-suggested skill', () => {
   const { suggestCandidates } = require('../src/search-core');
   const base = suggestCandidates(flatRows, 'help me set up test driven development');

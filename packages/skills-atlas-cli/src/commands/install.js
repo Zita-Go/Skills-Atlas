@@ -253,6 +253,9 @@ module.exports = async function install(argv) {
     return;
   }
 
+  // learn: a successful install is a positive signal for this skill's category.
+  try { require('../feedback').record({ skill, category: chosen.row && chosen.row._cat, signal: 'accepted' }); } catch { /* ignore */ }
+
   if (values.json) {
     const out = {
       skill, mode: 'folder', source: src.name,

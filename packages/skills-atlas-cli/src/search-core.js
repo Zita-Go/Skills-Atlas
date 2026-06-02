@@ -270,10 +270,11 @@ function contentDf(rows) {
 // `fire` is true only when there's a distinctive anchor (a rare name word, or ≥2
 // matched name words) or an otherwise strong (non-weak) match — so the hook stays
 // quiet on greetings and generic dev actions ("fix the typo", "build the app").
-function suggestCandidates(rows, prompt, { installed = new Set(), suggested = new Set(), limit = 5 } = {}) {
+function suggestCandidates(rows, prompt, { installed = new Set(), suggested = new Set(), feedback = null, limit = 5 } = {}) {
   const tokens = tokenize(lc(prompt));
   if (tokens.length < 2) return { fire: false, candidates: [], weak: false };
-  const taken = new Set([...installed, ...suggested]);
+  // `taken` also drops what you've dismissed or installed-then-removed — never re-suggest those.
+  const taken = new Set([...installed, ...suggested, ...(feedback ? feedback.suppressed : [])]);
   const info = segmentDf(rows);
 
   // 1. name anchors — ONLY contentful (non-generic) name words count, weighted by
@@ -365,7 +366,16 @@ function suggestCandidates(rows, prompt, { installed = new Set(), suggested = ne
     anchors.some(a => a.strong >= 2 || a.specific >= 1) ||
     contentAnchors.some(contentQualifies)
   );
-  return { fire, candidates: out.slice(0, limit), weak };
+  // Gentle nudge by learned category affinity — a disliked category sinks a little,
+  // a liked one rises a little. Bounded (never reorders far); fire is unaffected.
+  let candidates = out;
+  if (feedback && out.length > 1) {
+    candidates = out
+      .map((c, i) => ({ c, key: feedback.affinity(c.row._cat) / (i + 1) }))
+      .sort((a, b) => b.key - a.key)
+      .map(x => x.c);
+  }
+  return { fire, candidates: candidates.slice(0, limit), weak };
 }
 
 module.exports = {

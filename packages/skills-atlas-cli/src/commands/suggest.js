@@ -131,7 +131,7 @@ module.exports = async function suggest() {
     for (const s of fsu.scopesFor({})) for (const e of manifest.list(s.root)) installed.add(e.skill);
     const suggested = new Set(state.suggested || []);
 
-    const { fire, candidates } = suggestCandidates(flatRows, prompt, { installed, suggested });
+    const { fire, candidates } = suggestCandidates(flatRows, prompt, { installed, suggested, feedback: require('../feedback').current() });
     if (!fire || !candidates.length) { writeState(file, state); return; }
 
     const lines = candidates.map(c => {
@@ -146,7 +146,8 @@ module.exports = async function suggest() {
       `fits THIS task (it's a curated skill from the Skills Atlas catalog, not something you made up), ` +
       `then let them choose — activate it now (\`skills-atlas use <skill> --yes --project\` installs + applies it ` +
       `immediately), see what it covers first (\`skills-atlas info <skill>\`), or skip and you'll just ` +
-      `do the task yourself. If none fit but the task plainly needs a specialized skill, you may run ` +
+      `do the task yourself; if they ask to never suggest it again, run \`skills-atlas feedback dismiss <skill>\`. ` +
+      `If none fit but the task plainly needs a specialized skill, you may run ` +
       `\`skills-atlas search "<short intent>"\` to look further. If nothing fits, say nothing about this ` +
       `at all — don't mention this hook, these skills, or that a suggestion was made.` + langHint(ap.replyLang));
     state.lastSuggestedCount = state.count;

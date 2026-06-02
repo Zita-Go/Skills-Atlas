@@ -40,6 +40,13 @@ module.exports = async function remove(argv) {
   if (fsu.dirExists(dest)) fsu.rmrf(dest);
   manifest.remove(root, name);
 
+  // learn: removing a skill soon after installing it is a "regret" signal.
+  try {
+    const fb = require('../feedback');
+    const ageDays = tracked && tracked.installedAt ? (Date.now() - Date.parse(tracked.installedAt)) / 86400000 : Infinity;
+    if (Number.isFinite(ageDays) && ageDays < fb.REGRET_DAYS) fb.record({ skill: name, category: tracked.category, signal: 'regret' });
+  } catch { /* ignore */ }
+
   if (values.json) { console.log(JSON.stringify({ removed: name, dest })); return; }
   console.log(`${green('✓')} removed ${name}  ${dim(fsu.tildify(dest))}`);
   if (otherHas) console.log(dim(`note: '${name}' is still installed in the ${global ? 'project' : 'global'} scope — remove that too: skills-atlas remove ${name} ${otherFlag}`));
