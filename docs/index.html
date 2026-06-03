@@ -4626,7 +4626,7 @@ function setupUsePop(){
   pop.id = 'usePop';
   document.body.appendChild(pop);
   const EN = LANG === 'en';
-  let openFor = null, openedAt = 0;
+  let openFor = null;
   const hide = () => { pop.classList.add('hidden'); openFor = null; };
   function build(d){
     const skill = d.skill || '';
@@ -4649,15 +4649,23 @@ function setupUsePop(){
       `<div class="up-foot">${src}<a href="#" class="up-first">${EN ? 'First time? Set up the plugin →' : '首次?先装插件 →'}</a></div>`;
   }
   function place(btn){
-    const r = btn.getBoundingClientRect();
-    pop.style.visibility = 'hidden'; pop.classList.remove('hidden');
+    const wasHidden = pop.classList.contains('hidden');
+    if(wasHidden){ pop.style.visibility = 'hidden'; pop.classList.remove('hidden'); }   // 首次开：先隐形测量再定位，避免左上角闪一下
     const pw = pop.offsetWidth, ph = pop.offsetHeight;
+    const r = btn.getBoundingClientRect();
     let left = Math.max(8, Math.min(r.left, window.innerWidth - pw - 8));
     let top = r.bottom + 6;
     if(top + ph > window.innerHeight - 8) top = Math.max(8, r.top - ph - 6);
     pop.style.left = left + 'px'; pop.style.top = top + 'px';
-    pop.style.visibility = '';
+    if(wasHidden) pop.style.visibility = '';
   }
+  // 滚动/缩放时跟随按钮重新定位；按钮整个滚出视口才关闭（而不是一滚就关）
+  const reflow = () => {
+    if(pop.classList.contains('hidden') || !openFor) return;
+    const r = openFor.getBoundingClientRect();
+    if(r.bottom < 0 || r.top > window.innerHeight) { hide(); return; }
+    place(openFor);
+  };
   document.body.addEventListener('click', e => {
     const first = e.target.closest && e.target.closest('.up-first');
     if(first){ e.preventDefault(); hide(); openHowTo('use'); return; }
@@ -4665,14 +4673,13 @@ function setupUsePop(){
     if(btn){
       e.preventDefault(); e.stopPropagation();
       if(openFor === btn){ hide(); return; }
-      openFor = btn; build(btn.dataset); place(btn); openedAt = Date.now(); return;
+      openFor = btn; build(btn.dataset); place(btn); return;
     }
     if(!pop.classList.contains('hidden') && !pop.contains(e.target)) hide();
   });
   document.addEventListener('keydown', e => { if(e.key === 'Escape' && !pop.classList.contains('hidden')) hide(); });
-  // 滚动即关；但开启后 250ms 内忽略（吸收点击近边缘按钮时浏览器为聚焦产生的微滚动）
-  window.addEventListener('scroll', () => { if(!pop.classList.contains('hidden') && Date.now() - openedAt > 250) hide(); }, true);
-  window.addEventListener('resize', () => { if(!pop.classList.contains('hidden')) hide(); });
+  window.addEventListener('scroll', reflow, true);
+  window.addEventListener('resize', reflow);
 }
 setupSpotlight();
 setupUsage();
