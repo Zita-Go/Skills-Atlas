@@ -1812,6 +1812,7 @@ function buildContent(){
   let _ord = 0;   // 卡片原始（策展）顺序，用于「默认」排序复位
   let totalSkills = 0, totalGroups = 0, totalChains = 0;
   const vendorSet = new Set();
+  const skillSet = new Set();   // 唯一 skill 名（同一 skill 出现在多个分组只算一次）
 
   DATA.sections.forEach(h1 => {
     const icon = h1.icon || H1_ICONS[h1.title] || '📌';
@@ -1830,7 +1831,7 @@ function buildContent(){
       h2.rows.forEach(row => {
         totalGroups++;
         if(row.chain) totalChains++;
-        totalSkills += row.skills.length;
+        row.skills.forEach(sk => skillSet.add(sk));   // 去重统计：与徽章/「独立 skill」标签一致
         row.sources.forEach(s => vendorSet.add(s.name));
 
         const skillsHtml = row.skills.map(sk => {
@@ -1923,6 +1924,7 @@ function buildContent(){
   });
   root.innerHTML = html;
 
+  totalSkills = skillSet.size;   // 唯一 skill 数（与 README 徽章一致，不再把多分组出现的 skill 重复计数）
   document.getElementById('heroSkillCount').textContent = totalSkills;
   document.getElementById('heroGroupCount').textContent = totalGroups;
   document.getElementById('heroVendorCount').textContent = vendorSet.size;

@@ -16,7 +16,7 @@
 
 [**🧩 Claude Code 插件**](packages/skills-atlas-cli/plugin) | [**⌨️ CLI**](packages/skills-atlas-cli) | [🌐 在线访问](https://zita-go.github.io/Skills-Atlas/?lang=zh) | [📦 数据下载](data/) | [🤝 贡献新 skill](CONTRIBUTING.zh-CN.md) | [💬 讨论区](../../discussions)
 
-<a href="https://zita-go.github.io/Skills-Atlas/?lang=zh"><img src="docs/screenshot-dark.png" alt="Skills Atlas —— 在线浏览目录" width="760"></a>
+<a href="https://zita-go.github.io/Skills-Atlas/?lang=zh"><img src="docs/screenshot-dark.zh-CN.png" alt="Skills Atlas —— 在线浏览目录（中文界面）" width="760"></a>
 
 </div>
 
