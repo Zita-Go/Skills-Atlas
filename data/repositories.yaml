@@ -2057,6 +2057,7 @@
   default_branch: master
   description: Manus 风格的文件式持久规划 skill(task_plan/findings/progress 三件套)。
   description_en: A Manus-style file-based persistent planning skill (task_plan/findings/progress).
+  license: MIT
   doc_path: README.md
   skill_docs:
     planning-with-files: .codebuddy/skills/planning-with-files/SKILL.md
@@ -2071,6 +2072,7 @@
   default_branch: main
   description: 官方 Google Workspace CLI:一条命令操作 Drive/Gmail/Calendar/Sheets/Docs/Chat/Admin 等,内置 AI agent skills。
   description_en: 'The official Google Workspace CLI: one command for Drive/Gmail/Calendar/Sheets/Docs/Chat/Admin and more, with built-in AI agent skills.'
+  license: Apache-2.0
   doc_path: README.md
   skill_docs:
     gws-gmail: skills/gws-gmail/SKILL.md
