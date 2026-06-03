@@ -448,6 +448,15 @@ html.light .graph-view .link.dim{stroke-opacity:.07}
   border:1px solid var(--border);background:var(--bg-card);color:var(--fg);font-family:inherit;transition:all .12s}
 .graph-drawer .gd-btn.primary{background:var(--grad);color:#fff;border-color:transparent;font-weight:600}
 .graph-drawer .gd-btn:hover{transform:translateY(-1px)}
+/* 内嵌「用这个」小节：命令直接显示在面板里 */
+.graph-drawer .gd-use-sub{font-size:11.5px;font-weight:600;color:var(--fg);margin:0 0 6px}
+.graph-drawer .gd-rec{font-weight:600;color:var(--accent-2);font-size:10px;margin-left:6px;border:1px solid var(--accent-2);border-radius:99px;padding:0 6px;vertical-align:middle}
+.graph-drawer .gd-cmd{display:flex;gap:6px;align-items:center;margin:4px 0}
+.graph-drawer .gd-cmd code{flex:1;min-width:0;white-space:normal;word-break:break-word;font-family:var(--font-mono);background:var(--bg-elev);padding:6px 8px;border-radius:6px;font-size:11px;line-height:1.5;color:var(--fg)}
+.graph-drawer .gd-cmd .src-act{flex:0 0 auto;white-space:nowrap}
+.graph-drawer .gd-or{color:var(--fg-muted);font-size:10.5px;text-align:center;margin:6px 0 2px}
+.graph-drawer .gd-first{display:inline-block;margin-top:8px;color:var(--accent);font-size:11px;text-decoration:none}
+.graph-drawer .gd-first:hover{text-decoration:underline}
 @media(max-width:760px){ .graph-drawer{width:260px} }
 
 /* 大类色块图例 */
@@ -2861,6 +2870,17 @@ function buildGraph(){
       const url = (s && s.url) || '';
       return `<span class="gd-chip gd-repo${url ? '' : ' no-link'}" data-url="${escapeAttr(url)}"${url ? ` title="${escapeAttr(url)}"` : ''}>${escapeHtml(nm)}${url ? ' ↗' : ''}</span>`;
     }).join('');
+    // 内嵌「用这个」：把该 skill 交给插件/CLI，命令直接显示在面板里（不用浮层、不盖信息）
+    const cliArg = /[\s"']/.test(n.id) ? '"' + n.id.replace(/"/g, '\\"') + '"' : n.id;
+    const pluginCmd = '/skills-atlas:skill-install ' + n.id;
+    const cliCmd = 'skills-atlas use ' + cliArg;
+    const useSection =
+      `<div class="gd-sec gd-use"><h4>${EN ? '🧩 Use this' : '🧩 用这个'}</h4>` +
+      `<div class="gd-use-sub">${EN ? 'In Claude Code' : '在 Claude Code'}<span class="gd-rec">${EN ? 'recommended' : '推荐'}</span></div>` +
+      `<div class="gd-cmd"><code>${escapeHtml(pluginCmd)}</code><button class="src-act" data-act="copy" data-cmd="${escapeAttr(pluginCmd)}">${EN ? '📋 Copy' : '📋 复制'}</button></div>` +
+      `<div class="gd-or">${EN ? '— or terminal —' : '—— 或终端 ——'}</div>` +
+      `<div class="gd-cmd"><code>${escapeHtml(cliCmd)}</code><button class="src-act" data-act="copy" data-cmd="${escapeAttr(cliCmd)}">${EN ? '📋 Copy' : '📋 复制'}</button></div>` +
+      `<a href="#" class="up-first gd-first">${EN ? 'First time? Set up the plugin →' : '首次?先装插件 →'}</a></div>`;
     drawer.innerHTML =
       `<div class="gd-head"><button class="gd-close" aria-label="close">×</button>` +
       `<div class="gd-eyebrow">${EN ? 'SKILL' : '技能'}</div>` +
@@ -2871,9 +2891,9 @@ function buildGraph(){
         `<div class="gd-sec"><h4>${EN ? 'Often used with' : '常一起用'}</h4><div class="gd-chips">${nbHtml}</div></div>` +
         `<div class="gd-sec"><h4>${EN ? 'Part of these workflows' : '所属功能分组'}</h4>${grpHtml}</div>` +
         (srcHtml ? `<div class="gd-sec"><h4>${EN ? 'From repos' : '来自仓库'}</h4><div class="gd-chips">${srcHtml}</div></div>` : '') +
+        useSection +
       `</div>` +
-      `<div class="gd-foot"><button class="gd-btn primary" data-act="usethis" data-skill="${escapeAttr(n.id)}" data-skills="${escapeAttr(n.id)}">${EN ? '🧩 Use this' : '🧩 用这个'}</button>` +
-      `<button class="gd-btn" data-act="jump">${EN ? 'Open in cards →' : '在功能视图查看 →'}</button>` +
+      `<div class="gd-foot"><button class="gd-btn primary" data-act="jump">${EN ? 'Open in cards →' : '在功能视图查看 →'}</button>` +
       `<button class="gd-btn" data-act="link" style="flex:0 0 auto" title="${EN ? 'Copy shareable link' : '复制可分享链接'}">🔗</button></div>`;
     drawer.classList.add('open');
     drawer.querySelector('.gd-close').addEventListener('click', clearFocus);
