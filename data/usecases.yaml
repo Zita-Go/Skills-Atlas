@@ -1775,3 +1775,174 @@ web3-blockchain--20-5--247:
   when_to_use: 构建 NFT / 数字资产系统时
   use_case_en: Implement NFT standards (ERC-721/1155), metadata, minting and marketplace integration
   when_to_use_en: When building NFT / digital-asset systems
+software-engineering--1-1--302:
+  use_case: 用三个 markdown 文件拆解并跟踪多步任务、跨会话恢复
+  personas:
+  - 工程
+  - 通用
+  when_to_use: 复杂多步任务要持久跟踪时
+  use_case_en: Decompose and track multi-step tasks via three markdown files with cross-session resume
+  when_to_use_en: When a complex multi-step task needs persistent tracking
+software-engineering--1-4--303:
+  use_case: 自动识别版本/changelog 跑多语言发布
+  personas:
+  - 工程
+  when_to_use: 要发版且想一键化流程时
+  use_case_en: Auto-detect versions/changelogs to run multi-language releases
+  when_to_use_en: When shipping a release and wanting it automated
+design-frontend--5-7--304:
+  use_case: 多家 API 文生图/参考图/批量出图
+  personas:
+  - 设计
+  when_to_use: 要生成/绘制图像时
+  use_case_en: Text-to-image, reference images and batch across many APIs
+  when_to_use_en: When generating or drawing images
+design-frontend--5-7--305:
+  use_case: 为文章自动配插图与封面
+  personas:
+  - 设计
+  - 营销
+  when_to_use: 写完文章要配图/封面时
+  use_case_en: Auto-generate illustrations and covers for an article
+  when_to_use_en: When an article needs illustrations or a cover
+design-frontend--5-7--306:
+  use_case: 把内容做成信息图或社交卡片组
+  personas:
+  - 设计
+  - 营销
+  when_to_use: 要做信息图/小红书卡片时
+  use_case_en: Turn content into infographics or social card sets
+  when_to_use_en: When creating infographics or social cards
+design-frontend--5-7--307:
+  use_case: 把知识点做成科普漫画
+  personas:
+  - 设计
+  - 营销
+  when_to_use: 想用漫画讲解知识时
+  use_case_en: Turn a topic into an educational comic
+  when_to_use_en: When explaining a topic as a comic
+design-frontend--5-7--308:
+  use_case: 生成架构/流程/序列等 SVG 图
+  personas:
+  - 工程
+  - 设计
+  when_to_use: 要画技术示意图时
+  use_case_en: Generate architecture/flow/sequence SVG diagrams
+  when_to_use_en: When drawing technical diagrams
+design-frontend--5-5--309:
+  use_case: 把内容做成成套幻灯片图
+  personas:
+  - 设计
+  - 营销
+  when_to_use: 要快速做演示幻灯片时
+  use_case_en: Turn content into a styled slide image deck
+  when_to_use_en: When quickly producing presentation slides
+design-frontend--5-8--310:
+  use_case: 批量把图像压成 WebP/PNG
+  personas:
+  - 设计
+  - 工程
+  when_to_use: 图片太大要压缩时
+  use_case_en: Batch-compress images to WebP/PNG
+  when_to_use_en: When images are too large and need compressing
+docs-knowledge--2-2--311:
+  use_case: 多模式翻译文章/文档并保术语一致
+  personas:
+  - 通用
+  - 营销
+  when_to_use: 要翻译/精翻文章时
+  use_case_en: Multi-mode translation with glossary consistency
+  when_to_use_en: When translating or polishing a translation
+docs-knowledge--2-3--312:
+  use_case: 把文本规范成结构化 Markdown
+  personas:
+  - 通用
+  when_to_use: 文档格式乱要整理时
+  use_case_en: Normalize text into structured Markdown
+  when_to_use_en: When a document's formatting needs tidying
+docs-knowledge--2-3--313:
+  use_case: Markdown 转公众号可用的样式 HTML
+  personas:
+  - 营销
+  - 设计
+  when_to_use: 要把 MD 发成公众号网页时
+  use_case_en: Markdown to WeChat-ready styled HTML
+  when_to_use_en: When publishing Markdown as styled web/WeChat HTML
+data-scraping--7-1--314:
+  use_case: 抓网页转干净 Markdown
+  personas:
+  - 运营
+  - 研究
+  when_to_use: 要把网页存成 Markdown 时
+  use_case_en: Scrape a URL into clean Markdown
+  when_to_use_en: When saving a web page as Markdown
+media--6-2--315:
+  use_case: 下载 YouTube 字幕/转录(多语言)
+  personas:
+  - 运营
+  - 研究
+  when_to_use: 要拿视频文字稿时
+  use_case_en: Download YouTube transcripts (multi-language)
+  when_to_use_en: When you need a video's transcript
+comms-integration--9-1--316:
+  use_case: 把群聊提炼成结构化简报
+  personas:
+  - 运营
+  when_to_use: 要总结微信群消息时
+  use_case_en: Distill group chat into a structured digest
+  when_to_use_en: When summarizing a WeChat group
+marketing-growth--4-3--317:
+  use_case: 一键把内容发到微信/微博/X
+  personas:
+  - 营销
+  - 运营
+  when_to_use: 要把文章分发到社交平台时
+  use_case_en: Publish content to WeChat/Weibo/X in one go
+  when_to_use_en: When distributing an article to social platforms
+comms-integration--9-5--318:
+  use_case: 用 CLI 让 agent 收发与整理 Gmail
+  personas:
+  - 工程
+  - 运营
+  when_to_use: 要自动化 Gmail 收发时
+  use_case_en: Give an agent Gmail send/read/triage via CLI
+  when_to_use_en: When automating Gmail
+comms-integration--9-5--319:
+  use_case: 用 CLI 查/建 Google 日历事件
+  personas:
+  - 工程
+  - 运营
+  when_to_use: 要自动化日程安排时
+  use_case_en: Query and create Google Calendar events via CLI
+  when_to_use_en: When automating scheduling
+comms-integration--9-5--320:
+  use_case: 用 CLI 管理 Drive/Docs/Forms/Keep
+  personas:
+  - 工程
+  - 运营
+  when_to_use: 要自动化 Google 文档与文件时
+  use_case_en: Manage Drive/Docs/Forms/Keep via CLI
+  when_to_use_en: When automating Google docs and files
+comms-integration--9-5--321:
+  use_case: 用 CLI 操作 Chat/Meet/Classroom/People
+  personas:
+  - 工程
+  - 运营
+  when_to_use: 要自动化 Google 协作工具时
+  use_case_en: Operate Chat/Meet/Classroom/People via CLI
+  when_to_use_en: When automating Google collaboration tools
+comms-integration--9-5--322:
+  use_case: 拉管理审计报告、订阅 Workspace 事件
+  personas:
+  - 工程
+  - 运营
+  when_to_use: 要做管理审计或事件驱动自动化时
+  use_case_en: Pull admin audit reports and subscribe to Workspace events
+  when_to_use_en: When doing admin auditing or event-driven automation
+software-engineering--1-8--323:
+  use_case: 用 Model Armor 净化提示与响应
+  personas:
+  - 工程
+  when_to_use: 要给 AI 应用加内容安全护栏时
+  use_case_en: Sanitize prompts and responses via Model Armor
+  when_to_use_en: When adding content-safety guardrails to an AI app

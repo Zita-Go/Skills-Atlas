@@ -4353,3 +4353,295 @@
   description_en: Record an Architecture Decision Record (ADR) when making an architecture decision, changing a public API or shipping a feature — capturing the "why", constraints and trade-offs so future engineers and agents understand the codebase context.
   sources:
   - addyosmani
+- id: software-engineering--1-1--302
+  skills:
+  - planning-with-files
+  group: 文件式持久规划（Manus 风格）
+  group_en: File-based persistent planning (Manus-style)
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: Manus 风格的文件式规划:创建 task_plan.md / findings.md / progress.md 三个持久 markdown 文件来拆解与跟踪复杂多步任务,支持 /clear 后自动会话恢复。
+  description_en: 'Manus-style file-based planning: create persistent task_plan.md / findings.md / progress.md to decompose and track complex multi-step tasks, with automatic session resume after /clear.'
+  sources:
+  - planning-with-files
+- id: software-engineering--1-4--303
+  skills:
+  - release-skills
+  group: 通用发布流程自动化
+  group_en: Universal release automation
+  category: software-engineering
+  subcategory: 1-4
+  chain: false
+  description: 通用发布工作流:自动检测版本文件与 changelog,支持 Node.js / Python / Rust / Claude Plugin 发布、GitHub Releases、带注释标签等。
+  description_en: 'A universal release workflow: auto-detect version files and changelogs; supports Node.js / Python / Rust / Claude Plugin releases, GitHub Releases and annotated tags.'
+  sources:
+  - baoyu-skills
+- id: design-frontend--5-7--304
+  skills:
+  - baoyu-image-gen
+  group: AI 图像生成（多 API）
+  group_en: AI image generation (multi-API)
+  category: design-frontend
+  subcategory: 5-7
+  chain: false
+  description: 对接 GPT Image / Azure OpenAI / Google / OpenRouter / DashScope / GLM-Image / MiniMax / 即梦 / Seedream / Replicate 等多家 API 的图像生成,支持文生图、参考图、宽高比与批量。
+  description_en: 'AI image generation across many APIs (GPT Image, Azure OpenAI, Google, OpenRouter, DashScope, GLM-Image, MiniMax, Jimeng, Seedream, Replicate): text-to-image, reference images, aspect ratio and batch.'
+  sources:
+  - baoyu-skills
+- id: design-frontend--5-7--305
+  skills:
+  - baoyu-article-illustrator
+  - baoyu-cover-image
+  group: 文章配图与封面生成
+  group_en: Article illustration & cover generation
+  category: design-frontend
+  subcategory: 5-7
+  chain: false
+  description: 为文章生成视觉资产:分析文章结构、定位需配图处并以 Type×Style×Palette 三维方法生成风格一致的插图(article-illustrator);以及 5 维定制(类型/调色板/渲染/文本/情绪)的文章封面图(cover-image)。
+  description_en: 'Generate visual assets for articles: analyze structure, locate spots needing illustration and produce style-consistent images via a Type×Style×Palette approach (article-illustrator); plus 5-dimension article cover images (type/palette/rendering/text/mood) (cover-image).'
+  sources:
+  - baoyu-skills
+- id: design-frontend--5-7--306
+  skills:
+  - baoyu-infographic
+  - baoyu-xhs-images
+  group: 信息图 / 社交卡片生成
+  group_en: Infographics / social cards
+  category: design-frontend
+  subcategory: 5-7
+  chain: false
+  description: 出版级信息图(21 种布局 ×22 种风格,分析内容并推荐布局风格组合)与小红书/微信式卡通信息图卡片系列(1–10 张,12 风格 ×8 布局 ×3 配色)。
+  description_en: Publication-grade infographics (21 layouts ×22 styles with auto layout-style recommendation) and Xiaohongshu/WeChat-style cartoon infographic card series (1–10 cards, 12 styles ×8 layouts ×3 palettes).
+  sources:
+  - baoyu-skills
+- id: design-frontend--5-7--307
+  skills:
+  - baoyu-comic
+  group: 知识漫画生成
+  group_en: Educational comic generation
+  category: design-frontend
+  subcategory: 5-7
+  chain: false
+  description: 知识漫画创建器:支持多种艺术风格与语调,生成带详细分镜布局的原创科普/教育漫画,可批量出图。
+  description_en: 'A knowledge-comic creator: multiple art styles and tones, generating original educational comics with detailed panel layouts and batch image generation.'
+  sources:
+  - baoyu-skills
+- id: design-frontend--5-7--308
+  skills:
+  - baoyu-diagram
+  group: SVG 技术图表生成
+  group_en: SVG technical diagram generation
+  category: design-frontend
+  subcategory: 5-7
+  chain: false
+  description: 生成专业深色主题 SVG 图表:架构图、流程图、序列图、结构图、思维导图、时间线等,用于系统可视化。
+  description_en: Generate professional dark-themed SVG diagrams — architecture, flowcharts, sequence, structural, mind maps, timelines — for system visualization.
+  sources:
+  - baoyu-skills
+- id: design-frontend--5-5--309
+  skills:
+  - baoyu-slide-deck
+  group: 幻灯片图像生成
+  group_en: Slide-deck image generation
+  category: design-frontend
+  subcategory: 5-5
+  chain: false
+  description: 把内容转成专业幻灯片图像:先生成带样式说明的大纲,再逐页生成幻灯片图片,用于阅读与分享。
+  description_en: 'Turn content into professional slide-deck images: generate a styled outline, then render each slide as an image for reading and sharing.'
+  sources:
+  - baoyu-skills
+- id: design-frontend--5-8--310
+  skills:
+  - baoyu-compress-image
+  group: 图像压缩（WebP/PNG）
+  group_en: Image compression (WebP/PNG)
+  category: design-frontend
+  subcategory: 5-8
+  chain: false
+  description: 图像压缩工具:自动选择最佳工具把图像压成 WebP(默认)或 PNG,支持批量处理。
+  description_en: An image-compression tool that auto-selects the best tool to compress images to WebP (default) or PNG, with batch support.
+  sources:
+  - baoyu-skills
+- id: docs-knowledge--2-2--311
+  skills:
+  - baoyu-translate
+  group: 文章翻译（多模式）
+  group_en: Article translation (multi-mode)
+  category: docs-knowledge
+  subcategory: 2-2
+  chain: false
+  description: 文章/文档翻译,三种模式:快速(直译)、普通(先分析后译)、精翻(分析→翻译→校审→润色),可用术语表保持一致。
+  description_en: 'Article/document translation with three modes: quick (direct), normal (analyze then translate), refined (analyze → translate → review → polish), with glossaries for consistency.'
+  sources:
+  - baoyu-skills
+- id: docs-knowledge--2-3--312
+  skills:
+  - baoyu-format-markdown
+  group: Markdown 格式化
+  group_en: Markdown formatting
+  category: docs-knowledge
+  subcategory: 2-3
+  chain: false
+  description: 把纯文本或 Markdown 规范化:补 frontmatter、标题、摘要、加粗、列表、代码块等结构,只调格式不改内容。
+  description_en: 'Normalize plain text or Markdown: add frontmatter, titles, summaries, headings, bold, lists and code blocks — formatting only, content unchanged.'
+  sources:
+  - baoyu-skills
+- id: docs-knowledge--2-3--313
+  skills:
+  - baoyu-markdown-to-html
+  group: Markdown 转 HTML（公众号适配）
+  group_en: Markdown to HTML (WeChat-ready)
+  category: docs-knowledge
+  subcategory: 2-3
+  chain: false
+  description: 把 Markdown 转成带样式的 HTML,适配微信公众号,支持代码高亮、数学公式、Mermaid(无头 Chrome 渲染为图)、脚注等。
+  description_en: 'Convert Markdown to styled, WeChat-compatible HTML: code highlighting, math, Mermaid (rendered to images via headless Chrome), footnotes and more.'
+  sources:
+  - baoyu-skills
+- id: data-scraping--7-1--314
+  skills:
+  - baoyu-url-to-markdown
+  group: URL 转 Markdown 抓取
+  group_en: URL-to-Markdown scraping
+  category: data-scraping
+  subcategory: 7-1
+  chain: false
+  description: 抓取任意 URL 并转成干净 Markdown,内置 X/Twitter、YouTube 等站点适配器(基于 Chrome CDP)。
+  description_en: Fetch any URL and convert it to clean Markdown, with built-in site adapters for X/Twitter, YouTube and more (via Chrome CDP).
+  sources:
+  - baoyu-skills
+- id: media--6-2--315
+  skills:
+  - baoyu-youtube-transcript
+  group: YouTube 字幕 / 转录下载
+  group_en: YouTube transcript/subtitle download
+  category: media
+  subcategory: 6-2
+  chain: false
+  description: 按 URL 或视频 ID 下载 YouTube 字幕/转录与封面图,支持多语言、翻译、章节识别与发言人标注,无需 API Key 并自动缓存。
+  description_en: 'Download YouTube transcripts/subtitles and cover images by URL or video ID: multi-language, translation, chapter detection and speaker labeling, no API key, with caching.'
+  sources:
+  - baoyu-skills
+- id: comms-integration--9-1--316
+  skills:
+  - baoyu-wechat-summary
+  group: 微信群聊总结
+  group_en: WeChat group-chat summary
+  category: comms-integration
+  subcategory: 9-1
+  chain: false
+  description: 总结微信群聊精华为结构化简报(基于本地 wx-cli),并维护跨次运行的群聊历史与用户画像。
+  description_en: Summarize WeChat group-chat highlights into a structured digest (via the local wx-cli), maintaining cross-run chat history and user profiles.
+  sources:
+  - baoyu-skills
+- id: marketing-growth--4-3--317
+  skills:
+  - baoyu-post-to-wechat
+  - baoyu-post-to-weibo
+  - baoyu-post-to-x
+  group: 多平台社交发布（微信/微博/X）
+  group_en: Multi-platform social publishing (WeChat/Weibo/X)
+  category: marketing-growth
+  subcategory: 4-3
+  chain: false
+  description: 把内容发布到微信公众号(API 或 Chrome CDP)、微博(文/图/视频/头条)与 X/Twitter(推文/长文),输入支持 HTML/Markdown/纯文本,自动处理图文与外链。
+  description_en: Publish content to WeChat Official Account (API or Chrome CDP), Weibo (text/image/video/headline) and X/Twitter (posts/long-form), accepting HTML/Markdown/plain-text and handling media and external links.
+  sources:
+  - baoyu-skills
+- id: comms-integration--9-5--318
+  skills:
+  - gws-gmail
+  - gws-gmail-send
+  - gws-gmail-read
+  - gws-gmail-reply
+  - gws-gmail-reply-all
+  - gws-gmail-forward
+  - gws-gmail-triage
+  - gws-gmail-watch
+  group: Google Workspace — Gmail
+  group_en: Google Workspace — Gmail
+  category: comms-integration
+  subcategory: 9-5
+  chain: false
+  description: 官方 Google Workspace CLI 的 Gmail 技能组:发信、读信、回复/全部回复、转发、未读摘要 triage,以及通过 Pub/Sub 实时监听新邮件(NDJSON 流),自动处理线程、HTML、附件、抄送/密送与草稿。
+  description_en: 'Gmail skills of the official Google Workspace CLI: send, read, reply/reply-all, forward, unread triage, and real-time new-mail watch via Pub/Sub (NDJSON stream), handling threading, HTML, attachments, cc/bcc and drafts.'
+  sources:
+  - googleworkspace-cli
+- id: comms-integration--9-5--319
+  skills:
+  - gws-calendar
+  - gws-calendar-agenda
+  - gws-calendar-insert
+  group: Google Workspace — Calendar
+  group_en: Google Workspace — Calendar
+  category: comms-integration
+  subcategory: 9-5
+  chain: false
+  description: Google Calendar 技能组:管理日历与事件、查看跨日历的近期日程(agenda)、创建带地点/参会者/Meet 链接的事件。
+  description_en: 'Google Calendar skills: manage calendars and events, view upcoming agenda across calendars, and create events with location/attendees/Meet links.'
+  sources:
+  - googleworkspace-cli
+- id: comms-integration--9-5--320
+  skills:
+  - gws-drive
+  - gws-drive-upload
+  - gws-docs
+  - gws-docs-write
+  - gws-forms
+  - gws-keep
+  group: Google Workspace — Drive / Docs / Forms / Keep
+  group_en: Google Workspace — Drive / Docs / Forms / Keep
+  category: comms-integration
+  subcategory: 9-5
+  chain: false
+  description: Google 文件与文档技能组:Drive 文件/文件夹/共享盘管理与上传、Docs 读写与追加、Forms 表单读写、Keep 笔记管理。
+  description_en: 'Google files & docs skills: Drive file/folder/shared-drive management and upload, Docs read/write/append, Forms read/write, and Keep notes.'
+  sources:
+  - googleworkspace-cli
+- id: comms-integration--9-5--321
+  skills:
+  - gws-chat
+  - gws-chat-send
+  - gws-meet
+  - gws-classroom
+  - gws-people
+  group: Google Workspace — Chat / Meet / Classroom / People
+  group_en: Google Workspace — Chat / Meet / Classroom / People
+  category: comms-integration
+  subcategory: 9-5
+  chain: false
+  description: Google 协作技能组:Chat 空间与消息管理及发送、Meet 会议(记录/空间/参与者/录音)、Classroom 课程名册作业、People 联系人管理。
+  description_en: 'Google collaboration skills: Chat space/message management and sending, Meet conferences (records/spaces/participants/recordings), Classroom classes/rosters/coursework, and People contacts.'
+  sources:
+  - googleworkspace-cli
+- id: comms-integration--9-5--322
+  skills:
+  - gws-admin-reports
+  - gws-events
+  - gws-events-subscribe
+  - gws-events-renew
+  group: Google Workspace — Admin & Events
+  group_en: Google Workspace — Admin & Events
+  category: comms-integration
+  subcategory: 9-5
+  chain: false
+  description: Google Workspace 管理与事件技能组:Admin SDK 审计日志与使用报告,以及 Workspace Events 订阅的创建/续订/流式接收(NDJSON)。
+  description_en: 'Google Workspace admin & events skills: Admin SDK audit logs and usage reports, plus Workspace Events subscription create/renew/stream (NDJSON).'
+  sources:
+  - googleworkspace-cli
+- id: software-engineering--1-8--323
+  skills:
+  - gws-modelarmor
+  - gws-modelarmor-create-template
+  - gws-modelarmor-sanitize-prompt
+  - gws-modelarmor-sanitize-response
+  group: Google Model Armor 内容安全
+  group_en: Google Model Armor content safety
+  category: software-engineering
+  subcategory: 1-8
+  chain: false
+  description: 用 Google Model Armor 为 AI 应用做内容安全:创建防护模板,净化用户提示与模型响应,过滤有害/越狱内容。
+  description_en: 'Use Google Model Armor for AI content safety: create protection templates and sanitize user prompts and model responses to filter harmful/jailbreak content.'
+  sources:
+  - googleworkspace-cli

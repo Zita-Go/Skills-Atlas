@@ -225,6 +225,9 @@
   - id: 9-4
     title: 9.4 Sleep-time 自治研究
     title_en: 9.4 Sleep-time autonomous research
+  - id: 9-5
+    title: 9.5 办公套件集成（Google Workspace 等）
+    title_en: 9.5 Office-suite integration (Google Workspace, etc.)
 - id: startup-finance
   title: 十、创业 / 财务 / 合规
   title_en: 10. Startups / Finance / Compliance
