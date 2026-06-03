@@ -11,6 +11,7 @@
 [![Skills](https://img.shields.io/badge/skills-906-blue)](data/skills.yaml)
 [![Repos](https://img.shields.io/badge/repositories-115-green)](data/repositories.yaml)
 [![Categories](https://img.shields.io/badge/categories-20_×_116-orange)](data/categories.yaml)
+[![npm](https://img.shields.io/npm/v/skills-atlas-cli?label=skills-atlas-cli&logo=npm&color=cb3837)](https://www.npmjs.com/package/skills-atlas-cli)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [**🧩 Claude Code 插件**](packages/skills-atlas-cli/plugin) | [**⌨️ CLI**](packages/skills-atlas-cli) | [🌐 在线访问](https://zita-go.github.io/Skills-Atlas/?lang=zh) | [📦 数据下载](data/) | [🤝 贡献新 skill](CONTRIBUTING.zh-CN.md) | [💬 讨论区](../../discussions)
@@ -59,7 +60,8 @@ npm i -g skills-atlas-cli
 
 已经装好了？这里是参考。
 
-**skill 装到哪儿：** 装到**本项目**的在 `./.claude/skills/`（可提交 —— 跟着仓库走）；**全局**的在 `~/.claude/skills/`（走到哪跟到哪）。插件、自动驾驶和 `kit` 默认装到项目；CLI 的 `install` / `use` 默认装到全局。两边都能用 `--project` / `--global` 覆盖。
+> [!NOTE]
+> **skill 装到哪儿：** 装到**本项目**的在 `./.claude/skills/`（可提交 —— 跟着仓库走）；**全局**的在 `~/.claude/skills/`（走到哪跟到哪）。插件、自动驾驶和 `kit` 默认装到项目；CLI 的 `install` / `use` 默认装到全局。两边都能用 `--project` / `--global` 覆盖。
 
 ### 在 Claude Code 里 —— 插件
 
@@ -89,7 +91,8 @@ skills-atlas use brainstorming        # 装上并立即生效,不用重启
 skills-atlas kit                      # 识别当前项目,装一套对口的
 ```
 
-*（不想全局装？任何命令前面加 `npx skills-atlas-cli …` 即可。）*
+> [!TIP]
+> 不想全局装？任何命令前面加 `npx skills-atlas-cli …` 即可。
 
 除此之外，CLI 还是个完整的包管理器（`installed`、`outdated`、`upgrade`、`remove`、`doctor`），能从可提交的 `skills-atlas.kit.json` 复现一个项目的 skill 集（`sync`），能并入你组织的私有目录（`registry add`，同名时私有优先），也能作为 MCP server 给任意客户端用。→ [**CLI 完整文档**](packages/skills-atlas-cli)
 

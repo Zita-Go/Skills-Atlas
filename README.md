@@ -11,6 +11,7 @@
 [![Skills](https://img.shields.io/badge/skills-906-blue)](data/skills.yaml)
 [![Repos](https://img.shields.io/badge/repositories-115-green)](data/repositories.yaml)
 [![Categories](https://img.shields.io/badge/categories-20_×_116-orange)](data/categories.yaml)
+[![npm](https://img.shields.io/npm/v/skills-atlas-cli?label=skills-atlas-cli&logo=npm&color=cb3837)](https://www.npmjs.com/package/skills-atlas-cli)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [**🧩 Claude Code plugin**](packages/skills-atlas-cli/plugin) | [**⌨️ CLI**](packages/skills-atlas-cli) | [🌐 Visit online](https://zita-go.github.io/Skills-Atlas/?lang=en) | [📦 Data download](data/) | [🤝 Contribute a new skill](CONTRIBUTING.md) | [💬 Discussions](../../discussions)
@@ -71,7 +72,8 @@ same idea:
 
 Already set up? Here's the reference.
 
-**Where a skill lands:** installed for **this project** it goes to `./.claude/skills/` (committable — it travels with the repo); a **global** one goes to `~/.claude/skills/` (follows you everywhere). The plugin, autopilot and `kit` default to the project; the CLI's `install` / `use` default to global. Override either with `--project` / `--global`.
+> [!NOTE]
+> **Where a skill lands:** installed for **this project** it goes to `./.claude/skills/` (committable — it travels with the repo); a **global** one goes to `~/.claude/skills/` (follows you everywhere). The plugin, autopilot and `kit` default to the project; the CLI's `install` / `use` default to global. Override either with `--project` / `--global`.
 
 ### In Claude Code — the plugin
 
@@ -101,7 +103,8 @@ skills-atlas use brainstorming        # install + apply now, no restart
 skills-atlas kit                      # detect this project, install a tailored set
 ```
 
-*(No global install? Prefix any command with `npx skills-atlas-cli …`.)*
+> [!TIP]
+> No global install? Prefix any command with `npx skills-atlas-cli …`.
 
 Beyond that, the CLI is a full package manager (`installed`, `outdated`, `upgrade`, `remove`, `doctor`),
 reproduces a project's skill set from a committable `skills-atlas.kit.json` (`sync`), merges your org's
