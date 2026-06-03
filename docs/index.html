@@ -1305,7 +1305,6 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
         <span class="hero-start-q" data-i18n="hs_q">不知从哪开始？</span>
         <button class="start-chip start-chip-learn" data-start="learn" data-i18n="hs_learn">🗺️ 这是什么</button>
         <button class="start-chip start-chip-ai" data-start="ai" data-i18n="hs_ai">✨ 描述需求，AI 推荐</button>
-        <button class="start-chip" data-start="use" data-i18n="hs_use">🧩 在 Claude Code 里用</button>
         <button class="start-chip" data-start="browse" data-i18n="hs_browse">🗂️ 浏览全部大类</button>
         <span class="hero-start-eg" data-i18n="hs_eg">例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」</span>
       </div>
@@ -1944,9 +1943,8 @@ function buildContent(){
         html += `<div class="card-desc">${escapeHtml(pickT(row.description_en, row.description))}</div>`;
         // L2：卡片级主操作 = 把这个 skill 交给 Atlas 插件/CLI（与下方 source 行的上游命令分层）
         const primarySkill = (cardP && cardP.skill) ? cardP.skill : (row.skills[0] || '');
-        const useSrc = cardP || sortedSources.find(x => x.url) || sortedSources[0] || {};
         const useThisBtn = primarySkill
-          ? `<button class="use-this" data-act="usethis" data-skill="${escapeAttr(primarySkill)}" data-skills="${escapeAttr(row.skills.join(','))}" data-srcname="${escapeAttr(useSrc.name||'')}" data-srcurl="${escapeAttr(useSrc.url||'')}" title="${escapeAttr(LANG === 'en' ? 'Use this in Claude Code / terminal' : '在 Claude Code / 终端里用这个')}">${LANG === 'en' ? '🧩 Use this' : '🧩 用这个'}</button>`
+          ? `<button class="use-this" data-act="usethis" data-skill="${escapeAttr(primarySkill)}" data-skills="${escapeAttr(row.skills.join(','))}" title="${escapeAttr(LANG === 'en' ? 'Use this in Claude Code / terminal' : '在 Claude Code / 终端里用这个')}">${LANG === 'en' ? '🧩 Use this' : '🧩 用这个'}</button>`
           : '';
         html += `<div class="card-sources">${useThisBtn}${sourcesHtml}</div>`;
         html += `</div>`;
@@ -4637,16 +4635,13 @@ function setupUsePop(){
     const more = others.length
       ? `<div class="up-more">${EN ? `Bundles ${all.length} skills — swap the name for: ` : `这组含 ${all.length} 个 skill，换名字即可：`}${others.map(s => `<code>${escapeHtml(s)}</code>`).join(EN ? ', ' : '、')}</div>`
       : '';
-    const src = d.srcurl
-      ? `<a href="${escapeAttr(d.srcurl)}" target="_blank" rel="noopener">${EN ? 'Source' : '源'} ${escapeHtml(d.srcname || '')} ↗</a> · `
-      : '';
     pop.innerHTML =
       `<div class="up-sec">${EN ? 'In Claude Code' : '在 Claude Code'}<span class="up-rec">${EN ? 'recommended' : '推荐'}</span></div>` +
       `<div class="up-cmd"><code>${escapeHtml(plugin)}</code><button class="src-act" data-act="copy" data-cmd="${escapeAttr(plugin)}">${EN ? '📋 Copy' : '📋 复制'}</button></div>` +
       `<div class="up-or">${EN ? '— or terminal —' : '—— 或终端 ——'}</div>` +
       `<div class="up-cmd"><code>${escapeHtml(cli)}</code><button class="src-act" data-act="copy" data-cmd="${escapeAttr(cli)}">${EN ? '📋 Copy' : '📋 复制'}</button></div>` +
       more +
-      `<div class="up-foot">${src}<a href="#" class="up-first">${EN ? 'First time? Set up the plugin →' : '首次?先装插件 →'}</a></div>`;
+      `<div class="up-foot"><a href="#" class="up-first">${EN ? 'First time? Set up the plugin →' : '首次?先装插件 →'}</a></div>`;
   }
   function place(btn){
     const wasHidden = pop.classList.contains('hidden');
@@ -4695,7 +4690,6 @@ document.querySelectorAll('.start-chip').forEach(c => c.addEventListener('click'
   const a = c.dataset.start;
   if(a === 'ai'){ const b = document.getElementById('aiBtn'); if(b) b.click(); }
   else if(a === 'learn'){ openHowTo('learn'); }
-  else if(a === 'use'){ openHowTo('use'); }
   else if(a === 'browse'){ smoothScrollToEl(document.querySelector('.section-h1') || document.getElementById('content')); }
   else { const i = document.getElementById('search'); if(i){ i.focus(); i.scrollIntoView({ block:'center' }); } }
 }));
