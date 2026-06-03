@@ -8,11 +8,11 @@
 
 900+ skills, gathered from across the ecosystem and organized by what they do.
 
-[![Skills](https://img.shields.io/badge/skills-906-blue)](data/skills.yaml)
-[![Repos](https://img.shields.io/badge/repositories-115-green)](data/repositories.yaml)
-[![Categories](https://img.shields.io/badge/categories-20_×_116-orange)](data/categories.yaml)
-[![npm](https://img.shields.io/npm/v/skills-atlas-cli?label=skills-atlas-cli)](https://www.npmjs.com/package/skills-atlas-cli)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
+[![Skills](https://img.shields.io/badge/skills-906-3b82f6?style=flat&labelColor=1e293b&logo=claude&logoColor=white)](data/skills.yaml)
+[![Repos](https://img.shields.io/badge/repos-115-10b981?style=flat&labelColor=1e293b&logo=github&logoColor=white)](data/repositories.yaml)
+[![Categories](https://img.shields.io/badge/categories-20_×_116-f59e0b?style=flat&labelColor=1e293b)](data/categories.yaml)
+[![npm](https://img.shields.io/npm/v/skills-atlas-cli?style=flat&label=npm&color=8b5cf6&labelColor=1e293b&logo=npm&logoColor=white)](https://www.npmjs.com/package/skills-atlas-cli)
+[![License](https://img.shields.io/badge/license-MIT-64748b?style=flat&labelColor=1e293b&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
 [**🧩 Claude Code plugin**](packages/skills-atlas-cli/plugin) | [**⌨️ CLI**](packages/skills-atlas-cli) | [🌐 Visit online](https://zita-go.github.io/Skills-Atlas/?lang=en) | [📦 Data download](data/) | [🤝 Contribute a new skill](CONTRIBUTING.md) | [💬 Discussions](../../discussions)
 
