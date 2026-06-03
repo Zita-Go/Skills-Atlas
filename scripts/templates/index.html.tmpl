@@ -122,6 +122,8 @@ code{background:var(--code-bg);padding:.1em .4em;border-radius:4px;font-size:.92
 .sidebar h1{font-size:17px;margin:0 0 6px;letter-spacing:-0.01em;font-weight:700;
   background:var(--grad);-webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent}
+/* 品牌 logo：蓝紫渐变菱形（与 favicon 一致）；用内联 SVG，保证一定显示、不依赖 emoji 字体 */
+.brand-logo{vertical-align:-0.18em;margin-right:5px;flex-shrink:0}
 .sidebar .subtitle{color:var(--fg-muted);font-size:11.5px;margin-bottom:18px;
   letter-spacing:0.01em}
 .sidebar .stat-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
@@ -1212,7 +1214,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
 <div class="app" id="app">
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-head">
-    <h1>🗺️ Skills Atlas</h1>
+    <h1><svg class="brand-logo" viewBox="0 0 32 32" width="19" height="19" aria-hidden="true"><defs><linearGradient id="blogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c9cff"/><stop offset="1" stop-color="#c479ff"/></linearGradient></defs><path d="M16 3 L29 16 L16 29 L3 16 Z" fill="url(#blogo)"/></svg>Skills Atlas</h1>
     <button class="sidebar-toggle" id="sidebarToggle" title="收起目录" aria-label="收起目录" data-i18n-title="tt_sidebar_collapse" data-i18n-aria="tt_sidebar_collapse">
       <svg viewBox="0 0 24 24"><polyline points="15 6 9 12 15 18"/></svg>
     </button>
@@ -1296,7 +1298,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
     <div data-i18n="empty">没有匹配的 skill，试试别的关键词</div>
   </div>
   <footer class="site-footer">
-    <span class="sf-brand">🗺️ Skills Atlas</span>
+    <span class="sf-brand"><svg class="brand-logo" viewBox="0 0 32 32" width="14" height="14" aria-hidden="true"><defs><linearGradient id="blogo2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c9cff"/><stop offset="1" stop-color="#c479ff"/></linearGradient></defs><path d="M16 3 L29 16 L16 29 L3 16 Z" fill="url(#blogo2)"/></svg>Skills Atlas</span>
     <span class="sf-sep" aria-hidden="true">·</span>
     <span data-i18n="footer_tag">社区整理的 AI Agent Skills 目录，非官方</span>
     <span class="sf-sep" aria-hidden="true">·</span>
