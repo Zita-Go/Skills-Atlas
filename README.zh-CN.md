@@ -23,7 +23,7 @@
 
 ## 为什么
 
-Agent skills 在 2025 年爆发 —— 但它们散落在 ~115 个 GitHub 仓库里，而 awesome 列表只给你名字，从不告诉你**哪几个能配合用**。Skills Atlas 把它们收集起来、统一**按功能**组织，让你按手头的活去找：不同仓库的 SEO skill 并排摆出来、必须串起来用的开发工作流标成 **must-chain（⛓）**、文档处理套件一目了然。**297 个功能分组、覆盖 20 个大类** —— 软件、产品、营销、设计，加上法律、医疗、金融、DevOps、安全等专业垂直领域 —— 在[网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)上或终端里都能搜。
+Agent skills 在 2025 年爆发 —— 但它们散落在 ~115 个 GitHub 仓库里，而 awesome 列表只给你名字，从不告诉你**哪几个能配合用**。Skills Atlas 把它们收集起来、统一**按功能**组织，让你按手头的活去找：不同仓库的 SEO skill 并排摆出来、必须串起来用的开发工作流标成 **must-chain（⛓ —— 用 `--chain` 一次装齐）**、文档处理套件一目了然。**297 个功能分组、覆盖 20 个大类** —— 软件、产品、营销、设计，加上法律、医疗、金融、DevOps、安全等专业垂直领域 —— 在[网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)上或终端里都能搜。
 
 ## 快速上手
 
@@ -59,6 +59,8 @@ npm i -g skills-atlas-cli
 
 已经装好了？这里是参考。
 
+**skill 装到哪儿：** 装到**本项目**的在 `./.claude/skills/`（可提交 —— 跟着仓库走）；**全局**的在 `~/.claude/skills/`（走到哪跟到哪）。插件、自动驾驶和 `kit` 默认装到项目；CLI 的 `install` / `use` 默认装到全局。两边都能用 `--project` / `--global` 覆盖。
+
 ### 在 Claude Code 里 —— 插件
 
 直接说你要什么，或用命令：
@@ -88,8 +90,6 @@ skills-atlas kit                      # 识别当前项目,装一套对口的
 ```
 
 *（不想全局装？任何命令前面加 `npx skills-atlas-cli …` 即可。）*
-
-**skill 装到哪儿：** 装到**本项目**的在 `./.claude/skills/`（可提交 —— 跟着仓库走）；**全局**的在 `~/.claude/skills/`（走到哪跟到哪）。插件、自动驾驶和 `kit` 默认装到项目；CLI 的 `install` / `use` 默认装到全局。两边都能用 `--project` / `--global` 覆盖。
 
 除此之外，CLI 还是个完整的包管理器（`installed`、`outdated`、`upgrade`、`remove`、`doctor`），能从可提交的 `skills-atlas.kit.json` 复现一个项目的 skill 集（`sync`），能并入你组织的私有目录（`registry add`，同名时私有优先），也能作为 MCP server 给任意客户端用。→ [**CLI 完整文档**](packages/skills-atlas-cli)
 

@@ -26,7 +26,7 @@
 Agent skills exploded in 2025 — but they're scattered across ~115 GitHub repos, and awesome-lists
 only give you names, never which ones actually **work together**. Skills Atlas gathers them and
 organizes everything **by function**, so you find a skill by the job at hand: the SEO skills from
-different repos side by side, the dev-workflow skills marked **must-chain** (⛓), the document suite
+different repos side by side, the dev-workflow skills marked **must-chain** (⛓ — grab the whole set with `--chain`), the document suite
 at a glance. **297 functional groups across 20 categories** — software, PM, marketing and design,
 plus the pro verticals (legal, healthcare, finance, DevOps, security, …) — searchable
 [online](https://zita-go.github.io/Skills-Atlas/?lang=en) or from your shell.
@@ -71,6 +71,8 @@ same idea:
 
 Already set up? Here's the reference.
 
+**Where a skill lands:** installed for **this project** it goes to `./.claude/skills/` (committable — it travels with the repo); a **global** one goes to `~/.claude/skills/` (follows you everywhere). The plugin, autopilot and `kit` default to the project; the CLI's `install` / `use` default to global. Override either with `--project` / `--global`.
+
 ### In Claude Code — the plugin
 
 Just describe what you need, or reach for a command:
@@ -100,11 +102,6 @@ skills-atlas kit                      # detect this project, install a tailored 
 ```
 
 *(No global install? Prefix any command with `npx skills-atlas-cli …`.)*
-
-**Where skills land:** a skill installed for **this project** lives in `./.claude/skills/`
-(committable — it travels with the repo); a **global** one lives in `~/.claude/skills/` (follows you
-everywhere). The plugin, autopilot and `kit` default to the project; the CLI's `install` / `use`
-default to global. Override either with `--project` / `--global`.
 
 Beyond that, the CLI is a full package manager (`installed`, `outdated`, `upgrade`, `remove`, `doctor`),
 reproduces a project's skill set from a committable `skills-atlas.kit.json` (`sync`), merges your org's
