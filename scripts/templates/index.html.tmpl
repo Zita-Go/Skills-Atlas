@@ -760,8 +760,6 @@ html.light .card:hover .skill-tag{background:rgba(91,108,255,.14)}
 .hm-tile:hover{filter:brightness(1.05) saturate(1.05);z-index:3;transform:translateY(-1px);
   box-shadow:0 4px 14px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.5), inset 0 0 0 1.5px rgba(255,255,255,.7)}
 html.light .hm-tile{box-shadow:0 1px 3px rgba(20,30,60,.12), inset 0 1px 0 rgba(255,255,255,.45), inset 0 0 0 1px rgba(0,0,0,.05)}
-/* Twemoji 彩色 emoji 图：随字号缩放、与文字基线对齐 */
-img.emoji{height:1em;width:1em;margin:0 .04em;vertical-align:-0.12em;display:inline-block}
 .hm-tile .hm-ic{font-size:15px;line-height:1;filter:drop-shadow(0 1px 1px rgba(0,0,0,.4))}
 .hm-tile .hm-ic.tiny{font-size:11px}
 .hm-tile .hm-nm{font-size:10px;line-height:1.15;color:var(--txt);font-weight:700;
@@ -1421,8 +1419,6 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
 </div>
 </div>
 
-<!-- Twemoji：把 emoji 渲染成彩色 SVG，跨平台一致（不依赖访客系统是否装了彩色 emoji 字体） -->
-<script src="https://cdn.jsdelivr.net/npm/@twemoji/api@15.1.0/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <script>
 const DATA = {{DATA_JSON}};
 
@@ -4259,7 +4255,6 @@ function buildHeroMap(pal){
     const el = document.querySelectorAll('.section-h1')[+tl.dataset.idx];
     if(el) smoothScrollToEl(el);
   }));
-  twemojify(host);   // treemap 图标转彩色 emoji
 }
 
 // 渲染后按实测宽度收尾：能放下就保留名称，放不下时——纵向只删名称(保数量)，
@@ -4574,29 +4569,6 @@ document.querySelectorAll('.start-chip').forEach(c => c.addEventListener('click'
   else { const i = document.getElementById('search'); if(i){ i.focus(); i.scrollIntoView({ block:'center' }); } }
 }));
 setupJumpOffset();
-
-// 用 Twemoji 解析器把页面 emoji 渲染成彩色图，但贴 Noto 表情图（风格与系统/截图里那套一致：
-// 黄文件夹等），而非 twemoji 自带的 Twitter 蓝文件夹风格；不依赖访客是否装彩色 emoji 字体。
-function twemojify(root){
-  if(!window.twemoji) return;
-  try{
-    twemoji.parse(root || document.body, {
-      className: 'emoji',
-      callback: function(icon){
-        const cp = icon.split('-').filter(c => c !== 'fe0f').join('_');
-        return 'https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji/png/128/emoji_u' + cp + '.png';
-      }
-    });
-  }catch(e){}
-}
-// 个别 Noto 缺的 emoji 图加载失败时，回退成原生 emoji 字符（不留破图）
-document.addEventListener('error', function(e){
-  const t = e.target;
-  if(t && t.tagName === 'IMG' && t.classList && t.classList.contains('emoji') && !t.dataset.fb){
-    t.dataset.fb = '1'; t.replaceWith(document.createTextNode(t.alt || ''));
-  }
-}, true);
-twemojify(document.body);
 
 // 让锚点跳转留白 = sticky toolbar 实际高度 + 16（toolbar 换行变高时也不会挡住小节标题）
 function setupJumpOffset(){
