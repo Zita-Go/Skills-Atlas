@@ -2014,3 +2014,92 @@
     github-actions-templates: plugins/cicd-automation/skills/github-actions-templates/SKILL.md
   plugin_marketplace: true
   license: MIT
+- id: baoyu-skills
+  author: JimLiu
+  repo: baoyu-skills
+  url: https://github.com/JimLiu/baoyu-skills
+  type: skill-pack
+  skill_group_count: 15
+  stars: 20289
+  last_commit: '2026-06-02'
+  default_branch: main
+  description: 宝玉(JimLiu)的内容生产 skill 套件:配图/漫画/信息图/翻译/转换/社交发布等。
+  description_en: 'Baoyu (JimLiu)''s content-production skill suite: illustration, comics, infographics, translation, conversion, social publishing and more.'
+  doc_path: README.md
+  skill_docs:
+    release-skills: .claude/skills/release-skills/SKILL.md
+    baoyu-image-gen: skills/baoyu-image-gen/SKILL.md
+    baoyu-article-illustrator: skills/baoyu-article-illustrator/SKILL.md
+    baoyu-cover-image: skills/baoyu-cover-image/SKILL.md
+    baoyu-infographic: skills/baoyu-infographic/SKILL.md
+    baoyu-xhs-images: skills/baoyu-xhs-images/SKILL.md
+    baoyu-comic: skills/baoyu-comic/SKILL.md
+    baoyu-diagram: skills/baoyu-diagram/SKILL.md
+    baoyu-slide-deck: skills/baoyu-slide-deck/SKILL.md
+    baoyu-compress-image: skills/baoyu-compress-image/SKILL.md
+    baoyu-translate: skills/baoyu-translate/SKILL.md
+    baoyu-format-markdown: skills/baoyu-format-markdown/SKILL.md
+    baoyu-markdown-to-html: skills/baoyu-markdown-to-html/SKILL.md
+    baoyu-url-to-markdown: skills/baoyu-url-to-markdown/SKILL.md
+    baoyu-youtube-transcript: skills/baoyu-youtube-transcript/SKILL.md
+    baoyu-wechat-summary: skills/baoyu-wechat-summary/SKILL.md
+    baoyu-post-to-wechat: skills/baoyu-post-to-wechat/SKILL.md
+    baoyu-post-to-weibo: skills/baoyu-post-to-weibo/SKILL.md
+    baoyu-post-to-x: skills/baoyu-post-to-x/SKILL.md
+- id: planning-with-files
+  author: OthmanAdi
+  repo: planning-with-files
+  url: https://github.com/OthmanAdi/planning-with-files
+  type: skill
+  skill_group_count: 1
+  stars: 22585
+  last_commit: '2026-05-26'
+  default_branch: master
+  description: Manus 风格的文件式持久规划 skill(task_plan/findings/progress 三件套)。
+  description_en: A Manus-style file-based persistent planning skill (task_plan/findings/progress).
+  doc_path: README.md
+  skill_docs:
+    planning-with-files: .codebuddy/skills/planning-with-files/SKILL.md
+- id: googleworkspace-cli
+  author: googleworkspace
+  repo: cli
+  url: https://github.com/googleworkspace/cli
+  type: skill-pack
+  skill_group_count: 6
+  stars: 26785
+  last_commit: '2026-06-01'
+  default_branch: main
+  description: 官方 Google Workspace CLI:一条命令操作 Drive/Gmail/Calendar/Sheets/Docs/Chat/Admin 等,内置 AI agent skills。
+  description_en: 'The official Google Workspace CLI: one command for Drive/Gmail/Calendar/Sheets/Docs/Chat/Admin and more, with built-in AI agent skills.'
+  doc_path: README.md
+  skill_docs:
+    gws-gmail: skills/gws-gmail/SKILL.md
+    gws-gmail-send: skills/gws-gmail-send/SKILL.md
+    gws-gmail-read: skills/gws-gmail-read/SKILL.md
+    gws-gmail-reply: skills/gws-gmail-reply/SKILL.md
+    gws-gmail-reply-all: skills/gws-gmail-reply-all/SKILL.md
+    gws-gmail-forward: skills/gws-gmail-forward/SKILL.md
+    gws-gmail-triage: skills/gws-gmail-triage/SKILL.md
+    gws-gmail-watch: skills/gws-gmail-watch/SKILL.md
+    gws-calendar: skills/gws-calendar/SKILL.md
+    gws-calendar-agenda: skills/gws-calendar-agenda/SKILL.md
+    gws-calendar-insert: skills/gws-calendar-insert/SKILL.md
+    gws-drive: skills/gws-drive/SKILL.md
+    gws-drive-upload: skills/gws-drive-upload/SKILL.md
+    gws-docs: skills/gws-docs/SKILL.md
+    gws-docs-write: skills/gws-docs-write/SKILL.md
+    gws-forms: skills/gws-forms/SKILL.md
+    gws-keep: skills/gws-keep/SKILL.md
+    gws-chat: skills/gws-chat/SKILL.md
+    gws-chat-send: skills/gws-chat-send/SKILL.md
+    gws-meet: skills/gws-meet/SKILL.md
+    gws-classroom: skills/gws-classroom/SKILL.md
+    gws-people: skills/gws-people/SKILL.md
+    gws-admin-reports: skills/gws-admin-reports/SKILL.md
+    gws-events: skills/gws-events/SKILL.md
+    gws-events-subscribe: skills/gws-events-subscribe/SKILL.md
+    gws-events-renew: skills/gws-events-renew/SKILL.md
+    gws-modelarmor: skills/gws-modelarmor/SKILL.md
+    gws-modelarmor-create-template: skills/gws-modelarmor-create-template/SKILL.md
+    gws-modelarmor-sanitize-prompt: skills/gws-modelarmor-sanitize-prompt/SKILL.md
+    gws-modelarmor-sanitize-response: skills/gws-modelarmor-sanitize-response/SKILL.md
