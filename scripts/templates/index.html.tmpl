@@ -1209,6 +1209,27 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
 }
 .use-cc-btn{border-color:rgba(124,156,255,.5);color:var(--accent);background:rgba(124,156,255,.10);font-weight:600;white-space:nowrap}
 .use-cc-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(124,156,255,.18)}
+/* L2：卡片级「用这个」主按钮 + 交接 popover */
+.use-this{align-self:flex-start;display:inline-flex;align-items:center;gap:5px;cursor:pointer;
+  background:rgba(124,156,255,.12);border:1px solid rgba(124,156,255,.45);color:var(--accent);
+  font-weight:600;font-size:12px;padding:5px 12px;border-radius:99px;transition:all .15s;margin-bottom:3px}
+.use-this:hover{background:rgba(124,156,255,.2);border-color:var(--accent);transform:translateY(-1px)}
+.use-this:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.use-pop{position:fixed;z-index:120;width:308px;max-width:calc(100vw - 16px);
+  background:var(--bg-card);border:1px solid var(--border);border-radius:12px;
+  box-shadow:0 12px 40px rgba(0,0,0,.45);padding:12px 14px;font-size:12.5px;color:var(--fg)}
+.use-pop .up-sec{font-weight:700;color:var(--fg);margin-bottom:6px;font-size:12px}
+.use-pop .up-rec{font-weight:600;color:var(--accent-2);font-size:10px;margin-left:6px;
+  border:1px solid var(--accent-2);border-radius:99px;padding:0 6px;vertical-align:middle}
+.use-pop .up-cmd{display:flex;gap:8px;align-items:center;margin:3px 0}
+.use-pop .up-cmd code{flex:1;overflow-x:auto;white-space:nowrap;font-family:var(--font-mono);
+  background:var(--bg-elev);padding:6px 9px;border-radius:6px;font-size:11.5px}
+.use-pop .up-or{color:var(--fg-muted);font-size:11px;text-align:center;margin:8px 0 3px}
+.use-pop .up-more{color:var(--fg-dim);font-size:11px;margin:9px 0 0;line-height:1.7}
+.use-pop .up-more code{font-family:var(--font-mono);background:var(--bg-elev);padding:1px 5px;border-radius:4px}
+.use-pop .up-foot{margin-top:10px;padding-top:8px;border-top:1px solid var(--border);font-size:11px;color:var(--fg-dim)}
+.use-pop .up-foot a{color:var(--accent);text-decoration:none}
+.use-pop .up-foot a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -1920,7 +1941,13 @@ function buildContent(){
           html += `<div class="card-uc"><span aria-hidden="true">💡</span> ${escapeHtml(ucT)}${whenT?` <span class="card-when">· ${escapeHtml(whenT)}</span>`:''}${pch}</div>`;
         }
         html += `<div class="card-desc">${escapeHtml(pickT(row.description_en, row.description))}</div>`;
-        html += `<div class="card-sources">${sourcesHtml}</div>`;
+        // L2：卡片级主操作 = 把这个 skill 交给 Atlas 插件/CLI（与下方 source 行的上游命令分层）
+        const primarySkill = (cardP && cardP.skill) ? cardP.skill : (row.skills[0] || '');
+        const useSrc = cardP || sortedSources.find(x => x.url) || sortedSources[0] || {};
+        const useThisBtn = primarySkill
+          ? `<button class="use-this" data-act="usethis" data-skill="${escapeAttr(primarySkill)}" data-skills="${escapeAttr(row.skills.join(','))}" data-srcname="${escapeAttr(useSrc.name||'')}" data-srcurl="${escapeAttr(useSrc.url||'')}" title="${escapeAttr(LANG === 'en' ? 'Use this in Claude Code / terminal' : '在 Claude Code / 终端里用这个')}">${LANG === 'en' ? '🧩 Use this' : '🧩 用这个'}</button>`
+          : '';
+        html += `<div class="card-sources">${useThisBtn}${sourcesHtml}</div>`;
         html += `</div>`;
       });
       html += '</div>';
@@ -4591,8 +4618,64 @@ function setupHowTo(){
   });
   document.querySelectorAll('.sf-learn').forEach(el => el.addEventListener('click', e => { e.preventDefault(); openHowTo('learn'); }));
 }
+// L2：卡片「🧩 用这个」点开的轻量 popover —— 插件命令(主) + CLI(次) + 源 + 首次指引
+function setupUsePop(){
+  const pop = document.createElement('div');
+  pop.className = 'use-pop hidden';
+  pop.id = 'usePop';
+  document.body.appendChild(pop);
+  const EN = LANG === 'en';
+  let openFor = null, openedAt = 0;
+  const hide = () => { pop.classList.add('hidden'); openFor = null; };
+  function build(d){
+    const skill = d.skill || '';
+    const plugin = '/skills-atlas:skill-install ' + skill;
+    const cli = 'skills-atlas use ' + skill;
+    const all = (d.skills || '').split(',').filter(Boolean);
+    const others = all.filter(s => s !== skill);
+    const more = others.length
+      ? `<div class="up-more">${EN ? `Bundles ${all.length} skills — swap the name for: ` : `这组含 ${all.length} 个 skill，换名字即可：`}${others.map(s => `<code>${escapeHtml(s)}</code>`).join(EN ? ', ' : '、')}</div>`
+      : '';
+    const src = d.srcurl
+      ? `<a href="${escapeAttr(d.srcurl)}" target="_blank" rel="noopener">${EN ? 'Source' : '源'} ${escapeHtml(d.srcname || '')} ↗</a> · `
+      : '';
+    pop.innerHTML =
+      `<div class="up-sec">${EN ? 'In Claude Code' : '在 Claude Code'}<span class="up-rec">${EN ? 'recommended' : '推荐'}</span></div>` +
+      `<div class="up-cmd"><code>${escapeHtml(plugin)}</code><button class="src-act" data-act="copy" data-cmd="${escapeAttr(plugin)}">${EN ? '📋 Copy' : '📋 复制'}</button></div>` +
+      `<div class="up-or">${EN ? '— or terminal —' : '—— 或终端 ——'}</div>` +
+      `<div class="up-cmd"><code>${escapeHtml(cli)}</code><button class="src-act" data-act="copy" data-cmd="${escapeAttr(cli)}">${EN ? '📋 Copy' : '📋 复制'}</button></div>` +
+      more +
+      `<div class="up-foot">${src}<a href="#" class="up-first">${EN ? 'First time? Set up the plugin →' : '首次?先装插件 →'}</a></div>`;
+  }
+  function place(btn){
+    const r = btn.getBoundingClientRect();
+    pop.style.visibility = 'hidden'; pop.classList.remove('hidden');
+    const pw = pop.offsetWidth, ph = pop.offsetHeight;
+    let left = Math.max(8, Math.min(r.left, window.innerWidth - pw - 8));
+    let top = r.bottom + 6;
+    if(top + ph > window.innerHeight - 8) top = Math.max(8, r.top - ph - 6);
+    pop.style.left = left + 'px'; pop.style.top = top + 'px';
+    pop.style.visibility = '';
+  }
+  document.body.addEventListener('click', e => {
+    const first = e.target.closest && e.target.closest('.up-first');
+    if(first){ e.preventDefault(); hide(); openHowTo('use'); return; }
+    const btn = e.target.closest && e.target.closest('[data-act="usethis"]');
+    if(btn){
+      e.preventDefault(); e.stopPropagation();
+      if(openFor === btn){ hide(); return; }
+      openFor = btn; build(btn.dataset); place(btn); openedAt = Date.now(); return;
+    }
+    if(!pop.classList.contains('hidden') && !pop.contains(e.target)) hide();
+  });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && !pop.classList.contains('hidden')) hide(); });
+  // 滚动即关；但开启后 250ms 内忽略（吸收点击近边缘按钮时浏览器为聚焦产生的微滚动）
+  window.addEventListener('scroll', () => { if(!pop.classList.contains('hidden') && Date.now() - openedAt > 250) hide(); }, true);
+  window.addEventListener('resize', () => { if(!pop.classList.contains('hidden')) hide(); });
+}
 setupSpotlight();
 setupUsage();
+setupUsePop();
 setupTheme();
 setupMenuBtn();
 setupScrollSpy();
