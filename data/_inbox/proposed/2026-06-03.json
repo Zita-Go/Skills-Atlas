@@ -1,0 +1,3219 @@
+{
+  "generated_at": "2026-06-03T06:14:33+00:00",
+  "date": "2026-06-03",
+  "proposed_count": 5,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 39,
+      "seen_recently": 8,
+      "looks_aggregator": 4,
+      "no_skill_files": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "github/awesome-copilot",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "Leey21/awesome-ai-research-writing",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "VoltAgent/awesome-agent-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "agentskills/agentskills",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "Wechat-ggGitHub/Awesome-GitHub-Repo",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "add-atomic-chat-tool"
+      ],
+      "group": "MCP Server 开发",
+      "group_en": "MCP Server Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "添加 MCP 服务器，使容器代理能调用本地 Atomic Chat 桌面应用的模型，支持离线模型处理。",
+      "description_en": "Adds an MCP server enabling the container agent to call local models served by the Atomic Chat desktop app via its OpenAI-compatible API.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-codex"
+      ],
+      "group": "OpenAI 平台开发",
+      "group_en": "OpenAI Platform Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "集成 Codex 作为代理提供者，替代 Claude Agent SDK，支持规划、工具编排和会话恢复等功能。",
+      "description_en": "Integrates Codex as the full agent provider, replacing the Claude Agent SDK, with support for planning, tool orchestration, session resume, and more.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-dashboard"
+      ],
+      "group": "add-dashboard",
+      "group_en": "add-dashboard",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-deltachat"
+      ],
+      "group": "add-deltachat",
+      "group_en": "add-deltachat",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-discord",
+        "add-emacs"
+      ],
+      "group": "消息渠道集成",
+      "group_en": "Messaging Channel Integration",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为 NanoClaw 添加 Discord bot 集成，通过 Chat SDK 桥接，使 agent 能在 Discord 上与用户沟通。",
+      "description_en": "Adds Emacs integration to NanoClaw via a local HTTP bridge, allowing users to interact with the agent directly from Emacs.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-gcal-tool"
+      ],
+      "group": "Google 服务 MCP 工具集成",
+      "group_en": "Google Services MCP Tool Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "为 AI agent 添加 Google Calendar 工具，支持多日历和多账户，通过安全 OAuth 管理，实现事件查询、创建和空闲查询。",
+      "description_en": "Adds Google Calendar as an MCP tool to AI agents, supporting multi-calendar and multi-account with secure OAuth, enabling event listing, creation, and free/busy queries.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-gchat"
+      ],
+      "group": "Google Chat 频道集成",
+      "group_en": "Google Chat Channel Integration",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为 AI agent 集成 Google Chat 频道，通过 Chat SDK 实现消息收发，支持自动化沟通。",
+      "description_en": "Integrates Google Chat channel for AI agents via Chat SDK bridge, enabling automated messaging and communication.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-github"
+      ],
+      "group": "GitHub 通道集成",
+      "group_en": "GitHub Channel Integration",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "通过 Chat SDK 集成 GitHub，使 agent 能参与 PR 和 issue 评论线程作为对话，实现 Git/PR 协作自动化。",
+      "description_en": "Integrates GitHub via Chat SDK, allowing the agent to participate in PR and issue comment threads as conversations for Git/PR collaboration.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-gmail-tool"
+      ],
+      "group": "Gmail MCP 工具集成",
+      "group_en": "Gmail MCP Tool Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "通过 MCP 服务器集成 Gmail，使 agent 能读取、搜索、发送邮件等，并使用 OneCLI 安全管理 OAuth 令牌，确保凭证安全。",
+      "description_en": "Integrates Gmail via an MCP server, enabling the agent to read, search, send emails etc., with OneCLI securely managing OAuth tokens for credential safety.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-imessage"
+      ],
+      "group": "iMessage 频道集成",
+      "group_en": "iMessage Channel Integration",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为 NanoClaw 平台添加 iMessage 频道支持，支持本地 macOS（Full Disk Access）和远程 Photon API 两种模式，含完整安装与凭据配置流程。",
+      "description_en": "Adds iMessage channel support to NanoClaw with local macOS (Full Disk Access) or remote Photon API modes, including full install and credential setup.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-karpathy-llm-wiki"
+      ],
+      "group": "Karpathy LLM Wiki 知识库",
+      "group_en": "Karpathy LLM Wiki Knowledge Base",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "基于 Karpathy 的 LLM Wiki 模式，为 NanoClaw 群组搭建持久化 wiki 知识库，支持 URL、PDF、语音等多种来源，含三层架构设计。",
+      "description_en": "Sets up a persistent wiki knowledge base on NanoClaw groups following Karpathy's LLM Wiki pattern, supporting URLs, PDFs, voice notes, and more with a three-layer architecture.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-linear"
+      ],
+      "group": "Linear 任务管理",
+      "group_en": "Linear Task Management",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "通过 Chat SDK 添加 Linear 频道集成，使 AI agent 能参与 issue 评论线程作为对话，管理项目任务。",
+      "description_en": "Integrates Linear channel via Chat SDK, enabling the AI agent to participate in issue comment threads as conversations for project task management.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-macos-statusbar"
+      ],
+      "group": "桌面状态指示器",
+      "group_en": "Desktop Status Indicator",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "添加 macOS 菜单栏状态指示器，显示 NanoClaw 运行状态并提供启动、停止和重启控制，仅限 macOS。",
+      "description_en": "Adds a macOS menu bar status indicator for NanoClaw, showing running status with start, stop, and restart controls. macOS only.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-matrix"
+      ],
+      "group": "Matrix 集成",
+      "group_en": "Matrix Integration",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为 AI 代理添加 Matrix 消息渠道集成，通过 Chat SDK 实现与任意 Matrix homeserver 的连接，支持即时通讯功能。",
+      "description_en": "Add Matrix messaging channel integration for AI agents via Chat SDK, enabling connection to any Matrix homeserver for instant communication.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-mnemon"
+      ],
+      "group": "持久记忆系统",
+      "group_en": "Persistent Memory System",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "为 AI 代理安装基于图的持久记忆系统，通过钩子在响应前检索历史上下文并在每次交互后存储新洞察，支持容器重启后记忆保留。",
+      "description_en": "Install a graph-based persistent memory system for AI agents, using hooks to retrieve past context before responses and store new insights after each turn, with memory surviving container restarts.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-ollama-provider",
+        "add-ollama-tool"
+      ],
+      "group": "Ollama 本地模型集成",
+      "group_en": "Ollama Local Model Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "配置 NanoClaw agent 组路由到本地 Ollama 实例，通过环境变量覆盖替代 Anthropic API，实现本地推理、降低成本或试验开源模型",
+      "description_en": "Route a NanoClaw agent group to a local Ollama instance via env var overrides instead of Anthropic API, enabling local inference, cost reduction, or open-weight model experimentation",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-opencode",
+        "add-parallel"
+      ],
+      "group": "NanoClaw 平台扩展",
+      "group_en": "NanoClaw Platform Extensions",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为 NanoClaw 容器 agent 平台添加 OpenCode 作为 LLM 后端 provider，支持 OpenRouter、OpenAI、Google、DeepSeek 等非 Anthropic 模型的接入与配置。",
+      "description_en": "Adds OpenCode as an agent provider backend to NanoClaw, enabling support for non-Anthropic models (OpenRouter, OpenAI, Google, DeepSeek, etc.) via OpenCode configuration.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-resend"
+      ],
+      "group": "即时通讯集成",
+      "group_en": "Messaging Channel Integration",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为 NanoClaw agent 接入 Resend 邮件通道，实现异步邮件收发对话能力，含适配器拉取、依赖安装与 Webhook 配置全流程。",
+      "description_en": "Adds Resend email as an async messaging channel to NanoClaw, including adapter setup, dependency installation, and webhook configuration.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-rtk"
+      ],
+      "group": "远端 sandbox agent 运行时",
+      "group_en": "Remote Sandbox Agent Runtime",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "在 NanoClaw agent 容器中安装 rtk 代理，通过 PreToolUse hook 自动压缩 git/docker/kubectl 等 CLI 输出，节省 60–90% token。",
+      "description_en": "Installs rtk proxy into NanoClaw agent containers via PreToolUse hook, automatically compressing CLI tool output (git, docker, kubectl, etc.) for 60–90% token savings.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-signal",
+        "add-slack"
+      ],
+      "group": "即时通讯渠道集成",
+      "group_en": "Messaging Channel Integration",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为 NanoClaw 智能体添加 Signal 消息通道，通过 signal-cli TCP 守护进程实现原生 JSON-RPC 适配，无需 Chat SDK 桥接，需 Java 17+ 环境。",
+      "description_en": "Adds Slack messaging to NanoClaw agent via the Chat SDK bridge, covering Slack App creation, OAuth scopes configuration, and self-registration wiring.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-teams",
+        "add-telegram"
+      ],
+      "group": "消息渠道接入",
+      "group_en": "Messaging Channel Setup",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "将 NanoClaw agent 接入 Microsoft Teams，复制 Teams 适配器并配置 Azure 凭证，支持团队频道、群聊和私聊交互。",
+      "description_en": "Connect NanoClaw to Microsoft Teams by copying the channel adapter from a dedicated branch, installing the SDK package, and configuring Azure credentials for team channels, group chats, and DMs.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-vercel"
+      ],
+      "group": "add-vercel",
+      "group_en": "add-vercel",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "vercel-cli"
+      ],
+      "group": "vercel-cli",
+      "group_en": "vercel-cli",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "add-webex",
+        "add-wechat"
+      ],
+      "group": "NanoClaw 通道集成",
+      "group_en": "NanoClaw Channel Integrations",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为 NanoClaw 添加 Cisco Webex 频道集成，包括从 channels 分支拉取适配器、安装依赖包、配置 Bot Token 和 Webhook 签名，使 Agent 可通过 Webex 收发消息。",
+      "description_en": "Adds Cisco Webex channel to NanoClaw by pulling the adapter from the channels branch, installing dependencies, and configuring bot token + webhook signature verification so the agent can send and receive messages via Webex.",
+      "sources": [
+        "nanocoai/nanoclaw"
+      ]
+    },
+    {
+      "skills": [
+        "gws-admin-reports"
+      ],
+      "group": "Google Workspace 管理审计",
+      "group_en": "Google Workspace Admin Audit",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "通过 CLI 获取 Google Workspace 管理审计日志和使用报告，支持活动监控、客户使用统计及推送通知。",
+      "description_en": "CLI tool for fetching Google Workspace admin audit logs and usage reports, supporting activity monitoring, customer usage statistics, and push notifications.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-calendar-agenda"
+      ],
+      "group": "Google Calendar 日程查看",
+      "group_en": "Google Calendar Agenda Viewer",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "查询并显示 Google Calendar 中即将到来的事件，支持按今天、明天、周或自定义天数筛选，可按日历或时区过滤。",
+      "description_en": "Query and display upcoming events from Google Calendar, with filters for today, tomorrow, week, or custom days, and optional calendar or timezone filters.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-calendar-insert",
+        "gws-calendar",
+        "gws-drive",
+        "gws-events-renew"
+      ],
+      "group": "Google Workspace CLI 工具",
+      "group_en": "Google Workspace CLI Tools",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "通过命令行创建 Google Calendar 事件，支持设置摘要、时间、地点、参与者和 Google Meet 链接。",
+      "description_en": "Manages Google Drive files, folders, and shared drives via CLI commands, supporting upload, access control, and other operations for automated document handling.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-chat-send",
+        "gws-chat"
+      ],
+      "group": "Google Chat 集成",
+      "group_en": "Google Chat Integration",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "允许 AI agent 通过命令行向指定的 Google Chat 空间发送文本消息，支持快速通信自动化。",
+      "description_en": "Provides commands for managing Google Chat spaces and messages, including creating and deleting custom emojis, for comprehensive chat management.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-classroom"
+      ],
+      "group": "Google Classroom 管理",
+      "group_en": "Google Classroom Management",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "管理 Google Classroom 的课程、名册和作业，支持创建、删除、获取等操作。",
+      "description_en": "Manage Google Classroom classes, rosters, and coursework with commands for creating, deleting, and retrieving courses.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-docs-write"
+      ],
+      "group": "Office 文档四件套",
+      "group_en": "Office Document Suite",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "向 Google Docs 文档追加文本内容，支持简单文本插入。",
+      "description_en": "Append text to a Google Docs document with simple text insertion.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-docs",
+        "gws-drive-upload"
+      ],
+      "group": "Google Workspace 文档与文件管理",
+      "group_en": "Google Workspace Document and File Management",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "通过 CLI 命令读写 Google Docs 文档，支持创建、获取和批量更新操作，帮助 AI agent 自动化文档处理。",
+      "description_en": "Read and write Google Docs via CLI commands, supporting create, get, and batch update operations to automate document handling for AI agents.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-events-subscribe",
+        "gws-events"
+      ],
+      "group": "Google Workspace 事件流",
+      "group_en": "Google Workspace Event Streaming",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 AI agent 实时订阅 Google Workspace 事件（如 Chat 消息），通过 CLI 工具流式传输事件数据为 NDJSON，用于自动化工作流。",
+      "description_en": "A CLI toolset for managing Google Workspace event subscriptions, including creation, deletion, and querying, to support automated event handling.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-forms",
+        "gws-gmail-forward"
+      ],
+      "group": "Google Workspace CLI 自动化",
+      "group_en": "Google Workspace CLI Automation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "通过 CLI 操作 Google Forms，支持创建、读取、更新表单及管理响应，便于 agent 自动化表单处理。",
+      "description_en": "Operate Google Forms via CLI, supporting creation, reading, updating of forms and response management for agent automation.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-gmail-read"
+      ],
+      "group": "gws-gmail-read",
+      "group_en": "gws-gmail-read",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-gmail-reply-all"
+      ],
+      "group": "gws-gmail-reply-all",
+      "group_en": "gws-gmail-reply-all",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-gmail-reply",
+        "gws-gmail-send"
+      ],
+      "group": "邮件全套",
+      "group_en": "Email toolkit",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "封装 Gmail 回复能力，自动处理邮件线程，支持 HTML、附件、抄送/密送及草稿保存。",
+      "description_en": "Reply to Gmail messages with automatic threading, HTML body, attachments, CC/BCC, and draft saving.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-gmail-triage",
+        "gws-gmail-watch"
+      ],
+      "group": "Gmail 邮件管理",
+      "group_en": "Gmail Management",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "通过 GCP Pub/Sub 实时监听 Gmail 新邮件，以 NDJSON 流式输出消息内容。",
+      "description_en": "Summarize unread Gmail inbox (sender, subject, date) with customizable search query and message limit.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-gmail"
+      ],
+      "group": "Gmail CLI 工具",
+      "group_en": "Gmail CLI Tools",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "通过 CLI 命令管理 Gmail，支持发送、阅读、回复、转发邮件，用于自动化邮件处理和 agent 集成。",
+      "description_en": "Manage Gmail via CLI commands for sending, reading, replying, and forwarding emails, enabling automated email handling and agent integration.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-keep"
+      ],
+      "group": "笔记 CLI 工具",
+      "group_en": "Notes CLI Tools",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "通过 CLI 命令管理 Google Keep 笔记，支持创建、删除、列出笔记，实现笔记自动化操作。",
+      "description_en": "Manage Google Keep notes via CLI commands for creating, deleting, and listing notes, enabling automated note management.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-meet"
+      ],
+      "group": "Google Meet 管理",
+      "group_en": "Google Meet Management",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 通过 CLI 命令管理 Google Meet 会议，如获取会议记录、创建空间、查看参与者和录音等。",
+      "description_en": "Enables agents to manage Google Meet conferences via CLI commands, such as retrieving conference records, creating spaces, and listing participants or recordings.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-modelarmor-create-template"
+      ],
+      "group": "AI 模型安全",
+      "group_en": "AI Model Security",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "帮助 agent 创建 Google Model Armor 模板，用于保护 AI 模型免受越狱等安全威胁，支持预设或自定义配置。",
+      "description_en": "Allows agents to create Google Model Armor templates for securing AI models against threats like jailbreaks, supporting preset or custom configurations.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-modelarmor-sanitize-prompt",
+        "gws-modelarmor-sanitize-response"
+      ],
+      "group": "modelarmor-safety",
+      "group_en": "modelarmor-safety",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": true,
+      "description": "通过 Google Model Armor 模板净化用户提示，防止有害内容传递给模型，确保输入安全。",
+      "description_en": "Sanitizes model responses through Google Model Armor templates to filter harmful content before outputting to the user.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-modelarmor"
+      ],
+      "group": "内容安全过滤",
+      "group_en": "Content Safety Filtering",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "使用 Google Model Armor 过滤用户生成内容，确保 AI 应用的安全性。",
+      "description_en": "Filter user-generated content using Google Model Armor to ensure safety in AI applications.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "gws-people"
+      ],
+      "group": "联系人管理",
+      "group_en": "Contact Management",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "管理 Google People 联系人和 profile，包括联系人组的创建、删除和更新等操作。",
+      "description_en": "Manage Google People contacts and profiles, including operations on contact groups like create, delete, and update.",
+      "sources": [
+        "googleworkspace/cli"
+      ]
+    },
+    {
+      "skills": [
+        "planning-with-files",
+        "planning-with-files-ar"
+      ],
+      "group": "会话接力",
+      "group_en": "Session Relay",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "实现 Manus 风格的文件规划，创建任务计划、发现和进度文件，用于组织复杂任务并支持会话恢复。",
+      "description_en": "Implements Manus-style file-based planning, creating task plan, findings, and progress files to organize complex tasks with session recovery support.",
+      "sources": [
+        "OthmanAdi/planning-with-files"
+      ]
+    },
+    {
+      "skills": [
+        "planning-with-files-de",
+        "planning-with-files-es"
+      ],
+      "group": "Manus 风格文件规划",
+      "group_en": "Manus-style file-based planning",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "创建持久化 Markdown 规划文件（task_plan.md、findings.md、progress.md），帮助 Agent 分解和追踪复杂多步骤任务的进度，支持会话自动恢复。",
+      "description_en": "Creates persistent markdown planning files (task_plan.md, findings.md, progress.md) to help agents decompose and track complex multi-step tasks, with automatic session recovery.",
+      "sources": [
+        "OthmanAdi/planning-with-files"
+      ]
+    },
+    {
+      "skills": [
+        "planning-with-files-zh",
+        "planning-with-files-zht"
+      ],
+      "group": "文件规划系统",
+      "group_en": "File-based Planning System",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "实现 Manus 风格的持久化 Markdown 规划系统（繁体中文版），通过创建 task_plan.md、findings.md 和 progress.md 三个文件来组织任务进度，支持会话恢复和自动跟踪。",
+      "description_en": "Implements a Manus-style persistent markdown planning system (Traditional Chinese version) by creating and managing three files (task_plan.md, findings.md, progress.md) to organize task progress, with session recovery and automatic tracking.",
+      "sources": [
+        "OthmanAdi/planning-with-files"
+      ]
+    },
+    {
+      "skills": [
+        "release-skills"
+      ],
+      "group": "通用发布工作流",
+      "group_en": "Universal Release Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "自动化软件发布流程，支持多语言版本文件检测、Changelog 生成和 GitHub Releases 管理。",
+      "description_en": "Automates software release workflows with multi-language version file detection, changelog generation, and GitHub Releases management.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-article-illustrator"
+      ],
+      "group": "文章插图生成",
+      "group_en": "Article Illustration Generator",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "分析文章结构，识别需要插图的位置，使用 Type × Style × Palette 三维方法生成风格一致的视觉辅助图像。",
+      "description_en": "Analyzes article structure, identifies positions needing illustrations, and generates visually consistent images using a Type × Style × Palette three-dimensional approach.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-comic"
+      ],
+      "group": "知识漫画创作",
+      "group_en": "Knowledge Comic Creation",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "知识漫画创建器，支持多种艺术风格和语调，用于生成原创教育漫画，具有详细面板布局和批量图像生成功能。",
+      "description_en": "Knowledge comic creator that supports multiple art styles and tones, generating original educational comics with detailed panel layouts and batch image generation capabilities.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-compress-image"
+      ],
+      "group": "图像压缩优化",
+      "group_en": "Image Compression Optimization",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "图像压缩工具，自动选择最佳工具压缩图像为 WebP 或 PNG 格式，支持批量处理。",
+      "description_en": "Image compression tool that automatically selects the best available tool to compress images to WebP or PNG format, supporting batch processing.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-cover-image"
+      ],
+      "group": "创意 / 艺术 / 品牌资产",
+      "group_en": "Creative / Art / Brand Assets",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "生成文章封面图像，支持5维定制（类型、调色板、渲染、文本、情绪），结合11种调色板和7种渲染风格。",
+      "description_en": "Generates article cover images with 5-dimensional customization (type, palette, rendering, text, mood), combining 11 color palettes and 7 rendering styles.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-danger-gemini-web"
+      ],
+      "group": "三大模型厂 SDK 直连",
+      "group_en": "Direct SDK for Major AI Providers",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "通过逆向工程的 Gemini Web API 生成图像和文本，支持参考图像和多轮对话，可用作图像生成后端。",
+      "description_en": "Generates images and text via reverse-engineered Gemini Web API, supporting reference images and multi-turn conversations; usable as an image generation backend.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-danger-x-to-markdown"
+      ],
+      "group": "X 内容抓取",
+      "group_en": "X Content Scraping",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "将 X（Twitter）的推文和文章转换为带 YAML 前言的 Markdown 格式，用于内容归档或分析。",
+      "description_en": "Converts X (Twitter) tweets and articles to Markdown with YAML front matter for content archiving or analysis.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-diagram"
+      ],
+      "group": "SVG 图表生成",
+      "group_en": "SVG Diagram Generation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "生成专业的深色主题 SVG 图表，包括架构图、流程图、序列图等，用于系统可视化。",
+      "description_en": "Generates professional dark-themed SVG diagrams in various types such as architecture, flowcharts, and sequence diagrams for system visualization.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-electron-extract"
+      ],
+      "group": "Electron 应用提取",
+      "group_en": "Electron App Extraction",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "从已安装 Electron 应用的 .asar 包中提取资源和 JavaScript 源码，支持恢复原始文件或格式化代码，用于安全审计或逆向分析。",
+      "description_en": "Extracts resources and JavaScript source code from an installed Electron app's .asar bundle, restoring original files or formatting code for security auditing or reverse engineering.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-format-markdown"
+      ],
+      "group": "Markdown 格式化",
+      "group_en": "Markdown Formatting",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "将纯文本或 Markdown 文件格式化，添加 frontmatter、标题、列表等结构，仅调整格式不改变内容，提升文档可读性。",
+      "description_en": "Formats plain text or markdown files with frontmatter, headings, and lists to improve readability without altering content.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-image-gen"
+      ],
+      "group": "AI 图像生成",
+      "group_en": "AI Image Generation",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "支持多种 AI API 的图像生成，包括文本到图像、参考图像、宽高比设置和批量生成，适用于创建、生成或绘制图像。",
+      "description_en": "Supports AI image generation with multiple APIs, including text-to-image, reference images, aspect ratios, and batch generation for creating or drawing images.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-infographic"
+      ],
+      "group": "信息图生成",
+      "group_en": "Infographic Generation",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "生成专业信息图，提供 21 种布局和 22 种视觉风格，分析内容并推荐布局与风格组合，创建出版级信息图。",
+      "description_en": "Generates professional infographics with 21 layout types and 22 visual styles, analyzing content and recommending layout-style combinations for publication-ready outputs.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-markdown-to-html"
+      ],
+      "group": "Markdown 转 HTML 工具",
+      "group_en": "Markdown to HTML Converter",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "将 Markdown 文件转换为带样式的 HTML，优化微信公众号兼容性，支持代码高亮、数学公式、Mermaid 图表、脚注等丰富元素，用于生成美观的网页内容。",
+      "description_en": "Converts Markdown files to styled HTML optimized for WeChat Official Account, supporting code highlighting, math rendering, Mermaid diagrams, footnotes, and more for creating visually appealing web content.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-post-to-wechat"
+      ],
+      "group": "社媒平台写作",
+      "group_en": "Social Media Platform Writing",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "通过 API 或 Chrome CDP 发布内容到微信公众号，支持文章和图文发布，可处理 HTML、Markdown 或纯文本输入，并自动将外链转为底部引用。",
+      "description_en": "Posts content to WeChat Official Account via API or Chrome CDP, supporting article and image-text posts with HTML, markdown, or plain text input, and automatically converting external links into bottom citations.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-post-to-weibo",
+        "baoyu-post-to-x"
+      ],
+      "group": "社媒平台发布自动化",
+      "group_en": "Social Media Publishing Automation",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "帮助 agent 通过 Chrome 浏览器自动化发布内容到 X (Twitter)，支持推文和长篇文章，并区分 Codex Chrome 插件与 CDP 脚本模式。",
+      "description_en": "Helps agents automatically publish content to X (Twitter) via Chrome browser, supporting tweets and long-form articles, with clear differentiation between Codex Chrome plugin and CDP script modes.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-slide-deck"
+      ],
+      "group": "幻灯片图像生成",
+      "group_en": "Slide Deck Image Generation",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "将内容转化为专业的幻灯片图像，用于阅读和分享，支持自定义样式和布局。",
+      "description_en": "Converts content into professional slide deck images for reading and sharing, with customizable styles and layouts.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-translate"
+      ],
+      "group": "多模式文档翻译",
+      "group_en": "Multi-mode Document Translation",
+      "category": "docs-knowledge",
+      "subcategory": "2-2",
+      "chain": false,
+      "description": "翻译文章和文档，支持快速、普通和精翻三种模式，可自定义术语表保持一致性。",
+      "description_en": "Translates articles and documents with three modes: quick, normal, and refined, supporting custom glossaries for terminology consistency.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-url-to-markdown"
+      ],
+      "group": "网页内容提取",
+      "group_en": "Web Content Extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "帮助 AI 代理抓取任意 URL 并转换为干净的 Markdown 格式，内置适配器支持 Twitter、YouTube 等站点。",
+      "description_en": "Assists AI agents in fetching any URL and converting it to clean markdown, with built-in adapters for sites like X/Twitter and YouTube transcripts.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-wechat-summary"
+      ],
+      "group": "微信聊天总结",
+      "group_en": "WeChat Chat Summary",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "帮助 AI 代理总结微信群聊精华，生成结构化简报，并维护跨次运行的群聊历史与用户画像。",
+      "description_en": "Helps AI agents summarize WeChat group chat highlights into structured digests, maintaining history and user profiles across runs.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-xhs-images"
+      ],
+      "group": "社媒图片卡片生成",
+      "group_en": "Social Media Image Card Generator",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "将内容拆分为 1-10 张卡通风格信息图卡片，支持 12 种视觉风格、8 种布局和 3 套配色方案，适配小红书、微信等社交平台传播。",
+      "description_en": "Breaks content into 1-10 cartoon-style infographic image cards with 12 visual styles, 8 layouts, and 3 color palettes, optimized for platforms like Xiaohongshu and WeChat.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-youtube-transcript"
+      ],
+      "group": "YouTube 字幕与封面提取",
+      "group_en": "YouTube Transcript & Cover Extraction",
+      "category": "media",
+      "subcategory": "6-2",
+      "chain": false,
+      "description": "通过 URL 或视频 ID 下载 YouTube 视频字幕/转录文本及封面图，支持多语言、翻译、章节识别和发言人标注，无需 API Key，自动缓存加速重复格式化。",
+      "description_en": "Downloads YouTube transcripts/subtitles and cover images by URL or video ID with multilingual support, translation, chapters, and speaker identification — no API key required, with caching for fast re-formatting.",
+      "sources": [
+        "JimLiu/baoyu-skills"
+      ]
+    },
+    {
+      "skills": [
+        "frontend-forge-fe-operations",
+        "frontend-forge-fi-operations"
+      ],
+      "group": "Kubernetes 前端扩展管理",
+      "group_en": "Kubernetes Frontend Extension Management",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "操作 FrontendIntegration 资源与 frontend-forge 扩展本身，涵盖创建、启用、禁用和状态检查，帮助 agent 管理集群中的前端集成与扩展组件。",
+      "description_en": "Operates FrontendIntegration resources and the frontend-forge extension itself, covering creation, enabling, disabling, and status inspection, allowing agents to manage frontend integrations and extension components in the cluster.",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "frontend-integration-yaml"
+      ],
+      "group": "frontend-integration-yaml",
+      "group_en": "frontend-integration-yaml",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-cluster-management"
+      ],
+      "group": "kubesphere-cluster-management",
+      "group_en": "kubesphere-cluster-management",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-core"
+      ],
+      "group": "kubesphere-core",
+      "group_en": "kubesphere-core",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-devops-argocd"
+      ],
+      "group": "kubesphere-devops-argocd",
+      "group_en": "kubesphere-devops-argocd",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-devops-credentials"
+      ],
+      "group": "kubesphere-devops-credentials",
+      "group_en": "kubesphere-devops-credentials",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-devops-jenkins"
+      ],
+      "group": "kubesphere-devops-jenkins",
+      "group_en": "kubesphere-devops-jenkins",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-devops-overview",
+        "kubesphere-devops-pipeline",
+        "kubesphere-fluid"
+      ],
+      "group": "Kubernetes / GitOps / CI-CD",
+      "group_en": "Kubernetes / GitOps / CI-CD",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "帮助 AI agent 理解 KubeSphere DevOps 的架构、资源映射与集成，用于设置和故障排除 CI/CD 管道。",
+      "description_en": "Assists AI agents in managing Fluid extensions in KubeSphere, performing tasks such as installation, configuration, data caching, scaling, and troubleshooting.",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-devops-tenant"
+      ],
+      "group": "kubesphere-devops-tenant",
+      "group_en": "kubesphere-devops-tenant",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-extension-management"
+      ],
+      "group": "kubesphere-extension-management",
+      "group_en": "kubesphere-extension-management",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-multi-tenant-management"
+      ],
+      "group": "KubeSphere 多租户管理",
+      "group_en": "KubeSphere Multi-Tenant Management",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 AI 代理管理 KubeSphere 多租户环境，创建用户、工作区、项目并分配角色，遵循安全准则避免危险操作。",
+      "description_en": "Assists AI agents in managing multi-tenant environments in KubeSphere, creating users, workspaces, projects, and assigning roles while adhering to security guidelines.",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-network-extension-operations",
+        "kubesphere-openkruise"
+      ],
+      "group": "KubeSphere 集群运维",
+      "group_en": "KubeSphere Cluster Operations",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "管理 KubeSphere OpenKruise 扩展：安装/升级/卸载，创建 SidecarSet 和 CloneSet，执行原地更新、批量滚动发布与故障排查",
+      "description_en": "Manage the KubeSphere OpenKruise extension: install/upgrade/uninstall, create SidecarSet and CloneSet manifests, perform in-place updates, batch rollouts, and troubleshoot",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-servicemesh"
+      ],
+      "group": "KubeSphere 服务网格管理",
+      "group_en": "KubeSphere ServiceMesh Management",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "用于配置和故障排除 KubeSphere 的 ServiceMesh 扩展，集成 Istio、Kiali 和 Jaeger，支持安装、状态检查、灰度发布和流量治理。",
+      "description_en": "For configuring and troubleshooting KubeSphere's ServiceMesh extension, integrating Istio, Kiali, and Jaeger, with support for installation, status checks, grayscale release, and traffic governance.",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "kubesphere-volcano"
+      ],
+      "group": "KubeSphere Volcano 作业管理",
+      "group_en": "KubeSphere Volcano Job Management",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "用于管理 KubeSphere 中的 Volcano 作业和队列，支持创建、列表、更新、删除作业，生成 YAML 模板，以及故障排除和资源调度。",
+      "description_en": "For managing Volcano jobs and queues in KubeSphere, supporting creation, listing, updating, deleting jobs, generating YAML templates, and troubleshooting and resource scheduling.",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "nodegroup"
+      ],
+      "group": "nodegroup",
+      "group_en": "nodegroup",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "opensearch"
+      ],
+      "group": "opensearch",
+      "group_en": "opensearch",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "vector"
+      ],
+      "group": "vector",
+      "group_en": "vector",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "whizard-auditing"
+      ],
+      "group": "whizard-auditing",
+      "group_en": "whizard-auditing",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "whizard-events",
+        "whizard-logging"
+      ],
+      "group": "KubeSphere 可观测性扩展",
+      "group_en": "KubeSphere Observability Extensions",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 AI agent 安装和配置 KubeSphere 的 WizTelemetry 事件扩展，用于 Kubernetes 事件收集、处理和查询。",
+      "description_en": "Assists AI agents in installing and configuring the WizTelemetry Events extension for KubeSphere, enabling Kubernetes event collection, processing, and querying.",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "whizard-notification"
+      ],
+      "group": "whizard-notification",
+      "group_en": "whizard-notification",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "whizard-telemetry-ruler"
+      ],
+      "group": "whizard-telemetry-ruler",
+      "group_en": "whizard-telemetry-ruler",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "whizard-telemetry"
+      ],
+      "group": "whizard-telemetry",
+      "group_en": "whizard-telemetry",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    },
+    {
+      "skills": [
+        "wiztelemetry-tracing"
+      ],
+      "group": "wiztelemetry-tracing",
+      "group_en": "wiztelemetry-tracing",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "kubesphere/kubesphere"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "nanocoai",
+        "repo": "nanoclaw",
+        "full_name": "nanocoai/nanoclaw",
+        "url": "https://github.com/nanocoai/nanoclaw",
+        "stars": 29658,
+        "pushed_at": "2026-05-31",
+        "default_branch": "main",
+        "github_description": "A lightweight alternative to OpenClaw that runs in containers for security. Connects to WhatsApp, Telegram, Slack, Discord, Gmail and other messaging apps,, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
+        "topics": [
+          "ai-agents",
+          "ai-assistant",
+          "claude-code",
+          "claude-skills",
+          "openclaw"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "add-atomic-chat-tool",
+          "path": ".claude/skills/add-atomic-chat-tool/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "MCP Server 开发",
+          "group_en": "MCP Server Development",
+          "description_zh": "添加 MCP 服务器，使容器代理能调用本地 Atomic Chat 桌面应用的模型，支持离线模型处理。",
+          "description_en": "Adds an MCP server enabling the container agent to call local models served by the Atomic Chat desktop app via its OpenAI-compatible API.",
+          "what": "集成 Atomic Chat 本地模型通过 MCP 服务器。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-codex",
+          "path": ".claude/skills/add-codex/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "OpenAI 平台开发",
+          "group_en": "OpenAI Platform Development",
+          "description_zh": "集成 Codex 作为代理提供者，替代 Claude Agent SDK，支持规划、工具编排和会话恢复等功能。",
+          "description_en": "Integrates Codex as the full agent provider, replacing the Claude Agent SDK, with support for planning, tool orchestration, session resume, and more.",
+          "what": "使用 Codex 作为替代代理提供者。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-dashboard",
+          "path": ".claude/skills/add-dashboard/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "add-dashboard",
+          "group_en": "add-dashboard",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-deltachat",
+          "path": ".claude/skills/add-deltachat/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "add-deltachat",
+          "group_en": "add-deltachat",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-discord",
+          "path": ".claude/skills/add-discord/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "消息渠道集成",
+          "group_en": "Messaging Channel Integration",
+          "description_zh": "为 NanoClaw 添加 Discord bot 集成，通过 Chat SDK 桥接，使 agent 能在 Discord 上与用户沟通。",
+          "description_en": "Adds Discord bot integration to NanoClaw via Chat SDK bridge, enabling agent communication on Discord.",
+          "what": "集成 Discord bot 到 NanoClaw。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-emacs",
+          "path": ".claude/skills/add-emacs/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "消息渠道集成",
+          "group_en": "Messaging Channel Integration",
+          "description_zh": "为 NanoClaw 添加 Emacs 集成，通过本地 HTTP 桥，允许用户在 Emacs 中直接与 agent 交互。",
+          "description_en": "Adds Emacs integration to NanoClaw via a local HTTP bridge, allowing users to interact with the agent directly from Emacs.",
+          "what": "集成 Emacs 作为 NanoClaw 的聊天界面。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-gcal-tool",
+          "path": ".claude/skills/add-gcal-tool/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Google 服务 MCP 工具集成",
+          "group_en": "Google Services MCP Tool Integration",
+          "description_zh": "为 AI agent 添加 Google Calendar 工具，支持多日历和多账户，通过安全 OAuth 管理，实现事件查询、创建和空闲查询。",
+          "description_en": "Adds Google Calendar as an MCP tool to AI agents, supporting multi-calendar and multi-account with secure OAuth, enabling event listing, creation, and free/busy queries.",
+          "what": "集成 Google Calendar 作为 AI agent 的 MCP 工具",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-gchat",
+          "path": ".claude/skills/add-gchat/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "Google Chat 频道集成",
+          "group_en": "Google Chat Channel Integration",
+          "description_zh": "为 AI agent 集成 Google Chat 频道，通过 Chat SDK 实现消息收发，支持自动化沟通。",
+          "description_en": "Integrates Google Chat channel for AI agents via Chat SDK bridge, enabling automated messaging and communication.",
+          "what": "添加 Google Chat 频道到 AI agent",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-github",
+          "path": ".claude/skills/add-github/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "GitHub 通道集成",
+          "group_en": "GitHub Channel Integration",
+          "description_zh": "通过 Chat SDK 集成 GitHub，使 agent 能参与 PR 和 issue 评论线程作为对话，实现 Git/PR 协作自动化。",
+          "description_en": "Integrates GitHub via Chat SDK, allowing the agent to participate in PR and issue comment threads as conversations for Git/PR collaboration.",
+          "what": "添加 GitHub 通道集成以参与 PR 和 issue 讨论",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-gmail-tool",
+          "path": ".claude/skills/add-gmail-tool/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Gmail MCP 工具集成",
+          "group_en": "Gmail MCP Tool Integration",
+          "description_zh": "通过 MCP 服务器集成 Gmail，使 agent 能读取、搜索、发送邮件等，并使用 OneCLI 安全管理 OAuth 令牌，确保凭证安全。",
+          "description_en": "Integrates Gmail via an MCP server, enabling the agent to read, search, send emails etc., with OneCLI securely managing OAuth tokens for credential safety.",
+          "what": "添加 Gmail MCP 工具以进行邮件操作",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-imessage",
+          "path": ".claude/skills/add-imessage/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "iMessage 频道集成",
+          "group_en": "iMessage Channel Integration",
+          "description_zh": "为 NanoClaw 平台添加 iMessage 频道支持，支持本地 macOS（Full Disk Access）和远程 Photon API 两种模式，含完整安装与凭据配置流程。",
+          "description_en": "Adds iMessage channel support to NanoClaw with local macOS (Full Disk Access) or remote Photon API modes, including full install and credential setup.",
+          "what": "为 agent 平台接入 iMessage 消息通道",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-karpathy-llm-wiki",
+          "path": ".claude/skills/add-karpathy-llm-wiki/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "Karpathy LLM Wiki 知识库",
+          "group_en": "Karpathy LLM Wiki Knowledge Base",
+          "description_zh": "基于 Karpathy 的 LLM Wiki 模式，为 NanoClaw 群组搭建持久化 wiki 知识库，支持 URL、PDF、语音等多种来源，含三层架构设计。",
+          "description_en": "Sets up a persistent wiki knowledge base on NanoClaw groups following Karpathy's LLM Wiki pattern, supporting URLs, PDFs, voice notes, and more with a three-layer architecture.",
+          "what": "为 agent 群组搭建结构化持久知识库",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-linear",
+          "path": ".claude/skills/add-linear/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Linear 任务管理",
+          "group_en": "Linear Task Management",
+          "description_zh": "通过 Chat SDK 添加 Linear 频道集成，使 AI agent 能参与 issue 评论线程作为对话，管理项目任务。",
+          "description_en": "Integrates Linear channel via Chat SDK, enabling the AI agent to participate in issue comment threads as conversations for project task management.",
+          "what": "集成 Linear 项目管理工具到 AI agent。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-macos-statusbar",
+          "path": ".claude/skills/add-macos-statusbar/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "桌面状态指示器",
+          "group_en": "Desktop Status Indicator",
+          "description_zh": "添加 macOS 菜单栏状态指示器，显示 NanoClaw 运行状态并提供启动、停止和重启控制，仅限 macOS。",
+          "description_en": "Adds a macOS menu bar status indicator for NanoClaw, showing running status with start, stop, and restart controls. macOS only.",
+          "what": "为 NanoClaw 添加 macOS 菜单栏状态控制。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-matrix",
+          "path": ".claude/skills/add-matrix/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "Matrix 集成",
+          "group_en": "Matrix Integration",
+          "description_zh": "为 AI 代理添加 Matrix 消息渠道集成，通过 Chat SDK 实现与任意 Matrix homeserver 的连接，支持即时通讯功能。",
+          "description_en": "Add Matrix messaging channel integration for AI agents via Chat SDK, enabling connection to any Matrix homeserver for instant communication.",
+          "what": "集成 Matrix 消息渠道到 AI 代理。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-mnemon",
+          "path": ".claude/skills/add-mnemon/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "持久记忆系统",
+          "group_en": "Persistent Memory System",
+          "description_zh": "为 AI 代理安装基于图的持久记忆系统，通过钩子在响应前检索历史上下文并在每次交互后存储新洞察，支持容器重启后记忆保留。",
+          "description_en": "Install a graph-based persistent memory system for AI agents, using hooks to retrieve past context before responses and store new insights after each turn, with memory surviving container restarts.",
+          "what": "添加持久化记忆功能到 AI 代理。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-ollama-provider",
+          "path": ".claude/skills/add-ollama-provider/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Ollama 本地模型集成",
+          "group_en": "Ollama Local Model Integration",
+          "description_zh": "配置 NanoClaw agent 组路由到本地 Ollama 实例，通过环境变量覆盖替代 Anthropic API，实现本地推理、降低成本或试验开源模型",
+          "description_en": "Route a NanoClaw agent group to a local Ollama instance via env var overrides instead of Anthropic API, enabling local inference, cost reduction, or open-weight model experimentation",
+          "what": "将容器 agent 的 LLM 后端切换到本地 Ollama",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-ollama-tool",
+          "path": ".claude/skills/add-ollama-tool/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Ollama 本地模型集成",
+          "group_en": "Ollama Local Model Integration",
+          "description_zh": "添加基于 stdio 的 MCP server，让容器 agent 可调用本地 Ollama 模型生成内容，并可选启用模型拉取/删除等管理功能",
+          "description_en": "Add a stdio-based MCP server exposing local Ollama models as tools for the container agent, with optional model management capabilities like pull and delete",
+          "what": "为 agent 注册 Ollama 模型调用与管理的 MCP 工具",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-opencode",
+          "path": ".claude/skills/add-opencode/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "NanoClaw 平台扩展",
+          "group_en": "NanoClaw Platform Extensions",
+          "description_zh": "为 NanoClaw 容器 agent 平台添加 OpenCode 作为 LLM 后端 provider，支持 OpenRouter、OpenAI、Google、DeepSeek 等非 Anthropic 模型的接入与配置。",
+          "description_en": "Adds OpenCode as an agent provider backend to NanoClaw, enabling support for non-Anthropic models (OpenRouter, OpenAI, Google, DeepSeek, etc.) via OpenCode configuration.",
+          "what": "为 NanoClaw 容器 agent 添加 OpenCode 多模型 provider 支持",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-parallel",
+          "path": ".claude/skills/add-parallel/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "NanoClaw 平台扩展",
+          "group_en": "NanoClaw Platform Extensions",
+          "description_zh": "为 NanoClaw 集成 Parallel AI MCP 服务，新增快速网页搜索和深度研究能力，利用平台调度器进行非阻塞结果轮询。",
+          "description_en": "Integrates Parallel AI MCP into NanoClaw for quick web search and deep research capabilities, using the platform scheduler for non-blocking result polling.",
+          "what": "为 NanoClaw 集成 Parallel AI 网页搜索与深度研究能力",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-resend",
+          "path": ".claude/skills/add-resend/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "即时通讯集成",
+          "group_en": "Messaging Channel Integration",
+          "description_zh": "为 NanoClaw agent 接入 Resend 邮件通道，实现异步邮件收发对话能力，含适配器拉取、依赖安装与 Webhook 配置全流程。",
+          "description_en": "Adds Resend email as an async messaging channel to NanoClaw, including adapter setup, dependency installation, and webhook configuration.",
+          "what": "一键接入 Resend 邮件通道",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-rtk",
+          "path": ".claude/skills/add-rtk/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "远端 sandbox agent 运行时",
+          "group_en": "Remote Sandbox Agent Runtime",
+          "description_zh": "在 NanoClaw agent 容器中安装 rtk 代理，通过 PreToolUse hook 自动压缩 git/docker/kubectl 等 CLI 输出，节省 60–90% token。",
+          "description_en": "Installs rtk proxy into NanoClaw agent containers via PreToolUse hook, automatically compressing CLI tool output (git, docker, kubectl, etc.) for 60–90% token savings.",
+          "what": "为 agent 容器装入 CLI token 压缩代理",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-signal",
+          "path": ".claude/skills/add-signal/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "即时通讯渠道集成",
+          "group_en": "Messaging Channel Integration",
+          "description_zh": "为 NanoClaw 智能体添加 Signal 消息通道，通过 signal-cli TCP 守护进程实现原生 JSON-RPC 适配，无需 Chat SDK 桥接，需 Java 17+ 环境。",
+          "description_en": "Adds Signal messaging to NanoClaw agent via a native JSON-RPC adapter to the signal-cli TCP daemon, bypassing the Chat SDK bridge; requires Java 17+.",
+          "what": "配置 Signal 消息通道原生适配器，将 NanoClaw agent 接入 Signal 账号收发消息",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-slack",
+          "path": ".claude/skills/add-slack/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "即时通讯渠道集成",
+          "group_en": "Messaging Channel Integration",
+          "description_zh": "为 NanoClaw 智能体添加 Slack 消息通道，通过 Chat SDK 桥接集成，含 Slack App 创建、OAuth 权限配置与自注册接入全流程。",
+          "description_en": "Adds Slack messaging to NanoClaw agent via the Chat SDK bridge, covering Slack App creation, OAuth scopes configuration, and self-registration wiring.",
+          "what": "配置 Slack 消息通道适配器，将 NanoClaw agent 接入 Slack 工作区收发消息",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-teams",
+          "path": ".claude/skills/add-teams/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "消息渠道接入",
+          "group_en": "Messaging Channel Setup",
+          "description_zh": "将 NanoClaw agent 接入 Microsoft Teams，复制 Teams 适配器并配置 Azure 凭证，支持团队频道、群聊和私聊交互。",
+          "description_en": "Connect NanoClaw to Microsoft Teams by copying the channel adapter from a dedicated branch, installing the SDK package, and configuring Azure credentials for team channels, group chats, and DMs.",
+          "what": "一键接入 Microsoft Teams 渠道",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-telegram",
+          "path": ".claude/skills/add-telegram/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "消息渠道接入",
+          "group_en": "Messaging Channel Setup",
+          "description_zh": "将 NanoClaw agent 接入 Telegram，安装 bot 适配器及格式化/配对辅助模块，并完成 bot 凭证配置。",
+          "description_en": "Connect NanoClaw to Telegram by copying the bot adapter, formatting helpers, and pairing setup step from the channels branch, then configuring bot credentials.",
+          "what": "一键接入 Telegram bot 渠道",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-vercel",
+          "path": ".claude/skills/add-vercel/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "add-vercel",
+          "group_en": "add-vercel",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "vercel-cli",
+          "path": ".claude/skills/add-vercel/container-skills/vercel-cli/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "vercel-cli",
+          "group_en": "vercel-cli",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-webex",
+          "path": ".claude/skills/add-webex/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "NanoClaw 通道集成",
+          "group_en": "NanoClaw Channel Integrations",
+          "description_zh": "为 NanoClaw 添加 Cisco Webex 频道集成，包括从 channels 分支拉取适配器、安装依赖包、配置 Bot Token 和 Webhook 签名，使 Agent 可通过 Webex 收发消息。",
+          "description_en": "Adds Cisco Webex channel to NanoClaw by pulling the adapter from the channels branch, installing dependencies, and configuring bot token + webhook signature verification so the agent can send and receive messages via Webex.",
+          "what": "为 NanoClaw 平台接入 Cisco Webex 频道",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "add-wechat",
+          "path": ".claude/skills/add-wechat/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "NanoClaw 通道集成",
+          "group_en": "NanoClaw Channel Integrations",
+          "description_zh": "为 NanoClaw 添加微信个人号频道集成，基于腾讯官方 iLink Bot API，采用长轮询 + 扫码登录，无需第三方 Token 或公开 Webhook，无封号风险。",
+          "description_en": "Adds personal WeChat channel to NanoClaw via Tencent's official iLink Bot API using long-polling and QR-code login — no third-party token, no public webhook URL, and no ban risk.",
+          "what": "为 NanoClaw 平台接入微信个人号频道",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "googleworkspace",
+        "repo": "cli",
+        "full_name": "googleworkspace/cli",
+        "url": "https://github.com/googleworkspace/cli",
+        "stars": 26785,
+        "pushed_at": "2026-06-01",
+        "default_branch": "main",
+        "github_description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
+        "topics": [
+          "agent-skills",
+          "ai-agent",
+          "automation",
+          "cli",
+          "discovery-api",
+          "gemini-cli-extension",
+          "google-admin",
+          "google-api",
+          "google-calendar",
+          "google-chat",
+          "google-docs",
+          "google-drive",
+          "google-sheets",
+          "google-workspace",
+          "oauth2",
+          "rust"
+        ],
+        "language": "Rust",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "gws-admin-reports",
+          "path": "skills/gws-admin-reports/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace 管理审计",
+          "group_en": "Google Workspace Admin Audit",
+          "description_zh": "通过 CLI 获取 Google Workspace 管理审计日志和使用报告，支持活动监控、客户使用统计及推送通知。",
+          "description_en": "CLI tool for fetching Google Workspace admin audit logs and usage reports, supporting activity monitoring, customer usage statistics, and push notifications.",
+          "what": "审计日志和使用报告查询",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-calendar-agenda",
+          "path": "skills/gws-calendar-agenda/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Calendar 日程查看",
+          "group_en": "Google Calendar Agenda Viewer",
+          "description_zh": "查询并显示 Google Calendar 中即将到来的事件，支持按今天、明天、周或自定义天数筛选，可按日历或时区过滤。",
+          "description_en": "Query and display upcoming events from Google Calendar, with filters for today, tomorrow, week, or custom days, and optional calendar or timezone filters.",
+          "what": "日历事件查询与显示",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-calendar-insert",
+          "path": "skills/gws-calendar-insert/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 工具",
+          "group_en": "Google Workspace CLI Tools",
+          "description_zh": "通过命令行创建 Google Calendar 事件，支持设置摘要、时间、地点、参与者和 Google Meet 链接。",
+          "description_en": "Create a new event in Google Calendar via CLI, with options for summary, time, location, attendees, and Google Meet link.",
+          "what": "创建日历事件",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-calendar",
+          "path": "skills/gws-calendar/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 工具",
+          "group_en": "Google Workspace CLI Tools",
+          "description_zh": "管理 Google Calendar 的日历和事件，包括访问控制列表、日历列表和事件操作。",
+          "description_en": "Manage Google Calendar calendars and events, including access control lists, calendar list, and event operations.",
+          "what": "管理日历和事件",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-chat-send",
+          "path": "skills/gws-chat-send/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "Google Chat 集成",
+          "group_en": "Google Chat Integration",
+          "description_zh": "允许 AI agent 通过命令行向指定的 Google Chat 空间发送文本消息，支持快速通信自动化。",
+          "description_en": "Enables AI agents to send text messages to specified Google Chat spaces via command line for quick communication automation.",
+          "what": "发送消息到 Google Chat 空间",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-chat",
+          "path": "skills/gws-chat/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "Google Chat 集成",
+          "group_en": "Google Chat Integration",
+          "description_zh": "提供管理 Google Chat 空间和消息的命令，包括创建、删除自定义表情等，支持全面的聊天管理。",
+          "description_en": "Provides commands for managing Google Chat spaces and messages, including creating and deleting custom emojis, for comprehensive chat management.",
+          "what": "管理 Google Chat 空间和消息",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-classroom",
+          "path": "skills/gws-classroom/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Classroom 管理",
+          "group_en": "Google Classroom Management",
+          "description_zh": "管理 Google Classroom 的课程、名册和作业，支持创建、删除、获取等操作。",
+          "description_en": "Manage Google Classroom classes, rosters, and coursework with commands for creating, deleting, and retrieving courses.",
+          "what": "管理 Google Classroom 课程和作业",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-docs-write",
+          "path": "skills/gws-docs-write/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office Document Suite",
+          "description_zh": "向 Google Docs 文档追加文本内容，支持简单文本插入。",
+          "description_en": "Append text to a Google Docs document with simple text insertion.",
+          "what": "追加文本到 Google Docs 文档",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-docs",
+          "path": "skills/gws-docs/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace 文档与文件管理",
+          "group_en": "Google Workspace Document and File Management",
+          "description_zh": "通过 CLI 命令读写 Google Docs 文档，支持创建、获取和批量更新操作，帮助 AI agent 自动化文档处理。",
+          "description_en": "Read and write Google Docs via CLI commands, supporting create, get, and batch update operations to automate document handling for AI agents.",
+          "what": "CLI for Google Docs document operations",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-drive-upload",
+          "path": "skills/gws-drive-upload/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace 文档与文件管理",
+          "group_en": "Google Workspace Document and File Management",
+          "description_zh": "上传本地文件到 Google Drive，并自动检测文件类型和设置元数据，简化 AI agent 的文件管理任务。",
+          "description_en": "Upload local files to Google Drive with automatic file type detection and metadata setup, simplifying file management tasks for AI agents.",
+          "what": "CLI for uploading files to Google Drive",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-drive",
+          "path": "skills/gws-drive/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 工具",
+          "group_en": "Google Workspace CLI Tools",
+          "description_zh": "通过CLI命令管理Google Drive文件、文件夹和共享驱动，支持上传、访问控制等操作，用于自动化文档处理。",
+          "description_en": "Manages Google Drive files, folders, and shared drives via CLI commands, supporting upload, access control, and other operations for automated document handling.",
+          "what": "管理Google Drive文件",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-events-renew",
+          "path": "skills/gws-events-renew/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 工具",
+          "group_en": "Google Workspace CLI Tools",
+          "description_zh": "续订或重新激活Google Workspace事件订阅，防止订阅过期，确保自动化任务持续运行。",
+          "description_en": "Renews or reactivates Google Workspace event subscriptions to prevent expiration and keep automated tasks running.",
+          "what": "续订事件订阅",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-events-subscribe",
+          "path": "skills/gws-events-subscribe/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace 事件流",
+          "group_en": "Google Workspace Event Streaming",
+          "description_zh": "帮助 AI agent 实时订阅 Google Workspace 事件（如 Chat 消息），通过 CLI 工具流式传输事件数据为 NDJSON，用于自动化工作流。",
+          "description_en": "Enables AI agents to subscribe to Google Workspace events in real-time, streaming them as NDJSON via CLI for automation workflows.",
+          "what": "订阅 Google Workspace 事件并流式传输 NDJSON。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-events",
+          "path": "skills/gws-events/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace 事件流",
+          "group_en": "Google Workspace Event Streaming",
+          "description_zh": "提供 Google Workspace 事件订阅的完整管理功能，包括创建、删除和查询订阅，支持自动化事件处理，集成 CLI 命令。",
+          "description_en": "A CLI toolset for managing Google Workspace event subscriptions, including creation, deletion, and querying, to support automated event handling.",
+          "what": "管理 Google Workspace 事件订阅的 CLI 命令集。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-forms",
+          "path": "skills/gws-forms/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 自动化",
+          "group_en": "Google Workspace CLI Automation",
+          "description_zh": "通过 CLI 操作 Google Forms，支持创建、读取、更新表单及管理响应，便于 agent 自动化表单处理。",
+          "description_en": "Operate Google Forms via CLI, supporting creation, reading, updating of forms and response management for agent automation.",
+          "what": "Read and write Google Forms.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-forward",
+          "path": "skills/gws-gmail-forward/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Workspace CLI 自动化",
+          "group_en": "Google Workspace CLI Automation",
+          "description_zh": "通过 CLI 转发 Gmail 消息，支持指定收件人、附加内容和选项，便于 agent 自动化邮件转发。",
+          "description_en": "Forward Gmail messages via CLI, supporting specifying recipients, attachments, and options for agent automation.",
+          "what": "Forward a message to new recipients.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-read",
+          "path": "skills/gws-gmail-read/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "gws-gmail-read",
+          "group_en": "gws-gmail-read",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-reply-all",
+          "path": "skills/gws-gmail-reply-all/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "gws-gmail-reply-all",
+          "group_en": "gws-gmail-reply-all",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-reply",
+          "path": "skills/gws-gmail-reply/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "邮件全套",
+          "group_en": "Email toolkit",
+          "description_zh": "封装 Gmail 回复能力，自动处理邮件线程，支持 HTML、附件、抄送/密送及草稿保存。",
+          "description_en": "Reply to Gmail messages with automatic threading, HTML body, attachments, CC/BCC, and draft saving.",
+          "what": "AI agent 通过 CLI 自动回复 Gmail 邮件",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-send",
+          "path": "skills/gws-gmail-send/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "邮件全套",
+          "group_en": "Email toolkit",
+          "description_zh": "封装 Gmail 发送能力，支持多收件人、HTML 正文、附件、抄送/密送及草稿模式。",
+          "description_en": "Send Gmail messages with multiple recipients, HTML body, attachments, CC/BCC, and draft mode.",
+          "what": "AI agent 通过 CLI 自动发送 Gmail 邮件",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-triage",
+          "path": "skills/gws-gmail-triage/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Gmail 邮件管理",
+          "group_en": "Gmail Management",
+          "description_zh": "列出 Gmail 未读邮件摘要（发件人、主题、日期），支持自定义搜索条件和数量上限。",
+          "description_en": "Summarize unread Gmail inbox (sender, subject, date) with customizable search query and message limit.",
+          "what": "Read-only Gmail inbox triage via CLI",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail-watch",
+          "path": "skills/gws-gmail-watch/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Gmail 邮件管理",
+          "group_en": "Gmail Management",
+          "description_zh": "通过 GCP Pub/Sub 实时监听 Gmail 新邮件，以 NDJSON 流式输出消息内容。",
+          "description_en": "Watch Gmail for new messages via GCP Pub/Sub and stream them as NDJSON in real time.",
+          "what": "Real-time Gmail push watch via Pub/Sub",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-gmail",
+          "path": "skills/gws-gmail/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Gmail CLI 工具",
+          "group_en": "Gmail CLI Tools",
+          "description_zh": "通过 CLI 命令管理 Gmail，支持发送、阅读、回复、转发邮件，用于自动化邮件处理和 agent 集成。",
+          "description_en": "Manage Gmail via CLI commands for sending, reading, replying, and forwarding emails, enabling automated email handling and agent integration.",
+          "what": "CLI tool for Gmail operations like send, read, and manage emails.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-keep",
+          "path": "skills/gws-keep/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "笔记 CLI 工具",
+          "group_en": "Notes CLI Tools",
+          "description_zh": "通过 CLI 命令管理 Google Keep 笔记，支持创建、删除、列出笔记，实现笔记自动化操作。",
+          "description_en": "Manage Google Keep notes via CLI commands for creating, deleting, and listing notes, enabling automated note management.",
+          "what": "CLI tool for Google Keep note management.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-meet",
+          "path": "skills/gws-meet/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Google Meet 管理",
+          "group_en": "Google Meet Management",
+          "description_zh": "帮助 agent 通过 CLI 命令管理 Google Meet 会议，如获取会议记录、创建空间、查看参与者和录音等。",
+          "description_en": "Enables agents to manage Google Meet conferences via CLI commands, such as retrieving conference records, creating spaces, and listing participants or recordings.",
+          "what": "管理 Google Meet 会议",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-modelarmor-create-template",
+          "path": "skills/gws-modelarmor-create-template/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "AI 模型安全",
+          "group_en": "AI Model Security",
+          "description_zh": "帮助 agent 创建 Google Model Armor 模板，用于保护 AI 模型免受越狱等安全威胁，支持预设或自定义配置。",
+          "description_en": "Allows agents to create Google Model Armor templates for securing AI models against threats like jailbreaks, supporting preset or custom configurations.",
+          "what": "创建 Model Armor 安全模板",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-modelarmor-sanitize-prompt",
+          "path": "skills/gws-modelarmor-sanitize-prompt/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "内容安全净化",
+          "group_en": "Content Security Sanitization",
+          "description_zh": "通过 Google Model Armor 模板净化用户提示，防止有害内容传递给模型，确保输入安全。",
+          "description_en": "Sanitizes user prompts through Google Model Armor templates to filter harmful content before sending to the model.",
+          "what": "净化用户提示以确保输入安全。",
+          "chain": true,
+          "chain_group": "modelarmor-safety"
+        },
+        {
+          "name": "gws-modelarmor-sanitize-response",
+          "path": "skills/gws-modelarmor-sanitize-response/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "内容安全净化",
+          "group_en": "Content Security Sanitization",
+          "description_zh": "通过 Google Model Armor 模板净化模型响应，防止有害内容输出给用户，确保输出安全。",
+          "description_en": "Sanitizes model responses through Google Model Armor templates to filter harmful content before outputting to the user.",
+          "what": "净化模型响应以确保输出安全。",
+          "chain": true,
+          "chain_group": "modelarmor-safety"
+        },
+        {
+          "name": "gws-modelarmor",
+          "path": "skills/gws-modelarmor/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "内容安全过滤",
+          "group_en": "Content Safety Filtering",
+          "description_zh": "使用 Google Model Armor 过滤用户生成内容，确保 AI 应用的安全性。",
+          "description_en": "Filter user-generated content using Google Model Armor to ensure safety in AI applications.",
+          "what": "内容安全过滤",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "gws-people",
+          "path": "skills/gws-people/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "联系人管理",
+          "group_en": "Contact Management",
+          "description_zh": "管理 Google People 联系人和 profile，包括联系人组的创建、删除和更新等操作。",
+          "description_en": "Manage Google People contacts and profiles, including operations on contact groups like create, delete, and update.",
+          "what": "联系人管理",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "OthmanAdi",
+        "repo": "planning-with-files",
+        "full_name": "OthmanAdi/planning-with-files",
+        "url": "https://github.com/OthmanAdi/planning-with-files",
+        "stars": 22585,
+        "pushed_at": "2026-05-26",
+        "default_branch": "master",
+        "github_description": "Claude Code skill implementing Manus-style persistent markdown planning — the workflow pattern behind the $2B acquisition.",
+        "topics": [
+          "adal",
+          "agent-skills",
+          "antigravity",
+          "claude",
+          "claude-code",
+          "claude-skills",
+          "copilot",
+          "copilot-skills",
+          "hermes",
+          "hermes-agent",
+          "hermes-skill",
+          "kilocode",
+          "manus",
+          "mastra",
+          "openclaw",
+          "openclaw-skills",
+          "pi",
+          "pi-agent",
+          "planning"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "planning-with-files",
+          "path": ".codebuddy/skills/planning-with-files/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "会话接力",
+          "group_en": "Session Relay",
+          "description_zh": "实现 Manus 风格的文件规划，创建任务计划、发现和进度文件，用于组织复杂任务并支持会话恢复。",
+          "description_en": "Implements Manus-style file-based planning, creating task plan, findings, and progress files to organize complex tasks with session recovery support.",
+          "what": "基于文件的 planning 工具，支持任务组织和会话恢复。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "planning-with-files-ar",
+          "path": "skills/planning-with-files-ar/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "会话接力",
+          "group_en": "Session Relay",
+          "description_zh": "阿拉伯语版本的文件规划 skill，实现 Manus 风格的任务计划和进度跟踪，支持会话恢复。",
+          "description_en": "Arabic version of file-based planning skill, implementing Manus-style task planning and progress tracking with session recovery support.",
+          "what": "阿拉伯语版文件规划工具，用于任务管理和会话恢复。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "planning-with-files-de",
+          "path": "skills/planning-with-files-de/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "Manus 风格文件规划",
+          "group_en": "Manus-style file-based planning",
+          "description_zh": "创建持久化 Markdown 规划文件（task_plan.md、findings.md、progress.md），帮助 Agent 分解和追踪复杂多步骤任务的进度，支持会话自动恢复。",
+          "description_en": "Creates persistent markdown planning files (task_plan.md, findings.md, progress.md) to help agents decompose and track complex multi-step tasks, with automatic session recovery.",
+          "what": "文件持久化任务规划与进度追踪",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "planning-with-files-es",
+          "path": "skills/planning-with-files-es/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "Manus 风格文件规划",
+          "group_en": "Manus-style file-based planning",
+          "description_zh": "创建持久化 Markdown 规划文件（task_plan.md、findings.md、progress.md），帮助 Agent 分解和追踪复杂多步骤任务的进度，支持会话自动恢复。",
+          "description_en": "Creates persistent markdown planning files (task_plan.md, findings.md, progress.md) to help agents decompose and track complex multi-step tasks, with automatic session recovery.",
+          "what": "文件持久化任务规划与进度追踪",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "planning-with-files-zh",
+          "path": "skills/planning-with-files-zh/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "文件规划系统",
+          "group_en": "File-based Planning System",
+          "description_zh": "实现 Manus 风格的持久化 Markdown 规划系统，通过创建 task_plan.md、findings.md 和 progress.md 三个文件来组织任务进度，支持会话恢复和自动跟踪。",
+          "description_en": "Implements a Manus-style persistent markdown planning system by creating and managing three files (task_plan.md, findings.md, progress.md) to organize task progress, with session recovery and automatic tracking.",
+          "what": "管理任务规划文件以跟踪多步骤工作进度。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "planning-with-files-zht",
+          "path": "skills/planning-with-files-zht/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "文件规划系统",
+          "group_en": "File-based Planning System",
+          "description_zh": "实现 Manus 风格的持久化 Markdown 规划系统（繁体中文版），通过创建 task_plan.md、findings.md 和 progress.md 三个文件来组织任务进度，支持会话恢复和自动跟踪。",
+          "description_en": "Implements a Manus-style persistent markdown planning system (Traditional Chinese version) by creating and managing three files (task_plan.md, findings.md, progress.md) to organize task progress, with session recovery and automatic tracking.",
+          "what": "管理任务规划文件以跟踪多步骤工作进度。",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "JimLiu",
+        "repo": "baoyu-skills",
+        "full_name": "JimLiu/baoyu-skills",
+        "url": "https://github.com/JimLiu/baoyu-skills",
+        "stars": 20289,
+        "pushed_at": "2026-06-02",
+        "default_branch": "main",
+        "github_description": "",
+        "topics": [
+          "agent-skills",
+          "claude-skills",
+          "codex-skills",
+          "openclaw-skills"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "release-skills",
+          "path": ".claude/skills/release-skills/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "通用发布工作流",
+          "group_en": "Universal Release Workflow",
+          "description_zh": "自动化软件发布流程，支持多语言版本文件检测、Changelog 生成和 GitHub Releases 管理。",
+          "description_en": "Automates software release workflows with multi-language version file detection, changelog generation, and GitHub Releases management.",
+          "what": "通用发布工作流自动化",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-article-illustrator",
+          "path": "skills/baoyu-article-illustrator/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "文章插图生成",
+          "group_en": "Article Illustration Generator",
+          "description_zh": "分析文章结构，识别需要插图的位置，使用 Type × Style × Palette 三维方法生成风格一致的视觉辅助图像。",
+          "description_en": "Analyzes article structure, identifies positions needing illustrations, and generates visually consistent images using a Type × Style × Palette three-dimensional approach.",
+          "what": "文章插图生成与风格控制",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-comic",
+          "path": "skills/baoyu-comic/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "知识漫画创作",
+          "group_en": "Knowledge Comic Creation",
+          "description_zh": "知识漫画创建器，支持多种艺术风格和语调，用于生成原创教育漫画，具有详细面板布局和批量图像生成功能。",
+          "description_en": "Knowledge comic creator that supports multiple art styles and tones, generating original educational comics with detailed panel layouts and batch image generation capabilities.",
+          "what": "创建知识漫画，支持多种艺术风格和批量图像生成。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-compress-image",
+          "path": "skills/baoyu-compress-image/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "图像压缩优化",
+          "group_en": "Image Compression Optimization",
+          "description_zh": "图像压缩工具，自动选择最佳工具压缩图像为 WebP 或 PNG 格式，支持批量处理。",
+          "description_en": "Image compression tool that automatically selects the best available tool to compress images to WebP or PNG format, supporting batch processing.",
+          "what": "压缩图像到 WebP 或 PNG，自动选择最佳工具。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-cover-image",
+          "path": "skills/baoyu-cover-image/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "创意 / 艺术 / 品牌资产",
+          "group_en": "Creative / Art / Brand Assets",
+          "description_zh": "生成文章封面图像，支持5维定制（类型、调色板、渲染、文本、情绪），结合11种调色板和7种渲染风格。",
+          "description_en": "Generates article cover images with 5-dimensional customization (type, palette, rendering, text, mood), combining 11 color palettes and 7 rendering styles.",
+          "what": "为文章生成定制化封面图像。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-danger-gemini-web",
+          "path": "skills/baoyu-danger-gemini-web/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "三大模型厂 SDK 直连",
+          "group_en": "Direct SDK for Major AI Providers",
+          "description_zh": "通过逆向工程的 Gemini Web API 生成图像和文本，支持参考图像和多轮对话，可用作图像生成后端。",
+          "description_en": "Generates images and text via reverse-engineered Gemini Web API, supporting reference images and multi-turn conversations; usable as an image generation backend.",
+          "what": "调用 Gemini Web API 生成图像和文本内容。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-danger-x-to-markdown",
+          "path": "skills/baoyu-danger-x-to-markdown/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "X 内容抓取",
+          "group_en": "X Content Scraping",
+          "description_zh": "将 X（Twitter）的推文和文章转换为带 YAML 前言的 Markdown 格式，用于内容归档或分析。",
+          "description_en": "Converts X (Twitter) tweets and articles to Markdown with YAML front matter for content archiving or analysis.",
+          "what": "A tool to convert X content to Markdown.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-diagram",
+          "path": "skills/baoyu-diagram/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "SVG 图表生成",
+          "group_en": "SVG Diagram Generation",
+          "description_zh": "生成专业的深色主题 SVG 图表，包括架构图、流程图、序列图等，用于系统可视化。",
+          "description_en": "Generates professional dark-themed SVG diagrams in various types such as architecture, flowcharts, and sequence diagrams for system visualization.",
+          "what": "A tool to generate SVG diagrams.",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-electron-extract",
+          "path": "skills/baoyu-electron-extract/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "Electron 应用提取",
+          "group_en": "Electron App Extraction",
+          "description_zh": "从已安装 Electron 应用的 .asar 包中提取资源和 JavaScript 源码，支持恢复原始文件或格式化代码，用于安全审计或逆向分析。",
+          "description_en": "Extracts resources and JavaScript source code from an installed Electron app's .asar bundle, restoring original files or formatting code for security auditing or reverse engineering.",
+          "what": "提取 Electron 应用源码和资源",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-format-markdown",
+          "path": "skills/baoyu-format-markdown/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "Markdown 格式化",
+          "group_en": "Markdown Formatting",
+          "description_zh": "将纯文本或 Markdown 文件格式化，添加 frontmatter、标题、列表等结构，仅调整格式不改变内容，提升文档可读性。",
+          "description_en": "Formats plain text or markdown files with frontmatter, headings, and lists to improve readability without altering content.",
+          "what": "格式化 Markdown 文档结构",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-image-gen",
+          "path": "skills/baoyu-image-gen/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "AI 图像生成",
+          "group_en": "AI Image Generation",
+          "description_zh": "支持多种 AI API 的图像生成，包括文本到图像、参考图像、宽高比设置和批量生成，适用于创建、生成或绘制图像。",
+          "description_en": "Supports AI image generation with multiple APIs, including text-to-image, reference images, aspect ratios, and batch generation for creating or drawing images.",
+          "what": "AI 图像生成工具，支持多种 API 和批量处理。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-infographic",
+          "path": "skills/baoyu-infographic/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "信息图生成",
+          "group_en": "Infographic Generation",
+          "description_zh": "生成专业信息图，提供 21 种布局和 22 种视觉风格，分析内容并推荐布局与风格组合，创建出版级信息图。",
+          "description_en": "Generates professional infographics with 21 layout types and 22 visual styles, analyzing content and recommending layout-style combinations for publication-ready outputs.",
+          "what": "专业信息图生成器，提供布局和风格组合。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-markdown-to-html",
+          "path": "skills/baoyu-markdown-to-html/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Markdown 转 HTML 工具",
+          "group_en": "Markdown to HTML Converter",
+          "description_zh": "将 Markdown 文件转换为带样式的 HTML，优化微信公众号兼容性，支持代码高亮、数学公式、Mermaid 图表、脚注等丰富元素，用于生成美观的网页内容。",
+          "description_en": "Converts Markdown files to styled HTML optimized for WeChat Official Account, supporting code highlighting, math rendering, Mermaid diagrams, footnotes, and more for creating visually appealing web content.",
+          "what": "将 Markdown 转换为微信兼容的 HTML。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-post-to-wechat",
+          "path": "skills/baoyu-post-to-wechat/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "社媒平台写作",
+          "group_en": "Social Media Platform Writing",
+          "description_zh": "通过 API 或 Chrome CDP 发布内容到微信公众号，支持文章和图文发布，可处理 HTML、Markdown 或纯文本输入，并自动将外链转为底部引用。",
+          "description_en": "Posts content to WeChat Official Account via API or Chrome CDP, supporting article and image-text posts with HTML, markdown, or plain text input, and automatically converting external links into bottom citations.",
+          "what": "发布内容到微信公众号。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-post-to-weibo",
+          "path": "skills/baoyu-post-to-weibo/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "社媒平台发布自动化",
+          "group_en": "Social Media Publishing Automation",
+          "description_zh": "帮助 agent 通过 Chrome 浏览器自动化发布内容到微博，支持文本、图像、视频和头条文章，绕过反爬虫检测。",
+          "description_en": "Helps agents automatically publish content to Weibo via Chrome browser, supporting text, images, videos, and headline articles while bypassing anti-bot detection.",
+          "what": "自动化发布微博内容",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-post-to-x",
+          "path": "skills/baoyu-post-to-x/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "社媒平台发布自动化",
+          "group_en": "Social Media Publishing Automation",
+          "description_zh": "帮助 agent 通过 Chrome 浏览器自动化发布内容到 X (Twitter)，支持推文和长篇文章，并区分 Codex Chrome 插件与 CDP 脚本模式。",
+          "description_en": "Helps agents automatically publish content to X (Twitter) via Chrome browser, supporting tweets and long-form articles, with clear differentiation between Codex Chrome plugin and CDP script modes.",
+          "what": "自动化发布 X 内容",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-slide-deck",
+          "path": "skills/baoyu-slide-deck/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "幻灯片图像生成",
+          "group_en": "Slide Deck Image Generation",
+          "description_zh": "将内容转化为专业的幻灯片图像，用于阅读和分享，支持自定义样式和布局。",
+          "description_en": "Converts content into professional slide deck images for reading and sharing, with customizable styles and layouts.",
+          "what": "生成幻灯片图像",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-translate",
+          "path": "skills/baoyu-translate/SKILL.md",
+          "subcategory": "2-2",
+          "subcategory_title": "2.2 长文本翻译 / 跨语言",
+          "category": "docs-knowledge",
+          "group": "多模式文档翻译",
+          "group_en": "Multi-mode Document Translation",
+          "description_zh": "翻译文章和文档，支持快速、普通和精翻三种模式，可自定义术语表保持一致性。",
+          "description_en": "Translates articles and documents with three modes: quick, normal, and refined, supporting custom glossaries for terminology consistency.",
+          "what": "多模式文档翻译",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-url-to-markdown",
+          "path": "skills/baoyu-url-to-markdown/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "网页内容提取",
+          "group_en": "Web Content Extraction",
+          "description_zh": "帮助 AI 代理抓取任意 URL 并转换为干净的 Markdown 格式，内置适配器支持 Twitter、YouTube 等站点。",
+          "description_en": "Assists AI agents in fetching any URL and converting it to clean markdown, with built-in adapters for sites like X/Twitter and YouTube transcripts.",
+          "what": "抓取 URL 并转换为 Markdown",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-wechat-summary",
+          "path": "skills/baoyu-wechat-summary/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "微信聊天总结",
+          "group_en": "WeChat Chat Summary",
+          "description_zh": "帮助 AI 代理总结微信群聊精华，生成结构化简报，并维护跨次运行的群聊历史与用户画像。",
+          "description_en": "Helps AI agents summarize WeChat group chat highlights into structured digests, maintaining history and user profiles across runs.",
+          "what": "总结微信群聊记录并生成简报",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-xhs-images",
+          "path": "skills/baoyu-xhs-images/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "社媒图片卡片生成",
+          "group_en": "Social Media Image Card Generator",
+          "description_zh": "将内容拆分为 1-10 张卡通风格信息图卡片，支持 12 种视觉风格、8 种布局和 3 套配色方案，适配小红书、微信等社交平台传播。",
+          "description_en": "Breaks content into 1-10 cartoon-style infographic image cards with 12 visual styles, 8 layouts, and 3 color palettes, optimized for platforms like Xiaohongshu and WeChat.",
+          "what": "生成适配社交平台的信息图卡片系列",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "baoyu-youtube-transcript",
+          "path": "skills/baoyu-youtube-transcript/SKILL.md",
+          "subcategory": "6-2",
+          "subcategory_title": "6.2 音频 / TTS / 转写",
+          "category": "media",
+          "group": "YouTube 字幕与封面提取",
+          "group_en": "YouTube Transcript & Cover Extraction",
+          "description_zh": "通过 URL 或视频 ID 下载 YouTube 视频字幕/转录文本及封面图，支持多语言、翻译、章节识别和发言人标注，无需 API Key，自动缓存加速重复格式化。",
+          "description_en": "Downloads YouTube transcripts/subtitles and cover images by URL or video ID with multilingual support, translation, chapters, and speaker identification — no API key required, with caching for fast re-formatting.",
+          "what": "提取 YouTube 视频的字幕转录和封面图片",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "kubesphere",
+        "repo": "kubesphere",
+        "full_name": "kubesphere/kubesphere",
+        "url": "https://github.com/kubesphere/kubesphere",
+        "stars": 16952,
+        "pushed_at": "2026-06-02",
+        "default_branch": "master",
+        "github_description": "The container platform tailored for Kubernetes multi-cloud, datacenter, and edge management ⎈ 🖥 ☁️",
+        "topics": [
+          "agent-skills",
+          "ai",
+          "cloud-native",
+          "cncf",
+          "devops",
+          "ebpf",
+          "hacktoberfest",
+          "kubernetes",
+          "kubesphere",
+          "llm",
+          "multi-cluster",
+          "multi-tenancy",
+          "observability",
+          "servicemesh",
+          "skills",
+          "skills-sh",
+          "skillsmp"
+        ],
+        "language": "Go",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "frontend-forge-fe-operations",
+          "path": "skills/frontend-forge-fe-operations/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "Kubernetes 前端扩展管理",
+          "group_en": "Kubernetes Frontend Extension Management",
+          "description_zh": "管理 KubeSphere 中 FrontendExtension 资源的全生命周期，包括创建、更新、构建、发布和调试包制品，帮助 agent 在集群中执行扩展运维任务。",
+          "description_en": "Manages the full lifecycle of FrontendExtension resources in KubeSphere, including creation, update, build, publish, and debugging of package artifacts, enabling agents to perform extension operations in the cluster.",
+          "what": "管理 Kubernetes 中前端扩展的打包、发布与生命周期操作。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "frontend-forge-fi-operations",
+          "path": "skills/frontend-forge-fi-operations/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "Kubernetes 前端扩展管理",
+          "group_en": "Kubernetes Frontend Extension Management",
+          "description_zh": "操作 FrontendIntegration 资源与 frontend-forge 扩展本身，涵盖创建、启用、禁用和状态检查，帮助 agent 管理集群中的前端集成与扩展组件。",
+          "description_en": "Operates FrontendIntegration resources and the frontend-forge extension itself, covering creation, enabling, disabling, and status inspection, allowing agents to manage frontend integrations and extension components in the cluster.",
+          "what": "管理 Kubernetes 中 FrontendIntegration 资源与扩展本身的操作。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "frontend-integration-yaml",
+          "path": "skills/frontend-integration-yaml/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "frontend-integration-yaml",
+          "group_en": "frontend-integration-yaml",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-cluster-management",
+          "path": "skills/kubesphere-cluster-management/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "kubesphere-cluster-management",
+          "group_en": "kubesphere-cluster-management",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-core",
+          "path": "skills/kubesphere-core/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "kubesphere-core",
+          "group_en": "kubesphere-core",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-devops-argocd",
+          "path": "skills/kubesphere-devops-argocd/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "kubesphere-devops-argocd",
+          "group_en": "kubesphere-devops-argocd",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-devops-credentials",
+          "path": "skills/kubesphere-devops-credentials/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "kubesphere-devops-credentials",
+          "group_en": "kubesphere-devops-credentials",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-devops-jenkins",
+          "path": "skills/kubesphere-devops-jenkins/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "kubesphere-devops-jenkins",
+          "group_en": "kubesphere-devops-jenkins",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-devops-overview",
+          "path": "skills/kubesphere-devops-overview/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "Kubernetes / GitOps / CI-CD",
+          "group_en": "Kubernetes / GitOps / CI-CD",
+          "description_zh": "帮助 AI agent 理解 KubeSphere DevOps 的架构、资源映射与集成，用于设置和故障排除 CI/CD 管道。",
+          "description_en": "Assists AI agents in understanding KubeSphere DevOps architecture, resource mapping, and integration for setting up and troubleshooting CI/CD pipelines.",
+          "what": "理解 KubeSphere DevOps 架构与 CI/CD 集成",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-devops-pipeline",
+          "path": "skills/kubesphere-devops-pipeline/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "Kubernetes / GitOps / CI-CD",
+          "group_en": "Kubernetes / GitOps / CI-CD",
+          "description_zh": "帮助 AI agent 在 KubeSphere 中创建、运行和监控 CI/CD 管道，包括 API 操作和日志检索。",
+          "description_en": "Enables AI agents to create, run, and monitor CI/CD pipelines in KubeSphere, including API operations and log retrieval.",
+          "what": "管理 KubeSphere CI/CD 管道生命周期",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-devops-tenant",
+          "path": "skills/kubesphere-devops-tenant/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "kubesphere-devops-tenant",
+          "group_en": "kubesphere-devops-tenant",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-extension-management",
+          "path": "skills/kubesphere-extension-management/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "kubesphere-extension-management",
+          "group_en": "kubesphere-extension-management",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-fluid",
+          "path": "skills/kubesphere-fluid/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "Kubernetes / GitOps / CI-CD",
+          "group_en": "Kubernetes / GitOps / CI-CD",
+          "description_zh": "帮助 AI 代理管理 KubeSphere 中的 Fluid 扩展，执行安装、配置、数据缓存、缩放和故障排除等任务。",
+          "description_en": "Assists AI agents in managing Fluid extensions in KubeSphere, performing tasks such as installation, configuration, data caching, scaling, and troubleshooting.",
+          "what": "管理 KubeSphere Fluid 数据加速平台。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-multi-tenant-management",
+          "path": "skills/kubesphere-multi-tenant-management/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "KubeSphere 多租户管理",
+          "group_en": "KubeSphere Multi-Tenant Management",
+          "description_zh": "帮助 AI 代理管理 KubeSphere 多租户环境，创建用户、工作区、项目并分配角色，遵循安全准则避免危险操作。",
+          "description_en": "Assists AI agents in managing multi-tenant environments in KubeSphere, creating users, workspaces, projects, and assigning roles while adhering to security guidelines.",
+          "what": "管理 KubeSphere 多租户用户和权限。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-network-extension-operations",
+          "path": "skills/kubesphere-network-extension-operations/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "KubeSphere 集群运维",
+          "group_en": "KubeSphere Cluster Operations",
+          "description_zh": "管理 KubeSphere 网络扩展：安装/升级/配置 network 扩展，操作 Calico IPPool 资源、命名空间绑定及网络隔离策略",
+          "description_en": "Manage the KubeSphere network extension: install/upgrade/configure, operate Calico IPPool resources, namespace bindings, and network isolation policies",
+          "what": "网络扩展与 IPPool 生命周期管理",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-openkruise",
+          "path": "skills/kubesphere-openkruise/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "KubeSphere 集群运维",
+          "group_en": "KubeSphere Cluster Operations",
+          "description_zh": "管理 KubeSphere OpenKruise 扩展：安装/升级/卸载，创建 SidecarSet 和 CloneSet，执行原地更新、批量滚动发布与故障排查",
+          "description_en": "Manage the KubeSphere OpenKruise extension: install/upgrade/uninstall, create SidecarSet and CloneSet manifests, perform in-place updates, batch rollouts, and troubleshoot",
+          "what": "OpenKruise 工作负载与 Sidecar 生命周期管理",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-servicemesh",
+          "path": "skills/kubesphere-servicemesh/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "KubeSphere 服务网格管理",
+          "group_en": "KubeSphere ServiceMesh Management",
+          "description_zh": "用于配置和故障排除 KubeSphere 的 ServiceMesh 扩展，集成 Istio、Kiali 和 Jaeger，支持安装、状态检查、灰度发布和流量治理。",
+          "description_en": "For configuring and troubleshooting KubeSphere's ServiceMesh extension, integrating Istio, Kiali, and Jaeger, with support for installation, status checks, grayscale release, and traffic governance.",
+          "what": "配置和故障排除 KubeSphere ServiceMesh 扩展。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "kubesphere-volcano",
+          "path": "skills/kubesphere-volcano/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "KubeSphere Volcano 作业管理",
+          "group_en": "KubeSphere Volcano Job Management",
+          "description_zh": "用于管理 KubeSphere 中的 Volcano 作业和队列，支持创建、列表、更新、删除作业，生成 YAML 模板，以及故障排除和资源调度。",
+          "description_en": "For managing Volcano jobs and queues in KubeSphere, supporting creation, listing, updating, deleting jobs, generating YAML templates, and troubleshooting and resource scheduling.",
+          "what": "管理 KubeSphere 中的 Volcano 作业和队列。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nodegroup",
+          "path": "skills/nodegroup/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "nodegroup",
+          "group_en": "nodegroup",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "opensearch",
+          "path": "skills/opensearch/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "opensearch",
+          "group_en": "opensearch",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "vector",
+          "path": "skills/vector/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "vector",
+          "group_en": "vector",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "whizard-auditing",
+          "path": "skills/whizard-auditing/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "whizard-auditing",
+          "group_en": "whizard-auditing",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "whizard-events",
+          "path": "skills/whizard-events/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "KubeSphere 可观测性扩展",
+          "group_en": "KubeSphere Observability Extensions",
+          "description_zh": "帮助 AI agent 安装和配置 KubeSphere 的 WizTelemetry 事件扩展，用于 Kubernetes 事件收集、处理和查询。",
+          "description_en": "Assists AI agents in installing and configuring the WizTelemetry Events extension for KubeSphere, enabling Kubernetes event collection, processing, and querying.",
+          "what": "安装配置事件扩展和查询 API",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "whizard-logging",
+          "path": "skills/whizard-logging/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "KubeSphere 可观测性扩展",
+          "group_en": "KubeSphere Observability Extensions",
+          "description_zh": "帮助 AI agent 安装和配置 KubeSphere 的 WizTelemetry 日志扩展，用于日志收集、处理和查询。",
+          "description_en": "Assists AI agents in installing and configuring the WizTelemetry Logging extension for KubeSphere, enabling log collection, processing, and querying.",
+          "what": "安装配置日志扩展和查询 API",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "whizard-notification",
+          "path": "skills/whizard-notification/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "whizard-notification",
+          "group_en": "whizard-notification",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "whizard-telemetry-ruler",
+          "path": "skills/whizard-telemetry-ruler/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "whizard-telemetry-ruler",
+          "group_en": "whizard-telemetry-ruler",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "whizard-telemetry",
+          "path": "skills/whizard-telemetry/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "whizard-telemetry",
+          "group_en": "whizard-telemetry",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "wiztelemetry-tracing",
+          "path": "skills/wiztelemetry-tracing/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "wiztelemetry-tracing",
+          "group_en": "wiztelemetry-tracing",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    }
+  ]
+}
