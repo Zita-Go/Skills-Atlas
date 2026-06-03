@@ -11,12 +11,12 @@
 [![Skills](https://img.shields.io/badge/skills-906-blue)](data/skills.yaml)
 [![Repos](https://img.shields.io/badge/repositories-115-green)](data/repositories.yaml)
 [![Categories](https://img.shields.io/badge/categories-20_×_116-orange)](data/categories.yaml)
-[![npm](https://img.shields.io/npm/v/skills-atlas-cli?label=skills-atlas-cli&logo=npm&color=cb3837)](https://www.npmjs.com/package/skills-atlas-cli)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/skills-atlas-cli?label=skills-atlas-cli)](https://www.npmjs.com/package/skills-atlas-cli)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
 
 [**🧩 Claude Code 插件**](packages/skills-atlas-cli/plugin) | [**⌨️ CLI**](packages/skills-atlas-cli) | [🌐 在线访问](https://zita-go.github.io/Skills-Atlas/?lang=zh) | [📦 数据下载](data/) | [🤝 贡献新 skill](CONTRIBUTING.zh-CN.md) | [💬 讨论区](../../discussions)
 
-<a href="https://zita-go.github.io/Skills-Atlas/?lang=zh"><img src="docs/screenshot-dark.zh-CN.png" alt="Skills Atlas —— 在线浏览目录（中文界面）" width="760"></a>
+<a href="https://zita-go.github.io/Skills-Atlas/?lang=zh"><img src="docs/screenshot-dark.zh-CN.png" alt="Skills Atlas —— 在线浏览目录（中文界面）" width="820"></a>
 
 </div>
 
@@ -80,6 +80,8 @@ npm i -g skills-atlas-cli
 → [**插件完整文档**](packages/skills-atlas-cli/plugin)
 
 ### 在终端里 —— CLI
+
+<a href="packages/skills-atlas-cli"><img src="docs/cli-demo.png" alt="Skills Atlas CLI —— 在终端里搜索、查看、安装 skill" width="820"></a>
 
 同一套引擎，搬到 shell。装一次（`npm i -g skills-atlas-cli`），然后：
 

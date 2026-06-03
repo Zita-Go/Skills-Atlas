@@ -11,12 +11,12 @@
 [![Skills](https://img.shields.io/badge/skills-906-blue)](data/skills.yaml)
 [![Repos](https://img.shields.io/badge/repositories-115-green)](data/repositories.yaml)
 [![Categories](https://img.shields.io/badge/categories-20_×_116-orange)](data/categories.yaml)
-[![npm](https://img.shields.io/npm/v/skills-atlas-cli?label=skills-atlas-cli&logo=npm&color=cb3837)](https://www.npmjs.com/package/skills-atlas-cli)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![npm](https://img.shields.io/npm/v/skills-atlas-cli?label=skills-atlas-cli)](https://www.npmjs.com/package/skills-atlas-cli)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
 
 [**🧩 Claude Code plugin**](packages/skills-atlas-cli/plugin) | [**⌨️ CLI**](packages/skills-atlas-cli) | [🌐 Visit online](https://zita-go.github.io/Skills-Atlas/?lang=en) | [📦 Data download](data/) | [🤝 Contribute a new skill](CONTRIBUTING.md) | [💬 Discussions](../../discussions)
 
-<a href="https://zita-go.github.io/Skills-Atlas/?lang=en"><img src="docs/screenshot-dark.png" alt="Skills Atlas — browse the catalog online" width="760"></a>
+<a href="https://zita-go.github.io/Skills-Atlas/?lang=en"><img src="docs/screenshot-dark.png" alt="Skills Atlas — browse the catalog online" width="820"></a>
 
 </div>
 
@@ -92,6 +92,8 @@ Just describe what you need, or reach for a command:
 → [**full plugin docs**](packages/skills-atlas-cli/plugin)
 
 ### From the terminal — the CLI
+
+<a href="packages/skills-atlas-cli"><img src="docs/cli-demo.png" alt="Skills Atlas CLI — search, info and install a skill from the shell" width="820"></a>
 
 The same engine, for the shell. Install once (`npm i -g skills-atlas-cli`), then:
 
