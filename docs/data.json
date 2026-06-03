@@ -517,7 +517,7 @@
                   "author": "OthmanAdi",
                   "repo": "planning-with-files",
                   "default_branch": "master",
-                  "license": null,
+                  "license": "MIT",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OthmanAdi/planning-with-files",
@@ -2684,7 +2684,7 @@
                   "author": "googleworkspace",
                   "repo": "cli",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add googleworkspace/cli",
@@ -10270,7 +10270,7 @@
                   "author": "googleworkspace",
                   "repo": "cli",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add googleworkspace/cli",
@@ -10310,7 +10310,7 @@
                   "author": "googleworkspace",
                   "repo": "cli",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add googleworkspace/cli",
@@ -10353,7 +10353,7 @@
                   "author": "googleworkspace",
                   "repo": "cli",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add googleworkspace/cli",
@@ -10395,7 +10395,7 @@
                   "author": "googleworkspace",
                   "repo": "cli",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add googleworkspace/cli",
@@ -10436,7 +10436,7 @@
                   "author": "googleworkspace",
                   "repo": "cli",
                   "default_branch": "main",
-                  "license": null,
+                  "license": "Apache-2.0",
                   "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add googleworkspace/cli",
@@ -18759,7 +18759,7 @@
       "author": "OthmanAdi",
       "repo": "planning-with-files",
       "default_branch": "master",
-      "license": null,
+      "license": "MIT",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add OthmanAdi/planning-with-files",
@@ -18781,7 +18781,7 @@
       "author": "googleworkspace",
       "repo": "cli",
       "default_branch": "main",
-      "license": null,
+      "license": "Apache-2.0",
       "doc_path": "README.md",
       "install": {
         "command": "npx skills add googleworkspace/cli",
