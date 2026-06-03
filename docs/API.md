@@ -9,7 +9,7 @@
 ```ts
 interface Data {
   sections: Section[];   // 20 个大类（仅含有内容的）
-  vendors:  Record<string, Vendor>;  // 115 个源仓库，key = 仓库 id
+  vendors:  Record<string, Vendor>;  // 118 个源仓库，key = 仓库 id
 }
 ```
 

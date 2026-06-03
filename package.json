@@ -1,7 +1,7 @@
 {
   "name": "skills-atlas",
   "version": "0.1.0",
-  "description": "按功能分类的 AI Agent Skills 全景：906 skill，115 仓库，20 大类。",
+  "description": "按功能分类的 AI Agent Skills 全景：956 skill，118 仓库，20 大类。",
   "main": "docs/data.json",
   "files": [
     "docs/",

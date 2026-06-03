@@ -8,9 +8,9 @@
 
 900+ skills, gathered from across the ecosystem and organized by what they do.
 
-[![Skills](https://img.shields.io/badge/skills-906-3b82f6?style=flat&labelColor=4b5563&logo=claude&logoColor=white)](data/skills.yaml)
-[![Repos](https://img.shields.io/badge/repos-115-10b981?style=flat&labelColor=4b5563&logo=github&logoColor=white)](data/repositories.yaml)
-[![Categories](https://img.shields.io/badge/categories-20_×_116-f59e0b?style=flat&labelColor=4b5563)](data/categories.yaml)
+[![Skills](https://img.shields.io/badge/skills-956-3b82f6?style=flat&labelColor=4b5563&logo=claude&logoColor=white)](data/skills.yaml)
+[![Repos](https://img.shields.io/badge/repos-118-10b981?style=flat&labelColor=4b5563&logo=github&logoColor=white)](data/repositories.yaml)
+[![Categories](https://img.shields.io/badge/categories-20_×_117-f59e0b?style=flat&labelColor=4b5563)](data/categories.yaml)
 [![npm](https://img.shields.io/npm/v/skills-atlas-cli?style=flat&label=npm&color=8b5cf6&labelColor=4b5563&logo=npm&logoColor=white)](https://www.npmjs.com/package/skills-atlas-cli)
 [![License](https://img.shields.io/badge/license-MIT-64748b?style=flat&labelColor=4b5563&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
@@ -24,11 +24,11 @@
 
 ## Why
 
-Agent skills exploded in 2025 — but they're scattered across ~115 GitHub repos, and awesome-lists
+Agent skills exploded in 2025 — but they're scattered across ~118 GitHub repos, and awesome-lists
 only give you names, never which ones actually **work together**. Skills Atlas gathers them and
 organizes everything **by function**, so you find a skill by the job at hand: the SEO skills from
 different repos side by side, the dev-workflow skills marked **must-chain** (⛓ — grab the whole set with `--chain`), the document suite
-at a glance. **297 functional groups across 20 categories** — software, PM, marketing and design,
+at a glance. **319 functional groups across 20 categories** — software, PM, marketing and design,
 plus the pro verticals (legal, healthcare, finance, DevOps, security, …) — searchable
 [online](https://zita-go.github.io/Skills-Atlas/?lang=en) or from your shell.
 

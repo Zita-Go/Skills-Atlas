@@ -14,7 +14,7 @@
 
 ### Step 1：找到正确的 category 和 subcategory
 
-打开 `data/categories.yaml` 看 20 大类 / 116 子分组，找到最贴近的归属。
+打开 `data/categories.yaml` 看 20 大类 / 117 子分组，找到最贴近的归属。
 
 如果觉得没有合适的子分组，**优先**先在现有 category 下加新 subcategory，少新增大类。
 
@@ -94,7 +94,7 @@ PR 描述简单写一下来源 + 为什么归到这个分类即可。
   description: 8 个 figma skill 必须串成完整生态：figma 是总入口...
 ```
 
-## 改 20 大类 / 116 子分组结构
+## 改 20 大类 / 117 子分组结构
 
 需要谨慎，因为会影响所有 skill 的 category / subcategory 字段。
 
@@ -127,9 +127,9 @@ skills-atlas/
 │   ├── index.html           # 单文件网站
 │   └── data.json            # 给前端 fetch 的结构化数据
 ├── data/                    # 源数据（在这里改）
-│   ├── categories.yaml      # 20 大类 / 116 子分组
-│   ├── skills.yaml          # 297 个 skill 分组
-│   └── repositories.yaml    # 115 个源仓库元数据
+│   ├── categories.yaml      # 20 大类 / 117 子分组
+│   ├── skills.yaml          # 319 个 skill 分组
+│   └── repositories.yaml    # 118 个源仓库元数据
 ├── scripts/                 # parse_md / gen_html / validate / fetch_metadata
 ├── packages/
 │   ├── skills-atlas-data/   # npm 数据包（canonical data.json + types）

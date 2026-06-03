@@ -8,9 +8,9 @@
 
 900+ 个 skill，从整个生态里收集、按"做什么"重新组织。
 
-[![Skills](https://img.shields.io/badge/skills-906-3b82f6?style=flat&labelColor=4b5563&logo=claude&logoColor=white)](data/skills.yaml)
-[![Repos](https://img.shields.io/badge/repos-115-10b981?style=flat&labelColor=4b5563&logo=github&logoColor=white)](data/repositories.yaml)
-[![Categories](https://img.shields.io/badge/categories-20_×_116-f59e0b?style=flat&labelColor=4b5563)](data/categories.yaml)
+[![Skills](https://img.shields.io/badge/skills-956-3b82f6?style=flat&labelColor=4b5563&logo=claude&logoColor=white)](data/skills.yaml)
+[![Repos](https://img.shields.io/badge/repos-118-10b981?style=flat&labelColor=4b5563&logo=github&logoColor=white)](data/repositories.yaml)
+[![Categories](https://img.shields.io/badge/categories-20_×_117-f59e0b?style=flat&labelColor=4b5563)](data/categories.yaml)
 [![npm](https://img.shields.io/npm/v/skills-atlas-cli?style=flat&label=npm&color=8b5cf6&labelColor=4b5563&logo=npm&logoColor=white)](https://www.npmjs.com/package/skills-atlas-cli)
 [![License](https://img.shields.io/badge/license-MIT-64748b?style=flat&labelColor=4b5563&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
@@ -24,7 +24,7 @@
 
 ## 为什么
 
-Agent skills 在 2025 年爆发 —— 但它们散落在 ~115 个 GitHub 仓库里，而 awesome 列表只给你名字，从不告诉你**哪几个能配合用**。Skills Atlas 把它们收集起来、统一**按功能**组织，让你按手头的活去找：不同仓库的 SEO skill 并排摆出来、必须串起来用的开发工作流标成 **must-chain（⛓ —— 用 `--chain` 一次装齐）**、文档处理套件一目了然。**297 个功能分组、覆盖 20 个大类** —— 软件、产品、营销、设计，加上法律、医疗、金融、DevOps、安全等专业垂直领域 —— 在[网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)上或终端里都能搜。
+Agent skills 在 2025 年爆发 —— 但它们散落在 ~118 个 GitHub 仓库里，而 awesome 列表只给你名字，从不告诉你**哪几个能配合用**。Skills Atlas 把它们收集起来、统一**按功能**组织，让你按手头的活去找：不同仓库的 SEO skill 并排摆出来、必须串起来用的开发工作流标成 **must-chain（⛓ —— 用 `--chain` 一次装齐）**、文档处理套件一目了然。**319 个功能分组、覆盖 20 个大类** —— 软件、产品、营销、设计，加上法律、医疗、金融、DevOps、安全等专业垂直领域 —— 在[网站](https://zita-go.github.io/Skills-Atlas/?lang=zh)上或终端里都能搜。
 
 ## 快速上手
 
