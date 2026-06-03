@@ -4575,12 +4575,27 @@ document.querySelectorAll('.start-chip').forEach(c => c.addEventListener('click'
 }));
 setupJumpOffset();
 
-// 用 Twemoji 把页面里的 emoji 统一渲染成彩色 SVG（侧栏大类图标/区块标题/treemap/工具栏等），
-// 不再依赖访客系统是否装了彩色 emoji 字体（缺字体时原生 emoji 会显示为灰色单色字形）。
+// 用 Twemoji 解析器把页面 emoji 渲染成彩色图，但贴 Noto 表情图（风格与系统/截图里那套一致：
+// 黄文件夹等），而非 twemoji 自带的 Twitter 蓝文件夹风格；不依赖访客是否装彩色 emoji 字体。
 function twemojify(root){
   if(!window.twemoji) return;
-  try{ twemoji.parse(root || document.body, { className: 'emoji', folder: 'svg', ext: '.svg' }); }catch(e){}
+  try{
+    twemoji.parse(root || document.body, {
+      className: 'emoji',
+      callback: function(icon){
+        const cp = icon.split('-').filter(c => c !== 'fe0f').join('_');
+        return 'https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji/png/128/emoji_u' + cp + '.png';
+      }
+    });
+  }catch(e){}
 }
+// 个别 Noto 缺的 emoji 图加载失败时，回退成原生 emoji 字符（不留破图）
+document.addEventListener('error', function(e){
+  const t = e.target;
+  if(t && t.tagName === 'IMG' && t.classList && t.classList.contains('emoji') && !t.dataset.fb){
+    t.dataset.fb = '1'; t.replaceWith(document.createTextNode(t.alt || ''));
+  }
+}, true);
 twemojify(document.body);
 
 // 让锚点跳转留白 = sticky toolbar 实际高度 + 16（toolbar 换行变高时也不会挡住小节标题）
