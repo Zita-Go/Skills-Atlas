@@ -1207,6 +1207,8 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
   .spotlight-overlay{padding:40px 12px 12px}
   .spotlight-modal{max-height:84vh}
 }
+.use-cc-btn{border-color:rgba(124,156,255,.5);color:var(--accent);background:rgba(124,156,255,.10);font-weight:600;white-space:nowrap}
+.use-cc-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(124,156,255,.18)}
 </style>
 </head>
 <body>
@@ -1260,6 +1262,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
       <button class="cs-btn" data-sort="recent" data-i18n="sort_recent">最近更新</button>
     </div>
     <div class="spacer"></div>
+    <button class="theme-toggle use-cc-btn" id="useCcBtn" data-i18n="hs_use" title="在 Claude Code 里用整个目录" data-i18n-title="tt_use_cc">🧩 在 Claude Code 里用</button>
     <button class="theme-toggle" id="spotlightBtn" title="Spotlight 搜索 (⌘K / Ctrl+K)" data-i18n-title="tt_search"><svg class="tb-search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span data-i18n="btn_search">搜索</span> <kbd class="ai-kbd">⌘K</kbd></button>
     <button class="ai-btn" id="aiBtn" title="AI 推荐" data-i18n-title="tt_ai"><span class="aib-emoji" aria-hidden="true">✨</span><span class="aib-lbl" data-i18n="btn_ai">AI 推荐</span></button>
     <button class="theme-toggle js-lang" id="langToggle" title="Switch language">EN</button>
@@ -1278,7 +1281,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
       </div>
       <div class="hero-start">
         <span class="hero-start-q" data-i18n="hs_q">不知从哪开始？</span>
-        <button class="start-chip start-chip-learn" data-start="learn" data-i18n="hs_learn">👋 新手必看</button>
+        <button class="start-chip start-chip-learn" data-start="learn" data-i18n="hs_learn">🗺️ 这是什么</button>
         <button class="start-chip start-chip-ai" data-start="ai" data-i18n="hs_ai">✨ 描述需求，AI 推荐</button>
         <button class="start-chip" data-start="use" data-i18n="hs_use">🧩 在 Claude Code 里用</button>
         <button class="start-chip" data-start="browse" data-i18n="hs_browse">🗂️ 浏览全部大类</button>
@@ -1490,7 +1493,7 @@ const I18N = {
     usage_btn: '📖 用法', install_btn: '📋 安装', license_unknown: '未知',
     hs_q: '不知从哪开始？', hs_search: '🔍 搜 skill / 描述 / 仓库', hs_ai: '✨ 描述需求，AI 推荐', hs_browse: '🗂️ 浏览全部大类',
     hs_eg: '例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」',
-    hs_use: '🧩 在 Claude Code 里用', hs_learn: '👋 新手必看', footer_tag: '社区整理的 AI Agent Skills 目录（非官方）', footer_learn: '新手必看：什么是 Skill', footer_license: '站点 MIT；每个 skill 保留其上游许可证，安装前请在卡片上核对', howto_title: '👋 什么是 Agent Skill', howto_sub: '30 秒搞懂这个站点怎么用', tt_close: '关闭',
+    hs_use: '🧩 在 Claude Code 里用', hs_learn: '🗺️ 这是什么', tt_use_cc: '在 Claude Code 里用整个目录', footer_tag: '社区整理的 AI Agent Skills 目录（非官方）', footer_learn: '这是什么：网站导览', footer_license: '站点 MIT；每个 skill 保留其上游许可证，安装前请在卡片上核对', howto_title: '🗺️ 什么是 Skills Atlas', howto_sub: '30 秒看懂这个网站', tt_close: '关闭',
     usage_open_gh: '在 GitHub 打开 ↗', usage_copy_cmd: '📋 复制安装命令',
     copied: '✓ 已复制', copy_failed: '复制失败',
   },
@@ -1555,7 +1558,7 @@ const I18N = {
     usage_btn: '📖 Usage', install_btn: '📋 Install', license_unknown: 'unknown',
     hs_q: 'Not sure where to start?', hs_search: '🔍 Search skills / descriptions / repos', hs_ai: '✨ Describe your goal, AI picks', hs_browse: '🗂️ Browse all categories',
     hs_eg: 'e.g. "build a SaaS landing page", "write a PRD", "scrape a website"',
-    hs_use: '🧩 Use in Claude Code', hs_learn: '👋 New to Skills?', footer_tag: 'A community catalog of AI Agent Skills (unofficial)', footer_learn: 'New here? What is a Skill', footer_license: 'Site MIT; each skill keeps its upstream license — check it on the card before installing', howto_title: '👋 What is an Agent Skill', howto_sub: 'Understand this site in 30 seconds', tt_close: 'Close',
+    hs_use: '🧩 Use in Claude Code', hs_learn: '🗺️ What is this', tt_use_cc: 'Use the whole catalog in Claude Code', footer_tag: 'A community catalog of AI Agent Skills (unofficial)', footer_learn: 'What is this site', footer_license: 'Site MIT; each skill keeps its upstream license — check it on the card before installing', howto_title: '🗺️ What is Skills Atlas', howto_sub: 'What this site is, in 30 seconds', tt_close: 'Close',
     usage_open_gh: 'Open on GitHub ↗', usage_copy_cmd: '📋 Copy install command',
     copied: '✓ Copied', copy_failed: 'Copy failed',
   },
@@ -4531,18 +4534,22 @@ function setupHowTo(){
   const EN = LANG === 'en';
   // 两套内容：learn = 「什么是 skill」概念入门；use = 「在 Claude Code 里用」装插件/CLI
   const learnHTML = EN
-    ? `<p class="howto-lead">An <b>Agent Skill</b> is a reusable, packaged capability for <b>Claude Code</b> (Anthropic's terminal/IDE coding agent) — install it once, then invoke it whenever you need it.</p>`
-      + `<ol class="howto-steps"><li><b>Find</b> a skill here by what you want to do, and copy its install command.</li>`
-      + `<li><b>Install</b> — paste it in a terminal (e.g. <code>npx skills add author/repo</code>), or let the Skills Atlas plugin do it for you (see <b>🧩 Use in Claude Code</b>).</li>`
-      + `<li><b>Use</b> — Claude Code auto-discovers it: Claude uses it when relevant, or type <code>/skill-name</code>. Type <code>/</code> to see all skills.</li></ol>`
-      + `<p class="howto-note"><b>⛓ Chained</b> skills are meant to run in sequence — one's output feeds the next.</p>`
-      + `<p class="howto-more">Every skill is sourced from a public GitHub repo and grouped by what it does. <a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">Project &amp; docs ↗</a></p>`
-    : `<p class="howto-lead"><b>Agent Skill</b> 是 <b>Claude Code</b>（Anthropic 的终端/IDE 编码 agent）里可复用的「能力包」——装一次，之后随时调用。</p>`
-      + `<ol class="howto-steps"><li><b>找</b>：在这里按「我要做什么」找到 skill，复制它的安装命令。</li>`
-      + `<li><b>装</b>：把命令粘到终端运行（如 <code>npx skills add author/repo</code>），或让 Skills Atlas 插件帮你装（见 <b>🧩 在 Claude Code 里用</b>）。</li>`
-      + `<li><b>用</b>：Claude Code 会自动发现 —— 相关时自动调用；也可输入 <code>/skill名</code> 手动触发，输入 <code>/</code> 列出全部。</li></ol>`
-      + `<p class="howto-note"><b>⛓ 强绑定</b> 的 skill 需按顺序串起来用——前一个的产出喂给下一个。</p>`
-      + `<p class="howto-more">每个 skill 都来自公开 GitHub 仓库，按功能归类。<a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">项目主页 / 文档 ↗</a></p>`;
+    ? `<p class="howto-lead"><b>Skills Atlas</b> is a map of <b>ready-made skills</b> — it gathers 900+ Agent Skills scattered across ~115 GitHub repos and <b>reorganizes them by what they do</b>, so you find the right one by the job at hand, not just a list of names.</p>`
+      + `<p style="margin:12px 0 2px"><b>Four things you can do here</b></p>`
+      + `<ol class="howto-steps"><li>🔍 <b>Search / browse by function</b> — 297 functional groups across 20 categories, organized around tasks.</li>`
+      + `<li>⛓ <b>See what must chain</b> — must-chain workflows are flagged, so you grab the whole set at once.</li>`
+      + `<li>⚖️ <b>Compare across repos</b> — the same kind of skill (e.g. SEO) from different repos, side by side.</li>`
+      + `<li>🧩 <b>Take it into Claude Code in one step</b> — pick one and install it to use.</li></ol>`
+      + `<p class="howto-note">Next → hit <b>🧩 Use in Claude Code</b> to set up the plugin, or just scroll down and start browsing.</p>`
+      + `<p class="howto-more">Every skill comes from a public GitHub repo; the metadata here is curated by this project. <a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">Project &amp; docs ↗</a></p>`
+    : `<p class="howto-lead"><b>Skills Atlas</b> 是一张「现成 skill」的地图 —— 把散落在 ~115 个 GitHub 仓库里的 900+ 个 Agent Skill 收集起来，<b>按「做什么」重新组织</b>，让你照着手头的活找到对的那个，而不是只给一串名字的清单。</p>`
+      + `<p style="margin:12px 0 2px"><b>你能在这儿做四件事</b></p>`
+      + `<ol class="howto-steps"><li>🔍 <b>按功能搜 / 逛</b> —— 297 个功能分组、20 大类，照着任务找。</li>`
+      + `<li>⛓ <b>看哪些要串着用</b> —— must-chain 的工作流标出来，一次装齐。</li>`
+      + `<li>⚖️ <b>跨仓库并排比</b> —— 不同仓库的同类 skill（比如 SEO）摆一起挑。</li>`
+      + `<li>🧩 <b>一键拿去 Claude Code 用</b> —— 选好直接装上用。</li></ol>`
+      + `<p class="howto-note">下一步 → 点 <b>🧩 在 Claude Code 里用</b> 装好插件，或直接往下翻目录开始浏览。</p>`
+      + `<p class="howto-more">每个 skill 都来自公开 GitHub 仓库，元数据由本项目整理。<a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">项目主页 / 文档 ↗</a></p>`;
   const useHTML = EN
     ? `<p class="howto-lead">Use the whole catalog from <b>inside Claude Code</b> — the Skills Atlas plugin installs skills for you, and an autopilot surfaces the fitting one as you work.</p>`
       + `<p><b>🧩 Plugin — recommended</b></p>`
@@ -4559,15 +4566,20 @@ function setupHowTo(){
       + `<p class="howto-note"><b>⌨️ 更喜欢终端？</b>同一套引擎的 CLI：<code>skills-atlas search &lt;关键词&gt;</code>，再 <code>skills-atlas use &lt;skill&gt;</code>。</p>`
       + `<p class="howto-more">完整文档与插件：<a href="https://github.com/Zita-Go/Skills-Atlas/tree/main/packages/skills-atlas-cli/plugin" target="_blank" rel="noopener">Skills Atlas 插件 ↗</a></p>`;
   const titles = EN
-    ? { learn: '👋 What is an Agent Skill', use: '🧩 Use Skills Atlas in Claude Code' }
-    : { learn: '👋 什么是 Agent Skill', use: '🧩 在 Claude Code 里用' };
+    ? { learn: '🗺️ What is Skills Atlas', use: '🧩 Use Skills Atlas in Claude Code' }
+    : { learn: '🗺️ 什么是 Skills Atlas', use: '🧩 在 Claude Code 里用' };
+  const subs = EN
+    ? { learn: 'What this site is, in 30 seconds', use: 'Install once — the whole catalog inside Claude Code' }
+    : { learn: '30 秒看懂这个网站', use: '装一次，整个目录在 Claude Code 里随用' };
   const titleEl = ov.querySelector('#howtoTitle span') || ov.querySelector('#howtoTitle');
+  const subEl = ov.querySelector('.ai-subtitle');
   let ret = null;
   const closeBtn = ov.querySelector('#howtoClose');
   const close = () => { ov.classList.add('hidden'); document.documentElement.style.overflow = ''; if(ret && ret.focus) ret.focus(); };
   openHowTo = (mode) => {
     body.innerHTML = (mode === 'use') ? useHTML : learnHTML;
     if(titleEl) titleEl.textContent = (mode === 'use') ? titles.use : titles.learn;
+    if(subEl) subEl.textContent = (mode === 'use') ? subs.use : subs.learn;
     ret = document.activeElement; ov.classList.remove('hidden'); document.documentElement.style.overflow = 'hidden'; if(closeBtn) closeBtn.focus();
   };
   if(closeBtn) closeBtn.addEventListener('click', close);
@@ -4596,6 +4608,8 @@ document.querySelectorAll('.start-chip').forEach(c => c.addEventListener('click'
   else if(a === 'browse'){ smoothScrollToEl(document.querySelector('.section-h1') || document.getElementById('content')); }
   else { const i = document.getElementById('search'); if(i){ i.focus(); i.scrollIntoView({ block:'center' }); } }
 }));
+// 常驻顶栏「在 Claude Code 里用」入口
+const _useCc = document.getElementById('useCcBtn'); if(_useCc) _useCc.addEventListener('click', () => openHowTo('use'));
 setupJumpOffset();
 
 // 让锚点跳转留白 = sticky toolbar 实际高度 + 16（toolbar 换行变高时也不会挡住小节标题）
