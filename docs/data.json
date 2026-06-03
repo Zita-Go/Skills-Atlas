@@ -266,12 +266,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "dui kang xing duo  agent  gui hua  hyperplan "
+              "use_case": "5 个对抗成员辩论蒸馏出严谨可执行计划",
+              "use_case_en": "Five adversarial members debate to distill a rigorous, executable plan",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "高风险计划要压力测试时",
+              "when_to_use_en": "When a high-stakes plan needs stress-testing",
+              "py": "dui kang xing duo  agent  gui hua  hyperplan 5  ge dui kang cheng yuan bian lun zheng liu chu yan jin ke zhi xing ji hua"
             },
             {
               "skills": [
@@ -301,12 +303,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "xi tong hua gong zuo liu xun huan （ultrawork） ulw-loop "
+              "use_case": "目标导向循环把任务拆成证据绑定步骤 + 检查点",
+              "use_case_en": "Goal-directed loop decomposing tasks into evidence-bound, checkpointed steps",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "复杂任务要系统推进时",
+              "when_to_use_en": "When systematically driving a complex task",
+              "py": "xi tong hua gong zuo liu xun huan （ultrawork） ulw-loop  mu biao dao xiang xun huan ba ren wu chai cheng zheng ju bang ding bu zhou  +  jian cha dian"
             },
             {
               "skills": [
@@ -336,12 +340,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "gong zuo ji hua zhi xing xun huan  start-work "
+              "use_case": "执行 Prometheus 工作计划 + Boulder 状态 + 并行子代理",
+              "use_case_en": "Execute a Prometheus work plan with Boulder state and parallel sub-agents",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "按既定计划连续执行时",
+              "when_to_use_en": "When continuously executing an established plan",
+              "py": "gong zuo ji hua zhi xing xun huan  start-work  zhi xing  Prometheus  gong zuo ji hua  + Boulder  zhuang tai  +  bing xing zi dai li"
             },
             {
               "skills": [
@@ -371,12 +377,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "zhan lve gui hua gong zuo liu  ulw-plan "
+              "use_case": "苏格拉底访谈+代码探索+差距分析产出完整工作计划",
+              "use_case_en": "Socratic interview + code exploration + gap analysis into a complete plan",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "复杂任务开工前定计划时",
+              "when_to_use_en": "When planning before starting a complex task",
+              "py": "zhan lve gui hua gong zuo liu  ulw-plan  su ge la di fang tan + dai ma tan suo + cha ju fen xi chan chu wan zheng gong zuo ji hua"
             },
             {
               "skills": [
@@ -406,12 +414,15 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "yi tu cheng qing  interview-me "
+              "use_case": "逐步访谈在写码前澄清真实需求",
+              "use_case_en": "Step-by-step interview to clarify true requirements before any code",
+              "personas": [
+                "工程",
+                "PM"
+              ],
+              "when_to_use": "需求不清要先澄清时",
+              "when_to_use_en": "When requirements are unclear and need clarifying",
+              "py": "yi tu cheng qing  interview-me  zhu bu fang tan zai xie ma qian cheng qing zhen shi xu qiu"
             },
             {
               "skills": [
@@ -441,12 +452,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "yuan wen dang qu dong kai fa  source-driven-development "
+              "use_case": "基于官方文档写码,模式权威避免过时写法",
+              "use_case_en": "Write code grounded in official docs, authoritative and not outdated",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "要按权威文档实现时",
+              "when_to_use_en": "When implementing per authoritative docs",
+              "py": "yuan wen dang qu dong kai fa  source-driven-development  ji yu guan fang wen dang xie ma , mo shi quan wei bi mian guo shi xie fa"
             },
             {
               "skills": [
@@ -476,12 +489,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "jia gou jue ce ji lu （ADR） documentation-and-adrs "
+              "use_case": "记录 ADR,捕获决策的为什么/约束/权衡",
+              "use_case_en": "Record ADRs capturing the why, constraints and trade-offs of decisions",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "做架构决策要留档时",
+              "when_to_use_en": "When documenting architecture decisions",
+              "py": "jia gou jue ce ji lu （ADR） documentation-and-adrs  ji lu  ADR, bu huo jue ce de wei shen me / yue shu / quan heng"
             }
           ]
         },
@@ -880,12 +895,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "liu lan qi zi dong hua  / DevTools  ce shi  agent-browser browser-testing-with-devtools "
+              "use_case": "自动化网页操作 + Chrome DevTools 真实浏览器调试",
+              "use_case_en": "Automate web actions and debug in a real browser via Chrome DevTools",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "要测/调 Web 应用运行时",
+              "when_to_use_en": "When testing/debugging a web app at runtime",
+              "py": "liu lan qi zi dong hua  / DevTools  ce shi  agent-browser browser-testing-with-devtools  zi dong hua wang ye cao zuo  + Chrome DevTools  zhen shi liu lan qi tiao shi"
             },
             {
               "skills": [
@@ -915,12 +932,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "zeng liang shi xian  /  chi xu yan zheng  incremental-implementation "
+              "use_case": "每步实现-测试-验证,系统始终可工作",
+              "use_case_en": "Implement-test-verify each step so the system always stays working",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "想稳步交付功能时",
+              "when_to_use_en": "When delivering features incrementally",
+              "py": "zeng liang shi xian  /  chi xu yan zheng  incremental-implementation  mei bu shi xian - ce shi - yan zheng , xi tong shi zhong ke gong zuo"
             },
             {
               "skills": [
@@ -950,12 +969,15 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "wu zhang ai ce shi （ ping mu yue du qi  + WCAG） screen-reader-testing wcag-audit-patterns "
+              "use_case": "屏幕阅读器兼容 + WCAG 2.2 审计与修复",
+              "use_case_en": "Screen-reader compatibility plus WCAG 2.2 audit and remediation",
+              "personas": [
+                "工程",
+                "设计"
+              ],
+              "when_to_use": "要保证无障碍合规时",
+              "when_to_use_en": "When ensuring accessibility compliance",
+              "py": "wu zhang ai ce shi （ ping mu yue du qi  + WCAG） screen-reader-testing wcag-audit-patterns  ping mu yue du qi jian rong  + WCAG 2.2  shen ji yu xiu fu"
             },
             {
               "skills": [
@@ -984,12 +1006,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "Temporal  gong zuo liu ce shi  temporal-python-testing "
+              "use_case": "pytest 测 Temporal 工作流:时间跳跃/mock/回放",
+              "use_case_en": "Test Temporal workflows with pytest: time-skip, mocks, replay",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "要测 Temporal 工作流时",
+              "when_to_use_en": "When testing Temporal workflows",
+              "py": "Temporal  gong zuo liu ce shi  temporal-python-testing pytest  ce  Temporal  gong zuo liu : shi jian tiao yue /mock/ hui fang"
             }
           ]
         },
@@ -1138,12 +1162,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "duo  Agent  fa bu shen cha men jin  pre-publish-review "
+              "use_case": "发布前多 agent 逐变更 + 全局质量/安全三层审查门禁",
+              "use_case_en": "Multi-agent per-change plus global quality/security review gate before release",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "npm 包发布前把关时",
+              "when_to_use_en": "When gating an npm package release",
+              "py": "duo  Agent  fa bu shen cha men jin  pre-publish-review  fa bu qian duo  agent  zhu bian geng  +  quan ju zhi liang / an quan san ceng shen cha men jin"
             },
             {
               "skills": [
@@ -1173,12 +1199,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "si dai ma an quan yi chu  remove-deadcode "
+              "use_case": "LSP 验证 + 并行 agent 安全移除未使用代码",
+              "use_case_en": "Safely remove unused code via LSP verification and parallel agents",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "清理死代码降复杂度时",
+              "when_to_use_en": "When clearing dead code to cut complexity",
+              "py": "si dai ma an quan yi chu  remove-deadcode LSP  yan zheng  +  bing xing  agent  an quan yi chu wei shi yong dai ma"
             },
             {
               "skills": [
@@ -1208,12 +1236,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "zhu shi zhi liang zi dong jian cha  comment-checker "
+              "use_case": "编辑后自动检查注释质量、拦问题补丁",
+              "use_case_en": "Auto-check comment quality after edits and block bad patches",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "想保证注释规范时",
+              "when_to_use_en": "When enforcing comment quality",
+              "py": "zhu shi zhi liang zi dong jian cha  comment-checker  bian ji hou zi dong jian cha zhu shi zhi liang 、 lan wen ti bu ding"
             },
             {
               "skills": [
@@ -1243,12 +1273,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "LSP  yu yan fu wu ji cheng  lsp "
+              "use_case": "诊断/跳转/引用/符号/安全重命名等代码导航",
+              "use_case_en": "Code navigation: diagnostics, go-to-def, references, symbols, safe rename",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "需要精确代码导航时",
+              "when_to_use_en": "When precise code navigation is needed",
+              "py": "LSP  yu yan fu wu ji cheng  lsp  zhen duan / tiao zhuan / yin yong / fu hao / an quan zhong ming ming deng dai ma dao hang"
             },
             {
               "skills": [
@@ -1278,12 +1310,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "duo yu yan bian cheng gui fan yu gong ju lian  programming "
+              "use_case": "强制严格类型/现代工具链/代码质量(Py/Rust/TS)",
+              "use_case_en": "Enforce strict typing, modern toolchain and quality across Python/Rust/TS",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "想统一多语言编码规范时",
+              "when_to_use_en": "When standardizing multi-language coding",
+              "py": "duo yu yan bian cheng gui fan yu gong ju lian  programming  qiang zhi yan ge lei xing / xian dai gong ju lian / dai ma zhi liang (Py/Rust/TS)"
             },
             {
               "skills": [
@@ -1314,12 +1348,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "zhi neng zhong gou  /  qing li  AI  dai ma qi wei  refactor remove-ai-slops "
+              "use_case": "智能重构 + 回归测试锁定后批量清 AI 代码气味",
+              "use_case_en": "Smart refactor plus regression-locked batch cleanup of AI code smells",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "重构或清 AI 生成味时",
+              "when_to_use_en": "When refactoring or removing AI-generated smells",
+              "py": "zhi neng zhong gou  /  qing li  AI  dai ma qi wei  refactor remove-ai-slops  zhi neng zhong gou  +  hui gui ce shi suo ding hou pi liang qing  AI  dai ma qi wei"
             },
             {
               "skills": [
@@ -1367,12 +1403,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "shi xian hou bing xing  Code Review（ duo zi dai li ） review-work code-review-and-quality "
+              "use_case": "实现后 5 子代理并行做质量/安全/QA/上下文审查",
+              "use_case_en": "After implementation, 5 sub-agents review quality/security/QA/context in parallel",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "实现完成等待审查时",
+              "when_to_use_en": "When implementation is done and needs review",
+              "py": "shi xian hou bing xing  Code Review（ duo zi dai li ） review-work code-review-and-quality  shi xian hou  5  zi dai li bing xing zuo zhi liang / an quan /QA/ shang xia wen shen cha"
             },
             {
               "skills": [
@@ -1402,12 +1440,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "dai ma jian hua  code-simplification "
+              "use_case": "不改行为前提下简化代码提升可读可维护",
+              "use_case_en": "Simplify code for readability/maintainability without changing behavior",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "代码过复杂要瘦身时",
+              "when_to_use_en": "When overly complex code needs slimming",
+              "py": "dai ma jian hua  code-simplification  bu gai hang wei qian ti xia jian hua dai ma ti sheng ke du ke wei hu"
             },
             {
               "skills": [
@@ -1437,12 +1477,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "dai ma fei qi yu qian yi guan li  deprecation-and-migration "
+              "use_case": "管理废弃与用户迁移,安全移除旧系统",
+              "use_case_en": "Manage deprecation and user migration, safely retiring old systems",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "下线旧系统/迁移用户时",
+              "when_to_use_en": "When retiring a legacy system / migrating users",
+              "py": "dai ma fei qi yu qian yi guan li  deprecation-and-migration  guan li fei qi yu yong hu qian yi , an quan yi chu jiu xi tong"
             },
             {
               "skills": [
@@ -1472,12 +1514,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "zhi yi qu dong  /  dui kang xing shen cha  doubt-driven-development "
+              "use_case": "决策落地前注入证伪型审阅者做对抗交叉审查",
+              "use_case_en": "Inject a falsification-biased reviewer for adversarial cross-review before decisions land",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "高风险不可逆决策前",
+              "when_to_use_en": "Before high-risk, irreversible decisions",
+              "py": "zhi yi qu dong  /  dui kang xing shen cha  doubt-driven-development  jue ce luo di qian zhu ru zheng wei xing shen yue zhe zuo dui kang jiao cha shen cha"
             },
             {
               "skills": [
@@ -1507,12 +1551,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "xing neng you hua  performance-optimization "
+              "use_case": "基于测量与 Core Web Vitals 定位瓶颈并优化",
+              "use_case_en": "Profile and optimize against measurements and Core Web Vitals",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "应用性能要提升时",
+              "when_to_use_en": "When app performance needs improving",
+              "py": "xing neng you hua  performance-optimization  ji yu ce liang yu  Core Web Vitals  ding wei ping jing bing you hua"
             },
             {
               "skills": [
@@ -1541,12 +1587,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "duo  reviewer  xie tiao yu fa xian qu zhong  multi-reviewer-patterns "
+              "use_case": "多 agent 并行 review、去重发现、校准严重度出统一报告",
+              "use_case_en": "Parallel multi-agent review, dedup findings, calibrate severity into one report",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "多维审查要汇总去重时",
+              "when_to_use_en": "When consolidating multi-dimensional reviews",
+              "py": "duo  reviewer  xie tiao yu fa xian qu zhong  multi-reviewer-patterns  duo  agent  bing xing  review、 qu zhong fa xian 、 jiao zhun yan zhong du chu tong yi bao gao"
             }
           ]
         },
@@ -1765,12 +1813,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "ban ben guan li  / Changelog get-unpublished-changes "
+              "use_case": "对比 HEAD 与已发布版生成结构化 changelog 并荐版本号",
+              "use_case_en": "Generate a structured changelog vs the published version and suggest a version bump",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "发版前整理变更时",
+              "when_to_use_en": "When preparing release notes before publishing",
+              "py": "ban ben guan li  / Changelog get-unpublished-changes  dui bi  HEAD  yu yi fa bu ban sheng cheng jie gou hua  changelog  bing jian ban ben hao"
             },
             {
               "skills": [
@@ -1800,12 +1850,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "GitHub Issue/PR  fen xi  github-triage "
+              "use_case": "只读批量分析所有 open issue/PR 并出带证据的分类报告",
+              "use_case_en": "Read-only batch triage of all open issues/PRs into an evidence-backed report",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "issue/PR 积压需要盘点时",
+              "when_to_use_en": "When the issue/PR backlog needs triaging",
+              "py": "GitHub Issue/PR  fen xi  github-triage  zhi du pi liang fen xi suo you  open issue/PR  bing chu dai zheng ju de fen lei bao gao"
             },
             {
               "skills": [
@@ -1835,12 +1887,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "PR  quan sheng ming zhou qi zi dong hua  work-with-pr "
+              "use_case": "从建分支、实现、开 PR 到 CI/审查/合并清理全自动",
+              "use_case_en": "Automate the full PR lifecycle from branch to CI/review/merge/cleanup",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "想端到端跑完一个 PR 时",
+              "when_to_use_en": "When driving a PR end-to-end",
+              "py": "PR  quan sheng ming zhou qi zi dong hua  work-with-pr  cong jian fen zhi 、 shi xian 、 kai  PR  dao  CI/ shen cha / he bing qing li quan zi dong"
             },
             {
               "skills": [
@@ -1870,12 +1924,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "CI/CD  zi dong hua  ci-cd-and-automation "
+              "use_case": "自动化 CI/CD 配置,过质量门才部署",
+              "use_case_en": "Automate CI/CD config so changes deploy only past quality gates",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "搭/改流水线质量门时",
+              "when_to_use_en": "When building or hardening pipeline gates",
+              "py": "CI/CD  zi dong hua  ci-cd-and-automation  zi dong hua  CI/CD  pei zhi , guo zhi liang men cai bu shu"
             }
           ]
         },
@@ -1951,12 +2007,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "sheng chan bu shu yu jian kong  shipping-and-launch "
+              "use_case": "预发布清单 + 监控 + 回滚策略保安全发布",
+              "use_case_en": "Pre-launch checklist, monitoring and rollback for a safe release",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "要上生产前准备时",
+              "when_to_use_en": "When preparing to ship to production",
+              "py": "sheng chan bu shu yu jian kong  shipping-and-launch  yu fa bu qing dan  +  jian kong  +  hui gun ce lve bao an quan fa bu"
             }
           ]
         },
@@ -2194,12 +2252,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "API  yu jie kou she ji  api-and-interface-design api-design-principles "
+              "use_case": "设计稳定易用的 API/接口、防误用(REST/GraphQL)",
+              "use_case_en": "Design stable, ergonomic APIs/interfaces and prevent misuse (REST/GraphQL)",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "定 API 契约或模块边界时",
+              "when_to_use_en": "When defining API contracts or module boundaries",
+              "py": "API  yu jie kou she ji  api-and-interface-design api-design-principles  she ji wen ding yi yong de  API/ jie kou 、 fang wu yong (REST/GraphQL)"
             },
             {
               "skills": [
@@ -2228,12 +2288,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "FastAPI  xiang mu jiao shou jia  fastapi-templates "
+              "use_case": "生产级 FastAPI 脚手架:结构/async/依赖注入/测试",
+              "use_case_en": "Production FastAPI scaffolding: structure, async, DI, testing",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "新建 FastAPI 后端时",
+              "when_to_use_en": "When starting a new FastAPI backend",
+              "py": "FastAPI  xiang mu jiao shou jia  fastapi-templates  sheng chan ji  FastAPI  jiao shou jia : jie gou /async/ yi lai zhu ru / ce shi"
             }
           ]
         },
@@ -2516,12 +2578,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "ying yong ceng an quan （ jia gu  +  mi yao guan li ） security-and-hardening secrets-management "
+              "use_case": "输入校验/加密存储/安全头 + Vault 密钥管理",
+              "use_case_en": "Input validation, encrypted storage, secure headers, plus Vault secrets management",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "应用要加固防漏洞时",
+              "when_to_use_en": "When hardening an app against vulnerabilities",
+              "py": "ying yong ceng an quan （ jia gu  +  mi yao guan li ） security-and-hardening secrets-management  shu ru jiao yan / jia mi cun chu / an quan tou  + Vault  mi yao guan li"
             }
           ]
         },
@@ -2557,12 +2621,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "hou duan jia gou  /  wei fu wu she ji  architecture-patterns microservices-patterns "
+              "use_case": "Clean/Hexagonal/DDD 架构 + 微服务分解与韧性",
+              "use_case_en": "Clean/Hexagonal/DDD architecture plus microservice decomposition and resilience",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "设计可维护后端架构时",
+              "when_to_use_en": "When designing a maintainable backend architecture",
+              "py": "hou duan jia gou  /  wei fu wu she ji  architecture-patterns microservices-patterns Clean/Hexagonal/DDD  jia gou  +  wei fu wu fen jie yu ren xing"
             },
             {
               "skills": [
@@ -2594,12 +2660,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "shi jian su yuan  / CQRS / Saga cqrs-implementation event-store-design projection-patterns saga-orchestration "
+              "use_case": "CQRS 读写分离 + event store + 投影 + Saga 事务",
+              "use_case_en": "CQRS, event store, projections and Saga transactions",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "建事件驱动系统时",
+              "when_to_use_en": "When building an event-driven system",
+              "py": "shi jian su yuan  / CQRS / Saga cqrs-implementation event-store-design projection-patterns saga-orchestration CQRS  du xie fen li  + event store +  tou ying  + Saga  shi wu"
             },
             {
               "skills": [
@@ -2628,12 +2696,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "fen bu shi gong zuo liu bian pai （Temporal） workflow-orchestration-patterns "
+              "use_case": "Temporal 设计持久分布式工作流(确定性约束)",
+              "use_case_en": "Design durable distributed workflows with Temporal (determinism constraints)",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "要编排分布式工作流时",
+              "when_to_use_en": "When orchestrating distributed workflows",
+              "py": "fen bu shi gong zuo liu bian pai （Temporal） workflow-orchestration-patterns Temporal  she ji chi jiu fen bu shi gong zuo liu ( que ding xing yue shu )"
             }
           ]
         }
@@ -3302,12 +3372,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "xiang mu zhi shi tu pu gong ju ji  understand-chat understand-dashboard understand-diff understand-domain understand-explain understand-knowledge "
+              "use_case": "代码知识图谱:问答/可视化/diff/域流图/解释/聚类",
+              "use_case_en": "Code knowledge graph: Q&A, visualization, diff, domain flows, explain, clustering",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "要理解陌生代码库时",
+              "when_to_use_en": "When understanding an unfamiliar codebase",
+              "py": "xiang mu zhi shi tu pu gong ju ji  understand-chat understand-dashboard understand-diff understand-domain understand-explain understand-knowledge  dai ma zhi shi tu pu : wen da / ke shi hua /diff/ yu liu tu / jie shi / ju lei"
             },
             {
               "skills": [
@@ -3338,12 +3410,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "zhi shi tu pu qu dong de ru zhi liu cheng  understand understand-onboard "
+              "use_case": "建知识图谱再据图生成新人入职指南",
+              "use_case_en": "Build a knowledge graph, then generate a new-hire onboarding guide from it",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "新人要快速上手项目时",
+              "when_to_use_en": "When onboarding a newcomer to a project",
+              "py": "zhi shi tu pu qu dong de ru zhi liu cheng  understand understand-onboard  jian zhi shi tu pu zai ju tu sheng cheng xin ren ru zhi zhi nan"
             }
           ]
         },
@@ -3996,12 +4070,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "xiang fa jing lian  / MVP  ding yi  idea-refine "
+              "use_case": "发散收敛把模糊想法炼成可执行概念 + MVP",
+              "use_case_en": "Diverge/converge a fuzzy idea into an executable concept and MVP",
+              "personas": [
+                "PM"
+              ],
+              "when_to_use": "想法还模糊要定 MVP 时",
+              "when_to_use_en": "When a fuzzy idea needs shaping into an MVP",
+              "py": "xiang fa jing lian  / MVP  ding yi  idea-refine  fa san shou lian ba mo hu xiang fa lian cheng ke zhi xing gai nian  + MVP"
             }
           ]
         },
@@ -7147,12 +7223,15 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "qian duan gong cheng gui fan  frontend-ui-engineering "
+              "use_case": "构建生产级、可访问、高性能且精致的 UI",
+              "use_case_en": "Build production-grade, accessible, performant and polished UIs",
+              "personas": [
+                "设计",
+                "工程"
+              ],
+              "when_to_use": "要做高质量前端界面时",
+              "when_to_use_en": "When building high-quality frontend UIs",
+              "py": "qian duan gong cheng gui fan  frontend-ui-engineering  gou jian sheng chan ji 、 ke fang wen 、 gao xing neng qie jing zhi de  UI"
             }
           ]
         },
@@ -7225,12 +7304,15 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "pin pai zhuo lu ye she ji  brand-landingpage "
+              "use_case": "品牌访谈定方向 + Stitch 生成可部署着陆页 HTML",
+              "use_case_en": "Brand interview sets direction; Stitch generates a deploy-ready landing page",
+              "personas": [
+                "设计",
+                "营销"
+              ],
+              "when_to_use": "尚无设计稿要做营销页时",
+              "when_to_use_en": "When building a marketing page with no design yet",
+              "py": "pin pai zhuo lu ye she ji  brand-landingpage  pin pai fang tan ding fang xiang  + Stitch  sheng cheng ke bu shu zhuo lu ye  HTML"
             }
           ]
         },
@@ -8837,12 +8919,15 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "shu ju xu shi yu ke shi hua  data-storytelling "
+              "use_case": "把数据转成引人叙事,用于商业演示/投资人呈现",
+              "use_case_en": "Turn data into a compelling narrative for business/investor decks",
+              "personas": [
+                "PM",
+                "营销"
+              ],
+              "when_to_use": "要用数据讲故事时",
+              "when_to_use_en": "When telling a story with data",
+              "py": "shu ju xu shi yu ke shi hua  data-storytelling  ba shu ju zhuan cheng yin ren xu shi , yong yu shang ye yan shi / tou zi ren cheng xian"
             }
           ]
         },
@@ -10826,12 +10911,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "shang xia wen gong cheng you hua  context-engineering "
+              "use_case": "优化 agent 上下文:在对的时间给对的信息",
+              "use_case_en": "Optimize agent context to surface the right info at the right time",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "agent 输出质量/幻觉要改进时",
+              "when_to_use_en": "When improving agent output quality / reducing hallucination",
+              "py": "shang xia wen gong cheng you hua  context-engineering  you hua  agent  shang xia wen : zai dui de shi jian gei dui de xin xi"
             }
           ]
         },
@@ -10907,12 +10994,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "Agent  zhi shi ku chu shi hua （AGENTS.md） init-deep "
+              "use_case": "初始化分层 AGENTS.md 知识库建立 agent 上下文地基",
+              "use_case_en": "Initialize a hierarchical AGENTS.md knowledge base as agent context foundation",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "新项目搭 agent 上下文时",
+              "when_to_use_en": "When bootstrapping agent context for a new project",
+              "py": "Agent  zhi shi ku chu shi hua （AGENTS.md） init-deep  chu shi hua fen ceng  AGENTS.md  zhi shi ku jian li  agent  shang xia wen di ji"
             }
           ]
         },
@@ -11179,12 +11268,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "duo dai li bing xing kai fa xie tiao  parallel-feature-development task-coordination-strategies "
+              "use_case": "文件所有权策略让多代理并行实现不同层",
+              "use_case_en": "File-ownership strategy lets agents build different layers in parallel",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "多代理并行开发要防冲突时",
+              "when_to_use_en": "When coordinating parallel multi-agent development",
+              "py": "duo dai li bing xing kai fa xie tiao  parallel-feature-development task-coordination-strategies  wen jian suo you quan ce lve rang duo dai li bing xing shi xian bu tong ceng"
             },
             {
               "skills": [
@@ -11214,12 +11305,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "duo  agent  tuan dui zu cheng yu tong xin xie yi  team-composition-patterns team-communication-protocols "
+              "use_case": "设计 agent 团队组成 + 结构化通信协议",
+              "use_case_en": "Design agent-team composition and structured communication protocols",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "编排 agent 团队时",
+              "when_to_use_en": "When composing an agent team",
+              "py": "duo  agent  tuan dui zu cheng yu tong xin xie yi  team-composition-patterns team-communication-protocols  she ji  agent  tuan dui zu cheng  +  jie gou hua tong xin xie yi"
             }
           ]
         },
@@ -11630,12 +11723,15 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "Skill  zi dong fa xian yu diao yong  using-agent-skills "
+              "use_case": "会话开始按开发阶段自动发现并调用合适 skill",
+              "use_case_en": "Auto-discover and invoke the right skill by dev stage at session start",
+              "personas": [
+                "工程",
+                "通用"
+              ],
+              "when_to_use": "想让 agent 自动选 skill 时",
+              "when_to_use_en": "When letting the agent auto-select skills",
+              "py": "Skill  zi dong fa xian yu diao yong  using-agent-skills  hui hua kai shi an kai fa jie duan zi dong fa xian bing diao yong he shi  skill"
             }
           ]
         },
@@ -13556,12 +13652,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "CI/CD  guan dao  / GitHub Actions  mu ban  deployment-pipeline-design github-actions-templates "
+              "use_case": "多阶段 CI/CD 管道(审批门/零停机)+ GH Actions 模板",
+              "use_case_en": "Multi-stage CI/CD pipelines (approval gates, zero-downtime) plus GH Actions templates",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "要设计部署管道时",
+              "when_to_use_en": "When designing deployment pipelines",
+              "py": "CI/CD  guan dao  / GitHub Actions  mu ban  deployment-pipeline-design github-actions-templates  duo jie duan  CI/CD  guan dao ( shen pi men / ling ting ji )+ GH Actions  mu ban"
             }
           ]
         },
@@ -14055,12 +14153,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "lou dong wa jue  / Bug Bounty / OSINT bug-bounty bb-methodology bugcrowd-reporting cloud-iam-deep web2-recon web2-vuln-classes triage-validation report-writing osint-methodology offensive-osint osint-recon hackerone security-research "
+              "use_case": "漏洞赏金侦察(subfinder/httpx/nuclei)+ OSINT 测绘 + 多 agent 并行安全审计",
+              "use_case_en": "Bug-bounty recon (subfinder/httpx/nuclei), OSINT mapping and multi-agent parallel security audits",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "做漏洞挖掘 / 攻击面测绘时",
+              "when_to_use_en": "When hunting bugs / mapping attack surface",
+              "py": "lou dong wa jue  / Bug Bounty / OSINT bug-bounty bb-methodology bugcrowd-reporting cloud-iam-deep web2-recon web2-vuln-classes triage-validation report-writing osint-methodology offensive-osint osint-recon hackerone security-research  lou dong shang jin zhen cha (subfinder/httpx/nuclei)+ OSINT  ce hui  +  duo  agent  bing xing an quan shen ji"
             }
           ]
         },
@@ -14607,12 +14707,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "zhi neng he yue shen ji  /  lou dong jian ce  audit-reentrancy audit-signature audit-state-validation audit-math-precision behavioral-state-analysis semantic-guard-analysis state-invariant-detection proxy-upgrade-safety security-audit solidity-security "
+              "use_case": "Solidity/EVM 系统化审计 + 智能合约安全最佳实践防漏洞",
+              "use_case_en": "Systematic Solidity/EVM audits plus smart-contract security best practices",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "审计 / 加固智能合约时",
+              "when_to_use_en": "When auditing / hardening smart contracts",
+              "py": "zhi neng he yue shen ji  /  lou dong jian ce  audit-reentrancy audit-signature audit-state-validation audit-math-precision behavioral-state-analysis semantic-guard-analysis state-invariant-detection proxy-upgrade-safety security-audit solidity-security Solidity/EVM  xi tong hua shen ji  +  zhi neng he yue an quan zui jia shi jian fang lou dong"
             }
           ]
         },
@@ -14785,12 +14887,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "DeFi  he yue kai fa  /  gong ju lian  defi-protocol-templates "
+              "use_case": "生产级 DeFi Solidity 模板:质押/AMM/治理/借贷",
+              "use_case_en": "Production DeFi Solidity templates: staking/AMM/governance/lending",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "要快速生成 DeFi 合约时",
+              "when_to_use_en": "When generating DeFi contracts fast",
+              "py": "DeFi  he yue kai fa  /  gong ju lian  defi-protocol-templates  sheng chan ji  DeFi Solidity  mu ban : zhi ya /AMM/ zhi li / jie dai"
             },
             {
               "skills": [
@@ -14819,12 +14923,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "Web3  zhi neng he yue ce shi  web3-testing "
+              "use_case": "Hardhat/Foundry 全面测试:单测/Gas/模糊/主网 fork",
+              "use_case_en": "Comprehensive Hardhat/Foundry tests: unit, gas, fuzz, mainnet-fork",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "要测/验证 Solidity 合约时",
+              "when_to_use_en": "When testing/validating Solidity contracts",
+              "py": "Web3  zhi neng he yue ce shi  web3-testing Hardhat/Foundry  quan mian ce shi : dan ce /Gas/ mo hu / zhu wang  fork"
             }
           ]
         },
@@ -15004,12 +15110,14 @@
                   }
                 }
               ],
-              "use_case": "",
-              "use_case_en": "",
-              "personas": [],
-              "when_to_use": "",
-              "when_to_use_en": "",
-              "py": "Web3  ying yong  / NFT / DAO /  jiao yi  nft-minter-basic nft-metadata-pinner nft-market-analysis dao-proposal-starter web3-dao-tooling cross-chain-bridge web3-identity-auth dex-execution copy-trading solana-tx-building nft-standards "
+              "use_case": "实现 NFT 标准(ERC-721/1155)、元数据 / 铸造 / 市场集成",
+              "use_case_en": "Implement NFT standards (ERC-721/1155), metadata, minting and marketplace integration",
+              "personas": [
+                "工程"
+              ],
+              "when_to_use": "构建 NFT / 数字资产系统时",
+              "when_to_use_en": "When building NFT / digital-asset systems",
+              "py": "Web3  ying yong  / NFT / DAO /  jiao yi  nft-minter-basic nft-metadata-pinner nft-market-analysis dao-proposal-starter web3-dao-tooling cross-chain-bridge web3-identity-auth dex-execution copy-trading solana-tx-building nft-standards  shi xian  NFT  biao zhun (ERC-721/1155)、 yuan shu ju  /  zhu zao  /  shi chang ji cheng"
             }
           ]
         }
