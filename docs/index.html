@@ -3480,7 +3480,7 @@ async function callLLMRerank(query, candidates, cfg){
       signal: ctrl.signal
     });
   } catch(err){
-    if(timedOut) throw new Error('请求超时（60s 无响应）· free 模型常见，可换个模型再试');
+    if(timedOut) throw new Error(LANG === 'en' ? 'Request timed out (no response in 60s) · common with free models, try another' : '请求超时（60s 无响应）· free 模型常见，可换个模型再试');
     throw err;
   } finally { clearTimeout(timer); }
   if(!resp.ok){
@@ -3494,7 +3494,7 @@ async function callLLMRerank(query, candidates, cfg){
       if(e.metadata && e.metadata.raw) detail += ' :: ' + e.metadata.raw.slice(0, 120);
     }catch(_){}
     if(resp.status === 429){
-      throw new Error(`HTTP 429 限流：${detail}（免费模型常见，可换个模型再试）`);
+      throw new Error(LANG === 'en' ? `HTTP 429 rate-limited: ${detail} (common with free models, try another)` : `HTTP 429 限流：${detail}（免费模型常见，可换个模型再试）`);
     }
     throw new Error(`HTTP ${resp.status}: ${detail}`);
   }
@@ -3515,13 +3515,13 @@ async function callLLMRerank(query, candidates, cfg){
   if(!m){
     const finishReason = data.choices?.[0]?.finish_reason || '?';
     const usage = data.usage || {};
-    throw new Error(`LLM 返回空内容（finish=${finishReason} / tokens=${usage.completion_tokens||'?'}）· 换个模型试试`);
+    throw new Error(LANG === 'en' ? `LLM returned empty content (finish=${finishReason} / tokens=${usage.completion_tokens||'?'}) · try another model` : `LLM 返回空内容（finish=${finishReason} / tokens=${usage.completion_tokens||'?'}）· 换个模型试试`);
   }
   let parsed;
   try{ parsed = JSON.parse(m[0]); }
-  catch(e){ throw new Error('JSON 解析失败: ' + e.message); }
+  catch(e){ throw new Error((LANG === 'en' ? 'JSON parse failed: ' : 'JSON 解析失败: ') + e.message); }
   const arr = parsed.results || parsed.recommendations || [];
-  if(!Array.isArray(arr)) throw new Error('LLM 返回 results 不是数组');
+  if(!Array.isArray(arr)) throw new Error(LANG === 'en' ? 'LLM "results" is not an array' : 'LLM 返回 results 不是数组');
   // 把 LLM 给的 1-based index 映射回 candidates
   return arr.map(r => {
     const idx = (typeof r.index === 'number' ? r.index : parseInt(r.index, 10)) - 1;
