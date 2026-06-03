@@ -1412,3 +1412,366 @@ startup-finance--10-3--165:
   when_to_use: 涉及多国业务或合规问题
   use_case_en: Query 134 countries' tax, accounting rules, and compliance requirements via platform API.
   when_to_use_en: When dealing with multi-country ops or compliance.
+software-engineering--1-4--254:
+  use_case: 对比 HEAD 与已发布版生成结构化 changelog 并荐版本号
+  personas:
+  - 工程
+  when_to_use: 发版前整理变更时
+  use_case_en: Generate a structured changelog vs the published version and suggest a version bump
+  when_to_use_en: When preparing release notes before publishing
+software-engineering--1-4--255:
+  use_case: 只读批量分析所有 open issue/PR 并出带证据的分类报告
+  personas:
+  - 工程
+  when_to_use: issue/PR 积压需要盘点时
+  use_case_en: Read-only batch triage of all open issues/PRs into an evidence-backed report
+  when_to_use_en: When the issue/PR backlog needs triaging
+software-engineering--1-1--256:
+  use_case: 5 个对抗成员辩论蒸馏出严谨可执行计划
+  personas:
+  - 工程
+  when_to_use: 高风险计划要压力测试时
+  use_case_en: Five adversarial members debate to distill a rigorous, executable plan
+  when_to_use_en: When a high-stakes plan needs stress-testing
+software-engineering--1-3--257:
+  use_case: 发布前多 agent 逐变更 + 全局质量/安全三层审查门禁
+  personas:
+  - 工程
+  when_to_use: npm 包发布前把关时
+  use_case_en: Multi-agent per-change plus global quality/security review gate before release
+  when_to_use_en: When gating an npm package release
+software-engineering--1-3--258:
+  use_case: LSP 验证 + 并行 agent 安全移除未使用代码
+  personas:
+  - 工程
+  when_to_use: 清理死代码降复杂度时
+  use_case_en: Safely remove unused code via LSP verification and parallel agents
+  when_to_use_en: When clearing dead code to cut complexity
+software-engineering--1-4--259:
+  use_case: 从建分支、实现、开 PR 到 CI/审查/合并清理全自动
+  personas:
+  - 工程
+  when_to_use: 想端到端跑完一个 PR 时
+  use_case_en: Automate the full PR lifecycle from branch to CI/review/merge/cleanup
+  when_to_use_en: When driving a PR end-to-end
+software-engineering--1-3--260:
+  use_case: 编辑后自动检查注释质量、拦问题补丁
+  personas:
+  - 工程
+  when_to_use: 想保证注释规范时
+  use_case_en: Auto-check comment quality after edits and block bad patches
+  when_to_use_en: When enforcing comment quality
+software-engineering--1-3--261:
+  use_case: 诊断/跳转/引用/符号/安全重命名等代码导航
+  personas:
+  - 工程
+  when_to_use: 需要精确代码导航时
+  use_case_en: 'Code navigation: diagnostics, go-to-def, references, symbols, safe rename'
+  when_to_use_en: When precise code navigation is needed
+software-engineering--1-1--262:
+  use_case: 目标导向循环把任务拆成证据绑定步骤 + 检查点
+  personas:
+  - 工程
+  when_to_use: 复杂任务要系统推进时
+  use_case_en: Goal-directed loop decomposing tasks into evidence-bound, checkpointed steps
+  when_to_use_en: When systematically driving a complex task
+agent-architecture--12-2--263:
+  use_case: 初始化分层 AGENTS.md 知识库建立 agent 上下文地基
+  personas:
+  - 工程
+  when_to_use: 新项目搭 agent 上下文时
+  use_case_en: Initialize a hierarchical AGENTS.md knowledge base as agent context foundation
+  when_to_use_en: When bootstrapping agent context for a new project
+software-engineering--1-3--264:
+  use_case: 强制严格类型/现代工具链/代码质量(Py/Rust/TS)
+  personas:
+  - 工程
+  when_to_use: 想统一多语言编码规范时
+  use_case_en: Enforce strict typing, modern toolchain and quality across Python/Rust/TS
+  when_to_use_en: When standardizing multi-language coding
+software-engineering--1-3--265:
+  use_case: 智能重构 + 回归测试锁定后批量清 AI 代码气味
+  personas:
+  - 工程
+  when_to_use: 重构或清 AI 生成味时
+  use_case_en: Smart refactor plus regression-locked batch cleanup of AI code smells
+  when_to_use_en: When refactoring or removing AI-generated smells
+software-engineering--1-3--266:
+  use_case: 实现后 5 子代理并行做质量/安全/QA/上下文审查
+  personas:
+  - 工程
+  when_to_use: 实现完成等待审查时
+  use_case_en: After implementation, 5 sub-agents review quality/security/QA/context in parallel
+  when_to_use_en: When implementation is done and needs review
+software-engineering--1-1--267:
+  use_case: 执行 Prometheus 工作计划 + Boulder 状态 + 并行子代理
+  personas:
+  - 工程
+  when_to_use: 按既定计划连续执行时
+  use_case_en: Execute a Prometheus work plan with Boulder state and parallel sub-agents
+  when_to_use_en: When continuously executing an established plan
+software-engineering--1-1--268:
+  use_case: 苏格拉底访谈+代码探索+差距分析产出完整工作计划
+  personas:
+  - 工程
+  when_to_use: 复杂任务开工前定计划时
+  use_case_en: Socratic interview + code exploration + gap analysis into a complete plan
+  when_to_use_en: When planning before starting a complex task
+software-engineering--1-2--269:
+  use_case: 自动化网页操作 + Chrome DevTools 真实浏览器调试
+  personas:
+  - 工程
+  when_to_use: 要测/调 Web 应用运行时
+  use_case_en: Automate web actions and debug in a real browser via Chrome DevTools
+  when_to_use_en: When testing/debugging a web app at runtime
+docs-knowledge--2-4--270:
+  use_case: 代码知识图谱:问答/可视化/diff/域流图/解释/聚类
+  personas:
+  - 工程
+  when_to_use: 要理解陌生代码库时
+  use_case_en: 'Code knowledge graph: Q&A, visualization, diff, domain flows, explain, clustering'
+  when_to_use_en: When understanding an unfamiliar codebase
+docs-knowledge--2-4--271:
+  use_case: 建知识图谱再据图生成新人入职指南
+  personas:
+  - 工程
+  when_to_use: 新人要快速上手项目时
+  use_case_en: Build a knowledge graph, then generate a new-hire onboarding guide from it
+  when_to_use_en: When onboarding a newcomer to a project
+software-engineering--1-6--272:
+  use_case: 设计稳定易用的 API/接口、防误用(REST/GraphQL)
+  personas:
+  - 工程
+  when_to_use: 定 API 契约或模块边界时
+  use_case_en: Design stable, ergonomic APIs/interfaces and prevent misuse (REST/GraphQL)
+  when_to_use_en: When defining API contracts or module boundaries
+software-engineering--1-4--273:
+  use_case: 自动化 CI/CD 配置,过质量门才部署
+  personas:
+  - 工程
+  when_to_use: 搭/改流水线质量门时
+  use_case_en: Automate CI/CD config so changes deploy only past quality gates
+  when_to_use_en: When building or hardening pipeline gates
+software-engineering--1-3--274:
+  use_case: 不改行为前提下简化代码提升可读可维护
+  personas:
+  - 工程
+  when_to_use: 代码过复杂要瘦身时
+  use_case_en: Simplify code for readability/maintainability without changing behavior
+  when_to_use_en: When overly complex code needs slimming
+agent-architecture--12-1--275:
+  use_case: 优化 agent 上下文:在对的时间给对的信息
+  personas:
+  - 工程
+  when_to_use: agent 输出质量/幻觉要改进时
+  use_case_en: Optimize agent context to surface the right info at the right time
+  when_to_use_en: When improving agent output quality / reducing hallucination
+software-engineering--1-3--276:
+  use_case: 管理废弃与用户迁移,安全移除旧系统
+  personas:
+  - 工程
+  when_to_use: 下线旧系统/迁移用户时
+  use_case_en: Manage deprecation and user migration, safely retiring old systems
+  when_to_use_en: When retiring a legacy system / migrating users
+software-engineering--1-3--277:
+  use_case: 决策落地前注入证伪型审阅者做对抗交叉审查
+  personas:
+  - 工程
+  when_to_use: 高风险不可逆决策前
+  use_case_en: Inject a falsification-biased reviewer for adversarial cross-review before decisions land
+  when_to_use_en: Before high-risk, irreversible decisions
+design-frontend--5-2--278:
+  use_case: 构建生产级、可访问、高性能且精致的 UI
+  personas:
+  - 设计
+  - 工程
+  when_to_use: 要做高质量前端界面时
+  use_case_en: Build production-grade, accessible, performant and polished UIs
+  when_to_use_en: When building high-quality frontend UIs
+product-management--3-2--279:
+  use_case: 发散收敛把模糊想法炼成可执行概念 + MVP
+  personas:
+  - PM
+  when_to_use: 想法还模糊要定 MVP 时
+  use_case_en: Diverge/converge a fuzzy idea into an executable concept and MVP
+  when_to_use_en: When a fuzzy idea needs shaping into an MVP
+software-engineering--1-2--280:
+  use_case: 每步实现-测试-验证,系统始终可工作
+  personas:
+  - 工程
+  when_to_use: 想稳步交付功能时
+  use_case_en: Implement-test-verify each step so the system always stays working
+  when_to_use_en: When delivering features incrementally
+software-engineering--1-1--281:
+  use_case: 逐步访谈在写码前澄清真实需求
+  personas:
+  - 工程
+  - PM
+  when_to_use: 需求不清要先澄清时
+  use_case_en: Step-by-step interview to clarify true requirements before any code
+  when_to_use_en: When requirements are unclear and need clarifying
+software-engineering--1-3--282:
+  use_case: 基于测量与 Core Web Vitals 定位瓶颈并优化
+  personas:
+  - 工程
+  when_to_use: 应用性能要提升时
+  use_case_en: Profile and optimize against measurements and Core Web Vitals
+  when_to_use_en: When app performance needs improving
+software-engineering--1-8--283:
+  use_case: 输入校验/加密存储/安全头 + Vault 密钥管理
+  personas:
+  - 工程
+  when_to_use: 应用要加固防漏洞时
+  use_case_en: Input validation, encrypted storage, secure headers, plus Vault secrets management
+  when_to_use_en: When hardening an app against vulnerabilities
+software-engineering--1-5--284:
+  use_case: 预发布清单 + 监控 + 回滚策略保安全发布
+  personas:
+  - 工程
+  when_to_use: 要上生产前准备时
+  use_case_en: Pre-launch checklist, monitoring and rollback for a safe release
+  when_to_use_en: When preparing to ship to production
+software-engineering--1-1--285:
+  use_case: 基于官方文档写码,模式权威避免过时写法
+  personas:
+  - 工程
+  when_to_use: 要按权威文档实现时
+  use_case_en: Write code grounded in official docs, authoritative and not outdated
+  when_to_use_en: When implementing per authoritative docs
+meta-skill-mgmt--13-2--286:
+  use_case: 会话开始按开发阶段自动发现并调用合适 skill
+  personas:
+  - 工程
+  - 通用
+  when_to_use: 想让 agent 自动选 skill 时
+  use_case_en: Auto-discover and invoke the right skill by dev stage at session start
+  when_to_use_en: When letting the agent auto-select skills
+software-engineering--1-2--287:
+  use_case: 屏幕阅读器兼容 + WCAG 2.2 审计与修复
+  personas:
+  - 工程
+  - 设计
+  when_to_use: 要保证无障碍合规时
+  use_case_en: Screen-reader compatibility plus WCAG 2.2 audit and remediation
+  when_to_use_en: When ensuring accessibility compliance
+software-engineering--1-3--288:
+  use_case: 多 agent 并行 review、去重发现、校准严重度出统一报告
+  personas:
+  - 工程
+  when_to_use: 多维审查要汇总去重时
+  use_case_en: Parallel multi-agent review, dedup findings, calibrate severity into one report
+  when_to_use_en: When consolidating multi-dimensional reviews
+agent-architecture--12-4--289:
+  use_case: 文件所有权策略让多代理并行实现不同层
+  personas:
+  - 工程
+  when_to_use: 多代理并行开发要防冲突时
+  use_case_en: File-ownership strategy lets agents build different layers in parallel
+  when_to_use_en: When coordinating parallel multi-agent development
+agent-architecture--12-4--290:
+  use_case: 设计 agent 团队组成 + 结构化通信协议
+  personas:
+  - 工程
+  when_to_use: 编排 agent 团队时
+  use_case_en: Design agent-team composition and structured communication protocols
+  when_to_use_en: When composing an agent team
+software-engineering--1-6--291:
+  use_case: 生产级 FastAPI 脚手架:结构/async/依赖注入/测试
+  personas:
+  - 工程
+  when_to_use: 新建 FastAPI 后端时
+  use_case_en: 'Production FastAPI scaffolding: structure, async, DI, testing'
+  when_to_use_en: When starting a new FastAPI backend
+software-engineering--1-9--292:
+  use_case: Clean/Hexagonal/DDD 架构 + 微服务分解与韧性
+  personas:
+  - 工程
+  when_to_use: 设计可维护后端架构时
+  use_case_en: Clean/Hexagonal/DDD architecture plus microservice decomposition and resilience
+  when_to_use_en: When designing a maintainable backend architecture
+software-engineering--1-9--293:
+  use_case: CQRS 读写分离 + event store + 投影 + Saga 事务
+  personas:
+  - 工程
+  when_to_use: 建事件驱动系统时
+  use_case_en: CQRS, event store, projections and Saga transactions
+  when_to_use_en: When building an event-driven system
+software-engineering--1-2--294:
+  use_case: pytest 测 Temporal 工作流:时间跳跃/mock/回放
+  personas:
+  - 工程
+  when_to_use: 要测 Temporal 工作流时
+  use_case_en: 'Test Temporal workflows with pytest: time-skip, mocks, replay'
+  when_to_use_en: When testing Temporal workflows
+software-engineering--1-9--295:
+  use_case: Temporal 设计持久分布式工作流(确定性约束)
+  personas:
+  - 工程
+  when_to_use: 要编排分布式工作流时
+  use_case_en: Design durable distributed workflows with Temporal (determinism constraints)
+  when_to_use_en: When orchestrating distributed workflows
+web3-blockchain--20-3--296:
+  use_case: 生产级 DeFi Solidity 模板:质押/AMM/治理/借贷
+  personas:
+  - 工程
+  when_to_use: 要快速生成 DeFi 合约时
+  use_case_en: 'Production DeFi Solidity templates: staking/AMM/governance/lending'
+  when_to_use_en: When generating DeFi contracts fast
+web3-blockchain--20-3--297:
+  use_case: Hardhat/Foundry 全面测试:单测/Gas/模糊/主网 fork
+  personas:
+  - 工程
+  when_to_use: 要测/验证 Solidity 合约时
+  use_case_en: 'Comprehensive Hardhat/Foundry tests: unit, gas, fuzz, mainnet-fork'
+  when_to_use_en: When testing/validating Solidity contracts
+design-frontend--5-3--298:
+  use_case: 品牌访谈定方向 + Stitch 生成可部署着陆页 HTML
+  personas:
+  - 设计
+  - 营销
+  when_to_use: 尚无设计稿要做营销页时
+  use_case_en: Brand interview sets direction; Stitch generates a deploy-ready landing page
+  when_to_use_en: When building a marketing page with no design yet
+data-scraping--7-3--299:
+  use_case: 把数据转成引人叙事,用于商业演示/投资人呈现
+  personas:
+  - PM
+  - 营销
+  when_to_use: 要用数据讲故事时
+  use_case_en: Turn data into a compelling narrative for business/investor decks
+  when_to_use_en: When telling a story with data
+devops-infra--17-2--300:
+  use_case: 多阶段 CI/CD 管道(审批门/零停机)+ GH Actions 模板
+  personas:
+  - 工程
+  when_to_use: 要设计部署管道时
+  use_case_en: Multi-stage CI/CD pipelines (approval gates, zero-downtime) plus GH Actions templates
+  when_to_use_en: When designing deployment pipelines
+software-engineering--1-1--301:
+  use_case: 记录 ADR,捕获决策的为什么/约束/权衡
+  personas:
+  - 工程
+  when_to_use: 做架构决策要留档时
+  use_case_en: Record ADRs capturing the why, constraints and trade-offs of decisions
+  when_to_use_en: When documenting architecture decisions
+security-offensive--18-3--235:
+  use_case: 漏洞赏金侦察(subfinder/httpx/nuclei)+ OSINT 测绘 + 多 agent 并行安全审计
+  personas:
+  - 工程
+  when_to_use: 做漏洞挖掘 / 攻击面测绘时
+  use_case_en: Bug-bounty recon (subfinder/httpx/nuclei), OSINT mapping and multi-agent parallel security audits
+  when_to_use_en: When hunting bugs / mapping attack surface
+web3-blockchain--20-1--243:
+  use_case: Solidity/EVM 系统化审计 + 智能合约安全最佳实践防漏洞
+  personas:
+  - 工程
+  when_to_use: 审计 / 加固智能合约时
+  use_case_en: Systematic Solidity/EVM audits plus smart-contract security best practices
+  when_to_use_en: When auditing / hardening smart contracts
+web3-blockchain--20-5--247:
+  use_case: 实现 NFT 标准(ERC-721/1155)、元数据 / 铸造 / 市场集成
+  personas:
+  - 工程
+  when_to_use: 构建 NFT / 数字资产系统时
+  use_case_en: Implement NFT standards (ERC-721/1155), metadata, minting and marketplace integration
+  when_to_use_en: When building NFT / digital-asset systems
