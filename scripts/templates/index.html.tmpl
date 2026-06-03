@@ -2872,7 +2872,8 @@ function buildGraph(){
         `<div class="gd-sec"><h4>${EN ? 'Part of these workflows' : '所属功能分组'}</h4>${grpHtml}</div>` +
         (srcHtml ? `<div class="gd-sec"><h4>${EN ? 'From repos' : '来自仓库'}</h4><div class="gd-chips">${srcHtml}</div></div>` : '') +
       `</div>` +
-      `<div class="gd-foot"><button class="gd-btn primary" data-act="jump">${EN ? 'Open in cards →' : '在功能视图查看 →'}</button>` +
+      `<div class="gd-foot"><button class="gd-btn primary" data-act="usethis" data-skill="${escapeAttr(n.id)}" data-skills="${escapeAttr(n.id)}">${EN ? '🧩 Use this' : '🧩 用这个'}</button>` +
+      `<button class="gd-btn" data-act="jump">${EN ? 'Open in cards →' : '在功能视图查看 →'}</button>` +
       `<button class="gd-btn" data-act="link" style="flex:0 0 auto" title="${EN ? 'Copy shareable link' : '复制可分享链接'}">🔗</button></div>`;
     drawer.classList.add('open');
     drawer.querySelector('.gd-close').addEventListener('click', clearFocus);
