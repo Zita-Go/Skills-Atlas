@@ -1281,6 +1281,7 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
         <span class="hero-start-q" data-i18n="hs_q">不知从哪开始？</span>
         <button class="start-chip start-chip-learn" data-start="learn" data-i18n="hs_learn">👋 新手必看</button>
         <button class="start-chip start-chip-ai" data-start="ai" data-i18n="hs_ai">✨ 描述需求，AI 推荐</button>
+        <button class="start-chip" data-start="use" data-i18n="hs_use">🧩 在 Claude Code 里用</button>
         <button class="start-chip" data-start="browse" data-i18n="hs_browse">🗂️ 浏览全部大类</button>
         <span class="hero-start-eg" data-i18n="hs_eg">例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」</span>
       </div>
@@ -1490,7 +1491,7 @@ const I18N = {
     usage_btn: '📖 用法', install_btn: '📋 安装', license_unknown: '未知',
     hs_q: '不知从哪开始？', hs_search: '🔍 搜 skill / 描述 / 仓库', hs_ai: '✨ 描述需求，AI 推荐', hs_browse: '🗂️ 浏览全部大类',
     hs_eg: '例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」',
-    hs_learn: '👋 新手必看', footer_tag: '社区整理的 AI Agent Skills 目录（非官方）', footer_learn: '新手必看：什么是 Skill', footer_license: '站点 MIT；每个 skill 保留其上游许可证，安装前请在卡片上核对', howto_title: '👋 什么是 Agent Skill', howto_sub: '30 秒搞懂这个站点怎么用', tt_close: '关闭',
+    hs_use: '🧩 在 Claude Code 里用', hs_learn: '👋 新手必看', footer_tag: '社区整理的 AI Agent Skills 目录（非官方）', footer_learn: '新手必看：什么是 Skill', footer_license: '站点 MIT；每个 skill 保留其上游许可证，安装前请在卡片上核对', howto_title: '👋 Skill 是什么 · 怎么用', howto_sub: '30 秒搞懂这个站点怎么用', tt_close: '关闭',
     usage_open_gh: '在 GitHub 打开 ↗', usage_copy_cmd: '📋 复制安装命令',
     copied: '✓ 已复制', copy_failed: '复制失败',
   },
@@ -1555,7 +1556,7 @@ const I18N = {
     usage_btn: '📖 Usage', install_btn: '📋 Install', license_unknown: 'unknown',
     hs_q: 'Not sure where to start?', hs_search: '🔍 Search skills / descriptions / repos', hs_ai: '✨ Describe your goal, AI picks', hs_browse: '🗂️ Browse all categories',
     hs_eg: 'e.g. "build a SaaS landing page", "write a PRD", "scrape a website"',
-    hs_learn: '👋 New to Skills?', footer_tag: 'A community catalog of AI Agent Skills (unofficial)', footer_learn: 'New here? What is a Skill', footer_license: 'Site MIT; each skill keeps its upstream license — check it on the card before installing', howto_title: '👋 What is an Agent Skill', howto_sub: 'Understand this site in 30 seconds', tt_close: 'Close',
+    hs_use: '🧩 Use in Claude Code', hs_learn: '👋 New to Skills?', footer_tag: 'A community catalog of AI Agent Skills (unofficial)', footer_learn: 'New here? What is a Skill', footer_license: 'Site MIT; each skill keeps its upstream license — check it on the card before installing', howto_title: '👋 What a Skill is & how to use it', howto_sub: 'Understand this site in 30 seconds', tt_close: 'Close',
     usage_open_gh: 'Open on GitHub ↗', usage_copy_cmd: '📋 Copy install command',
     copied: '✓ Copied', copy_failed: 'Copy failed',
   },
@@ -4531,15 +4532,19 @@ function setupHowTo(){
   const EN = LANG === 'en';
   body.innerHTML = EN
     ? `<p class="howto-lead">An <b>Agent Skill</b> is a reusable, packaged capability for <b>Claude Code</b> (Anthropic's terminal/IDE coding agent) — install it once, then invoke it whenever you need it.</p>`
-      + `<ol class="howto-steps"><li><b>Find</b> a skill here by what you want to do, and copy its install command.</li>`
-      + `<li><b>Install</b> — paste it in a terminal on your machine (e.g. <code>npx skills add author/repo</code>).</li>`
-      + `<li><b>Use</b> — Claude Code auto-discovers it: Claude uses it automatically when relevant, or type <code>/skill-name</code> to run it. Type <code>/</code> to see all skills.</li></ol>`
+      + `<p><b>🧩 Easiest — the Skills Atlas plugin.</b> It installs skills for you right in the conversation, and an autopilot surfaces the fitting one as you work:</p>`
+      + `<ol class="howto-steps"><li>In a terminal: <code>npm i -g skills-atlas-cli</code></li>`
+      + `<li>In Claude Code: <code>/plugin marketplace add Zita-Go/Skills-Atlas</code>, then <code>/plugin install skills-atlas@skills-atlas</code></li>`
+      + `<li>Restart, then just describe your task — or run <code>/skills-atlas:skill-install &lt;skill&gt;</code>. (Terminal only, no plugin? <code>skills-atlas use &lt;skill&gt;</code>.)</li></ol>`
+      + `<p class="howto-note"><b>Or install a skill manually:</b> copy a card's command (e.g. <code>npx skills add author/repo</code>) and run it; Claude Code auto-discovers it, or type <code>/skill-name</code>.</p>`
       + `<p class="howto-note"><b>⛓ Chained</b> skills are meant to run in sequence — one's output feeds the next.</p>`
       + `<p class="howto-more">Every skill is sourced from a public GitHub repo and grouped by what it does. <a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">Project &amp; docs ↗</a></p>`
     : `<p class="howto-lead"><b>Agent Skill</b> 是 <b>Claude Code</b>（Anthropic 的终端/IDE 编码 agent）里可复用的「能力包」——装一次，之后随时调用。</p>`
-      + `<ol class="howto-steps"><li><b>找</b>：在这里按「我要做什么」找到 skill，复制它的安装命令。</li>`
-      + `<li><b>装</b>：把命令粘到你电脑的终端运行（如 <code>npx skills add author/repo</code>）。</li>`
-      + `<li><b>用</b>：Claude Code 会自动发现 —— 相关时自动调用；也可输入 <code>/skill名</code> 手动触发，输入 <code>/</code> 可列出全部。</li></ol>`
+      + `<p><b>🧩 最省事——Skills Atlas 插件。</b>它在对话里帮你装 skill，自动驾驶还会在你干活时主动端出合适的那个：</p>`
+      + `<ol class="howto-steps"><li>终端里：<code>npm i -g skills-atlas-cli</code></li>`
+      + `<li>Claude Code 里：<code>/plugin marketplace add Zita-Go/Skills-Atlas</code>，再 <code>/plugin install skills-atlas@skills-atlas</code></li>`
+      + `<li>重启后直接说你要做什么 —— 或 <code>/skills-atlas:skill-install &lt;skill&gt;</code>。（只用终端、没装插件？<code>skills-atlas use &lt;skill&gt;</code>。）</li></ol>`
+      + `<p class="howto-note"><b>或者手动装某个 skill：</b>复制卡片上的安装命令（如 <code>npx skills add author/repo</code>）运行；Claude Code 会自动发现，或输入 <code>/skill名</code> 触发。</p>`
       + `<p class="howto-note"><b>⛓ 强绑定</b> 的 skill 需按顺序串起来用——前一个的产出喂给下一个。</p>`
       + `<p class="howto-more">每个 skill 都来自公开 GitHub 仓库，按功能归类。<a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">项目主页 / 文档 ↗</a></p>`;
   let ret = null;
@@ -4568,6 +4573,7 @@ document.querySelectorAll('.start-chip').forEach(c => c.addEventListener('click'
   const a = c.dataset.start;
   if(a === 'ai'){ const b = document.getElementById('aiBtn'); if(b) b.click(); }
   else if(a === 'learn'){ openHowTo(); }
+  else if(a === 'use'){ openHowTo(); }
   else if(a === 'browse'){ smoothScrollToEl(document.querySelector('.section-h1') || document.getElementById('content')); }
   else { const i = document.getElementById('search'); if(i){ i.focus(); i.scrollIntoView({ block:'center' }); } }
 }));
