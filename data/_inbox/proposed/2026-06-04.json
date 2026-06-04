@@ -1,0 +1,613 @@
+{
+  "generated_at": "2026-06-04T05:24:43+00:00",
+  "date": "2026-06-04",
+  "proposed_count": 3,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 45,
+      "seen_recently": 19,
+      "not_a_collection": 2,
+      "no_skill_files": 3,
+      "looks_aggregator": 2
+    },
+    "filtered_out": [
+      {
+        "full_name": "yusufkaraaslan/Skill_Seekers",
+        "reason": "非正经集合：该仓库是一个技能构建工具（MCP 服务器），用于将文档、仓库、PDF 等转换为 Claude AI 技能，而非提供可直接使用的实用技能集合。"
+      },
+      {
+        "full_name": "jnMetaCode/agency-agents-zh",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "NevaMind-AI/memU",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "travisvn/awesome-claude-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "ComposioHQ/awesome-codex-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "lsdefine/GenericAgent",
+        "reason": "非正经集合：仓库是一个自我进化agent框架，其skill_search是内部检索工具，而非独立的技能集合。"
+      },
+      {
+        "full_name": "YSGStudyHards/DotNetGuide",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "nature-academic-search"
+      ],
+      "group": "深度文献检索",
+      "group_en": "Deep Literature Search",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": false,
+      "description": "多源文献搜索与引文管理，支持 PubMed、CrossRef 等工具，适用于 Nature 论文的学术研究工作流。",
+      "description_en": "Multi-source literature search and citation management using tools like PubMed and CrossRef, tailored for Nature-style academic research workflows.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-citation"
+      ],
+      "group": "引文管理",
+      "group_en": "Citation Management",
+      "category": "academic-research",
+      "subcategory": "11-4",
+      "chain": false,
+      "description": "为手稿文本自动添加符合 Nature/CNS 标准的引用，通过分段搜索和筛选，支持多种参考文献格式输出。",
+      "description_en": "Automatically add strict Nature/CNS citations to manuscript text by segmenting passages and searching, with support for multiple reference manager outputs.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-data"
+      ],
+      "group": "学术数据引用 / FAIR metadata",
+      "group_en": "Academic data citation / FAIR metadata",
+      "category": "academic-research",
+      "subcategory": "11-4",
+      "chain": false,
+      "description": "为 Nature 系期刊准备、审核或修订 Data Availability 声明、数据仓库选择、数据集引用及 FAIR 元数据检查清单，支持中文作者英译润色。",
+      "description_en": "Prepare, audit, or revise Nature-ready Data Availability statements, repository plans, dataset citations, and FAIR metadata checklists—plus CN-to-EN wording polish for Chinese-speaking authors.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-figure"
+      ],
+      "group": "科研出版级图表 / Nature figure workflow",
+      "group_en": "Publication-grade scientific figures / Nature figure workflow",
+      "category": "academic-research",
+      "subcategory": "11-4",
+      "chain": false,
+      "description": "用 Python(matplotlib/seaborn) 或 R(ggplot2/patchwork) 制作符合 Nature 等高影响力期刊投稿规范的多面板科研图表，含结论定义、证据逻辑、导出 QA 全流程。",
+      "description_en": "Create submission-grade, multi-panel scientific figures in Python or R for Nature-family and other high-impact journals, covering conclusion design, evidence logic, export, and QA review.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-paper2ppt"
+      ],
+      "group": "论文转 PPT",
+      "group_en": "Paper to PPTX",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "帮助 AI agent 从科学论文自动构建 Nature 风格中文演示文稿，优化图表选择、幻灯片内容和布局，并运行自我修正循环以确保质量。",
+      "description_en": "Assists AI agents in automatically building Nature-style Chinese presentations from scientific papers, with optimized figure selection, slide content, and layout, plus a self-review loop for quality assurance.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-polishing"
+      ],
+      "group": "学术写作润色",
+      "group_en": "Academic Writing Polishing",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "帮助 AI agent 润色学术散文为 Nature 风格英语，涵盖论文各节段的写作策略、句级优化，并修复 LaTeX 排版问题如图表布局和浮动体设置。",
+      "description_en": "Assists AI agents in polishing academic prose into Nature-style English, covering writing strategies for each paper section, sentence-level refinement, and LaTeX layout fixes for figures and floats.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-reader"
+      ],
+      "group": "学术研究流水线",
+      "group_en": "Academic Research Pipeline",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "帮助 agent 构建 Nature 论文的中英文对照阅读器，支持 PDF、DOI 等来源，保留图表位置并确保源锚定。",
+      "description_en": "Helps agent build Chinese-English side-by-side readers for Nature papers from sources like PDF, DOI, or HTML, preserving figure/table placement and source anchors.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-response",
+        "nature-reviewer"
+      ],
+      "group": "论文同行评审",
+      "group_en": "Paper Peer Review",
+      "category": "academic-research",
+      "subcategory": "11-5",
+      "chain": false,
+      "description": "辅助 agent 起草 Nature 系列期刊的审稿回复信，处理修订请求和反驳信，确保逐点回应。",
+      "description_en": "Assists agent in drafting reviewer response letters for Nature-family manuscript revisions, handling revision requests and rebuttals with point-by-point responses.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-writing"
+      ],
+      "group": "学术写作全流程",
+      "group_en": "Academic Writing Full Process",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "根据用户提供的论点、结果或中文草稿，起草或重组Nature风格的学术手稿各部分。",
+      "description_en": "Draft or restructure Nature-style academic manuscript sections based on user-provided claims, results, or Chinese drafts.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "零依赖 HTML 演示",
+      "group_en": "Zero-dependency HTML Presentation",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "生成单文件HTML横向翻页PPT，支持电子杂志和瑞士国际主义两种视觉风格，含WebGL背景、章节幕封、数据大字报、图片网格等模板，适用于分享、演讲等场景。",
+      "description_en": "Generates single-file HTML horizontal-swipe slide decks with two visual styles: Editorial Magazine and Swiss International, featuring WebGL backgrounds, section screens, data infographics, image grids, and more, suitable for sharing, presentations, and launches.",
+      "sources": [
+        "op7418/guizang-ppt-skill"
+      ]
+    },
+    {
+      "skills": [
+        "docx"
+      ],
+      "group": "Office 文档四件套",
+      "group_en": "Office Document Suite",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 AI agent 创建、读取、编辑和操纵 Word 文档（.docx），支持格式化、表格、页眉、查找替换、图片插入等功能。",
+      "description_en": "Helps AI agents create, read, edit, and manipulate Word documents (.docx), with support for formatting, tables, headers, find-and-replace, image insertion, and more.",
+      "sources": [
+        "eigent-ai/eigent"
+      ]
+    },
+    {
+      "skills": [
+        "pdf"
+      ],
+      "group": "PDF 重型 API",
+      "group_en": "PDF Heavy API",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 AI agent 处理 PDF 文件，包括读取文本、合并分割、添加水印、表单填写、加密解密和 OCR 识别等操作。",
+      "description_en": "Helps AI agents process PDF files, including text extraction, merging, splitting, watermarking, form filling, encryption/decryption, and OCR recognition.",
+      "sources": [
+        "eigent-ai/eigent"
+      ]
+    },
+    {
+      "skills": [
+        "pptx"
+      ],
+      "group": "pptx",
+      "group_en": "pptx",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "eigent-ai/eigent"
+      ]
+    },
+    {
+      "skills": [
+        "skill-creator"
+      ],
+      "group": "skill-creator",
+      "group_en": "skill-creator",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "eigent-ai/eigent"
+      ]
+    },
+    {
+      "skills": [
+        "skill-security-auditor"
+      ],
+      "group": "skill-security-auditor",
+      "group_en": "skill-security-auditor",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "eigent-ai/eigent"
+      ]
+    },
+    {
+      "skills": [
+        "xlsx"
+      ],
+      "group": "xlsx",
+      "group_en": "xlsx",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "eigent-ai/eigent"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "Yuan1z0825",
+        "repo": "nature-skills",
+        "full_name": "Yuan1z0825/nature-skills",
+        "url": "https://github.com/Yuan1z0825/nature-skills",
+        "stars": 16211,
+        "pushed_at": "2026-06-02",
+        "default_branch": "main",
+        "github_description": "符合nature论文学术表达和科研绘图的Skill",
+        "topics": [
+          "codex-skills",
+          "nature",
+          "nature-skills"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-codex-skills"
+      },
+      "skills": [
+        {
+          "name": "nature-academic-search",
+          "path": "plugins/nature-skills/skills/nature-academic-search/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "深度文献检索",
+          "group_en": "Deep Literature Search",
+          "description_zh": "多源文献搜索与引文管理，支持 PubMed、CrossRef 等工具，适用于 Nature 论文的学术研究工作流。",
+          "description_en": "Multi-source literature search and citation management using tools like PubMed and CrossRef, tailored for Nature-style academic research workflows.",
+          "what": "协调多步骤文献搜索工作流。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nature-citation",
+          "path": "plugins/nature-skills/skills/nature-citation/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "引文管理",
+          "group_en": "Citation Management",
+          "description_zh": "为手稿文本自动添加符合 Nature/CNS 标准的引用，通过分段搜索和筛选，支持多种参考文献格式输出。",
+          "description_en": "Automatically add strict Nature/CNS citations to manuscript text by segmenting passages and searching, with support for multiple reference manager outputs.",
+          "what": "添加 Nature/CNS 引用到学术手稿。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nature-data",
+          "path": "plugins/nature-skills/skills/nature-data/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "学术数据引用 / FAIR metadata",
+          "group_en": "Academic data citation / FAIR metadata",
+          "description_zh": "为 Nature 系期刊准备、审核或修订 Data Availability 声明、数据仓库选择、数据集引用及 FAIR 元数据检查清单，支持中文作者英译润色。",
+          "description_en": "Prepare, audit, or revise Nature-ready Data Availability statements, repository plans, dataset citations, and FAIR metadata checklists—plus CN-to-EN wording polish for Chinese-speaking authors.",
+          "what": "Nature 投稿专用的数据可用性声明与 FAIR 元数据工具",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nature-figure",
+          "path": "plugins/nature-skills/skills/nature-figure/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "科研出版级图表 / Nature figure workflow",
+          "group_en": "Publication-grade scientific figures / Nature figure workflow",
+          "description_zh": "用 Python(matplotlib/seaborn) 或 R(ggplot2/patchwork) 制作符合 Nature 等高影响力期刊投稿规范的多面板科研图表，含结论定义、证据逻辑、导出 QA 全流程。",
+          "description_en": "Create submission-grade, multi-panel scientific figures in Python or R for Nature-family and other high-impact journals, covering conclusion design, evidence logic, export, and QA review.",
+          "what": "Nature 投稿级科研图表生成与审校全流程工具",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nature-paper2ppt",
+          "path": "plugins/nature-skills/skills/nature-paper2ppt/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "论文转 PPT",
+          "group_en": "Paper to PPTX",
+          "description_zh": "帮助 AI agent 从科学论文自动构建 Nature 风格中文演示文稿，优化图表选择、幻灯片内容和布局，并运行自我修正循环以确保质量。",
+          "description_en": "Assists AI agents in automatically building Nature-style Chinese presentations from scientific papers, with optimized figure selection, slide content, and layout, plus a self-review loop for quality assurance.",
+          "what": "从论文生成 Nature 风格 PPT",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nature-polishing",
+          "path": "plugins/nature-skills/skills/nature-polishing/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术写作润色",
+          "group_en": "Academic Writing Polishing",
+          "description_zh": "帮助 AI agent 润色学术散文为 Nature 风格英语，涵盖论文各节段的写作策略、句级优化，并修复 LaTeX 排版问题如图表布局和浮动体设置。",
+          "description_en": "Assists AI agents in polishing academic prose into Nature-style English, covering writing strategies for each paper section, sentence-level refinement, and LaTeX layout fixes for figures and floats.",
+          "what": "润色学术论文为 Nature 风格英语",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nature-reader",
+          "path": "plugins/nature-skills/skills/nature-reader/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术研究流水线",
+          "group_en": "Academic Research Pipeline",
+          "description_zh": "帮助 agent 构建 Nature 论文的中英文对照阅读器，支持 PDF、DOI 等来源，保留图表位置并确保源锚定。",
+          "description_en": "Helps agent build Chinese-English side-by-side readers for Nature papers from sources like PDF, DOI, or HTML, preserving figure/table placement and source anchors.",
+          "what": "构建中英文对照论文阅读器",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nature-response",
+          "path": "plugins/nature-skills/skills/nature-response/SKILL.md",
+          "subcategory": "11-5",
+          "subcategory_title": "11.5 同行评审 / 论文质量",
+          "category": "academic-research",
+          "group": "论文同行评审",
+          "group_en": "Paper Peer Review",
+          "description_zh": "辅助 agent 起草 Nature 系列期刊的审稿回复信，处理修订请求和反驳信，确保逐点回应。",
+          "description_en": "Assists agent in drafting reviewer response letters for Nature-family manuscript revisions, handling revision requests and rebuttals with point-by-point responses.",
+          "what": "起草审稿回复信",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nature-reviewer",
+          "path": "plugins/nature-skills/skills/nature-reviewer/SKILL.md",
+          "subcategory": "11-5",
+          "subcategory_title": "11.5 同行评审 / 论文质量",
+          "category": "academic-research",
+          "group": "论文同行评审",
+          "group_en": "Paper Peer Review",
+          "description_zh": "模拟Nature期刊审稿人视角，生成三份审稿报告和一份交叉评估，帮助作者预审稿件。",
+          "description_en": "Simulate a Nature-style reviewer perspective, generating three reviewer reports and a cross-review synthesis to assist authors in pre-submission assessment.",
+          "what": "生成Nature风格审稿报告",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "nature-writing",
+          "path": "plugins/nature-skills/skills/nature-writing/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术写作全流程",
+          "group_en": "Academic Writing Full Process",
+          "description_zh": "根据用户提供的论点、结果或中文草稿，起草或重组Nature风格的学术手稿各部分。",
+          "description_en": "Draft or restructure Nature-style academic manuscript sections based on user-provided claims, results, or Chinese drafts.",
+          "what": "起草Nature学术手稿",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "op7418",
+        "repo": "guizang-ppt-skill",
+        "full_name": "op7418/guizang-ppt-skill",
+        "url": "https://github.com/op7418/guizang-ppt-skill",
+        "stars": 14775,
+        "pushed_at": "2026-06-02",
+        "default_branch": "main",
+        "github_description": "AI-agent Skill for generating polished HTML slide decks: editorial magazine and Swiss layouts, image prompts, social covers, and a WebGL/low-power presentation runtime.",
+        "topics": [
+          "ai-agent",
+          "claude-code",
+          "codex",
+          "html-deck",
+          "image-generation",
+          "ppt",
+          "presentation",
+          "skill",
+          "skills",
+          "swiss-design",
+          "web-ppt"
+        ],
+        "language": "HTML",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "零依赖 HTML 演示",
+          "group_en": "Zero-dependency HTML Presentation",
+          "description_zh": "生成单文件HTML横向翻页PPT，支持电子杂志和瑞士国际主义两种视觉风格，含WebGL背景、章节幕封、数据大字报、图片网格等模板，适用于分享、演讲等场景。",
+          "description_en": "Generates single-file HTML horizontal-swipe slide decks with two visual styles: Editorial Magazine and Swiss International, featuring WebGL backgrounds, section screens, data infographics, image grids, and more, suitable for sharing, presentations, and launches.",
+          "what": "生成风格多样的HTML演示文稿。",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "eigent-ai",
+        "repo": "eigent",
+        "full_name": "eigent-ai/eigent",
+        "url": "https://github.com/eigent-ai/eigent",
+        "stars": 14204,
+        "pushed_at": "2026-06-03",
+        "default_branch": "main",
+        "github_description": "Eigent: The Open Source Cowork Desktop to Unlock Your Exceptional Productivity. Local and Free Alternative to Claude Cowork.",
+        "topics": [
+          "agent-framework",
+          "agent-skills",
+          "agentic-ai",
+          "agentic-workflow",
+          "claude-cowork",
+          "claude-cowork-alternative",
+          "claude-cowork-free",
+          "desktop-agent",
+          "multi-agent-systems"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "docx",
+          "path": "resources/example-skills/docx/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office Document Suite",
+          "description_zh": "帮助 AI agent 创建、读取、编辑和操纵 Word 文档（.docx），支持格式化、表格、页眉、查找替换、图片插入等功能。",
+          "description_en": "Helps AI agents create, read, edit, and manipulate Word documents (.docx), with support for formatting, tables, headers, find-and-replace, image insertion, and more.",
+          "what": "处理 Word 文档的创建和编辑。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "pdf",
+          "path": "resources/example-skills/pdf/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "PDF 重型 API",
+          "group_en": "PDF Heavy API",
+          "description_zh": "帮助 AI agent 处理 PDF 文件，包括读取文本、合并分割、添加水印、表单填写、加密解密和 OCR 识别等操作。",
+          "description_en": "Helps AI agents process PDF files, including text extraction, merging, splitting, watermarking, form filling, encryption/decryption, and OCR recognition.",
+          "what": "处理 PDF 文件的各种操作。",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "pptx",
+          "path": "resources/example-skills/pptx/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "pptx",
+          "group_en": "pptx",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "skill-creator",
+          "path": "resources/example-skills/skill-creator/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "skill-creator",
+          "group_en": "skill-creator",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "skill-security-auditor",
+          "path": "resources/example-skills/skill-security-auditor/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "skill-security-auditor",
+          "group_en": "skill-security-auditor",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        },
+        {
+          "name": "xlsx",
+          "path": "resources/example-skills/xlsx/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "xlsx",
+          "group_en": "xlsx",
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": ""
+        }
+      ]
+    }
+  ]
+}
