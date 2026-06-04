@@ -7,3 +7,7 @@
 #
 # 用法：人审 daily-discover 提的 PR 时，遇到不想再被推荐的仓库，
 # 在这里追加一条，下一次发现就会自动跳过。
+- author: eigent-ai
+  repo: eigent
+  reason: Electron 桌面应用（Claude Cowork 开源替代）；resources/example-skills/ 下为 Anthropic 官方 docx/pdf/pptx/xlsx/skill-creator 的 vendored 副本（均已收录于 skills.yaml），非原始 skill 来源
+  added_at: 2026-06-04
