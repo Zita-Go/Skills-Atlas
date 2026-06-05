@@ -1,0 +1,1959 @@
+{
+  "generated_at": "2026-06-05T05:41:39+00:00",
+  "date": "2026-06-05",
+  "proposed_count": 6,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 45,
+      "seen_recently": 27,
+      "blocklisted": 1,
+      "truncated": 265,
+      "no_skill_files": 3,
+      "looks_aggregator": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "alibaba/zvec",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "HBAI-Ltd/Toonflow-app",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "BehiSecc/awesome-claude-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "ChinaSiro/claude-code-sourcemap",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "nature-academic-search"
+      ],
+      "group": "深度文献检索 / 综述",
+      "group_en": "Deep Literature Search / Review",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": false,
+      "description": "帮助代理执行多步骤文献搜索、引用验证、MeSH策略和参考文献管理，适用于学术研究工作流。",
+      "description_en": "Assists agents in executing multi-step literature searches, citation verification, MeSH strategies, and reference management for academic research workflows.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-citation"
+      ],
+      "group": "引文 / 参考文献管理",
+      "group_en": "Citation / Reference Management",
+      "category": "academic-research",
+      "subcategory": "11-4",
+      "chain": false,
+      "description": "自动为稿件添加严格的 Nature/CNS 引用，通过搜索指定期刊并输出参考管理器兼容文件，简化学术写作中的引用处理。",
+      "description_en": "Automatically adds strict Nature/CNS citations to manuscripts by searching specified journals and exporting reference-manager-ready files, streamlining citation handling in academic writing.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-data"
+      ],
+      "group": "学术数据管理",
+      "group_en": "Academic Data Management",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "为Nature论文准备、审计或修订数据可用性声明、数据存储库计划和FAIR元数据检查表，确保符合期刊要求。",
+      "description_en": "Prepare, audit, or revise data availability statements, data repository plans, and FAIR metadata checklists for Nature manuscripts to ensure compliance with journal requirements.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-figure"
+      ],
+      "group": "科学出版图表",
+      "group_en": "Scientific Publication Figures",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "为Nature或高影响力期刊提供提交级别的图表工作流，支持Python或R，用于创建、修订或润色科学图表，确保出版质量。",
+      "description_en": "Provide submission-grade figure workflows for Nature or high-impact journals using Python or R, to create, revise, or polish scientific figures for publication quality.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-paper2ppt"
+      ],
+      "group": "学术演示 / Beamer / 论文转 PPT",
+      "group_en": "Academic Presentations / Beamer / Paper-to-PPT",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "帮助agent从科学论文、预印本等材料中构建Nature风格的中文PPT演示文稿，包括自审修正以确保图表质量和文本布局。",
+      "description_en": "Assists agents in building Nature-style Chinese PPTX presentations from scientific papers, preprints, etc., with self-review for figure quality and text layout.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-polishing"
+      ],
+      "group": "学术投稿 / LaTeX / 排版",
+      "group_en": "Academic Submission / LaTeX / Typesetting",
+      "category": "academic-research",
+      "subcategory": "11-4",
+      "chain": false,
+      "description": "帮助agent将学术论文润色为Nature风格的英文，并修复LaTeX排版问题，如页面布局和图表安排。",
+      "description_en": "Aids agents in polishing academic papers into Nature-style English and fixing LaTeX typesetting issues such as page layout and figure arrangement.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-reader"
+      ],
+      "group": "长文本翻译",
+      "group_en": "Long-text Translation",
+      "category": "docs-knowledge",
+      "subcategory": "2-2",
+      "chain": false,
+      "description": "为学术论文构建中英文对照、图表感知的 Markdown 阅读器，支持从 PDF、DOI、arXiv 等源提取和翻译内容，保留图表位置与源锚点。",
+      "description_en": "Builds Chinese-English side-by-side, figure/table-aware Markdown readers for academic papers, supporting content extraction and translation from sources like PDF, DOI, and arXiv, while preserving figure/table placement and source anchors.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-response"
+      ],
+      "group": "审稿回复",
+      "group_en": "Reviewer Response",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "起草、审核或修订 Nature 家族稿件的逐点审稿回复信，处理审稿意见、编辑决定和回复草稿，确保符合学术规范。",
+      "description_en": "Drafts, audits, or revises point-by-point reviewer response letters for Nature-family manuscript revisions, handling reviewer comments, editor decisions, and response drafts while ensuring academic standards.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-reviewer"
+      ],
+      "group": "论文同行评审 / 质量审查",
+      "group_en": "Paper Peer Review / Quality Audit",
+      "category": "academic-research",
+      "subcategory": "11-5",
+      "chain": false,
+      "description": "帮助agent模拟Nature审稿人视角，生成预审稿意见和评估报告，涵盖原创性、科学重要性等维度。",
+      "description_en": "Assist agent in simulating a Nature reviewer's perspective, generating pre-submission review opinions and assessment reports covering dimensions like originality and scientific importance.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nature-writing"
+      ],
+      "group": "学术 / 科研论文写作 / 审稿回复 / 修订 / Rebuttal / 学术研究流水线",
+      "group_en": "Academic / Research Paper Writing / Review Response / Revision / Rebuttal / Academic Research Pipeline",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "帮助agent起草或重组Nature风格的学术论文部分，如摘要、引言、方法等，基于用户提供的内容或中文草稿。",
+      "description_en": "Help agent draft or restructure Nature-style academic paper sections, such as abstracts, introductions, and methods, based on user-provided content or Chinese drafts.",
+      "sources": [
+        "Yuan1z0825/nature-skills"
+      ]
+    },
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "HTML-native 设计 skill",
+      "group_en": "HTML-native Design Skill",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "帮助AI代理生成单文件HTML横向翻页PPT，支持电子杂志和瑞士国际主义两种视觉风格，含WebGL背景、章节幕封和动效。",
+      "description_en": "Assists AI agents in generating single-file HTML horizontal swipe presentations with two visual styles: editorial magazine and Swiss International, featuring WebGL backgrounds, chapter slides, and animations.",
+      "sources": [
+        "op7418/guizang-ppt-skill"
+      ]
+    },
+    {
+      "skills": [
+        "browser-edge-cases"
+      ],
+      "group": "浏览器自动化调试",
+      "group_en": "Browser Automation Debugging",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "提供调试浏览器自动化在复杂网站（如LinkedIn、Twitter）失败的标准操作程序，帮助代理解决边缘情况。",
+      "description_en": "SOP for debugging browser automation failures on complex websites like LinkedIn, Twitter/X, SPAs, or sites with Shadow DOM.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "test-reporting"
+      ],
+      "group": "集成测试报告",
+      "group_en": "Integration Test Reporting",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "运行代理集成测试套件并生成详细HTML报告，包含每个测试的输入和结果分析。",
+      "description_en": "Run integration test suites for dummy agents and produce detailed HTML reports with per-test input-outcome analysis.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "triage-issue"
+      ],
+      "group": "GitHub Issue/PR 分析 / 通用发布流程自动化",
+      "group_en": "GitHub Issue/PR Analysis / Release Automation",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "分析 GitHub issue，验证技术声明，自动关闭无效问题并生成响应。",
+      "description_en": "Analyzes GitHub issues, verifies technical claims, and closes invalid issues with automated responses.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "colony-progress-tracker"
+      ],
+      "group": "多代理并行开发协调",
+      "group_en": "Multi-Agent Parallel Development Coordination",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "在多代理任务队列中声称任务、跟踪步骤进度并验证 SOP 门控条件。",
+      "description_en": "Claims tasks in a multi-agent queue, tracks step progress, and verifies SOP gate conditions.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "context-preservation"
+      ],
+      "group": "上下文保留与工作笔记",
+      "group_en": "Context Preservation & Working Notes",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "在自动上下文修剪前，主动从工具结果中提取关键值到工作笔记，防止数据丢失。",
+      "description_en": "Proactively extracts critical values from tool results into working notes before context pruning destroys them, ensuring important data is preserved during agent operations.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "error-recovery"
+      ],
+      "group": "错误恢复决策树",
+      "group_en": "Error Recovery Decision Tree",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "当工具调用失败时，遵循结构化的恢复决策树，避免盲目重试或放弃。",
+      "description_en": "Provides a structured recovery decision tree for failed tool calls, enabling intelligent retry and escalation instead of blind retries or giving up.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "note-taking"
+      ],
+      "group": "Agent 记忆系统",
+      "group_en": "Agent Memory System",
+      "category": "agent-architecture",
+      "subcategory": "12-3",
+      "chain": false,
+      "description": "维护自由形式工作笔记，记录决策、提取值和开放问题，防止上下文修剪丢失关键信息。",
+      "description_en": "Maintain free-form working notes to record decisions, extracted values, and open questions, preventing loss of key information during context pruning.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "quality-monitor"
+      ],
+      "group": "Tool / 评测 / 项目级方法论",
+      "group_en": "Tool / Evaluation / Project-level Methodology",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "定期自我评估输出质量，以在外部判断之前捕获退化，确保智能体性能稳定。",
+      "description_en": "Periodically self-assess output quality to catch degradation before external evaluation, ensuring stable agent performance.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "writing-hive-skills"
+      ],
+      "group": "Skill 创建器",
+      "group_en": "Skill Creator",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "指导为 Hive agent 创建符合规范的新 skill，包括放置位置、发现机制和优先级规则。",
+      "description_en": "Guides creating new skills for Hive agents, covering placement, discovery mechanisms, and precedence rules per specification.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "browser-automation"
+      ],
+      "group": "浏览器自动化",
+      "group_en": "Browser Automation",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "教授通过 Chrome DevTools Protocol 进行浏览器自动化的技能，包括坐标计算、shadow-DOM 处理和真实站点验证。",
+      "description_en": "Teaches browser automation skills via Chrome DevTools Protocol, covering coordinate calculation, shadow-DOM handling, and verification on real production sites.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "chart-creation-foundations"
+      ],
+      "group": "图表创建基础",
+      "group_en": "Chart Creation Foundations",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "当chart_*工具可用时必须阅读，教授使用chart_render生成实时图表并下载为PNG，涵盖BI/金融级美学标准和12种常见图表类型的规范模式，避免手动写markdown。",
+      "description_en": "Required reading when chart_* tools are available, teaching the use of chart_render for live chart rendering and PNG downloads, covering BI/financial-grade aesthetics and canonical patterns for 12 common chart types to avoid manual markdown.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "linkedin-automation"
+      ],
+      "group": "社交平台自动化",
+      "group_en": "Social Platform Automation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "在使用浏览器工具自动化LinkedIn前必须阅读，涵盖处理shadow DOM、CSP等挑战的验证流程，用于消息、连接请求、帖子和搜索等操作，需配合browser-automation使用。",
+      "description_en": "Required reading before automating LinkedIn with browser_* tools, covering verified flows for handling shadow DOM, CSP, and other challenges for messaging, connection requests, feed posts, and search automation, requiring browser-automation.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "terminal-tools-foundations"
+      ],
+      "group": "终端工具基础",
+      "group_en": "Terminal Tools Foundations",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "教导 agent 终端工具的前后台任务管理、输出处理和工具偏好，避免常见错误。",
+      "description_en": "Teaches agents foreground/background job management, output handling, and tool preference for terminal tools to avoid common pitfalls.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "terminal-tools-fs-search"
+      ],
+      "group": "终端文件搜索",
+      "group_en": "Terminal Filesystem Search",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导使用 terminal_rg 和 terminal_find 进行项目外部文件系统搜索，包括内容搜索和谓词查询。",
+      "description_en": "Guides the use of terminal_rg and terminal_find for filesystem search outside the project tree, including content search and predicate queries.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "terminal-tools-job-control",
+        "terminal-tools-pty-sessions"
+      ],
+      "group": "终端作业与PTY会话管理",
+      "group_en": "Terminal Job & PTY Session Management",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "教agent管理后台作业，实现启动、轮询、等待及信号处理，适用于构建、部署等长时任务。",
+      "description_en": "Teaches agents how to manage background jobs with start, poll, wait patterns and signal escalation for long-running tasks like builds and deploys.",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "terminal-tools-troubleshooting"
+      ],
+      "group": "终端工具调试诊断",
+      "group_en": "Terminal Tool Diagnostics",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "诊断终端工具调用异常：stdout 为空、exit_code 为 null、session 忙等场景的排查方案",
+      "description_en": "Diagnostic recipes for terminal tool call anomalies: empty stdout, null exit_code, session busy, and other unexpected behaviors",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "x-automation"
+      ],
+      "group": "X/Twitter 自动化",
+      "group_en": "X/Twitter Automation",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "自动化 X/Twitter 操作：发帖、回复、删除、搜索互动，含 Draft.js 编辑器已验证流程",
+      "description_en": "Automate X/Twitter operations: posting, replying, deleting, search-and-engage, with verified Draft.js compose flows",
+      "sources": [
+        "aden-hive/hive"
+      ]
+    },
+    {
+      "skills": [
+        "0-autoresearch-skill",
+        "litgpt"
+      ],
+      "group": "AI 研究自主编排与模型实现",
+      "group_en": "Autonomous AI Research Orchestration and Model Implementation",
+      "category": "comms-integration",
+      "subcategory": "9-4",
+      "chain": true,
+      "description": "使用 LitGPT 库实现和训练大型语言模型，支持 Llama、Gemma 等 20+ 架构，提供清洁代码实现和 LoRA/QLoRA 微调工作流。",
+      "description_en": "Orchestrates end-to-end autonomous AI research projects, managing experiment iterations and result synthesis through a two-loop architecture, routing to domain-specific skills for execution, and supporting continuous autonomous operation.",
+      "sources": [
+        "Orchestra-Research/AI-Research-SKILLs"
+      ]
+    },
+    {
+      "skills": [
+        "rwkv",
+        "torchtitan"
+      ],
+      "group": "AI 模型架构与训练",
+      "group_en": "AI Model Architecture and Training",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助agent使用torchtitan进行分布式LLM预训练，支持4D并行（FSDP2、TP、PP、CP）和多GPU扩展。",
+      "description_en": "Assists agent in understanding and using the RWKV model architecture for linear time inference and infinite context, with installation and basic usage guidance.",
+      "sources": [
+        "Orchestra-Research/AI-Research-SKILLs"
+      ]
+    },
+    {
+      "skills": [
+        "huggingface-tokenizers",
+        "sentencepiece"
+      ],
+      "group": "Tokenization 工具",
+      "group_en": "Tokenization Tools",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "帮助 agent 进行高性能 tokenization，支持 BPE、WordPiece 和 Unigram 算法，用于 NLP 研究和生产。",
+      "description_en": "Assists agents in performing high-performance tokenization, supporting BPE, WordPiece, and Unigram algorithms for NLP research and production.",
+      "sources": [
+        "Orchestra-Research/AI-Research-SKILLs"
+      ]
+    },
+    {
+      "skills": [
+        "peft",
+        "unsloth"
+      ],
+      "group": "Scientific Agent skill 集 / 实验设计 / 科研编码 / 复现",
+      "group_en": "Scientific Agent skill set / Experiment design / Research coding / Reproduction",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "提供Unsloth库的快速微调专家指导，加速训练2-5倍并减少内存占用，优化LoRA/QLoRA方法。",
+      "description_en": "Expert guidance for fast fine-tuning with Unsloth, accelerating training by 2-5x and reducing memory usage for LoRA/QLoRA optimization.",
+      "sources": [
+        "Orchestra-Research/AI-Research-SKILLs"
+      ]
+    },
+    {
+      "skills": [
+        "nnsight",
+        "pyvene",
+        "slime",
+        "torchforge"
+      ],
+      "group": "Scientific Agent skill 集",
+      "group_en": "Scientific Agent skill set",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "提供使用 slime 框架进行 LLM 后训练强化学习的指导，适用于训练 GLM、Qwen3 等模型，并支持自定义数据生成和 Megatron-LM 集成。",
+      "description_en": "Helps agents interpret and manipulate neural network internals using the nnsight library, supporting local and remote execution of experiments on massive models without local GPU resources.",
+      "sources": [
+        "Orchestra-Research/AI-Research-SKILLs"
+      ]
+    },
+    {
+      "skills": [
+        "nemo-curator",
+        "ray-data"
+      ],
+      "group": "数据处理",
+      "group_en": "Data Processing",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助代理进行分布式ML数据处理，支持流式执行和多种数据格式，适用于批量推理和ETL管道。",
+      "description_en": "Helps agents perform scalable distributed data processing for ML, supporting streaming execution and multiple formats for batch inference and ETL pipelines.",
+      "sources": [
+        "Orchestra-Research/AI-Research-SKILLs"
+      ]
+    },
+    {
+      "skills": [
+        "openrlhf",
+        "simpo"
+      ],
+      "group": "LLM训练与优化",
+      "group_en": "LLM Training & Optimization",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "基于Ray和vLLM的高性能RLHF训练框架，支持PPO、GRPO等算法，适用于大模型分布式训练。",
+      "description_en": "High-performance RLHF training framework using Ray and vLLM, supporting PPO, GRPO, and other algorithms for distributed training of large models.",
+      "sources": [
+        "Orchestra-Research/AI-Research-SKILLs"
+      ]
+    },
+    {
+      "skills": [
+        "trl-fine-tuning",
+        "verl"
+      ],
+      "group": "AI 模型训练与后训练",
+      "group_en": "AI Model Training and Post-Training",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "指导 agent 使用 verl 库进行大规模语言模型的强化学习训练，支持多种 RL 算法和灵活的基础设施后端。",
+      "description_en": "Guides agents in using the verl library for large-scale reinforcement learning training of language models, supporting multiple RL algorithms and flexible infrastructure backends.",
+      "sources": [
+        "Orchestra-Research/AI-Research-SKILLs"
+      ]
+    },
+    {
+      "skills": [
+        "constitutional-ai"
+      ],
+      "group": "AI安全对齐训练",
+      "group_en": "AI Safety Alignment Training",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "训练AI模型通过自我批判和AI反馈减少有害输出，实现安全对齐，无需人类标签。",
+      "description_en": "Train AI models to reduce harmful outputs through self-critique and AI feedback for safety alignment, without human labels.",
+      "sources": [
+        "Orchestra-Research/AI-Research-SKILLs"
+      ]
+    },
+    {
+      "skills": [
+        "llamaguard"
+      ],
+      "group": "AI内容审核模型部署",
+      "group_en": "AI Content Moderation Model Deployment",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "部署Meta的LlamaGuard模型进行LLM输入输出的安全分类和过滤，支持6类安全风险。",
+      "description_en": "Deploy Meta's LlamaGuard model for safety classification and filtering of LLM inputs and outputs across 6 safety categories.",
+      "sources": [
+        "Orchestra-Research/AI-Research-SKILLs"
+      ]
+    },
+    {
+      "skills": [
+        "nemo-guardrails",
+        "prompt-guard"
+      ],
+      "group": "LLM 安全防护",
+      "group_en": "LLM Safety Guardrails",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "使用 Meta 的 86M 参数模型检测提示注入和越狱尝试，过滤恶意输入以保护 LLM 应用安全。",
+      "description_en": "Integrates programmable safety rails for LLM applications, supporting jailbreak detection, input/output validation, fact-checking, and content filtering.",
+      "sources": [
+        "Orchestra-Research/AI-Research-SKILLs"
+      ]
+    },
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "提示工程",
+      "group_en": "Prompt Engineering",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助agent为各类AI工具（如LLM、Cursor、Midjourney等）生成高效、零浪费的生产就绪提示词，优化交互效果。",
+      "description_en": "Assists agents in generating optimized, production-ready prompts for various AI tools (e.g., LLMs, Cursor, Midjourney), ensuring zero token waste and improved efficiency.",
+      "sources": [
+        "nidhinjs/prompt-master"
+      ]
+    },
+    {
+      "skills": [
+        "article-to-podcast-script"
+      ],
+      "group": "播客脚本生成",
+      "group_en": "Podcast Script Generation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "将 Markdown 文章转换为 1 到 4 位主持人的自然第一人称播客脚本，并保存为 .txt 文件，用于音频内容制作。",
+      "description_en": "Convert a Markdown article into a natural first-person podcast script for 1 to 4 speakers and save it as a .txt file for audio content creation.",
+      "sources": [
+        "digoal/blog"
+      ]
+    },
+    {
+      "skills": [
+        "axiom-explainer"
+      ],
+      "group": "概念讲解文章生成",
+      "group_en": "Concept Explanation Article Generation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "生成面向大学生和成年人的中文 Markdown 教学文章，解释公理、定理、理论等概念，包含 Mermaid 图表和示例，用于教育或科普。",
+      "description_en": "Generate Chinese Markdown teaching articles for university students and adults, explaining axioms, theorems, laws, principles, or theory systems with Mermaid diagrams and examples for education or popularization.",
+      "sources": [
+        "digoal/blog"
+      ]
+    },
+    {
+      "skills": [
+        "database-foundation-course-writer"
+      ],
+      "group": "写作 / 共写 / 文案打磨",
+      "group_en": "Writing / Co-writing / Copywriting",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "帮助AI代理基于参考材料生成数据库技术的中文Markdown文章，保存为GitHub可渲染格式，适用于架构师、DBA和开发者。",
+      "description_en": "Assists AI agents in generating Chinese Markdown articles on database technologies from reference materials, saved as GitHub-renderable files for architects, DBAs, and developers.",
+      "sources": [
+        "digoal/blog"
+      ]
+    },
+    {
+      "skills": [
+        "digoal-perspective"
+      ],
+      "group": "思维框架模拟",
+      "group_en": "Mindset Framework Simulation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "让AI代理模拟digoal/德哥的思维模式和表达风格，应用于数据库实践、技术通信和跨领域判断。",
+      "description_en": "Enables AI agents to simulate digoal/德哥's mindset and expression style for database practices, technical communication, and cross-domain judgment.",
+      "sources": [
+        "digoal/blog"
+      ]
+    },
+    {
+      "skills": [
+        "finance-core-analysis",
+        "finance-explosive-article"
+      ],
+      "group": "金融分析流水线",
+      "group_en": "Financial Analysis Pipeline",
+      "category": "",
+      "subcategory": "",
+      "chain": true,
+      "description": "从每日金融简报和外部验证中生成深度机制分析 markdown，用于公众号风格文章，是金融分析流水线的第二阶段。",
+      "description_en": "Transform financial analysis into high-impact articles, explaining market mechanisms with first principles, suitable for public platforms like WeChat, as the final stage of the pipeline.",
+      "sources": [
+        "digoal/blog"
+      ]
+    },
+    {
+      "skills": [
+        "paper-interpretation"
+      ],
+      "group": "论文解读 / 解读生成",
+      "group_en": "Paper Interpretation / Reading Generation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "从论文 PDF 生成通俗易懂、图文并茂的中文 Markdown 解读，帮助 agent 快速理解学术论文并保存结果。",
+      "description_en": "Generates accessible, illustrated Chinese Markdown interpretations from paper PDFs, enabling agents to quickly grasp academic research and save outputs.",
+      "sources": [
+        "digoal/blog"
+      ]
+    },
+    {
+      "skills": [
+        "pgfaq"
+      ],
+      "group": "数据库 / SQL / 分析",
+      "group_en": "Database / SQL / Analysis",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "基于 PostgreSQL 源码和文档，回答核心数据库行为、SQL、配置等问题并提供带来源的 Markdown 答案。",
+      "description_en": "Answers core PostgreSQL questions on behavior, SQL, configuration, and internals based on source code and documentation, delivering sourced Markdown responses.",
+      "sources": [
+        "digoal/blog"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "Yuan1z0825",
+        "repo": "nature-skills",
+        "full_name": "Yuan1z0825/nature-skills",
+        "url": "https://github.com/Yuan1z0825/nature-skills",
+        "stars": 16710,
+        "pushed_at": "2026-06-02",
+        "default_branch": "main",
+        "github_description": "符合nature论文学术表达和科研绘图的Skill",
+        "topics": [
+          "codex-skills",
+          "nature",
+          "nature-skills"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-codex-skills"
+      },
+      "skills": [
+        {
+          "name": "nature-academic-search",
+          "path": "plugins/nature-skills/skills/nature-academic-search/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "深度文献检索 / 综述",
+          "group_en": "Deep Literature Search / Review",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助代理执行多步骤文献搜索、引用验证、MeSH策略和参考文献管理，适用于学术研究工作流。",
+          "description_en": "Assists agents in executing multi-step literature searches, citation verification, MeSH strategies, and reference management for academic research workflows.",
+          "what": "执行多源文献搜索和参考文献管理",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nature-citation",
+          "path": "plugins/nature-skills/skills/nature-citation/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "引文 / 参考文献管理",
+          "group_en": "Citation / Reference Management",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "自动为稿件添加严格的 Nature/CNS 引用，通过搜索指定期刊并输出参考管理器兼容文件，简化学术写作中的引用处理。",
+          "description_en": "Automatically adds strict Nature/CNS citations to manuscripts by searching specified journals and exporting reference-manager-ready files, streamlining citation handling in academic writing.",
+          "what": "自动添加 Nature/CNS 引用并管理参考文献",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nature-data",
+          "path": "plugins/nature-skills/skills/nature-data/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术数据管理",
+          "group_en": "Academic Data Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为Nature论文准备、审计或修订数据可用性声明、数据存储库计划和FAIR元数据检查表，确保符合期刊要求。",
+          "description_en": "Prepare, audit, or revise data availability statements, data repository plans, and FAIR metadata checklists for Nature manuscripts to ensure compliance with journal requirements.",
+          "what": "管理Nature论文的数据可用性和FAIR元数据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nature-figure",
+          "path": "plugins/nature-skills/skills/nature-figure/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "科学出版图表",
+          "group_en": "Scientific Publication Figures",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为Nature或高影响力期刊提供提交级别的图表工作流，支持Python或R，用于创建、修订或润色科学图表，确保出版质量。",
+          "description_en": "Provide submission-grade figure workflows for Nature or high-impact journals using Python or R, to create, revise, or polish scientific figures for publication quality.",
+          "what": "生成Nature期刊的科学图表。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nature-paper2ppt",
+          "path": "plugins/nature-skills/skills/nature-paper2ppt/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "学术演示 / Beamer / 论文转 PPT",
+          "group_en": "Academic Presentations / Beamer / Paper-to-PPT",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助agent从科学论文、预印本等材料中构建Nature风格的中文PPT演示文稿，包括自审修正以确保图表质量和文本布局。",
+          "description_en": "Assists agents in building Nature-style Chinese PPTX presentations from scientific papers, preprints, etc., with self-review for figure quality and text layout.",
+          "what": "从科学论文生成Nature风格PPT演示文稿",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nature-polishing",
+          "path": "plugins/nature-skills/skills/nature-polishing/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "学术投稿 / LaTeX / 排版",
+          "group_en": "Academic Submission / LaTeX / Typesetting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助agent将学术论文润色为Nature风格的英文，并修复LaTeX排版问题，如页面布局和图表安排。",
+          "description_en": "Aids agents in polishing academic papers into Nature-style English and fixing LaTeX typesetting issues such as page layout and figure arrangement.",
+          "what": "润色学术论文为Nature风格英文并修复LaTeX排版",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nature-reader",
+          "path": "plugins/nature-skills/skills/nature-reader/SKILL.md",
+          "subcategory": "2-2",
+          "subcategory_title": "2.2 长文本翻译 / 跨语言",
+          "category": "docs-knowledge",
+          "group": "长文本翻译",
+          "group_en": "Long-text Translation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为学术论文构建中英文对照、图表感知的 Markdown 阅读器，支持从 PDF、DOI、arXiv 等源提取和翻译内容，保留图表位置与源锚点。",
+          "description_en": "Builds Chinese-English side-by-side, figure/table-aware Markdown readers for academic papers, supporting content extraction and translation from sources like PDF, DOI, and arXiv, while preserving figure/table placement and source anchors.",
+          "what": "构建论文中英文对照 Markdown 阅读器",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nature-response",
+          "path": "plugins/nature-skills/skills/nature-response/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "审稿回复",
+          "group_en": "Reviewer Response",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "起草、审核或修订 Nature 家族稿件的逐点审稿回复信，处理审稿意见、编辑决定和回复草稿，确保符合学术规范。",
+          "description_en": "Drafts, audits, or revises point-by-point reviewer response letters for Nature-family manuscript revisions, handling reviewer comments, editor decisions, and response drafts while ensuring academic standards.",
+          "what": "起草审稿回复信",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nature-reviewer",
+          "path": "plugins/nature-skills/skills/nature-reviewer/SKILL.md",
+          "subcategory": "11-5",
+          "subcategory_title": "11.5 同行评审 / 论文质量",
+          "category": "academic-research",
+          "group": "论文同行评审 / 质量审查",
+          "group_en": "Paper Peer Review / Quality Audit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助agent模拟Nature审稿人视角，生成预审稿意见和评估报告，涵盖原创性、科学重要性等维度。",
+          "description_en": "Assist agent in simulating a Nature reviewer's perspective, generating pre-submission review opinions and assessment reports covering dimensions like originality and scientific importance.",
+          "what": "模拟Nature审稿人评估",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nature-writing",
+          "path": "plugins/nature-skills/skills/nature-writing/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术 / 科研论文写作 / 审稿回复 / 修订 / Rebuttal / 学术研究流水线",
+          "group_en": "Academic / Research Paper Writing / Review Response / Revision / Rebuttal / Academic Research Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助agent起草或重组Nature风格的学术论文部分，如摘要、引言、方法等，基于用户提供的内容或中文草稿。",
+          "description_en": "Help agent draft or restructure Nature-style academic paper sections, such as abstracts, introductions, and methods, based on user-provided content or Chinese drafts.",
+          "what": "起草Nature风格论文",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "op7418",
+        "repo": "guizang-ppt-skill",
+        "full_name": "op7418/guizang-ppt-skill",
+        "url": "https://github.com/op7418/guizang-ppt-skill",
+        "stars": 15063,
+        "pushed_at": "2026-06-02",
+        "default_branch": "main",
+        "github_description": "AI-agent Skill for generating polished HTML slide decks: editorial magazine and Swiss layouts, image prompts, social covers, and a WebGL/low-power presentation runtime.",
+        "topics": [
+          "ai-agent",
+          "claude-code",
+          "codex",
+          "html-deck",
+          "image-generation",
+          "ppt",
+          "presentation",
+          "skill",
+          "skills",
+          "swiss-design",
+          "web-ppt"
+        ],
+        "language": "HTML",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "HTML-native 设计 skill",
+          "group_en": "HTML-native Design Skill",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助AI代理生成单文件HTML横向翻页PPT，支持电子杂志和瑞士国际主义两种视觉风格，含WebGL背景、章节幕封和动效。",
+          "description_en": "Assists AI agents in generating single-file HTML horizontal swipe presentations with two visual styles: editorial magazine and Swiss International, featuring WebGL backgrounds, chapter slides, and animations.",
+          "what": "生成精美的HTML演示文稿",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "aden-hive",
+        "repo": "hive",
+        "full_name": "aden-hive/hive",
+        "url": "https://github.com/aden-hive/hive",
+        "stars": 10494,
+        "pushed_at": "2026-05-29",
+        "default_branch": "main",
+        "github_description": "Multi-Agent Harness for Production AI",
+        "topics": [
+          "agent",
+          "agent-framework",
+          "agent-skills",
+          "anthropic",
+          "automation",
+          "autonomous-agents",
+          "claude",
+          "harness",
+          "harness-engineering",
+          "human-in-the-loop",
+          "openai",
+          "python",
+          "self-hosted",
+          "self-improving"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "browser-edge-cases",
+          "path": ".claude/skills/browser-edge-cases/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "浏览器自动化调试",
+          "group_en": "Browser Automation Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供调试浏览器自动化在复杂网站（如LinkedIn、Twitter）失败的标准操作程序，帮助代理解决边缘情况。",
+          "description_en": "SOP for debugging browser automation failures on complex websites like LinkedIn, Twitter/X, SPAs, or sites with Shadow DOM.",
+          "what": "Debug browser automation edge cases.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "test-reporting",
+          "path": ".claude/skills/test-reporting/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "集成测试报告",
+          "group_en": "Integration Test Reporting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "运行代理集成测试套件并生成详细HTML报告，包含每个测试的输入和结果分析。",
+          "description_en": "Run integration test suites for dummy agents and produce detailed HTML reports with per-test input-outcome analysis.",
+          "what": "Generate integration test reports.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "triage-issue",
+          "path": ".claude/skills/triage-issue/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "GitHub Issue/PR 分析 / 通用发布流程自动化",
+          "group_en": "GitHub Issue/PR Analysis / Release Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析 GitHub issue，验证技术声明，自动关闭无效问题并生成响应。",
+          "description_en": "Analyzes GitHub issues, verifies technical claims, and closes invalid issues with automated responses.",
+          "what": "自动处理 GitHub issue 以维护代码库清洁。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "colony-progress-tracker",
+          "path": "core/framework/skills/_default_skills/colony-progress-tracker/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多代理并行开发协调",
+          "group_en": "Multi-Agent Parallel Development Coordination",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在多代理任务队列中声称任务、跟踪步骤进度并验证 SOP 门控条件。",
+          "description_en": "Claims tasks in a multi-agent queue, tracks step progress, and verifies SOP gate conditions.",
+          "what": "管理多代理任务队列和进度跟踪。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "context-preservation",
+          "path": "core/framework/skills/_default_skills/context-preservation/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "上下文保留与工作笔记",
+          "group_en": "Context Preservation & Working Notes",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在自动上下文修剪前，主动从工具结果中提取关键值到工作笔记，防止数据丢失。",
+          "description_en": "Proactively extracts critical values from tool results into working notes before context pruning destroys them, ensuring important data is preserved during agent operations.",
+          "what": "运行时保留关键数据以防上下文修剪丢失",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "error-recovery",
+          "path": "core/framework/skills/_default_skills/error-recovery/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "错误恢复决策树",
+          "group_en": "Error Recovery Decision Tree",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "当工具调用失败时，遵循结构化的恢复决策树，避免盲目重试或放弃。",
+          "description_en": "Provides a structured recovery decision tree for failed tool calls, enabling intelligent retry and escalation instead of blind retries or giving up.",
+          "what": "工具调用失败时的结构化恢复策略",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "note-taking",
+          "path": "core/framework/skills/_default_skills/note-taking/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "Agent 记忆系统",
+          "group_en": "Agent Memory System",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "维护自由形式工作笔记，记录决策、提取值和开放问题，防止上下文修剪丢失关键信息。",
+          "description_en": "Maintain free-form working notes to record decisions, extracted values, and open questions, preventing loss of key information during context pruning.",
+          "what": "用于智能体在运行时保持关键数据，避免上下文丢失。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "quality-monitor",
+          "path": "core/framework/skills/_default_skills/quality-monitor/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Tool / 评测 / 项目级方法论",
+          "group_en": "Tool / Evaluation / Project-level Methodology",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "定期自我评估输出质量，以在外部判断之前捕获退化，确保智能体性能稳定。",
+          "description_en": "Periodically self-assess output quality to catch degradation before external evaluation, ensuring stable agent performance.",
+          "what": "用于智能体自我监控输出质量，及时调整策略。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "writing-hive-skills",
+          "path": "core/framework/skills/_default_skills/writing-hive-skills/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器",
+          "group_en": "Skill Creator",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导为 Hive agent 创建符合规范的新 skill，包括放置位置、发现机制和优先级规则。",
+          "description_en": "Guides creating new skills for Hive agents, covering placement, discovery mechanisms, and precedence rules per specification.",
+          "what": "创建和管理 Hive agent 技能的元技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "browser-automation",
+          "path": "core/framework/skills/_preset_skills/browser-automation/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "浏览器自动化",
+          "group_en": "Browser Automation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "教授通过 Chrome DevTools Protocol 进行浏览器自动化的技能，包括坐标计算、shadow-DOM 处理和真实站点验证。",
+          "description_en": "Teaches browser automation skills via Chrome DevTools Protocol, covering coordinate calculation, shadow-DOM handling, and verification on real production sites.",
+          "what": "基于真实生产环境验证的浏览器自动化工具。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "chart-creation-foundations",
+          "path": "core/framework/skills/_preset_skills/chart-creation-foundations/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "图表创建基础",
+          "group_en": "Chart Creation Foundations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "当chart_*工具可用时必须阅读，教授使用chart_render生成实时图表并下载为PNG，涵盖BI/金融级美学标准和12种常见图表类型的规范模式，避免手动写markdown。",
+          "description_en": "Required reading when chart_* tools are available, teaching the use of chart_render for live chart rendering and PNG downloads, covering BI/financial-grade aesthetics and canonical patterns for 12 common chart types to avoid manual markdown.",
+          "what": "提供图表创建的契约和规范，确保AI agent生成高质量数据可视化图表。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "linkedin-automation",
+          "path": "core/framework/skills/_preset_skills/linkedin-automation/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "社交平台自动化",
+          "group_en": "Social Platform Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在使用浏览器工具自动化LinkedIn前必须阅读，涵盖处理shadow DOM、CSP等挑战的验证流程，用于消息、连接请求、帖子和搜索等操作，需配合browser-automation使用。",
+          "description_en": "Required reading before automating LinkedIn with browser_* tools, covering verified flows for handling shadow DOM, CSP, and other challenges for messaging, connection requests, feed posts, and search automation, requiring browser-automation.",
+          "what": "提供LinkedIn特定的自动化指南，帮助AI agent安全可靠地执行社交平台操作。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "terminal-tools-foundations",
+          "path": "core/framework/skills/_preset_skills/terminal-tools-foundations/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "终端工具基础",
+          "group_en": "Terminal Tools Foundations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "教导 agent 终端工具的前后台任务管理、输出处理和工具偏好，避免常见错误。",
+          "description_en": "Teaches agents foreground/background job management, output handling, and tool preference for terminal tools to avoid common pitfalls.",
+          "what": "终端工具使用的基础知识。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "terminal-tools-fs-search",
+          "path": "core/framework/skills/_preset_skills/terminal-tools-fs-search/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "终端文件搜索",
+          "group_en": "Terminal Filesystem Search",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导使用 terminal_rg 和 terminal_find 进行项目外部文件系统搜索，包括内容搜索和谓词查询。",
+          "description_en": "Guides the use of terminal_rg and terminal_find for filesystem search outside the project tree, including content search and predicate queries.",
+          "what": "文件系统搜索工具的使用指南。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "terminal-tools-job-control",
+          "path": "core/framework/skills/_preset_skills/terminal-tools-job-control/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "终端作业与PTY会话管理",
+          "group_en": "Terminal Job & PTY Session Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "教agent管理后台作业，实现启动、轮询、等待及信号处理，适用于构建、部署等长时任务。",
+          "description_en": "Teaches agents how to manage background jobs with start, poll, wait patterns and signal escalation for long-running tasks like builds and deploys.",
+          "what": "管理后台作业生命周期，包括启动、轮询、等待和信号处理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "terminal-tools-pty-sessions",
+          "path": "core/framework/skills/_preset_skills/terminal-tools-pty-sessions/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "终端作业与PTY会话管理",
+          "group_en": "Terminal Job & PTY Session Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "教agent使用持久PTY会话，支持跨调用状态保持、驱动REPL和交互式提示。",
+          "description_en": "Teaches agents how to use persistent PTY sessions for stateful interactions, driving REPLs and handling interactive prompts.",
+          "what": "管理持久PTY会话，用于交互式程序和状态保持。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "terminal-tools-troubleshooting",
+          "path": "core/framework/skills/_preset_skills/terminal-tools-troubleshooting/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "终端工具调试诊断",
+          "group_en": "Terminal Tool Diagnostics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "诊断终端工具调用异常：stdout 为空、exit_code 为 null、session 忙等场景的排查方案",
+          "description_en": "Diagnostic recipes for terminal tool call anomalies: empty stdout, null exit_code, session busy, and other unexpected behaviors",
+          "what": "终端工具返回异常结果时的排查方案集合",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "x-automation",
+          "path": "core/framework/skills/_preset_skills/x-automation/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "X/Twitter 自动化",
+          "group_en": "X/Twitter Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "自动化 X/Twitter 操作：发帖、回复、删除、搜索互动，含 Draft.js 编辑器已验证流程",
+          "description_en": "Automate X/Twitter operations: posting, replying, deleting, search-and-engage, with verified Draft.js compose flows",
+          "what": "通过浏览器工具自动化 X/Twitter 社交平台交互",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "Orchestra-Research",
+        "repo": "AI-Research-SKILLs",
+        "full_name": "Orchestra-Research/AI-Research-SKILLs",
+        "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
+        "stars": 9330,
+        "pushed_at": "2026-04-28",
+        "default_branch": "main",
+        "github_description": "Comprehensive open-source library of AI research and engineering skills for any AI model. Package the skills and your claude code/codex/gemini agent will be an AI research agent with full horsepower. Maintained by Orchestra Research.",
+        "topics": [
+          "ai",
+          "ai-research",
+          "claude",
+          "claude-code",
+          "claude-skills",
+          "codex",
+          "gemini",
+          "gpt-5",
+          "grpo",
+          "huggingface",
+          "machine-leanring",
+          "megatron",
+          "skills",
+          "vllm"
+        ],
+        "language": "TeX",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "0-autoresearch-skill",
+          "path": "0-autoresearch-skill/SKILL.md",
+          "subcategory": "9-4",
+          "subcategory_title": "9.4 Sleep-time 自治研究",
+          "category": "comms-integration",
+          "group": "睡眠时长跑研究 ARIS",
+          "group_en": "Sleep-time Autonomous Research ARIS",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "编排端到端自主 AI 研究项目，通过双循环架构管理实验迭代和结果合成，路由到领域技能执行，支持持续自主运行。",
+          "description_en": "Orchestrates end-to-end autonomous AI research projects, managing experiment iterations and result synthesis through a two-loop architecture, routing to domain-specific skills for execution, and supporting continuous autonomous operation.",
+          "what": "AI 研究项目的自主编排工具。",
+          "chain": true,
+          "chain_group": "AI 研究自主编排与模型实现",
+          "chain_group_en": "Autonomous AI Research Orchestration and Model Implementation"
+        },
+        {
+          "name": "litgpt",
+          "path": "01-model-architecture/litgpt/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "LLM 模型实现与微调",
+          "group_en": "LLM Model Implementation and Fine-Tuning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "使用 LitGPT 库实现和训练大型语言模型，支持 Llama、Gemma 等 20+ 架构，提供清洁代码实现和 LoRA/QLoRA 微调工作流。",
+          "description_en": "Implements and trains large language models using the LitGPT library, supporting 20+ architectures like Llama and Gemma, with clean code implementations and LoRA/QLoRA fine-tuning workflows.",
+          "what": "LitGPT 库的 LLM 实现和训练技能。",
+          "chain": true,
+          "chain_group": "AI 研究自主编排与模型实现",
+          "chain_group_en": "Autonomous AI Research Orchestration and Model Implementation"
+        },
+        {
+          "name": "rwkv",
+          "path": "01-model-architecture/rwkv/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "AI 模型架构与训练",
+          "group_en": "AI Model Architecture and Training",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助agent理解和使用RWKV模型架构，实现线性时间推理和无限上下文，提供安装和基本用法指南。",
+          "description_en": "Assists agent in understanding and using the RWKV model architecture for linear time inference and infinite context, with installation and basic usage guidance.",
+          "what": "RWKV模型架构的介绍和使用指南。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "torchtitan",
+          "path": "01-model-architecture/torchtitan/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "AI 模型架构与训练",
+          "group_en": "AI Model Architecture and Training",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助agent使用torchtitan进行分布式LLM预训练，支持4D并行（FSDP2、TP、PP、CP）和多GPU扩展。",
+          "description_en": "Enables agent to perform distributed LLM pretraining with torchtitan, supporting 4D parallelism (FSDP2, TP, PP, CP) and multi-GPU scaling.",
+          "what": "分布式LLM预训练框架的使用技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "huggingface-tokenizers",
+          "path": "02-tokenization/huggingface-tokenizers/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "Tokenization 工具",
+          "group_en": "Tokenization Tools",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 进行高性能 tokenization，支持 BPE、WordPiece 和 Unigram 算法，用于 NLP 研究和生产。",
+          "description_en": "Assists agents in performing high-performance tokenization, supporting BPE, WordPiece, and Unigram algorithms for NLP research and production.",
+          "what": "高速 tokenization 库",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sentencepiece",
+          "path": "02-tokenization/sentencepiece/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "Tokenization 工具",
+          "group_en": "Tokenization Tools",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 实现语言无关的 tokenization，支持多语言模型和 CJK 语言，用于 AI 研究。",
+          "description_en": "Enables agents to perform language-independent tokenization, supporting multilingual models and CJK languages for AI research.",
+          "what": "语言无关 tokenizer",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "peft",
+          "path": "03-fine-tuning/peft/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "Scientific Agent skill 集 / 实验设计 / 科研编码 / 复现",
+          "group_en": "Scientific Agent skill set / Experiment design / Research coding / Reproduction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导使用PEFT和LoRA进行参数高效微调，适用于大型模型，节省内存并支持多适配器部署。",
+          "description_en": "Guidance on parameter-efficient fine-tuning using PEFT and LoRA for large models, saving memory and enabling multi-adapter deployment.",
+          "what": "参数高效微调指导。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "unsloth",
+          "path": "03-fine-tuning/unsloth/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "Scientific Agent skill 集 / 实验设计 / 科研编码 / 复现",
+          "group_en": "Scientific Agent skill set / Experiment design / Research coding / Reproduction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供Unsloth库的快速微调专家指导，加速训练2-5倍并减少内存占用，优化LoRA/QLoRA方法。",
+          "description_en": "Expert guidance for fast fine-tuning with Unsloth, accelerating training by 2-5x and reducing memory usage for LoRA/QLoRA optimization.",
+          "what": "快速微调指导。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nnsight",
+          "path": "04-mechanistic-interpretability/nnsight/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "Scientific Agent skill 集",
+          "group_en": "Scientific Agent skill set",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 使用 nnsight 库解释和操纵神经网络内部，支持本地和远程执行大型模型实验，无需本地 GPU 资源。",
+          "description_en": "Helps agents interpret and manipulate neural network internals using the nnsight library, supporting local and remote execution of experiments on massive models without local GPU resources.",
+          "what": "使用 nnsight 进行神经网络可解释性实验",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pyvene",
+          "path": "04-mechanistic-interpretability/pyvene/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "Scientific Agent skill 集",
+          "group_en": "Scientific Agent skill set",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 使用 pyvene 库进行因果干预实验，如激活修补和因果追踪，支持可复现的神经网络研究。",
+          "description_en": "Helps agents conduct causal intervention experiments using the pyvene library, such as activation patching and causal tracing, for reproducible neural network research.",
+          "what": "使用 pyvene 进行因果干预实验",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nemo-curator",
+          "path": "05-data-processing/nemo-curator/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "数据处理",
+          "group_en": "Data Processing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助代理准备高质量LLM训练数据，支持GPU加速数据清洗、去重、过滤和隐私保护。",
+          "description_en": "Helps agents prepare high-quality LLM training datasets with GPU-accelerated data curation, deduplication, quality filtering, and privacy redaction.",
+          "what": "GPU-accelerated data curation for LLM training",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ray-data",
+          "path": "05-data-processing/ray-data/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "数据处理",
+          "group_en": "Data Processing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助代理进行分布式ML数据处理，支持流式执行和多种数据格式，适用于批量推理和ETL管道。",
+          "description_en": "Helps agents perform scalable distributed data processing for ML, supporting streaming execution and multiple formats for batch inference and ETL pipelines.",
+          "what": "Scalable data processing for ML workloads",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "openrlhf",
+          "path": "06-post-training/openrlhf/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "LLM训练与优化",
+          "group_en": "LLM Training & Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于Ray和vLLM的高性能RLHF训练框架，支持PPO、GRPO等算法，适用于大模型分布式训练。",
+          "description_en": "High-performance RLHF training framework using Ray and vLLM, supporting PPO, GRPO, and other algorithms for distributed training of large models.",
+          "what": "大模型RLHF训练框架",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "simpo",
+          "path": "06-post-training/simpo/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "LLM训练与优化",
+          "group_en": "LLM Training & Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "简单偏好优化方法，用于LLM对齐，无需参考模型，比DPO更高效，适合快速训练。",
+          "description_en": "Simple preference optimization method for LLM alignment, reference-free and more efficient than DPO, suitable for fast training.",
+          "what": "LLM偏好优化工具",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "slime",
+          "path": "06-post-training/slime/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "Scientific Agent skill 集",
+          "group_en": "Scientific Agent skill set",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "提供使用 slime 框架进行 LLM 后训练强化学习的指导，适用于训练 GLM、Qwen3 等模型，并支持自定义数据生成和 Megatron-LM 集成。",
+          "description_en": "Guidance for LLM post-training with RL using the slime framework, suitable for training models like GLM and Qwen3, with custom data generation and Megatron-LM integration.",
+          "what": "指导 AI agent 使用 slime 框架进行强化学习训练与模型优化。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "torchforge",
+          "path": "06-post-training/torchforge/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "Scientific Agent skill 集",
+          "group_en": "Scientific Agent skill set",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "提供使用 torchforge 进行 PyTorch 原生强化学习的指导，支持清洁的算法隔离、可扩展训练和 Monarch 系统集成。",
+          "description_en": "Guidance for PyTorch-native agentic RL using torchforge, supporting clean algorithm isolation, scalable training, and Monarch system integration.",
+          "what": "指导 AI agent 使用 torchforge 进行强化学习研究与算法实验。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "trl-fine-tuning",
+          "path": "06-post-training/trl-fine-tuning/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "AI 模型训练与后训练",
+          "group_en": "AI Model Training and Post-Training",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 使用 TRL 工具包进行语言模型的后训练，支持指令微调、偏好对齐和强化学习优化。",
+          "description_en": "Helps agents use the TRL toolkit for post-training of language models, supporting supervised fine-tuning, preference alignment, and reinforcement learning optimization.",
+          "what": "使用 TRL 进行语言模型微调",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "verl",
+          "path": "06-post-training/verl/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "AI 模型训练与后训练",
+          "group_en": "AI Model Training and Post-Training",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 使用 verl 库进行大规模语言模型的强化学习训练，支持多种 RL 算法和灵活的基础设施后端。",
+          "description_en": "Guides agents in using the verl library for large-scale reinforcement learning training of language models, supporting multiple RL algorithms and flexible infrastructure backends.",
+          "what": "使用 verl 进行大规模 RL 训练",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "constitutional-ai",
+          "path": "07-safety-alignment/constitutional-ai/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "AI安全对齐训练",
+          "group_en": "AI Safety Alignment Training",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "训练AI模型通过自我批判和AI反馈减少有害输出，实现安全对齐，无需人类标签。",
+          "description_en": "Train AI models to reduce harmful outputs through self-critique and AI feedback for safety alignment, without human labels.",
+          "what": "使用Constitutional AI方法训练无害AI模型。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "llamaguard",
+          "path": "07-safety-alignment/llamaguard/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "AI内容审核模型部署",
+          "group_en": "AI Content Moderation Model Deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "部署Meta的LlamaGuard模型进行LLM输入输出的安全分类和过滤，支持6类安全风险。",
+          "description_en": "Deploy Meta's LlamaGuard model for safety classification and filtering of LLM inputs and outputs across 6 safety categories.",
+          "what": "部署LlamaGuard模型进行实时内容审核。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nemo-guardrails",
+          "path": "07-safety-alignment/nemo-guardrails/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "LLM 安全防护",
+          "group_en": "LLM Safety Guardrails",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 LLM 应用集成可编程安全护栏，支持越狱检测、输入输出验证、事实检查和内容过滤。",
+          "description_en": "Integrates programmable safety rails for LLM applications, supporting jailbreak detection, input/output validation, fact-checking, and content filtering.",
+          "what": "提供 LLM 运行时安全防护框架。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "prompt-guard",
+          "path": "07-safety-alignment/prompt-guard/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "LLM 安全防护",
+          "group_en": "LLM Safety Guardrails",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "使用 Meta 的 86M 参数模型检测提示注入和越狱尝试，过滤恶意输入以保护 LLM 应用安全。",
+          "description_en": "Uses Meta's 86M parameter model to detect prompt injection and jailbreak attempts, filtering malicious inputs to protect LLM applications.",
+          "what": "检测恶意提示注入以增强 LLM 安全。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "nidhinjs",
+        "repo": "prompt-master",
+        "full_name": "nidhinjs/prompt-master",
+        "url": "https://github.com/nidhinjs/prompt-master",
+        "stars": 8737,
+        "pushed_at": "2026-05-03",
+        "default_branch": "main",
+        "github_description": "A Claude skill that writes the accurate prompts for any AI tool. Zero tokens or credits wasted. Full context and memory retention",
+        "topics": [
+          "claude-ai",
+          "claude-skills",
+          "llm",
+          "prompt-engineering"
+        ],
+        "language": "",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "提示工程",
+          "group_en": "Prompt Engineering",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助agent为各类AI工具（如LLM、Cursor、Midjourney等）生成高效、零浪费的生产就绪提示词，优化交互效果。",
+          "description_en": "Assists agents in generating optimized, production-ready prompts for various AI tools (e.g., LLMs, Cursor, Midjourney), ensuring zero token waste and improved efficiency.",
+          "what": "为AI工具生成优化提示。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "digoal",
+        "repo": "blog",
+        "full_name": "digoal/blog",
+        "url": "https://github.com/digoal/blog",
+        "stars": 8497,
+        "pushed_at": "2026-06-05",
+        "default_branch": "master",
+        "github_description": "Opensource,Database,AI,Business,Minds. git clone --depth 1 https://github.com/digoal/blog",
+        "topics": [
+          "database",
+          "enterprisedb",
+          "gpdb",
+          "greenplum",
+          "hawq",
+          "mongodb",
+          "mysql",
+          "oracle",
+          "pg",
+          "pgsql",
+          "postgres",
+          "postgresql"
+        ],
+        "language": "HTML",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "article-to-podcast-script",
+          "path": "skills/article-to-podcast-script/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "播客脚本生成",
+          "group_en": "Podcast Script Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将 Markdown 文章转换为 1 到 4 位主持人的自然第一人称播客脚本，并保存为 .txt 文件，用于音频内容制作。",
+          "description_en": "Convert a Markdown article into a natural first-person podcast script for 1 to 4 speakers and save it as a .txt file for audio content creation.",
+          "what": "将文章转换为播客脚本",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "axiom-explainer",
+          "path": "skills/axiom-explainer/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "概念讲解文章生成",
+          "group_en": "Concept Explanation Article Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成面向大学生和成年人的中文 Markdown 教学文章，解释公理、定理、理论等概念，包含 Mermaid 图表和示例，用于教育或科普。",
+          "description_en": "Generate Chinese Markdown teaching articles for university students and adults, explaining axioms, theorems, laws, principles, or theory systems with Mermaid diagrams and examples for education or popularization.",
+          "what": "生成概念解释教学文章",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "database-foundation-course-writer",
+          "path": "skills/database-foundation-course-writer/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "写作 / 共写 / 文案打磨",
+          "group_en": "Writing / Co-writing / Copywriting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助AI代理基于参考材料生成数据库技术的中文Markdown文章，保存为GitHub可渲染格式，适用于架构师、DBA和开发者。",
+          "description_en": "Assists AI agents in generating Chinese Markdown articles on database technologies from reference materials, saved as GitHub-renderable files for architects, DBAs, and developers.",
+          "what": "生成数据库基础课程文章",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "digoal-perspective",
+          "path": "skills/digoal-perspective/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "思维框架模拟",
+          "group_en": "Mindset Framework Simulation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让AI代理模拟digoal/德哥的思维模式和表达风格，应用于数据库实践、技术通信和跨领域判断。",
+          "description_en": "Enables AI agents to simulate digoal/德哥's mindset and expression style for database practices, technical communication, and cross-domain judgment.",
+          "what": "模拟专家视角进行角色扮演",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "finance-core-analysis",
+          "path": "skills/finance-core-analysis/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "金融分析内容生成",
+          "group_en": "Financial Analysis Content Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从每日金融简报和外部验证中生成深度机制分析 markdown，用于公众号风格文章，是金融分析流水线的第二阶段。",
+          "description_en": "Generate deep mechanism analysis markdown from daily finance briefs and external verification, suitable for public platform articles, as stage 2 of the financial analysis pipeline.",
+          "what": "生成深度金融分析文章",
+          "chain": true,
+          "chain_group": "金融分析流水线",
+          "chain_group_en": "Financial Analysis Pipeline"
+        },
+        {
+          "name": "finance-explosive-article",
+          "path": "skills/finance-explosive-article/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "金融分析内容生成",
+          "group_en": "Financial Analysis Content Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将金融分析转化为高影响力爆款文章，以第一性原理解释市场机制，适用于公众号等公共平台，是流水线的最终阶段。",
+          "description_en": "Transform financial analysis into high-impact articles, explaining market mechanisms with first principles, suitable for public platforms like WeChat, as the final stage of the pipeline.",
+          "what": "生成爆款金融文章",
+          "chain": true,
+          "chain_group": "金融分析流水线",
+          "chain_group_en": "Financial Analysis Pipeline"
+        },
+        {
+          "name": "paper-interpretation",
+          "path": "skills/paper-interpretation/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "论文解读 / 解读生成",
+          "group_en": "Paper Interpretation / Reading Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从论文 PDF 生成通俗易懂、图文并茂的中文 Markdown 解读，帮助 agent 快速理解学术论文并保存结果。",
+          "description_en": "Generates accessible, illustrated Chinese Markdown interpretations from paper PDFs, enabling agents to quickly grasp academic research and save outputs.",
+          "what": "从 PDF 论文生成中文解读文章。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pgfaq",
+          "path": "skills/pgfaq/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "数据库 / SQL / 分析",
+          "group_en": "Database / SQL / Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于 PostgreSQL 源码和文档，回答核心数据库行为、SQL、配置等问题并提供带来源的 Markdown 答案。",
+          "description_en": "Answers core PostgreSQL questions on behavior, SQL, configuration, and internals based on source code and documentation, delivering sourced Markdown responses.",
+          "what": "解答 PostgreSQL 核心数据库问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
