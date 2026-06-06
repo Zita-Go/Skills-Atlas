@@ -1,0 +1,2151 @@
+{
+  "generated_at": "2026-06-06T05:36:04+00:00",
+  "date": "2026-06-06",
+  "proposed_count": 3,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 45,
+      "seen_recently": 37,
+      "blocklisted": 1,
+      "truncated": 255,
+      "looks_aggregator": 2,
+      "no_skill_files": 3,
+      "not_a_collection": 2
+    },
+    "filtered_out": [
+      {
+        "full_name": "WangRongsheng/awesome-LLM-resources",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "xixu-me/xget",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "jeecgboot/jimureport",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "refly-ai/refly",
+        "reason": "非正经集合：仓库是 Refly 技能构建平台的源代码，而非独立的技能集合。"
+      },
+      {
+        "full_name": "yzfly/Awesome-MCP-ZH",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "gonglei007/GameDevMind",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "htmlstreamofficial/preline",
+        "reason": "非正经集合：该仓库核心是基于Tailwind CSS的UI组件库，附带的theme-generator技能属于模板脚手架类，非正经AI skill集合。"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "affiliate-marketing"
+      ],
+      "group": "推荐 / 联盟 / 社区 / 联合 / 潜客 / 客户研究",
+      "group_en": "Recommendation, Affiliate, Community, Partnership, Lead, Customer Research",
+      "category": "marketing-growth",
+      "subcategory": "4-6",
+      "chain": false,
+      "description": "抓取Amazon产品详情，自动生成适用于Twitter/X、Instagram和微信的促销内容，用于联盟营销。",
+      "description_en": "Extract product information from Amazon and generate optimized promotional content for social media platforms to boost affiliate sales.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "alipay-mcp-config"
+      ],
+      "group": "API / SDK / MCP / Agent 开发",
+      "group_en": "API / SDK / MCP / Agent Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导系统管理员配置支付宝MCP服务器，实现AI代理的支付集成功能，包括沙箱测试和故障排除。",
+      "description_en": "Provide configuration guide for setting up Alipay MCP Server, enabling AI agents to process payments with sandbox testing and troubleshooting.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "cold-outreach"
+      ],
+      "group": "潜客获取",
+      "group_en": "Lead Generation",
+      "category": "marketing-growth",
+      "subcategory": "4-6",
+      "chain": false,
+      "description": "通过Google Maps查找本地企业，提取联系邮箱，用LLM生成个性化冷邮件并通过SMTP发送，实现B2B潜客获取自动化。",
+      "description_en": "Automate B2B cold email campaigns by finding local businesses on Google Maps, extracting contact emails, generating personalized outreach with LLM, and sending via SMTP.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "self-improving"
+      ],
+      "group": "自我精炼 agent / 影子 agent + MCP 记忆",
+      "group_en": "Self-Improving Agent / Shadow Agent + MCP Memory",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "代理通过自我反思和自我批评评估工作，捕获错误，并通过自我学习和记忆组织实现永久改进。",
+      "description_en": "Enable agents to self-reflect, self-criticize, self-learn, and self-organize memory for permanent improvement.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "bd-record",
+        "comment-engagement"
+      ],
+      "group": "潜客拓展工作流",
+      "group_en": "Lead Expansion Workflow",
+      "category": "",
+      "subcategory": "",
+      "chain": true,
+      "description": "维护SQLite数据库，记录已探索的创作者和已互动的帖子，避免商业开发中的重复追踪与互动。",
+      "description_en": "Searches content on social media platforms and engages in comment sections to expand potential customers or promote brands, used for automated scheduled tasks.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "info-record",
+        "intel-gathering"
+      ],
+      "group": "商业情报采集工作流",
+      "group_en": "Business Intelligence Collection Workflow",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": true,
+      "description": "维护SQLite情报采集数据库，记录和查询已采集信息，避免重复，支持按日检索。",
+      "description_en": "Scheduled monitoring of social media accounts and web sources, extracting business intelligence per preset standards, generating briefings or reports.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "lead-hunting"
+      ],
+      "group": "潜客 / 客户研究",
+      "group_en": "Lead / Customer Research",
+      "category": "marketing-growth",
+      "subcategory": "4-6",
+      "chain": false,
+      "description": "通过自媒体平台搜索并筛选潜在客户，支持发布者画像分析和评论区挖掘，用于自动化潜客获取。",
+      "description_en": "Searches social media platforms to identify potential customers through creator profile analysis and comment mining, automating lead generation.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "design-system-picker"
+      ],
+      "group": "品牌系统 / 视觉规范",
+      "group_en": "Brand System / Visual Standards",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "从内置设计系统库中匹配最合适的设计系统，为网页和界面设计提供风格规范。",
+      "description_en": "Matches the most suitable design system from a built-in library, providing style specifications for web and interface design.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "investor-materials",
+        "investor-outreach",
+        "ir-record"
+      ],
+      "group": "募资 / Pitch / 投资人关系",
+      "group_en": "Fundraising / Pitch / Investor Relations",
+      "category": "startup-finance",
+      "subcategory": "10-4",
+      "chain": false,
+      "description": "帮助AI agent创建和更新融资路演材料，如Pitch Deck、财务模型等，确保数据一致性和逻辑清晰，经得起质疑。",
+      "description_en": "Assists AI agents in creating and updating fundraising materials like Pitch Decks, One-Pagers, and financial models, ensuring data consistency, logical clarity, and scrutiny-proofness.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "market-research"
+      ],
+      "group": "市场研究 / 竞品分析 / 投资人尽调",
+      "group_en": "Market Research / Competitive Analysis / Investor Due Diligence",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "开展市场研究、竞品分析和投资人尽调，提供决策导向的摘要和来源标注。",
+      "description_en": "Conduct market research, competitive analysis, and investor due diligence, delivering decision-oriented summaries with source citations.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "swcr-register"
+      ],
+      "group": "知识产权",
+      "group_en": "Intellectual Property",
+      "category": "legal-compliance",
+      "subcategory": "14-4",
+      "chain": false,
+      "description": "自动生成中国软件著作权登记所需全套材料，包括源程序文档、操作手册和填报信息，可辅助在线提交。",
+      "description_en": "Automatically generate all materials for Chinese software copyright registration, including source program documentation, operation manuals, and submission information, with online filing assistance.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "customer-db",
+        "payment_send",
+        "proactive-send"
+      ],
+      "group": "销售辅助 / RevOps / 留存",
+      "group_en": "Sales Support / RevOps / Retention",
+      "category": "marketing-growth",
+      "subcategory": "4-9",
+      "chain": false,
+      "description": "在特定业务场景下，主动向客户发送消息，通过写入Redis outbound stream实现，无需等待客户发起对话。",
+      "description_en": "Maintain a SQLite customer database in the sales-cs workspace, saving customer business status, profiles, and follow-up records across sessions for sales process management.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "demo_send",
+        "exp_invite"
+      ],
+      "group": "销售客户转化流程",
+      "group_en": "Sales Customer Conversion Workflow",
+      "category": "marketing-growth",
+      "subcategory": "4-9",
+      "chain": true,
+      "description": "当客户询问产品使用细节或想看形态时，自动发送演示材料并跟进需求，促进销售转化。",
+      "description_en": "Invites customers interested in the product to join an experience group when they want to learn more, updating status to prevent duplicate invitations.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "douyin-publish",
+        "facebook-publish",
+        "instagram-publish"
+      ],
+      "group": "多渠道分发（邮件 / SMS / 社交）",
+      "group_en": "Multi-channel Distribution (Email / SMS / Social)",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "通过Meta Graph API自动化发布内容到Facebook，支持帖子、视频、Reels和Stories等多种格式。",
+      "description_en": "Automates video publishing to Douyin via the Open Platform API, supporting video upload, cover image, and hashtags with OAuth2 authentication.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "highlight-clipper",
+        "t2video"
+      ],
+      "group": "视频剪辑 / 生成",
+      "group_en": "Video Editing / Generation",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "整合 TTS 语音合成、素材搜集（Pexels/Pixabay/AI 生成）和 FFmpeg 组装，从脚本到短视频一站式制作，支持 9:16 竖屏。",
+      "description_en": "Integrates TTS voice synthesis, material collection (Pexels/Pixabay/AI-generated), and FFmpeg assembly for one-stop short video production from script, supporting 9:16 vertical format.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "juejin-publish",
+        "pinterest-publish"
+      ],
+      "group": "多渠道分发",
+      "group_en": "Multi-channel distribution",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "通过Pinterest API v5自动化创建图片或视频Pin，支持看板选择和OAuth2认证，简化社交媒体内容发布。",
+      "description_en": "Automates creating image or video pins on Pinterest via API v5, supporting board selection and OAuth2 authentication for streamlined social media content publishing.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "published-track"
+      ],
+      "group": "数据库 / SQL / 分析",
+      "group_en": "Database / SQL / Analysis",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "使用 SQLite 数据库记录微信公众号、知乎、B站等多平台发布内容及互动数据，按平台分表管理，便于追踪和分析。",
+      "description_en": "Uses SQLite database to record publication content and interaction data across platforms like WeChat Official Account, Zhihu, Bilibili, etc., with per-platform table management for tracking and analysis.",
+      "sources": [
+        "TeamWiseFlow/wiseflow"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-action"
+      ],
+      "group": "心理诊断工具",
+      "group_en": "Psychological Diagnosis Tools",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "基于阿德勒心理学，帮用户诊断执行力障碍和拖延的真正原因，提供深度心理分析而非激励。",
+      "description_en": "Diagnose execution block and procrastination root causes using Adlerian psychology, offering psychological insight instead of motivation.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-agent-migration"
+      ],
+      "group": "Agent 工作台迁移",
+      "group_en": "Agent Workspace Migration",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮用户整理混乱的 Agent 项目，实现 Claude Code、Codex、Grok 三端一致的可维护工作台结构。",
+      "description_en": "Organize chaotic Agent projects into a maintainable workspace with consistent structure across Claude Code, Codex, and Grok.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-ai-check"
+      ],
+      "group": "语法 / 文风审查",
+      "group_en": "Grammar / Style Review",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "扫描用户文案中的 AI 生成痕迹，输出详细检测报告，帮助识别 AI 写作特征，默认只诊断不改，强调基于用户意图改善写作。",
+      "description_en": "Scans user copy for AI-generated patterns, outputs detailed diagnostic reports to identify AI writing features, diagnosis only by default, with emphasis on improving writing based on user intent.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-benchmark"
+      ],
+      "group": "竞品 / 对比页 / 战情",
+      "group_en": "Competitor / Comparison Page / Intelligence",
+      "category": "marketing-growth",
+      "subcategory": "4-8",
+      "chain": false,
+      "description": "使用五重过滤法帮用户找到值得模仿的对标，排除自我干扰，专注于高利润、可模仿的商业对象，适用于从零到一阶段的模仿决策。",
+      "description_en": "Uses a five-filter method to help users find imitable benchmarks, eliminating self-distraction to focus on high-profit and executable business models, suitable for imitation decisions from zero to one.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-chatroom-austrian",
+        "dbs-chatroom"
+      ],
+      "group": "专家对话模拟",
+      "group_en": "Expert Dialogue Simulation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 模拟哈耶克、米塞斯和 Claude 的三人对话，从奥派经济学视角分析经济问题。",
+      "description_en": "Helps agent simulate a three-way dialogue between Hayek, Mises, and Claude, analyzing economic issues from the Austrian economics perspective.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-content-system"
+      ],
+      "group": "内容结构化系统",
+      "group_en": "Content Structuring System",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 把本地大量内容资产（如文稿、推文、选题）搭成可持续生长的内容结构化工程，包括审计规模、建立工程、抽取内容单元和生成主题地图。",
+      "description_en": "Helps agents build a sustainable content structuring engineering from local content assets (e.g., drafts, tweets, topics), including auditing scale, creating projects, extracting content units, and generating topic maps.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-content"
+      ],
+      "group": "内容创作诊断",
+      "group_en": "Content Creation Diagnosis",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 诊断如何把已确认的选题变成好内容，包括匹配内容形式、选择平台和审查表达方向。",
+      "description_en": "Helps agents diagnose how to turn a confirmed topic into good content, including matching content formats, selecting platforms, and reviewing expression direction.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-decision"
+      ],
+      "group": "个人决策系统",
+      "group_en": "Personal Decision System",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为业务、关系等长期跟踪领域构建本地知识工程，通过四层结构、快照和概念库持久化决策过程，支持复盘与规律提炼。",
+      "description_en": "Build a local knowledge project for long-running domains like business or relationships, persisting decision processes with a four-layer structure, snapshots, and a concept library for review and pattern extraction.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-deconstruct",
+        "dbs-good-question"
+      ],
+      "group": "问题框定 / 假设管理",
+      "group_en": "Problem Framing / Hypothesis Management",
+      "category": "product-management",
+      "subcategory": "3-2",
+      "chain": false,
+      "description": "把用户丢来的模糊问题改写成 Agent 可推理、可批评、可验证的问题说明书，暴露关键冲突并评估自动化可行程度。",
+      "description_en": "Apply Wittgenstein's philosophy of language and Austrian economics to deconstruct ambiguous business concepts to atomic level, clarifying linguistic confusion and identifying pseudo-concepts.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-diagnosis"
+      ],
+      "group": "商业模式诊断与问题消解",
+      "group_en": "Business Model Diagnosis & Problem Dissolution",
+      "category": "product-management",
+      "subcategory": "3-4",
+      "chain": false,
+      "description": "商业诊断 skill，提供问诊（消解用户商业问题）和体检（拆解商业模式出报告）两种模式，通过结构化流程识别问题本质。",
+      "description_en": "Business diagnosis skill with two modes: consultation (dissolve the user's business question) and checkup (dissect business model into a diagnostic report), using structured frameworks to identify the real problem.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-goal"
+      ],
+      "group": "问题框定与目标澄清",
+      "group_en": "Problem Framing & Goal Clarification",
+      "category": "product-management",
+      "subcategory": "3-2",
+      "chain": false,
+      "description": "用维特根斯坦语言哲学审计模糊目标，通过可指物性、可否证性等测试将空转的目标语言转为可检查的交付物。",
+      "description_en": "Audits fuzzy goals using Wittgenstein's philosophy of language, transforming 'idling' goal statements into checkable deliverables through tests like pointability and falsifiability.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-hook"
+      ],
+      "group": "Hook / 创意点子",
+      "group_en": "Hook / Creative Ideas",
+      "category": "marketing-growth",
+      "subcategory": "4-7",
+      "chain": false,
+      "description": "诊断短视频开头问题：先审内容质量，再按话题+Hook+可信度公式生成可执行的开头优化方案。",
+      "description_en": "Diagnoses short-video opening issues by first auditing content quality, then generating actionable hook rewrites using a topic + hook + credibility formula.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-learning"
+      ],
+      "group": "自适应辅导 / 苏格拉底教学",
+      "group_en": "Adaptive Tutoring / Socratic Teaching",
+      "category": "education-learning",
+      "subcategory": "19-2",
+      "chain": false,
+      "description": "将课题拆分为连续学习文章，根据用户反馈自适应调整深度、角度和节奏，构建个性化学习梯度。",
+      "description_en": "Splits a topic into a sequence of learning articles, adaptively adjusting depth, angle, and pace based on user feedback to build a personalized learning gradient.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-report"
+      ],
+      "group": "诊断报告生成",
+      "group_en": "Diagnosis Report Generation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "将多次诊断状态存档合并成一份可交付的markdown报告，便于分享、回顾和归档。",
+      "description_en": "Merges multiple diagnosis state snapshots into a deliverable markdown report for easy sharing, review, and archiving.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-restore",
+        "dbs-save"
+      ],
+      "group": "诊断状态管理",
+      "group_en": "Diagnosis State Management",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": true,
+      "description": "将当前商业诊断的关键结论和状态保存到本地结构化文件，实现跨会话持久记忆。",
+      "description_en": "Restore the most recent diagnosis snapshot from local storage, enabling cross-session continuation and project-isolated management.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-slowisfast"
+      ],
+      "group": "商业策略诊断",
+      "group_en": "Business Strategy Diagnosis",
+      "category": "product-management",
+      "subcategory": "3-4",
+      "chain": false,
+      "description": "帮创业者识别哪些环节值得放慢以积累长期资产，避免捷径带来的反噬。",
+      "description_en": "Help entrepreneurs identify where to slow down to build long-term assets, avoiding shortcuts that backfire.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "dbs-xhs-title"
+      ],
+      "group": "小红书标题优化",
+      "group_en": "Xiaohongshu Title Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-2",
+      "chain": false,
+      "description": "基于75个验证公式，为小红书内容匹配最佳标题模板并生成定制标题。",
+      "description_en": "Match and generate Xiaohongshu titles from 75 proven formulas, explaining the choice.",
+      "sources": [
+        "dontbesilent2025/dbskill"
+      ]
+    },
+    {
+      "skills": [
+        "article-magazine",
+        "blog-post"
+      ],
+      "group": "长文 HTML 生成",
+      "group_en": "Long-form HTML Generation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "生成杂志风格的长文 HTML，包含 hero 区域、正文排版、引用块等，适用于公众号、博客等平台发布。",
+      "description_en": "Generates magazine-style long-form HTML with hero section, typography, blockquotes, etc., suitable for publishing on platforms like WeChat or blogs.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    },
+    {
+      "skills": [
+        "card-twitter",
+        "card-xiaohongshu"
+      ],
+      "group": "病毒式传播 / Hook / 创意",
+      "group_en": "Viral / Hook / Creative",
+      "category": "marketing-growth",
+      "subcategory": "4-7",
+      "chain": false,
+      "description": "它帮助AI代理生成用于Twitter的分享卡片HTML模板，包含金句、作者署名和品牌水印，适合直接截图配推文发出，视觉简洁有力。",
+      "description_en": "It helps AI agents generate Xiaohongshu-style multi-slide knowledge card templates, each slide focusing on one key point with Morandi color scheme, ideal for informative content sharing and social media marketing.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    },
+    {
+      "skills": [
+        "competitive-teardown"
+      ],
+      "group": "竞品分析报告",
+      "group_en": "Competitive Analysis Reports",
+      "category": "marketing-growth",
+      "subcategory": "4-8",
+      "chain": false,
+      "description": "帮助AI agent将竞品资料转化为结构化产品决策报告，包括定位图、功能矩阵、价格对比和机会窗口分析。",
+      "description_en": "Helps AI agents convert competitor materials into structured product decision reports, including positioning maps, feature matrices, price comparisons, and opportunity windows.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    },
+    {
+      "skills": [
+        "dashboard"
+      ],
+      "group": "管理后台仪表板生成",
+      "group_en": "Admin Dashboard Generation",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "帮助AI agent快速生成管理后台仪表板页面，包含固定侧栏、顶栏、KPI网格和图表，适用于运营监控。",
+      "description_en": "Helps AI agents quickly generate admin dashboard pages with fixed sidebars, top bars, KPI grids, and charts for operational monitoring.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    },
+    {
+      "skills": [
+        "data-report"
+      ],
+      "group": "数据可视化报告",
+      "group_en": "Data Visualization Report",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "把CSV/Excel/JSON数据转成漂亮的可视化报告页，包含KPI卡片、图表、表格和文字洞察。",
+      "description_en": "Convert CSV/Excel/JSON data into a visually appealing HTML report page with KPI cards, charts, tables, and textual insights.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    },
+    {
+      "skills": [
+        "dating-web"
+      ],
+      "group": "社区仪表板",
+      "group_en": "Community Dashboard",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为社区或配对应用生成数据仪表板，显示KPI、趋势图和实时信号。",
+      "description_en": "Generate a data dashboard for dating or community apps, displaying KPIs, trend charts, and real-time signals.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    },
+    {
+      "skills": [
+        "deck-blueprint",
+        "deck-course-module"
+      ],
+      "group": "幻灯片模板生成",
+      "group_en": "Slide Template Generation",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "生成工程架构讲解的幻灯片模板，采用蓝图网格和 pipeline 设计，适合严肃演示。",
+      "description_en": "Generates course and training presentation templates with persistent learning objectives and MCQ self-assessment pages.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    },
+    {
+      "skills": [
+        "deck-dir-key-nav",
+        "deck-graphify-dark",
+        "deck-magazine-web",
+        "deck-obsidian-claude",
+        "deck-open-slide-canvas",
+        "deck-pitch",
+        "deck-tech-sharing",
+        "deck-xhs-pastel",
+        "deck-xhs-post",
+        "deck-xhs-white"
+      ],
+      "group": "学术演示 / Beamer / 论文转 PPT / HTML-native 设计 skill / 幻灯片图像生成 / 零依赖 HTML 演示",
+      "group_en": "Academic Presentations / Beamer / Paper to PPT / HTML-native Design Skills / Slide Image Generation / Zero-dependency HTML Presentations",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "为 AI agent 生成暗色主题的图谱演示幻灯片，适用于 AI 原生或开发工具发布，包含渐变背景、力导向图谱和 JetBrains Mono 代码高亮。",
+      "description_en": "Generates dark-themed graph presentation slides for AI-native or dev-tool launches, featuring gradient backgrounds, floating orbs, SVG force-directed graphs, and JetBrains Mono code highlighting.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    },
+    {
+      "skills": [
+        "deck-presenter-mode",
+        "deck-product-launch"
+      ],
+      "group": "演示文稿生成",
+      "group_en": "Presentation Generation",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "生成产品发布Keynote风格的HTML演示文稿，包含特性展示、定价页面和行动号召部分。",
+      "description_en": "Generates HTML presentation decks with speaker notes and a teleprompter popup for presenters, featuring multiple theme options.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    },
+    {
+      "skills": [
+        "deck-replit",
+        "deck-safety-alert"
+      ],
+      "group": "HTML Deck 模板生成",
+      "group_en": "HTML Deck Template Generation",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "帮助 agent 生成 Replit Slides 风格的横向滑动幻灯片，支持 8 种主题，自动适配内容长度。",
+      "description_en": "Helps agents create red-themed decks for safety alerts and incident reviews, featuring hazard stripes and multi-tier risk cards.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    },
+    {
+      "skills": [
+        "deck-simple",
+        "deck-swiss-international"
+      ],
+      "group": "HTML 幻灯片模板",
+      "group_en": "HTML Slide Templates",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "生成瑞士国际主义风格 HTML 幻灯片，采用 16 列网格和单一饱和色调，提供 22 个版式，适用于商业、产品分析等理性表达场景。",
+      "description_en": "Generates Swiss International style HTML decks with 16-column grid layouts and single accent colors, offering 22 layouts for business, product analysis, and rational expression scenarios.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    },
+    {
+      "skills": [
+        "digital-eguide",
+        "doc-kami-parchment"
+      ],
+      "group": "HTML 设计模板（多场景排版）",
+      "group_en": "HTML Design Templates (Multi-surface Layouts)",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "生成双页跨页电子指南 HTML：封面含目录预览，内页含课程正文、pull-quote 和步骤列表，适合 lead magnet / playbook 类营销物料。",
+      "description_en": "Generates editorial HTML in warm parchment style (Kami-inspired): ink-blue monochrome accent, serif typography, A4 long-page layout — suitable for reports, letters, resumes, and changelogs.",
+      "sources": [
+        "nexu-io/html-anything"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "TeamWiseFlow",
+        "repo": "wiseflow",
+        "full_name": "TeamWiseFlow/wiseflow",
+        "url": "https://github.com/TeamWiseFlow/wiseflow",
+        "stars": 8241,
+        "pushed_at": "2026-06-05",
+        "default_branch": "master",
+        "github_description": "为所有人准备的AI搞钱团队。技术平权，对抗AI引发的新一轮贫富差距加大！",
+        "topics": [
+          "crawler",
+          "digital-employee",
+          "makemoney",
+          "mas",
+          "multi-agent",
+          "multi-agent-systems",
+          "rpa"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "affiliate-marketing",
+          "path": "_disabled/skills/affiliate-marketing/SKILL.md",
+          "subcategory": "4-6",
+          "subcategory_title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "category": "marketing-growth",
+          "group": "推荐 / 联盟 / 社区 / 联合 / 潜客 / 客户研究",
+          "group_en": "Recommendation, Affiliate, Community, Partnership, Lead, Customer Research",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "抓取Amazon产品详情，自动生成适用于Twitter/X、Instagram和微信的促销内容，用于联盟营销。",
+          "description_en": "Extract product information from Amazon and generate optimized promotional content for social media platforms to boost affiliate sales.",
+          "what": "抓取Amazon产品并生成多平台营销内容",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "alipay-mcp-config",
+          "path": "_disabled/skills/alipay-mcp-config/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "API / SDK / MCP / Agent 开发",
+          "group_en": "API / SDK / MCP / Agent Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导系统管理员配置支付宝MCP服务器，实现AI代理的支付集成功能，包括沙箱测试和故障排除。",
+          "description_en": "Provide configuration guide for setting up Alipay MCP Server, enabling AI agents to process payments with sandbox testing and troubleshooting.",
+          "what": "配置支付宝支付MCP服务器",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cold-outreach",
+          "path": "_disabled/skills/cold-outreach/SKILL.md",
+          "subcategory": "4-6",
+          "subcategory_title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "category": "marketing-growth",
+          "group": "潜客获取",
+          "group_en": "Lead Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过Google Maps查找本地企业，提取联系邮箱，用LLM生成个性化冷邮件并通过SMTP发送，实现B2B潜客获取自动化。",
+          "description_en": "Automate B2B cold email campaigns by finding local businesses on Google Maps, extracting contact emails, generating personalized outreach with LLM, and sending via SMTP.",
+          "what": "B2B冷邮件自动化管线。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "self-improving",
+          "path": "_disabled/skills/self-improving/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "自我精炼 agent / 影子 agent + MCP 记忆",
+          "group_en": "Self-Improving Agent / Shadow Agent + MCP Memory",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "代理通过自我反思和自我批评评估工作，捕获错误，并通过自我学习和记忆组织实现永久改进。",
+          "description_en": "Enable agents to self-reflect, self-criticize, self-learn, and self-organize memory for permanent improvement.",
+          "what": "代理自我改进与记忆系统。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "bd-record",
+          "path": "addons/officials/crew/business-developer/skills/bd-record/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "数据追踪与去重",
+          "group_en": "Data Tracking & Deduplication",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "维护SQLite数据库，记录已探索的创作者和已互动的帖子，避免商业开发中的重复追踪与互动。",
+          "description_en": "Maintains a SQLite database to track explored creators and interacted posts, preventing duplicate tracking and interactions in business development.",
+          "what": "管理数据库以支持潜客拓展的去重记录。",
+          "chain": true,
+          "chain_group": "潜客拓展工作流",
+          "chain_group_en": "Lead Expansion Workflow"
+        },
+        {
+          "name": "comment-engagement",
+          "path": "addons/officials/crew/business-developer/skills/comment-engagement/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "社交潜客拓展",
+          "group_en": "Social Lead Expansion",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过自媒体平台搜索内容，在评论区互动以拓展潜在客户或进行品牌宣传，用于定时自动化任务。",
+          "description_en": "Searches content on social media platforms and engages in comment sections to expand potential customers or promote brands, used for automated scheduled tasks.",
+          "what": "自动化社交媒体互动以拓展潜在客户。",
+          "chain": true,
+          "chain_group": "潜客拓展工作流",
+          "chain_group_en": "Lead Expansion Workflow"
+        },
+        {
+          "name": "info-record",
+          "path": "addons/officials/crew/business-developer/skills/info-record/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "情报数据库管理",
+          "group_en": "Intelligence Database Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "维护SQLite情报采集数据库，记录和查询已采集信息，避免重复，支持按日检索。",
+          "description_en": "Maintains an SQLite intelligence collection database, records and queries collected information to avoid duplication, and supports daily retrieval.",
+          "what": "管理情报采集的数据库记录和去重。",
+          "chain": true,
+          "chain_group": "商业情报采集工作流",
+          "chain_group_en": "Business Intelligence Collection Workflow"
+        },
+        {
+          "name": "intel-gathering",
+          "path": "addons/officials/crew/business-developer/skills/intel-gathering/SKILL.md",
+          "subcategory": "7-2",
+          "subcategory_title": "7.2 跨平台社交 / 趋势监测",
+          "category": "data-scraping",
+          "group": "跨平台社交 / 趋势监测",
+          "group_en": "Cross-Platform Social / Trend Monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "定时监控自媒体账号和网页信源，按预设标准提取商业情报，生成简报或报告。",
+          "description_en": "Scheduled monitoring of social media accounts and web sources, extracting business intelligence per preset standards, generating briefings or reports.",
+          "what": "自动化商业情报监控和报告生成。",
+          "chain": true,
+          "chain_group": "商业情报采集工作流",
+          "chain_group_en": "Business Intelligence Collection Workflow"
+        },
+        {
+          "name": "lead-hunting",
+          "path": "addons/officials/crew/business-developer/skills/lead-hunting/SKILL.md",
+          "subcategory": "4-6",
+          "subcategory_title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "category": "marketing-growth",
+          "group": "潜客 / 客户研究",
+          "group_en": "Lead / Customer Research",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "通过自媒体平台搜索并筛选潜在客户，支持发布者画像分析和评论区挖掘，用于自动化潜客获取。",
+          "description_en": "Searches social media platforms to identify potential customers through creator profile analysis and comment mining, automating lead generation.",
+          "what": "自动化潜客挖掘和客户识别。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "design-system-picker",
+          "path": "addons/officials/crew/designer/skills/design-system-picker/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "品牌系统 / 视觉规范",
+          "group_en": "Brand System / Visual Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从内置设计系统库中匹配最合适的设计系统，为网页和界面设计提供风格规范。",
+          "description_en": "Matches the most suitable design system from a built-in library, providing style specifications for web and interface design.",
+          "what": "根据描述选择设计系统。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "investor-materials",
+          "path": "addons/officials/crew/ir/skills/investor-materials/SKILL.md",
+          "subcategory": "10-4",
+          "subcategory_title": "10.4 募资 / 投资人关系",
+          "category": "startup-finance",
+          "group": "募资 / Pitch / 投资人关系",
+          "group_en": "Fundraising / Pitch / Investor Relations",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助AI agent创建和更新融资路演材料，如Pitch Deck、财务模型等，确保数据一致性和逻辑清晰，经得起质疑。",
+          "description_en": "Assists AI agents in creating and updating fundraising materials like Pitch Decks, One-Pagers, and financial models, ensuring data consistency, logical clarity, and scrutiny-proofness.",
+          "what": "创建融资路演材料和文档。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "investor-outreach",
+          "path": "addons/officials/crew/ir/skills/investor-outreach/SKILL.md",
+          "subcategory": "10-4",
+          "subcategory_title": "10.4 募资 / 投资人关系",
+          "category": "startup-finance",
+          "group": "募资 / Pitch / 投资人关系",
+          "group_en": "Fundraising / Pitch / Investor Relations",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助AI agent撰写个性化投资人触达邮件、暖介绍请求和跟进邮件，降低行动门槛，使用事实代替空话。",
+          "description_en": "Helps AI agents draft personalized investor outreach communications, including cold emails, warm intro requests, and follow-ups, lowering action barriers and using facts over fluff.",
+          "what": "撰写投资人触达和沟通文案。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ir-record",
+          "path": "addons/officials/crew/ir/skills/ir-record/SKILL.md",
+          "subcategory": "10-4",
+          "subcategory_title": "10.4 募资 / 投资人关系",
+          "category": "startup-finance",
+          "group": "募资 / Pitch / 投资人关系",
+          "group_en": "Fundraising / Pitch / Investor Relations",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "维护投资人档案和接触历史的 SQLite 数据库，用于跟踪融资进展，避免重复联系。",
+          "description_en": "Maintain an SQLite database for investor records and contact history, tracking fundraising progress and avoiding duplicate outreach.",
+          "what": "SQLite 数据库管理投资人档案和接触记录。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "market-research",
+          "path": "addons/officials/crew/ir/skills/market-research/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "市场研究 / 竞品分析 / 投资人尽调",
+          "group_en": "Market Research / Competitive Analysis / Investor Due Diligence",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "开展市场研究、竞品分析和投资人尽调，提供决策导向的摘要和来源标注。",
+          "description_en": "Conduct market research, competitive analysis, and investor due diligence, delivering decision-oriented summaries with source citations.",
+          "what": "执行市场研究、竞品分析和投资人尽调，输出决策导向报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "swcr-register",
+          "path": "addons/officials/crew/ir/skills/swcr-register/SKILL.md",
+          "subcategory": "14-4",
+          "subcategory_title": "14.4 知识产权",
+          "category": "legal-compliance",
+          "group": "知识产权",
+          "group_en": "Intellectual Property",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "自动生成中国软件著作权登记所需全套材料，包括源程序文档、操作手册和填报信息，可辅助在线提交。",
+          "description_en": "Automatically generate all materials for Chinese software copyright registration, including source program documentation, operation manuals, and submission information, with online filing assistance.",
+          "what": "软件著作权登记全流程自动化",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "customer-db",
+          "path": "addons/officials/crew/sales-cs/skills/customer-db/SKILL.md",
+          "subcategory": "4-9",
+          "subcategory_title": "4.9 销售辅助 / RevOps / 留存",
+          "category": "marketing-growth",
+          "group": "销售辅助 / RevOps / 留存",
+          "group_en": "Sales Support / RevOps / Retention",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在销售-客户服务工作区维护SQLite客户数据库，跨会话保存客户商业状态、画像和跟进记录，用于销售流程管理。",
+          "description_en": "Maintain a SQLite customer database in the sales-cs workspace, saving customer business status, profiles, and follow-up records across sessions for sales process management.",
+          "what": "持久化客户数据管理",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "demo_send",
+          "path": "addons/officials/crew/sales-cs/skills/demo_send/SKILL.md",
+          "subcategory": "4-9",
+          "subcategory_title": "4.9 销售辅助 / RevOps / 留存",
+          "category": "marketing-growth",
+          "group": "销售辅助 / RevOps / 留存",
+          "group_en": "Sales Support / RevOps / Retention",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "当客户询问产品使用细节或想看形态时，自动发送演示材料并跟进需求，促进销售转化。",
+          "description_en": "Automatically sends demo materials when customers inquire about product usage or form, and follows up on needs to drive sales conversion.",
+          "what": "发送产品演示材料给潜在客户。",
+          "chain": true,
+          "chain_group": "销售客户转化流程",
+          "chain_group_en": "Sales Customer Conversion Workflow"
+        },
+        {
+          "name": "exp_invite",
+          "path": "addons/officials/crew/sales-cs/skills/exp_invite/SKILL.md",
+          "subcategory": "4-9",
+          "subcategory_title": "4.9 销售辅助 / RevOps / 留存",
+          "category": "marketing-growth",
+          "group": "销售辅助 / RevOps / 留存",
+          "group_en": "Sales Support / RevOps / Retention",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "当客户对产品感兴趣并想深入了解时，邀请他们加入体验群，并更新状态避免重复邀请。",
+          "description_en": "Invites customers interested in the product to join an experience group when they want to learn more, updating status to prevent duplicate invitations.",
+          "what": "邀请客户加入产品体验群。",
+          "chain": true,
+          "chain_group": "销售客户转化流程",
+          "chain_group_en": "Sales Customer Conversion Workflow"
+        },
+        {
+          "name": "payment_send",
+          "path": "addons/officials/crew/sales-cs/skills/payment_send/SKILL.md",
+          "subcategory": "4-9",
+          "subcategory_title": "4.9 销售辅助 / RevOps / 留存",
+          "category": "marketing-growth",
+          "group": "销售辅助 / RevOps / 留存",
+          "group_en": "Sales Support / RevOps / Retention",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "当客户表达购买意向时，发送预存的付款二维码图片，支持俱乐部、订阅和充值模式，推进成交。",
+          "description_en": "When a customer expresses purchase intent, send a pre-stored payment QR code image, supporting club, subscription, and top-up modes, to advance the transaction.",
+          "what": "发送付款二维码以完成销售。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "proactive-send",
+          "path": "addons/officials/crew/sales-cs/skills/proactive-send/SKILL.md",
+          "subcategory": "4-9",
+          "subcategory_title": "4.9 销售辅助 / RevOps / 留存",
+          "category": "marketing-growth",
+          "group": "销售辅助 / RevOps / 留存",
+          "group_en": "Sales Support / RevOps / Retention",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在特定业务场景下，主动向客户发送消息，通过写入Redis outbound stream实现，无需等待客户发起对话。",
+          "description_en": "Proactively send messages to customers in specific business scenarios by writing to Redis outbound stream, without waiting for the customer to initiate a conversation.",
+          "what": "主动发送消息以进行业务沟通。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "douyin-publish",
+          "path": "addons/officials/crew/selfmedia-operator/skills/douyin-publish/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "多渠道分发（邮件 / SMS / 社交）",
+          "group_en": "Multi-channel Distribution (Email / SMS / Social)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过抖音开放平台API自动化发布视频，支持视频上传、封面设置和话题标签，需OAuth2认证。",
+          "description_en": "Automates video publishing to Douyin via the Open Platform API, supporting video upload, cover image, and hashtags with OAuth2 authentication.",
+          "what": "自动化发布视频到抖音。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "facebook-publish",
+          "path": "addons/officials/crew/selfmedia-operator/skills/facebook-publish/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "多渠道分发（邮件 / SMS / 社交）",
+          "group_en": "Multi-channel Distribution (Email / SMS / Social)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过Meta Graph API自动化发布内容到Facebook，支持帖子、视频、Reels和Stories等多种格式。",
+          "description_en": "Automates content publishing to Facebook via the Meta Graph API, supporting posts, videos, Reels, and Stories.",
+          "what": "自动化发布内容到Facebook。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "highlight-clipper",
+          "path": "addons/officials/crew/selfmedia-operator/skills/highlight-clipper/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "视频剪辑 / 生成",
+          "group_en": "Video Editing / Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过语音转录和文本分析，自动从长视频中提取精彩片段，用于短视频分发。",
+          "description_en": "Automatically extract highlight clips from long videos using ASR transcription and text analysis for short video distribution.",
+          "what": "自动提取视频高光片段用于短视频分发。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "instagram-publish",
+          "path": "addons/officials/crew/selfmedia-operator/skills/instagram-publish/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "多渠道分发（邮件 / SMS / 社交）",
+          "group_en": "Multi-channel Distribution (Email / SMS / Social)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过Meta Graph API自动发布图片、轮播和Reels到Instagram账号。",
+          "description_en": "Automatically publish images, carousels, and reels to Instagram via Meta Graph API.",
+          "what": "通过Meta Graph API发布内容到Instagram。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "juejin-publish",
+          "path": "addons/officials/crew/selfmedia-operator/skills/juejin-publish/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "多渠道分发",
+          "group_en": "Multi-channel distribution",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "自动化发布文章到掘金平台，通过浏览器自动化完成在线编辑、分类选择、标签添加和封面上传等全流程操作。",
+          "description_en": "Automates publishing articles to Juejin platform, handling online editing, category selection, tag addition, and cover image upload via browser automation.",
+          "what": "Automates article publishing to Juejin.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pinterest-publish",
+          "path": "addons/officials/crew/selfmedia-operator/skills/pinterest-publish/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "多渠道分发",
+          "group_en": "Multi-channel distribution",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过Pinterest API v5自动化创建图片或视频Pin，支持看板选择和OAuth2认证，简化社交媒体内容发布。",
+          "description_en": "Automates creating image or video pins on Pinterest via API v5, supporting board selection and OAuth2 authentication for streamlined social media content publishing.",
+          "what": "Automates pin creation on Pinterest.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "published-track",
+          "path": "addons/officials/crew/selfmedia-operator/skills/published-track/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "数据库 / SQL / 分析",
+          "group_en": "Database / SQL / Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "使用 SQLite 数据库记录微信公众号、知乎、B站等多平台发布内容及互动数据，按平台分表管理，便于追踪和分析。",
+          "description_en": "Uses SQLite database to record publication content and interaction data across platforms like WeChat Official Account, Zhihu, Bilibili, etc., with per-platform table management for tracking and analysis.",
+          "what": "记录和追踪多平台发布数据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "t2video",
+          "path": "addons/officials/crew/selfmedia-operator/skills/t2video/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "视频剪辑 / 生成",
+          "group_en": "Video Editing / Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "整合 TTS 语音合成、素材搜集（Pexels/Pixabay/AI 生成）和 FFmpeg 组装，从脚本到短视频一站式制作，支持 9:16 竖屏。",
+          "description_en": "Integrates TTS voice synthesis, material collection (Pexels/Pixabay/AI-generated), and FFmpeg assembly for one-stop short video production from script, supporting 9:16 vertical format.",
+          "what": "从脚本生成短视频。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "dontbesilent2025",
+        "repo": "dbskill",
+        "full_name": "dontbesilent2025/dbskill",
+        "url": "https://github.com/dontbesilent2025/dbskill",
+        "stars": 6207,
+        "pushed_at": "2026-06-05",
+        "default_branch": "main",
+        "github_description": "dontbesilent 的商业诊断 Skills",
+        "topics": [],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "dbs-action",
+          "path": "skills/dbs-action/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "心理诊断工具",
+          "group_en": "Psychological Diagnosis Tools",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于阿德勒心理学，帮用户诊断执行力障碍和拖延的真正原因，提供深度心理分析而非激励。",
+          "description_en": "Diagnose execution block and procrastination root causes using Adlerian psychology, offering psychological insight instead of motivation.",
+          "what": "诊断执行力障碍和拖延原因。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-agent-migration",
+          "path": "skills/dbs-agent-migration/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Agent 工作台迁移",
+          "group_en": "Agent Workspace Migration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮用户整理混乱的 Agent 项目，实现 Claude Code、Codex、Grok 三端一致的可维护工作台结构。",
+          "description_en": "Organize chaotic Agent projects into a maintainable workspace with consistent structure across Claude Code, Codex, and Grok.",
+          "what": "整理 Agent 工作台结构，确保多平台一致性。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-ai-check",
+          "path": "skills/dbs-ai-check/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "语法 / 文风审查",
+          "group_en": "Grammar / Style Review",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "扫描用户文案中的 AI 生成痕迹，输出详细检测报告，帮助识别 AI 写作特征，默认只诊断不改，强调基于用户意图改善写作。",
+          "description_en": "Scans user copy for AI-generated patterns, outputs detailed diagnostic reports to identify AI writing features, diagnosis only by default, with emphasis on improving writing based on user intent.",
+          "what": "AI 写作特征检测与报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-benchmark",
+          "path": "skills/dbs-benchmark/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "竞品 / 对比页 / 战情",
+          "group_en": "Competitor / Comparison Page / Intelligence",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "使用五重过滤法帮用户找到值得模仿的对标，排除自我干扰，专注于高利润、可模仿的商业对象，适用于从零到一阶段的模仿决策。",
+          "description_en": "Uses a five-filter method to help users find imitable benchmarks, eliminating self-distraction to focus on high-profit and executable business models, suitable for imitation decisions from zero to one.",
+          "what": "对标分析与筛选工具。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-chatroom-austrian",
+          "path": "skills/dbs-chatroom-austrian/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "专家对话模拟",
+          "group_en": "Expert Dialogue Simulation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 模拟哈耶克、米塞斯和 Claude 的三人对话，从奥派经济学视角分析经济问题。",
+          "description_en": "Helps agent simulate a three-way dialogue between Hayek, Mises, and Claude, analyzing economic issues from the Austrian economics perspective.",
+          "what": "奥派经济学多角色对话模拟",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-chatroom",
+          "path": "skills/dbs-chatroom/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "专家对话模拟",
+          "group_en": "Expert Dialogue Simulation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 根据话题推荐专家或接受指定专家，模拟多角色对话用于商业诊断。",
+          "description_en": "Helps agent recommend experts based on a topic or accept specified experts, simulating multi-role dialogue for business diagnostics.",
+          "what": "通用专家多角色对话模拟",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-content-system",
+          "path": "skills/dbs-content-system/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "内容结构化系统",
+          "group_en": "Content Structuring System",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 把本地大量内容资产（如文稿、推文、选题）搭成可持续生长的内容结构化工程，包括审计规模、建立工程、抽取内容单元和生成主题地图。",
+          "description_en": "Helps agents build a sustainable content structuring engineering from local content assets (e.g., drafts, tweets, topics), including auditing scale, creating projects, extracting content units, and generating topic maps.",
+          "what": "构建内容结构化系统",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-content",
+          "path": "skills/dbs-content/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "内容创作诊断",
+          "group_en": "Content Creation Diagnosis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 诊断如何把已确认的选题变成好内容，包括匹配内容形式、选择平台和审查表达方向。",
+          "description_en": "Helps agents diagnose how to turn a confirmed topic into good content, including matching content formats, selecting platforms, and reviewing expression direction.",
+          "what": "诊断内容创作策略",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-decision",
+          "path": "skills/dbs-decision/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "个人决策系统",
+          "group_en": "Personal Decision System",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为业务、关系等长期跟踪领域构建本地知识工程，通过四层结构、快照和概念库持久化决策过程，支持复盘与规律提炼。",
+          "description_en": "Build a local knowledge project for long-running domains like business or relationships, persisting decision processes with a four-layer structure, snapshots, and a concept library for review and pattern extraction.",
+          "what": "管理长期决策领域的本地知识工程，支持持久化记录与复盘。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-deconstruct",
+          "path": "skills/dbs-deconstruct/SKILL.md",
+          "subcategory": "3-2",
+          "subcategory_title": "3.2 问题框定 / 假设管理",
+          "category": "product-management",
+          "group": "问题框定 / 假设管理",
+          "group_en": "Problem Framing / Hypothesis Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "运用维特根斯坦语言哲学和奥派经济学，将模糊商业概念拆解到原子级别，澄清语言混淆并识别伪概念。",
+          "description_en": "Apply Wittgenstein's philosophy of language and Austrian economics to deconstruct ambiguous business concepts to atomic level, clarifying linguistic confusion and identifying pseudo-concepts.",
+          "what": "拆解商业概念到原子级别，澄清语言混淆。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-diagnosis",
+          "path": "skills/dbs-diagnosis/SKILL.md",
+          "subcategory": "3-4",
+          "subcategory_title": "3.4 战略 / 定位 / 商业模式",
+          "category": "product-management",
+          "group": "商业模式诊断与问题消解",
+          "group_en": "Business Model Diagnosis & Problem Dissolution",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "商业诊断 skill，提供问诊（消解用户商业问题）和体检（拆解商业模式出报告）两种模式，通过结构化流程识别问题本质。",
+          "description_en": "Business diagnosis skill with two modes: consultation (dissolve the user's business question) and checkup (dissect business model into a diagnostic report), using structured frameworks to identify the real problem.",
+          "what": "用结构化框架诊断商业模式、消解错误的商业问题",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-goal",
+          "path": "skills/dbs-goal/SKILL.md",
+          "subcategory": "3-2",
+          "subcategory_title": "3.2 问题框定 / 假设管理",
+          "category": "product-management",
+          "group": "问题框定与目标澄清",
+          "group_en": "Problem Framing & Goal Clarification",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用维特根斯坦语言哲学审计模糊目标，通过可指物性、可否证性等测试将空转的目标语言转为可检查的交付物。",
+          "description_en": "Audits fuzzy goals using Wittgenstein's philosophy of language, transforming 'idling' goal statements into checkable deliverables through tests like pointability and falsifiability.",
+          "what": "将用户的模糊目标审计为可行动、可验收的具体交付物",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-good-question",
+          "path": "skills/dbs-good-question/SKILL.md",
+          "subcategory": "3-2",
+          "subcategory_title": "3.2 问题框定 / 假设管理",
+          "category": "product-management",
+          "group": "问题框定 / 假设管理",
+          "group_en": "Problem Framing / Hypothesis Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把用户丢来的模糊问题改写成 Agent 可推理、可批评、可验证的问题说明书，暴露关键冲突并评估自动化可行程度。",
+          "description_en": "Transforms fuzzy user problems into structured, verifiable problem briefs that expose key conflicts and evaluate how far an agent can automate a solution.",
+          "what": "模糊问题→结构化问题说明书+自动化评估",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-hook",
+          "path": "skills/dbs-hook/SKILL.md",
+          "subcategory": "4-7",
+          "subcategory_title": "4.7 病毒式传播 / Hook / 创意",
+          "category": "marketing-growth",
+          "group": "Hook / 创意点子",
+          "group_en": "Hook / Creative Ideas",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "诊断短视频开头问题：先审内容质量，再按话题+Hook+可信度公式生成可执行的开头优化方案。",
+          "description_en": "Diagnoses short-video opening issues by first auditing content quality, then generating actionable hook rewrites using a topic + hook + credibility formula.",
+          "what": "短视频文案→开头诊断+优化方案",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-learning",
+          "path": "skills/dbs-learning/SKILL.md",
+          "subcategory": "19-2",
+          "subcategory_title": "19.2 自适应辅导 / 苏格拉底教学",
+          "category": "education-learning",
+          "group": "自适应辅导 / 苏格拉底教学",
+          "group_en": "Adaptive Tutoring / Socratic Teaching",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "将课题拆分为连续学习文章，根据用户反馈自适应调整深度、角度和节奏，构建个性化学习梯度。",
+          "description_en": "Splits a topic into a sequence of learning articles, adaptively adjusting depth, angle, and pace based on user feedback to build a personalized learning gradient.",
+          "what": "提供自适应交互式学习序列",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-report",
+          "path": "skills/dbs-report/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "诊断报告生成",
+          "group_en": "Diagnosis Report Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将多次诊断状态存档合并成一份可交付的markdown报告，便于分享、回顾和归档。",
+          "description_en": "Merges multiple diagnosis state snapshots into a deliverable markdown report for easy sharing, review, and archiving.",
+          "what": "合并诊断存档生成报告",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-restore",
+          "path": "skills/dbs-restore/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "影子 agent + MCP 记忆",
+          "group_en": "Shadow Agent + MCP Memory",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "从本地恢复最近一次商业诊断的状态存档，支持跨会话接续和项目隔离管理。",
+          "description_en": "Restore the most recent diagnosis snapshot from local storage, enabling cross-session continuation and project-isolated management.",
+          "what": "跨会话诊断状态恢复工具。",
+          "chain": true,
+          "chain_group": "诊断状态管理",
+          "chain_group_en": "Diagnosis State Management"
+        },
+        {
+          "name": "dbs-save",
+          "path": "skills/dbs-save/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "影子 agent + MCP 记忆",
+          "group_en": "Shadow Agent + MCP Memory",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "将当前商业诊断的关键结论和状态保存到本地结构化文件，实现跨会话持久记忆。",
+          "description_en": "Save the current diagnosis key conclusions and state to local structured files for cross-session persistent memory.",
+          "what": "跨会话诊断状态保存工具。",
+          "chain": true,
+          "chain_group": "诊断状态管理",
+          "chain_group_en": "Diagnosis State Management"
+        },
+        {
+          "name": "dbs-slowisfast",
+          "path": "skills/dbs-slowisfast/SKILL.md",
+          "subcategory": "3-4",
+          "subcategory_title": "3.4 战略 / 定位 / 商业模式",
+          "category": "product-management",
+          "group": "商业策略诊断",
+          "group_en": "Business Strategy Diagnosis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮创业者识别哪些环节值得放慢以积累长期资产，避免捷径带来的反噬。",
+          "description_en": "Help entrepreneurs identify where to slow down to build long-term assets, avoiding shortcuts that backfire.",
+          "what": "诊断创业方法中值得慢做的地方以建造资产。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dbs-xhs-title",
+          "path": "skills/dbs-xhs-title/SKILL.md",
+          "subcategory": "4-2",
+          "subcategory_title": "4.2 文案 / 营销心理 / 产品命名",
+          "category": "marketing-growth",
+          "group": "小红书标题优化",
+          "group_en": "Xiaohongshu Title Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于75个验证公式，为小红书内容匹配最佳标题模板并生成定制标题。",
+          "description_en": "Match and generate Xiaohongshu titles from 75 proven formulas, explaining the choice.",
+          "what": "为小红书内容匹配和生成爆款标题公式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "nexu-io",
+        "repo": "html-anything",
+        "full_name": "nexu-io/html-anything",
+        "url": "https://github.com/nexu-io/html-anything",
+        "stars": 6169,
+        "pushed_at": "2026-06-02",
+        "default_branch": "main",
+        "github_description": "✨ The agentic HTML editor — your local AI agent writes the HTML, you ship it. 🚀 75 Skills × 9 Surfaces (magazine · deck · poster · XHS / tweet · prototype · data report · Hyperframes) 🛡️ Sandboxed preview · 📤 1-click to WeChat / X / Zhihu / HTML / PNG 🔑 Zero API key — Claude Code / Cursor / Codex / Gemini / Copilot / OpenCode / Qwen / Aider.",
+        "topics": [
+          "agent-skills",
+          "agentic",
+          "ai-agents",
+          "ai-design",
+          "ai-editor",
+          "byok",
+          "claude",
+          "claude-code",
+          "claude-skills",
+          "coding-agents",
+          "generative-ai",
+          "html",
+          "html-editor",
+          "hyperframes",
+          "local-first",
+          "markdown",
+          "nextjs",
+          "vibe-coding",
+          "wechat",
+          "xiaohongshu"
+        ],
+        "language": "HTML",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "article-magazine",
+          "path": "next/src/lib/templates/skills/article-magazine/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "长文 HTML 生成",
+          "group_en": "Long-form HTML Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成杂志风格的长文 HTML，包含 hero 区域、正文排版、引用块等，适用于公众号、博客等平台发布。",
+          "description_en": "Generates magazine-style long-form HTML with hero section, typography, blockquotes, etc., suitable for publishing on platforms like WeChat or blogs.",
+          "what": "生成杂志风格的 HTML 长文。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "blog-post",
+          "path": "next/src/lib/templates/skills/blog-post/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "长文 HTML 生成",
+          "group_en": "Long-form HTML Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成博客长文 HTML，包含出版头、大标题、作者署名和相关文章推荐等元素，用于博客或案例研究。",
+          "description_en": "Generates blog post HTML with masthead, hero section, author bio, and related posts for blogs or case studies.",
+          "what": "生成博客风格的 HTML 长文。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "card-twitter",
+          "path": "next/src/lib/templates/skills/card-twitter/SKILL.md",
+          "subcategory": "4-7",
+          "subcategory_title": "4.7 病毒式传播 / Hook / 创意",
+          "category": "marketing-growth",
+          "group": "病毒式传播 / Hook / 创意",
+          "group_en": "Viral / Hook / Creative",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "它帮助AI代理生成用于Twitter的分享卡片HTML模板，包含金句、作者署名和品牌水印，适合直接截图配推文发出，视觉简洁有力。",
+          "description_en": "It helps AI agents generate HTML templates for Twitter share cards, featuring quote text, author attribution, and brand watermark, suitable for direct screenshot posting with a clean visual style.",
+          "what": "生成Twitter分享卡片HTML模板",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "card-xiaohongshu",
+          "path": "next/src/lib/templates/skills/card-xiaohongshu/SKILL.md",
+          "subcategory": "4-7",
+          "subcategory_title": "4.7 病毒式传播 / Hook / 创意",
+          "category": "marketing-growth",
+          "group": "病毒式传播 / Hook / 创意",
+          "group_en": "Viral / Hook / Creative",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "它帮助AI代理生成小红书风格的多张联排知识卡片模板，每张一个核心观点，配莫兰迪色系，适合干货分享和社交媒体营销。",
+          "description_en": "It helps AI agents generate Xiaohongshu-style multi-slide knowledge card templates, each slide focusing on one key point with Morandi color scheme, ideal for informative content sharing and social media marketing.",
+          "what": "生成小红书图文卡片HTML模板",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competitive-teardown",
+          "path": "next/src/lib/templates/skills/competitive-teardown/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "竞品分析报告",
+          "group_en": "Competitive Analysis Reports",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助AI agent将竞品资料转化为结构化产品决策报告，包括定位图、功能矩阵、价格对比和机会窗口分析。",
+          "description_en": "Helps AI agents convert competitor materials into structured product decision reports, including positioning maps, feature matrices, price comparisons, and opportunity windows.",
+          "what": "生成竞品拆解报告以辅助产品战略决策。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dashboard",
+          "path": "next/src/lib/templates/skills/dashboard/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "管理后台仪表板生成",
+          "group_en": "Admin Dashboard Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助AI agent快速生成管理后台仪表板页面，包含固定侧栏、顶栏、KPI网格和图表，适用于运营监控。",
+          "description_en": "Helps AI agents quickly generate admin dashboard pages with fixed sidebars, top bars, KPI grids, and charts for operational monitoring.",
+          "what": "生成管理后台仪表板UI artifact。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "data-report",
+          "path": "next/src/lib/templates/skills/data-report/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "数据可视化报告",
+          "group_en": "Data Visualization Report",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把CSV/Excel/JSON数据转成漂亮的可视化报告页，包含KPI卡片、图表、表格和文字洞察。",
+          "description_en": "Convert CSV/Excel/JSON data into a visually appealing HTML report page with KPI cards, charts, tables, and textual insights.",
+          "what": "数据转HTML可视化报告",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dating-web",
+          "path": "next/src/lib/templates/skills/dating-web/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "社区仪表板",
+          "group_en": "Community Dashboard",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为社区或配对应用生成数据仪表板，显示KPI、趋势图和实时信号。",
+          "description_en": "Generate a data dashboard for dating or community apps, displaying KPIs, trend charts, and real-time signals.",
+          "what": "生成配对/社区数据仪表板",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-blueprint",
+          "path": "next/src/lib/templates/skills/deck-blueprint/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "幻灯片模板生成",
+          "group_en": "Slide Template Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成工程架构讲解的幻灯片模板，采用蓝图网格和 pipeline 设计，适合严肃演示。",
+          "description_en": "Generates engineering architecture presentation templates with blueprint grids and pipeline boxes for serious talks.",
+          "what": "创建工程架构幻灯片模板",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-course-module",
+          "path": "next/src/lib/templates/skills/deck-course-module/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "幻灯片模板生成",
+          "group_en": "Slide Template Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成课程培训幻灯片模板，包含持续显示的学习目标和 MCQ 自测页，适合教学使用。",
+          "description_en": "Generates course and training presentation templates with persistent learning objectives and MCQ self-assessment pages.",
+          "what": "创建课程培训幻灯片模板",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-dir-key-nav",
+          "path": "next/src/lib/templates/skills/deck-dir-key-nav/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "学术演示 / Beamer / 论文转 PPT / HTML-native 设计 skill / 幻灯片图像生成 / 零依赖 HTML 演示",
+          "group_en": "Academic Presentations / Beamer / Paper to PPT / HTML-native Design Skills / Slide Image Generation / Zero-dependency HTML Presentations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 AI agent 提供极简风格的 HTML 幻灯片模板，支持单色背景循环、160px 大标题和箭头列表，适用于快速演示和讲义生成。",
+          "description_en": "Provides AI agents with a minimalist HTML slide template featuring monocolor backgrounds, large display titles, and arrow-prefixed monospace lists for quick presentations.",
+          "what": "Generates minimalist keynote-style HTML slides with monocolor backgrounds.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-graphify-dark",
+          "path": "next/src/lib/templates/skills/deck-graphify-dark/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "学术演示 / Beamer / 论文转 PPT / HTML-native 设计 skill / 幻灯片图像生成 / 零依赖 HTML 演示",
+          "group_en": "Academic Presentations / Beamer / Paper to PPT / HTML-native Design Skills / Slide Image Generation / Zero-dependency HTML Presentations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 AI agent 生成暗色主题的图谱演示幻灯片，适用于 AI 原生或开发工具发布，包含渐变背景、力导向图谱和 JetBrains Mono 代码高亮。",
+          "description_en": "Generates dark-themed graph presentation slides for AI-native or dev-tool launches, featuring gradient backgrounds, floating orbs, SVG force-directed graphs, and JetBrains Mono code highlighting.",
+          "what": "Creates dark-themed graph presentation slides with SVG force-directed graphs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-magazine-web",
+          "path": "next/src/lib/templates/skills/deck-magazine-web/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "学术演示 / Beamer / 论文转 PPT / HTML-native 设计 skill / 幻灯片图像生成 / 零依赖 HTML 演示",
+          "group_en": "Academic Presentations / Beamer / Paper to PPT / HTML-native Design Skills / Slide Image Generation / Zero-dependency HTML Presentations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为AI代理生成杂志风格网页演示文稿，支持横向翻页、WebGL流体背景和衬线字体，适用于营销场景。",
+          "description_en": "Enables AI agents to generate magazine-style web decks with horizontal swipe, WebGL fluid backgrounds, and serif fonts for marketing presentations.",
+          "what": "生成杂志风格网页演示文稿",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-obsidian-claude",
+          "path": "next/src/lib/templates/skills/deck-obsidian-claude/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "学术演示 / Beamer / 论文转 PPT / HTML-native 设计 skill / 幻灯片图像生成 / 零依赖 HTML 演示",
+          "group_en": "Academic Presentations / Beamer / Paper to PPT / HTML-native Design Skills / Slide Image Generation / Zero-dependency HTML Presentations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为AI代理生成GitHub暗黑主题开发者演示文稿，带紫蓝渐变标题、代码高亮和网格布局，适合工程教程。",
+          "description_en": "Enables AI agents to generate GitHub-dark themed developer decks with purple-blue gradient titles, code highlights, and grid layouts for engineering tutorials.",
+          "what": "生成GitHub暗黑主题开发者演示文稿",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-open-slide-canvas",
+          "path": "next/src/lib/templates/skills/deck-open-slide-canvas/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "学术演示 / Beamer / 论文转 PPT / HTML-native 设计 skill / 幻灯片图像生成 / 零依赖 HTML 演示",
+          "group_en": "Academic Presentation / Beamer / Paper to PPT / HTML-native Design Skill / Slide Image Generation / Zero-dependency HTML Presentation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为AI agent提供生成自由布局1920x1080画布HTML幻灯片的技能，支持多种调色板和React组件自由组合，适用于个人作品集和艺术演示。",
+          "description_en": "Provides AI agents with skills to generate freeform 1920x1080 canvas HTML slides, supporting multiple color palettes and React component layout for portfolios and artistic presentations.",
+          "what": "生成自由布局的HTML幻灯片。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-pitch",
+          "path": "next/src/lib/templates/skills/deck-pitch/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "学术演示 / Beamer / 论文转 PPT / HTML-native 设计 skill / 幻灯片图像生成 / 零依赖 HTML 演示",
+          "group_en": "Academic Presentation / Beamer / Paper to PPT / HTML-native Design Skill / Slide Image Generation / Zero-dependency HTML Presentation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为AI agent生成投资人Pitch Deck模板，包含10页关键页面如问题、解决方案、市场大小和融资请求。",
+          "description_en": "Generates investor-ready 10-slide pitch deck templates for AI agents, covering key pages such as problem, solution, market size, and funding ask.",
+          "what": "生成投资人融资演示文稿。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-presenter-mode",
+          "path": "next/src/lib/templates/skills/deck-presenter-mode/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "演示文稿生成",
+          "group_en": "Presentation Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为演讲者生成带逐字稿笔记和提词器弹窗的HTML演示文稿模板，支持多主题切换。",
+          "description_en": "Generates HTML presentation decks with speaker notes and a teleprompter popup for presenters, featuring multiple theme options.",
+          "what": "创建含演讲者模式的演示文稿。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-product-launch",
+          "path": "next/src/lib/templates/skills/deck-product-launch/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "演示文稿生成",
+          "group_en": "Presentation Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成产品发布Keynote风格的HTML演示文稿，包含特性展示、定价页面和行动号召部分。",
+          "description_en": "Generates product launch keynote-style HTML presentations with feature cards, pricing tiers, and call-to-action sections.",
+          "what": "创建产品发布演示文稿。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-replit",
+          "path": "next/src/lib/templates/skills/deck-replit/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "HTML Deck 模板生成",
+          "group_en": "HTML Deck Template Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 生成 Replit Slides 风格的横向滑动幻灯片，支持 8 种主题，自动适配内容长度。",
+          "description_en": "Helps agents create Replit Slides-style horizontal-swipe decks with 8 theme options and auto-adjusting content length.",
+          "what": "生成 Replit 风格的主题化幻灯片 deck。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-safety-alert",
+          "path": "next/src/lib/templates/skills/deck-safety-alert/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "HTML Deck 模板生成",
+          "group_en": "HTML Deck Template Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 生成用于安全警报、事故复盘的红色主题 deck，包含 hazard 条纹和多级风险卡片。",
+          "description_en": "Helps agents create red-themed decks for safety alerts and incident reviews, featuring hazard stripes and multi-tier risk cards.",
+          "what": "生成安全风险与事故复盘专用的警示风格 deck。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-simple",
+          "path": "next/src/lib/templates/skills/deck-simple/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "HTML 幻灯片模板",
+          "group_en": "HTML Slide Templates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成通用水平滑动 HTML 幻灯片，适用于产品介绍、概览或学习，支持键盘切换和进度条，内容长度自适应。",
+          "description_en": "Generates horizontal-swipe HTML decks for pitches, overviews, or studies, with keyboard navigation and progress bar, adapting to content length.",
+          "what": "创建简单水平滑动 HTML 幻灯片",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-swiss-international",
+          "path": "next/src/lib/templates/skills/deck-swiss-international/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "HTML 幻灯片模板",
+          "group_en": "HTML Slide Templates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成瑞士国际主义风格 HTML 幻灯片，采用 16 列网格和单一饱和色调，提供 22 个版式，适用于商业、产品分析等理性表达场景。",
+          "description_en": "Generates Swiss International style HTML decks with 16-column grid layouts and single accent colors, offering 22 layouts for business, product analysis, and rational expression scenarios.",
+          "what": "创建瑞士国际主义风格 HTML 幻灯片",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-tech-sharing",
+          "path": "next/src/lib/templates/skills/deck-tech-sharing/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "学术演示 / Beamer / 论文转 PPT / HTML-native 设计 skill / 幻灯片图像生成 / 零依赖 HTML 演示",
+          "group_en": "Academic Presentations / Beamer / Paper to PPT / HTML-native Design Skill / Slide Image Generation / Zero-dependency HTML Presentations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为技术分享或会议生成专业风格的 HTML 演示文稿，包含议程、代码块和 Q&A 页面，采用 GitHub-dark 配色。",
+          "description_en": "Generate professional HTML decks for tech sharing or conferences, with agenda, code blocks, Q&A pages, and GitHub-dark color scheme.",
+          "what": "生成技术分享演示文稿",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-xhs-pastel",
+          "path": "next/src/lib/templates/skills/deck-xhs-pastel/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "学术演示 / Beamer / 论文转 PPT / HTML-native 设计 skill / 幻灯片图像生成 / 零依赖 HTML 演示",
+          "group_en": "Academic Presentations / Beamer / Paper to PPT / HTML-native Design Skill / Slide Image Generation / Zero-dependency HTML Presentations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成小红书风格的柔和演示文稿，适用于生活方式和个人成长内容，具有马卡龙色调和圆角卡片设计。",
+          "description_en": "Generate pastel-style decks for lifestyle and personal growth content on Xiaohongshu, featuring soft colors and rounded card designs.",
+          "what": "生成生活方式演示文稿",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-xhs-post",
+          "path": "next/src/lib/templates/skills/deck-xhs-post/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "学术演示 / Beamer / 论文转 PPT / HTML-native 设计 skill / 幻灯片图像生成 / 零依赖 HTML 演示",
+          "group_en": "Academic Presentations / Beamer / Paper-to-PPT / HTML-native Design Skills / Slide Image Generation / Zero-dependency HTML Presentations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 AI 代理生成小红书/Instagram 的 9 页竖版图文轮播，采用暖色 pastel 背景和虚线卡片布局。",
+          "description_en": "Assists the AI agent in creating 9-page vertical carousel posts for Xiaohongshu/Instagram with pastel backgrounds and dashed sticker card layouts.",
+          "what": "生成社交平台竖版图文轮播内容",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deck-xhs-white",
+          "path": "next/src/lib/templates/skills/deck-xhs-white/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "学术演示 / Beamer / 论文转 PPT / HTML-native 设计 skill / 幻灯片图像生成 / 零依赖 HTML 演示",
+          "group_en": "Academic Presentations / Beamer / Paper-to-PPT / HTML-native Design Skills / Slide Image Generation / Zero-dependency HTML Presentations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成白底杂志风 deck，适用于小红书图文和横版 PPT，包括彩虹条、渐变文字和马卡龙卡片。",
+          "description_en": "Generates white editorial-style decks for Xiaohongshu posts and horizontal PPTs, featuring rainbow bars, gradient text, and macaron cards.",
+          "what": "生成杂志风格图文和演示 deck",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "digital-eguide",
+          "path": "next/src/lib/templates/skills/digital-eguide/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "HTML 设计模板（多场景排版）",
+          "group_en": "HTML Design Templates (Multi-surface Layouts)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成双页跨页电子指南 HTML：封面含目录预览，内页含课程正文、pull-quote 和步骤列表，适合 lead magnet / playbook 类营销物料。",
+          "description_en": "Generates a two-page spread e-guide in HTML: a cover with TOC teaser and an inner page with lesson body, pull-quote, and step list — ideal for lead magnets and playbooks.",
+          "what": "为 agent 提供双页电子指南模板，可直接输出 HTML",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "doc-kami-parchment",
+          "path": "next/src/lib/templates/skills/doc-kami-parchment/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "HTML 设计模板（多场景排版）",
+          "group_en": "HTML Design Templates (Multi-surface Layouts)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成暖羊皮纸风格排版 HTML（Kami 风）：墨蓝单色 accent + 衬线字体 + A4 长页，适合报告、信函、简历、财报等严肃文档。",
+          "description_en": "Generates editorial HTML in warm parchment style (Kami-inspired): ink-blue monochrome accent, serif typography, A4 long-page layout — suitable for reports, letters, resumes, and changelogs.",
+          "what": "为 agent 提供 Kami 羊皮纸排版模板，输出带完整视觉规范的文档 HTML",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
