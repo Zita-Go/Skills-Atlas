@@ -13,7 +13,7 @@
   url: https://github.com/obra/superpowers
   type: skill
   skill_group_count: 7
-  stars: 218896
+  stars: 219653
   last_commit: '2026-06-03'
   default_branch: main
   description: 能用的 agentic skill 框架与软件开发方法论。
@@ -42,8 +42,8 @@
   url: https://github.com/mattpocock/skills
   type: skill
   skill_group_count: 10
-  stars: 118678
-  last_commit: '2026-06-03'
+  stars: 119489
+  last_commit: '2026-06-06'
   default_branch: main
   description: 真·工程师的 skill,直接来自作者的 .claude 目录。
   description_en: Skills for Real Engineers. Straight from my .claude directory.
@@ -68,8 +68,8 @@
   url: https://github.com/phuryn/pm-skills
   type: skill
   skill_group_count: 37
-  stars: 12025
-  last_commit: '2026-06-05'
+  stars: 12146
+  last_commit: '2026-06-06'
   default_branch: main
   description: PM Skills 市场:100+ agentic skill/命令/插件,覆盖发现→战略→执行→发布→增长。
   description_en: 'PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.'
@@ -148,7 +148,7 @@
   url: https://github.com/openai/skills
   type: skill
   skill_group_count: 24
-  stars: 21426
+  stars: 21496
   last_commit: '2026-05-29'
   default_branch: main
   description: 面向 Codex 的 skill 目录。
@@ -237,7 +237,7 @@
   url: https://github.com/Fission-AI/OpenSpec
   type: cli-framework
   skill_group_count: 1
-  stars: 53121
+  stars: 53217
   last_commit: '2026-06-03'
   default_branch: main
   description: 面向 AI 编码助手的规格驱动开发(SDD)。
@@ -254,7 +254,7 @@
   url: https://github.com/open-gsd/gsd-core
   type: sdd-framework
   skill_group_count: 1
-  stars: 2833
+  stars: 2934
   last_commit: '2026-06-06'
   default_branch: next
   description: 规格驱动开发(SDD)/上下文工程框架：清晰规格 + 受控上下文 + 发布前验证，装后以 /gsd-* 斜杠命令驱动整套流程；由 open-gsd 社区治理延续维护。
@@ -272,7 +272,7 @@
   url: https://github.com/anthropics/skills
   type: skill
   skill_group_count: 14
-  stars: 146960
+  stars: 147265
   last_commit: '2026-05-29'
   default_branch: main
   description: Agent Skills 官方公开仓库。
@@ -305,7 +305,7 @@
   url: https://github.com/ComposioHQ/awesome-claude-skills
   type: skill
   skill_group_count: 1
-  stars: 63379
+  stars: 63494
   last_commit: '2026-05-22'
   default_branch: master
   description: 精选的 Claude Skills / 资源 / 工具清单,用于定制 Claude AI 工作流。
@@ -322,7 +322,7 @@
   url: https://github.com/obra/superpowers-lab
   type: skill
   skill_group_count: 3
-  stars: 360
+  stars: 362
   last_commit: '2026-06-01'
   default_branch: main
   description: Claude Code Superpowers 的实验性 skill —— 新技巧与工具。
@@ -340,7 +340,7 @@
   url: https://github.com/kenryu42/claude-code-safety-net
   type: plugin
   skill_group_count: 1
-  stars: 1376
+  stars: 1377
   last_commit: '2026-06-05'
   default_branch: main
   description: 编码 agent 钩子:在破坏性 git/文件系统命令执行前拦截,充当安全网(支持 Codex/Claude Code/OpenCode/Gemini/Copilot CLI)。
@@ -353,7 +353,7 @@
   url: https://github.com/google-gemini/gemini-skills
   type: skill
   skill_group_count: 1
-  stars: 3598
+  stars: 3602
   last_commit: '2026-05-20'
   default_branch: main
   description: 面向 Gemini API/SDK 与模型/agent 交互的 skill。
@@ -371,7 +371,7 @@
   url: https://github.com/vercel-labs/agent-skills
   type: cli
   skill_group_count: 3
-  stars: 27618
+  stars: 27657
   last_commit: '2026-06-03'
   default_branch: main
   license: MIT
@@ -389,7 +389,7 @@
   url: https://github.com/trailofbits/skills
   type: marketplace
   skill_group_count: 1
-  stars: 5569
+  stars: 5579
   last_commit: '2026-06-05'
   default_branch: main
   description: Trail of Bits 的 Claude Code 安全研究 / 漏洞检测 / 审计 skill。
@@ -415,8 +415,8 @@
   url: https://github.com/kreuzberg-dev/kreuzberg
   type: extraction-engine
   skill_group_count: 1
-  stars: 8442
-  last_commit: '2026-06-05'
+  stars: 8448
+  last_commit: '2026-06-06'
   default_branch: main
   description: 以 Rust 为核的多语言文档智能框架:从 PDF/Office/图片等 97+ 格式抽取文本/元数据/图片/结构化信息。
   description_en: A polyglot document intelligence framework with a Rust core. Extract text, metadata, images, and structured information from PDFs, Office documents, images, and 97+ formats. Available
@@ -432,8 +432,8 @@
   url: https://github.com/deusyu/translate-book
   type: skill
   skill_group_count: 1
-  stars: 751
-  last_commit: '2026-06-05'
+  stars: 753
+  last_commit: '2026-06-06'
   default_branch: main
   description: 用并行子 agent 把整本书(PDF/DOCX/EPUB)翻译成任意语言的 Claude Code skill。
   description_en: Claude Code skill that translates entire books (PDF/DOCX/EPUB) into any language using parallel subagents
@@ -444,7 +444,7 @@
   url: https://github.com/blader/humanizer
   type: skill
   skill_group_count: 1
-  stars: 22527
+  stars: 22661
   last_commit: '2026-05-27'
   default_branch: main
   description: 去除文本中 AI 生成痕迹、提升自然度的 Claude Code skill。
@@ -456,8 +456,8 @@
   url: https://github.com/NeoLabHQ/context-engineering-kit
   type: skill
   skill_group_count: 1
-  stars: 1074
-  last_commit: '2026-06-03'
+  stars: 1075
+  last_commit: '2026-06-06'
   default_branch: master
   description: 手工打造、专注提升 agent 结果质量的 Claude Code skill(兼容 OpenCode/Cursor/Antigravity/Gemini CLI 等)。
   description_en: Hand-crafted Claude Code Skills focused on improving agent results quality. Compatible with OpenCode, Cursor, Antigravity, Gemini CLI, and others.
@@ -473,8 +473,8 @@
   url: https://github.com/alchaincyf/huashu-design
   type: skill
   skill_group_count: 2
-  stars: 16396
-  last_commit: '2026-06-05'
+  stars: 16538
+  last_commit: '2026-06-06'
   default_branch: master
   description: Huashu Design · HTML-native design skill for Claude Code · Claude Code 里 HTML 原生的设计 skill · 高保真原型 / 幻灯片 / 动画 + 20 设计哲学 + 5 维评审 + MP4 导出 · Agent-agnostic
   description_en: Huashu Design · HTML-native design skill for Claude Code · HTML-native design skill in Claude Code · high-fidelity prototypes / slides / animation + 20 design philosophies + 5-dimension
@@ -486,7 +486,7 @@
   url: https://github.com/JuliusBrussee/caveman
   type: skill
   skill_group_count: 1
-  stars: 69300
+  stars: 69537
   last_commit: '2026-05-20'
   default_branch: main
   description: 用"原始人式"精简措辞砍掉约 65% token 的 Claude Code skill。
@@ -513,7 +513,7 @@
   url: https://github.com/PleasePrompto/notebooklm-skill
   type: skill
   skill_group_count: 1
-  stars: 6893
+  stars: 6905
   last_commit: '2025-11-21'
   default_branch: master
   description: 让 Claude Code 直接对接 Google NotebookLM 笔记本:查询上传文档、获得有来源依据的引用式答案。
@@ -526,8 +526,8 @@
   url: https://github.com/teng-lin/notebooklm-py
   type: python-library
   skill_group_count: 1
-  stars: 15952
-  last_commit: '2026-06-05'
+  stars: 16006
+  last_commit: '2026-06-07'
   default_branch: main
   description: Google NotebookLM 的非官方 Python API 与 agentic skill,完整编程访问 NotebookLM 功能。
   description_en: Unofficial Python API and agentic skill for Google NotebookLM. Full programmatic access to NotebookLM's features—including capabilities the web UI doesn't expose—via Python, CLI, and AI
@@ -539,8 +539,8 @@
   url: https://github.com/safishamsi/graphify
   type: skill
   skill_group_count: 1
-  stars: 59804
-  last_commit: '2026-06-05'
+  stars: 60617
+  last_commit: '2026-06-07'
   default_branch: v8
   description: AI 编码助手 skill:把任意代码/SQL schema/R/shell 脚本文件夹转成项目知识图谱(兼容 Claude Code/Codex/Cursor/Gemini CLI 等)。
   description_en: AI coding assistant skill (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, and more). Turn any folder of code, SQL schemas, R scripts, shell scripts, docs, papers, images, or videos
@@ -556,7 +556,7 @@
   url: https://github.com/bevibing/tutor-skills
   type: skill
   skill_group_count: 1
-  stars: 923
+  stars: 927
   last_commit: '2026-02-28'
   default_branch: main
   description: 把 PDF/文档/代码库转成 Obsidian 学习金库的 Claude Code skill。
@@ -594,7 +594,7 @@
   url: https://github.com/hanfang/claude-memory-skill
   type: skill
   skill_group_count: 1
-  stars: 30
+  stars: 31
   last_commit: '2026-02-07'
   default_branch: main
   description: 极简、低摩擦的 Claude Code 记忆系统。
@@ -611,8 +611,8 @@
   url: https://github.com/thedotmack/claude-mem
   type: cli-mcp
   skill_group_count: 1
-  stars: 80860
-  last_commit: '2026-06-03'
+  stars: 80985
+  last_commit: '2026-06-06'
   default_branch: main
   description: 为每个 agent 提供跨 session 持久上下文:记录 agent 全过程、AI 压缩后注入相关上下文。
   description_en: Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions.
@@ -625,7 +625,7 @@
   url: https://github.com/alirezarezvani/claude-skills
   type: skill
   skill_group_count: 1
-  stars: 17264
+  stars: 17346
   last_commit: '2026-06-03'
   default_branch: main
   description: 337 个 Claude Code skill/agent skill/插件(30+ agent、70+ 命令、330+ skill,兼容 Claude Code/Codex 等)。
@@ -640,7 +640,7 @@
   url: https://github.com/deanpeters/Product-Manager-Skills
   type: skill
   skill_group_count: 25
-  stars: 4802
+  stars: 4851
   last_commit: '2026-05-20'
   default_branch: main
   description: 基于实战方法的产品管理 skill 框架(Claude Code/Cowork/Codex/AI agent)。
@@ -697,7 +697,7 @@
   url: https://github.com/ognjengt/founder-skills
   type: skill
   skill_group_count: 13
-  stars: 187
+  stars: 189
   last_commit: '2026-05-18'
   license: MIT
   doc_path: README.md
@@ -740,7 +740,7 @@
   url: https://github.com/Digidai/product-manager-skills
   type: skill
   skill_group_count: 1
-  stars: 101
+  stars: 102
   last_commit: '2026-04-12'
   default_branch: main
   description: PM skill(Claude Code/Codex/Cursor/Windsurf):诊断 SaaS 指标、评审 PRD、规划路线图、做发现、辅导 PM 职业转型。
@@ -752,7 +752,7 @@
   url: https://github.com/coreyhaines31/marketingskills
   type: skill
   skill_group_count: 24
-  stars: 32072
+  stars: 32182
   last_commit: '2026-06-05'
   default_branch: main
   description: 面向 Claude Code 与 AI agent 的营销 skill:CRO、文案、SEO、分析与增长工程。
@@ -810,7 +810,7 @@
   url: https://github.com/AgriciDaniel/claude-seo
   type: skill
   skill_group_count: 1
-  stars: 8298
+  stars: 8379
   last_commit: '2026-05-25'
   default_branch: main
   description: 通用 SEO skill:25 子 skill + 18 子 agent,覆盖技术 SEO、E-E-A-T、schema、GEO/AEO、外链、本地 SEO 与地图情报。
@@ -825,8 +825,8 @@
   url: https://github.com/ReScienceLab/opc-skills
   type: skill
   skill_group_count: 6
-  stars: 915
-  last_commit: '2026-06-05'
+  stars: 917
+  last_commit: '2026-06-06'
   default_branch: main
   description: 面向独立创业者(solopreneur)的 agent skill。
   description_en: Agent Skills for Solopreneurs
@@ -849,7 +849,7 @@
   url: https://github.com/AgriciDaniel/claude-ads
   type: skill
   skill_group_count: 1
-  stars: 5725
+  stars: 5757
   last_commit: '2026-06-05'
   license: MIT
   doc_path: README.md
@@ -864,7 +864,7 @@
   url: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
   type: skill
   skill_group_count: 1
-  stars: 87817
+  stars: 88138
   last_commit: '2026-04-03'
   default_branch: main
   description: 为多平台专业 UI/UX 构建提供设计智能的 AI skill。
@@ -878,7 +878,7 @@
   url: https://github.com/op7418/NanoBanana-PPT-Skills
   type: skill
   skill_group_count: 1
-  stars: 2919
+  stars: 2929
   last_commit: '2026-01-19'
   default_branch: main
   license: MIT
@@ -890,7 +890,7 @@
   url: https://github.com/zarazhangrui/frontend-slides
   type: skill
   skill_group_count: 1
-  stars: 20450
+  stars: 20554
   last_commit: '2026-05-26'
   default_branch: main
   description: 用编码 agent 的前端能力在网页上制作精美幻灯片。
@@ -906,8 +906,8 @@
   url: https://github.com/nexu-io/open-design
   type: skill
   skill_group_count: 1
-  stars: 59441
-  last_commit: '2026-06-05'
+  stars: 60206
+  last_commit: '2026-06-06'
   default_branch: main
   description: 本地优先、开源的 Claude Design 平替:原生桌面应用,259+ skill / 142+ 设计系统,覆盖 Web/桌面/移动原型。
   description_en: 🎨 Local-first, open-source Claude Design alternative. 🖥️ Native desktop app. ⚡ 259+ Skills · ✨ 142+ Design Systems 🖼️ Web · desktop · mobile prototypes · slides · images · videos · HyperFrames
@@ -920,7 +920,7 @@
   url: https://github.com/op7418/Youtube-clipper-skill
   type: skill
   skill_group_count: 1
-  stars: 1942
+  stars: 1943
   last_commit: '2026-01-22'
   default_branch: main
   license: MIT
@@ -932,7 +932,7 @@
   url: https://github.com/calesthio/OpenMontage
   type: video-engine
   skill_group_count: 1
-  stars: 4410
+  stars: 4448
   last_commit: '2026-05-07'
   license: AGPL-3.0
   doc_path: README.md
@@ -945,7 +945,7 @@
   url: https://github.com/remotion-dev/skills
   type: skill
   skill_group_count: 1
-  stars: 3465
+  stars: 3477
   last_commit: '2026-05-07'
   doc_path: README.md
   default_branch: main
@@ -958,7 +958,7 @@
   url: https://github.com/firecrawl/cli
   type: skill
   skill_group_count: 1
-  stars: 437
+  stars: 439
   last_commit: '2026-06-05'
   default_branch: main
   license: ISC
@@ -972,8 +972,8 @@
   url: https://github.com/mvanhorn/last30days-skill
   type: skill
   skill_group_count: 1
-  stars: 28205
-  last_commit: '2026-06-01'
+  stars: 28795
+  last_commit: '2026-06-06'
   default_branch: main
   description: 跨 Reddit/X/YouTube/HN/Polymarket 与网络研究任意话题,综合出有依据的摘要。
   description_en: AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary
@@ -986,7 +986,7 @@
   url: https://github.com/Paramchoudhary/ResumeSkills
   type: skill
   skill_group_count: 6
-  stars: 688
+  stars: 697
   last_commit: '2026-05-20'
   default_branch: main
   description: 聚焦简历优化/求职/职业发展的 AI agent skill 集,面向求职者与转行者。
@@ -1015,7 +1015,7 @@
   url: https://github.com/santifer/career-ops
   type: skill
   skill_group_count: 2
-  stars: 48897
+  stars: 49344
   last_commit: '2026-06-03'
   default_branch: main
   description: 基于 Claude Code 的 AI 求职系统:14 个 skill 模式、Go 仪表盘、PDF 生成、批处理。
@@ -1046,7 +1046,7 @@
   url: https://github.com/Charlie85270/Dorothy
   type: desktop-app
   skill_group_count: 1
-  stars: 297
+  stars: 298
   last_commit: '2026-05-05'
   default_branch: main
   description: Dorothy —— 你的 AI agent 需要的"贤内助"(个人助理)。
@@ -1059,7 +1059,7 @@
   url: https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep
   type: multi-skill-suite
   skill_group_count: 1
-  stars: 11472
+  stars: 11541
   last_commit: '2026-06-05'
   default_branch: main
   description: ARIS(Auto-Research-In-Sleep)—— 纯 Markdown 的自治 ML 研究 skill:跨模型评审循环、想法发现与实验。
@@ -1073,7 +1073,7 @@
   url: https://github.com/garrytan/gstack
   type: skill
   skill_group_count: 1
-  stars: 107421
+  stars: 107664
   last_commit: '2026-06-04'
   default_branch: main
   description: 复刻 Garry Tan 的 Claude Code 配置:23 个 opinionated 工具,充当 CEO/设计/工程经理/发布经理/文档工程/QA。
@@ -1085,7 +1085,7 @@
   url: https://github.com/EveryInc/charlie-cfo-skill
   type: skill
   skill_group_count: 1
-  stars: 245
+  stars: 247
   last_commit: '2026-01-29'
   default_branch: main
   description: 面向 bootstrapped CFO 财务管理的 Claude Code skill(以 Charlie Munger 命名)。
@@ -1097,7 +1097,7 @@
   url: https://github.com/openaccountants/openaccountants
   type: skill
   skill_group_count: 1
-  stars: 139
+  stars: 148
   last_commit: '2026-06-05'
   default_branch: main
   description: 开源会计与税务 AI skill:覆盖 133 国 + 51 个美国州,可上传 Claude/ChatGPT 或经 MCP 接入,会计师验证。
@@ -1110,8 +1110,8 @@
   url: https://github.com/imbad0202/academic-research-skills
   type: multi-skill-suite
   skill_group_count: 1
-  stars: 27683
-  last_commit: '2026-06-06'
+  stars: 28091
+  last_commit: '2026-06-07'
   default_branch: main
   description: 面向 Claude Code 的学术研究 skill:research → write → review → revise → finalize 全流程。
   description_en: 'Academic Research Skills for Claude Code: research → write → review → revise → finalize'
@@ -1124,7 +1124,7 @@
   url: https://github.com/K-Dense-AI/scientific-agent-skills
   type: multi-skill-suite
   skill_group_count: 1
-  stars: 27361
+  stars: 27415
   last_commit: '2026-06-04'
   default_branch: main
   description: 把任意 AI agent 变成 AI 科学家:#1 科学 Agent Skills 库,16 万+ 科学家使用,140 个开箱 skill + 100+ 科学数据库(生物/化学/医学/药物发现)。
@@ -1138,7 +1138,7 @@
   url: https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering
   type: skill
   skill_group_count: 12
-  stars: 16355
+  stars: 16376
   last_commit: '2026-05-26'
   default_branch: main
   description: 面向 context engineering、多 agent 架构与生产级 agent 系统的 Agent Skill 合集。
@@ -1169,7 +1169,7 @@
   url: https://github.com/UseAI-pro/openclaw-skills-security
   type: skill
   skill_group_count: 1
-  stars: 61
+  stars: 62
   last_commit: '2026-03-10'
   default_branch: main
   description: 精选、安全优先的 OpenClaw skill(Markdown):安全审计——检测提示注入/供应链攻击/凭据泄露。
@@ -1183,8 +1183,8 @@
   url: https://github.com/anthropics/claude-plugins-official
   type: marketplace
   skill_group_count: 1
-  stars: 29441
-  last_commit: '2026-06-06'
+  stars: 29514
+  last_commit: '2026-06-07'
   default_branch: main
   description: Anthropic 官方管理的高质量 Claude Code 插件目录。
   description_en: Official, Anthropic-managed directory of high quality Claude Code Plugins.
@@ -1196,7 +1196,7 @@
   url: https://github.com/multica-ai/andrej-karpathy-skills
   type: claude-md-template
   skill_group_count: 1
-  stars: 168729
+  stars: 169387
   last_commit: '2026-04-20'
   default_branch: main
   license: MIT
@@ -1211,7 +1211,7 @@
   skill_group_count: 1
   default_branch: master
   doc_path: README.md
-  stars: 163
+  stars: 165
   last_commit: '2026-04-26'
   description: 面向经济/金融/社科学术研究的 Claude Code skill 大全(写作/文献综述/数据分析/可视化等)。
   description_en: Comprehensive collection of Claude Code skills for academic research in economics, finance, and social sciences
@@ -1223,7 +1223,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 1901
+  stars: 1905
   last_commit: '2026-06-03'
   description: 通用型科研写作工具:先深度检索再成稿、每条论断都附可核验来源。
   license: MIT
@@ -1236,7 +1236,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 87
+  stars: 91
   last_commit: '2026-05-11'
   description: Claude Code 插件:多智能体编排,以多个专家 agent 并行做学术写作评审。
   license: MIT
@@ -1262,7 +1262,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 333
+  stars: 334
   last_commit: '2025-12-29'
   description: 面向 ML/AI arXiv 综述论文的 SKILL(Codex 优先):issue 驱动搭 IEEEtran LaTeX + 校验 BibTeX 引用。
   description_en: 'A .codex SKILL for issue-driven ML/AI arXiv review papers: scaffold LaTeX + verify BibTeX citations end-to-end.'
@@ -1274,8 +1274,8 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 443
-  last_commit: '2026-06-05'
+  stars: 446
+  last_commit: '2026-06-06'
   description: 面向 Claude Code 的通用 LaTeX 文档 skill:27 模板 / 27 脚本 / 26 参考指南。
   description_en: 'Universal LaTeX document skill for Claude Code: 27 templates, 27 scripts, 26 reference guides. Made with Claude Code on ✦ HappyCapy AI ✦ platform'
   license: MIT
@@ -1287,7 +1287,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 653
+  stars: 655
   last_commit: '2026-05-11'
   description: 把常用科研经验与流程封装成的 Agent skill 集(医学影像综述、论文转幻灯、多智能体综述等)。
   description_en: Some commonly used research experiences and processes are encapsulated into Agent skills.
@@ -1300,7 +1300,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 100
+  stars: 106
   last_commit: '2026-02-27'
   description: Claude Code 的科研 skill 集,覆盖论文全生命周期(文献检索→写作→评审→排版),从 17 个研究自动化仓提炼。
   description_en: 'Skills for Claude Code — deep-research: systematic academic literature review'
@@ -1312,7 +1312,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 8078
+  stars: 8098
   last_commit: '2026-06-04'
   description: Anthropic 官方法律 agent skill 市场:12 个执业领域(商事/公司/诉讼/IP/劳动/隐私/监管/AI 治理等)、80+ agent、100+ skill。
   license: Apache-2.0
@@ -1325,7 +1325,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 19278
+  stars: 19370
   last_commit: '2026-06-06'
   description: Anthropic 官方知识工作插件集(法律/财务/销售等模块);本目录用其法律模块:合同审查/NDA 分流/合规/法律风险。
   license: Apache-2.0
@@ -1338,7 +1338,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 313
+  stars: 314
   last_commit: '2026-02-20'
   description: 基于 CUAD 41 风险类目的合同审查 Claude skill,产出律师级 redline。
   license: MIT
@@ -1351,7 +1351,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 1415
+  stars: 1417
   last_commit: '2026-03-27'
   description: AI 法律 Claude skill 套件:14 个 skill + 5 个 agent,覆盖合同审查/NDA/隐私政策/合规缺口(GDPR/CCPA/PCI/SOC2)。
   description_en: AI Legal Assistant skill for Claude Code. Contract review, risk analysis, NDA generation, compliance auditing, negotiation strategy, and PDF reports — 14 skills, 5 parallel agents. If
@@ -1379,7 +1379,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 291
+  stars: 292
   last_commit: '2026-06-01'
   description: Anthropic 官方 Claude for Healthcare:FHIR 端点开发、医保事前授权审查、临床试验方案(FDA/NIH);另带 CMS/ICD-10/NPI/PubMed 等数据连接器。
   description_en: 'Anthropic''s official Claude for Healthcare: FHIR endpoint development, prior-authorization review, clinical-trial protocols (FDA/NIH); plus CMS/ICD-10/NPI/PubMed data connectors.'
@@ -1391,7 +1391,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 30137
+  stars: 30254
   last_commit: '2026-06-05'
   license: Apache-2.0
   description: Anthropic 官方金融服务 skill 市场:投行/股票研究/PE/财富管理/基金运营等垂直 plugin + LSEG/S&P 数据连接器。
@@ -1404,7 +1404,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 44
+  stars: 47
   last_commit: '2026-03-11'
   description: 量化交易 Agent Skill 集(62 个):行情/技术分析/回测/组合风险/量化方法/期权固收(另含大量加密/DeFi skill)。
   license: MIT
@@ -1418,7 +1418,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 118
+  stars: 120
   last_commit: '2026-03-31'
   description: 机构级金融 skill 套件(84 个):财富管理/证券合规(KYC/AML/Reg-BI)/组合风险/交易运营/数据集成。
   license: MIT
@@ -1445,7 +1445,7 @@
   skill_group_count: 1
   default_branch: master
   doc_path: README.md
-  stars: 149
+  stars: 150
   last_commit: '2026-03-05'
   description: vectorbt 回测 Claude skill 包:策略搭建、回测、参数优化、绩效统计与对比。
   description_en: Agentic coding skills for backtesting trading strategies using VectorBT. Supports Indian, US, and Crypto markets    with realistic transaction cost modeling, TA-Lib indicators, QuantStats
@@ -1459,7 +1459,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 653
+  stars: 654
   last_commit: '2026-05-28'
   description: HashiCorp 官方 IaC skill 集:Terraform 风格/测试/Stacks/provider 开发 + Packer 镜像构建。
   license: MPL-2.0
@@ -1472,7 +1472,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 140
+  stars: 142
   last_commit: '2026-06-05'
   license: Apache-2.0
   description: Grafana 官方可观测性 skill(39 个):Grafana/PromQL/LGTM 栈(Loki/Tempo/Mimir)/OpenTelemetry/告警/IRM/FinOps/k6。
@@ -1513,7 +1513,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 9665
+  stars: 9692
   last_commit: '2026-05-20'
   description: 多领域 Claude skill 仓(66 个/12 类);本目录引用其 DevOps/SRE 类:devops-engineer / sre-engineer(SLO)/ kubernetes-specialist / monitoring-expert。
   license: MIT
@@ -1527,7 +1527,7 @@
   skill_group_count: 1
   default_branch: master
   doc_path: README.md
-  stars: 1988
+  stars: 1992
   last_commit: '2026-06-03'
   description: Terraform 社区名人 Anton Babenko 的 Terraform skill。
   description_en: Terraform & OpenTofu Skill for AI Agents - testing, modules, CI/CD, and production patterns
@@ -1566,7 +1566,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 332
+  stars: 335
   last_commit: '2026-05-29'
   description: 渗透测试全生命周期 skill+agent(覆盖 OWASP Top10、CTF、/pentest /hackerone),含蓝队 DFIR/威胁情报(仅限授权测试)。
   license: MIT
@@ -1580,7 +1580,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 59
+  stars: 64
   last_commit: '2026-06-01'
   description: 网络安全综合 skill(15 个):渗透/红队/漏洞/逆向/威胁狩猎/CSOC,攻防蓝队全覆盖(仅限授权测试)。
   license: MIT
@@ -1594,8 +1594,8 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 1676
-  last_commit: '2026-06-05'
+  stars: 1698
+  last_commit: '2026-06-06'
   description: Bug Bounty 漏洞挖掘 skill(51 个):方法论、各漏洞类、云 IAM、企业 VPN 攻击、披露报告(仅限授权测试)。
   description_en: A Claude Code skill bundle for bug hunting and external red-team work - 51 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 vulnerability classes, plus enterprise
     identity + infrastructure attack matrices.
@@ -1608,7 +1608,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 1628
+  stars: 1633
   last_commit: '2026-06-05'
   description: 攻击性 OSINT 侦察 skill:OSINT 方法论与攻击面测绘(仅限授权测试)。
   description_en: Two paired Claude skills · 90+ recon modules · 48 secret-regex patterns · 80+ dorks · 9 read-only credential validators · 27 attack-path templates · 5,500+ lines of structured tradecraft.
@@ -1622,7 +1622,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 2407
+  stars: 2413
   last_commit: '2026-05-21'
   description: Bug Bounty skill(集成 subfinder/httpx/nuclei/dalfox/ffuf):侦察、漏洞分类、triage 验证、报告(仅限授权测试)。
   license: MIT
@@ -1635,7 +1635,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 233
+  stars: 236
   last_commit: '2026-05-27'
   description: 网络安全 red/blue/purple skill:渗透/红队 + SOC 运营/SIEM 检测/威胁狩猎/取证(仅限授权测试)。
   license: MIT
@@ -1663,7 +1663,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 292
+  stars: 294
   last_commit: '2026-06-05'
   description: 循证教学 Agent Skill 旗舰(165 个,CC BY-SA 4.0):课程设计与评估、自适应辅导、学习科学、AI 素养、EAL 语言发展等 20 个 domain。
   description_en: 165 evidence-based education skills for Claude, Codex, and any Agent Skills-compatible tool.
@@ -1678,7 +1678,7 @@
   default_branch: main
   doc_path: README.md
   stars: 74
-  last_commit: '2026-06-04'
+  last_commit: '2026-06-06'
   description: 智能教材 Claude skill:learning graph 生成、章节/测验/词表内容生成、MicroSim 交互模拟、教育评估。
   license: CC-BY-NC-SA-4.0
   description_en: 'Intelligent-textbook Claude skills: learning-graph generation, chapter/quiz/glossary content generation, MicroSim interactive simulations, and educational assessment.'
@@ -1690,7 +1690,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 270
+  stars: 273
   last_commit: '2026-06-01'
   description: Skill-Anything:把任意素材转成 12 段学习指南 + quiz + flashcard + 间隔重复,可导出 SKILL.md。
   license: MIT
@@ -1776,7 +1776,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 322
+  stars: 323
   last_commit: '2026-06-02'
   description: ElevenLabs 官方语音 skill(9 个):文本转语音(70+语言)/Scribe 转写/变声/人声分离/音效/实时语音对话 agent/音乐生成。
   license: MIT
@@ -1789,7 +1789,7 @@
   skill_group_count: 1
   default_branch: master
   doc_path: README.md
-  stars: 268
+  stars: 272
   last_commit: '2026-05-18'
   description: HeyGen 官方数字人 skill(3 个):创建 avatar、生成口播视频、跨语言翻译配音换嘴型。
   license: MIT
@@ -1803,7 +1803,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 234
+  stars: 238
   last_commit: '2026-06-06'
   description: Suno 音乐制作全流水线 Claude 插件(54 skill):作词/专辑策划/混音/母带/封面/宣发/发布。
   license: CC0-1.0
@@ -1830,7 +1830,7 @@
   skill_group_count: 1
   default_branch: main
   doc_path: README.md
-  stars: 1338
+  stars: 1342
   last_commit: '2026-05-20'
   description: AI-native 视频制作工具箱(Remotion/FFmpeg/MoviePy/Playwright 录制 + ElevenLabs/AceStep 音频)。
   license: MIT
@@ -1882,7 +1882,7 @@
   url: https://github.com/code-yeongyu/oh-my-openagent
   type: multi-skill-suite
   skill_group_count: 20
-  stars: 61164
+  stars: 61274
   last_commit: '2026-06-06'
   default_branch: dev
   description: omo —— 面向复杂代码库的 agent harness（「镐子」），复杂软件工程的一体化 skill 套件。
@@ -1916,8 +1916,8 @@
   url: https://github.com/Lum1104/Understand-Anything
   type: skill-pack
   skill_group_count: 2
-  stars: 52886
-  last_commit: '2026-06-04'
+  stars: 53587
+  last_commit: '2026-06-06'
   default_branch: main
   description: 把任意代码变成可探索、可搜索、可问答的交互式知识图谱；支持 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等。
   description_en: Turn any code into an interactive knowledge graph you can explore, search and ask questions about; works with Claude Code, Codex, Cursor, Copilot, Gemini CLI and more.
@@ -1938,8 +1938,8 @@
   url: https://github.com/addyosmani/agent-skills
   type: skill-pack
   skill_group_count: 22
-  stars: 48460
-  last_commit: '2026-06-02'
+  stars: 48706
+  last_commit: '2026-06-06'
   default_branch: main
   description: 面向 AI 编码 agent 的生产级工程 skill 集。
   description_en: Production-grade engineering skills for AI coding agents.
@@ -1975,7 +1975,7 @@
   url: https://github.com/wshobson/agents
   type: marketplace
   skill_group_count: 22
-  stars: 36406
+  stars: 36445
   last_commit: '2026-06-05'
   default_branch: main
   description: 面向 Claude Code、Codex CLI、Cursor、OpenCode、Gemini CLI 的多 harness agentic 插件市场。
@@ -2020,7 +2020,7 @@
   url: https://github.com/JimLiu/baoyu-skills
   type: skill-pack
   skill_group_count: 15
-  stars: 20606
+  stars: 20672
   last_commit: '2026-06-03'
   default_branch: main
   description: 宝玉(JimLiu)的内容生产 skill 套件:配图/漫画/信息图/翻译/转换/社交发布等。
@@ -2052,7 +2052,7 @@
   url: https://github.com/OthmanAdi/planning-with-files
   type: skill
   skill_group_count: 1
-  stars: 22753
+  stars: 22793
   last_commit: '2026-05-26'
   default_branch: master
   description: Manus 风格的文件式持久规划 skill(task_plan/findings/progress 三件套)。
@@ -2067,7 +2067,7 @@
   url: https://github.com/googleworkspace/cli
   type: skill-pack
   skill_group_count: 6
-  stars: 26875
+  stars: 26892
   last_commit: '2026-06-01'
   default_branch: main
   description: 官方 Google Workspace CLI:一条命令操作 Drive/Gmail/Calendar/Sheets/Docs/Chat/Admin 等,内置 AI agent skills。
