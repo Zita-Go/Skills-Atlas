@@ -4666,3 +4666,64 @@
   description_en: 'nature-skills ten-piece suite covering the full Nature/CNS paper lifecycle from submission to revision: multi-step literature search + citation verification (academic-search) → bilingual figure-aware Markdown reader (reader) → draft/restructure sections (writing) → polish into Nature-style English + fix LaTeX (polishing) → strict Nature/CNS citations + reference management (citation) → data availability statements / FAIR metadata (data) → submission-grade figures in Python/R (figure) → paper-to-deck Nature-style PPTX (paper2ppt) → simulate reviewer pre-review (reviewer) → point-by-point response letters (response); skills share _shared/ and route to each other.'
   sources:
   - Yuan1z0825/nature-skills
+- id: meta-skill-mgmt--13-2--345
+  skills:
+  - dbs-agent-migration
+  group: Agent 项目 / 工作台治理
+  group_en: Agent project / workbench governance
+  category: meta-skill-mgmt
+  subcategory: 13-2
+  chain: false
+  description: 帮用户整理混乱的 Agent 项目，实现 Claude Code、Codex、Grok 三端一致的可维护工作台结构。
+  description_en: Organize chaotic Agent projects into a maintainable workspace with consistent structure across Claude Code, Codex, and Grok.
+  sources:
+  - dontbesilent2025/dbskill
+- id: docs-knowledge--2-3--346
+  skills:
+  - dbs-content
+  group: 内容创作诊断
+  group_en: Content-creation diagnosis
+  category: docs-knowledge
+  subcategory: 2-3
+  chain: false
+  description: 帮助 agent 诊断如何把已确认的选题变成好内容，包括匹配内容形式、选择平台和审查表达方向。
+  description_en: Helps agents diagnose how to turn a confirmed topic into good content, including matching content formats, selecting platforms, and reviewing expression direction.
+  sources:
+  - dontbesilent2025/dbskill
+- id: docs-knowledge--2-6--347
+  skills:
+  - dbs-decision
+  group: 个人决策知识工程
+  group_en: Personal decision knowledge base
+  category: docs-knowledge
+  subcategory: 2-6
+  chain: false
+  description: 为业务、关系等长期跟踪领域构建本地知识工程，通过四层结构、快照和概念库持久化决策过程，支持复盘与规律提炼。
+  description_en: Build a local knowledge project for long-running domains like business or relationships, persisting decision processes with a four-layer structure, snapshots, and a concept library for review and pattern extraction.
+  sources:
+  - dontbesilent2025/dbskill
+- id: agent-architecture--12-6--348
+  skills:
+  - prompt-master
+  group: 提示词生成
+  group_en: Prompt generation
+  category: agent-architecture
+  subcategory: 12-6
+  chain: false
+  description: 为各类 AI 工具（LLM、Cursor、Midjourney 等）生成高效、零浪费、生产就绪的提示词，优化交互效果。
+  description_en: Generate efficient, zero-waste, production-ready prompts for AI tools (LLMs, Cursor, Midjourney, etc.) to optimize interaction.
+  sources:
+  - nidhinjs/prompt-master
+- id: finance-trading--16-8--349
+  skills:
+  - finance-core-analysis
+  - finance-explosive-article
+  group: 金融分析流水线（机制分析 → 爆款文）
+  group_en: Financial analysis pipeline (mechanism analysis → viral article)
+  category: finance-trading
+  subcategory: 16-8
+  chain: true
+  description: 金融分析内容流水线（公众号风）：finance-core-analysis（从每日金融简报和外部验证中生成深度机制分析 markdown，用于公众号风格文章，是金融分析流水线的第二阶段。）→ finance-explosive-article（将金融分析转化为高影响力爆款文章，以第一性原理解释市场机制，适用于公众号等公共平台，是流水线的最终阶段。）。注：完整流水线第 1 阶段 daily-finance 未收录，此为残链。
+  description_en: 'Financial-analysis content pipeline: finance-core-analysis (Generate deep mechanism analysis markdown from daily finance briefs and external verification, suitable for public platform articles, as stage 2 of the financial analysis pipeline.) → finance-explosive-article (Transform financial analysis into high-impact articles, explaining market mechanisms with first principles, suitable for public platforms like WeChat, as the final stage of the pipeline.). Note: stage-1 daily-finance is not catalogued (partial chain).'
+  sources:
+  - digoal/blog
