@@ -1052,6 +1052,118 @@
               "when_to_use": "要测 Temporal 工作流时",
               "when_to_use_en": "When testing Temporal workflows",
               "py": "Temporal  gong zuo liu ce shi  temporal-python-testing pytest  ce  Temporal  gong zuo liu : shi jian tiao yue /mock/ hui fang"
+            },
+            {
+              "skills": [
+                "browser-automation",
+                "browser-edge-cases",
+                "linkedin-automation",
+                "x-automation"
+              ],
+              "group": "浏览器自动化（含 LinkedIn / X 社交平台）",
+              "group_en": "Browser automation (incl. LinkedIn / X)",
+              "chain": false,
+              "description": "browser-automation（教授通过 Chrome DevTools Protocol 进行浏览器自动化的技能，包括坐标计算、shadow-DOM 处理和真实站点验证。）；browser-edge-cases（提供调试浏览器自动化在复杂网站（如LinkedIn、Twitter）失败的标准操作程序，帮助代理解决边缘情况。）；linkedin-automation（在使用浏览器工具自动化LinkedIn前必须阅读，涵盖处理shadow DOM、CSP等挑战的验证流程，用于消息、连接请求、帖子和搜索等操作，需配合browser-automation使用。）；x-automation（自动化 X/Twitter 操作：发帖、回复、删除、搜索互动，含 Draft.js 编辑器已验证流程）",
+              "description_en": "browser-automation: Teaches browser automation skills via Chrome DevTools Protocol, covering coordinate calculation, shadow-DOM handling, and verification on real production sites.; browser-edge-cases: SOP for debugging browser automation failures on complex websites like LinkedIn, Twitter/X, SPAs, or sites with Shadow DOM.; linkedin-automation: Required reading before automating LinkedIn with browser_* tools, covering verified flows for handling shadow DOM, CSP, and other challenges for messaging, connection requests, feed posts, and search automation, requiring browser-automation.; x-automation: Automate X/Twitter operations: posting, replying, deleting, search-and-engage, with verified Draft.js compose flows",
+              "sources": [
+                {
+                  "name": "hive",
+                  "url": "https://github.com/aden-hive/hive",
+                  "stars": 10494,
+                  "last_commit": "2026-05-29",
+                  "type": "multi-skill-suite",
+                  "author": "aden-hive",
+                  "repo": "hive",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add aden-hive/hive",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/aden-hive/hive ~/.claude/skills/hive"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "liu lan qi zi dong hua （ han  LinkedIn / X  she jiao ping tai ） browser-automation browser-edge-cases linkedin-automation x-automation "
+            },
+            {
+              "skills": [
+                "terminal-tools-foundations",
+                "terminal-tools-fs-search",
+                "terminal-tools-job-control",
+                "terminal-tools-pty-sessions",
+                "terminal-tools-troubleshooting"
+              ],
+              "group": "终端工具集（fs/作业/PTY/排障）",
+              "group_en": "Terminal tools (fs / jobs / PTY / troubleshooting)",
+              "chain": false,
+              "description": "terminal-tools-foundations（教导 agent 终端工具的前后台任务管理、输出处理和工具偏好，避免常见错误。）；terminal-tools-fs-search（指导使用 terminal_rg 和 terminal_find 进行项目外部文件系统搜索，包括内容搜索和谓词查询。）；terminal-tools-job-control（教agent管理后台作业，实现启动、轮询、等待及信号处理，适用于构建、部署等长时任务。）；terminal-tools-pty-sessions（教agent使用持久PTY会话，支持跨调用状态保持、驱动REPL和交互式提示。）；terminal-tools-troubleshooting（诊断终端工具调用异常：stdout 为空、exit_code 为 null、session 忙等场景的排查方案）",
+              "description_en": "terminal-tools-foundations: Teaches agents foreground/background job management, output handling, and tool preference for terminal tools to avoid common pitfalls.; terminal-tools-fs-search: Guides the use of terminal_rg and terminal_find for filesystem search outside the project tree, including content search and predicate queries.; terminal-tools-job-control: Teaches agents how to manage background jobs with start, poll, wait patterns and signal escalation for long-running tasks like builds and deploys.; terminal-tools-pty-sessions: Teaches agents how to use persistent PTY sessions for stateful interactions, driving REPLs and handling interactive prompts.; terminal-tools-troubleshooting: Diagnostic recipes for terminal tool call anomalies: empty stdout, null exit_code, session busy, and other unexpected behaviors",
+              "sources": [
+                {
+                  "name": "hive",
+                  "url": "https://github.com/aden-hive/hive",
+                  "stars": 10494,
+                  "last_commit": "2026-05-29",
+                  "type": "multi-skill-suite",
+                  "author": "aden-hive",
+                  "repo": "hive",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add aden-hive/hive",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/aden-hive/hive ~/.claude/skills/hive"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "zhong duan gong ju ji （fs/ zuo ye /PTY/ pai zhang ） terminal-tools-foundations terminal-tools-fs-search terminal-tools-job-control terminal-tools-pty-sessions terminal-tools-troubleshooting "
+            },
+            {
+              "skills": [
+                "test-reporting"
+              ],
+              "group": "集成测试报告",
+              "group_en": "Integration test reporting",
+              "chain": false,
+              "description": "运行代理集成测试套件并生成详细HTML报告，包含每个测试的输入和结果分析。",
+              "description_en": "Run integration test suites for dummy agents and produce detailed HTML reports with per-test input-outcome analysis.",
+              "sources": [
+                {
+                  "name": "hive",
+                  "url": "https://github.com/aden-hive/hive",
+                  "stars": 10494,
+                  "last_commit": "2026-05-29",
+                  "type": "multi-skill-suite",
+                  "author": "aden-hive",
+                  "repo": "hive",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add aden-hive/hive",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/aden-hive/hive ~/.claude/skills/hive"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "ji cheng ce shi bao gao  test-reporting "
             }
           ]
         },
@@ -2007,6 +2119,41 @@
               "when_to_use": "要发版且想一键化流程时",
               "when_to_use_en": "When shipping a release and wanting it automated",
               "py": "tong yong fa bu liu cheng zi dong hua  release-skills  zi dong shi bie ban ben /changelog  pao duo yu yan fa bu"
+            },
+            {
+              "skills": [
+                "triage-issue"
+              ],
+              "group": "GitHub Issue/PR 分析与发布自动化",
+              "group_en": "GitHub issue/PR triage & release automation",
+              "chain": false,
+              "description": "分析 GitHub issue，验证技术声明，自动关闭无效问题并生成响应。",
+              "description_en": "Analyzes GitHub issues, verifies technical claims, and closes invalid issues with automated responses.",
+              "sources": [
+                {
+                  "name": "hive",
+                  "url": "https://github.com/aden-hive/hive",
+                  "stars": 10494,
+                  "last_commit": "2026-05-29",
+                  "type": "multi-skill-suite",
+                  "author": "aden-hive",
+                  "repo": "hive",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add aden-hive/hive",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/aden-hive/hive ~/.claude/skills/hive"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "GitHub Issue/PR  fen xi yu fa bu zi dong hua  triage-issue "
             }
           ]
         },
@@ -12441,6 +12588,42 @@
               "when_to_use": "构建需要复杂推理的神经符号 agent 时",
               "when_to_use_en": "Building neuro-symbolic agents requiring complex reasoning.",
               "py": "BDI  xin zhi zhuang tai  bdi-mental-states  ba yu yi shang xia wen zhuan hua wei  BDI  xin zhi zhuang tai ， zeng qiang  agent  tui li neng li"
+            },
+            {
+              "skills": [
+                "note-taking",
+                "context-preservation"
+              ],
+              "group": "Agent 记忆 / 工作笔记",
+              "group_en": "Agent memory / working notes",
+              "chain": false,
+              "description": "note-taking（维护自由形式工作笔记，记录决策、提取值和开放问题，防止上下文修剪丢失关键信息。）；context-preservation（在自动上下文修剪前，主动从工具结果中提取关键值到工作笔记，防止数据丢失。）",
+              "description_en": "note-taking: Maintain free-form working notes to record decisions, extracted values, and open questions, preventing loss of key information during context pruning.; context-preservation: Proactively extracts critical values from tool results into working notes before context pruning destroys them, ensuring important data is preserved during agent operations.",
+              "sources": [
+                {
+                  "name": "hive",
+                  "url": "https://github.com/aden-hive/hive",
+                  "stars": 10494,
+                  "last_commit": "2026-05-29",
+                  "type": "multi-skill-suite",
+                  "author": "aden-hive",
+                  "repo": "hive",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add aden-hive/hive",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/aden-hive/hive ~/.claude/skills/hive"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Agent  ji yi  /  gong zuo bi ji  note-taking context-preservation "
             }
           ]
         },
@@ -12633,6 +12816,41 @@
               "when_to_use": "编排 agent 团队时",
               "when_to_use_en": "When composing an agent team",
               "py": "duo  agent  tuan dui zu cheng yu tong xin xie yi  team-composition-patterns team-communication-protocols  she ji  agent  tuan dui zu cheng  +  jie gou hua tong xin xie yi"
+            },
+            {
+              "skills": [
+                "colony-progress-tracker"
+              ],
+              "group": "多代理并行开发协调",
+              "group_en": "Multi-agent parallel dev coordination",
+              "chain": false,
+              "description": "在多代理任务队列中声称任务、跟踪步骤进度并验证 SOP 门控条件。",
+              "description_en": "Claims tasks in a multi-agent queue, tracks step progress, and verifies SOP gate conditions.",
+              "sources": [
+                {
+                  "name": "hive",
+                  "url": "https://github.com/aden-hive/hive",
+                  "stars": 10494,
+                  "last_commit": "2026-05-29",
+                  "type": "multi-skill-suite",
+                  "author": "aden-hive",
+                  "repo": "hive",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add aden-hive/hive",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/aden-hive/hive ~/.claude/skills/hive"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "duo dai li bing xing kai fa xie tiao  colony-progress-tracker "
             }
           ]
         },
@@ -12790,6 +13008,42 @@
               "when_to_use": "启动新 agent 项目时评估可行性和成本",
               "when_to_use_en": "Evaluate feasibility and cost before starting new agent project.",
               "py": "xiang mu ji fang fa lun  project-development  cong ren wu shi pei xing jian cha dao cheng ben gu suan ， xi tong xing di jiao fu  LLM agent  xiang mu"
+            },
+            {
+              "skills": [
+                "quality-monitor",
+                "error-recovery"
+              ],
+              "group": "Agent 质量自评 / 错误恢复",
+              "group_en": "Agent self-eval / error recovery",
+              "chain": false,
+              "description": "quality-monitor（定期自我评估输出质量，以在外部判断之前捕获退化，确保智能体性能稳定。）；error-recovery（当工具调用失败时，遵循结构化的恢复决策树，避免盲目重试或放弃。）",
+              "description_en": "quality-monitor: Periodically self-assess output quality to catch degradation before external evaluation, ensuring stable agent performance.; error-recovery: Provides a structured recovery decision tree for failed tool calls, enabling intelligent retry and escalation instead of blind retries or giving up.",
+              "sources": [
+                {
+                  "name": "hive",
+                  "url": "https://github.com/aden-hive/hive",
+                  "stars": 10494,
+                  "last_commit": "2026-05-29",
+                  "type": "multi-skill-suite",
+                  "author": "aden-hive",
+                  "repo": "hive",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add aden-hive/hive",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/aden-hive/hive ~/.claude/skills/hive"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Agent  zhi liang zi ping  /  cuo wu hui fu  quality-monitor error-recovery "
             }
           ]
         },
@@ -12935,6 +13189,41 @@
               "when_to_use": "需要写/优化skill时",
               "when_to_use_en": "When writing or optimizing a skill",
               "py": "Skill  chuang jian qi  skill-creator writing-skills write-a-skill  chuang jian he ce shi xin skill de wan zheng liu cheng"
+            },
+            {
+              "skills": [
+                "writing-hive-skills"
+              ],
+              "group": "Skill 创建器（hive）",
+              "group_en": "Skill creator (hive)",
+              "chain": false,
+              "description": "指导为 Hive agent 创建符合规范的新 skill，包括放置位置、发现机制和优先级规则。",
+              "description_en": "Guides creating new skills for Hive agents, covering placement, discovery mechanisms, and precedence rules per specification.",
+              "sources": [
+                {
+                  "name": "hive",
+                  "url": "https://github.com/aden-hive/hive",
+                  "stars": 10494,
+                  "last_commit": "2026-05-29",
+                  "type": "multi-skill-suite",
+                  "author": "aden-hive",
+                  "repo": "hive",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add aden-hive/hive",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/aden-hive/hive ~/.claude/skills/hive"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Skill  chuang jian qi （hive） writing-hive-skills "
             }
           ]
         },
@@ -19968,6 +20257,26 @@
         "command": "npx skills add nidhinjs/prompt-master",
         "kind": "skill",
         "alt": "git clone https://github.com/nidhinjs/prompt-master ~/.claude/skills/prompt-master"
+      },
+      "skill_docs": null,
+      "skill_licenses": null
+    },
+    "hive": {
+      "url": "https://github.com/aden-hive/hive",
+      "description": "Multi-Agent Harness for Production AI",
+      "description_en": null,
+      "stars": 10494,
+      "last_commit": "2026-05-29",
+      "type": "multi-skill-suite",
+      "author": "aden-hive",
+      "repo": "hive",
+      "default_branch": "main",
+      "license": null,
+      "doc_path": null,
+      "install": {
+        "command": "npx skills add aden-hive/hive",
+        "kind": "multi-skill-suite",
+        "alt": "git clone https://github.com/aden-hive/hive ~/.claude/skills/hive"
       },
       "skill_docs": null,
       "skill_licenses": null
