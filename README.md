@@ -6,11 +6,11 @@
 
 **The right ready-made skill for any task in Claude Code — found, installed, and surfaced as you work.**
 
-900+ skills, gathered from across the ecosystem and organized by what they do.
+1000+ skills, gathered from across the ecosystem and organized by what they do.
 
-[![Skills](https://img.shields.io/badge/skills-956-3b82f6?style=flat&labelColor=4b5563&logo=claude&logoColor=white)](data/skills.yaml)
-[![Repos](https://img.shields.io/badge/repos-118-10b981?style=flat&labelColor=4b5563&logo=github&logoColor=white)](data/repositories.yaml)
-[![Categories](https://img.shields.io/badge/categories-20_×_117-f59e0b?style=flat&labelColor=4b5563)](data/categories.yaml)
+[![Skills](https://img.shields.io/badge/skills-1029-3b82f6?style=flat&labelColor=4b5563&logo=claude&logoColor=white)](data/skills.yaml)
+[![Repos](https://img.shields.io/badge/repos-125-10b981?style=flat&labelColor=4b5563&logo=github&logoColor=white)](data/repositories.yaml)
+[![Categories](https://img.shields.io/badge/categories-21_×_128-f59e0b?style=flat&labelColor=4b5563)](data/categories.yaml)
 [![npm](https://img.shields.io/npm/v/skills-atlas-cli?style=flat&label=npm&color=8b5cf6&labelColor=4b5563&logo=npm&logoColor=white)](https://www.npmjs.com/package/skills-atlas-cli)
 [![License](https://img.shields.io/badge/license-MIT-64748b?style=flat&labelColor=4b5563&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
