@@ -1670,15 +1670,17 @@
 - id: design-frontend--5-5--124
   skills:
   - frontend-slides
+  - guizang-ppt-skill
   group: 零依赖 HTML 演示
   group_en: zero-dependency HTML presentation
   category: design-frontend
   subcategory: 5-5
   chain: false
-  description: zarazhangrui/frontend-slides（1920×1080 固定 16:9 stage + 12 视觉风格预设 + bold-template-pack 可视化预览卡 + PPTX 转 web + Playwright 导 PDF + Vercel 部署）
-  description_en: zarazhangrui/frontend-slides (1920×1080 fixed 16:9 stage + 12 visual style presets + bold-template-pack visual preview cards + PPTX to web + Playwright export PDF + Vercel deployment)
+  description: zarazhangrui/frontend-slides（1920×1080 固定 16:9 stage + 12 视觉风格预设 + bold-template-pack 可视化预览卡 + PPTX 转 web + Playwright 导 PDF + Vercel 部署）；op7418/guizang-ppt-skill（单文件 HTML 横向翻页 PPT，电子杂志 / 瑞士国际主义两种视觉风格，含 WebGL 背景、章节幕封、动效）
+  description_en: zarazhangrui/frontend-slides (1920×1080 fixed 16:9 stage + 12 visual style presets + bold-template-pack visual preview cards + PPTX to web + Playwright export PDF + Vercel deployment); op7418/guizang-ppt-skill (single-file horizontal-flip HTML deck, editorial-magazine / Swiss-international styles, with WebGL backgrounds, section covers, animations)
   sources:
   - zarazhangrui
+  - guizang-ppt-skill
 - id: design-frontend--5-5--125
   skills:
   - huashu-design
@@ -4665,4 +4667,324 @@
   description: nature-skills 十件套，覆盖 Nature/CNS 论文从投稿到返修的全流程：多步文献检索+引用核验(academic-search) → 中英对照、图表感知的 Markdown 阅读器(reader) → 起草/重组各章节(writing) → 润色为 Nature 风英文并修 LaTeX 排版(polishing) → 严格 Nature/CNS 引用与参考管理(citation) → 数据可用性声明/FAIR 元数据(data) → Python/R 出版级科研制图(figure) → 论文转 Nature 风中文 PPT(paper2ppt) → 模拟审稿人预审(reviewer) → 逐点审稿回复信(response)；各 skill 共享 _shared/、互相 route。
   description_en: 'nature-skills ten-piece suite covering the full Nature/CNS paper lifecycle from submission to revision: multi-step literature search + citation verification (academic-search) → bilingual figure-aware Markdown reader (reader) → draft/restructure sections (writing) → polish into Nature-style English + fix LaTeX (polishing) → strict Nature/CNS citations + reference management (citation) → data availability statements / FAIR metadata (data) → submission-grade figures in Python/R (figure) → paper-to-deck Nature-style PPTX (paper2ppt) → simulate reviewer pre-review (reviewer) → point-by-point response letters (response); skills share _shared/ and route to each other.'
   sources:
-  - Yuan1z0825/nature-skills
+  - nature-skills
+- id: data-scraping--7-3--325
+  skills:
+  - pgfaq
+  group: PostgreSQL 源码级答疑
+  group_en: PostgreSQL source-level Q&A
+  category: data-scraping
+  subcategory: 7-3
+  chain: false
+  description: 基于 PostgreSQL 源码和文档，回答核心数据库行为、SQL、配置等问题并提供带来源的 Markdown 答案。
+  description_en: Answers core PostgreSQL questions on behavior, SQL, configuration, and internals based on source code and documentation, delivering sourced Markdown responses.
+  sources:
+  - digoal-blog
+- id: docs-knowledge--2-3--326
+  skills:
+  - axiom-explainer
+  - database-foundation-course-writer
+  - paper-interpretation
+  - article-to-podcast-script
+  group: 中文 Markdown 内容生成（科普 / 课程 / 解读 / 播客）
+  group_en: Chinese Markdown content generation
+  category: docs-knowledge
+  subcategory: 2-3
+  chain: false
+  description: axiom-explainer（生成面向大学生和成年人的中文 Markdown 教学文章，解释公理、定理、理论等概念，包含 Mermaid 图表和示例，用于教育或科普。）；database-foundation-course-writer（帮助AI代理基于参考材料生成数据库技术的中文Markdown文章，保存为GitHub可渲染格式，适用于架构师、DBA和开发者。）；paper-interpretation（从论文 PDF 生成通俗易懂、图文并茂的中文 Markdown 解读，帮助 agent 快速理解学术论文并保存结果。）；article-to-podcast-script（将 Markdown 文章转换为 1 到 4 位主持人的自然第一人称播客脚本，并保存为 .txt 文件，用于音频内容制作。）
+  description_en: 'axiom-explainer: Generate Chinese Markdown teaching articles for university students and adults, explaining axioms, theorems, laws, principles, or theory systems with Mermaid diagrams and examples for education or popularization.; database-foundation-course-writer: Assists AI agents in generating Chinese Markdown articles on database technologies from reference materials, saved as GitHub-renderable files for architects, DBAs, and developers.; paper-interpretation: Generates accessible, illustrated Chinese Markdown interpretations from paper PDFs, enabling agents to quickly grasp academic research and save outputs.; article-to-podcast-script: Convert a Markdown article into a natural first-person podcast script for 1 to 4 speakers and save it as a .txt file for audio content creation.'
+  sources:
+  - digoal-blog
+- id: docs-knowledge--2-3--327
+  skills:
+  - dbs-ai-check
+  group: AI 写作痕迹检测
+  group_en: AI writing-trace detection
+  category: docs-knowledge
+  subcategory: 2-3
+  chain: false
+  description: 扫描用户文案中的 AI 生成痕迹，输出详细检测报告，帮助识别 AI 写作特征，默认只诊断不改，强调基于用户意图改善写作。
+  description_en: Scans user copy for AI-generated patterns, outputs detailed diagnostic reports to identify AI writing features, diagnosis only by default, with emphasis on improving writing based on user intent.
+  sources:
+  - dbskill
+- id: marketing-growth--4-8--328
+  skills:
+  - dbs-benchmark
+  group: 对标筛选（五重过滤）
+  group_en: Benchmark target selection
+  category: marketing-growth
+  subcategory: 4-8
+  chain: false
+  description: 使用五重过滤法帮用户找到值得模仿的对标，排除自我干扰，专注于高利润、可模仿的商业对象，适用于从零到一阶段的模仿决策。
+  description_en: Uses a five-filter method to help users find imitable benchmarks, eliminating self-distraction to focus on high-profit and executable business models, suitable for imitation decisions from zero to one.
+  sources:
+  - dbskill
+- id: product-management--3-2--329
+  skills:
+  - dbs-deconstruct
+  - dbs-goal
+  - dbs-good-question
+  group: 问题框定 / 目标澄清（维特根斯坦语言哲学）
+  group_en: Problem framing / goal clarification
+  category: product-management
+  subcategory: 3-2
+  chain: false
+  description: dbs-deconstruct（运用维特根斯坦语言哲学和奥派经济学，将模糊商业概念拆解到原子级别，澄清语言混淆并识别伪概念。）；dbs-goal（用维特根斯坦语言哲学审计模糊目标，通过可指物性、可否证性等测试将空转的目标语言转为可检查的交付物。）；dbs-good-question（把用户丢来的模糊问题改写成 Agent 可推理、可批评、可验证的问题说明书，暴露关键冲突并评估自动化可行程度。）
+  description_en: 'dbs-deconstruct: Apply Wittgenstein''s philosophy of language and Austrian economics to deconstruct ambiguous business concepts to atomic level, clarifying linguistic confusion and identifying pseudo-concepts.; dbs-goal: Audits fuzzy goals using Wittgenstein''s philosophy of language, transforming ''idling'' goal statements into checkable deliverables through tests like pointability and falsifiability.; dbs-good-question: Transforms fuzzy user problems into structured, verifiable problem briefs that expose key conflicts and evaluate how far an agent can automate a solution.'
+  sources:
+  - dbskill
+- id: product-management--3-4--330
+  skills:
+  - dbs-diagnosis
+  - dbs-slowisfast
+  group: 商业模式诊断 / 策略
+  group_en: Business-model diagnosis / strategy
+  category: product-management
+  subcategory: 3-4
+  chain: false
+  description: dbs-diagnosis（商业诊断 skill，提供问诊（消解用户商业问题）和体检（拆解商业模式出报告）两种模式，通过结构化流程识别问题本质。）；dbs-slowisfast（帮创业者识别哪些环节值得放慢以积累长期资产，避免捷径带来的反噬。）
+  description_en: 'dbs-diagnosis: Business diagnosis skill with two modes: consultation (dissolve the user''s business question) and checkup (dissect business model into a diagnostic report), using structured frameworks to identify the real problem.; dbs-slowisfast: Help entrepreneurs identify where to slow down to build long-term assets, avoiding shortcuts that backfire.'
+  sources:
+  - dbskill
+- id: marketing-growth--4-7--331
+  skills:
+  - dbs-hook
+  group: 短视频开头 Hook 优化
+  group_en: Short-video opening hook optimization
+  category: marketing-growth
+  subcategory: 4-7
+  chain: false
+  description: 诊断短视频开头问题：先审内容质量，再按话题+Hook+可信度公式生成可执行的开头优化方案。
+  description_en: Diagnoses short-video opening issues by first auditing content quality, then generating actionable hook rewrites using a topic + hook + credibility formula.
+  sources:
+  - dbskill
+- id: education-learning--19-2--332
+  skills:
+  - dbs-learning
+  group: 自适应学习梯度
+  group_en: Adaptive learning gradient
+  category: education-learning
+  subcategory: 19-2
+  chain: false
+  description: 将课题拆分为连续学习文章，根据用户反馈自适应调整深度、角度和节奏，构建个性化学习梯度。
+  description_en: Splits a topic into a sequence of learning articles, adaptively adjusting depth, angle, and pace based on user feedback to build a personalized learning gradient.
+  sources:
+  - dbskill
+- id: marketing-growth--4-2--333
+  skills:
+  - dbs-xhs-title
+  group: 小红书标题优化（75 公式）
+  group_en: Xiaohongshu title optimization
+  category: marketing-growth
+  subcategory: 4-2
+  chain: false
+  description: 基于75个验证公式，为小红书内容匹配最佳标题模板并生成定制标题。
+  description_en: Match and generate Xiaohongshu titles from 75 proven formulas, explaining the choice.
+  sources:
+  - dbskill
+- id: docs-knowledge--2-6--334
+  skills:
+  - dbs-save
+  - dbs-restore
+  - dbs-report
+  group: 诊断状态管理（本地存档 / 跨会话接续）
+  group_en: Diagnosis state management
+  category: docs-knowledge
+  subcategory: 2-6
+  chain: true
+  description: dbs-save（将当前商业诊断的关键结论和状态保存到本地结构化文件，实现跨会话持久记忆。）；dbs-restore（从本地恢复最近一次商业诊断的状态存档，支持跨会话接续和项目隔离管理。）；dbs-report（将多次诊断状态存档合并成一份可交付的markdown报告，便于分享、回顾和归档。）
+  description_en: 'dbs-save: Save the current diagnosis key conclusions and state to local structured files for cross-session persistent memory.; dbs-restore: Restore the most recent diagnosis snapshot from local storage, enabling cross-session continuation and project-isolated management.; dbs-report: Merges multiple diagnosis state snapshots into a deliverable markdown report for easy sharing, review, and archiving.'
+  sources:
+  - dbskill
+- id: ml-llm-engineering--21-1--335
+  skills:
+  - litgpt
+  - rwkv
+  group: 模型架构与实现
+  group_en: Model architecture & implementation
+  category: ml-llm-engineering
+  subcategory: 21-1
+  chain: false
+  description: LLM 模型架构的实现与使用：litgpt（用 LitGPT 实现/训练 Llama、Gemma 等 20+ 架构 + LoRA/QLoRA）、rwkv（RWKV 线性时间推理 / 无限上下文架构）。
+  description_en: 'Implement/use LLM architectures: litgpt (LitGPT for Llama/Gemma, 20+ architectures, LoRA/QLoRA), rwkv (RWKV linear-time inference / infinite context).'
+  sources:
+  - ai-research-skills
+- id: ml-llm-engineering--21-2--336
+  skills:
+  - huggingface-tokenizers
+  - sentencepiece
+  group: Tokenization 工具
+  group_en: Tokenization tools
+  category: ml-llm-engineering
+  subcategory: 21-2
+  chain: false
+  description: 高性能 tokenization：huggingface-tokenizers（BPE/WordPiece/Unigram）、sentencepiece（语言无关，多语言/CJK）。
+  description_en: 'High-performance tokenization: huggingface-tokenizers (BPE/WordPiece/Unigram), sentencepiece (language-agnostic, multilingual/CJK).'
+  sources:
+  - ai-research-skills
+- id: ml-llm-engineering--21-3--337
+  skills:
+  - peft
+  group: 参数高效微调（PEFT）
+  group_en: Parameter-efficient fine-tuning
+  category: ml-llm-engineering
+  subcategory: 21-3
+  chain: false
+  description: 指导使用PEFT和LoRA进行参数高效微调，适用于大型模型，节省内存并支持多适配器部署。
+  description_en: Guidance on parameter-efficient fine-tuning using PEFT and LoRA for large models, saving memory and enabling multi-adapter deployment.
+  sources:
+  - ai-research-skills
+- id: ml-llm-engineering--21-4--338
+  skills:
+  - openrlhf
+  - verl
+  - slime
+  - torchforge
+  - trl-fine-tuning
+  group: RL / 后训练框架
+  group_en: RL / post-training frameworks
+  category: ml-llm-engineering
+  subcategory: 21-4
+  chain: false
+  description: LLM 后训练 / RLHF 训练框架：openrlhf（PPO/GRPO，Ray+vLLM）、verl（大规模 RL，多后端）、slime（GLM/Qwen3 后训练，Megatron）、torchforge（PyTorch 原生 RL）、trl-fine-tuning（TRL 指令微调/对齐/RL）。
+  description_en: 'LLM post-training / RLHF frameworks: openrlhf, verl, slime, torchforge, trl-fine-tuning.'
+  sources:
+  - ai-research-skills
+- id: ml-llm-engineering--21-4--339
+  skills:
+  - simpo
+  - constitutional-ai
+  group: 偏好对齐方法（SimPO / Constitutional AI）
+  group_en: Preference alignment methods
+  category: ml-llm-engineering
+  subcategory: 21-4
+  chain: false
+  description: LLM 偏好对齐方法：simpo（简单偏好优化，无需参考模型）、constitutional-ai（自我批判+AI 反馈的安全对齐，无需人工标签）。
+  description_en: 'LLM preference-alignment methods: simpo (reference-free preference optimization), constitutional-ai (self-critique + AI feedback alignment).'
+  sources:
+  - ai-research-skills
+- id: ml-llm-engineering--21-5--340
+  skills:
+  - nnsight
+  - pyvene
+  group: 模型可解释性 / 机制研究
+  group_en: Mechanistic interpretability
+  category: ml-llm-engineering
+  subcategory: 21-5
+  chain: false
+  description: 神经网络机制可解释性：nnsight（解释/操纵网络内部，支持远程大模型实验）、pyvene（因果干预，激活修补/因果追踪）。
+  description_en: 'Mechanistic interpretability: nnsight (inspect/manipulate internals, remote execution), pyvene (causal intervention, activation patching).'
+  sources:
+  - ai-research-skills
+- id: ml-llm-engineering--21-6--341
+  skills:
+  - nemo-curator
+  - ray-data
+  group: 训练数据处理
+  group_en: Training data processing
+  category: ml-llm-engineering
+  subcategory: 21-6
+  chain: false
+  description: LLM 训练数据处理：nemo-curator（GPU 加速清洗/去重/过滤/隐私）、ray-data（分布式 ML 数据 / ETL / 批量推理）。
+  description_en: 'LLM training-data processing: nemo-curator (GPU-accelerated cleaning/dedup), ray-data (distributed ML data / ETL).'
+  sources:
+  - ai-research-skills
+- id: ml-llm-engineering--21-7--342
+  skills:
+  - torchtitan
+  group: 分布式训练 / 基础设施
+  group_en: Distributed training / infrastructure
+  category: ml-llm-engineering
+  subcategory: 21-7
+  chain: false
+  description: 帮助agent使用torchtitan进行分布式LLM预训练，支持4D并行（FSDP2、TP、PP、CP）和多GPU扩展。
+  description_en: Enables agent to perform distributed LLM pretraining with torchtitan, supporting 4D parallelism (FSDP2, TP, PP, CP) and multi-GPU scaling.
+  sources:
+  - ai-research-skills
+- id: ml-llm-engineering--21-8--343
+  skills:
+  - llamaguard
+  - nemo-guardrails
+  - prompt-guard
+  group: LLM 安全 / 护栏
+  group_en: LLM safety / guardrails
+  category: ml-llm-engineering
+  subcategory: 21-8
+  chain: false
+  description: LLM 运行时安全与护栏：llamaguard（Meta LlamaGuard 输入输出安全分类，6 类）、nemo-guardrails（可编程护栏，越狱检测/校验/事实核查）、prompt-guard（Meta 86M 检测提示注入/越狱）。
+  description_en: 'LLM runtime safety & guardrails: llamaguard, nemo-guardrails, prompt-guard.'
+  sources:
+  - ai-research-skills
+- id: ml-llm-engineering--21-9--344
+  skills:
+  - autoresearch
+  group: 自主研究编排
+  group_en: Autonomous research orchestration
+  category: ml-llm-engineering
+  subcategory: 21-9
+  chain: false
+  description: autoresearch：自主科研项目编排器（"研究项目经理"）。双循环架构（内循环跑实验、外循环综合并定方向），按需路由到本类各域 skill 执行，靠 Claude Code /loop 或 OpenClaw 心跳持续无人值守运行，最终产出研究演示与论文。它是编排器、独立工具（非串联 chain）。
+  description_en: 'autoresearch: autonomous research orchestrator (two-loop architecture; routes to domain skills; runs unattended via /loop or OpenClaw heartbeat; produces presentations and papers). A standalone orchestrator, not a linear chain.'
+  sources:
+  - ai-research-skills
+- id: meta-skill-mgmt--13-2--345
+  skills:
+  - dbs-agent-migration
+  group: Agent 项目 / 工作台治理
+  group_en: Agent project / workbench governance
+  category: meta-skill-mgmt
+  subcategory: 13-2
+  chain: false
+  description: 帮用户整理混乱的 Agent 项目，实现 Claude Code、Codex、Grok 三端一致的可维护工作台结构。
+  description_en: Organize chaotic Agent projects into a maintainable workspace with consistent structure across Claude Code, Codex, and Grok.
+  sources:
+  - dbskill
+- id: docs-knowledge--2-3--346
+  skills:
+  - dbs-content
+  group: 内容创作诊断
+  group_en: Content-creation diagnosis
+  category: docs-knowledge
+  subcategory: 2-3
+  chain: false
+  description: 帮助 agent 诊断如何把已确认的选题变成好内容，包括匹配内容形式、选择平台和审查表达方向。
+  description_en: Helps agents diagnose how to turn a confirmed topic into good content, including matching content formats, selecting platforms, and reviewing expression direction.
+  sources:
+  - dbskill
+- id: docs-knowledge--2-6--347
+  skills:
+  - dbs-decision
+  group: 个人决策知识工程
+  group_en: Personal decision knowledge base
+  category: docs-knowledge
+  subcategory: 2-6
+  chain: false
+  description: 为业务、关系等长期跟踪领域构建本地知识工程，通过四层结构、快照和概念库持久化决策过程，支持复盘与规律提炼。
+  description_en: Build a local knowledge project for long-running domains like business or relationships, persisting decision processes with a four-layer structure, snapshots, and a concept library for review and pattern extraction.
+  sources:
+  - dbskill
+- id: agent-architecture--12-6--348
+  skills:
+  - prompt-master
+  group: 提示词生成
+  group_en: Prompt generation
+  category: agent-architecture
+  subcategory: 12-6
+  chain: false
+  description: 为各类 AI 工具（LLM、Cursor、Midjourney 等）生成高效、零浪费、生产就绪的提示词，优化交互效果。
+  description_en: Generate efficient, production-ready prompts for AI tools (LLMs, Cursor, Midjourney) to optimize interaction.
+  sources:
+  - prompt-master
+- id: finance-trading--16-8--349
+  skills:
+  - finance-core-analysis
+  - finance-explosive-article
+  group: 金融分析流水线（机制分析 → 爆款文）
+  group_en: Financial analysis pipeline
+  category: finance-trading
+  subcategory: 16-8
+  chain: true
+  description: 金融分析内容流水线（公众号风）：finance-core-analysis（从每日金融简报和外部验证中生成深度机制分析 markdown，用于公众号风格文章，是金融分析流水线的第二阶段。）→ finance-explosive-article（将金融分析转化为高影响力爆款文章，以第一性原理解释市场机制，适用于公众号等公共平台，是流水线的最终阶段。）。注：完整流水线第 1 阶段 daily-finance 未收录，此为残链。
+  description_en: 'Financial-analysis content pipeline: finance-core-analysis → finance-explosive-article. Note: stage-1 daily-finance not catalogued (partial chain).'
+  sources:
+  - digoal-blog
