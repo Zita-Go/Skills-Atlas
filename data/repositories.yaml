@@ -2159,3 +2159,12 @@
   default_branch: main
   last_commit: '2026-05-03'
   description: 'A Claude skill that writes the accurate prompts for any AI tool. Zero tokens or credits wasted. Full context and memory '
+- id: hive
+  author: aden-hive
+  repo: hive
+  url: https://github.com/aden-hive/hive
+  type: multi-skill-suite
+  stars: 10494
+  default_branch: main
+  last_commit: '2026-05-29'
+  description: Multi-Agent Harness for Production AI
