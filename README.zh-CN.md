@@ -6,11 +6,11 @@
 
 **在 Claude Code 里，任何任务都能拿到对的那个现成 skill —— 自动找到、装好，还在你干活时主动端到面前。**
 
-900+ 个 skill，从整个生态里收集、按"做什么"重新组织。
+1000+ 个 skill，从整个生态里收集、按"做什么"重新组织。
 
-[![Skills](https://img.shields.io/badge/skills-956-3b82f6?style=flat&labelColor=4b5563&logo=claude&logoColor=white)](data/skills.yaml)
-[![Repos](https://img.shields.io/badge/repos-118-10b981?style=flat&labelColor=4b5563&logo=github&logoColor=white)](data/repositories.yaml)
-[![Categories](https://img.shields.io/badge/categories-20_×_117-f59e0b?style=flat&labelColor=4b5563)](data/categories.yaml)
+[![Skills](https://img.shields.io/badge/skills-1029-3b82f6?style=flat&labelColor=4b5563&logo=claude&logoColor=white)](data/skills.yaml)
+[![Repos](https://img.shields.io/badge/repos-125-10b981?style=flat&labelColor=4b5563&logo=github&logoColor=white)](data/repositories.yaml)
+[![Categories](https://img.shields.io/badge/categories-21_×_128-f59e0b?style=flat&labelColor=4b5563)](data/categories.yaml)
 [![npm](https://img.shields.io/npm/v/skills-atlas-cli?style=flat&label=npm&color=8b5cf6&labelColor=4b5563&logo=npm&logoColor=white)](https://www.npmjs.com/package/skills-atlas-cli)
 [![License](https://img.shields.io/badge/license-MIT-64748b?style=flat&labelColor=4b5563&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
