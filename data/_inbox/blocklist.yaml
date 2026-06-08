@@ -19,3 +19,11 @@
   repo: html-anything
   reason: 已收录 nexu-io/open-design(60k★)的同组织 vendored 兄弟仓，多个 deck/card/article skill 与 open-design 同名同模板(article-magazine 正文 diff=0 行)，重复来源
   added_at: 2026-06-08
+- author: nanocoai
+  repo: nanoclaw
+  reason: OpenClaw 替代产品；30 个 add-* skill 是“给 nanoclaw 加某集成”的产品胶水，脱离产品不可用，非通用 skill 集合
+  added_at: 2026-06-08
+- author: kubesphere
+  repo: kubesphere
+  reason: Kubernetes 平台产品；skill 全是操作自家组件(FrontendExtension/devops/whizard 等)的产品内部运维，非通用 skill 集合，且多为空壳
+  added_at: 2026-06-08
