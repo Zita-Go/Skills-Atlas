@@ -1670,15 +1670,17 @@
 - id: design-frontend--5-5--124
   skills:
   - frontend-slides
+  - guizang-ppt-skill
   group: 零依赖 HTML 演示
   group_en: zero-dependency HTML presentation
   category: design-frontend
   subcategory: 5-5
   chain: false
-  description: zarazhangrui/frontend-slides（1920×1080 固定 16:9 stage + 12 视觉风格预设 + bold-template-pack 可视化预览卡 + PPTX 转 web + Playwright 导 PDF + Vercel 部署）
-  description_en: zarazhangrui/frontend-slides (1920×1080 fixed 16:9 stage + 12 visual style presets + bold-template-pack visual preview cards + PPTX to web + Playwright export PDF + Vercel deployment)
+  description: zarazhangrui/frontend-slides（1920×1080 固定 16:9 stage + 12 视觉风格预设 + bold-template-pack 可视化预览卡 + PPTX 转 web + Playwright 导 PDF + Vercel 部署）；op7418/guizang-ppt-skill（单文件 HTML 横向翻页 PPT，电子杂志 / 瑞士国际主义两种视觉风格，含 WebGL 背景、章节幕封、动效）
+  description_en: zarazhangrui/frontend-slides (1920×1080 fixed 16:9 stage + 12 visual style presets + bold-template-pack visual preview cards + PPTX to web + Playwright export PDF + Vercel deployment); op7418/guizang-ppt-skill (single-file horizontal-flip HTML deck, editorial-magazine / Swiss-international styles, with WebGL backgrounds, section covers, animations)
   sources:
   - zarazhangrui
+  - op7418/guizang-ppt-skill
 - id: design-frontend--5-5--125
   skills:
   - huashu-design
