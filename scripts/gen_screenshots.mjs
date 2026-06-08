@@ -41,7 +41,7 @@ await new Promise(r => server.listen(0, r));
 const port = server.address().port;
 const browser = await chromium.launch();
 for (const sh of SHOTS) {
-  const ctx = await browser.newContext({ viewport: { width: 1440, height: 780 }, deviceScaleFactor: 1.5, colorScheme: sh.theme });
+  const ctx = await browser.newContext({ viewport: { width: 1680, height: 800 }, deviceScaleFactor: 1.5, colorScheme: sh.theme });
   const p = await ctx.newPage();
   await p.goto(`http://localhost:${port}/index.html?lang=${sh.lang}`, { waitUntil: 'domcontentloaded' });
   await p.waitForTimeout(700);
