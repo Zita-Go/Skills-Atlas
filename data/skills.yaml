@@ -4666,3 +4666,131 @@
   description_en: 'nature-skills ten-piece suite covering the full Nature/CNS paper lifecycle from submission to revision: multi-step literature search + citation verification (academic-search) → bilingual figure-aware Markdown reader (reader) → draft/restructure sections (writing) → polish into Nature-style English + fix LaTeX (polishing) → strict Nature/CNS citations + reference management (citation) → data availability statements / FAIR metadata (data) → submission-grade figures in Python/R (figure) → paper-to-deck Nature-style PPTX (paper2ppt) → simulate reviewer pre-review (reviewer) → point-by-point response letters (response); skills share _shared/ and route to each other.'
   sources:
   - Yuan1z0825/nature-skills
+- id: data-scraping--7-3--325
+  skills:
+  - pgfaq
+  group: PostgreSQL 源码级答疑
+  group_en: PostgreSQL source-level Q&A
+  category: data-scraping
+  subcategory: 7-3
+  chain: false
+  description: 基于 PostgreSQL 源码和文档，回答核心数据库行为、SQL、配置等问题并提供带来源的 Markdown 答案。
+  description_en: Answers core PostgreSQL questions on behavior, SQL, configuration, and internals based on source code and documentation, delivering sourced Markdown responses.
+  sources:
+  - digoal/blog
+- id: docs-knowledge--2-3--326
+  skills:
+  - axiom-explainer
+  - database-foundation-course-writer
+  - paper-interpretation
+  - article-to-podcast-script
+  group: 中文 Markdown 内容生成（科普 / 课程 / 解读 / 播客）
+  group_en: Chinese Markdown content generation (explainer / course / paper digest / podcast)
+  category: docs-knowledge
+  subcategory: 2-3
+  chain: false
+  description: axiom-explainer（生成面向大学生和成年人的中文 Markdown 教学文章，解释公理、定理、理论等概念，包含 Mermaid 图表和示例，用于教育或科普。）；database-foundation-course-writer（帮助AI代理基于参考材料生成数据库技术的中文Markdown文章，保存为GitHub可渲染格式，适用于架构师、DBA和开发者。）；paper-interpretation（从论文 PDF 生成通俗易懂、图文并茂的中文 Markdown 解读，帮助 agent 快速理解学术论文并保存结果。）；article-to-podcast-script（将 Markdown 文章转换为 1 到 4 位主持人的自然第一人称播客脚本，并保存为 .txt 文件，用于音频内容制作。）
+  description_en: 'axiom-explainer: Generate Chinese Markdown teaching articles for university students and adults, explaining axioms, theorems, laws, principles, or theory systems with Mermaid diagrams and examples for education or popularization.; database-foundation-course-writer: Assists AI agents in generating Chinese Markdown articles on database technologies from reference materials, saved as GitHub-renderable files for architects, DBAs, and developers.; paper-interpretation: Generates accessible, illustrated Chinese Markdown interpretations from paper PDFs, enabling agents to quickly grasp academic research and save outputs.; article-to-podcast-script: Convert a Markdown article into a natural first-person podcast script for 1 to 4 speakers and save it as a .txt file for audio content creation.'
+  sources:
+  - digoal/blog
+- id: docs-knowledge--2-3--327
+  skills:
+  - dbs-ai-check
+  group: AI 写作痕迹检测
+  group_en: AI writing-trace detection
+  category: docs-knowledge
+  subcategory: 2-3
+  chain: false
+  description: 扫描用户文案中的 AI 生成痕迹，输出详细检测报告，帮助识别 AI 写作特征，默认只诊断不改，强调基于用户意图改善写作。
+  description_en: Scans user copy for AI-generated patterns, outputs detailed diagnostic reports to identify AI writing features, diagnosis only by default, with emphasis on improving writing based on user intent.
+  sources:
+  - dontbesilent2025/dbskill
+- id: marketing-growth--4-8--328
+  skills:
+  - dbs-benchmark
+  group: 对标筛选（五重过滤）
+  group_en: Benchmark target selection (five-filter)
+  category: marketing-growth
+  subcategory: 4-8
+  chain: false
+  description: 使用五重过滤法帮用户找到值得模仿的对标，排除自我干扰，专注于高利润、可模仿的商业对象，适用于从零到一阶段的模仿决策。
+  description_en: Uses a five-filter method to help users find imitable benchmarks, eliminating self-distraction to focus on high-profit and executable business models, suitable for imitation decisions from zero to one.
+  sources:
+  - dontbesilent2025/dbskill
+- id: product-management--3-2--329
+  skills:
+  - dbs-deconstruct
+  - dbs-goal
+  - dbs-good-question
+  group: 问题框定 / 目标澄清（维特根斯坦语言哲学）
+  group_en: Problem framing / goal clarification (Wittgensteinian language philosophy)
+  category: product-management
+  subcategory: 3-2
+  chain: false
+  description: dbs-deconstruct（运用维特根斯坦语言哲学和奥派经济学，将模糊商业概念拆解到原子级别，澄清语言混淆并识别伪概念。）；dbs-goal（用维特根斯坦语言哲学审计模糊目标，通过可指物性、可否证性等测试将空转的目标语言转为可检查的交付物。）；dbs-good-question（把用户丢来的模糊问题改写成 Agent 可推理、可批评、可验证的问题说明书，暴露关键冲突并评估自动化可行程度。）
+  description_en: 'dbs-deconstruct: Apply Wittgenstein''s philosophy of language and Austrian economics to deconstruct ambiguous business concepts to atomic level, clarifying linguistic confusion and identifying pseudo-concepts.; dbs-goal: Audits fuzzy goals using Wittgenstein''s philosophy of language, transforming ''idling'' goal statements into checkable deliverables through tests like pointability and falsifiability.; dbs-good-question: Transforms fuzzy user problems into structured, verifiable problem briefs that expose key conflicts and evaluate how far an agent can automate a solution.'
+  sources:
+  - dontbesilent2025/dbskill
+- id: product-management--3-4--330
+  skills:
+  - dbs-diagnosis
+  - dbs-slowisfast
+  group: 商业模式诊断 / 策略
+  group_en: Business-model diagnosis / strategy
+  category: product-management
+  subcategory: 3-4
+  chain: false
+  description: dbs-diagnosis（商业诊断 skill，提供问诊（消解用户商业问题）和体检（拆解商业模式出报告）两种模式，通过结构化流程识别问题本质。）；dbs-slowisfast（帮创业者识别哪些环节值得放慢以积累长期资产，避免捷径带来的反噬。）
+  description_en: 'dbs-diagnosis: Business diagnosis skill with two modes: consultation (dissolve the user''s business question) and checkup (dissect business model into a diagnostic report), using structured frameworks to identify the real problem.; dbs-slowisfast: Help entrepreneurs identify where to slow down to build long-term assets, avoiding shortcuts that backfire.'
+  sources:
+  - dontbesilent2025/dbskill
+- id: marketing-growth--4-7--331
+  skills:
+  - dbs-hook
+  group: 短视频开头 Hook 优化
+  group_en: Short-video opening hook optimization
+  category: marketing-growth
+  subcategory: 4-7
+  chain: false
+  description: 诊断短视频开头问题：先审内容质量，再按话题+Hook+可信度公式生成可执行的开头优化方案。
+  description_en: Diagnoses short-video opening issues by first auditing content quality, then generating actionable hook rewrites using a topic + hook + credibility formula.
+  sources:
+  - dontbesilent2025/dbskill
+- id: education-learning--19-2--332
+  skills:
+  - dbs-learning
+  group: 自适应学习梯度
+  group_en: Adaptive learning gradient
+  category: education-learning
+  subcategory: 19-2
+  chain: false
+  description: 将课题拆分为连续学习文章，根据用户反馈自适应调整深度、角度和节奏，构建个性化学习梯度。
+  description_en: Splits a topic into a sequence of learning articles, adaptively adjusting depth, angle, and pace based on user feedback to build a personalized learning gradient.
+  sources:
+  - dontbesilent2025/dbskill
+- id: marketing-growth--4-2--333
+  skills:
+  - dbs-xhs-title
+  group: 小红书标题优化（75 公式）
+  group_en: Xiaohongshu title optimization (75 formulas)
+  category: marketing-growth
+  subcategory: 4-2
+  chain: false
+  description: 基于75个验证公式，为小红书内容匹配最佳标题模板并生成定制标题。
+  description_en: Match and generate Xiaohongshu titles from 75 proven formulas, explaining the choice.
+  sources:
+  - dontbesilent2025/dbskill
+- id: docs-knowledge--2-6--334
+  skills:
+  - dbs-save
+  - dbs-restore
+  - dbs-report
+  group: 诊断状态管理（本地存档 / 跨会话接续）
+  group_en: Diagnosis state management (local archive / cross-session resume)
+  category: docs-knowledge
+  subcategory: 2-6
+  chain: true
+  description: dbs-save（将当前商业诊断的关键结论和状态保存到本地结构化文件，实现跨会话持久记忆。）；dbs-restore（从本地恢复最近一次商业诊断的状态存档，支持跨会话接续和项目隔离管理。）；dbs-report（将多次诊断状态存档合并成一份可交付的markdown报告，便于分享、回顾和归档。）
+  description_en: 'dbs-save: Save the current diagnosis key conclusions and state to local structured files for cross-session persistent memory.; dbs-restore: Restore the most recent diagnosis snapshot from local storage, enabling cross-session continuation and project-isolated management.; dbs-report: Merges multiple diagnosis state snapshots into a deliverable markdown report for easy sharing, review, and archiving.'
+  sources:
+  - dontbesilent2025/dbskill
