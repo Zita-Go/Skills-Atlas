@@ -288,6 +288,9 @@
   - id: 12-5
     title: 12.5 Tool / 评测 / 项目级方法论
     title_en: 12.5 Tool / evaluation / project-level methodology
+  - id: 12-6
+    title: 12.6 提示工程 / Prompt 生成
+    title_en: 12.6 Prompt engineering / prompt generation
 - id: meta-skill-mgmt
   title: 十三、元能力 / Skill 治理
   title_en: 13. Meta-capabilities / Skill Governance
@@ -380,6 +383,9 @@
   - id: 16-7
     title: 16.7 基金运营 / 中后台
     title_en: 16.7 Fund administration / back-office
+  - id: 16-8
+    title: 16.8 金融内容 / 分析写作
+    title_en: 16.8 Financial content / analysis writing
 - id: devops-infra
   title: 十七、DevOps / SRE / 基础设施
   title_en: 17. DevOps / SRE / Infrastructure
