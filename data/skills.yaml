@@ -4666,3 +4666,134 @@
   description_en: 'nature-skills ten-piece suite covering the full Nature/CNS paper lifecycle from submission to revision: multi-step literature search + citation verification (academic-search) → bilingual figure-aware Markdown reader (reader) → draft/restructure sections (writing) → polish into Nature-style English + fix LaTeX (polishing) → strict Nature/CNS citations + reference management (citation) → data availability statements / FAIR metadata (data) → submission-grade figures in Python/R (figure) → paper-to-deck Nature-style PPTX (paper2ppt) → simulate reviewer pre-review (reviewer) → point-by-point response letters (response); skills share _shared/ and route to each other.'
   sources:
   - Yuan1z0825/nature-skills
+- id: ml-llm-engineering--21-1--335
+  skills:
+  - litgpt
+  - rwkv
+  group: 模型架构与实现
+  group_en: Model architecture & implementation
+  category: ml-llm-engineering
+  subcategory: 21-1
+  chain: false
+  description: LLM 模型架构的实现与使用：litgpt（用 LitGPT 实现/训练 Llama、Gemma 等 20+ 架构，清洁代码 + LoRA/QLoRA 微调）、rwkv（RWKV 线性时间推理 / 无限上下文架构的安装与用法）。
+  description_en: 'Implement and use LLM architectures: litgpt (LitGPT for Llama/Gemma and 20+ architectures with clean code + LoRA/QLoRA), rwkv (RWKV linear-time inference / infinite-context architecture).'
+  sources:
+  - Orchestra-Research/AI-Research-SKILLs
+- id: ml-llm-engineering--21-2--336
+  skills:
+  - huggingface-tokenizers
+  - sentencepiece
+  group: Tokenization 工具
+  group_en: Tokenization tools
+  category: ml-llm-engineering
+  subcategory: 21-2
+  chain: false
+  description: 高性能 tokenization：huggingface-tokenizers（BPE / WordPiece / Unigram，NLP 研究与生产）、sentencepiece（语言无关，多语言 / CJK）。
+  description_en: 'High-performance tokenization: huggingface-tokenizers (BPE / WordPiece / Unigram), sentencepiece (language-agnostic, multilingual / CJK).'
+  sources:
+  - Orchestra-Research/AI-Research-SKILLs
+- id: ml-llm-engineering--21-3--337
+  skills:
+  - peft
+  group: 参数高效微调（PEFT）
+  group_en: Parameter-efficient fine-tuning (PEFT)
+  category: ml-llm-engineering
+  subcategory: 21-3
+  chain: false
+  description: 用 PEFT / LoRA 对大模型做参数高效微调，省内存并支持多适配器部署。
+  description_en: Parameter-efficient fine-tuning of large models with PEFT / LoRA, saving memory and supporting multi-adapter deployment.
+  sources:
+  - Orchestra-Research/AI-Research-SKILLs
+- id: ml-llm-engineering--21-4--338
+  skills:
+  - openrlhf
+  - verl
+  - slime
+  - torchforge
+  - trl-fine-tuning
+  group: RL / 后训练框架
+  group_en: RL / post-training frameworks
+  category: ml-llm-engineering
+  subcategory: 21-4
+  chain: false
+  description: LLM 后训练 / RLHF 训练框架：openrlhf（PPO/GRPO，Ray+vLLM 高性能分布式）、verl（大规模 RL，多基础设施后端）、slime（GLM/Qwen3 后训练 RL，Megatron 集成）、torchforge（PyTorch 原生 RL，算法隔离）、trl-fine-tuning（TRL 指令微调 / 偏好对齐 / RL）。
+  description_en: 'LLM post-training / RLHF frameworks: openrlhf (PPO/GRPO on Ray+vLLM), verl (large-scale RL, multiple backends), slime (post-training RL for GLM/Qwen3, Megatron), torchforge (PyTorch-native RL), trl-fine-tuning (TRL SFT / preference / RL).'
+  sources:
+  - Orchestra-Research/AI-Research-SKILLs
+- id: ml-llm-engineering--21-4--339
+  skills:
+  - simpo
+  - constitutional-ai
+  group: 偏好对齐方法（SimPO / Constitutional AI）
+  group_en: Preference alignment methods (SimPO / Constitutional AI)
+  category: ml-llm-engineering
+  subcategory: 21-4
+  chain: false
+  description: LLM 偏好对齐方法：simpo（简单偏好优化，无需参考模型，比 DPO 更高效）、constitutional-ai（自我批判 + AI 反馈，无需人工标签的安全对齐）。
+  description_en: 'LLM preference-alignment methods: simpo (simple preference optimization, reference-free, more efficient than DPO), constitutional-ai (self-critique + AI feedback, label-free safety alignment).'
+  sources:
+  - Orchestra-Research/AI-Research-SKILLs
+- id: ml-llm-engineering--21-5--340
+  skills:
+  - nnsight
+  - pyvene
+  group: 模型可解释性 / 机制研究
+  group_en: Mechanistic interpretability
+  category: ml-llm-engineering
+  subcategory: 21-5
+  chain: false
+  description: 神经网络机制可解释性研究：nnsight（解释 / 操纵网络内部，支持远程执行大模型实验，无需本地 GPU）、pyvene（因果干预，激活修补 / 因果追踪，可复现）。
+  description_en: 'Mechanistic interpretability research: nnsight (inspect/manipulate model internals, remote execution without local GPU), pyvene (causal intervention, activation patching / causal tracing).'
+  sources:
+  - Orchestra-Research/AI-Research-SKILLs
+- id: ml-llm-engineering--21-6--341
+  skills:
+  - nemo-curator
+  - ray-data
+  group: 训练数据处理
+  group_en: Training data processing
+  category: ml-llm-engineering
+  subcategory: 21-6
+  chain: false
+  description: LLM 训练数据处理：nemo-curator（GPU 加速清洗 / 去重 / 过滤 / 隐私保护）、ray-data（分布式 ML 数据处理，流式执行，批量推理 / ETL）。
+  description_en: 'LLM training-data processing: nemo-curator (GPU-accelerated cleaning / dedup / filtering / privacy), ray-data (distributed ML data processing, streaming, batch inference / ETL).'
+  sources:
+  - Orchestra-Research/AI-Research-SKILLs
+- id: ml-llm-engineering--21-7--342
+  skills:
+  - torchtitan
+  group: 分布式训练 / 基础设施
+  group_en: Distributed training / infrastructure
+  category: ml-llm-engineering
+  subcategory: 21-7
+  chain: false
+  description: 用 torchtitan 做分布式 LLM 预训练，支持 4D 并行（FSDP2 / TP / PP / CP）和多 GPU 扩展。
+  description_en: Distributed LLM pretraining with torchtitan, supporting 4D parallelism (FSDP2 / TP / PP / CP) and multi-GPU scaling.
+  sources:
+  - Orchestra-Research/AI-Research-SKILLs
+- id: ml-llm-engineering--21-8--343
+  skills:
+  - llamaguard
+  - nemo-guardrails
+  - prompt-guard
+  group: LLM 安全 / 护栏
+  group_en: LLM safety / guardrails
+  category: ml-llm-engineering
+  subcategory: 21-8
+  chain: false
+  description: LLM 运行时安全与护栏：llamaguard（Meta LlamaGuard 对输入输出做安全分类，6 类风险）、nemo-guardrails（可编程护栏，越狱检测 / 输入输出校验 / 事实核查）、prompt-guard（Meta 86M 模型检测提示注入 / 越狱）。
+  description_en: 'LLM runtime safety & guardrails: llamaguard (Meta LlamaGuard input/output safety classification, 6 risk classes), nemo-guardrails (programmable guardrails, jailbreak detection / I-O validation / fact-checking), prompt-guard (Meta 86M model for prompt-injection / jailbreak detection).'
+  sources:
+  - Orchestra-Research/AI-Research-SKILLs
+- id: ml-llm-engineering--21-9--344
+  skills:
+  - autoresearch
+  group: 自主研究编排
+  group_en: Autonomous research orchestration
+  category: ml-llm-engineering
+  subcategory: 21-9
+  chain: false
+  description: autoresearch：自主科研项目编排器（"研究项目经理"）。双循环架构——内循环跑实验迭代、外循环综合结果并定方向；按需路由到本类各域 skill 执行；靠 Claude Code /loop 或 OpenClaw 心跳持续无人值守运行；最终产出研究演示与论文。它本身是编排器、独立工具（非串联 chain）。
+  description_en: 'autoresearch: an autonomous research project orchestrator ("research project manager"). Two-loop architecture (inner loop runs experiments, outer loop synthesizes and steers); routes to domain skills in this category for execution; runs continuously unattended via Claude Code /loop or OpenClaw heartbeat; produces research presentations and papers. It is the orchestrator (a standalone tool, not a linear chain).'
+  sources:
+  - Orchestra-Research/AI-Research-SKILLs
