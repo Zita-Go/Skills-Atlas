@@ -2105,3 +2105,57 @@
     gws-modelarmor-create-template: skills/gws-modelarmor-create-template/SKILL.md
     gws-modelarmor-sanitize-prompt: skills/gws-modelarmor-sanitize-prompt/SKILL.md
     gws-modelarmor-sanitize-response: skills/gws-modelarmor-sanitize-response/SKILL.md
+- id: nature-skills
+  author: Yuan1z0825
+  repo: nature-skills
+  url: https://github.com/Yuan1z0825/nature-skills
+  type: multi-skill-suite
+  stars: 16710
+  default_branch: main
+  last_commit: '2026-06-02'
+  description: 符合nature论文学术表达和科研绘图的Skill
+- id: guizang-ppt-skill
+  author: op7418
+  repo: guizang-ppt-skill
+  url: https://github.com/op7418/guizang-ppt-skill
+  type: skill
+  stars: 15063
+  default_branch: main
+  last_commit: '2026-06-02'
+  description: 'AI-agent Skill for generating polished HTML slide decks: editorial magazine and Swiss layouts, image prompts, social cov'
+- id: ai-research-skills
+  author: Orchestra-Research
+  repo: AI-Research-SKILLs
+  url: https://github.com/Orchestra-Research/AI-Research-SKILLs
+  type: multi-skill-suite
+  stars: 9330
+  default_branch: main
+  last_commit: '2026-04-28'
+  description: Comprehensive open-source library of AI research and engineering skills for any AI model. Package the skills and your cl
+- id: dbskill
+  author: dontbesilent2025
+  repo: dbskill
+  url: https://github.com/dontbesilent2025/dbskill
+  type: multi-skill-suite
+  stars: 6207
+  default_branch: main
+  last_commit: '2026-06-05'
+  description: dontbesilent 的商业诊断 Skills
+- id: digoal-blog
+  author: digoal
+  repo: blog
+  url: https://github.com/digoal/blog
+  type: multi-skill-suite
+  stars: 8497
+  default_branch: master
+  last_commit: '2026-06-05'
+  description: Opensource,Database,AI,Business,Minds. git clone --depth 1 https://github.com/digoal/blog
+- id: prompt-master
+  author: nidhinjs
+  repo: prompt-master
+  url: https://github.com/nidhinjs/prompt-master
+  type: skill
+  stars: 8737
+  default_branch: main
+  last_commit: '2026-05-03'
+  description: 'A Claude skill that writes the accurate prompts for any AI tool. Zero tokens or credits wasted. Full context and memory '
