@@ -11026,6 +11026,46 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "ke yan ji jin  / Grant  shen qing  research-grants "
+            },
+            {
+              "skills": [
+                "nature-academic-search",
+                "nature-reader",
+                "nature-writing",
+                "nature-polishing",
+                "nature-citation",
+                "nature-data",
+                "nature-figure",
+                "nature-paper2ppt",
+                "nature-reviewer",
+                "nature-response"
+              ],
+              "group": "Nature 论文全流程（检索→阅读→写作→润色→引文→数据→制图→PPT→自审→回复）",
+              "group_en": "Nature paper end-to-end workflow (search → read → write → polish → cite → data → figure → deck → review → response)",
+              "chain": true,
+              "description": "nature-skills 十件套，覆盖 Nature/CNS 论文从投稿到返修的全流程：多步文献检索+引用核验(academic-search) → 中英对照、图表感知的 Markdown 阅读器(reader) → 起草/重组各章节(writing) → 润色为 Nature 风英文并修 LaTeX 排版(polishing) → 严格 Nature/CNS 引用与参考管理(citation) → 数据可用性声明/FAIR 元数据(data) → Python/R 出版级科研制图(figure) → 论文转 Nature 风中文 PPT(paper2ppt) → 模拟审稿人预审(reviewer) → 逐点审稿回复信(response)；各 skill 共享 _shared/、互相 route。",
+              "description_en": "nature-skills ten-piece suite covering the full Nature/CNS paper lifecycle from submission to revision: multi-step literature search + citation verification (academic-search) → bilingual figure-aware Markdown reader (reader) → draft/restructure sections (writing) → polish into Nature-style English + fix LaTeX (polishing) → strict Nature/CNS citations + reference management (citation) → data availability statements / FAIR metadata (data) → submission-grade figures in Python/R (figure) → paper-to-deck Nature-style PPTX (paper2ppt) → simulate reviewer pre-review (reviewer) → point-by-point response letters (response); skills share _shared/ and route to each other.",
+              "sources": [
+                {
+                  "name": "Yuan1z0825/nature-skills",
+                  "url": "#",
+                  "stars": null,
+                  "last_commit": null,
+                  "type": "skill",
+                  "author": null,
+                  "repo": null,
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": null
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Nature  lun wen quan liu cheng （ jian suo → yue du → xie zuo → run se → yin wen → shu ju → zhi tu →PPT→ zi shen → hui fu ） nature-academic-search nature-reader nature-writing nature-polishing nature-citation nature-data nature-figure nature-paper2ppt nature-reviewer nature-response "
             }
           ]
         },
