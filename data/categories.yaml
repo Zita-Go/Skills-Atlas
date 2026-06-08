@@ -451,3 +451,35 @@
   - id: 20-5
     title: 20.5 Web3 应用 / NFT / DAO / 交易
     title_en: 20.5 Web3 apps / NFT / DAO / trading
+- id: ml-llm-engineering
+  title: 二十一、大模型 / ML 工程与研究
+  title_en: 21. LLM / ML Engineering & Research
+  icon: 🧠
+  subcategories:
+  - id: 21-1
+    title: 21.1 模型架构 / 实现
+    title_en: 21.1 Model architecture / implementation
+  - id: 21-2
+    title: 21.2 Tokenization
+    title_en: 21.2 Tokenization
+  - id: 21-3
+    title: 21.3 微调 / 参数高效（PEFT）
+    title_en: 21.3 Fine-tuning / parameter-efficient (PEFT)
+  - id: 21-4
+    title: 21.4 后训练 / RLHF / 偏好对齐
+    title_en: 21.4 Post-training / RLHF / preference alignment
+  - id: 21-5
+    title: 21.5 模型可解释性 / 机制研究
+    title_en: 21.5 Mechanistic interpretability
+  - id: 21-6
+    title: 21.6 训练数据处理
+    title_en: 21.6 Training data processing
+  - id: 21-7
+    title: 21.7 分布式训练 / 基础设施
+    title_en: 21.7 Distributed training / infrastructure
+  - id: 21-8
+    title: 21.8 LLM 安全 / 护栏
+    title_en: 21.8 LLM safety / guardrails
+  - id: 21-9
+    title: 21.9 自主研究 / 科研编排
+    title_en: 21.9 Autonomous research / orchestration
