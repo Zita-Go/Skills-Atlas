@@ -11,3 +11,11 @@
   repo: eigent
   reason: Electron 桌面应用（Claude Cowork 开源替代）；resources/example-skills/ 下为 Anthropic 官方 docx/pdf/pptx/xlsx/skill-creator 的 vendored 副本（均已收录于 skills.yaml），非原始 skill 来源
   added_at: 2026-06-04
+- author: TeamWiseFlow
+  repo: wiseflow
+  reason: is_collection=no——28 个“skill”全是与 openclaw/awada/微信网盘/Redis/本地 db 死耦合的产品内部 SOP，CLAUDE.md 自陈“给 openclaw 用”，脱离产品不可用，非通用 skill 集合
+  added_at: 2026-06-08
+- author: nexu-io
+  repo: html-anything
+  reason: 已收录 nexu-io/open-design(60k★)的同组织 vendored 兄弟仓，多个 deck/card/article skill 与 open-design 同名同模板(article-magazine 正文 diff=0 行)，重复来源
+  added_at: 2026-06-08
