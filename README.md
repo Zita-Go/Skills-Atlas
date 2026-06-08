@@ -24,12 +24,12 @@
 
 ## Why
 
-Agent skills exploded in 2025 — but they're scattered across ~118 GitHub repos, and awesome-lists
+Agent skills exploded in 2025 — but they're scattered across ~125 GitHub repos, and awesome-lists
 only give you names, never which ones actually **work together**. Skills Atlas gathers them and
 organizes everything **by function**, so you find a skill by the job at hand: the SEO skills from
 different repos side by side, the dev-workflow skills marked **must-chain** (⛓ — grab the whole set with `--chain`), the document suite
-at a glance. **319 functional groups across 20 categories** — software, PM, marketing and design,
-plus the pro verticals (legal, healthcare, finance, DevOps, security, …) — searchable
+at a glance. **353 functional groups across 21 categories** — software, PM, marketing and design,
+plus the pro verticals (legal, healthcare, finance, DevOps, security, ML/LLM, …) — searchable
 [online](https://zita-go.github.io/Skills-Atlas/?lang=en) or from your shell.
 
 ## Quick start
