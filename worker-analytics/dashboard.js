@@ -72,7 +72,22 @@ export const DASHBOARD_HTML = `<!doctype html>
         + '<span class="val">'+fmt(v)+extra+'</span></div>';
     }).join('') + '</div>';
   }
-  function card(key, rows){ return '<section class="card'+(DANGER[key]?' danger':'')+'"><h2>'+(TITLES[key]||key)+'</h2>'+chart(rows)+'</section>'; }
+  function cardAutopilot(rows){
+    const m = {}; for(const r of (rows||[])) m[r.type] = Number(r.n)||0;
+    const sg = m.ap_suggest||0, ac = m.ap_accept||0, di = m.ap_dismiss||0;
+    const labeled = [
+      { metric:'proposed (to agent)', n: sg },
+      { metric:'accepted (installed)', n: ac },
+      { metric:'dismissed', n: di },
+    ];
+    const rate = sg ? Math.round(ac/sg*100) : 0;
+    const note = '<p class="muted" style="font-size:11px;margin:9px 0 0;line-height:1.5">Accept rate <b>'+rate+'%</b> ('+fmt(ac)+' / '+fmt(sg)+' proposed). “Proposed” = surfaced to Claude as context; you only see it if Claude relays it — so this counts proposals, not what the user saw. <b>accepted</b> (the user installed it) is the real signal.</p>';
+    return '<section class="card"><h2>Autopilot — proposed → accepted</h2>'+chart(labeled)+note+'</section>';
+  }
+  function card(key, rows){
+    if(key === 'autopilot') return cardAutopilot(rows);
+    return '<section class="card'+(DANGER[key]?' danger':'')+'"><h2>'+(TITLES[key]||key)+'</h2>'+chart(rows)+'</section>';
+  }
   async function load(){
     $('err').textContent='';
     const ep = $('ep').value.trim().replace(/[/]+$/,''), tok = $('tok').value.trim();
