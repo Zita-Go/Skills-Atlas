@@ -1340,6 +1340,8 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
     <a href="https://github.com/Zita-Go/Skills-Atlas" target="_blank" rel="noopener">GitHub ↗</a>
     <span class="sf-sep" aria-hidden="true">·</span>
     <span class="sf-note" data-i18n="footer_license">站点 MIT；每个 skill 保留其上游许可证，安装前请在卡片上核对</span>
+    <span class="sf-sep" aria-hidden="true">·</span>
+    <span class="sf-note" data-i18n="footer_privacy">记录匿名使用与错误用于改进，不收集 IP、不认人</span>
   </footer>
 </main>
 
@@ -1456,6 +1458,10 @@ html.light .repo-card-foot .rc-upd.fresh{color:#1a7f37}
 
 <script>
 const DATA = {{DATA_JSON}};
+const BUILD_ID = '{{BUILD_ID}}';
+// Analytics ingestion endpoint. Empty string disables collection (no-op).
+// Set to the deployed worker-analytics URL + '/event' after deploy, then regenerate.
+const ANALYTICS_ENDPOINT = '';
 
 // ===== i18n（双语框架）=====
 // 界面 chrome 全量翻译；数据内容（分类/组名/描述）由 data.json 的 *_en 字段提供，
@@ -1522,7 +1528,7 @@ const I18N = {
     usage_btn: '📖 用法', install_btn: '📋 安装', license_unknown: '未知',
     hs_q: '不知从哪开始？', hs_search: '🔍 搜 skill / 描述 / 仓库', hs_ai: '✨ 描述需求，AI 推荐', hs_browse: '🗂️ 浏览全部大类',
     hs_eg: '例：「快速搭 SaaS 落地页」「给项目写 PRD」「自动化网页抓取」',
-    hs_use: '🧩 在 Claude Code 里用', hs_learn: '🗺️ 这是什么', tt_use_cc: '在 Claude Code 里用整个目录', footer_tag: '社区整理的 AI Agent Skills 目录（非官方）', footer_learn: '这是什么：网站导览', footer_license: '站点 MIT；每个 skill 保留其上游许可证，安装前请在卡片上核对', howto_title: '🗺️ 什么是 Skills Atlas', howto_sub: '30 秒看懂这个网站', tt_close: '关闭',
+    hs_use: '🧩 在 Claude Code 里用', hs_learn: '🗺️ 这是什么', tt_use_cc: '在 Claude Code 里用整个目录', footer_tag: '社区整理的 AI Agent Skills 目录（非官方）', footer_learn: '这是什么：网站导览', footer_license: '站点 MIT；每个 skill 保留其上游许可证，安装前请在卡片上核对', footer_privacy: '记录匿名使用与错误用于改进，不收集 IP、不认人', howto_title: '🗺️ 什么是 Skills Atlas', howto_sub: '30 秒看懂这个网站', tt_close: '关闭',
     usage_open_gh: '在 GitHub 打开 ↗', usage_copy_cmd: '📋 复制安装命令',
     copied: '✓ 已复制', copy_failed: '复制失败',
   },
@@ -1587,7 +1593,7 @@ const I18N = {
     usage_btn: '📖 Usage', install_btn: '📋 Install', license_unknown: 'unknown',
     hs_q: 'Not sure where to start?', hs_search: '🔍 Search skills / descriptions / repos', hs_ai: '✨ Describe your goal, AI picks', hs_browse: '🗂️ Browse all categories',
     hs_eg: 'e.g. "build a SaaS landing page", "write a PRD", "scrape a website"',
-    hs_use: '🧩 Use in Claude Code', hs_learn: '🗺️ What is this', tt_use_cc: 'Use the whole catalog in Claude Code', footer_tag: 'A community catalog of AI Agent Skills (unofficial)', footer_learn: 'What is this site', footer_license: 'Site MIT; each skill keeps its upstream license — check it on the card before installing', howto_title: '🗺️ What is Skills Atlas', howto_sub: 'What this site is, in 30 seconds', tt_close: 'Close',
+    hs_use: '🧩 Use in Claude Code', hs_learn: '🗺️ What is this', tt_use_cc: 'Use the whole catalog in Claude Code', footer_tag: 'A community catalog of AI Agent Skills (unofficial)', footer_learn: 'What is this site', footer_license: 'Site MIT; each skill keeps its upstream license — check it on the card before installing', footer_privacy: 'Anonymous usage & error events to improve the site — no IP, no identity', howto_title: '🗺️ What is Skills Atlas', howto_sub: 'What this site is, in 30 seconds', tt_close: 'Close',
     usage_open_gh: 'Open on GitHub ↗', usage_copy_cmd: '📋 Copy install command',
     copied: '✓ Copied', copy_failed: 'Copy failed',
   },
@@ -3674,6 +3680,7 @@ function setupAI(){
     showStatus(`<span class="ai-spin"></span><span>${LANG === 'en' ? `Calling ${escapeHtml(cfg.model)} to pick from ${candidates.length} skills…` : `调用 ${escapeHtml(cfg.model)} 从 ${candidates.length} 个 skill 中筛选…`}</span>`);
     try{
       const reranked = await callLLMRerank(q, candidates, cfg);
+      if(window.SA_track) SA_track('ai_recommend', { target: (typeof input !== 'undefined' && input && input.value ? input.value.slice(0,120) : '') });
       hideStatus();
       if(!reranked.length){
         if(localScored.length > 0){
@@ -3686,6 +3693,7 @@ function setupAI(){
         renderResults(reranked, 'llm');
       }
     }catch(err){
+      if(window.SA_track) SA_track('err_ai', { detail: String(err && err.message || err).slice(0,200) });
       console.warn('LLM rerank 失败:', err);
       const msg = err.message || String(err);
       if(localScored.length > 0){
@@ -4551,6 +4559,7 @@ function setupUsage(){
       body.innerHTML = renderMarkdown(text).trim() || `<div class="usage-state">${t('usage_empty')}</div>`;
       sub.textContent = `${d.skill ? d.skill + ' · ' : ''}${d.author}/${d.repo} · ${path}`;
     }catch(err){
+      if(window.SA_track) SA_track('err_skillmd', { target: (d && d.skill) || '', source: (d && d.name) || null, detail: ('raw ' + ((d && ((d.author||'') + '/' + (d.repo||'') + (d.docpath ? '/' + d.docpath : ''))) || '')).slice(0,200) });
       if(myReq !== usageReq) return;
       const gh = d.url || `https://github.com/${d.author}/${d.repo}`;
       body.innerHTML = `<div class="usage-state">${t('usage_notfound')}<br>` +
@@ -4718,6 +4727,107 @@ document.querySelectorAll('.start-chip').forEach(c => c.addEventListener('click'
 // 常驻顶栏「在 Claude Code 里用」入口
 const _useCc = document.getElementById('useCcBtn'); if(_useCc) _useCc.addEventListener('click', () => openHowTo('use'));
 setupJumpOffset();
+
+// ===== Skills Atlas private analytics collector (P1) — observes DOM, never blocks UI =====
+(function(){
+  if(!ANALYTICS_ENDPOINT) return;                                 // disabled until deploy URL is set
+  var DNT = navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.msDoNotTrack === '1';
+  var OFF = false; try { OFF = localStorage.getItem('sa_track') === 'off'; } catch(e){}
+  if(DNT || OFF || !navigator.sendBeacon){ window.SA_track = function(){}; return; }
+
+  var SID = Math.random().toString(36).slice(2, 10);
+  var BUF = [], FLUSH_AT = 12, FLUSH_MS = 5000, timer = null;
+
+  // skill -> {cat, src} from the inlined DATA (primary occurrence); lets use/copy carry dims.
+  var META = {};
+  try {
+    (DATA.sections || []).forEach(function(h1){
+      var cat = (h1.title_en || h1.title || '');
+      (h1.subsections || []).forEach(function(h2){
+        (h2.rows || []).forEach(function(r){
+          var src = (r.sources && r.sources[0] && r.sources[0].name) || '';
+          (r.skills || []).forEach(function(sk){ if(!META[sk]) META[sk] = { cat: cat, src: src }; });
+        });
+      });
+    });
+  } catch(e){}
+
+  function flush(){
+    if(!BUF.length) return;
+    var batch = BUF; BUF = [];
+    try { navigator.sendBeacon(ANALYTICS_ENDPOINT, JSON.stringify({ events: batch })); } catch(e){}
+  }
+  function schedule(){ if(timer) return; timer = setTimeout(function(){ timer = null; flush(); }, FLUSH_MS); }
+
+  window.SA_track = function(type, fields){
+    try {
+      var ev = { type: type, sid: SID,
+        lang: (typeof LANG !== 'undefined' ? LANG : ''),
+        view: (typeof currentView !== 'undefined' ? currentView : ''),
+        ver: (typeof BUILD_ID !== 'undefined' ? BUILD_ID : '') };
+      if(fields) for(var k in fields){ if(fields[k] != null) ev[k] = fields[k]; }
+      BUF.push(ev);
+      if(BUF.length >= FLUSH_AT) flush(); else schedule();
+    } catch(e){}
+  };
+
+  function skillFromCmd(cmd){
+    return cmd.replace(/^\/skills-atlas:skill-install\s+/, '')
+              .replace(/^skills-atlas use\s+/, '')
+              .replace(/^"|"$/g, '').slice(0, 80);
+  }
+  function withMeta(skill, extra){
+    var m = META[skill] || {};
+    var o = { target: skill, category: m.cat || null, source: m.src || null };
+    if(extra) for(var k in extra) o[k] = extra[k];
+    return o;
+  }
+
+  document.addEventListener('click', function(e){
+    try {
+      var n = e.target;
+      var act = n.closest && n.closest('[data-act]');
+      if(act){
+        var a = act.dataset.act, cmd = act.dataset.cmd || '';
+        if(a === 'usethis') SA_track('use_open', withMeta(act.dataset.skill || ''));
+        else if(a === 'copy'){
+          if(cmd.indexOf('/skills-atlas:') === 0) SA_track('copy_plugin', withMeta(skillFromCmd(cmd)));
+          else if(cmd.indexOf('skills-atlas use ') === 0) SA_track('copy_cli', withMeta(skillFromCmd(cmd)));
+        }
+      }
+      var vb = n.closest && n.closest('.view-btn[data-view]');
+      if(vb) SA_track('view_switch', { target: vb.dataset.view });
+      var sc = n.closest && n.closest('.start-chip[data-start], #useCcBtn, .sf-learn');
+      if(sc) SA_track('panel_open', { target: (sc.dataset && sc.dataset.start) || sc.id || 'learn' });
+    } catch(err){}
+  }, true);
+
+  var sInp = document.getElementById('search');
+  if(sInp){
+    var sTimer = null;
+    sInp.addEventListener('input', function(){
+      clearTimeout(sTimer);
+      sTimer = setTimeout(function(){
+        var q = sInp.value.trim();
+        if(q.length < 2) return;
+        var es = document.getElementById('emptyState');
+        var zero = !!(es && !es.classList.contains('hidden'));
+        SA_track(zero ? 'search_zero' : 'search', { target: q.slice(0, 120) });
+      }, 900);
+    });
+  }
+
+  window.addEventListener('error', function(ev){
+    SA_track('err_js', { detail: (((ev && ev.message) || '') + ' @ ' + ((ev && ev.filename) || '') + ':' + ((ev && ev.lineno) || '')).slice(0, 200) });
+  });
+  window.addEventListener('unhandledrejection', function(ev){
+    var r = ev && ev.reason;
+    SA_track('err_js', { detail: ('promise: ' + (r && r.message ? r.message : String(r))).slice(0, 200) });
+  });
+
+  document.addEventListener('visibilitychange', function(){ if(document.visibilityState === 'hidden') flush(); });
+  window.addEventListener('pagehide', flush);
+})();
 
 // 让锚点跳转留白 = sticky toolbar 实际高度 + 16（toolbar 换行变高时也不会挡住小节标题）
 function setupJumpOffset(){

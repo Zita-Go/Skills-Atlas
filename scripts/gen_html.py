@@ -176,6 +176,15 @@ def main():
     n_subcats = sum(len(h['subsections']) for h in sections)
     n_unique = len({sk for s in skills for sk in s['skills']})
     n_chains = sum(1 for s in skills if s.get('chain'))
+    # Build id for analytics `ver` — git short SHA (deterministic per commit), else 'dev'.
+    import subprocess
+    try:
+        build_id = subprocess.check_output(
+            ['git', 'rev-parse', '--short', 'HEAD'], cwd=str(ROOT),
+            stderr=subprocess.DEVNULL).decode().strip()
+    except Exception:
+        build_id = 'dev'
+    rendered = rendered.replace('{{BUILD_ID}}', build_id)
     for ph, val in {'{{N_REPOS}}': n_repos, '{{N_GROUPS}}': n_groups,
                     '{{N_CATS}}': n_cats, '{{N_SUBCATS}}': n_subcats,
                     '{{N_UNIQUE}}': n_unique, '{{N_CHAINS}}': n_chains}.items():
