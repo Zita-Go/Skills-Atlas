@@ -12,6 +12,7 @@
   th,td{border-bottom:1px solid #eee;padding:4px 8px;text-align:left;font-variant-numeric:tabular-nums}
   td:last-child,th:last-child{text-align:right}
   .muted{color:#889} code{background:#eef;padding:1px 5px;border-radius:4px}
+  input[type=checkbox]{min-width:auto;padding:0;cursor:pointer}
   #err{color:#c0392b}
 </style>
 <h1>Skills Atlas — private analytics</h1>
@@ -21,12 +22,14 @@
   <input id="tok" size="24" type="password" placeholder="STATS_TOKEN">
   <select id="days"><option value="0">all time</option><option value="7">7d</option><option value="30">30d</option><option value="90">90d</option></select>
   <button id="load">Load</button>
+  <label class="muted"><input type="checkbox" id="auto"> auto-refresh 60s</label>
 </div>
 <div id="err"></div>
 <div id="out"></div>
 <script>
   const $ = id => document.getElementById(id);
   for (const k of ['ep','tok']) { try { $(k).value = localStorage.getItem('sa_'+k) || ''; } catch(e){} }
+  let autoTimer = null;
   function table(rows){
     if(!rows || !rows.length) return '<p class="muted">— none —</p>';
     const cols = Object.keys(rows[0]);
@@ -47,10 +50,19 @@
       data = await res.json();
     } catch(e){ $('err').textContent = 'fetch failed: '+e.message; return; }
     const s = data.stats || {};
-    let html = '<p class="muted">window: '+(data.days?data.days+'d':'all time')+'</p>';
+    let html = '<p class="muted">window: '+(data.days?data.days+'d':'all time')+' · updated '+new Date().toLocaleTimeString()+(autoTimer?' · auto-refresh 60s':'')+'</p>';
     for(const k of Object.keys(TITLES)) html += '<h2>'+TITLES[k]+'</h2>'+table(s[k]);
     for(const k of Object.keys(s)) if(!(k in TITLES)) html += '<h2>'+k+'</h2>'+table(s[k]);
     $('out').innerHTML = html;
   }
   $('load').addEventListener('click', load);
+  // Light "feels-live": auto-refresh re-fetches /stats every 60s while checked (still pull, no backend).
+  function setAuto(){
+    if(autoTimer){ clearInterval(autoTimer); autoTimer = null; }
+    try { localStorage.setItem('sa_auto', $('auto').checked ? '1' : ''); } catch(e){}
+    if($('auto').checked){ autoTimer = setInterval(load, 60000); load(); }
+  }
+  try { $('auto').checked = localStorage.getItem('sa_auto') === '1'; } catch(e){}
+  $('auto').addEventListener('change', setAuto);
+  if($('auto').checked) setAuto();
 </script>
