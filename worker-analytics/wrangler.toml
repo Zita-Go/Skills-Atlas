@@ -1,0 +1,14 @@
+name = "skills-atlas-analytics"
+main = "index.js"
+compatibility_date = "2025-04-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://zita-go.github.io"
+
+# D1: create with `wrangler d1 create skills-atlas-analytics`, then paste the id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "skills-atlas-analytics"
+database_id = "REPLACE_AFTER_d1_create"
+
+# STATS_TOKEN (P3 read-out) is a secret: `wrangler secret put STATS_TOKEN`
