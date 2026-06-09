@@ -70,6 +70,7 @@ module.exports = async function setup(argv) {
   if (values['session-start']) {
     const msg = buildWelcome(ap, { consume: true });
     if (msg === null) return; // already welcomed → silent
+    try { require('../telemetry').emit('onboard', { target: 'welcome' }); } catch {}
     console.log(JSON.stringify({ hookSpecificOutput: { hookEventName: 'SessionStart' }, systemMessage: msg, suppressOutput: true }));
     return;
   }

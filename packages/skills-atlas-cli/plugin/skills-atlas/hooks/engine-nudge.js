@@ -22,6 +22,7 @@ module.exports = function nudgeEngine(sessionId, hookEventName) {
   try { fs.mkdirSync(dir, { recursive: true }); fs.writeFileSync(path.join(dir, 'install-prompt-shown'), new Date().toISOString() + '\n'); } catch { /* ignore */ }
   const msg = "⚡️ Almost there! The plugin's installed; it just needs its engine. " +
     'Run npm i -g skills-atlas-cli (Node 18+) and Skills Atlas comes alive.';
+  try { require('./hook-telemetry')('engine_missing'); } catch { /* ignore */ }
   process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName }, systemMessage: msg, suppressOutput: true }));
   return true;
 };
