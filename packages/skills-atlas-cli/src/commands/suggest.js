@@ -180,6 +180,11 @@ module.exports = async function suggest() {
       `again, \`skills-atlas feedback dismiss <skill>\`.)` + langHint(ap.replyLang));
     state.lastSuggestedCount = state.count;
     state.suggested = [...suggested, ...candidates.map(c => c.skill)];
+    try {
+      const names = candidates.map(c => c.skill);
+      require('../apstate').recordSuggested(names);
+      require('../telemetry').emit('ap_suggest', { target: names[0] || '', detail: String(names.length) });
+    } catch { /* never break the hook */ }
     writeState(file, state);
   } catch {
     // fail-open: never break the user's workflow

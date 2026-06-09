@@ -76,3 +76,12 @@ test('enabled emit + flush writes one outbox batch with iid/ver/os/client', () =
   assert.match(payload.events[0].iid, /^[0-9a-f]{16}$/);
   assert.ok(payload.events[0].ver && payload.events[0].os);
 });
+
+test('apstate records + expires suggestions', () => {
+  const { env } = freshEnv(); Object.assign(process.env, env);
+  delete require.cache[require.resolve('../src/apstate')];
+  const a = require('../src/apstate');
+  a.recordSuggested(['brainstorming']);
+  assert.equal(a.wasRecentlySuggested('brainstorming'), true);
+  assert.equal(a.wasRecentlySuggested('nope'), false);
+});

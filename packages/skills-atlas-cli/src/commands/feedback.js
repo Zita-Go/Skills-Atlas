@@ -34,6 +34,7 @@ module.exports = async function feedbackCmd(argv) {
     const x = positionals.slice(1).join(' ');
     if (!x) { console.error('usage: skills-atlas feedback dismiss <skill>'); process.exitCode = 1; return; }
     feedback.dismiss(x);
+    try { require('../telemetry').emit('ap_dismiss', { target: x }); } catch {}
     console.log(values.json ? JSON.stringify({ dismissed: x }) : `${green('✓')} won't suggest ${x} again (any project).`);
     return;
   }

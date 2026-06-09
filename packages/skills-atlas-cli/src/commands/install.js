@@ -248,6 +248,7 @@ module.exports = async function install(argv) {
   try {
     result = await installFolder({ author, repo, branch, docPath, dest, targetRoot, skillName: skill, source: src.name, group: chosen.row && chosen.row.group, category: chosen.row && chosen.row._cat });
   } catch (e) {
+    try { require('../telemetry').emit('cli_install', { target: (typeof skill !== 'undefined' ? skill : ''), detail: ('fail:' + String(e && e.message || e)).slice(0, 120) }); } catch {}
     console.error(`install failed: ${e.message}`);
     process.exitCode = 1;
     return;
@@ -255,6 +256,15 @@ module.exports = async function install(argv) {
 
   // installing clears any prior suppression (global dismiss + this project's removal).
   try { require('../feedback').installed(skill); } catch { /* ignore */ }
+
+  try {
+    const tel = require('../telemetry');
+    tel.emit('cli_install', { target: skill, detail: 'ok', category: chosen.row && chosen.row._cat, source: src && src.name });
+    if (require('../apstate').wasRecentlySuggested(skill)) tel.emit('ap_accept', { target: skill });
+    const fs2 = require('fs'), os2 = require('os'), path2 = require('path');
+    const marker = path2.join(process.env.XDG_CACHE_HOME || path2.join(os2.homedir(), '.cache'), 'skills-atlas', 'first-install');
+    if (!fs2.existsSync(marker)) { try { fs2.mkdirSync(path2.dirname(marker), { recursive: true }); fs2.writeFileSync(marker, new Date().toISOString()); } catch {} tel.emit('onboard', { target: 'first_install', source: src && src.name }); }
+  } catch { /* telemetry must never break install */ }
 
   if (values.json) {
     const out = {
