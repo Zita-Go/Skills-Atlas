@@ -91,6 +91,8 @@ export const DASHBOARD_HTML = `<!doctype html>
     $('out').innerHTML = '<p class="meta">window: '+(data.days?data.days+'d':'all time')+' · client: '+(data.client||'all')+' · updated '+new Date().toLocaleTimeString()+(autoTimer?' · auto-refresh 60s':'')+'</p><div class="grid">'+cards+'</div>';
   }
   $('load').addEventListener('click', load);
+  $('client').addEventListener('change', load);   // changing the filter re-queries immediately
+  $('days').addEventListener('change', load);
   // Light "feels-live": auto-refresh re-fetches /stats every 60s while checked (still pull, no backend).
   function setAuto(){
     if(autoTimer){ clearInterval(autoTimer); autoTimer = null; }
