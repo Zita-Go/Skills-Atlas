@@ -1,4 +1,5 @@
 import { normalizeEvent, uaFamily, refHost } from './lib.js';
+import { runStats } from './stats.js';
 
 const DEFAULT_ALLOWED_ORIGINS = ['https://zita-go.github.io'];
 const RATE_WINDOW_MS = 60_000;
@@ -29,6 +30,13 @@ function corsHeaders(origin, allowed) {
 
 const noContent = (cors) => new Response(null, { status: 204, headers: cors });
 
+function safeEqual(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
+  let d = 0;
+  for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return d === 0;
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -41,6 +49,19 @@ export default {
     if (request.method === 'GET' && url.pathname === '/') {
       return new Response(JSON.stringify({ ok: true, service: 'skills-atlas-analytics' }),
         { status: 200, headers: { 'Content-Type': 'application/json', ...cors } });
+    }
+    if (request.method === 'GET' && url.pathname === '/stats') {
+      const open = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };
+      if (!env.STATS_TOKEN) return new Response(JSON.stringify({ error: 'stats not configured' }), { status: 503, headers: open });
+      if (!safeEqual(url.searchParams.get('token') || '', env.STATS_TOKEN)) return new Response(JSON.stringify({ error: 'unauthorized' }), { status: 401, headers: open });
+      const days = parseInt(url.searchParams.get('days') || '0', 10);
+      const cutoff = days > 0 ? Date.now() - days * 86_400_000 : 0;
+      try {
+        const stats = await runStats(env.DB, cutoff);
+        return new Response(JSON.stringify({ generatedAt: Date.now(), days: days || null, stats }), { status: 200, headers: open });
+      } catch (e) {
+        return new Response(JSON.stringify({ error: 'query failed' }), { status: 500, headers: open });
+      }
     }
     if (request.method !== 'POST' || url.pathname !== '/event') return noContent(cors);
 

@@ -69,3 +69,30 @@ test('GET / health → 200 ok', async () => {
   const res = await worker.fetch(new Request('https://w/'), env);
   assert.equal(res.status, 200);
 });
+
+function statsEnv(token) {
+  return {
+    ALLOWED_ORIGINS: 'https://zita-go.github.io',
+    STATS_TOKEN: token,
+    DB: { prepare() { return { bind: () => ({ all: async () => ({ results: [{ x: 1 }] }) }) }; } },
+  };
+}
+
+test('/stats without STATS_TOKEN configured → 503', async () => {
+  const res = await worker.fetch(new Request('https://w/stats?token=abc'), statsEnv(undefined));
+  assert.equal(res.status, 503);
+});
+
+test('/stats with wrong token → 401', async () => {
+  const res = await worker.fetch(new Request('https://w/stats?token=nope'), statsEnv('secret'));
+  assert.equal(res.status, 401);
+});
+
+test('/stats with correct token → 200 + stats object', async () => {
+  const res = await worker.fetch(new Request('https://w/stats?token=secret&days=7'), statsEnv('secret'));
+  assert.equal(res.status, 200);
+  const body = await res.json();
+  assert.ok(body.stats && typeof body.stats === 'object');
+  assert.equal(body.days, 7);
+  assert.ok('topSkills' in body.stats);
+});
