@@ -54,7 +54,7 @@ test('normalizeEvent accepts CLI rows with client/os/iid', () => {
   assert.equal(row.iid, 'abcd1234');
 });
 
-test('EVENT_TYPES has the 18 agreed types (11 web + 7 cli)', () => {
-  assert.equal(EVENT_TYPES.size, 18);
-  assert.ok(EVENT_TYPES.has('use_open') && EVENT_TYPES.has('err_js') && EVENT_TYPES.has('cli_install') && EVENT_TYPES.has('onboard'));
+test('EVENT_TYPES has the 19 agreed types (11 web + 8 cli)', () => {
+  assert.equal(EVENT_TYPES.size, 19);
+  assert.ok(EVENT_TYPES.has('use_open') && EVENT_TYPES.has('err_js') && EVENT_TYPES.has('cli_install') && EVENT_TYPES.has('onboard') && EVENT_TYPES.has('skill_created'));
 });

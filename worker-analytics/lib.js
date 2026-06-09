@@ -5,8 +5,8 @@ export const EVENT_TYPES = new Set([
   'use_open', 'copy_plugin', 'copy_cli', 'ai_recommend',
   'search', 'search_zero', 'view_switch', 'panel_open',
   'err_skillmd', 'err_js', 'err_ai',
-  // cli/plugin (7)
-  'cli_cmd', 'cli_install', 'ap_suggest', 'ap_accept', 'ap_dismiss', 'onboard', 'cli_err',
+  // cli/plugin (8)
+  'cli_cmd', 'cli_install', 'ap_suggest', 'ap_accept', 'ap_dismiss', 'onboard', 'cli_err', 'skill_created',
 ]);
 
 const STR_MAX = 200;

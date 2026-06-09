@@ -90,7 +90,10 @@ async function main() {
   if (sub !== 'update' && sub !== 'gap-analyze' && sub !== 'setup' && !process.env.SKILLS_ATLAS_SUBCALL) {
     try { require('../src/data').maybeBackgroundRefresh(); } catch { /* ignore */ }
   }
-  if (sub !== 'telemetry' && !process.env.SKILLS_ATLAS_SUBCALL) telemetry.emit('cli_cmd', { target: sub });
+  if (sub !== 'telemetry' && !process.env.SKILLS_ATLAS_SUBCALL) {
+    telemetry.emit('cli_cmd', { target: sub });
+    try { require('../src/localskills').reportCreated(); } catch { /* ignore */ }
+  }
   try {
     await cmd(rest);
   } catch (e) {

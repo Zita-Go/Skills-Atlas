@@ -4,6 +4,7 @@ export const QUERIES = {
   topSkills:    "SELECT target, COUNT(*) n FROM events WHERE ts>=? AND type IN ('use_open','copy_plugin','copy_cli') AND target IS NOT NULL AND target!='' GROUP BY target ORDER BY n DESC LIMIT 25",
   copySplit:    "SELECT type, COUNT(*) n FROM events WHERE ts>=? AND type IN ('copy_plugin','copy_cli') GROUP BY type",
   topInstalls:  "SELECT target, COUNT(*) n FROM events WHERE ts>=? AND type='cli_install' AND detail='ok' AND target!='' GROUP BY target ORDER BY n DESC LIMIT 25",
+  skillsCreated:"SELECT target, COUNT(*) n FROM events WHERE ts>=? AND type='skill_created' AND target!='' GROUP BY target ORDER BY n DESC LIMIT 25",
   autopilot:    "SELECT type, COUNT(*) n FROM events WHERE ts>=? AND type IN ('ap_suggest','ap_accept','ap_dismiss') GROUP BY type",
   funnel:       "SELECT target, COUNT(DISTINCT iid) installs, COUNT(*) n FROM events WHERE ts>=? AND type='onboard' GROUP BY target ORDER BY n DESC",
   zeroSearches: "SELECT target, COUNT(*) n FROM events WHERE ts>=? AND type='search_zero' AND target!='' GROUP BY target ORDER BY n DESC LIMIT 25",

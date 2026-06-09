@@ -183,7 +183,9 @@ module.exports = async function suggest() {
     try {
       const names = candidates.map(c => c.skill);
       require('../apstate').recordSuggested(names);
-      require('../telemetry').emit('ap_suggest', { target: names[0] || '', detail: String(names.length) });
+      // Derived signals only — NEVER the prompt text: how many matched + a coarse length bucket.
+      const plen = Math.min(2000, Math.round(prompt.length / 50) * 50);
+      require('../telemetry').emit('ap_suggest', { target: names[0] || '', detail: 'matched=' + names.length + ' plen=' + plen });
     } catch { /* never break the hook */ }
     writeState(file, state);
   } catch {
