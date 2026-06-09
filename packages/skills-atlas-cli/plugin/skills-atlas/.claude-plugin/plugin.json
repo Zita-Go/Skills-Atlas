@@ -1,7 +1,7 @@
 {
   "name": "skills-atlas",
   "description": "Search, install, and grow AI agent skills from the Skills Atlas catalog, in-conversation.",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "author": {
     "name": "Skills Atlas contributors"
   },

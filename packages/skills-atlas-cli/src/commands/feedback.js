@@ -1,6 +1,6 @@
 // `skills-atlas feedback` — the autopilot's local suppression list. Two scopes:
 // skills you've dismissed (never suggested, anywhere) and skills you've removed from
-// THIS project (not suggested here). Show / add to / reset it. Nothing is sent.
+// THIS project (not suggested here). Show / add to / reset it.
 'use strict';
 
 const { parse } = require('../args');
@@ -9,11 +9,13 @@ const { green, dim } = require('../format');
 
 const HELP = `usage: skills-atlas feedback [dismiss <skill> | reset]
 
-Skills the autopilot won't suggest again. Two kinds, local only — nothing is sent:
+Skills the autopilot won't suggest again. Two kinds, stored locally (the suppression list itself is never uploaded):
   • dismissed — you said "never suggest this"; applies in every project
   • removed   — you removed it from THIS project; suppressed here only
 Installing a skill clears both. (Removing one from the global scope is just an
 uninstall — it does not suppress; use 'dismiss' for a blanket no.)
+
+The suppression list stays on your machine. (Anonymous usage telemetry is separate and opt-out — see \`skills-atlas telemetry\`.)
 
   feedback                  show the suppression list (this project + global)
   feedback dismiss <skill>  never suggest a skill again, in any project

@@ -114,6 +114,12 @@ skills-atlas kit                      # 识别当前项目,装一套对口的
 - [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) —— 47 个 PM skill
 - [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) —— 15 个 Context Engineering skill
 
+## 遥测
+
+Skills Atlas 会收集**匿名、可关闭（opt-out）**的使用情况来改进工具——哪些命令被运行、装了哪些
+skill、autopilot 的建议有没有被采纳、以及错误。**不收集 prompt、文件路径、skill 内容、身份或 IP。**
+默认开启，随时可关：`skills-atlas telemetry off`（或设 `DO_NOT_TRACK=1`）。用 `skills-atlas telemetry status` 查看状态。
+
 ## License
 
 [MIT](LICENSE) —— 随便用、随便改、随便商业化，保留 attribution 即可。

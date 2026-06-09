@@ -129,6 +129,13 @@ This project's skill data is sourced from the excellent repositories below (top 
 - [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) — 47 PM skills
 - [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) — 15 Context Engineering skills
 
+## Telemetry
+
+Skills Atlas collects **anonymous, opt-out** usage to improve the tool — which commands run, which
+skills install, whether autopilot suggestions are accepted, and errors. **No prompts, no file paths,
+no skill contents, no identity, no IP.** It's on by default; turn it off any time with
+`skills-atlas telemetry off` (or set `DO_NOT_TRACK=1`). See `skills-atlas telemetry status`.
+
 ## License
 
 [MIT](LICENSE) — use, modify, and commercialize freely, with attribution.
