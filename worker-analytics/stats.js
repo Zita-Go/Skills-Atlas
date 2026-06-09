@@ -10,14 +10,20 @@ export const QUERIES = {
   zeroSearches: "SELECT target, COUNT(*) n FROM events WHERE ts>=? AND type='search_zero' AND target!='' GROUP BY target ORDER BY n DESC LIMIT 25",
   errorsByType: "SELECT type, COUNT(*) n FROM events WHERE ts>=? AND (type LIKE 'err\\_%' ESCAPE '\\' OR type='cli_err') GROUP BY type ORDER BY n DESC",
   brokenSkillmd:"SELECT detail, COUNT(*) n FROM events WHERE ts>=? AND type='err_skillmd' AND detail IS NOT NULL AND detail!='' GROUP BY detail ORDER BY n DESC LIMIT 25",
-  cliCommands:  "SELECT target, COUNT(*) n FROM events WHERE ts>=? AND type='cli_cmd' AND target!='' GROUP BY target ORDER BY n DESC LIMIT 25",
+  // 'suggest' is the per-prompt autopilot hook (runs on every prompt) — exclude it from the
+  // user-command view; the meaningful "autopilot fired a suggestion" signal is ap_suggest.
+  cliCommands:  "SELECT target, COUNT(*) n FROM events WHERE ts>=? AND type='cli_cmd' AND target!='' AND target!='suggest' GROUP BY target ORDER BY n DESC LIMIT 25",
   clientTotals: "SELECT client, COUNT(*) n FROM events WHERE ts>=? GROUP BY client",
 };
 
-export async function runStats(db, cutoff) {
+// Optional `client` filter (web|cli|plugin); '' = all. Injected after the shared `WHERE ts>=?`
+// prefix every query begins with, so each runs with bind(cutoff, client, client).
+export async function runStats(db, cutoff, client) {
+  const cl = client || '';
   const out = {};
   for (const [key, sql] of Object.entries(QUERIES)) {
-    const r = await db.prepare(sql).bind(cutoff).all();
+    const q = sql.replace('WHERE ts>=?', "WHERE ts>=? AND (?='' OR client=?)");
+    const r = await db.prepare(q).bind(cutoff, cl, cl).all();
     out[key] = (r && r.results) || [];
   }
   return out;

@@ -61,9 +61,11 @@ export default {
       if (!safeEqual(url.searchParams.get('token') || '', env.STATS_TOKEN)) return new Response(JSON.stringify({ error: 'unauthorized' }), { status: 401, headers: open });
       const days = parseInt(url.searchParams.get('days') || '0', 10);
       const cutoff = days > 0 ? Date.now() - days * 86_400_000 : 0;
+      const rawClient = url.searchParams.get('client') || '';
+      const client = ['web', 'cli', 'plugin'].includes(rawClient) ? rawClient : '';
       try {
-        const stats = await runStats(env.DB, cutoff);
-        return new Response(JSON.stringify({ generatedAt: Date.now(), days: days || null, stats }), { status: 200, headers: open });
+        const stats = await runStats(env.DB, cutoff, client);
+        return new Response(JSON.stringify({ generatedAt: Date.now(), days: days || null, client: client || null, stats }), { status: 200, headers: open });
       } catch (e) {
         return new Response(JSON.stringify({ error: 'query failed' }), { status: 500, headers: open });
       }

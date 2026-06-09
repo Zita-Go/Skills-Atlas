@@ -39,6 +39,7 @@ export const DASHBOARD_HTML = `<!doctype html>
   <input id="ep" size="38" placeholder="https://skills-atlas-analytics.<sub>.workers.dev">
   <input id="tok" size="22" type="password" placeholder="STATS_TOKEN">
   <select id="days"><option value="0">all time</option><option value="7">7d</option><option value="30">30d</option><option value="90">90d</option></select>
+  <select id="client"><option value="">all clients</option><option value="plugin">plugin (in Claude Code)</option><option value="web">web</option><option value="cli">cli (terminal)</option></select>
   <button id="load">Load</button>
   <label class="muted"><input type="checkbox" id="auto"> auto-refresh 60s</label>
 </div>
@@ -47,6 +48,7 @@ export const DASHBOARD_HTML = `<!doctype html>
 <script>
   const $ = id => document.getElementById(id);
   for (const k of ['ep','tok']) { try { $(k).value = localStorage.getItem('sa_'+k) || ''; } catch(e){} }
+  try { $('client').value = localStorage.getItem('sa_client') || ''; } catch(e){}
   if (!$('ep').value && location.protocol.indexOf('http') === 0) $('ep').value = location.origin;
   let autoTimer = null;
   const TITLES = { clientTotals:'Volume: web / cli / plugin', funnel:'Onboarding funnel (by install)', autopilot:'Autopilot: suggest / accept / dismiss', topSkills:'Top skills (open + copy)', topInstalls:'Top CLI installs', skillsCreated:'Skills created (craft)', copySplit:'Copy: plugin vs CLI', cliCommands:'CLI command usage', zeroSearches:'Zero-result searches (gaps)', brokenSkillmd:'Broken SKILL.md (curation)', errorsByType:'Errors by type' };
@@ -74,11 +76,11 @@ export const DASHBOARD_HTML = `<!doctype html>
   async function load(){
     $('err').textContent='';
     const ep = $('ep').value.trim().replace(/[/]+$/,''), tok = $('tok').value.trim();
-    try { localStorage.setItem('sa_ep',ep); localStorage.setItem('sa_tok',tok); } catch(e){}
+    try { localStorage.setItem('sa_ep',ep); localStorage.setItem('sa_tok',tok); localStorage.setItem('sa_client',$('client').value); } catch(e){}
     if(!ep || !tok){ $('err').textContent='Enter the token (the endpoint defaults to this worker).'; return; }
     let data;
     try {
-      const res = await fetch(ep+'/stats?token='+encodeURIComponent(tok)+'&days='+$('days').value);
+      const res = await fetch(ep+'/stats?token='+encodeURIComponent(tok)+'&days='+$('days').value+'&client='+$('client').value);
       if(!res.ok){ $('err').textContent = 'HTTP '+res.status+(res.status===401?' — bad token':res.status===503?' — STATS_TOKEN not set on the worker':''); return; }
       data = await res.json();
     } catch(e){ $('err').textContent = 'fetch failed: '+e.message; return; }
@@ -86,7 +88,7 @@ export const DASHBOARD_HTML = `<!doctype html>
     let cards = '';
     for(const k of ORDER) if(k in s) cards += card(k, s[k]);
     for(const k of Object.keys(s)) if(ORDER.indexOf(k) < 0) cards += card(k, s[k]);
-    $('out').innerHTML = '<p class="meta">window: '+(data.days?data.days+'d':'all time')+' · updated '+new Date().toLocaleTimeString()+(autoTimer?' · auto-refresh 60s':'')+'</p><div class="grid">'+cards+'</div>';
+    $('out').innerHTML = '<p class="meta">window: '+(data.days?data.days+'d':'all time')+' · client: '+(data.client||'all')+' · updated '+new Date().toLocaleTimeString()+(autoTimer?' · auto-refresh 60s':'')+'</p><div class="grid">'+cards+'</div>';
   }
   $('load').addEventListener('click', load);
   // Light "feels-live": auto-refresh re-fetches /stats every 60s while checked (still pull, no backend).
