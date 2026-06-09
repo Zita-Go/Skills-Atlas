@@ -96,3 +96,11 @@ test('/stats with correct token → 200 + stats object', async () => {
   assert.equal(body.days, 7);
   assert.ok('topSkills' in body.stats);
 });
+
+test('GET /dashboard serves the HTML page (no DB/token needed for the shell)', async () => {
+  const res = await worker.fetch(new Request('https://w/dashboard'), {});
+  assert.equal(res.status, 200);
+  assert.match(res.headers.get('Content-Type') || '', /text\/html/);
+  const body = await res.text();
+  assert.ok(body.includes('private analytics'));
+});

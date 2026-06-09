@@ -1,4 +1,8 @@
-<!doctype html>
+// Single-source dashboard UI, served by the worker at GET /dashboard. Data stays gated by
+// STATS_TOKEN (same-origin /stats), so only you can see it. Also works as a local file.
+// NOTE: this markup is embedded in a template literal — it must contain no backticks, no ${},
+// and no backslashes (the one trailing-slash regex uses /[/]+$/ instead of /\/+$/).
+export const DASHBOARD_HTML = `<!doctype html>
 <meta charset="utf-8">
 <title>Skills Atlas — private analytics</title>
 <style>
@@ -16,7 +20,7 @@
   #err{color:#c0392b}
 </style>
 <h1>Skills Atlas — private analytics</h1>
-<p class="muted">Private read-out. Paste your worker base URL + the <code>STATS_TOKEN</code> you set with <code>wrangler secret put STATS_TOKEN</code>. Nothing here is published.</p>
+<p class="muted">Private read-out — data is gated by your <code>STATS_TOKEN</code> (set with <code>wrangler secret put STATS_TOKEN</code>), so only you can see it. The endpoint defaults to this worker.</p>
 <div class="bar">
   <input id="ep" size="40" placeholder="https://skills-atlas-analytics.<sub>.workers.dev">
   <input id="tok" size="24" type="password" placeholder="STATS_TOKEN">
@@ -29,6 +33,7 @@
 <script>
   const $ = id => document.getElementById(id);
   for (const k of ['ep','tok']) { try { $(k).value = localStorage.getItem('sa_'+k) || ''; } catch(e){} }
+  if (!$('ep').value && location.protocol.indexOf('http') === 0) $('ep').value = location.origin;
   let autoTimer = null;
   function table(rows){
     if(!rows || !rows.length) return '<p class="muted">— none —</p>';
@@ -40,9 +45,9 @@
   const TITLES = { topSkills:'Top skills (open + copy)', copySplit:'Copy: plugin vs CLI', topInstalls:'Top CLI installs', autopilot:'Autopilot: suggest / accept / dismiss', funnel:'Onboarding funnel (by install)', zeroSearches:'Zero-result searches (gaps)', errorsByType:'Errors by type', brokenSkillmd:'Broken SKILL.md (curation)', cliCommands:'CLI command usage', clientTotals:'Volume: web / cli / plugin' };
   async function load(){
     $('err').textContent=''; $('out').innerHTML='';
-    const ep = $('ep').value.trim().replace(/\/+$/,''), tok = $('tok').value.trim();
+    const ep = $('ep').value.trim().replace(/[/]+$/,''), tok = $('tok').value.trim();
     try { localStorage.setItem('sa_ep',ep); localStorage.setItem('sa_tok',tok); } catch(e){}
-    if(!ep || !tok){ $('err').textContent='Enter the endpoint and token.'; return; }
+    if(!ep || !tok){ $('err').textContent='Enter the token (the endpoint defaults to this worker).'; return; }
     let data;
     try {
       const res = await fetch(ep+'/stats?token='+encodeURIComponent(tok)+'&days='+$('days').value);
@@ -66,3 +71,4 @@
   $('auto').addEventListener('change', setAuto);
   if($('auto').checked) setAuto();
 </script>
+`;

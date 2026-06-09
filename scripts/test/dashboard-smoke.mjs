@@ -2,11 +2,15 @@
 //   node scripts/test/dashboard-smoke.mjs
 import playwright from '/root/.npm/_npx/e41f203b7505f1fb/node_modules/playwright/index.js';
 const { chromium } = playwright;
+import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { DASHBOARD_HTML } from '../../worker-analytics/dashboard.js';
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
-const URL = 'file://' + path.join(ROOT, 'worker-analytics/dashboard.html');
+// Single source: render the exact HTML the worker serves at GET /dashboard.
+const tmp = path.join(os.tmpdir(), 'sa-dashboard-smoke.html');
+fs.writeFileSync(tmp, DASHBOARD_HTML);
+const URL = 'file://' + tmp;
 const errs = [];
 const browser = await chromium.launch();
 try {
@@ -28,4 +32,4 @@ try {
   console.log('rendered sections:', ok, '| JS errors:', errs.length ? errs.join(' | ') : 'NONE');
   if (!ok || errs.length) process.exit(1);
   console.log('DASHBOARD SMOKE OK');
-} finally { await browser.close(); }
+} finally { await browser.close(); try { fs.unlinkSync(tmp); } catch (e) {} }

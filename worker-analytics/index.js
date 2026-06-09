@@ -1,5 +1,6 @@
 import { normalizeEvent, uaFamily, refHost } from './lib.js';
 import { runStats } from './stats.js';
+import { DASHBOARD_HTML } from './dashboard.js';
 
 const DEFAULT_ALLOWED_ORIGINS = ['https://zita-go.github.io'];
 const RATE_WINDOW_MS = 60_000;
@@ -49,6 +50,10 @@ export default {
     if (request.method === 'GET' && url.pathname === '/') {
       return new Response(JSON.stringify({ ok: true, service: 'skills-atlas-analytics' }),
         { status: 200, headers: { 'Content-Type': 'application/json', ...cors } });
+    }
+    if (request.method === 'GET' && url.pathname === '/dashboard') {
+      // The page is a public shell; the DATA it shows is gated by STATS_TOKEN (same-origin /stats).
+      return new Response(DASHBOARD_HTML, { status: 200, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
     }
     if (request.method === 'GET' && url.pathname === '/stats') {
       const open = { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' };

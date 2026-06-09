@@ -22,11 +22,15 @@ wrangler secret put STATS_TOKEN      # choose a long random value
 wrangler deploy
 ```
 
-Then open `worker-analytics/dashboard.html` **locally** (it is NOT served by GitHub Pages — it does not live under `docs/`), paste the worker base URL + the token, and Load. Or query directly:
+Then open the hosted dashboard from any browser — **`https://<worker-url>/dashboard`** — and paste the token (saved per-device; the endpoint defaults to this worker). The page is a public shell; the DATA is gated by `STATS_TOKEN`, so only you can see it. Or query directly:
 
 ```bash
 curl "https://<worker-url>/stats?token=$STATS_TOKEN&days=30"
 ```
+
+For page-level privacy too (so the shell itself requires login), put the worker behind **Cloudflare Access** (Zero Trust → an Access policy allowing only your email). No code needed.
+
+The dashboard UI is a single source in `dashboard.js` (served by the worker; not under `docs/`, never on GitHub Pages).
 
 `/stats` is the only authenticated route: missing token → `503`, wrong token → `401`. The dashboard is inert until you paste a working endpoint + token, so it is safe to keep in the repo.
 
