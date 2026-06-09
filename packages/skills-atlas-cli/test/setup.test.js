@@ -1,4 +1,8 @@
 'use strict';
+// Telemetry must never phone home from the test suite. The CLI subprocesses this file spawns
+// inherit this env (published builds have a real BUILTIN_ENDPOINT). Add the same line to any
+// future test that exercises an emitting command (install / suggest / feedback / setup).
+process.env.DO_NOT_TRACK = '1';
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('node:fs');

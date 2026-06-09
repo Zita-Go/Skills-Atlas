@@ -19,10 +19,11 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const SRC = path.join(ROOT, 'docs/index.html');
 
-// Build a temp copy with the endpoint enabled (so the collector is live for the test).
+// Build a temp copy with the endpoint forced to a dummy (so the collector is live for the test
+// AND never POSTs to the real worker, whatever the committed ANALYTICS_ENDPOINT happens to be).
 const html = fs.readFileSync(SRC, 'utf8');
 const enabled = html.replace(
-  "const ANALYTICS_ENDPOINT = '';",
+  /const ANALYTICS_ENDPOINT = '[^']*';/,
   "const ANALYTICS_ENDPOINT = 'https://test.invalid/event';"
 );
 if (enabled === html) { console.error('FAIL: could not find ANALYTICS_ENDPOINT const to enable'); process.exit(1); }

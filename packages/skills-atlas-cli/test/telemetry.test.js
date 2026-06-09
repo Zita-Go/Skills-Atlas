@@ -12,11 +12,12 @@ function freshEnv() {
 }
 function load() { delete require.cache[require.resolve('../src/telemetry')]; return require('../src/telemetry'); }
 
-test('inert when no endpoint configured', () => {
+test('on by default once the built-in endpoint is set (no env override, no DNT)', () => {
+  // BUILTIN_ENDPOINT is now configured (go-live), so with no opt-out it is enabled.
   const { env } = freshEnv();
   Object.assign(process.env, env); delete process.env.SKILLS_ATLAS_TELEMETRY_ENDPOINT; delete process.env.DO_NOT_TRACK;
   const t = load();
-  assert.equal(t.isEnabled(), false);
+  assert.equal(t.isEnabled(), true);
 });
 
 test('on by default once endpoint set; first run writes iid + is stable', () => {

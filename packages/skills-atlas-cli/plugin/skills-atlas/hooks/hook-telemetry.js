@@ -6,7 +6,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-const ENDPOINT = ''; // set to the same worker /event URL as the CLI before publishing
+const ENDPOINT = 'https://skills-atlas-analytics.zita-go.workers.dev/event'; // worker-analytics /event
 function dnt() { const v = process.env.DO_NOT_TRACK; return v != null && v !== '' && v !== '0' && String(v).toLowerCase() !== 'false'; }
 function offByConfig() {
   try {

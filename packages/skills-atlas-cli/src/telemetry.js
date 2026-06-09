@@ -9,7 +9,7 @@ const crypto = require('crypto');
 
 // Set BUILTIN_ENDPOINT to the deployed worker-analytics URL + '/event' BEFORE publishing to enable.
 // Empty = inert (no notice, nothing sent). The env override exists for tests / power users.
-const BUILTIN_ENDPOINT = '';
+const BUILTIN_ENDPOINT = 'https://skills-atlas-analytics.zita-go.workers.dev/event';
 function endpoint() { return process.env.SKILLS_ATLAS_TELEMETRY_ENDPOINT || BUILTIN_ENDPOINT; }
 const VERSION = require('../package.json').version;
 
