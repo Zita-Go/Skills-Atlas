@@ -22,12 +22,14 @@ const setup = require('../src/commands/setup');
 const feedback = require('../src/commands/feedback');
 const update = require('../src/commands/update');
 const mcp = require('../src/commands/mcp');
+const telemetry = require('../src/telemetry');
+const telemetryCmd = require('../src/commands/telemetry');
 const { categories, list } = require('../src/commands/categories');
 
 const VERSION = require('../package.json').version;
 // `use` = install + activate inline (emit the SKILL.md so an agent follows it now).
 const use = argv => install([...argv, '--inline']);
-const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, gaps, 'gap-analyze': gapAnalyze, craft, prune, feedback, setup, update, categories, list, registry, mcp };
+const commands = { search, info, install, use, kit, sync, installed, upgrade, remove, outdated, doctor, suggest, hook, gaps, 'gap-analyze': gapAnalyze, craft, prune, feedback, setup, update, categories, list, registry, mcp, telemetry: telemetryCmd };
 
 const HELP = `skills-atlas — search, install & manage AI agent skills
 
@@ -57,6 +59,7 @@ autopilot (opt-in):
   craft              codify a workflow you keep repeating into a new local skill (Claude drafts it)
   prune              installed skills you no longer use — Claude suggests removing them
   feedback           what the autopilot learned from your installs/removes (sharpens it)
+  telemetry on|off|status  anonymous opt-out usage telemetry (no prompts/paths/identity)
 
 catalog:
   update             refresh the catalog from the public data feed
@@ -87,7 +90,13 @@ async function main() {
   if (sub !== 'update' && sub !== 'gap-analyze' && sub !== 'setup' && !process.env.SKILLS_ATLAS_SUBCALL) {
     try { require('../src/data').maybeBackgroundRefresh(); } catch { /* ignore */ }
   }
-  await cmd(rest);
+  if (sub !== 'telemetry' && !process.env.SKILLS_ATLAS_SUBCALL) telemetry.emit('cli_cmd', { target: sub });
+  try {
+    await cmd(rest);
+  } catch (e) {
+    telemetry.emit('cli_err', { target: sub, detail: String(e && e.message || e).slice(0, 200) });
+    throw e;
+  }
 }
 
 main().catch(err => {
