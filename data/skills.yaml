@@ -5093,3 +5093,62 @@
   description_en: Guides creating new skills for Hive agents, covering placement, discovery mechanisms, and precedence rules per specification.
   sources:
   - hive
+- id: docs-knowledge--2-4--358
+  skills:
+  - wiki
+  - wiki-cli
+  - wiki-mode
+  - wiki-ingest
+  - save
+  - autoresearch
+  - wiki-query
+  - wiki-retrieve
+  - wiki-lint
+  - wiki-fold
+  group: Obsidian 第二大脑（wiki 知识库工作流）
+  group_en: Obsidian second brain (wiki knowledge-base workflow)
+  category: docs-knowledge
+  subcategory: 2-4
+  chain: true
+  description: AgriciDaniel/claude-obsidian 的 Obsidian 第二大脑工作流：wiki（建持久知识库 + 路由）→ wiki-ingest（文件/URL 入库、抽实体建维基链）· save（对话归档成结构化笔记）· autoresearch（自动搜索综合并归档）→ wiki-query（查询综合回写）· wiki-retrieve（混合检索/重排/片段召回）→ wiki-lint（查孤立页/死链/元数据）· wiki-fold（日志折叠汇总）；wiki-cli 为共享 transport 底座，wiki-mode 配 LYT/PARA/Zettelkasten 组织模式。
+  description_en: 'Obsidian second-brain workflow: wiki (build persistent vault + route) -> wiki-ingest (ingest files/URLs, extract entities + wiki-links) / save (archive chats into structured notes) / autoresearch (auto search, synthesize, archive) -> wiki-query (query + write back) / wiki-retrieve (hybrid retrieval/rerank/snippets) -> wiki-lint (orphans/dead-links/metadata) / wiki-fold (fold logs); wiki-cli is the shared transport, wiki-mode configures LYT/PARA/Zettelkasten.'
+  sources:
+  - claude-obsidian
+- id: docs-knowledge--2-4--359
+  skills:
+  - canvas
+  - obsidian-bases
+  - obsidian-markdown
+  group: Obsidian 笔记格式 / 结构工具
+  group_en: Obsidian note format / structure tools
+  category: docs-knowledge
+  subcategory: 2-4
+  chain: false
+  description: Obsidian 笔记格式与结构工具：canvas（维护 Obsidian Canvas 画布，自动排版图片、PDF 与知识卡片。）、obsidian-bases（管理 Obsidian Bases 的 YAML 视图，支持筛选、公式、卡片/表格列表。）、obsidian-markdown（提供 Obsidian 语法参考，帮助 Agent 正确编写维基链接、嵌入和属性。）。
+  description_en: 'Obsidian note format/structure tools: canvas (auto-layout Canvas boards), obsidian-bases (Bases YAML views), obsidian-markdown (Obsidian syntax reference).'
+  sources:
+  - claude-obsidian
+- id: data-scraping--7-1--360
+  skills:
+  - defuddle
+  group: 网页内容清洗入库
+  group_en: Web content cleaning for ingestion
+  category: data-scraping
+  subcategory: 7-1
+  chain: false
+  description: 清理网页正文，去除广告导航等噪音，生成适合入库的 Markdown。
+  description_en: Cleans webpage bodies by removing ads and navigation clutter, producing Markdown ready for knowledge ingestion.
+  sources:
+  - claude-obsidian
+- id: agent-architecture--12-5--361
+  skills:
+  - think
+  group: 10 原则思考循环
+  group_en: 10-principle thinking loop
+  category: agent-architecture
+  subcategory: 12-5
+  chain: false
+  description: 引导 Claude 对复杂问题进行观察、倾听、第一性原理分析、连接与反思，形成更稳健的决策或输出。
+  description_en: Guides Claude through a structured reflection loop for complex, ambiguous, or high-stakes problems.
+  sources:
+  - claude-obsidian
