@@ -1,0 +1,1421 @@
+{
+  "generated_at": "2026-06-10T13:47:42+00:00",
+  "date": "2026-06-10",
+  "proposed_count": 3,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 50,
+      "blocklisted": 6,
+      "seen_recently": 47,
+      "truncated": 246,
+      "skill_name_dup": 19,
+      "not_a_collection": 1,
+      "no_skill_files": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "Egonex-AI/Understand-Anything",
+        "reason": "⚠ 疑似 vendored 副本（仍提交待人审）：8/8 个 skill 名已在目录——understand-chat, understand-dashboard, understand-diff, understand-domain, understand-explain, understand-knowledge…；建议人审核是否整仓拒/blocklist"
+      },
+      {
+        "full_name": "topoteretes/cognee",
+        "reason": "非正经集合：该仓库虽主打 AI memory 平台，但本次发现的是 examples/demos 下的两个极小示例 skill，更像演示/教程素材而非值得收录的正式 skill 集合。"
+      },
+      {
+        "full_name": "Mr-xn/Penetration_Testing_POC",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "ThinkInAIXYZ/deepchat",
+        "reason": "⚠ 疑似 vendored 副本（仍提交待人审）：10/19 个 skill 名已在目录——algorithmic-art, doc-coauthoring, docx, frontend-design, mcp-builder, pdf…；建议人审核是否整仓拒/blocklist"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "understand-chat",
+        "understand-dashboard"
+      ],
+      "group": "项目知识图谱工具集",
+      "group_en": "Project knowledge graph toolkit",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "启动 Web 仪表盘，帮助 agent 可视化和浏览代码知识图谱。",
+      "description_en": "Lets an agent answer project questions by locating concepts and relationships in a code knowledge graph.",
+      "sources": [
+        "Egonex-AI/Understand-Anything"
+      ]
+    },
+    {
+      "skills": [
+        "understand-diff",
+        "understand-domain"
+      ],
+      "group": "知识图谱驱动的代码理解工作流",
+      "group_en": "Knowledge-Graph-Driven Code Understanding Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": true,
+      "description": "从代码库抽取业务域、流程和步骤，生成可交互知识图谱。",
+      "description_en": "Extract business domains, flows, and steps from a codebase into an interactive knowledge graph.",
+      "sources": [
+        "Egonex-AI/Understand-Anything"
+      ]
+    },
+    {
+      "skills": [
+        "understand-explain"
+      ],
+      "group": "项目知识图谱",
+      "group_en": "Project Knowledge Graph",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "基于知识图谱深入解释指定文件、函数或模块。",
+      "description_en": "Deeply explains a specified file, function, or module using the project knowledge graph.",
+      "sources": [
+        "Egonex-AI/Understand-Anything"
+      ]
+    },
+    {
+      "skills": [
+        "understand-knowledge"
+      ],
+      "group": "LLM Wiki 知识图谱",
+      "group_en": "LLM Wiki Knowledge Graph",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "解析 Karpathy 风格 LLM wiki，抽取实体关系并生成知识图谱看板。",
+      "description_en": "Analyzes Karpathy-style LLM wikis, extracting entities and relationships into an interactive knowledge graph.",
+      "sources": [
+        "Egonex-AI/Understand-Anything"
+      ]
+    },
+    {
+      "skills": [
+        "understand-onboard",
+        "understand"
+      ],
+      "group": "代码库知识图谱到入职指南",
+      "group_en": "From codebase graph to onboarding guide",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": true,
+      "description": "把代码库分析成可交互知识图谱，便于理解架构和关系。",
+      "description_en": "Turns a codebase into an interactive knowledge graph for architecture exploration.",
+      "sources": [
+        "Egonex-AI/Understand-Anything"
+      ]
+    },
+    {
+      "skills": [
+        "autoresearch",
+        "canvas"
+      ],
+      "group": "Obsidian 知识库采集工作流",
+      "group_en": "Obsidian knowledge capture workflow",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": true,
+      "description": "维护 Obsidian Canvas 画布，自动排版图片、PDF 与知识卡片。",
+      "description_en": "Runs iterative web research and files synthesized findings into the Obsidian wiki.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "defuddle"
+      ],
+      "group": "网页内容清洗入库",
+      "group_en": "Web Content Cleaning for Ingestion",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "清理网页正文，去除广告导航等噪音，生成适合入库的 Markdown。",
+      "description_en": "Cleans webpage bodies by removing ads and navigation clutter, producing Markdown ready for knowledge ingestion.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "obsidian-bases"
+      ],
+      "group": "Obsidian Bases 数据库视图",
+      "group_en": "Obsidian Bases Database Views",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "管理 Obsidian Bases 的 YAML 视图，支持筛选、公式、卡片/表格列表。",
+      "description_en": "Creates and edits Obsidian Bases YAML views, including filters, formulas, cards, tables, and lists.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "obsidian-markdown"
+      ],
+      "group": "Obsidian Markdown 语法参考",
+      "group_en": "Obsidian Markdown Syntax Reference",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "提供 Obsidian 语法参考，帮助 Agent 正确编写维基链接、嵌入和属性。",
+      "description_en": "Provides an Obsidian syntax reference so agents can write wikilinks, embeds, properties, and callouts correctly.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "save"
+      ],
+      "group": "Obsidian 会话归档记忆",
+      "group_en": "Obsidian Session Archive Memory",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "把当前对话和洞察归档为结构化 Obsidian 笔记，并维护索引与缓存。",
+      "description_en": "Archives the current conversation or insight as a structured Obsidian note and updates indexes and caches.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "think"
+      ],
+      "group": "10 原则思考循环",
+      "group_en": "Ten-Principle Thinking Loop",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "引导 Claude 对复杂问题进行观察、倾听、第一性原理分析、连接与反思，形成更稳健的决策或输出。",
+      "description_en": "Guides Claude through a structured reflection loop for complex, ambiguous, or high-stakes problems.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "wiki-cli"
+      ],
+      "group": "Obsidian 本地笔记通道",
+      "group_en": "Obsidian Vault Transport",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "封装 Obsidian CLI，让 Claude 在本地 vault 中读取、写入、搜索和修改 Markdown 笔记。",
+      "description_en": "Wraps the Obsidian CLI so Claude can read, write, search, and update notes in a local vault.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "wiki-fold",
+        "wiki-ingest"
+      ],
+      "group": "Obsidian 第二大脑知识图谱",
+      "group_en": "Obsidian second-brain knowledge graph",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "把文件、URL 或批量来源写入 Obsidian wiki，抽取实体概念并建立维基链接和记录。",
+      "description_en": "Ingests files, URLs, or batches into an Obsidian wiki by extracting entities, updating notes, and logging changes.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "wiki-lint"
+      ],
+      "group": "Obsidian 知识库维护",
+      "group_en": "Obsidian Knowledge Base Maintenance",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "检查 Obsidian 知识库中的孤立页面、死链、元数据缺口，并生成维护报告。",
+      "description_en": "Audits an Obsidian vault for orphaned notes, broken links, stale claims, metadata gaps, and produces maintenance reports.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "wiki-mode"
+      ],
+      "group": "Vault 方法论模式配置",
+      "group_en": "Vault Methodology Mode Configuration",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "为 Compound Vault 设置 LYT、PARA、Zettelkasten 等组织模式，供入库流程参考。",
+      "description_en": "Configures the vault's organizing methodology—LYT, PARA, Zettelkasten, or Generic—so ingest skills file notes consistently.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "wiki-query",
+        "wiki-retrieve"
+      ],
+      "group": "Obsidian 知识库检索问答",
+      "group_en": "Obsidian vault retrieval and Q&A",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": true,
+      "description": "让 Claude 查询 Obsidian 知识库，综合答案并回写优质页面。",
+      "description_en": "Lets Claude query the Obsidian vault, synthesize cited answers, and save strong responses back as notes.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "wiki"
+      ],
+      "group": "Obsidian 持久第二大脑",
+      "group_en": "Obsidian Persistent Second Brain",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "帮 Claude 在 Obsidian 中建立持久 wiki，整理、引用并持续积累知识。",
+      "description_en": "Helps Claude create and maintain a persistent Obsidian wiki for organizing, linking, and compounding knowledge.",
+      "sources": [
+        "AgriciDaniel/claude-obsidian"
+      ]
+    },
+    {
+      "skills": [
+        "deepchat-data-import"
+      ],
+      "group": "DeepChat 数据导入与迁移",
+      "group_en": "DeepChat Data Import & Migration",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 安全读取、导入和迁移 DeepChat 本地数据库、设置与会话数据。",
+      "description_en": "Helps an agent safely inspect, import, and migrate DeepChat's local data stores and settings.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "deepchat-release"
+      ],
+      "group": "DeepChat 发布流程",
+      "group_en": "DeepChat Release Workflow",
+      "category": "product-management",
+      "subcategory": "3-10",
+      "chain": false,
+      "description": "指导 agent 按 DeepChat 仓库流程准备版本、更新发布说明、分支和打标签。",
+      "description_en": "Guides an agent through DeepChat release prep, changelog updates, release branching, tagging, and publishing.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "deepchat-sdd"
+      ],
+      "group": "DeepChat SDD 工作流",
+      "group_en": "DeepChat SDD Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "让 agent 在修改 DeepChat 前先建立规范、计划与任务，并澄清问题后实施验证。",
+      "description_en": "Helps the agent follow a DeepChat SDD workflow: define specs, plans, tasks, clarify blockers, then implement and validate.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "cua-driver"
+      ],
+      "group": "Computer Use macOS 自动化",
+      "group_en": "Computer Use macOS Automation",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "让 agent 通过 Computer Use MCP 工具识别窗口、操作控件，自动化 macOS 应用任务。",
+      "description_en": "Enables the agent to automate macOS GUI workflows through DeepChat's Computer Use MCP tools.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "feishu-tools"
+      ],
+      "group": "飞书/Lark 工作区集成",
+      "group_en": "Feishu/Lark Workspace Integration",
+      "category": "comms-integration",
+      "subcategory": "9-5",
+      "chain": false,
+      "description": "通过 MCP 工具读写整理飞书文档、表格和知识内容。",
+      "description_en": "Use MCP tools to read, edit, and organize Feishu/Lark docs, sheets, and workspace content.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "algorithmic-art"
+      ],
+      "group": "p5.js 算法艺术生成",
+      "group_en": "p5.js Algorithmic Art Generation",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "用 p5.js 生成带随机种子和参数探索的算法艺术作品。",
+      "description_en": "Generate original algorithmic art with p5.js, seeded randomness, and interactive parameter exploration.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "code-review"
+      ],
+      "group": "代码审查助手",
+      "group_en": "Code Review Assistant",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "审查代码质量、安全与性能，并给出分级问题和改进建议。",
+      "description_en": "Reviews code quality, security, and performance, then reports prioritized issues with improvement suggestions.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "deepchat-settings"
+      ],
+      "group": "DeepChat 应用设置",
+      "group_en": "DeepChat App Settings",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "在用户明确要求时，安全修改 DeepChat 的主题、语言、字体等应用设置。",
+      "description_en": "Safely changes DeepChat app settings such as theme, language, and font size when explicitly requested.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "doc-coauthoring"
+      ],
+      "group": "协作写文档 / 语法 / 文风审查",
+      "group_en": "Collaborative writing / grammar and style review",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "引导用户通过澄清、结构化打磨和读者测试完成文档共写。",
+      "description_en": "Guides users through clarification, structured refinement, and reader testing to co-author documents.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "docx"
+      ],
+      "group": "Office 文档四件套 / PDF 重型 API",
+      "group_en": "Office document toolkit / PDF-heavy APIs",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "支持 Word .docx 的创建、编辑、修订、批注、格式保留与文本提取。",
+      "description_en": "Creates, edits, analyzes, and redlines Word .docx files while preserving structure and comments.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "frontend-design"
+      ],
+      "group": "跨平台 UI/UX / Vercel 三件套 / 前端美学",
+      "group_en": "Cross-platform UI/UX / Vercel stack / frontend aesthetics",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "指导 agent 设计并实现有审美辨识度、生产级的网页界面、组件和应用。",
+      "description_en": "Guides the agent in designing and implementing polished, distinctive production-grade web UIs.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "git-commit"
+      ],
+      "group": "Conventional Commit 提交信息",
+      "group_en": "Conventional Commit messages",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "帮助 agent 查看暂存差异并生成符合 Conventional Commits 规范的提交信息。",
+      "description_en": "Helps the agent inspect staged diffs and craft messages that follow the Conventional Commits standard.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "infographic-syntax-creator"
+      ],
+      "group": "AntV Infographic DSL 生成",
+      "group_en": "AntV Infographic DSL generation",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "将用户内容整理成 AntV Infographic DSL，选择模板并输出规范代码块。",
+      "description_en": "Turns user content into AntV Infographic DSL, selects a template, and emits a clean code block.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "mcp-builder"
+      ],
+      "group": "MCP Server 开发",
+      "group_en": "MCP server development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导构建高质量 MCP Server，把外部 API 或服务封装为 LLM 工具。",
+      "description_en": "Guides the creation of high-quality MCP servers that expose external APIs or services as LLM tools.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "pdf"
+      ],
+      "group": "PDF 重型 API",
+      "group_en": "PDF Heavy API Toolkit",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮 Agent 提取/生成/合并 PDF，处理表格和表单。",
+      "description_en": "Helps agents extract, generate, merge, and process PDFs, including tables and forms.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "pptx",
+        "xlsx"
+      ],
+      "group": "Office 文档四件套",
+      "group_en": "Office Document Suite",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 Agent 创建、读取、修改 Excel/CSV/TSV 文件，处理公式、格式、模板保留、数据分析和可视化。",
+      "description_en": "Helps agents create, read, edit, and analyze Excel, CSV, and TSV files while preserving formulas, formatting, and existing templates.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "skill-creator"
+      ],
+      "group": "Skill 创建指南",
+      "group_en": "Skill creation guide",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "指导 agent 创建或更新 Claude Skill，组织领域知识、工作流和工具集成。",
+      "description_en": "Guides agents in creating or updating Claude skills with focused domain knowledge, workflows, and tool integrations.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    },
+    {
+      "skills": [
+        "web-artifacts-builder"
+      ],
+      "group": "多组件 Claude artifact 构建",
+      "group_en": "Multi-component Claude artifact builder",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "用 React、Tailwind 与 shadcn/ui 构建并打包复杂 Claude HTML artifact。",
+      "description_en": "Builds and bundles complex Claude HTML artifacts using React, Tailwind, and shadcn/ui.",
+      "sources": [
+        "ThinkInAIXYZ/deepchat"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "Egonex-AI",
+        "repo": "Understand-Anything",
+        "full_name": "Egonex-AI/Understand-Anything",
+        "url": "https://github.com/Egonex-AI/Understand-Anything",
+        "stars": 56351,
+        "pushed_at": "2026-06-09",
+        "default_branch": "main",
+        "github_description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
+        "topics": [
+          "antigravity-skills",
+          "business-knowledge",
+          "claude-code",
+          "claude-skills",
+          "codebase-analysis",
+          "codex",
+          "codex-skills",
+          "developer-tools-ai-agent",
+          "gemini-cli-skills",
+          "karpathy-llm-wiki",
+          "knowledge-base",
+          "knowledge-graph",
+          "memory",
+          "opencode-skills",
+          "pi-agent",
+          "understandcode",
+          "vibe-coding"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "understand-chat",
+          "path": "understand-anything-plugin/skills/understand-chat/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱工具集",
+          "group_en": "Project knowledge graph toolkit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "让 agent 基于代码知识图谱定位概念、关系并回答项目问题。",
+          "description_en": "Lets an agent answer project questions by locating concepts and relationships in a code knowledge graph.",
+          "what": "基于 .understand-anything/knowledge-graph.json 进行代码库问答。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "understand-anything · 组「项目知识图谱工具集」"
+        },
+        {
+          "name": "understand-dashboard",
+          "path": "understand-anything-plugin/skills/understand-dashboard/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱工具集",
+          "group_en": "Project knowledge graph toolkit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "启动 Web 仪表盘，帮助 agent 可视化和浏览代码知识图谱。",
+          "description_en": "Launches a web dashboard for visualizing and browsing a codebase knowledge graph.",
+          "what": "打开 Understand Anything dashboard 查看项目知识图谱。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "understand-anything · 组「项目知识图谱工具集」"
+        },
+        {
+          "name": "understand-diff",
+          "path": "understand-anything-plugin/skills/understand-diff/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Diff/PR 变更影响分析",
+          "group_en": "Diff and PR Impact Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于项目知识图谱分析代码变更、影响范围与潜在风险。",
+          "description_en": "Analyze code changes against a project knowledge graph to identify impact and risk.",
+          "what": "用知识图谱审查 diff 或 PR 的影响范围。",
+          "chain": true,
+          "chain_group": "知识图谱驱动的代码理解工作流",
+          "chain_group_en": "Knowledge-Graph-Driven Code Understanding Workflow",
+          "dup_catalog": "understand-anything · 组「项目知识图谱工具集」"
+        },
+        {
+          "name": "understand-domain",
+          "path": "understand-anything-plugin/skills/understand-domain/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱",
+          "group_en": "Project Knowledge Graph",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "从代码库抽取业务域、流程和步骤，生成可交互知识图谱。",
+          "description_en": "Extract business domains, flows, and steps from a codebase into an interactive knowledge graph.",
+          "what": "把代码库中的业务域知识整理成可探索图谱。",
+          "chain": true,
+          "chain_group": "知识图谱驱动的代码理解工作流",
+          "chain_group_en": "Knowledge-Graph-Driven Code Understanding Workflow",
+          "dup_catalog": "understand-anything · 组「项目知识图谱工具集」"
+        },
+        {
+          "name": "understand-explain",
+          "path": "understand-anything-plugin/skills/understand-explain/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱",
+          "group_en": "Project Knowledge Graph",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "基于知识图谱深入解释指定文件、函数或模块。",
+          "description_en": "Deeply explains a specified file, function, or module using the project knowledge graph.",
+          "what": "Explains code components through graph context.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "understand-anything · 组「项目知识图谱工具集」"
+        },
+        {
+          "name": "understand-knowledge",
+          "path": "understand-anything-plugin/skills/understand-knowledge/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "LLM Wiki 知识图谱",
+          "group_en": "LLM Wiki Knowledge Graph",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "解析 Karpathy 风格 LLM wiki，抽取实体关系并生成知识图谱看板。",
+          "description_en": "Analyzes Karpathy-style LLM wikis, extracting entities and relationships into an interactive knowledge graph.",
+          "what": "Builds an interactive graph from a Karpathy-pattern LLM wiki.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "understand-anything · 组「项目知识图谱工具集」"
+        },
+        {
+          "name": "understand-onboard",
+          "path": "understand-anything-plugin/skills/understand-onboard/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "知识图谱驱动的入职流程",
+          "group_en": "Knowledge-graph-driven onboarding",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "基于项目知识图谱为新成员生成入职指南。",
+          "description_en": "Creates onboarding guides from a project knowledge graph.",
+          "what": "从知识图谱抽取项目结构、职责和学习路径，生成新成员入职材料。",
+          "chain": true,
+          "chain_group": "代码库知识图谱到入职指南",
+          "chain_group_en": "From codebase graph to onboarding guide",
+          "dup_catalog": "understand-anything · 组「知识图谱驱动的入职流程」"
+        },
+        {
+          "name": "understand",
+          "path": "understand-anything-plugin/skills/understand/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱工具集",
+          "group_en": "Project knowledge graph toolkit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "把代码库分析成可交互知识图谱，便于理解架构和关系。",
+          "description_en": "Turns a codebase into an interactive knowledge graph for architecture exploration.",
+          "what": "扫描代码、依赖、模块和关系，输出可查询的项目知识图谱。",
+          "chain": true,
+          "chain_group": "代码库知识图谱到入职指南",
+          "chain_group_en": "From codebase graph to onboarding guide",
+          "dup_catalog": "understand-anything · 组「知识图谱驱动的入职流程」"
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "AgriciDaniel",
+        "repo": "claude-obsidian",
+        "full_name": "AgriciDaniel/claude-obsidian",
+        "url": "https://github.com/AgriciDaniel/claude-obsidian",
+        "stars": 6485,
+        "pushed_at": "2026-05-28",
+        "default_branch": "main",
+        "github_description": "Self-organizing AI second brain for Obsidian + Claude Code. Drop any source and Claude reads, links, and files it into one connected knowledge graph of plain Markdown you own. AI note-taking, personal knowledge management (PKM), and an open-source Notion alternative. Based on Karpathy's LLM Wiki pattern.",
+        "topics": [
+          "agent-skills",
+          "ai-note-taking",
+          "ai-second-brain",
+          "claude-code",
+          "claude-code-skill",
+          "claude-memory",
+          "claude-plugin",
+          "karpathy-llm-wiki",
+          "knowledge-graph",
+          "knowledge-management",
+          "note-taking",
+          "notion-alternative",
+          "obsidian",
+          "obsidian-ai",
+          "obsidian-plugin",
+          "obsidian-second-brain",
+          "open-source",
+          "personal-knowledge-management",
+          "pkm",
+          "second-brain"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "autoresearch",
+          "path": "skills/autoresearch/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱工具集",
+          "group_en": "Project knowledge graph toolkit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "自动循环搜索、综合资料并归档到维基知识库。",
+          "description_en": "Runs iterative web research and files synthesized findings into the Obsidian wiki.",
+          "what": "Autonomous research loop that searches sources, synthesizes findings, and writes structured wiki pages.",
+          "chain": true,
+          "chain_group": "Obsidian 知识库采集工作流",
+          "chain_group_en": "Obsidian knowledge capture workflow",
+          "dup_catalog": "ai-research-skills · 组「自主研究编排」"
+        },
+        {
+          "name": "canvas",
+          "path": "skills/canvas/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "项目知识图谱工具集",
+          "group_en": "Project knowledge graph toolkit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "维护 Obsidian Canvas 画布，自动排版图片、PDF 与知识卡片。",
+          "description_en": "Creates and updates Obsidian Canvas boards with positioned visual references.",
+          "what": "Adds images, PDFs, text cards, and wiki pages to Obsidian Canvas files with automatic placement.",
+          "chain": true,
+          "chain_group": "Obsidian 知识库采集工作流",
+          "chain_group_en": "Obsidian knowledge capture workflow"
+        },
+        {
+          "name": "defuddle",
+          "path": "skills/defuddle/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "网页内容清洗入库",
+          "group_en": "Web Content Cleaning for Ingestion",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "清理网页正文，去除广告导航等噪音，生成适合入库的 Markdown。",
+          "description_en": "Cleans webpage bodies by removing ads and navigation clutter, producing Markdown ready for knowledge ingestion.",
+          "what": "将 URL 内容清洗为干净 Markdown，减少后续处理 token。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "obsidian-bases",
+          "path": "skills/obsidian-bases/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "Obsidian Bases 数据库视图",
+          "group_en": "Obsidian Bases Database Views",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "管理 Obsidian Bases 的 YAML 视图，支持筛选、公式、卡片/表格列表。",
+          "description_en": "Creates and edits Obsidian Bases YAML views, including filters, formulas, cards, tables, and lists.",
+          "what": "用 .base 文件为笔记库创建动态数据库视图。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "obsidian-markdown",
+          "path": "skills/obsidian-markdown/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "Obsidian Markdown 语法参考",
+          "group_en": "Obsidian Markdown Syntax Reference",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 Obsidian 语法参考，帮助 Agent 正确编写维基链接、嵌入和属性。",
+          "description_en": "Provides an Obsidian syntax reference so agents can write wikilinks, embeds, properties, and callouts correctly.",
+          "what": "Obsidian 笔记语法速查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "save",
+          "path": "skills/save/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "Obsidian 会话归档记忆",
+          "group_en": "Obsidian Session Archive Memory",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把当前对话和洞察归档为结构化 Obsidian 笔记，并维护索引与缓存。",
+          "description_en": "Archives the current conversation or insight as a structured Obsidian note and updates indexes and caches.",
+          "what": "会话知识入库。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "think",
+          "path": "skills/think/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "10 原则思考循环",
+          "group_en": "Ten-Principle Thinking Loop",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导 Claude 对复杂问题进行观察、倾听、第一性原理分析、连接与反思，形成更稳健的决策或输出。",
+          "description_en": "Guides Claude through a structured reflection loop for complex, ambiguous, or high-stakes problems.",
+          "what": "A meta-skill for disciplined reasoning before producing decisions or outputs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wiki-cli",
+          "path": "skills/wiki-cli/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "Obsidian 本地笔记通道",
+          "group_en": "Obsidian Vault Transport",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "封装 Obsidian CLI，让 Claude 在本地 vault 中读取、写入、搜索和修改 Markdown 笔记。",
+          "description_en": "Wraps the Obsidian CLI so Claude can read, write, search, and update notes in a local vault.",
+          "what": "Provides the local transport layer for mutating an Obsidian knowledge vault.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wiki-fold",
+          "path": "skills/wiki-fold/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "Obsidian 第二大脑知识图谱",
+          "group_en": "Obsidian second-brain knowledge graph",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将 Obsidian wiki 日志分批抽取汇总为折叠元页，链接子条目并保持结果可追溯。",
+          "description_en": "Summarizes batches of Obsidian wiki log entries into traceable fold pages that link back to their child notes.",
+          "what": "Rolls up recent wiki/log.md entries into deterministic, extractive meta-pages.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wiki-ingest",
+          "path": "skills/wiki-ingest/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "Obsidian 第二大脑知识图谱",
+          "group_en": "Obsidian second-brain knowledge graph",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把文件、URL 或批量来源写入 Obsidian wiki，抽取实体概念并建立维基链接和记录。",
+          "description_en": "Ingests files, URLs, or batches into an Obsidian wiki by extracting entities, updating notes, and logging changes.",
+          "what": "Turns sources into Obsidian notes with wikilinks and operation logs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wiki-lint",
+          "path": "skills/wiki-lint/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "Obsidian 知识库维护",
+          "group_en": "Obsidian Knowledge Base Maintenance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "检查 Obsidian 知识库中的孤立页面、死链、元数据缺口，并生成维护报告。",
+          "description_en": "Audits an Obsidian vault for orphaned notes, broken links, stale claims, metadata gaps, and produces maintenance reports.",
+          "what": "Run periodic wiki health checks and emit lint reports, dashboards, or canvas maps.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wiki-mode",
+          "path": "skills/wiki-mode/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "Vault 方法论模式配置",
+          "group_en": "Vault Methodology Mode Configuration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Compound Vault 设置 LYT、PARA、Zettelkasten 等组织模式，供入库流程参考。",
+          "description_en": "Configures the vault's organizing methodology—LYT, PARA, Zettelkasten, or Generic—so ingest skills file notes consistently.",
+          "what": "Declare the vault's methodology mode for downstream filing decisions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wiki-query",
+          "path": "skills/wiki-query/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "Obsidian 第二大脑 / 复合知识库",
+          "group_en": "Obsidian Second Brain / Compound Vault",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 Claude 查询 Obsidian 知识库，综合答案并回写优质页面。",
+          "description_en": "Lets Claude query the Obsidian vault, synthesize cited answers, and save strong responses back as notes.",
+          "what": "从 Obsidian wiki vault 中回答问题，并把好答案沉淀为新页面。",
+          "chain": true,
+          "chain_group": "Obsidian 知识库检索问答",
+          "chain_group_en": "Obsidian vault retrieval and Q&A"
+        },
+        {
+          "name": "wiki-retrieve",
+          "path": "skills/wiki-retrieve/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "Obsidian 第二大脑 / 复合知识库",
+          "group_en": "Obsidian Second Brain / Compound Vault",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Obsidian 知识库提供混合检索、重排与上下文片段召回能力。",
+          "description_en": "Adds hybrid chunk-level retrieval, contextual prefixes, BM25, and reranking for the vault.",
+          "what": "为 wiki-query 提供更细粒度、更可靠的片段召回与排序。",
+          "chain": true,
+          "chain_group": "Obsidian 知识库检索问答",
+          "chain_group_en": "Obsidian vault retrieval and Q&A"
+        },
+        {
+          "name": "wiki",
+          "path": "skills/wiki/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "Obsidian 持久第二大脑",
+          "group_en": "Obsidian Persistent Second Brain",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 Claude 在 Obsidian 中建立持久 wiki，整理、引用并持续积累知识。",
+          "description_en": "Helps Claude create and maintain a persistent Obsidian wiki for organizing, linking, and compounding knowledge.",
+          "what": "Builds and maintains a persistent, cross-referenced knowledge base inside an Obsidian vault.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "ThinkInAIXYZ",
+        "repo": "deepchat",
+        "full_name": "ThinkInAIXYZ/deepchat",
+        "url": "https://github.com/ThinkInAIXYZ/deepchat",
+        "stars": 5986,
+        "pushed_at": "2026-06-10",
+        "default_branch": "dev",
+        "github_description": "🐬DeepChat - A smart assistant that connects powerful AI to your personal world",
+        "topics": [
+          "agent",
+          "agent-skills",
+          "ai",
+          "ai-assistant",
+          "ai-sdk",
+          "chatgpt",
+          "claude",
+          "cross-platform",
+          "deepseek",
+          "electron",
+          "gemini",
+          "harness-design",
+          "hermes-agent",
+          "llm-client",
+          "mcp",
+          "mcp-client",
+          "openai-client",
+          "openclaw"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "deepchat-data-import",
+          "path": ".agents/skills/deepchat-data-import/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "DeepChat 数据导入与迁移",
+          "group_en": "DeepChat Data Import & Migration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 安全读取、导入和迁移 DeepChat 本地数据库、设置与会话数据。",
+          "description_en": "Helps an agent safely inspect, import, and migrate DeepChat's local data stores and settings.",
+          "what": "帮助 agent 安全读取、导入和迁移 DeepChat 本地数据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deepchat-release",
+          "path": ".agents/skills/deepchat-release/SKILL.md",
+          "subcategory": "3-10",
+          "subcategory_title": "3.10 发布 / EOL / 沟通",
+          "category": "product-management",
+          "group": "DeepChat 发布流程",
+          "group_en": "DeepChat Release Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 按 DeepChat 仓库流程准备版本、更新发布说明、分支和打标签。",
+          "description_en": "Guides an agent through DeepChat release prep, changelog updates, release branching, tagging, and publishing.",
+          "what": "帮助 agent 按仓库流程准备并发布 DeepChat 版本。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deepchat-sdd",
+          "path": ".agents/skills/deepchat-sdd/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "DeepChat SDD 工作流",
+          "group_en": "DeepChat SDD Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 在修改 DeepChat 前先建立规范、计划与任务，并澄清问题后实施验证。",
+          "description_en": "Helps the agent follow a DeepChat SDD workflow: define specs, plans, tasks, clarify blockers, then implement and validate.",
+          "what": "Runs the DeepChat SDD process before source, config, docs, or architecture changes.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cua-driver",
+          "path": "plugins/cua/skills/cua-driver/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Computer Use macOS 自动化",
+          "group_en": "Computer Use macOS Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 通过 Computer Use MCP 工具识别窗口、操作控件，自动化 macOS 应用任务。",
+          "description_en": "Enables the agent to automate macOS GUI workflows through DeepChat's Computer Use MCP tools.",
+          "what": "Drives macOS app GUI automation through the CUA MCP toolset.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "feishu-tools",
+          "path": "plugins/feishu/skills/feishu-tools/SKILL.md",
+          "subcategory": "9-5",
+          "subcategory_title": "9.5 办公套件集成（Google Workspace 等）",
+          "category": "comms-integration",
+          "group": "飞书/Lark 工作区集成",
+          "group_en": "Feishu/Lark Workspace Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 MCP 工具读写整理飞书文档、表格和知识内容。",
+          "description_en": "Use MCP tools to read, edit, and organize Feishu/Lark docs, sheets, and workspace content.",
+          "what": "Feishu/Lark MCP tool surface for workspace document and spreadsheet operations.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "algorithmic-art",
+          "path": "resources/skills/algorithmic-art/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "p5.js 算法艺术生成",
+          "group_en": "p5.js Algorithmic Art Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 p5.js 生成带随机种子和参数探索的算法艺术作品。",
+          "description_en": "Generate original algorithmic art with p5.js, seeded randomness, and interactive parameter exploration.",
+          "what": "Creates p5.js-based generative art from algorithmic philosophy and user prompts.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic · 组「算法艺术」"
+        },
+        {
+          "name": "code-review",
+          "path": "resources/skills/code-review/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "代码审查助手",
+          "group_en": "Code Review Assistant",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审查代码质量、安全与性能，并给出分级问题和改进建议。",
+          "description_en": "Reviews code quality, security, and performance, then reports prioritized issues with improvement suggestions.",
+          "what": "提供代码审查的焦点、流程和输出格式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deepchat-settings",
+          "path": "resources/skills/deepchat-settings/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "DeepChat 应用设置",
+          "group_en": "DeepChat App Settings",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在用户明确要求时，安全修改 DeepChat 的主题、语言、字体等应用设置。",
+          "description_en": "Safely changes DeepChat app settings such as theme, language, and font size when explicitly requested.",
+          "what": "控制 DeepChat 应用设置工具的安全调用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "doc-coauthoring",
+          "path": "resources/skills/doc-coauthoring/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "协作写文档 / 语法 / 文风审查",
+          "group_en": "Collaborative writing / grammar and style review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导用户通过澄清、结构化打磨和读者测试完成文档共写。",
+          "description_en": "Guides users through clarification, structured refinement, and reader testing to co-author documents.",
+          "what": "结构化文档共写工作流，覆盖上下文收集、内容打磨和读者测试。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic · 组「协作写文档」"
+        },
+        {
+          "name": "docx",
+          "path": "resources/skills/docx/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套 / PDF 重型 API",
+          "group_en": "Office document toolkit / PDF-heavy APIs",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "支持 Word .docx 的创建、编辑、修订、批注、格式保留与文本提取。",
+          "description_en": "Creates, edits, analyzes, and redlines Word .docx files while preserving structure and comments.",
+          "what": "Word .docx 文档处理工作流，覆盖读写、修订、批注与提取。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        },
+        {
+          "name": "frontend-design",
+          "path": "resources/skills/frontend-design/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "跨平台 UI/UX / Vercel 三件套 / 前端美学",
+          "group_en": "Cross-platform UI/UX / Vercel stack / frontend aesthetics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 设计并实现有审美辨识度、生产级的网页界面、组件和应用。",
+          "description_en": "Guides the agent in designing and implementing polished, distinctive production-grade web UIs.",
+          "what": "构建高审美质量的前端界面与组件",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/oh-my-openagent · 组「前端美学」"
+        },
+        {
+          "name": "git-commit",
+          "path": "resources/skills/git-commit/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Conventional Commit 提交信息",
+          "group_en": "Conventional Commit messages",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 查看暂存差异并生成符合 Conventional Commits 规范的提交信息。",
+          "description_en": "Helps the agent inspect staged diffs and craft messages that follow the Conventional Commits standard.",
+          "what": "生成 Conventional Commit 风格提交信息",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "infographic-syntax-creator",
+          "path": "resources/skills/infographic-syntax-creator/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "AntV Infographic DSL 生成",
+          "group_en": "AntV Infographic DSL generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将用户内容整理成 AntV Infographic DSL，选择模板并输出规范代码块。",
+          "description_en": "Turns user content into AntV Infographic DSL, selects a template, and emits a clean code block.",
+          "what": "根据内容结构选择模板并生成 AntV Infographic 语法。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "mcp-builder",
+          "path": "resources/skills/mcp-builder/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "MCP Server 开发",
+          "group_en": "MCP server development",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导构建高质量 MCP Server，把外部 API 或服务封装为 LLM 工具。",
+          "description_en": "Guides the creation of high-quality MCP servers that expose external APIs or services as LLM tools.",
+          "what": "帮助设计并实现 MCP Server 工具集成。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic · 组「MCP Server 开发」"
+        },
+        {
+          "name": "pdf",
+          "path": "resources/skills/pdf/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "PDF 重型 API",
+          "group_en": "PDF Heavy API Toolkit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮 Agent 提取/生成/合并 PDF，处理表格和表单。",
+          "description_en": "Helps agents extract, generate, merge, and process PDFs, including tables and forms.",
+          "what": "PDF 文档处理技能，覆盖文本/表格提取、生成、合并拆分和表单处理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        },
+        {
+          "name": "pptx",
+          "path": "resources/skills/pptx/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office Document Suite",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮 Agent 读取、创建、编辑和分析 PPTX 演示文稿。",
+          "description_en": "Helps agents read, create, edit, and analyze PowerPoint presentations.",
+          "what": "PPTX 演示文稿技能，支持文本提取、布局、备注、评论和设计元素处理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        },
+        {
+          "name": "skill-creator",
+          "path": "resources/skills/skill-creator/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建指南",
+          "group_en": "Skill creation guide",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 创建或更新 Claude Skill，组织领域知识、工作流和工具集成。",
+          "description_en": "Guides agents in creating or updating Claude skills with focused domain knowledge, workflows, and tool integrations.",
+          "what": "帮助创建或改进 Claude Skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/Codex/superpowers/mattpocock · 组「Skill 创建器」"
+        },
+        {
+          "name": "web-artifacts-builder",
+          "path": "resources/skills/web-artifacts-builder/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "多组件 Claude artifact 构建",
+          "group_en": "Multi-component Claude artifact builder",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 React、Tailwind 与 shadcn/ui 构建并打包复杂 Claude HTML artifact。",
+          "description_en": "Builds and bundles complex Claude HTML artifacts using React, Tailwind, and shadcn/ui.",
+          "what": "帮助生成带状态、路由或组件库的复杂 Claude 前端 artifact。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic · 组「单文件 React HTML artifact」"
+        },
+        {
+          "name": "xlsx",
+          "path": "resources/skills/xlsx/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office document toolkit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 Agent 创建、读取、修改 Excel/CSV/TSV 文件，处理公式、格式、模板保留、数据分析和可视化。",
+          "description_en": "Helps agents create, read, edit, and analyze Excel, CSV, and TSV files while preserving formulas, formatting, and existing templates.",
+          "what": "A spreadsheet skill for creating, reading, editing, and analyzing Excel/CSV/TSV workbooks while preserving templates and formulas.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        }
+      ]
+    }
+  ]
+}
