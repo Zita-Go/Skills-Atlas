@@ -176,14 +176,16 @@ def main():
     n_subcats = sum(len(h['subsections']) for h in sections)
     n_unique = len({sk for s in skills for sk in s['skills']})
     n_chains = sum(1 for s in skills if s.get('chain'))
-    # Build id for analytics `ver` — git short SHA (deterministic per commit), else 'dev'.
-    import subprocess
-    try:
-        build_id = subprocess.check_output(
-            ['git', 'rev-parse', '--short', 'HEAD'], cwd=str(ROOT),
-            stderr=subprocess.DEVNULL).decode().strip()
-    except Exception:
-        build_id = 'dev'
+    # Build id for analytics `ver` — deterministic content hash of the data payload.
+    # NOT the git SHA: a commit can't contain its own SHA, and PR CI checks out a merge
+    # commit, so a git-SHA build_id makes the committed docs un-reproducible and breaks the
+    # "Re-render HTML to ensure parity" check on every data PR. Hashing the data instead is
+    # byte-identical locally and in CI, and still changes iff the catalog data changes —
+    # which is the meaningful version signal for this site.
+    import hashlib
+    build_id = hashlib.sha1(
+        json.dumps(data, ensure_ascii=False, sort_keys=True).encode('utf-8')
+    ).hexdigest()[:7]
     rendered = rendered.replace('{{BUILD_ID}}', build_id)
     for ph, val in {'{{N_REPOS}}': n_repos, '{{N_GROUPS}}': n_groups,
                     '{{N_CATS}}': n_cats, '{{N_SUBCATS}}': n_subcats,
