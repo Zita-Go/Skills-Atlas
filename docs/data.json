@@ -3901,6 +3901,87 @@
               "when_to_use": "新人要快速上手项目时",
               "when_to_use_en": "When onboarding a newcomer to a project",
               "py": "zhi shi tu pu qu dong de ru zhi liu cheng  understand understand-onboard  jian zhi shi tu pu zai ju tu sheng cheng xin ren ru zhi zhi nan"
+            },
+            {
+              "skills": [
+                "wiki",
+                "wiki-cli",
+                "wiki-mode",
+                "wiki-ingest",
+                "save",
+                "autoresearch",
+                "wiki-query",
+                "wiki-retrieve",
+                "wiki-lint",
+                "wiki-fold"
+              ],
+              "group": "Obsidian 第二大脑（wiki 知识库工作流）",
+              "group_en": "Obsidian second brain (wiki knowledge-base workflow)",
+              "chain": true,
+              "description": "AgriciDaniel/claude-obsidian 的 Obsidian 第二大脑工作流：wiki（建持久知识库 + 路由）→ wiki-ingest（文件/URL 入库、抽实体建维基链）· save（对话归档成结构化笔记）· autoresearch（自动搜索综合并归档）→ wiki-query（查询综合回写）· wiki-retrieve（混合检索/重排/片段召回）→ wiki-lint（查孤立页/死链/元数据）· wiki-fold（日志折叠汇总）；wiki-cli 为共享 transport 底座，wiki-mode 配 LYT/PARA/Zettelkasten 组织模式。",
+              "description_en": "Obsidian second-brain workflow: wiki (build persistent vault + route) -> wiki-ingest (ingest files/URLs, extract entities + wiki-links) / save (archive chats into structured notes) / autoresearch (auto search, synthesize, archive) -> wiki-query (query + write back) / wiki-retrieve (hybrid retrieval/rerank/snippets) -> wiki-lint (orphans/dead-links/metadata) / wiki-fold (fold logs); wiki-cli is the shared transport, wiki-mode configures LYT/PARA/Zettelkasten.",
+              "sources": [
+                {
+                  "name": "claude-obsidian",
+                  "url": "https://github.com/AgriciDaniel/claude-obsidian",
+                  "stars": 6485,
+                  "last_commit": "2026-05-28",
+                  "type": "multi-skill-suite",
+                  "author": "AgriciDaniel",
+                  "repo": "claude-obsidian",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add AgriciDaniel/claude-obsidian",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/AgriciDaniel/claude-obsidian ~/.claude/skills/claude-obsidian"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Obsidian  di er da nao （wiki  zhi shi ku gong zuo liu ） wiki wiki-cli wiki-mode wiki-ingest save autoresearch wiki-query wiki-retrieve wiki-lint wiki-fold "
+            },
+            {
+              "skills": [
+                "canvas",
+                "obsidian-bases",
+                "obsidian-markdown"
+              ],
+              "group": "Obsidian 笔记格式 / 结构工具",
+              "group_en": "Obsidian note format / structure tools",
+              "chain": false,
+              "description": "Obsidian 笔记格式与结构工具：canvas（维护 Obsidian Canvas 画布，自动排版图片、PDF 与知识卡片。）、obsidian-bases（管理 Obsidian Bases 的 YAML 视图，支持筛选、公式、卡片/表格列表。）、obsidian-markdown（提供 Obsidian 语法参考，帮助 Agent 正确编写维基链接、嵌入和属性。）。",
+              "description_en": "Obsidian note format/structure tools: canvas (auto-layout Canvas boards), obsidian-bases (Bases YAML views), obsidian-markdown (Obsidian syntax reference).",
+              "sources": [
+                {
+                  "name": "claude-obsidian",
+                  "url": "https://github.com/AgriciDaniel/claude-obsidian",
+                  "stars": 6485,
+                  "last_commit": "2026-05-28",
+                  "type": "multi-skill-suite",
+                  "author": "AgriciDaniel",
+                  "repo": "claude-obsidian",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add AgriciDaniel/claude-obsidian",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/AgriciDaniel/claude-obsidian ~/.claude/skills/claude-obsidian"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Obsidian  bi ji ge shi  /  jie gou gong ju  canvas obsidian-bases obsidian-markdown "
             }
           ]
         },
@@ -9592,6 +9673,41 @@
               "when_to_use": "要把网页存成 Markdown 时",
               "when_to_use_en": "When saving a web page as Markdown",
               "py": "URL  zhuan  Markdown  zhua qu  baoyu-url-to-markdown  zhua wang ye zhuan gan jing  Markdown"
+            },
+            {
+              "skills": [
+                "defuddle"
+              ],
+              "group": "网页内容清洗入库",
+              "group_en": "Web content cleaning for ingestion",
+              "chain": false,
+              "description": "清理网页正文，去除广告导航等噪音，生成适合入库的 Markdown。",
+              "description_en": "Cleans webpage bodies by removing ads and navigation clutter, producing Markdown ready for knowledge ingestion.",
+              "sources": [
+                {
+                  "name": "claude-obsidian",
+                  "url": "https://github.com/AgriciDaniel/claude-obsidian",
+                  "stars": 6485,
+                  "last_commit": "2026-05-28",
+                  "type": "multi-skill-suite",
+                  "author": "AgriciDaniel",
+                  "repo": "claude-obsidian",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add AgriciDaniel/claude-obsidian",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/AgriciDaniel/claude-obsidian ~/.claude/skills/claude-obsidian"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "wang ye nei rong qing xi ru ku  defuddle "
             }
           ]
         },
@@ -13044,6 +13160,41 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "Agent  zhi liang zi ping  /  cuo wu hui fu  quality-monitor error-recovery "
+            },
+            {
+              "skills": [
+                "think"
+              ],
+              "group": "10 原则思考循环",
+              "group_en": "10-principle thinking loop",
+              "chain": false,
+              "description": "引导 Claude 对复杂问题进行观察、倾听、第一性原理分析、连接与反思，形成更稳健的决策或输出。",
+              "description_en": "Guides Claude through a structured reflection loop for complex, ambiguous, or high-stakes problems.",
+              "sources": [
+                {
+                  "name": "claude-obsidian",
+                  "url": "https://github.com/AgriciDaniel/claude-obsidian",
+                  "stars": 6485,
+                  "last_commit": "2026-05-28",
+                  "type": "multi-skill-suite",
+                  "author": "AgriciDaniel",
+                  "repo": "claude-obsidian",
+                  "default_branch": "main",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add AgriciDaniel/claude-obsidian",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/AgriciDaniel/claude-obsidian ~/.claude/skills/claude-obsidian"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "10  yuan ze si kao xun huan  think "
             }
           ]
         },
@@ -20277,6 +20428,26 @@
         "command": "npx skills add aden-hive/hive",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/aden-hive/hive ~/.claude/skills/hive"
+      },
+      "skill_docs": null,
+      "skill_licenses": null
+    },
+    "claude-obsidian": {
+      "url": "https://github.com/AgriciDaniel/claude-obsidian",
+      "description": "Self-organizing AI second brain for Obsidian + Claude Code. Drop any source and Claude reads, links, and files it into o",
+      "description_en": null,
+      "stars": 6485,
+      "last_commit": "2026-05-28",
+      "type": "multi-skill-suite",
+      "author": "AgriciDaniel",
+      "repo": "claude-obsidian",
+      "default_branch": "main",
+      "license": null,
+      "doc_path": null,
+      "install": {
+        "command": "npx skills add AgriciDaniel/claude-obsidian",
+        "kind": "multi-skill-suite",
+        "alt": "git clone https://github.com/AgriciDaniel/claude-obsidian ~/.claude/skills/claude-obsidian"
       },
       "skill_docs": null,
       "skill_licenses": null
