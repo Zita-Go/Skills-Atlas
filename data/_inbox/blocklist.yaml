@@ -27,3 +27,11 @@
   repo: kubesphere
   reason: Kubernetes 平台产品；skill 全是操作自家组件(FrontendExtension/devops/whizard 等)的产品内部运维，非通用 skill 集合，且多为空壳
   added_at: 2026-06-08
+- author: Egonex-AI
+  repo: Understand-Anything
+  reason: 已收录源 understand-anything 的同一上游原仓(fork:false/parent:null，56k★ 权威原仓)；8 个 skill 全已在目录，重复
+  added_at: 2026-06-10
+- author: ThinkInAIXYZ
+  repo: deepchat
+  reason: Electron 桌面聊天 App(产品)；19 个 skill 中 10 个是 Anthropic 官方逐字副本，9 个死绑 DeepChat 内部(SQLCipher/PLUGIN_ROOT/MCP)，非通用 skill 集合
+  added_at: 2026-06-10
