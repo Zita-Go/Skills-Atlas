@@ -2175,3 +2175,12 @@
   last_commit: '2026-05-29'
   description: Multi-Agent Harness for Production AI
   license: Apache-2.0
+- id: claude-obsidian
+  author: AgriciDaniel
+  repo: claude-obsidian
+  url: https://github.com/AgriciDaniel/claude-obsidian
+  type: multi-skill-suite
+  stars: 6485
+  default_branch: main
+  last_commit: '2026-05-28'
+  description: Self-organizing AI second brain for Obsidian + Claude Code. Drop any source and Claude reads, links, and files it into o
