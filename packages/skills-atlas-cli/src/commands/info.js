@@ -46,6 +46,10 @@ module.exports = async function info(argv) {
   const infoObj = buildInfo(name, { skillIndex, vendors: data.vendors });
 
   if (!infoObj.found) {
+    // `info` stays EXACT — it never fuzzy-resolves to a different skill (that would show the wrong
+    // skill's details as if they were yours). But "no such skill" is a valid answer, not a crash:
+    // exit 0 with clean output (a plain found:false for --json; a search hint for humans) so the
+    // plugin's `!`…`` wrapper doesn't surface it as `Error: Shell command failed`.
     if (values.json) {
       console.log(JSON.stringify(infoObj, null, 2));
     } else {
@@ -54,7 +58,6 @@ module.exports = async function info(argv) {
       if (sugg.length) console.error(`did you mean: ${sugg.join(', ')}`);
       console.error(`try: skills-atlas search ${name}`);
     }
-    process.exitCode = 1;
     return;
   }
 
