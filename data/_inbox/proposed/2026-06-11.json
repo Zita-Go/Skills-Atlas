@@ -1,0 +1,2423 @@
+{
+  "generated_at": "2026-06-11T05:27:54+00:00",
+  "date": "2026-06-11",
+  "proposed_count": 6,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 51,
+      "blocklisted": 9,
+      "seen_recently": 49,
+      "truncated": 237,
+      "skill_name_dup": 16,
+      "not_a_collection": 1,
+      "no_skill_files": 2,
+      "looks_aggregator": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "CCOSTAN/Home-AssistantConfig",
+        "reason": "非正经集合：该仓库主要是个人 Home Assistant 智能家居配置与文档，仅附带少量 Codex skills，不是面向 AI agent 的专门技能集合。"
+      },
+      {
+        "full_name": "jnMetaCode/superpowers-zh",
+        "reason": "⚠ 疑似 vendored 副本（仍提交待人审）：14/20 个 skill 名已在目录——brainstorming, dispatching-parallel-agents, executing-plans, finishing-a-development-branch, mcp-builder, receiving-code-review…；建议人审核是否整仓拒/blocklist"
+      },
+      {
+        "full_name": "genesislab-io/beatai",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "libukai/awesome-agent-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "KimYx0207/AI-Coding-Guide-Zh",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "wechatsync"
+      ],
+      "group": "多平台文章同步发布（WechatSync）",
+      "group_en": "Multi-platform article syndication (WechatSync)",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "通过 CLI 将 Markdown/HTML 文章同步发布到多个内容平台。",
+      "description_en": "Publishes Markdown/HTML articles from the CLI to multiple content platforms.",
+      "sources": [
+        "wechatsync/Wechatsync"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-book"
+      ],
+      "group": "结构化拆书 / 认知地图",
+      "group_en": "Structured Book Analysis & Cognitive Maps",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "按问题、共识、位移、落点拆解书籍，并生成认知地图。",
+      "description_en": "Breaks down a book by its core question, prior consensus, intellectual delta, conclusion, and takeaway, then produces a cognitive map.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-card"
+      ],
+      "group": "阅读卡片 / 信息图 / 视觉笔记生成",
+      "group_en": "Reading Cards, Infographics & Visual Notes",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "把文本、URL 或文件内容转换为长图、信息图、多卡、漫画或白板等 PNG 视觉素材。",
+      "description_en": "Turns text, URLs, or files into PNG visuals such as long cards, infographics, multi-card decks, comics, or whiteboard notes.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-invest"
+      ],
+      "group": "创业/项目投资尽调",
+      "group_en": "Startup & Project Investment Due Diligence",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": false,
+      "description": "基于BP、访谈和经营数据生成投资分析报告，判断项目飞轮与抗冲击能力。",
+      "description_en": "Produces investment analysis reports from pitches, interviews, and operating data, evaluating flywheels and resilience.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-learn"
+      ],
+      "group": "概念解剖 / 深度理解",
+      "group_en": "Concept Anatomy / Deep Understanding",
+      "category": "education-learning",
+      "subcategory": "19-2",
+      "chain": false,
+      "description": "从历史、辩证、语言、形式等八维拆解任意概念，生成 org-mode 深度理解笔记。",
+      "description_en": "Deconstructs any concept across eight lenses and outputs a concise org-mode note for deeper understanding.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-paper-flow"
+      ],
+      "group": "科研论文阅读与可视化卡片",
+      "group_en": "Research paper reading and visual cards",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": false,
+      "description": "读取论文来源，生成解读笔记与视觉卡片，支持多篇并行。",
+      "description_en": "Reads paper sources, produces analysis notes and visual cards, with parallel handling for multiple papers.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-paper-river"
+      ],
+      "group": "论文溯源与问题演化",
+      "group_en": "Paper lineage and problem evolution",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": false,
+      "description": "围绕一篇论文追溯引用谱系，梳理问题演化与最新进展。",
+      "description_en": "Traces a paper’s citation lineage to explain how the problem evolved and where it is heading.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-paper"
+      ],
+      "group": "非学术读者论文故事化解读",
+      "group_en": "Storytelling paper explanations for non-academics",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "把论文转成七拍故事，帮助非专业读者理解并复述论文。",
+      "description_en": "Turns a paper into a seven-beat story so non-specialists can understand and retell it.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-plain"
+      ],
+      "group": "白话改写 / Plain language rewrite",
+      "group_en": "Plain-language rewriting",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "把任意内容改写成聪明 12 岁孩子也能懂的白话表达。",
+      "description_en": "Rewrites content in plain language a smart 12-year-old can grasp.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-present"
+      ],
+      "group": "零依赖 HTML 演示 / Outline 演讲渲染",
+      "group_en": "Zero-dependency HTML presentations / outline speaker decks",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "将 orgmode/markdown outline 1:1 渲染为视觉化 HTML 演讲页，不改写原文。",
+      "description_en": "Renders orgmode or Markdown outlines into visual, single-file HTML presentation pages while preserving the original structure.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-push"
+      ],
+      "group": "Skill 发布同步",
+      "group_en": "Skill publishing sync",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "将本地更新过的 ljg-* skills 同步到 GitHub 仓库，并维护 master/md 分支与 README 一致性。",
+      "description_en": "Syncs updated local ljg-* skills to a GitHub repo, maintaining master and Markdown branches plus README consistency.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-qa"
+      ],
+      "group": "长文论证 Q&A 提取",
+      "group_en": "Argument-Driven Q&A Extraction",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "把文章、论文或书的论证骨架拆成连续、尖锐的问答链。",
+      "description_en": "Extracts a text’s argument skeleton into a chain of incisive Q&A.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-rank"
+      ],
+      "group": "领域降秩 / 基本假设挖掘",
+      "group_en": "Domain Rank Reduction & Assumption Mining",
+      "category": "product-management",
+      "subcategory": "3-2",
+      "chain": false,
+      "description": "把领域现象压缩为少数不可再分的生成性解释力，并检查基本假设。",
+      "description_en": "Reduces a domain to its irreducible explanatory generators and tests assumptions.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-read"
+      ],
+      "group": "伴读 / 跨语言阅读",
+      "group_en": "Bilingual Reading Companion",
+      "category": "docs-knowledge",
+      "subcategory": "2-2",
+      "chain": false,
+      "description": "帮助 agent 伴读长文本，翻译、拆解结构并引导用户追问。",
+      "description_en": "Helps an agent guide users through long texts with translation, structure mapping, and probing questions.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-relationship"
+      ],
+      "group": "关系结构诊断",
+      "group_en": "Relationship Structure Diagnosis",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 通过结构化提问，让用户看见关系问题的深层模式。",
+      "description_en": "Helps an agent use structured questioning to reveal deeper patterns in relationship issues.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-roundtable"
+      ],
+      "group": "多视角圆桌辩论",
+      "group_en": "Multi-perspective Roundtable Debate",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 组织多视角圆桌辩论，提炼争议并输出结构化讨论。",
+      "description_en": "Helps the agent facilitate a structured multi-perspective debate and distill the core tensions.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-skill-map"
+      ],
+      "group": "Skill 安装 / 发现 / Skill 自动发现与调用",
+      "group_en": "Skill Installation / Discovery / Auto-discovery & Invocation",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "扫描已安装技能，按类别生成可视化地图，帮助 agent 快速了解可用能力。",
+      "description_en": "Scans installed skills and renders a categorized visual map so the agent can quickly see available capabilities.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-think"
+      ],
+      "group": "纵向深钻思维",
+      "group_en": "Vertical Deep-Dive Thinking",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "引导 agent 对观点逐层追问，直到触及基本机制或公理，并生成 org 笔记。",
+      "description_en": "Guides an agent to drill vertically through a claim until it reaches a foundational mechanism or axiom, then saves an org-mode note.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-travel"
+      ],
+      "group": "文化旅行研究",
+      "group_en": "Cultural Travel Research",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为指定城市做博物馆、古建与历史背景研究，生成结构化文档和便携卡片。",
+      "description_en": "Researches a city’s museums, ancient architecture, and historical context, producing a structured document and portable reference cards.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-word-flow",
+        "ljg-word"
+      ],
+      "group": "词卡工作流（解词→信息图）",
+      "group_en": "Word card workflow (word analysis → infographic)",
+      "category": "",
+      "subcategory": "",
+      "chain": true,
+      "description": "串联英文单词解析和信息图生成，批量产出词卡 PNG。",
+      "description_en": "Explains an English word through etymological imagery, core semantics, and a bilingual takeaway.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ljg-writes"
+      ],
+      "group": "批判性文章写作引擎",
+      "group_en": "Critical Essay Writing Engine",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "帮助 agent 围绕一个观点层层追问，输出 1000-1500 字批判性文章。",
+      "description_en": "Helps an agent interrogate a single viewpoint and shape it into a 1,000–1,500-word critical essay.",
+      "sources": [
+        "lijigang/ljg-skills"
+      ]
+    },
+    {
+      "skills": [
+        "antfu"
+      ],
+      "group": "前端工程约定",
+      "group_en": "Frontend Engineering Conventions",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "为 JS/TS 项目提供代码组织、类型、注释、测试与发布配置约定，帮助 agent 按 Anthony Fu 偏好搭建和维护项目。",
+      "description_en": "Provides Anthony Fu’s conventions for JS/TS projects, covering code organization, types, comments, testing, and publishing setup.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "nuxt"
+      ],
+      "group": "Nuxt 全栈开发指南",
+      "group_en": "Nuxt Full-Stack Development Guide",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "为 Nuxt 3 应用提供目录、配置、路由、数据获取、模块和部署相关约定，帮助 agent 开发与维护全栈 Vue 项目。",
+      "description_en": "Covers Nuxt 3 conventions for directory structure, config, routing, data fetching, modules, and deployment in full-stack Vue apps.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "pinia"
+      ],
+      "group": "Vue/Pinia 状态管理规范",
+      "group_en": "Vue/Pinia State Management",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 在 Vue 项目中定义 Pinia store、处理 state/getters/actions，并安全使用插件与跨 store 组合。",
+      "description_en": "Helps the agent define Pinia stores, manage state/getters/actions, and use plugins or store composition in Vue apps.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "pnpm"
+      ],
+      "group": "Node 包管理与工作区规范",
+      "group_en": "Node Package and Workspace Management",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 在 pnpm 项目中选择 CLI 命令、配置 workspace、处理依赖覆盖，并在 CI 中使用冻结锁文件。",
+      "description_en": "Helps the agent choose pnpm CLI commands, configure workspaces, handle dependency overrides, and use frozen lockfiles in CI.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "slidev"
+      ],
+      "group": "HTML-native 设计 skill / PPT 视频流水线",
+      "group_en": "HTML-native Design Skill / PPT-Video Pipeline",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "帮助 agent 用 Slidev 创建带代码、动效和交互的技术演示文稿。",
+      "description_en": "Helps the agent create Slidev-based technical decks with code, animations, diagrams, and exports.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "tsdown"
+      ],
+      "group": "TypeScript 库打包 / tsup 迁移",
+      "group_en": "TypeScript Library Bundling / tsup Migration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 用 tsdown 打包 TS/JS 库、生成声明并迁移 tsup。",
+      "description_en": "Helps the agent bundle TypeScript/JavaScript libraries, generate declarations, and migrate from tsup with tsdown.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "turborepo"
+      ],
+      "group": "Monorepo 任务管线与缓存",
+      "group_en": "Monorepo task pipelines and caching",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "帮助 agent 配置 Turbo 任务管线、缓存、affected 构建与 monorepo 脚本。",
+      "description_en": "Helps agents configure Turbo task pipelines, caching, affected builds, and monorepo scripts.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "unocss"
+      ],
+      "group": "UnoCSS 原子化样式工程",
+      "group_en": "UnoCSS atomic styling workflow",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 检查 UnoCSS 配置，编写规则、shortcuts 与原子化类名。",
+      "description_en": "Helps agents inspect UnoCSS config and write rules, shortcuts, and atomic class utilities.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "vite"
+      ],
+      "group": "Vite 项目配置与构建",
+      "group_en": "Vite project configuration and build workflows",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 配置 Vite、编写插件、处理 SSR 与构建迁移。",
+      "description_en": "Helps agents configure Vite projects, write plugins, and handle SSR or build migrations.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "vitepress"
+      ],
+      "group": "文档站与静态站点生成",
+      "group_en": "Documentation sites and static site generation",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "帮助 agent 搭建 VitePress 文档站、配置主题与组织 Markdown 内容。",
+      "description_en": "Helps agents build VitePress docs sites, configure themes, and organize Markdown content.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "vitest"
+      ],
+      "group": "Vitest 单元测试与覆盖率",
+      "group_en": "Vitest Unit Testing & Coverage",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 编写、配置和调试 Vitest 单元测试，覆盖 mock、覆盖率与过滤。",
+      "description_en": "Helps agents write, configure, and debug Vitest unit tests, including mocks, coverage, and filtering.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "vue-best-practices"
+      ],
+      "group": "Vue 前端工程规范",
+      "group_en": "Vue Engineering Standards",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "指导 agent 在 Vue 3 任务中采用 Composition API、TypeScript、SSR 与相关工具。",
+      "description_en": "Guides agents in Vue 3 work using Composition API, TypeScript, SSR, and the surrounding Vue tooling.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "vue-router-best-practices"
+      ],
+      "group": "Vue Router 开发模式",
+      "group_en": "Vue Router Development Patterns",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 识别 Vue Router 4 导航守卫、参数变化、生命周期清理等常见问题并给出路由实现建议。",
+      "description_en": "Helps the agent spot Vue Router 4 guard, param, and lifecycle pitfalls and suggest robust routing patterns.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "vue-testing-best-practices"
+      ],
+      "group": "Vue 测试策略",
+      "group_en": "Vue Testing Strategy",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 为 Vue 3 项目选择 Vitest、组件测试、Mocking 与 Playwright 策略，规避异步和注入问题。",
+      "description_en": "Helps the agent choose Vue 3 testing strategies with Vitest, component tests, mocks, and Playwright while avoiding async and injection pitfalls.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "vue",
+        "vueuse-functions"
+      ],
+      "group": "Vue 3 开发规范",
+      "group_en": "Vue 3 Development Guidelines",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 在 Vue 3 SFC 中按 Composition API、TS 和内置 API 编写组件。",
+      "description_en": "Helps agents choose VueUse composables first when building features in Vue or Nuxt projects.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "web-design-guidelines"
+      ],
+      "group": "Web 界面规范审查",
+      "group_en": "Web UI guideline reviews",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "拉取 Web Interface Guidelines，审查 UI 代码并输出文件行号问题。",
+      "description_en": "Fetches the latest Web Interface Guidelines and audits UI code for compliance with concise, line-based findings.",
+      "sources": [
+        "antfu/skills"
+      ]
+    },
+    {
+      "skills": [
+        "brainstorming"
+      ],
+      "group": "设计先行与规格说明",
+      "group_en": "Design-First Specification Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "在编码前探索需求、形成设计规格并获取批准，为后续实现计划提供依据。",
+      "description_en": "Explores requirements and produces an approved design spec before implementation begins.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "chinese-code-review"
+      ],
+      "group": "中文代码审查沟通规范",
+      "group_en": "Chinese Code Review Communication",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "提供中文代码审查话术、分级标注和中英注释规范，帮助温和而明确地反馈问题。",
+      "description_en": "Provides Chinese code-review phrasing, severity labels, and bilingual comment conventions for clear feedback.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "chinese-commit-conventions"
+      ],
+      "group": "Git 工作流 / 危险命令拦截",
+      "group_en": "Git workflow / dangerous command guardrails",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "帮助 agent 按中文团队习惯编写规范 commit、生成 changelog 配置。",
+      "description_en": "Helps agents write conventional Chinese commit messages and configure changelog tooling.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "chinese-documentation"
+      ],
+      "group": "语法 / 文风审查",
+      "group_en": "Grammar and style review",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "为 agent 提供中文技术文档排版、标点和中英混排规范，提升可读性。",
+      "description_en": "Gives agents Chinese technical writing rules for typography, punctuation, and mixed-language readability.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "chinese-git-workflow",
+        "finishing-a-development-branch",
+        "using-git-worktrees"
+      ],
+      "group": "Git 工作流",
+      "group_en": "Git Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "帮助 agent 配置国内 Git 平台 SSH/HTTPS、CI 接入与镜像同步。",
+      "description_en": "Helps an agent verify tests after implementation and choose the right merge, PR, or cleanup path.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "dispatching-parallel-agents"
+      ],
+      "group": "多代理并行开发协调",
+      "group_en": "Parallel Multi-Agent Coordination",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "帮助 agent 将无共享状态的任务分派给多个隔离智能体并行处理。",
+      "description_en": "Helps the agent assign independent tasks to isolated agents for parallel execution.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "executing-plans"
+      ],
+      "group": "核心开发工作流（superpowers）",
+      "group_en": "Core development workflow (superpowers)",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "帮助 agent 审查书面实现计划，逐任务执行、验证并提交变更。",
+      "description_en": "Helps an agent review a written implementation plan, execute it task by task, validate progress, and commit changes.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "mcp-builder"
+      ],
+      "group": "MCP Server 开发",
+      "group_en": "MCP Server Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 AI 设计、实现、测试和部署生产级 MCP 服务器，规范工具与资源结构。",
+      "description_en": "Guides AI agents in designing, implementing, testing, and deploying production-ready MCP servers with clear tool and resource conventions.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "receiving-code-review"
+      ],
+      "group": "代码审查反馈处理",
+      "group_en": "Code Review Feedback Handling",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "帮助 AI 收到代码审查反馈后先澄清、验证、评估，再按优先级实施并测试。",
+      "description_en": "Helps AI agents process code review feedback by clarifying, verifying, evaluating, and then implementing fixes in priority order.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "requesting-code-review",
+        "subagent-driven-development"
+      ],
+      "group": "子代理驱动开发工作流",
+      "group_en": "Subagent-Driven Development Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": true,
+      "description": "在合并或继续前分派代码审查子代理，集中发现关键问题。",
+      "description_en": "Breaks implementation plans into task-specific subagents and chains spec and quality reviews.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "systematic-debugging"
+      ],
+      "group": "系统化调试",
+      "group_en": "Systematic Debugging",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "指导 agent 在修复前先复现、查证据、定位根因，避免猜测式补丁。",
+      "description_en": "Guides agents to reproduce, gather evidence, and identify root causes before proposing fixes.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "test-driven-development"
+      ],
+      "group": "TDD（多家同名版本）",
+      "group_en": "Test-Driven Development",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "要求先写失败测试，再写最少实现并通过测试，最后重构。",
+      "description_en": "Enforces a red-green-refactor flow: write a failing test first, then implement the minimum passing code.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "using-superpowers"
+      ],
+      "group": "Skill 自动发现与调用",
+      "group_en": "Skill discovery and activation",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "会话开始时发现并调用相关技能，确保任务前加载正确工作流。",
+      "description_en": "Discovers and activates relevant skills at the start of a conversation so the right workflow is loaded before work begins.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "verification-before-completion"
+      ],
+      "group": "系统化调试 / 完工验证",
+      "group_en": "Systematic Debugging and Completion Verification",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "在提交或 PR 前运行验证命令，用证据支撑完成结论。",
+      "description_en": "Runs verification before claiming completion, so PRs and commits are backed by fresh evidence.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "workflow-runner"
+      ],
+      "group": "YAML 工作流执行器",
+      "group_en": "YAML Workflow Runner",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "让 agent 在 CLI 内读取 YAML 工作流并依次扮演角色执行任务。",
+      "description_en": "Lets the agent run YAML workflows inside the CLI, executing each role step with the current LLM.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "writing-plans"
+      ],
+      "group": "源文档驱动开发",
+      "group_en": "Spec-Driven Development",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "在编码前把规格拆成文件、任务和测试步骤，便于代理执行。",
+      "description_en": "Turns specs into file-level tasks and test steps before coding.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "writing-skills"
+      ],
+      "group": "TDD 驱动 Skill 编写",
+      "group_en": "TDD-Based Skill Authoring",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "用 TDD 方式创建、验证和迭代 Skill，确保代理行为可观察。",
+      "description_en": "Uses a TDD loop to author, validate, and iterate agent skills.",
+      "sources": [
+        "jnMetaCode/superpowers-zh"
+      ]
+    },
+    {
+      "skills": [
+        "jira-driven-planning"
+      ],
+      "group": "Jira 驱动实施计划",
+      "group_en": "Jira-driven implementation planning",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "基于 Jira 需求与 Confluence 文档，生成前后端/基础设施分层实施计划。",
+      "description_en": "Turns Jira requirements and Confluence docs into a layered implementation plan across frontend, backend, and infrastructure.",
+      "sources": [
+        "breaking-brake/cc-wf-studio"
+      ]
+    },
+    {
+      "skills": [
+        "pr-review-analysis"
+      ],
+      "group": "PR 评论验证分析",
+      "group_en": "PR review comment validation",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "拉取 GitHub PR 评论，逐条核对代码并判定有效性，输出修复建议。",
+      "description_en": "Fetches GitHub PR review comments, checks them against the code, and summarizes valid, partial, or invalid feedback.",
+      "sources": [
+        "breaking-brake/cc-wf-studio"
+      ]
+    },
+    {
+      "skills": [
+        "pr-to-main-cleanup",
+        "pr-to-main"
+      ],
+      "group": "PR 到 main 的发布协作流程",
+      "group_en": "PR-to-main release collaboration workflow",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": true,
+      "description": "为 pnpm + Changesets 单仓创建 main PR，检查受影响包与 changeset。",
+      "description_en": "Creates a main-targeted PR in a pnpm Changesets monorepo, checking affected packages and changesets.",
+      "sources": [
+        "breaking-brake/cc-wf-studio"
+      ]
+    },
+    {
+      "skills": [
+        "workflow-schema-tuning",
+        "cc-workflow-ai-editor"
+      ],
+      "group": "CC Workflow Studio 工作流编辑与 schema 调优",
+      "group_en": "CC Workflow Studio workflow editing and schema tuning",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": true,
+      "description": "通过对话和 MCP 工具创建、修改 CC Workflow Studio 的可视化工作流。",
+      "description_en": "Creates and edits CC Workflow Studio visual workflows through conversation and MCP tools.",
+      "sources": [
+        "breaking-brake/cc-wf-studio"
+      ]
+    },
+    {
+      "skills": [
+        "ccwf-cli"
+      ],
+      "group": "CC Workflow Studio 工作流编排",
+      "group_en": "CC Workflow Studio workflow orchestration",
+      "category": "comms-integration",
+      "subcategory": "9-3",
+      "chain": false,
+      "description": "帮助 Agent 在终端预览、校验、转换并执行工作流 JSON。",
+      "description_en": "Helps the agent preview, validate, convert, and run workflow JSON from the terminal.",
+      "sources": [
+        "breaking-brake/cc-wf-studio"
+      ]
+    },
+    {
+      "skills": [
+        "image-gen-guide"
+      ],
+      "group": "媒体生成工具指南",
+      "group_en": "Media Generation Tool Guide",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "指导 agent 异步调用图片/视频生成工具并路由用户意图。",
+      "description_en": "Guides the agent through async image and video generation plus intent routing.",
+      "sources": [
+        "liliMozi/openhanako"
+      ]
+    },
+    {
+      "skills": [
+        "hana-plugin-creator"
+      ],
+      "group": "Hana 插件开发",
+      "group_en": "Hana Plugin Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 规划、检查和生成 Hana 插件脚手架与安装目录。",
+      "description_en": "Helps the agent plan, validate, and scaffold install-ready Hana plugins.",
+      "sources": [
+        "liliMozi/openhanako"
+      ]
+    },
+    {
+      "skills": [
+        "office-documents"
+      ],
+      "group": "PDF 重型 API / Office 文档四件套",
+      "group_en": "PDF Heavy API / Office Document Suite",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 agent 读取、分析、抽取、修改和转换 PDF 与 Office 文档。",
+      "description_en": "Helps the agent read, analyze, extract from, modify, and convert PDF and Office documents.",
+      "sources": [
+        "liliMozi/openhanako"
+      ]
+    },
+    {
+      "skills": [
+        "quiet-musing"
+      ],
+      "group": "深度推理协议 / 复杂问题拆解",
+      "group_en": "Deep Reasoning Protocol / Complex Problem Breakdown",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "为复杂问题启用结构化推理，先理解、拆解、多路径权衡后再行动。",
+      "description_en": "Triggers a structured reasoning protocol for complex, uncertain, or high-stakes decisions before action.",
+      "sources": [
+        "liliMozi/openhanako"
+      ]
+    },
+    {
+      "skills": [
+        "skill-creator"
+      ],
+      "group": "Skill 创建与评估器",
+      "group_en": "Skill Creation and Evaluation",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "创建、优化并评估 Skill，包括测试提示词、基准测试和触发描述调优。",
+      "description_en": "Creates, improves, and evaluates skills with test prompts, benchmarks, and trigger-description tuning.",
+      "sources": [
+        "liliMozi/openhanako"
+      ]
+    },
+    {
+      "skills": [
+        "user-guide"
+      ],
+      "group": "HanaAgent 用户帮助",
+      "group_en": "HanaAgent User Help",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "面向普通用户解释 HanaAgent 的用法、功能、设置和常见问题。",
+      "description_en": "Explains HanaAgent usage, features, setup, and common questions in plain language.",
+      "sources": [
+        "liliMozi/openhanako"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "wechatsync",
+        "repo": "Wechatsync",
+        "full_name": "wechatsync/Wechatsync",
+        "url": "https://github.com/wechatsync/Wechatsync",
+        "stars": 5705,
+        "pushed_at": "2026-05-27",
+        "default_branch": "v2",
+        "github_description": "一键同步文章到多个内容平台，支持今日头条、WordPress、知乎、简书、掘金、CSDN、typecho各大平台，一次发布，多平台同步发布。解放个人生产力",
+        "topics": [
+          "blog",
+          "chrome",
+          "chrome-extension",
+          "markdown",
+          "multiplatform",
+          "spider",
+          "vue",
+          "wechat-official-account",
+          "writer"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "wechatsync",
+          "path": "skills/wechatsync/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "多平台文章同步发布（WechatSync）",
+          "group_en": "Multi-platform article syndication (WechatSync)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 CLI 将 Markdown/HTML 文章同步发布到多个内容平台。",
+          "description_en": "Publishes Markdown/HTML articles from the CLI to multiple content platforms.",
+          "what": "Agent can use WechatSync to cross-post articles across supported Chinese platforms and blogs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "lijigang",
+        "repo": "ljg-skills",
+        "full_name": "lijigang/ljg-skills",
+        "url": "https://github.com/lijigang/ljg-skills",
+        "stars": 5568,
+        "pushed_at": "2026-06-10",
+        "default_branch": "master",
+        "github_description": "",
+        "topics": [],
+        "language": "HTML",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "ljg-book",
+          "path": "skills/ljg-book/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "结构化拆书 / 认知地图",
+          "group_en": "Structured Book Analysis & Cognitive Maps",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按问题、共识、位移、落点拆解书籍，并生成认知地图。",
+          "description_en": "Breaks down a book by its core question, prior consensus, intellectual delta, conclusion, and takeaway, then produces a cognitive map.",
+          "what": "把一本书抽象成问题—共识—位移—结论—takeaway 的结构化认知地图。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-card",
+          "path": "skills/ljg-card/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "阅读卡片 / 信息图 / 视觉笔记生成",
+          "group_en": "Reading Cards, Infographics & Visual Notes",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把文本、URL 或文件内容转换为长图、信息图、多卡、漫画或白板等 PNG 视觉素材。",
+          "description_en": "Turns text, URLs, or files into PNG visuals such as long cards, infographics, multi-card decks, comics, or whiteboard notes.",
+          "what": "内容视觉铸造：将文本、URL 或文件转成多种 PNG 视觉卡片。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-invest",
+          "path": "skills/ljg-invest/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "创业/项目投资尽调",
+          "group_en": "Startup & Project Investment Due Diligence",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于BP、访谈和经营数据生成投资分析报告，判断项目飞轮与抗冲击能力。",
+          "description_en": "Produces investment analysis reports from pitches, interviews, and operating data, evaluating flywheels and resilience.",
+          "what": "生成一份面向项目判断的深度投资分析报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-learn",
+          "path": "skills/ljg-learn/SKILL.md",
+          "subcategory": "19-2",
+          "subcategory_title": "19.2 自适应辅导 / 苏格拉底教学",
+          "category": "education-learning",
+          "group": "概念解剖 / 深度理解",
+          "group_en": "Concept Anatomy / Deep Understanding",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从历史、辩证、语言、形式等八维拆解任意概念，生成 org-mode 深度理解笔记。",
+          "description_en": "Deconstructs any concept across eight lenses and outputs a concise org-mode note for deeper understanding.",
+          "what": "把抽象概念拆解成多维洞见并压缩成一句话顿悟。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-paper-flow",
+          "path": "skills/ljg-paper-flow/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "科研论文阅读与可视化卡片",
+          "group_en": "Research paper reading and visual cards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取论文来源，生成解读笔记与视觉卡片，支持多篇并行。",
+          "description_en": "Reads paper sources, produces analysis notes and visual cards, with parallel handling for multiple papers.",
+          "what": "把论文阅读、解读笔记和卡片生成串成一条可并行执行的流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-paper-river",
+          "path": "skills/ljg-paper-river/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "论文溯源与问题演化",
+          "group_en": "Paper lineage and problem evolution",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "围绕一篇论文追溯引用谱系，梳理问题演化与最新进展。",
+          "description_en": "Traces a paper’s citation lineage to explain how the problem evolved and where it is heading.",
+          "what": "用倒读法从单篇论文出发，递归重建领域问题的发展脉络。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-paper",
+          "path": "skills/ljg-paper/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "非学术读者论文故事化解读",
+          "group_en": "Storytelling paper explanations for non-academics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把论文转成七拍故事，帮助非专业读者理解并复述论文。",
+          "description_en": "Turns a paper into a seven-beat story so non-specialists can understand and retell it.",
+          "what": "Explains research papers as clear narrative stories rather than academic summaries.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-plain",
+          "path": "skills/ljg-plain/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "白话改写 / Plain language rewrite",
+          "group_en": "Plain-language rewriting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把任意内容改写成聪明 12 岁孩子也能懂的白话表达。",
+          "description_en": "Rewrites content in plain language a smart 12-year-old can grasp.",
+          "what": "Simplifies any content so it is concrete, honest, and easy to understand.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-present",
+          "path": "skills/ljg-present/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "零依赖 HTML 演示 / Outline 演讲渲染",
+          "group_en": "Zero-dependency HTML presentations / outline speaker decks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将 orgmode/markdown outline 1:1 渲染为视觉化 HTML 演讲页，不改写原文。",
+          "description_en": "Renders orgmode or Markdown outlines into visual, single-file HTML presentation pages while preserving the original structure.",
+          "what": "把 outline 铸成视觉化 HTML 演讲页。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-push",
+          "path": "skills/ljg-push/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 发布同步",
+          "group_en": "Skill publishing sync",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将本地更新过的 ljg-* skills 同步到 GitHub 仓库，并维护 master/md 分支与 README 一致性。",
+          "description_en": "Syncs updated local ljg-* skills to a GitHub repo, maintaining master and Markdown branches plus README consistency.",
+          "what": "把本地更新过的 ljg-* skills 同步发布到 GitHub。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-qa",
+          "path": "skills/ljg-qa/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "长文论证 Q&A 提取",
+          "group_en": "Argument-Driven Q&A Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把文章、论文或书的论证骨架拆成连续、尖锐的问答链。",
+          "description_en": "Extracts a text’s argument skeleton into a chain of incisive Q&A.",
+          "what": "把文本核心观点转换为有形式化收口的 Q-A 链。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-rank",
+          "path": "skills/ljg-rank/SKILL.md",
+          "subcategory": "3-2",
+          "subcategory_title": "3.2 问题框定 / 假设管理",
+          "category": "product-management",
+          "group": "领域降秩 / 基本假设挖掘",
+          "group_en": "Domain Rank Reduction & Assumption Mining",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把领域现象压缩为少数不可再分的生成性解释力，并检查基本假设。",
+          "description_en": "Reduces a domain to its irreducible explanatory generators and tests assumptions.",
+          "what": "把复杂领域降秩为可反推现象的根因框架。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-read",
+          "path": "skills/ljg-read/SKILL.md",
+          "subcategory": "2-2",
+          "subcategory_title": "2.2 长文本翻译 / 跨语言",
+          "category": "docs-knowledge",
+          "group": "伴读 / 跨语言阅读",
+          "group_en": "Bilingual Reading Companion",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 伴读长文本，翻译、拆解结构并引导用户追问。",
+          "description_en": "Helps an agent guide users through long texts with translation, structure mapping, and probing questions.",
+          "what": "Guides users through reading any text with translation, structural annotation, and deep questioning.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-relationship",
+          "path": "skills/ljg-relationship/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "关系结构诊断",
+          "group_en": "Relationship Structure Diagnosis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 通过结构化提问，让用户看见关系问题的深层模式。",
+          "description_en": "Helps an agent use structured questioning to reveal deeper patterns in relationship issues.",
+          "what": "Diagnoses relationship dynamics through five-layer structure and psychoanalytic reflection.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-roundtable",
+          "path": "skills/ljg-roundtable/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "多视角圆桌辩论",
+          "group_en": "Multi-perspective Roundtable Debate",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 组织多视角圆桌辩论，提炼争议并输出结构化讨论。",
+          "description_en": "Helps the agent facilitate a structured multi-perspective debate and distill the core tensions.",
+          "what": "A reusable framework for moderated roundtable discussions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-skill-map",
+          "path": "skills/ljg-skill-map/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 安装 / 发现 / Skill 自动发现与调用",
+          "group_en": "Skill Installation / Discovery / Auto-discovery & Invocation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "扫描已安装技能，按类别生成可视化地图，帮助 agent 快速了解可用能力。",
+          "description_en": "Scans installed skills and renders a categorized visual map so the agent can quickly see available capabilities.",
+          "what": "A skill discovery utility that visualizes installed agent skills.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-think",
+          "path": "skills/ljg-think/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "纵向深钻思维",
+          "group_en": "Vertical Deep-Dive Thinking",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导 agent 对观点逐层追问，直到触及基本机制或公理，并生成 org 笔记。",
+          "description_en": "Guides an agent to drill vertically through a claim until it reaches a foundational mechanism or axiom, then saves an org-mode note.",
+          "what": "A prompt-style thinking tool for deep why-chain analysis.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-travel",
+          "path": "skills/ljg-travel/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "文化旅行研究",
+          "group_en": "Cultural Travel Research",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为指定城市做博物馆、古建与历史背景研究，生成结构化文档和便携卡片。",
+          "description_en": "Researches a city’s museums, ancient architecture, and historical context, producing a structured document and portable reference cards.",
+          "what": "A pre-trip cultural research workflow for museum and heritage-focused travel.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ljg-word-flow",
+          "path": "skills/ljg-word-flow/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "英语词卡工作流",
+          "group_en": "English Word Card Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "串联英文单词解析和信息图生成，批量产出词卡 PNG。",
+          "description_en": "Chains English word analysis with infographic generation to batch-create word card PNGs.",
+          "what": "A wrapper that analyzes words first, then creates word-card images.",
+          "chain": true,
+          "chain_group": "词卡工作流（解词→信息图）",
+          "chain_group_en": "Word card workflow (word analysis → infographic)"
+        },
+        {
+          "name": "ljg-word",
+          "path": "skills/ljg-word/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "英语词汇深解",
+          "group_en": "English Word Deep-Dive",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "深度解析英文单词的词源画面、核心意象和双语金句。",
+          "description_en": "Explains an English word through etymological imagery, core semantics, and a bilingual takeaway.",
+          "what": "A standalone word mastery skill for deep semantic explanations.",
+          "chain": true,
+          "chain_group": "词卡工作流（解词→信息图）",
+          "chain_group_en": "Word card workflow (word analysis → infographic)"
+        },
+        {
+          "name": "ljg-writes",
+          "path": "skills/ljg-writes/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "批判性文章写作引擎",
+          "group_en": "Critical Essay Writing Engine",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 围绕一个观点层层追问，输出 1000-1500 字批判性文章。",
+          "description_en": "Helps an agent interrogate a single viewpoint and shape it into a 1,000–1,500-word critical essay.",
+          "what": "写作引擎，用连续追问和翻转把观点推进成文章。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "antfu",
+        "repo": "skills",
+        "full_name": "antfu/skills",
+        "url": "https://github.com/antfu/skills",
+        "stars": 5259,
+        "pushed_at": "2026-05-01",
+        "default_branch": "main",
+        "github_description": "Anthony Fu's curated collection of agent skills.",
+        "topics": [
+          "agent-skills",
+          "skills"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "antfu",
+          "path": "skills/antfu/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "前端工程约定",
+          "group_en": "Frontend Engineering Conventions",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 JS/TS 项目提供代码组织、类型、注释、测试与发布配置约定，帮助 agent 按 Anthony Fu 偏好搭建和维护项目。",
+          "description_en": "Provides Anthony Fu’s conventions for JS/TS projects, covering code organization, types, comments, testing, and publishing setup.",
+          "what": "Define coding, TypeScript, testing, and publishing conventions for JS/TS projects.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nuxt",
+          "path": "skills/nuxt/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Nuxt 全栈开发指南",
+          "group_en": "Nuxt Full-Stack Development Guide",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Nuxt 3 应用提供目录、配置、路由、数据获取、模块和部署相关约定，帮助 agent 开发与维护全栈 Vue 项目。",
+          "description_en": "Covers Nuxt 3 conventions for directory structure, config, routing, data fetching, modules, and deployment in full-stack Vue apps.",
+          "what": "Guide agents through Nuxt 3 app structure, routing, data fetching, modules, and server-side rendering.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pinia",
+          "path": "skills/pinia/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Vue/Pinia 状态管理规范",
+          "group_en": "Vue/Pinia State Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Vue 项目中定义 Pinia store、处理 state/getters/actions，并安全使用插件与跨 store 组合。",
+          "description_en": "Helps the agent define Pinia stores, manage state/getters/actions, and use plugins or store composition in Vue apps.",
+          "what": "指导 agent 在 Vue 应用中按 Pinia 模式管理状态。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pnpm",
+          "path": "skills/pnpm/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Node 包管理与工作区规范",
+          "group_en": "Node Package and Workspace Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 pnpm 项目中选择 CLI 命令、配置 workspace、处理依赖覆盖，并在 CI 中使用冻结锁文件。",
+          "description_en": "Helps the agent choose pnpm CLI commands, configure workspaces, handle dependency overrides, and use frozen lockfiles in CI.",
+          "what": "指导 agent 在 pnpm 项目中管理依赖、workspace 与 CI 行为。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "slidev",
+          "path": "skills/slidev/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "HTML-native 设计 skill / PPT 视频流水线",
+          "group_en": "HTML-native Design Skill / PPT-Video Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 Slidev 创建带代码、动效和交互的技术演示文稿。",
+          "description_en": "Helps the agent create Slidev-based technical decks with code, animations, diagrams, and exports.",
+          "what": "Use Slidev to build and present Markdown-based developer slide decks with code, diagrams, animations, and export options.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "tsdown",
+          "path": "skills/tsdown/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "TypeScript 库打包 / tsup 迁移",
+          "group_en": "TypeScript Library Bundling / tsup Migration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 tsdown 打包 TS/JS 库、生成声明并迁移 tsup。",
+          "description_en": "Helps the agent bundle TypeScript/JavaScript libraries, generate declarations, and migrate from tsup with tsdown.",
+          "what": "Use tsdown to bundle TypeScript/JavaScript libraries for npm with declarations and multi-format outputs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "turborepo",
+          "path": "skills/turborepo/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Monorepo 任务管线与缓存",
+          "group_en": "Monorepo task pipelines and caching",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 配置 Turbo 任务管线、缓存、affected 构建与 monorepo 脚本。",
+          "description_en": "Helps agents configure Turbo task pipelines, caching, affected builds, and monorepo scripts.",
+          "what": "Turborepo monorepo build-system guidance.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "unocss",
+          "path": "skills/unocss/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "UnoCSS 原子化样式工程",
+          "group_en": "UnoCSS atomic styling workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 检查 UnoCSS 配置，编写规则、shortcuts 与原子化类名。",
+          "description_en": "Helps agents inspect UnoCSS config and write rules, shortcuts, and atomic class utilities.",
+          "what": "UnoCSS atomic CSS configuration guidance.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vite",
+          "path": "skills/vite/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Vite 项目配置与构建",
+          "group_en": "Vite project configuration and build workflows",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 配置 Vite、编写插件、处理 SSR 与构建迁移。",
+          "description_en": "Helps agents configure Vite projects, write plugins, and handle SSR or build migrations.",
+          "what": "Guidance for Vite configuration, plugin API, SSR, and Vite 8/Rolldown migration.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vitepress",
+          "path": "skills/vitepress/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "文档站与静态站点生成",
+          "group_en": "Documentation sites and static site generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 搭建 VitePress 文档站、配置主题与组织 Markdown 内容。",
+          "description_en": "Helps agents build VitePress docs sites, configure themes, and organize Markdown content.",
+          "what": "Workflow guidance for VitePress configuration, routing, theming, and Markdown/Vue content.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vitest",
+          "path": "skills/vitest/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Vitest 单元测试与覆盖率",
+          "group_en": "Vitest Unit Testing & Coverage",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 编写、配置和调试 Vitest 单元测试，覆盖 mock、覆盖率与过滤。",
+          "description_en": "Helps agents write, configure, and debug Vitest unit tests, including mocks, coverage, and filtering.",
+          "what": "Vitest 单元测试、mock、覆盖率与过滤指南。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vue-best-practices",
+          "path": "skills/vue-best-practices/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Vue 前端工程规范",
+          "group_en": "Vue Engineering Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 在 Vue 3 任务中采用 Composition API、TypeScript、SSR 与相关工具。",
+          "description_en": "Guides agents in Vue 3 work using Composition API, TypeScript, SSR, and the surrounding Vue tooling.",
+          "what": "Vue 3 组件架构、状态流与 TypeScript 开发规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vue-router-best-practices",
+          "path": "skills/vue-router-best-practices/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Vue Router 开发模式",
+          "group_en": "Vue Router Development Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 识别 Vue Router 4 导航守卫、参数变化、生命周期清理等常见问题并给出路由实现建议。",
+          "description_en": "Helps the agent spot Vue Router 4 guard, param, and lifecycle pitfalls and suggest robust routing patterns.",
+          "what": "用于 Vue Router 4 模式、守卫和生命周期问题排查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vue-testing-best-practices",
+          "path": "skills/vue-testing-best-practices/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Vue 测试策略",
+          "group_en": "Vue Testing Strategy",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 为 Vue 3 项目选择 Vitest、组件测试、Mocking 与 Playwright 策略，规避异步和注入问题。",
+          "description_en": "Helps the agent choose Vue 3 testing strategies with Vitest, component tests, mocks, and Playwright while avoiding async and injection pitfalls.",
+          "what": "用于 Vue.js 测试基础设施与测试模式决策。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vue",
+          "path": "skills/vue/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Vue 3 开发规范",
+          "group_en": "Vue 3 Development Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Vue 3 SFC 中按 Composition API、TS 和内置 API 编写组件。",
+          "description_en": "Guides agents in writing Vue 3 SFCs with Composition API, TypeScript, and built-in APIs.",
+          "what": "Vue 3 SFC implementation guidance.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vueuse-functions",
+          "path": "skills/vueuse-functions/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Vue 3 开发规范",
+          "group_en": "Vue 3 Development Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Vue/Nuxt 项目中优先选用 VueUse composables 实现功能。",
+          "description_en": "Helps agents choose VueUse composables first when building features in Vue or Nuxt projects.",
+          "what": "VueUse composable selection and usage guidance.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "web-design-guidelines",
+          "path": "skills/web-design-guidelines/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Web 界面规范审查",
+          "group_en": "Web UI guideline reviews",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "拉取 Web Interface Guidelines，审查 UI 代码并输出文件行号问题。",
+          "description_en": "Fetches the latest Web Interface Guidelines and audits UI code for compliance with concise, line-based findings.",
+          "what": "Fetches current Web Interface Guidelines and reviews UI files against them.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "vercel-labs · 组「Vercel 三件套」"
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "jnMetaCode",
+        "repo": "superpowers-zh",
+        "full_name": "jnMetaCode/superpowers-zh",
+        "url": "https://github.com/jnMetaCode/superpowers-zh",
+        "stars": 5124,
+        "pushed_at": "2026-06-02",
+        "default_branch": "main",
+        "github_description": "🦸 AI 编程超能力 · 中文增强版 — superpowers（116k+ ⭐）完整汉化 + 6 个中国原创 skills，让 Claude Code / Copilot CLI / Hermes Agent / Cursor / Windsurf / Kiro / Gemini CLI 等 16 款 AI 编程工具真正会干活",
+        "topics": [
+          "agent-skills",
+          "agentic-coding",
+          "ai-coding",
+          "chinese",
+          "claude-code",
+          "code-review",
+          "cursor",
+          "gemini-cli",
+          "kiro",
+          "mcp",
+          "npm-package",
+          "prompt-engineering",
+          "skills",
+          "superpowers",
+          "tdd",
+          "trae"
+        ],
+        "language": "Shell",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "brainstorming",
+          "path": "skills/brainstorming/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "设计先行与规格说明",
+          "group_en": "Design-First Specification Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在编码前探索需求、形成设计规格并获取批准，为后续实现计划提供依据。",
+          "description_en": "Explores requirements and produces an approved design spec before implementation begins.",
+          "what": "Turns an idea into an approved design and specification before coding.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers · 组「核心开发工作流（superpowers）」"
+        },
+        {
+          "name": "chinese-code-review",
+          "path": "skills/chinese-code-review/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "中文代码审查沟通规范",
+          "group_en": "Chinese Code Review Communication",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供中文代码审查话术、分级标注和中英注释规范，帮助温和而明确地反馈问题。",
+          "description_en": "Provides Chinese code-review phrasing, severity labels, and bilingual comment conventions for clear feedback.",
+          "what": "A style guide for writing constructive Chinese code-review comments.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "chinese-commit-conventions",
+          "path": "skills/chinese-commit-conventions/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流 / 危险命令拦截",
+          "group_en": "Git workflow / dangerous command guardrails",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按中文团队习惯编写规范 commit、生成 changelog 配置。",
+          "description_en": "Helps agents write conventional Chinese commit messages and configure changelog tooling.",
+          "what": "定义中文 Conventional Commits 类型、scope、body 和 changelog 配置要点。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "chinese-documentation",
+          "path": "skills/chinese-documentation/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "语法 / 文风审查",
+          "group_en": "Grammar and style review",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为 agent 提供中文技术文档排版、标点和中英混排规范，提升可读性。",
+          "description_en": "Gives agents Chinese technical writing rules for typography, punctuation, and mixed-language readability.",
+          "what": "整理中文技术文档的中英文空格、标点、术语和链接格式规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "chinese-git-workflow",
+          "path": "skills/chinese-git-workflow/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "group_en": "Git Workflow",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 配置国内 Git 平台 SSH/HTTPS、CI 接入与镜像同步。",
+          "description_en": "Helps the agent configure SSH/HTTPS, CI integration, and mirror sync for Chinese Git platforms.",
+          "what": "适配 Gitee、Coding.net、极狐 GitLab、CNB 等国内 Git 平台。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dispatching-parallel-agents",
+          "path": "skills/dispatching-parallel-agents/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多代理并行开发协调",
+          "group_en": "Parallel Multi-Agent Coordination",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 将无共享状态的任务分派给多个隔离智能体并行处理。",
+          "description_en": "Helps the agent assign independent tasks to isolated agents for parallel execution.",
+          "what": "为多个独立问题域创建自包含任务、并行执行并汇总验证。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers · 组「核心开发工作流（superpowers）」"
+        },
+        {
+          "name": "executing-plans",
+          "path": "skills/executing-plans/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "核心开发工作流（superpowers）",
+          "group_en": "Core development workflow (superpowers)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 审查书面实现计划，逐任务执行、验证并提交变更。",
+          "description_en": "Helps an agent review a written implementation plan, execute it task by task, validate progress, and commit changes.",
+          "what": "审查并执行书面实现计划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers · 组「核心开发工作流（superpowers）」"
+        },
+        {
+          "name": "finishing-a-development-branch",
+          "path": "skills/finishing-a-development-branch/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "group_en": "Git workflow",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 在实现完成后验证测试，并选择合并、PR 或清理分支。",
+          "description_en": "Helps an agent verify tests after implementation and choose the right merge, PR, or cleanup path.",
+          "what": "收尾开发分支并处理集成选项。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers/oh-my-openagent/addyosmani/wshobson · 组「Git 工作流」"
+        },
+        {
+          "name": "mcp-builder",
+          "path": "skills/mcp-builder/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "MCP Server 开发",
+          "group_en": "MCP Server Development",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导 AI 设计、实现、测试和部署生产级 MCP 服务器，规范工具与资源结构。",
+          "description_en": "Guides AI agents in designing, implementing, testing, and deploying production-ready MCP servers with clear tool and resource conventions.",
+          "what": "MCP 服务器构建方法论，覆盖工具、资源、提示、项目结构、测试和部署。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic · 组「MCP Server 开发」"
+        },
+        {
+          "name": "receiving-code-review",
+          "path": "skills/receiving-code-review/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "代码审查反馈处理",
+          "group_en": "Code Review Feedback Handling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 AI 收到代码审查反馈后先澄清、验证、评估，再按优先级实施并测试。",
+          "description_en": "Helps AI agents process code review feedback by clarifying, verifying, evaluating, and then implementing fixes in priority order.",
+          "what": "收到代码审查反馈后的澄清、验证、反驳和实施流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers · 组「Code Review 双向」"
+        },
+        {
+          "name": "requesting-code-review",
+          "path": "skills/requesting-code-review/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Code Review 双向",
+          "group_en": "Bidirectional Code Review",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在合并或继续前分派代码审查子代理，集中发现关键问题。",
+          "description_en": "Spawns a focused code-review subagent before merging or moving on to catch issues early.",
+          "what": "用于在关键实现节点启动独立代码审查子代理。",
+          "chain": true,
+          "chain_group": "子代理驱动开发工作流",
+          "chain_group_en": "Subagent-Driven Development Workflow",
+          "dup_catalog": "superpowers · 组「Code Review 双向」"
+        },
+        {
+          "name": "subagent-driven-development",
+          "path": "skills/subagent-driven-development/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "核心开发工作流（superpowers）",
+          "group_en": "Core Development Workflow (Superpowers)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "按任务分派子代理实现，并串联规格与质量审查。",
+          "description_en": "Breaks implementation plans into task-specific subagents and chains spec and quality reviews.",
+          "what": "用于按任务分派子代理实现并串联规格与质量审查。",
+          "chain": true,
+          "chain_group": "子代理驱动开发工作流",
+          "chain_group_en": "Subagent-Driven Development Workflow",
+          "dup_catalog": "superpowers · 组「核心开发工作流（superpowers）」"
+        },
+        {
+          "name": "systematic-debugging",
+          "path": "skills/systematic-debugging/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "系统化调试",
+          "group_en": "Systematic Debugging",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导 agent 在修复前先复现、查证据、定位根因，避免猜测式补丁。",
+          "description_en": "Guides agents to reproduce, gather evidence, and identify root causes before proposing fixes.",
+          "what": "用于 bug、测试失败和异常行为的根因调查流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers/mattpocock/Codex/oh-my-openagent/addyosmani/wshobson · 组「系统化调试」"
+        },
+        {
+          "name": "test-driven-development",
+          "path": "skills/test-driven-development/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "TDD（多家同名版本）",
+          "group_en": "Test-Driven Development",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "要求先写失败测试，再写最少实现并通过测试，最后重构。",
+          "description_en": "Enforces a red-green-refactor flow: write a failing test first, then implement the minimum passing code.",
+          "what": "用于新功能、修复和重构前的测试驱动开发流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers/mattpocock/Pawel/addyosmani · 组「TDD（多家同名版本）」"
+        },
+        {
+          "name": "using-git-worktrees",
+          "path": "skills/using-git-worktrees/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "group_en": "Git workflow",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在编码前检测或创建隔离 worktree，保护当前工作区。",
+          "description_en": "Detects or creates an isolated Git worktree before coding to protect the current workspace.",
+          "what": "在实现前先建立隔离的 Git 工作区。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers/oh-my-openagent/addyosmani/wshobson · 组「Git 工作流」"
+        },
+        {
+          "name": "using-superpowers",
+          "path": "skills/using-superpowers/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 自动发现与调用",
+          "group_en": "Skill discovery and activation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "会话开始时发现并调用相关技能，确保任务前加载正确工作流。",
+          "description_en": "Discovers and activates relevant skills at the start of a conversation so the right workflow is loaded before work begins.",
+          "what": "作为会话前置技能，负责发现并激活适用技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "verification-before-completion",
+          "path": "skills/verification-before-completion/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "系统化调试 / 完工验证",
+          "group_en": "Systematic Debugging and Completion Verification",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在提交或 PR 前运行验证命令，用证据支撑完成结论。",
+          "description_en": "Runs verification before claiming completion, so PRs and commits are backed by fresh evidence.",
+          "what": "在宣称完成、修复或测试通过前，强制运行并检查验证命令输出。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers · 组「完工验证」"
+        },
+        {
+          "name": "workflow-runner",
+          "path": "skills/workflow-runner/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "YAML 工作流执行器",
+          "group_en": "YAML Workflow Runner",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 在 CLI 内读取 YAML 工作流并依次扮演角色执行任务。",
+          "description_en": "Lets the agent run YAML workflows inside the CLI, executing each role step with the current LLM.",
+          "what": "在 Claude Code、OpenClaw 或 Cursor 中执行 agency-orchestrator YAML 多角色工作流。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "writing-plans",
+          "path": "skills/writing-plans/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "源文档驱动开发",
+          "group_en": "Spec-Driven Development",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在编码前把规格拆成文件、任务和测试步骤，便于代理执行。",
+          "description_en": "Turns specs into file-level tasks and test steps before coding.",
+          "what": "生成可执行的实现计划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers · 组「核心开发工作流（superpowers）」"
+        },
+        {
+          "name": "writing-skills",
+          "path": "skills/writing-skills/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "TDD 驱动 Skill 编写",
+          "group_en": "TDD-Based Skill Authoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 TDD 方式创建、验证和迭代 Skill，确保代理行为可观察。",
+          "description_en": "Uses a TDD loop to author, validate, and iterate agent skills.",
+          "what": "编写并验证可复用 Skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/Codex/superpowers/mattpocock · 组「Skill 创建器」"
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "breaking-brake",
+        "repo": "cc-wf-studio",
+        "full_name": "breaking-brake/cc-wf-studio",
+        "url": "https://github.com/breaking-brake/cc-wf-studio",
+        "stars": 5103,
+        "pushed_at": "2026-06-10",
+        "default_branch": "main",
+        "github_description": "CC Workflow Studio",
+        "topics": [
+          "agent-skills",
+          "claude-code",
+          "mcp-tools",
+          "slash-commands",
+          "sub-agents",
+          "vscode-extension",
+          "workflow-automation"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "jira-driven-planning",
+          "path": ".claude/skills/jira-driven-planning/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "Jira 驱动实施计划",
+          "group_en": "Jira-driven implementation planning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于 Jira 需求与 Confluence 文档，生成前后端/基础设施分层实施计划。",
+          "description_en": "Turns Jira requirements and Confluence docs into a layered implementation plan across frontend, backend, and infrastructure.",
+          "what": "Creates a structured implementation plan from Jira ticket details and related Confluence documentation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pr-review-analysis",
+          "path": ".claude/skills/pr-review-analysis/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "PR 评论验证分析",
+          "group_en": "PR review comment validation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "拉取 GitHub PR 评论，逐条核对代码并判定有效性，输出修复建议。",
+          "description_en": "Fetches GitHub PR review comments, checks them against the code, and summarizes valid, partial, or invalid feedback.",
+          "what": "Analyzes GitHub PR review comments and verifies each finding against the actual codebase.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pr-to-main-cleanup",
+          "path": ".claude/skills/pr-to-main-cleanup/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "通用发布流程自动化",
+          "group_en": "Release workflow automation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在 PR 合并到 main 后，同步主干并删除本地/远端功能分支。",
+          "description_en": "Syncs main and deletes local and remote feature branches after a PR is merged.",
+          "what": "删除已合并到 main 的功能分支，避免仓库堆积旧分支。",
+          "chain": true,
+          "chain_group": "PR 到 main 的发布协作流程",
+          "chain_group_en": "PR-to-main release collaboration workflow"
+        },
+        {
+          "name": "pr-to-main",
+          "path": ".claude/skills/pr-to-main/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "通用发布流程自动化",
+          "group_en": "Release workflow automation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为 pnpm + Changesets 单仓创建 main PR，检查受影响包与 changeset。",
+          "description_en": "Creates a main-targeted PR in a pnpm Changesets monorepo, checking affected packages and changesets.",
+          "what": "把 feature/fix 分支整理成可被 Changesets 发布管线处理的 PR。",
+          "chain": true,
+          "chain_group": "PR 到 main 的发布协作流程",
+          "chain_group_en": "PR-to-main release collaboration workflow"
+        },
+        {
+          "name": "workflow-schema-tuning",
+          "path": ".claude/skills/workflow-schema-tuning/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "CC Workflow Studio schema 调优",
+          "group_en": "CC Workflow Studio Schema Tuning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 调整工作流 schema，以影响 AI 编辑器生成工作流的倾向。",
+          "description_en": "Helps agents tune the workflow schema to steer how the AI editor generates workflows.",
+          "what": "Tune workflow-schema.json as prompt engineering for the AI workflow editor.",
+          "chain": true,
+          "chain_group": "CC Workflow Studio 工作流编辑与 schema 调优",
+          "chain_group_en": "CC Workflow Studio workflow editing and schema tuning"
+        },
+        {
+          "name": "cc-workflow-ai-editor",
+          "path": ".github/skills/cc-workflow-ai-editor/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "CC Workflow Studio 可视化工作流编辑",
+          "group_en": "CC Workflow Studio Visual Workflow Editor",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过对话和 MCP 工具创建、修改 CC Workflow Studio 的可视化工作流。",
+          "description_en": "Creates and edits CC Workflow Studio visual workflows through conversation and MCP tools.",
+          "what": "Use MCP-backed conversation to build and modify visual AI agent workflows.",
+          "chain": true,
+          "chain_group": "CC Workflow Studio 工作流编辑与 schema 调优",
+          "chain_group_en": "CC Workflow Studio workflow editing and schema tuning"
+        },
+        {
+          "name": "ccwf-cli",
+          "path": "packages/cli/skills/ccwf-cli/SKILL.md",
+          "subcategory": "9-3",
+          "subcategory_title": "9.3 桌面 Agent 编排平台",
+          "category": "comms-integration",
+          "group": "CC Workflow Studio 工作流编排",
+          "group_en": "CC Workflow Studio workflow orchestration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 在终端预览、校验、转换并执行工作流 JSON。",
+          "description_en": "Helps the agent preview, validate, convert, and run workflow JSON from the terminal.",
+          "what": "用于处理 .vscode/workflows/*.json 或任意 workflow JSON 的查看、验证、导出和执行。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "liliMozi",
+        "repo": "openhanako",
+        "full_name": "liliMozi/openhanako",
+        "url": "https://github.com/liliMozi/openhanako",
+        "stars": 4683,
+        "pushed_at": "2026-06-10",
+        "default_branch": "main",
+        "github_description": "A personal AI agent with memory, personality, and autonomy.",
+        "topics": [],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "image-gen-guide",
+          "path": "plugins/image-gen/skills/image-gen-guide/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "媒体生成工具指南",
+          "group_en": "Media Generation Tool Guide",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 异步调用图片/视频生成工具并路由用户意图。",
+          "description_en": "Guides the agent through async image and video generation plus intent routing.",
+          "what": "媒体生成工作流指南",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hana-plugin-creator",
+          "path": "skills2set/hana-plugin-creator/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Hana 插件开发",
+          "group_en": "Hana Plugin Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 规划、检查和生成 Hana 插件脚手架与安装目录。",
+          "description_en": "Helps the agent plan, validate, and scaffold install-ready Hana plugins.",
+          "what": "Hana 插件创建与开发助手",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "office-documents",
+          "path": "skills2set/office-documents/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "PDF 重型 API / Office 文档四件套",
+          "group_en": "PDF Heavy API / Office Document Suite",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 读取、分析、抽取、修改和转换 PDF 与 Office 文档。",
+          "description_en": "Helps the agent read, analyze, extract from, modify, and convert PDF and Office documents.",
+          "what": "Document inspection, extraction, and safe modification workflow.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "quiet-musing",
+          "path": "skills2set/quiet-musing/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "深度推理协议 / 复杂问题拆解",
+          "group_en": "Deep Reasoning Protocol / Complex Problem Breakdown",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为复杂问题启用结构化推理，先理解、拆解、多路径权衡后再行动。",
+          "description_en": "Triggers a structured reasoning protocol for complex, uncertain, or high-stakes decisions before action.",
+          "what": "Structured reasoning protocol for ambiguous, multi-step, or trade-off-heavy tasks.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skill-creator",
+          "path": "skills2set/skill-creator/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建与评估器",
+          "group_en": "Skill Creation and Evaluation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "创建、优化并评估 Skill，包括测试提示词、基准测试和触发描述调优。",
+          "description_en": "Creates, improves, and evaluates skills with test prompts, benchmarks, and trigger-description tuning.",
+          "what": "用于从零创建、迭代优化并评估 Skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/Codex/superpowers/mattpocock · 组「Skill 创建器」"
+        },
+        {
+          "name": "user-guide",
+          "path": "skills2set/user-guide/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "HanaAgent 用户帮助",
+          "group_en": "HanaAgent User Help",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "面向普通用户解释 HanaAgent 的用法、功能、设置和常见问题。",
+          "description_en": "Explains HanaAgent usage, features, setup, and common questions in plain language.",
+          "what": "用于回答 HanaAgent 的使用、设置和功能问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
