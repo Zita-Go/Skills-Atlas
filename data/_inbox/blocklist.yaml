@@ -35,3 +35,7 @@
   repo: deepchat
   reason: Electron 桌面聊天 App(产品)；19 个 skill 中 10 个是 Anthropic 官方逐字副本，9 个死绑 DeepChat 内部(SQLCipher/PLUGIN_ROOT/MCP)，非通用 skill 集合
   added_at: 2026-06-10
+- author: wechatsync
+  repo: Wechatsync
+  reason: Chrome 扩展产品（一键同步文章到多平台）；唯一 skill 是薄 RPC 客户端，所有平台操作经 WebSocket(9527) 委派给专有 Chrome 扩展，README 直言 cannot operate independently，无法独立使用
+  added_at: '2026-06-11'
