@@ -5152,3 +5152,448 @@
   description_en: Guides Claude through a structured reflection loop for complex, ambiguous, or high-stakes problems.
   sources:
   - claude-obsidian
+- id: docs-knowledge--2-4--362
+  skills:
+  - ljg-book
+  group: 结构化拆书 / 认知地图
+  group_en: Structured Book Analysis & Cognitive Maps
+  category: docs-knowledge
+  subcategory: 2-4
+  chain: false
+  description: 按问题、共识、位移、落点拆解书籍，并生成认知地图。
+  description_en: Breaks down a book by its core question, prior consensus, intellectual delta, conclusion, and takeaway, then produces a cognitive map.
+  sources:
+  - ljg-skills
+- id: design-frontend--5-8--363
+  skills:
+  - ljg-card
+  group: 阅读卡片 / 信息图 / 视觉笔记生成
+  group_en: Reading Cards, Infographics & Visual Notes
+  category: design-frontend
+  subcategory: 5-8
+  chain: false
+  description: 把文本、URL 或文件内容转换为长图、信息图、多卡、漫画或白板等 PNG 视觉素材。
+  description_en: Turns text, URLs, or files into PNG visuals such as long cards, infographics, multi-card decks, comics, or whiteboard notes.
+  sources:
+  - ljg-skills
+- id: finance-trading--16-4--364
+  skills:
+  - ljg-invest
+  group: 创业/项目投资尽调
+  group_en: Startup & Project Investment Due Diligence
+  category: finance-trading
+  subcategory: 16-4
+  chain: false
+  description: 基于BP、访谈和经营数据生成投资分析报告，判断项目飞轮与抗冲击能力。
+  description_en: Produces investment analysis reports from pitches, interviews, and operating data, evaluating flywheels and resilience.
+  sources:
+  - ljg-skills
+- id: education-learning--19-2--365
+  skills:
+  - ljg-learn
+  group: 概念解剖 / 深度理解
+  group_en: Concept Anatomy / Deep Understanding
+  category: education-learning
+  subcategory: 19-2
+  chain: false
+  description: 从历史、辩证、语言、形式等八维拆解任意概念，生成 org-mode 深度理解笔记。
+  description_en: Deconstructs any concept across eight lenses and outputs a concise org-mode note for deeper understanding.
+  sources:
+  - ljg-skills
+- id: academic-research--11-3--366
+  skills:
+  - ljg-paper-flow
+  group: 科研论文阅读与可视化卡片
+  group_en: Research paper reading and visual cards
+  category: academic-research
+  subcategory: 11-3
+  chain: false
+  description: 读取论文来源，生成解读笔记与视觉卡片，支持多篇并行。
+  description_en: Reads paper sources, produces analysis notes and visual cards, with parallel handling for multiple papers.
+  sources:
+  - ljg-skills
+- id: academic-research--11-3--367
+  skills:
+  - ljg-paper-river
+  group: 论文溯源与问题演化
+  group_en: Paper lineage and problem evolution
+  category: academic-research
+  subcategory: 11-3
+  chain: false
+  description: 围绕一篇论文追溯引用谱系，梳理问题演化与最新进展。
+  description_en: Traces a paper’s citation lineage to explain how the problem evolved and where it is heading.
+  sources:
+  - ljg-skills
+- id: academic-research--11-1--368
+  skills:
+  - ljg-paper
+  group: 非学术读者论文故事化解读
+  group_en: Storytelling paper explanations for non-academics
+  category: academic-research
+  subcategory: 11-1
+  chain: false
+  description: 把论文转成七拍故事，帮助非专业读者理解并复述论文。
+  description_en: Turns a paper into a seven-beat story so non-specialists can understand and retell it.
+  sources:
+  - ljg-skills
+- id: docs-knowledge--2-3--369
+  skills:
+  - ljg-plain
+  group: 白话改写 / Plain language rewrite
+  group_en: Plain-language rewriting
+  category: docs-knowledge
+  subcategory: 2-3
+  chain: false
+  description: 把任意内容改写成聪明 12 岁孩子也能懂的白话表达。
+  description_en: Rewrites content in plain language a smart 12-year-old can grasp.
+  sources:
+  - ljg-skills
+- id: design-frontend--5-5--370
+  skills:
+  - ljg-present
+  group: 零依赖 HTML 演示 / Outline 演讲渲染
+  group_en: Zero-dependency HTML presentations / outline speaker decks
+  category: design-frontend
+  subcategory: 5-5
+  chain: false
+  description: 将 orgmode/markdown outline 1:1 渲染为视觉化 HTML 演讲页，不改写原文。
+  description_en: Renders orgmode or Markdown outlines into visual, single-file HTML presentation pages while preserving the original structure.
+  sources:
+  - ljg-skills
+- id: docs-knowledge--2-4--371
+  skills:
+  - ljg-qa
+  group: 长文论证 Q&A 提取
+  group_en: Argument-Driven Q&A Extraction
+  category: docs-knowledge
+  subcategory: 2-4
+  chain: false
+  description: 把文章、论文或书的论证骨架拆成连续、尖锐的问答链。
+  description_en: Extracts a text’s argument skeleton into a chain of incisive Q&A.
+  sources:
+  - ljg-skills
+- id: product-management--3-2--372
+  skills:
+  - ljg-rank
+  group: 领域降秩 / 基本假设挖掘
+  group_en: Domain Rank Reduction & Assumption Mining
+  category: product-management
+  subcategory: 3-2
+  chain: false
+  description: 把领域现象压缩为少数不可再分的生成性解释力，并检查基本假设。
+  description_en: Reduces a domain to its irreducible explanatory generators and tests assumptions.
+  sources:
+  - ljg-skills
+- id: docs-knowledge--2-2--373
+  skills:
+  - ljg-read
+  group: 伴读 / 跨语言阅读
+  group_en: Bilingual Reading Companion
+  category: docs-knowledge
+  subcategory: 2-2
+  chain: false
+  description: 帮助 agent 伴读长文本，翻译、拆解结构并引导用户追问。
+  description_en: Helps an agent guide users through long texts with translation, structure mapping, and probing questions.
+  sources:
+  - ljg-skills
+- id: education-learning--19-2--374
+  skills:
+  - ljg-relationship
+  group: 关系结构诊断
+  group_en: Relationship Structure Diagnosis
+  category: education-learning
+  subcategory: 19-2
+  chain: false
+  description: 帮助 agent 通过结构化提问，让用户看见关系问题的深层模式。
+  description_en: Helps an agent use structured questioning to reveal deeper patterns in relationship issues.
+  sources:
+  - ljg-skills
+- id: product-management--3-2--375
+  skills:
+  - ljg-roundtable
+  group: 多视角圆桌辩论
+  group_en: Multi-perspective Roundtable Debate
+  category: product-management
+  subcategory: 3-2
+  chain: false
+  description: 帮助 agent 组织多视角圆桌辩论，提炼争议并输出结构化讨论。
+  description_en: Helps the agent facilitate a structured multi-perspective debate and distill the core tensions.
+  sources:
+  - ljg-skills
+- id: meta-skill-mgmt--13-2--376
+  skills:
+  - ljg-skill-map
+  group: Skill 安装 / 发现 / Skill 自动发现与调用
+  group_en: Skill Installation / Discovery / Auto-discovery & Invocation
+  category: meta-skill-mgmt
+  subcategory: 13-2
+  chain: false
+  description: 扫描 ~/.claude/skills/ 生成已安装技能的地图与调用关系，便于发现和复用本地技能。
+  description_en: Scans installed skills and renders a categorized visual map so the agent can quickly see available capabilities.
+  sources:
+  - ljg-skills
+- id: product-management--3-2--377
+  skills:
+  - ljg-think
+  group: 纵向深钻思维
+  group_en: Vertical Deep-Dive Thinking
+  category: product-management
+  subcategory: 3-2
+  chain: false
+  description: 引导 agent 对观点逐层追问，直到触及基本机制或公理，并生成 org 笔记。
+  description_en: Guides an agent to drill vertically through a claim until it reaches a foundational mechanism or axiom, then saves an org-mode note.
+  sources:
+  - ljg-skills
+- id: docs-knowledge--2-4--378
+  skills:
+  - ljg-travel
+  group: 文化旅行研究
+  group_en: Cultural Travel Research
+  category: docs-knowledge
+  subcategory: 2-4
+  chain: false
+  description: 为指定城市做博物馆、古建与历史背景研究，生成结构化文档和便携卡片。（注：原 skill 依赖作者私有 Research/ContentAnalysis skill，收录版建议用内置 WebSearch/WebFetch 兜底）
+  description_en: Researches a city’s museums, ancient architecture, and historical context, producing a structured document and portable reference cards.
+  sources:
+  - ljg-skills
+- id: education-learning--19-3--379
+  skills:
+  - ljg-word-flow
+  - ljg-word
+  group: 词卡工作流（解词→信息图）
+  group_en: Word card workflow (word analysis → infographic)
+  category: education-learning
+  subcategory: 19-3
+  chain: true
+  description: 串联英文单词解析和信息图生成，批量产出词卡 PNG。
+  description_en: Explains an English word through etymological imagery, core semantics, and a bilingual takeaway.
+  sources:
+  - ljg-skills
+- id: docs-knowledge--2-3--380
+  skills:
+  - ljg-writes
+  group: 批判性文章写作引擎
+  group_en: Critical Essay Writing Engine
+  category: docs-knowledge
+  subcategory: 2-3
+  chain: false
+  description: 帮助 agent 围绕一个观点层层追问，输出 1000-1500 字批判性文章。
+  description_en: Helps an agent interrogate a single viewpoint and shape it into a 1,000–1,500-word critical essay.
+  sources:
+  - ljg-skills
+- id: design-frontend--5-2--381
+  skills:
+  - antfu
+  group: 前端工程约定
+  group_en: Frontend Engineering Conventions
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 为 JS/TS 项目提供代码组织、类型、注释、测试与发布配置约定，帮助 agent 按 Anthony Fu 偏好搭建和维护项目。
+  description_en: Provides Anthony Fu’s conventions for JS/TS projects, covering code organization, types, comments, testing, and publishing setup.
+  sources:
+  - antfu-skills
+- id: design-frontend--5-2--382
+  skills:
+  - nuxt
+  group: Nuxt 全栈开发指南
+  group_en: Nuxt Full-Stack Development Guide
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 为 Nuxt 3 应用提供目录、配置、路由、数据获取、模块和部署相关约定，帮助 agent 开发与维护全栈 Vue 项目。
+  description_en: Covers Nuxt 3 conventions for directory structure, config, routing, data fetching, modules, and deployment in full-stack Vue apps.
+  sources:
+  - antfu-skills
+- id: design-frontend--5-2--383
+  skills:
+  - pinia
+  group: Vue/Pinia 状态管理规范
+  group_en: Vue/Pinia State Management
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 帮助 agent 在 Vue 项目中定义 Pinia store、处理 state/getters/actions，并安全使用插件与跨 store 组合。
+  description_en: Helps the agent define Pinia stores, manage state/getters/actions, and use plugins or store composition in Vue apps.
+  sources:
+  - antfu-skills
+- id: design-frontend--5-2--384
+  skills:
+  - pnpm
+  group: Node 包管理与工作区规范
+  group_en: Node Package and Workspace Management
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 帮助 agent 在 pnpm 项目中选择 CLI 命令、配置 workspace、处理依赖覆盖，并在 CI 中使用冻结锁文件。
+  description_en: Helps the agent choose pnpm CLI commands, configure workspaces, handle dependency overrides, and use frozen lockfiles in CI.
+  sources:
+  - antfu-skills
+- id: design-frontend--5-2--385
+  skills:
+  - unocss
+  group: UnoCSS 原子化样式工程
+  group_en: UnoCSS atomic styling workflow
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 帮助 agent 检查 UnoCSS 配置，编写规则、shortcuts 与原子化类名。
+  description_en: Helps agents inspect UnoCSS config and write rules, shortcuts, and atomic class utilities.
+  sources:
+  - antfu-skills
+- id: design-frontend--5-2--386
+  skills:
+  - vite
+  group: Vite 项目配置与构建
+  group_en: Vite project configuration and build workflows
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 帮助 agent 配置 Vite、编写插件、处理 SSR 与构建迁移。
+  description_en: Helps agents configure Vite projects, write plugins, and handle SSR or build migrations.
+  sources:
+  - antfu-skills
+- id: design-frontend--5-3--387
+  skills:
+  - vitepress
+  group: 文档站与静态站点生成
+  group_en: Documentation sites and static site generation
+  category: design-frontend
+  subcategory: 5-3
+  chain: false
+  description: 帮助 agent 搭建 VitePress 文档站、配置主题与组织 Markdown 内容。
+  description_en: Helps agents build VitePress docs sites, configure themes, and organize Markdown content.
+  sources:
+  - antfu-skills
+- id: software-engineering--1-2--388
+  skills:
+  - vitest
+  group: Vitest 单元测试与覆盖率
+  group_en: Vitest Unit Testing & Coverage
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 帮助 agent 编写、配置和调试 Vitest 单元测试，覆盖 mock、覆盖率与过滤。
+  description_en: Helps agents write, configure, and debug Vitest unit tests, including mocks, coverage, and filtering.
+  sources:
+  - antfu-skills
+- id: design-frontend--5-2--389
+  skills:
+  - vue
+  group: Vue 3 开发规范
+  group_en: Vue 3 Development Guidelines
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 帮助 agent 在 Vue 3 SFC 中按 Composition API、TS 和内置 API 编写组件。
+  description_en: Helps agents choose VueUse composables first when building features in Vue or Nuxt projects.
+  sources:
+  - antfu-skills
+- id: software-engineering--1-3--390
+  skills:
+  - chinese-code-review
+  group: 中文代码审查沟通规范
+  group_en: Chinese Code Review Communication
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 提供中文代码审查话术、分级标注和中英注释规范，帮助温和而明确地反馈问题。
+  description_en: Provides Chinese code-review phrasing, severity labels, and bilingual comment conventions for clear feedback.
+  sources:
+  - superpowers-zh
+- id: software-engineering--1-4--391
+  skills:
+  - chinese-commit-conventions
+  group: Git 工作流 / 危险命令拦截
+  group_en: Git workflow / dangerous command guardrails
+  category: software-engineering
+  subcategory: 1-4
+  chain: false
+  description: 帮助 agent 按中文团队习惯编写规范 commit、生成 changelog 配置。
+  description_en: Helps agents write conventional Chinese commit messages and configure changelog tooling.
+  sources:
+  - superpowers-zh
+- id: docs-knowledge--2-3--392
+  skills:
+  - chinese-documentation
+  group: 语法 / 文风审查
+  group_en: Grammar and style review
+  category: docs-knowledge
+  subcategory: 2-3
+  chain: false
+  description: 为 agent 提供中文技术文档排版、标点和中英混排规范，提升可读性。
+  description_en: Gives agents Chinese technical writing rules for typography, punctuation, and mixed-language readability.
+  sources:
+  - superpowers-zh
+- id: software-engineering--1-4--393
+  skills:
+  - chinese-git-workflow
+  group: Git 工作流
+  group_en: Git Workflow
+  category: software-engineering
+  subcategory: 1-4
+  chain: false
+  description: 帮助 agent 配置国内 Git 平台 SSH/HTTPS、CI 接入与镜像同步。
+  description_en: Helps an agent verify tests after implementation and choose the right merge, PR, or cleanup path.
+  sources:
+  - superpowers-zh
+- id: agent-architecture--12-4--394
+  skills:
+  - workflow-runner
+  group: YAML 工作流执行器
+  group_en: YAML Workflow Runner
+  category: agent-architecture
+  subcategory: 12-4
+  chain: false
+  description: 运行 agency-orchestrator 风格的 YAML 工作流编排器（依赖外部 agency-agents-zh 包，使用前需安装）。
+  description_en: Lets the agent run YAML workflows inside the CLI, executing each role step with the current LLM.
+  sources:
+  - superpowers-zh
+- id: software-engineering--1-1--395
+  skills:
+  - jira-driven-planning
+  group: Jira 驱动实施计划
+  group_en: Jira-driven implementation planning
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 基于 Jira 需求与 Confluence 文档，生成前后端/基础设施分层实施计划。
+  description_en: Turns Jira requirements and Confluence docs into a layered implementation plan across frontend, backend, and infrastructure.
+  sources:
+  - cc-wf-studio
+- id: software-engineering--1-3--396
+  skills:
+  - pr-review-analysis
+  group: PR 评论验证分析
+  group_en: PR review comment validation
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 拉取 GitHub PR 评论，逐条核对代码并判定有效性，输出修复建议。
+  description_en: Fetches GitHub PR review comments, checks them against the code, and summarizes valid, partial, or invalid feedback.
+  sources:
+  - cc-wf-studio
+- id: docs-knowledge--2-1--397
+  skills:
+  - office-documents
+  group: PDF 重型 API / Office 文档四件套
+  group_en: PDF Heavy API / Office Document Suite
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: false
+  description: 帮助 agent 读取、分析、抽取、修改和转换 PDF 与 Office 文档。
+  description_en: Helps the agent read, analyze, extract from, modify, and convert PDF and Office documents.
+  sources:
+  - openhanako
+- id: agent-architecture--12-5--398
+  skills:
+  - quiet-musing
+  group: 深度推理协议 / 复杂问题拆解
+  group_en: Deep Reasoning Protocol / Complex Problem Breakdown
+  category: agent-architecture
+  subcategory: 12-5
+  chain: false
+  description: 为复杂问题启用结构化推理，先理解、拆解、多路径权衡后再行动。
+  description_en: Triggers a structured reasoning protocol for complex, uncertain, or high-stakes decisions before action.
+  sources:
+  - openhanako

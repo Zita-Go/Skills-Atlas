@@ -535,6 +535,41 @@
               "when_to_use": "复杂多步任务要持久跟踪时",
               "when_to_use_en": "When a complex multi-step task needs persistent tracking",
               "py": "wen jian shi chi jiu gui hua （Manus  feng ge ） planning-with-files  yong san ge  markdown  wen jian chai jie bing gen zong duo bu ren wu 、 kua hui hua hui fu"
+            },
+            {
+              "skills": [
+                "jira-driven-planning"
+              ],
+              "group": "Jira 驱动实施计划",
+              "group_en": "Jira-driven implementation planning",
+              "chain": false,
+              "description": "基于 Jira 需求与 Confluence 文档，生成前后端/基础设施分层实施计划。",
+              "description_en": "Turns Jira requirements and Confluence docs into a layered implementation plan across frontend, backend, and infrastructure.",
+              "sources": [
+                {
+                  "name": "cc-wf-studio",
+                  "url": "https://github.com/breaking-brake/cc-wf-studio",
+                  "stars": 5103,
+                  "last_commit": "2026-06-10",
+                  "type": "skill-pack",
+                  "author": "breaking-brake",
+                  "repo": "cc-wf-studio",
+                  "default_branch": "main",
+                  "license": "AGPL-3.0",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add breaking-brake/cc-wf-studio",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/breaking-brake/cc-wf-studio ~/.claude/skills/cc-wf-studio"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Jira  qu dong shi shi ji hua  jira-driven-planning "
             }
           ]
         },
@@ -1164,6 +1199,41 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "ji cheng ce shi bao gao  test-reporting "
+            },
+            {
+              "skills": [
+                "vitest"
+              ],
+              "group": "Vitest 单元测试与覆盖率",
+              "group_en": "Vitest Unit Testing & Coverage",
+              "chain": false,
+              "description": "帮助 agent 编写、配置和调试 Vitest 单元测试，覆盖 mock、覆盖率与过滤。",
+              "description_en": "Helps agents write, configure, and debug Vitest unit tests, including mocks, coverage, and filtering.",
+              "sources": [
+                {
+                  "name": "antfu-skills",
+                  "url": "https://github.com/antfu/skills",
+                  "stars": 5259,
+                  "last_commit": "2026-05-01",
+                  "type": "multi-skill-suite",
+                  "author": "antfu",
+                  "repo": "skills",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add antfu/skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/antfu/skills ~/.claude/skills/skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Vitest  dan yuan ce shi yu fu gai lv  vitest "
             }
           ]
         },
@@ -1745,6 +1815,76 @@
               "when_to_use": "多维审查要汇总去重时",
               "when_to_use_en": "When consolidating multi-dimensional reviews",
               "py": "duo  reviewer  xie tiao yu fa xian qu zhong  multi-reviewer-patterns  duo  agent  bing xing  review、 qu zhong fa xian 、 jiao zhun yan zhong du chu tong yi bao gao"
+            },
+            {
+              "skills": [
+                "chinese-code-review"
+              ],
+              "group": "中文代码审查沟通规范",
+              "group_en": "Chinese Code Review Communication",
+              "chain": false,
+              "description": "提供中文代码审查话术、分级标注和中英注释规范，帮助温和而明确地反馈问题。",
+              "description_en": "Provides Chinese code-review phrasing, severity labels, and bilingual comment conventions for clear feedback.",
+              "sources": [
+                {
+                  "name": "superpowers-zh",
+                  "url": "https://github.com/jnMetaCode/superpowers-zh",
+                  "stars": 5124,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "jnMetaCode",
+                  "repo": "superpowers-zh",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add jnMetaCode/superpowers-zh",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/jnMetaCode/superpowers-zh ~/.claude/skills/superpowers-zh"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "zhong wen dai ma shen cha gou tong gui fan  chinese-code-review "
+            },
+            {
+              "skills": [
+                "pr-review-analysis"
+              ],
+              "group": "PR 评论验证分析",
+              "group_en": "PR review comment validation",
+              "chain": false,
+              "description": "拉取 GitHub PR 评论，逐条核对代码并判定有效性，输出修复建议。",
+              "description_en": "Fetches GitHub PR review comments, checks them against the code, and summarizes valid, partial, or invalid feedback.",
+              "sources": [
+                {
+                  "name": "cc-wf-studio",
+                  "url": "https://github.com/breaking-brake/cc-wf-studio",
+                  "stars": 5103,
+                  "last_commit": "2026-06-10",
+                  "type": "skill-pack",
+                  "author": "breaking-brake",
+                  "repo": "cc-wf-studio",
+                  "default_branch": "main",
+                  "license": "AGPL-3.0",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add breaking-brake/cc-wf-studio",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/breaking-brake/cc-wf-studio ~/.claude/skills/cc-wf-studio"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "PR  ping lun yan zheng fen xi  pr-review-analysis "
             }
           ]
         },
@@ -2154,6 +2294,76 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "GitHub Issue/PR  fen xi yu fa bu zi dong hua  triage-issue "
+            },
+            {
+              "skills": [
+                "chinese-commit-conventions"
+              ],
+              "group": "Git 工作流 / 危险命令拦截",
+              "group_en": "Git workflow / dangerous command guardrails",
+              "chain": false,
+              "description": "帮助 agent 按中文团队习惯编写规范 commit、生成 changelog 配置。",
+              "description_en": "Helps agents write conventional Chinese commit messages and configure changelog tooling.",
+              "sources": [
+                {
+                  "name": "superpowers-zh",
+                  "url": "https://github.com/jnMetaCode/superpowers-zh",
+                  "stars": 5124,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "jnMetaCode",
+                  "repo": "superpowers-zh",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add jnMetaCode/superpowers-zh",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/jnMetaCode/superpowers-zh ~/.claude/skills/superpowers-zh"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Git  gong zuo liu  /  wei xian ming ling lan jie  chinese-commit-conventions "
+            },
+            {
+              "skills": [
+                "chinese-git-workflow"
+              ],
+              "group": "Git 工作流",
+              "group_en": "Git Workflow",
+              "chain": false,
+              "description": "帮助 agent 配置国内 Git 平台 SSH/HTTPS、CI 接入与镜像同步。",
+              "description_en": "Helps an agent verify tests after implementation and choose the right merge, PR, or cleanup path.",
+              "sources": [
+                {
+                  "name": "superpowers-zh",
+                  "url": "https://github.com/jnMetaCode/superpowers-zh",
+                  "stars": 5124,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "jnMetaCode",
+                  "repo": "superpowers-zh",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add jnMetaCode/superpowers-zh",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/jnMetaCode/superpowers-zh ~/.claude/skills/superpowers-zh"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Git  gong zuo liu  chinese-git-workflow "
             }
           ]
         },
@@ -3113,6 +3323,41 @@
               "when_to_use": "多格式混合数据需要高效抽取",
               "when_to_use_en": "Multi-format mixed data needs efficient extraction.",
               "py": "duo ge shi chou qu yin qing  kreuzberg  yi ci xing chou qu 90+ wen jian ge shi +300+ bian cheng yu yan ， sheng 30-50%RAG token cheng ben 。"
+            },
+            {
+              "skills": [
+                "office-documents"
+              ],
+              "group": "PDF 重型 API / Office 文档四件套",
+              "group_en": "PDF Heavy API / Office Document Suite",
+              "chain": false,
+              "description": "帮助 agent 读取、分析、抽取、修改和转换 PDF 与 Office 文档。",
+              "description_en": "Helps the agent read, analyze, extract from, modify, and convert PDF and Office documents.",
+              "sources": [
+                {
+                  "name": "openhanako",
+                  "url": "https://github.com/liliMozi/openhanako",
+                  "stars": 4683,
+                  "last_commit": "2026-06-10",
+                  "type": "skill-pack",
+                  "author": "liliMozi",
+                  "repo": "openhanako",
+                  "default_branch": "main",
+                  "license": "Apache-2.0",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add liliMozi/openhanako",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/liliMozi/openhanako ~/.claude/skills/openhanako"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "PDF  zhong xing  API / Office  wen dang si jian tao  office-documents "
             }
           ]
         },
@@ -3195,6 +3440,41 @@
               "when_to_use": "要翻译/精翻文章时",
               "when_to_use_en": "When translating or polishing a translation",
               "py": "wen zhang fan yi （ duo mo shi ） baoyu-translate  duo mo shi fan yi wen zhang / wen dang bing bao shu yu yi zhi"
+            },
+            {
+              "skills": [
+                "ljg-read"
+              ],
+              "group": "伴读 / 跨语言阅读",
+              "group_en": "Bilingual Reading Companion",
+              "chain": false,
+              "description": "帮助 agent 伴读长文本，翻译、拆解结构并引导用户追问。",
+              "description_en": "Helps an agent guide users through long texts with translation, structure mapping, and probing questions.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "ban du  /  kua yu yan yue du  ljg-read "
             }
           ]
         },
@@ -3647,6 +3927,111 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "nei rong chuang zuo zhen duan  dbs-content "
+            },
+            {
+              "skills": [
+                "ljg-plain"
+              ],
+              "group": "白话改写 / Plain language rewrite",
+              "group_en": "Plain-language rewriting",
+              "chain": false,
+              "description": "把任意内容改写成聪明 12 岁孩子也能懂的白话表达。",
+              "description_en": "Rewrites content in plain language a smart 12-year-old can grasp.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "bai hua gai xie  / Plain language rewrite ljg-plain "
+            },
+            {
+              "skills": [
+                "ljg-writes"
+              ],
+              "group": "批判性文章写作引擎",
+              "group_en": "Critical Essay Writing Engine",
+              "chain": false,
+              "description": "帮助 agent 围绕一个观点层层追问，输出 1000-1500 字批判性文章。",
+              "description_en": "Helps an agent interrogate a single viewpoint and shape it into a 1,000–1,500-word critical essay.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "pi pan xing wen zhang xie zuo yin qing  ljg-writes "
+            },
+            {
+              "skills": [
+                "chinese-documentation"
+              ],
+              "group": "语法 / 文风审查",
+              "group_en": "Grammar and style review",
+              "chain": false,
+              "description": "为 agent 提供中文技术文档排版、标点和中英混排规范，提升可读性。",
+              "description_en": "Gives agents Chinese technical writing rules for typography, punctuation, and mixed-language readability.",
+              "sources": [
+                {
+                  "name": "superpowers-zh",
+                  "url": "https://github.com/jnMetaCode/superpowers-zh",
+                  "stars": 5124,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "jnMetaCode",
+                  "repo": "superpowers-zh",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add jnMetaCode/superpowers-zh",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/jnMetaCode/superpowers-zh ~/.claude/skills/superpowers-zh"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "yu fa  /  wen feng shen cha  chinese-documentation "
             }
           ]
         },
@@ -3982,6 +4367,111 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "Obsidian  bi ji ge shi  /  jie gou gong ju  canvas obsidian-bases obsidian-markdown "
+            },
+            {
+              "skills": [
+                "ljg-book"
+              ],
+              "group": "结构化拆书 / 认知地图",
+              "group_en": "Structured Book Analysis & Cognitive Maps",
+              "chain": false,
+              "description": "按问题、共识、位移、落点拆解书籍，并生成认知地图。",
+              "description_en": "Breaks down a book by its core question, prior consensus, intellectual delta, conclusion, and takeaway, then produces a cognitive map.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "jie gou hua chai shu  /  ren zhi di tu  ljg-book "
+            },
+            {
+              "skills": [
+                "ljg-qa"
+              ],
+              "group": "长文论证 Q&A 提取",
+              "group_en": "Argument-Driven Q&A Extraction",
+              "chain": false,
+              "description": "把文章、论文或书的论证骨架拆成连续、尖锐的问答链。",
+              "description_en": "Extracts a text’s argument skeleton into a chain of incisive Q&A.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "zhang wen lun zheng  Q&A  ti qu  ljg-qa "
+            },
+            {
+              "skills": [
+                "ljg-travel"
+              ],
+              "group": "文化旅行研究",
+              "group_en": "Cultural Travel Research",
+              "chain": false,
+              "description": "为指定城市做博物馆、古建与历史背景研究，生成结构化文档和便携卡片。（注：原 skill 依赖作者私有 Research/ContentAnalysis skill，收录版建议用内置 WebSearch/WebFetch 兜底）",
+              "description_en": "Researches a city’s museums, ancient architecture, and historical context, producing a structured document and portable reference cards.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "wen hua lv xing yan jiu  ljg-travel "
             }
           ]
         },
@@ -4751,6 +5241,111 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "wen ti kuang ding  /  mu biao cheng qing （ wei te gen si tan yu yan zhe xue ） dbs-deconstruct dbs-goal dbs-good-question "
+            },
+            {
+              "skills": [
+                "ljg-rank"
+              ],
+              "group": "领域降秩 / 基本假设挖掘",
+              "group_en": "Domain Rank Reduction & Assumption Mining",
+              "chain": false,
+              "description": "把领域现象压缩为少数不可再分的生成性解释力，并检查基本假设。",
+              "description_en": "Reduces a domain to its irreducible explanatory generators and tests assumptions.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "ling yu jiang zhi  /  ji ben jia she wa jue  ljg-rank "
+            },
+            {
+              "skills": [
+                "ljg-roundtable"
+              ],
+              "group": "多视角圆桌辩论",
+              "group_en": "Multi-perspective Roundtable Debate",
+              "chain": false,
+              "description": "帮助 agent 组织多视角圆桌辩论，提炼争议并输出结构化讨论。",
+              "description_en": "Helps the agent facilitate a structured multi-perspective debate and distill the core tensions.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "duo shi jiao yuan zhuo bian lun  ljg-roundtable "
+            },
+            {
+              "skills": [
+                "ljg-think"
+              ],
+              "group": "纵向深钻思维",
+              "group_en": "Vertical Deep-Dive Thinking",
+              "chain": false,
+              "description": "引导 agent 对观点逐层追问，直到触及基本机制或公理，并生成 org 笔记。",
+              "description_en": "Guides an agent to drill vertically through a claim until it reaches a foundational mechanism or axiom, then saves an org-mode note.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "zong xiang shen zuan si wei  ljg-think "
             }
           ]
         },
@@ -8086,6 +8681,251 @@
               "when_to_use": "要做高质量前端界面时",
               "when_to_use_en": "When building high-quality frontend UIs",
               "py": "qian duan gong cheng gui fan  frontend-ui-engineering  gou jian sheng chan ji 、 ke fang wen 、 gao xing neng qie jing zhi de  UI"
+            },
+            {
+              "skills": [
+                "antfu"
+              ],
+              "group": "前端工程约定",
+              "group_en": "Frontend Engineering Conventions",
+              "chain": false,
+              "description": "为 JS/TS 项目提供代码组织、类型、注释、测试与发布配置约定，帮助 agent 按 Anthony Fu 偏好搭建和维护项目。",
+              "description_en": "Provides Anthony Fu’s conventions for JS/TS projects, covering code organization, types, comments, testing, and publishing setup.",
+              "sources": [
+                {
+                  "name": "antfu-skills",
+                  "url": "https://github.com/antfu/skills",
+                  "stars": 5259,
+                  "last_commit": "2026-05-01",
+                  "type": "multi-skill-suite",
+                  "author": "antfu",
+                  "repo": "skills",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add antfu/skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/antfu/skills ~/.claude/skills/skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "qian duan gong cheng yue ding  antfu "
+            },
+            {
+              "skills": [
+                "nuxt"
+              ],
+              "group": "Nuxt 全栈开发指南",
+              "group_en": "Nuxt Full-Stack Development Guide",
+              "chain": false,
+              "description": "为 Nuxt 3 应用提供目录、配置、路由、数据获取、模块和部署相关约定，帮助 agent 开发与维护全栈 Vue 项目。",
+              "description_en": "Covers Nuxt 3 conventions for directory structure, config, routing, data fetching, modules, and deployment in full-stack Vue apps.",
+              "sources": [
+                {
+                  "name": "antfu-skills",
+                  "url": "https://github.com/antfu/skills",
+                  "stars": 5259,
+                  "last_commit": "2026-05-01",
+                  "type": "multi-skill-suite",
+                  "author": "antfu",
+                  "repo": "skills",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add antfu/skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/antfu/skills ~/.claude/skills/skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Nuxt  quan zhan kai fa zhi nan  nuxt "
+            },
+            {
+              "skills": [
+                "pinia"
+              ],
+              "group": "Vue/Pinia 状态管理规范",
+              "group_en": "Vue/Pinia State Management",
+              "chain": false,
+              "description": "帮助 agent 在 Vue 项目中定义 Pinia store、处理 state/getters/actions，并安全使用插件与跨 store 组合。",
+              "description_en": "Helps the agent define Pinia stores, manage state/getters/actions, and use plugins or store composition in Vue apps.",
+              "sources": [
+                {
+                  "name": "antfu-skills",
+                  "url": "https://github.com/antfu/skills",
+                  "stars": 5259,
+                  "last_commit": "2026-05-01",
+                  "type": "multi-skill-suite",
+                  "author": "antfu",
+                  "repo": "skills",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add antfu/skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/antfu/skills ~/.claude/skills/skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Vue/Pinia  zhuang tai guan li gui fan  pinia "
+            },
+            {
+              "skills": [
+                "pnpm"
+              ],
+              "group": "Node 包管理与工作区规范",
+              "group_en": "Node Package and Workspace Management",
+              "chain": false,
+              "description": "帮助 agent 在 pnpm 项目中选择 CLI 命令、配置 workspace、处理依赖覆盖，并在 CI 中使用冻结锁文件。",
+              "description_en": "Helps the agent choose pnpm CLI commands, configure workspaces, handle dependency overrides, and use frozen lockfiles in CI.",
+              "sources": [
+                {
+                  "name": "antfu-skills",
+                  "url": "https://github.com/antfu/skills",
+                  "stars": 5259,
+                  "last_commit": "2026-05-01",
+                  "type": "multi-skill-suite",
+                  "author": "antfu",
+                  "repo": "skills",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add antfu/skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/antfu/skills ~/.claude/skills/skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Node  bao guan li yu gong zuo qu gui fan  pnpm "
+            },
+            {
+              "skills": [
+                "unocss"
+              ],
+              "group": "UnoCSS 原子化样式工程",
+              "group_en": "UnoCSS atomic styling workflow",
+              "chain": false,
+              "description": "帮助 agent 检查 UnoCSS 配置，编写规则、shortcuts 与原子化类名。",
+              "description_en": "Helps agents inspect UnoCSS config and write rules, shortcuts, and atomic class utilities.",
+              "sources": [
+                {
+                  "name": "antfu-skills",
+                  "url": "https://github.com/antfu/skills",
+                  "stars": 5259,
+                  "last_commit": "2026-05-01",
+                  "type": "multi-skill-suite",
+                  "author": "antfu",
+                  "repo": "skills",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add antfu/skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/antfu/skills ~/.claude/skills/skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "UnoCSS  yuan zi hua yang shi gong cheng  unocss "
+            },
+            {
+              "skills": [
+                "vite"
+              ],
+              "group": "Vite 项目配置与构建",
+              "group_en": "Vite project configuration and build workflows",
+              "chain": false,
+              "description": "帮助 agent 配置 Vite、编写插件、处理 SSR 与构建迁移。",
+              "description_en": "Helps agents configure Vite projects, write plugins, and handle SSR or build migrations.",
+              "sources": [
+                {
+                  "name": "antfu-skills",
+                  "url": "https://github.com/antfu/skills",
+                  "stars": 5259,
+                  "last_commit": "2026-05-01",
+                  "type": "multi-skill-suite",
+                  "author": "antfu",
+                  "repo": "skills",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add antfu/skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/antfu/skills ~/.claude/skills/skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Vite  xiang mu pei zhi yu gou jian  vite "
+            },
+            {
+              "skills": [
+                "vue"
+              ],
+              "group": "Vue 3 开发规范",
+              "group_en": "Vue 3 Development Guidelines",
+              "chain": false,
+              "description": "帮助 agent 在 Vue 3 SFC 中按 Composition API、TS 和内置 API 编写组件。",
+              "description_en": "Helps agents choose VueUse composables first when building features in Vue or Nuxt projects.",
+              "sources": [
+                {
+                  "name": "antfu-skills",
+                  "url": "https://github.com/antfu/skills",
+                  "stars": 5259,
+                  "last_commit": "2026-05-01",
+                  "type": "multi-skill-suite",
+                  "author": "antfu",
+                  "repo": "skills",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add antfu/skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/antfu/skills ~/.claude/skills/skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Vue 3  kai fa gui fan  vue "
             }
           ]
         },
@@ -8167,6 +9007,41 @@
               "when_to_use": "尚无设计稿要做营销页时",
               "when_to_use_en": "When building a marketing page with no design yet",
               "py": "pin pai zhuo lu ye she ji  brand-landingpage  pin pai fang tan ding fang xiang  + Stitch  sheng cheng ke bu shu zhuo lu ye  HTML"
+            },
+            {
+              "skills": [
+                "vitepress"
+              ],
+              "group": "文档站与静态站点生成",
+              "group_en": "Documentation sites and static site generation",
+              "chain": false,
+              "description": "帮助 agent 搭建 VitePress 文档站、配置主题与组织 Markdown 内容。",
+              "description_en": "Helps agents build VitePress docs sites, configure themes, and organize Markdown content.",
+              "sources": [
+                {
+                  "name": "antfu-skills",
+                  "url": "https://github.com/antfu/skills",
+                  "stars": 5259,
+                  "last_commit": "2026-05-01",
+                  "type": "multi-skill-suite",
+                  "author": "antfu",
+                  "repo": "skills",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add antfu/skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/antfu/skills ~/.claude/skills/skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "wen dang zhan yu jing tai zhan dian sheng cheng  vitepress "
             }
           ]
         },
@@ -8562,6 +9437,41 @@
               "when_to_use": "要快速做演示幻灯片时",
               "when_to_use_en": "When quickly producing presentation slides",
               "py": "huan deng pian tu xiang sheng cheng  baoyu-slide-deck  ba nei rong zuo cheng cheng tao huan deng pian tu"
+            },
+            {
+              "skills": [
+                "ljg-present"
+              ],
+              "group": "零依赖 HTML 演示 / Outline 演讲渲染",
+              "group_en": "Zero-dependency HTML presentations / outline speaker decks",
+              "chain": false,
+              "description": "将 orgmode/markdown outline 1:1 渲染为视觉化 HTML 演讲页，不改写原文。",
+              "description_en": "Renders orgmode or Markdown outlines into visual, single-file HTML presentation pages while preserving the original structure.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "ling yi lai  HTML  yan shi  / Outline  yan jiang xuan ran  ljg-present "
             }
           ]
         },
@@ -9094,6 +10004,41 @@
               "when_to_use": "图片太大要压缩时",
               "when_to_use_en": "When images are too large and need compressing",
               "py": "tu xiang ya suo （WebP/PNG） baoyu-compress-image  pi liang ba tu xiang ya cheng  WebP/PNG"
+            },
+            {
+              "skills": [
+                "ljg-card"
+              ],
+              "group": "阅读卡片 / 信息图 / 视觉笔记生成",
+              "group_en": "Reading Cards, Infographics & Visual Notes",
+              "chain": false,
+              "description": "把文本、URL 或文件内容转换为长图、信息图、多卡、漫画或白板等 PNG 视觉素材。",
+              "description_en": "Turns text, URLs, or files into PNG visuals such as long cards, infographics, multi-card decks, comics, or whiteboard notes.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "yue du ka pian  /  xin xi tu  /  shi jue bi ji sheng cheng  ljg-card "
             }
           ]
         }
@@ -11744,6 +12689,41 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "Nature  lun wen quan liu cheng （ jian suo → yue du → xie zuo → run se → yin wen → shu ju → zhi tu →PPT→ zi shen → hui fu ） nature-academic-search nature-reader nature-writing nature-polishing nature-citation nature-data nature-figure nature-paper2ppt nature-reviewer nature-response "
+            },
+            {
+              "skills": [
+                "ljg-paper"
+              ],
+              "group": "非学术读者论文故事化解读",
+              "group_en": "Storytelling paper explanations for non-academics",
+              "chain": false,
+              "description": "把论文转成七拍故事，帮助非专业读者理解并复述论文。",
+              "description_en": "Turns a paper into a seven-beat story so non-specialists can understand and retell it.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "fei xue shu du zhe lun wen gu shi hua jie du  ljg-paper "
             }
           ]
         },
@@ -11963,6 +12943,76 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "shen du wen xian jian suo  /  zong shu  lit-review deep-research academic-researcher literature-search literature-review github-research survey-generation literature-scout research-lookup "
+            },
+            {
+              "skills": [
+                "ljg-paper-flow"
+              ],
+              "group": "科研论文阅读与可视化卡片",
+              "group_en": "Research paper reading and visual cards",
+              "chain": false,
+              "description": "读取论文来源，生成解读笔记与视觉卡片，支持多篇并行。",
+              "description_en": "Reads paper sources, produces analysis notes and visual cards, with parallel handling for multiple papers.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "ke yan lun wen yue du yu ke shi hua ka pian  ljg-paper-flow "
+            },
+            {
+              "skills": [
+                "ljg-paper-river"
+              ],
+              "group": "论文溯源与问题演化",
+              "group_en": "Paper lineage and problem evolution",
+              "chain": false,
+              "description": "围绕一篇论文追溯引用谱系，梳理问题演化与最新进展。",
+              "description_en": "Traces a paper’s citation lineage to explain how the problem evolved and where it is heading.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "lun wen su yuan yu wen ti yan hua  ljg-paper-river "
             }
           ]
         },
@@ -12967,6 +14017,41 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "duo dai li bing xing kai fa xie tiao  colony-progress-tracker "
+            },
+            {
+              "skills": [
+                "workflow-runner"
+              ],
+              "group": "YAML 工作流执行器",
+              "group_en": "YAML Workflow Runner",
+              "chain": false,
+              "description": "运行 agency-orchestrator 风格的 YAML 工作流编排器（依赖外部 agency-agents-zh 包，使用前需安装）。",
+              "description_en": "Lets the agent run YAML workflows inside the CLI, executing each role step with the current LLM.",
+              "sources": [
+                {
+                  "name": "superpowers-zh",
+                  "url": "https://github.com/jnMetaCode/superpowers-zh",
+                  "stars": 5124,
+                  "last_commit": "2026-06-02",
+                  "type": "multi-skill-suite",
+                  "author": "jnMetaCode",
+                  "repo": "superpowers-zh",
+                  "default_branch": "main",
+                  "license": "MIT",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add jnMetaCode/superpowers-zh",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/jnMetaCode/superpowers-zh ~/.claude/skills/superpowers-zh"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "YAML  gong zuo liu zhi xing qi  workflow-runner "
             }
           ]
         },
@@ -13195,6 +14280,41 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "10  yuan ze si kao xun huan  think "
+            },
+            {
+              "skills": [
+                "quiet-musing"
+              ],
+              "group": "深度推理协议 / 复杂问题拆解",
+              "group_en": "Deep Reasoning Protocol / Complex Problem Breakdown",
+              "chain": false,
+              "description": "为复杂问题启用结构化推理，先理解、拆解、多路径权衡后再行动。",
+              "description_en": "Triggers a structured reasoning protocol for complex, uncertain, or high-stakes decisions before action.",
+              "sources": [
+                {
+                  "name": "openhanako",
+                  "url": "https://github.com/liliMozi/openhanako",
+                  "stars": 4683,
+                  "last_commit": "2026-06-10",
+                  "type": "skill-pack",
+                  "author": "liliMozi",
+                  "repo": "openhanako",
+                  "default_branch": "main",
+                  "license": "Apache-2.0",
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add liliMozi/openhanako",
+                    "kind": "skill-pack",
+                    "alt": "git clone https://github.com/liliMozi/openhanako ~/.claude/skills/openhanako"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "shen du tui li xie yi  /  fu za wen ti chai jie  quiet-musing "
             }
           ]
         },
@@ -13568,6 +14688,41 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "Agent  xiang mu  /  gong zuo tai zhi li  dbs-agent-migration "
+            },
+            {
+              "skills": [
+                "ljg-skill-map"
+              ],
+              "group": "Skill 安装 / 发现 / Skill 自动发现与调用",
+              "group_en": "Skill Installation / Discovery / Auto-discovery & Invocation",
+              "chain": false,
+              "description": "扫描 ~/.claude/skills/ 生成已安装技能的地图与调用关系，便于发现和复用本地技能。",
+              "description_en": "Scans installed skills and renders a categorized visual map so the agent can quickly see available capabilities.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "Skill  an zhuang  /  fa xian  / Skill  zi dong fa xian yu diao yong  ljg-skill-map "
             }
           ]
         },
@@ -15054,6 +16209,41 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "tou xing  / PE / M&A cim-builder pitch-deck teaser buyer-list lbo-model merger-model returns-analysis deal-screening dd-checklist ic-memo unit-economics value-creation-plan "
+            },
+            {
+              "skills": [
+                "ljg-invest"
+              ],
+              "group": "创业/项目投资尽调",
+              "group_en": "Startup & Project Investment Due Diligence",
+              "chain": false,
+              "description": "基于BP、访谈和经营数据生成投资分析报告，判断项目飞轮与抗冲击能力。",
+              "description_en": "Produces investment analysis reports from pitches, interviews, and operating data, evaluating flywheels and resilience.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "chuang ye / xiang mu tou zi jin diao  ljg-invest "
             }
           ]
         },
@@ -16336,6 +17526,76 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "zi shi ying xue xi ti du  dbs-learning "
+            },
+            {
+              "skills": [
+                "ljg-learn"
+              ],
+              "group": "概念解剖 / 深度理解",
+              "group_en": "Concept Anatomy / Deep Understanding",
+              "chain": false,
+              "description": "从历史、辩证、语言、形式等八维拆解任意概念，生成 org-mode 深度理解笔记。",
+              "description_en": "Deconstructs any concept across eight lenses and outputs a concise org-mode note for deeper understanding.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "gai nian jie pou  /  shen du li jie  ljg-learn "
+            },
+            {
+              "skills": [
+                "ljg-relationship"
+              ],
+              "group": "关系结构诊断",
+              "group_en": "Relationship Structure Diagnosis",
+              "chain": false,
+              "description": "帮助 agent 通过结构化提问，让用户看见关系问题的深层模式。",
+              "description_en": "Helps an agent use structured questioning to reveal deeper patterns in relationship issues.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "guan xi jie gou zhen duan  ljg-relationship "
             }
           ]
         },
@@ -16441,6 +17701,42 @@
               "when_to_use": "",
               "when_to_use_en": "",
               "py": "fa xue yuan  /  fa kao bei kao  bar-prep-questions case-brief irac-practice legal-writing socratic-drill study-plan flashcards outline-builder cold-call-prep "
+            },
+            {
+              "skills": [
+                "ljg-word-flow",
+                "ljg-word"
+              ],
+              "group": "词卡工作流（解词→信息图）",
+              "group_en": "Word card workflow (word analysis → infographic)",
+              "chain": true,
+              "description": "串联英文单词解析和信息图生成，批量产出词卡 PNG。",
+              "description_en": "Explains an English word through etymological imagery, core semantics, and a bilingual takeaway.",
+              "sources": [
+                {
+                  "name": "ljg-skills",
+                  "url": "https://github.com/lijigang/ljg-skills",
+                  "stars": 5568,
+                  "last_commit": "2026-06-10",
+                  "type": "multi-skill-suite",
+                  "author": "lijigang",
+                  "repo": "ljg-skills",
+                  "default_branch": "master",
+                  "license": null,
+                  "doc_path": null,
+                  "install": {
+                    "command": "npx skills add lijigang/ljg-skills",
+                    "kind": "multi-skill-suite",
+                    "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "ci ka gong zuo liu （ jie ci → xin xi tu ） ljg-word-flow ljg-word "
             }
           ]
         },
@@ -20448,6 +21744,106 @@
         "command": "npx skills add AgriciDaniel/claude-obsidian",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/AgriciDaniel/claude-obsidian ~/.claude/skills/claude-obsidian"
+      },
+      "skill_docs": null,
+      "skill_licenses": null
+    },
+    "ljg-skills": {
+      "url": "https://github.com/lijigang/ljg-skills",
+      "description": "李继刚的个人原创 Claude Code skill 集：拆书、降秩、追本溯源、铸卡、词卡等独有中文方法论，输出多为 org-mode 笔记。",
+      "description_en": "lijigang's personal collection of original Claude Code skills — book deconstruction, domain reduction, source tracing, card crafting, and vocabulary cards, mostly producing org-mode notes.",
+      "stars": 5568,
+      "last_commit": "2026-06-10",
+      "type": "multi-skill-suite",
+      "author": "lijigang",
+      "repo": "ljg-skills",
+      "default_branch": "master",
+      "license": null,
+      "doc_path": null,
+      "install": {
+        "command": "npx skills add lijigang/ljg-skills",
+        "kind": "multi-skill-suite",
+        "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
+      },
+      "skill_docs": null,
+      "skill_licenses": null
+    },
+    "antfu-skills": {
+      "url": "https://github.com/antfu/skills",
+      "description": "Anthony Fu 策展的 agent skill 集；本目录仅收录其自创的 Vue/Vite/Vitest/Nuxt/Pinia/UnoCSS 等前端工程规范 skill（仓内大量 vendored 镜像 skill 未收）。",
+      "description_en": "Anthony Fu's curated agent-skill collection; this catalog includes only his own first-party frontend skills (Vue/Vite/Vitest/Nuxt/Pinia/UnoCSS), not the vendored upstream mirrors in the repo.",
+      "stars": 5259,
+      "last_commit": "2026-05-01",
+      "type": "multi-skill-suite",
+      "author": "antfu",
+      "repo": "skills",
+      "default_branch": "main",
+      "license": "MIT",
+      "doc_path": null,
+      "install": {
+        "command": "npx skills add antfu/skills",
+        "kind": "multi-skill-suite",
+        "alt": "git clone https://github.com/antfu/skills ~/.claude/skills/skills"
+      },
+      "skill_docs": null,
+      "skill_licenses": null
+    },
+    "superpowers-zh": {
+      "url": "https://github.com/jnMetaCode/superpowers-zh",
+      "description": "superpowers 的中文增强版；本目录仅收录其原创的中文 skill（中文代码审查 / 提交规范 / Git 工作流 / 文档规范等），汉化自 superpowers 的副本未收。",
+      "description_en": "Chinese-enhanced edition of superpowers; this catalog includes only its original Chinese skills (code review, commit conventions, Git workflow, documentation), not the translated copies of superpowers.",
+      "stars": 5124,
+      "last_commit": "2026-06-02",
+      "type": "multi-skill-suite",
+      "author": "jnMetaCode",
+      "repo": "superpowers-zh",
+      "default_branch": "main",
+      "license": "MIT",
+      "doc_path": null,
+      "install": {
+        "command": "npx skills add jnMetaCode/superpowers-zh",
+        "kind": "multi-skill-suite",
+        "alt": "git clone https://github.com/jnMetaCode/superpowers-zh ~/.claude/skills/superpowers-zh"
+      },
+      "skill_docs": null,
+      "skill_licenses": null
+    },
+    "cc-wf-studio": {
+      "url": "https://github.com/breaking-brake/cc-wf-studio",
+      "description": "CC Workflow Studio（VSCode 扩展产品）；本目录仅收录其中可独立使用的通用 skill（Jira 驱动规划、PR 评论验证分析）。",
+      "description_en": "CC Workflow Studio (a VSCode-extension product); this catalog includes only its portable, product-independent skills (Jira-driven planning, PR review analysis).",
+      "stars": 5103,
+      "last_commit": "2026-06-10",
+      "type": "skill-pack",
+      "author": "breaking-brake",
+      "repo": "cc-wf-studio",
+      "default_branch": "main",
+      "license": "AGPL-3.0",
+      "doc_path": null,
+      "install": {
+        "command": "npx skills add breaking-brake/cc-wf-studio",
+        "kind": "skill-pack",
+        "alt": "git clone https://github.com/breaking-brake/cc-wf-studio ~/.claude/skills/cc-wf-studio"
+      },
+      "skill_docs": null,
+      "skill_licenses": null
+    },
+    "openhanako": {
+      "url": "https://github.com/liliMozi/openhanako",
+      "description": "HanaAgent（开源桌面 AI agent 产品）；本目录仅收录其中真原创、可移植的 skill（Office 文档四件套、深度推理协议 quiet-musing）。",
+      "description_en": "HanaAgent (an open-source desktop AI agent product); this catalog includes only its genuinely original, portable skills (Office document toolkit, the quiet-musing deep-reasoning protocol).",
+      "stars": 4683,
+      "last_commit": "2026-06-10",
+      "type": "skill-pack",
+      "author": "liliMozi",
+      "repo": "openhanako",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "doc_path": null,
+      "install": {
+        "command": "npx skills add liliMozi/openhanako",
+        "kind": "skill-pack",
+        "alt": "git clone https://github.com/liliMozi/openhanako ~/.claude/skills/openhanako"
       },
       "skill_docs": null,
       "skill_licenses": null
