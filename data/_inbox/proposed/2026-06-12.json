@@ -1,0 +1,1906 @@
+{
+  "generated_at": "2026-06-12T05:30:44+00:00",
+  "date": "2026-06-12",
+  "proposed_count": 4,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 57,
+      "blocklisted": 10,
+      "seen_recently": 54,
+      "truncated": 227,
+      "skill_name_dup": 8,
+      "looks_aggregator": 3,
+      "not_a_collection": 1,
+      "no_skill_files": 2
+    },
+    "filtered_out": [
+      {
+        "full_name": "tech-leads-club/agent-skills",
+        "reason": "⚠ 疑似 vendored 副本（仍提交待人审）：8/30 个 skill 名已在目录——cloudflare-deploy, netlify-deploy, render-deploy, vercel-deploy, figma-implement-design, figma…；建议人审核是否整仓拒/blocklist"
+      },
+      {
+        "full_name": "xixu-me/awesome-persona-distill-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "AlexAnys/awesome-openclaw-usecases-zh",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "zebbern/claude-code-guide",
+        "reason": "非正经集合：该仓库更偏 Claude Code 使用指南/教程（setup、commands、tips），不是以可复用 agent skill 为主的正经集合。"
+      },
+      {
+        "full_name": "Hoper-J/AI-Guide-and-Demos-zh_CN",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "clawdbot-ai/awesome-openclaw-skills-zh",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "killop/anything_about_game",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "component-common-domain-detection"
+      ],
+      "group": "组件语义去重",
+      "group_en": "Component Semantic Deduplication",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "扫描组件命名空间，识别重复领域逻辑并给出合并建议。",
+      "description_en": "Scans component namespaces to spot duplicated domain logic and suggest consolidation opportunities.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "component-flattening-analysis"
+      ],
+      "group": "组件层级整理",
+      "group_en": "Component Hierarchy Cleanup",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "识别组件层级中的孤儿类和错位代码，规划扁平化重构。",
+      "description_en": "Finds orphaned or misplaced classes in component hierarchies and plans flattening refactors.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "component-identification-sizing",
+        "coupling-analysis"
+      ],
+      "group": "架构健康与拆分工作流",
+      "group_en": "Architecture Health & Decomposition Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": true,
+      "description": "用强度、距离、波动性评估模块耦合，判断是否需要解耦。",
+      "description_en": "Assesses module coupling by strength, distance, and volatility to guide decoupling decisions.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "decomposition-planning-roadmap",
+        "domain-analysis"
+      ],
+      "group": "微服务拆分与 DDD 边界分析",
+      "group_en": "Microservices decomposition and DDD boundaries",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮 agent 用 DDD 战略设计识别代码库中的子域、核心域与边界上下文。",
+      "description_en": "Helps agents turn monolith decomposition into a phased migration roadmap with priorities and dependencies.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "domain-identification-grouping"
+      ],
+      "group": "领域识别与服务架构分组",
+      "group_en": "Domain Identification for Service Architecture",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 将代码组件按业务域归类，支撑服务化架构规划。",
+      "description_en": "Helps an agent group code components by business domain to support service-oriented architecture planning.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "frontend-blueprint"
+      ],
+      "group": "前端设计蓝图",
+      "group_en": "Frontend Design Blueprint",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "帮助 agent 在生成前端代码前澄清视觉、交互、品牌与设计约束。",
+      "description_en": "Helps an agent clarify visual, interaction, brand, and design constraints before generating frontend code.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "legacy-migration-planner"
+      ],
+      "group": "遗留系统迁移规划",
+      "group_en": "Legacy Migration Planning",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "为遗留系统迁移制定证据化方案，覆盖 strangler fig、拆分与升级路线。",
+      "description_en": "Creates evidence-backed legacy migration plans using strangler-fig and incremental modernization strategies.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "modular-decomposition"
+      ],
+      "group": "单体模块化拆解",
+      "group_en": "Monolith Modular Decomposition",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "运行单体到模块化的分析流水线，识别组件、耦合、重复逻辑和领域分组。",
+      "description_en": "Runs a structured monolith-to-modular analysis pipeline to size components, assess coupling, and group domains.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "modular-design-principles"
+      ],
+      "group": "模块化系统设计原则",
+      "group_en": "Modular Design Principles",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 判断模块边界、耦合关系、状态隔离和失败隔离。",
+      "description_en": "Helps agents reason about module boundaries, coupling, state isolation, and failure containment.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "react-composition-patterns"
+      ],
+      "group": "React 组件组合模式",
+      "group_en": "React Component Composition Patterns",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 设计可扩展的 React 组件 API，减少布尔 props 膨胀。",
+      "description_en": "Helps agents design scalable React component APIs and reduce boolean prop sprawl.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "tactical-ddd"
+      ],
+      "group": "领域模型审查与 DDD 重构",
+      "group_en": "Domain Model Review & DDD Refactoring",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "帮助 agent 检查贫血领域模型，识别 DDD 构建块并给出重构建议。",
+      "description_en": "Helps agents detect anemic domain models, identify DDD building blocks, and guide refactoring.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "aws-advisor"
+      ],
+      "group": "AWS 架构顾问",
+      "group_en": "AWS Architecture Advisor",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 在 AWS 上下文中做架构选型、安全审查、迁移和排障建议。",
+      "description_en": "Helps agents provide AWS architecture, security, migration, and troubleshooting guidance.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "cloudflare-deploy",
+        "netlify-deploy",
+        "render-deploy",
+        "vercel-deploy"
+      ],
+      "group": "平台特化部署（4 选 1 平行替代）",
+      "group_en": "Platform-specific deployment alternatives",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "帮助 agent 认证、选择 Cloudflare 产品并完成 Workers/Pages 等部署。",
+      "description_en": "Helps the agent authenticate, choose the right Cloudflare product, and deploy Workers, Pages, or related services.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "create-adr",
+        "create-rfc"
+      ],
+      "group": "技术决策文档工作流",
+      "group_en": "Technical decision documentation workflow",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": true,
+      "description": "帮助 agent 为已确定的架构决策创建 ADR，保留背景、选择与后果。",
+      "description_en": "Helps an agent create ADRs for finalized architectural decisions, preserving context, options, and consequences.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "create-technical-design-doc"
+      ],
+      "group": "技术设计文档 / RFC 生成",
+      "group_en": "Technical Design Doc & RFC Writer",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "通过交互式问题梳理架构方案，生成技术设计文档、RFC 或实现计划，便于团队评审与落地。",
+      "description_en": "Guides agents through interactive discovery to produce TDDs, RFCs, architecture plans, and risk-aware implementation docs.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "cursor-subagent-creator"
+      ],
+      "group": "Cursor 子代理创建",
+      "group_en": "Cursor Subagent Builder",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "帮助 agent 按 Cursor 约定创建专用子代理，配置隔离上下文、提示词和可复用工作流。",
+      "description_en": "Helps agents create Cursor-specific subagents with isolated context, prompts, and reusable workflows.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "skill-architect"
+      ],
+      "group": "Skill 创建器",
+      "group_en": "Skill Creator",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "指导 agent 先发现需求，再架构并生成高质量 Skill。",
+      "description_en": "Guides agents through discovery and architecture before drafting a high-quality skill.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "subagent-creator"
+      ],
+      "group": "子代理创建器",
+      "group_en": "Subagent Creator",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "指导 agent 设计带隔离上下文的专用子代理。",
+      "description_en": "Helps agents design specialized subagents with isolated context for complex workflows.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "the-fool"
+      ],
+      "group": "决策挑战与盲点审查",
+      "group_en": "Decision Challenge & Blind Spot Review",
+      "category": "product-management",
+      "subcategory": "3-2",
+      "chain": false,
+      "description": "帮助 agent 在决策前反向质疑方案、检验假设并发现盲点。",
+      "description_en": "Helps an agent challenge plans, test assumptions, and surface blind spots before committing.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "figma-implement-design"
+      ],
+      "group": "Figma 设计转代码工作流",
+      "group_en": "Figma Design-to-Code Workflow",
+      "category": "design-frontend",
+      "subcategory": "5-4",
+      "chain": false,
+      "description": "把 Figma 节点转换为生产代码，并保持像素级视觉一致。",
+      "description_en": "Turns Figma nodes into production code while preserving pixel-perfect visual fidelity.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "figma"
+      ],
+      "group": "Figma 8 件套",
+      "group_en": "Figma 8-piece kit",
+      "category": "design-frontend",
+      "subcategory": "5-4",
+      "chain": false,
+      "description": "通过 Figma MCP 获取节点上下文、截图和资产，辅助设计到代码实现。",
+      "description_en": "Fetches Figma node context, screenshots, and assets via MCP to support design-to-code work.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "frontend-design"
+      ],
+      "group": "高品质前端界面生成",
+      "group_en": "Premium frontend interface generation",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "生成具有鲜明视觉方向的生产级前端页面、组件和 Web 应用。",
+      "description_en": "Generates polished, distinctive production-grade frontend pages, components, and web apps.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "web-design-guidelines"
+      ],
+      "group": "Web 设计指南审查",
+      "group_en": "Web Design Guidelines Review",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "审查 UI 代码是否符合 Web 界面指南、可访问性与交互规范。",
+      "description_en": "Reviews UI code against web interface, accessibility, and interaction guidelines.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "codenavi"
+      ],
+      "group": "跨会话代码库调查",
+      "group_en": "Cross-session Codebase Investigation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 Agent 系统调查陌生代码库，记录发现并谨慎实施修复或功能。",
+      "description_en": "Helps agents investigate unfamiliar codebases, preserve findings, and implement changes carefully.",
+      "sources": [
+        "tech-leads-club/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "google-maps-scraper"
+      ],
+      "group": "Google Maps 商家线索抓取",
+      "group_en": "Google Maps Business Lead Scraping",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "用 Docker 抓取 Google Maps 商家线索、联系方式与评价。",
+      "description_en": "Scrapes Google Maps via Docker to collect business leads, contacts, and reviews.",
+      "sources": [
+        "gosom/google-maps-scraper"
+      ]
+    },
+    {
+      "skills": [
+        "sn-da-excel-workflow",
+        "category-coloring",
+        "condition-filtering",
+        "range-filtering",
+        "threshold-filtering",
+        "basic-statistics"
+      ],
+      "group": "Excel 数据分析工作流",
+      "group_en": "Excel Data Analysis Workflow",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": true,
+      "description": "当 Excel 超万行时转为 Parquet 提速，提取指标并高亮结果行，辅助 agent 处理大型表格。",
+      "description_en": "Run basic statistics across multi-sheet Excel files, including grouped averages, range extraction, deduplication, sums, and exports.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "duplicate-value-coloring",
+        "outlier-coloring"
+      ],
+      "group": "Excel 表格比对与异常标注",
+      "group_en": "Excel comparison and anomaly highlighting",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮 agent 识别 Excel 超限数值与错误单元格，并按规则高亮。",
+      "description_en": "Helps agents extract coefficients from multiple Excel sheets, compare them against thresholds, and highlight anomalies.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "threshold-cell-coloring",
+        "top-value-coloring"
+      ],
+      "group": "Excel 分析工作流",
+      "group_en": "Excel Analysis Workflow",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": true,
+      "description": "读取 Excel 数据，计算阈值并生成带条件格式的报表。",
+      "description_en": "Reads Excel data, calculates thresholds, and exports a formatted report with conditional styling.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "data-bar-formatting",
+        "comparison-analysis"
+      ],
+      "group": "Excel 数据分析与可视化",
+      "group_en": "Excel Data Analysis and Visualization",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "从带单位字符串提取数值，清洗数据并生成分布图表。",
+      "description_en": "Extracts numeric values from unit-bearing strings, cleans the data, and generates distribution charts.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "group-by-analysis",
+        "kpi-metric-analysis"
+      ],
+      "group": "Excel 数据清洗与聚合分析",
+      "group_en": "Excel Data Cleaning and Aggregation",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮 agent 读取 Excel 多 Sheet，清洗数据、分组聚合并生成统计表和图表。",
+      "description_en": "Helps an agent read multi-sheet Excel workbooks, clean data, aggregate groups, and produce summary tables with charts.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "pivot-table-analysis"
+      ],
+      "group": "Excel 交叉表与热力图分析",
+      "group_en": "Excel Crosstab & Heatmap Analysis",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "清洗 Excel 数据，构建交叉表、占比汇总并生成热力图。",
+      "description_en": "Cleans Excel data, builds crosstabs and share summaries, and generates heatmaps.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "time-series-analysis"
+      ],
+      "group": "Excel 时间序列趋势分析",
+      "group_en": "Excel Time-Series Trend Analysis",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "读取 Excel 指标，清洗百分比并分析趋势、变化与生成图表。",
+      "description_en": "Loads Excel metrics, normalizes percentages, analyzes trends and changes, and creates charts.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "trend-analysis"
+      ],
+      "group": "Excel 数据分析与趋势预测",
+      "group_en": "Excel analysis and trend forecasting",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "读取 Excel 并按维度分级，计算增长率、预测值并生成对比图表。",
+      "description_en": "Loads Excel data, grades it by dimension, calculates growth rates and forecasts, and creates comparison charts.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "duplicate-removal"
+      ],
+      "group": "Excel 数据清洗与去重",
+      "group_en": "Excel data cleaning and deduplication",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "读取多 Sheet Excel，按关键词提取并清洗数据，完成分类去重与统计报表。",
+      "description_en": "Reads multi-sheet Excel files, extracts keyword-matched records, cleans text, deduplicates categories, and summarizes counts.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "invalid-data-cleaning",
+        "missing-value-handling"
+      ],
+      "group": "Excel 数据清洗工作流",
+      "group_en": "Excel data cleaning workflow",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": true,
+      "description": "帮助 agent 预处理大规模 Excel，转 Parquet 并按规则清洗文本列后导出。",
+      "description_en": "Preprocesses large Excel files, converts them to Parquet, applies regex text cleaning, and exports the cleaned workbook.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "numeric-format-normalization",
+        "outlier-detection"
+      ],
+      "group": "Excel 数据处理工作流",
+      "group_en": "Excel Data Processing Workflow",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": true,
+      "description": "标准化 Excel 数值列，清洗空值并核对汇总合计，导出核对结果文件。",
+      "description_en": "Normalizes Excel numeric columns, cleans missing values, reconciles totals, and exports results.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "text-normalization"
+      ],
+      "group": "Excel 数据清洗与标准化",
+      "group_en": "Excel data cleaning and normalization",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 agent 清洗 Excel 文本和异常数值字段，提取中文并输出处理后的文件。",
+      "description_en": "Cleans Excel text and malformed numeric fields, extracts Chinese characters, and returns a processed workbook.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "category-filtering"
+      ],
+      "group": "Excel 分类统计与可视化",
+      "group_en": "Excel categorical analysis and visualization",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 agent 对 Excel 数据做自定义分类、交叉统计、评分分级并生成可视化图表。",
+      "description_en": "Classifies Excel data, runs cross-tab statistics and scoring, and generates visual summaries.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "category-statistics",
+        "grouped-statistics"
+      ],
+      "group": "Excel 数据统计分析工作流",
+      "group_en": "Excel Data Statistics Workflow",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": true,
+      "description": "对多 Sheet Excel 做行数统计、合并填充、交叉分析与格式美化。",
+      "description_en": "Processes multi-sheet Excel files with row counts, merges, filling, cross-analysis, and formatting.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "percentage-calculation",
+        "bar-chart-visualization"
+      ],
+      "group": "Excel 数据统计与可视化工作流",
+      "group_en": "Excel Data Analysis & Visualization Workflow",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": true,
+      "description": "读取多表 Excel，处理合并单元格与清洗分组，生成交叉统计结果和美化柱状图。",
+      "description_en": "Dynamically locates metric fields, switches large-file strategies, computes ratios and averages, and outputs a structured report.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "histogram-visualization",
+        "line-chart-visualization"
+      ],
+      "group": "Excel 数据可视化与统计分析",
+      "group_en": "Excel Data Visualization and Statistical Analysis",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "从 Excel 数值列提取数据，分析分布、异常值并生成箱线图/直方图报告。",
+      "description_en": "Analyzes numeric Excel data for distributions and outliers, then generates boxplot and histogram reports.",
+      "sources": [
+        "OpenSenseNova/SenseNova-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "maa-logging"
+      ],
+      "group": "C++ 日志宏规范",
+      "group_en": "C++ Logging Macro Standards",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "指导 agent 在 MaaFramework 中规范使用日志宏、容器和自定义类型输出。",
+      "description_en": "Guides agents to use MaaFramework logging macros, containers, and custom type output consistently.",
+      "sources": [
+        "MaaXYZ/MaaFramework"
+      ]
+    },
+    {
+      "skills": [
+        "meojson"
+      ],
+      "group": "C++ JSON 库使用规范",
+      "group_en": "C++ JSON Library Usage Standards",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 agent 使用 meojson 进行 JSON 解析、序列化、类型检查和自定义类型支持。",
+      "description_en": "Guides agents to use meojson for JSON parsing, serialization, type checks, and custom type support.",
+      "sources": [
+        "MaaXYZ/MaaFramework"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "tech-leads-club",
+        "repo": "agent-skills",
+        "full_name": "tech-leads-club/agent-skills",
+        "url": "https://github.com/tech-leads-club/agent-skills",
+        "stars": 4574,
+        "pushed_at": "2026-06-11",
+        "default_branch": "main",
+        "github_description": "The secure, validated skill registry for professional AI coding agents. Extend Antigravity, Claude Code, Cursor, Copilot and more with absolute confidence.",
+        "topics": [
+          "agent",
+          "ai",
+          "antigravity",
+          "claude-code",
+          "copilot",
+          "cursor",
+          "skills"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "component-common-domain-detection",
+          "path": "packages/skills-catalog/skills/(architecture)/component-common-domain-detection/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "组件语义去重",
+          "group_en": "Component Semantic Deduplication",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "扫描组件命名空间，识别重复领域逻辑并给出合并建议。",
+          "description_en": "Scans component namespaces to spot duplicated domain logic and suggest consolidation opportunities.",
+          "what": "Finds duplicate domain logic across components and proposes consolidation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "component-flattening-analysis",
+          "path": "packages/skills-catalog/skills/(architecture)/component-flattening-analysis/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "组件层级整理",
+          "group_en": "Component Hierarchy Cleanup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "识别组件层级中的孤儿类和错位代码，规划扁平化重构。",
+          "description_en": "Finds orphaned or misplaced classes in component hierarchies and plans flattening refactors.",
+          "what": "Detects misplaced classes and recommends component hierarchy flattening.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "component-identification-sizing",
+          "path": "packages/skills-catalog/skills/(architecture)/component-identification-sizing/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "架构组件识别与拆分规划",
+          "group_en": "Component Discovery & Decomposition Planning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "识别代码库架构组件并统计规模，辅助制定拆分优先级。",
+          "description_en": "Identifies architectural components and size metrics to guide decomposition priorities.",
+          "what": "生成组件清单、规模指标和拆分候选。",
+          "chain": true,
+          "chain_group": "架构健康与拆分工作流",
+          "chain_group_en": "Architecture Health & Decomposition Workflow"
+        },
+        {
+          "name": "coupling-analysis",
+          "path": "packages/skills-catalog/skills/(architecture)/coupling-analysis/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "架构耦合健康分析",
+          "group_en": "Architecture Coupling Health Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用强度、距离、波动性评估模块耦合，判断是否需要解耦。",
+          "description_en": "Assesses module coupling by strength, distance, and volatility to guide decoupling decisions.",
+          "what": "输出模块耦合诊断和解耦建议。",
+          "chain": true,
+          "chain_group": "架构健康与拆分工作流",
+          "chain_group_en": "Architecture Health & Decomposition Workflow"
+        },
+        {
+          "name": "decomposition-planning-roadmap",
+          "path": "packages/skills-catalog/skills/(architecture)/decomposition-planning-roadmap/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "微服务拆分与 DDD 边界分析",
+          "group_en": "Microservices decomposition and DDD boundaries",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 将单体拆分的迁移路径、优先级和依赖梳理成阶段路线图。",
+          "description_en": "Helps agents turn monolith decomposition into a phased migration roadmap with priorities and dependencies.",
+          "what": "规划单体应用拆分为微服务的阶段路线图。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "domain-analysis",
+          "path": "packages/skills-catalog/skills/(architecture)/domain-analysis/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "微服务拆分与 DDD 边界分析",
+          "group_en": "Microservices decomposition and DDD boundaries",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 用 DDD 战略设计识别代码库中的子域、核心域与边界上下文。",
+          "description_en": "Uses DDD strategic design to identify subdomains, core domains, and bounded contexts in a codebase.",
+          "what": "识别业务领域边界与服务拆分候选边界。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "domain-identification-grouping",
+          "path": "packages/skills-catalog/skills/(architecture)/domain-identification-grouping/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "领域识别与服务架构分组",
+          "group_en": "Domain Identification for Service Architecture",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将代码组件按业务域归类，支撑服务化架构规划。",
+          "description_en": "Helps an agent group code components by business domain to support service-oriented architecture planning.",
+          "what": "将现有组件映射到业务域，为服务拆分和命名空间重构提供依据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "frontend-blueprint",
+          "path": "packages/skills-catalog/skills/(architecture)/frontend-blueprint/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "前端设计蓝图",
+          "group_en": "Frontend Design Blueprint",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在生成前端代码前澄清视觉、交互、品牌与设计约束。",
+          "description_en": "Helps an agent clarify visual, interaction, brand, and design constraints before generating frontend code.",
+          "what": "作为前端设计顾问，通过结构化提问把模糊的 UI 需求转化为可执行的设计上下文。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "legacy-migration-planner",
+          "path": "packages/skills-catalog/skills/(architecture)/legacy-migration-planner/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "遗留系统迁移规划",
+          "group_en": "Legacy Migration Planning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为遗留系统迁移制定证据化方案，覆盖 strangler fig、拆分与升级路线。",
+          "description_en": "Creates evidence-backed legacy migration plans using strangler-fig and incremental modernization strategies.",
+          "what": "把遗留系统现代化拆成可执行迁移计划，但不负责实现。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "modular-decomposition",
+          "path": "packages/skills-catalog/skills/(architecture)/modular-decomposition/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "单体模块化拆解",
+          "group_en": "Monolith Modular Decomposition",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "运行单体到模块化的分析流水线，识别组件、耦合、重复逻辑和领域分组。",
+          "description_en": "Runs a structured monolith-to-modular analysis pipeline to size components, assess coupling, and group domains.",
+          "what": "运行单体拆解流水线，识别组件、耦合、重复逻辑和候选模块。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "modular-design-principles",
+          "path": "packages/skills-catalog/skills/(architecture)/modular-design-principles/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "模块化系统设计原则",
+          "group_en": "Modular Design Principles",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 判断模块边界、耦合关系、状态隔离和失败隔离。",
+          "description_en": "Helps agents reason about module boundaries, coupling, state isolation, and failure containment.",
+          "what": "用于架构设计或评审时应用模块化原则。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "react-composition-patterns",
+          "path": "packages/skills-catalog/skills/(architecture)/react-composition-patterns/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "React 组件组合模式",
+          "group_en": "React Component Composition Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计可扩展的 React 组件 API，减少布尔 props 膨胀。",
+          "description_en": "Helps agents design scalable React component APIs and reduce boolean prop sprawl.",
+          "what": "用于 React 组件重构和组件库 API 设计。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "tactical-ddd",
+          "path": "packages/skills-catalog/skills/(architecture)/tactical-ddd/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "领域模型审查与 DDD 重构",
+          "group_en": "Domain Model Review & DDD Refactoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 检查贫血领域模型，识别 DDD 构建块并给出重构建议。",
+          "description_en": "Helps agents detect anemic domain models, identify DDD building blocks, and guide refactoring.",
+          "what": "检查领域模型贫血并指导 DDD 重构。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-advisor",
+          "path": "packages/skills-catalog/skills/(cloud)/aws-advisor/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "AWS 架构顾问",
+          "group_en": "AWS Architecture Advisor",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 AWS 上下文中做架构选型、安全审查、迁移和排障建议。",
+          "description_en": "Helps agents provide AWS architecture, security, migration, and troubleshooting guidance.",
+          "what": "为 AWS 架构、安全和实施问题提供文档支撑的建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cloudflare-deploy",
+          "path": "packages/skills-catalog/skills/(cloud)/cloudflare-deploy/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "平台特化部署（4 选 1 平行替代）",
+          "group_en": "Platform-specific deployment alternatives",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 认证、选择 Cloudflare 产品并完成 Workers/Pages 等部署。",
+          "description_en": "Helps the agent authenticate, choose the right Cloudflare product, and deploy Workers, Pages, or related services.",
+          "what": "Cloudflare 平台部署与发布流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Codex · 组「平台特化部署（4 选 1 平行替代）」"
+        },
+        {
+          "name": "netlify-deploy",
+          "path": "packages/skills-catalog/skills/(cloud)/netlify-deploy/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "平台特化部署（4 选 1 平行替代）",
+          "group_en": "Platform-specific deployment alternatives",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 用 Netlify CLI 认证、关联站点并执行预览或生产部署。",
+          "description_en": "Helps the agent authenticate with Netlify CLI, link or create sites, and run preview or production deploys.",
+          "what": "Netlify 平台部署与发布流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Codex · 组「平台特化部署（4 选 1 平行替代）」"
+        },
+        {
+          "name": "render-deploy",
+          "path": "packages/skills-catalog/skills/(cloud)/render-deploy/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "平台特化部署（4 选 1 平行替代）",
+          "group_en": "Platform-specific deployment",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 分析代码库、生成 render.yaml 并部署到 Render。",
+          "description_en": "Helps an agent analyze a codebase, generate render.yaml, and deploy to Render.",
+          "what": "Deploy apps to Render through blueprints or dashboard/API flows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Codex · 组「平台特化部署（4 选 1 平行替代）」"
+        },
+        {
+          "name": "vercel-deploy",
+          "path": "packages/skills-catalog/skills/(cloud)/vercel-deploy/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "平台特化部署（4 选 1 平行替代）",
+          "group_en": "Platform-specific deployment",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 将应用或网站部署到 Vercel，并返回预览链接。",
+          "description_en": "Helps an agent deploy apps or websites to Vercel and return preview links.",
+          "what": "Deploys projects to Vercel, preferring preview deployments unless production is requested.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Codex · 组「平台特化部署（4 选 1 平行替代）」"
+        },
+        {
+          "name": "create-adr",
+          "path": "packages/skills-catalog/skills/(creation)/create-adr/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "RFC / ADR 技术决策文档",
+          "group_en": "RFC/ADR technical decision docs",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 为已确定的架构决策创建 ADR，保留背景、选择与后果。",
+          "description_en": "Helps an agent create ADRs for finalized architectural decisions, preserving context, options, and consequences.",
+          "what": "生成 ADR 文档，记录架构决策的上下文、决策内容和后续影响。",
+          "chain": true,
+          "chain_group": "技术决策文档工作流",
+          "chain_group_en": "Technical decision documentation workflow"
+        },
+        {
+          "name": "create-rfc",
+          "path": "packages/skills-catalog/skills/(creation)/create-rfc/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "RFC / ADR 技术决策文档",
+          "group_en": "RFC/ADR technical decision docs",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 编写结构化 RFC，比较方案、说明理由并推动团队共识。",
+          "description_en": "Helps an agent draft structured RFCs that compare options, explain rationale, and drive team alignment.",
+          "what": "生成 RFC 提案文档，明确变更方案、替代选项、理由和审批路径。",
+          "chain": true,
+          "chain_group": "技术决策文档工作流",
+          "chain_group_en": "Technical decision documentation workflow"
+        },
+        {
+          "name": "create-technical-design-doc",
+          "path": "packages/skills-catalog/skills/(creation)/create-technical-design-doc/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "技术设计文档 / RFC 生成",
+          "group_en": "Technical Design Doc & RFC Writer",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过交互式问题梳理架构方案，生成技术设计文档、RFC 或实现计划，便于团队评审与落地。",
+          "description_en": "Guides agents through interactive discovery to produce TDDs, RFCs, architecture plans, and risk-aware implementation docs.",
+          "what": "Creates technical design documents, RFCs, and implementation plans before coding.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cursor-subagent-creator",
+          "path": "packages/skills-catalog/skills/(creation)/cursor-subagent-creator/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "Cursor 子代理创建",
+          "group_en": "Cursor Subagent Builder",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按 Cursor 约定创建专用子代理，配置隔离上下文、提示词和可复用工作流。",
+          "description_en": "Helps agents create Cursor-specific subagents with isolated context, prompts, and reusable workflows.",
+          "what": "Creates Cursor-specific subagents for complex delegated workflows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skill-architect",
+          "path": "packages/skills-catalog/skills/(creation)/skill-architect/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器",
+          "group_en": "Skill Creator",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导 agent 先发现需求，再架构并生成高质量 Skill。",
+          "description_en": "Guides agents through discovery and architecture before drafting a high-quality skill.",
+          "what": "引导 agent 从需求发现到架构设计，谨慎生成 Skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "subagent-creator",
+          "path": "packages/skills-catalog/skills/(creation)/subagent-creator/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "子代理创建器",
+          "group_en": "Subagent Creator",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 设计带隔离上下文的专用子代理。",
+          "description_en": "Helps agents design specialized subagents with isolated context for complex workflows.",
+          "what": "帮助判断何时用子代理，并配置验证器、调试器等专用代理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "the-fool",
+          "path": "packages/skills-catalog/skills/(decision-making)/the-fool/SKILL.md",
+          "subcategory": "3-2",
+          "subcategory_title": "3.2 问题框定 / 假设管理",
+          "category": "product-management",
+          "group": "决策挑战与盲点审查",
+          "group_en": "Decision Challenge & Blind Spot Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在决策前反向质疑方案、检验假设并发现盲点。",
+          "description_en": "Helps an agent challenge plans, test assumptions, and surface blind spots before committing.",
+          "what": "用于在提交前挑战方案、识别假设漏洞与证据缺口。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "figma-implement-design",
+          "path": "packages/skills-catalog/skills/(design)/figma-implement-design/SKILL.md",
+          "subcategory": "5-4",
+          "subcategory_title": "5.4 Figma 双向集成",
+          "category": "design-frontend",
+          "group": "Figma 设计转代码工作流",
+          "group_en": "Figma Design-to-Code Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把 Figma 节点转换为生产代码，并保持像素级视觉一致。",
+          "description_en": "Turns Figma nodes into production code while preserving pixel-perfect visual fidelity.",
+          "what": "用于把 Figma 节点转换为符合项目规范的代码。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Codex · 组「Figma 8 件套」"
+        },
+        {
+          "name": "figma",
+          "path": "packages/skills-catalog/skills/(design)/figma/SKILL.md",
+          "subcategory": "5-4",
+          "subcategory_title": "5.4 Figma 双向集成",
+          "category": "design-frontend",
+          "group": "Figma 8 件套",
+          "group_en": "Figma 8-piece kit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "通过 Figma MCP 获取节点上下文、截图和资产，辅助设计到代码实现。",
+          "description_en": "Fetches Figma node context, screenshots, and assets via MCP to support design-to-code work.",
+          "what": "Figma MCP 集成，用于读取设计上下文并指导代码实现。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Codex · 组「Figma 8 件套」"
+        },
+        {
+          "name": "frontend-design",
+          "path": "packages/skills-catalog/skills/(design)/frontend-design/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "高品质前端界面生成",
+          "group_en": "Premium frontend interface generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成具有鲜明视觉方向的生产级前端页面、组件和 Web 应用。",
+          "description_en": "Generates polished, distinctive production-grade frontend pages, components, and web apps.",
+          "what": "指导 AI 构建美观、非模板化的前端界面与 Web artifact。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/oh-my-openagent · 组「前端美学」"
+        },
+        {
+          "name": "web-design-guidelines",
+          "path": "packages/skills-catalog/skills/(design)/web-design-guidelines/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Web 设计指南审查",
+          "group_en": "Web Design Guidelines Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审查 UI 代码是否符合 Web 界面指南、可访问性与交互规范。",
+          "description_en": "Reviews UI code against web interface, accessibility, and interaction guidelines.",
+          "what": "A UI-code review skill that checks files for Web Interface Guidelines compliance.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "vercel-labs · 组「Vercel 三件套」"
+        },
+        {
+          "name": "codenavi",
+          "path": "packages/skills-catalog/skills/(development)/codenavi/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "跨会话代码库调查",
+          "group_en": "Cross-session Codebase Investigation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 系统调查陌生代码库，记录发现并谨慎实施修复或功能。",
+          "description_en": "Helps agents investigate unfamiliar codebases, preserve findings, and implement changes carefully.",
+          "what": "A codebase navigation skill for careful investigation and surgical implementation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "gosom",
+        "repo": "google-maps-scraper",
+        "full_name": "gosom/google-maps-scraper",
+        "url": "https://github.com/gosom/google-maps-scraper",
+        "stars": 4304,
+        "pushed_at": "2026-05-30",
+        "default_branch": "main",
+        "github_description": "scrape data  from Google Maps. Extracts data such as the name, address, phone number, website URL, rating,  reviews number, latitude and longitude, reviews,email and more for each place",
+        "topics": [
+          "agent-skills",
+          "claude-skills",
+          "codex-skills",
+          "distributed-scraper",
+          "distributed-scraping",
+          "golang",
+          "google-maps",
+          "google-maps-scraping",
+          "web-scraper",
+          "web-scraping"
+        ],
+        "language": "Go",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "google-maps-scraper",
+          "path": "skills/google-maps-scraper/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Google Maps 商家线索抓取",
+          "group_en": "Google Maps Business Lead Scraping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 Docker 抓取 Google Maps 商家线索、联系方式与评价。",
+          "description_en": "Scrapes Google Maps via Docker to collect business leads, contacts, and reviews.",
+          "what": "帮助 agent 从 Google Maps 抓取指定关键词或城市的商家线索、联系方式、评分与评价。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "OpenSenseNova",
+        "repo": "SenseNova-Skills",
+        "full_name": "OpenSenseNova/SenseNova-Skills",
+        "url": "https://github.com/OpenSenseNova/SenseNova-Skills",
+        "stars": 4301,
+        "pushed_at": "2026-06-11",
+        "default_branch": "main",
+        "github_description": "Modular SenseNova skills for building AI-powered office assistants and productivity workflows",
+        "topics": [
+          "agent",
+          "agent-skills",
+          "ai-agents",
+          "ai-assistant",
+          "data-analysis",
+          "document-processing",
+          "office-automation",
+          "presentation-slides"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "sn-da-excel-workflow",
+          "path": "skills/sn-da-excel-workflow/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据分析工作流",
+          "group_en": "Excel Data Analysis Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "编排 Excel/CSV 多表读取、清洗、筛选、聚合、导出，适合 agent 处理表格分析与报表生成。",
+          "description_en": "Orchestrates Excel/CSV reading, cleaning, filtering, aggregation, and export for agent-driven spreadsheet analysis and reporting.",
+          "what": "用于 Excel 多 Sheet 数据读取、清洗、筛选、聚合与报告导出的工作流。",
+          "chain": true,
+          "chain_group": "Excel 数据分析工作流",
+          "chain_group_en": "Excel Data Analysis Workflow"
+        },
+        {
+          "name": "category-coloring",
+          "path": "skills/sn-da-excel-workflow/capability/excel-cell-coloring/category-coloring/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据分析工作流",
+          "group_en": "Excel Data Analysis Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "当 Excel 超万行时转为 Parquet 提速，提取指标并高亮结果行，辅助 agent 处理大型表格。",
+          "description_en": "For Excel files over 10k rows, converts to Parquet for speed, extracts target metrics, and highlights result rows for agents.",
+          "what": "大型 Excel 的 Parquet 优化、指标提取与结果高亮能力。",
+          "chain": true,
+          "chain_group": "Excel 数据分析工作流",
+          "chain_group_en": "Excel Data Analysis Workflow"
+        },
+        {
+          "name": "duplicate-value-coloring",
+          "path": "skills/sn-da-excel-workflow/capability/excel-cell-coloring/duplicate-value-coloring/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 表格比对与异常标注",
+          "group_en": "Excel comparison and anomaly highlighting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 从 Excel 多表提取系数、对比阈值并高亮异常。",
+          "description_en": "Helps agents extract coefficients from multiple Excel sheets, compare them against thresholds, and highlight anomalies.",
+          "what": "从不同 Sheet 中提取指定维度数值，进行跨表逻辑对比并标记异常单元格。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "outlier-coloring",
+          "path": "skills/sn-da-excel-workflow/capability/excel-cell-coloring/outlier-coloring/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 表格比对与异常标注",
+          "group_en": "Excel comparison and anomaly highlighting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 识别 Excel 超限数值与错误单元格，并按规则高亮。",
+          "description_en": "Helps agents detect out-of-limit Excel values and error cells, then highlight them according to rules.",
+          "what": "用正则和上下文回溯提取限值，识别超限行或错误单元格并高亮。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "threshold-cell-coloring",
+          "path": "skills/sn-da-excel-workflow/capability/excel-cell-coloring/threshold-cell-coloring/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 分析报表自动格式化",
+          "group_en": "Excel Analysis Report Formatting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 Excel 数据，计算阈值并生成带条件格式的报表。",
+          "description_en": "Reads Excel data, calculates thresholds, and exports a formatted report with conditional styling.",
+          "what": "Counts Excel rows, analyzes time-series values, and highlights cells below average with openpyxl.",
+          "chain": true,
+          "chain_group": "Excel 分析工作流",
+          "chain_group_en": "Excel Analysis Workflow"
+        },
+        {
+          "name": "top-value-coloring",
+          "path": "skills/sn-da-excel-workflow/capability/excel-cell-coloring/top-value-coloring/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 分析报表自动格式化",
+          "group_en": "Excel Analysis Report Formatting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "合并多表数据，筛选 Top 指标并自动高亮导出。",
+          "description_en": "Merges multi-sheet data, filters top metrics, and exports highlighted results.",
+          "what": "Combines sheet data, ranks top values, and applies formatting to key indicators with openpyxl.",
+          "chain": true,
+          "chain_group": "Excel 分析工作流",
+          "chain_group_en": "Excel Analysis Workflow"
+        },
+        {
+          "name": "data-bar-formatting",
+          "path": "skills/sn-da-excel-workflow/capability/excel-conditional-formatting/data-bar-formatting/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据分析与可视化",
+          "group_en": "Excel Data Analysis and Visualization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从带单位字符串提取数值，清洗数据并生成分布图表。",
+          "description_en": "Extracts numeric values from unit-bearing strings, cleans the data, and generates distribution charts.",
+          "what": "Excel workflow sub-skill for numeric extraction and distribution visualization.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "comparison-analysis",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-analysis/comparison-analysis/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据分析与可视化",
+          "group_en": "Excel Data Analysis and Visualization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "清洗分类列并统计数量、比例与差异，生成对比图表。",
+          "description_en": "Clean categorical columns, calculate counts, ratios, and differences, then generate comparison charts.",
+          "what": "Excel workflow sub-skill for categorical comparison analysis.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "group-by-analysis",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-analysis/group-by-analysis/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据清洗与聚合分析",
+          "group_en": "Excel Data Cleaning and Aggregation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 读取 Excel 多 Sheet，清洗数据、分组聚合并生成统计表和图表。",
+          "description_en": "Helps an agent read multi-sheet Excel workbooks, clean data, aggregate groups, and produce summary tables with charts.",
+          "what": "Excel 多 Sheet 数据清洗、分组聚合与可视化。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kpi-metric-analysis",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-analysis/kpi-metric-analysis/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据清洗与聚合分析",
+          "group_en": "Excel Data Cleaning and Aggregation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 按数据量读取文件，验证单位指标并排序输出 KPI 结果表。",
+          "description_en": "Helps an agent choose a read strategy, validate metric units, rank KPIs, and export the result table.",
+          "what": "Excel KPI 指标提取、单位校验、排序与结果导出。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pivot-table-analysis",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-analysis/pivot-table-analysis/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Excel 交叉表与热力图分析",
+          "group_en": "Excel Crosstab & Heatmap Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "清洗 Excel 数据，构建交叉表、占比汇总并生成热力图。",
+          "description_en": "Cleans Excel data, builds crosstabs and share summaries, and generates heatmaps.",
+          "what": "从 Excel 源表输出多维占比分析与热力图。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "time-series-analysis",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-analysis/time-series-analysis/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Excel 时间序列趋势分析",
+          "group_en": "Excel Time-Series Trend Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 Excel 指标，清洗百分比并分析趋势、变化与生成图表。",
+          "description_en": "Loads Excel metrics, normalizes percentages, analyzes trends and changes, and creates charts.",
+          "what": "将 Excel 指标转为趋势判断和可视化图表。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "trend-analysis",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-analysis/trend-analysis/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据分析与趋势预测",
+          "group_en": "Excel analysis and trend forecasting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 Excel 并按维度分级，计算增长率、预测值并生成对比图表。",
+          "description_en": "Loads Excel data, grades it by dimension, calculates growth rates and forecasts, and creates comparison charts.",
+          "what": "Excel 分级趋势预测与可视化",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "duplicate-removal",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/duplicate-removal/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据清洗与去重",
+          "group_en": "Excel data cleaning and deduplication",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取多 Sheet Excel，按关键词提取并清洗数据，完成分类去重与统计报表。",
+          "description_en": "Reads multi-sheet Excel files, extracts keyword-matched records, cleans text, deduplicates categories, and summarizes counts.",
+          "what": "多 Sheet Excel 去重统计",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "invalid-data-cleaning",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/invalid-data-cleaning/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据清洗与分析",
+          "group_en": "Excel data cleaning and analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 预处理大规模 Excel，转 Parquet 并按规则清洗文本列后导出。",
+          "description_en": "Preprocesses large Excel files, converts them to Parquet, applies regex text cleaning, and exports the cleaned workbook.",
+          "what": "大规模 Excel 转 Parquet、文本正则清洗与导出。",
+          "chain": true,
+          "chain_group": "Excel 数据清洗工作流",
+          "chain_group_en": "Excel data cleaning workflow"
+        },
+        {
+          "name": "missing-value-handling",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/missing-value-handling/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据清洗与分析",
+          "group_en": "Excel data cleaning and analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 深度清洗多 Sheet Excel，处理缺失值、异常值并做跨表核对。",
+          "description_en": "Cleans multi-sheet Excel workbooks, handles missing values and outliers, reconciles sheets, and summarizes key metrics.",
+          "what": "多 Sheet Excel 清洗、缺失值处理、跨表核对与统计。",
+          "chain": true,
+          "chain_group": "Excel 数据清洗工作流",
+          "chain_group_en": "Excel data cleaning workflow"
+        },
+        {
+          "name": "numeric-format-normalization",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/numeric-format-normalization/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据清洗",
+          "group_en": "Excel Data Cleaning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "标准化 Excel 数值列，清洗空值并核对汇总合计，导出核对结果文件。",
+          "description_en": "Normalizes Excel numeric columns, cleans missing values, reconciles totals, and exports results.",
+          "what": "标准化 Excel 数值列并核对汇总合计。",
+          "chain": true,
+          "chain_group": "Excel 数据处理工作流",
+          "chain_group_en": "Excel Data Processing Workflow"
+        },
+        {
+          "name": "outlier-detection",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/outlier-detection/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据清洗",
+          "group_en": "Excel Data Cleaning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 IQR 检测 Excel 数值列异常值，并汇总分布质量指标。",
+          "description_en": "Detects outliers in Excel numeric columns with IQR and summarizes distribution quality metrics.",
+          "what": "基于 IQR 做异常值检测与数据质量评估。",
+          "chain": true,
+          "chain_group": "Excel 数据处理工作流",
+          "chain_group_en": "Excel Data Processing Workflow"
+        },
+        {
+          "name": "text-normalization",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/text-normalization/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 数据清洗与标准化",
+          "group_en": "Excel data cleaning and normalization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 清洗 Excel 文本和异常数值字段，提取中文并输出处理后的文件。",
+          "description_en": "Cleans Excel text and malformed numeric fields, extracts Chinese characters, and returns a processed workbook.",
+          "what": "Excel 文本与数值字段清洗子技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "category-filtering",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-filtering/category-filtering/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 分类统计与可视化",
+          "group_en": "Excel categorical analysis and visualization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 对 Excel 数据做自定义分类、交叉统计、评分分级并生成可视化图表。",
+          "description_en": "Classifies Excel data, runs cross-tab statistics and scoring, and generates visual summaries.",
+          "what": "Excel 分类统计、评分分级与可视化子技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "condition-filtering",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-filtering/condition-filtering/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套 / PDF 重型 API / Office 文档四件套",
+          "group_en": "Office Document Suite",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据数据规模选择策略，清洗 Excel 列名并按颜色、前缀、正则筛选。",
+          "description_en": "Chooses the processing strategy by data size, cleans Excel columns, and filters rows by color, prefix, or regex.",
+          "what": "Excel 条件筛选与大文件优化子技能。",
+          "chain": true,
+          "chain_group": "Excel 数据分析工作流",
+          "chain_group_en": "Excel Data Analysis Workflow"
+        },
+        {
+          "name": "range-filtering",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-filtering/range-filtering/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套 / PDF 重型 API / Office 文档四件套",
+          "group_en": "Office Document Suite",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 Excel 多工作表并统计规模，清洗表头与数值列后按范围筛选。",
+          "description_en": "Reads all Excel sheets, estimates their scale, normalizes headers and numeric columns, then filters by ranges.",
+          "what": "Excel 多表读取、规模评估与条件筛选子技能。",
+          "chain": true,
+          "chain_group": "Excel 数据分析工作流",
+          "chain_group_en": "Excel Data Analysis Workflow"
+        },
+        {
+          "name": "threshold-filtering",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-filtering/threshold-filtering/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套 / PDF 重型 API / Office 文档四件套",
+          "group_en": "Office Document Suite / Heavy PDF APIs",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 Excel 工作表，清洗数值列并按阈值筛选，同时标记和导出符合条件的单元格。",
+          "description_en": "Read Excel sheets, clean numeric columns, filter by threshold, then style and export matching cells.",
+          "what": "Excel 数值列清洗、阈值筛选与样式标记。",
+          "chain": true,
+          "chain_group": "Excel 数据分析工作流",
+          "chain_group_en": "Excel Data Analysis Workflow"
+        },
+        {
+          "name": "basic-statistics",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-statistics/basic-statistics/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套 / PDF 重型 API / Office 文档四件套",
+          "group_en": "Office Document Suite / Heavy PDF APIs",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "对多 Sheet Excel 做基础统计，支持按分组筛选、计算均值、区间提取、去重求和并导出结果。",
+          "description_en": "Run basic statistics across multi-sheet Excel files, including grouped averages, range extraction, deduplication, sums, and exports.",
+          "what": "Excel 多表基础统计与结果导出。",
+          "chain": true,
+          "chain_group": "Excel 数据分析工作流",
+          "chain_group_en": "Excel Data Analysis Workflow"
+        },
+        {
+          "name": "category-statistics",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-statistics/category-statistics/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "分类统计与分布可视化",
+          "group_en": "Category Statistics & Distribution Charts",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提取类别列并统计数量占比，生成柱状图、饼图等分布报告。",
+          "description_en": "Extracts a categorical column, counts proportions, and generates distribution charts.",
+          "what": "用于分类数据的分布统计与图表报告。",
+          "chain": true,
+          "chain_group": "Excel 数据统计分析工作流",
+          "chain_group_en": "Excel Data Statistics Workflow"
+        },
+        {
+          "name": "grouped-statistics",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-statistics/grouped-statistics/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 多 Sheet 清洗与统计",
+          "group_en": "Excel Multi-Sheet Cleaning & Statistics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "对多 Sheet Excel 做行数统计、合并填充、交叉分析与格式美化。",
+          "description_en": "Processes multi-sheet Excel files with row counts, merges, filling, cross-analysis, and formatting.",
+          "what": "用于多表 Excel 的统计、合并和结果美化。",
+          "chain": true,
+          "chain_group": "Excel 数据统计分析工作流",
+          "chain_group_en": "Excel Data Statistics Workflow"
+        },
+        {
+          "name": "percentage-calculation",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-statistics/percentage-calculation/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Excel 数据统计与可视化",
+          "group_en": "Excel Data Statistics & Visualization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "动态定位指标字段，切换大文件处理策略，计算占比均值并输出报告。",
+          "description_en": "Dynamically locates metric fields, switches large-file strategies, computes ratios and averages, and outputs a structured report.",
+          "what": "Excel 工作流中的指标提取与占比/均值计算能力。",
+          "chain": true,
+          "chain_group": "Excel 数据统计与可视化工作流",
+          "chain_group_en": "Excel Data Analysis & Visualization Workflow"
+        },
+        {
+          "name": "bar-chart-visualization",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-visualization/bar-chart-visualization/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Excel 数据统计与可视化",
+          "group_en": "Excel Data Statistics & Visualization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取多表 Excel，处理合并单元格与清洗分组，生成交叉统计结果和美化柱状图。",
+          "description_en": "Reads multi-sheet Excel files, cleans merged-cell data, groups cross-tab results, and generates polished bar charts.",
+          "what": "Excel 工作流中的多表清洗、交叉统计与柱状图生成能力。",
+          "chain": true,
+          "chain_group": "Excel 数据统计与可视化工作流",
+          "chain_group_en": "Excel Data Analysis & Visualization Workflow"
+        },
+        {
+          "name": "histogram-visualization",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-visualization/histogram-visualization/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Excel 数据可视化与统计分析",
+          "group_en": "Excel Data Visualization and Statistical Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从 Excel 数值列提取数据，分析分布、异常值并生成箱线图/直方图报告。",
+          "description_en": "Analyzes numeric Excel data for distributions and outliers, then generates boxplot and histogram reports.",
+          "what": "适合做数值数据分布检查与异常值可视化。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "line-chart-visualization",
+          "path": "skills/sn-da-excel-workflow/capability/excel-data-visualization/line-chart-visualization/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Excel 数据可视化与统计分析",
+          "group_en": "Excel Data Visualization and Statistical Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "清洗 Excel 表格数据，识别趋势与对比关系，并生成综合折线图表。",
+          "description_en": "Cleans Excel tabular data, identifies trends and comparisons, and produces comprehensive line charts.",
+          "what": "适合做趋势对比、多维分析和参数敏感性展示。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "MaaXYZ",
+        "repo": "MaaFramework",
+        "full_name": "MaaXYZ/MaaFramework",
+        "url": "https://github.com/MaaXYZ/MaaFramework",
+        "stars": 4233,
+        "pushed_at": "2026-06-12",
+        "default_branch": "main",
+        "github_description": "基于图像识别的自动化黑盒测试框架 | An automation black-box testing framework based on image recognition",
+        "topics": [
+          "black-box-testing",
+          "computer-vision"
+        ],
+        "language": "C++",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "maa-logging",
+          "path": ".claude/skills/maa-logging/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "C++ 日志宏规范",
+          "group_en": "C++ Logging Macro Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 在 MaaFramework 中规范使用日志宏、容器和自定义类型输出。",
+          "description_en": "Guides agents to use MaaFramework logging macros, containers, and custom type output consistently.",
+          "what": "标准化 C++ 日志输出，避免手动拼接字符串并提升可读性。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "meojson",
+          "path": ".claude/skills/meojson/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "C++ JSON 库使用规范",
+          "group_en": "C++ JSON Library Usage Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 使用 meojson 进行 JSON 解析、序列化、类型检查和自定义类型支持。",
+          "description_en": "Guides agents to use meojson for JSON parsing, serialization, type checks, and custom type support.",
+          "what": "规范 meojson 的解析、序列化和 jsonization 用法，减少类型错误。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
