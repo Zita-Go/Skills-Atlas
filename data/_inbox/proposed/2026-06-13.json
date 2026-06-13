@@ -1,0 +1,1999 @@
+{
+  "generated_at": "2026-06-13T05:27:54+00:00",
+  "date": "2026-06-13",
+  "proposed_count": 7,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 57,
+      "blocklisted": 10,
+      "seen_recently": 66,
+      "truncated": 214,
+      "not_a_collection": 1,
+      "no_skill_files": 2
+    },
+    "filtered_out": [
+      {
+        "full_name": "evalstate/fast-agent",
+        "reason": "非正经集合：该仓库是 fast-agent 框架/示例项目，skill 位于 examples/ 下，更像框架演示/示例技能，而非独立可收录的 skill 集合。"
+      },
+      {
+        "full_name": "lintsinghua/claude-code-book",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "DSXiangLi/DecryptPrompt",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "skill"
+      ],
+      "group": "skill",
+      "group_en": "skill",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "Panniantong/Agent-Reach"
+      ]
+    },
+    {
+      "skills": [
+        "pinme-auth",
+        "pinme-email"
+      ],
+      "group": "PinMe Worker 平台 API 集成",
+      "group_en": "PinMe Worker Platform API Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 Worker TS 调用 PinMe 邮件 API，向用户发送 HTML 邮件。",
+      "description_en": "Guides Worker TypeScript code to call PinMe auth proxy APIs for user management and token verification.",
+      "sources": [
+        "glitternetwork/pinme"
+      ]
+    },
+    {
+      "skills": [
+        "pinme-llm"
+      ],
+      "group": "PinMe Worker OpenRouter API",
+      "group_en": "PinMe Worker OpenRouter API",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 Agent 在 PinMe Worker TypeScript 中安全调用 OpenRouter 代理 API，生成模型、聊天和搜索集成代码。",
+      "description_en": "Helps the agent generate TypeScript code for PinMe Workers to call OpenRouter proxy APIs for models, chat, streaming, and web search.",
+      "sources": [
+        "glitternetwork/pinme"
+      ]
+    },
+    {
+      "skills": [
+        "pinme-share"
+      ],
+      "group": "PinMe 静态分享发布",
+      "group_en": "PinMe static share publishing",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "帮助 Agent 生成静态分享页并通过 PinMe 上传发布，返回可分享的最终链接。",
+      "description_en": "Helps the agent package results into a polished static page, upload it through PinMe, and return a shareable final URL.",
+      "sources": [
+        "glitternetwork/pinme"
+      ]
+    },
+    {
+      "skills": [
+        "pinme"
+      ],
+      "group": "PinMe 零配置部署",
+      "group_en": "PinMe zero-config deployment",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "帮助 agent 上传文件、发布静态站或部署全栈项目到 IPFS/Cloudflare。",
+      "description_en": "Helps agents upload files, publish static sites, and deploy full-stack projects to IPFS or Cloudflare.",
+      "sources": [
+        "glitternetwork/pinme"
+      ]
+    },
+    {
+      "skills": [
+        "deep-analysis",
+        "investor-panel"
+      ],
+      "group": "个股深度分析流水线",
+      "group_en": "Equity Deep-Dive Analysis Pipeline",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": true,
+      "description": "让 agent 按多位投资流派评审个股，输出信号、置信度和投票结论。",
+      "description_en": "Helps an agent perform equity deep-dives, valuation modeling, and produce IC-style reports.",
+      "sources": [
+        "wbh604/UZI-Skill"
+      ]
+    },
+    {
+      "skills": [
+        "lhb-analyzer"
+      ],
+      "group": "龙虎榜 / 游资席位分析",
+      "group_en": "Dragon List / Hot-Money Seat Analysis",
+      "category": "finance-trading",
+      "subcategory": "16-1",
+      "chain": false,
+      "description": "分析个股龙虎榜，识别游资席位并对比板块龙头。",
+      "description_en": "Analyzes a stock’s exchange trading list to identify hot-money seats and compare sector leaders.",
+      "sources": [
+        "wbh604/UZI-Skill"
+      ]
+    },
+    {
+      "skills": [
+        "trap-detector"
+      ],
+      "group": "杀猪盘 / 骗局风险扫描",
+      "group_en": "Pump-and-Dump / Scam Risk Scanner",
+      "category": "finance-trading",
+      "subcategory": "16-5",
+      "chain": false,
+      "description": "扫描社交推荐、话术和K线异常，识别杀猪盘风险。",
+      "description_en": "Scans social promotion patterns, scripted claims, and price anomalies to flag pump-and-dump risks.",
+      "sources": [
+        "wbh604/UZI-Skill"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-ad-creative"
+      ],
+      "group": "AI 广告创意图生成",
+      "group_en": "AI Ad Creative Generation",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "为产品生成广告主视觉、文案变体和平台尺寸裁剪。",
+      "description_en": "Generates hero images, ad copy variants, and platform-ready crops for campaigns.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-ai-clipping"
+      ],
+      "group": "AI 长视频切片生成",
+      "group_en": "AI Long-form Video Clipping",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "将长视频转成多条带评分、钩子和竖屏裁剪的短视频。",
+      "description_en": "Turns long videos into ranked short clips with hooks, rationales, and vertical crops.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-cinema-director"
+      ],
+      "group": "AI 电影导演 / 视频生成指令",
+      "group_en": "AI Cinema Directing for Video Generation",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "将创意意图转成镜头、运镜、灯光和视频模型参数指令。",
+      "description_en": "Turns creative intent into shot, camera, lighting, and video-model directives.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-instagram-post"
+      ],
+      "group": "Instagram 图文生成",
+      "group_en": "Instagram Visual Post Generation",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "根据 brief 生成 Instagram 封面图，并配套 caption 和标签。",
+      "description_en": "Creates an on-brand Instagram hero image with a matching caption and hashtags.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-logo-creator"
+      ],
+      "group": "muapi-logo-creator",
+      "group_en": "Logo/Banner Generation / AI Image Creation (Nano Banana Pro) / Multi-API Image Generation / Article Cover Generation",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "根据品牌愿景生成极简可扩展的矢量风 Logo 概念与几何标识。",
+      "description_en": "Creates vector-style logo concepts from brand vision using geometric primitives and negative space.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-nano-banana"
+      ],
+      "group": "muapi-nano-banana",
+      "group_en": "Logo/Banner Generation / AI Image Creation (Nano Banana Pro) / Multi-API Image Generation / Article Cover Generation",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "基于结构化创意简报生成高质量图片，控制主体、场景、构图与光线。",
+      "description_en": "Generates high-fidelity images from structured creative briefs, controlling subject, setting, composition, and lighting.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-product-video-ad-maker"
+      ],
+      "group": "MuAPI 产品视频广告生成",
+      "group_en": "MuAPI Product Video Ad Generation",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "将产品图和场景描述转为高端广告视频。",
+      "description_en": "Turns a product photo and scene brief into a polished cinematic product ad video.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-seedance-2"
+      ],
+      "group": "Seedance 2.0 电影级视频生成",
+      "group_en": "Seedance 2.0 Cinematic Video Generation",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "用导演提示控制 Seedance 2.0 生成多模态视频。",
+      "description_en": "Guides Seedance 2.0 to generate high-fidelity videos with cinematic direction and camera control.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-social-media-video",
+        "muapi-ugc-video-factory"
+      ],
+      "group": "AI 社媒视频生成（MuAPI / Seedance）",
+      "group_en": "AI social video generation (MuAPI / Seedance)",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "读取品牌资料，生成社媒视频脚本、分镜、参考帧并产出平台视频。",
+      "description_en": "Creates on-brand social videos from brand, ICP, and messaging files, including storyboard, reference frames, and platform-ready output.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-ui-design"
+      ],
+      "group": "UI/UX 高保真原型生成",
+      "group_en": "High-Fidelity UI/UX Mockups",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "将需求转化为移动端/Web 高保真 UI 原型、线框和设计系统规范。",
+      "description_en": "Turns product requirements into high-fidelity UI/UX mockups, wireframes, and design-system specs for web and mobile.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-youtube-shorts"
+      ],
+      "group": "短视频自动切片",
+      "group_en": "Short-Form Video Auto-Clipping",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "将长视频自动切成适合 Shorts/Reels/TikTok 的竖屏短视频。",
+      "description_en": "Automatically turns long-form videos into vertical short clips tuned for YouTube Shorts, TikTok, and Reels.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "muapi-youtube-thumbnail"
+      ],
+      "group": "YouTube 缩略图 AI 出图",
+      "group_en": "YouTube Thumbnail AI Image Generation",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "根据标题与频道风格生成高点击率 YouTube 缩略图。",
+      "description_en": "Creates high-CTR YouTube thumbnail images from a title and style cues.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "edit"
+      ],
+      "group": "MuAPI 多媒体编辑增强",
+      "group_en": "MuAPI Media Editing & Enhancement",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "通过 MuAPI 对图像和视频进行提示式编辑、增强与特效处理。",
+      "description_en": "Edits and enhances images or videos through MuAPI prompts, upscaling, effects, and lip sync.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "media",
+        "platform"
+      ],
+      "group": "MuAPI 媒体生成工作流",
+      "group_en": "MuAPI Media Generation Workflow",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": true,
+      "description": "通过 MuAPI 在终端生成图片、视频、音乐和音频，并上传素材。",
+      "description_en": "Generate images, videos, music, and audio from the terminal through MuAPI, with CDN upload support.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ai-clipping"
+      ],
+      "group": "AI 长视频切片 / Shorts 生成",
+      "group_en": "AI Long-Form to Shorts Clipping",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "将长视频自动转成多条带病毒评分、开场钩子和竖屏裁切的短视频。",
+      "description_en": "Turns long videos into ranked, hook-ready vertical short clips with virality scoring and auto-cropping.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "3d-logo-animation"
+      ],
+      "group": "Logo 3D 化与动画",
+      "group_en": "3D Logo Transformation & Animation",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "把二维 Logo 转成高品质 3D 版本，并生成带材质风格和专业光影的电影级动画。",
+      "description_en": "Transforms a 2D logo into a polished 3D asset and generates a cinematic animated version.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ai-fight-scene"
+      ],
+      "group": "AI 动作分镜视频生成",
+      "group_en": "AI Action Storyboard Video Generation",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "用角色设定、场景和动作脚本生成分镜图，并驱动图像到视频生成打斗片段。",
+      "description_en": "Turns character, setting, and action beats into storyboard panels, then generates a fight-scene video from them.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "animal-video-generator"
+      ],
+      "group": "拟人动物 vlogger 视频",
+      "group_en": "Anthropomorphic Animal Vlogger Videos",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "根据动物、地点、服装和台词生成拟人动物 vlogger 的超写实短视频。",
+      "description_en": "Creates an ultra-realistic video of an anthropomorphic animal vlogger from animal, location, outfit, and dialogue inputs.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "award-ceremony-video"
+      ],
+      "group": "AI 视频生成（muapi 模板）",
+      "group_en": "AI Video Generation (muapi Templates)",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "基于获奖者和主持人照片生成15秒颁奖礼视频。",
+      "description_en": "Generate a 15-second cinematic awards ceremony video from winner and host photos.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "cartoon-dance-animation"
+      ],
+      "group": "AI 角色动画 / 视频生成（muapi）",
+      "group_en": "AI Character Animation / Video Generation (muapi)",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "把真人照片转成3D卡通角色，并用参考视频驱动动作。",
+      "description_en": "Turns a real-person photo into a 3D cartoon character and animates it with a reference motion video.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "character-story-video"
+      ],
+      "group": "AI 故事视频生成",
+      "group_en": "AI Story Video Generation",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "帮助 agent 建立一致角色并生成连续场景动画故事视频。",
+      "description_en": "Helps agents establish a consistent character and generate sequential animated story scenes.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "cinema-director"
+      ],
+      "group": "AI 电影导演指令",
+      "group_en": "AI Cinematic Direction",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "帮助 agent 将创意意图转化为镜头、运镜、灯光等视频生成指令。",
+      "description_en": "Helps agents turn creative intent into shot, camera, lighting, and model directives for video generation.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "drone-style-video",
+        "freeze-effect-video"
+      ],
+      "group": "MuAPI 风格化视频生成",
+      "group_en": "MuAPI Stylized Video Generation",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "让 agent 按输入生成无人机航拍视角视频。",
+      "description_en": "Helps agents create cinematic freeze-effect videos from reference images and scene details.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "giant-product-showcase"
+      ],
+      "group": "巨物产品视觉生成",
+      "group_en": "Giant Product Visual Generation",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "为 agent 生成巨物产品广告图，把普通商品变成建筑级视觉场景。",
+      "description_en": "Helps an agent create giant product ad visuals, turning ordinary items into dramatic building-scale scenes.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "jewelry-product-video"
+      ],
+      "group": "高端产品广告视频",
+      "group_en": "Premium Product Ad Video",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "为 agent 生成高端珠宝广告图，并进一步制作宏微观旋转商业视频。",
+      "description_en": "Helps an agent generate premium jewelry ad imagery and turn it into macro cinematic product videos.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "music-video"
+      ],
+      "group": "音乐视频生成",
+      "group_en": "Music Video Generation",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "根据主题规划分镜、生成关键帧与配乐，并串联成短音乐视频。",
+      "description_en": "Plans keyframes, creates matching music, and assembles them into a short music video.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "one-shot-video"
+      ],
+      "group": "单镜头视频生成",
+      "group_en": "One-Shot Video Generation",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "生成单镜头连续电影感视频，支持参考图、风格、时长和画幅控制。",
+      "description_en": "Creates a seamless cinematic single-shot video with reference-image and style controls.",
+      "sources": [
+        "SamurAIGPT/Generative-Media-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "cc-sdd-new-agent"
+      ],
+      "group": "编码 Agent 集成 SOP",
+      "group_en": "Coding Agent Integration SOP",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "指导按 SOP 集成或迁移编码 Agent，先出计划再实现验证。",
+      "description_en": "Guides the integration or migration of coding agents through a plan-first SOP with implementation and verification artifacts.",
+      "sources": [
+        "gotalab/cc-sdd"
+      ]
+    },
+    {
+      "skills": [
+        "kiro-debug"
+      ],
+      "group": "根因优先调试",
+      "group_en": "Root-Cause-First Debugging",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "用根因优先方式调查实现失败，给出修复计划和验证建议。",
+      "description_en": "Investigates implementation failures with a root-cause-first approach and returns a fix plan plus verification guidance.",
+      "sources": [
+        "gotalab/cc-sdd"
+      ]
+    },
+    {
+      "skills": [
+        "kiro-discovery",
+        "kiro-impl"
+      ],
+      "group": "Kiro SDD 工作流",
+      "group_en": "Kiro SDD Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": true,
+      "description": "让 agent 按已批准任务以 TDD 和子代理协作完成实现。",
+      "description_en": "Guides agents through lightweight project discovery, intent clarification, and next-step planning.",
+      "sources": [
+        "gotalab/cc-sdd"
+      ]
+    },
+    {
+      "skills": [
+        "kiro-review",
+        "kiro-spec-batch"
+      ],
+      "group": "SDD 规格到验收工作流",
+      "group_en": "Spec-to-Acceptance SDD Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": true,
+      "description": "根据路线图并行生成各功能的规格、需求、设计和任务文件，并按依赖波次排序。",
+      "description_en": "Reviews completed work against approved specs, task boundaries, and verification evidence before acceptance.",
+      "sources": [
+        "gotalab/cc-sdd"
+      ]
+    },
+    {
+      "skills": [
+        "kiro-spec-design",
+        "kiro-spec-init"
+      ],
+      "group": "Kiro 规格初始化到技术设计工作流",
+      "group_en": "Kiro spec initiation to technical design workflow",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": true,
+      "description": "读取规格、需求和研究材料，生成职责边界清晰、含接口与图示的技术设计方案。",
+      "description_en": "Initializes a feature spec from project context, ensuring the problem, current state, and desired change are clarified.",
+      "sources": [
+        "gotalab/cc-sdd"
+      ]
+    },
+    {
+      "skills": [
+        "kiro-spec-quick",
+        "kiro-spec-requirements"
+      ],
+      "group": "SDD 规格生成工作流",
+      "group_en": "SDD Spec Generation Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "围绕已有规格读取 steering 上下文，生成边界清晰的 EARS 风格需求。",
+      "description_en": "Turns a short feature idea into a staged spec, running a lightweight review in automatic or interactive mode.",
+      "sources": [
+        "gotalab/cc-sdd"
+      ]
+    },
+    {
+      "skills": [
+        "kiro-spec-status",
+        "kiro-spec-tasks"
+      ],
+      "group": "规格状态到任务生成",
+      "group_en": "Spec Status to Task Generation",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": true,
+      "description": "将已批准规格拆解为可执行实施任务并检查覆盖度",
+      "description_en": "Breaks approved specs into executable implementation tasks and checks coverage.",
+      "sources": [
+        "gotalab/cc-sdd"
+      ]
+    },
+    {
+      "skills": [
+        "kiro-steering-custom",
+        "kiro-steering"
+      ],
+      "group": "Kiro Steering 项目知识",
+      "group_en": "Kiro Steering Project Knowledge",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": false,
+      "description": "维护 Kiro steering 目录，引导 agent 初始化、同步并保护项目知识。",
+      "description_en": "Creates specialized steering docs that capture domain-specific conventions like API standards or testing approaches.",
+      "sources": [
+        "gotalab/cc-sdd"
+      ]
+    },
+    {
+      "skills": [
+        "kiro-validate-design",
+        "kiro-validate-gap"
+      ],
+      "group": "SDD 需求到设计验证工作流",
+      "group_en": "SDD requirements-to-design validation workflow",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": true,
+      "description": "基于已批准需求和设计文档，评审技术设计质量并给出 GO/NO-GO 决策。",
+      "description_en": "Analyzes the gap between approved requirements and the existing codebase, assessing implementation options and integration risks.",
+      "sources": [
+        "gotalab/cc-sdd"
+      ]
+    },
+    {
+      "skills": [
+        "kiro-validate-impl",
+        "kiro-verify-completion"
+      ],
+      "group": "SDD 完成验证与集成验收",
+      "group_en": "SDD Completion Verification and Integration Acceptance",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": true,
+      "description": "用于在声明完成前用新证据核验任务、修复、测试或上线结论。",
+      "description_en": "Validates cross-task integration, full test coverage, and alignment with the approved spec after implementation.",
+      "sources": [
+        "gotalab/cc-sdd"
+      ]
+    },
+    {
+      "skills": [
+        "channel-setup-assistant"
+      ],
+      "group": "OpenClaw 渠道配置",
+      "group_en": "OpenClaw Channel Setup",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "帮助 agent 通过问答收集渠道凭据，执行 OpenClaw 命令配置消息渠道，并做健康检查。",
+      "description_en": "Guides the agent through collecting channel credentials, running OpenClaw commands to configure messaging integrations, and verifying connectivity.",
+      "sources": [
+        "miaoxworld/OpenClawInstaller"
+      ]
+    },
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "小红书图文与公众号封面生成",
+      "group_en": "Xiaohongshu Posts & WeChat Cover Generator",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "根据文章、脚本、截图、产品说明或照片，生成小红书图文、3:4 卡片和微信公众号 21:9+1:1 封面套图。",
+      "description_en": "Generates Xiaohongshu carousels, 3:4 social cards, and WeChat Official Account cover pairs from articles, scripts, screenshots, notes, or photos.",
+      "sources": [
+        "op7418/guizang-social-card-skill"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "Panniantong",
+        "repo": "Agent-Reach",
+        "full_name": "Panniantong/Agent-Reach",
+        "url": "https://github.com/Panniantong/Agent-Reach",
+        "stars": 26867,
+        "pushed_at": "2026-06-12",
+        "default_branch": "main",
+        "github_description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+        "topics": [
+          "agent-infrastructure",
+          "ai-agent",
+          "ai-search",
+          "automation",
+          "bilibili",
+          "claude-code",
+          "cli",
+          "cursor",
+          "free-api",
+          "llm-tools",
+          "mcp",
+          "python",
+          "reddit-scraper",
+          "twitter-scraper",
+          "web-scraper",
+          "xiaohongshu",
+          "youtube-transcript"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "skill",
+          "path": "agent_reach/skill/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "skill",
+          "group_en": "skill",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "glitternetwork",
+        "repo": "pinme",
+        "full_name": "glitternetwork/pinme",
+        "url": "https://github.com/glitternetwork/pinme",
+        "stars": 3662,
+        "pushed_at": "2026-06-04",
+        "default_branch": "main",
+        "github_description": "Deploy Your Frontend in a Single Command. Claude Code Skills supported.",
+        "topics": [
+          "ai-tools",
+          "claude-code-skill",
+          "claude-skills",
+          "deployment",
+          "deployment-tools",
+          "frontend",
+          "frontend-deployment",
+          "hosting",
+          "serverless",
+          "skills",
+          "static-site",
+          "static-site-deploy",
+          "static-site-hosting",
+          "web-hosting",
+          "zero-configuration"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "pinme-auth",
+          "path": "skills/pinme-auth/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "PinMe Worker 平台 API 集成",
+          "group_en": "PinMe Worker Platform API Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Worker TS 调用 PinMe 认证代理 API，管理用户与校验令牌。",
+          "description_en": "Guides Worker TypeScript code to call PinMe auth proxy APIs for user management and token verification.",
+          "what": "用于在 PinMe Worker 中接入身份认证 API。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pinme-email",
+          "path": "skills/pinme-email/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "PinMe Worker 平台 API 集成",
+          "group_en": "PinMe Worker Platform API Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Worker TS 调用 PinMe 邮件 API，向用户发送 HTML 邮件。",
+          "description_en": "Guides Worker TypeScript code to call PinMe's email API to send HTML messages to users.",
+          "what": "用于在 PinMe Worker 中接入邮件发送 API。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pinme-llm",
+          "path": "skills/pinme-llm/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "PinMe Worker OpenRouter API",
+          "group_en": "PinMe Worker OpenRouter API",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Agent 在 PinMe Worker TypeScript 中安全调用 OpenRouter 代理 API，生成模型、聊天和搜索集成代码。",
+          "description_en": "Helps the agent generate TypeScript code for PinMe Workers to call OpenRouter proxy APIs for models, chat, streaming, and web search.",
+          "what": "为 PinMe Worker 生成调用 OpenRouter 代理的 TypeScript API 代码。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pinme-share",
+          "path": "skills/pinme-share/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "PinMe 静态分享发布",
+          "group_en": "PinMe static share publishing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 生成静态分享页并通过 PinMe 上传发布，返回可分享的最终链接。",
+          "description_en": "Helps the agent package results into a polished static page, upload it through PinMe, and return a shareable final URL.",
+          "what": "把结果包装成静态页面并通过 PinMe 发布分享链接。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pinme",
+          "path": "skills/pinme/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "PinMe 零配置部署",
+          "group_en": "PinMe zero-config deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 上传文件、发布静态站或部署全栈项目到 IPFS/Cloudflare。",
+          "description_en": "Helps agents upload files, publish static sites, and deploy full-stack projects to IPFS or Cloudflare.",
+          "what": "A Claude Code skill for zero-config PinMe uploads and deployments.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "wbh604",
+        "repo": "UZI-Skill",
+        "full_name": "wbh604/UZI-Skill",
+        "url": "https://github.com/wbh604/UZI-Skill",
+        "stars": 3537,
+        "pushed_at": "2026-06-11",
+        "default_branch": "main",
+        "github_description": "冰冷的钱就这样流进我温暖的口袋-游资（UZI）Skills — 让我们欢迎，股海贼王！66位投资大佬帮你看盘 · 22维数据 × 180条量化规则 × 17种机构分析方法 · A股/港股/美股 ",
+        "topics": [],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "deep-analysis",
+          "path": "skills/deep-analysis/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "deep-analysis",
+          "group_en": "Investment Banking / PE / M&A / Equity Research / Valuation / Financial Statements",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "帮助 agent 对个股做深度研究、估值建模并生成投委会风格报告。",
+          "description_en": "Helps an agent perform equity deep-dives, valuation modeling, and produce IC-style reports.",
+          "what": "个股深度分析核心工作流，覆盖数据、建模、量化评审与报告生成。",
+          "chain": true,
+          "chain_group": "个股深度分析流水线",
+          "chain_group_en": "Equity Deep-Dive Analysis Pipeline"
+        },
+        {
+          "name": "investor-panel",
+          "path": "skills/investor-panel/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "investor-panel",
+          "group_en": "Investment Banking / PE / M&A / Equity Research / Valuation / Financial Statements",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "让 agent 按多位投资流派评审个股，输出信号、置信度和投票结论。",
+          "description_en": "Runs a multi-investor panel to score a stock and return signals, confidence, and verdicts.",
+          "what": "读取个股维度数据和原始数据，模拟投资流派评审并输出结构化信号。",
+          "chain": true,
+          "chain_group": "个股深度分析流水线",
+          "chain_group_en": "Equity Deep-Dive Analysis Pipeline"
+        },
+        {
+          "name": "lhb-analyzer",
+          "path": "skills/lhb-analyzer/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "龙虎榜 / 游资席位分析",
+          "group_en": "Dragon List / Hot-Money Seat Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析个股龙虎榜，识别游资席位并对比板块龙头。",
+          "description_en": "Analyzes a stock’s exchange trading list to identify hot-money seats and compare sector leaders.",
+          "what": "用于龙虎榜深度分析、游资席位识别与板块辨识度判断。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "trap-detector",
+          "path": "skills/trap-detector/SKILL.md",
+          "subcategory": "16-5",
+          "subcategory_title": "16.5 财富管理 / 顾问 / 合规",
+          "category": "finance-trading",
+          "group": "杀猪盘 / 骗局风险扫描",
+          "group_en": "Pump-and-Dump / Scam Risk Scanner",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "扫描社交推荐、话术和K线异常，识别杀猪盘风险。",
+          "description_en": "Scans social promotion patterns, scripted claims, and price anomalies to flag pump-and-dump risks.",
+          "what": "用于识别朋友推荐、社群引流等杀猪盘风险信号。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "SamurAIGPT",
+        "repo": "Generative-Media-Skills",
+        "full_name": "SamurAIGPT/Generative-Media-Skills",
+        "url": "https://github.com/SamurAIGPT/Generative-Media-Skills",
+        "stars": 3512,
+        "pushed_at": "2026-06-12",
+        "default_branch": "main",
+        "github_description": "Multi-modal Generative Media Skills for AI Agents (Claude Code, Cursor, Gemini CLI). High-quality image, video, and audio generation powered by muapi.ai.",
+        "topics": [
+          "agent-skills",
+          "agent-tools",
+          "ai-agents",
+          "ai-video",
+          "claude-code",
+          "claude-code-skills",
+          "claude-skills",
+          "flux",
+          "generative-ai",
+          "image-generation",
+          "kling",
+          "mcp",
+          "midjourney",
+          "muapi",
+          "multimodal-ai",
+          "skills",
+          "suno",
+          "text-to-image",
+          "text-to-video",
+          "video-generation"
+        ],
+        "language": "Shell",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "muapi-ad-creative",
+          "path": ".opencode/skills/muapi-ad-creative/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "AI 广告创意图生成",
+          "group_en": "AI Ad Creative Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为产品生成广告主视觉、文案变体和平台尺寸裁剪。",
+          "description_en": "Generates hero images, ad copy variants, and platform-ready crops for campaigns.",
+          "what": "Creates a complete ad creative set from product, audience, and campaign inputs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-ai-clipping",
+          "path": ".opencode/skills/muapi-ai-clipping/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "AI 长视频切片生成",
+          "group_en": "AI Long-form Video Clipping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将长视频转成多条带评分、钩子和竖屏裁剪的短视频。",
+          "description_en": "Turns long videos into ranked short clips with hooks, rationales, and vertical crops.",
+          "what": "Uses muapi.ai to auto-clip and rank viral moments from hosted videos.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-cinema-director",
+          "path": ".opencode/skills/muapi-cinema-director/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "AI 电影导演 / 视频生成指令",
+          "group_en": "AI Cinema Directing for Video Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将创意意图转成镜头、运镜、灯光和视频模型参数指令。",
+          "description_en": "Turns creative intent into shot, camera, lighting, and video-model directives.",
+          "what": "AI 视频生成导演指令。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-instagram-post",
+          "path": ".opencode/skills/muapi-instagram-post/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "Instagram 图文生成",
+          "group_en": "Instagram Visual Post Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据 brief 生成 Instagram 封面图，并配套 caption 和标签。",
+          "description_en": "Creates an on-brand Instagram hero image with a matching caption and hashtags.",
+          "what": "Instagram 图文帖生成。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-logo-creator",
+          "path": ".opencode/skills/muapi-logo-creator/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "muapi-logo-creator",
+          "group_en": "Logo/Banner Generation / AI Image Creation (Nano Banana Pro) / Multi-API Image Generation / Article Cover Generation",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "根据品牌愿景生成极简可扩展的矢量风 Logo 概念与几何标识。",
+          "description_en": "Creates vector-style logo concepts from brand vision using geometric primitives and negative space.",
+          "what": "设计品牌 Logo 概念与几何图形标识。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-nano-banana",
+          "path": ".opencode/skills/muapi-nano-banana/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "muapi-nano-banana",
+          "group_en": "Logo/Banner Generation / AI Image Creation (Nano Banana Pro) / Multi-API Image Generation / Article Cover Generation",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "基于结构化创意简报生成高质量图片，控制主体、场景、构图与光线。",
+          "description_en": "Generates high-fidelity images from structured creative briefs, controlling subject, setting, composition, and lighting.",
+          "what": "用结构化提示词生成高质量图像。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-product-video-ad-maker",
+          "path": ".opencode/skills/muapi-product-video-ad-maker/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "MuAPI 产品视频广告生成",
+          "group_en": "MuAPI Product Video Ad Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将产品图和场景描述转为高端广告视频。",
+          "description_en": "Turns a product photo and scene brief into a polished cinematic product ad video.",
+          "what": "从产品图和场景描述生成高端产品广告视频。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-seedance-2",
+          "path": ".opencode/skills/muapi-seedance-2/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "Seedance 2.0 电影级视频生成",
+          "group_en": "Seedance 2.0 Cinematic Video Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用导演提示控制 Seedance 2.0 生成多模态视频。",
+          "description_en": "Guides Seedance 2.0 to generate high-fidelity videos with cinematic direction and camera control.",
+          "what": "面向 Seedance 2.0 的视频生成、续写、剪辑和角色一致性工作流。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-social-media-video",
+          "path": ".opencode/skills/muapi-social-media-video/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "AI 社媒视频生成（MuAPI / Seedance）",
+          "group_en": "AI social video generation (MuAPI / Seedance)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取品牌资料，生成社媒视频脚本、分镜、参考帧并产出平台视频。",
+          "description_en": "Creates on-brand social videos from brand, ICP, and messaging files, including storyboard, reference frames, and platform-ready output.",
+          "what": "Generates brand-aware social media videos.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-ugc-video-factory",
+          "path": ".opencode/skills/muapi-ugc-video-factory/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "AI 社媒视频生成（MuAPI / Seedance）",
+          "group_en": "AI social video generation (MuAPI / Seedance)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用真人和产品图生成竖版 UGC 广告视频，并合成口播音频。",
+          "description_en": "Turns person and product photos into a vertical UGC-style ad video with synchronized spoken audio.",
+          "what": "Creates UGC-style video ads from person and product images.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-ui-design",
+          "path": ".opencode/skills/muapi-ui-design/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "UI/UX 高保真原型生成",
+          "group_en": "High-Fidelity UI/UX Mockups",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将需求转化为移动端/Web 高保真 UI 原型、线框和设计系统规范。",
+          "description_en": "Turns product requirements into high-fidelity UI/UX mockups, wireframes, and design-system specs for web and mobile.",
+          "what": "为 agent 生成高质量 UI/UX 原型与设计系统说明。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-youtube-shorts",
+          "path": ".opencode/skills/muapi-youtube-shorts/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "短视频自动切片",
+          "group_en": "Short-Form Video Auto-Clipping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将长视频自动切成适合 Shorts/Reels/TikTok 的竖屏短视频。",
+          "description_en": "Automatically turns long-form videos into vertical short clips tuned for YouTube Shorts, TikTok, and Reels.",
+          "what": "为 agent 生成平台化短视频切片。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "muapi-youtube-thumbnail",
+          "path": ".opencode/skills/muapi-youtube-thumbnail/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "YouTube 缩略图 AI 出图",
+          "group_en": "YouTube Thumbnail AI Image Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据标题与频道风格生成高点击率 YouTube 缩略图。",
+          "description_en": "Creates high-CTR YouTube thumbnail images from a title and style cues.",
+          "what": "用标题、频道风格和主体描述规划并生成 16:9 YouTube 缩略图。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "edit",
+          "path": "core/edit/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "MuAPI 多媒体编辑增强",
+          "group_en": "MuAPI Media Editing & Enhancement",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 MuAPI 对图像和视频进行提示式编辑、增强与特效处理。",
+          "description_en": "Edits and enhances images or videos through MuAPI prompts, upscaling, effects, and lip sync.",
+          "what": "对现有图像或视频执行提示式编辑、增强、背景移除、换脸、对口型和特效处理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "media",
+          "path": "core/media/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "MuAPI 多模态媒体生成",
+          "group_en": "MuAPI Multimodal Media Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 MuAPI 在终端生成图片、视频、音乐和音频，并上传素材。",
+          "description_en": "Generate images, videos, music, and audio from the terminal through MuAPI, with CDN upload support.",
+          "what": "提供图片、视频、音乐和音频的终端生成脚本。",
+          "chain": true,
+          "chain_group": "MuAPI 媒体生成工作流",
+          "chain_group_en": "MuAPI Media Generation Workflow"
+        },
+        {
+          "name": "platform",
+          "path": "core/platform/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "MuAPI 平台配置与轮询",
+          "group_en": "MuAPI Platform Setup & Polling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "配置 MuAPI 密钥、检查连接，并轮询异步生成结果。",
+          "description_en": "Configure MuAPI credentials, verify connectivity, and poll asynchronous generation results.",
+          "what": "提供密钥配置、连通性测试和异步结果轮询工具。",
+          "chain": true,
+          "chain_group": "MuAPI 媒体生成工作流",
+          "chain_group_en": "MuAPI Media Generation Workflow"
+        },
+        {
+          "name": "ai-clipping",
+          "path": "library/edit/ai-clipping/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "AI 长视频切片 / Shorts 生成",
+          "group_en": "AI Long-Form to Shorts Clipping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将长视频自动转成多条带病毒评分、开场钩子和竖屏裁切的短视频。",
+          "description_en": "Turns long videos into ranked, hook-ready vertical short clips with virality scoring and auto-cropping.",
+          "what": "把长视频转成可发布的短视频片段。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "3d-logo-animation",
+          "path": "library/motion/3d-logo-animation/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "Logo 3D 化与动画",
+          "group_en": "3D Logo Transformation & Animation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把二维 Logo 转成高品质 3D 版本，并生成带材质风格和专业光影的电影级动画。",
+          "description_en": "Transforms a 2D logo into a polished 3D asset and generates a cinematic animated version.",
+          "what": "把静态 Logo 变成 3D 动画品牌素材。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ai-fight-scene",
+          "path": "library/motion/ai-fight-scene/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "AI 动作分镜视频生成",
+          "group_en": "AI Action Storyboard Video Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用角色设定、场景和动作脚本生成分镜图，并驱动图像到视频生成打斗片段。",
+          "description_en": "Turns character, setting, and action beats into storyboard panels, then generates a fight-scene video from them.",
+          "what": "AI 打斗场景视频生成器。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "animal-video-generator",
+          "path": "library/motion/animal-video-generator/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "拟人动物 vlogger 视频",
+          "group_en": "Anthropomorphic Animal Vlogger Videos",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据动物、地点、服装和台词生成拟人动物 vlogger 的超写实短视频。",
+          "description_en": "Creates an ultra-realistic video of an anthropomorphic animal vlogger from animal, location, outfit, and dialogue inputs.",
+          "what": "拟人动物 vlogger 视频生成器。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "award-ceremony-video",
+          "path": "library/motion/award-ceremony-video/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "AI 视频生成（muapi 模板）",
+          "group_en": "AI Video Generation (muapi Templates)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于获奖者和主持人照片生成15秒颁奖礼视频。",
+          "description_en": "Generate a 15-second cinematic awards ceremony video from winner and host photos.",
+          "what": "Creates a fixed awards-ceremony scene with identity-locked photos, spoken announcement, and LED display text.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cartoon-dance-animation",
+          "path": "library/motion/cartoon-dance-animation/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "AI 角色动画 / 视频生成（muapi）",
+          "group_en": "AI Character Animation / Video Generation (muapi)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把真人照片转成3D卡通角色，并用参考视频驱动动作。",
+          "description_en": "Turns a real-person photo into a 3D cartoon character and animates it with a reference motion video.",
+          "what": "Converts a user image into a stylized 3D character, then applies dance or motion from a reference video.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "character-story-video",
+          "path": "library/motion/character-story-video/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "AI 故事视频生成",
+          "group_en": "AI Story Video Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 建立一致角色并生成连续场景动画故事视频。",
+          "description_en": "Helps agents establish a consistent character and generate sequential animated story scenes.",
+          "what": "Creates multi-part animated story videos with consistent characters.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cinema-director",
+          "path": "library/motion/cinema-director/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "AI 电影导演指令",
+          "group_en": "AI Cinematic Direction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将创意意图转化为镜头、运镜、灯光等视频生成指令。",
+          "description_en": "Helps agents turn creative intent into shot, camera, lighting, and model directives for video generation.",
+          "what": "Converts creative intent into cinematic video-generation instructions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "drone-style-video",
+          "path": "library/motion/drone-style-video/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "MuAPI 风格化视频生成",
+          "group_en": "MuAPI Stylized Video Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 按输入生成无人机航拍视角视频。",
+          "description_en": "Helps agents generate aerial drone-style videos from structured prompts.",
+          "what": "Generate drone-style aerial footage with specified shot type, style, aspect ratio, and optional reference image.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "freeze-effect-video",
+          "path": "library/motion/freeze-effect-video/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "MuAPI 风格化视频生成",
+          "group_en": "MuAPI Stylized Video Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 生成时间冻结效果的创意短视频。",
+          "description_en": "Helps agents create cinematic freeze-effect videos from reference images and scene details.",
+          "what": "Generate a cinematic video where time freezes, the subject moves through the scene, then time resumes.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "giant-product-showcase",
+          "path": "library/motion/giant-product-showcase/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "巨物产品视觉生成",
+          "group_en": "Giant Product Visual Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 生成巨物产品广告图，把普通商品变成建筑级视觉场景。",
+          "description_en": "Helps an agent create giant product ad visuals, turning ordinary items into dramatic building-scale scenes.",
+          "what": "生成巨物产品商业视觉，可选进入动画流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "jewelry-product-video",
+          "path": "library/motion/jewelry-product-video/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "高端产品广告视频",
+          "group_en": "Premium Product Ad Video",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 生成高端珠宝广告图，并进一步制作宏微观旋转商业视频。",
+          "description_en": "Helps an agent generate premium jewelry ad imagery and turn it into macro cinematic product videos.",
+          "what": "生成珠宝广告视觉，并制作宏微观商业视频。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "music-video",
+          "path": "library/motion/music-video/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "音乐视频生成",
+          "group_en": "Music Video Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据主题规划分镜、生成关键帧与配乐，并串联成短音乐视频。",
+          "description_en": "Plans keyframes, creates matching music, and assembles them into a short music video.",
+          "what": "Builds a short music video from a theme with generated visuals and soundtrack.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "one-shot-video",
+          "path": "library/motion/one-shot-video/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "单镜头视频生成",
+          "group_en": "One-Shot Video Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成单镜头连续电影感视频，支持参考图、风格、时长和画幅控制。",
+          "description_en": "Creates a seamless cinematic single-shot video with reference-image and style controls.",
+          "what": "Generates a continuous one-shot video from a scene prompt.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "gotalab",
+        "repo": "cc-sdd",
+        "full_name": "gotalab/cc-sdd",
+        "url": "https://github.com/gotalab/cc-sdd",
+        "stars": 3473,
+        "pushed_at": "2026-05-20",
+        "default_branch": "main",
+        "github_description": "Turn approved specs into long-running autonomous implementation. A minimal, adaptable SDD harness with Agent Skills for Claude Code, Codex, Cursor, Copilot, Windsurf, OpenCode, Gemini CLI, and Antigravity.",
+        "topics": [
+          "agent-skills",
+          "claude-code",
+          "codex",
+          "cursor",
+          "gemini-cli",
+          "github-copilot",
+          "kiro",
+          "opencode",
+          "sdd",
+          "spec-driven-development",
+          "steering",
+          "subagents"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "cc-sdd-new-agent",
+          "path": ".agents/skills/cc-sdd-new-agent/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "编码 Agent 集成 SOP",
+          "group_en": "Coding Agent Integration SOP",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导按 SOP 集成或迁移编码 Agent，先出计划再实现验证。",
+          "description_en": "Guides the integration or migration of coding agents through a plan-first SOP with implementation and verification artifacts.",
+          "what": "A plan-first workflow for adding or migrating supported coding-agent integrations in the cc-sdd harness.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kiro-debug",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-debug/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "根因优先调试",
+          "group_en": "Root-Cause-First Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用根因优先方式调查实现失败，给出修复计划和验证建议。",
+          "description_en": "Investigates implementation failures with a root-cause-first approach and returns a fix plan plus verification guidance.",
+          "what": "A debugging skill for blocked implementation, failed validation, or repeated remediation without speculative patching.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kiro-discovery",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-discovery/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "SDD 发现与分解",
+          "group_en": "SDD Discovery and Decomposition",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 扫描项目元数据、澄清意图并规划下一步。",
+          "description_en": "Guides agents through lightweight project discovery, intent clarification, and next-step planning.",
+          "what": "Entry point that converts new work into a concrete action path.",
+          "chain": true,
+          "chain_group": "Kiro SDD 工作流",
+          "chain_group_en": "Kiro SDD Workflow"
+        },
+        {
+          "name": "kiro-impl",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-impl/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "SDD 实施与 TDD",
+          "group_en": "SDD Implementation with TDD",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 按已批准任务以 TDD 和子代理协作完成实现。",
+          "description_en": "Helps agents implement approved tasks with TDD, subagent dispatch, and review controls.",
+          "what": "Execution skill that turns approved tasks into tested implementation work.",
+          "chain": true,
+          "chain_group": "Kiro SDD 工作流",
+          "chain_group_en": "Kiro SDD Workflow"
+        },
+        {
+          "name": "kiro-review",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-review/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "质疑驱动 / 对抗性审查",
+          "group_en": "Adversarial Review",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在实现完成后对照已批准规格、任务边界和验证证据审查任务是否可验收。",
+          "description_en": "Reviews completed work against approved specs, task boundaries, and verification evidence before acceptance.",
+          "what": "Task-local adversarial review for spec-aligned implementation acceptance.",
+          "chain": true,
+          "chain_group": "SDD 规格到验收工作流",
+          "chain_group_en": "Spec-to-Acceptance SDD Workflow"
+        },
+        {
+          "name": "kiro-spec-batch",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-spec-batch/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "源文档驱动开发",
+          "group_en": "Source-Document-Driven Development",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "根据路线图并行生成各功能的规格、需求、设计和任务文件，并按依赖波次排序。",
+          "description_en": "Generates requirements, design, and task specs for roadmap features in dependency-aware parallel waves.",
+          "what": "Parallel spec generation for roadmap features in an SDD harness.",
+          "chain": true,
+          "chain_group": "SDD 规格到验收工作流",
+          "chain_group_en": "Spec-to-Acceptance SDD Workflow"
+        },
+        {
+          "name": "kiro-spec-design",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-spec-design/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "Kiro 技术设计生成",
+          "group_en": "Kiro technical design generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取规格、需求和研究材料，生成职责边界清晰、含接口与图示的技术设计方案。",
+          "description_en": "Turns approved specs and research into a technical design with components, interfaces, boundaries, and diagrams.",
+          "what": "Generate a technical design from an approved specification.",
+          "chain": true,
+          "chain_group": "Kiro 规格初始化到技术设计工作流",
+          "chain_group_en": "Kiro spec initiation to technical design workflow"
+        },
+        {
+          "name": "kiro-spec-init",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-spec-init/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "Kiro 规格初始化",
+          "group_en": "Kiro specification initialization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据项目描述初始化功能需求文档与规格目录结构，补齐问题、现状和变更目标。",
+          "description_en": "Initializes a feature spec from project context, ensuring the problem, current state, and desired change are clarified.",
+          "what": "Initialize a new feature specification.",
+          "chain": true,
+          "chain_group": "Kiro 规格初始化到技术设计工作流",
+          "chain_group_en": "Kiro spec initiation to technical design workflow"
+        },
+        {
+          "name": "kiro-spec-quick",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-spec-quick/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "SDD 规格生成工作流",
+          "group_en": "SDD Spec Generation Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将简短功能描述转为四阶段规格，并在自动或交互模式下完成轻量审查。",
+          "description_en": "Turns a short feature idea into a staged spec, running a lightweight review in automatic or interactive mode.",
+          "what": "将简短功能描述转为四阶段规格并执行轻量 sanity review。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kiro-spec-requirements",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-spec-requirements/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "SDD 规格生成工作流",
+          "group_en": "SDD Spec Generation Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "围绕已有规格读取 steering 上下文，生成边界清晰的 EARS 风格需求。",
+          "description_en": "Reads steering context for an existing spec and produces clear, boundary-aware EARS-style requirements.",
+          "what": "围绕已有规格生成完整、边界清晰的 EARS 风格需求。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kiro-spec-status",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-spec-status/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "轻量 SDD 框架",
+          "group_en": "Lightweight SDD Framework",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "读取规格文件，汇总阶段进度、阻塞点与下一步",
+          "description_en": "Reads spec files to summarize phase progress, blockers, and next actions.",
+          "what": "帮助 agent 判断当前规格是否可继续推进。",
+          "chain": true,
+          "chain_group": "规格状态到任务生成",
+          "chain_group_en": "Spec Status to Task Generation"
+        },
+        {
+          "name": "kiro-spec-tasks",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-spec-tasks/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "轻量 SDD 框架",
+          "group_en": "Lightweight SDD Framework",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "将已批准规格拆解为可执行实施任务并检查覆盖度",
+          "description_en": "Breaks approved specs into executable implementation tasks and checks coverage.",
+          "what": "帮助 agent 把已批准规格转成实施任务清单。",
+          "chain": true,
+          "chain_group": "规格状态到任务生成",
+          "chain_group_en": "Spec Status to Task Generation"
+        },
+        {
+          "name": "kiro-steering-custom",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-steering-custom/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "Kiro Steering 项目知识",
+          "group_en": "Kiro Steering Project Knowledge",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为特定领域创建专用 steering 文档，把 API、测试等约定沉淀为项目记忆。",
+          "description_en": "Creates specialized steering docs that capture domain-specific conventions like API standards or testing approaches.",
+          "what": "引导 agent 为专门主题创建自定义 steering 文档。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kiro-steering",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-steering/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "Kiro Steering 项目知识",
+          "group_en": "Kiro Steering Project Knowledge",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "维护 Kiro steering 目录，引导 agent 初始化、同步并保护项目知识。",
+          "description_en": "Maintains the Kiro steering directory, guiding agents to initialize, sync, and protect project knowledge.",
+          "what": "帮助 agent 管理项目 steering 文档的生命周期。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kiro-validate-design",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-validate-design/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "SDD 规格验证与实施准备",
+          "group_en": "SDD spec validation and implementation readiness",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于已批准需求和设计文档，评审技术设计质量并给出 GO/NO-GO 决策。",
+          "description_en": "Reviews technical design quality against approved requirements and design docs, then issues a clear go/no-go decision.",
+          "what": "评审技术设计是否具备实现条件并给出关键改进建议。",
+          "chain": true,
+          "chain_group": "SDD 需求到设计验证工作流",
+          "chain_group_en": "SDD requirements-to-design validation workflow"
+        },
+        {
+          "name": "kiro-validate-gap",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-validate-gap/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "SDD 规格验证与实施准备",
+          "group_en": "SDD spec validation and implementation readiness",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析已批准需求与现有代码库之间的实现差距，评估方案与集成风险。",
+          "description_en": "Analyzes the gap between approved requirements and the existing codebase, assessing implementation options and integration risks.",
+          "what": "识别需求与现有代码库之间的缺失能力和实现路径。",
+          "chain": true,
+          "chain_group": "SDD 需求到设计验证工作流",
+          "chain_group_en": "SDD requirements-to-design validation workflow"
+        },
+        {
+          "name": "kiro-validate-impl",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-validate-impl/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "SDD 集成验收",
+          "group_en": "SDD Integration Acceptance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在所有任务完成后验证跨任务集成、测试套件与需求覆盖。",
+          "description_en": "Validates cross-task integration, full test coverage, and alignment with the approved spec after implementation.",
+          "what": "验证实现后的跨任务集成与需求覆盖。",
+          "chain": true,
+          "chain_group": "SDD 完成验证与集成验收",
+          "chain_group_en": "SDD Completion Verification and Integration Acceptance"
+        },
+        {
+          "name": "kiro-verify-completion",
+          "path": "tools/cc-sdd/templates/agents/antigravity-skills/skills/kiro-verify-completion/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "SDD 完成门禁",
+          "group_en": "SDD Completion Gates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用于在声明完成前用新证据核验任务、修复、测试或上线结论。",
+          "description_en": "Checks completion claims against fresh evidence before marking tasks, fixes, tests, or features as done.",
+          "what": "核验完成声明与证据是否匹配。",
+          "chain": true,
+          "chain_group": "SDD 完成验证与集成验收",
+          "chain_group_en": "SDD Completion Verification and Integration Acceptance"
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "miaoxworld",
+        "repo": "OpenClawInstaller",
+        "full_name": "miaoxworld/OpenClawInstaller",
+        "url": "https://github.com/miaoxworld/OpenClawInstaller",
+        "stars": 3434,
+        "pushed_at": "2026-03-22",
+        "default_branch": "main",
+        "github_description": "ClawdBot 一键部署工具",
+        "topics": [
+          "clawdbot",
+          "moltbot",
+          "openclaw"
+        ],
+        "language": "Shell",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "channel-setup-assistant",
+          "path": "skills/channel-setup-assistant/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "OpenClaw 渠道配置",
+          "group_en": "OpenClaw Channel Setup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 通过问答收集渠道凭据，执行 OpenClaw 命令配置消息渠道，并做健康检查。",
+          "description_en": "Guides the agent through collecting channel credentials, running OpenClaw commands to configure messaging integrations, and verifying connectivity.",
+          "what": "配置 OpenClaw 消息渠道并验证连通性。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "op7418",
+        "repo": "guizang-social-card-skill",
+        "full_name": "op7418/guizang-social-card-skill",
+        "url": "https://github.com/op7418/guizang-social-card-skill",
+        "stars": 3421,
+        "pushed_at": "2026-05-27",
+        "default_branch": "main",
+        "github_description": "🪧 Claude Code / Codex skill — generate Xiaohongshu carousels & WeChat 21:9+1:1 cover pairs. Editorial × Swiss visual systems, 28 layouts, 10 themes, single-file HTML → PNG. 小红书图文 + 公众号封面对",
+        "topics": [
+          "agent-skill",
+          "ai-agent",
+          "anthropic",
+          "claude-code",
+          "claude-skill",
+          "codex",
+          "editorial-design",
+          "html-template",
+          "image-generation",
+          "playwright",
+          "rednote",
+          "social-cards",
+          "swiss-design",
+          "wechat",
+          "xiaohongshu"
+        ],
+        "language": "HTML",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "小红书图文与公众号封面生成",
+          "group_en": "Xiaohongshu Posts & WeChat Cover Generator",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据文章、脚本、截图、产品说明或照片，生成小红书图文、3:4 卡片和微信公众号 21:9+1:1 封面套图。",
+          "description_en": "Generates Xiaohongshu carousels, 3:4 social cards, and WeChat Official Account cover pairs from articles, scripts, screenshots, notes, or photos.",
+          "what": "Creates polished Guizang/Swiss editorial social-card packages as single-file HTML rendered to PNG.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
