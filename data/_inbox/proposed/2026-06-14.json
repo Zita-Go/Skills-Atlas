@@ -1,0 +1,2257 @@
+{
+  "generated_at": "2026-06-14T05:31:08+00:00",
+  "date": "2026-06-14",
+  "proposed_count": 5,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 57,
+      "blocklisted": 10,
+      "seen_recently": 78,
+      "truncated": 204,
+      "looks_aggregator": 2,
+      "no_skill_files": 3,
+      "skill_name_dup": 3
+    },
+    "filtered_out": [
+      {
+        "full_name": "JsonChao/Awesome-Android-Notebook",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "guanguans/favorite-link",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "taishi-i/awesome-ChatGPT-repositories",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "davepoon/buildwithclaude",
+        "reason": "⚠ 疑似 vendored 副本（仍提交待人审）：3/30 个 skill 名已在目录——security-audit, brand-guidelines, canvas-design；建议人审核是否整仓拒/blocklist"
+      },
+      {
+        "full_name": "codeaashu/claude-code",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "ChanceYu/front-end-rss",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "create-custom-agent"
+      ],
+      "group": "VS Code 自定义 Agent 文件创建",
+      "group_en": "VS Code Custom Agent File Creation",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "帮助 agent 创建 VS Code 自定义 agent 文件，配置角色、工具与交接。",
+      "description_en": "Helps agents create VS Code custom agent files, configuring roles, tools, and handoffs.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "create-skill-test"
+      ],
+      "group": "Agent Skill 测试脚手架",
+      "group_en": "Agent Skill Test Scaffolding",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助为 agent skill 生成 eval.yaml 测试、场景、断言和 fixture。",
+      "description_en": "Helps scaffold eval.yaml tests, scenarios, assertions, and fixtures for agent skills.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "create-skill"
+      ],
+      "group": "Skill 创建器",
+      "group_en": "Skill Creator",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "帮助 agent 按规范创建新 skill，生成 SKILL.md 和目录结构。",
+      "description_en": "Helps agents scaffold new skills with compliant SKILL.md files and directory structures.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "no-eval-skill"
+      ],
+      "group": "技能发现测试夹具",
+      "group_en": "Skill discovery test fixture",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "用于测试技能发现逻辑遇到缺少 eval.yaml 的 skill 时的行为。",
+      "description_en": "Tests how skill discovery handles skills missing eval.yaml.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "sample-skill"
+      ],
+      "group": "未归类测试样例",
+      "group_en": "Uncategorized test fixture",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "验证器问候生成样例，帮助 agent 按姓名和时段生成问候语。",
+      "description_en": "A validator fixture for generating greetings by name and time of day.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "mcp-csharp-create"
+      ],
+      "group": "三大模型厂 SDK 直连 / API 与接口设计 / MCP Server 开发",
+      "group_en": "Model SDK Direct Access, API Design, and MCP Server Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "用 C# SDK 创建 MCP server，配置工具、提示、资源和传输方式。",
+      "description_en": "Creates C# MCP servers with the SDK, configuring tools, prompts, resources, and transport.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "mcp-csharp-debug",
+        "mcp-csharp-publish"
+      ],
+      "group": "C# MCP Server 调试到发布工作流",
+      "group_en": "C# MCP server debug-to-publish workflow",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": true,
+      "description": "帮助 agent 打包、容器化并部署 C# MCP 服务器到 Azure 或 Registry。",
+      "description_en": "Helps agents package, containerize, and deploy C# MCP servers to Azure or the MCP Registry.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "mcp-csharp-test"
+      ],
+      "group": "C# MCP Server 测试",
+      "group_en": "C# MCP Server Testing",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 为 C# MCP Server 编写单元、集成与端到端测试。",
+      "description_en": "Helps agents write unit, integration, and end-to-end tests for C# MCP servers.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "technology-selection"
+      ],
+      "group": ".NET AI/ML 技术选型",
+      "group_en": ".NET AI/ML Technology Selection",
+      "category": "software-engineering",
+      "subcategory": "1-7",
+      "chain": false,
+      "description": "指导 agent 在 .NET 8+ 项目中选型并落地 AI/ML 功能。",
+      "description_en": "Helps agents choose and implement AI/ML features in .NET 8+ projects.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "configuring-opentelemetry-dotnet"
+      ],
+      "group": "可观测性 / 监控（LGTM / Prometheus / OTel）",
+      "group_en": "Observability / Monitoring (LGTM / Prometheus / OTel)",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 agent 在 ASP.NET Core 中配置 OpenTelemetry 追踪、指标、日志与 OTLP 导出。",
+      "description_en": "Helps agents configure OpenTelemetry traces, metrics, logs, and OTLP export in ASP.NET Core.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "convert-blazor-server-to-webapp",
+        "dotnet-webapi",
+        "minimal-api-file-upload",
+        "author-component",
+        "collect-user-input",
+        "configure-auth",
+        "coordinate-components",
+        "create-blazor-project",
+        "fetch-and-send-data",
+        "plan-ui-change",
+        "support-prerendering",
+        "use-js-interop",
+        "optimizing-ef-core-queries"
+      ],
+      "group": "Microsoft / .NET 栈",
+      "group_en": "Microsoft / .NET Stack",
+      "category": "software-engineering",
+      "subcategory": "1-7",
+      "chain": false,
+      "description": "帮助 agent 创建或修改 ASP.NET Core Web API 端点，规范 HTTP 语义、OpenAPI 文档、DTO 与错误处理。",
+      "description_en": "Guides agents in implementing file upload endpoints in .NET 8+ Minimal APIs, including form binding, size limits, type validation, and streaming.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "analyzing-dotnet-performance"
+      ],
+      "group": ".NET 性能反模式审查",
+      "group_en": ".NET Performance Anti-Pattern Review",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "扫描 C#/.NET 代码中的性能反模式，给出优先级和修复建议。",
+      "description_en": "Scans C#/.NET code for performance anti-patterns and suggests prioritized fixes.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "android-tombstone-symbolication"
+      ],
+      "group": ".NET Android 崩溃符号化",
+      "group_en": ".NET Android Crash Symbolication",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "解析 Android tombstone，将 .NET 原生崩溃帧符号化为函数和源码位置。",
+      "description_en": "Parses Android tombstones to symbolicate .NET native crash frames into functions and source locations.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "apple-crash-symbolication"
+      ],
+      "group": "Apple 平台 .NET 崩溃日志符号化",
+      "group_en": "Apple .NET Crash Log Symbolication",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "解析 Apple .ips 崩溃日志，将 .NET 运行时帧定位到源码位置。",
+      "description_en": "Symbolicates Apple .ips crash logs to map .NET runtime frames back to source locations.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "clr-activation-debugging"
+      ],
+      "group": ".NET Framework CLR 激活诊断",
+      "group_en": ".NET Framework CLR Activation Diagnostics",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "分析 CLRLoad 日志，定位 .NET Framework 运行时加载选择问题。",
+      "description_en": "Analyzes CLR activation logs to diagnose .NET Framework runtime loading and version-selection failures.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "dotnet-trace-collect",
+        "dump-collect"
+      ],
+      "group": ".NET 生产诊断采集",
+      "group_en": ".NET Production Diagnostics Collection",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 为 .NET 生产性能问题选择诊断工具，并指导跨平台、容器或 Kubernetes 环境采集 trace 数据。",
+      "description_en": "Guides agents in choosing .NET diagnostic tools and collecting performance traces across platforms, containers, and Kubernetes.",
+      "sources": [
+        "dotnet/skills"
+      ]
+    },
+    {
+      "skills": [
+        "drawio-skill"
+      ],
+      "group": "draw.io 图表生成",
+      "group_en": "draw.io Diagram Generation",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "把自然语言需求转成 draw.io 图表 XML，支持架构图、流程图、ERD、UML 等导出。",
+      "description_en": "Turns natural-language requests into draw.io XML diagrams, including architecture, flowcharts, ERDs, and UML exports.",
+      "sources": [
+        "Agents365-ai/drawio-skill"
+      ]
+    },
+    {
+      "skills": [
+        "code-health"
+      ],
+      "group": "代码健康巡检 / 技术债扫描",
+      "group_en": "Code Health Audit / Tech Debt Scan",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "扫描代码库，识别死代码、技术债、依赖风险和代码异味，并生成审计报告。",
+      "description_en": "Scans the codebase for dead code, tech debt, dependency risks, and code smells, then writes an audit report.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "feature-spec"
+      ],
+      "group": "Spec → 工程",
+      "group_en": "Spec → Engineering",
+      "category": "product-management",
+      "subcategory": "3-6",
+      "chain": false,
+      "description": "生成完整功能规格、验收标准和交付交接说明，帮助产品需求进入开发。",
+      "description_en": "Creates a complete feature spec with acceptance criteria, scope, risks, and developer handoff notes.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "implement-feature",
+        "release-check"
+      ],
+      "group": "功能到发布的交付流水线",
+      "group_en": "Feature-to-release delivery pipeline",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": true,
+      "description": "从已批准规格出发，编排开发代理完成架构、编码、测试和交付交接。",
+      "description_en": "Runs pre-release checks across docs, tests, security, and quality gates, then returns a release verdict.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "review-findings",
+        "security-audit"
+      ],
+      "group": "Agent Triforce QA→Dev 修复闭环",
+      "group_en": "Agent Triforce QA-to-Dev Fix Loop",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": true,
+      "description": "执行 OWASP、密钥、依赖和智能合约安全检查，生成报告并移交修复。",
+      "description_en": "Runs OWASP, secrets, dependency, and smart-contract security checks, then writes a report and hands findings off for remediation.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "init"
+      ],
+      "group": "uc-taskmanager 初始化",
+      "group_en": "uc-taskmanager Initialization",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "初始化当前项目的 uc-taskmanager，创建工作目录并配置 Bash 权限。",
+      "description_en": "Sets up the current project for uc-taskmanager by creating its working folder and configuring Bash permissions.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "sdd-pipeline"
+      ],
+      "group": "SDD 流水线参考包",
+      "group_en": "SDD Pipeline Reference Pack",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "为 SDD 流水线代理提供流程、schema、上下文与日志格式等参考规则。",
+      "description_en": "Provides SDD pipeline agents with reference rules for workflow, schemas, context policy, XML format, and activity logs.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "work-pipeline",
+        "work-status"
+      ],
+      "group": "WORK-PIPELINE 任务管理流程",
+      "group_en": "WORK-PIPELINE task management workflow",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": true,
+      "description": "读取 WORK 清单与进度文件，汇总任务状态并展示完成、进行中和待办情况。",
+      "description_en": "Reads WORK and progress files to summarize task status, completion, in-progress work, and pending items.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "activecampaign-automation"
+      ],
+      "group": "ActiveCampaign 营销自动化",
+      "group_en": "ActiveCampaign Marketing Automation",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "通过 Rube MCP 管理 ActiveCampaign 联系人、标签、订阅与自动化任务。",
+      "description_en": "Manage ActiveCampaign contacts, tags, subscriptions, and automation tasks through Rube MCP.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "agent-analytics"
+      ],
+      "group": "项目增长健康指标",
+      "group_en": "Project Growth Health Metrics",
+      "category": "product-management",
+      "subcategory": "3-8",
+      "chain": false,
+      "description": "用 CLI 为项目接入分析追踪、漏斗、留存和 A/B 实验优化。",
+      "description_en": "Track project analytics, funnels, retention, and A/B experiments from the CLI.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "airtable-automation"
+      ],
+      "group": "Airtable 自动化 via Rube MCP",
+      "group_en": "Airtable automation with Rube MCP",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 Agent 通过 Rube MCP 连接 Airtable，管理记录、表结构和视图。",
+      "description_en": "Helps the agent connect to Airtable through Rube MCP to manage records, schemas, and views.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "amplitude-automation"
+      ],
+      "group": "Amplitude 产品分析自动化",
+      "group_en": "Amplitude product analytics automation",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 Agent 通过 Rube MCP 连接 Amplitude，发送事件并查询用户和群组。",
+      "description_en": "Helps the agent connect to Amplitude through Rube MCP to send events and query users or cohorts.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "artifacts-builder"
+      ],
+      "group": "复杂 Claude 前端 Artifact 构建",
+      "group_en": "Complex Claude Frontend Artifact Builder",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "帮助 agent 初始化、开发并打包复杂 claude.ai 前端 Artifact。",
+      "description_en": "Helps agents scaffold, develop, and bundle complex claude.ai frontend artifacts.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "asana-automation"
+      ],
+      "group": "Asana 自动化",
+      "group_en": "Asana Automation",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "通过 Rube MCP 管理 Asana 任务、项目、团队和工作区。",
+      "description_en": "Manage Asana tasks, projects, teams, and workspaces through Rube MCP.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "aurakit"
+      ],
+      "group": "全栈开发增强引擎",
+      "group_en": "Full-Stack Development Booster",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "增强 Claude Code 全栈开发，提供模式化构建、评审和安全钩子。",
+      "description_en": "Enhances Claude Code full-stack work with guided modes, review flows, and security hooks.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "bamboohr-automation"
+      ],
+      "group": "BambooHR 人事自动化",
+      "group_en": "BambooHR HRIS Automation",
+      "category": "comms-integration",
+      "subcategory": "9-5",
+      "chain": false,
+      "description": "通过 Rube MCP 自动化 BambooHR 员工、休假与福利管理。",
+      "description_en": "Automates BambooHR employee, time-off, and benefits workflows through Rube MCP.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "basecamp-automation"
+      ],
+      "group": "Basecamp 项目管理自动化",
+      "group_en": "Basecamp Project Management Automation",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "通过 Rube MCP 连接 Basecamp，帮助 agent 管理项目、待办、消息和成员。",
+      "description_en": "Connects agents to Basecamp through Rube MCP to manage projects, to-dos, messages, and people.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "bitbucket-automation"
+      ],
+      "group": "Bitbucket Git/PR 自动化",
+      "group_en": "Bitbucket Git/PR Automation",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "通过 Rube MCP 操作 Bitbucket 仓库、分支、PR、issue 和工作区。",
+      "description_en": "Uses Rube MCP to operate Bitbucket repositories, branches, pull requests, issues, and workspaces.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "box-automation"
+      ],
+      "group": "Box 存储与协作自动化",
+      "group_en": "Box storage and collaboration automation",
+      "category": "comms-integration",
+      "subcategory": "9-5",
+      "chain": false,
+      "description": "帮助 agent 通过 Rube MCP 操作 Box，完成文件上传下载、搜索、文件夹与共享管理。",
+      "description_en": "Helps agents operate Box through Rube MCP for uploads, downloads, search, folder, and sharing workflows.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "brand-guidelines"
+      ],
+      "group": "Anthropic 品牌规范",
+      "group_en": "Anthropic brand guidelines",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "让 agent 将 Anthropic 官方品牌色、字体和排版规范应用到各类 artifact。",
+      "description_en": "Applies Anthropic’s official colors, typography, and layout guidance to artifacts that need brand-consistent styling.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "brevo-automation"
+      ],
+      "group": "Brevo 邮件营销自动化",
+      "group_en": "Brevo email marketing automation",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "通过 Rube MCP/Composio 连接 Brevo，自动管理邮件活动、模板、发件人和绩效。",
+      "description_en": "Uses Rube MCP/Composio to automate Brevo email campaigns, templates, senders, and performance workflows.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "cal-com-automation"
+      ],
+      "group": "Cal.com 日程预约自动化",
+      "group_en": "Cal.com scheduling automation",
+      "category": "comms-integration",
+      "subcategory": "9-5",
+      "chain": false,
+      "description": "通过 Rube MCP/Composio 管理 Cal.com 预约、可用性、Webhook 和团队，自动处理日程操作。",
+      "description_en": "Uses Rube MCP/Composio to manage Cal.com bookings, availability, webhooks, and team scheduling tasks.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "calendly-automation"
+      ],
+      "group": "Calendly 日程自动化（Rube MCP）",
+      "group_en": "Calendly Scheduling Automation (Rube MCP)",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮 agent 通过 Rube MCP 连接 Composio Calendly，查询日程与可用性、创建链接、管理受邀者并执行组织管理。",
+      "description_en": "Helps an agent connect to Composio’s Calendly toolkit through Rube MCP to check availability, create scheduling links, list events, track invitees, and administer the organization.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "canva-automation"
+      ],
+      "group": "Canva 设计资产自动化（Rube MCP）",
+      "group_en": "Canva Design Asset Automation (Rube MCP)",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "帮 agent 通过 Rube MCP 连接 Composio Canva，浏览设计、导出文件、管理文件夹、套用品牌模板并自动填充内容。",
+      "description_en": "Helps an agent connect to Composio’s Canva toolkit through Rube MCP to browse designs, export files, manage folders, apply brand templates, and autofill content.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "canvas-design"
+      ],
+      "group": "视觉哲学艺术生成",
+      "group_en": "Visual Philosophy Artwork",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "帮助 agent 先提炼视觉哲学，再生成海报或艺术 PNG/PDF。",
+      "description_en": "Helps the agent define a visual philosophy and produce poster or artwork in PNG/PDF form.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "cf-proxy"
+      ],
+      "group": "Cloudflare Pages 代理部署",
+      "group_en": "Cloudflare Pages Proxy Deployment",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "帮助 agent 在 Cloudflare Pages 部署 VLESS 节点并配置域名 DNS。",
+      "description_en": "Helps the agent deploy a VLESS node on Cloudflare Pages and configure domain DNS.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "changelog-generator"
+      ],
+      "group": "changelog-generator",
+      "group_en": "Release automation and CI/CD automation",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "将 Git 提交自动归类并转写成面向用户的产品更新说明。",
+      "description_en": "Turns Git commits into clear, user-friendly release notes.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "circleci-automation"
+      ],
+      "group": "circleci-automation",
+      "group_en": "Release automation and CI/CD automation",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "通过 Rube MCP 触发并监控 CircleCI 流水线与测试结果。",
+      "description_en": "Triggers and monitors CircleCI pipelines and test results through Rube MCP.",
+      "sources": [
+        "davepoon/buildwithclaude"
+      ]
+    },
+    {
+      "skills": [
+        "paper-spine-audit",
+        "paper-spine-build"
+      ],
+      "group": "PaperSpine 学术论文构建与审计工作流",
+      "group_en": "PaperSpine Academic Paper Build and Audit Workflow",
+      "category": "academic-research",
+      "subcategory": "11-5",
+      "chain": true,
+      "description": "审计论文输出是否完整、论证有证据支撑，并检查 LaTeX 引文和图表安全性。",
+      "description_en": "Builds a paper or report draft from research materials, confirmed motivation, evidence banks, and writing blueprints.",
+      "sources": [
+        "WUBING2023/PaperSpine"
+      ]
+    },
+    {
+      "skills": [
+        "paper-spine-citation",
+        "paper-spine-humanize",
+        "paper-spine-research",
+        "paper-spine-rewrite"
+      ],
+      "group": "PaperSpine 论文重写流水线",
+      "group_en": "PaperSpine manuscript rewriting workflow",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": true,
+      "description": "帮助 agent 从研究材料中筛选候选文献，生成可核验的引用支持库，支撑论文背景与讨论段落。",
+      "description_en": "Helps agents apply tiered stylistic revisions to academic text and document AI-pattern changes in an auditable matrix.",
+      "sources": [
+        "WUBING2023/PaperSpine"
+      ]
+    },
+    {
+      "skills": [
+        "paper-spine-intake",
+        "paper-spine-latex"
+      ],
+      "group": "PaperSpine 论文重写交付流水线",
+      "group_en": "PaperSpine paper rewriting delivery pipeline",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": true,
+      "description": "收集论文重写选项，生成 PaperSpine 配置，供后续流程使用。",
+      "description_en": "Assembles LaTeX projects, manages figures, citations, labels, and compile-safety checks.",
+      "sources": [
+        "WUBING2023/PaperSpine"
+      ]
+    },
+    {
+      "skills": [
+        "paper-spine-translate"
+      ],
+      "group": "学术论文中文翻译包",
+      "group_en": "Academic paper Chinese translation package",
+      "category": "docs-knowledge",
+      "subcategory": "2-2",
+      "chain": false,
+      "description": "为 PaperSpine 生成完整中文翻译包，逐项翻译配置、资料索引、研究档案与全文。",
+      "description_en": "Builds PaperSpine’s complete Chinese translation package, translating config, indexes, dossiers, and the full paper.",
+      "sources": [
+        "WUBING2023/PaperSpine"
+      ]
+    },
+    {
+      "skills": [
+        "paper-spine-ui"
+      ],
+      "group": "PaperSpine 配置 UI 启动器",
+      "group_en": "PaperSpine configuration UI launcher",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "启动 PaperSpine 的外部终端配置界面，供 Codex 和 Claude Code 交互式补齐配置。",
+      "description_en": "Launches PaperSpine’s external terminal configuration UI for Codex and Claude Code.",
+      "sources": [
+        "WUBING2023/PaperSpine"
+      ]
+    },
+    {
+      "skills": [
+        "paper-spine-update"
+      ],
+      "group": "PaperSpine 安装与更新",
+      "group_en": "PaperSpine installation and updates",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "检查、升级或重装 PaperSpine，同时保留本地配置。",
+      "description_en": "Checks, upgrades, or reinstalls PaperSpine while preserving local settings.",
+      "sources": [
+        "WUBING2023/PaperSpine"
+      ]
+    },
+    {
+      "skills": [
+        "paper-spine"
+      ],
+      "group": "学术研究流水线",
+      "group_en": "Academic research writing pipeline",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "统筹论文/报告的动机提炼、写作、引用、修订与 LaTeX/PDF/Word 输出。",
+      "description_en": "Coordinates motivation, writing, citations, revision, and LaTeX/PDF/Word output for papers and reports.",
+      "sources": [
+        "WUBING2023/PaperSpine"
+      ]
+    },
+    {
+      "skills": [
+        "gpt-image"
+      ],
+      "group": "AI 出图（Codex）",
+      "group_en": "AI Image Generation (Codex)",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "帮助 agent 调用 GPT Image 2 生成、编辑、修复图像并复用提示图库。",
+      "description_en": "Helps agents generate, edit, and inpaint images with GPT Image 2 while reusing prompt patterns.",
+      "sources": [
+        "wuyoscar/GPT-Image2-Skill"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "dotnet",
+        "repo": "skills",
+        "full_name": "dotnet/skills",
+        "url": "https://github.com/dotnet/skills",
+        "stars": 3366,
+        "pushed_at": "2026-06-14",
+        "default_branch": "main",
+        "github_description": "Repository for skills to assist AI coding agents with .NET and C#",
+        "topics": [
+          "agent-skills"
+        ],
+        "language": "C#",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "create-custom-agent",
+          "path": ".agents/skills/create-custom-agent/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "VS Code 自定义 Agent 文件创建",
+          "group_en": "VS Code Custom Agent File Creation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 创建 VS Code 自定义 agent 文件，配置角色、工具与交接。",
+          "description_en": "Helps agents create VS Code custom agent files, configuring roles, tools, and handoffs.",
+          "what": "用于创建和配置 VS Code .agent.md 自定义 agent 文件。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "create-skill-test",
+          "path": ".agents/skills/create-skill-test/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Agent Skill 测试脚手架",
+          "group_en": "Agent Skill Test Scaffolding",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助为 agent skill 生成 eval.yaml 测试、场景、断言和 fixture。",
+          "description_en": "Helps scaffold eval.yaml tests, scenarios, assertions, and fixtures for agent skills.",
+          "what": "用于为 dotnet/skills 中的 agent skill 创建测试评估文件。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "create-skill",
+          "path": ".agents/skills/create-skill/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器",
+          "group_en": "Skill Creator",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 按规范创建新 skill，生成 SKILL.md 和目录结构。",
+          "description_en": "Helps agents scaffold new skills with compliant SKILL.md files and directory structures.",
+          "what": "Scaffolds new agent skills with validation and templates.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "no-eval-skill",
+          "path": "eng/skill-validator/tests/fixtures/no-eval-skill/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "技能发现测试夹具",
+          "group_en": "Skill discovery test fixture",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用于测试技能发现逻辑遇到缺少 eval.yaml 的 skill 时的行为。",
+          "description_en": "Tests how skill discovery handles skills missing eval.yaml.",
+          "what": "Fixture for discovery behavior without eval.yaml.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sample-skill",
+          "path": "eng/skill-validator/tests/fixtures/sample-skill/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "未归类测试样例",
+          "group_en": "Uncategorized test fixture",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "验证器问候生成样例，帮助 agent 按姓名和时段生成问候语。",
+          "description_en": "A validator fixture for generating greetings by name and time of day.",
+          "what": "用于测试验证器的问候生成样例 skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "mcp-csharp-create",
+          "path": "plugins/dotnet-ai/skills/mcp-csharp-create/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "三大模型厂 SDK 直连 / API 与接口设计 / MCP Server 开发",
+          "group_en": "Model SDK Direct Access, API Design, and MCP Server Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 C# SDK 创建 MCP server，配置工具、提示、资源和传输方式。",
+          "description_en": "Creates C# MCP servers with the SDK, configuring tools, prompts, resources, and transport.",
+          "what": "创建 C# MCP server 并配置工具、提示、资源与 stdio/HTTP 传输。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "mcp-csharp-debug",
+          "path": "plugins/dotnet-ai/skills/mcp-csharp-debug/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "三大模型厂 SDK 直连 / API 与接口设计 / MCP Server 开发",
+          "group_en": "MCP Server and API Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 本地运行、调试并交互式测试 C# MCP 服务器。",
+          "description_en": "Helps agents run, debug, and interactively test C# MCP servers locally.",
+          "what": "本地运行、断点调试、MCP Inspector 测试、Copilot Agent Mode 验证、mcp.json 与日志排障。",
+          "chain": true,
+          "chain_group": "C# MCP Server 调试到发布工作流",
+          "chain_group_en": "C# MCP server debug-to-publish workflow"
+        },
+        {
+          "name": "mcp-csharp-publish",
+          "path": "plugins/dotnet-ai/skills/mcp-csharp-publish/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "三大模型厂 SDK 直连 / API 与接口设计 / MCP Server 开发",
+          "group_en": "MCP Server and API Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 打包、容器化并部署 C# MCP 服务器到 Azure 或 Registry。",
+          "description_en": "Helps agents package, containerize, and deploy C# MCP servers to Azure or the MCP Registry.",
+          "what": "将 stdio MCP server 打包为 NuGet，HTTP server 容器化，配置 Azure 部署与 MCP Registry 元数据。",
+          "chain": true,
+          "chain_group": "C# MCP Server 调试到发布工作流",
+          "chain_group_en": "C# MCP server debug-to-publish workflow"
+        },
+        {
+          "name": "mcp-csharp-test",
+          "path": "plugins/dotnet-ai/skills/mcp-csharp-test/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "C# MCP Server 测试",
+          "group_en": "C# MCP Server Testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 为 C# MCP Server 编写单元、集成与端到端测试。",
+          "description_en": "Helps agents write unit, integration, and end-to-end tests for C# MCP servers.",
+          "what": "C# MCP Server 的测试策略与测试框架搭建指南。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "technology-selection",
+          "path": "plugins/dotnet-ai/skills/technology-selection/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": ".NET AI/ML 技术选型",
+          "group_en": ".NET AI/ML Technology Selection",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 在 .NET 8+ 项目中选型并落地 AI/ML 功能。",
+          "description_en": "Helps agents choose and implement AI/ML features in .NET 8+ projects.",
+          "what": ".NET 8+ 项目的 AI/ML 技术选型与实现指南。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "configuring-opentelemetry-dotnet",
+          "path": "plugins/dotnet-aspnetcore/skills/configuring-opentelemetry-dotnet/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "可观测性 / 监控（LGTM / Prometheus / OTel）",
+          "group_en": "Observability / Monitoring (LGTM / Prometheus / OTel)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 在 ASP.NET Core 中配置 OpenTelemetry 追踪、指标、日志与 OTLP 导出。",
+          "description_en": "Helps agents configure OpenTelemetry traces, metrics, logs, and OTLP export in ASP.NET Core.",
+          "what": "配置 ASP.NET Core 的 OpenTelemetry SDK、导出器和自定义指标/跨度。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "convert-blazor-server-to-webapp",
+          "path": "plugins/dotnet-aspnetcore/skills/convert-blazor-server-to-webapp/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET Stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 将旧版 Blazor Server 应用迁移到 .NET 8+ Blazor Web App，并更新宿主与交互模型。",
+          "description_en": "Helps agents migrate legacy Blazor Server apps to .NET 8+ Blazor Web Apps and update the hosting and interactivity model.",
+          "what": "指导把 Blazor Server 项目迁移到 Blazor Web App 的代码与配置变更。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dotnet-webapi",
+          "path": "plugins/dotnet-aspnetcore/skills/dotnet-webapi/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET Stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 创建或修改 ASP.NET Core Web API 端点，规范 HTTP 语义、OpenAPI 文档、DTO 与错误处理。",
+          "description_en": "Helps agents create or modify ASP.NET Core Web API endpoints with proper HTTP semantics, OpenAPI documentation, DTOs, and error handling.",
+          "what": "ASP.NET Core Web API endpoint creation and modification skill.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "minimal-api-file-upload",
+          "path": "plugins/dotnet-aspnetcore/skills/minimal-api-file-upload/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET Stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导 agent 在 .NET 8+ Minimal API 中实现文件上传端点，处理表单绑定、大小限制、类型校验与流式上传。",
+          "description_en": "Guides agents in implementing file upload endpoints in .NET 8+ Minimal APIs, including form binding, size limits, type validation, and streaming.",
+          "what": "ASP.NET Core Minimal API file upload endpoint skill.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "author-component",
+          "path": "plugins/dotnet-blazor/skills/author-component/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 编写和审查 Blazor 组件，规范参数、事件、生命周期与状态处理。",
+          "description_en": "Helps agents author and review Blazor components with correct parameters, events, lifecycle, and state handling.",
+          "what": "Create or review Blazor components without JavaScript interop, following .NET Blazor architecture rules.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "collect-user-input",
+          "path": "plugins/dotnet-blazor/skills/collect-user-input/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 构建和验证 Blazor 表单，处理用户输入、绑定与提交模式。",
+          "description_en": "Helps agents build and validate Blazor forms, including binding, validation, and submission patterns.",
+          "what": "Build forms, validate data, and handle user input in Blazor across supported interactivity modes.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "configure-auth",
+          "path": "plugins/dotnet-blazor/skills/configure-auth/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET Stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为 Blazor Web App 配置认证授权，处理交互模式相关鉴权问题。",
+          "description_en": "Configures authentication and authorization for Blazor Web Apps, including render-mode-specific auth issues.",
+          "what": "Adds ASP.NET Core Identity, authorization policies, login/logout, and auth-state handling to Blazor apps.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "coordinate-components",
+          "path": "plugins/dotnet-blazor/skills/coordinate-components/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET Stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 Blazor 组件在跨层级或渲染模式边界共享和同步状态。",
+          "description_en": "Helps Blazor components share and synchronize state across component boundaries and render modes.",
+          "what": "Selects the right cascading state mechanism for Blazor components and shared app state.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "create-blazor-project",
+          "path": "plugins/dotnet-blazor/skills/create-blazor-project/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET Stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 按要求创建 Blazor Web App，选择渲染模式并生成项目结构。",
+          "description_en": "Helps an agent create a Blazor Web App, choose the right render mode, and scaffold the initial project structure.",
+          "what": "Scaffold a new Blazor web app after clarifying requirements.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "fetch-and-send-data",
+          "path": "plugins/dotnet-blazor/skills/fetch-and-send-data/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET Stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 在不同 Blazor 渲染模式下获取或提交数据，并处理加载和错误状态。",
+          "description_en": "Helps an agent load and submit data in Blazor components while handling async lifecycle, loading, and error states.",
+          "what": "Fetch backend data or send API requests from Blazor components.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "plan-ui-change",
+          "path": "plugins/dotnet-blazor/skills/plan-ui-change/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 规划复杂 Blazor 页面，拆解组件与数据流并落地实现。",
+          "description_en": "Helps an agent plan complex Blazor pages by decomposing components and data flow, then implementing them.",
+          "what": "用于复杂 Blazor UI 需求的组件拆解与实施规划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "support-prerendering",
+          "path": "plugins/dotnet-blazor/skills/support-prerendering/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 修复 Blazor 预渲染生命周期问题，避免重复加载和状态丢失。",
+          "description_en": "Helps an agent fix Blazor prerendering lifecycle issues, avoiding duplicate loads and lost state.",
+          "what": "用于排查和修复 Blazor 预渲染到交互切换的问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "use-js-interop",
+          "path": "plugins/dotnet-blazor/skills/use-js-interop/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 在 Blazor 组件中添加、审查或修复 JS interop，处理模块、生命周期和引用释放。",
+          "description_en": "Helps agents add, review, or fix JavaScript interop in Blazor components, including module setup, lifecycle timing, and reference disposal.",
+          "what": "Add, review, or fix JavaScript interop in Blazor components.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "optimizing-ef-core-queries",
+          "path": "plugins/dotnet-data/skills/optimizing-ef-core-queries/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 诊断并优化 EF Core 查询，减少 N+1、选择跟踪模式并避免常见性能陷阱。",
+          "description_en": "Helps agents diagnose and optimize EF Core queries by reducing N+1 patterns, choosing tracking modes, and avoiding common performance pitfalls.",
+          "what": "Optimize Entity Framework Core queries for performance and reduced database load.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "analyzing-dotnet-performance",
+          "path": "plugins/dotnet-diag/skills/analyzing-dotnet-performance/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": ".NET 性能反模式审查",
+          "group_en": ".NET Performance Anti-Pattern Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "扫描 C#/.NET 代码中的性能反模式，给出优先级和修复建议。",
+          "description_en": "Scans C#/.NET code for performance anti-patterns and suggests prioritized fixes.",
+          "what": "Use this to review hot paths or allocation-heavy .NET code before release.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "android-tombstone-symbolication",
+          "path": "plugins/dotnet-diag/skills/android-tombstone-symbolication/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": ".NET Android 崩溃符号化",
+          "group_en": ".NET Android Crash Symbolication",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "解析 Android tombstone，将 .NET 原生崩溃帧符号化为函数和源码位置。",
+          "description_en": "Parses Android tombstones to symbolicate .NET native crash frames into functions and source locations.",
+          "what": "Use this to triage .NET MAUI or Mono Android crashes from tombstone backtraces.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "apple-crash-symbolication",
+          "path": "plugins/dotnet-diag/skills/apple-crash-symbolication/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Apple 平台 .NET 崩溃日志符号化",
+          "group_en": "Apple .NET Crash Log Symbolication",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "解析 Apple .ips 崩溃日志，将 .NET 运行时帧定位到源码位置。",
+          "description_en": "Symbolicates Apple .ips crash logs to map .NET runtime frames back to source locations.",
+          "what": "用于排查 .NET MAUI/Mono 在 Apple 平台的崩溃。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "clr-activation-debugging",
+          "path": "plugins/dotnet-diag/skills/clr-activation-debugging/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": ".NET Framework CLR 激活诊断",
+          "group_en": ".NET Framework CLR Activation Diagnostics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析 CLRLoad 日志，定位 .NET Framework 运行时加载选择问题。",
+          "description_en": "Analyzes CLR activation logs to diagnose .NET Framework runtime loading and version-selection failures.",
+          "what": "用于排查 .NET Framework CLR 激活与运行时加载问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dotnet-trace-collect",
+          "path": "plugins/dotnet-diag/skills/dotnet-trace-collect/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": ".NET 生产诊断采集",
+          "group_en": ".NET Production Diagnostics Collection",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 为 .NET 生产性能问题选择诊断工具，并指导跨平台、容器或 Kubernetes 环境采集 trace 数据。",
+          "description_en": "Guides agents in choosing .NET diagnostic tools and collecting performance traces across platforms, containers, and Kubernetes.",
+          "what": "Selects .NET diagnostic tools and collects performance traces without analyzing the data.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dump-collect",
+          "path": "plugins/dotnet-diag/skills/dump-collect/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": ".NET 生产诊断采集",
+          "group_en": ".NET Production Diagnostics Collection",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 为现代 .NET 应用配置并收集崩溃 dump，覆盖本机、容器和 Kubernetes 环境。",
+          "description_en": "Guides agents in configuring and capturing crash dumps for modern .NET apps on local machines, containers, and Kubernetes.",
+          "what": "Configures and captures .NET crash dumps without opening or analyzing them.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "Agents365-ai",
+        "repo": "drawio-skill",
+        "full_name": "Agents365-ai/drawio-skill",
+        "url": "https://github.com/Agents365-ai/drawio-skill",
+        "stars": 3101,
+        "pushed_at": "2026-06-03",
+        "default_branch": "main",
+        "github_description": "Generate draw.io diagrams from natural language — 6 presets, vision self-check + up to 5-round refinement, codebase-to-diagram, 10,000+ official shapes & 321 AI/LLM brand logos. Exports PNG/SVG/PDF/JPG.",
+        "topics": [
+          "agent-skill",
+          "agent-skills",
+          "architecture-diagram",
+          "claude-code",
+          "claude-code-skill",
+          "claude-skills",
+          "diagram",
+          "drawio",
+          "erd",
+          "flowchart",
+          "openclaw",
+          "openclaw-skills",
+          "skill-md",
+          "skillsmp",
+          "uml"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "drawio-skill",
+          "path": "skills/drawio-skill/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "draw.io 图表生成",
+          "group_en": "draw.io Diagram Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把自然语言需求转成 draw.io 图表 XML，支持架构图、流程图、ERD、UML 等导出。",
+          "description_en": "Turns natural-language requests into draw.io XML diagrams, including architecture, flowcharts, ERDs, and UML exports.",
+          "what": "Generate and refine draw.io diagrams from natural language with export and optional visual self-check.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "davepoon",
+        "repo": "buildwithclaude",
+        "full_name": "davepoon/buildwithclaude",
+        "url": "https://github.com/davepoon/buildwithclaude",
+        "stars": 3063,
+        "pushed_at": "2026-06-13",
+        "default_branch": "main",
+        "github_description": "A single hub to find Claude Skills, Agents, Commands, Hooks, Plugins, and Marketplace collections to extend Claude Code, Claude Desktop, Agent SDK and OpenClaw",
+        "topics": [
+          "claude",
+          "claude-code",
+          "claude-code-commands",
+          "claude-skills",
+          "cli-tool",
+          "commands",
+          "mcp",
+          "mcp-server",
+          "mcp-tools",
+          "openclaw",
+          "plugin-marketplace",
+          "subagents"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "code-health",
+          "path": "plugins/agent-triforce/skills/code-health/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "代码健康巡检 / 技术债扫描",
+          "group_en": "Code Health Audit / Tech Debt Scan",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "扫描代码库，识别死代码、技术债、依赖风险和代码异味，并生成审计报告。",
+          "description_en": "Scans the codebase for dead code, tech debt, dependency risks, and code smells, then writes an audit report.",
+          "what": "Runs a comprehensive code health scan and prepares findings for the Dev agent.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "feature-spec",
+          "path": "plugins/agent-triforce/skills/feature-spec/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "Spec → 工程",
+          "group_en": "Spec → Engineering",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "生成完整功能规格、验收标准和交付交接说明，帮助产品需求进入开发。",
+          "description_en": "Creates a complete feature spec with acceptance criteria, scope, risks, and developer handoff notes.",
+          "what": "Creates a structured product feature specification and handoff for implementation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "implement-feature",
+          "path": "plugins/agent-triforce/skills/implement-feature/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "规格驱动的功能实现",
+          "group_en": "Spec-driven feature implementation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从已批准规格出发，编排开发代理完成架构、编码、测试和交付交接。",
+          "description_en": "Turns an approved spec into architecture, code, tests, and QA handoff through a Dev agent workflow.",
+          "what": "把已批准规格转化为代码、测试与 QA 交接。",
+          "chain": true,
+          "chain_group": "功能到发布的交付流水线",
+          "chain_group_en": "Feature-to-release delivery pipeline"
+        },
+        {
+          "name": "release-check",
+          "path": "plugins/agent-triforce/skills/release-check/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "发布前质量门禁",
+          "group_en": "Pre-release quality gates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "发布前执行文档、测试、安全与质量门禁检查，给出放行或阻塞结论。",
+          "description_en": "Runs pre-release checks across docs, tests, security, and quality gates, then returns a release verdict.",
+          "what": "发布前核验文档、测试、安全与质量门禁并判定是否放行。",
+          "chain": true,
+          "chain_group": "功能到发布的交付流水线",
+          "chain_group_en": "Feature-to-release delivery pipeline"
+        },
+        {
+          "name": "review-findings",
+          "path": "plugins/agent-triforce/skills/review-findings/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "QA 评审发现修复闭环",
+          "group_en": "QA Findings Remediation Loop",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 QA 评审报告，按严重度修复问题、更新测试并提交复验材料。",
+          "description_en": "Reads QA review reports, fixes issues by severity, updates tests, and prepares materials for re-verification.",
+          "what": "修复 QA 评审发现并准备复验报告。",
+          "chain": true,
+          "chain_group": "Agent Triforce QA→Dev 修复闭环",
+          "chain_group_en": "Agent Triforce QA-to-Dev Fix Loop"
+        },
+        {
+          "name": "security-audit",
+          "path": "plugins/agent-triforce/skills/security-audit/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "应用安全审计闭环",
+          "group_en": "Application Security Audit Loop",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "执行 OWASP、密钥、依赖和智能合约安全检查，生成报告并移交修复。",
+          "description_en": "Runs OWASP, secrets, dependency, and smart-contract security checks, then writes a report and hands findings off for remediation.",
+          "what": "完成应用安全审计并输出可修复的问题报告。",
+          "chain": true,
+          "chain_group": "Agent Triforce QA→Dev 修复闭环",
+          "chain_group_en": "Agent Triforce QA-to-Dev Fix Loop",
+          "dup_catalog": "auditmos/quillai-network/XSpoonAi/trailofbits/wshobson · 组「智能合约审计 / 漏洞检测」"
+        },
+        {
+          "name": "init",
+          "path": "plugins/agents-uc-taskmanager/skills/init/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "uc-taskmanager 初始化",
+          "group_en": "uc-taskmanager Initialization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "初始化当前项目的 uc-taskmanager，创建工作目录并配置 Bash 权限。",
+          "description_en": "Sets up the current project for uc-taskmanager by creating its working folder and configuring Bash permissions.",
+          "what": "用于初始化 uc-taskmanager 项目环境。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sdd-pipeline",
+          "path": "plugins/agents-uc-taskmanager/skills/sdd-pipeline/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "SDD 流水线参考包",
+          "group_en": "SDD Pipeline Reference Pack",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 SDD 流水线代理提供流程、schema、上下文与日志格式等参考规则。",
+          "description_en": "Provides SDD pipeline agents with reference rules for workflow, schemas, context policy, XML format, and activity logs.",
+          "what": "为 uc-taskmanager 的 SDD 流水线提供内部参考规则。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "work-pipeline",
+          "path": "plugins/agents-uc-taskmanager/skills/work-pipeline/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多代理并行开发协调",
+          "group_en": "Multi-agent development coordination",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "通过方括号标签启动 WORK 流水线，协调多个子代理完成需求规划与执行。",
+          "description_en": "Starts the WORK pipeline from bracket tags and coordinates sub-agents through planning and execution.",
+          "what": "触发 WORK-PIPELINE 的多代理开发流程。",
+          "chain": true,
+          "chain_group": "WORK-PIPELINE 任务管理流程",
+          "chain_group_en": "WORK-PIPELINE task management workflow"
+        },
+        {
+          "name": "work-status",
+          "path": "plugins/agents-uc-taskmanager/skills/work-status/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "WORK/TASK 状态看板",
+          "group_en": "WORK/TASK status dashboard",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 WORK 清单与进度文件，汇总任务状态并展示完成、进行中和待办情况。",
+          "description_en": "Reads WORK and progress files to summarize task status, completion, in-progress work, and pending items.",
+          "what": "查询并展示 WORK/TASK 的当前进度。",
+          "chain": true,
+          "chain_group": "WORK-PIPELINE 任务管理流程",
+          "chain_group_en": "WORK-PIPELINE task management workflow"
+        },
+        {
+          "name": "activecampaign-automation",
+          "path": "plugins/all-skills/skills/activecampaign-automation/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "ActiveCampaign 营销自动化",
+          "group_en": "ActiveCampaign Marketing Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Rube MCP 管理 ActiveCampaign 联系人、标签、订阅与自动化任务。",
+          "description_en": "Manage ActiveCampaign contacts, tags, subscriptions, and automation tasks through Rube MCP.",
+          "what": "让 agent 通过 Rube MCP 操作 ActiveCampaign 联系人、标签、订阅与自动化任务。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "agent-analytics",
+          "path": "plugins/all-skills/skills/agent-analytics/SKILL.md",
+          "subcategory": "3-8",
+          "subcategory_title": "3.8 SaaS 健康 / 财务指标 / 单位经济",
+          "category": "product-management",
+          "group": "项目增长健康指标",
+          "group_en": "Project Growth Health Metrics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 CLI 为项目接入分析追踪、漏斗、留存和 A/B 实验优化。",
+          "description_en": "Track project analytics, funnels, retention, and A/B experiments from the CLI.",
+          "what": "让 agent 通过 CLI 追踪项目指标、漏斗、留存并运行 A/B 实验。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "airtable-automation",
+          "path": "plugins/all-skills/skills/airtable-automation/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Airtable 自动化 via Rube MCP",
+          "group_en": "Airtable automation with Rube MCP",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 通过 Rube MCP 连接 Airtable，管理记录、表结构和视图。",
+          "description_en": "Helps the agent connect to Airtable through Rube MCP to manage records, schemas, and views.",
+          "what": "通过 Rube MCP 执行 Airtable 记录、表、字段和视图操作。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "amplitude-automation",
+          "path": "plugins/all-skills/skills/amplitude-automation/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Amplitude 产品分析自动化",
+          "group_en": "Amplitude product analytics automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 通过 Rube MCP 连接 Amplitude，发送事件并查询用户和群组。",
+          "description_en": "Helps the agent connect to Amplitude through Rube MCP to send events and query users or cohorts.",
+          "what": "通过 Rube MCP 执行 Amplitude 事件、用户活动和群组相关操作。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "artifacts-builder",
+          "path": "plugins/all-skills/skills/artifacts-builder/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "复杂 Claude 前端 Artifact 构建",
+          "group_en": "Complex Claude Frontend Artifact Builder",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 初始化、开发并打包复杂 claude.ai 前端 Artifact。",
+          "description_en": "Helps agents scaffold, develop, and bundle complex claude.ai frontend artifacts.",
+          "what": "Builds React/Tailwind/shadcn UI artifacts and bundles them for Claude artifacts.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "asana-automation",
+          "path": "plugins/all-skills/skills/asana-automation/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Asana 自动化",
+          "group_en": "Asana Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Rube MCP 管理 Asana 任务、项目、团队和工作区。",
+          "description_en": "Manage Asana tasks, projects, teams, and workspaces through Rube MCP.",
+          "what": "Automates Asana operations via Composio tools exposed through Rube MCP.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aurakit",
+          "path": "plugins/all-skills/skills/aurakit/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "全栈开发增强引擎",
+          "group_en": "Full-Stack Development Booster",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "增强 Claude Code 全栈开发，提供模式化构建、评审和安全钩子。",
+          "description_en": "Enhances Claude Code full-stack work with guided modes, review flows, and security hooks.",
+          "what": "提供 34 种开发模式、安全钩子和多语言评审，增强 Claude Code 的全栈开发流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "bamboohr-automation",
+          "path": "plugins/all-skills/skills/bamboohr-automation/SKILL.md",
+          "subcategory": "9-5",
+          "subcategory_title": "9.5 办公套件集成（Google Workspace 等）",
+          "category": "comms-integration",
+          "group": "BambooHR 人事自动化",
+          "group_en": "BambooHR HRIS Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Rube MCP 自动化 BambooHR 员工、休假与福利管理。",
+          "description_en": "Automates BambooHR employee, time-off, and benefits workflows through Rube MCP.",
+          "what": "通过 Rube MCP 调用 Composio BambooHR 工具，执行员工目录、休假和福利等工作流。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "basecamp-automation",
+          "path": "plugins/all-skills/skills/basecamp-automation/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Basecamp 项目管理自动化",
+          "group_en": "Basecamp Project Management Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Rube MCP 连接 Basecamp，帮助 agent 管理项目、待办、消息和成员。",
+          "description_en": "Connects agents to Basecamp through Rube MCP to manage projects, to-dos, messages, and people.",
+          "what": "Automates Basecamp project and task workflows via Rube MCP.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "bitbucket-automation",
+          "path": "plugins/all-skills/skills/bitbucket-automation/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Bitbucket Git/PR 自动化",
+          "group_en": "Bitbucket Git/PR Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Rube MCP 操作 Bitbucket 仓库、分支、PR、issue 和工作区。",
+          "description_en": "Uses Rube MCP to operate Bitbucket repositories, branches, pull requests, issues, and workspaces.",
+          "what": "Automates Bitbucket repository and pull-request workflows through Rube MCP.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "box-automation",
+          "path": "plugins/all-skills/skills/box-automation/SKILL.md",
+          "subcategory": "9-5",
+          "subcategory_title": "9.5 办公套件集成（Google Workspace 等）",
+          "category": "comms-integration",
+          "group": "Box 存储与协作自动化",
+          "group_en": "Box storage and collaboration automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 通过 Rube MCP 操作 Box，完成文件上传下载、搜索、文件夹与共享管理。",
+          "description_en": "Helps agents operate Box through Rube MCP for uploads, downloads, search, folder, and sharing workflows.",
+          "what": "通过 Rube/Composio 的 Box 工具集执行云端文件与协作操作。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brand-guidelines",
+          "path": "plugins/all-skills/skills/brand-guidelines/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "Anthropic 品牌规范",
+          "group_en": "Anthropic brand guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 将 Anthropic 官方品牌色、字体和排版规范应用到各类 artifact。",
+          "description_en": "Applies Anthropic’s official colors, typography, and layout guidance to artifacts that need brand-consistent styling.",
+          "what": "为输出物套用 Anthropic 官方视觉风格。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic · 组「品牌视觉三件套」"
+        },
+        {
+          "name": "brevo-automation",
+          "path": "plugins/all-skills/skills/brevo-automation/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "Brevo 邮件营销自动化",
+          "group_en": "Brevo email marketing automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Rube MCP/Composio 连接 Brevo，自动管理邮件活动、模板、发件人和绩效。",
+          "description_en": "Uses Rube MCP/Composio to automate Brevo email campaigns, templates, senders, and performance workflows.",
+          "what": "通过 Rube MCP/Composio 自动化 Brevo 邮件营销活动管理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cal-com-automation",
+          "path": "plugins/all-skills/skills/cal-com-automation/SKILL.md",
+          "subcategory": "9-5",
+          "subcategory_title": "9.5 办公套件集成（Google Workspace 等）",
+          "category": "comms-integration",
+          "group": "Cal.com 日程预约自动化",
+          "group_en": "Cal.com scheduling automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Rube MCP/Composio 管理 Cal.com 预约、可用性、Webhook 和团队，自动处理日程操作。",
+          "description_en": "Uses Rube MCP/Composio to manage Cal.com bookings, availability, webhooks, and team scheduling tasks.",
+          "what": "通过 Rube MCP/Composio 自动化 Cal.com 预约与日程工作流。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "calendly-automation",
+          "path": "plugins/all-skills/skills/calendly-automation/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Calendly 日程自动化（Rube MCP）",
+          "group_en": "Calendly Scheduling Automation (Rube MCP)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 通过 Rube MCP 连接 Composio Calendly，查询日程与可用性、创建链接、管理受邀者并执行组织管理。",
+          "description_en": "Helps an agent connect to Composio’s Calendly toolkit through Rube MCP to check availability, create scheduling links, list events, track invitees, and administer the organization.",
+          "what": "通过 Rube MCP 自动化 Calendly 日程、可用性与受邀者管理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "canva-automation",
+          "path": "plugins/all-skills/skills/canva-automation/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "Canva 设计资产自动化（Rube MCP）",
+          "group_en": "Canva Design Asset Automation (Rube MCP)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 通过 Rube MCP 连接 Composio Canva，浏览设计、导出文件、管理文件夹、套用品牌模板并自动填充内容。",
+          "description_en": "Helps an agent connect to Composio’s Canva toolkit through Rube MCP to browse designs, export files, manage folders, apply brand templates, and autofill content.",
+          "what": "通过 Rube MCP 自动执行 Canva 设计资产操作。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "canvas-design",
+          "path": "plugins/all-skills/skills/canvas-design/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "视觉哲学艺术生成",
+          "group_en": "Visual Philosophy Artwork",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 先提炼视觉哲学，再生成海报或艺术 PNG/PDF。",
+          "description_en": "Helps the agent define a visual philosophy and produce poster or artwork in PNG/PDF form.",
+          "what": "Creates a visual philosophy and expresses it as a static visual artifact.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic · 组「品牌视觉三件套」"
+        },
+        {
+          "name": "cf-proxy",
+          "path": "plugins/all-skills/skills/cf-proxy/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Cloudflare Pages 代理部署",
+          "group_en": "Cloudflare Pages Proxy Deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Cloudflare Pages 部署 VLESS 节点并配置域名 DNS。",
+          "description_en": "Helps the agent deploy a VLESS node on Cloudflare Pages and configure domain DNS.",
+          "what": "Deploys and configures a VLESS proxy node on Cloudflare Pages.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "changelog-generator",
+          "path": "plugins/all-skills/skills/changelog-generator/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "changelog-generator",
+          "group_en": "Release automation and CI/CD automation",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "将 Git 提交自动归类并转写成面向用户的产品更新说明。",
+          "description_en": "Turns Git commits into clear, user-friendly release notes.",
+          "what": "从 Git 提交历史生成清晰、面向用户的产品更新说明。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "circleci-automation",
+          "path": "plugins/all-skills/skills/circleci-automation/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "circleci-automation",
+          "group_en": "Release automation and CI/CD automation",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "通过 Rube MCP 触发并监控 CircleCI 流水线与测试结果。",
+          "description_en": "Triggers and monitors CircleCI pipelines and test results through Rube MCP.",
+          "what": "通过 Rube MCP 触发、监控 CircleCI 流水线并读取测试结果和产物。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "WUBING2023",
+        "repo": "PaperSpine",
+        "full_name": "WUBING2023/PaperSpine",
+        "url": "https://github.com/WUBING2023/PaperSpine",
+        "stars": 3045,
+        "pushed_at": "2026-06-11",
+        "default_branch": "main",
+        "github_description": "PaperSpine is a motivation-driven skill for learning from strong academic papers, building a paper’s central argument, and rewriting manuscripts through evidence-aware blueprints, revision matrices, and LaTeX-safe audits.",
+        "topics": [],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "paper-spine-audit",
+          "path": "dist/claude/skills/paper-spine-audit/SKILL.md",
+          "subcategory": "11-5",
+          "subcategory_title": "11.5 同行评审 / 论文质量",
+          "category": "academic-research",
+          "group": "论文同行评审 / 质量审查",
+          "group_en": "Paper Peer Review and Quality Checks",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "审计论文输出是否完整、论证有证据支撑，并检查 LaTeX 引文和图表安全性。",
+          "description_en": "Audits paper outputs for completeness, evidence-backed claims, revision depth, and LaTeX citation and figure safety.",
+          "what": "Checks PaperSpine outputs before finalizing a rewrite or build.",
+          "chain": true,
+          "chain_group": "PaperSpine 学术论文构建与审计工作流",
+          "chain_group_en": "PaperSpine Academic Paper Build and Audit Workflow"
+        },
+        {
+          "name": "paper-spine-build",
+          "path": "dist/claude/skills/paper-spine-build/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "paper-spine-build",
+          "group_en": "Academic Research Paper Writing and Revision Pipeline",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "基于研究材料、动机确认、证据库和蓝图，从材料构建论文或报告草稿。",
+          "description_en": "Builds a paper or report draft from research materials, confirmed motivation, evidence banks, and writing blueprints.",
+          "what": "Creates academic drafts from materials using the shared PaperSpine workflow.",
+          "chain": true,
+          "chain_group": "PaperSpine 学术论文构建与审计工作流",
+          "chain_group_en": "PaperSpine Academic Paper Build and Audit Workflow"
+        },
+        {
+          "name": "paper-spine-citation",
+          "path": "dist/claude/skills/paper-spine-citation/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "深度文献检索 / 论文引用支持库",
+          "group_en": "Literature Discovery / Citation Support Bank",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 从研究材料中筛选候选文献，生成可核验的引用支持库，支撑论文背景与讨论段落。",
+          "description_en": "Helps agents screen reference materials into a verifiable citation support bank for background and discussion claims.",
+          "what": "构建可核验的论文引用支持库。",
+          "chain": true,
+          "chain_group": "PaperSpine 论文重写流水线",
+          "chain_group_en": "PaperSpine manuscript rewriting workflow"
+        },
+        {
+          "name": "paper-spine-humanize",
+          "path": "dist/claude/skills/paper-spine-humanize/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术写作修订 / AI 模式审计矩阵",
+          "group_en": "Academic Writing Revision / AI-Pattern Audit Matrix",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 对学术文本做分层风格修订，并记录 AI 模式变化，输出可审计矩阵。",
+          "description_en": "Helps agents apply tiered stylistic revisions to academic text and document AI-pattern changes in an auditable matrix.",
+          "what": "对学术文本进行透明化风格修订。",
+          "chain": true,
+          "chain_group": "PaperSpine 论文重写流水线",
+          "chain_group_en": "PaperSpine manuscript rewriting workflow"
+        },
+        {
+          "name": "paper-spine-intake",
+          "path": "dist/claude/skills/paper-spine-intake/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "论文重写工作流配置",
+          "group_en": "PaperSpine Rewriting Intake",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "收集论文重写选项，生成 PaperSpine 配置，供后续流程使用。",
+          "description_en": "Collects paper rewriting options and writes PaperSpine config for downstream steps.",
+          "what": "在正式 PaperSpine 工作前收集选项并生成配置。",
+          "chain": true,
+          "chain_group": "PaperSpine 论文重写交付流水线",
+          "chain_group_en": "PaperSpine paper rewriting delivery pipeline"
+        },
+        {
+          "name": "paper-spine-latex",
+          "path": "dist/claude/skills/paper-spine-latex/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "LaTeX / arXiv 论文排版",
+          "group_en": "LaTeX / arXiv Paper Formatting",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "组装 LaTeX 项目、处理图表引用与标签，并输出编译安全检查报告。",
+          "description_en": "Assembles LaTeX projects, manages figures, citations, labels, and compile-safety checks.",
+          "what": "在稿件修订或材料成稿后组装 LaTeX 并检查编译安全。",
+          "chain": true,
+          "chain_group": "PaperSpine 论文重写交付流水线",
+          "chain_group_en": "PaperSpine paper rewriting delivery pipeline"
+        },
+        {
+          "name": "paper-spine-research",
+          "path": "dist/claude/skills/paper-spine-research/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术 / 科研论文写作 / 修订 / 学术研究流水线",
+          "group_en": "Academic writing / manuscript revision / research pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "调研目标场景、收集范例与文献，生成动机选项。",
+          "description_en": "Researches the target scene, gathers examples and references, and prepares motivation options.",
+          "what": "在论文重写前建立目标场景、范例、文献和动机选项。",
+          "chain": true,
+          "chain_group": "PaperSpine 论文重写流水线",
+          "chain_group_en": "PaperSpine manuscript rewriting pipeline"
+        },
+        {
+          "name": "paper-spine-rewrite",
+          "path": "dist/claude/skills/paper-spine-rewrite/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术 / 科研论文写作 / 修订 / 学术研究流水线",
+          "group_en": "Academic writing / manuscript revision / research pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于已确认动机、证据和蓝图，实质改写论文稿件。",
+          "description_en": "Rewrites a manuscript using confirmed motivation, evidence, and section blueprints.",
+          "what": "在研究与动机确认后，对已有稿件进行证据感知的结构化重写。",
+          "chain": true,
+          "chain_group": "PaperSpine 论文重写流水线",
+          "chain_group_en": "PaperSpine manuscript rewriting pipeline"
+        },
+        {
+          "name": "paper-spine-translate",
+          "path": "dist/claude/skills/paper-spine-translate/SKILL.md",
+          "subcategory": "2-2",
+          "subcategory_title": "2.2 长文本翻译 / 跨语言",
+          "category": "docs-knowledge",
+          "group": "学术论文中文翻译包",
+          "group_en": "Academic paper Chinese translation package",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 PaperSpine 生成完整中文翻译包，逐项翻译配置、资料索引、研究档案与全文。",
+          "description_en": "Builds PaperSpine’s complete Chinese translation package, translating config, indexes, dossiers, and the full paper.",
+          "what": "生成 PaperSpine 所需的完整中文翻译文件包。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "paper-spine-ui",
+          "path": "dist/claude/skills/paper-spine-ui/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "PaperSpine 配置 UI 启动器",
+          "group_en": "PaperSpine configuration UI launcher",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "启动 PaperSpine 的外部终端配置界面，供 Codex 和 Claude Code 交互式补齐配置。",
+          "description_en": "Launches PaperSpine’s external terminal configuration UI for Codex and Claude Code.",
+          "what": "启动 PaperSpine 的外部配置界面。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "paper-spine-update",
+          "path": "dist/claude/skills/paper-spine-update/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "PaperSpine 安装与更新",
+          "group_en": "PaperSpine installation and updates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "检查、升级或重装 PaperSpine，同时保留本地配置。",
+          "description_en": "Checks, upgrades, or reinstalls PaperSpine while preserving local settings.",
+          "what": "用于 PaperSpine 的版本检查、升级和本地重装。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "paper-spine",
+          "path": "dist/claude/skills/paper-spine/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术研究流水线",
+          "group_en": "Academic research writing pipeline",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "统筹论文/报告的动机提炼、写作、引用、修订与 LaTeX/PDF/Word 输出。",
+          "description_en": "Coordinates motivation, writing, citations, revision, and LaTeX/PDF/Word output for papers and reports.",
+          "what": "PaperSpine 的主入口，负责路由到各写作与研究子技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "wuyoscar",
+        "repo": "GPT-Image2-Skill",
+        "full_name": "wuyoscar/GPT-Image2-Skill",
+        "url": "https://github.com/wuyoscar/GPT-Image2-Skill",
+        "stars": 2995,
+        "pushed_at": "2026-05-23",
+        "default_branch": "main",
+        "github_description": "GPT Image 2 prompt gallery, image prompt library, agentic skill, and CLI for OpenAI image generation/editing",
+        "topics": [
+          "agent-skills",
+          "ai-image-prompts",
+          "claude-code-skill",
+          "cli",
+          "codex-skill",
+          "gpt-image",
+          "gpt-image-2",
+          "gpt-image-2-prompts",
+          "image-editing",
+          "image-generation",
+          "image-prompt",
+          "openai",
+          "prompt-library",
+          "prompt-templates",
+          "research-figures",
+          "text-to-image"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "gpt-image",
+          "path": "skills/gpt-image/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "AI 出图（Codex）",
+          "group_en": "AI Image Generation (Codex)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 调用 GPT Image 2 生成、编辑、修复图像并复用提示图库。",
+          "description_en": "Helps agents generate, edit, and inpaint images with GPT Image 2 while reusing prompt patterns.",
+          "what": "Use GPT Image 2 and the bundled prompt gallery/CLI for image generation and editing.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
