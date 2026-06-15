@@ -1,0 +1,1841 @@
+{
+  "generated_at": "2026-06-15T05:39:24+00:00",
+  "date": "2026-06-15",
+  "proposed_count": 6,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 57,
+      "blocklisted": 10,
+      "seen_recently": 90,
+      "truncated": 195,
+      "not_a_collection": 2,
+      "skill_name_dup": 1,
+      "looks_aggregator": 1,
+      "no_skill_files": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "open-gitagent/opengap",
+        "reason": "非正经集合：该仓库主要是 OpenGAP agent 定义标准及示例 skill，且技能位于 examples 目录，不宜作为可收录的正经 skill 集合。"
+      },
+      {
+        "full_name": "WenyuChiou/awesome-agentic-ai-zh",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "Windy3f3f3f3f/how-claude-code-works",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "KhazP/vibe-coding-prompt-template",
+        "reason": "非正经集合：仓库名含 prompt-template，且描述强调模板与工作流，更像提示词/模板脚手架而非可收录的 AI agent skill 集合。"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "ponytail-audit"
+      ],
+      "group": "极简重构全仓审计",
+      "group_en": "Minimalist Refactoring Audit",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "扫描全仓识别过度设计与可删除代码，输出按收益排序的精简建议。",
+      "description_en": "Scans the whole repo for over-engineering and ranks simplification or removal opportunities by impact.",
+      "sources": [
+        "DietrichGebert/ponytail"
+      ]
+    },
+    {
+      "skills": [
+        "ponytail-debt"
+      ],
+      "group": "Ponytail 技术债台账",
+      "group_en": "Ponytail Debt Ledger",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "收集代码中的 ponytail 标记，整理成技术债台账并标出缺少升级路径的项。",
+      "description_en": "Collects ponytail markers from code into a debt ledger and flags items missing an upgrade path.",
+      "sources": [
+        "DietrichGebert/ponytail"
+      ]
+    },
+    {
+      "skills": [
+        "ponytail-help"
+      ],
+      "group": "Ponytail 帮助卡",
+      "group_en": "Ponytail Help Card",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "提供 Ponytail 模式、触发命令和技能的速查卡，帮助 agent 说明或切换工作方式。",
+      "description_en": "A quick-reference card for Ponytail modes, triggers, and commands so agents can explain or switch working modes.",
+      "sources": [
+        "DietrichGebert/ponytail"
+      ]
+    },
+    {
+      "skills": [
+        "ponytail-review"
+      ],
+      "group": "过度工程审查",
+      "group_en": "Over-engineering Review",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "专注审查过度设计、重复造轮子和无谓依赖，按行给出删除或简化建议。",
+      "description_en": "Reviews code specifically for unnecessary complexity, reinvented libraries, and needless dependencies with deletion-focused findings.",
+      "sources": [
+        "DietrichGebert/ponytail"
+      ]
+    },
+    {
+      "skills": [
+        "ponytail"
+      ],
+      "group": "极简编码行为约束",
+      "group_en": "Minimal Coding Constraint",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-5",
+      "chain": false,
+      "description": "让 agent 在编码时优先选择最简单、最少依赖且可用的方案。",
+      "description_en": "Guides agents to choose the simplest viable implementation with minimal dependencies.",
+      "sources": [
+        "DietrichGebert/ponytail"
+      ]
+    },
+    {
+      "skills": [
+        "gemini"
+      ],
+      "group": "跨模型营销评审",
+      "group_en": "Cross-Model Marketing Review",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "调用 Gemini CLI 为 SEO/GEO 与 Google Ads 改动提供独立复核、挑战和咨询。",
+      "description_en": "Uses Gemini CLI as an independent reviewer, challenger, and consultant for SEO/GEO and Google Ads changes.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "audit"
+      ],
+      "group": "付费广告全账户审计",
+      "group_en": "Full Paid-Ad Account Audits",
+      "category": "marketing-growth",
+      "subcategory": "4-4",
+      "chain": false,
+      "description": "审计 Google Ads 账户健康，沉淀业务上下文供后续广告技能复用。",
+      "description_en": "Audits Google Ads account health and persists business context for downstream ad workflows.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "copy"
+      ],
+      "group": "Google Ads 文案与测试",
+      "group_en": "Google Ads Copy & Testing",
+      "category": "marketing-growth",
+      "subcategory": "4-4",
+      "chain": false,
+      "description": "帮助 agent 生成 Google Ads RSA 文案，并设计 A/B 测试找出更优信息。",
+      "description_en": "Helps the agent generate Google Ads RSA copy and design A/B tests to identify stronger messaging.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "landing"
+      ],
+      "group": "Google Ads 落地页诊断",
+      "group_en": "Google Ads Landing Page Diagnostics",
+      "category": "marketing-growth",
+      "subcategory": "4-5",
+      "chain": false,
+      "description": "帮助 agent 评分和诊断广告落地页，定位高点击低转化原因并给出修复建议。",
+      "description_en": "Helps the agent score and diagnose ad landing pages, pinpoint high-click/low-conversion issues, and recommend fixes.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "manage"
+      ],
+      "group": "Google Ads 账户运营优化",
+      "group_en": "Google Ads Account Operations",
+      "category": "marketing-growth",
+      "subcategory": "4-4",
+      "chain": false,
+      "description": "帮助 agent 管理 Google Ads 账户，诊断投放效果并优化关键词、出价、预算与广告资产。",
+      "description_en": "Helps the agent operate Google Ads accounts by diagnosing performance and optimizing keywords, bids, budgets, and ad assets.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "notfair-upgrade-skill"
+      ],
+      "group": "NotFair 插件升级维护",
+      "group_en": "NotFair Plugin Upgrade Maintenance",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "帮助 agent 将 NotFair 插件升级到最新版本，并同步市场仓库、插件缓存与安装清单。",
+      "description_en": "Helps the agent upgrade NotFair to the latest version and keep the marketplace repo, plugin cache, and install manifest in sync.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "broken-link-checker"
+      ],
+      "group": "SEO 技术健康审计",
+      "group_en": "SEO technical health audit",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "快速扫描网站并查找 404/5xx 坏链，定位来源页以辅助修复。",
+      "description_en": "Crawls a site to find broken internal and outbound links, then reports source pages for fixes.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "content-planner"
+      ],
+      "group": "SEO 内容日历规划",
+      "group_en": "SEO content calendar planning",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "基于 GSC 数据识别快速赢面，生成面向发布排期的优先内容日历。",
+      "description_en": "Uses GSC data to surface quick-win topics and produce a prioritized publishing calendar.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "content-writer"
+      ],
+      "group": "SEO 内容创作与页面优化",
+      "group_en": "SEO content creation and page optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "帮助 agent 根据关键词、主题或 URL 撰写或改写符合 E-E-A-T 与 helpful content 要求的 SEO 内容。",
+      "description_en": "Helps agents draft or improve SEO-focused content that aligns with E-E-A-T and helpful content principles.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "geo-optimizer"
+      ],
+      "group": "生成引擎优化",
+      "group_en": "Generative Engine Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "帮助 agent 审计并改写内容，提升其在 ChatGPT、Claude、Perplexity 等 AI 搜索中的引用概率。",
+      "description_en": "Helps agents audit and rewrite content to improve visibility and citations in AI search engines.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "keyword-research"
+      ],
+      "group": "SEO/GEO 关键词研究",
+      "group_en": "SEO/GEO Keyword Research",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "从种子词发现高价值关键词，识别意图、竞争度和主题簇。",
+      "description_en": "Discovers and prioritizes high-value keywords from a seed term for SEO and GEO strategy.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "meta-tags-optimizer"
+      ],
+      "group": "SEO 元标签与 CTR 优化",
+      "group_en": "SEO Metadata & CTR Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "生成并优化标题、Meta 描述、OG/Twitter 标签，提升搜索与社媒点击率。",
+      "description_en": "Creates and optimizes title tags, meta descriptions, and social metadata to improve CTR.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "schema-markup-generator"
+      ],
+      "group": "SEO 结构化数据",
+      "group_en": "SEO Structured Data",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "生成并校验 JSON-LD 结构化数据，帮助页面获得丰富搜索结果。",
+      "description_en": "Generates and validates JSON-LD structured data to help pages qualify for rich search results.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "seo-analysis"
+      ],
+      "group": "SEO 审计与诊断",
+      "group_en": "SEO Audit and Diagnostics",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "整合搜索控制台、性能指标和技术 SEO 数据，产出可执行优化计划。",
+      "description_en": "Combines Search Console, performance, and technical SEO signals into actionable optimization plans.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "seo-page"
+      ],
+      "group": "单页 SEO 审计与内容质量评估",
+      "group_en": "Single-Page SEO Audits",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "帮助 agent 审计指定页面的内容质量、技术 SEO 和搜索意图，并给出修复建议。",
+      "description_en": "Helps agents audit a specific URL for content quality, technical SEO, search intent, and actionable fixes.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "setup-cms"
+      ],
+      "group": "SEO 工具 CMS 集成",
+      "group_en": "SEO Tool CMS Integration",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "帮助 agent 配置 WordPress、Strapi 等 CMS 连接，让 SEO 报告同步内容数据。",
+      "description_en": "Helps agents connect WordPress, Strapi, or similar CMSs so SEO reports can use published content data.",
+      "sources": [
+        "nowork-studio/NotFair"
+      ]
+    },
+    {
+      "skills": [
+        "md2wechat"
+      ],
+      "group": "Markdown 转 HTML（公众号适配）",
+      "group_en": "Markdown-to-WeChat HTML",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "调用 md2wechat CLI，将 Markdown 转成公众号 HTML，生成配图并创建草稿。",
+      "description_en": "Operates the md2wechat CLI to convert Markdown into WeChat-ready HTML, generate images, and create drafts.",
+      "sources": [
+        "geekjourneyx/md2wechat-skill"
+      ]
+    },
+    {
+      "skills": [
+        "finance-sentiment",
+        "hormuz-strait",
+        "tradingview-reader",
+        "stock-correlation",
+        "yfinance-data",
+        "linkedin-reader",
+        "opencli-reader"
+      ],
+      "group": "行情数据 / 市场情报",
+      "group_en": "Market data / market intelligence",
+      "category": "finance-trading",
+      "subcategory": "16-1",
+      "chain": false,
+      "description": "聚合 Reddit、X、新闻和 Polymarket 的股票情绪与热度信号。",
+      "description_en": "Read LinkedIn professionally to support financial research, market sentiment, and finance-job monitoring.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "funda-data"
+      ],
+      "group": "funda-data",
+      "group_en": "Stock research, valuation, financials, IB, PE, and M&A",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": false,
+      "description": "通过 MCP/REST 获取 Funda 的研报合成、行情、财报与期权等金融数据。",
+      "description_en": "Uses Funda’s MCP and REST APIs to retrieve synthesized research plus market, financial, and options data.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "hyperliquid-reader"
+      ],
+      "group": "链上数据 / 浏览器 / RPC",
+      "group_en": "On-chain Data / Explorer / RPC",
+      "category": "web3-blockchain",
+      "subcategory": "20-4",
+      "chain": false,
+      "description": "只读 Hyperliquid 永续/现货市场数据，供行情与资金费率分析。",
+      "description_en": "Reads Hyperliquid perpetual and spot market data for price, funding, and order-book analysis.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "company-valuation"
+      ],
+      "group": "company-valuation",
+      "group_en": "Stock Research / Valuation / Financials / IB / PE / M&A",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": false,
+      "description": "用 DCF、可比公司和分部估值估算上市公司公允价值。",
+      "description_en": "Estimates public-company fair value using DCF, peer multiples, and SOTP.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "earnings-preview",
+        "earnings-recap"
+      ],
+      "group": "财报预期→结果复盘",
+      "group_en": "Earnings Expectations → Results Recap",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": true,
+      "description": "用 yfinance 汇总财报预期、共识估计与历史表现",
+      "description_en": "Uses yfinance to summarize earnings expectations, consensus estimates, and historical performance.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "estimate-analysis"
+      ],
+      "group": "estimate-analysis",
+      "group_en": "Equity Research / Valuation / Earnings Estimates",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": false,
+      "description": "帮助 agent 基于 Yahoo Finance 数据深入分析分析师预期、EPS/收入修正趋势和增长预测。",
+      "description_en": "Helps the agent analyze analyst estimates, EPS/revenue revision trends, and growth projections using Yahoo Finance data.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "etf-premium"
+      ],
+      "group": "ETF 溢价/折价分析",
+      "group_en": "ETF Premium and Discount Analysis",
+      "category": "finance-trading",
+      "subcategory": "16-1",
+      "chain": false,
+      "description": "帮助 agent 计算 ETF 相对 NAV 的溢价或折价，并拆解价格偏离背后的结构性因素。",
+      "description_en": "Helps the agent calculate ETF premium/discount versus NAV and break down the drivers behind price divergence.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "options-payoff"
+      ],
+      "group": "衍生品 / 固定收益",
+      "group_en": "Derivatives & Fixed Income",
+      "category": "finance-trading",
+      "subcategory": "16-6",
+      "chain": false,
+      "description": "帮助 agent 从文本或截图提取期权策略，生成盈亏曲线和风险指标。",
+      "description_en": "Helps the agent extract option strategies from text or screenshots and generate payoff curves with risk metrics.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "saas-valuation-compression"
+      ],
+      "group": "saas-valuation-compression",
+      "group_en": "Valuation & Financial Research",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": false,
+      "description": "帮助 agent 比较 SaaS 公司轮次估值倍数，解释压缩或扩张原因。",
+      "description_en": "Helps the agent compare SaaS valuation multiples across funding rounds and explain compression or expansion drivers.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "sepa-strategy"
+      ],
+      "group": "量化方法 / ML 信号 / 回测 / 策略框架",
+      "group_en": "Quant Methods / ML Signals / Backtesting / Strategy Frameworks",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": false,
+      "description": "用 SEPA 框架分析成长股入场点、趋势阶段、形态与风险收益。",
+      "description_en": "Analyzes growth-stock setups, trend stages, chart patterns, and risk/reward using the SEPA framework.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "stock-liquidity"
+      ],
+      "group": "股票流动性 / 交易成本分析",
+      "group_en": "Stock liquidity and trading-cost analysis",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": false,
+      "description": "分析买卖价差、成交量、深度和冲击成本，评估流动性",
+      "description_en": "Assesses bid-ask spreads, volume, depth, and market impact to gauge stock liquidity.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "skill-creator"
+      ],
+      "group": "Skill 创建与评测器",
+      "group_en": "Skill Creator & Evaluator",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "指导创建、优化、评测和迭代 agent 技能，覆盖规划、写作、评分与质量改进。",
+      "description_en": "Guides the creation, optimization, evaluation, and iteration of agent skills, from planning and writing to scoring and quality improvement.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "discord-reader"
+      ],
+      "group": "Discord 金融舆情监听",
+      "group_en": "Discord Financial Sentiment Monitor",
+      "category": "finance-trading",
+      "subcategory": "16-1",
+      "chain": false,
+      "description": "只读 Discord 频道与消息，用于交易社区讨论、加密市场情绪和金融研究。",
+      "description_en": "Reads Discord channels and messages in read-only mode to gather trading-community discussions, crypto sentiment, and financial research.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "telegram-reader",
+        "twitter-reader"
+      ],
+      "group": "社交金融情报读取",
+      "group_en": "Social Finance Intelligence Readers",
+      "category": "finance-trading",
+      "subcategory": "16-1",
+      "chain": false,
+      "description": "用只读 Telegram 读取金融频道消息，服务市场情报与舆情研究。",
+      "description_en": "Reads Telegram channels and groups read-only to collect financial news and market sentiment for research.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "yc-reader"
+      ],
+      "group": "YC 公司数据库 / 创投市场情报",
+      "group_en": "YC Company Database / Venture Market Intelligence",
+      "category": "finance-trading",
+      "subcategory": "16-1",
+      "chain": false,
+      "description": "读取 YC 公司、批次、招聘和赛道趋势等公开数据，支持创投研究。",
+      "description_en": "Fetches public YC company, batch, hiring, and sector-trend data for venture research.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "startup-analysis"
+      ],
+      "group": "初创公司尽调 / 投资分析",
+      "group_en": "Startup Due Diligence / Investment Analysis",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": false,
+      "description": "从投资人、求职者和创始人视角评估初创公司的健康度、风险与潜力。",
+      "description_en": "Evaluates startups through investor, job-seeker, and founder lenses for diligence and decision-making.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "generative-ui"
+      ],
+      "group": "Claude 生成式 UI 组件",
+      "group_en": "Claude Generative UI Widgets",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "指导 Claude 用 show_widget 生成图表、仪表盘和交互式 HTML/SVG 视觉组件。",
+      "description_en": "Guides Claude in using show_widget to create charts, dashboards, and interactive HTML/SVG visuals.",
+      "sources": [
+        "himself65/finance-skills"
+      ]
+    },
+    {
+      "skills": [
+        "benchmark-paper-template",
+        "figure-designer"
+      ],
+      "group": "学术研究流水线",
+      "group_en": "Academic Research Writing Pipeline",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "为 Benchmark 论文梳理五支柱、引言逻辑、章节骨架和投稿检查。",
+      "description_en": "Structures benchmark and evaluation papers with a five-pillar audit, introduction logic, section skeleton, and pre-submission checklist.",
+      "sources": [
+        "HKUSTDial/Supervisor-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "idea-evaluator",
+        "tech-paper-template"
+      ],
+      "group": "研究选题 / 假设 / 构思",
+      "group_en": "Research Topic Ideation and Hypothesis Shaping",
+      "category": "academic-research",
+      "subcategory": "11-6",
+      "chain": false,
+      "description": "帮 agent 将研究想法整理为论文逻辑骨架，定位类型并做一致性检查。",
+      "description_en": "Turns a research idea into a paper’s logical skeleton, positions the contribution type, and checks consistency.",
+      "sources": [
+        "HKUSTDial/Supervisor-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "intro-drafter"
+      ],
+      "group": "科研论文写作",
+      "group_en": "Research Paper Writing",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "根据论文要素生成六段式 Introduction 大纲和写作要点。",
+      "description_en": "Builds a six-paragraph introduction outline with writing points for a technical paper.",
+      "sources": [
+        "HKUSTDial/Supervisor-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "pre-submission-reviewer"
+      ],
+      "group": "论文同行评审 / 质量审查",
+      "group_en": "Peer Review and Quality Assessment",
+      "category": "academic-research",
+      "subcategory": "11-5",
+      "chain": false,
+      "description": "在投稿前从逻辑、写作、语法、LaTeX 和图表质量做结构化审查。",
+      "description_en": "Runs a structured pre-submission audit covering logic, prose, grammar, LaTeX, and figure quality.",
+      "sources": [
+        "HKUSTDial/Supervisor-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "vibe-research-workflow"
+      ],
+      "group": "AI 科研编排 / Vibe Research 工作流",
+      "group_en": "AI Research Orchestration / Vibe Research Workflow",
+      "category": "ml-llm-engineering",
+      "subcategory": "21-9",
+      "chain": false,
+      "description": "指导 AI 辅助科研的编码、制图、写作流程与工具选择。",
+      "description_en": "Guides AI-assisted research across coding, figures, writing, and tool selection.",
+      "sources": [
+        "HKUSTDial/Supervisor-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "专利交底书生成",
+      "group_en": "Patent Disclosure Drafting",
+      "category": "legal-compliance",
+      "subcategory": "14-4",
+      "chain": false,
+      "description": "从项目文档挖掘专利点，查新并生成、自检中国专利交底书。",
+      "description_en": "Mines patentable ideas from project docs, checks novelty, and drafts self-checked Chinese patent disclosures.",
+      "sources": [
+        "handsomestWei/patent-disclosure-skill"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "DietrichGebert",
+        "repo": "ponytail",
+        "full_name": "DietrichGebert/ponytail",
+        "url": "https://github.com/DietrichGebert/ponytail",
+        "stars": 9051,
+        "pushed_at": "2026-06-15",
+        "default_branch": "main",
+        "github_description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+        "topics": [
+          "agent-skills",
+          "ai-agents",
+          "claude",
+          "claude-code",
+          "claude-code-plugin",
+          "cursor-rules",
+          "developer-tools",
+          "llm",
+          "prompt-engineering",
+          "yagni"
+        ],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "ponytail-audit",
+          "path": "skills/ponytail-audit/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "极简重构全仓审计",
+          "group_en": "Minimalist Refactoring Audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "扫描全仓识别过度设计与可删除代码，输出按收益排序的精简建议。",
+          "description_en": "Scans the whole repo for over-engineering and ranks simplification or removal opportunities by impact.",
+          "what": "全仓查找可删除、可简化或可替换的过度工程代码。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ponytail-debt",
+          "path": "skills/ponytail-debt/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Ponytail 技术债台账",
+          "group_en": "Ponytail Debt Ledger",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "收集代码中的 ponytail 标记，整理成技术债台账并标出缺少升级路径的项。",
+          "description_en": "Collects ponytail markers from code into a debt ledger and flags items missing an upgrade path.",
+          "what": "提取 ponytail 注释形成技术债清单，提示何时需要升级。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ponytail-help",
+          "path": "skills/ponytail-help/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Ponytail 帮助卡",
+          "group_en": "Ponytail Help Card",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 Ponytail 模式、触发命令和技能的速查卡，帮助 agent 说明或切换工作方式。",
+          "description_en": "A quick-reference card for Ponytail modes, triggers, and commands so agents can explain or switch working modes.",
+          "what": "A one-shot help card for Ponytail commands and behavior modes.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ponytail-review",
+          "path": "skills/ponytail-review/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "过度工程审查",
+          "group_en": "Over-engineering Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "专注审查过度设计、重复造轮子和无谓依赖，按行给出删除或简化建议。",
+          "description_en": "Reviews code specifically for unnecessary complexity, reinvented libraries, and needless dependencies with deletion-focused findings.",
+          "what": "A code review skill that hunts over-engineering and suggests simpler replacements.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ponytail",
+          "path": "skills/ponytail/SKILL.md",
+          "subcategory": "13-5",
+          "subcategory_title": "13.5 行为约束模板",
+          "category": "meta-skill-mgmt",
+          "group": "极简编码行为约束",
+          "group_en": "Minimal Coding Constraint",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 在编码时优先选择最简单、最少依赖且可用的方案。",
+          "description_en": "Guides agents to choose the simplest viable implementation with minimal dependencies.",
+          "what": "A YAGNI-style coding persona that pushes agents toward the simplest workable solution.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "nowork-studio",
+        "repo": "NotFair",
+        "full_name": "nowork-studio/NotFair",
+        "url": "https://github.com/nowork-studio/NotFair",
+        "stars": 2850,
+        "pushed_at": "2026-06-11",
+        "default_branch": "main",
+        "github_description": "Open-source Claude Code skills for SEO, GEO, Google Ads, Meta Ads",
+        "topics": [
+          "claude-code-plugin",
+          "claude-skills",
+          "geo",
+          "googleads",
+          "googleadsmcp",
+          "mcp",
+          "metaads",
+          "seo"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "gemini",
+          "path": "gemini/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "跨模型营销评审",
+          "group_en": "Cross-Model Marketing Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "调用 Gemini CLI 为 SEO/GEO 与 Google Ads 改动提供独立复核、挑战和咨询。",
+          "description_en": "Uses Gemini CLI as an independent reviewer, challenger, and consultant for SEO/GEO and Google Ads changes.",
+          "what": "为营销改动提供第二个模型视角。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "audit",
+          "path": "google-ads/audit/SKILL.md",
+          "subcategory": "4-4",
+          "subcategory_title": "4.4 付费广告 / ASO",
+          "category": "marketing-growth",
+          "group": "付费广告全账户审计",
+          "group_en": "Full Paid-Ad Account Audits",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "审计 Google Ads 账户健康，沉淀业务上下文供后续广告技能复用。",
+          "description_en": "Audits Google Ads account health and persists business context for downstream ad workflows.",
+          "what": "建立广告账户审计基线与可复用上下文。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "copy",
+          "path": "google-ads/copy/SKILL.md",
+          "subcategory": "4-4",
+          "subcategory_title": "4.4 付费广告 / ASO",
+          "category": "marketing-growth",
+          "group": "Google Ads 文案与测试",
+          "group_en": "Google Ads Copy & Testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 生成 Google Ads RSA 文案，并设计 A/B 测试找出更优信息。",
+          "description_en": "Helps the agent generate Google Ads RSA copy and design A/B tests to identify stronger messaging.",
+          "what": "Generates and A/B tests Google Ads copy, headlines, descriptions, and RSA components.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "landing",
+          "path": "google-ads/landing/SKILL.md",
+          "subcategory": "4-5",
+          "subcategory_title": "4.5 CRO / 转化优化",
+          "category": "marketing-growth",
+          "group": "Google Ads 落地页诊断",
+          "group_en": "Google Ads Landing Page Diagnostics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 评分和诊断广告落地页，定位高点击低转化原因并给出修复建议。",
+          "description_en": "Helps the agent score and diagnose ad landing pages, pinpoint high-click/low-conversion issues, and recommend fixes.",
+          "what": "Scores Google Ads landing pages on weighted dimensions and recommends conversion improvements.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "manage",
+          "path": "google-ads/manage/SKILL.md",
+          "subcategory": "4-4",
+          "subcategory_title": "4.4 付费广告 / ASO",
+          "category": "marketing-growth",
+          "group": "Google Ads 账户运营优化",
+          "group_en": "Google Ads Account Operations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 管理 Google Ads 账户，诊断投放效果并优化关键词、出价、预算与广告资产。",
+          "description_en": "Helps the agent operate Google Ads accounts by diagnosing performance and optimizing keywords, bids, budgets, and ad assets.",
+          "what": "Google Ads 账户的运营、诊断与优化工作流。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "notfair-upgrade-skill",
+          "path": "notfair-upgrade-skill/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "NotFair 插件升级维护",
+          "group_en": "NotFair Plugin Upgrade Maintenance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 NotFair 插件升级到最新版本，并同步市场仓库、插件缓存与安装清单。",
+          "description_en": "Helps the agent upgrade NotFair to the latest version and keep the marketplace repo, plugin cache, and install manifest in sync.",
+          "what": "NotFair 插件升级与安装状态同步。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "broken-link-checker",
+          "path": "seo/broken-link-checker/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 技术健康审计",
+          "group_en": "SEO technical health audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "快速扫描网站并查找 404/5xx 坏链，定位来源页以辅助修复。",
+          "description_en": "Crawls a site to find broken internal and outbound links, then reports source pages for fixes.",
+          "what": "Finds broken links and source pages for technical SEO fixes.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-planner",
+          "path": "seo/content-planner/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 内容日历规划",
+          "group_en": "SEO content calendar planning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于 GSC 数据识别快速赢面，生成面向发布排期的优先内容日历。",
+          "description_en": "Uses GSC data to surface quick-win topics and produce a prioritized publishing calendar.",
+          "what": "Turns GSC data into a prioritized content calendar.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-writer",
+          "path": "seo/content-writer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 内容创作与页面优化",
+          "group_en": "SEO content creation and page optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 根据关键词、主题或 URL 撰写或改写符合 E-E-A-T 与 helpful content 要求的 SEO 内容。",
+          "description_en": "Helps agents draft or improve SEO-focused content that aligns with E-E-A-T and helpful content principles.",
+          "what": "Creates or improves SEO-optimized blog posts, landing pages, and website copy.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "geo-optimizer",
+          "path": "seo/geo-optimizer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "生成引擎优化",
+          "group_en": "Generative Engine Optimization",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 审计并改写内容，提升其在 ChatGPT、Claude、Perplexity 等 AI 搜索中的引用概率。",
+          "description_en": "Helps agents audit and rewrite content to improve visibility and citations in AI search engines.",
+          "what": "Optimizes content for citation and visibility in generative search engines.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "keyword-research",
+          "path": "seo/keyword-research/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO/GEO 关键词研究",
+          "group_en": "SEO/GEO Keyword Research",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从种子词发现高价值关键词，识别意图、竞争度和主题簇。",
+          "description_en": "Discovers and prioritizes high-value keywords from a seed term for SEO and GEO strategy.",
+          "what": "Discovers, analyzes, and prioritizes keywords for SEO and GEO content strategy.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "meta-tags-optimizer",
+          "path": "seo/meta-tags-optimizer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 元标签与 CTR 优化",
+          "group_en": "SEO Metadata & CTR Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成并优化标题、Meta 描述、OG/Twitter 标签，提升搜索与社媒点击率。",
+          "description_en": "Creates and optimizes title tags, meta descriptions, and social metadata to improve CTR.",
+          "what": "Optimizes page metadata for search snippets, social previews, and click-through rate.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "schema-markup-generator",
+          "path": "seo/schema-markup-generator/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 结构化数据",
+          "group_en": "SEO Structured Data",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成并校验 JSON-LD 结构化数据，帮助页面获得丰富搜索结果。",
+          "description_en": "Generates and validates JSON-LD structured data to help pages qualify for rich search results.",
+          "what": "Creates Schema.org JSON-LD markup for FAQ, product, article, local business, and related page types.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "seo-analysis",
+          "path": "seo/seo-analysis/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 审计与诊断",
+          "group_en": "SEO Audit and Diagnostics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "整合搜索控制台、性能指标和技术 SEO 数据，产出可执行优化计划。",
+          "description_en": "Combines Search Console, performance, and technical SEO signals into actionable optimization plans.",
+          "what": "Audits organic search performance, technical SEO issues, metadata, schema gaps, and keyword opportunities.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "seo-page",
+          "path": "seo/seo-page/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "单页 SEO 审计与内容质量评估",
+          "group_en": "Single-Page SEO Audits",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 审计指定页面的内容质量、技术 SEO 和搜索意图，并给出修复建议。",
+          "description_en": "Helps agents audit a specific URL for content quality, technical SEO, search intent, and actionable fixes.",
+          "what": "对单个 URL 做深度 SEO 审计并输出修复清单。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "setup-cms",
+          "path": "seo/setup-cms/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 工具 CMS 集成",
+          "group_en": "SEO Tool CMS Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 配置 WordPress、Strapi 等 CMS 连接，让 SEO 报告同步内容数据。",
+          "description_en": "Helps agents connect WordPress, Strapi, or similar CMSs so SEO reports can use published content data.",
+          "what": "把 CMS 接入 SEO 分析工具并测试数据连通性。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "geekjourneyx",
+        "repo": "md2wechat-skill",
+        "full_name": "geekjourneyx/md2wechat-skill",
+        "url": "https://github.com/geekjourneyx/md2wechat-skill",
+        "stars": 2844,
+        "pushed_at": "2026-06-11",
+        "default_branch": "main",
+        "github_description": "Markdown to WeChat CLI | 一键排版发布到微信公众号：支持 40+ 排版样式和专业主题 、AI 配图 、批量发布",
+        "topics": [
+          "agent-cli",
+          "ai-agent",
+          "ai-writing",
+          "claude-code",
+          "claude-skills",
+          "cli",
+          "go",
+          "llm",
+          "markdown",
+          "markdown-converter",
+          "markdown-formatter",
+          "markdown-to-html",
+          "markdown-to-wechat",
+          "mcp-server",
+          "md2wechat",
+          "wechat",
+          "wechat-article",
+          "wechat-mp",
+          "wechat-public-account",
+          "weixin"
+        ],
+        "language": "Go",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "md2wechat",
+          "path": "platforms/openclaw/md2wechat/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "Markdown 转 HTML（公众号适配）",
+          "group_en": "Markdown-to-WeChat HTML",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "调用 md2wechat CLI，将 Markdown 转成公众号 HTML，生成配图并创建草稿。",
+          "description_en": "Operates the md2wechat CLI to convert Markdown into WeChat-ready HTML, generate images, and create drafts.",
+          "what": "Converts Markdown into WeChat Official Account HTML and drafts.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "himself65",
+        "repo": "finance-skills",
+        "full_name": "himself65/finance-skills",
+        "url": "https://github.com/himself65/finance-skills",
+        "stars": 2806,
+        "pushed_at": "2026-06-14",
+        "default_branch": "main",
+        "github_description": "A collection of skills for AI financial analysis.",
+        "topics": [
+          "agent-skills",
+          "claude-code",
+          "skills",
+          "trading"
+        ],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "finance-sentiment",
+          "path": "plugins/data-providers/skills/finance-sentiment/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market data / market intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "聚合 Reddit、X、新闻和 Polymarket 的股票情绪与热度信号。",
+          "description_en": "Aggregates stock sentiment and buzz signals from Reddit, X, news, and Polymarket.",
+          "what": "Pulls cross-source sentiment metrics for stock research without trading actions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "funda-data",
+          "path": "plugins/data-providers/skills/funda-data/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "funda-data",
+          "group_en": "Stock research, valuation, financials, IB, PE, and M&A",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "通过 MCP/REST 获取 Funda 的研报合成、行情、财报与期权等金融数据。",
+          "description_en": "Uses Funda’s MCP and REST APIs to retrieve synthesized research plus market, financial, and options data.",
+          "what": "Queries analyst-grade research synthesis and raw structured financial data.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hormuz-strait",
+          "path": "plugins/data-providers/skills/hormuz-strait/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market Data / Market Intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "读取霍尔木兹海峡监控数据，评估航运、油价与地缘风险。",
+          "description_en": "Fetches Hormuz Strait monitoring data to assess shipping, oil prices, and geopolitical risk.",
+          "what": "只读霍尔木兹海峡航运、油价、保险风险与贸易影响数据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hyperliquid-reader",
+          "path": "plugins/data-providers/skills/hyperliquid-reader/SKILL.md",
+          "subcategory": "20-4",
+          "subcategory_title": "20.4 链上数据 / 浏览器 / RPC",
+          "category": "web3-blockchain",
+          "group": "链上数据 / 浏览器 / RPC",
+          "group_en": "On-chain Data / Explorer / RPC",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "只读 Hyperliquid 永续/现货市场数据，供行情与资金费率分析。",
+          "description_en": "Reads Hyperliquid perpetual and spot market data for price, funding, and order-book analysis.",
+          "what": "只读 Hyperliquid 公开市场数据，包括资金费率、持仓、成交量和K线。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "tradingview-reader",
+          "path": "plugins/data-providers/skills/tradingview-reader/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market Data & Market Intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "读取本地 TradingView 的行情、新闻、筛选和警报。",
+          "description_en": "Reads local TradingView data for quotes, news, screeners, and alerts.",
+          "what": "Use it to retrieve read-only TradingView market data and alerts.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "company-valuation",
+          "path": "plugins/market-analysis/skills/company-valuation/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "company-valuation",
+          "group_en": "Stock Research / Valuation / Financials / IB / PE / M&A",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "用 DCF、可比公司和分部估值估算上市公司公允价值。",
+          "description_en": "Estimates public-company fair value using DCF, peer multiples, and SOTP.",
+          "what": "Use it to value a public company and triangulate an implied fair share price.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "earnings-preview",
+          "path": "plugins/market-analysis/skills/earnings-preview/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "earnings-preview",
+          "group_en": "Stock research / valuation / earnings / IB / PE / M&A",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "用 yfinance 汇总财报预期、共识估计与历史表现",
+          "description_en": "Uses yfinance to summarize earnings expectations, consensus estimates, and historical performance.",
+          "what": "Prepares a pre-earnings briefing for a specified ticker.",
+          "chain": true,
+          "chain_group": "财报预期→结果复盘",
+          "chain_group_en": "Earnings Expectations → Results Recap"
+        },
+        {
+          "name": "earnings-recap",
+          "path": "plugins/market-analysis/skills/earnings-recap/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "earnings-recap",
+          "group_en": "Stock research / valuation / earnings / IB / PE / M&A",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "用 yfinance 汇总财报结果、预期差与股价反应",
+          "description_en": "Uses yfinance to summarize earnings results, surprises, and stock price reaction.",
+          "what": "Creates a post-earnings recap for a specified ticker.",
+          "chain": true,
+          "chain_group": "财报预期→结果复盘",
+          "chain_group_en": "Earnings Expectations → Results Recap"
+        },
+        {
+          "name": "estimate-analysis",
+          "path": "plugins/market-analysis/skills/estimate-analysis/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "estimate-analysis",
+          "group_en": "Equity Research / Valuation / Earnings Estimates",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "帮助 agent 基于 Yahoo Finance 数据深入分析分析师预期、EPS/收入修正趋势和增长预测。",
+          "description_en": "Helps the agent analyze analyst estimates, EPS/revenue revision trends, and growth projections using Yahoo Finance data.",
+          "what": "用于回答关于分析师预期变化、EPS 修正、收入预测和增长趋势的股票研究请求。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "etf-premium",
+          "path": "plugins/market-analysis/skills/etf-premium/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "ETF 溢价/折价分析",
+          "group_en": "ETF Premium and Discount Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 计算 ETF 相对 NAV 的溢价或折价，并拆解价格偏离背后的结构性因素。",
+          "description_en": "Helps the agent calculate ETF premium/discount versus NAV and break down the drivers behind price divergence.",
+          "what": "用于分析 ETF 是否偏离净值、溢价/折价原因、套利受阻和做市/对冲影响。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "options-payoff",
+          "path": "plugins/market-analysis/skills/options-payoff/SKILL.md",
+          "subcategory": "16-6",
+          "subcategory_title": "16.6 衍生品 / 固定收益",
+          "category": "finance-trading",
+          "group": "衍生品 / 固定收益",
+          "group_en": "Derivatives & Fixed Income",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 从文本或截图提取期权策略，生成盈亏曲线和风险指标。",
+          "description_en": "Helps the agent extract option strategies from text or screenshots and generate payoff curves with risk metrics.",
+          "what": "生成期权策略的交互式盈亏曲线。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "saas-valuation-compression",
+          "path": "plugins/market-analysis/skills/saas-valuation-compression/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "saas-valuation-compression",
+          "group_en": "Valuation & Financial Research",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "帮助 agent 比较 SaaS 公司轮次估值倍数，解释压缩或扩张原因。",
+          "description_en": "Helps the agent compare SaaS valuation multiples across funding rounds and explain compression or expansion drivers.",
+          "what": "分析 SaaS 公司轮次估值倍数变化。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sepa-strategy",
+          "path": "plugins/market-analysis/skills/sepa-strategy/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "量化方法 / ML 信号 / 回测 / 策略框架",
+          "group_en": "Quant Methods / ML Signals / Backtesting / Strategy Frameworks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 SEPA 框架分析成长股入场点、趋势阶段、形态与风险收益。",
+          "description_en": "Analyzes growth-stock setups, trend stages, chart patterns, and risk/reward using the SEPA framework.",
+          "what": "Applies Mark Minervini’s SEPA methodology to evaluate whether a stock is a high-quality momentum/growth trading setup.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "stock-correlation",
+          "path": "plugins/market-analysis/skills/stock-correlation/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market Data / Market Intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "基于历史价格数据查找相关股票、行业同伴与配对交易线索。",
+          "description_en": "Uses historical price data to identify correlated stocks, sector peers, and pair-trading leads.",
+          "what": "Finds and analyzes correlated equities, related tickers, beta relationships, and co-movement patterns.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "stock-liquidity",
+          "path": "plugins/market-analysis/skills/stock-liquidity/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "股票流动性 / 交易成本分析",
+          "group_en": "Stock liquidity and trading-cost analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析买卖价差、成交量、深度和冲击成本，评估流动性",
+          "description_en": "Assesses bid-ask spreads, volume, depth, and market impact to gauge stock liquidity.",
+          "what": "股票流动性与交易成本分析",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "yfinance-data",
+          "path": "plugins/market-analysis/skills/yfinance-data/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market data and market intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "用 yfinance 获取股价、财报、期权、分红和分析师数据",
+          "description_en": "Fetches prices, financials, options, dividends, and analyst data via yfinance.",
+          "what": "Yahoo Finance 数据获取",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skill-creator",
+          "path": "plugins/skill-creator/skills/skill-creator/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建与评测器",
+          "group_en": "Skill Creator & Evaluator",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导创建、优化、评测和迭代 agent 技能，覆盖规划、写作、评分与质量改进。",
+          "description_en": "Guides the creation, optimization, evaluation, and iteration of agent skills, from planning and writing to scoring and quality improvement.",
+          "what": "把重复工作流沉淀为可评测、可迭代的 agent skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/Codex/superpowers/mattpocock · 组「Skill 创建器」"
+        },
+        {
+          "name": "discord-reader",
+          "path": "plugins/social-readers/skills/discord-reader/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "Discord 金融舆情监听",
+          "group_en": "Discord Financial Sentiment Monitor",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "只读 Discord 频道与消息，用于交易社区讨论、加密市场情绪和金融研究。",
+          "description_en": "Reads Discord channels and messages in read-only mode to gather trading-community discussions, crypto sentiment, and financial research.",
+          "what": "从 Discord 交易社区中只读收集市场讨论与情绪信号。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "linkedin-reader",
+          "path": "plugins/social-readers/skills/linkedin-reader/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market Data / Intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "读取 LinkedIn 专业动态，辅助金融研究、市场情绪与岗位观察。",
+          "description_en": "Read LinkedIn professionally to support financial research, market sentiment, and finance-job monitoring.",
+          "what": "A read-only LinkedIn research reader for financial and trading-related signals.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "opencli-reader",
+          "path": "plugins/social-readers/skills/opencli-reader/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market Data / Intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "作为 opencli 泛读兜底，读取多类财经、新闻与研究来源。",
+          "description_en": "A generic opencli reader for finance, news, research, and social sources when no dedicated skill exists.",
+          "what": "A read-only fallback reader for many finance-relevant sources through opencli.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "telegram-reader",
+          "path": "plugins/social-readers/skills/telegram-reader/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "社交金融情报读取",
+          "group_en": "Social Finance Intelligence Readers",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用只读 Telegram 读取金融频道消息，服务市场情报与舆情研究。",
+          "description_en": "Reads Telegram channels and groups read-only to collect financial news and market sentiment for research.",
+          "what": "Reads Telegram channels/groups with tdl for financial news, market research, and read-only message export.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "twitter-reader",
+          "path": "plugins/social-readers/skills/twitter-reader/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "社交金融情报读取",
+          "group_en": "Social Finance Intelligence Readers",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用只读 Twitter/X 搜索金融讨论与书签，辅助市场情绪研究。",
+          "description_en": "Reads Twitter/X read-only to search financial discussions, bookmarks, and market sentiment for research.",
+          "what": "Reads Twitter/X with opencli for financial research, market sentiment, bookmarks, and analyst/news monitoring.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "yc-reader",
+          "path": "plugins/social-readers/skills/yc-reader/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "YC 公司数据库 / 创投市场情报",
+          "group_en": "YC Company Database / Venture Market Intelligence",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 YC 公司、批次、招聘和赛道趋势等公开数据，支持创投研究。",
+          "description_en": "Fetches public YC company, batch, hiring, and sector-trend data for venture research.",
+          "what": "Read-only Y Combinator data reader for startup and venture market intelligence.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "startup-analysis",
+          "path": "plugins/startup-tools/skills/startup-analysis/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "初创公司尽调 / 投资分析",
+          "group_en": "Startup Due Diligence / Investment Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从投资人、求职者和创始人视角评估初创公司的健康度、风险与潜力。",
+          "description_en": "Evaluates startups through investor, job-seeker, and founder lenses for diligence and decision-making.",
+          "what": "Multi-perspective startup assessment framework for investment, career, and strategic decisions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "generative-ui",
+          "path": "plugins/ui-tools/skills/generative-ui/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "Claude 生成式 UI 组件",
+          "group_en": "Claude Generative UI Widgets",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Claude 用 show_widget 生成图表、仪表盘和交互式 HTML/SVG 视觉组件。",
+          "description_en": "Guides Claude in using show_widget to create charts, dashboards, and interactive HTML/SVG visuals.",
+          "what": "为 Claude 的 show_widget 提供视觉与交互组件设计规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "HKUSTDial",
+        "repo": "Supervisor-Skills",
+        "full_name": "HKUSTDial/Supervisor-Skills",
+        "url": "https://github.com/HKUSTDial/Supervisor-Skills",
+        "stars": 2649,
+        "pushed_at": "2026-04-29",
+        "default_branch": "main",
+        "github_description": "将博导十年科研经验炼化为可直接调用的 AI 技能。从 Idea 构思到论文投稿，你的 AI 科研副导师。",
+        "topics": [
+          "ai-research",
+          "ai-researcher",
+          "awesome",
+          "awesome-list",
+          "phd-research",
+          "research-skills",
+          "skills",
+          "vibe-research"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "benchmark-paper-template",
+          "path": "plugins/phd-research/skills/benchmark-paper-template/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术研究流水线",
+          "group_en": "Academic Research Writing Pipeline",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为 Benchmark 论文梳理五支柱、引言逻辑、章节骨架和投稿检查。",
+          "description_en": "Structures benchmark and evaluation papers with a five-pillar audit, introduction logic, section skeleton, and pre-submission checklist.",
+          "what": "为 Benchmark/评测论文提供结构化和审查流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "figure-designer",
+          "path": "plugins/phd-research/skills/figure-designer/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术研究流水线",
+          "group_en": "Academic Research Writing Pipeline",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为技术论文核心配图选择设计范式、布局、标注、工具并做质量审查。",
+          "description_en": "Guides technical-paper figure design, including paradigm, layout, labels, tooling, and quality-control checks.",
+          "what": "为技术论文配图提供设计建议和质量审查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "idea-evaluator",
+          "path": "plugins/phd-research/skills/idea-evaluator/SKILL.md",
+          "subcategory": "11-6",
+          "subcategory_title": "11.6 研究选题 / 假设 / 构思",
+          "category": "academic-research",
+          "group": "研究选题 / 假设 / 构思",
+          "group_en": "Research Topic Ideation and Hypothesis Shaping",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "用五维框架评估研究想法的新颖性、可行性与致命缺陷。",
+          "description_en": "Evaluates research ideas for novelty, feasibility, and fatal flaws using a five-dimension framework.",
+          "what": "面向研究选题的审稿人式评估与筛选技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "intro-drafter",
+          "path": "plugins/phd-research/skills/intro-drafter/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "科研论文写作",
+          "group_en": "Research Paper Writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据论文要素生成六段式 Introduction 大纲和写作要点。",
+          "description_en": "Builds a six-paragraph introduction outline with writing points for a technical paper.",
+          "what": "用于组织技术论文 Introduction 叙事结构的写作技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pre-submission-reviewer",
+          "path": "plugins/phd-research/skills/pre-submission-reviewer/SKILL.md",
+          "subcategory": "11-5",
+          "subcategory_title": "11.5 同行评审 / 论文质量",
+          "category": "academic-research",
+          "group": "论文同行评审 / 质量审查",
+          "group_en": "Peer Review and Quality Assessment",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在投稿前从逻辑、写作、语法、LaTeX 和图表质量做结构化审查。",
+          "description_en": "Runs a structured pre-submission audit covering logic, prose, grammar, LaTeX, and figure quality.",
+          "what": "A reviewer-style pre-submission audit for technical papers.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "tech-paper-template",
+          "path": "plugins/phd-research/skills/tech-paper-template/SKILL.md",
+          "subcategory": "11-6",
+          "subcategory_title": "11.6 研究选题 / 假设 / 构思",
+          "category": "academic-research",
+          "group": "研究选题 / 假设 / 构思",
+          "group_en": "Research Ideation and Hypothesis Framing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮 agent 将研究想法整理为论文逻辑骨架，定位类型并做一致性检查。",
+          "description_en": "Turns a research idea into a paper’s logical skeleton, positions the contribution type, and checks consistency.",
+          "what": "Builds a thinking-template skeleton for a technical paper before drafting.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vibe-research-workflow",
+          "path": "plugins/phd-research/skills/vibe-research-workflow/SKILL.md",
+          "subcategory": "21-9",
+          "subcategory_title": "21.9 自主研究 / 科研编排",
+          "category": "ml-llm-engineering",
+          "group": "AI 科研编排 / Vibe Research 工作流",
+          "group_en": "AI Research Orchestration / Vibe Research Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 AI 辅助科研的编码、制图、写作流程与工具选择。",
+          "description_en": "Guides AI-assisted research across coding, figures, writing, and tool selection.",
+          "what": "A meta-workflow for AI-assisted research with Vibe Coding, Vibe Figure, and Vibe Writing sub-flows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "handsomestWei",
+        "repo": "patent-disclosure-skill",
+        "full_name": "handsomestWei/patent-disclosure-skill",
+        "url": "https://github.com/handsomestWei/patent-disclosure-skill",
+        "stars": 2608,
+        "pushed_at": "2026-05-28",
+        "default_branch": "main",
+        "github_description": "中国专利.skill，从项目文档到可交付的技术交底书，专利点挖掘、联网国知局查新、脱敏成文与自检闭环。",
+        "topics": [
+          "chinese",
+          "disclosure",
+          "patent",
+          "python",
+          "skill"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "14-4",
+          "subcategory_title": "14.4 知识产权",
+          "category": "legal-compliance",
+          "group": "专利交底书生成",
+          "group_en": "Patent Disclosure Drafting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从项目文档挖掘专利点，查新并生成、自检中国专利交底书。",
+          "description_en": "Mines patentable ideas from project docs, checks novelty, and drafts self-checked Chinese patent disclosures.",
+          "what": "覆盖专利点挖掘、查新、交底书生成与自检闭环。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
