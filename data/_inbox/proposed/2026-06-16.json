@@ -1,0 +1,4230 @@
+{
+  "generated_at": "2026-06-16T06:36:53+00:00",
+  "date": "2026-06-16",
+  "proposed_count": 8,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 57,
+      "blocklisted": 10,
+      "seen_recently": 101,
+      "truncated": 185,
+      "looks_aggregator": 2,
+      "skill_name_dup": 3
+    },
+    "filtered_out": [
+      {
+        "full_name": "RKiding/Awesome-finance-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "yaolifeng0629/Awesome-independent-tools",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "browser-cdp"
+      ],
+      "group": "浏览器 agent CLI",
+      "group_en": "Browser Agent CLI",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "通过 CDP 控制 Chrome，复用登录态并执行页面操作、JS 评估与快照提取。",
+      "description_en": "Controls Chrome through CDP to reuse logged-in sessions, automate page actions, evaluate JavaScript, and capture snapshots.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story-cover"
+      ],
+      "group": "小说封面生成",
+      "group_en": "Novel Cover Generation",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "根据书名、题材与作者名生成含标题署名的网文封面图。",
+      "description_en": "Generates polished web-novel cover art with title and author name from genre cues and style references.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story-deslop"
+      ],
+      "group": "语法 / 文风审查",
+      "group_en": "Writing Style Review",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "检测网文中的 AI 写作痕迹，并用最小改动让文本更自然。",
+      "description_en": "Detects AI-like patterns in web-novel prose and rewrites them with minimal changes for a more natural voice.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story-import"
+      ],
+      "group": "小说项目导入 / 逆向工程",
+      "group_en": "Novel Project Import and Reverse Engineering",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "将已有小说反向解析为可续写的标准写作工程项目。",
+      "description_en": "Reverse-engineers an existing novel into a standard writing project that can be continued by later writing skills.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story-long-analyze"
+      ],
+      "group": "长篇网文拆文",
+      "group_en": "Long-form Web Novel Breakdown",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "帮助 agent 拆解长篇小说的黄金三章、人设、爽点、节奏与设定关系。",
+      "description_en": "Helps an agent deconstruct a long-form web novel’s opening, characters, payoff design, pacing, and worldbuilding relationships.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story-long-scan"
+      ],
+      "group": "长篇网文扫榜",
+      "group_en": "Long-form Web Novel Market Scan",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "帮助 agent 分析网文平台榜单，提炼热门题材、市场趋势与可行创作方向。",
+      "description_en": "Helps an agent analyze web novel ranking data to identify trending genres, market patterns, and viable writing directions.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story-long-write"
+      ],
+      "group": "长篇网文写作",
+      "group_en": "Long-form Web Novel Writing",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "从选题、世界观、人物与情节线管理到大纲和正文续写，辅助长篇网文创作。",
+      "description_en": "Helps plan and write long-form web novels, from premise and worldbuilding to outlines, character arcs, and chapter drafting.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story-review"
+      ],
+      "group": "网文结构与一致性审查",
+      "group_en": "Web Novel Review and Consistency Check",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "用多视角或单人模式审查小说结构、角色、文字与设定，并给出修改建议。",
+      "description_en": "Reviews fiction for structure, characters, prose, and continuity, then returns actionable revision guidance.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story-setup"
+      ],
+      "group": "网文写作项目初始化",
+      "group_en": "Web Novel Writing Project Setup",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "部署网文写作工具集配置、规则与钩子，初始化可复用写作项目环境。",
+      "description_en": "Deploys the web-novel writing toolkit’s configuration, rules, and hooks to initialize a reusable project workspace.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story-short-analyze"
+      ],
+      "group": "短篇网文拆文分析",
+      "group_en": "Short Web Novel Deconstruction",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "拆解短篇网文的故事核、结构、情感线与爆点，生成可指导续写的拆文报告。",
+      "description_en": "Analyzes short web novels for story core, structure, emotional arc, and hooks, producing a report that guides future drafts.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story-short-scan"
+      ],
+      "group": "短篇网文趋势监测",
+      "group_en": "Short-form web novel trend monitoring",
+      "category": "data-scraping",
+      "subcategory": "7-2",
+      "chain": false,
+      "description": "基于平台榜单识别短篇热门题材、情绪方向、风口有效期和风险阈值。",
+      "description_en": "Analyzes platform rankings to identify hot short-story themes, emotional angles, trend windows, and risks.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story-short-write"
+      ],
+      "group": "短篇网文写作",
+      "group_en": "Short-form web novel writing",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "辅助短篇网文从情绪目标、核心框架到成稿写作，并控制节奏与格式。",
+      "description_en": "Helps draft short web novels from emotional intent and story structure to polished platform-ready prose.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "story"
+      ],
+      "group": "网文写作工具箱",
+      "group_en": "Web Novel Writing Toolkit",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "网文写作主入口，按用户意图路由到扫榜、拆文、写作、去 AI 味和封面等 skill。",
+      "description_en": "Main entry for web-novel writing, routing requests to market scanning, story analysis, drafting, AI-flavor cleanup, and cover generation.",
+      "sources": [
+        "worldwonderer/oh-story-claudecode"
+      ]
+    },
+    {
+      "skills": [
+        "browser-act-skill-forge",
+        "browser-act"
+      ],
+      "group": "BrowserAct 网站探索到可复用 Skill 构建工作流",
+      "group_en": "BrowserAct website exploration to reusable skill workflow",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": true,
+      "description": "基于网站探索生成可复用 Skill 包，帮助 agent 封装站点抓取与自动化能力。",
+      "description_en": "Lets agents invoke a browser automation CLI to access rendered pages, operate forms, capture screenshots, and manage sessions.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "amazon-alexa-qa",
+        "amazon-asin-lookup-api-skill"
+      ],
+      "group": "Amazon 电商数据提取",
+      "group_en": "Amazon ecommerce data extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "向 Amazon Alexa/Rufus 提交购物问题并收集结构化回答",
+      "description_en": "Looks up Amazon product details by ASIN, including title, price, ratings, and availability.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "amazon-best-selling-products-finder-api-skill",
+        "amazon-buy-box-monitor-api-skill",
+        "amazon-product-api-skill",
+        "amazon-product-search-api-skill"
+      ],
+      "group": "Amazon 商品数据抽取",
+      "group_en": "Amazon product data extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "通过 BrowserAct 模板抽取 Amazon 商品标题、ASIN、价格、评分和规格，用于市场研究。",
+      "description_en": "Monitors Amazon Buy Box details by ASIN, including seller prices, ratings, fulfillment methods, and availability.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "amazon-competitor-analyzer",
+        "amazon-listing-competitor-analysis-skill"
+      ],
+      "group": "竞品分析",
+      "group_en": "Competitive Analysis",
+      "category": "marketing-growth",
+      "subcategory": "4-8",
+      "chain": false,
+      "description": "用 BrowserAct 抓取 Amazon ASIN 数据，对比规格、价格、评论与视觉并提炼竞争机会。",
+      "description_en": "Analyzes an Amazon competitor listing by ASIN, extracting SEO cues, conversion signals, buyer psychology, and whitespace opportunities.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "amazon-reviews-api-skill"
+      ],
+      "group": "Amazon 评论采集",
+      "group_en": "Amazon Review Extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "通过 Amazon Reviews API 提取商品评论、评分与链接，供反馈分析使用。",
+      "description_en": "Extracts Amazon product reviews, ratings, and links through the Amazon Reviews API for feedback or market analysis.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-listing"
+      ],
+      "group": "电商商品列表采集",
+      "group_en": "E-commerce Product Listing Extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "从电商搜索/分类页按筛选条件分页提取商品列表，返回结构化字段。",
+      "description_en": "Extracts paginated product listings from e-commerce search or category pages with filters and structured fields.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-product-detail",
+        "ecommerce-reviews"
+      ],
+      "group": "电商商品与评论抓取",
+      "group_en": "E-commerce Product & Review Scraping",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "从商品或评论页分页抽取客户评论、评分、日期、正文、验证购买与有用票数。",
+      "description_en": "Collect paginated customer reviews from product or review pages, including ratings, dates, verified status, and helpful votes.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-seller-info",
+        "goofish-item-detail"
+      ],
+      "group": "电商平台页面数据采集",
+      "group_en": "E-commerce Page Data Extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "从电商平台卖家主页抽取名称、评分、评价数、好评率和政策等结构化数据。",
+      "description_en": "Extract structured seller profile data from marketplace storefront pages.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "goofish-search-list",
+        "taobao-keyword-search"
+      ],
+      "group": "电商搜索抓取",
+      "group_en": "E-commerce search scraping",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "抓取闲鱼关键词搜索结果中的二手商品卡片，支持分页与筛选。",
+      "description_en": "Scrapes Goofish keyword search results and returns paginated second-hand item cards.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "taobao-product-detail",
+        "taobao-product-reviews"
+      ],
+      "group": "淘宝商品数据采集",
+      "group_en": "Taobao product data extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "按 itemId 打开淘宝/Tmall 页面，抽取标题、价格、店铺、SKU 等商品详情。",
+      "description_en": "Extract paginated buyer reviews, dates, SKUs, and photo links from Taobao/Tmall item pages.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "taobao-shop-catalog"
+      ],
+      "group": "淘宝/天猫店铺商品目录抓取",
+      "group_en": "Taobao/Tmall Shop Catalog Scraping",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "帮助 agent 登录淘宝后按店铺 ID 分页抓取商品标题、itemId 和图片链接。",
+      "description_en": "Helps an agent log in to Taobao and paginate a shop catalog to collect item IDs, titles, and image URLs.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "business-contact-social-links-skill"
+      ],
+      "group": "企业官网与社媒链接提取",
+      "group_en": "Company Website & Social Profile Extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "帮助 agent 根据公司名或官网 URL 提取官网、LinkedIn、X、Facebook、YouTube 等社交链接。",
+      "description_en": "Helps an agent find a company’s official site and social profiles from a name or website URL.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "github-project-contributor-finder-api-skill",
+        "google-maps-api-skill"
+      ],
+      "group": "BrowserAct 线索数据抽取",
+      "group_en": "BrowserAct lead data extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "通过 BrowserAct API 从 Google Maps 提取商家名称、分类、联系方式、评分和营业时间。",
+      "description_en": "Uses the BrowserAct API to collect structured Google Maps business data, including names, categories, contacts, ratings, and hours.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "google-maps-reviews-api-skill"
+      ],
+      "group": "Google Maps 评论数据抽取",
+      "group_en": "Google Maps review extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "通过 Google Maps Reviews API 模板抽取评论，用于反馈监测和舆情分析。",
+      "description_en": "Extracts Google Maps review data through a BrowserAct template for feedback monitoring and sentiment analysis.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "google-maps-search-api-skill"
+      ],
+      "group": "Google Maps 商家数据抽取",
+      "group_en": "Google Maps business data extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "通过 Google Maps Search API 模板抽取商家列表，用于线索收集和市场研究。",
+      "description_en": "Extracts Google Maps business listings through a BrowserAct template for lead generation and market research.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "google-social-media-finder"
+      ],
+      "group": "跨平台社交账号查找",
+      "group_en": "Cross-platform social profile lookup",
+      "category": "data-scraping",
+      "subcategory": "7-2",
+      "chain": false,
+      "description": "通过 Google 搜索发现目标人物或品牌的社媒账号与公开资料。",
+      "description_en": "Uses Google search to find public social profiles for a person, brand, or username across platforms.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "indeed-job-search"
+      ],
+      "group": "招聘网站职位抓取",
+      "group_en": "Job board scraping",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "从 Indeed 搜索结果中抽取职位、薪资、公司与投递链接等结构化数据。",
+      "description_en": "Extracts structured job listing data from Indeed, including titles, salaries, companies, descriptions, and apply links.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "industry-key-contact-radar-api-skill"
+      ],
+      "group": "关键联系人雷达",
+      "group_en": "Key Contact Radar",
+      "category": "marketing-growth",
+      "subcategory": "4-6",
+      "chain": false,
+      "description": "按行业、角色和平台发现关键联系人，并抽取公开资料与线索。",
+      "description_en": "Discovers key contacts by industry, role, and platform, then extracts public profile details and lead data.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "linkedin-jobs-search"
+      ],
+      "group": "LinkedIn 职位抓取",
+      "group_en": "LinkedIn Job Listings Scraper",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "在 LinkedIn 搜索职位并按筛选条件抽取完整岗位详情。",
+      "description_en": "Searches LinkedIn jobs with filters and extracts full listing details for agent workflows.",
+      "sources": [
+        "browser-act/skills"
+      ]
+    },
+    {
+      "skills": [
+        "ctf-ai-ml",
+        "ctf-crypto"
+      ],
+      "group": "CTF 解题技能包",
+      "group_en": "CTF Challenge Solver Skills",
+      "category": "security-offensive",
+      "subcategory": "18-3",
+      "chain": false,
+      "description": "帮助 agent 处理密码学 CTF 题目，覆盖 RSA、AES、ECC、格密码与常见密码攻击。",
+      "description_en": "Helps agents solve cryptography CTF challenges, covering RSA, AES, ECC, lattices, and common cryptographic attacks.",
+      "sources": [
+        "ljagiello/ctf-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ctf-forensics"
+      ],
+      "group": "CTF 取证 / 隐写 / 网络与链上分析",
+      "group_en": "CTF forensics, steganography, network & chain analysis",
+      "category": "security-offensive",
+      "subcategory": "18-4",
+      "chain": false,
+      "description": "为 CTF 取证题提供磁盘、内存、PCAP、隐写、注册表和链上交易分析指引。",
+      "description_en": "Guides agents through CTF forensics tasks involving disk, memory, PCAP, steganography, registry, and chain analysis.",
+      "sources": [
+        "ljagiello/ctf-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ctf-malware"
+      ],
+      "group": "恶意软件 / 逆向 / C2 流量 / 内存取证",
+      "group_en": "Malware analysis, reverse engineering, C2 traffic & memory forensics",
+      "category": "security-offensive",
+      "subcategory": "18-4",
+      "chain": false,
+      "description": "为 CTF 恶意软件题提供混淆脚本、PE/.NET、shellcode、C2 流量和内存取证分析指引。",
+      "description_en": "Guides agents through CTF malware tasks involving obfuscated scripts, PE/.NET binaries, shellcode, C2 traffic, and memory forensics.",
+      "sources": [
+        "ljagiello/ctf-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ctf-misc"
+      ],
+      "group": "CTF 综合杂项挑战",
+      "group_en": "CTF Miscellaneous Challenge Solving",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "作为 CTF 杂项题兜底参考，覆盖编码、pyjail、SDR、QR/音频、沙盒逃逸等跨类技巧。",
+      "description_en": "Fallback reference for miscellaneous CTF challenges, covering encodings, pyjails, SDR, QR/audio puzzles, sandbox escapes, and other edge cases.",
+      "sources": [
+        "ljagiello/ctf-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ctf-osint"
+      ],
+      "group": "CTF OSINT 情报搜集",
+      "group_en": "CTF OSINT Intelligence Gathering",
+      "category": "security-offensive",
+      "subcategory": "18-3",
+      "chain": false,
+      "description": "提供公开来源情报检索、社媒、地理定位、DNS、反向图片与历史记录等 CTF OSINT 解题参考。",
+      "description_en": "Reference for CTF OSINT tasks, including public-source research, social media, geolocation, DNS, reverse image search, and historical records.",
+      "sources": [
+        "ljagiello/ctf-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ctf-pwn",
+        "ctf-reverse"
+      ],
+      "group": "CTF 逆向到利用流程",
+      "group_en": "CTF Reverse-to-Exploit Workflow",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": true,
+      "description": "帮助 agent 在 CTF pwn 题中利用二进制漏洞，选择工具并推进到代码执行或提权。",
+      "description_en": "Helps agents exploit binary vulnerabilities in CTF pwn challenges, choose tooling, and progress toward code execution or privilege escalation.",
+      "sources": [
+        "ljagiello/ctf-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ctf-web",
+        "ctf-writeup"
+      ],
+      "group": "CTF 解题到提交报告",
+      "group_en": "CTF Solve-to-Writeup Workflow",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": true,
+      "description": "把已解 CTF 题目整理成标准提交式解题报告，便于队友或主办方复核。",
+      "description_en": "Guides agents through CTF web challenges, from attack-surface mapping to tool selection and execution.",
+      "sources": [
+        "ljagiello/ctf-skills"
+      ]
+    },
+    {
+      "skills": [
+        "solve-challenge"
+      ],
+      "group": "CTF 解题调度 / 安全挑战入口",
+      "group_en": "CTF Challenge Dispatcher and Security Challenge Entrypoint",
+      "category": "security-offensive",
+      "subcategory": "18-3",
+      "chain": false,
+      "description": "作为 CTF 入口，先做初步分流、识别主类型，并路由到专门技能开始解题。",
+      "description_en": "Acts as the CTF entrypoint, triaging the challenge and routing to the right specialist skill.",
+      "sources": [
+        "ljagiello/ctf-skills"
+      ]
+    },
+    {
+      "skills": [
+        "emp-best-practices",
+        "empjs"
+      ],
+      "group": "EMP 微前端工程",
+      "group_en": "EMP Micro Frontend Engineering",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 创建 EMP React 19 项目，补齐 emp.config.ts、脚本、Tailwind、状态管理和性能优化配置。",
+      "description_en": "Helps the agent configure EMP CLI and Rspack module federation, handle host/remote apps, framework interop, plugins, and performance tuning.",
+      "sources": [
+        "empjs/emp"
+      ]
+    },
+    {
+      "skills": [
+        "agency-os"
+      ],
+      "group": "Notion 任务调度板",
+      "group_en": "Notion Task Dispatch Board",
+      "category": "docs-knowledge",
+      "subcategory": "2-5",
+      "chain": false,
+      "description": "用 Notion MCP 管理任务源、队列审批和并行 agent 分发。",
+      "description_en": "Manages a Notion-backed task source of truth, approval queue, and parallel agent dispatch.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "amplify"
+      ],
+      "group": "Prompt 放大与质量评分",
+      "group_en": "Prompt Amplification and Quality Scoring",
+      "category": "agent-architecture",
+      "subcategory": "12-6",
+      "chain": false,
+      "description": "把模糊低质提示改写成领域适配、可执行的高质量提示并评分。",
+      "description_en": "Rewrites vague prompts into domain-aware, executable prompts and scores them for quality.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "audit"
+      ],
+      "group": "多级代码审计 / PR 质量门禁",
+      "group_en": "Multi-level code audit / PR quality gates",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "对近期改动做 L1-L5 代码审查，覆盖质量、规格、安全与性能。",
+      "description_en": "Runs L1-L5 code reviews on recent changes, covering quality, specs, security, and performance.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "background"
+      ],
+      "group": "后台 agent 生命周期管理",
+      "group_en": "Background agent lifecycle management",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "查看、取消、清理由 Hyperflow 任务启动的后台 agent 与输出缓冲。",
+      "description_en": "Inspect, cancel, and prune background agents launched by Hyperflow tasks, including their output buffers.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "bridge"
+      ],
+      "group": "CLAUDE.md 模板",
+      "group_en": "CLAUDE.md Templates",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-5",
+      "chain": false,
+      "description": "将 Hyperflow 规则嵌入 CLAUDE.md，让非 CLI 环境继承行为约束。",
+      "description_en": "Embeds Hyperflow rules into CLAUDE.md so non-CLI surfaces follow the same behavior contract.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "cache"
+      ],
+      "group": "Hyperflow 项目记忆 CRUD",
+      "group_en": "Hyperflow Project Memory CRUD",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "管理 .hyperflow/memory/ 的增删改查、搜索、归档和清理。",
+      "description_en": "Provides CRUD, search, archiving, and cleanup for Hyperflow’s project memory.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "deploy",
+        "dispatch"
+      ],
+      "group": "Hyperflow 执行与发布流水线",
+      "group_en": "Hyperflow execution-to-release pipeline",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": true,
+      "description": "把任务文件分发给并行 worker 执行、分层评审、汇总提交，适合批量实现计划。",
+      "description_en": "Dispatches task-file batches to parallel workers, applies reviewer gates, and commits subtask results.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "flush",
+        "hyperflow"
+      ],
+      "group": "Hyperflow 工程工作流",
+      "group_en": "Hyperflow engineering workflow",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": true,
+      "description": "用于链中断后手动清理 Hyperflow 的延期提交队列，把 staging 分支快进合并回用户分支并清空队列。",
+      "description_en": "Applies Hyperflow's engineering workflow in single-agent environments, from planning and scoping to implementation, self-review, and integration review.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "scaffold",
+        "scope"
+      ],
+      "group": "Hyperflow 项目启动到任务派发",
+      "group_en": "Hyperflow project kickoff to task dispatch workflow",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": true,
+      "description": "用于新项目一键搭建 Hyperflow 缓存、记忆骨架，并安装 AGENTS/CLAUDE 检测垫片。",
+      "description_en": "Sets up a new Hyperflow project by building its cache, seeding memory structure, and installing AGENTS/CLAUDE shims.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "spec"
+      ],
+      "group": "Spec → 工程",
+      "group_en": "Spec → engineering handoff",
+      "category": "product-management",
+      "subcategory": "3-6",
+      "chain": false,
+      "description": "帮 agent 在动手前澄清设计问题、比较方案并生成可审批的规格。",
+      "description_en": "Helps the agent clarify ambiguous design requests, compare approaches, and produce an approvable spec before implementation.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "status"
+      ],
+      "group": "Hyperflow 项目状态面板",
+      "group_en": "Hyperflow status dashboard",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "为 agent 提供 Hyperflow 项目状态、进度、记忆和运行概况的只读快照。",
+      "description_en": "Gives the agent a read-only snapshot of Hyperflow project metadata, task progress, memory, and live work status.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "sticky"
+      ],
+      "group": "Hyperflow 路由控制",
+      "group_en": "Hyperflow Routing Controls",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "设置项目级自动路由模式，控制 Hyperflow 任务消息何时触发链式处理。",
+      "description_en": "Sets project-level auto-routing modes so Hyperflow knows when task messages should trigger chains.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "trace"
+      ],
+      "group": "系统化根因调试",
+      "group_en": "Systematic Root-Cause Debugging",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "在调试、测试失败或构建错误时先复现并定位根因，再提出修复。",
+      "description_en": "Runs systematic root-cause debugging before patching failing tests, builds, or runtime issues.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "workflow",
+        "hyperflow-amplify"
+      ],
+      "group": "Hyperflow 提示词增强到执行流水线",
+      "group_en": "Hyperflow prompt-to-execution pipeline",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": true,
+      "description": "为迁移、审计、验证等大任务选择动态工作流，并适配不同 agent 宿主。",
+      "description_en": "Routes complex migrations, audits, and verification work through dynamic workflows across supported agent hosts.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "hyperflow-audit"
+      ],
+      "group": "Hyperflow 代码审查",
+      "group_en": "Hyperflow Code Review",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "对代码变更进行分级审查，输出问题清单并触发修复门禁。",
+      "description_en": "Runs tiered code reviews on diffs, commits, branches, or PRs and writes findings with a fix gate.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "hyperflow-cache"
+      ],
+      "group": "Hyperflow 项目记忆",
+      "group_en": "Hyperflow Project Memory",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "管理项目记忆文件，支持查看、搜索、新增、编辑和清理。",
+      "description_en": "Maintains project memory entries with list, search, add, edit, prune, and clear operations.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "hyperflow-deploy",
+        "hyperflow-dispatch"
+      ],
+      "group": "Hyperflow 执行到发布流水线",
+      "group_en": "Hyperflow execution-to-release workflow",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": true,
+      "description": "发布前运行质量门并请求确认，阻止绕过验证或强推主分支。",
+      "description_en": "Runs release gates and asks for confirmation before pushing, preventing unsafe main-branch pushes.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "hyperflow-scaffold",
+        "hyperflow-scope"
+      ],
+      "group": "Hyperflow 项目启动与任务拆解工作流",
+      "group_en": "Hyperflow project setup and task-scoping workflow",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": true,
+      "description": "创建 .hyperflow 缓存、记忆文件和 slash commands，为 agent 建立项目上下文。",
+      "description_en": "Sets up Hyperflow’s project cache, memory files, and slash commands to give the agent project context.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "hyperflow-spec"
+      ],
+      "group": "Hyperflow 设计工作流",
+      "group_en": "Hyperflow design workflow",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "设计阶段梳理方案、写入规范并交接后续范围制定。",
+      "description_en": "Designs and approves implementation specs, then hands off to scoping.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "hyperflow-status"
+      ],
+      "group": "Hyperflow 项目状态",
+      "group_en": "Hyperflow project status",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "只读汇总任务进度、规范、审计与记忆状态。",
+      "description_en": "Read-only summary of task progress, specs, audits, and memory state.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "hyperflow-sticky"
+      ],
+      "group": "Hyperflow 自动路由控制",
+      "group_en": "Hyperflow auto-routing control",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "设置任务消息自动路由强度，决定何时触发 Hyperflow 工作流。",
+      "description_en": "Sets how aggressively task-shaped messages are auto-routed into Hyperflow workflows.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "hyperflow-trace"
+      ],
+      "group": "Hyperflow 调试根因分析",
+      "group_en": "Hyperflow root-cause debugging",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "通过复现、5 Whys 和假设验证定位根因，再最小修复并回归验证。",
+      "description_en": "Reproduces failures, validates hypotheses, fixes the root cause, and verifies the patch.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "shipwright-pipeline"
+      ],
+      "group": "自然语言应用生成器",
+      "group_en": "Natural-Language App Builders",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "将自然语言需求转化为可构建、测试和部署的全栈应用。",
+      "description_en": "Turns plain-language app ideas into buildable, tested, deployment-ready full-stack applications.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "buzz-devrel"
+      ],
+      "group": "DevRel 社区增长设计",
+      "group_en": "DevRel Community Growth Playbooks",
+      "category": "product-management",
+      "subcategory": "3-5",
+      "chain": false,
+      "description": "为开发者工具或开源项目设计 DevRel 项目、社区、大使和指标。",
+      "description_en": "Designs DevRel programs, community systems, ambassador tiers, events, and success metrics.",
+      "sources": [
+        "jeremylongshore/claude-code-plugins-plus-skills"
+      ]
+    },
+    {
+      "skills": [
+        "(root)",
+        "brainstorming-research"
+      ],
+      "group": "科研论文写作工作流",
+      "group_en": "Research paper writing workflow",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": true,
+      "description": "面向论文/学位论文，统筹头脑风暴、章节写作、综述与 LaTeX 输出。",
+      "description_en": "Coordinates full-cycle academic writing, from brainstorming and chapter drafting to literature review and LaTeX output.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "environment-setup"
+      ],
+      "group": "科研 Python 环境配置",
+      "group_en": "Research Python Environment Setup",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "为科研绘图安装 Miniconda、创建 conda 环境、装依赖并自检。",
+      "description_en": "Installs Miniconda, creates a research conda environment, adds plotting dependencies, and verifies the setup.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "evidence-driven-writing"
+      ],
+      "group": "证据驱动论文写作",
+      "group_en": "Evidence-Driven Academic Writing",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "把文献池转成证据地图、段落蓝图，再生成引言或综述。",
+      "description_en": "Builds an evidence map and paragraph blueprint before drafting or revising citation-backed academic sections.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "experiment-results-planning"
+      ],
+      "group": "实验设计 / 科研编码 / 复现",
+      "group_en": "Experiment Design / Research Coding / Reproducibility",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "为论文设计实验方案、评估协议与结果表图清单，确保贡献可追溯。",
+      "description_en": "Builds experiment protocols, evaluation plans, and result table/figure checklists for papers.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "figures-diagram"
+      ],
+      "group": "学术图表生图提示词",
+      "group_en": "Academic Diagram Image Prompts",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "为论文流程图、架构图和概念图生成学术风格生图提示词。",
+      "description_en": "Creates polished prompts for generating academic flowcharts, architecture diagrams, and conceptual figures.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "figures-python",
+        "latex-output"
+      ],
+      "group": "论文图表到 LaTeX 产出流程",
+      "group_en": "Paper figure-to-LaTeX production workflow",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": true,
+      "description": "用 Python 生成论文投稿级图表，管理数据清单、输出 PNG/SVG 并规范保存。",
+      "description_en": "Turns paper content into LaTeX chapters, a main file, and references using the user’s template, with compile checks.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "literature-review",
+        "paper-orchestration"
+      ],
+      "group": "论文写作编排 → 文献综述",
+      "group_en": "Research writing orchestration workflow",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": true,
+      "description": "协调论文写作流程，拆分任务、设置检查门并审计能力使用。",
+      "description_en": "Orchestrates research-paper writing by staging tasks, enforcing review gates, and auditing capability use.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "peer-review"
+      ],
+      "group": "论文同行评审 / 质量审查",
+      "group_en": "Paper Peer Review and Quality Review",
+      "category": "academic-research",
+      "subcategory": "11-5",
+      "chain": false,
+      "description": "帮助 agent 在投稿前按清单审查论文质量、方法统计严谨性，并生成审稿报告。",
+      "description_en": "Helps agents systematically review paper quality, methodological and statistical rigor, and draft peer-review reports before submission.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "prompts-collection"
+      ],
+      "group": "学术论文提示词模板",
+      "group_en": "Academic Writing Prompt Templates",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "提供学术论文翻译、润色和去 AI 味的即用提示词，帮助 agent 处理论文段落。",
+      "description_en": "Ready-to-use prompt templates for translating, polishing, and humanizing academic text segments.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "statistical-analysis"
+      ],
+      "group": "论文统计分析",
+      "group_en": "Research Paper Statistical Analysis",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "根据研究数据特征选择统计检验，生成 Python 执行代码，并按 APA 格式报告结果。",
+      "description_en": "Helps the agent choose the right statistical test from the data structure, generate Python analysis code, and report results in APA style.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "using-research-writing"
+      ],
+      "group": "科研写作任务编排",
+      "group_en": "Research Writing Workflow Orchestration",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "为科研写作任务建立调用流程，判断任务规模并路由到头脑风暴、论文统筹等技能。",
+      "description_en": "Sets up the research-writing workflow, checks task scope, and routes the agent to the right specialized writing skills.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "verification",
+        "writing-chapters"
+      ],
+      "group": "研究论文写作验证工作流",
+      "group_en": "Research writing and verification workflow",
+      "category": "academic-research",
+      "subcategory": "11-5",
+      "chain": true,
+      "description": "为论文完成、引用和格式等声明设置验证门控，要求先跑命令再确认。",
+      "description_en": "Sets verification gates for claims of completion, citation validity, formatting, and evidence before reporting success.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "writing-core"
+      ],
+      "group": "学术 / 科研论文写作",
+      "group_en": "Academic Research Writing",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "帮助 agent 润色中文学术论文，提升自然表达并检查 Markdown 质量。",
+      "description_en": "Helps the agent polish Chinese academic papers, improve naturalness, and check Markdown quality.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "writing-humanities"
+      ],
+      "group": "人文社科论文写作",
+      "group_en": "Humanities & Social Science Writing",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "为 agent 提供人文社科论文的结构、论证和引用写作指导。",
+      "description_en": "Guides the agent in structuring, arguing, and citing humanities and social science papers.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "writing-law"
+      ],
+      "group": "法学论文写作规范",
+      "group_en": "Legal Academic Writing Standards",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "为法学论文提供论证结构、引用规范与写作风格指导。",
+      "description_en": "Guides legal academic papers with argument structure, citation rules, and formal writing style.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "writing-medical"
+      ],
+      "group": "医学与临床研究论文写作规范",
+      "group_en": "Medical and Clinical Research Writing Standards",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "帮助医学论文遵循 IMRaD、伦理声明和报告规范写作。",
+      "description_en": "Helps medical papers follow IMRaD structure, ethics statements, and reporting guidelines.",
+      "sources": [
+        "Norman-bury/research-writing-skill"
+      ]
+    },
+    {
+      "skills": [
+        "accessibility"
+      ],
+      "group": "无障碍测试（屏幕阅读器 + WCAG）",
+      "group_en": "Accessibility Testing (Screen Readers + WCAG)",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "依据 WCAG 2.2 与 Lighthouse 无障碍审计，检查替代文本、键盘导航等并提出修复建议。",
+      "description_en": "Audits WCAG 2.2 accessibility issues with Lighthouse guidance and suggests fixes for text alternatives, keyboard navigation, and assistive technology support.",
+      "sources": [
+        "addyosmani/web-quality-skills"
+      ]
+    },
+    {
+      "skills": [
+        "best-practices"
+      ],
+      "group": "Web 应用质量审计（Lighthouse）",
+      "group_en": "Web App Quality Audits (Lighthouse)",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "依据 Lighthouse Best Practices 审计现代 Web 实践，覆盖 HTTPS、CSP、兼容性与代码质量检查。",
+      "description_en": "Applies Lighthouse Best Practices to review HTTPS, CSP, compatibility, and code quality in modern web apps.",
+      "sources": [
+        "addyosmani/web-quality-skills"
+      ]
+    },
+    {
+      "skills": [
+        "core-web-vitals",
+        "performance"
+      ],
+      "group": "Lighthouse 网页质量优化",
+      "group_en": "Lighthouse Web Quality Optimization",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮 agent 基于 Lighthouse 找出瓶颈并给出性能优化方案。",
+      "description_en": "Uses Lighthouse to identify bottlenecks and recommend practical performance improvements.",
+      "sources": [
+        "addyosmani/web-quality-skills"
+      ]
+    },
+    {
+      "skills": [
+        "seo"
+      ],
+      "group": "Lighthouse SEO 审计与优化",
+      "group_en": "Lighthouse-Based SEO Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "基于 Lighthouse 与 Google 指南优化技术 SEO、页面 SEO 和结构化数据。",
+      "description_en": "Optimizes technical and on-page SEO, including structured data, using Lighthouse and Google guidance.",
+      "sources": [
+        "addyosmani/web-quality-skills"
+      ]
+    },
+    {
+      "skills": [
+        "web-quality-audit"
+      ],
+      "group": "Lighthouse Web 质量审计",
+      "group_en": "Lighthouse Web Quality Audit",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "用 Lighthouse 审计性能、无障碍、SEO 和最佳实践并给出修复建议。",
+      "description_en": "Audits performance, accessibility, SEO, and best practices with Lighthouse and prioritizes fixes.",
+      "sources": [
+        "addyosmani/web-quality-skills"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-active-directory"
+      ],
+      "group": "Active Directory 红队攻击路径",
+      "group_en": "Active Directory Red Team Attack Paths",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "帮助 agent 按授权红队流程评估 AD 环境，梳理攻击路径、横向移动和持久化风险。",
+      "description_en": "Guides authorized red-team assessments of AD environments, including attack-path mapping, lateral movement, and persistence risks.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-ai-security"
+      ],
+      "group": "AI/LLM 红队评估",
+      "group_en": "AI/LLM Red Team Assessment",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "帮助 agent 系统化评估 AI/LLM 系统的提示注入、越狱、抽取和数据投毒等攻击面。",
+      "description_en": "Helps agents systematically assess AI/LLM attack surfaces such as prompt injection, jailbreaks, extraction, and data poisoning.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-jwt",
+        "offensive-oauth"
+      ],
+      "group": "认证协议攻击测试",
+      "group_en": "Authentication Protocol Attack Testing",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": false,
+      "description": "提供 OAuth 流程安全测试清单，帮助检查重定向、CSRF、PKCE 与令牌泄露问题。",
+      "description_en": "An OAuth flow security testing checklist for checking redirect handling, CSRF, PKCE, and token leakage issues.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-cloud"
+      ],
+      "group": "云红队方法库",
+      "group_en": "Cloud Red-Team Playbook",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "帮助 agent 按云身份、权限、持久化和数据风险组织攻击面评估。",
+      "description_en": "Helps the agent structure cloud attack-surface assessments around identity, permissions, persistence, and data risk.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-basic-exploitation"
+      ],
+      "group": "漏洞利用开发基础",
+      "group_en": "Basic Exploit Development",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "帮助 agent 梳理经典 Linux 漏洞利用原语和 PoC 构建步骤。",
+      "description_en": "Helps the agent reason through classic Linux exploitation primitives and initial PoC construction.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-crash-analysis",
+        "offensive-bug-identification",
+        "offensive-fuzzing-course",
+        "offensive-fuzzing",
+        "offensive-vuln-classes",
+        "offensive-osint-methodology",
+        "offensive-osint"
+      ],
+      "group": "漏洞挖掘 / Bug Bounty / OSINT",
+      "group_en": "Vulnerability Mining / Bug Bounty / OSINT",
+      "category": "security-offensive",
+      "subcategory": "18-3",
+      "chain": false,
+      "description": "帮助 agent 按黑盒/灰盒/白盒场景选型 fuzz 工具、设计 harness 并处理崩溃。",
+      "description_en": "Guides red-team and bug-bounty reconnaissance across domains, social, GitHub, infrastructure, breach, and asset signals.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-exploit-dev-course",
+        "offensive-toctou",
+        "offensive-advanced-redteam",
+        "offensive-edr-evasion",
+        "offensive-initial-access",
+        "offensive-shellcode"
+      ],
+      "group": "红队 / 攻击链 / 后渗透",
+      "group_en": "Red Team / Attack Chain / Post-Exploitation",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "为 agent 提供利用开发学习路径、实验环境和周计划，用于训练或研究 onboarding。",
+      "description_en": "Provides a structured exploit-development roadmap, lab setup, and weekly plan for training or onboarding researchers.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-exploit-development",
+        "offensive-mitigations"
+      ],
+      "group": "漏洞利用开发",
+      "group_en": "Exploit Development",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "帮助 Agent 按清单搭建利用开发环境、调试 PoC 并规划可靠利用链。",
+      "description_en": "Guides agents through exploit-dev environments, debugging PoCs, and reliable exploit planning.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-keylogger-arch"
+      ],
+      "group": "恶意代码分析 / 逆向",
+      "group_en": "Malware analysis / reverse engineering",
+      "category": "security-offensive",
+      "subcategory": "18-4",
+      "chain": false,
+      "description": "帮助 agent 分析输入捕获型恶意软件架构，用于防御性威胁研究。",
+      "description_en": "Helps an agent analyze input-capture malware architecture for defensive threat research.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-windows-boundaries",
+        "offensive-windows-mitigations"
+      ],
+      "group": "Windows 红队方法论",
+      "group_en": "Windows red-team methodology",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "帮助 agent 梳理 Windows 安全边界、枚举攻击面并规划提权或沙箱逃逸路径。",
+      "description_en": "Helps an agent map Windows security boundaries, enumerate attack surfaces, and plan privilege-escalation or sandbox-escape paths.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-iot"
+      ],
+      "group": "IoT / 嵌入式渗透测试",
+      "group_en": "IoT / Embedded Pen Testing",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": false,
+      "description": "帮助 agent 按授权范围梳理 IoT 与嵌入式设备测试流程。",
+      "description_en": "Guides agents through authorized IoT and embedded-device testing workflows.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-mobile"
+      ],
+      "group": "移动应用渗透测试",
+      "group_en": "Mobile App Pen Testing",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": false,
+      "description": "帮助 agent 按授权范围执行移动应用安全测试流程。",
+      "description_en": "Guides agents through authorized mobile app security testing workflows.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-fast-checking",
+        "offensive-reporting"
+      ],
+      "group": "渗透测试评估到报告交付",
+      "group_en": "Pentest assessment-to-reporting workflow",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": true,
+      "description": "帮助 agent 在限时评估中快速梳理攻击面、检查常见漏洞模式并给出下一步。",
+      "description_en": "Helps the agent quickly map attack surfaces, check common vulnerability patterns, and suggest next steps during time-boxed assessments.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    },
+    {
+      "skills": [
+        "offensive-business-logic",
+        "offensive-deserialization"
+      ],
+      "group": "渗透测试(Web / API / 基础设施)",
+      "group_en": "Web, API & Infrastructure Penetration Testing",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": false,
+      "description": "帮助 agent 检查反序列化入口风险，识别不安全对象反序列化、gadget chain 与相关利用面。",
+      "description_en": "Helps the agent systematically identify business logic flaws across flows, state transitions, authorization boundaries, pricing, and discount abuse.",
+      "sources": [
+        "SnailSploit/Claude-Red"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "worldwonderer",
+        "repo": "oh-story-claudecode",
+        "full_name": "worldwonderer/oh-story-claudecode",
+        "url": "https://github.com/worldwonderer/oh-story-claudecode",
+        "stars": 2574,
+        "pushed_at": "2026-06-15",
+        "default_branch": "main",
+        "github_description": "网文/小说写作 skill 包，覆盖长篇与短篇网络小说的扫榜、拆文、写作、去AI味、封面图全流程",
+        "topics": [
+          "ai-agent",
+          "ai-writing",
+          "chinese-novel",
+          "claude-code",
+          "claude-skills",
+          "creative-writing",
+          "novel-writing",
+          "openclaw",
+          "skill",
+          "web-novel",
+          "writing-assistant"
+        ],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "browser-cdp",
+          "path": "skills/browser-cdp/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "浏览器 agent CLI",
+          "group_en": "Browser Agent CLI",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "通过 CDP 控制 Chrome，复用登录态并执行页面操作、JS 评估与快照提取。",
+          "description_en": "Controls Chrome through CDP to reuse logged-in sessions, automate page actions, evaluate JavaScript, and capture snapshots.",
+          "what": "浏览器自动化与登录态复用工具。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-cover",
+          "path": "skills/story-cover/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "小说封面生成",
+          "group_en": "Novel Cover Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据书名、题材与作者名生成含标题署名的网文封面图。",
+          "description_en": "Generates polished web-novel cover art with title and author name from genre cues and style references.",
+          "what": "小说封面图像生成工具。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-deslop",
+          "path": "skills/story-deslop/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "语法 / 文风审查",
+          "group_en": "Writing Style Review",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "检测网文中的 AI 写作痕迹，并用最小改动让文本更自然。",
+          "description_en": "Detects AI-like patterns in web-novel prose and rewrites them with minimal changes for a more natural voice.",
+          "what": "A web-novel de-AI-ing polish skill that preserves plot intent while reducing template-like phrasing.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-import",
+          "path": "skills/story-import/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "小说项目导入 / 逆向工程",
+          "group_en": "Novel Project Import and Reverse Engineering",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将已有小说反向解析为可续写的标准写作工程项目。",
+          "description_en": "Reverse-engineers an existing novel into a standard writing project that can be continued by later writing skills.",
+          "what": "An import skill that turns existing manuscript text into a structured, continuation-ready writing project.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-long-analyze",
+          "path": "skills/story-long-analyze/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "长篇网文拆文",
+          "group_en": "Long-form Web Novel Breakdown",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 拆解长篇小说的黄金三章、人设、爽点、节奏与设定关系。",
+          "description_en": "Helps an agent deconstruct a long-form web novel’s opening, characters, payoff design, pacing, and worldbuilding relationships.",
+          "what": "A structured literary-analysis skill for breaking down long-form web novels into actionable writing insights.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-long-scan",
+          "path": "skills/story-long-scan/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "长篇网文扫榜",
+          "group_en": "Long-form Web Novel Market Scan",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 分析网文平台榜单，提炼热门题材、市场趋势与可行创作方向。",
+          "description_en": "Helps an agent analyze web novel ranking data to identify trending genres, market patterns, and viable writing directions.",
+          "what": "A market-scanning skill for turning platform rankings into practical web-novel topic opportunities.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-long-write",
+          "path": "skills/story-long-write/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "长篇网文写作",
+          "group_en": "Long-form Web Novel Writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从选题、世界观、人物与情节线管理到大纲和正文续写，辅助长篇网文创作。",
+          "description_en": "Helps plan and write long-form web novels, from premise and worldbuilding to outlines, character arcs, and chapter drafting.",
+          "what": "用于长篇网文的开书、大纲搭建、世界观/人物管理和日更续写。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-review",
+          "path": "skills/story-review/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "网文结构与一致性审查",
+          "group_en": "Web Novel Review and Consistency Check",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用多视角或单人模式审查小说结构、角色、文字与设定，并给出修改建议。",
+          "description_en": "Reviews fiction for structure, characters, prose, and continuity, then returns actionable revision guidance.",
+          "what": "用于对小说文本进行结构、角色、文字和设定一致性审查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-setup",
+          "path": "skills/story-setup/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "网文写作项目初始化",
+          "group_en": "Web Novel Writing Project Setup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "部署网文写作工具集配置、规则与钩子，初始化可复用写作项目环境。",
+          "description_en": "Deploys the web-novel writing toolkit’s configuration, rules, and hooks to initialize a reusable project workspace.",
+          "what": "用于初始化网文写作项目的基础设施。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-short-analyze",
+          "path": "skills/story-short-analyze/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "短篇网文拆文分析",
+          "group_en": "Short Web Novel Deconstruction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "拆解短篇网文的故事核、结构、情感线与爆点，生成可指导续写的拆文报告。",
+          "description_en": "Analyzes short web novels for story core, structure, emotional arc, and hooks, producing a report that guides future drafts.",
+          "what": "用于拆解短篇网文并生成写作参考报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-short-scan",
+          "path": "skills/story-short-scan/SKILL.md",
+          "subcategory": "7-2",
+          "subcategory_title": "7.2 跨平台社交 / 趋势监测",
+          "category": "data-scraping",
+          "group": "短篇网文趋势监测",
+          "group_en": "Short-form web novel trend monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于平台榜单识别短篇热门题材、情绪方向、风口有效期和风险阈值。",
+          "description_en": "Analyzes platform rankings to identify hot short-story themes, emotional angles, trend windows, and risks.",
+          "what": "把榜单样本转化为可执行的选题趋势与复扫计划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-short-write",
+          "path": "skills/story-short-write/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "短篇网文写作",
+          "group_en": "Short-form web novel writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "辅助短篇网文从情绪目标、核心框架到成稿写作，并控制节奏与格式。",
+          "description_en": "Helps draft short web novels from emotional intent and story structure to polished platform-ready prose.",
+          "what": "把选题或灵感推进成符合平台节奏的短篇正文。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story",
+          "path": "skills/story/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "网文写作工具箱",
+          "group_en": "Web Novel Writing Toolkit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "网文写作主入口，按用户意图路由到扫榜、拆文、写作、去 AI 味和封面等 skill。",
+          "description_en": "Main entry for web-novel writing, routing requests to market scanning, story analysis, drafting, AI-flavor cleanup, and cover generation.",
+          "what": "根据写作意图自动分发到对应网文创作工具。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "browser-act",
+        "repo": "skills",
+        "full_name": "browser-act/skills",
+        "url": "https://github.com/browser-act/skills",
+        "stars": 2542,
+        "pushed_at": "2026-06-12",
+        "default_branch": "main",
+        "github_description": "Browser automation CLI built for AI agents. Break through anti-bot walls, hand off to humans across platforms when stuck. Parallel multi-task execution, independent multi-session operation, isolated multi-account browsing.",
+        "topics": [
+          "ai-agents",
+          "automation",
+          "claude-cli",
+          "claude-code",
+          "claude-code-skills",
+          "claude-skills",
+          "codex",
+          "codex-cli",
+          "codex-skill",
+          "cursor",
+          "data-extraction",
+          "no-code",
+          "openclaw",
+          "openclaw-cli",
+          "openclaw-skill",
+          "openclaw-skills",
+          "web-data-extraction",
+          "web-scraping",
+          "web-scraping-api"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "browser-act-skill-forge",
+          "path": "browser-act-skill-forge/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器",
+          "group_en": "Skill Creator",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "基于网站探索生成可复用 Skill 包，帮助 agent 封装站点抓取与自动化能力。",
+          "description_en": "Generates reusable Skill packages from website exploration, helping agents package site scraping and automation capabilities.",
+          "what": "把网站探索结果转化为可复用 Skill。",
+          "chain": true,
+          "chain_group": "BrowserAct 网站探索到可复用 Skill 构建工作流",
+          "chain_group_en": "BrowserAct website exploration to reusable skill workflow"
+        },
+        {
+          "name": "browser-act",
+          "path": "browser-act/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "浏览器自动化 CLI",
+          "group_en": "Browser Automation CLI",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 调用浏览器 CLI，完成渲染页面访问、表单操作、截图与会话管理。",
+          "description_en": "Lets agents invoke a browser automation CLI to access rendered pages, operate forms, capture screenshots, and manage sessions.",
+          "what": "执行网页浏览、交互与数据提取。",
+          "chain": true,
+          "chain_group": "BrowserAct 网站探索到可复用 Skill 构建工作流",
+          "chain_group_en": "BrowserAct website exploration to reusable skill workflow"
+        },
+        {
+          "name": "amazon-alexa-qa",
+          "path": "solutions/ecommerce/amazon-alexa-qa/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Amazon 电商数据提取",
+          "group_en": "Amazon ecommerce data extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "向 Amazon Alexa/Rufus 提交购物问题并收集结构化回答",
+          "description_en": "Submits Amazon Alexa/Rufus shopping questions and collects structured responses.",
+          "what": "用于在 Amazon 购物助手场景中自动提交问题并采集回答。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "amazon-asin-lookup-api-skill",
+          "path": "solutions/ecommerce/amazon-asin-lookup-api-skill/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Amazon 电商数据提取",
+          "group_en": "Amazon ecommerce data extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 ASIN 查询 Amazon 商品标题、价格、评分等结构化信息",
+          "description_en": "Looks up Amazon product details by ASIN, including title, price, ratings, and availability.",
+          "what": "用于按 ASIN 获取 Amazon 商品元数据与价格库存信息。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "amazon-best-selling-products-finder-api-skill",
+          "path": "solutions/ecommerce/amazon-best-selling-products-finder-api-skill/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Amazon 商品数据抽取",
+          "group_en": "Amazon product data extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 BrowserAct 从 Amazon 抽取畅销商品标题、价格、评分等结构化数据。",
+          "description_en": "Extracts structured Amazon best-seller data—titles, prices, ratings, and more—via BrowserAct.",
+          "what": "从 Amazon 搜索词或市场页面抓取畅销商品的结构化商品数据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "amazon-buy-box-monitor-api-skill",
+          "path": "solutions/ecommerce/amazon-buy-box-monitor-api-skill/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Amazon 商品数据抽取",
+          "group_en": "Amazon product data extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按 ASIN 监控 Amazon Buy Box 价格、卖家评分、履约方式等竞争数据。",
+          "description_en": "Monitors Amazon Buy Box details by ASIN, including seller prices, ratings, fulfillment methods, and availability.",
+          "what": "按 ASIN 提取并监控 Amazon Buy Box 相关的卖家与价格信息。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "amazon-competitor-analyzer",
+          "path": "solutions/ecommerce/amazon-competitor-analyzer/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "竞品分析",
+          "group_en": "Competitive Analysis",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "用 BrowserAct 抓取 Amazon ASIN 数据，对比规格、价格、评论与视觉并提炼竞争机会。",
+          "description_en": "Scrapes Amazon ASIN data with BrowserAct, compares specs, pricing, reviews, and visuals, then surfaces competitive opportunities.",
+          "what": "从多个 ASIN 抓取并横向比较 Amazon 竞品数据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "amazon-listing-competitor-analysis-skill",
+          "path": "solutions/ecommerce/amazon-listing-competitor-analysis-skill/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "竞品分析",
+          "group_en": "Competitive Analysis",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "按 ASIN 解析 Amazon 竞品 listing，提取 SEO、转化信号、买家心理与市场空白。",
+          "description_en": "Analyzes an Amazon competitor listing by ASIN, extracting SEO cues, conversion signals, buyer psychology, and whitespace opportunities.",
+          "what": "对单个 Amazon 竞品 listing 做深度诊断和机会归纳。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "amazon-product-api-skill",
+          "path": "solutions/ecommerce/amazon-product-api-skill/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Amazon 商品数据抽取",
+          "group_en": "Amazon Product Data Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 BrowserAct 模板抽取 Amazon 商品标题、ASIN、价格、评分和规格，用于市场研究。",
+          "description_en": "Extracts structured Amazon product listings—titles, ASINs, prices, ratings, and specs—for market research.",
+          "what": "Amazon product listing extractor for product monitoring and research.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "amazon-product-search-api-skill",
+          "path": "solutions/ecommerce/amazon-product-search-api-skill/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Amazon 商品数据抽取",
+          "group_en": "Amazon Product Data Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按关键词和品牌筛选自动抽取 Amazon 搜索结果，生成结构化商品数据。",
+          "description_en": "Automatically extracts Amazon search results by keyword and brand filters into structured product data.",
+          "what": "Amazon search-result scraper for catalogs, availability, ratings, and competitor monitoring.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "amazon-reviews-api-skill",
+          "path": "solutions/ecommerce/amazon-reviews-api-skill/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Amazon 评论采集",
+          "group_en": "Amazon Review Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Amazon Reviews API 提取商品评论、评分与链接，供反馈分析使用。",
+          "description_en": "Extracts Amazon product reviews, ratings, and links through the Amazon Reviews API for feedback or market analysis.",
+          "what": "Collects Amazon review data for a product by ASIN.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-listing",
+          "path": "solutions/ecommerce/ecommerce-listing/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "电商商品列表采集",
+          "group_en": "E-commerce Product Listing Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从电商搜索/分类页按筛选条件分页提取商品列表，返回结构化字段。",
+          "description_en": "Extracts paginated product listings from e-commerce search or category pages with filters and structured fields.",
+          "what": "Collects product catalog data from e-commerce search or category pages.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-product-detail",
+          "path": "solutions/ecommerce/ecommerce-product-detail/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "电商商品与评论抓取",
+          "group_en": "E-commerce Product & Review Scraping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从电商商品页抽取名称、价格、库存、图片、标识符与变体等完整商品数据。",
+          "description_en": "Extract complete product data from e-commerce pages, including price, availability, images, identifiers, and variants.",
+          "what": "从商品页结构化提取完整商品资料。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-reviews",
+          "path": "solutions/ecommerce/ecommerce-reviews/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "电商商品与评论抓取",
+          "group_en": "E-commerce Product & Review Scraping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从商品或评论页分页抽取客户评论、评分、日期、正文、验证购买与有用票数。",
+          "description_en": "Collect paginated customer reviews from product or review pages, including ratings, dates, verified status, and helpful votes.",
+          "what": "分页抽取商品评论与评分数据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-seller-info",
+          "path": "solutions/ecommerce/ecommerce-seller-info/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "电商平台页面数据采集",
+          "group_en": "E-commerce Page Data Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从电商平台卖家主页抽取名称、评分、评价数、好评率和政策等结构化数据。",
+          "description_en": "Extract structured seller profile data from marketplace storefront pages.",
+          "what": "抽取公开卖家主页的 JSON-LD/DOM 信息，整理为卖家画像。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "goofish-item-detail",
+          "path": "solutions/ecommerce/goofish-item-detail/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "电商平台页面数据采集",
+          "group_en": "E-commerce Page Data Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "加载闲鱼单品页并抽取标题、价格、描述、图片、标签和卖家信息。",
+          "description_en": "Load a Goofish listing page and extract its key listing details.",
+          "what": "采集闲鱼单品详情，包括标题、价格、描述、图片、标签与卖家信息。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "goofish-search-list",
+          "path": "solutions/ecommerce/goofish-search-list/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "电商搜索抓取",
+          "group_en": "E-commerce search scraping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "抓取闲鱼关键词搜索结果中的二手商品卡片，支持分页与筛选。",
+          "description_en": "Scrapes Goofish keyword search results and returns paginated second-hand item cards.",
+          "what": "抓取闲鱼搜索页的二手商品卡片并结构化返回。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "taobao-keyword-search",
+          "path": "solutions/ecommerce/taobao-keyword-search/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "电商搜索抓取",
+          "group_en": "E-commerce search scraping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按关键词抓取淘宝/天猫搜索结果商品卡片，支持分页与筛选。",
+          "description_en": "Searches Taobao/Tmall by keyword and extracts paginated product cards.",
+          "what": "抓取淘宝/天猫搜索页商品卡片并结构化返回。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "taobao-product-detail",
+          "path": "solutions/ecommerce/taobao-product-detail/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "淘宝商品数据采集",
+          "group_en": "Taobao product data extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按 itemId 打开淘宝/Tmall 页面，抽取标题、价格、店铺、SKU 等商品详情。",
+          "description_en": "Extract full Taobao/Tmall product details from an open item page by itemId.",
+          "what": "Fetches full product details from a Taobao or Tmall item page.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "taobao-product-reviews",
+          "path": "solutions/ecommerce/taobao-product-reviews/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "淘宝商品数据采集",
+          "group_en": "Taobao product data extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按 itemId 打开淘宝/Tmall 页面，抽取买家评论、日期、SKU 与图片链接。",
+          "description_en": "Extract paginated buyer reviews, dates, SKUs, and photo links from Taobao/Tmall item pages.",
+          "what": "Fetches customer reviews from a Taobao or Tmall item page.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "taobao-shop-catalog",
+          "path": "solutions/ecommerce/taobao-shop-catalog/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "淘宝/天猫店铺商品目录抓取",
+          "group_en": "Taobao/Tmall Shop Catalog Scraping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 登录淘宝后按店铺 ID 分页抓取商品标题、itemId 和图片链接。",
+          "description_en": "Helps an agent log in to Taobao and paginate a shop catalog to collect item IDs, titles, and image URLs.",
+          "what": "Extracts paginated product listings from a Taobao/Tmall shop by shopId.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "business-contact-social-links-skill",
+          "path": "solutions/lead-generation/business-contact-social-links-skill/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "企业官网与社媒链接提取",
+          "group_en": "Company Website & Social Profile Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 根据公司名或官网 URL 提取官网、LinkedIn、X、Facebook、YouTube 等社交链接。",
+          "description_en": "Helps an agent find a company’s official site and social profiles from a name or website URL.",
+          "what": "Extracts official website and social media links for business contacts.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "github-project-contributor-finder-api-skill",
+          "path": "solutions/lead-generation/github-project-contributor-finder-api-skill/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "BrowserAct 线索数据抽取",
+          "group_en": "BrowserAct lead data extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 BrowserAct API 按关键词检索 GitHub 项目，提取指标、贡献者资料和社交链接。",
+          "description_en": "Uses the BrowserAct API to search GitHub projects by keyword and extract metrics, contributor profiles, and social links.",
+          "what": "Extracts GitHub project and contributor lead data.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "google-maps-api-skill",
+          "path": "solutions/lead-generation/google-maps-api-skill/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "BrowserAct 线索数据抽取",
+          "group_en": "BrowserAct lead data extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 BrowserAct API 从 Google Maps 提取商家名称、分类、联系方式、评分和营业时间。",
+          "description_en": "Uses the BrowserAct API to collect structured Google Maps business data, including names, categories, contacts, ratings, and hours.",
+          "what": "Scrapes Google Maps business lead data.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "google-maps-reviews-api-skill",
+          "path": "solutions/lead-generation/google-maps-reviews-api-skill/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Google Maps 评论数据抽取",
+          "group_en": "Google Maps review extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Google Maps Reviews API 模板抽取评论，用于反馈监测和舆情分析。",
+          "description_en": "Extracts Google Maps review data through a BrowserAct template for feedback monitoring and sentiment analysis.",
+          "what": "抽取 Google Maps 评论数据，支持品牌、门店或竞品评论监测。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "google-maps-search-api-skill",
+          "path": "solutions/lead-generation/google-maps-search-api-skill/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Google Maps 商家数据抽取",
+          "group_en": "Google Maps business data extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Google Maps Search API 模板抽取商家列表，用于线索收集和市场研究。",
+          "description_en": "Extracts Google Maps business listings through a BrowserAct template for lead generation and market research.",
+          "what": "抽取 Google Maps 商家搜索结果，支持线索收集、CRM 导入和区域市场分析。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "google-social-media-finder",
+          "path": "solutions/lead-generation/google-social-media-finder/SKILL.md",
+          "subcategory": "7-2",
+          "subcategory_title": "7.2 跨平台社交 / 趋势监测",
+          "category": "data-scraping",
+          "group": "跨平台社交账号查找",
+          "group_en": "Cross-platform social profile lookup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Google 搜索发现目标人物或品牌的社媒账号与公开资料。",
+          "description_en": "Uses Google search to find public social profiles for a person, brand, or username across platforms.",
+          "what": "根据姓名、品牌或用户名跨平台查找公开社媒档案。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "indeed-job-search",
+          "path": "solutions/lead-generation/indeed-job-search/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "招聘网站职位抓取",
+          "group_en": "Job board scraping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从 Indeed 搜索结果中抽取职位、薪资、公司与投递链接等结构化数据。",
+          "description_en": "Extracts structured job listing data from Indeed, including titles, salaries, companies, descriptions, and apply links.",
+          "what": "按关键词、地点和国家抓取 Indeed 职位数据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "industry-key-contact-radar-api-skill",
+          "path": "solutions/lead-generation/industry-key-contact-radar-api-skill/SKILL.md",
+          "subcategory": "4-6",
+          "subcategory_title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "category": "marketing-growth",
+          "group": "关键联系人雷达",
+          "group_en": "Key Contact Radar",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按行业、角色和平台发现关键联系人，并抽取公开资料与线索。",
+          "description_en": "Discovers key contacts by industry, role, and platform, then extracts public profile details and lead data.",
+          "what": "通过 BrowserAct API 模板从多个社交平台发现并结构化关键联系人信息。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "linkedin-jobs-search",
+          "path": "solutions/lead-generation/linkedin-jobs-search/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "LinkedIn 职位抓取",
+          "group_en": "LinkedIn Job Listings Scraper",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在 LinkedIn 搜索职位并按筛选条件抽取完整岗位详情。",
+          "description_en": "Searches LinkedIn jobs with filters and extracts full listing details for agent workflows.",
+          "what": "在已登录的 LinkedIn 会话中搜索职位并抽取结构化岗位数据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "ljagiello",
+        "repo": "ctf-skills",
+        "full_name": "ljagiello/ctf-skills",
+        "url": "https://github.com/ljagiello/ctf-skills",
+        "stars": 2405,
+        "pushed_at": "2026-05-01",
+        "default_branch": "main",
+        "github_description": "Agent skills for solving CTF challenges - web exploitation, binary pwn, crypto, reverse engineering, forensics, OSINT, and more",
+        "topics": [
+          "agent-skills",
+          "claude-code",
+          "claude-code-skills",
+          "codex",
+          "codex-cli",
+          "ctf",
+          "ctf-challenges",
+          "ctf-tools",
+          "gemini",
+          "gemini-cli",
+          "opencode",
+          "security"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-code"
+      },
+      "skills": [
+        {
+          "name": "ctf-ai-ml",
+          "path": "ctf-ai-ml/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "CTF 解题技能包",
+          "group_en": "CTF Challenge Solver Skills",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 识别并处理 AI/ML 类 CTF 题目，包括对抗样本、模型提取与提示注入。",
+          "description_en": "Helps agents tackle AI/ML CTF challenges, including adversarial examples, model extraction, and prompt injection.",
+          "what": "AI/ML CTF challenge techniques and attack references.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ctf-crypto",
+          "path": "ctf-crypto/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "CTF 解题技能包",
+          "group_en": "CTF Challenge Solver Skills",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理密码学 CTF 题目，覆盖 RSA、AES、ECC、格密码与常见密码攻击。",
+          "description_en": "Helps agents solve cryptography CTF challenges, covering RSA, AES, ECC, lattices, and common cryptographic attacks.",
+          "what": "Cryptography CTF challenge techniques and attack references.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ctf-forensics",
+          "path": "ctf-forensics/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "CTF 取证 / 隐写 / 网络与链上分析",
+          "group_en": "CTF forensics, steganography, network & chain analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 CTF 取证题提供磁盘、内存、PCAP、隐写、注册表和链上交易分析指引。",
+          "description_en": "Guides agents through CTF forensics tasks involving disk, memory, PCAP, steganography, registry, and chain analysis.",
+          "what": "用于 CTF 中的磁盘、内存、PCAP、隐写、链上交易等取证线索分析。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ctf-malware",
+          "path": "ctf-malware/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "恶意软件 / 逆向 / C2 流量 / 内存取证",
+          "group_en": "Malware analysis, reverse engineering, C2 traffic & memory forensics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 CTF 恶意软件题提供混淆脚本、PE/.NET、shellcode、C2 流量和内存取证分析指引。",
+          "description_en": "Guides agents through CTF malware tasks involving obfuscated scripts, PE/.NET binaries, shellcode, C2 traffic, and memory forensics.",
+          "what": "用于 CTF 中的恶意脚本、PE/.NET、shellcode、C2 流量和内存取证分析。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ctf-misc",
+          "path": "ctf-misc/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "CTF 综合杂项挑战",
+          "group_en": "CTF Miscellaneous Challenge Solving",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "作为 CTF 杂项题兜底参考，覆盖编码、pyjail、SDR、QR/音频、沙盒逃逸等跨类技巧。",
+          "description_en": "Fallback reference for miscellaneous CTF challenges, covering encodings, pyjails, SDR, QR/audio puzzles, sandbox escapes, and other edge cases.",
+          "what": "Fallback CTF skill for cross-category or edge-case challenges that do not fit the main domains.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ctf-osint",
+          "path": "ctf-osint/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "CTF OSINT 情报搜集",
+          "group_en": "CTF OSINT Intelligence Gathering",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供公开来源情报检索、社媒、地理定位、DNS、反向图片与历史记录等 CTF OSINT 解题参考。",
+          "description_en": "Reference for CTF OSINT tasks, including public-source research, social media, geolocation, DNS, reverse image search, and historical records.",
+          "what": "OSINT-focused CTF skill for gathering and connecting clues from public sources.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ctf-pwn",
+          "path": "ctf-pwn/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "CTF 二进制漏洞利用 / Pwn",
+          "group_en": "CTF Binary Exploitation / Pwn",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 CTF pwn 题中利用二进制漏洞，选择工具并推进到代码执行或提权。",
+          "description_en": "Helps agents exploit binary vulnerabilities in CTF pwn challenges, choose tooling, and progress toward code execution or privilege escalation.",
+          "what": "二进制漏洞利用技术参考与工具安装指引。",
+          "chain": true,
+          "chain_group": "CTF 逆向到利用流程",
+          "chain_group_en": "CTF Reverse-to-Exploit Workflow"
+        },
+        {
+          "name": "ctf-reverse",
+          "path": "ctf-reverse/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "CTF 逆向工程",
+          "group_en": "CTF Reverse Engineering",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 CTF 逆向题中拆解编译、混淆、打包或虚拟化目标，先理解机制再解题。",
+          "description_en": "Helps agents unpack compiled, obfuscated, packed, or virtualized CTF targets so they can understand the logic before solving.",
+          "what": "CTF 逆向工程方法与工具链参考。",
+          "chain": true,
+          "chain_group": "CTF 逆向到利用流程",
+          "chain_group_en": "CTF Reverse-to-Exploit Workflow"
+        },
+        {
+          "name": "ctf-web",
+          "path": "ctf-web/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "CTF Web 漏洞利用",
+          "group_en": "CTF Web Exploitation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 CTF Web 题提供漏洞面梳理、工具选择和解题执行指引。",
+          "description_en": "Guides agents through CTF web challenges, from attack-surface mapping to tool selection and execution.",
+          "what": "用于 CTF Web 漏洞类题目的路由和执行。",
+          "chain": true,
+          "chain_group": "CTF 解题到提交报告",
+          "chain_group_en": "CTF Solve-to-Writeup Workflow"
+        },
+        {
+          "name": "ctf-writeup",
+          "path": "ctf-writeup/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "CTF 解题报告生成",
+          "group_en": "CTF Writeup Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把已解 CTF 题目整理成标准提交式解题报告，便于队友或主办方复核。",
+          "description_en": "Turns a solved CTF challenge into a concise submission-style writeup for teammate or organizer review.",
+          "what": "用于赛后快速生成标准化 CTF 解题报告。",
+          "chain": true,
+          "chain_group": "CTF 解题到提交报告",
+          "chain_group_en": "CTF Solve-to-Writeup Workflow"
+        },
+        {
+          "name": "solve-challenge",
+          "path": "solve-challenge/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "CTF 解题调度 / 安全挑战入口",
+          "group_en": "CTF Challenge Dispatcher and Security Challenge Entrypoint",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "作为 CTF 入口，先做初步分流、识别主类型，并路由到专门技能开始解题。",
+          "description_en": "Acts as the CTF entrypoint, triaging the challenge and routing to the right specialist skill.",
+          "what": "Dispatcher and first-pass triage for CTF challenge solving.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "empjs",
+        "repo": "emp",
+        "full_name": "empjs/emp",
+        "url": "https://github.com/empjs/emp",
+        "stars": 2397,
+        "pushed_at": "2026-06-12",
+        "default_branch": "main",
+        "github_description": "EMP Micro FE Base on Rspack & module federation",
+        "topics": [
+          "emp",
+          "federation",
+          "module-federation"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "emp-best-practices",
+          "path": ".trae/skills/emp-best-practices/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "EMP 微前端工程",
+          "group_en": "EMP Micro Frontend Engineering",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 配置 EMP CLI/Rspack 模块联邦，处理 Host/Remote、多框架互调、插件和性能优化。",
+          "description_en": "Helps the agent configure EMP CLI and Rspack module federation, handle host/remote apps, framework interop, plugins, and performance tuning.",
+          "what": "EMP CLI、Rspack 与模块联邦开发指南。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "empjs",
+          "path": "skills/empjs/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "EMP 微前端工程",
+          "group_en": "EMP Micro Frontend Engineering",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 创建 EMP React 19 项目，补齐 emp.config.ts、脚本、Tailwind、状态管理和性能优化配置。",
+          "description_en": "Helps the agent scaffold EMP React 19 projects and complete emp.config.ts, scripts, Tailwind, state management, and performance settings.",
+          "what": "EMP React 脚手架、配置与性能优化技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "jeremylongshore",
+        "repo": "claude-code-plugins-plus-skills",
+        "full_name": "jeremylongshore/claude-code-plugins-plus-skills",
+        "url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills",
+        "stars": 2385,
+        "pushed_at": "2026-06-16",
+        "default_branch": "main",
+        "github_description": "425 plugins, 2,810 skills, 200 agents for Claude Code. Open-source marketplace at tonsofskills.com with the ccpi CLI package manager.",
+        "topics": [
+          "agent-skills",
+          "ai",
+          "ai-agents",
+          "anthropic",
+          "automation",
+          "claude-code",
+          "claude-code-plugins",
+          "developer-tools",
+          "devops",
+          "llm",
+          "marketplace",
+          "mcp",
+          "plugin-marketplace",
+          "plugin-system",
+          "saas",
+          "skills"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "agency-os",
+          "path": "plugins/ai-agency/agency-os/skills/agency-os/SKILL.md",
+          "subcategory": "2-5",
+          "subcategory_title": "2.5 Notion 协作矩阵",
+          "category": "docs-knowledge",
+          "group": "Notion 任务调度板",
+          "group_en": "Notion Task Dispatch Board",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 Notion MCP 管理任务源、队列审批和并行 agent 分发。",
+          "description_en": "Manages a Notion-backed task source of truth, approval queue, and parallel agent dispatch.",
+          "what": "把 Notion 变成 AI agency 的任务调度与执行协调中心。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "amplify",
+          "path": "plugins/ai-agency/hyperflow/skills/amplify/SKILL.md",
+          "subcategory": "12-6",
+          "subcategory_title": "12.6 提示工程 / Prompt 生成",
+          "category": "agent-architecture",
+          "group": "Prompt 放大与质量评分",
+          "group_en": "Prompt Amplification and Quality Scoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把模糊低质提示改写成领域适配、可执行的高质量提示并评分。",
+          "description_en": "Rewrites vague prompts into domain-aware, executable prompts and scores them for quality.",
+          "what": "先把粗糙提示打磨成更强版本，再交给后续 agent 或技能执行。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "audit",
+          "path": "plugins/ai-agency/hyperflow/skills/audit/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "多级代码审计 / PR 质量门禁",
+          "group_en": "Multi-level code audit / PR quality gates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "对近期改动做 L1-L5 代码审查，覆盖质量、规格、安全与性能。",
+          "description_en": "Runs L1-L5 code reviews on recent changes, covering quality, specs, security, and performance.",
+          "what": "触发 /hyperflow:audit 对 diff 或 PR 进行多层审查，并可转入修复范围。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "background",
+          "path": "plugins/ai-agency/hyperflow/skills/background/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "后台 agent 生命周期管理",
+          "group_en": "Background agent lifecycle management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "查看、取消、清理由 Hyperflow 任务启动的后台 agent 与输出缓冲。",
+          "description_en": "Inspect, cancel, and prune background agents launched by Hyperflow tasks, including their output buffers.",
+          "what": "通过 /hyperflow:background 管理后台 agent 的注册、结果、取消与清理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "bridge",
+          "path": "plugins/ai-agency/hyperflow/skills/bridge/SKILL.md",
+          "subcategory": "13-5",
+          "subcategory_title": "13.5 行为约束模板",
+          "category": "meta-skill-mgmt",
+          "group": "CLAUDE.md 模板",
+          "group_en": "CLAUDE.md Templates",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "将 Hyperflow 规则嵌入 CLAUDE.md，让非 CLI 环境继承行为约束。",
+          "description_en": "Embeds Hyperflow rules into CLAUDE.md so non-CLI surfaces follow the same behavior contract.",
+          "what": "将 Hyperflow 行为准则便携化到 CLAUDE.md。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cache",
+          "path": "plugins/ai-agency/hyperflow/skills/cache/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "Hyperflow 项目记忆 CRUD",
+          "group_en": "Hyperflow Project Memory CRUD",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "管理 .hyperflow/memory/ 的增删改查、搜索、归档和清理。",
+          "description_en": "Provides CRUD, search, archiving, and cleanup for Hyperflow’s project memory.",
+          "what": "对 Hyperflow 记忆库进行增删改查、搜索、归档和清理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deploy",
+          "path": "plugins/ai-agency/hyperflow/skills/deploy/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "通用发布流程自动化",
+          "group_en": "General release workflow automation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "执行预推送门禁、提交、发布并推送，适合在准备上线时运行完整质量检查。",
+          "description_en": "Runs pre-push quality gates, commits, releases, and pushes when the work is ready to ship.",
+          "what": "A Claude Code release skill that enforces lint, typecheck, build, tests, and security checks before shipping.",
+          "chain": true,
+          "chain_group": "Hyperflow 执行与发布流水线",
+          "chain_group_en": "Hyperflow execution-to-release pipeline"
+        },
+        {
+          "name": "dispatch",
+          "path": "plugins/ai-agency/hyperflow/skills/dispatch/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "Hyperflow 多 worker 执行编排",
+          "group_en": "Hyperflow multi-worker execution orchestration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把任务文件分发给并行 worker 执行、分层评审、汇总提交，适合批量实现计划。",
+          "description_en": "Dispatches task-file batches to parallel workers, applies reviewer gates, and commits subtask results.",
+          "what": "A Claude Code orchestration skill that runs planned task batches through parallel workers and quality review.",
+          "chain": true,
+          "chain_group": "Hyperflow 执行与发布流水线",
+          "chain_group_en": "Hyperflow execution-to-release pipeline"
+        },
+        {
+          "name": "flush",
+          "path": "plugins/ai-agency/hyperflow/skills/flush/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "延期提交恢复",
+          "group_en": "Deferred commit recovery",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用于链中断后手动清理 Hyperflow 的延期提交队列，把 staging 分支快进合并回用户分支并清空队列。",
+          "description_en": "Recovery utility for interrupted Hyperflow chains: flush queued commits from staging back to the user branch and clear the queue.",
+          "what": "在 Hyperflow 链中断或上下文丢失后，手动完成延期提交的恢复合并。",
+          "chain": true,
+          "chain_group": "Hyperflow 工程工作流",
+          "chain_group_en": "Hyperflow engineering workflow"
+        },
+        {
+          "name": "hyperflow",
+          "path": "plugins/ai-agency/hyperflow/skills/hyperflow/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "Hyperflow 工程编排",
+          "group_en": "Hyperflow engineering orchestration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为单 agent 环境套用 Hyperflow 工程编排，覆盖规划、范围拆解、实现、自审、集成评审与交付。",
+          "description_en": "Applies Hyperflow's engineering workflow in single-agent environments, from planning and scoping to implementation, self-review, and integration review.",
+          "what": "让 Codex、Antigravity 等单 agent 表面按 Hyperflow 流程处理非平凡工程任务。",
+          "chain": true,
+          "chain_group": "Hyperflow 工程工作流",
+          "chain_group_en": "Hyperflow engineering workflow"
+        },
+        {
+          "name": "scaffold",
+          "path": "plugins/ai-agency/hyperflow/skills/scaffold/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "Agent 知识库初始化（AGENTS.md）",
+          "group_en": "Agent Knowledge Base Initialization (AGENTS.md)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "用于新项目一键搭建 Hyperflow 缓存、记忆骨架，并安装 AGENTS/CLAUDE 检测垫片。",
+          "description_en": "Sets up a new Hyperflow project by building its cache, seeding memory structure, and installing AGENTS/CLAUDE shims.",
+          "what": "Initializes Hyperflow project context and optional AI-tool shims.",
+          "chain": true,
+          "chain_group": "Hyperflow 项目启动到任务派发",
+          "chain_group_en": "Hyperflow project kickoff to task dispatch workflow"
+        },
+        {
+          "name": "scope",
+          "path": "plugins/ai-agency/hyperflow/skills/scope/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "任务拆解与派发准备",
+          "group_en": "Task Decomposition for Worker Dispatch",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把明确需求拆成批量 worker 子任务，生成任务文件并准备派发。",
+          "description_en": "Breaks a clear request into batched worker tasks, writes the task file, and prepares it for dispatch.",
+          "what": "Creates a Hyperflow task file by decomposing a request into worker batches.",
+          "chain": true,
+          "chain_group": "Hyperflow 项目启动到任务派发",
+          "chain_group_en": "Hyperflow project kickoff to task dispatch workflow"
+        },
+        {
+          "name": "spec",
+          "path": "plugins/ai-agency/hyperflow/skills/spec/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "Spec → 工程",
+          "group_en": "Spec → engineering handoff",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮 agent 在动手前澄清设计问题、比较方案并生成可审批的规格。",
+          "description_en": "Helps the agent clarify ambiguous design requests, compare approaches, and produce an approvable spec before implementation.",
+          "what": "Structured design/spec phase for ambiguous product or system ideas.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "status",
+          "path": "plugins/ai-agency/hyperflow/skills/status/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Hyperflow 项目状态面板",
+          "group_en": "Hyperflow status dashboard",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 Hyperflow 项目状态、进度、记忆和运行概况的只读快照。",
+          "description_en": "Gives the agent a read-only snapshot of Hyperflow project metadata, task progress, memory, and live work status.",
+          "what": "Read-only dashboard for active Hyperflow tasks and project metadata.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sticky",
+          "path": "plugins/ai-agency/hyperflow/skills/sticky/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "Hyperflow 路由控制",
+          "group_en": "Hyperflow Routing Controls",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "设置项目级自动路由模式，控制 Hyperflow 任务消息何时触发链式处理。",
+          "description_en": "Sets project-level auto-routing modes so Hyperflow knows when task messages should trigger chains.",
+          "what": "配置 Hyperflow 的自动路由模式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "trace",
+          "path": "plugins/ai-agency/hyperflow/skills/trace/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "系统化根因调试",
+          "group_en": "Systematic Root-Cause Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在调试、测试失败或构建错误时先复现并定位根因，再提出修复。",
+          "description_en": "Runs systematic root-cause debugging before patching failing tests, builds, or runtime issues.",
+          "what": "先复现问题并定位根因，再给出修复。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "workflow",
+          "path": "plugins/ai-agency/hyperflow/skills/workflow/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "跨宿主大任务工作流",
+          "group_en": "Cross-host big-task workflows",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为迁移、审计、验证等大任务选择动态工作流，并适配不同 agent 宿主。",
+          "description_en": "Routes complex migrations, audits, and verification work through dynamic workflows across supported agent hosts.",
+          "what": "把超大任务转入可验证的工作流轨道。",
+          "chain": true,
+          "chain_group": "Hyperflow 提示词增强到执行流水线",
+          "chain_group_en": "Hyperflow prompt-to-execution pipeline"
+        },
+        {
+          "name": "hyperflow-amplify",
+          "path": "plugins/ai-agency/hyperflow/templates/antigravity/skills/hyperflow-amplify/SKILL.md",
+          "subcategory": "12-6",
+          "subcategory_title": "12.6 提示工程 / Prompt 生成",
+          "category": "agent-architecture",
+          "group": "Prompt 增强器",
+          "group_en": "Prompt amplifier",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将粗略提示词改写为清晰任务说明，补充领域标准、约束与验收标准。",
+          "description_en": "Turns rough prompts into clear task briefs with domain standards, constraints, and acceptance criteria.",
+          "what": "在运行前把含糊需求加工成可执行提示词。",
+          "chain": true,
+          "chain_group": "Hyperflow 提示词增强到执行流水线",
+          "chain_group_en": "Hyperflow prompt-to-execution pipeline"
+        },
+        {
+          "name": "hyperflow-audit",
+          "path": "plugins/ai-agency/hyperflow/templates/antigravity/skills/hyperflow-audit/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Hyperflow 代码审查",
+          "group_en": "Hyperflow Code Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "对代码变更进行分级审查，输出问题清单并触发修复门禁。",
+          "description_en": "Runs tiered code reviews on diffs, commits, branches, or PRs and writes findings with a fix gate.",
+          "what": "执行 Hyperflow 多级代码审查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hyperflow-cache",
+          "path": "plugins/ai-agency/hyperflow/templates/antigravity/skills/hyperflow-cache/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "Hyperflow 项目记忆",
+          "group_en": "Hyperflow Project Memory",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "管理项目记忆文件，支持查看、搜索、新增、编辑和清理。",
+          "description_en": "Maintains project memory entries with list, search, add, edit, prune, and clear operations.",
+          "what": "维护 Hyperflow 项目记忆。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hyperflow-deploy",
+          "path": "plugins/ai-agency/hyperflow/templates/antigravity/skills/hyperflow-deploy/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Hyperflow 发布闸门",
+          "group_en": "Hyperflow release gate",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "发布前运行质量门并请求确认，阻止绕过验证或强推主分支。",
+          "description_en": "Runs release gates and asks for confirmation before pushing, preventing unsafe main-branch pushes.",
+          "what": "Hyperflow 工作流中的发布阶段，负责发布前闸口与推送确认。",
+          "chain": true,
+          "chain_group": "Hyperflow 执行到发布流水线",
+          "chain_group_en": "Hyperflow execution-to-release workflow"
+        },
+        {
+          "name": "hyperflow-dispatch",
+          "path": "plugins/ai-agency/hyperflow/templates/antigravity/skills/hyperflow-dispatch/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "Hyperflow 任务执行",
+          "group_en": "Hyperflow task execution",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按任务批次实现变更、自检并运行质量门，再按子任务提交。",
+          "description_en": "Executes planned task batches with self-review, quality gates, and one commit per sub-task.",
+          "what": "Hyperflow 工作流中的执行阶段，负责实现、自检、质量门和提交。",
+          "chain": true,
+          "chain_group": "Hyperflow 执行到发布流水线",
+          "chain_group_en": "Hyperflow execution-to-release workflow"
+        },
+        {
+          "name": "hyperflow-scaffold",
+          "path": "plugins/ai-agency/hyperflow/templates/antigravity/skills/hyperflow-scaffold/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "Hyperflow 项目上下文初始化",
+          "group_en": "Hyperflow project context initialization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "创建 .hyperflow 缓存、记忆文件和 slash commands，为 agent 建立项目上下文。",
+          "description_en": "Sets up Hyperflow’s project cache, memory files, and slash commands to give the agent project context.",
+          "what": "Scaffolds the Hyperflow project context surfaces for an agent.",
+          "chain": true,
+          "chain_group": "Hyperflow 项目启动与任务拆解工作流",
+          "chain_group_en": "Hyperflow project setup and task-scoping workflow"
+        },
+        {
+          "name": "hyperflow-scope",
+          "path": "plugins/ai-agency/hyperflow/templates/antigravity/skills/hyperflow-scope/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "Hyperflow 任务拆解计划",
+          "group_en": "Hyperflow task decomposition planning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把清晰任务拆解成批次图和任务文件，并交接给后续执行技能。",
+          "description_en": "Breaks clear tasks into a batch graph and task file, then hands off to the execution skill.",
+          "what": "Creates a scoped batch plan and hands it off for execution.",
+          "chain": true,
+          "chain_group": "Hyperflow 项目启动与任务拆解工作流",
+          "chain_group_en": "Hyperflow project setup and task-scoping workflow"
+        },
+        {
+          "name": "hyperflow-spec",
+          "path": "plugins/ai-agency/hyperflow/templates/antigravity/skills/hyperflow-spec/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "Hyperflow 设计工作流",
+          "group_en": "Hyperflow design workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "设计阶段梳理方案、写入规范并交接后续范围制定。",
+          "description_en": "Designs and approves implementation specs, then hands off to scoping.",
+          "what": "把模糊需求转化为可审批的 .hyperflow/specs 设计方案。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hyperflow-status",
+          "path": "plugins/ai-agency/hyperflow/templates/antigravity/skills/hyperflow-status/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Hyperflow 项目状态",
+          "group_en": "Hyperflow project status",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "只读汇总任务进度、规范、审计与记忆状态。",
+          "description_en": "Read-only summary of task progress, specs, audits, and memory state.",
+          "what": "只读查看 Hyperflow 当前项目状态与进度。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hyperflow-sticky",
+          "path": "plugins/ai-agency/hyperflow/templates/antigravity/skills/hyperflow-sticky/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "Hyperflow 自动路由控制",
+          "group_en": "Hyperflow auto-routing control",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "设置任务消息自动路由强度，决定何时触发 Hyperflow 工作流。",
+          "description_en": "Sets how aggressively task-shaped messages are auto-routed into Hyperflow workflows.",
+          "what": "Configuration mode for Hyperflow auto-routing behavior.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hyperflow-trace",
+          "path": "plugins/ai-agency/hyperflow/templates/antigravity/skills/hyperflow-trace/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Hyperflow 调试根因分析",
+          "group_en": "Hyperflow root-cause debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过复现、5 Whys 和假设验证定位根因，再最小修复并回归验证。",
+          "description_en": "Reproduces failures, validates hypotheses, fixes the root cause, and verifies the patch.",
+          "what": "Structured debugging routine for failing tests or runtime errors.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "shipwright-pipeline",
+          "path": "plugins/ai-agency/shipwright/skills/shipwright-pipeline/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "自然语言应用生成器",
+          "group_en": "Natural-Language App Builders",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将自然语言需求转化为可构建、测试和部署的全栈应用。",
+          "description_en": "Turns plain-language app ideas into buildable, tested, deployment-ready full-stack applications.",
+          "what": "Autonomous app-building skill for scaffolding and generating full-stack projects.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "buzz-devrel",
+          "path": "plugins/ai-agency/tonone/bundle/marketing-team/skills/buzz-devrel/SKILL.md",
+          "subcategory": "3-5",
+          "subcategory_title": "3.5 GTM / 进入策略 / 增长 loop",
+          "category": "product-management",
+          "group": "DevRel 社区增长设计",
+          "group_en": "DevRel Community Growth Playbooks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为开发者工具或开源项目设计 DevRel 项目、社区、大使和指标。",
+          "description_en": "Designs DevRel programs, community systems, ambassador tiers, events, and success metrics.",
+          "what": "Playbook builder for developer relations and community-led growth programs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "Norman-bury",
+        "repo": "research-writing-skill",
+        "full_name": "Norman-bury/research-writing-skill",
+        "url": "https://github.com/Norman-bury/research-writing-skill",
+        "stars": 2381,
+        "pushed_at": "2026-06-10",
+        "default_branch": "main",
+        "github_description": "科研写作助手 (Research Writing Assistant)",
+        "topics": [],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术 / 科研论文写作",
+          "group_en": "Academic research writing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "面向论文/学位论文，统筹头脑风暴、章节写作、综述与 LaTeX 输出。",
+          "description_en": "Coordinates full-cycle academic writing, from brainstorming and chapter drafting to literature review and LaTeX output.",
+          "what": "作为科研写作入口，按论文类型路由到头脑风暴、章节写作、文献综述和 LaTeX 输出。",
+          "chain": true,
+          "chain_group": "科研论文写作工作流",
+          "chain_group_en": "Research paper writing workflow"
+        },
+        {
+          "name": "brainstorming-research",
+          "path": "skills/brainstorming-research/SKILL.md",
+          "subcategory": "11-6",
+          "subcategory_title": "11.6 研究选题 / 假设 / 构思",
+          "category": "academic-research",
+          "group": "研究选题 / 假设 / 构思",
+          "group_en": "Research topic, hypothesis, and ideation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "通过问答明确论文类型、学科、主题、方法和章节结构，形成写作计划。",
+          "description_en": "Uses guided dialogue to clarify paper type, discipline, topic, method, and chapter structure into a writing plan.",
+          "what": "在正式写作前通过问答确认论文类型、主题、方法和结构，降低返工。",
+          "chain": true,
+          "chain_group": "科研论文写作工作流",
+          "chain_group_en": "Research paper writing workflow"
+        },
+        {
+          "name": "environment-setup",
+          "path": "skills/environment-setup/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "科研 Python 环境配置",
+          "group_en": "Research Python Environment Setup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为科研绘图安装 Miniconda、创建 conda 环境、装依赖并自检。",
+          "description_en": "Installs Miniconda, creates a research conda environment, adds plotting dependencies, and verifies the setup.",
+          "what": "Checks the operating system, installs or repairs Miniconda, initializes Conda, creates the research environment, installs plotting dependencies, and updates progress.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "evidence-driven-writing",
+          "path": "skills/evidence-driven-writing/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "证据驱动论文写作",
+          "group_en": "Evidence-Driven Academic Writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把文献池转成证据地图、段落蓝图，再生成引言或综述。",
+          "description_en": "Builds an evidence map and paragraph blueprint before drafting or revising citation-backed academic sections.",
+          "what": "Turns a literature pool into citation-backed claims, evidence maps, paragraph blueprints, and manuscript prose for introductions and related work.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "experiment-results-planning",
+          "path": "skills/experiment-results-planning/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "实验设计 / 科研编码 / 复现",
+          "group_en": "Experiment Design / Research Coding / Reproducibility",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为论文设计实验方案、评估协议与结果表图清单，确保贡献可追溯。",
+          "description_en": "Builds experiment protocols, evaluation plans, and result table/figure checklists for papers.",
+          "what": "在正式撰写结果前锁定实验协议与贡献—结果对应关系。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "figures-diagram",
+          "path": "skills/figures-diagram/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "学术图表生图提示词",
+          "group_en": "Academic Diagram Image Prompts",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为论文流程图、架构图和概念图生成学术风格生图提示词。",
+          "description_en": "Creates polished prompts for generating academic flowcharts, architecture diagrams, and conceptual figures.",
+          "what": "把图表需求整理成可用于生图 AI 的学术图表提示词。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "figures-python",
+          "path": "skills/figures-python/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "科研论文图表生成",
+          "group_en": "Research paper figure generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 Python 生成论文投稿级图表，管理数据清单、输出 PNG/SVG 并规范保存。",
+          "description_en": "Creates publication-ready Python figures, manages data manifests, exports PNG/SVG, and saves them consistently.",
+          "what": "生成科研论文级别的数据图表，并规范记录数据与输出格式。",
+          "chain": true,
+          "chain_group": "论文图表到 LaTeX 产出流程",
+          "chain_group_en": "Paper figure-to-LaTeX production workflow"
+        },
+        {
+          "name": "latex-output",
+          "path": "skills/latex-output/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "LaTeX / arXiv 论文排版 / 论文转网页 / 产出",
+          "group_en": "LaTeX / arXiv Paper Typesetting / Web Conversion / Output",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将论文内容按用户模板生成 LaTeX 章节、主文件和参考文献，并检查可编译性。",
+          "description_en": "Turns paper content into LaTeX chapters, a main file, and references using the user’s template, with compile checks.",
+          "what": "按学校或期刊模板把论文内容输出为可编译的 LaTeX 项目结构。",
+          "chain": true,
+          "chain_group": "论文图表到 LaTeX 产出流程",
+          "chain_group_en": "Paper figure-to-LaTeX production workflow"
+        },
+        {
+          "name": "literature-review",
+          "path": "skills/literature-review/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "深度文献检索 / 综述 / 科研论文阅读与可视化卡片",
+          "group_en": "Deep literature search and review synthesis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导文献检索、核验来源并综合撰写综述段落。",
+          "description_en": "Guides agents in searching, verifying sources, and synthesizing literature review sections.",
+          "what": "用于文献综述章节，帮助搜索、验证并综合可追溯引用。",
+          "chain": true,
+          "chain_group": "论文写作编排 → 文献综述",
+          "chain_group_en": "Research writing orchestration workflow",
+          "dup_catalog": "franklee16/lingzhi227/luwill/K-Dense-writer · 组「深度文献检索 / 综述」"
+        },
+        {
+          "name": "paper-orchestration",
+          "path": "skills/paper-orchestration/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术 / 科研论文写作",
+          "group_en": "Academic / research paper writing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "协调论文写作流程，拆分任务、设置检查门并审计能力使用。",
+          "description_en": "Orchestrates research-paper writing by staging tasks, enforcing review gates, and auditing capability use.",
+          "what": "用于中大型论文任务，先建立计划、提纲、任务包和评审门槛。",
+          "chain": true,
+          "chain_group": "论文写作编排 → 文献综述",
+          "chain_group_en": "Research writing orchestration workflow"
+        },
+        {
+          "name": "peer-review",
+          "path": "skills/peer-review/SKILL.md",
+          "subcategory": "11-5",
+          "subcategory_title": "11.5 同行评审 / 论文质量",
+          "category": "academic-research",
+          "group": "论文同行评审 / 质量审查",
+          "group_en": "Paper Peer Review and Quality Review",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 在投稿前按清单审查论文质量、方法统计严谨性，并生成审稿报告。",
+          "description_en": "Helps agents systematically review paper quality, methodological and statistical rigor, and draft peer-review reports before submission.",
+          "what": "A checklist-based peer review and self-review workflow for manuscripts.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "franklee16/K-Dense-writer/andrehuang/lingzhi227/luwill · 组「论文同行评审 / 质量审查」"
+        },
+        {
+          "name": "prompts-collection",
+          "path": "skills/prompts-collection/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "学术论文提示词模板",
+          "group_en": "Academic Writing Prompt Templates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供学术论文翻译、润色和去 AI 味的即用提示词，帮助 agent 处理论文段落。",
+          "description_en": "Ready-to-use prompt templates for translating, polishing, and humanizing academic text segments.",
+          "what": "Reusable prompt templates for academic translation, polishing, and humanizing text.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "statistical-analysis",
+          "path": "skills/statistical-analysis/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "论文统计分析",
+          "group_en": "Research Paper Statistical Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据研究数据特征选择统计检验，生成 Python 执行代码，并按 APA 格式报告结果。",
+          "description_en": "Helps the agent choose the right statistical test from the data structure, generate Python analysis code, and report results in APA style.",
+          "what": "为论文统计分析提供检验选择、Python 代码和 APA 报告规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "using-research-writing",
+          "path": "skills/using-research-writing/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "科研写作任务编排",
+          "group_en": "Research Writing Workflow Orchestration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为科研写作任务建立调用流程，判断任务规模并路由到头脑风暴、论文统筹等技能。",
+          "description_en": "Sets up the research-writing workflow, checks task scope, and routes the agent to the right specialized writing skills.",
+          "what": "科研写作入口编排器，负责判断任务范围并分发到具体技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "verification",
+          "path": "skills/verification/SKILL.md",
+          "subcategory": "11-5",
+          "subcategory_title": "11.5 同行评审 / 论文质量",
+          "category": "academic-research",
+          "group": "论文同行评审 / 质量审查",
+          "group_en": "Paper peer review / quality review",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为论文完成、引用和格式等声明设置验证门控，要求先跑命令再确认。",
+          "description_en": "Sets verification gates for claims of completion, citation validity, formatting, and evidence before reporting success.",
+          "what": "在声称完成或引用已验证前，运行并解读验证命令。",
+          "chain": true,
+          "chain_group": "研究论文写作验证工作流",
+          "chain_group_en": "Research writing and verification workflow"
+        },
+        {
+          "name": "writing-chapters",
+          "path": "skills/writing-chapters/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "论文章节写作",
+          "group_en": "Paper chapter writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在大纲和证据图就绪后，按章节撰写论文并执行污染与质量检查。",
+          "description_en": "Writes paper chapters after the outline and evidence map are ready, with contamination and quality checks.",
+          "what": "按章节生成论文正文，并推动用户确认和进度更新。",
+          "chain": true,
+          "chain_group": "研究论文写作验证工作流",
+          "chain_group_en": "Research writing and verification workflow"
+        },
+        {
+          "name": "writing-core",
+          "path": "skills/writing-core/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术 / 科研论文写作",
+          "group_en": "Academic Research Writing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 润色中文学术论文，提升自然表达并检查 Markdown 质量。",
+          "description_en": "Helps the agent polish Chinese academic papers, improve naturalness, and check Markdown quality.",
+          "what": "用于论文正文润色、去AI化改写和格式质量检查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "writing-humanities",
+          "path": "skills/writing-humanities/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "人文社科论文写作",
+          "group_en": "Humanities & Social Science Writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供人文社科论文的结构、论证和引用写作指导。",
+          "description_en": "Guides the agent in structuring, arguing, and citing humanities and social science papers.",
+          "what": "用于人文社科论文写作的论证组织、文体表达与引用规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "writing-law",
+          "path": "skills/writing-law/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "法学论文写作规范",
+          "group_en": "Legal Academic Writing Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为法学论文提供论证结构、引用规范与写作风格指导。",
+          "description_en": "Guides legal academic papers with argument structure, citation rules, and formal writing style.",
+          "what": "法学论文写作专项技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "writing-medical",
+          "path": "skills/writing-medical/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "医学与临床研究论文写作规范",
+          "group_en": "Medical and Clinical Research Writing Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助医学论文遵循 IMRaD、伦理声明和报告规范写作。",
+          "description_en": "Helps medical papers follow IMRaD structure, ethics statements, and reporting guidelines.",
+          "what": "医学与临床研究论文写作专项技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "addyosmani",
+        "repo": "web-quality-skills",
+        "full_name": "addyosmani/web-quality-skills",
+        "url": "https://github.com/addyosmani/web-quality-skills",
+        "stars": 2354,
+        "pushed_at": "2026-06-14",
+        "default_branch": "main",
+        "github_description": "Agent Skills for optimizing web quality based on Lighthouse and Core Web Vitals.",
+        "topics": [
+          "accessibility",
+          "agent-skills",
+          "claude-skills",
+          "core-web-vitals",
+          "lighthouse",
+          "skills",
+          "testing",
+          "web-performance"
+        ],
+        "language": "Shell",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "accessibility",
+          "path": "skills/accessibility/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "无障碍测试（屏幕阅读器 + WCAG）",
+          "group_en": "Accessibility Testing (Screen Readers + WCAG)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "依据 WCAG 2.2 与 Lighthouse 无障碍审计，检查替代文本、键盘导航等并提出修复建议。",
+          "description_en": "Audits WCAG 2.2 accessibility issues with Lighthouse guidance and suggests fixes for text alternatives, keyboard navigation, and assistive technology support.",
+          "what": "用于执行无障碍审计与修复。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "best-practices",
+          "path": "skills/best-practices/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Web 应用质量审计（Lighthouse）",
+          "group_en": "Web App Quality Audits (Lighthouse)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "依据 Lighthouse Best Practices 审计现代 Web 实践，覆盖 HTTPS、CSP、兼容性与代码质量检查。",
+          "description_en": "Applies Lighthouse Best Practices to review HTTPS, CSP, compatibility, and code quality in modern web apps.",
+          "what": "用于执行 Lighthouse Best Practices 审计。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "core-web-vitals",
+          "path": "skills/core-web-vitals/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Lighthouse 网页质量优化",
+          "group_en": "Lighthouse Web Quality Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 审计并优化页面加载、交互与视觉稳定性。",
+          "description_en": "Helps the agent audit and improve page loading, interactivity, and visual stability.",
+          "what": "Optimizes Core Web Vitals metrics for better page experience.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "performance",
+          "path": "skills/performance/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Lighthouse 网页质量优化",
+          "group_en": "Lighthouse Web Quality Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 基于 Lighthouse 找出瓶颈并给出性能优化方案。",
+          "description_en": "Uses Lighthouse to identify bottlenecks and recommend practical performance improvements.",
+          "what": "Optimizes general web performance and loading speed.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "seo",
+          "path": "skills/seo/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "Lighthouse SEO 审计与优化",
+          "group_en": "Lighthouse-Based SEO Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于 Lighthouse 与 Google 指南优化技术 SEO、页面 SEO 和结构化数据。",
+          "description_en": "Optimizes technical and on-page SEO, including structured data, using Lighthouse and Google guidance.",
+          "what": "帮助 agent 改进网站搜索可见性、排名和页面 SEO 基础。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "web-quality-audit",
+          "path": "skills/web-quality-audit/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Lighthouse Web 质量审计",
+          "group_en": "Lighthouse Web Quality Audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 Lighthouse 审计性能、无障碍、SEO 和最佳实践并给出修复建议。",
+          "description_en": "Audits performance, accessibility, SEO, and best practices with Lighthouse and prioritizes fixes.",
+          "what": "用于全面审查网站质量并生成可执行修复清单。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "SnailSploit",
+        "repo": "Claude-Red",
+        "full_name": "SnailSploit/Claude-Red",
+        "url": "https://github.com/SnailSploit/Claude-Red",
+        "stars": 2323,
+        "pushed_at": "2026-05-08",
+        "default_branch": "main",
+        "github_description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
+        "topics": [
+          "claude-ai",
+          "claude-pt",
+          "claude-skills",
+          "redteam",
+          "redteam-tools",
+          "skills"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "offensive-active-directory",
+          "path": "Skills/active-directory/offensive-active-directory/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "Active Directory 红队攻击路径",
+          "group_en": "Active Directory Red Team Attack Paths",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按授权红队流程评估 AD 环境，梳理攻击路径、横向移动和持久化风险。",
+          "description_en": "Guides authorized red-team assessments of AD environments, including attack-path mapping, lateral movement, and persistence risks.",
+          "what": "用于授权场景下的 Active Directory 红队评估方法论。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-ai-security",
+          "path": "Skills/ai/offensive-ai-security/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "AI/LLM 红队评估",
+          "group_en": "AI/LLM Red Team Assessment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 系统化评估 AI/LLM 系统的提示注入、越狱、抽取和数据投毒等攻击面。",
+          "description_en": "Helps agents systematically assess AI/LLM attack surfaces such as prompt injection, jailbreaks, extraction, and data poisoning.",
+          "what": "用于 AI/LLM 系统的安全红队清单。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-jwt",
+          "path": "Skills/auth/offensive-jwt/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "认证协议攻击测试",
+          "group_en": "Authentication Protocol Attack Testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 JWT 认证安全测试清单，帮助定位令牌篡改与验证绕过风险。",
+          "description_en": "A JWT security testing checklist for identifying token tampering and validation bypass risks.",
+          "what": "JWT authentication attack methodology for penetration testers.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-oauth",
+          "path": "Skills/auth/offensive-oauth/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "认证协议攻击测试",
+          "group_en": "Authentication Protocol Attack Testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 OAuth 流程安全测试清单，帮助检查重定向、CSRF、PKCE 与令牌泄露问题。",
+          "description_en": "An OAuth flow security testing checklist for checking redirect handling, CSRF, PKCE, and token leakage issues.",
+          "what": "OAuth 2.0 security testing methodology for web apps and bug bounty engagements.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-cloud",
+          "path": "Skills/cloud/offensive-cloud/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "云红队方法库",
+          "group_en": "Cloud Red-Team Playbook",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按云身份、权限、持久化和数据风险组织攻击面评估。",
+          "description_en": "Helps the agent structure cloud attack-surface assessments around identity, permissions, persistence, and data risk.",
+          "what": "云红队评估方法论。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-basic-exploitation",
+          "path": "Skills/exploit-dev/offensive-basic-exploitation/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "漏洞利用开发基础",
+          "group_en": "Basic Exploit Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 梳理经典 Linux 漏洞利用原语和 PoC 构建步骤。",
+          "description_en": "Helps the agent reason through classic Linux exploitation primitives and initial PoC construction.",
+          "what": "基础漏洞利用开发方法论。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-crash-analysis",
+          "path": "Skills/exploit-dev/offensive-crash-analysis/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "漏洞挖掘 / Bug Bounty / OSINT",
+          "group_en": "Vulnerability Mining / Bug Bounty / OSINT",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 分析崩溃转储、调试器输出和栈寄存器信息，判断漏洞可利用性。",
+          "description_en": "Helps an agent triage crash dumps, debugger output, stack and register data, and judge exploitability.",
+          "what": "崩溃分析与可利用性评估清单。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-exploit-dev-course",
+          "path": "Skills/exploit-dev/offensive-exploit-dev-course/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team / Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为 agent 提供利用开发学习路径、实验环境和周计划，用于训练或研究 onboarding。",
+          "description_en": "Provides a structured exploit-development roadmap, lab setup, and weekly plan for training or onboarding researchers.",
+          "what": "利用开发课程路线与训练计划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-exploit-development",
+          "path": "Skills/exploit-dev/offensive-exploit-development/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "漏洞利用开发",
+          "group_en": "Exploit Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 按清单搭建利用开发环境、调试 PoC 并规划可靠利用链。",
+          "description_en": "Guides agents through exploit-dev environments, debugging PoCs, and reliable exploit planning.",
+          "what": "利用开发环境、调试与 PoC 生命周期清单。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-mitigations",
+          "path": "Skills/exploit-dev/offensive-mitigations/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "漏洞利用开发",
+          "group_en": "Exploit Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 识别目标防护机制，并梳理常见缓解绕过方向。",
+          "description_en": "Helps agents identify target hardening mechanisms and review mitigation bypass considerations.",
+          "what": "目标防护机制识别与绕过方向参考。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-toctou",
+          "path": "Skills/exploit-dev/offensive-toctou/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team / Attack Chains / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "识别 TOCTOU 竞态，扩大检查/使用窗口并指导利用路径。",
+          "description_en": "Identifies TOCTOU races and guides exploitation paths across systems.",
+          "what": "用于在发现 check-then-act 模式后分析竞态漏洞利用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-bug-identification",
+          "path": "Skills/fuzzing/offensive-bug-identification/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "漏洞挖掘 / Bug Bounty / OSINT",
+          "group_en": "Vulnerability Research / Bug Bounty / OSINT",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "系统化梳理静态/动态审计、污点分析和漏洞识别流程。",
+          "description_en": "Systematically guides source review, taint analysis, and vulnerability discovery.",
+          "what": "用于代码审计或黑盒测试时建立漏洞发现清单。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-fuzzing-course",
+          "path": "Skills/fuzzing/offensive-fuzzing-course/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "漏洞挖掘 / Bug Bounty / OSINT",
+          "group_en": "Vulnerability Discovery / Bug Bounty / OSINT",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导 agent 选择模糊测试目标、构建语料与 harness，并归类崩溃结果。",
+          "description_en": "Guides the agent in selecting fuzz targets, preparing corpora and harnesses, and triaging crashes.",
+          "what": "Week 2 课程型方法论，聚焦通过 fuzzing 发现漏洞并分析崩溃可利用性。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-fuzzing",
+          "path": "Skills/fuzzing/offensive-fuzzing/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "漏洞挖掘 / Bug Bounty / OSINT",
+          "group_en": "Vulnerability Discovery / Bug Bounty / OSINT",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 按黑盒/灰盒/白盒场景选型 fuzz 工具、设计 harness 并处理崩溃。",
+          "description_en": "Helps the agent choose fuzzing tools by coverage model, design harnesses, and process crash triage.",
+          "what": "实战型 fuzzing 方法论，覆盖目标调研、工具选型、语料管理、变异策略和崩溃报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-vuln-classes",
+          "path": "Skills/fuzzing/offensive-vuln-classes/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "漏洞挖掘 / Bug Bounty / OSINT",
+          "group_en": "Vulnerability Research / Bug Bounty / OSINT",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "梳理漏洞类别与 CVE 案例，辅助漏洞研究和利用开发。",
+          "description_en": "Organizes vulnerability classes and CVE examples to support vulnerability research and exploit development.",
+          "what": "用于在讨论漏洞类型、内存破坏或 CVE 模式时提供分类与案例。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-advanced-redteam",
+          "path": "Skills/infrastructure/offensive-advanced-redteam/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team Operations / Attack Chains / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "覆盖 OPSEC、C2、横向移动、持久化和数据外传的红队流程。",
+          "description_en": "Covers OPSEC, C2, lateral movement, persistence, and exfiltration workflows for red-team operations.",
+          "what": "用于规划高级红队行动、理解 APT TTP 与攻击链路。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-edr-evasion",
+          "path": "Skills/infrastructure/offensive-edr-evasion/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 规划红队行动中的 EDR 规避与绕过策略。",
+          "description_en": "Helps an agent plan EDR evasion and bypass considerations during red-team engagements.",
+          "what": "EDR evasion checklist for red-team planning.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-initial-access",
+          "path": "Skills/infrastructure/offensive-initial-access/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 梳理红队初始访问路径与 MITRE ATT&CK 阶段。",
+          "description_en": "Helps an agent map initial-access paths and MITRE ATT&CK TA0001 considerations.",
+          "what": "Initial-access checklist for red-team planning.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-keylogger-arch",
+          "path": "Skills/infrastructure/offensive-keylogger-arch/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "恶意代码分析 / 逆向",
+          "group_en": "Malware analysis / reverse engineering",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 分析输入捕获型恶意软件架构，用于防御性威胁研究。",
+          "description_en": "Helps an agent analyze input-capture malware architecture for defensive threat research.",
+          "what": "高层说明键盘输入捕获与恶意软件架构。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-shellcode",
+          "path": "Skills/infrastructure/offensive-shellcode/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red-team attack chains / post-exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 从高层理解 shellcode 与载荷工程，用于红队研究。",
+          "description_en": "Helps an agent reason at a high level about shellcode and payload engineering for red-team research.",
+          "what": "高层说明 shellcode 与载荷工程的研究边界。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-windows-boundaries",
+          "path": "Skills/infrastructure/offensive-windows-boundaries/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "Windows 红队方法论",
+          "group_en": "Windows red-team methodology",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 梳理 Windows 安全边界、枚举攻击面并规划提权或沙箱逃逸路径。",
+          "description_en": "Helps an agent map Windows security boundaries, enumerate attack surfaces, and plan privilege-escalation or sandbox-escape paths.",
+          "what": "用于 Windows 提权与沙箱逃逸规划前的边界梳理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-windows-mitigations",
+          "path": "Skills/infrastructure/offensive-windows-mitigations/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "Windows 红队方法论",
+          "group_en": "Windows red-team methodology",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 理解 Windows 缓解机制、识别绕过思路并评估利用可行性。",
+          "description_en": "Helps an agent understand Windows exploit mitigations, reason about bypass options, and assess exploitation feasibility.",
+          "what": "用于 Windows 利用前的缓解机制评估与绕过思路整理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-iot",
+          "path": "Skills/iot/offensive-iot/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "IoT / 嵌入式渗透测试",
+          "group_en": "IoT / Embedded Pen Testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按授权范围梳理 IoT 与嵌入式设备测试流程。",
+          "description_en": "Guides agents through authorized IoT and embedded-device testing workflows.",
+          "what": "面向 IoT 和嵌入式设备的安全测试方法论。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-mobile",
+          "path": "Skills/mobile/offensive-mobile/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "移动应用渗透测试",
+          "group_en": "Mobile App Pen Testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按授权范围执行移动应用安全测试流程。",
+          "description_en": "Guides agents through authorized mobile app security testing workflows.",
+          "what": "面向 Android/iOS 应用的安全测试方法论。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-osint-methodology",
+          "path": "Skills/recon/offensive-osint-methodology/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "漏洞挖掘 / Bug Bounty / OSINT",
+          "group_en": "Vulnerability Research / Bug Bounty / OSINT",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为 OSINT 行动提供目标定义、来源选择、收集关联和报告清单。",
+          "description_en": "Provides a structured OSINT checklist for target scoping, source selection, collection, correlation, and reporting.",
+          "what": "OSINT 行动方法论清单，覆盖目标定义、来源选择、收集、关联和报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-osint",
+          "path": "Skills/recon/offensive-osint/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "漏洞挖掘 / Bug Bounty / OSINT",
+          "group_en": "Vulnerability Research / Bug Bounty / OSINT",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导红队/漏洞赏金侦察，汇总域名、社交、GitHub、资产与泄露线索。",
+          "description_en": "Guides red-team and bug-bounty reconnaissance across domains, social, GitHub, infrastructure, breach, and asset signals.",
+          "what": "攻击面 OSINT 工作流，覆盖域名、社交、GitHub、Shodan/Censys、泄露数据与资产画像。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "elementalsouls-bughunter/elementalsouls-osint/shuvonsec/briiirussell/transilienceai/oh-my-openagent · 组「漏洞挖掘 / Bug Bounty / OSINT」"
+        },
+        {
+          "name": "offensive-fast-checking",
+          "path": "Skills/utility/offensive-fast-checking/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "快速渗透测试检查清单",
+          "group_en": "Rapid Pentest Checklist",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在限时评估中快速梳理攻击面、检查常见漏洞模式并给出下一步。",
+          "description_en": "Helps the agent quickly map attack surfaces, check common vulnerability patterns, and suggest next steps during time-boxed assessments.",
+          "what": "A fast offensive checklist for rapid recon, scanner setup, and vulnerability triage.",
+          "chain": true,
+          "chain_group": "渗透测试评估到报告交付",
+          "chain_group_en": "Pentest assessment-to-reporting workflow"
+        },
+        {
+          "name": "offensive-reporting",
+          "path": "Skills/utility/offensive-reporting/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "渗透测试报告交付",
+          "group_en": "Pentest Reporting Deliverables",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将渗透测试发现整理成风险清晰、证据规范、可交付的报告。",
+          "description_en": "Helps the agent turn findings into risk-led, evidence-aware penetration test reports.",
+          "what": "A methodology for structuring executive summaries, technical findings, CVSS scoring, and remediation tracking.",
+          "chain": true,
+          "chain_group": "渗透测试评估到报告交付",
+          "chain_group_en": "Pentest assessment-to-reporting workflow"
+        },
+        {
+          "name": "offensive-business-logic",
+          "path": "Skills/web/offensive-business-logic/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "渗透测试(Web / API / 基础设施)",
+          "group_en": "Web, API & Infrastructure Penetration Testing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 系统化识别业务流程漏洞，覆盖状态流转、权限边界、价格与优惠滥用等测试维度。",
+          "description_en": "Helps the agent systematically identify business logic flaws across flows, state transitions, authorization boundaries, pricing, and discount abuse.",
+          "what": "A methodology for testing complex business logic vulnerabilities in web, mobile, API, SaaS, fintech, and marketplace applications.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "offensive-deserialization",
+          "path": "Skills/web/offensive-deserialization/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "渗透测试(Web / API / 基础设施)",
+          "group_en": "Web, API & Infrastructure Penetration Testing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 检查反序列化入口风险，识别不安全对象反序列化、gadget chain 与相关利用面。",
+          "description_en": "Helps the agent assess insecure deserialization risks, including unsafe object deserialization sinks, gadget chains, and related exploit surfaces.",
+          "what": "A checklist-oriented skill for evaluating insecure deserialization vulnerabilities in application testing engagements.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
