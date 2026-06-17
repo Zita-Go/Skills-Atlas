@@ -1,0 +1,4094 @@
+{
+  "generated_at": "2026-06-17T06:38:47+00:00",
+  "date": "2026-06-17",
+  "proposed_count": 8,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 57,
+      "blocklisted": 10,
+      "seen_recently": 113,
+      "truncated": 176,
+      "skill_name_dup": 12,
+      "no_skill_files": 2
+    },
+    "filtered_out": [
+      {
+        "full_name": "mrgoonie/claudekit-skills",
+        "reason": "⚠ 疑似 vendored 副本（仍提交待人审）：10/30 个 skill 名已在目录——context-engineering, debugging, systematic-debugging, verification-before-completion, docx, pdf…；建议人审核是否整仓拒/blocklist"
+      },
+      {
+        "full_name": "twostraws/Swift-Agent-Skills",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "ciembor/agent-rules-books",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "agent-teams",
+        "batch-orchestration",
+        "sprint-status"
+      ],
+      "group": "多代理并行开发协调",
+      "group_en": "Multi-Agent Parallel Development Coordination",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "帮助 agent 把多个 Claude Code 会话组织成团队，分配任务、共享清单并通过信箱与文件锁协作。",
+      "description_en": "Organizes multiple Claude Code sessions into a coordinated team with task ownership, shared lists, mailbox messaging, and file-lock collaboration.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "auto-setup"
+      ],
+      "group": "项目质量门自动配置",
+      "group_en": "Automated Project Quality Gates",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "帮助 agent 在接入新项目时识别技术栈，自动配置 lint、typecheck、test、format 等质量门和 Claude 设置。",
+      "description_en": "Helps agents identify a project stack and configure linting, typechecking, tests, formatting, hooks, and Claude settings for new codebases.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "bug-capture"
+      ],
+      "group": "GitHub 缺陷捕获",
+      "group_en": "GitHub Bug Capture",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "把用户口头反馈的缺陷整理成符合项目术语的 GitHub issue，并先检查重复项。",
+      "description_en": "Turns conversational bug reports into domain-aware GitHub issues after minimal clarification and duplicate checks.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "compact-guard",
+        "context-engineering"
+      ],
+      "group": "上下文压缩与工程工作流",
+      "group_en": "Context Compaction and Engineering Workflow",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": true,
+      "description": "用写入、选择、压缩、隔离管理上下文流，帮助 Agent 在长会话中保持状态清晰高效。",
+      "description_en": "Preserves task state, key files, and next steps before context compaction so work can resume cleanly afterward.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "context-optimizer"
+      ],
+      "group": "Claude Code 上下文优化",
+      "group_en": "Claude Code Context Optimization",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": false,
+      "description": "帮助 agent 管理上下文窗口、压缩会话并降低 token 负担。",
+      "description_en": "Helps agents manage context windows, compact sessions, and reduce token load.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "cost-tracker"
+      ],
+      "group": "Claude Code 成本与预算控制",
+      "group_en": "Claude Code Cost and Budget Control",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": false,
+      "description": "帮助 agent 跟踪会话成本、设置预算提醒并优化 token 花费。",
+      "description_en": "Helps agents track session costs, set budget alerts, and optimize token spending.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "deslop"
+      ],
+      "group": "清理 AI 代码气味",
+      "group_en": "AI Code Smell Cleanup",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "清理分支 diff 中的 AI 代码啰嗦、冗余注释和过度抽象。",
+      "description_en": "Cleans AI-generated slop, redundant comments, and over-engineering from the branch diff.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "file-watcher"
+      ],
+      "group": "Claude Code hooks 文件监听",
+      "group_en": "Claude Code File Watch Hooks",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "配置 Claude Code hooks，监听文件变化并注入环境变量。",
+      "description_en": "Sets up Claude Code hooks that react to file changes and inject environment variables.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "insights",
+        "learn-rule"
+      ],
+      "group": "学习规则闭环",
+      "group_en": "Learning-rule feedback loop",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": true,
+      "description": "从项目记忆和会话历史生成学习趋势、修正率与效率洞察。",
+      "description_en": "Generates learning trends, correction rates, and productivity insights from project memory and session history.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "llm-council"
+      ],
+      "group": "多模型委员会审议",
+      "group_en": "Multi-LLM council deliberation",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "组织多个 LLM 并行回答、匿名互评并由主席模型综合，适合高风险评审与架构决策。",
+      "description_en": "Coordinates multiple LLMs to answer independently, rank anonymized responses, and synthesize a final view for high-stakes reviews.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "llm-gate"
+      ],
+      "group": "LLM Prompt Hook 质量门禁",
+      "group_en": "LLM prompt-hook quality gates",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "用 Claude Code prompt hooks 在提交等操作前调用 LLM 校验约定，拦截不合规操作。",
+      "description_en": "Uses Claude Code prompt hooks to run AI checks before operations like commits and block convention violations.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "mcp-audit"
+      ],
+      "group": "MCP 工具审计与成本优化",
+      "group_en": "MCP tool auditing and cost optimization",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "审计 MCP 服务器开销、冗余与安全风险，给出清理建议。",
+      "description_en": "Audits MCP servers for token overhead, redundancy, and security, then recommends cleanup.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "module-map"
+      ],
+      "group": "代码地图 / 快速定位",
+      "group_en": "Codebase orientation maps",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "生成一屏代码地图，标出入口、核心模块、数据流和隐藏耦合。",
+      "description_en": "Creates a one-screen code map with entry points, core modules, data flow, and hidden coupling.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "orchestrate"
+      ],
+      "group": "多阶段功能开发编排",
+      "group_en": "Multi-Phase Feature Orchestration",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "把复杂功能拆成研究、计划、实现、评审阶段，并设置置信度与审批门控。",
+      "description_en": "Breaks complex features into research, planning, implementation, and review phases with confidence and approval gates.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "parallel-worktrees"
+      ],
+      "group": "Git 并行 worktree 会话",
+      "group_en": "Parallel Git Worktree Sessions",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "用 Git worktree 隔离并行任务，让测试、构建和探索分支互不干扰。",
+      "description_en": "Uses Git worktrees to isolate parallel tasks so tests, builds, and experiments do not interfere.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "permission-tuner"
+      ],
+      "group": "Claude Code 权限调优",
+      "group_en": "Claude Code Permission Tuning",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-3",
+      "chain": false,
+      "description": "分析权限拒绝记录，生成更安全的 alwaysAllow/alwaysDeny 规则。",
+      "description_en": "Analyzes permission denial patterns and proposes safer allow and deny rules.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "plan-interrogate"
+      ],
+      "group": "plan-interrogate",
+      "group_en": "Core Development Workflow / Handoff / Intent Clarification / Interrogation Mode",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "把计划拆成决策树，逐项追问并锁定实现前答案。",
+      "description_en": "Turns a plan into a decision tree and resolves choices before coding.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "pro-workflow"
+      ],
+      "group": "跨 agent 编码工作流编排",
+      "group_en": "Cross-agent coding workflow orchestration",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "提供跨 agent 的编码工作流、钩子事件和团队编排，减少纠正循环。",
+      "description_en": "Orchestrates cross-agent coding workflows with hooks, reference guides, and correction loops.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "replay-learnings"
+      ],
+      "group": "Agent 记忆 / 工作笔记",
+      "group_en": "Agent memory / work notes",
+      "category": "agent-architecture",
+      "subcategory": "12-3",
+      "chain": false,
+      "description": "在任务开始前检索历史教训和修正规则，提醒 agent 避开旧错误。",
+      "description_en": "Surfaces relevant past learnings before a task so the agent avoids repeating mistakes.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "safe-mode"
+      ],
+      "group": "Claude Code 安全模式",
+      "group_en": "Claude Code Safe Mode",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-5",
+      "chain": false,
+      "description": "在 Claude Code 中启用危险操作拦截、目录锁定和权限提醒。",
+      "description_en": "Enables destructive-operation interception, directory lockdown, and permission alerts for Claude Code sessions.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "session-handoff"
+      ],
+      "group": "会话接力 / 上下文 handoff",
+      "group_en": "Session Handoff / Context Transfer",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "在会话结束时生成进度、决策、待办和恢复命令的结构化交接文档。",
+      "description_en": "Creates a structured handoff note with progress, decisions, open tasks, and a resume command at session end.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "skill-optimizer"
+      ],
+      "group": "Skill 优化器 / 离线训练循环",
+      "group_en": "Skill optimizer / offline training loop",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "基于历史修正训练现有 SKILL.md，验证后合并可证明有效的改进补丁。",
+      "description_en": "Trains existing SKILL.md files from past corrections and accepts only validated improvements.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "smart-commit"
+      ],
+      "group": "质量门禁提交 / Conventional Commits",
+      "group_en": "Quality-gated commits / Conventional Commits",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "提交前运行质量门禁、审查暂存改动，并生成规范的 conventional commit。",
+      "description_en": "Runs quality gates, reviews staged changes, and creates a conventional commit.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "survey-generator"
+      ],
+      "group": "AI/ML 文献综述生成器",
+      "group_en": "AI/ML Literature Survey Generator",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": false,
+      "description": "根据公开锚点资料生成带分类与真实参考文献的 wiki 文献综述。",
+      "description_en": "Generates a wiki-based literature survey with taxonomy and real citations from public anchor sources.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "thoroughness-scoring"
+      ],
+      "group": "Thoroughness 决策评分",
+      "group_en": "Thoroughness Decision Scoring",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "帮 agent 在方案选择时重述上下文、评估彻底度并避免低质量捷径。",
+      "description_en": "Helps the agent restate context, score option quality, and avoid low-quality shortcuts when choosing an implementation path.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "token-efficiency"
+      ],
+      "group": "Token 效率与工具预算",
+      "group_en": "Token Efficiency and Tool Budgeting",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "通过反奉承、预算限制和先读后写，减少 agent 的 token 浪费与无效迭代。",
+      "description_en": "Reduces token waste and unnecessary iteration with anti-sycophancy rules, tool-call budgets, and read-before-write habits.",
+      "sources": [
+        "rohitg00/pro-workflow"
+      ]
+    },
+    {
+      "skills": [
+        "supabase-postgres-best-practices"
+      ],
+      "group": "Supabase Postgres 性能优化",
+      "group_en": "Supabase Postgres Performance Optimization",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 编写、审查和优化 Supabase/Postgres 查询、Schema 与连接配置，并参考规则定位性能问题。",
+      "description_en": "Helps agents write, review, and optimize Supabase/Postgres queries, schemas, and connection settings using prioritized performance rules.",
+      "sources": [
+        "supabase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "supabase"
+      ],
+      "group": "Supabase 通用开发",
+      "group_en": "General Supabase Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "为 agent 提供 Supabase 数据库、Auth、Edge Functions、Realtime、Storage、CLI/MCP 等任务的查证、实现与验证指引。",
+      "description_en": "Guides agents through Supabase Database, Auth, Edge Functions, Realtime, Storage, CLI, and MCP tasks with current docs and verification.",
+      "sources": [
+        "supabase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "skillshare-changelog",
+        "skillshare-release"
+      ],
+      "group": "危险命令拦截 / 版本管理 / Changelog / 通用发布流程自动化",
+      "group_en": "Dangerous command guard / versioning / changelog / release automation",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "执行发布流程：先跑测试检查，再生成 changelog、更新版本、提交并草拟公告。",
+      "description_en": "Orchestrates releases by validating checks, generating changelogs, bumping versions, committing changes, and drafting announcements.",
+      "sources": [
+        "runkids/skillshare"
+      ]
+    },
+    {
+      "skills": [
+        "skillshare-cli-e2e-test"
+      ],
+      "group": "CLI E2E 测试运行",
+      "group_en": "CLI E2E test runner",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "在 devcontainer 中按 runbook 启动隔离环境，执行并报告 CLI E2E 测试，验证 CLI 行为。",
+      "description_en": "Runs runbook-based CLI end-to-end tests in an isolated devcontainer and reports the results.",
+      "sources": [
+        "runkids/skillshare"
+      ]
+    },
+    {
+      "skills": [
+        "skillshare-codebase-audit"
+      ],
+      "group": "代码库一致性审计",
+      "group_en": "Codebase consistency audit",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "只读检查 CLI 参数、文档、测试与目标的同步一致性，并输出问题摘要。",
+      "description_en": "Read-only checks keep CLI flags, docs, tests, and targets aligned, then summarize drift.",
+      "sources": [
+        "runkids/skillshare"
+      ]
+    },
+    {
+      "skills": [
+        "skillshare-devcontainer"
+      ],
+      "group": "Devcontainer 命令执行",
+      "group_en": "Devcontainer command execution",
+      "category": "software-engineering",
+      "subcategory": "1-7",
+      "chain": false,
+      "description": "在 devcontainer 中运行命令、测试和调试，避免在宿主机误跑 Linux 二进制。",
+      "description_en": "Runs commands, tests, and debugging in the devcontainer to avoid host/container mismatches.",
+      "sources": [
+        "runkids/skillshare"
+      ]
+    },
+    {
+      "skills": [
+        "skillshare-implement-feature"
+      ],
+      "group": "TDD 功能实现（Go）",
+      "group_en": "TDD Feature Implementation (Go)",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "基于规格或描述以 TDD 流程实现 Go 功能，补测试并按项目约定拆分处理程序。",
+      "description_en": "Implements Go features from specs or descriptions using a test-first workflow, with tests and project-specific handler structure.",
+      "sources": [
+        "runkids/skillshare"
+      ]
+    },
+    {
+      "skills": [
+        "skillshare-ui-website-style"
+      ],
+      "group": "Skillshare 前端设计系统",
+      "group_en": "Skillshare frontend design system",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "统一 Skillshare 两个前端的设计令牌、组件 API 与视觉一致性。",
+      "description_en": "Keeps Skillshare’s dashboard and website UI aligned with its design tokens, component APIs, and visual patterns.",
+      "sources": [
+        "runkids/skillshare"
+      ]
+    },
+    {
+      "skills": [
+        "skillshare-update-docs"
+      ],
+      "group": "代码变更后的文档同步",
+      "group_en": "Code-change documentation sync",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "用代码差异和 Go 源同步网站文档、README 与内置技能说明。",
+      "description_en": "Syncs website docs, README, and built-in skill descriptions against source changes.",
+      "sources": [
+        "runkids/skillshare"
+      ]
+    },
+    {
+      "skills": [
+        "skillshare"
+      ],
+      "group": "跨工具 Skill 同步与管理",
+      "group_en": "Cross-tool Skill Sync & Management",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "帮助 agent 管理、同步、备份和审计多 AI CLI 工具中的 skills/agents 配置。",
+      "description_en": "Helps agents manage, sync, back up, and audit skills and agents across many AI CLI tools.",
+      "sources": [
+        "runkids/skillshare"
+      ]
+    },
+    {
+      "skills": [
+        "apify-actor-development"
+      ],
+      "group": "Apify Actor 开发",
+      "group_en": "Apify Actor Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 Agent 创建、调试并部署 Apify Actors，处理输入输出与云端运行。",
+      "description_en": "Helps an agent create, debug, and deploy Apify Actors, including inputs, outputs, and cloud execution.",
+      "sources": [
+        "apify/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "apify-actorization"
+      ],
+      "group": "Apify Actor 接入",
+      "group_en": "Apify Actor Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 Agent 将现有项目或 CLI 封装为 Apify Actor，并配置生命周期与部署。",
+      "description_en": "Helps an agent wrap existing projects or CLI tools as Apify Actors and configure lifecycle and deployment.",
+      "sources": [
+        "apify/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "apify-generate-output-schema",
+        "apify-sdk-integration"
+      ],
+      "group": "Apify 平台开发工具",
+      "group_en": "Apify platform development tools",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 在应用中通过 apify-client 或 REST API 调用 Apify Actors。",
+      "description_en": "Helps an agent inspect Apify Actor source code and generate validated output schema files.",
+      "sources": [
+        "apify/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "apify-ultimate-scraper"
+      ],
+      "group": "Apify 多平台网页抓取",
+      "group_en": "Apify multi-platform web scraping",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "基于 Apify CLI 调度多平台 Actor，帮助 agent 从社媒、搜索、地图等站点提取结构化数据。",
+      "description_en": "Uses the Apify CLI to run Actors across many platforms, helping agents extract structured data from social, search, map, and marketplace sites.",
+      "sources": [
+        "apify/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "geo-content-optimizer",
+        "meta-tags-optimizer"
+      ],
+      "group": "SEO/GEO 内容优化",
+      "group_en": "SEO/GEO Content Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "为页面生成或改写标题、描述与社交元标签，提升点击率和分享效果。",
+      "description_en": "Creates or rewrites page titles, meta descriptions, and social meta tags to improve CTR and sharing.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "schema-markup-generator",
+        "seo-content-writer"
+      ],
+      "group": "SEO / GEO 内容优化与结构化数据",
+      "group_en": "SEO / GEO Content Optimization and Structured Data",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "生成 Schema.org JSON-LD，识别富结果类型并输出结构化数据。",
+      "description_en": "Generates Schema.org JSON-LD and identifies eligible rich-result structured data.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-quality-auditor",
+        "domain-authority-auditor"
+      ],
+      "group": "SEO/GEO 审计与优化（CORE-EEAT/CITE）",
+      "group_en": "SEO/GEO Audit & Optimization (CORE-EEAT/CITE)",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "审计内容质量、E-E-A-T 与发布就绪度，生成评分和改进计划。",
+      "description_en": "Audits content quality, E-E-A-T, and publish readiness, then returns scores and fixes.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "entity-optimizer"
+      ],
+      "group": "实体优化 / 知识图谱",
+      "group_en": "Entity Optimization / Knowledge Graph",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "审计并构建品牌实体在知识图谱、Wikidata 与 AI 引擎中的身份信号。",
+      "description_en": "Audits and builds brand entity identity signals across knowledge graphs, Wikidata, and AI engines.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "memory-management"
+      ],
+      "group": "SEO/GEO 项目记忆管理",
+      "group_en": "SEO/GEO Project Memory Management",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "管理 SEO/GEO 项目的热缓存、活动记忆、归档与隐私清理。",
+      "description_en": "Manages hot cache, active memory, archives, and privacy cleanup for SEO/GEO projects.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "alert-manager",
+        "backlink-analyzer"
+      ],
+      "group": "SEO/GEO 监控与外链分析",
+      "group_en": "SEO/GEO Monitoring & Backlink Analysis",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "为排名、流量、技术问题和竞品变化配置阈值提醒，帮助 agent 做持续 SEO 监控。",
+      "description_en": "Configures threshold alerts for rankings, traffic, technical issues, and competitor changes so agents can monitor SEO continuously.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "performance-reporter",
+        "rank-tracker"
+      ],
+      "group": "SEO 监测与报告工作流",
+      "group_en": "SEO monitoring and reporting workflow",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": true,
+      "description": "聚合SEO/GEO数据，生成多指标绩效报告和老板看板，并给出优先建议。",
+      "description_en": "Aggregates SEO/GEO data into multi-metric performance reports, dashboards, and prioritized recommendations.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-refresher"
+      ],
+      "group": "内容刷新 / GEO 排名恢复",
+      "group_en": "Content Refresh / GEO Ranking Recovery",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "识别过时内容，评估新鲜度与流量衰减，生成 GEO 更新计划和重发策略。",
+      "description_en": "Refreshes aging content by scoring freshness, prioritizing updates, and planning GEO-focused republishing.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "internal-linking-optimizer"
+      ],
+      "group": "内链架构 / 孤立页面修复",
+      "group_en": "Internal Link Architecture / Orphan Page Fixing",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "分析内链结构、权重流向和孤立页面，输出优先修复的源/目标/锚文本方案。",
+      "description_en": "Maps internal links, authority flow, orphan pages, and crawl depth into a prioritized linking plan.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "on-page-seo-auditor",
+        "technical-seo-checker"
+      ],
+      "group": "生成引擎优化 / SEO 全套",
+      "group_en": "GEO / SEO Optimization Suite",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "检查技术SEO，诊断抓取、索引、速度、规范标签和站点迁移问题。",
+      "description_en": "Audits a page’s on-page SEO signals and prioritizes fixes for titles, structure, keywords, links, and images.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "competitor-analysis",
+        "content-gap-analysis"
+      ],
+      "group": "SEO 竞品研究与内容缺口发现",
+      "group_en": "SEO competitor research and content gap discovery",
+      "category": "marketing-growth",
+      "subcategory": "4-8",
+      "chain": true,
+      "description": "对标竞品关键词、内容、外链、AI 引用与流量份额，输出行动计划。",
+      "description_en": "Compares site coverage against competitors to surface missing topics, keyword gaps, and priority content opportunities.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "keyword-research"
+      ],
+      "group": "SEO / GEO 关键词研究",
+      "group_en": "SEO / GEO Keyword Research",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "帮助 agent 围绕主题发现、评分并聚类关键词，用于 SEO/GEO 选题规划。",
+      "description_en": "Helps an agent discover, score, and cluster keywords for SEO/GEO content planning.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "serp-analysis"
+      ],
+      "group": "SEO / GEO SERP 分析",
+      "group_en": "SEO / GEO SERP Analysis",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "帮助 agent 分析搜索结果页结构、排名特征、意图与摘要机会，指导查询优化。",
+      "description_en": "Helps an agent analyze SERP structure, ranking features, intent, and snippet opportunities for a query.",
+      "sources": [
+        "aaron-he-zhu/seo-geo-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "commissaire-aux-comptes"
+      ],
+      "group": "法国法定审计",
+      "group_en": "French statutory audit",
+      "category": "startup-finance",
+      "subcategory": "10-3",
+      "chain": false,
+      "description": "按法国 NEP 流程审计年报，核验账簿税表并生成审计意见。",
+      "description_en": "Audits French annual accounts under NEP, verifies ledgers and tax filings, and drafts audit opinions.",
+      "sources": [
+        "romainsimon/paperasse"
+      ]
+    },
+    {
+      "skills": [
+        "comptable"
+      ],
+      "group": "法国会计税务合规",
+      "group_en": "French accounting and tax compliance",
+      "category": "startup-finance",
+      "subcategory": "10-3",
+      "chain": false,
+      "description": "管理法国企业 PCG 记账、税费申报、年结和电子发票合规。",
+      "description_en": "Handles French PCG bookkeeping, tax filings, year-end close, and e-invoicing compliance.",
+      "sources": [
+        "romainsimon/paperasse"
+      ]
+    },
+    {
+      "skills": [
+        "controleur-fiscal"
+      ],
+      "group": "法国企业税务审计模拟",
+      "group_en": "French corporate tax audit simulation",
+      "category": "startup-finance",
+      "subcategory": "10-3",
+      "chain": false,
+      "description": "帮助 Agent 模拟 DGFIP 企业税务稽查，审查账目并识别潜在补税风险。",
+      "description_en": "Helps an agent simulate a DGFIP corporate tax audit, review accounts, and flag reassessment risks.",
+      "sources": [
+        "romainsimon/paperasse"
+      ]
+    },
+    {
+      "skills": [
+        "fiscaliste"
+      ],
+      "group": "法国个人税务顾问",
+      "group_en": "French personal tax advisory",
+      "category": "startup-finance",
+      "subcategory": "10-3",
+      "chain": false,
+      "description": "帮助 Agent 为法国个人计算所得税、申报并评估合法优化方案。",
+      "description_en": "Helps an agent calculate French personal income tax, prepare filings, and evaluate lawful optimization options.",
+      "sources": [
+        "romainsimon/paperasse"
+      ]
+    },
+    {
+      "skills": [
+        "notaire"
+      ],
+      "group": "法国公证法律助手",
+      "group_en": "French Notarial Legal Assistant",
+      "category": "legal-compliance",
+      "subcategory": "14-8",
+      "chain": false,
+      "description": "协助处理法国不动产、继承、赠与等公证法律事项。",
+      "description_en": "Helps agents handle French notarial matters such as real estate, estates, gifts, and civil-law documents.",
+      "sources": [
+        "romainsimon/paperasse"
+      ]
+    },
+    {
+      "skills": [
+        "syndic"
+      ],
+      "group": "法国共管物业助手",
+      "group_en": "French Co-Ownership Management Assistant",
+      "category": "legal-compliance",
+      "subcategory": "14-8",
+      "chain": false,
+      "description": "协助管理法国共管物业的行政、会计、大会与合规流程。",
+      "description_en": "Helps agents manage French co-ownership administration, accounting, general meetings, and compliance workflows.",
+      "sources": [
+        "romainsimon/paperasse"
+      ]
+    },
+    {
+      "skills": [
+        "aesthetic",
+        "ai-multimodal"
+      ],
+      "group": "ClaudeKit UI 构建工作流",
+      "group_en": "ClaudeKit UI Build Workflow",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": true,
+      "description": "帮助 agent 处理音频、图片、视频、PDF，并生成或编辑图像。",
+      "description_en": "Helps the agent design beautiful, usable interfaces grounded in proven visual principles.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "backend-development"
+      ],
+      "group": "后端架构 / 微服务设计",
+      "group_en": "Backend Architecture / Microservices Design",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "指导 agent 设计并实现可扩展、安全的后端系统、API 与微服务。",
+      "description_en": "Guides agents in designing and building scalable, secure backend systems, APIs, and microservices.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "better-auth"
+      ],
+      "group": "认证 / 授权实现",
+      "group_en": "Authentication / Authorization Implementation",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 在 TypeScript 或 JavaScript 应用中接入 Better Auth 认证与权限。",
+      "description_en": "Helps agents integrate Better Auth authentication and authorization into TypeScript or JavaScript applications.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "bunny"
+      ],
+      "group": "Bunny.net 云服务集成",
+      "group_en": "Bunny.net Cloud Platform Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助智能体通过 Bunny.net API 集成 CDN、存储、流媒体、DNS、安全与容器服务。",
+      "description_en": "Helps agents integrate Bunny.net APIs for CDN, storage, streaming, DNS, security, and containers.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "chrome-devtools"
+      ],
+      "group": "Puppeteer 浏览器自动化与调试",
+      "group_en": "Puppeteer Browser Automation & Debugging",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "通过 Puppeteer 脚本自动化浏览器，辅助调试、性能分析、截图和网络监控。",
+      "description_en": "Automates browsers with Puppeteer scripts for debugging, performance analysis, screenshots, and network monitoring.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "claude-code"
+      ],
+      "group": "Claude Code 使用与集成",
+      "group_en": "Claude Code Usage and Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 Claude Code 安装、命令、MCP、技能、插件、CI/CD 与企业部署。",
+      "description_en": "Guides setup, commands, MCP, skills, plugins, CI/CD, and enterprise deployment for Claude Code.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "code-review"
+      ],
+      "group": "代码审查反馈与验证门禁",
+      "group_en": "Code Review Feedback and Verification Gates",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "规范接收审查反馈、请求评审与完成前验证，避免无证据宣称。",
+      "description_en": "Structures review feedback handling, subagent review requests, and evidence-based completion checks.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "context-engineering"
+      ],
+      "group": "Context Engineering 地基课 / 上下文工程优化",
+      "group_en": "Context Engineering Foundations & Optimization",
+      "category": "agent-architecture",
+      "subcategory": "12-1",
+      "chain": false,
+      "description": "指导 Agent 筛选高信号上下文、压缩记忆并优化多代理协作。",
+      "description_en": "Guides agents in curating high-signal context, compacting memory, and optimizing multi-agent coordination.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "databases"
+      ],
+      "group": "数据库建模 / SQL 与运维",
+      "group_en": "Database Modeling, SQL, and Operations",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 Agent 设计 Mongo/Postgres 数据模型、查询、优化性能与迁移备份。",
+      "description_en": "Helps agents design Mongo/Postgres data models, write queries, optimize performance, and manage migrations and backups.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "debugging",
+        "defense-in-depth",
+        "root-cause-tracing",
+        "systematic-debugging",
+        "verification-before-completion"
+      ],
+      "group": "完工验证 / 系统化调试",
+      "group_en": "Completion Verification / Systematic Debugging",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "在数据经过的每一层设置验证，降低缺陷绕过单点检查的风险。",
+      "description_en": "Provides a systematic debugging framework: investigate root causes before fixing and verify the outcome.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "devops"
+      ],
+      "group": "多云与容器部署",
+      "group_en": "Cloud and container deployments",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "指导 agent 在 Cloudflare、Docker、GCP 与 Kubernetes 间选择并部署。",
+      "description_en": "Guides deployment choices and operations across Cloudflare, Docker, GCP, and Kubernetes.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "docs-seeker"
+      ],
+      "group": "技术文档发现与分析",
+      "group_en": "Technical Documentation Discovery & Analysis",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 用 llms.txt、仓库分析和并行探索查找技术文档。",
+      "description_en": "Helps agents find technical docs via llms.txt, repository analysis, and parallel exploration.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "docx",
+        "pdf",
+        "pptx",
+        "xlsx"
+      ],
+      "group": "Office 文档四件套",
+      "group_en": "Office Document Quartet",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 agent 创建、编辑、分析 PPTX，读取文本、版式和备注。",
+      "description_en": "Helps the agent create, edit, analyze, and inspect PPTX files, including layouts and speaker notes.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "frontend-design"
+      ],
+      "group": "高质量前端界面构建",
+      "group_en": "High-quality Frontend UI Builds",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "帮助 Agent 生成有设计感、可运行的前端页面与应用代码。",
+      "description_en": "Helps the agent build polished, distinctive frontend components, pages, and apps.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "frontend-development"
+      ],
+      "group": "React/TypeScript 前端工程规范",
+      "group_en": "React/TypeScript Frontend Engineering Standards",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "指导 React/TypeScript 项目中的组件、路由、样式、数据获取与性能优化。",
+      "description_en": "Guides React/TypeScript implementation, including components, routing, styling, data fetching, and performance.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "google-adk-python"
+      ],
+      "group": "Agent SDK 与工具集成开发",
+      "group_en": "Agent SDK & Tool Integration Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助构建、编排、部署和评估基于 Google ADK Python 的 AI Agent。",
+      "description_en": "Helps build, orchestrate, deploy, and evaluate AI agents using Google ADK for Python.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "mcp-builder"
+      ],
+      "group": "三大模型厂 SDK 直连 / MCP Server 开发",
+      "group_en": "Direct SDK Connections for Major Model Providers / MCP Server Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导设计并构建高质量 MCP Server，让 agent 通过工具调用外部服务。",
+      "description_en": "Guides the design and build of high-quality MCP servers so agents can call external services through tools.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "mcp-management"
+      ],
+      "group": "MCP 工具发现与运行管理",
+      "group_en": "MCP Tool Discovery and Runtime Management",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "发现、筛选并执行 MCP 工具/提示/资源，集中管理多服务器能力。",
+      "description_en": "Discovers, filters, and executes MCP tools, prompts, and resources while coordinating multiple servers.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "media-processing"
+      ],
+      "group": "FFmpeg / ImageMagick 媒体处理",
+      "group_en": "FFmpeg / ImageMagick Media Processing",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "帮助 agent 用 FFmpeg 和 ImageMagick 转换、压缩、裁剪、滤镜处理音视频与图片，并生成缩略图。",
+      "description_en": "Helps the agent use FFmpeg and ImageMagick to convert, compress, crop, filter, thumbnail, and prepare video, audio, and image assets.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "mermaidjs-v11"
+      ],
+      "group": "Mermaid 图表生成",
+      "group_en": "Mermaid Diagram Generation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 用 Mermaid.js 生成流程图、时序图、架构图、甘特图等可渲染图表。",
+      "description_en": "Helps the agent generate renderable diagrams such as flowcharts, sequence diagrams, architecture maps, and Gantt charts with Mermaid.js.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "payment-integration"
+      ],
+      "group": "支付网关 / 订阅与 Webhook 集成",
+      "group_en": "Payment Gateway, Subscription & Webhook Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 agent 接入支付、订阅、Webhook 与许可，并选择合适支付渠道。",
+      "description_en": "Helps an agent integrate payments, subscriptions, webhooks, and licensing while choosing the right provider.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "problem-solving"
+      ],
+      "group": "创造性破局 / 逆向思维",
+      "group_en": "Creative Breakthrough & Inversion Thinking",
+      "category": "product-management",
+      "subcategory": "3-2",
+      "chain": false,
+      "description": "用逆向、模式识别和极端缩放等方法，帮助 agent 突破卡点并生成优雅解法。",
+      "description_en": "Uses inversion, pattern recognition, and scale tests to help an agent break through stuck points and find elegant solutions.",
+      "sources": [
+        "mrgoonie/claudekit-skills"
+      ]
+    },
+    {
+      "skills": [
+        "breadth-chart-analyst"
+      ],
+      "group": "breadth-chart-analyst",
+      "group_en": "Backtesting and Technical Analysis",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": false,
+      "description": "分析标普500广度与上涨股票比例图表，识别中期趋势和短期交易信号。",
+      "description_en": "Analyzes S&P 500 breadth and uptrend-ratio charts to identify medium-term trend and short-term trading signals.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "earnings-calendar",
+        "economic-calendar-fetcher",
+        "market-environment-analysis",
+        "market-news-analyst",
+        "edge-signal-aggregator",
+        "finviz-screener"
+      ],
+      "group": "行情数据 / 市场情报",
+      "group_en": "Market Data and Intelligence",
+      "category": "finance-trading",
+      "subcategory": "16-1",
+      "chain": false,
+      "description": "通过 FMP API 检索美股未来一周财报日期、EPS/收入预期，并按市值筛选重要公司。",
+      "description_en": "Fetches upcoming US earnings dates, EPS and revenue estimates from FMP, filtering for market-moving companies.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "sector-analyst",
+        "ibd-distribution-day-monitor"
+      ],
+      "group": "回测 / 策略框架 / 量化方法 / 技术分析 / 指标",
+      "group_en": "Strategy Backtesting & Technical Analysis",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": false,
+      "description": "分析板块与行业表现图，判断市场周期和轮动概率。",
+      "description_en": "Reads sector and industry performance charts to assess market cycle and rotation scenarios.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "stanley-druckenmiller-investment"
+      ],
+      "group": "投资哲学 / 组合顾问",
+      "group_en": "Investment Philosophy / Portfolio Advisory",
+      "category": "finance-trading",
+      "subcategory": "16-5",
+      "chain": false,
+      "description": "依据德拉肯米勒原则，辅助宏观研判、风险管理与组合构建。",
+      "description_en": "Applies Druckenmiller-style principles to macro assessment, risk control, and portfolio construction.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "technical-analyst"
+      ],
+      "group": "技术分析 / 图表解读",
+      "group_en": "Technical Analysis / Chart Reading",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": false,
+      "description": "根据周线图表识别趋势、支撑阻力与概率化情景。",
+      "description_en": "Analyzes weekly charts to identify trends, support/resistance, and probability-weighted scenarios.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "us-market-bubble-detector"
+      ],
+      "group": "市场泡沫风险检测",
+      "group_en": "Market Bubble Detection",
+      "category": "finance-trading",
+      "subcategory": "16-1",
+      "chain": false,
+      "description": "用量化指标和 Minsky/Kindleberger 框架评估美股泡沫风险，辅助止盈、入场和做空时机判断。",
+      "description_en": "Assesses U.S. market bubble risk with quantitative indicators and the Minsky/Kindleberger framework to support timing and risk decisions.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "us-stock-analysis"
+      ],
+      "group": "us-stock-analysis",
+      "group_en": "Stock Research, Valuation & Financial Reports",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": false,
+      "description": "围绕美股基本面、技术面、同业对比和估值生成结构化投资分析报告。",
+      "description_en": "Produces structured U.S. equity research reports covering fundamentals, technicals, peer comparisons, valuation, and recent developments.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "backtest-expert"
+      ],
+      "group": "backtest-expert",
+      "group_en": "Backtesting, strategy frameworks, quantitative methods, signals, and technical indicators",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": false,
+      "description": "提供系统化回测方法论，帮助识别偏差、过拟合并验证策略稳健性。",
+      "description_en": "Provides systematic backtesting guidance to detect bias, overfitting, and validate strategy robustness.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "breakout-trade-planner"
+      ],
+      "group": "breakout-trade-planner",
+      "group_en": "Backtesting, strategy frameworks, quantitative methods, signals, and technical indicators",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": false,
+      "description": "基于 VCP 结果生成突破交易计划，计算仓位、止损目标与 Alpaca 订单模板。",
+      "description_en": "Turns VCP screener results into breakout trade plans with sizing, stops, targets, and Alpaca order templates.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "canslim-screener"
+      ],
+      "group": "CANSLIM 股票筛选器",
+      "group_en": "CANSLIM Stock Screener",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": false,
+      "description": "按 CANSLIM 七要素筛选美股，综合评分并生成可执行报告。",
+      "description_en": "Screens U.S. equities through the CANSLIM framework, scores candidates, and produces actionable reports.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "data-quality-checker"
+      ],
+      "group": "市场分析内容质检",
+      "group_en": "Market Analysis Content QA",
+      "category": "finance-trading",
+      "subcategory": "16-8",
+      "chain": false,
+      "description": "发布前检查市场分析文档中的价格尺度、日期、单位和配置合计错误。",
+      "description_en": "Checks market analysis documents for data-scale, date, unit, and allocation-total issues before publication.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "dividend-growth-pullback-screener"
+      ],
+      "group": "股息增长回调选股",
+      "group_en": "Dividend Growth Pullback Screening",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": false,
+      "description": "筛选高股息增长、RSI超卖回调的长期买入候选股。",
+      "description_en": "Screens for long-term dividend growers with temporary RSI oversold pullbacks.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "downtrend-duration-analyzer"
+      ],
+      "group": "历史下跌持续时间分析",
+      "group_en": "Historical Downtrend Duration Analysis",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": false,
+      "description": "分析历史下跌周期并生成分位、行业修复时长直方图。",
+      "description_en": "Analyzes historical downtrends and generates recovery-duration histograms by sector and market cap.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "dual-axis-skill-reviewer"
+      ],
+      "group": "SKILL.md 双轴评审",
+      "group_en": "Dual-Axis SKILL.md Review",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-3",
+      "chain": false,
+      "description": "用双轴方法评审 SKILL.md 并输出质量评分与改进项。",
+      "description_en": "Reviews SKILL.md files with deterministic checks plus LLM critique and scored improvement reports.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "earnings-trade-analyzer"
+      ],
+      "group": "财报后动量股票筛选",
+      "group_en": "Earnings Momentum Stock Screener",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": false,
+      "description": "用五因子评分筛选财报后动量交易候选。",
+      "description_en": "Scores recent post-earnings stocks on five factors to surface momentum trade candidates.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "edge-candidate-agent",
+        "edge-concept-synthesizer"
+      ],
+      "group": "交易信号研究到策略导出工作流",
+      "group_en": "Trading Edge Research to Strategy Export Workflow",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": true,
+      "description": "把 EOD 市场观察转为研究票据与策略管线输入。",
+      "description_en": "Converts EOD observations into research tickets and strategy specs.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "edge-hint-extractor",
+        "edge-pipeline-orchestrator"
+      ],
+      "group": "交易 Edge 研究流水线",
+      "group_en": "Trading Edge Research Pipeline",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": true,
+      "description": "把市场观察、异常和新闻反应整理成结构化 edge hints，供后续概念合成。",
+      "description_en": "Coordinates the full edge research workflow from candidate detection through strategy design, review, revision, and export.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "edge-strategy-designer"
+      ],
+      "group": "交易策略草案生成",
+      "group_en": "Trading Strategy Drafting",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": false,
+      "description": "将边缘概念转为多版本策略草案，校准退出与风险参数。",
+      "description_en": "Turns edge concepts into strategy draft variants with calibrated exits and risk settings.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "edge-strategy-reviewer"
+      ],
+      "group": "策略草案质量门禁",
+      "group_en": "Trading Strategy Draft Quality Gate",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": false,
+      "description": "审查交易策略草案，评估边缘合理性、过拟合、样本量和执行可行性，输出通过/修订/拒绝结论。",
+      "description_en": "Reviews trading strategy drafts for edge plausibility, overfitting risk, sample size, and execution realism, then returns a pass, revise, or reject verdict.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "exposure-coach"
+      ],
+      "group": "市场姿态与仓位控制",
+      "group_en": "Market Posture & Exposure Control",
+      "category": "finance-trading",
+      "subcategory": "16-3",
+      "chain": false,
+      "description": "汇总广度、趋势、宏观、资金流等信号，生成仓位上限和市场姿态摘要，辅助决定当前股票投入比例。",
+      "description_en": "Synthesizes breadth, trend, macro, and flow signals into a market posture summary with exposure limits for deciding how much capital to commit.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ftd-detector"
+      ],
+      "group": "技术分析 / 市场择时",
+      "group_en": "Technical Analysis & Market Timing",
+      "category": "finance-trading",
+      "subcategory": "16-2",
+      "chain": false,
+      "description": "识别 Follow-Through Day 等市场底部信号，给出质量评分与加仓或回补指引。",
+      "description_en": "Detects Follow-Through Day signals to confirm market bottoms and guide exposure decisions.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    },
+    {
+      "skills": [
+        "institutional-flow-tracker"
+      ],
+      "group": "institutional-flow-tracker",
+      "group_en": "Stock Research & Institutional Flow Analysis",
+      "category": "finance-trading",
+      "subcategory": "16-4",
+      "chain": false,
+      "description": "基于13F持仓变化追踪机构资金流向并发现个股机会",
+      "description_en": "Tracks institutional ownership shifts from 13F filings to surface stock opportunities.",
+      "sources": [
+        "tradermonty/claude-trading-skills"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "rohitg00",
+        "repo": "pro-workflow",
+        "full_name": "rohitg00/pro-workflow",
+        "url": "https://github.com/rohitg00/pro-workflow",
+        "stars": 2315,
+        "pushed_at": "2026-06-15",
+        "default_branch": "main",
+        "github_description": "Claude Code learns from your corrections: self-correcting memory that compounds over 50+ sessions. Context engineering, parallel worktrees, agent teams, and 17 battle-tested skills.",
+        "topics": [
+          "agent-orchestration",
+          "ai-agents",
+          "ai-coding",
+          "ai-workflow",
+          "claude",
+          "claude-code",
+          "claude-code-plugin",
+          "claude-code-skills",
+          "claude-skills",
+          "codex",
+          "context-engineering",
+          "cursor",
+          "developer-tools",
+          "gemini-cli",
+          "hooks",
+          "productivity",
+          "self-correction",
+          "workflow",
+          "worktrees"
+        ],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "agent-teams",
+          "path": "skills/agent-teams/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多代理并行开发协调",
+          "group_en": "Multi-Agent Parallel Development Coordination",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 把多个 Claude Code 会话组织成团队，分配任务、共享清单并通过信箱与文件锁协作。",
+          "description_en": "Organizes multiple Claude Code sessions into a coordinated team with task ownership, shared lists, mailbox messaging, and file-lock collaboration.",
+          "what": "A coordination pattern for running several full Claude Code sessions in parallel on the same codebase.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "auto-setup",
+          "path": "skills/auto-setup/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "项目质量门自动配置",
+          "group_en": "Automated Project Quality Gates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在接入新项目时识别技术栈，自动配置 lint、typecheck、test、format 等质量门和 Claude 设置。",
+          "description_en": "Helps agents identify a project stack and configure linting, typechecking, tests, formatting, hooks, and Claude settings for new codebases.",
+          "what": "An onboarding skill that detects project type and sets up baseline quality gates automatically.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "batch-orchestration",
+          "path": "skills/batch-orchestration/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多代理并行开发协调",
+          "group_en": "Parallel Agent Development Coordination",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "把大规模重复变更拆成独立单元，调度多个隔离代理并行执行并汇总验证结果。",
+          "description_en": "Breaks large repetitive changes into independent units, coordinates isolated agents in parallel, and collects verified results.",
+          "what": "将批量重构或迁移拆分为可并行执行的独立任务。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "bug-capture",
+          "path": "skills/bug-capture/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "GitHub 缺陷捕获",
+          "group_en": "GitHub Bug Capture",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把用户口头反馈的缺陷整理成符合项目术语的 GitHub issue，并先检查重复项。",
+          "description_en": "Turns conversational bug reports into domain-aware GitHub issues after minimal clarification and duplicate checks.",
+          "what": "把缺陷反馈沉淀为可追踪、可复用的 GitHub issue。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "compact-guard",
+          "path": "skills/compact-guard/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "Claude Code 压缩保护",
+          "group_en": "Claude Code Compaction Guard",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在上下文压缩前保存任务状态、关键文件和下一步，压缩后帮助恢复工作现场。",
+          "description_en": "Preserves task state, key files, and next steps before context compaction so work can resume cleanly afterward.",
+          "what": "A pre/post-compaction checklist for protecting active context in AI coding sessions.",
+          "chain": true,
+          "chain_group": "上下文压缩与工程工作流",
+          "chain_group_en": "Context Compaction and Engineering Workflow"
+        },
+        {
+          "name": "context-engineering",
+          "path": "skills/context-engineering/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "上下文工程四操作",
+          "group_en": "Four-Operation Context Engineering",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用写入、选择、压缩、隔离管理上下文流，帮助 Agent 在长会话中保持状态清晰高效。",
+          "description_en": "Uses writing, selecting, compressing, and isolating to manage context flow and keep long AI sessions focused.",
+          "what": "A framework for controlling context lifecycle, token budgets, and session state.",
+          "chain": true,
+          "chain_group": "上下文压缩与工程工作流",
+          "chain_group_en": "Context Compaction and Engineering Workflow",
+          "dup_catalog": "addyosmani · 组「上下文工程优化」"
+        },
+        {
+          "name": "context-optimizer",
+          "path": "skills/context-optimizer/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "Claude Code 上下文优化",
+          "group_en": "Claude Code Context Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 管理上下文窗口、压缩会话并降低 token 负担。",
+          "description_en": "Helps agents manage context windows, compact sessions, and reduce token load.",
+          "what": "Optimizes Claude Code sessions by monitoring context usage and applying compaction, MCP, and delegation tactics.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cost-tracker",
+          "path": "skills/cost-tracker/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "Claude Code 成本与预算控制",
+          "group_en": "Claude Code Cost and Budget Control",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 跟踪会话成本、设置预算提醒并优化 token 花费。",
+          "description_en": "Helps agents track session costs, set budget alerts, and optimize token spending.",
+          "what": "Monitors Claude Code costs and recommends budget-aware token and tool-call strategies.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deslop",
+          "path": "skills/deslop/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "清理 AI 代码气味",
+          "group_en": "AI Code Smell Cleanup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "清理分支 diff 中的 AI 代码啰嗦、冗余注释和过度抽象。",
+          "description_en": "Cleans AI-generated slop, redundant comments, and over-engineering from the branch diff.",
+          "what": "A pre-commit cleanup pass that diffs against main and removes AI code smell.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "file-watcher",
+          "path": "skills/file-watcher/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Claude Code hooks 文件监听",
+          "group_en": "Claude Code File Watch Hooks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "配置 Claude Code hooks，监听文件变化并注入环境变量。",
+          "description_en": "Sets up Claude Code hooks that react to file changes and inject environment variables.",
+          "what": "Registers watched paths and handles file-change events for reactive agent workflows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "insights",
+          "path": "skills/insights/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Agent 会话表现度量",
+          "group_en": "Agent session performance metrics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从项目记忆和会话历史生成学习趋势、修正率与效率洞察。",
+          "description_en": "Generates learning trends, correction rates, and productivity insights from project memory and session history.",
+          "what": "Shows session analytics, learning patterns, correction trends, heatmaps, and productivity metrics.",
+          "chain": true,
+          "chain_group": "学习规则闭环",
+          "chain_group_en": "Learning-rule feedback loop"
+        },
+        {
+          "name": "learn-rule",
+          "path": "skills/learn-rule/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "项目记忆学习规则",
+          "group_en": "Project memory learning rules",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把用户纠正沉淀为可检索、可分类的持久学习规则。",
+          "description_en": "Turns user corrections into categorized, retrievable persistent learning rules.",
+          "what": "Captures mistakes and user corrections as durable learning rules for future sessions.",
+          "chain": true,
+          "chain_group": "学习规则闭环",
+          "chain_group_en": "Learning-rule feedback loop"
+        },
+        {
+          "name": "llm-council",
+          "path": "skills/llm-council/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多模型委员会审议",
+          "group_en": "Multi-LLM council deliberation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "组织多个 LLM 并行回答、匿名互评并由主席模型综合，适合高风险评审与架构决策。",
+          "description_en": "Coordinates multiple LLMs to answer independently, rank anonymized responses, and synthesize a final view for high-stakes reviews.",
+          "what": "Run a provider-agnostic multi-LLM deliberation workflow.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "llm-gate",
+          "path": "skills/llm-gate/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "LLM Prompt Hook 质量门禁",
+          "group_en": "LLM prompt-hook quality gates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 Claude Code prompt hooks 在提交等操作前调用 LLM 校验约定，拦截不合规操作。",
+          "description_en": "Uses Claude Code prompt hooks to run AI checks before operations like commits and block convention violations.",
+          "what": "Create AI-backed quality gates with Claude Code prompt hooks.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "mcp-audit",
+          "path": "skills/mcp-audit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "MCP 工具审计与成本优化",
+          "group_en": "MCP tool auditing and cost optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计 MCP 服务器开销、冗余与安全风险，给出清理建议。",
+          "description_en": "Audits MCP servers for token overhead, redundancy, and security, then recommends cleanup.",
+          "what": "Audit connected MCP servers to reduce context cost and remove overlap.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "module-map",
+          "path": "skills/module-map/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "代码地图 / 快速定位",
+          "group_en": "Codebase orientation maps",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成一屏代码地图，标出入口、核心模块、数据流和隐藏耦合。",
+          "description_en": "Creates a one-screen code map with entry points, core modules, data flow, and hidden coupling.",
+          "what": "Maps an unfamiliar code area quickly with file-backed entry points and flows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "orchestrate",
+          "path": "skills/orchestrate/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "多阶段功能开发编排",
+          "group_en": "Multi-Phase Feature Orchestration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把复杂功能拆成研究、计划、实现、评审阶段，并设置置信度与审批门控。",
+          "description_en": "Breaks complex features into research, planning, implementation, and review phases with confidence and approval gates.",
+          "what": "用于复杂功能开发时组织多阶段执行与质量门控。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "parallel-worktrees",
+          "path": "skills/parallel-worktrees/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 并行 worktree 会话",
+          "group_en": "Parallel Git Worktree Sessions",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 Git worktree 隔离并行任务，让测试、构建和探索分支互不干扰。",
+          "description_en": "Uses Git worktrees to isolate parallel tasks so tests, builds, and experiments do not interfere.",
+          "what": "用于并行开发、等待测试或探索多条方案时隔离工作区。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "permission-tuner",
+          "path": "skills/permission-tuner/SKILL.md",
+          "subcategory": "13-3",
+          "subcategory_title": "13.3 Skill 安全审计",
+          "category": "meta-skill-mgmt",
+          "group": "Claude Code 权限调优",
+          "group_en": "Claude Code Permission Tuning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析权限拒绝记录，生成更安全的 alwaysAllow/alwaysDeny 规则。",
+          "description_en": "Analyzes permission denial patterns and proposes safer allow and deny rules.",
+          "what": "Tune Claude Code permission prompts from usage patterns.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "plan-interrogate",
+          "path": "skills/plan-interrogate/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "plan-interrogate",
+          "group_en": "Core Development Workflow / Handoff / Intent Clarification / Interrogation Mode",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "把计划拆成决策树，逐项追问并锁定实现前答案。",
+          "description_en": "Turns a plan into a decision tree and resolves choices before coding.",
+          "what": "Stress-test a plan by walking its decision tree one question at a time.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pro-workflow",
+          "path": "skills/pro-workflow/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "跨 agent 编码工作流编排",
+          "group_en": "Cross-agent coding workflow orchestration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供跨 agent 的编码工作流、钩子事件和团队编排，减少纠正循环。",
+          "description_en": "Orchestrates cross-agent coding workflows with hooks, reference guides, and correction loops.",
+          "what": "跨 agent 编码工作流与纠错循环的总控 skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "replay-learnings",
+          "path": "skills/replay-learnings/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "Agent 记忆 / 工作笔记",
+          "group_en": "Agent memory / work notes",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在任务开始前检索历史教训和修正规则，提醒 agent 避开旧错误。",
+          "description_en": "Surfaces relevant past learnings before a task so the agent avoids repeating mistakes.",
+          "what": "检索并回放历史修正与经验，作为任务前简报。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "safe-mode",
+          "path": "skills/safe-mode/SKILL.md",
+          "subcategory": "13-5",
+          "subcategory_title": "13.5 行为约束模板",
+          "category": "meta-skill-mgmt",
+          "group": "Claude Code 安全模式",
+          "group_en": "Claude Code Safe Mode",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在 Claude Code 中启用危险操作拦截、目录锁定和权限提醒。",
+          "description_en": "Enables destructive-operation interception, directory lockdown, and permission alerts for Claude Code sessions.",
+          "what": "Provides opt-in guardrails for Bash, Edit, and Write actions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "session-handoff",
+          "path": "skills/session-handoff/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "会话接力 / 上下文 handoff",
+          "group_en": "Session Handoff / Context Transfer",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在会话结束时生成进度、决策、待办和恢复命令的结构化交接文档。",
+          "description_en": "Creates a structured handoff note with progress, decisions, open tasks, and a resume command at session end.",
+          "what": "Captures current state so the next session can continue smoothly.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skill-optimizer",
+          "path": "skills/skill-optimizer/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 优化器 / 离线训练循环",
+          "group_en": "Skill optimizer / offline training loop",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于历史修正训练现有 SKILL.md，验证后合并可证明有效的改进补丁。",
+          "description_en": "Trains existing SKILL.md files from past corrections and accepts only validated improvements.",
+          "what": "把 accumulated learn-rule 修正转成受验证门禁约束的 skill 改进补丁。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "smart-commit",
+          "path": "skills/smart-commit/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "质量门禁提交 / Conventional Commits",
+          "group_en": "Quality-gated commits / Conventional Commits",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提交前运行质量门禁、审查暂存改动，并生成规范的 conventional commit。",
+          "description_en": "Runs quality gates, reviews staged changes, and creates a conventional commit.",
+          "what": "在用户要求提交时自动检查改动质量、扫描问题并生成提交。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sprint-status",
+          "path": "skills/sprint-status/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多代理并行开发协调",
+          "group_en": "Parallel Agent Development Coordination",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 在并行 Claude Code 会话中标识上下文并输出状态行，避免串线。",
+          "description_en": "Keeps parallel Claude Code sessions oriented with context headers and status lines to avoid cross-talk.",
+          "what": "并行 Claude Code 会话协调与状态标记",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "survey-generator",
+          "path": "skills/survey-generator/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "AI/ML 文献综述生成器",
+          "group_en": "AI/ML Literature Survey Generator",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据公开锚点资料生成带分类与真实参考文献的 wiki 文献综述。",
+          "description_en": "Generates a wiki-based literature survey with taxonomy and real citations from public anchor sources.",
+          "what": "AI/ML 文献综述与参考文献整理",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "thoroughness-scoring",
+          "path": "skills/thoroughness-scoring/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "Thoroughness 决策评分",
+          "group_en": "Thoroughness Decision Scoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 在方案选择时重述上下文、评估彻底度并避免低质量捷径。",
+          "description_en": "Helps the agent restate context, score option quality, and avoid low-quality shortcuts when choosing an implementation path.",
+          "what": "A scoring rubric for choosing the most thorough viable implementation path.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "token-efficiency",
+          "path": "skills/token-efficiency/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Token 效率与工具预算",
+          "group_en": "Token Efficiency and Tool Budgeting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过反奉承、预算限制和先读后写，减少 agent 的 token 浪费与无效迭代。",
+          "description_en": "Reduces token waste and unnecessary iteration with anti-sycophancy rules, tool-call budgets, and read-before-write habits.",
+          "what": "A playbook for making agent sessions cheaper, shorter, and less repetitive.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "supabase",
+        "repo": "agent-skills",
+        "full_name": "supabase/agent-skills",
+        "url": "https://github.com/supabase/agent-skills",
+        "stars": 2258,
+        "pushed_at": "2026-06-09",
+        "default_branch": "main",
+        "github_description": "Agent Skills to help developers using AI agents with Supabase",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "skills",
+          "supabase"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "supabase-postgres-best-practices",
+          "path": "skills/supabase-postgres-best-practices/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Supabase Postgres 性能优化",
+          "group_en": "Supabase Postgres Performance Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 编写、审查和优化 Supabase/Postgres 查询、Schema 与连接配置，并参考规则定位性能问题。",
+          "description_en": "Helps agents write, review, and optimize Supabase/Postgres queries, schemas, and connection settings using prioritized performance rules.",
+          "what": "Postgres performance rules for Supabase agents.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "supabase",
+          "path": "skills/supabase/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Supabase 通用开发",
+          "group_en": "General Supabase Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 Supabase 数据库、Auth、Edge Functions、Realtime、Storage、CLI/MCP 等任务的查证、实现与验证指引。",
+          "description_en": "Guides agents through Supabase Database, Auth, Edge Functions, Realtime, Storage, CLI, and MCP tasks with current docs and verification.",
+          "what": "General Supabase development guidance for agent workflows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "runkids",
+        "repo": "skillshare",
+        "full_name": "runkids/skillshare",
+        "url": "https://github.com/runkids/skillshare",
+        "stars": 2246,
+        "pushed_at": "2026-06-16",
+        "default_branch": "main",
+        "github_description": "📚 Sync skills across all AI CLI tools with one command and simplify team sharing. Supporting Codex, Claude Code, OpenClaw & more",
+        "topics": [
+          "agenthub",
+          "ai",
+          "claude-code",
+          "cli",
+          "codex",
+          "codex-skills",
+          "copilot",
+          "cross-machine-sync",
+          "cursor",
+          "gemini",
+          "go",
+          "gui",
+          "openclaw",
+          "skills",
+          "skills-audit",
+          "skills-management",
+          "skills-manager",
+          "skills-ui",
+          "skillshare",
+          "team-management"
+        ],
+        "language": "Go",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-codex-skills"
+      },
+      "skills": [
+        {
+          "name": "skillshare-changelog",
+          "path": ".skillshare/skills/skillshare-changelog/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "危险命令拦截 / 版本管理 / Changelog / 通用发布流程自动化",
+          "group_en": "Dangerous command guard / versioning / changelog / release automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据近期提交生成规范 CHANGELOG 条目，并同步网站更新页面。",
+          "description_en": "Builds a conventional CHANGELOG entry from recent commits and updates the website changelog page.",
+          "what": "根据最近提交生成发布变更日志，并同步网站页面。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skillshare-cli-e2e-test",
+          "path": ".skillshare/skills/skillshare-cli-e2e-test/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "CLI E2E 测试运行",
+          "group_en": "CLI E2E test runner",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在 devcontainer 中按 runbook 启动隔离环境，执行并报告 CLI E2E 测试，验证 CLI 行为。",
+          "description_en": "Runs runbook-based CLI end-to-end tests in an isolated devcontainer and reports the results.",
+          "what": "按 runbook 在隔离容器中执行 CLI 端到端测试。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skillshare-codebase-audit",
+          "path": ".skillshare/skills/skillshare-codebase-audit/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "代码库一致性审计",
+          "group_en": "Codebase consistency audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "只读检查 CLI 参数、文档、测试与目标的同步一致性，并输出问题摘要。",
+          "description_en": "Read-only checks keep CLI flags, docs, tests, and targets aligned, then summarize drift.",
+          "what": "审计代码、文档、测试和目标文件的一致性漂移。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skillshare-devcontainer",
+          "path": ".skillshare/skills/skillshare-devcontainer/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Devcontainer 命令执行",
+          "group_en": "Devcontainer command execution",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在 devcontainer 中运行命令、测试和调试，避免在宿主机误跑 Linux 二进制。",
+          "description_en": "Runs commands, tests, and debugging in the devcontainer to avoid host/container mismatches.",
+          "what": "把 CLI 验证、测试和调试放到 devcontainer 中执行。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skillshare-implement-feature",
+          "path": ".skillshare/skills/skillshare-implement-feature/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "TDD 功能实现（Go）",
+          "group_en": "TDD Feature Implementation (Go)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于规格或描述以 TDD 流程实现 Go 功能，补测试并按项目约定拆分处理程序。",
+          "description_en": "Implements Go features from specs or descriptions using a test-first workflow, with tests and project-specific handler structure.",
+          "what": "基于规格先写测试，再实现 Go 功能并按项目约定拆分。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skillshare-release",
+          "path": ".skillshare/skills/skillshare-release/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "危险命令拦截 / 版本管理 / Changelog / 通用发布流程自动化",
+          "group_en": "Dangerous Command Guard / Versioning / Changelog / Release Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "执行发布流程：先跑测试检查，再生成 changelog、更新版本、提交并草拟公告。",
+          "description_en": "Orchestrates releases by validating checks, generating changelogs, bumping versions, committing changes, and drafting announcements.",
+          "what": "跑完整检查后完成版本、changelog、提交和公告草稿。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skillshare-ui-website-style",
+          "path": ".skillshare/skills/skillshare-ui-website-style/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Skillshare 前端设计系统",
+          "group_en": "Skillshare frontend design system",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "统一 Skillshare 两个前端的设计令牌、组件 API 与视觉一致性。",
+          "description_en": "Keeps Skillshare’s dashboard and website UI aligned with its design tokens, component APIs, and visual patterns.",
+          "what": "用于修改 Skillshare 前端时遵循统一设计规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skillshare-update-docs",
+          "path": ".skillshare/skills/skillshare-update-docs/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "代码变更后的文档同步",
+          "group_en": "Code-change documentation sync",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用代码差异和 Go 源同步网站文档、README 与内置技能说明。",
+          "description_en": "Syncs website docs, README, and built-in skill descriptions against source changes.",
+          "what": "用于代码变更后同步文档与源码。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skillshare",
+          "path": "skills/skillshare/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "跨工具 Skill 同步与管理",
+          "group_en": "Cross-tool Skill Sync & Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 管理、同步、备份和审计多 AI CLI 工具中的 skills/agents 配置。",
+          "description_en": "Helps agents manage, sync, back up, and audit skills and agents across many AI CLI tools.",
+          "what": "A CLI skill manager that syncs AI CLI skills and agents from a single source across global and project modes.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "apify",
+        "repo": "agent-skills",
+        "full_name": "apify/agent-skills",
+        "url": "https://github.com/apify/agent-skills",
+        "stars": 2151,
+        "pushed_at": "2026-06-02",
+        "default_branch": "main",
+        "github_description": "Collection of Apify Agent Skills",
+        "topics": [],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "apify-actor-development",
+          "path": "skills/apify-actor-development/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apify Actor 开发",
+          "group_en": "Apify Actor Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 创建、调试并部署 Apify Actors，处理输入输出与云端运行。",
+          "description_en": "Helps an agent create, debug, and deploy Apify Actors, including inputs, outputs, and cloud execution.",
+          "what": "用于开发、调试和部署 Apify Actor。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "apify-actorization",
+          "path": "skills/apify-actorization/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apify Actor 接入",
+          "group_en": "Apify Actor Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 将现有项目或 CLI 封装为 Apify Actor，并配置生命周期与部署。",
+          "description_en": "Helps an agent wrap existing projects or CLI tools as Apify Actors and configure lifecycle and deployment.",
+          "what": "用于把现有项目迁移为 Apify Actor。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "apify-generate-output-schema",
+          "path": "skills/apify-generate-output-schema/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apify 平台开发工具",
+          "group_en": "Apify platform development tools",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 分析 Apify Actor 源码，生成并校验输出 schema 文件。",
+          "description_en": "Helps an agent inspect Apify Actor source code and generate validated output schema files.",
+          "what": "根据 Actor 源码生成并校验输出 schema 文件。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "apify-sdk-integration",
+          "path": "skills/apify-sdk-integration/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apify 平台开发工具",
+          "group_en": "Apify platform development tools",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在应用中通过 apify-client 或 REST API 调用 Apify Actors。",
+          "description_en": "Helps an agent call Apify Actors from an application using apify-client or the REST API.",
+          "what": "用 apify-client 或 REST API 在应用中调用 Apify Actors。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "apify-ultimate-scraper",
+          "path": "skills/apify-ultimate-scraper/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Apify 多平台网页抓取",
+          "group_en": "Apify multi-platform web scraping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于 Apify CLI 调度多平台 Actor，帮助 agent 从社媒、搜索、地图等站点提取结构化数据。",
+          "description_en": "Uses the Apify CLI to run Actors across many platforms, helping agents extract structured data from social, search, map, and marketplace sites.",
+          "what": "按目标平台选择 Apify Actor 并以 JSON 格式输出抓取结果。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "aaron-he-zhu",
+        "repo": "seo-geo-claude-skills",
+        "full_name": "aaron-he-zhu/seo-geo-claude-skills",
+        "url": "https://github.com/aaron-he-zhu/seo-geo-claude-skills",
+        "stars": 2146,
+        "pushed_at": "2026-06-05",
+        "default_branch": "main",
+        "github_description": "20 SEO & GEO skills for Claude Code, Cursor, Codex, and 35+ AI agents. Keyword research, content writing, technical audits, rank tracking. CORE-EEAT + CITE frameworks.",
+        "topics": [
+          "agent-skills",
+          "ai-skills",
+          "claude-code",
+          "claude-skills",
+          "content-optimization",
+          "generative-engine-optimization",
+          "geo",
+          "marketing",
+          "search-engine-optimization",
+          "seo",
+          "seo-tools"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "geo-content-optimizer",
+          "path": "build/geo-content-optimizer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO/GEO 内容优化",
+          "group_en": "SEO/GEO Content Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "优化正文以适配 AI 答案引擎，提高被引用和出现的机会。",
+          "description_en": "Optimizes content for AI answer engines to improve citation readiness and visibility.",
+          "what": "优化内容以获得 ChatGPT、Perplexity、AI Overviews 等 AI 答案中的引用与可见性。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "meta-tags-optimizer",
+          "path": "build/meta-tags-optimizer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO/GEO 内容优化",
+          "group_en": "SEO/GEO Content Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为页面生成或改写标题、描述与社交元标签，提升点击率和分享效果。",
+          "description_en": "Creates or rewrites page titles, meta descriptions, and social meta tags to improve CTR and sharing.",
+          "what": "生成或优化 title、meta description、OG/Twitter Card 等元标签以提升 CTR。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "schema-markup-generator",
+          "path": "build/schema-markup-generator/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO / GEO 内容优化与结构化数据",
+          "group_en": "SEO / GEO Content Optimization and Structured Data",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成 Schema.org JSON-LD，识别富结果类型并输出结构化数据。",
+          "description_en": "Generates Schema.org JSON-LD and identifies eligible rich-result structured data.",
+          "what": "Creates structured data markup for rich results.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "seo-content-writer",
+          "path": "build/seo-content-writer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO / GEO 内容优化与结构化数据",
+          "group_en": "SEO / GEO Content Optimization and Structured Data",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "围绕关键词与搜索意图撰写 SEO 文章、博客和落地页内容。",
+          "description_en": "Drafts SEO articles, blogs, and landing pages around keywords and search intent.",
+          "what": "Writes search-intent aligned SEO content.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-quality-auditor",
+          "path": "cross-cutting/content-quality-auditor/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO/GEO 审计与优化（CORE-EEAT/CITE）",
+          "group_en": "SEO/GEO Audit & Optimization (CORE-EEAT/CITE)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计内容质量、E-E-A-T 与发布就绪度，生成评分和改进计划。",
+          "description_en": "Audits content quality, E-E-A-T, and publish readiness, then returns scores and fixes.",
+          "what": "Runs an 80-item CORE-EEAT audit with veto checks and a remediation plan.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "domain-authority-auditor",
+          "path": "cross-cutting/domain-authority-auditor/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO/GEO 审计与优化（CORE-EEAT/CITE）",
+          "group_en": "SEO/GEO Audit & Optimization (CORE-EEAT/CITE)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计域名权威、网站信任与引用可信度，输出 CITE 分级。",
+          "description_en": "Audits domain authority, site trust, and citation credibility with CITE scoring.",
+          "what": "Runs a 40-item CITE trust audit with TRUSTED, CAUTIOUS, and UNTRUSTED outcomes.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "entity-optimizer",
+          "path": "cross-cutting/entity-optimizer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "实体优化 / 知识图谱",
+          "group_en": "Entity Optimization / Knowledge Graph",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计并构建品牌实体在知识图谱、Wikidata 与 AI 引擎中的身份信号。",
+          "description_en": "Audits and builds brand entity identity signals across knowledge graphs, Wikidata, and AI engines.",
+          "what": "优化品牌/实体在知识图谱、Wikidata 和 AI 识别中的身份信号。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "memory-management",
+          "path": "cross-cutting/memory-management/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "SEO/GEO 项目记忆管理",
+          "group_en": "SEO/GEO Project Memory Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "管理 SEO/GEO 项目的热缓存、活动记忆、归档与隐私清理。",
+          "description_en": "Manages hot cache, active memory, archives, and privacy cleanup for SEO/GEO projects.",
+          "what": "管理 SEO/GEO 项目的热缓存、活动记忆、归档和隐私清理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "alert-manager",
+          "path": "monitor/alert-manager/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO/GEO 监控与外链分析",
+          "group_en": "SEO/GEO Monitoring & Backlink Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为排名、流量、技术问题和竞品变化配置阈值提醒，帮助 agent 做持续 SEO 监控。",
+          "description_en": "Configures threshold alerts for rankings, traffic, technical issues, and competitor changes so agents can monitor SEO continuously.",
+          "what": "设置并维护 SEO/GEO 指标预警。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "backlink-analyzer",
+          "path": "monitor/backlink-analyzer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO/GEO 监控与外链分析",
+          "group_en": "SEO/GEO Monitoring & Backlink Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析外链来源、锚文本、垃圾链接和竞品外链缺口，辅助制定外链与风控策略。",
+          "description_en": "Profiles backlink sources, anchor text, toxic links, and competitor link gaps to guide link-building and risk decisions.",
+          "what": "审查外链质量并发现建设机会。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "performance-reporter",
+          "path": "monitor/performance-reporter/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "生成引擎优化 / SEO 全套",
+          "group_en": "Generative Engine Optimization / Full SEO Suite",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "聚合SEO/GEO数据，生成多指标绩效报告和老板看板，并给出优先建议。",
+          "description_en": "Aggregates SEO/GEO data into multi-metric performance reports, dashboards, and prioritized recommendations.",
+          "what": "Builds stakeholder-ready SEO/GEO performance reports and KPI dashboards.",
+          "chain": true,
+          "chain_group": "SEO 监测与报告工作流",
+          "chain_group_en": "SEO monitoring and reporting workflow"
+        },
+        {
+          "name": "rank-tracker",
+          "path": "monitor/rank-tracker/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "生成引擎优化 / SEO 全套",
+          "group_en": "Generative Engine Optimization / Full SEO Suite",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "追踪关键词排名与SERP变化，支持排名快照对比和AI可见性检查。",
+          "description_en": "Tracks keyword rankings and SERP shifts, compares snapshots, and checks AI visibility.",
+          "what": "Monitors keyword and SERP position changes over time.",
+          "chain": true,
+          "chain_group": "SEO 监测与报告工作流",
+          "chain_group_en": "SEO monitoring and reporting workflow"
+        },
+        {
+          "name": "content-refresher",
+          "path": "optimize/content-refresher/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "内容刷新 / GEO 排名恢复",
+          "group_en": "Content Refresh / GEO Ranking Recovery",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "识别过时内容，评估新鲜度与流量衰减，生成 GEO 更新计划和重发策略。",
+          "description_en": "Refreshes aging content by scoring freshness, prioritizing updates, and planning GEO-focused republishing.",
+          "what": "用于更新旧内容并恢复排名。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "internal-linking-optimizer",
+          "path": "optimize/internal-linking-optimizer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "内链架构 / 孤立页面修复",
+          "group_en": "Internal Link Architecture / Orphan Page Fixing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析内链结构、权重流向和孤立页面，输出优先修复的源/目标/锚文本方案。",
+          "description_en": "Maps internal links, authority flow, orphan pages, and crawl depth into a prioritized linking plan.",
+          "what": "用于修复站内链接架构。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "on-page-seo-auditor",
+          "path": "optimize/on-page-seo-auditor/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "生成引擎优化 / SEO 全套",
+          "group_en": "GEO / SEO Optimization Suite",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计单页SEO信号，定位标题、结构、关键词、链接和图片问题。",
+          "description_en": "Audits a page’s on-page SEO signals and prioritizes fixes for titles, structure, keywords, links, and images.",
+          "what": "Use it when a single page’s SEO health or ranking drop needs diagnosis.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "technical-seo-checker",
+          "path": "optimize/technical-seo-checker/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "生成引擎优化 / SEO 全套",
+          "group_en": "GEO / SEO Optimization Suite",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "检查技术SEO，诊断抓取、索引、速度、规范标签和站点迁移问题。",
+          "description_en": "Checks technical SEO health and diagnoses crawl, indexing, speed, canonical, and migration issues.",
+          "what": "Use it when site speed, crawlability, indexing, or technical SEO issues need diagnosis.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competitor-analysis",
+          "path": "research/competitor-analysis/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "竞品分析",
+          "group_en": "Competitor Analysis",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "对标竞品关键词、内容、外链、AI 引用与流量份额，输出行动计划。",
+          "description_en": "Benchmarks competitor keywords, content, backlinks, AI citations, and traffic share into a prioritized action plan.",
+          "what": "分析竞争对手 SEO/GEO 策略，识别优势、弱点、市场机会和可执行改进方向。",
+          "chain": true,
+          "chain_group": "SEO 竞品研究与内容缺口发现",
+          "chain_group_en": "SEO competitor research and content gap discovery",
+          "dup_catalog": "Pawel/Corey/founder-skills · 组「竞品分析」"
+        },
+        {
+          "name": "content-gap-analysis",
+          "path": "research/content-gap-analysis/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO/GEO 内容缺口与选题机会",
+          "group_en": "SEO/GEO Content Gap and Topic Opportunities",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "对比站点覆盖，识别缺失主题、关键词缺口和优先内容机会。",
+          "description_en": "Compares site coverage against competitors to surface missing topics, keyword gaps, and priority content opportunities.",
+          "what": "对自有站点与竞品进行主题覆盖对比，生成内容缺口、关键词机会和编辑日历建议。",
+          "chain": true,
+          "chain_group": "SEO 竞品研究与内容缺口发现",
+          "chain_group_en": "SEO competitor research and content gap discovery"
+        },
+        {
+          "name": "keyword-research",
+          "path": "research/keyword-research/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO / GEO 关键词研究",
+          "group_en": "SEO / GEO Keyword Research",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 围绕主题发现、评分并聚类关键词，用于 SEO/GEO 选题规划。",
+          "description_en": "Helps an agent discover, score, and cluster keywords for SEO/GEO content planning.",
+          "what": "Keyword discovery, scoring, intent analysis, and clustering for SEO/GEO planning.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "serp-analysis",
+          "path": "research/serp-analysis/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO / GEO SERP 分析",
+          "group_en": "SEO / GEO SERP Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 分析搜索结果页结构、排名特征、意图与摘要机会，指导查询优化。",
+          "description_en": "Helps an agent analyze SERP structure, ranking features, intent, and snippet opportunities for a query.",
+          "what": "Maps SERP features, ranking patterns, search intent, and AI Overview or snippet opportunities.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "romainsimon",
+        "repo": "paperasse",
+        "full_name": "romainsimon/paperasse",
+        "url": "https://github.com/romainsimon/paperasse",
+        "stars": 2140,
+        "pushed_at": "2026-05-13",
+        "default_branch": "master",
+        "github_description": "🇫🇷  Skills pour agents IA spécialisés dans la bureaucratie française : Comptable, Notaire, ...",
+        "topics": [
+          "agent-skills",
+          "agentic-workflow",
+          "bureaucratie",
+          "claude",
+          "claude-code",
+          "claude-skills",
+          "comptabilite",
+          "comptable",
+          "france",
+          "notaire",
+          "paperasse",
+          "skills"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "commissaire-aux-comptes",
+          "path": "commissaire-aux-comptes/SKILL.md",
+          "subcategory": "10-3",
+          "subcategory_title": "10.3 会计 / 税务 / 跨国合规",
+          "category": "startup-finance",
+          "group": "法国法定审计",
+          "group_en": "French statutory audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按法国 NEP 流程审计年报，核验账簿税表并生成审计意见。",
+          "description_en": "Audits French annual accounts under NEP, verifies ledgers and tax filings, and drafts audit opinions.",
+          "what": "审计法国公司年报并出具意见。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "comptable",
+          "path": "comptable/SKILL.md",
+          "subcategory": "10-3",
+          "subcategory_title": "10.3 会计 / 税务 / 跨国合规",
+          "category": "startup-finance",
+          "group": "法国会计税务合规",
+          "group_en": "French accounting and tax compliance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "管理法国企业 PCG 记账、税费申报、年结和电子发票合规。",
+          "description_en": "Handles French PCG bookkeeping, tax filings, year-end close, and e-invoicing compliance.",
+          "what": "处理法国企业会计、税务和发票合规。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "controleur-fiscal",
+          "path": "controleur-fiscal/SKILL.md",
+          "subcategory": "10-3",
+          "subcategory_title": "10.3 会计 / 税务 / 跨国合规",
+          "category": "startup-finance",
+          "group": "法国企业税务审计模拟",
+          "group_en": "French corporate tax audit simulation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 模拟 DGFIP 企业税务稽查，审查账目并识别潜在补税风险。",
+          "description_en": "Helps an agent simulate a DGFIP corporate tax audit, review accounts, and flag reassessment risks.",
+          "what": "模拟法国企业税务稽查并输出风险与法律依据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "fiscaliste",
+          "path": "fiscaliste/SKILL.md",
+          "subcategory": "10-3",
+          "subcategory_title": "10.3 会计 / 税务 / 跨国合规",
+          "category": "startup-finance",
+          "group": "法国个人税务顾问",
+          "group_en": "French personal tax advisory",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 为法国个人计算所得税、申报并评估合法优化方案。",
+          "description_en": "Helps an agent calculate French personal income tax, prepare filings, and evaluate lawful optimization options.",
+          "what": "为法国个人提供所得税、资产与税务优化建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "notaire",
+          "path": "notaire/SKILL.md",
+          "subcategory": "14-8",
+          "subcategory_title": "14.8 法务运营 / 文书",
+          "category": "legal-compliance",
+          "group": "法国公证法律助手",
+          "group_en": "French Notarial Legal Assistant",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协助处理法国不动产、继承、赠与等公证法律事项。",
+          "description_en": "Helps agents handle French notarial matters such as real estate, estates, gifts, and civil-law documents.",
+          "what": "法国公证法律事项处理助手。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "syndic",
+          "path": "syndic/SKILL.md",
+          "subcategory": "14-8",
+          "subcategory_title": "14.8 法务运营 / 文书",
+          "category": "legal-compliance",
+          "group": "法国共管物业助手",
+          "group_en": "French Co-Ownership Management Assistant",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协助管理法国共管物业的行政、会计、大会与合规流程。",
+          "description_en": "Helps agents manage French co-ownership administration, accounting, general meetings, and compliance workflows.",
+          "what": "法国共管物业行政与合规管理助手。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "mrgoonie",
+        "repo": "claudekit-skills",
+        "full_name": "mrgoonie/claudekit-skills",
+        "url": "https://github.com/mrgoonie/claudekit-skills",
+        "stars": 2132,
+        "pushed_at": "2026-04-03",
+        "default_branch": "main",
+        "github_description": "All powerful skills of ClaudeKit.cc!",
+        "topics": [],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "aesthetic",
+          "path": ".claude/skills/aesthetic/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "界面美学与设计系统",
+          "group_en": "Interface Aesthetics & Design Systems",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按视觉原则设计美观、易用且可落地的界面。",
+          "description_en": "Helps the agent design beautiful, usable interfaces grounded in proven visual principles.",
+          "what": "Create aesthetically strong UI/UX, design docs, style guidance, and visual hierarchy.",
+          "chain": true,
+          "chain_group": "ClaudeKit UI 构建工作流",
+          "chain_group_en": "ClaudeKit UI Build Workflow"
+        },
+        {
+          "name": "ai-multimodal",
+          "path": ".claude/skills/ai-multimodal/SKILL.md",
+          "subcategory": "6-2",
+          "subcategory_title": "6.2 音频 / TTS / 转写",
+          "category": "media",
+          "group": "多模态媒体理解与生成",
+          "group_en": "Multimodal Media Understanding & Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理音频、图片、视频、PDF，并生成或编辑图像。",
+          "description_en": "Helps the agent process audio, images, video, PDFs, and generate or edit visuals.",
+          "what": "Use Gemini multimodal APIs for transcription, OCR, visual analysis, video understanding, and image generation.",
+          "chain": true,
+          "chain_group": "ClaudeKit UI 构建工作流",
+          "chain_group_en": "ClaudeKit UI Build Workflow"
+        },
+        {
+          "name": "backend-development",
+          "path": ".claude/skills/backend-development/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "后端架构 / 微服务设计",
+          "group_en": "Backend Architecture / Microservices Design",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导 agent 设计并实现可扩展、安全的后端系统、API 与微服务。",
+          "description_en": "Guides agents in designing and building scalable, secure backend systems, APIs, and microservices.",
+          "what": "为后端系统设计、API 实现、数据库优化、部署与安全提供实践指引。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "better-auth",
+          "path": ".claude/skills/better-auth/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "认证 / 授权实现",
+          "group_en": "Authentication / Authorization Implementation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 TypeScript 或 JavaScript 应用中接入 Better Auth 认证与权限。",
+          "description_en": "Helps agents integrate Better Auth authentication and authorization into TypeScript or JavaScript applications.",
+          "what": "为 Web 应用实现登录、OAuth、2FA、会话管理与 RBAC 等认证能力。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "bunny",
+          "path": ".claude/skills/bunny/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Bunny.net 云服务集成",
+          "group_en": "Bunny.net Cloud Platform Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助智能体通过 Bunny.net API 集成 CDN、存储、流媒体、DNS、安全与容器服务。",
+          "description_en": "Helps agents integrate Bunny.net APIs for CDN, storage, streaming, DNS, security, and containers.",
+          "what": "用于配置和调用 Bunny.net 的 CDN、存储、流媒体、DNS、安全与容器能力。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "chrome-devtools",
+          "path": ".claude/skills/chrome-devtools/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Puppeteer 浏览器自动化与调试",
+          "group_en": "Puppeteer Browser Automation & Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Puppeteer 脚本自动化浏览器，辅助调试、性能分析、截图和网络监控。",
+          "description_en": "Automates browsers with Puppeteer scripts for debugging, performance analysis, screenshots, and network monitoring.",
+          "what": "用于通过 Puppeteer 执行浏览器自动化、调试、性能分析、截图和网络监控。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "claude-code",
+          "path": ".claude/skills/claude-code/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Claude Code 使用与集成",
+          "group_en": "Claude Code Usage and Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Claude Code 安装、命令、MCP、技能、插件、CI/CD 与企业部署。",
+          "description_en": "Guides setup, commands, MCP, skills, plugins, CI/CD, and enterprise deployment for Claude Code.",
+          "what": "Agent helper for Claude Code workflows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "code-review",
+          "path": ".claude/skills/code-review/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "代码审查反馈与验证门禁",
+          "group_en": "Code Review Feedback and Verification Gates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "规范接收审查反馈、请求评审与完成前验证，避免无证据宣称。",
+          "description_en": "Structures review feedback handling, subagent review requests, and evidence-based completion checks.",
+          "what": "Keeps code review rigorous and verifiable.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "context-engineering",
+          "path": ".claude/skills/context-engineering/SKILL.md",
+          "subcategory": "12-1",
+          "subcategory_title": "12.1 Context 概念基础",
+          "category": "agent-architecture",
+          "group": "Context Engineering 地基课 / 上下文工程优化",
+          "group_en": "Context Engineering Foundations & Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Agent 筛选高信号上下文、压缩记忆并优化多代理协作。",
+          "description_en": "Guides agents in curating high-signal context, compacting memory, and optimizing multi-agent coordination.",
+          "what": "为 Agent 系统提供上下文筛选、压缩、记忆、多代理协作与评测的上下文工程指南。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "addyosmani · 组「上下文工程优化」"
+        },
+        {
+          "name": "databases",
+          "path": ".claude/skills/databases/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "数据库建模 / SQL 与运维",
+          "group_en": "Database Modeling, SQL, and Operations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 设计 Mongo/Postgres 数据模型、查询、优化性能与迁移备份。",
+          "description_en": "Helps agents design Mongo/Postgres data models, write queries, optimize performance, and manage migrations and backups.",
+          "what": "统一覆盖 MongoDB 与 PostgreSQL 的数据建模、查询、性能优化、迁移、备份和运维实践。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "debugging",
+          "path": ".claude/skills/debugging/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "完工验证 / 系统化调试",
+          "group_en": "Completion Verification / Systematic Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供系统化排障框架，先定位根因、再修复并验证结果。",
+          "description_en": "Provides a systematic debugging framework: investigate root causes before fixing and verify the outcome.",
+          "what": "用于遇到 bug、测试失败或意外行为时，按根因分析、验证和完成前检查流程处理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers/mattpocock/Codex/oh-my-openagent/addyosmani/wshobson · 组「系统化调试」"
+        },
+        {
+          "name": "defense-in-depth",
+          "path": ".claude/skills/debugging/defense-in-depth/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "完工验证 / 系统化调试",
+          "group_en": "Completion Verification / Systematic Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在数据经过的每一层设置验证，降低缺陷绕过单点检查的风险。",
+          "description_en": "Adds validation at every layer data passes through so bugs cannot bypass a single check.",
+          "what": "用于修复由无效数据引发的缺陷时，在入口、业务逻辑、环境守卫和调试层建立多层防护。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "root-cause-tracing",
+          "path": ".claude/skills/debugging/root-cause-tracing/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "完工验证 / 系统化调试",
+          "group_en": "Completion Verification / Systematic Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 从深层报错反向追踪，定位最初触发点。",
+          "description_en": "Guides agents to trace backward from deep errors to the original trigger.",
+          "what": "Trace backward through the call chain to identify the original bug trigger.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "systematic-debugging",
+          "path": ".claude/skills/debugging/systematic-debugging/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "完工验证 / 系统化调试",
+          "group_en": "Completion Verification / Systematic Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供四阶段调试框架，要求先查明根因再修复问题。",
+          "description_en": "Provides a four-phase debugging framework that requires root-cause analysis before fixes.",
+          "what": "Run a disciplined debugging process before proposing any fix.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers/mattpocock/Codex/oh-my-openagent/addyosmani/wshobson · 组「系统化调试」"
+        },
+        {
+          "name": "verification-before-completion",
+          "path": ".claude/skills/debugging/verification-before-completion/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "完工验证 / 系统化调试",
+          "group_en": "Completion verification / systematic debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "完成前运行验证命令，并用输出证据确认结果。",
+          "description_en": "Runs fresh verification commands and uses output evidence before claiming completion.",
+          "what": "完成声明前的验证门禁。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "superpowers · 组「完工验证」"
+        },
+        {
+          "name": "devops",
+          "path": ".claude/skills/devops/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "多云与容器部署",
+          "group_en": "Cloud and container deployments",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 在 Cloudflare、Docker、GCP 与 Kubernetes 间选择并部署。",
+          "description_en": "Guides deployment choices and operations across Cloudflare, Docker, GCP, and Kubernetes.",
+          "what": "多云与容器化部署决策和运维。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "docs-seeker",
+          "path": ".claude/skills/docs-seeker/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "技术文档发现与分析",
+          "group_en": "Technical Documentation Discovery & Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 llms.txt、仓库分析和并行探索查找技术文档。",
+          "description_en": "Helps agents find technical docs via llms.txt, repository analysis, and parallel exploration.",
+          "what": "发现并分析目标库或框架的最新技术文档与 GitHub 仓库资料。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "docx",
+          "path": ".claude/skills/document-skills/docx/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office Document Quartet",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 创建、编辑、审阅和提取 Word 文档内容。",
+          "description_en": "Helps agents create, edit, review, and extract content from Word documents.",
+          "what": "处理 .docx 的读取、编辑、修订、批注和格式保留。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        },
+        {
+          "name": "pdf",
+          "path": ".claude/skills/document-skills/pdf/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office Document Toolkit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 提取、创建、合并拆分 PDF，并处理表单。",
+          "description_en": "Helps the agent extract, create, merge, split, and process PDF forms programmatically.",
+          "what": "PDF extraction, creation, merging, splitting, and form handling guide.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        },
+        {
+          "name": "pptx",
+          "path": ".claude/skills/document-skills/pptx/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office Document Toolkit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 创建、编辑、分析 PPTX，读取文本、版式和备注。",
+          "description_en": "Helps the agent create, edit, analyze, and inspect PPTX files, including layouts and speaker notes.",
+          "what": "PPTX creation, editing, analysis, and OOXML inspection guide.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        },
+        {
+          "name": "xlsx",
+          "path": ".claude/skills/document-skills/xlsx/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office Document Quartet",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 Agent 创建、编辑、分析电子表格并避免公式错误。",
+          "description_en": "Helps the agent create, edit, analyze spreadsheets, and avoid formula errors.",
+          "what": "用于 Excel/CSV 等电子表格建模、读写、分析和可视化。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        },
+        {
+          "name": "frontend-design",
+          "path": ".claude/skills/frontend-design/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "高质量前端界面构建",
+          "group_en": "High-quality Frontend UI Builds",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 生成有设计感、可运行的前端页面与应用代码。",
+          "description_en": "Helps the agent build polished, distinctive frontend components, pages, and apps.",
+          "what": "用于根据需求设计并实现高质量前端界面。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/oh-my-openagent · 组「前端美学」"
+        },
+        {
+          "name": "frontend-development",
+          "path": ".claude/skills/frontend-development/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "React/TypeScript 前端工程规范",
+          "group_en": "React/TypeScript Frontend Engineering Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 React/TypeScript 项目中的组件、路由、样式、数据获取与性能优化。",
+          "description_en": "Guides React/TypeScript implementation, including components, routing, styling, data fetching, and performance.",
+          "what": "A practical checklist for modern React and TypeScript frontend development.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "google-adk-python",
+          "path": ".claude/skills/google-adk-python/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Agent SDK 与工具集成开发",
+          "group_en": "Agent SDK & Tool Integration Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助构建、编排、部署和评估基于 Google ADK Python 的 AI Agent。",
+          "description_en": "Helps build, orchestrate, deploy, and evaluate AI agents using Google ADK for Python.",
+          "what": "Operational guidance for developing Google ADK Python agents with tools and workflows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "mcp-builder",
+          "path": ".claude/skills/mcp-builder/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "三大模型厂 SDK 直连 / MCP Server 开发",
+          "group_en": "Direct SDK Connections for Major Model Providers / MCP Server Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导设计并构建高质量 MCP Server，让 agent 通过工具调用外部服务。",
+          "description_en": "Guides the design and build of high-quality MCP servers so agents can call external services through tools.",
+          "what": "Build MCP servers that expose workflow-oriented tools for external APIs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic · 组「MCP Server 开发」"
+        },
+        {
+          "name": "mcp-management",
+          "path": ".claude/skills/mcp-management/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "MCP 工具发现与运行管理",
+          "group_en": "MCP Tool Discovery and Runtime Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "发现、筛选并执行 MCP 工具/提示/资源，集中管理多服务器能力。",
+          "description_en": "Discovers, filters, and executes MCP tools, prompts, and resources while coordinating multiple servers.",
+          "what": "Manage MCP server capabilities and execute selected tools efficiently.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "media-processing",
+          "path": ".claude/skills/media-processing/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "FFmpeg / ImageMagick 媒体处理",
+          "group_en": "FFmpeg / ImageMagick Media Processing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 FFmpeg 和 ImageMagick 转换、压缩、裁剪、滤镜处理音视频与图片，并生成缩略图。",
+          "description_en": "Helps the agent use FFmpeg and ImageMagick to convert, compress, crop, filter, thumbnail, and prepare video, audio, and image assets.",
+          "what": "在需要处理音视频/图片文件或搭建媒体流水线时调用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "mermaidjs-v11",
+          "path": ".claude/skills/mermaidjs-v11/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Mermaid 图表生成",
+          "group_en": "Mermaid Diagram Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 Mermaid.js 生成流程图、时序图、架构图、甘特图等可渲染图表。",
+          "description_en": "Helps the agent generate renderable diagrams such as flowcharts, sequence diagrams, architecture maps, and Gantt charts with Mermaid.js.",
+          "what": "在需要把流程、架构、时序或项目计划转为 Mermaid 图表时调用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "payment-integration",
+          "path": ".claude/skills/payment-integration/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "支付网关 / 订阅与 Webhook 集成",
+          "group_en": "Payment Gateway, Subscription & Webhook Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 接入支付、订阅、Webhook 与许可，并选择合适支付渠道。",
+          "description_en": "Helps an agent integrate payments, subscriptions, webhooks, and licensing while choosing the right provider.",
+          "what": "A payment integration playbook covering provider selection, checkout, webhooks, QR payments, and software licensing.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "problem-solving",
+          "path": ".claude/skills/problem-solving/SKILL.md",
+          "subcategory": "3-2",
+          "subcategory_title": "3.2 问题框定 / 假设管理",
+          "category": "product-management",
+          "group": "创造性破局 / 逆向思维",
+          "group_en": "Creative Breakthrough & Inversion Thinking",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用逆向、模式识别和极端缩放等方法，帮助 agent 突破卡点并生成优雅解法。",
+          "description_en": "Uses inversion, pattern recognition, and scale tests to help an agent break through stuck points and find elegant solutions.",
+          "what": "A dispatchable set of creative problem-solving techniques for overcoming stuck points.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "tradermonty",
+        "repo": "claude-trading-skills",
+        "full_name": "tradermonty/claude-trading-skills",
+        "url": "https://github.com/tradermonty/claude-trading-skills",
+        "stars": 1929,
+        "pushed_at": "2026-06-14",
+        "default_branch": "main",
+        "github_description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+        "topics": [],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "breadth-chart-analyst",
+          "path": "examples/weekly-trade-strategy/.claude/skills/breadth-chart-analyst/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "breadth-chart-analyst",
+          "group_en": "Backtesting and Technical Analysis",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "分析标普500广度与上涨股票比例图表，识别中期趋势和短期交易信号。",
+          "description_en": "Analyzes S&P 500 breadth and uptrend-ratio charts to identify medium-term trend and short-term trading signals.",
+          "what": "用于评估市场广度并生成仓位建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "earnings-calendar",
+          "path": "examples/weekly-trade-strategy/.claude/skills/earnings-calendar/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market Data and Intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "通过 FMP API 检索美股未来一周财报日期、EPS/收入预期，并按市值筛选重要公司。",
+          "description_en": "Fetches upcoming US earnings dates, EPS and revenue estimates from FMP, filtering for market-moving companies.",
+          "what": "用于汇总未来一周重要美股财报事件。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "economic-calendar-fetcher",
+          "path": "examples/weekly-trade-strategy/.claude/skills/economic-calendar-fetcher/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market Data & Intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "获取未来经济事件与数据发布，辅助生成市场影响日历。",
+          "description_en": "Fetches upcoming economic releases and events to support market-impact calendars.",
+          "what": "Fetches upcoming economic calendar events via FMP and returns raw JSON or text for assistant analysis.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "market-environment-analysis",
+          "path": "examples/weekly-trade-strategy/.claude/skills/market-environment-analysis/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market Data & Intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "汇总全球市场数据并评估风险偏好、趋势、波动和板块轮动。",
+          "description_en": "Summarizes global market data and assesses risk appetite, trend, volatility, and sector rotation.",
+          "what": "Creates a comprehensive market environment report from indices, FX, commodities, yields, VIX, and sentiment signals.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "market-news-analyst",
+          "path": "examples/weekly-trade-strategy/.claude/skills/market-news-analyst/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market Data & Intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "自动收集近10天市场新闻，评估其对股票和商品的影响。",
+          "description_en": "Collects recent market-moving news and ranks its likely impact on equities and commodities.",
+          "what": "用于重大财经新闻的市场影响分析。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sector-analyst",
+          "path": "examples/weekly-trade-strategy/.claude/skills/sector-analyst/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "回测 / 策略框架 / 量化方法 / 技术分析 / 指标",
+          "group_en": "Strategy Backtesting & Technical Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析板块与行业表现图，判断市场周期和轮动概率。",
+          "description_en": "Reads sector and industry performance charts to assess market cycle and rotation scenarios.",
+          "what": "用于板块表现图和市场轮动判断。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "stanley-druckenmiller-investment",
+          "path": "examples/weekly-trade-strategy/.claude/skills/stanley-druckenmiller-investment/SKILL.md",
+          "subcategory": "16-5",
+          "subcategory_title": "16.5 财富管理 / 顾问 / 合规",
+          "category": "finance-trading",
+          "group": "投资哲学 / 组合顾问",
+          "group_en": "Investment Philosophy / Portfolio Advisory",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "依据德拉肯米勒原则，辅助宏观研判、风险管理与组合构建。",
+          "description_en": "Applies Druckenmiller-style principles to macro assessment, risk control, and portfolio construction.",
+          "what": "为投资讨论提供宏观、流动性和风险框架。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "technical-analyst",
+          "path": "examples/weekly-trade-strategy/.claude/skills/technical-analyst/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "技术分析 / 图表解读",
+          "group_en": "Technical Analysis / Chart Reading",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据周线图表识别趋势、支撑阻力与概率化情景。",
+          "description_en": "Analyzes weekly charts to identify trends, support/resistance, and probability-weighted scenarios.",
+          "what": "为图表型交易分析提供结构化技术判断。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "us-market-bubble-detector",
+          "path": "examples/weekly-trade-strategy/.claude/skills/us-market-bubble-detector/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "市场泡沫风险检测",
+          "group_en": "Market Bubble Detection",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用量化指标和 Minsky/Kindleberger 框架评估美股泡沫风险，辅助止盈、入场和做空时机判断。",
+          "description_en": "Assesses U.S. market bubble risk with quantitative indicators and the Minsky/Kindleberger framework to support timing and risk decisions.",
+          "what": "基于量化指标评估美股泡沫风险。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "us-stock-analysis",
+          "path": "examples/weekly-trade-strategy/.claude/skills/us-stock-analysis/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "us-stock-analysis",
+          "group_en": "Stock Research, Valuation & Financial Reports",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "围绕美股基本面、技术面、同业对比和估值生成结构化投资分析报告。",
+          "description_en": "Produces structured U.S. equity research reports covering fundamentals, technicals, peer comparisons, valuation, and recent developments.",
+          "what": "生成美股基本面与技术面综合研究报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "backtest-expert",
+          "path": "skills/backtest-expert/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "backtest-expert",
+          "group_en": "Backtesting, strategy frameworks, quantitative methods, signals, and technical indicators",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "提供系统化回测方法论，帮助识别偏差、过拟合并验证策略稳健性。",
+          "description_en": "Provides systematic backtesting guidance to detect bias, overfitting, and validate strategy robustness.",
+          "what": "帮 agent 审查交易回测并给出稳健性判断。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "breakout-trade-planner",
+          "path": "skills/breakout-trade-planner/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "breakout-trade-planner",
+          "group_en": "Backtesting, strategy frameworks, quantitative methods, signals, and technical indicators",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "基于 VCP 结果生成突破交易计划，计算仓位、止损目标与 Alpaca 订单模板。",
+          "description_en": "Turns VCP screener results into breakout trade plans with sizing, stops, targets, and Alpaca order templates.",
+          "what": "把 VCP 筛选结果转换成可执行的交易计划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "canslim-screener",
+          "path": "skills/canslim-screener/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "CANSLIM 股票筛选器",
+          "group_en": "CANSLIM Stock Screener",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按 CANSLIM 七要素筛选美股，综合评分并生成可执行报告。",
+          "description_en": "Screens U.S. equities through the CANSLIM framework, scores candidates, and produces actionable reports.",
+          "what": "Uses CANSLIM to identify and rank U.S. growth and momentum stocks.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "data-quality-checker",
+          "path": "skills/data-quality-checker/SKILL.md",
+          "subcategory": "16-8",
+          "subcategory_title": "16.8 金融内容 / 分析写作",
+          "category": "finance-trading",
+          "group": "市场分析内容质检",
+          "group_en": "Market Analysis Content QA",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "发布前检查市场分析文档中的价格尺度、日期、单位和配置合计错误。",
+          "description_en": "Checks market analysis documents for data-scale, date, unit, and allocation-total issues before publication.",
+          "what": "Validates market analysis documents before publication.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dividend-growth-pullback-screener",
+          "path": "skills/dividend-growth-pullback-screener/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "股息增长回调选股",
+          "group_en": "Dividend Growth Pullback Screening",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "筛选高股息增长、RSI超卖回调的长期买入候选股。",
+          "description_en": "Screens for long-term dividend growers with temporary RSI oversold pullbacks.",
+          "what": "Identifies quality dividend growth stocks with strong fundamentals and short-term technical weakness.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "downtrend-duration-analyzer",
+          "path": "skills/downtrend-duration-analyzer/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "历史下跌持续时间分析",
+          "group_en": "Historical Downtrend Duration Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析历史下跌周期并生成分位、行业修复时长直方图。",
+          "description_en": "Analyzes historical downtrends and generates recovery-duration histograms by sector and market cap.",
+          "what": "Estimates typical correction lengths from historical peak-to-trough price data.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dual-axis-skill-reviewer",
+          "path": "skills/dual-axis-skill-reviewer/SKILL.md",
+          "subcategory": "13-3",
+          "subcategory_title": "13.3 Skill 安全审计",
+          "category": "meta-skill-mgmt",
+          "group": "SKILL.md 双轴评审",
+          "group_en": "Dual-Axis SKILL.md Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用双轴方法评审 SKILL.md 并输出质量评分与改进项。",
+          "description_en": "Reviews SKILL.md files with deterministic checks plus LLM critique and scored improvement reports.",
+          "what": "对技能仓库进行可复现的双轴质量评审。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "earnings-trade-analyzer",
+          "path": "skills/earnings-trade-analyzer/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "财报后动量股票筛选",
+          "group_en": "Earnings Momentum Stock Screener",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用五因子评分筛选财报后动量交易候选。",
+          "description_en": "Scores recent post-earnings stocks on five factors to surface momentum trade candidates.",
+          "what": "用财报后五因子评分给股票分级，辅助寻找动量交易机会。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "edge-candidate-agent",
+          "path": "skills/edge-candidate-agent/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "交易策略研究管线",
+          "group_en": "Trading Strategy Research Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把 EOD 市场观察转为研究票据与策略管线输入。",
+          "description_en": "Converts EOD observations into research tickets and strategy specs.",
+          "what": "把市场异常整理成可验证研究票据和策略管线输入。",
+          "chain": true,
+          "chain_group": "交易信号研究到策略导出工作流",
+          "chain_group_en": "Trading Edge Research to Strategy Export Workflow"
+        },
+        {
+          "name": "edge-concept-synthesizer",
+          "path": "skills/edge-concept-synthesizer/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "交易策略研究管线",
+          "group_en": "Trading Strategy Research Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把零散检测票据聚类成可复用的交易假设概念。",
+          "description_en": "Clusters raw detection tickets into reusable trading edge concepts.",
+          "what": "把检测票据抽象为带假设、失效条件和策略剧本的概念。",
+          "chain": true,
+          "chain_group": "交易信号研究到策略导出工作流",
+          "chain_group_en": "Trading Edge Research to Strategy Export Workflow"
+        },
+        {
+          "name": "edge-hint-extractor",
+          "path": "skills/edge-hint-extractor/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "交易策略研发流水线",
+          "group_en": "Trading Strategy Research Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把市场观察、异常和新闻反应整理成结构化 edge hints，供后续概念合成。",
+          "description_en": "Turns market observations, anomalies, and news reactions into structured edge hints for concept synthesis.",
+          "what": "将日常市场观察提炼为可复用的交易 edge hints。",
+          "chain": true,
+          "chain_group": "交易 Edge 研究流水线",
+          "chain_group_en": "Trading Edge Research Pipeline"
+        },
+        {
+          "name": "edge-pipeline-orchestrator",
+          "path": "skills/edge-pipeline-orchestrator/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "交易策略研发流水线",
+          "group_en": "Trading Strategy Research Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协调从候选检测到策略设计、评审、修订和导出的完整 edge 研究流程。",
+          "description_en": "Coordinates the full edge research workflow from candidate detection through strategy design, review, revision, and export.",
+          "what": "把多阶段交易策略研究流程串成端到端流水线。",
+          "chain": true,
+          "chain_group": "交易 Edge 研究流水线",
+          "chain_group_en": "Trading Edge Research Pipeline"
+        },
+        {
+          "name": "edge-signal-aggregator",
+          "path": "skills/edge-signal-aggregator/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market Data / Market Intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "聚合多来源 edge 信号，去重排矛盾并生成投资优先级看板。",
+          "description_en": "Aggregates multiple edge signals, deduplicates conflicts, and ranks investment ideas.",
+          "what": "合并多个上游 edge-finding 输出并生成加权 conviction dashboard。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "edge-strategy-designer",
+          "path": "skills/edge-strategy-designer/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "交易策略草案生成",
+          "group_en": "Trading Strategy Drafting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将边缘概念转为多版本策略草案，校准退出与风险参数。",
+          "description_en": "Turns edge concepts into strategy draft variants with calibrated exits and risk settings.",
+          "what": "从 edge_concepts.yaml 生成 strategy_drafts 和可选 ticket YAML。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "edge-strategy-reviewer",
+          "path": "skills/edge-strategy-reviewer/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "策略草案质量门禁",
+          "group_en": "Trading Strategy Draft Quality Gate",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审查交易策略草案，评估边缘合理性、过拟合、样本量和执行可行性，输出通过/修订/拒绝结论。",
+          "description_en": "Reviews trading strategy drafts for edge plausibility, overfitting risk, sample size, and execution realism, then returns a pass, revise, or reject verdict.",
+          "what": "为策略草案生成质量门禁评审结果。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "exposure-coach",
+          "path": "skills/exposure-coach/SKILL.md",
+          "subcategory": "16-3",
+          "subcategory_title": "16.3 组合 / 风险管理",
+          "category": "finance-trading",
+          "group": "市场姿态与仓位控制",
+          "group_en": "Market Posture & Exposure Control",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "汇总广度、趋势、宏观、资金流等信号，生成仓位上限和市场姿态摘要，辅助决定当前股票投入比例。",
+          "description_en": "Synthesizes breadth, trend, macro, and flow signals into a market posture summary with exposure limits for deciding how much capital to commit.",
+          "what": "为交易者生成当前市场姿态和仓位上限建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "finviz-screener",
+          "path": "skills/finviz-screener/SKILL.md",
+          "subcategory": "16-1",
+          "subcategory_title": "16.1 行情数据 / 市场情报",
+          "category": "finance-trading",
+          "group": "行情数据 / 市场情报",
+          "group_en": "Market Data & Intelligence",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "把自然语言选股条件转成 FinViz 筛选 URL，支持日英输入、过滤校验和浏览器打开。",
+          "description_en": "Turns natural-language stock criteria into validated FinViz screener URLs and opens them in the browser.",
+          "what": "Builds validated FinViz screener links from user screening requests.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ftd-detector",
+          "path": "skills/ftd-detector/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "技术分析 / 市场择时",
+          "group_en": "Technical Analysis & Market Timing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "识别 Follow-Through Day 等市场底部信号，给出质量评分与加仓或回补指引。",
+          "description_en": "Detects Follow-Through Day signals to confirm market bottoms and guide exposure decisions.",
+          "what": "Assesses rally attempts and bottom confirmation using FTD methodology.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ibd-distribution-day-monitor",
+          "path": "skills/ibd-distribution-day-monitor/SKILL.md",
+          "subcategory": "16-2",
+          "subcategory_title": "16.2 技术分析 / 量化 / 回测",
+          "category": "finance-trading",
+          "group": "回测 / 策略框架 / 量化方法 / 技术分析 / 指标",
+          "group_en": "Technical Analysis & Strategy Frameworks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "监控指数分布日并评估市场风险与杠杆仓位建议",
+          "description_en": "Monitors index distribution days and assesses market risk for leveraged exposure decisions.",
+          "what": "按 IBD 规则识别分布日、聚类市场恶化信号并给出 QQQ/TQQQ 风险状态。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "institutional-flow-tracker",
+          "path": "skills/institutional-flow-tracker/SKILL.md",
+          "subcategory": "16-4",
+          "subcategory_title": "16.4 股票研究 / 估值 / 投行 / PE",
+          "category": "finance-trading",
+          "group": "institutional-flow-tracker",
+          "group_en": "Stock Research & Institutional Flow Analysis",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "基于13F持仓变化追踪机构资金流向并发现个股机会",
+          "description_en": "Tracks institutional ownership shifts from 13F filings to surface stock opportunities.",
+          "what": "读取 13F 变化以识别机构增持/减持并辅助个股发现与假设验证。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
