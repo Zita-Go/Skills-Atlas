@@ -99,9 +99,12 @@ function scoreRow(r, tokens, fullQuery) {
   let score = base;
   // Exact skill-name term is a strong signal only for SHORT queries (you're
   // naming the skill). On long queries one matching token must not dominate.
+  // Scale the bonus by coverage so a single exact-name token on a multi-word
+  // query (e.g. "translate book" hitting a skill literally named `translate`)
+  // can't outrank a row that covers every term (`translate-book`).
   if (tokens.length <= 2) {
     const skillSet = new Set((r.skills || []).map(lc));
-    for (const t of tokens) if (skillSet.has(t)) score += 50;
+    for (const t of tokens) if (skillSet.has(t)) score += 50 * coverage;
   }
   if (fullQuery && f.all.includes(fullQuery)) score += 30;        // whole phrase verbatim
   if (tokens.length >= 2) score *= 0.25 + 0.75 * coverage * coverage; // coverage dominates

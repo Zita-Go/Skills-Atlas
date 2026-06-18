@@ -39,3 +39,39 @@
   repo: Wechatsync
   reason: Chrome 扩展产品（一键同步文章到多平台）；唯一 skill 是薄 RPC 客户端，所有平台操作经 WebSocket(9527) 委派给专有 Chrome 扩展，README 直言 cannot operate independently，无法独立使用
   added_at: '2026-06-11'
+- author: MaaXYZ
+  repo: MaaFramework
+  reason: C++ 自动化测试框架产品仓；.claude/skills 仅为开发本框架的贡献者内部编码规范，非通用可移植 skill
+  added_at: '2026-06-18'
+- author: Panniantong
+  repo: Agent-Reach
+  reason: Python CLI 产品（installer/doctor/glue layer 自述）；唯一 skill 死绑本产品安装流程，非可移植 skill
+  added_at: '2026-06-18'
+- author: wbh604
+  repo: UZI-Skill
+  reason: 单一炒股产品 stock-deep-analyzer（Python 后端+30 余 fetch_*.py+本地 db），非原创可移植 skill 集合
+  added_at: '2026-06-18'
+- author: SamurAIGPT
+  repo: Generative-Media-Skills
+  reason: 商业付费服务 muapi.ai 的供应商 SDK/营销载体；所有 skill 硬绑 muapi 平台需 MUAPI_API_KEY，无法独立使用
+  added_at: '2026-06-18'
+- author: miaoxworld
+  repo: OpenClawInstaller
+  reason: OpenClaw/ClawdBot 产品的一键部署器（Shell 安装脚本/Dockerfile），非 skill 集合
+  added_at: '2026-06-18'
+- author: davepoon
+  repo: buildwithclaude
+  reason: Claude 插件市场/发现平台聚合 hub（含 marketplace.json），非第一方原创来源
+  added_at: '2026-06-18'
+- author: geekjourneyx
+  repo: md2wechat-skill
+  reason: Go CLI 产品 md2wechat 的运行手册，skill 死绑私有二进制（通篇 md2wechat 子命令），非可移植
+  added_at: '2026-06-18'
+- author: anbeime
+  repo: skill
+  reason: skill 聚合/爬虫商店（自述每 24h 爬 awesome-agent-skills），非第一方原创来源，全为搬运副本
+  added_at: '2026-06-18'
+- author: OpenRaiser
+  repo: NanoResearch
+  reason: 端到端自主科研引擎产品（9 阶段流水线/SLURM/飞书机器人）；skills 为 vendored 镜像或产品内部组件，非可移植
+  added_at: '2026-06-18'

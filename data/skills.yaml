@@ -5597,3 +5597,1736 @@
   description_en: Triggers a structured reasoning protocol for complex, uncertain, or high-stakes decisions before action.
   sources:
   - openhanako
+- id: software-engineering--1-3--399
+  skills:
+  - component-common-domain-detection
+  group: 组件语义去重
+  group_en: Component Semantic Deduplication
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 扫描组件命名空间，识别重复领域逻辑并给出合并建议。
+  description_en: Scans component namespaces to spot duplicated domain logic and suggest consolidation opportunities.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-3--400
+  skills:
+  - component-flattening-analysis
+  group: 组件层级整理
+  group_en: Component Hierarchy Cleanup
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 识别组件层级中的孤儿类和错位代码，规划扁平化重构。
+  description_en: Finds orphaned or misplaced classes in component hierarchies and plans flattening refactors.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-9--401
+  skills:
+  - component-identification-sizing
+  - coupling-analysis
+  group: 架构健康与拆分工作流
+  group_en: Architecture Health & Decomposition Workflow
+  category: software-engineering
+  subcategory: 1-9
+  chain: true
+  description: 用强度、距离、波动性评估模块耦合，判断是否需要解耦。
+  description_en: Assesses module coupling by strength, distance, and volatility to guide decoupling decisions.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-9--402
+  skills:
+  - decomposition-planning-roadmap
+  - domain-analysis
+  group: 微服务拆分与 DDD 边界分析
+  group_en: Microservices decomposition and DDD boundaries
+  category: software-engineering
+  subcategory: 1-9
+  chain: false
+  description: 帮 agent 用 DDD 战略设计识别代码库中的子域、核心域与边界上下文。
+  description_en: Helps agents turn monolith decomposition into a phased migration roadmap with priorities and dependencies.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-9--403
+  skills:
+  - domain-identification-grouping
+  group: 领域识别与服务架构分组
+  group_en: Domain Identification for Service Architecture
+  category: software-engineering
+  subcategory: 1-9
+  chain: false
+  description: 帮助 agent 将代码组件按业务域归类，支撑服务化架构规划。
+  description_en: Helps an agent group code components by business domain to support service-oriented architecture planning.
+  sources:
+  - tech-leads-club
+- id: design-frontend--5-3--404
+  skills:
+  - frontend-blueprint
+  group: 前端设计蓝图
+  group_en: Frontend Design Blueprint
+  category: design-frontend
+  subcategory: 5-3
+  chain: false
+  description: 帮助 agent 在生成前端代码前澄清视觉、交互、品牌与设计约束。
+  description_en: Helps an agent clarify visual, interaction, brand, and design constraints before generating frontend code.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-9--405
+  skills:
+  - legacy-migration-planner
+  group: 遗留系统迁移规划
+  group_en: Legacy Migration Planning
+  category: software-engineering
+  subcategory: 1-9
+  chain: false
+  description: 为遗留系统迁移制定证据化方案，覆盖 strangler fig、拆分与升级路线。
+  description_en: Creates evidence-backed legacy migration plans using strangler-fig and incremental modernization strategies.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-9--406
+  skills:
+  - modular-decomposition
+  group: 单体模块化拆解
+  group_en: Monolith Modular Decomposition
+  category: software-engineering
+  subcategory: 1-9
+  chain: false
+  description: 运行单体到模块化的分析流水线，识别组件、耦合、重复逻辑和领域分组。
+  description_en: Runs a structured monolith-to-modular analysis pipeline to size components, assess coupling, and group domains.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-9--407
+  skills:
+  - modular-design-principles
+  group: 模块化系统设计原则
+  group_en: Modular Design Principles
+  category: software-engineering
+  subcategory: 1-9
+  chain: false
+  description: 帮助 agent 判断模块边界、耦合关系、状态隔离和失败隔离。
+  description_en: Helps agents reason about module boundaries, coupling, state isolation, and failure containment.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-3--408
+  skills:
+  - tactical-ddd
+  group: 领域模型审查与 DDD 重构
+  group_en: Domain Model Review & DDD Refactoring
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 帮助 agent 检查贫血领域模型，识别 DDD 构建块并给出重构建议。
+  description_en: Helps agents detect anemic domain models, identify DDD building blocks, and guide refactoring.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-9--409
+  skills:
+  - aws-advisor
+  group: AWS 架构顾问
+  group_en: AWS Architecture Advisor
+  category: software-engineering
+  subcategory: 1-9
+  chain: false
+  description: 帮助 agent 在 AWS 上下文中做架构选型、安全审查、迁移和排障建议。
+  description_en: Helps agents provide AWS architecture, security, migration, and troubleshooting guidance.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-1--410
+  skills:
+  - create-adr
+  - create-rfc
+  group: 技术决策文档工作流
+  group_en: Technical decision documentation workflow
+  category: software-engineering
+  subcategory: 1-1
+  chain: true
+  description: 帮助 agent 为已确定的架构决策创建 ADR，保留背景、选择与后果。
+  description_en: Helps an agent create ADRs for finalized architectural decisions, preserving context, options, and consequences.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-1--411
+  skills:
+  - create-technical-design-doc
+  group: 技术设计文档 / RFC 生成
+  group_en: Technical Design Doc & RFC Writer
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 通过交互式问题梳理架构方案，生成技术设计文档、RFC 或实现计划，便于团队评审与落地。
+  description_en: Guides agents through interactive discovery to produce TDDs, RFCs, architecture plans, and risk-aware implementation docs.
+  sources:
+  - tech-leads-club
+- id: agent-architecture--12-4--412
+  skills:
+  - cursor-subagent-creator
+  group: Cursor 子代理创建
+  group_en: Cursor Subagent Builder
+  category: agent-architecture
+  subcategory: 12-4
+  chain: false
+  description: 帮助 agent 按 Cursor 约定创建专用子代理，配置隔离上下文、提示词和可复用工作流。
+  description_en: Helps agents create Cursor-specific subagents with isolated context, prompts, and reusable workflows.
+  sources:
+  - tech-leads-club
+- id: meta-skill-mgmt--13-1--413
+  skills:
+  - skill-architect
+  group: Skill 创建器
+  group_en: Skill Creator
+  category: meta-skill-mgmt
+  subcategory: 13-1
+  chain: false
+  description: 指导 agent 先发现需求，再架构并生成高质量 Skill。
+  description_en: Guides agents through discovery and architecture before drafting a high-quality skill.
+  sources:
+  - tech-leads-club
+- id: agent-architecture--12-4--414
+  skills:
+  - subagent-creator
+  group: 子代理创建器
+  group_en: Subagent Creator
+  category: agent-architecture
+  subcategory: 12-4
+  chain: false
+  description: 指导 agent 设计带隔离上下文的专用子代理。
+  description_en: Helps agents design specialized subagents with isolated context for complex workflows.
+  sources:
+  - tech-leads-club
+- id: software-engineering--1-3--415
+  skills:
+  - codenavi
+  group: 跨会话代码库调查
+  group_en: Cross-session Codebase Investigation
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 帮助 Agent 系统调查陌生代码库，记录发现并谨慎实施修复或功能。
+  description_en: Helps agents investigate unfamiliar codebases, preserve findings, and implement changes carefully.
+  sources:
+  - tech-leads-club
+- id: data-scraping--7-1--416
+  skills:
+  - google-maps-scraper
+  group: Google Maps 商家线索抓取
+  group_en: Google Maps Business Lead Scraping
+  category: data-scraping
+  subcategory: 7-1
+  chain: false
+  description: 用 Docker 抓取 Google Maps 商家线索、联系方式与评价。
+  description_en: Scrapes Google Maps via Docker to collect business leads, contacts, and reviews.
+  sources:
+  - google-maps-scraper
+- id: docs-knowledge--2-1--417
+  skills:
+  - sn-da-excel-workflow
+  - category-coloring
+  - condition-filtering
+  - range-filtering
+  - threshold-filtering
+  - basic-statistics
+  group: Excel 数据分析工作流
+  group_en: Excel Data Analysis Workflow
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: true
+  description: 当 Excel 超万行时转为 Parquet 提速，提取指标并高亮结果行，辅助 agent 处理大型表格。
+  description_en: Run basic statistics across multi-sheet Excel files, including grouped averages, range extraction, deduplication, sums, and exports.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--418
+  skills:
+  - duplicate-value-coloring
+  - outlier-coloring
+  group: Excel 表格比对与异常标注
+  group_en: Excel comparison and anomaly highlighting
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: false
+  description: 帮 agent 识别 Excel 超限数值与错误单元格，并按规则高亮。
+  description_en: Helps agents extract coefficients from multiple Excel sheets, compare them against thresholds, and highlight anomalies.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--419
+  skills:
+  - threshold-cell-coloring
+  - top-value-coloring
+  group: Excel 分析工作流
+  group_en: Excel Analysis Workflow
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: true
+  description: 读取 Excel 数据，计算阈值并生成带条件格式的报表。
+  description_en: Reads Excel data, calculates thresholds, and exports a formatted report with conditional styling.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--420
+  skills:
+  - data-bar-formatting
+  - comparison-analysis
+  group: Excel 数据分析与可视化
+  group_en: Excel Data Analysis and Visualization
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: false
+  description: 从带单位字符串提取数值，清洗数据并生成分布图表。
+  description_en: Extracts numeric values from unit-bearing strings, cleans the data, and generates distribution charts.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--421
+  skills:
+  - group-by-analysis
+  - kpi-metric-analysis
+  group: Excel 数据清洗与聚合分析
+  group_en: Excel Data Cleaning and Aggregation
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: false
+  description: 帮 agent 读取 Excel 多 Sheet，清洗数据、分组聚合并生成统计表和图表。
+  description_en: Helps an agent read multi-sheet Excel workbooks, clean data, aggregate groups, and produce summary tables with charts.
+  sources:
+  - sensenova-skills
+- id: data-scraping--7-3--422
+  skills:
+  - pivot-table-analysis
+  group: Excel 交叉表与热力图分析
+  group_en: Excel Crosstab & Heatmap Analysis
+  category: data-scraping
+  subcategory: 7-3
+  chain: false
+  description: 清洗 Excel 数据，构建交叉表、占比汇总并生成热力图。
+  description_en: Cleans Excel data, builds crosstabs and share summaries, and generates heatmaps.
+  sources:
+  - sensenova-skills
+- id: data-scraping--7-3--423
+  skills:
+  - time-series-analysis
+  group: Excel 时间序列趋势分析
+  group_en: Excel Time-Series Trend Analysis
+  category: data-scraping
+  subcategory: 7-3
+  chain: false
+  description: 读取 Excel 指标，清洗百分比并分析趋势、变化与生成图表。
+  description_en: Loads Excel metrics, normalizes percentages, analyzes trends and changes, and creates charts.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--424
+  skills:
+  - trend-analysis
+  group: Excel 数据分析与趋势预测
+  group_en: Excel analysis and trend forecasting
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: false
+  description: 读取 Excel 并按维度分级，计算增长率、预测值并生成对比图表。
+  description_en: Loads Excel data, grades it by dimension, calculates growth rates and forecasts, and creates comparison charts.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--425
+  skills:
+  - duplicate-removal
+  group: Excel 数据清洗与去重
+  group_en: Excel data cleaning and deduplication
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: false
+  description: 读取多 Sheet Excel，按关键词提取并清洗数据，完成分类去重与统计报表。
+  description_en: Reads multi-sheet Excel files, extracts keyword-matched records, cleans text, deduplicates categories, and summarizes counts.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--426
+  skills:
+  - invalid-data-cleaning
+  - missing-value-handling
+  group: Excel 数据清洗工作流
+  group_en: Excel data cleaning workflow
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: true
+  description: 帮助 agent 预处理大规模 Excel，转 Parquet 并按规则清洗文本列后导出。
+  description_en: Preprocesses large Excel files, converts them to Parquet, applies regex text cleaning, and exports the cleaned workbook.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--427
+  skills:
+  - numeric-format-normalization
+  - outlier-detection
+  group: Excel 数据处理工作流
+  group_en: Excel Data Processing Workflow
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: true
+  description: 标准化 Excel 数值列，清洗空值并核对汇总合计，导出核对结果文件。
+  description_en: Normalizes Excel numeric columns, cleans missing values, reconciles totals, and exports results.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--428
+  skills:
+  - text-normalization
+  group: Excel 数据清洗与标准化
+  group_en: Excel data cleaning and normalization
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: false
+  description: 帮助 agent 清洗 Excel 文本和异常数值字段，提取中文并输出处理后的文件。
+  description_en: Cleans Excel text and malformed numeric fields, extracts Chinese characters, and returns a processed workbook.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--429
+  skills:
+  - category-filtering
+  group: Excel 分类统计与可视化
+  group_en: Excel categorical analysis and visualization
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: false
+  description: 帮助 agent 对 Excel 数据做自定义分类、交叉统计、评分分级并生成可视化图表。
+  description_en: Classifies Excel data, runs cross-tab statistics and scoring, and generates visual summaries.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--430
+  skills:
+  - category-statistics
+  - grouped-statistics
+  group: Excel 数据统计分析工作流
+  group_en: Excel Data Statistics Workflow
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: true
+  description: 对多 Sheet Excel 做行数统计、合并填充、交叉分析与格式美化。
+  description_en: Processes multi-sheet Excel files with row counts, merges, filling, cross-analysis, and formatting.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--431
+  skills:
+  - percentage-calculation
+  - bar-chart-visualization
+  group: Excel 数据统计与可视化工作流
+  group_en: Excel Data Analysis & Visualization Workflow
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: true
+  description: 读取多表 Excel，处理合并单元格与清洗分组，生成交叉统计结果和美化柱状图。
+  description_en: Dynamically locates metric fields, switches large-file strategies, computes ratios and averages, and outputs a structured report.
+  sources:
+  - sensenova-skills
+- id: docs-knowledge--2-1--432
+  skills:
+  - histogram-visualization
+  - line-chart-visualization
+  group: Excel 数据可视化与统计分析
+  group_en: Excel Data Visualization and Statistical Analysis
+  category: docs-knowledge
+  subcategory: 2-1
+  chain: false
+  description: 从 Excel 数值列提取数据，分析分布、异常值并生成箱线图/直方图报告。
+  description_en: Analyzes numeric Excel data for distributions and outliers, then generates boxplot and histogram reports.
+  sources:
+  - sensenova-skills
+- id: software-engineering--1-5--433
+  skills:
+  - pinme-share
+  group: PinMe 静态分享发布
+  group_en: PinMe static share publishing
+  category: software-engineering
+  subcategory: 1-5
+  chain: false
+  description: 帮助 Agent 生成静态分享页并通过 PinMe 上传发布，返回可分享的最终链接。
+  description_en: Helps the agent package results into a polished static page, upload it through PinMe, and return a shareable final URL.
+  sources:
+  - pinme
+- id: software-engineering--1-5--434
+  skills:
+  - pinme
+  group: PinMe 零配置部署
+  group_en: PinMe zero-config deployment
+  category: software-engineering
+  subcategory: 1-5
+  chain: false
+  description: 帮助 agent 上传文件、发布静态站或部署全栈项目到 IPFS/Cloudflare。
+  description_en: Helps agents upload files, publish static sites, and deploy full-stack projects to IPFS or Cloudflare.
+  sources:
+  - pinme
+- id: software-engineering--1-2--435
+  skills:
+  - kiro-debug
+  group: 根因优先调试
+  group_en: Root-Cause-First Debugging
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 用根因优先方式调查实现失败，给出修复计划和验证建议。
+  description_en: Investigates implementation failures with a root-cause-first approach and returns a fix plan plus verification guidance.
+  sources:
+  - cc-sdd
+- id: software-engineering--1-1--436
+  skills:
+  - kiro-discovery
+  - kiro-impl
+  group: Kiro SDD 工作流
+  group_en: Kiro SDD Workflow
+  category: software-engineering
+  subcategory: 1-1
+  chain: true
+  description: 让 agent 按已批准任务以 TDD 和子代理协作完成实现。
+  description_en: Guides agents through lightweight project discovery, intent clarification, and next-step planning.
+  sources:
+  - cc-sdd
+- id: software-engineering--1-3--437
+  skills:
+  - kiro-review
+  - kiro-spec-batch
+  group: SDD 规格到验收工作流
+  group_en: Spec-to-Acceptance SDD Workflow
+  category: software-engineering
+  subcategory: 1-3
+  chain: true
+  description: 根据路线图并行生成各功能的规格、需求、设计和任务文件，并按依赖波次排序。
+  description_en: Reviews completed work against approved specs, task boundaries, and verification evidence before acceptance.
+  sources:
+  - cc-sdd
+- id: software-engineering--1-1--438
+  skills:
+  - kiro-spec-design
+  - kiro-spec-init
+  group: Kiro 规格初始化到技术设计工作流
+  group_en: Kiro spec initiation to technical design workflow
+  category: software-engineering
+  subcategory: 1-1
+  chain: true
+  description: 读取规格、需求和研究材料，生成职责边界清晰、含接口与图示的技术设计方案。
+  description_en: Initializes a feature spec from project context, ensuring the problem, current state, and desired change are clarified.
+  sources:
+  - cc-sdd
+- id: software-engineering--1-1--439
+  skills:
+  - kiro-spec-quick
+  - kiro-spec-requirements
+  group: SDD 规格生成工作流
+  group_en: SDD Spec Generation Workflow
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 围绕已有规格读取 steering 上下文，生成边界清晰的 EARS 风格需求。
+  description_en: Turns a short feature idea into a staged spec, running a lightweight review in automatic or interactive mode.
+  sources:
+  - cc-sdd
+- id: software-engineering--1-1--440
+  skills:
+  - kiro-spec-status
+  - kiro-spec-tasks
+  group: 规格状态到任务生成
+  group_en: Spec Status to Task Generation
+  category: software-engineering
+  subcategory: 1-1
+  chain: true
+  description: 将已批准规格拆解为可执行实施任务并检查覆盖度
+  description_en: Breaks approved specs into executable implementation tasks and checks coverage.
+  sources:
+  - cc-sdd
+- id: agent-architecture--12-2--441
+  skills:
+  - kiro-steering-custom
+  - kiro-steering
+  group: Kiro Steering 项目知识
+  group_en: Kiro Steering Project Knowledge
+  category: agent-architecture
+  subcategory: 12-2
+  chain: false
+  description: 维护 Kiro steering 目录，引导 agent 初始化、同步并保护项目知识。
+  description_en: Creates specialized steering docs that capture domain-specific conventions like API standards or testing approaches.
+  sources:
+  - cc-sdd
+- id: software-engineering--1-1--442
+  skills:
+  - kiro-validate-design
+  - kiro-validate-gap
+  group: SDD 需求到设计验证工作流
+  group_en: SDD requirements-to-design validation workflow
+  category: software-engineering
+  subcategory: 1-1
+  chain: true
+  description: 基于已批准需求和设计文档，评审技术设计质量并给出 GO/NO-GO 决策。
+  description_en: Analyzes the gap between approved requirements and the existing codebase, assessing implementation options and integration risks.
+  sources:
+  - cc-sdd
+- id: software-engineering--1-1--443
+  skills:
+  - kiro-validate-impl
+  - kiro-verify-completion
+  group: SDD 完成验证与集成验收
+  group_en: SDD Completion Verification and Integration Acceptance
+  category: software-engineering
+  subcategory: 1-1
+  chain: true
+  description: 用于在声明完成前用新证据核验任务、修复、测试或上线结论。
+  description_en: Validates cross-task integration, full test coverage, and alignment with the approved spec after implementation.
+  sources:
+  - cc-sdd
+- id: agent-architecture--12-4--444
+  skills:
+  - create-custom-agent
+  group: VS Code 自定义 Agent 文件创建
+  group_en: VS Code Custom Agent File Creation
+  category: agent-architecture
+  subcategory: 12-4
+  chain: false
+  description: 帮助 agent 创建 VS Code 自定义 agent 文件，配置角色、工具与交接。
+  description_en: Helps agents create VS Code custom agent files, configuring roles, tools, and handoffs.
+  sources:
+  - dotnet-skills
+- id: software-engineering--1-6--445
+  skills:
+  - mcp-csharp-create
+  group: 三大模型厂 SDK 直连 / API 与接口设计 / MCP Server 开发
+  group_en: Model SDK Direct Access, API Design, and MCP Server Development
+  category: software-engineering
+  subcategory: 1-6
+  chain: false
+  description: 用 C# SDK 创建 MCP server，配置工具、提示、资源和传输方式。
+  description_en: Creates C# MCP servers with the SDK, configuring tools, prompts, resources, and transport.
+  sources:
+  - dotnet-skills
+- id: software-engineering--1-6--446
+  skills:
+  - mcp-csharp-debug
+  - mcp-csharp-publish
+  group: C# MCP Server 调试到发布工作流
+  group_en: C# MCP server debug-to-publish workflow
+  category: software-engineering
+  subcategory: 1-6
+  chain: true
+  description: 帮助 agent 打包、容器化并部署 C# MCP 服务器到 Azure 或 Registry。
+  description_en: Helps agents package, containerize, and deploy C# MCP servers to Azure or the MCP Registry.
+  sources:
+  - dotnet-skills
+- id: software-engineering--1-6--447
+  skills:
+  - mcp-csharp-test
+  group: C# MCP Server 测试
+  group_en: C# MCP Server Testing
+  category: software-engineering
+  subcategory: 1-6
+  chain: false
+  description: 帮助 agent 为 C# MCP Server 编写单元、集成与端到端测试。
+  description_en: Helps agents write unit, integration, and end-to-end tests for C# MCP servers.
+  sources:
+  - dotnet-skills
+- id: software-engineering--1-7--448
+  skills:
+  - technology-selection
+  group: .NET AI/ML 技术选型
+  group_en: .NET AI/ML Technology Selection
+  category: software-engineering
+  subcategory: 1-7
+  chain: false
+  description: 指导 agent 在 .NET 8+ 项目中选型并落地 AI/ML 功能。
+  description_en: Helps agents choose and implement AI/ML features in .NET 8+ projects.
+  sources:
+  - dotnet-skills
+- id: devops-infra--17-3--449
+  skills:
+  - configuring-opentelemetry-dotnet
+  group: 可观测性 / 监控（LGTM / Prometheus / OTel）
+  group_en: Observability / Monitoring (LGTM / Prometheus / OTel)
+  category: devops-infra
+  subcategory: 17-3
+  chain: false
+  description: 帮助 agent 在 ASP.NET Core 中配置 OpenTelemetry 追踪、指标、日志与 OTLP 导出。
+  description_en: Helps agents configure OpenTelemetry traces, metrics, logs, and OTLP export in ASP.NET Core.
+  sources:
+  - dotnet-skills
+- id: software-engineering--1-7--450
+  skills:
+  - convert-blazor-server-to-webapp
+  - dotnet-webapi
+  - minimal-api-file-upload
+  - author-component
+  - collect-user-input
+  - create-blazor-project
+  - optimizing-ef-core-queries
+  group: Microsoft / .NET 栈
+  group_en: Microsoft / .NET Stack
+  category: software-engineering
+  subcategory: 1-7
+  chain: false
+  description: 帮助 agent 创建或修改 ASP.NET Core Web API 端点，规范 HTTP 语义、OpenAPI 文档、DTO 与错误处理。
+  description_en: Guides agents in implementing file upload endpoints in .NET 8+ Minimal APIs, including form binding, size limits, type validation, and streaming.
+  sources:
+  - dotnet-skills
+- id: software-engineering--1-3--451
+  skills:
+  - analyzing-dotnet-performance
+  group: .NET 性能反模式审查
+  group_en: .NET Performance Anti-Pattern Review
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 扫描 C#/.NET 代码中的性能反模式，给出优先级和修复建议。
+  description_en: Scans C#/.NET code for performance anti-patterns and suggests prioritized fixes.
+  sources:
+  - dotnet-skills
+- id: software-engineering--1-2--452
+  skills:
+  - android-tombstone-symbolication
+  group: .NET Android 崩溃符号化
+  group_en: .NET Android Crash Symbolication
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 解析 Android tombstone，将 .NET 原生崩溃帧符号化为函数和源码位置。
+  description_en: Parses Android tombstones to symbolicate .NET native crash frames into functions and source locations.
+  sources:
+  - dotnet-skills
+- id: software-engineering--1-2--453
+  skills:
+  - apple-crash-symbolication
+  group: Apple 平台 .NET 崩溃日志符号化
+  group_en: Apple .NET Crash Log Symbolication
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 解析 Apple .ips 崩溃日志，将 .NET 运行时帧定位到源码位置。
+  description_en: Symbolicates Apple .ips crash logs to map .NET runtime frames back to source locations.
+  sources:
+  - dotnet-skills
+- id: software-engineering--1-2--454
+  skills:
+  - clr-activation-debugging
+  group: .NET Framework CLR 激活诊断
+  group_en: .NET Framework CLR Activation Diagnostics
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 分析 CLRLoad 日志，定位 .NET Framework 运行时加载选择问题。
+  description_en: Analyzes CLR activation logs to diagnose .NET Framework runtime loading and version-selection failures.
+  sources:
+  - dotnet-skills
+- id: software-engineering--1-2--455
+  skills:
+  - dotnet-trace-collect
+  - dump-collect
+  group: .NET 生产诊断采集
+  group_en: .NET Production Diagnostics Collection
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 帮助 agent 为 .NET 生产性能问题选择诊断工具，并指导跨平台、容器或 Kubernetes 环境采集 trace 数据。
+  description_en: Guides agents in choosing .NET diagnostic tools and collecting performance traces across platforms, containers, and Kubernetes.
+  sources:
+  - dotnet-skills
+- id: design-frontend--5-7--456
+  skills:
+  - drawio-skill
+  group: draw.io 图表生成
+  group_en: draw.io Diagram Generation
+  category: design-frontend
+  subcategory: 5-7
+  chain: false
+  description: 把自然语言需求转成 draw.io 图表 XML，支持架构图、流程图、ERD、UML 等导出。
+  description_en: Turns natural-language requests into draw.io XML diagrams, including architecture, flowcharts, ERDs, and UML exports.
+  sources:
+  - drawio-skill
+- id: academic-research--11-5--457
+  skills:
+  - paper-spine-audit
+  - paper-spine-build
+  group: PaperSpine 学术论文构建与审计工作流
+  group_en: PaperSpine Academic Paper Build and Audit Workflow
+  category: academic-research
+  subcategory: 11-5
+  chain: true
+  description: 审计论文输出是否完整、论证有证据支撑，并检查 LaTeX 引文和图表安全性。
+  description_en: Builds a paper or report draft from research materials, confirmed motivation, evidence banks, and writing blueprints.
+  sources:
+  - paperspine
+- id: academic-research--11-3--458
+  skills:
+  - paper-spine-citation
+  - paper-spine-humanize
+  - paper-spine-research
+  - paper-spine-rewrite
+  group: PaperSpine 论文重写流水线
+  group_en: PaperSpine manuscript rewriting workflow
+  category: academic-research
+  subcategory: 11-3
+  chain: true
+  description: 帮助 agent 从研究材料中筛选候选文献，生成可核验的引用支持库，支撑论文背景与讨论段落。
+  description_en: Helps agents apply tiered stylistic revisions to academic text and document AI-pattern changes in an auditable matrix.
+  sources:
+  - paperspine
+- id: academic-research--11-1--459
+  skills:
+  - paper-spine-latex
+  group: PaperSpine 论文重写交付流水线
+  group_en: PaperSpine paper rewriting delivery pipeline
+  category: academic-research
+  subcategory: 11-1
+  chain: true
+  description: 收集论文重写选项，生成 PaperSpine 配置，供后续流程使用。
+  description_en: Assembles LaTeX projects, manages figures, citations, labels, and compile-safety checks.
+  sources:
+  - paperspine
+- id: docs-knowledge--2-2--460
+  skills:
+  - paper-spine-translate
+  group: 学术论文中文翻译包
+  group_en: Academic paper Chinese translation package
+  category: docs-knowledge
+  subcategory: 2-2
+  chain: false
+  description: 为 PaperSpine 生成完整中文翻译包，逐项翻译配置、资料索引、研究档案与全文。
+  description_en: Builds PaperSpine’s complete Chinese translation package, translating config, indexes, dossiers, and the full paper.
+  sources:
+  - paperspine
+- id: academic-research--11-1--461
+  skills:
+  - paper-spine
+  group: 学术研究流水线
+  group_en: Academic research writing pipeline
+  category: academic-research
+  subcategory: 11-1
+  chain: false
+  description: 统筹论文/报告的动机提炼、写作、引用、修订与 LaTeX/PDF/Word 输出。
+  description_en: Coordinates motivation, writing, citations, revision, and LaTeX/PDF/Word output for papers and reports.
+  sources:
+  - paperspine
+- id: design-frontend--5-8--462
+  skills:
+  - gpt-image
+  group: AI 出图（Codex）
+  group_en: AI Image Generation (Codex)
+  category: design-frontend
+  subcategory: 5-8
+  chain: false
+  description: 帮助 agent 调用 GPT Image 2 生成、编辑、修复图像并复用提示图库。
+  description_en: Helps agents generate, edit, and inpaint images with GPT Image 2 while reusing prompt patterns.
+  sources:
+  - gpt-image2-skill
+- id: software-engineering--1-3--463
+  skills:
+  - ponytail-audit
+  group: 极简重构全仓审计
+  group_en: Minimalist Refactoring Audit
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 扫描全仓识别过度设计与可删除代码，输出按收益排序的精简建议。
+  description_en: Scans the whole repo for over-engineering and ranks simplification or removal opportunities by impact.
+  sources:
+  - ponytail
+- id: software-engineering--1-3--464
+  skills:
+  - ponytail-debt
+  group: Ponytail 技术债台账
+  group_en: Ponytail Debt Ledger
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 收集代码中的 ponytail 标记，整理成技术债台账并标出缺少升级路径的项。
+  description_en: Collects ponytail markers from code into a debt ledger and flags items missing an upgrade path.
+  sources:
+  - ponytail
+- id: software-engineering--1-3--465
+  skills:
+  - ponytail-review
+  group: 过度工程审查
+  group_en: Over-engineering Review
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 专注审查过度设计、重复造轮子和无谓依赖，按行给出删除或简化建议。
+  description_en: Reviews code specifically for unnecessary complexity, reinvented libraries, and needless dependencies with deletion-focused findings.
+  sources:
+  - ponytail
+- id: meta-skill-mgmt--13-5--466
+  skills:
+  - ponytail
+  group: 极简编码行为约束
+  group_en: Minimal Coding Constraint
+  category: meta-skill-mgmt
+  subcategory: 13-5
+  chain: false
+  description: 让 agent 在编码时优先选择最简单、最少依赖且可用的方案。
+  description_en: Guides agents to choose the simplest viable implementation with minimal dependencies.
+  sources:
+  - ponytail
+- id: marketing-growth--4-1--467
+  skills:
+  - gemini
+  group: 跨模型营销评审
+  group_en: Cross-Model Marketing Review
+  category: marketing-growth
+  subcategory: 4-1
+  chain: false
+  description: 调用 Gemini CLI 为 SEO/GEO 与 Google Ads 改动提供独立复核、挑战和咨询。
+  description_en: Uses Gemini CLI as an independent reviewer, challenger, and consultant for SEO/GEO and Google Ads changes.
+  sources:
+  - notfair
+- id: marketing-growth--4-1--468
+  skills:
+  - broken-link-checker
+  group: SEO 技术健康审计
+  group_en: SEO technical health audit
+  category: marketing-growth
+  subcategory: 4-1
+  chain: false
+  description: 快速扫描网站并查找 404/5xx 坏链，定位来源页以辅助修复。
+  description_en: Crawls a site to find broken internal and outbound links, then reports source pages for fixes.
+  sources:
+  - notfair
+- id: marketing-growth--4-1--469
+  skills:
+  - content-planner
+  group: SEO 内容日历规划
+  group_en: SEO content calendar planning
+  category: marketing-growth
+  subcategory: 4-1
+  chain: false
+  description: 基于 GSC 数据识别快速赢面，生成面向发布排期的优先内容日历。
+  description_en: Uses GSC data to surface quick-win topics and produce a prioritized publishing calendar.
+  sources:
+  - notfair
+- id: marketing-growth--4-1--470
+  skills:
+  - content-writer
+  group: SEO 内容创作与页面优化
+  group_en: SEO content creation and page optimization
+  category: marketing-growth
+  subcategory: 4-1
+  chain: false
+  description: 帮助 agent 根据关键词、主题或 URL 撰写或改写符合 E-E-A-T 与 helpful content 要求的 SEO 内容。
+  description_en: Helps agents draft or improve SEO-focused content that aligns with E-E-A-T and helpful content principles.
+  sources:
+  - notfair
+- id: marketing-growth--4-1--471
+  skills:
+  - geo-optimizer
+  group: 生成引擎优化
+  group_en: Generative Engine Optimization
+  category: marketing-growth
+  subcategory: 4-1
+  chain: false
+  description: 帮助 agent 审计并改写内容，提升其在 ChatGPT、Claude、Perplexity 等 AI 搜索中的引用概率。
+  description_en: Helps agents audit and rewrite content to improve visibility and citations in AI search engines.
+  sources:
+  - notfair
+- id: marketing-growth--4-1--472
+  skills:
+  - keyword-research
+  group: SEO/GEO 关键词研究
+  group_en: SEO/GEO Keyword Research
+  category: marketing-growth
+  subcategory: 4-1
+  chain: false
+  description: 从种子词发现高价值关键词，识别意图、竞争度和主题簇。
+  description_en: Discovers and prioritizes high-value keywords from a seed term for SEO and GEO strategy.
+  sources:
+  - notfair
+- id: marketing-growth--4-1--473
+  skills:
+  - meta-tags-optimizer
+  group: SEO 元标签与 CTR 优化
+  group_en: SEO Metadata & CTR Optimization
+  category: marketing-growth
+  subcategory: 4-1
+  chain: false
+  description: 生成并优化标题、Meta 描述、OG/Twitter 标签，提升搜索与社媒点击率。
+  description_en: Creates and optimizes title tags, meta descriptions, and social metadata to improve CTR.
+  sources:
+  - notfair
+- id: marketing-growth--4-1--474
+  skills:
+  - schema-markup-generator
+  group: SEO 结构化数据
+  group_en: SEO Structured Data
+  category: marketing-growth
+  subcategory: 4-1
+  chain: false
+  description: 生成并校验 JSON-LD 结构化数据，帮助页面获得丰富搜索结果。
+  description_en: Generates and validates JSON-LD structured data to help pages qualify for rich search results.
+  sources:
+  - notfair
+- id: marketing-growth--4-1--475
+  skills:
+  - seo-analysis
+  group: SEO 审计与诊断
+  group_en: SEO Audit and Diagnostics
+  category: marketing-growth
+  subcategory: 4-1
+  chain: false
+  description: 整合搜索控制台、性能指标和技术 SEO 数据，产出可执行优化计划。
+  description_en: Combines Search Console, performance, and technical SEO signals into actionable optimization plans.
+  sources:
+  - notfair
+- id: marketing-growth--4-1--476
+  skills:
+  - seo-page
+  group: 单页 SEO 审计与内容质量评估
+  group_en: Single-Page SEO Audits
+  category: marketing-growth
+  subcategory: 4-1
+  chain: false
+  description: 帮助 agent 审计指定页面的内容质量、技术 SEO 和搜索意图，并给出修复建议。
+  description_en: Helps agents audit a specific URL for content quality, technical SEO, search intent, and actionable fixes.
+  sources:
+  - notfair
+- id: marketing-growth--4-1--477
+  skills:
+  - setup-cms
+  group: SEO 工具 CMS 集成
+  group_en: SEO Tool CMS Integration
+  category: marketing-growth
+  subcategory: 4-1
+  chain: false
+  description: 帮助 agent 配置 WordPress、Strapi 等 CMS 连接，让 SEO 报告同步内容数据。
+  description_en: Helps agents connect WordPress, Strapi, or similar CMSs so SEO reports can use published content data.
+  sources:
+  - notfair
+- id: finance-trading--16-1--478
+  skills:
+  - finance-sentiment
+  - hormuz-strait
+  - tradingview-reader
+  - stock-correlation
+  - yfinance-data
+  - linkedin-reader
+  - opencli-reader
+  group: 行情数据 / 市场情报
+  group_en: Market data / market intelligence
+  category: finance-trading
+  subcategory: 16-1
+  chain: false
+  description: 聚合 Reddit、X、新闻和 Polymarket 的股票情绪与热度信号。
+  description_en: Read LinkedIn professionally to support financial research, market sentiment, and finance-job monitoring.
+  sources:
+  - himself65-finance-skills
+- id: web3-blockchain--20-4--479
+  skills:
+  - hyperliquid-reader
+  group: 链上数据 / 浏览器 / RPC
+  group_en: On-chain Data / Explorer / RPC
+  category: web3-blockchain
+  subcategory: 20-4
+  chain: false
+  description: 只读 Hyperliquid 永续/现货市场数据，供行情与资金费率分析。
+  description_en: Reads Hyperliquid perpetual and spot market data for price, funding, and order-book analysis.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-4--480
+  skills:
+  - company-valuation
+  group: company-valuation
+  group_en: Stock Research / Valuation / Financials / IB / PE / M&A
+  category: finance-trading
+  subcategory: 16-4
+  chain: false
+  description: 用 DCF、可比公司和分部估值估算上市公司公允价值。
+  description_en: Estimates public-company fair value using DCF, peer multiples, and SOTP.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-4--481
+  skills:
+  - earnings-preview
+  - earnings-recap
+  group: 财报预期→结果复盘
+  group_en: Earnings Expectations → Results Recap
+  category: finance-trading
+  subcategory: 16-4
+  chain: true
+  description: 用 yfinance 汇总财报预期、共识估计与历史表现
+  description_en: Uses yfinance to summarize earnings expectations, consensus estimates, and historical performance.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-4--482
+  skills:
+  - estimate-analysis
+  group: estimate-analysis
+  group_en: Equity Research / Valuation / Earnings Estimates
+  category: finance-trading
+  subcategory: 16-4
+  chain: false
+  description: 帮助 agent 基于 Yahoo Finance 数据深入分析分析师预期、EPS/收入修正趋势和增长预测。
+  description_en: Helps the agent analyze analyst estimates, EPS/revenue revision trends, and growth projections using Yahoo Finance data.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-1--483
+  skills:
+  - etf-premium
+  group: ETF 溢价/折价分析
+  group_en: ETF Premium and Discount Analysis
+  category: finance-trading
+  subcategory: 16-1
+  chain: false
+  description: 帮助 agent 计算 ETF 相对 NAV 的溢价或折价，并拆解价格偏离背后的结构性因素。
+  description_en: Helps the agent calculate ETF premium/discount versus NAV and break down the drivers behind price divergence.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-6--484
+  skills:
+  - options-payoff
+  group: 衍生品 / 固定收益
+  group_en: Derivatives & Fixed Income
+  category: finance-trading
+  subcategory: 16-6
+  chain: false
+  description: 帮助 agent 从文本或截图提取期权策略，生成盈亏曲线和风险指标。
+  description_en: Helps the agent extract option strategies from text or screenshots and generate payoff curves with risk metrics.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-4--485
+  skills:
+  - saas-valuation-compression
+  group: saas-valuation-compression
+  group_en: Valuation & Financial Research
+  category: finance-trading
+  subcategory: 16-4
+  chain: false
+  description: 帮助 agent 比较 SaaS 公司轮次估值倍数，解释压缩或扩张原因。
+  description_en: Helps the agent compare SaaS valuation multiples across funding rounds and explain compression or expansion drivers.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-2--486
+  skills:
+  - sepa-strategy
+  group: 量化方法 / ML 信号 / 回测 / 策略框架
+  group_en: Quant Methods / ML Signals / Backtesting / Strategy Frameworks
+  category: finance-trading
+  subcategory: 16-2
+  chain: false
+  description: 用 SEPA 框架分析成长股入场点、趋势阶段、形态与风险收益。
+  description_en: Analyzes growth-stock setups, trend stages, chart patterns, and risk/reward using the SEPA framework.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-2--487
+  skills:
+  - stock-liquidity
+  group: 股票流动性 / 交易成本分析
+  group_en: Stock liquidity and trading-cost analysis
+  category: finance-trading
+  subcategory: 16-2
+  chain: false
+  description: 分析买卖价差、成交量、深度和冲击成本，评估流动性
+  description_en: Assesses bid-ask spreads, volume, depth, and market impact to gauge stock liquidity.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-1--488
+  skills:
+  - discord-reader
+  group: Discord 金融舆情监听
+  group_en: Discord Financial Sentiment Monitor
+  category: finance-trading
+  subcategory: 16-1
+  chain: false
+  description: 只读 Discord 频道与消息，用于交易社区讨论、加密市场情绪和金融研究。
+  description_en: Reads Discord channels and messages in read-only mode to gather trading-community discussions, crypto sentiment, and financial research.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-1--489
+  skills:
+  - telegram-reader
+  - twitter-reader
+  group: 社交金融情报读取
+  group_en: Social Finance Intelligence Readers
+  category: finance-trading
+  subcategory: 16-1
+  chain: false
+  description: 用只读 Telegram 读取金融频道消息，服务市场情报与舆情研究。
+  description_en: Reads Telegram channels and groups read-only to collect financial news and market sentiment for research.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-1--490
+  skills:
+  - yc-reader
+  group: YC 公司数据库 / 创投市场情报
+  group_en: YC Company Database / Venture Market Intelligence
+  category: finance-trading
+  subcategory: 16-1
+  chain: false
+  description: 读取 YC 公司、批次、招聘和赛道趋势等公开数据，支持创投研究。
+  description_en: Fetches public YC company, batch, hiring, and sector-trend data for venture research.
+  sources:
+  - himself65-finance-skills
+- id: finance-trading--16-4--491
+  skills:
+  - startup-analysis
+  group: 初创公司尽调 / 投资分析
+  group_en: Startup Due Diligence / Investment Analysis
+  category: finance-trading
+  subcategory: 16-4
+  chain: false
+  description: 从投资人、求职者和创始人视角评估初创公司的健康度、风险与潜力。
+  description_en: Evaluates startups through investor, job-seeker, and founder lenses for diligence and decision-making.
+  sources:
+  - himself65-finance-skills
+- id: academic-research--11-1--492
+  skills:
+  - benchmark-paper-template
+  - figure-designer
+  group: 学术研究流水线
+  group_en: Academic Research Writing Pipeline
+  category: academic-research
+  subcategory: 11-1
+  chain: false
+  description: 为 Benchmark 论文梳理五支柱、引言逻辑、章节骨架和投稿检查。
+  description_en: Structures benchmark and evaluation papers with a five-pillar audit, introduction logic, section skeleton, and pre-submission checklist.
+  sources:
+  - supervisor-skills
+- id: academic-research--11-6--493
+  skills:
+  - idea-evaluator
+  - tech-paper-template
+  group: 研究选题 / 假设 / 构思
+  group_en: Research Topic Ideation and Hypothesis Shaping
+  category: academic-research
+  subcategory: 11-6
+  chain: false
+  description: 帮 agent 将研究想法整理为论文逻辑骨架，定位类型并做一致性检查。
+  description_en: Turns a research idea into a paper’s logical skeleton, positions the contribution type, and checks consistency.
+  sources:
+  - supervisor-skills
+- id: academic-research--11-1--494
+  skills:
+  - intro-drafter
+  group: 科研论文写作
+  group_en: Research Paper Writing
+  category: academic-research
+  subcategory: 11-1
+  chain: false
+  description: 根据论文要素生成六段式 Introduction 大纲和写作要点。
+  description_en: Builds a six-paragraph introduction outline with writing points for a technical paper.
+  sources:
+  - supervisor-skills
+- id: academic-research--11-5--495
+  skills:
+  - pre-submission-reviewer
+  group: 论文同行评审 / 质量审查
+  group_en: Peer Review and Quality Assessment
+  category: academic-research
+  subcategory: 11-5
+  chain: false
+  description: 在投稿前从逻辑、写作、语法、LaTeX 和图表质量做结构化审查。
+  description_en: Runs a structured pre-submission audit covering logic, prose, grammar, LaTeX, and figure quality.
+  sources:
+  - supervisor-skills
+- id: ml-llm-engineering--21-9--496
+  skills:
+  - vibe-research-workflow
+  group: AI 科研编排 / Vibe Research 工作流
+  group_en: AI Research Orchestration / Vibe Research Workflow
+  category: ml-llm-engineering
+  subcategory: 21-9
+  chain: false
+  description: 指导 AI 辅助科研的编码、制图、写作流程与工具选择。
+  description_en: Guides AI-assisted research across coding, figures, writing, and tool selection.
+  sources:
+  - supervisor-skills
+- id: data-scraping--7-3--497
+  skills:
+  - design-postgis-tables
+  - design-postgres-tables
+  group: PostgreSQL/PostGIS 表设计参考
+  group_en: PostgreSQL/PostGIS Table Design References
+  category: data-scraping
+  subcategory: 7-3
+  chain: false
+  description: 为 agent 提供 PostgreSQL 表设计规则，覆盖数据类型、约束、索引、JSONB 和分区实践。
+  description_en: Helps an agent design PostGIS spatial tables, including geometry choices, coordinate systems, spatial indexes, and query performance.
+  sources:
+  - pg-aiguide
+- id: data-scraping--7-3--498
+  skills:
+  - find-hypertable-candidates
+  - migrate-postgres-tables-to-hypertables
+  group: TimescaleDB hypertable 迁移工作流
+  group_en: TimescaleDB Hypertable Migration Workflow
+  category: data-scraping
+  subcategory: 7-3
+  chain: true
+  description: 分析 PostgreSQL 表结构、索引和查询模式，识别适合 TimescaleDB hypertable 的表。
+  description_en: Analyzes PostgreSQL schemas, indexes, and query patterns to identify tables suitable for TimescaleDB hypertables.
+  sources:
+  - pg-aiguide
+- id: data-scraping--7-3--499
+  skills:
+  - pgvector-semantic-search
+  - postgres-hybrid-text-search
+  group: PostgreSQL 搜索与 RAG
+  group_en: PostgreSQL Search & RAG
+  category: data-scraping
+  subcategory: 7-3
+  chain: false
+  description: 帮 Agent 在 PostgreSQL 中配置 pgvector 语义搜索与 RAG 检索。
+  description_en: Helps the agent configure pgvector in PostgreSQL for semantic search and RAG retrieval.
+  sources:
+  - pg-aiguide
+- id: data-scraping--7-3--500
+  skills:
+  - postgres
+  - setup-timescaledb-hypertables
+  group: PostgreSQL / TimescaleDB 数据库技能
+  group_en: PostgreSQL & TimescaleDB Database Skills
+  category: data-scraping
+  subcategory: 7-3
+  chain: false
+  description: 指导 agent 创建 TimescaleDB hypertable、压缩、保留策略和连续聚合。
+  description_en: Guides the agent in setting up TimescaleDB hypertables, compression, retention policies, and continuous aggregates.
+  sources:
+  - pg-aiguide
+- id: devops-infra--17-3--501
+  skills:
+  - blueprint
+  group: WordPress Playground 蓝图
+  group_en: WordPress Playground Blueprints
+  category: devops-infra
+  subcategory: 17-3
+  chain: false
+  description: 创建、编辑和审查 WordPress Playground 蓝图 JSON。
+  description_en: Creates, edits, and reviews WordPress Playground blueprint JSON files.
+  sources:
+  - wordpress-agent-skills
+- id: agent-architecture--12-5--502
+  skills:
+  - wordpress-router
+  group: WordPress 项目路由
+  group_en: WordPress Project Routing
+  category: agent-architecture
+  subcategory: 12-5
+  chain: false
+  description: 快速识别 WordPress 代码库类型并分派到对应工作流。
+  description_en: Classifies WordPress repos and routes tasks to the right workflow.
+  sources:
+  - wordpress-agent-skills
+- id: software-engineering--1-6--503
+  skills:
+  - wp-abilities-api
+  - wp-abilities-audit
+  group: WordPress Abilities API 审计到实现
+  group_en: WordPress Abilities API audit-to-implementation workflow
+  category: software-engineering
+  subcategory: 1-6
+  chain: true
+  description: 审计插件 REST 表面，生成 Abilities API 注册规划文档。
+  description_en: Audits a WordPress plugin’s REST surface and drafts an Abilities API registration plan.
+  sources:
+  - wordpress-agent-skills
+- id: software-engineering--1-2--504
+  skills:
+  - wp-abilities-verify
+  group: WordPress Abilities API 验证
+  group_en: WordPress Abilities API Verification
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 验证 WordPress 插件 Abilities API 注册，检查回调是否越权写入、权限与 schema，并可运行态验证。
+  description_en: Verifies WordPress plugin Abilities API registrations, catches read-only callbacks that write, and checks permissions, schemas, and runtime behavior.
+  sources:
+  - wordpress-agent-skills
+- id: design-frontend--5-2--505
+  skills:
+  - wp-block-development
+  group: WordPress Gutenberg 块开发
+  group_en: WordPress Gutenberg Block Development
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 帮助 agent 开发/维护 WordPress Gutenberg 块，处理 block.json、属性、动态渲染、迁移、构建和测试。
+  description_en: Helps agents develop and maintain WordPress Gutenberg blocks, including block.json, attributes, rendering, deprecations, build, and tests.
+  sources:
+  - wordpress-agent-skills
+- id: design-frontend--5-2--506
+  skills:
+  - wp-block-themes
+  group: WordPress 块主题开发
+  group_en: WordPress Block Theme Development
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 帮助 agent 开发或排查 WordPress 块主题，覆盖 theme.json、模板、图案、样式变体和站点编辑器问题。
+  description_en: Helps an agent develop or troubleshoot WordPress block themes, including theme.json, templates, patterns, style variations, and Site Editor issues.
+  sources:
+  - wordpress-agent-skills
+- id: design-frontend--5-2--507
+  skills:
+  - wp-interactivity-api
+  group: WordPress 交互 API 开发
+  group_en: WordPress Interactivity API Development
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 帮助 agent 构建或调试 WordPress 交互功能，识别 directives、状态存储、模块脚本和 hydration 问题。
+  description_en: Helps an agent build or debug WordPress Interactivity API features, including directives, stores, module scripts, and hydration behavior.
+  sources:
+  - wordpress-agent-skills
+- id: devops-infra--17-3--508
+  skills:
+  - wp-performance
+  group: WordPress 性能诊断与优化
+  group_en: WordPress Performance Profiling
+  category: devops-infra
+  subcategory: 17-3
+  chain: false
+  description: 帮 agent 用 WP-CLI、Server-Timing 等诊断并优化 WordPress 慢请求与后台性能。
+  description_en: Helps an agent diagnose and optimize WordPress performance using WP-CLI, Server-Timing, Query Monitor, and backend profiling data.
+  sources:
+  - wordpress-agent-skills
+- id: software-engineering--1-2--509
+  skills:
+  - wp-phpstan
+  group: WordPress PHPStan 静态分析
+  group_en: WordPress PHPStan Static Analysis
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 帮 agent 配置、运行和修复 WordPress 项目的 PHPStan 静态分析。
+  description_en: Helps an agent configure, run, and fix PHPStan static analysis in WordPress plugins, themes, and sites.
+  sources:
+  - wordpress-agent-skills
+- id: devops-infra--17-3--510
+  skills:
+  - wp-playground
+  group: WordPress Playground 沙盒与调试
+  group_en: WordPress Playground sandbox and debugging
+  category: devops-infra
+  subcategory: 17-3
+  chain: false
+  description: 指导 Agent 快速启动临时 WordPress 环境，用于测试插件主题、复现问题和调试。
+  description_en: Helps the agent spin up disposable WordPress environments for plugin and theme testing, issue reproduction, and debugging.
+  sources:
+  - wordpress-agent-skills
+- id: software-engineering--1-6--511
+  skills:
+  - wp-plugin-development
+  group: WordPress 插件开发
+  group_en: WordPress plugin development
+  category: software-engineering
+  subcategory: 1-6
+  chain: false
+  description: 指导 Agent 创建、重构和发布 WordPress 插件，覆盖钩子、管理界面与安全发布。
+  description_en: Guides the agent in building, refactoring, and packaging WordPress plugins, including hooks, admin UI, and security.
+  sources:
+  - wordpress-agent-skills
+- id: legal-compliance--14-4--512
+  skills:
+  - wp-plugin-directory-guidelines
+  group: 知识产权(清查 / 侵权 / OSS / DMCA)
+  group_en: Intellectual Property (Audits / Infringement / OSS / DMCA)
+  category: legal-compliance
+  subcategory: 14-4
+  chain: false
+  description: 审查 WP 插件 GPL、命名、商标与目录提交合规。
+  description_en: Reviews WP plugin GPL, naming, trademark, and directory compliance.
+  sources:
+  - wordpress-agent-skills
+- id: agent-architecture--12-5--513
+  skills:
+  - wp-project-triage
+  group: WordPress 项目识别与工具链探测
+  group_en: WordPress Project Discovery and Toolchain Probe
+  category: agent-architecture
+  subcategory: 12-5
+  chain: false
+  description: 识别 WP 仓库类型并输出 JSON 报告，辅助选择工作流。
+  description_en: Identifies WP repo type and emits a JSON report for workflow selection.
+  sources:
+  - wordpress-agent-skills
+- id: software-engineering--1-6--514
+  skills:
+  - wp-rest-api
+  group: WordPress REST API 开发
+  group_en: WordPress REST API Development
+  category: software-engineering
+  subcategory: 1-6
+  chain: false
+  description: 帮助 agent 构建、调试 WordPress REST API 路由、权限、Schema 与响应。
+  description_en: Helps the agent build and debug WordPress REST routes, permissions, schemas, and responses.
+  sources:
+  - wordpress-agent-skills
+- id: software-engineering--1-5--515
+  skills:
+  - wp-wpcli-and-ops
+  group: WordPress 运维与部署
+  group_en: WordPress Operations and Deployment
+  category: software-engineering
+  subcategory: 1-5
+  chain: false
+  description: 帮助 agent 安全执行 WP-CLI 运维、数据库迁移、插件主题与多站点管理。
+  description_en: Helps the agent safely run WP-CLI operations, database migrations, plugin/theme management, and multisite tasks.
+  sources:
+  - wordpress-agent-skills
+- id: design-frontend--5-2--516
+  skills:
+  - wpds
+  group: WordPress Design System（WPDS）
+  group_en: WordPress Design System (WPDS)
+  category: design-frontend
+  subcategory: 5-2
+  chain: false
+  description: 帮助 agent 在 WordPress UI 构建/审查中调用 WPDS MCP，引用组件、设计令牌和官方文档。
+  description_en: Helps agents build and review WordPress UIs by using the WPDS MCP server to retrieve components, design tokens, and official docs.
+  sources:
+  - wordpress-agent-skills
+- id: agent-architecture--12-4--517
+  skills:
+  - autonomous-skill
+  group: Claude Code 自治任务循环
+  group_en: Claude Code Autonomous Task Loops
+  category: agent-architecture
+  subcategory: 12-4
+  chain: false
+  description: 让 Agent 自动拆分并跨会话持续执行长任务，带进度追踪与循环完成机制。
+  description_en: Lets an agent decompose long-running tasks and keep executing them across sessions with progress tracking and looped completion.
+  sources:
+  - feiskyer-cc-settings
+- id: software-engineering--1-6--518
+  skills:
+  - codex-skill
+  group: OpenAI Codex 自治编码
+  group_en: OpenAI Codex Autonomous Coding
+  category: software-engineering
+  subcategory: 1-6
+  chain: false
+  description: 调用 Codex CLI 在沙箱中自动完成编码、审查与实现任务。
+  description_en: Uses the Codex CLI to autonomously implement and review code in a sandboxed environment.
+  sources:
+  - feiskyer-cc-settings
+- id: software-engineering--1-1--519
+  skills:
+  - kiro-skill
+  group: 轻量 SDD 框架 / 核心开发工作流（superpowers）
+  group_en: Lightweight SDD Framework / Core Development Workflow (superpowers)
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 引导 agent 将功能想法转成需求、设计和任务，并逐步实现。
+  description_en: Guides an agent from feature idea to requirements, design, tasks, and incremental implementation.
+  sources:
+  - feiskyer-cc-settings
+- id: design-frontend--5-8--520
+  skills:
+  - nanobanana-skill
+  group: Gemini 图片生成与编辑
+  group_en: Gemini Image Generation and Editing
+  category: design-frontend
+  subcategory: 5-8
+  chain: false
+  description: 调用 nanobanana 和 Gemini API，按提示生成或编辑图片。
+  description_en: Uses nanobanana with the Gemini API to generate or edit images from prompts.
+  sources:
+  - feiskyer-cc-settings
+- id: software-engineering--1-1--521
+  skills:
+  - spec-kit-skill
+  group: 轻量 SDD 框架
+  group_en: Lightweight SDD Framework
+  category: software-engineering
+  subcategory: 1-1
+  chain: false
+  description: 引导 agent 用 Spec-Kit 建立宪法、规格、计划与实现流程。
+  description_en: Guides the agent through Spec-Kit’s constitution, spec, planning, and implementation workflow.
+  sources:
+  - feiskyer-cc-settings
+- id: media--6-2--522
+  skills:
+  - youtube-transcribe-skill
+  group: YouTube 字幕提取
+  group_en: YouTube Transcript Extraction
+  category: media
+  subcategory: 6-2
+  chain: false
+  description: 从 YouTube 链接提取字幕或自动转写并保存为本地文本。
+  description_en: Extracts YouTube captions or auto-generated transcripts and saves them locally.
+  sources:
+  - feiskyer-cc-settings
+- id: meta-skill-mgmt--13-1--523
+  skills:
+  - command-creator
+  group: Claude Code 命令创建器
+  group_en: Claude Code Command Creator
+  category: meta-skill-mgmt
+  subcategory: 13-1
+  chain: false
+  description: 帮助 agent 创建结构规范、可复用的 Claude Code 自定义斜杠命令。
+  description_en: Helps the agent create well-structured, reusable Claude Code custom slash commands.
+  sources:
+  - feiskyer-cc-settings
+- id: agent-architecture--12-4--524
+  skills:
+  - deep-research
+  group: 深度调研多 Agent 编排
+  group_en: Deep Research Multi-Agent Orchestration
+  category: agent-architecture
+  subcategory: 12-4
+  chain: false
+  description: 把调研目标拆成并行子任务，调度子进程采集、聚合并产出报告。
+  description_en: Breaks research goals into parallel tasks, runs subprocesses to gather and synthesize findings, and writes a report.
+  sources:
+  - feiskyer-cc-settings
+- id: agent-architecture--12-2--525
+  skills:
+  - eureka
+  group: 技术突破捕获与归档
+  group_en: Technical Breakthrough Capture and Archiving
+  category: agent-architecture
+  subcategory: 12-2
+  chain: false
+  description: 捕获技术突破的问题、洞察与变化，生成结构化 Markdown 知识资产。
+  description_en: Captures the problem, insight, and before/after changes from technical breakthroughs into structured, reusable Markdown knowledge assets.
+  sources:
+  - feiskyer-cc-settings
+- id: software-engineering--1-4--526
+  skills:
+  - github-fix-issue
+  group: GitHub Issue/PR 分析与发布自动化
+  group_en: GitHub Issue/PR Analysis and Release Automation
+  category: software-engineering
+  subcategory: 1-4
+  chain: false
+  description: 端到端分析 GitHub Issue，制定修复计划、创建分支、实现测试并提交 PR。
+  description_en: Analyzes a GitHub issue end to end, plans a fix, creates a branch, implements and tests it, then submits a PR.
+  sources:
+  - feiskyer-cc-settings
+- id: software-engineering--1-3--527
+  skills:
+  - github-review-pr
+  group: 实现后并行 Code Review（多子代理）
+  group_en: Parallel Subagent Code Review
+  category: software-engineering
+  subcategory: 1-3
+  chain: false
+  description: 用并行子代理评审 GitHub PR，产出高信号、可执行的代码审查意见。
+  description_en: Reviews GitHub PRs with parallel specialist subagents to deliver high-signal, actionable code review feedback.
+  sources:
+  - feiskyer-cc-settings
+- id: design-frontend--5-8--528
+  skills:
+  - gpt-image-skill
+  group: OpenAI GPT 图像生成与编辑
+  group_en: OpenAI GPT Image Generation and Editing
+  category: design-frontend
+  subcategory: 5-8
+  chain: false
+  description: 通过 OpenAI GPT Image API 生成或编辑图片，支持模型、尺寸和质量参数。
+  description_en: Generates or edits images via the OpenAI GPT Image API, with controls for model, size, and quality.
+  sources:
+  - feiskyer-cc-settings
+- id: agent-architecture--12-2--529
+  skills:
+  - reflection
+  group: 会话复盘与 CLAUDE.md 迭代
+  group_en: Session Retrospectives & CLAUDE.md Iteration
+  category: agent-architecture
+  subcategory: 12-2
+  chain: false
+  description: 帮助 agent 复盘开发会话，提炼经验并改进 CLAUDE.md 指令。
+  description_en: Helps the agent review a development session, capture lessons, and improve CLAUDE.md instructions.
+  sources:
+  - feiskyer-cc-settings
+- id: docs-knowledge--2-2--530
+  skills:
+  - translate
+  group: 技术文章中文翻译
+  group_en: Tech Article Chinese Translation
+  category: docs-knowledge
+  subcategory: 2-2
+  chain: false
+  description: 将英文或日文技术文章翻译为自然流畅的中文，保留 Markdown 与术语。
+  description_en: Translates English or Japanese tech articles into fluent Chinese while preserving Markdown and terminology.
+  sources:
+  - feiskyer-cc-settings
+- id: meta-skill-mgmt--13-3--531
+  skills:
+  - validate-skills
+  group: Skill 规范校验
+  group_en: Skill spec validation
+  category: meta-skill-mgmt
+  subcategory: 13-3
+  chain: false
+  description: 校验仓库内 Skill 的名称、描述、结构和写作规范，便于发现格式与最佳实践问题。
+  description_en: Checks skill names, descriptions, structure, and authoring conventions for spec and best-practice issues.
+  sources:
+  - callstack-agent-skills
+- id: devops-infra--17-2--532
+  skills:
+  - github-actions
+  group: CI/CD 管道 / GitHub Actions 模板
+  group_en: CI/CD Pipelines / GitHub Actions Templates
+  category: devops-infra
+  subcategory: 17-2
+  chain: false
+  description: 为 AI 助手生成 React Native iOS/Android 云端构建与产物下载工作流。
+  description_en: Helps AI assistants set up GitHub Actions workflows for React Native iOS and Android cloud builds and artifact retrieval.
+  sources:
+  - callstack-agent-skills
+- id: software-engineering--1-4--533
+  skills:
+  - github
+  group: github
+  group_en: GitHub Essentials / Issue & PR Analysis / PR Automation
+  category: software-engineering
+  subcategory: 1-4
+  chain: false
+  description: 用 gh CLI 处理 PR、堆叠 PR、合并策略和仓库自动化。
+  description_en: Uses the gh CLI to manage PRs, stacked PRs, merge strategies, and repository automation.
+  sources:
+  - callstack-agent-skills
+- id: software-engineering--1-2--534
+  skills:
+  - react-native-best-practices
+  group: React Native 性能优化与调试
+  group_en: React Native Performance Optimization and Debugging
+  category: software-engineering
+  subcategory: 1-2
+  chain: false
+  description: 指导优化 React Native FPS、TTI、包体积、内存泄漏和动画卡顿。
+  description_en: Guides optimization of React Native FPS, TTI, bundle size, memory leaks, and animation jank.
+  sources:
+  - callstack-agent-skills
+- id: software-engineering--1-5--535
+  skills:
+  - react-native-brownfield-migration
+  - upgrading-react-native
+  group: React Native 平台集成与升级
+  group_en: React Native platform integration and upgrades
+  category: software-engineering
+  subcategory: 1-5
+  chain: false
+  description: 帮助按官方 diff 升级 React Native，处理依赖、CocoaPods、Gradle 与 Expo SDK 变更。
+  description_en: Guides incremental React Native or Expo adoption in native iOS/Android apps, including artifact packaging and host integration.
+  sources:
+  - callstack-agent-skills
+- id: design-frontend--5-8--536
+  skills:
+  - guizang-social-card-skill
+  group: 小红书图文与公众号封面生成
+  group_en: Xiaohongshu Posts & WeChat Cover Generator
+  category: design-frontend
+  subcategory: 5-8
+  chain: false
+  description: 根据文章、脚本、截图、产品说明或照片，生成小红书图文、3:4 卡片和微信公众号 21:9+1:1 封面套图。
+  description_en: Generates Xiaohongshu carousels, 3:4 social cards, and WeChat Official Account cover pairs from articles, scripts, screenshots, notes, or photos.
+  sources:
+  - guizang-social-card
+- id: legal-compliance--14-4--537
+  skills:
+  - patent-disclosure-skill
+  group: 专利交底书生成
+  group_en: Patent Disclosure Drafting
+  category: legal-compliance
+  subcategory: 14-4
+  chain: false
+  description: 从项目文档挖掘专利点，查新并生成、自检中国专利交底书。
+  description_en: Mines patentable ideas from project docs, checks novelty, and drafts self-checked Chinese patent disclosures.
+  sources:
+  - patent-disclosure-skill
+- id: meta-skill-mgmt--13-1--538
+  skills:
+  - agent-skill-creator
+  group: Skill 创建器
+  group_en: Skill Creator
+  category: meta-skill-mgmt
+  subcategory: 13-1
+  chain: false
+  description: 把流程描述转化为跨平台 SKILL.md，并验证、配置、导出和迁移 Agent 技能。
+  description_en: Creates cross-platform SKILL.md agent skills from workflow descriptions, then validates, configures, exports, and migrates them.
+  sources:
+  - agent-skill-creator
