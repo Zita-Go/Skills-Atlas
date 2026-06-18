@@ -2242,3 +2242,220 @@
   description: HanaAgent（开源桌面 AI agent 产品）；本目录仅收录其中真原创、可移植的 skill（Office 文档四件套、深度推理协议 quiet-musing）。
   description_en: HanaAgent (an open-source desktop AI agent product); this catalog includes only its genuinely original, portable skills (Office document toolkit, the quiet-musing deep-reasoning protocol).
   license: Apache-2.0
+- id: tech-leads-club
+  author: tech-leads-club
+  repo: agent-skills
+  url: https://github.com/tech-leads-club/agent-skills
+  type: multi-skill-suite
+  stars: 4574
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: Tech Leads Club 维护的软件架构分析 skill 集：单体拆分、DDD 战术/战略设计、模块化设计原则、遗留迁移、AWS 顾问等原创 skill（仓内 vendored 镜像未收）。
+  description_en: Tech Leads Club’s software-architecture skills — monolith decomposition, tactical/strategic DDD, modular-design principles, legacy migration, AWS advisor; vendored mirrors in the repo are excluded.
+- id: google-maps-scraper
+  author: gosom
+  repo: google-maps-scraper
+  url: https://github.com/gosom/google-maps-scraper
+  type: skill
+  stars: 4304
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: gosom 的 Google Maps 数据抓取工具仓附带的 skill：从 Google Maps 提取商家/地点数据。
+  description_en: A skill bundled with gosom’s Google Maps scraper — extract business/place data from Google Maps.
+  license: MIT
+- id: sensenova-skills
+  author: OpenSenseNova
+  repo: SenseNova-Skills
+  url: https://github.com/OpenSenseNova/SenseNova-Skills
+  type: multi-skill-suite
+  stars: 4301
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: 商汤科技（SenseNova）官方 Excel 数据处理 skill 集：读写/统计/透视/可视化（柱状/折线/直方/饼图）等，纯 pandas/matplotlib 实现。
+  description_en: SenseTime’s official Excel data-processing skills — read/write, statistics, pivots, and charts (bar/line/histogram/pie), built on pandas/matplotlib.
+  license: MIT
+- id: pinme
+  author: glitternetwork
+  repo: pinme
+  url: https://github.com/glitternetwork/pinme
+  type: skill-pack
+  stars: 3662
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: PinMe CLI 的官方源仓附带 skill：把站点一键发布/固定到去中心化存储（IPFS）。
+  description_en: Skills from the official PinMe CLI repo — one-click publish/pin a site to decentralized storage (IPFS).
+  license: MIT
+- id: cc-sdd
+  author: gotalab
+  repo: cc-sdd
+  url: https://github.com/gotalab/cc-sdd
+  type: multi-skill-suite
+  stars: 3473
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: gotalab 的 cc-sdd：规格驱动开发（SDD）脚手架与工作流 skill（需求→设计→任务→实现的全流程编排）。
+  description_en: gotalab’s cc-sdd — spec-driven-development scaffolding and workflow skills (requirements → design → tasks → implementation).
+  license: MIT
+- id: guizang-social-card
+  author: op7418
+  repo: guizang-social-card-skill
+  url: https://github.com/op7418/guizang-social-card-skill
+  type: skill
+  stars: 3421
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: 归藏（op7418）原创：将文本生成小红书图文卡片与公众号封面的视觉素材。
+  description_en: op7418 (Guizang) original skill — turn text into Xiaohongshu image cards and WeChat cover visuals.
+  license: AGPL-3.0
+- id: dotnet-skills
+  author: dotnet
+  repo: skills
+  url: https://github.com/dotnet/skills
+  type: multi-skill-suite
+  stars: 3366
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: 微软 .NET 官方 agent skill 集：.NET/C# 开发、测试、迁移、诊断等第一方权威 skill（仓内 vendored 镜像未收）。
+  description_en: Microsoft’s official .NET agent skills — first-party .NET/C# development, testing, migration, and diagnostics (vendored mirrors excluded).
+  license: MIT
+- id: drawio-skill
+  author: Agents365-ai
+  repo: drawio-skill
+  url: https://github.com/Agents365-ai/drawio-skill
+  type: skill
+  stars: 3101
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: Agents365-ai 的 draw.io 图表生成 skill：用自然语言生成/编辑 draw.io 流程图。
+  description_en: Agents365-ai’s draw.io skill — generate and edit draw.io diagrams from natural language.
+  license: MIT
+- id: paperspine
+  author: WUBING2023
+  repo: PaperSpine
+  url: https://github.com/WUBING2023/PaperSpine
+  type: multi-skill-suite
+  stars: 3045
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: WUBING2023 的 PaperSpine：学术论文写作/结构化/投稿全流程 skill 集。
+  description_en: WUBING2023’s PaperSpine — academic paper writing, structuring, and submission workflow skills.
+  license: MIT
+- id: gpt-image2-skill
+  author: wuyoscar
+  repo: GPT-Image2-Skill
+  url: https://github.com/wuyoscar/GPT-Image2-Skill
+  type: skill
+  stars: 2995
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: wuyoscar 精选的 GPT-Image-2 图像生成 prompt/工作流 skill。
+  description_en: wuyoscar’s curated GPT-Image-2 image-generation prompt/workflow skill.
+  license: MIT
+- id: ponytail
+  author: DietrichGebert
+  repo: ponytail
+  url: https://github.com/DietrichGebert/ponytail
+  type: multi-skill-suite
+  stars: 9051
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: Dietrich Gebert 的 ponytail：极简/YAGNI 编码哲学 skill（“懒惰资深开发”风格的克制工程）。
+  description_en: Dietrich Gebert’s ponytail — minimalist/YAGNI coding-philosophy skills (the “lazy senior dev” restraint).
+  license: MIT
+- id: notfair
+  author: nowork-studio
+  repo: NotFair
+  url: https://github.com/nowork-studio/NotFair
+  type: multi-skill-suite
+  stars: 2850
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: nowork-studio 的 NotFair：面向产品/增长/内容的多功能 agent skill 集。
+  description_en: nowork-studio’s NotFair — a multi-purpose agent-skill set for product, growth, and content.
+  license: MIT
+- id: himself65-finance-skills
+  author: himself65
+  repo: finance-skills
+  url: https://github.com/himself65/finance-skills
+  type: multi-skill-suite
+  stars: 2806
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: himself65 的金融 skill 合集：遵循 agentskills.io 开放标准的行情/分析/估值/报告等原创金融 skill。
+  description_en: himself65’s finance skills — original market/analysis/valuation/reporting skills following the agentskills.io open standard.
+  license: MIT
+- id: supervisor-skills
+  author: HKUSTDial
+  repo: Supervisor-Skills
+  url: https://github.com/HKUSTDial/Supervisor-Skills
+  type: multi-skill-suite
+  stars: 2649
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: 港科大（广州）骆昱宇团队将十年数据库/可视化科研方法论沉淀的 skill 集。
+  description_en: Skills distilling a decade of database/visualization research methodology from Prof. Yuyu Luo’s group at HKUST(GZ).
+- id: patent-disclosure-skill
+  author: handsomestWei
+  repo: patent-disclosure-skill
+  url: https://github.com/handsomestWei/patent-disclosure-skill
+  type: skill
+  stars: 2608
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: handsomestWei 的专利交底书生成 skill：从技术方案生成结构化专利交底书。
+  description_en: handsomestWei’s patent-disclosure skill — generate a structured patent disclosure from a technical solution.
+  license: MIT
+- id: pg-aiguide
+  author: timescale
+  repo: pg-aiguide
+  url: https://github.com/timescale/pg-aiguide
+  type: multi-skill-suite
+  stars: 1766
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: Timescale 官方 pg-aiguide：PostgreSQL/TimescaleDB + AI（pgvector/向量检索/最佳实践）开发指南 skill。
+  description_en: Timescale’s official pg-aiguide — PostgreSQL/TimescaleDB + AI development guides (pgvector, vector search, best practices).
+  license: Apache-2.0
+- id: wordpress-agent-skills
+  author: WordPress
+  repo: agent-skills
+  url: https://github.com/WordPress/agent-skills
+  type: multi-skill-suite
+  stars: 1708
+  default_branch: trunk
+  last_commit: '2026-06-18'
+  description: WordPress 官方 agent skill 集：插件/主题开发、WP-CLI、区块、REST API 等第一方 WordPress 开发 skill。
+  description_en: WordPress’s official agent skills — first-party plugin/theme development, WP-CLI, blocks, and REST API skills.
+- id: feiskyer-cc-settings
+  author: feiskyer
+  repo: claude-code-settings
+  url: https://github.com/feiskyer/claude-code-settings
+  type: multi-skill-suite
+  stars: 1554
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: feiskyer 的 Claude Code 配置仓附带的原创 skill 集（开发/运维/工作流等）。
+  description_en: Original skills bundled with feiskyer’s Claude Code settings repo (development, ops, workflow).
+  license: MIT
+- id: agent-skill-creator
+  author: FrancyJGLisboa
+  repo: agent-skill-creator
+  url: https://github.com/FrancyJGLisboa/agent-skill-creator
+  type: skill-pack
+  stars: 1529
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: FrancyJGLisboa 的跨平台 skill 工厂：用对话生成新的 agent skill（含校验/打包流水线）。
+  description_en: FrancyJGLisboa’s cross-platform skill factory — author new agent skills conversationally, with a validation/packaging pipeline.
+  license: MIT
+- id: callstack-agent-skills
+  author: callstackincubator
+  repo: agent-skills
+  url: https://github.com/callstackincubator/agent-skills
+  type: multi-skill-suite
+  stars: 1448
+  default_branch: main
+  last_commit: '2026-06-18'
+  description: Callstack 的 agent skill 集：React Native / 移动端工程相关原创 skill。
+  description_en: Callstack’s agent skills — original React Native / mobile-engineering skills.
+  license: MIT
