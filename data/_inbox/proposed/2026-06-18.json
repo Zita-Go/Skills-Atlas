@@ -1,0 +1,3183 @@
+{
+  "generated_at": "2026-06-18T06:00:05+00:00",
+  "date": "2026-06-18",
+  "proposed_count": 7,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 58,
+      "blocklisted": 10,
+      "seen_recently": 125,
+      "truncated": 169,
+      "skill_name_dup": 11,
+      "no_skill_files": 2,
+      "looks_aggregator": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "anbeime/skill",
+        "reason": "⚠ 疑似 vendored 副本（仍提交待人审）：7/30 个 skill 名已在目录——baoyu-format-markdown, baoyu-post-to-wechat, baoyu-post-to-x, baoyu-url-to-markdown, data-storytelling, frontend-design…；建议人审核是否整仓拒/blocklist"
+      },
+      {
+        "full_name": "maxritter/pilot-shell",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "ComposioHQ/awesome-claude-plugins",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "Natively-AI-assistant/natively-cluely-ai-assistant",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "(root)",
+        "companion-simple"
+      ],
+      "group": "虚拟伴侣对话陪伴（OpenClaw）",
+      "group_en": "Virtual companion chat for OpenClaw",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "为 OpenClaw 增加温暖陪伴对话能力，可按场景生成回应并分享静态图片。",
+      "description_en": "Adds a warm companion persona to OpenClaw, generating supportive replies from context and optionally sharing static images.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "companion-skill"
+      ],
+      "group": "OpenClaw 虚拟伴侣",
+      "group_en": "OpenClaw Virtual Companion",
+      "category": "comms-integration",
+      "subcategory": "9-1",
+      "chain": false,
+      "description": "为 OpenClaw 增加陪伴聊天、场景图片生成和飞书消息发送能力。",
+      "description_en": "Adds companion chat, scene-based image generation, and Feishu messaging to OpenClaw.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "agent-team"
+      ],
+      "group": "多智能体团队协作框架",
+      "group_en": "Multi-Agent Team Collaboration Framework",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "帮助 agent 动态组建多角色智能体团队，支持共享记忆、协作讨论和任务分工。",
+      "description_en": "Helps agents dynamically assemble multi-role teams with shared memory, collaboration, and task ownership.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "agentkit-multimedia-shopping",
+        "infinitetalk"
+      ],
+      "group": "数字人口播 / 跨语言配音",
+      "group_en": "Digital human talking-head videos / cross-language dubbing",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "根据音频生成同步唇形、头部和身体姿态的数字人视频，也可给现有视频重配音。",
+      "description_en": "Creates 9:16 e-commerce talking-head videos by coordinating character art, scene backgrounds, TTS, and final video assembly.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "article-illustrator"
+      ],
+      "group": "文章配图与封面生成",
+      "group_en": "Article illustrations and cover generation",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "分析文章结构，识别配图位置，生成插画并插入 Markdown。",
+      "description_en": "Analyzes article structure, identifies illustration points, generates visuals, and inserts them into Markdown.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "bedtime-story"
+      ],
+      "group": "儿童睡前故事 / 成语讲解",
+      "group_en": "Bedtime Stories and Idiom Explanations for Kids",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "为儿童生成睡前故事和成语典故讲解，按年龄调整语气与节奏。",
+      "description_en": "Generates bedtime fables and idiom stories for children, adapting tone and pacing by age.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "chrome-automation"
+      ],
+      "group": "Chrome/CDP 浏览器自动化",
+      "group_en": "Chrome CDP Browser Automation",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "通过 CDP 连接并控制用户现有 Chrome，自动检查依赖并实时反馈浏览器操作。",
+      "description_en": "Connects to and controls the user’s existing Chrome browser via CDP, with dependency checks and live feedback.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "content-creation-publisher",
+        "baoyu-format-markdown"
+      ],
+      "group": "内容采集→排版→配图→发布",
+      "group_en": "Content Capture to Publishing Workflow",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": true,
+      "description": "将纯文本或 Markdown 自动补全 frontmatter、标题、摘要、列表与代码块排版。",
+      "description_en": "Formats plain text or Markdown with frontmatter, headings, summaries, lists, code blocks, and CJK typography.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-post-to-wechat",
+        "baoyu-post-to-x",
+        "intelligent-content-system"
+      ],
+      "group": "多平台社交发布（微信/微博/X） / 社媒平台 写作",
+      "group_en": "Multi-platform social publishing (WeChat/Weibo/X) / social writing",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "自动识别内容场景，编排网页采集、配图、小红书图文和多平台发布。",
+      "description_en": "Orchestrates content workflows from web capture and illustration to Xiaohongshu cards and multi-platform publishing.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "baoyu-url-to-markdown"
+      ],
+      "group": "URL 转 Markdown 抓取",
+      "group_en": "URL-to-Markdown Capture",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "通过 Chrome CDP 抓取网页并转换为干净 Markdown，支持登录后等待用户信号。",
+      "description_en": "Fetches webpages via Chrome CDP and converts them to clean Markdown, including pages that require a user signal after login.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "content-research-writer"
+      ],
+      "group": "研究辅助内容写作 / 引用整理",
+      "group_en": "Research-assisted writing and citation support",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "协助研究、列提纲、补充引用、优化开头并逐段反馈，提升内容写作质量。",
+      "description_en": "Researches, outlines, cites, sharpens hooks, and gives section-by-section feedback to improve content writing.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "data-storytelling"
+      ],
+      "group": "数据叙事与业务汇报",
+      "group_en": "Data Storytelling for Business Reporting",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 Agent 将数据洞察组织成有叙事结构的报告与汇报材料。",
+      "description_en": "Helps agents turn data insights into narrative-driven reports and stakeholder presentations.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "digital-avatar-shopping-video"
+      ],
+      "group": "电商数字人口播视频生成",
+      "group_en": "E-commerce Digital Human Sales Videos",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "帮助 Agent 按商品与平台要求生成带货脚本、数字人口播、画面和字幕音效。",
+      "description_en": "Helps agents create product-shopping videos with scripts, digital-avatar voiceover, visuals, subtitles, and audio.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "dream-video-prompt-generator"
+      ],
+      "group": "电商短视频提示词生成",
+      "group_en": "E-commerce Short-Video Prompt Generation",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "为数字人带货视频生成中英双语、分镜一致的即梦视频提示词。",
+      "description_en": "Generates bilingual, scene-consistent prompts for AI video tools used in digital human sales clips.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-copywriter"
+      ],
+      "group": "电商商品文案创作",
+      "group_en": "E-commerce Product Copywriting",
+      "category": "marketing-growth",
+      "subcategory": "4-2",
+      "chain": false,
+      "description": "为电商商品生成和优化图片营销文案，突出卖点并促进转化。",
+      "description_en": "Creates and refines e-commerce product copy that highlights benefits and supports conversion.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-video-marketing"
+      ],
+      "group": "电商视频营销脚本",
+      "group_en": "E-commerce Video Marketing Scripts",
+      "category": "marketing-growth",
+      "subcategory": "4-2",
+      "chain": false,
+      "description": "帮助 agent 为电商商品生成多平台营销视频脚本，覆盖人群定位、卖点提炼、叙事结构和镜头设计。",
+      "description_en": "Helps an agent draft conversion-focused e-commerce video scripts for multiple platforms, including audience targeting, selling points, narrative structure, and shot design.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "frontend-design"
+      ],
+      "group": "前端界面与 Web 应用构建",
+      "group_en": "UI Artifacts and Web App Building",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "帮助 agent 根据需求创建有设计感的 Web 组件、页面或应用，并生成可运行的前端代码。",
+      "description_en": "Helps an agent turn requirements into distinctive, production-grade frontend components, pages, or apps with polished working code.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "historical-interview-scripts"
+      ],
+      "group": "历史名人访谈短视频文案",
+      "group_en": "Historical Celebrity Interview Scripts",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "为历史名人现代访谈秀生成标题、串词、问答正文与互动引导，并检查幽默和史实边界。",
+      "description_en": "Creates fictional modern interview scripts featuring historical figures, including titles, host copy, Q&A, and quality checks for humor and historical boundaries.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "historical-science-video-prod"
+      ],
+      "group": "历史科学科普短视频素材生成",
+      "group_en": "Historical Science Short-Video Production Kit",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "根据主题、年代和科学结论生成口播文案、分镜表、Veo2提示词和人物设定，供短视频制作使用。",
+      "description_en": "Turns a historical science topic into a 3-minute short-video package with narration, storyboard, Veo2 prompts, and character design.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "icon-generator"
+      ],
+      "group": "占位/待补全技能",
+      "group_en": "Placeholder / Incomplete Skills",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "占位文件，缺少实际技能内容，无法直接供 agent 使用。",
+      "description_en": "Placeholder file with no actual skill content; not directly usable by agents.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "infinitetalk-shopping-avatar"
+      ],
+      "group": "数字人带货视频提示词",
+      "group_en": "Digital Human Shopping Video Prompts",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "为 InfiniteTalk 数字人带货视频生成结构化提示词与参数配置。",
+      "description_en": "Generates structured prompts and parameter specs for InfiniteTalk digital-human shopping videos.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "contract-review"
+      ],
+      "group": "合同 / NDA / 供应商协议审查 / 合同 / 法律文书生成",
+      "group_en": "Contract / NDA / Vendor Agreement Review & Legal Document Generation",
+      "category": "legal-compliance",
+      "subcategory": "14-1",
+      "chain": false,
+      "description": "为合同添加批注式风险标注，并生成摘要、意见和流程图。",
+      "description_en": "Adds risk comments to contracts and generates summaries, opinions, and flowcharts.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "law-to-markdown"
+      ],
+      "group": "法务运营 / 文书 / 法援诊所",
+      "group_en": "Legal Operations / Legal Documents / Legal Aid Clinic",
+      "category": "legal-compliance",
+      "subcategory": "14-8",
+      "chain": false,
+      "description": "将法律文本从 txt/docx/pdf 转为结构化 Markdown 并校验保真。",
+      "description_en": "Converts legal texts from txt, docx, or pdf into structured Markdown with fidelity checks.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "media-processor"
+      ],
+      "group": "FFmpeg/ImageMagick 媒体处理",
+      "group_en": "FFmpeg/ImageMagick Media Processing",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "帮 agent 调用 FFmpeg 和 ImageMagick 处理视频/图片，完成转码、缩放、压缩、格式转换并验证输出。",
+      "description_en": "Helps the agent process video and image files with FFmpeg/ImageMagick, including transcoding, resizing, compression, format conversion, and output validation.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "moltbook"
+      ],
+      "group": "AI 社交网络发布与互动",
+      "group_en": "AI Social Network Posting & Interaction",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "帮 agent 注册并连接 Moltbook，发布帖子、评论、点赞、创建社区并管理社交互动。",
+      "description_en": "Lets the agent register with Moltbook, publish posts, comment, upvote, create communities, and manage social interactions.",
+      "sources": [
+        "anbeime/skill"
+      ]
+    },
+    {
+      "skills": [
+        "design-postgis-tables",
+        "design-postgres-tables"
+      ],
+      "group": "PostgreSQL/PostGIS 表设计参考",
+      "group_en": "PostgreSQL/PostGIS Table Design References",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "为 agent 提供 PostgreSQL 表设计规则，覆盖数据类型、约束、索引、JSONB 和分区实践。",
+      "description_en": "Helps an agent design PostGIS spatial tables, including geometry choices, coordinate systems, spatial indexes, and query performance.",
+      "sources": [
+        "timescale/pg-aiguide"
+      ]
+    },
+    {
+      "skills": [
+        "find-hypertable-candidates",
+        "migrate-postgres-tables-to-hypertables"
+      ],
+      "group": "TimescaleDB hypertable 迁移工作流",
+      "group_en": "TimescaleDB Hypertable Migration Workflow",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": true,
+      "description": "分析 PostgreSQL 表结构、索引和查询模式，识别适合 TimescaleDB hypertable 的表。",
+      "description_en": "Analyzes PostgreSQL schemas, indexes, and query patterns to identify tables suitable for TimescaleDB hypertables.",
+      "sources": [
+        "timescale/pg-aiguide"
+      ]
+    },
+    {
+      "skills": [
+        "pgvector-semantic-search",
+        "postgres-hybrid-text-search"
+      ],
+      "group": "PostgreSQL 搜索与 RAG",
+      "group_en": "PostgreSQL Search & RAG",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮 Agent 在 PostgreSQL 中配置 pgvector 语义搜索与 RAG 检索。",
+      "description_en": "Helps the agent configure pgvector in PostgreSQL for semantic search and RAG retrieval.",
+      "sources": [
+        "timescale/pg-aiguide"
+      ]
+    },
+    {
+      "skills": [
+        "postgres",
+        "setup-timescaledb-hypertables"
+      ],
+      "group": "PostgreSQL / TimescaleDB 数据库技能",
+      "group_en": "PostgreSQL & TimescaleDB Database Skills",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "指导 agent 创建 TimescaleDB hypertable、压缩、保留策略和连续聚合。",
+      "description_en": "Guides the agent in setting up TimescaleDB hypertables, compression, retention policies, and continuous aggregates.",
+      "sources": [
+        "timescale/pg-aiguide"
+      ]
+    },
+    {
+      "skills": [
+        "blueprint"
+      ],
+      "group": "WordPress Playground 蓝图",
+      "group_en": "WordPress Playground Blueprints",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "创建、编辑和审查 WordPress Playground 蓝图 JSON。",
+      "description_en": "Creates, edits, and reviews WordPress Playground blueprint JSON files.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wordpress-router"
+      ],
+      "group": "WordPress 项目路由",
+      "group_en": "WordPress Project Routing",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "快速识别 WordPress 代码库类型并分派到对应工作流。",
+      "description_en": "Classifies WordPress repos and routes tasks to the right workflow.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-abilities-api",
+        "wp-abilities-audit"
+      ],
+      "group": "WordPress Abilities API 审计到实现",
+      "group_en": "WordPress Abilities API audit-to-implementation workflow",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": true,
+      "description": "审计插件 REST 表面，生成 Abilities API 注册规划文档。",
+      "description_en": "Audits a WordPress plugin’s REST surface and drafts an Abilities API registration plan.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-abilities-verify"
+      ],
+      "group": "WordPress Abilities API 验证",
+      "group_en": "WordPress Abilities API Verification",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "验证 WordPress 插件 Abilities API 注册，检查回调是否越权写入、权限与 schema，并可运行态验证。",
+      "description_en": "Verifies WordPress plugin Abilities API registrations, catches read-only callbacks that write, and checks permissions, schemas, and runtime behavior.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-block-development"
+      ],
+      "group": "WordPress Gutenberg 块开发",
+      "group_en": "WordPress Gutenberg Block Development",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 开发/维护 WordPress Gutenberg 块，处理 block.json、属性、动态渲染、迁移、构建和测试。",
+      "description_en": "Helps agents develop and maintain WordPress Gutenberg blocks, including block.json, attributes, rendering, deprecations, build, and tests.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-block-themes"
+      ],
+      "group": "WordPress 块主题开发",
+      "group_en": "WordPress Block Theme Development",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 开发或排查 WordPress 块主题，覆盖 theme.json、模板、图案、样式变体和站点编辑器问题。",
+      "description_en": "Helps an agent develop or troubleshoot WordPress block themes, including theme.json, templates, patterns, style variations, and Site Editor issues.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-interactivity-api"
+      ],
+      "group": "WordPress 交互 API 开发",
+      "group_en": "WordPress Interactivity API Development",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 构建或调试 WordPress 交互功能，识别 directives、状态存储、模块脚本和 hydration 问题。",
+      "description_en": "Helps an agent build or debug WordPress Interactivity API features, including directives, stores, module scripts, and hydration behavior.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-performance"
+      ],
+      "group": "WordPress 性能诊断与优化",
+      "group_en": "WordPress Performance Profiling",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮 agent 用 WP-CLI、Server-Timing 等诊断并优化 WordPress 慢请求与后台性能。",
+      "description_en": "Helps an agent diagnose and optimize WordPress performance using WP-CLI, Server-Timing, Query Monitor, and backend profiling data.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-phpstan"
+      ],
+      "group": "WordPress PHPStan 静态分析",
+      "group_en": "WordPress PHPStan Static Analysis",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮 agent 配置、运行和修复 WordPress 项目的 PHPStan 静态分析。",
+      "description_en": "Helps an agent configure, run, and fix PHPStan static analysis in WordPress plugins, themes, and sites.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-playground"
+      ],
+      "group": "WordPress Playground 沙盒与调试",
+      "group_en": "WordPress Playground sandbox and debugging",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 Agent 快速启动临时 WordPress 环境，用于测试插件主题、复现问题和调试。",
+      "description_en": "Helps the agent spin up disposable WordPress environments for plugin and theme testing, issue reproduction, and debugging.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-plugin-development"
+      ],
+      "group": "WordPress 插件开发",
+      "group_en": "WordPress plugin development",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 Agent 创建、重构和发布 WordPress 插件，覆盖钩子、管理界面与安全发布。",
+      "description_en": "Guides the agent in building, refactoring, and packaging WordPress plugins, including hooks, admin UI, and security.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-plugin-directory-guidelines"
+      ],
+      "group": "知识产权(清查 / 侵权 / OSS / DMCA)",
+      "group_en": "Intellectual Property (Audits / Infringement / OSS / DMCA)",
+      "category": "legal-compliance",
+      "subcategory": "14-4",
+      "chain": false,
+      "description": "审查 WP 插件 GPL、命名、商标与目录提交合规。",
+      "description_en": "Reviews WP plugin GPL, naming, trademark, and directory compliance.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-project-triage"
+      ],
+      "group": "WordPress 项目识别与工具链探测",
+      "group_en": "WordPress Project Discovery and Toolchain Probe",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "识别 WP 仓库类型并输出 JSON 报告，辅助选择工作流。",
+      "description_en": "Identifies WP repo type and emits a JSON report for workflow selection.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-rest-api"
+      ],
+      "group": "WordPress REST API 开发",
+      "group_en": "WordPress REST API Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 构建、调试 WordPress REST API 路由、权限、Schema 与响应。",
+      "description_en": "Helps the agent build and debug WordPress REST routes, permissions, schemas, and responses.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wp-wpcli-and-ops"
+      ],
+      "group": "WordPress 运维与部署",
+      "group_en": "WordPress Operations and Deployment",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "帮助 agent 安全执行 WP-CLI 运维、数据库迁移、插件主题与多站点管理。",
+      "description_en": "Helps the agent safely run WP-CLI operations, database migrations, plugin/theme management, and multisite tasks.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wpds"
+      ],
+      "group": "WordPress Design System（WPDS）",
+      "group_en": "WordPress Design System (WPDS)",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 在 WordPress UI 构建/审查中调用 WPDS MCP，引用组件、设计令牌和官方文档。",
+      "description_en": "Helps agents build and review WordPress UIs by using the WPDS MCP server to retrieve components, design tokens, and official docs.",
+      "sources": [
+        "WordPress/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "autonomous-skill"
+      ],
+      "group": "Claude Code 自治任务循环",
+      "group_en": "Claude Code Autonomous Task Loops",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "让 Agent 自动拆分并跨会话持续执行长任务，带进度追踪与循环完成机制。",
+      "description_en": "Lets an agent decompose long-running tasks and keep executing them across sessions with progress tracking and looped completion.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "codex-skill"
+      ],
+      "group": "OpenAI Codex 自治编码",
+      "group_en": "OpenAI Codex Autonomous Coding",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "调用 Codex CLI 在沙箱中自动完成编码、审查与实现任务。",
+      "description_en": "Uses the Codex CLI to autonomously implement and review code in a sandboxed environment.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "kiro-skill"
+      ],
+      "group": "轻量 SDD 框架 / 核心开发工作流（superpowers）",
+      "group_en": "Lightweight SDD Framework / Core Development Workflow (superpowers)",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "引导 agent 将功能想法转成需求、设计和任务，并逐步实现。",
+      "description_en": "Guides an agent from feature idea to requirements, design, tasks, and incremental implementation.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "nanobanana-skill"
+      ],
+      "group": "Gemini 图片生成与编辑",
+      "group_en": "Gemini Image Generation and Editing",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "调用 nanobanana 和 Gemini API，按提示生成或编辑图片。",
+      "description_en": "Uses nanobanana with the Gemini API to generate or edit images from prompts.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "spec-kit-skill"
+      ],
+      "group": "轻量 SDD 框架",
+      "group_en": "Lightweight SDD Framework",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "引导 agent 用 Spec-Kit 建立宪法、规格、计划与实现流程。",
+      "description_en": "Guides the agent through Spec-Kit’s constitution, spec, planning, and implementation workflow.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "youtube-transcribe-skill"
+      ],
+      "group": "YouTube 字幕提取",
+      "group_en": "YouTube Transcript Extraction",
+      "category": "media",
+      "subcategory": "6-2",
+      "chain": false,
+      "description": "从 YouTube 链接提取字幕或自动转写并保存为本地文本。",
+      "description_en": "Extracts YouTube captions or auto-generated transcripts and saves them locally.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "command-creator"
+      ],
+      "group": "Claude Code 命令创建器",
+      "group_en": "Claude Code Command Creator",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "帮助 agent 创建结构规范、可复用的 Claude Code 自定义斜杠命令。",
+      "description_en": "Helps the agent create well-structured, reusable Claude Code custom slash commands.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "deep-research"
+      ],
+      "group": "深度调研多 Agent 编排",
+      "group_en": "Deep Research Multi-Agent Orchestration",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "把调研目标拆成并行子任务，调度子进程采集、聚合并产出报告。",
+      "description_en": "Breaks research goals into parallel tasks, runs subprocesses to gather and synthesize findings, and writes a report.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "eureka"
+      ],
+      "group": "技术突破捕获与归档",
+      "group_en": "Technical Breakthrough Capture and Archiving",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": false,
+      "description": "捕获技术突破的问题、洞察与变化，生成结构化 Markdown 知识资产。",
+      "description_en": "Captures the problem, insight, and before/after changes from technical breakthroughs into structured, reusable Markdown knowledge assets.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "github-fix-issue"
+      ],
+      "group": "GitHub Issue/PR 分析与发布自动化",
+      "group_en": "GitHub Issue/PR Analysis and Release Automation",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "端到端分析 GitHub Issue，制定修复计划、创建分支、实现测试并提交 PR。",
+      "description_en": "Analyzes a GitHub issue end to end, plans a fix, creates a branch, implements and tests it, then submits a PR.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "github-review-pr"
+      ],
+      "group": "实现后并行 Code Review（多子代理）",
+      "group_en": "Parallel Subagent Code Review",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "用并行子代理评审 GitHub PR，产出高信号、可执行的代码审查意见。",
+      "description_en": "Reviews GitHub PRs with parallel specialist subagents to deliver high-signal, actionable code review feedback.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "gpt-image-skill"
+      ],
+      "group": "OpenAI GPT 图像生成与编辑",
+      "group_en": "OpenAI GPT Image Generation and Editing",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "通过 OpenAI GPT Image API 生成或编辑图片，支持模型、尺寸和质量参数。",
+      "description_en": "Generates or edits images via the OpenAI GPT Image API, with controls for model, size, and quality.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "reflection"
+      ],
+      "group": "会话复盘与 CLAUDE.md 迭代",
+      "group_en": "Session Retrospectives & CLAUDE.md Iteration",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": false,
+      "description": "帮助 agent 复盘开发会话，提炼经验并改进 CLAUDE.md 指令。",
+      "description_en": "Helps the agent review a development session, capture lessons, and improve CLAUDE.md instructions.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "skill-creator",
+        "(root)"
+      ],
+      "group": "Skill 创建器",
+      "group_en": "Skill Creator",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "把流程描述转化为跨平台 SKILL.md，并验证、配置、导出和迁移 Agent 技能。",
+      "description_en": "Creates cross-platform SKILL.md agent skills from workflow descriptions, then validates, configures, exports, and migrates them.",
+      "sources": [
+        "FrancyJGLisboa/agent-skill-creator",
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "translate"
+      ],
+      "group": "技术文章中文翻译",
+      "group_en": "Tech Article Chinese Translation",
+      "category": "docs-knowledge",
+      "subcategory": "2-2",
+      "chain": false,
+      "description": "将英文或日文技术文章翻译为自然流畅的中文，保留 Markdown 与术语。",
+      "description_en": "Translates English or Japanese tech articles into fluent Chinese while preserving Markdown and terminology.",
+      "sources": [
+        "feiskyer/claude-code-settings"
+      ]
+    },
+    {
+      "skills": [
+        "pr-blocker-summarizer"
+      ],
+      "group": "PR 阻塞摘要",
+      "group_en": "PR Blocker Digest",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "将 PR 导出 JSON 整理为阻塞优先摘要，标出受阻、可合并 PR 并生成站会摘要。",
+      "description_en": "Turns exported PR JSON into a blockers-first standup digest, identifying blocked and merge-ready pull requests.",
+      "sources": [
+        "FrancyJGLisboa/agent-skill-creator"
+      ]
+    },
+    {
+      "skills": [
+        "nanoresearch-experiment"
+      ],
+      "group": "NanoResearch 实验代码骨架生成",
+      "group_en": "NanoResearch Experiment Scaffolding",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "把实验蓝图转化为可运行的 Python 实验工程骨架。",
+      "description_en": "Turns an experiment blueprint into a runnable Python experiment scaffold.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "nanoresearch-ideation"
+      ],
+      "group": "NanoResearch 选题与假设生成",
+      "group_en": "NanoResearch Research Ideation",
+      "category": "academic-research",
+      "subcategory": "11-6",
+      "chain": false,
+      "description": "检索论文并做缺口分析，生成可执行研究假设。",
+      "description_en": "Searches papers, analyzes research gaps, and proposes actionable hypotheses.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "nanoresearch-planning",
+        "nanoresearch-writing"
+      ],
+      "group": "NanoResearch 科研流水线",
+      "group_en": "NanoResearch Research Workflow",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": true,
+      "description": "根据假设规划数据集、基线、指标和消融实验，生成结构化实验蓝图。",
+      "description_en": "Turns a selected hypothesis into a structured experiment blueprint with datasets, baselines, metrics, and ablations.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "0-autoresearch-skill"
+      ],
+      "group": "自主研究编排",
+      "group_en": "Autonomous Research Orchestration",
+      "category": "ml-llm-engineering",
+      "subcategory": "21-9",
+      "chain": false,
+      "description": "编排自主研究项目，运行实验-综合双循环并产出论文与报告。",
+      "description_en": "Orchestrates autonomous research projects with experiment-synthesis loops and paper/report outputs.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "academic-plotting"
+      ],
+      "group": "论文图表生成",
+      "group_en": "Paper Figure Generation",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "为 ML 论文生成架构图与数据图，支持 Gemini 绘图和 Matplotlib 图表。",
+      "description_en": "Creates architecture diagrams and data figures for ML papers using Gemini and Matplotlib/Seaborn.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "accelerate"
+      ],
+      "group": "HuggingFace Accelerate 分布式训练",
+      "group_en": "HuggingFace Accelerate Distributed Training",
+      "category": "ml-llm-engineering",
+      "subcategory": "21-7",
+      "chain": false,
+      "description": "帮助 agent 将 PyTorch 训练脚本接入 Accelerate，支持多 GPU、混合精度和统一启动。",
+      "description_en": "Helps an agent convert PyTorch training scripts to HuggingFace Accelerate for multi-GPU, mixed-precision, and unified distributed launches.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "brainstorming-research-ideas",
+        "creative-thinking-for-research"
+      ],
+      "group": "研究选题 / 假设 / 构思",
+      "group_en": "Research Ideation Frameworks",
+      "category": "academic-research",
+      "subcategory": "11-6",
+      "chain": false,
+      "description": "引导 agent 用结构化框架探索研究空白、形成高潜力选题并评估方向。",
+      "description_en": "Guides an agent through structured ideation frameworks to uncover research gaps, shape promising topics, and evaluate directions.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "lm-evaluation-harness"
+      ],
+      "group": "LLM 基准评测",
+      "group_en": "LLM Benchmark Evaluation",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "调用 lm-eval 对 LLM 进行标准基准测试和结果分析。",
+      "description_en": "Runs lm-eval to benchmark LLMs on standard academic suites and analyze results.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "ml-paper-writing"
+      ],
+      "group": "学术 / 科研论文写作",
+      "group_en": "Academic / Research Paper Writing",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "为 agent 提供 ML 论文从草稿、论证、引文到投稿检查的写作流程。",
+      "description_en": "Guides agents through ML paper drafting, argument structure, citation checks, and submission readiness.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "ml-training-recipes"
+      ],
+      "group": "PyTorch 训练实现与调优",
+      "group_en": "PyTorch Training Implementation and Tuning",
+      "category": "ml-llm-engineering",
+      "subcategory": "21-1",
+      "chain": false,
+      "description": "提供 PyTorch 训练循环、优化器、调度和调试配方，辅助模型实验。",
+      "description_en": "Provides PyTorch training-loop, optimizer, scheduling, and debugging recipes for model experiments.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "peft"
+      ],
+      "group": "LLM 参数高效微调",
+      "group_en": "Parameter-Efficient LLM Fine-Tuning",
+      "category": "ml-llm-engineering",
+      "subcategory": "21-3",
+      "chain": false,
+      "description": "帮助 agent 选择 PEFT/LoRA/QLoRA 方法，配置依赖并在有限显存下微调大模型。",
+      "description_en": "Helps an agent choose PEFT, LoRA, or QLoRA strategies and set up memory-efficient LLM fine-tuning.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "ray-data"
+      ],
+      "group": "训练数据处理",
+      "group_en": "Training Data Processing",
+      "category": "ml-llm-engineering",
+      "subcategory": "21-6",
+      "chain": false,
+      "description": "帮助 agent 用 Ray Data 构建可扩展数据预处理、批推理和多模态数据加载流水线。",
+      "description_en": "Guides an agent in building scalable Ray Data pipelines for preprocessing, batch inference, and multimodal loading.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "skypilot"
+      ],
+      "group": "多云 GPU 训练编排",
+      "group_en": "Multi-Cloud GPU Training Orchestration",
+      "category": "ml-llm-engineering",
+      "subcategory": "21-7",
+      "chain": false,
+      "description": "帮助 agent 在多云环境调度 ML 训练与批量任务，并优化 GPU 成本。",
+      "description_en": "Helps the agent schedule ML training and batch workloads across clouds while optimizing GPU costs.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "unsloth"
+      ],
+      "group": "Unsloth 高效微调",
+      "group_en": "Unsloth Efficient Fine-Tuning",
+      "category": "ml-llm-engineering",
+      "subcategory": "21-3",
+      "chain": false,
+      "description": "帮助 agent 使用 Unsloth 进行快速、低显存的 LoRA/QLoRA 微调。",
+      "description_en": "Helps the agent fine-tune models with Unsloth using fast, memory-efficient LoRA or QLoRA workflows.",
+      "sources": [
+        "OpenRaiser/NanoResearch"
+      ]
+    },
+    {
+      "skills": [
+        "validate-skills"
+      ],
+      "group": "Skill 规范校验",
+      "group_en": "Skill spec validation",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-3",
+      "chain": false,
+      "description": "校验仓库内 Skill 的名称、描述、结构和写作规范，便于发现格式与最佳实践问题。",
+      "description_en": "Checks skill names, descriptions, structure, and authoring conventions for spec and best-practice issues.",
+      "sources": [
+        "callstackincubator/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agent-device"
+      ],
+      "group": "移动端设备 UI 自动化",
+      "group_en": "Mobile device UI automation",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 在 iOS、tvOS、macOS 和 Android 上导航应用、截图、点击、输入并提取界面信息。",
+      "description_en": "Helps agents navigate apps, capture snapshots, tap, type, scroll, and extract UI information across Apple and Android devices.",
+      "sources": [
+        "callstackincubator/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "dogfood"
+      ],
+      "group": "移动应用探索式 QA（agent-device）",
+      "group_en": "Mobile exploratory QA (agent-device)",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "用 agent-device 系统探索 iOS/Android 应用，发现 bug 与 UX 问题并生成可复现报告。",
+      "description_en": "Uses agent-device to systematically explore iOS/Android apps, find bugs and UX issues, and generate reproducible QA reports.",
+      "sources": [
+        "callstackincubator/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "react-native-testing"
+      ],
+      "group": "React Native Testing Library 组件测试",
+      "group_en": "React Native component testing with RNTL",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "指导编写 React Native 组件测试，覆盖 RNTL v13/v14 的查询、事件与异步断言。",
+      "description_en": "Guides writing React Native component tests with RNTL v13/v14, including queries, events, and async assertions.",
+      "sources": [
+        "callstackincubator/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "vercel-react-native-skills"
+      ],
+      "group": "React Native / Expo 移动工程规范",
+      "group_en": "React Native / Expo Mobile Engineering Guidelines",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "为 AI 助手提供 React Native 与 Expo 性能、动画、导航等开发规范。",
+      "description_en": "Gives AI assistants practical React Native and Expo guidelines for performance, animations, navigation, and mobile app structure.",
+      "sources": [
+        "callstackincubator/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "github-actions"
+      ],
+      "group": "CI/CD 管道 / GitHub Actions 模板",
+      "group_en": "CI/CD Pipelines / GitHub Actions Templates",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "为 AI 助手生成 React Native iOS/Android 云端构建与产物下载工作流。",
+      "description_en": "Helps AI assistants set up GitHub Actions workflows for React Native iOS and Android cloud builds and artifact retrieval.",
+      "sources": [
+        "callstackincubator/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "github"
+      ],
+      "group": "github",
+      "group_en": "GitHub Essentials / Issue & PR Analysis / PR Automation",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "用 gh CLI 处理 PR、堆叠 PR、合并策略和仓库自动化。",
+      "description_en": "Uses the gh CLI to manage PRs, stacked PRs, merge strategies, and repository automation.",
+      "sources": [
+        "callstackincubator/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "react-native-best-practices"
+      ],
+      "group": "React Native 性能优化与调试",
+      "group_en": "React Native Performance Optimization and Debugging",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "指导优化 React Native FPS、TTI、包体积、内存泄漏和动画卡顿。",
+      "description_en": "Guides optimization of React Native FPS, TTI, bundle size, memory leaks, and animation jank.",
+      "sources": [
+        "callstackincubator/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "react-native-brownfield-migration",
+        "upgrading-react-native"
+      ],
+      "group": "React Native 平台集成与升级",
+      "group_en": "React Native platform integration and upgrades",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "帮助按官方 diff 升级 React Native，处理依赖、CocoaPods、Gradle 与 Expo SDK 变更。",
+      "description_en": "Guides incremental React Native or Expo adoption in native iOS/Android apps, including artifact packaging and host integration.",
+      "sources": [
+        "callstackincubator/agent-skills"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "anbeime",
+        "repo": "skill",
+        "full_name": "anbeime/skill",
+        "url": "https://github.com/anbeime/skill",
+        "stars": 1836,
+        "pushed_at": "2026-06-17",
+        "default_branch": "main",
+        "github_description": "收录最全、更新最快的技能Skills 商店，涵盖文档处理、内容创作、编程开发、机器学习、自动化工作流等多个领域的 72 个精选技能包。所有技能已打包完成，可直接安装使用！ 该商店中自动抓取了 Github 上的所有的 Skills 项目，并按照分类、更新时间、Star 数量等标签进行整理。",
+        "topics": [
+          "claude-skills",
+          "finance-skill",
+          "gemini-skills",
+          "hermes-skill",
+          "office-skill",
+          "openclaw-skills",
+          "skill",
+          "skill-md",
+          "skills"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "虚拟伴侣对话陪伴（OpenClaw）",
+          "group_en": "Virtual companion chat for OpenClaw",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 OpenClaw 增加温暖陪伴对话能力，可按场景生成回应并分享静态图片。",
+          "description_en": "Adds a warm companion persona to OpenClaw, generating supportive replies from context and optionally sharing static images.",
+          "what": "OpenClaw 虚拟陪伴对话与静态图片分享。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "companion-simple",
+          "path": "projects/companion-simple/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "虚拟伴侣对话陪伴（OpenClaw）",
+          "group_en": "Virtual companion chat for OpenClaw",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 OpenClaw 增加温暖陪伴对话能力，可按场景生成回应并分享静态图片。",
+          "description_en": "Adds a warm companion persona to OpenClaw, generating supportive replies from context and optionally sharing static images.",
+          "what": "OpenClaw 虚拟陪伴对话与静态图片分享。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "companion-skill",
+          "path": "projects/companion-skill/SKILL.md",
+          "subcategory": "9-1",
+          "subcategory_title": "9.1 即时通讯集成",
+          "category": "comms-integration",
+          "group": "OpenClaw 虚拟伴侣",
+          "group_en": "OpenClaw Virtual Companion",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 OpenClaw 增加陪伴聊天、场景图片生成和飞书消息发送能力。",
+          "description_en": "Adds companion chat, scene-based image generation, and Feishu messaging to OpenClaw.",
+          "what": "虚拟陪伴、图片生成与飞书消息集成。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "agent-team",
+          "path": "skills/agent-team/agent-team/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "多智能体团队协作框架",
+          "group_en": "Multi-Agent Team Collaboration Framework",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 动态组建多角色智能体团队，支持共享记忆、协作讨论和任务分工。",
+          "description_en": "Helps agents dynamically assemble multi-role teams with shared memory, collaboration, and task ownership.",
+          "what": "多智能体角色管理、动态组队与共享记忆协作。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "agentkit-multimedia-shopping",
+          "path": "skills/agentkit-multimedia-shopping/agentkit-multimedia-shopping/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "数字人口播 / 跨语言配音",
+          "group_en": "Digital human talking-head videos / cross-language dubbing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "生成9:16电商数字人口播视频，串联角色、场景、语音与成片流程。",
+          "description_en": "Creates 9:16 e-commerce talking-head videos by coordinating character art, scene backgrounds, TTS, and final video assembly.",
+          "what": "数字人导购带货视频生成",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "article-illustrator",
+          "path": "skills/article-illustrator/article-illustrator/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "文章配图与封面生成",
+          "group_en": "Article illustrations and cover generation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "分析文章结构，识别配图位置，生成插画并插入 Markdown。",
+          "description_en": "Analyzes article structure, identifies illustration points, generates visuals, and inserts them into Markdown.",
+          "what": "文章配图分析、生成与插入",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "bedtime-story",
+          "path": "skills/bedtime-story/bedtime-story/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "儿童睡前故事 / 成语讲解",
+          "group_en": "Bedtime Stories and Idiom Explanations for Kids",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为儿童生成睡前故事和成语典故讲解，按年龄调整语气与节奏。",
+          "description_en": "Generates bedtime fables and idiom stories for children, adapting tone and pacing by age.",
+          "what": "A child-friendly bedtime storytelling skill with fable lists and idiom explanations.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "chrome-automation",
+          "path": "skills/chrome-automation/chrome-automation/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Chrome/CDP 浏览器自动化",
+          "group_en": "Chrome CDP Browser Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 CDP 连接并控制用户现有 Chrome，自动检查依赖并实时反馈浏览器操作。",
+          "description_en": "Connects to and controls the user’s existing Chrome browser via CDP, with dependency checks and live feedback.",
+          "what": "Controls the user’s existing Chrome browser through CDP with live visual feedback.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-creation-publisher",
+          "path": "skills/content-creation-publisher/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "内容采集到多平台发布工作流",
+          "group_en": "Content Pipeline to Multi-platform Publishing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "整合网页采集、Markdown 排版、配图与微信/X 发布，支撑内容生产到分发。",
+          "description_en": "Turns source URLs into formatted, illustrated posts and publishes them to WeChat Official Accounts and X.",
+          "what": "把网页内容转 Markdown、排版配图后发布到微信公众号和 X。",
+          "chain": true,
+          "chain_group": "内容采集→排版→配图→发布",
+          "chain_group_en": "Content Capture to Publishing Workflow"
+        },
+        {
+          "name": "baoyu-format-markdown",
+          "path": "skills/content-creation-publisher/baoyu-format-markdown/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "Markdown 格式化",
+          "group_en": "Markdown Formatting",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "将纯文本或 Markdown 自动补全 frontmatter、标题、摘要、列表与代码块排版。",
+          "description_en": "Formats plain text or Markdown with frontmatter, headings, summaries, lists, code blocks, and CJK typography.",
+          "what": "把纯文本或 Markdown 自动格式化为结构清晰的文章文档。",
+          "chain": true,
+          "chain_group": "内容采集→排版→配图→发布",
+          "chain_group_en": "Content Capture to Publishing Workflow",
+          "dup_catalog": "baoyu-skills · 组「Markdown 格式化」"
+        },
+        {
+          "name": "baoyu-post-to-wechat",
+          "path": "skills/content-creation-publisher/baoyu-post-to-wechat/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "多平台社交发布（微信/微博/X） / 社媒平台 写作",
+          "group_en": "Multi-platform social publishing (WeChat/Weibo/X) / social writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 API 或浏览器自动化发布微信公众号图文和文章。",
+          "description_en": "Publishes WeChat Official Account articles and image-text posts via API or browser automation.",
+          "what": "Helps the agent publish WeChat Official Account content from HTML, Markdown, or plain text.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "baoyu-skills · 组「多平台社交发布（微信/微博/X）」"
+        },
+        {
+          "name": "baoyu-post-to-x",
+          "path": "skills/content-creation-publisher/baoyu-post-to-x/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "多平台社交发布（微信/微博/X） / 社媒平台 写作",
+          "group_en": "Multi-platform social publishing (WeChat/Weibo/X) / social writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过真实 Chrome 自动化发布 X 帖子、视频和长文。",
+          "description_en": "Publishes X posts, videos, and long-form articles through real Chrome automation.",
+          "what": "Helps the agent publish regular posts, media posts, quote tweets, and X Articles.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "baoyu-skills · 组「多平台社交发布（微信/微博/X）」"
+        },
+        {
+          "name": "baoyu-url-to-markdown",
+          "path": "skills/content-creation-publisher/baoyu-url-to-markdown/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "URL 转 Markdown 抓取",
+          "group_en": "URL-to-Markdown Capture",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "通过 Chrome CDP 抓取网页并转换为干净 Markdown，支持登录后等待用户信号。",
+          "description_en": "Fetches webpages via Chrome CDP and converts them to clean Markdown, including pages that require a user signal after login.",
+          "what": "把网页内容抓取并整理成 Markdown。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "baoyu-skills · 组「URL 转 Markdown 抓取」"
+        },
+        {
+          "name": "content-research-writer",
+          "path": "skills/content-research-writer/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "研究辅助内容写作 / 引用整理",
+          "group_en": "Research-assisted writing and citation support",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协助研究、列提纲、补充引用、优化开头并逐段反馈，提升内容写作质量。",
+          "description_en": "Researches, outlines, cites, sharpens hooks, and gives section-by-section feedback to improve content writing.",
+          "what": "作为研究驱动的内容写作伙伴辅助创作。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "data-storytelling",
+          "path": "skills/data-storytelling/data-storytelling/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "数据叙事与业务汇报",
+          "group_en": "Data Storytelling for Business Reporting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 将数据洞察组织成有叙事结构的报告与汇报材料。",
+          "description_en": "Helps agents turn data insights into narrative-driven reports and stakeholder presentations.",
+          "what": "用故事结构、上下文和可视化表达数据洞察。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "wshobson · 组「数据叙事与可视化」"
+        },
+        {
+          "name": "digital-avatar-shopping-video",
+          "path": "skills/digital-avatar-shopping-video/digital-avatar-shopping-video/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "电商数字人口播视频生成",
+          "group_en": "E-commerce Digital Human Sales Videos",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 按商品与平台要求生成带货脚本、数字人口播、画面和字幕音效。",
+          "description_en": "Helps agents create product-shopping videos with scripts, digital-avatar voiceover, visuals, subtitles, and audio.",
+          "what": "把商品信息转化为短视频平台可用的数字人口播带货视频。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dream-video-prompt-generator",
+          "path": "skills/dream-video-prompt-generator/dream-video-prompt-generator/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "电商短视频提示词生成",
+          "group_en": "E-commerce Short-Video Prompt Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为数字人带货视频生成中英双语、分镜一致的即梦视频提示词。",
+          "description_en": "Generates bilingual, scene-consistent prompts for AI video tools used in digital human sales clips.",
+          "what": "按主体、运动、场景、镜头与氛围公式生成5秒短视频提示词。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-copywriter",
+          "path": "skills/ecommerce-copywriter/ecommerce-copywriter/SKILL.md",
+          "subcategory": "4-2",
+          "subcategory_title": "4.2 文案 / 营销心理 / 产品命名",
+          "category": "marketing-growth",
+          "group": "电商商品文案创作",
+          "group_en": "E-commerce Product Copywriting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为电商商品生成和优化图片营销文案，突出卖点并促进转化。",
+          "description_en": "Creates and refines e-commerce product copy that highlights benefits and supports conversion.",
+          "what": "围绕产品卖点、目标用户和平台风格输出标题、正文与 emoji 文案。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-video-marketing",
+          "path": "skills/ecommerce-video-marketing/ecommerce-video-marketing/SKILL.md",
+          "subcategory": "4-2",
+          "subcategory_title": "4.2 文案 / 营销心理 / 产品命名",
+          "category": "marketing-growth",
+          "group": "电商视频营销脚本",
+          "group_en": "E-commerce Video Marketing Scripts",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 为电商商品生成多平台营销视频脚本，覆盖人群定位、卖点提炼、叙事结构和镜头设计。",
+          "description_en": "Helps an agent draft conversion-focused e-commerce video scripts for multiple platforms, including audience targeting, selling points, narrative structure, and shot design.",
+          "what": "生成电商商品营销视频脚本、叙事结构与镜头设计。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "frontend-design",
+          "path": "skills/frontend-design/frontend-design/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "前端界面与 Web 应用构建",
+          "group_en": "UI Artifacts and Web App Building",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 根据需求创建有设计感的 Web 组件、页面或应用，并生成可运行的前端代码。",
+          "description_en": "Helps an agent turn requirements into distinctive, production-grade frontend components, pages, or apps with polished working code.",
+          "what": "生成高质量前端界面与 Web 应用代码。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/oh-my-openagent · 组「前端美学」"
+        },
+        {
+          "name": "historical-interview-scripts",
+          "path": "skills/historical-interview-scripts/historical-interview-scripts/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "历史名人访谈短视频文案",
+          "group_en": "Historical Celebrity Interview Scripts",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为历史名人现代访谈秀生成标题、串词、问答正文与互动引导，并检查幽默和史实边界。",
+          "description_en": "Creates fictional modern interview scripts featuring historical figures, including titles, host copy, Q&A, and quality checks for humor and historical boundaries.",
+          "what": "生成历史名人访谈短视频脚本。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "historical-science-video-prod",
+          "path": "skills/historical-science-video-prod/historical-science-video-prod/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "历史科学科普短视频素材生成",
+          "group_en": "Historical Science Short-Video Production Kit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据主题、年代和科学结论生成口播文案、分镜表、Veo2提示词和人物设定，供短视频制作使用。",
+          "description_en": "Turns a historical science topic into a 3-minute short-video package with narration, storyboard, Veo2 prompts, and character design.",
+          "what": "生成科普短视频全流程素材包。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "icon-generator",
+          "path": "skills/icon-generator/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "占位/待补全技能",
+          "group_en": "Placeholder / Incomplete Skills",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "占位文件，缺少实际技能内容，无法直接供 agent 使用。",
+          "description_en": "Placeholder file with no actual skill content; not directly usable by agents.",
+          "what": "占位文件，缺少实际可执行内容。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "infinitetalk-shopping-avatar",
+          "path": "skills/infinitetalk-shopping-avatar/infinitetalk-shopping-avatar/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "数字人带货视频提示词",
+          "group_en": "Digital Human Shopping Video Prompts",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 InfiniteTalk 数字人带货视频生成结构化提示词与参数配置。",
+          "description_en": "Generates structured prompts and parameter specs for InfiniteTalk digital-human shopping videos.",
+          "what": "为数字人带货视频生成分镜提示词和推理参数。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "infinitetalk",
+          "path": "skills/infinitetalk/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "数字人口播 / 跨语言配音",
+          "group_en": "Digital human talking-head / cross-language dubbing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "根据音频生成同步唇形、头部和身体姿态的数字人视频，也可给现有视频重配音。",
+          "description_en": "Generates synchronized talking-head videos from images or existing footage using audio input and dubbing.",
+          "what": "音频驱动图片/视频生成同步说话人视频。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "intelligent-content-system",
+          "path": "skills/intelligent-content-system/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "多平台社交发布（微信/微博/X） / 社媒平台 写作",
+          "group_en": "Multi-platform social publishing / social platform writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "自动识别内容场景，编排网页采集、配图、小红书图文和多平台发布。",
+          "description_en": "Orchestrates content workflows from web capture and illustration to Xiaohongshu cards and multi-platform publishing.",
+          "what": "编排从采集、配图、图文生成到发布的内容工作流。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "contract-review",
+          "path": "skills/legal-assistant-skills-main/contract-review/SKILL.md",
+          "subcategory": "14-1",
+          "subcategory_title": "14.1 合同 / NDA / 供应商审查",
+          "category": "legal-compliance",
+          "group": "合同 / NDA / 供应商协议审查 / 合同 / 法律文书生成",
+          "group_en": "Contract / NDA / Vendor Agreement Review & Legal Document Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为合同添加批注式风险标注，并生成摘要、意见和流程图。",
+          "description_en": "Adds risk comments to contracts and generates summaries, opinions, and flowcharts.",
+          "what": "Adds comment-based issue annotations to a contract without editing the original text.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "claude-for-legal/evolsb/zubair-trabzada/knowledge-work-plugins/borghei · 组「合同 / NDA / 供应商协议审查」"
+        },
+        {
+          "name": "law-to-markdown",
+          "path": "skills/legal-assistant-skills-main/law-to-markdown/SKILL.md",
+          "subcategory": "14-8",
+          "subcategory_title": "14.8 法务运营 / 文书",
+          "category": "legal-compliance",
+          "group": "法务运营 / 文书 / 法援诊所",
+          "group_en": "Legal Operations / Legal Documents / Legal Aid Clinic",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "将法律文本从 txt/docx/pdf 转为结构化 Markdown 并校验保真。",
+          "description_en": "Converts legal texts from txt, docx, or pdf into structured Markdown with fidelity checks.",
+          "what": "Converts statutes and normative files into Markdown with legal structure and validation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "media-processor",
+          "path": "skills/media-processor/media-processor/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "FFmpeg/ImageMagick 媒体处理",
+          "group_en": "FFmpeg/ImageMagick Media Processing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 调用 FFmpeg 和 ImageMagick 处理视频/图片，完成转码、缩放、压缩、格式转换并验证输出。",
+          "description_en": "Helps the agent process video and image files with FFmpeg/ImageMagick, including transcoding, resizing, compression, format conversion, and output validation.",
+          "what": "处理视频和图片文件的转码、缩放、压缩与格式转换。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "moltbook",
+          "path": "skills/moltbook/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "AI 社交网络发布与互动",
+          "group_en": "AI Social Network Posting & Interaction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 注册并连接 Moltbook，发布帖子、评论、点赞、创建社区并管理社交互动。",
+          "description_en": "Lets the agent register with Moltbook, publish posts, comment, upvote, create communities, and manage social interactions.",
+          "what": "为 AI agent 提供 Moltbook 社交网络发帖、评论、点赞和社区管理能力。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "timescale",
+        "repo": "pg-aiguide",
+        "full_name": "timescale/pg-aiguide",
+        "url": "https://github.com/timescale/pg-aiguide",
+        "stars": 1766,
+        "pushed_at": "2026-06-10",
+        "default_branch": "main",
+        "github_description": "MCP server and Claude plugin for Postgres skills and documentation. Helps AI coding tools generate better PostgreSQL code.",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "ai-coding",
+          "claude-code-plugin",
+          "claude-code-plugins",
+          "claude-code-plugins-marketplace",
+          "claude-marketplace",
+          "claude-plugin",
+          "claude-skills",
+          "docs",
+          "documentation",
+          "mcp",
+          "mcp-server",
+          "postgres",
+          "postgresql",
+          "skills"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "design-postgis-tables",
+          "path": "skills/design-postgis-tables/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "PostgreSQL/PostGIS 表设计参考",
+          "group_en": "PostgreSQL/PostGIS Table Design References",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 PostGIS 空间表设计规则，覆盖几何类型、坐标系、索引和查询性能。",
+          "description_en": "Helps an agent design PostGIS spatial tables, including geometry choices, coordinate systems, spatial indexes, and query performance.",
+          "what": "A reference for designing PostGIS-backed spatial tables.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "design-postgres-tables",
+          "path": "skills/design-postgres-tables/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "PostgreSQL/PostGIS 表设计参考",
+          "group_en": "PostgreSQL/PostGIS Table Design References",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 PostgreSQL 表设计规则，覆盖数据类型、约束、索引、JSONB 和分区实践。",
+          "description_en": "Guides an agent in PostgreSQL table design, including data types, constraints, indexes, JSONB patterns, and partitioning.",
+          "what": "A reference for general PostgreSQL table and schema design.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "find-hypertable-candidates",
+          "path": "skills/find-hypertable-candidates/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "PostgreSQL/TimescaleDB 迁移评估",
+          "group_en": "PostgreSQL/TimescaleDB Migration Assessment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析 PostgreSQL 表结构、索引和查询模式，识别适合 TimescaleDB hypertable 的表。",
+          "description_en": "Analyzes PostgreSQL schemas, indexes, and query patterns to identify tables suitable for TimescaleDB hypertables.",
+          "what": "Evaluates existing PostgreSQL tables for TimescaleDB hypertable migration potential.",
+          "chain": true,
+          "chain_group": "TimescaleDB hypertable 迁移工作流",
+          "chain_group_en": "TimescaleDB Hypertable Migration Workflow"
+        },
+        {
+          "name": "migrate-postgres-tables-to-hypertables",
+          "path": "skills/migrate-postgres-tables-to-hypertables/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "PostgreSQL/TimescaleDB 迁移评估",
+          "group_en": "PostgreSQL/TimescaleDB Migration Assessment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "规划并执行 PostgreSQL 表到 TimescaleDB hypertable 的迁移、验证与压缩配置。",
+          "description_en": "Plans and validates PostgreSQL table migrations to TimescaleDB hypertables, including compression setup.",
+          "what": "Migrates identified PostgreSQL tables to TimescaleDB hypertables with configuration and validation.",
+          "chain": true,
+          "chain_group": "TimescaleDB hypertable 迁移工作流",
+          "chain_group_en": "TimescaleDB Hypertable Migration Workflow"
+        },
+        {
+          "name": "pgvector-semantic-search",
+          "path": "skills/pgvector-semantic-search/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "PostgreSQL 搜索与 RAG",
+          "group_en": "PostgreSQL Search & RAG",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 Agent 在 PostgreSQL 中配置 pgvector 语义搜索与 RAG 检索。",
+          "description_en": "Helps the agent configure pgvector in PostgreSQL for semantic search and RAG retrieval.",
+          "what": "设置 pgvector 语义搜索、ANN 索引与 RAG 检索。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "postgres-hybrid-text-search",
+          "path": "skills/postgres-hybrid-text-search/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "PostgreSQL 搜索与 RAG",
+          "group_en": "PostgreSQL Search & RAG",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 Agent 组合 BM25 与 pgvector，实现 PostgreSQL 混合检索。",
+          "description_en": "Helps the agent combine BM25 and pgvector for hybrid search in PostgreSQL.",
+          "what": "融合关键词与语义检索，并用 RRF 合并排序。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "postgres",
+          "path": "skills/postgres/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "PostgreSQL / TimescaleDB 数据库技能",
+          "group_en": "PostgreSQL & TimescaleDB Database Skills",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计 PostgreSQL 表结构、索引、搜索扩展与迁移方案。",
+          "description_en": "Helps the agent design PostgreSQL schemas, indexes, search extensions, and migrations.",
+          "what": "PostgreSQL 专家参考，覆盖表设计、索引、搜索、扩展与迁移。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "setup-timescaledb-hypertables",
+          "path": "skills/setup-timescaledb-hypertables/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "PostgreSQL / TimescaleDB 数据库技能",
+          "group_en": "PostgreSQL & TimescaleDB Database Skills",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 创建 TimescaleDB hypertable、压缩、保留策略和连续聚合。",
+          "description_en": "Guides the agent in setting up TimescaleDB hypertables, compression, retention policies, and continuous aggregates.",
+          "what": "TimescaleDB 配置指南，覆盖 hypertable、压缩、保留和连续聚合。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "WordPress",
+        "repo": "agent-skills",
+        "full_name": "WordPress/agent-skills",
+        "url": "https://github.com/WordPress/agent-skills",
+        "stars": 1708,
+        "pushed_at": "2026-06-15",
+        "default_branch": "trunk",
+        "github_description": "Expert-level WordPress knowledge for AI coding assistants - blocks, themes, plugins, and best practices",
+        "topics": [],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "blueprint",
+          "path": "skills/blueprint/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "WordPress Playground 蓝图",
+          "group_en": "WordPress Playground Blueprints",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "创建、编辑和审查 WordPress Playground 蓝图 JSON。",
+          "description_en": "Creates, edits, and reviews WordPress Playground blueprint JSON files.",
+          "what": "用于配置 WordPress Playground 环境的蓝图 JSON。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wordpress-router",
+          "path": "skills/wordpress-router/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "WordPress 项目路由",
+          "group_en": "WordPress Project Routing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "快速识别 WordPress 代码库类型并分派到对应工作流。",
+          "description_en": "Classifies WordPress repos and routes tasks to the right workflow.",
+          "what": "用于 WordPress 项目任务的初始分诊与路由。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-abilities-api",
+          "path": "skills/wp-abilities-api/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "WordPress Abilities API 工作流",
+          "group_en": "WordPress Abilities API workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 注册、暴露并排查 WordPress 能力 API。",
+          "description_en": "Helps an agent register, expose, and debug the WordPress Abilities API.",
+          "what": "注册 abilities 与分类、配置 REST 暴露，并排查客户端不可见等问题。",
+          "chain": true,
+          "chain_group": "WordPress Abilities API 审计到实现",
+          "chain_group_en": "WordPress Abilities API audit-to-implementation workflow"
+        },
+        {
+          "name": "wp-abilities-audit",
+          "path": "skills/wp-abilities-audit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "WordPress Abilities API 工作流",
+          "group_en": "WordPress Abilities API workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计插件 REST 表面，生成 Abilities API 注册规划文档。",
+          "description_en": "Audits a WordPress plugin’s REST surface and drafts an Abilities API registration plan.",
+          "what": "盘点 REST 控制器、能力门禁与语义意图，输出可复核的审计与规划文档。",
+          "chain": true,
+          "chain_group": "WordPress Abilities API 审计到实现",
+          "chain_group_en": "WordPress Abilities API audit-to-implementation workflow"
+        },
+        {
+          "name": "wp-abilities-verify",
+          "path": "skills/wp-abilities-verify/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "WordPress Abilities API 验证",
+          "group_en": "WordPress Abilities API Verification",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "验证 WordPress 插件 Abilities API 注册，检查回调是否越权写入、权限与 schema，并可运行态验证。",
+          "description_en": "Verifies WordPress plugin Abilities API registrations, catches read-only callbacks that write, and checks permissions, schemas, and runtime behavior.",
+          "what": "验证 WordPress Abilities API 注册、权限、schema 与回调行为。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-block-development",
+          "path": "skills/wp-block-development/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "WordPress Gutenberg 块开发",
+          "group_en": "WordPress Gutenberg Block Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 开发/维护 WordPress Gutenberg 块，处理 block.json、属性、动态渲染、迁移、构建和测试。",
+          "description_en": "Helps agents develop and maintain WordPress Gutenberg blocks, including block.json, attributes, rendering, deprecations, build, and tests.",
+          "what": "开发和维护 WordPress Gutenberg 区块。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-block-themes",
+          "path": "skills/wp-block-themes/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "WordPress 块主题开发",
+          "group_en": "WordPress Block Theme Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 开发或排查 WordPress 块主题，覆盖 theme.json、模板、图案、样式变体和站点编辑器问题。",
+          "description_en": "Helps an agent develop or troubleshoot WordPress block themes, including theme.json, templates, patterns, style variations, and Site Editor issues.",
+          "what": "按流程检测块主题根目录，并指导 theme.json、模板/图案和样式层级的修改与排查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-interactivity-api",
+          "path": "skills/wp-interactivity-api/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "WordPress 交互 API 开发",
+          "group_en": "WordPress Interactivity API Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 构建或调试 WordPress 交互功能，识别 directives、状态存储、模块脚本和 hydration 问题。",
+          "description_en": "Helps an agent build or debug WordPress Interactivity API features, including directives, stores, module scripts, and hydration behavior.",
+          "what": "按流程检测 Interactivity API 使用方式，并指导 directives、store/actions 和 hydration 问题排查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-performance",
+          "path": "skills/wp-performance/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "WordPress 性能诊断与优化",
+          "group_en": "WordPress Performance Profiling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 用 WP-CLI、Server-Timing 等诊断并优化 WordPress 慢请求与后台性能。",
+          "description_en": "Helps an agent diagnose and optimize WordPress performance using WP-CLI, Server-Timing, Query Monitor, and backend profiling data.",
+          "what": "Backend-only WordPress performance profiling and optimization workflow.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-phpstan",
+          "path": "skills/wp-phpstan/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "WordPress PHPStan 静态分析",
+          "group_en": "WordPress PHPStan Static Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 配置、运行和修复 WordPress 项目的 PHPStan 静态分析。",
+          "description_en": "Helps an agent configure, run, and fix PHPStan static analysis in WordPress plugins, themes, and sites.",
+          "what": "WordPress PHPStan setup, baselines, and error triage workflow.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-playground",
+          "path": "skills/wp-playground/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "WordPress Playground 沙盒与调试",
+          "group_en": "WordPress Playground sandbox and debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Agent 快速启动临时 WordPress 环境，用于测试插件主题、复现问题和调试。",
+          "description_en": "Helps the agent spin up disposable WordPress environments for plugin and theme testing, issue reproduction, and debugging.",
+          "what": "用于临时 WordPress 沙盒、快照构建与本地调试。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-plugin-development",
+          "path": "skills/wp-plugin-development/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "WordPress 插件开发",
+          "group_en": "WordPress plugin development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Agent 创建、重构和发布 WordPress 插件，覆盖钩子、管理界面与安全发布。",
+          "description_en": "Guides the agent in building, refactoring, and packaging WordPress plugins, including hooks, admin UI, and security.",
+          "what": "用于 WordPress 插件架构、钩子、设置页、安全修复与发布打包。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-plugin-directory-guidelines",
+          "path": "skills/wp-plugin-directory-guidelines/SKILL.md",
+          "subcategory": "14-4",
+          "subcategory_title": "14.4 知识产权",
+          "category": "legal-compliance",
+          "group": "知识产权(清查 / 侵权 / OSS / DMCA)",
+          "group_en": "Intellectual Property (Audits / Infringement / OSS / DMCA)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "审查 WP 插件 GPL、命名、商标与目录提交合规。",
+          "description_en": "Reviews WP plugin GPL, naming, trademark, and directory compliance.",
+          "what": "用于审查 WordPress 插件是否符合 WordPress.org 目录规则。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-project-triage",
+          "path": "skills/wp-project-triage/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "WordPress 项目识别与工具链探测",
+          "group_en": "WordPress Project Discovery and Toolchain Probe",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "识别 WP 仓库类型并输出 JSON 报告，辅助选择工作流。",
+          "description_en": "Identifies WP repo type and emits a JSON report for workflow selection.",
+          "what": "用于在修改 WordPress 仓库前先探测项目类型、工具链和测试情况。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-rest-api",
+          "path": "skills/wp-rest-api/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "WordPress REST API 开发",
+          "group_en": "WordPress REST API Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 构建、调试 WordPress REST API 路由、权限、Schema 与响应。",
+          "description_en": "Helps the agent build and debug WordPress REST routes, permissions, schemas, and responses.",
+          "what": "WordPress REST API endpoint and controller development skill.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wp-wpcli-and-ops",
+          "path": "skills/wp-wpcli-and-ops/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "WordPress 运维与部署",
+          "group_en": "WordPress Operations and Deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 安全执行 WP-CLI 运维、数据库迁移、插件主题与多站点管理。",
+          "description_en": "Helps the agent safely run WP-CLI operations, database migrations, plugin/theme management, and multisite tasks.",
+          "what": "WP-CLI operations and WordPress site maintenance skill.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wpds",
+          "path": "skills/wpds/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "WordPress Design System（WPDS）",
+          "group_en": "WordPress Design System (WPDS)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 WordPress UI 构建/审查中调用 WPDS MCP，引用组件、设计令牌和官方文档。",
+          "description_en": "Helps agents build and review WordPress UIs by using the WPDS MCP server to retrieve components, design tokens, and official docs.",
+          "what": "Retrieves WPDS components, tokens, and documentation for WordPress UI work.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "feiskyer",
+        "repo": "claude-code-settings",
+        "full_name": "feiskyer/claude-code-settings",
+        "url": "https://github.com/feiskyer/claude-code-settings",
+        "stars": 1554,
+        "pushed_at": "2026-04-25",
+        "default_branch": "main",
+        "github_description": "Claude Code settings, commands and agents for vibe coding",
+        "topics": [
+          "agentic-ai",
+          "agents",
+          "ai",
+          "claude-code",
+          "claude-skills",
+          "codex",
+          "copilot",
+          "kiro",
+          "litellm",
+          "spec-driven-development",
+          "vibe-coding"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "autonomous-skill",
+          "path": "plugins/autonomous-skill/skills/autonomous-skill/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "Claude Code 自治任务循环",
+          "group_en": "Claude Code Autonomous Task Loops",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 Agent 自动拆分并跨会话持续执行长任务，带进度追踪与循环完成机制。",
+          "description_en": "Lets an agent decompose long-running tasks and keep executing them across sessions with progress tracking and looped completion.",
+          "what": "Autonomous task executor with headless and hook-based continuation loops.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "codex-skill",
+          "path": "plugins/codex-skill/skills/codex-skill/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "OpenAI Codex 自治编码",
+          "group_en": "OpenAI Codex Autonomous Coding",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "调用 Codex CLI 在沙箱中自动完成编码、审查与实现任务。",
+          "description_en": "Uses the Codex CLI to autonomously implement and review code in a sandboxed environment.",
+          "what": "Autonomous coding delegate powered by OpenAI Codex/GPT models.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kiro-skill",
+          "path": "plugins/kiro-skill/skills/kiro-skill/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "轻量 SDD 框架 / 核心开发工作流（superpowers）",
+          "group_en": "Lightweight SDD Framework / Core Development Workflow (superpowers)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导 agent 将功能想法转成需求、设计和任务，并逐步实现。",
+          "description_en": "Guides an agent from feature idea to requirements, design, tasks, and incremental implementation.",
+          "what": "把功能想法转成 EARS 需求、设计文档和可执行任务。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nanobanana-skill",
+          "path": "plugins/nanobanana-skill/skills/nanobanana-skill/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "Gemini 图片生成与编辑",
+          "group_en": "Gemini Image Generation and Editing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "调用 nanobanana 和 Gemini API，按提示生成或编辑图片。",
+          "description_en": "Uses nanobanana with the Gemini API to generate or edit images from prompts.",
+          "what": "通过 nanobanana 调用 Gemini API 生成或编辑图片。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "spec-kit-skill",
+          "path": "plugins/spec-kit-skill/skills/spec-kit-skill/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "轻量 SDD 框架",
+          "group_en": "Lightweight SDD Framework",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "引导 agent 用 Spec-Kit 建立宪法、规格、计划与实现流程。",
+          "description_en": "Guides the agent through Spec-Kit’s constitution, spec, planning, and implementation workflow.",
+          "what": "GitHub Spec-Kit integration for constitution-based feature development.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "youtube-transcribe-skill",
+          "path": "plugins/youtube-transcribe-skill/skills/youtube-transcribe-skill/SKILL.md",
+          "subcategory": "6-2",
+          "subcategory_title": "6.2 音频 / TTS / 转写",
+          "category": "media",
+          "group": "YouTube 字幕提取",
+          "group_en": "YouTube Transcript Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从 YouTube 链接提取字幕或自动转写并保存为本地文本。",
+          "description_en": "Extracts YouTube captions or auto-generated transcripts and saves them locally.",
+          "what": "Converts YouTube video subtitles into local plain-text transcript files.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "command-creator",
+          "path": "skills/command-creator/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Claude Code 命令创建器",
+          "group_en": "Claude Code Command Creator",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 创建结构规范、可复用的 Claude Code 自定义斜杠命令。",
+          "description_en": "Helps the agent create well-structured, reusable Claude Code custom slash commands.",
+          "what": "Builds Claude Code command files from a user's workflow intent.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deep-research",
+          "path": "skills/deep-research/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "深度调研多 Agent 编排",
+          "group_en": "Deep Research Multi-Agent Orchestration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把调研目标拆成并行子任务，调度子进程采集、聚合并产出报告。",
+          "description_en": "Breaks research goals into parallel tasks, runs subprocesses to gather and synthesize findings, and writes a report.",
+          "what": "Orchestrates parallel research agents to gather evidence, synthesize findings, and deliver a standalone report.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "franklee16/lingzhi227/luwill/K-Dense-writer · 组「深度文献检索 / 综述」"
+        },
+        {
+          "name": "eureka",
+          "path": "skills/eureka/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "技术突破捕获与归档",
+          "group_en": "Technical Breakthrough Capture and Archiving",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "捕获技术突破的问题、洞察与变化，生成结构化 Markdown 知识资产。",
+          "description_en": "Captures the problem, insight, and before/after changes from technical breakthroughs into structured, reusable Markdown knowledge assets.",
+          "what": "Capture technical breakthroughs into structured reusable Markdown knowledge assets.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "github-fix-issue",
+          "path": "skills/github-fix-issue/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "GitHub Issue/PR 分析与发布自动化",
+          "group_en": "GitHub Issue/PR Analysis and Release Automation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "端到端分析 GitHub Issue，制定修复计划、创建分支、实现测试并提交 PR。",
+          "description_en": "Analyzes a GitHub issue end to end, plans a fix, creates a branch, implements and tests it, then submits a PR.",
+          "what": "Fix a GitHub issue end to end and submit the resulting PR.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "github-review-pr",
+          "path": "skills/github-review-pr/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "实现后并行 Code Review（多子代理）",
+          "group_en": "Parallel Subagent Code Review",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "用并行子代理评审 GitHub PR，产出高信号、可执行的代码审查意见。",
+          "description_en": "Reviews GitHub PRs with parallel specialist subagents to deliver high-signal, actionable code review feedback.",
+          "what": "面向 GitHub PR 的多视角代码审查工作流。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "gpt-image-skill",
+          "path": "skills/gpt-image-skill/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "OpenAI GPT 图像生成与编辑",
+          "group_en": "OpenAI GPT Image Generation and Editing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 OpenAI GPT Image API 生成或编辑图片，支持模型、尺寸和质量参数。",
+          "description_en": "Generates or edits images via the OpenAI GPT Image API, with controls for model, size, and quality.",
+          "what": "基于 OpenAI GPT Image API 的图像生成与编辑工具。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "reflection",
+          "path": "skills/reflection/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "会话复盘与 CLAUDE.md 迭代",
+          "group_en": "Session Retrospectives & CLAUDE.md Iteration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 复盘开发会话，提炼经验并改进 CLAUDE.md 指令。",
+          "description_en": "Helps the agent review a development session, capture lessons, and improve CLAUDE.md instructions.",
+          "what": "Analyze a session and update project instructions based on observed issues and learnings.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skill-creator",
+          "path": "skills/skill-creator/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器",
+          "group_en": "Skill Creator",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 创建、迭代和评测 Agent skills，并设计测试与定量评估。",
+          "description_en": "Helps the agent create, refine, and evaluate agent skills with test prompts and quantitative benchmarks.",
+          "what": "Guide the end-to-end process of drafting, testing, evaluating, and improving agent skills.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/Codex/superpowers/mattpocock · 组「Skill 创建器」"
+        },
+        {
+          "name": "translate",
+          "path": "skills/translate/SKILL.md",
+          "subcategory": "2-2",
+          "subcategory_title": "2.2 长文本翻译 / 跨语言",
+          "category": "docs-knowledge",
+          "group": "技术文章中文翻译",
+          "group_en": "Tech Article Chinese Translation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将英文或日文技术文章翻译为自然流畅的中文，保留 Markdown 与术语。",
+          "description_en": "Translates English or Japanese tech articles into fluent Chinese while preserving Markdown and terminology.",
+          "what": "Translate tech articles or texts from English or Japanese into Chinese.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "FrancyJGLisboa",
+        "repo": "agent-skill-creator",
+        "full_name": "FrancyJGLisboa/agent-skill-creator",
+        "url": "https://github.com/FrancyJGLisboa/agent-skill-creator",
+        "stars": 1529,
+        "pushed_at": "2026-06-13",
+        "default_branch": "main",
+        "github_description": "Turn any workflow into reusable AI agent skills that install on 17 platforms — Claude Code, Copilot, Cursor, Windsurf, Codex, Gemini, Kiro, and more. One SKILL.md, every platform.",
+        "topics": [],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "path-skill-md"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器",
+          "group_en": "Skill Creator",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "把流程描述转化为跨平台 SKILL.md，并验证、配置、导出和迁移 Agent 技能。",
+          "description_en": "Creates cross-platform SKILL.md agent skills from workflow descriptions, then validates, configures, exports, and migrates them.",
+          "what": "从工作流描述生成可安装到多平台的 SKILL.md，并验证和导出。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pr-blocker-summarizer",
+          "path": "references/examples/pr-blocker-summarizer/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "PR 阻塞摘要",
+          "group_en": "PR Blocker Digest",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将 PR 导出 JSON 整理为阻塞优先摘要，标出受阻、可合并 PR 并生成站会摘要。",
+          "description_en": "Turns exported PR JSON into a blockers-first standup digest, identifying blocked and merge-ready pull requests.",
+          "what": "从 PR 导出的 JSON 中识别阻塞项并生成 PR 站会摘要。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "OpenRaiser",
+        "repo": "NanoResearch",
+        "full_name": "OpenRaiser/NanoResearch",
+        "url": "https://github.com/OpenRaiser/NanoResearch",
+        "stars": 1507,
+        "pushed_at": "2026-05-26",
+        "default_branch": "main",
+        "github_description": "🦞+🔬 NanoResearch: The Autonomous AI Research Assistant",
+        "topics": [
+          "agent-skills",
+          "agents",
+          "ai",
+          "ai-agents",
+          "ai-scientist",
+          "artificial-intelligence",
+          "autonomous-agents",
+          "autonomous-research",
+          "autoresearch",
+          "claude-code",
+          "claude-skills",
+          "nanobot",
+          "openclaw"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "nanoresearch-experiment",
+          "path": "skills/nanoresearch-experiment/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "NanoResearch 实验代码骨架生成",
+          "group_en": "NanoResearch Experiment Scaffolding",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把实验蓝图转化为可运行的 Python 实验工程骨架。",
+          "description_en": "Turns an experiment blueprint into a runnable Python experiment scaffold.",
+          "what": "从 experiment_blueprint.json 生成数据、模型、训练、评估和消融配置代码。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nanoresearch-ideation",
+          "path": "skills/nanoresearch-ideation/SKILL.md",
+          "subcategory": "11-6",
+          "subcategory_title": "11.6 研究选题 / 假设 / 构思",
+          "category": "academic-research",
+          "group": "NanoResearch 选题与假设生成",
+          "group_en": "NanoResearch Research Ideation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "检索论文并做缺口分析，生成可执行研究假设。",
+          "description_en": "Searches papers, analyzes research gaps, and proposes actionable hypotheses.",
+          "what": "围绕给定主题检索 arXiv 和 Semantic Scholar 文献，产出差距分析与候选假设。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nanoresearch-planning",
+          "path": "skills/nanoresearch-planning/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "实验设计 / 科研编码 / 复现 / Scientific Agent skill 集",
+          "group_en": "Experiment Design & Scientific Research Coding",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据假设规划数据集、基线、指标和消融实验，生成结构化实验蓝图。",
+          "description_en": "Turns a selected hypothesis into a structured experiment blueprint with datasets, baselines, metrics, and ablations.",
+          "what": "Produces experiment_blueprint.json from ideation_output.json.",
+          "chain": true,
+          "chain_group": "NanoResearch 科研流水线",
+          "chain_group_en": "NanoResearch Research Workflow"
+        },
+        {
+          "name": "nanoresearch-writing",
+          "path": "skills/nanoresearch-writing/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "nanoresearch-writing",
+          "group_en": "Academic Paper Writing & Research Workflow",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "汇总前序成果，生成带图表和参考文献的 LaTeX 论文草稿。",
+          "description_en": "Assembles prior research outputs into a complete LaTeX manuscript draft with figures, tables, and bibliography.",
+          "what": "Drafts a LaTeX research paper from ideation, planning, and experiment outputs.",
+          "chain": true,
+          "chain_group": "NanoResearch 科研流水线",
+          "chain_group_en": "NanoResearch Research Workflow"
+        },
+        {
+          "name": "0-autoresearch-skill",
+          "path": "skills/vendor-ai-research/0-autoresearch-skill/SKILL.md",
+          "subcategory": "21-9",
+          "subcategory_title": "21.9 自主研究 / 科研编排",
+          "category": "ml-llm-engineering",
+          "group": "自主研究编排",
+          "group_en": "Autonomous Research Orchestration",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "编排自主研究项目，运行实验-综合双循环并产出论文与报告。",
+          "description_en": "Orchestrates autonomous research projects with experiment-synthesis loops and paper/report outputs.",
+          "what": "Research lifecycle orchestration for autonomous multi-hypothesis projects.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "academic-plotting",
+          "path": "skills/vendor-ai-research/academic-plotting/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "论文图表生成",
+          "group_en": "Paper Figure Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 ML 论文生成架构图与数据图，支持 Gemini 绘图和 Matplotlib 图表。",
+          "description_en": "Creates architecture diagrams and data figures for ML papers using Gemini and Matplotlib/Seaborn.",
+          "what": "Publication-quality figure generation for ML papers.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "accelerate",
+          "path": "skills/vendor-ai-research/accelerate/SKILL.md",
+          "subcategory": "21-7",
+          "subcategory_title": "21.7 分布式训练 / 基础设施",
+          "category": "ml-llm-engineering",
+          "group": "HuggingFace Accelerate 分布式训练",
+          "group_en": "HuggingFace Accelerate Distributed Training",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 PyTorch 训练脚本接入 Accelerate，支持多 GPU、混合精度和统一启动。",
+          "description_en": "Helps an agent convert PyTorch training scripts to HuggingFace Accelerate for multi-GPU, mixed-precision, and unified distributed launches.",
+          "what": "将单 GPU PyTorch 训练脚本快速改造为 Accelerate 分布式训练。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brainstorming-research-ideas",
+          "path": "skills/vendor-ai-research/brainstorming-research-ideas/SKILL.md",
+          "subcategory": "11-6",
+          "subcategory_title": "11.6 研究选题 / 假设 / 构思",
+          "category": "academic-research",
+          "group": "研究选题 / 假设 / 构思",
+          "group_en": "Research Ideation Frameworks",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "引导 agent 用结构化框架探索研究空白、形成高潜力选题并评估方向。",
+          "description_en": "Guides an agent through structured ideation frameworks to uncover research gaps, shape promising topics, and evaluate directions.",
+          "what": "用多视角框架把模糊研究兴趣转化为可讨论、可评估的研究方向。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "creative-thinking-for-research",
+          "path": "skills/vendor-ai-research/creative-thinking-for-research/SKILL.md",
+          "subcategory": "11-6",
+          "subcategory_title": "11.6 研究选题 / 假设 / 构思",
+          "category": "academic-research",
+          "group": "研究选题 / 假设 / 构思",
+          "group_en": "Research Topic Ideation & Hypothesis Generation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "用认知科学框架帮助生成 CS/AI 研究新方向。",
+          "description_en": "Uses cognitive-science frameworks to generate novel CS/AI research directions.",
+          "what": "用认知科学创意框架系统化生成研究选题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "lm-evaluation-harness",
+          "path": "skills/vendor-ai-research/lm-evaluation-harness/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "LLM 基准评测",
+          "group_en": "LLM Benchmark Evaluation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "调用 lm-eval 对 LLM 进行标准基准测试和结果分析。",
+          "description_en": "Runs lm-eval to benchmark LLMs on standard academic suites and analyze results.",
+          "what": "用 lm-evaluation-harness 执行 LLM 标准基准评测。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ml-paper-writing",
+          "path": "skills/vendor-ai-research/ml-paper-writing/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "学术 / 科研论文写作",
+          "group_en": "Academic / Research Paper Writing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为 agent 提供 ML 论文从草稿、论证、引文到投稿检查的写作流程。",
+          "description_en": "Guides agents through ML paper drafting, argument structure, citation checks, and submission readiness.",
+          "what": "面向 ML/AI/Systems 顶会的论文写作与投稿检查技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ml-training-recipes",
+          "path": "skills/vendor-ai-research/ml-training-recipes/SKILL.md",
+          "subcategory": "21-1",
+          "subcategory_title": "21.1 模型架构 / 实现",
+          "category": "ml-llm-engineering",
+          "group": "PyTorch 训练实现与调优",
+          "group_en": "PyTorch Training Implementation and Tuning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 PyTorch 训练循环、优化器、调度和调试配方，辅助模型实验。",
+          "description_en": "Provides PyTorch training-loop, optimizer, scheduling, and debugging recipes for model experiments.",
+          "what": "面向多领域 PyTorch 模型训练与实验调优的实战配方。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "peft",
+          "path": "skills/vendor-ai-research/peft/SKILL.md",
+          "subcategory": "21-3",
+          "subcategory_title": "21.3 微调 / 参数高效（PEFT）",
+          "category": "ml-llm-engineering",
+          "group": "LLM 参数高效微调",
+          "group_en": "Parameter-Efficient LLM Fine-Tuning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 选择 PEFT/LoRA/QLoRA 方法，配置依赖并在有限显存下微调大模型。",
+          "description_en": "Helps an agent choose PEFT, LoRA, or QLoRA strategies and set up memory-efficient LLM fine-tuning.",
+          "what": "PEFT/LoRA/QLoRA 微调决策与配置",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "ai-research-skills · 组「参数高效微调（PEFT）」"
+        },
+        {
+          "name": "ray-data",
+          "path": "skills/vendor-ai-research/ray-data/SKILL.md",
+          "subcategory": "21-6",
+          "subcategory_title": "21.6 训练数据处理",
+          "category": "ml-llm-engineering",
+          "group": "训练数据处理",
+          "group_en": "Training Data Processing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 用 Ray Data 构建可扩展数据预处理、批推理和多模态数据加载流水线。",
+          "description_en": "Guides an agent in building scalable Ray Data pipelines for preprocessing, batch inference, and multimodal loading.",
+          "what": "Ray Data 分布式 ML 数据处理",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "ai-research-skills · 组「训练数据处理」"
+        },
+        {
+          "name": "skypilot",
+          "path": "skills/vendor-ai-research/skypilot/SKILL.md",
+          "subcategory": "21-7",
+          "subcategory_title": "21.7 分布式训练 / 基础设施",
+          "category": "ml-llm-engineering",
+          "group": "多云 GPU 训练编排",
+          "group_en": "Multi-Cloud GPU Training Orchestration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在多云环境调度 ML 训练与批量任务，并优化 GPU 成本。",
+          "description_en": "Helps the agent schedule ML training and batch workloads across clouds while optimizing GPU costs.",
+          "what": "Use for multi-cloud ML workload orchestration, spot-instance recovery, distributed training, and GPU cost optimization.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "unsloth",
+          "path": "skills/vendor-ai-research/unsloth/SKILL.md",
+          "subcategory": "21-3",
+          "subcategory_title": "21.3 微调 / 参数高效（PEFT）",
+          "category": "ml-llm-engineering",
+          "group": "Unsloth 高效微调",
+          "group_en": "Unsloth Efficient Fine-Tuning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 使用 Unsloth 进行快速、低显存的 LoRA/QLoRA 微调。",
+          "description_en": "Helps the agent fine-tune models with Unsloth using fast, memory-efficient LoRA or QLoRA workflows.",
+          "what": "Use for Unsloth fine-tuning guidance, LoRA/QLoRA optimization, debugging, and implementation patterns.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "callstackincubator",
+        "repo": "agent-skills",
+        "full_name": "callstackincubator/agent-skills",
+        "url": "https://github.com/callstackincubator/agent-skills",
+        "stars": 1448,
+        "pushed_at": "2026-06-02",
+        "default_branch": "main",
+        "github_description": "A collection of agent-optimized React Native skills for AI coding assistants.",
+        "topics": [],
+        "language": "Shell",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "validate-skills",
+          "path": ".claude/skills/validate-skills/SKILL.md",
+          "subcategory": "13-3",
+          "subcategory_title": "13.3 Skill 安全审计",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 规范校验",
+          "group_en": "Skill spec validation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "校验仓库内 Skill 的名称、描述、结构和写作规范，便于发现格式与最佳实践问题。",
+          "description_en": "Checks skill names, descriptions, structure, and authoring conventions for spec and best-practice issues.",
+          "what": "用于验证 Skill 文档是否符合 agentskills.io 与 Claude Code 规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "agent-device",
+          "path": "plugins/vendored/.agents/skills/agent-device/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "移动端设备 UI 自动化",
+          "group_en": "Mobile device UI automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 iOS、tvOS、macOS 和 Android 上导航应用、截图、点击、输入并提取界面信息。",
+          "description_en": "Helps agents navigate apps, capture snapshots, tap, type, scroll, and extract UI information across Apple and Android devices.",
+          "what": "用于跨 Apple 与 Android 设备执行 UI 交互、快照与验证。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dogfood",
+          "path": "plugins/vendored/.agents/skills/dogfood/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "移动应用探索式 QA（agent-device）",
+          "group_en": "Mobile exploratory QA (agent-device)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 agent-device 系统探索 iOS/Android 应用，发现 bug 与 UX 问题并生成可复现报告。",
+          "description_en": "Uses agent-device to systematically explore iOS/Android apps, find bugs and UX issues, and generate reproducible QA reports.",
+          "what": "帮助 agent 对移动应用进行探索式 QA 并产出复现证据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "react-native-testing",
+          "path": "plugins/vendored/.agents/skills/react-native-testing/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "React Native Testing Library 组件测试",
+          "group_en": "React Native component testing with RNTL",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导编写 React Native 组件测试，覆盖 RNTL v13/v14 的查询、事件与异步断言。",
+          "description_en": "Guides writing React Native component tests with RNTL v13/v14, including queries, events, and async assertions.",
+          "what": "帮助 agent 编写、审查或修复 React Native 组件测试。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vercel-react-native-skills",
+          "path": "plugins/vendored/.agents/skills/vercel-react-native-skills/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "React Native / Expo 移动工程规范",
+          "group_en": "React Native / Expo Mobile Engineering Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 AI 助手提供 React Native 与 Expo 性能、动画、导航等开发规范。",
+          "description_en": "Gives AI assistants practical React Native and Expo guidelines for performance, animations, navigation, and mobile app structure.",
+          "what": "用于编写和优化 React Native / Expo 移动端应用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "github-actions",
+          "path": "skills/github-actions/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "CI/CD 管道 / GitHub Actions 模板",
+          "group_en": "CI/CD Pipelines / GitHub Actions Templates",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为 AI 助手生成 React Native iOS/Android 云端构建与产物下载工作流。",
+          "description_en": "Helps AI assistants set up GitHub Actions workflows for React Native iOS and Android cloud builds and artifact retrieval.",
+          "what": "用于配置移动端 CI 构建、模拟器产物上传和下载。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "github",
+          "path": "skills/github/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "github",
+          "group_en": "GitHub Essentials / Issue & PR Analysis / PR Automation",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "用 gh CLI 处理 PR、堆叠 PR、合并策略和仓库自动化。",
+          "description_en": "Uses the gh CLI to manage PRs, stacked PRs, merge strategies, and repository automation.",
+          "what": "GitHub PR and repository workflow guidance for coding agents.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "react-native-best-practices",
+          "path": "skills/react-native-best-practices/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "React Native 性能优化与调试",
+          "group_en": "React Native Performance Optimization and Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导优化 React Native FPS、TTI、包体积、内存泄漏和动画卡顿。",
+          "description_en": "Guides optimization of React Native FPS, TTI, bundle size, memory leaks, and animation jank.",
+          "what": "React Native performance debugging and optimization playbook.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "react-native-brownfield-migration",
+          "path": "skills/react-native-brownfield-migration/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "React Native 平台集成与升级",
+          "group_en": "React Native platform integration and upgrades",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导将原生 iOS/Android 应用渐进接入 React Native/Expo，并打包集成原生构件。",
+          "description_en": "Guides incremental React Native or Expo adoption in native iOS/Android apps, including artifact packaging and host integration.",
+          "what": "用于规划并执行 React Native 原生宿主渐进接入。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "upgrading-react-native",
+          "path": "skills/upgrading-react-native/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "React Native 平台集成与升级",
+          "group_en": "React Native platform integration and upgrades",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助按官方 diff 升级 React Native，处理依赖、CocoaPods、Gradle 与 Expo SDK 变更。",
+          "description_en": "Upgrades React Native using template diffs while handling dependencies, CocoaPods, Gradle, and Expo SDK changes.",
+          "what": "用于执行 React Native 版本升级与平台配置迁移。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
