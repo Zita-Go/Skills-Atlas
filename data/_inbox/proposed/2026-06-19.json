@@ -1,0 +1,2462 @@
+{
+  "generated_at": "2026-06-19T05:44:00+00:00",
+  "date": "2026-06-19",
+  "proposed_count": 4,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 80,
+      "blocklisted": 21,
+      "seen_recently": 100,
+      "truncated": 161,
+      "looks_tutorial": 1,
+      "skill_name_dup": 5,
+      "looks_aggregator": 2,
+      "not_a_collection": 2,
+      "no_skill_files": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "xianyu110/awesome-openclaw-tutorial",
+        "reason": "仓库名像教程/演示/模板"
+      },
+      {
+        "full_name": "a5c-ai/babysitter",
+        "reason": "⚠ 疑似 vendored 副本（仍提交待人审）：3/30 个 skill 名已在目录——architecture-patterns, test-driven-development, verification-before-completion；建议人审核是否整仓拒/blocklist"
+      },
+      {
+        "full_name": "Prat011/awesome-llm-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "bergside/awesome-design-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "datawhalechina/agent-skills-with-anthropic",
+        "reason": "非正经集合：该仓库明确是围绕课程内容的中文翻译、知识整理教程与示例代码解读，更像课程资料而非可独立收录的 AI agent skill 集合。"
+      },
+      {
+        "full_name": "hesamsheikh/octogent",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "pedrohcgs/claude-code-my-workflow",
+        "reason": "非正经集合：仓库描述明确为 ready-to-fork Claude Code template，更像可复用模板/脚手架，按宁严勿松原则不收录。"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "generate2dmap"
+      ],
+      "group": "2D 游戏地图资产生成",
+      "group_en": "2D Game Map Asset Generation",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "规划并生成 RPG、战术或横版场景地图、碰撞区与导出目标。",
+      "description_en": "Plans and generates RPG, tactical, or side-scrolling game maps with collision zones and export targets.",
+      "sources": [
+        "0x0funky/agent-sprite-forge"
+      ]
+    },
+    {
+      "skills": [
+        "generate2dsprite"
+      ],
+      "group": "动画 sprite 生成",
+      "group_en": "Animated Sprite Generation",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "从自然语言生成 2D 游戏精灵、动作帧与透明 GIF 导出。",
+      "description_en": "Generates 2D game sprites, animation frames, and transparent GIF exports from natural-language prompts.",
+      "sources": [
+        "0x0funky/agent-sprite-forge"
+      ]
+    },
+    {
+      "skills": [
+        "37signals-way"
+      ],
+      "group": "37signals 产品开发框架",
+      "group_en": "37signals Product Development Framework",
+      "category": "product-management",
+      "subcategory": "3-4",
+      "chain": false,
+      "description": "帮助 Agent 按 37signals 方法塑造产品、收敛范围并规划六周周期。",
+      "description_en": "Helps agents shape products, cut scope, and plan six-week cycles using the 37signals philosophy.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "blue-ocean-strategy"
+      ],
+      "group": "Canvas 全套 / 战略编排 workflow",
+      "group_en": "Canvas Suite / Strategy Orchestration Workflow",
+      "category": "product-management",
+      "subcategory": "3-4",
+      "chain": false,
+      "description": "帮助 Agent 用蓝海战略、战略画布和 ERRC 寻找非竞争市场。",
+      "description_en": "Helps agents identify uncontested market space using Blue Ocean Strategy, strategy canvas, and ERRC.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "clean-architecture"
+      ],
+      "group": "Clean Architecture 架构设计",
+      "group_en": "Clean Architecture Design",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 按依赖规则、端口适配和分层边界设计可维护软件架构。",
+      "description_en": "Helps the agent design maintainable software architecture using dependency rules, ports and adapters, and clear layer boundaries.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "clean-code"
+      ],
+      "group": "Clean Code 代码质量",
+      "group_en": "Clean Code Quality",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "帮助 agent 改进命名、函数边界、错误处理和可读性，提升代码可维护性。",
+      "description_en": "Helps the agent improve naming, function boundaries, error handling, and readability to raise code maintainability.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "cold-start-problem"
+      ],
+      "group": "网络效应冷启动与增长",
+      "group_en": "Network Effects Cold Start & Growth",
+      "category": "product-management",
+      "subcategory": "3-5",
+      "chain": false,
+      "description": "帮助 agent 用网络效应框架规划市场、社交或协作产品的冷启动、增长阶段与扩张节奏。",
+      "description_en": "Helps agents plan cold starts, growth stages, and expansion sequencing for networked products using Andrew Chen’s framework.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "contagious"
+      ],
+      "group": "口碑传播与病毒机制",
+      "group_en": "Word-of-Mouth & Viral Mechanics",
+      "category": "marketing-growth",
+      "subcategory": "4-7",
+      "chain": false,
+      "description": "帮助 agent 用 STEPPS 框架设计口碑传播、分享机制和病毒式增长活动。",
+      "description_en": "Helps agents design shareability, word-of-mouth loops, and viral campaigns using Berger’s STEPPS framework.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "continuous-discovery"
+      ],
+      "group": "持续发现节奏 / 机会方案树",
+      "group_en": "Continuous Discovery Cadence / Opportunity Solution Trees",
+      "category": "product-management",
+      "subcategory": "3-3",
+      "chain": false,
+      "description": "帮助 agent 建立每周客户触达、机会方案树和假设验证节奏。",
+      "description_en": "Helps an agent set up weekly customer touchpoints, opportunity mapping, and assumption validation.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "cro-methodology"
+      ],
+      "group": "CRO / 转化优化",
+      "group_en": "CRO / Conversion Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-5",
+      "chain": false,
+      "description": "帮助 agent 审计落地页漏斗、定位转化阻力并设计 A/B 测试。",
+      "description_en": "Helps an agent audit landing-page funnels, pinpoint conversion friction, and design A/B tests.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "crossing-the-chasm"
+      ],
+      "group": "技术产品跨越鸿沟 GTM",
+      "group_en": "Crossing the Chasm GTM",
+      "category": "product-management",
+      "subcategory": "3-5",
+      "chain": false,
+      "description": "帮助 agent 用技术采用生命周期、滩头市场和完整产品策略规划主流化 GTM。",
+      "description_en": "Helps agents plan mainstream GTM using adoption lifecycle, beachhead segments, and whole-product strategy.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "ddia-systems"
+      ],
+      "group": "数据密集型系统架构",
+      "group_en": "Data-Intensive Systems Architecture",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 在数据库选型、复制分区、事务一致性和容错间做架构取舍。",
+      "description_en": "Helps agents make architecture trade-offs across database choice, replication, partitioning, consistency, and resilience.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "design-everyday-things"
+      ],
+      "group": "日常用品设计原则 / UX 可用性诊断",
+      "group_en": "Design of Everyday Things / UX Usability Diagnosis",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "用可发现性、心智模型、反馈等原则诊断混淆点并改进交互。",
+      "description_en": "Diagnoses confusing interactions and improves UX using discoverability, mental models, and feedback principles.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "design-sprint"
+      ],
+      "group": "设计冲刺 / 快速验证",
+      "group_en": "Design Sprint / Rapid Validation",
+      "category": "product-management",
+      "subcategory": "3-3",
+      "chain": false,
+      "description": "组织 5 天设计冲刺，通过原型和用户测试快速验证产品想法。",
+      "description_en": "Runs a 5-day design sprint to prototype ideas and validate them with real users quickly.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "domain-driven-design"
+      ],
+      "group": "领域识别与服务架构分组 / 后端架构 / 微服务设计 / 微服务拆分与 DDD 边界分析",
+      "group_en": "Domain Modeling & Service Architecture / Backend Architecture / Microservice Design / DDD Boundaries",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 围绕业务领域进行软件建模，使用限界上下文、聚合、通用语言和上下文映射定义服务边界。",
+      "description_en": "Helps an agent model software around the business domain using bounded contexts, aggregates, ubiquitous language, and context maps to define service boundaries.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "drive-motivation"
+      ],
+      "group": "动机系统设计 / AMP 激励与游戏化",
+      "group_en": "Motivation System Design / AMP Incentives & Gamification",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 用自主、专精、使命感设计产品或团队激励系统，改进游戏化、入职进度和参与度机制。",
+      "description_en": "Helps an agent design product or team motivation systems around autonomy, mastery, and purpose, improving gamification, onboarding, and engagement loops.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "good-strategy-bad-strategy"
+      ],
+      "group": "战略内核 / 好战略坏战略",
+      "group_en": "Strategy Kernel / Good Strategy Bad Strategy",
+      "category": "product-management",
+      "subcategory": "3-4",
+      "chain": false,
+      "description": "帮 agent 用战略内核诊断并改写战略文档，识别空泛目标并提炼行动。",
+      "description_en": "Helps an agent diagnose and rewrite strategy using Rumelt's kernel, spotting fluff and extracting coherent action.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "high-output-management"
+      ],
+      "group": "高产出管理 / 经理杠杆",
+      "group_en": "High-output management / managerial leverage",
+      "category": "product-management",
+      "subcategory": "3-9",
+      "chain": false,
+      "description": "帮 agent 用高产出管理框架设计管理节奏、授权、指标和 OKR。",
+      "description_en": "Helps an agent apply High Output Management to manager cadence, delegation, metrics, and OKRs.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "high-perf-browser"
+      ],
+      "group": "Web 性能优化 / 浏览器网络诊断",
+      "group_en": "Web Performance Optimization & Browser Networking Diagnostics",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 从网络协议、缓存、渲染路径和加载策略诊断并优化页面性能。",
+      "description_en": "Helps agents diagnose and optimize page performance through network protocols, caching, rendering paths, and loading strategies.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "hooked-ux"
+      ],
+      "group": "Hook 模型 / 习惯养成产品循环",
+      "group_en": "Hook Model & Habit-Forming Product Loops",
+      "category": "product-management",
+      "subcategory": "3-3",
+      "chain": false,
+      "description": "帮助 agent 用 Hook Model 设计触发、行动、奖励与投入循环，提升留存。",
+      "description_en": "Helps agents design trigger-action-reward-investment loops that strengthen retention and habit formation.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "hundred-million-offers"
+      ],
+      "group": "定价与报价策略",
+      "group_en": "Pricing & Offer Strategy",
+      "category": "marketing-growth",
+      "subcategory": "4-10",
+      "chain": false,
+      "description": "帮助 agent 基于价值方程、保证与稀缺性设计高转化报价与定价包装。",
+      "description_en": "Helps agents craft irresistible offers using value equations, bonuses, guarantees, scarcity, and pricing logic.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "improve-retention"
+      ],
+      "group": "留存诊断与激活优化",
+      "group_en": "Retention Diagnosis & Activation Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-9",
+      "chain": false,
+      "description": "帮助 agent 用行为设计诊断留存流失、激活障碍并设计降低摩擦的改进方案。",
+      "description_en": "Helps agents diagnose churn and activation friction using behavior design and retention metrics.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "influence-psychology"
+      ],
+      "group": "影响力心理学 / 说服原则",
+      "group_en": "Influence Psychology / Persuasion Principles",
+      "category": "marketing-growth",
+      "subcategory": "4-2",
+      "chain": false,
+      "description": "帮助 agent 用六大说服原则审视文案、销售页和产品信任机制。",
+      "description_en": "Helps the agent apply six persuasion principles to review copy, sales pages, and trust signals ethically.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "inspired-product"
+      ],
+      "group": "产品发现与交付双轨",
+      "group_en": "Discovery and Delivery Dual Track",
+      "category": "product-management",
+      "subcategory": "3-3",
+      "chain": false,
+      "description": "帮助 agent 按发现-交付双轨制评估产品团队、路线图和交付方式。",
+      "description_en": "Helps the agent evaluate product teams, roadmaps, and delivery models using a discovery-and-delivery dual-track lens.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "ios-hig-design"
+      ],
+      "group": "iOS HIG 界面规范",
+      "group_en": "iOS HIG Interface Guidelines",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "帮助 agent 按 Apple HIG 设计 iOS/iPadOS 界面，覆盖导航、无障碍、符号和平台惯例。",
+      "description_en": "Helps an agent design iOS/iPadOS interfaces according to Apple’s Human Interface Guidelines, covering navigation, accessibility, symbols, and platform conventions.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "jobs-to-be-done"
+      ],
+      "group": "JTBD（Jobs-to-be-Done）",
+      "group_en": "Jobs-to-be-Done Discovery",
+      "category": "product-management",
+      "subcategory": "3-1",
+      "chain": false,
+      "description": "帮助 agent 用 JTBD 访谈、竞争替代和切换动机识别客户真实需求。",
+      "description_en": "Helps an agent uncover real customer needs through JTBD interviews, competitive alternatives, and switching-motivation analysis.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "lean-analytics",
+        "lean-startup"
+      ],
+      "group": "精益创业实验与指标闭环",
+      "group_en": "Lean Startup Experiment & Metrics Loop",
+      "category": "product-management",
+      "subcategory": "3-8",
+      "chain": true,
+      "description": "帮助选择、审计创业指标，识别虚荣指标并设定北极星或 OMTM。",
+      "description_en": "Helps agents design MVPs, run validated-learning experiments, and decide whether to persevere or pivot.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "lean-ux"
+      ],
+      "group": "Lean UX / Discovery 编排",
+      "group_en": "Lean UX / Discovery Orchestration",
+      "category": "product-management",
+      "subcategory": "3-3",
+      "chain": false,
+      "description": "帮助 agent 用假设驱动、协作共创和快速实验推进 UX 决策。",
+      "description_en": "Helps agents guide Lean UX through hypothesis-driven collaboration and rapid experiments.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "made-to-stick"
+      ],
+      "group": "SUCCESs 记忆化文案框架",
+      "group_en": "SUCCESs Sticky Messaging Framework",
+      "category": "marketing-growth",
+      "subcategory": "4-2",
+      "chain": false,
+      "description": "帮助 agent 用 SUCCESs 原则改写信息，使其更清晰、难忘并促进行动。",
+      "description_en": "Helps agents reshape messages with the SUCCESs framework so they are clearer, memorable, and action-oriented.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "microinteractions"
+      ],
+      "group": "微交互设计框架",
+      "group_en": "Microinteraction Design Framework",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "帮助 agent 设计按钮、表单、加载态等 UI 细节的触发、规则、反馈与循环。",
+      "description_en": "Helps agents design tiny UI moments—triggers, rules, feedback, and loops—for buttons, forms, loading states, and other interface details.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "mom-test"
+      ],
+      "group": "Mom Test 客户访谈",
+      "group_en": "Mom Test Customer Interviews",
+      "category": "product-management",
+      "subcategory": "3-1",
+      "chain": false,
+      "description": "帮助 agent 用 Mom Test 规则设计客户访谈，避免诱导并提取真实需求信号。",
+      "description_en": "Helps agents run Mom Test-style customer interviews that avoid leading questions and extract real demand signals.",
+      "sources": [
+        "wondelai/skills"
+      ]
+    },
+    {
+      "skills": [
+        "process-builder"
+      ],
+      "group": "Babysitter 流程定义创建",
+      "group_en": "Babysitter Process Definition Creation",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "指导 Agent 按 Babysitter SDK 结构创建流程定义，完成研究与实现。",
+      "description_en": "Guides an agent to create Babysitter process definitions using the SDK structure, from research to implementation.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "agent-dispatch"
+      ],
+      "group": "依赖感知 Agent 调度",
+      "group_en": "Dependency-Aware Agent Dispatch",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "帮助 Agent 根据依赖构建并行执行批次与调度队列。",
+      "description_en": "Builds dependency-aware batches and dispatch queues for parallel agent execution.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "code-review-gate",
+        "feature-intake"
+      ],
+      "group": "Automaker 功能交付流水线",
+      "group_en": "Automaker Feature Delivery Pipeline",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": true,
+      "description": "审查变更代码并给出质量评分、问题清单与通过/驳回门禁结论。",
+      "description_en": "Turns feature descriptions and screenshots into structured requirements, complexity estimates, and acceptance criteria.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "kanban-management"
+      ],
+      "group": "Kanban 看板管理",
+      "group_en": "Kanban Board Management",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "初始化 Kanban 看板，跟踪特性卡片优先级、WIP 限制和流转状态。",
+      "description_en": "Initialize a Kanban board to track feature priority, WIP limits, and card movement.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "streaming-progress"
+      ],
+      "group": "Agent 进度流",
+      "group_en": "Agent Progress Streaming",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "把执行阶段事件格式化为实时进度流，供界面展示和机器消费。",
+      "description_en": "Format execution-stage events into real-time progress streams for UI display and machine consumption.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "test-automation",
+        "worktree-isolation"
+      ],
+      "group": "Automaker 隔离开发与测试工作流",
+      "group_en": "Automaker isolated development and testing workflow",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": true,
+      "description": "运行 Vitest/Playwright，汇总结果、覆盖率并分析失败根因。",
+      "description_en": "Runs Vitest/Playwright suites, summarizes results and coverage, and analyzes failure root causes.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "architecture-design"
+      ],
+      "group": "架构设计与 ADR",
+      "group_en": "Architecture Design & ADRs",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "根据 PRD 和复杂度生成系统架构、技术选型、数据模型、API 合同和 ADR。",
+      "description_en": "Generate system architecture, tech stack rationale, data models, API contracts, ADRs, and readiness assessment from a PRD.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "code-review"
+      ],
+      "group": "多维代码审查",
+      "group_en": "Multidimensional Code Review",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "从正确性、安全、性能、可维护性和测试覆盖五维审查代码并给出改进项。",
+      "description_en": "Review code across correctness, security, performance, maintainability, and test coverage, then provide actionable fixes.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "prd-creation",
+        "product-brief-creation"
+      ],
+      "group": "BMAD 产品定义工作流",
+      "group_en": "BMAD Product Definition Workflow",
+      "category": "product-management",
+      "subcategory": "3-6",
+      "chain": true,
+      "description": "用 JTBD 和优先级框架生成 PRD、验收标准与 MVP 范围。",
+      "description_en": "Generate a PRD with acceptance criteria, prioritization, and MVP scope using JTBD and prioritization frameworks.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "project-documentation"
+      ],
+      "group": "项目文档生成",
+      "group_en": "Project Documentation Generation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "扫描源码树并生成项目概览、组件深潜文档与 Mermaid 架构图。",
+      "description_en": "Analyzes a source tree and produces onboarding docs, component deep dives, and Mermaid architecture diagrams.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "qa-testing"
+      ],
+      "group": "API/E2E 测试与质量门禁",
+      "group_en": "API/E2E Testing and Quality Gates",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "生成并执行 API/E2E 测试，汇总覆盖率与质量门禁结论。",
+      "description_en": "Generates and runs API and E2E tests, then reports coverage and quality-gate status.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "quick-flow"
+      ],
+      "group": "轻量 SDD 框架",
+      "group_en": "Lightweight SDD Framework",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "帮助 agent 快速生成规格、分故事实现并做代码评审。",
+      "description_en": "Helps an agent turn requirements into specs, implement stories, and review quality.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "sprint-planning"
+      ],
+      "group": "Sprint 计划工作流",
+      "group_en": "Sprint Planning Workflow",
+      "category": "product-management",
+      "subcategory": "3-9",
+      "chain": false,
+      "description": "帮助 agent 根据史诗、速度和依赖制定可执行冲刺计划。",
+      "description_en": "Helps an agent plan sprint goals, select stories, order work, and flag blockers.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "story-development",
+        "ux-design"
+      ],
+      "group": "BMAD 产品交付工作流",
+      "group_en": "BMAD Product Delivery Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": true,
+      "description": "基于 PRD 与人物画像生成用户流程、线框图、设计系统和交接规范。",
+      "description_en": "Creates user flows, wireframes, design-system foundations, accessibility notes, and engineering handoff specs from PRD inputs.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "architecture-patterns"
+      ],
+      "group": "后端架构",
+      "group_en": "Backend Architecture",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "为 agent 提供系统边界、数据流、集成模式和扩展性决策指南。",
+      "description_en": "Gives agents guidance on system boundaries, data flow, integration patterns, and scalability decisions.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "code-generation"
+      ],
+      "group": "TDD 实现规范",
+      "group_en": "TDD Implementation Guidelines",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "指导 agent 按现有模式写出最少代码，避免过度实现并保持测试通过。",
+      "description_en": "Guides agents to write minimal, convention-aligned code that keeps tests passing without overengineering.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "code-review-patterns"
+      ],
+      "group": "代码审查模式",
+      "group_en": "Code Review Patterns",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "用安全、质量、性能、可维护性维度审查代码并生成置信度门禁。",
+      "description_en": "Review code across security, quality, performance, and maintainability with confidence-gated findings.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "debugging-patterns"
+      ],
+      "group": "调试诊断模式",
+      "group_en": "Debugging Diagnosis Patterns",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "用日志优先、git 关联和模式匹配框架定位根因并评分。",
+      "description_en": "Diagnose root causes with log-first investigation, git correlation, and pattern matching.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "planning-patterns",
+        "session-memory"
+      ],
+      "group": "CC10x 计划与记忆闭环",
+      "group_en": "CC10x Planning and Memory Loop",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": true,
+      "description": "帮 agent 调研方案、制定分阶段计划、评估风险与验收标准，并衔接构建执行。",
+      "description_en": "Helps the agent research options, create phased plans, assess risks and acceptance criteria, and hand off smoothly to build execution.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "test-driven-development",
+        "verification-before-completion"
+      ],
+      "group": "CC10X 构建验证工作流",
+      "group_en": "CC10X Build Verification Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": true,
+      "description": "强制先写失败测试，再最小实现并通过测试，最后重构。",
+      "description_en": "Enforces a strict test-first RED-GREEN-REFACTOR cycle with mandatory evidence.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "audit-trail",
+        "context-management"
+      ],
+      "group": "CCPM 规格驱动开发流水线",
+      "group_en": "CCPM Spec-Driven Development Pipeline",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": true,
+      "description": "追踪 PRD 到提交，验证用户故事、任务和 GitHub Issue 覆盖。",
+      "description_en": "Load and isolate project context while preserving state across CCPM phases and sessions.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "epic-generation",
+        "github-sync"
+      ],
+      "group": "CCPM 工程计划到 GitHub 同步工作流",
+      "group_en": "CCPM Epic-to-GitHub Sync Workflow",
+      "category": "product-management",
+      "subcategory": "3-6",
+      "chain": true,
+      "description": "把 Epic 与任务双向同步到 GitHub Issues，维护标签、关系、进度和状态映射。",
+      "description_en": "Syncs Epics and tasks bidirectionally with GitHub Issues, including labels, relationships, progress, and status mapping.",
+      "sources": [
+        "a5c-ai/babysitter"
+      ]
+    },
+    {
+      "skills": [
+        "analytics"
+      ],
+      "group": "ktx 语义层数据分析",
+      "group_en": "ktx semantic-layer analytics",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 Agent 发现 ktx 数据源，并用语义层或 SQL 准确分析查询。",
+      "description_en": "Helps agents discover ktx-connected data sources and analyze them accurately through the semantic layer or SQL.",
+      "sources": [
+        "Kaelio/ktx"
+      ]
+    },
+    {
+      "skills": [
+        "dbt_ingest"
+      ],
+      "group": "dbt 元数据入 ktx 语义层",
+      "group_en": "dbt metadata ingestion into ktx",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "把 dbt YAML 模型与来源映射为 ktx 语义层覆盖和列说明。",
+      "description_en": "Maps dbt YAML models and sources into ktx semantic-layer overlays and column notes.",
+      "sources": [
+        "Kaelio/ktx"
+      ]
+    },
+    {
+      "skills": [
+        "historic_sql_patterns",
+        "historic_sql_table_digest"
+      ],
+      "group": "historic-SQL 记忆构建工作流",
+      "group_en": "Historic SQL Memory-Building Workflow",
+      "category": "agent-architecture",
+      "subcategory": "12-3",
+      "chain": true,
+      "description": "读取 historic-SQL patterns 分片，识别跨表重复分析意图，验证 join 标识符后输出结构化 pattern 证据。",
+      "description_en": "Reads a historic-SQL table-usage shard, summarizes how the table is used, and emits table_usage evidence for context projection.",
+      "sources": [
+        "Kaelio/ktx"
+      ]
+    },
+    {
+      "skills": [
+        "ingest_triage"
+      ],
+      "group": "Agent 记忆写入冲突处理",
+      "group_en": "Agent Memory Write Conflict Handling",
+      "category": "agent-architecture",
+      "subcategory": "12-3",
+      "chain": false,
+      "description": "在写入前识别并解决上下文包冲突，维护记忆一致性。",
+      "description_en": "Resolves bundle-ingest conflicts before writes to keep agent memory consistent.",
+      "sources": [
+        "Kaelio/ktx"
+      ]
+    },
+    {
+      "skills": [
+        "live_database_ingest"
+      ],
+      "group": "数据库 schema 语义层导入",
+      "group_en": "Database Schema Semantic-Layer Ingestion",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "从数据库结构快照创建语义层来源，并生成 wiki 更新。",
+      "description_en": "Creates semantic-layer sources and wiki updates from live database schema snapshots.",
+      "sources": [
+        "Kaelio/ktx"
+      ]
+    },
+    {
+      "skills": [
+        "looker_ingest",
+        "lookml_ingest"
+      ],
+      "group": "Looker 语义层摄入",
+      "group_en": "Looker semantic-layer ingestion",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "把 LookML 视图、模型和 Explore 映射为 ktx 语义层来源与连接图。",
+      "description_en": "Extracts metrics, segments, and semantics from Looker runtime JSON into reusable context knowledge.",
+      "sources": [
+        "Kaelio/ktx"
+      ]
+    },
+    {
+      "skills": [
+        "metabase_ingest",
+        "metricflow_ingest"
+      ],
+      "group": "KTX 语义层导入",
+      "group_en": "KTX semantic layer ingestion",
+      "category": "agent-architecture",
+      "subcategory": "12-3",
+      "chain": false,
+      "description": "将 Metabase 问题、模型和指标转换为 ktx 语义层定义，辅助 agent 理解查询上下文。",
+      "description_en": "Convert Metabase questions, models, and metrics into ktx semantic layer definitions so agents understand query context.",
+      "sources": [
+        "Kaelio/ktx"
+      ]
+    },
+    {
+      "skills": [
+        "notion_synthesize",
+        "sl"
+      ],
+      "group": "Notion 上下文入库到语义层查询",
+      "group_en": "From Notion context ingestion to semantic-layer querying",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": true,
+      "description": "读取并查询公司语义层 YAML，帮助 agent 准确使用业务指标。",
+      "description_en": "Reads and queries company semantic-layer YAML so agents can use business metrics accurately.",
+      "sources": [
+        "Kaelio/ktx"
+      ]
+    },
+    {
+      "skills": [
+        "sl_capture",
+        "wiki_capture"
+      ],
+      "group": "KTX 回合后记忆捕获工作流",
+      "group_en": "KTX post-turn memory capture workflow",
+      "category": "agent-architecture",
+      "subcategory": "12-3",
+      "chain": true,
+      "description": "帮助记忆代理捕获可复用指标、维度、连接模式，并写入 ktx 语义层。",
+      "description_en": "Helps the memory agent preserve business definitions, filters, and organizational conventions in a wiki knowledge base.",
+      "sources": [
+        "Kaelio/ktx"
+      ]
+    },
+    {
+      "skills": [
+        "ktx"
+      ],
+      "group": "ktx 数据 Agent 上下文层配置",
+      "group_en": "ktx Data Agent Context Layer Setup",
+      "category": "agent-architecture",
+      "subcategory": "12-3",
+      "chain": false,
+      "description": "帮助 agent 非交互安装和配置 ktx，连接数据源、初始化上下文、嵌入与集成并验证可用性。",
+      "description_en": "Helps an agent install and configure ktx non-interactively, connect data sources, initialize context and embeddings, wire integrations, and verify readiness.",
+      "sources": [
+        "Kaelio/ktx"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "0x0funky",
+        "repo": "agent-sprite-forge",
+        "full_name": "0x0funky/agent-sprite-forge",
+        "url": "https://github.com/0x0funky/agent-sprite-forge",
+        "stars": 2861,
+        "pushed_at": "2026-05-05",
+        "default_branch": "main",
+        "github_description": "Agent Skill for generating 2D sprite sheets and map, transparent PNG frames, and animated GIFs from prompts.",
+        "topics": [
+          "agent-skills",
+          "codex",
+          "pixel-art",
+          "sprite-generator"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "generate2dmap",
+          "path": "skills/generate2dmap/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "2D 游戏地图资产生成",
+          "group_en": "2D Game Map Asset Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "规划并生成 RPG、战术或横版场景地图、碰撞区与导出目标。",
+          "description_en": "Plans and generates RPG, tactical, or side-scrolling game maps with collision zones and export targets.",
+          "what": "生成可集成到游戏引擎的 2D 地图资产。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "generate2dsprite",
+          "path": "skills/generate2dsprite/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "动画 sprite 生成",
+          "group_en": "Animated Sprite Generation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "从自然语言生成 2D 游戏精灵、动作帧与透明 GIF 导出。",
+          "description_en": "Generates 2D game sprites, animation frames, and transparent GIF exports from natural-language prompts.",
+          "what": "生成角色、道具、特效等 2D 游戏精灵与动画帧。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "wondelai",
+        "repo": "skills",
+        "full_name": "wondelai/skills",
+        "url": "https://github.com/wondelai/skills",
+        "stars": 1397,
+        "pushed_at": "2026-06-17",
+        "default_branch": "main",
+        "github_description": "Agent skills for Claude Code and other agentskills.io-compatible agents. See https://developertoolkit.ai for more information about skills in general.",
+        "topics": [
+          "agent-skills",
+          "ai-skills",
+          "claude-code",
+          "claude-code-marketplace",
+          "claude-code-plugin",
+          "claude-code-skills",
+          "claude-plugins",
+          "claude-skills",
+          "skill-md",
+          "skillsmp"
+        ],
+        "language": "Shell",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "37signals-way",
+          "path": "37signals-way/SKILL.md",
+          "subcategory": "3-4",
+          "subcategory_title": "3.4 战略 / 定位 / 商业模式",
+          "category": "product-management",
+          "group": "37signals 产品开发框架",
+          "group_en": "37signals Product Development Framework",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 按 37signals 方法塑造产品、收敛范围并规划六周周期。",
+          "description_en": "Helps agents shape products, cut scope, and plan six-week cycles using the 37signals philosophy.",
+          "what": "37signals 产品开发与范围收敛框架",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "blue-ocean-strategy",
+          "path": "blue-ocean-strategy/SKILL.md",
+          "subcategory": "3-4",
+          "subcategory_title": "3.4 战略 / 定位 / 商业模式",
+          "category": "product-management",
+          "group": "Canvas 全套 / 战略编排 workflow",
+          "group_en": "Canvas Suite / Strategy Orchestration Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 用蓝海战略、战略画布和 ERRC 寻找非竞争市场。",
+          "description_en": "Helps agents identify uncontested market space using Blue Ocean Strategy, strategy canvas, and ERRC.",
+          "what": "蓝海战略与价值创新分析框架",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "clean-architecture",
+          "path": "clean-architecture/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "Clean Architecture 架构设计",
+          "group_en": "Clean Architecture Design",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按依赖规则、端口适配和分层边界设计可维护软件架构。",
+          "description_en": "Helps the agent design maintainable software architecture using dependency rules, ports and adapters, and clear layer boundaries.",
+          "what": "Apply Clean Architecture principles to structure code around business rules and framework independence.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "clean-code",
+          "path": "clean-code/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Clean Code 代码质量",
+          "group_en": "Clean Code Quality",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 改进命名、函数边界、错误处理和可读性，提升代码可维护性。",
+          "description_en": "Helps the agent improve naming, function boundaries, error handling, and readability to raise code maintainability.",
+          "what": "Apply Clean Code practices to write, review, and refactor readable and maintainable code.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cold-start-problem",
+          "path": "cold-start-problem/SKILL.md",
+          "subcategory": "3-5",
+          "subcategory_title": "3.5 GTM / 进入策略 / 增长 loop",
+          "category": "product-management",
+          "group": "网络效应冷启动与增长",
+          "group_en": "Network Effects Cold Start & Growth",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用网络效应框架规划市场、社交或协作产品的冷启动、增长阶段与扩张节奏。",
+          "description_en": "Helps agents plan cold starts, growth stages, and expansion sequencing for networked products using Andrew Chen’s framework.",
+          "what": "Applies The Cold Start Problem framework to networked products.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "contagious",
+          "path": "contagious/SKILL.md",
+          "subcategory": "4-7",
+          "subcategory_title": "4.7 病毒式传播 / Hook / 创意",
+          "category": "marketing-growth",
+          "group": "口碑传播与病毒机制",
+          "group_en": "Word-of-Mouth & Viral Mechanics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 STEPPS 框架设计口碑传播、分享机制和病毒式增长活动。",
+          "description_en": "Helps agents design shareability, word-of-mouth loops, and viral campaigns using Berger’s STEPPS framework.",
+          "what": "Uses the STEPPS framework to engineer shareability and virality.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "continuous-discovery",
+          "path": "continuous-discovery/SKILL.md",
+          "subcategory": "3-3",
+          "subcategory_title": "3.3 产品发现 / 实验",
+          "category": "product-management",
+          "group": "持续发现节奏 / 机会方案树",
+          "group_en": "Continuous Discovery Cadence / Opportunity Solution Trees",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 建立每周客户触达、机会方案树和假设验证节奏。",
+          "description_en": "Helps an agent set up weekly customer touchpoints, opportunity mapping, and assumption validation.",
+          "what": "A weekly cadence for customer discovery using opportunity solution trees and assumption testing.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cro-methodology",
+          "path": "cro-methodology/SKILL.md",
+          "subcategory": "4-5",
+          "subcategory_title": "4.5 CRO / 转化优化",
+          "category": "marketing-growth",
+          "group": "CRO / 转化优化",
+          "group_en": "CRO / Conversion Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 审计落地页漏斗、定位转化阻力并设计 A/B 测试。",
+          "description_en": "Helps an agent audit landing-page funnels, pinpoint conversion friction, and design A/B tests.",
+          "what": "Audits funnels and landing pages to identify conversion friction and test evidence-based fixes.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "crossing-the-chasm",
+          "path": "crossing-the-chasm/SKILL.md",
+          "subcategory": "3-5",
+          "subcategory_title": "3.5 GTM / 进入策略 / 增长 loop",
+          "category": "product-management",
+          "group": "技术产品跨越鸿沟 GTM",
+          "group_en": "Crossing the Chasm GTM",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用技术采用生命周期、滩头市场和完整产品策略规划主流化 GTM。",
+          "description_en": "Helps agents plan mainstream GTM using adoption lifecycle, beachhead segments, and whole-product strategy.",
+          "what": "提供 Crossing the Chasm 决策框架，判断产品是否准备好进入主流市场。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ddia-systems",
+          "path": "ddia-systems/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "数据密集型系统架构",
+          "group_en": "Data-Intensive Systems Architecture",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在数据库选型、复制分区、事务一致性和容错间做架构取舍。",
+          "description_en": "Helps agents make architecture trade-offs across database choice, replication, partitioning, consistency, and resilience.",
+          "what": "提供 DDIA 原则，用于评估数据架构的可扩展性、一致性与可靠性。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "design-everyday-things",
+          "path": "design-everyday-things/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "日常用品设计原则 / UX 可用性诊断",
+          "group_en": "Design of Everyday Things / UX Usability Diagnosis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用可发现性、心智模型、反馈等原则诊断混淆点并改进交互。",
+          "description_en": "Diagnoses confusing interactions and improves UX using discoverability, mental models, and feedback principles.",
+          "what": "Applies foundational human-centered design principles to evaluate and improve product usability.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "design-sprint",
+          "path": "design-sprint/SKILL.md",
+          "subcategory": "3-3",
+          "subcategory_title": "3.3 产品发现 / 实验",
+          "category": "product-management",
+          "group": "设计冲刺 / 快速验证",
+          "group_en": "Design Sprint / Rapid Validation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "组织 5 天设计冲刺，通过原型和用户测试快速验证产品想法。",
+          "description_en": "Runs a 5-day design sprint to prototype ideas and validate them with real users quickly.",
+          "what": "Guides agents through a structured design sprint workflow for fast product validation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "domain-driven-design",
+          "path": "domain-driven-design/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "领域识别与服务架构分组 / 后端架构 / 微服务设计 / 微服务拆分与 DDD 边界分析",
+          "group_en": "Domain Modeling & Service Architecture / Backend Architecture / Microservice Design / DDD Boundaries",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 围绕业务领域进行软件建模，使用限界上下文、聚合、通用语言和上下文映射定义服务边界。",
+          "description_en": "Helps an agent model software around the business domain using bounded contexts, aggregates, ubiquitous language, and context maps to define service boundaries.",
+          "what": "A DDD framework for business-aligned software modeling and service boundaries.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "drive-motivation",
+          "path": "drive-motivation/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "动机系统设计 / AMP 激励与游戏化",
+          "group_en": "Motivation System Design / AMP Incentives & Gamification",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用自主、专精、使命感设计产品或团队激励系统，改进游戏化、入职进度和参与度机制。",
+          "description_en": "Helps an agent design product or team motivation systems around autonomy, mastery, and purpose, improving gamification, onboarding, and engagement loops.",
+          "what": "An AMP-based framework for motivation systems, incentives, and gamification.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "good-strategy-bad-strategy",
+          "path": "good-strategy-bad-strategy/SKILL.md",
+          "subcategory": "3-4",
+          "subcategory_title": "3.4 战略 / 定位 / 商业模式",
+          "category": "product-management",
+          "group": "战略内核 / 好战略坏战略",
+          "group_en": "Strategy Kernel / Good Strategy Bad Strategy",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 用战略内核诊断并改写战略文档，识别空泛目标并提炼行动。",
+          "description_en": "Helps an agent diagnose and rewrite strategy using Rumelt's kernel, spotting fluff and extracting coherent action.",
+          "what": "A strategy-auditing skill that turns goal lists into diagnosis, guiding policy, and actions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "high-output-management",
+          "path": "high-output-management/SKILL.md",
+          "subcategory": "3-9",
+          "subcategory_title": "3.9 OKR / Sprint / Retro / Stakeholder",
+          "category": "product-management",
+          "group": "高产出管理 / 经理杠杆",
+          "group_en": "High-output management / managerial leverage",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 用高产出管理框架设计管理节奏、授权、指标和 OKR。",
+          "description_en": "Helps an agent apply High Output Management to manager cadence, delegation, metrics, and OKRs.",
+          "what": "A management operating skill for increasing organizational output through leverage, meetings, and decisions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "high-perf-browser",
+          "path": "high-perf-browser/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Web 性能优化 / 浏览器网络诊断",
+          "group_en": "Web Performance Optimization & Browser Networking Diagnostics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 从网络协议、缓存、渲染路径和加载策略诊断并优化页面性能。",
+          "description_en": "Helps agents diagnose and optimize page performance through network protocols, caching, rendering paths, and loading strategies.",
+          "what": "系统性优化 Core Web Vitals 与页面加载性能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hooked-ux",
+          "path": "hooked-ux/SKILL.md",
+          "subcategory": "3-3",
+          "subcategory_title": "3.3 产品发现 / 实验",
+          "category": "product-management",
+          "group": "Hook 模型 / 习惯养成产品循环",
+          "group_en": "Hook Model & Habit-Forming Product Loops",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 Hook Model 设计触发、行动、奖励与投入循环，提升留存。",
+          "description_en": "Helps agents design trigger-action-reward-investment loops that strengthen retention and habit formation.",
+          "what": "评估并设计 habit-forming 产品参与机制。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hundred-million-offers",
+          "path": "hundred-million-offers/SKILL.md",
+          "subcategory": "4-10",
+          "subcategory_title": "4.10 定价 / 商业模型",
+          "category": "marketing-growth",
+          "group": "定价与报价策略",
+          "group_en": "Pricing & Offer Strategy",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 基于价值方程、保证与稀缺性设计高转化报价与定价包装。",
+          "description_en": "Helps agents craft irresistible offers using value equations, bonuses, guarantees, scarcity, and pricing logic.",
+          "what": "Creates high-converting offer structures for pricing, packaging, bonuses, guarantees, and scarcity.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "improve-retention",
+          "path": "improve-retention/SKILL.md",
+          "subcategory": "4-9",
+          "subcategory_title": "4.9 销售辅助 / RevOps / 留存",
+          "category": "marketing-growth",
+          "group": "留存诊断与激活优化",
+          "group_en": "Retention Diagnosis & Activation Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用行为设计诊断留存流失、激活障碍并设计降低摩擦的改进方案。",
+          "description_en": "Helps agents diagnose churn and activation friction using behavior design and retention metrics.",
+          "what": "Diagnoses retention problems and proposes activation improvements based on behavior design.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "influence-psychology",
+          "path": "influence-psychology/SKILL.md",
+          "subcategory": "4-2",
+          "subcategory_title": "4.2 文案 / 营销心理 / 产品命名",
+          "category": "marketing-growth",
+          "group": "影响力心理学 / 说服原则",
+          "group_en": "Influence Psychology / Persuasion Principles",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用六大说服原则审视文案、销售页和产品信任机制。",
+          "description_en": "Helps the agent apply six persuasion principles to review copy, sales pages, and trust signals ethically.",
+          "what": "Ethically apply reciprocity, commitment, social proof, authority, liking, and scarcity to product, copy, and sales decisions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "inspired-product",
+          "path": "inspired-product/SKILL.md",
+          "subcategory": "3-3",
+          "subcategory_title": "3.3 产品发现 / 实验",
+          "category": "product-management",
+          "group": "产品发现与交付双轨",
+          "group_en": "Discovery and Delivery Dual Track",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按发现-交付双轨制评估产品团队、路线图和交付方式。",
+          "description_en": "Helps the agent evaluate product teams, roadmaps, and delivery models using a discovery-and-delivery dual-track lens.",
+          "what": "Guide product teams away from feature-factory habits toward empowered discovery and continuous value delivery.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ios-hig-design",
+          "path": "ios-hig-design/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "iOS HIG 界面规范",
+          "group_en": "iOS HIG Interface Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按 Apple HIG 设计 iOS/iPadOS 界面，覆盖导航、无障碍、符号和平台惯例。",
+          "description_en": "Helps an agent design iOS/iPadOS interfaces according to Apple’s Human Interface Guidelines, covering navigation, accessibility, symbols, and platform conventions.",
+          "what": "按 Apple HIG 指导原生 iOS 界面设计。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "jobs-to-be-done",
+          "path": "jobs-to-be-done/SKILL.md",
+          "subcategory": "3-1",
+          "subcategory_title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "category": "product-management",
+          "group": "JTBD（Jobs-to-be-Done）",
+          "group_en": "Jobs-to-be-Done Discovery",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 用 JTBD 访谈、竞争替代和切换动机识别客户真实需求。",
+          "description_en": "Helps an agent uncover real customer needs through JTBD interviews, competitive alternatives, and switching-motivation analysis.",
+          "what": "用 JTBD 框架发现客户真实需求。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Dean/Pawel · 组「JTBD（Jobs-to-be-Done）」"
+        },
+        {
+          "name": "lean-analytics",
+          "path": "lean-analytics/SKILL.md",
+          "subcategory": "3-8",
+          "subcategory_title": "3.8 SaaS 健康 / 财务指标 / 单位经济",
+          "category": "product-management",
+          "group": "Startup 指标 / OMTM 审计",
+          "group_en": "Startup Metrics & OMTM Audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助选择、审计创业指标，识别虚荣指标并设定北极星或 OMTM。",
+          "description_en": "Helps agents choose and audit startup metrics, spot vanity metrics, and set a North Star or OMTM.",
+          "what": "Uses Lean Analytics to choose and audit startup metrics.",
+          "chain": true,
+          "chain_group": "精益创业实验与指标闭环",
+          "chain_group_en": "Lean Startup Experiment & Metrics Loop"
+        },
+        {
+          "name": "lean-startup",
+          "path": "lean-startup/SKILL.md",
+          "subcategory": "3-3",
+          "subcategory_title": "3.3 产品发现 / 实验",
+          "category": "product-management",
+          "group": "Lean Startup MVP 实验",
+          "group_en": "Lean Startup MVP Experiments",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助设计 MVP、验证学习实验，并支持坚持或转向决策。",
+          "description_en": "Helps agents design MVPs, run validated-learning experiments, and decide whether to persevere or pivot.",
+          "what": "Applies Lean Startup principles to MVP experiments and pivot decisions.",
+          "chain": true,
+          "chain_group": "精益创业实验与指标闭环",
+          "chain_group_en": "Lean Startup Experiment & Metrics Loop"
+        },
+        {
+          "name": "lean-ux",
+          "path": "lean-ux/SKILL.md",
+          "subcategory": "3-3",
+          "subcategory_title": "3.3 产品发现 / 实验",
+          "category": "product-management",
+          "group": "Lean UX / Discovery 编排",
+          "group_en": "Lean UX / Discovery Orchestration",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 用假设驱动、协作共创和快速实验推进 UX 决策。",
+          "description_en": "Helps agents guide Lean UX through hypothesis-driven collaboration and rapid experiments.",
+          "what": "A Lean UX framework skill for hypothesis-driven product and design discovery.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "made-to-stick",
+          "path": "made-to-stick/SKILL.md",
+          "subcategory": "4-2",
+          "subcategory_title": "4.2 文案 / 营销心理 / 产品命名",
+          "category": "marketing-growth",
+          "group": "SUCCESs 记忆化文案框架",
+          "group_en": "SUCCESs Sticky Messaging Framework",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 SUCCESs 原则改写信息，使其更清晰、难忘并促进行动。",
+          "description_en": "Helps agents reshape messages with the SUCCESs framework so they are clearer, memorable, and action-oriented.",
+          "what": "A messaging framework skill that applies SUCCESs to make ideas stick.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "microinteractions",
+          "path": "microinteractions/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "微交互设计框架",
+          "group_en": "Microinteraction Design Framework",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计按钮、表单、加载态等 UI 细节的触发、规则、反馈与循环。",
+          "description_en": "Helps agents design tiny UI moments—triggers, rules, feedback, and loops—for buttons, forms, loading states, and other interface details.",
+          "what": "Designs polished microinteractions for product UI moments.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "mom-test",
+          "path": "mom-test/SKILL.md",
+          "subcategory": "3-1",
+          "subcategory_title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "category": "product-management",
+          "group": "Mom Test 客户访谈",
+          "group_en": "Mom Test Customer Interviews",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 Mom Test 规则设计客户访谈，避免诱导并提取真实需求信号。",
+          "description_en": "Helps agents run Mom Test-style customer interviews that avoid leading questions and extract real demand signals.",
+          "what": "Guides non-leading customer discovery interviews.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "a5c-ai",
+        "repo": "babysitter",
+        "full_name": "a5c-ai/babysitter",
+        "url": "https://github.com/a5c-ai/babysitter",
+        "stars": 1364,
+        "pushed_at": "2026-06-18",
+        "default_branch": "main",
+        "github_description": "Babysitter enforces obedience on agentic workforces and enables them to manage extremely complex tasks and workflows through deterministic, hallucination-free self-orchestration",
+        "topics": [
+          "agent-orchestration",
+          "agent-skills",
+          "agentic-ai",
+          "agentic-workflow",
+          "ai-agents",
+          "ai-automation",
+          "babysitter",
+          "claude-code",
+          "claude-code-skills",
+          "claude-code-workflows",
+          "claude-skills",
+          "claude-workflows",
+          "codex-plugin",
+          "codex-skills",
+          "codex-workflow",
+          "hermes-plugin",
+          "pi-extension",
+          "trustworthy-ai",
+          "vibe-coding"
+        ],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "process-builder",
+          "path": ".claude/skills/process-builder/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Babysitter 流程定义创建",
+          "group_en": "Babysitter Process Definition Creation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Agent 按 Babysitter SDK 结构创建流程定义，完成研究与实现。",
+          "description_en": "Guides an agent to create Babysitter process definitions using the SDK structure, from research to implementation.",
+          "what": "用于创建 Babysitter 框架中的新流程定义。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "agent-dispatch",
+          "path": "library/methodologies/automaker/skills/agent-dispatch/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "依赖感知 Agent 调度",
+          "group_en": "Dependency-Aware Agent Dispatch",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 根据依赖构建并行执行批次与调度队列。",
+          "description_en": "Builds dependency-aware batches and dispatch queues for parallel agent execution.",
+          "what": "用于为并行 Agent 执行生成依赖感知的批处理调度队列。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "code-review-gate",
+          "path": "library/methodologies/automaker/skills/code-review-gate/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "代码质量门禁审查",
+          "group_en": "Code Quality Gate Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审查变更代码并给出质量评分、问题清单与通过/驳回门禁结论。",
+          "description_en": "Reviews code changes, scores quality, flags issues, and enforces an approval threshold.",
+          "what": "用于 agent 代码审查门禁，自动评分并执行阈值审批。",
+          "chain": true,
+          "chain_group": "Automaker 功能交付流水线",
+          "chain_group_en": "Automaker Feature Delivery Pipeline"
+        },
+        {
+          "name": "feature-intake",
+          "path": "library/methodologies/automaker/skills/feature-intake/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "功能需求结构化",
+          "group_en": "Feature Intake Structuring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把功能描述和截图解析为结构化需求、复杂度与验收标准。",
+          "description_en": "Turns feature descriptions and screenshots into structured requirements, complexity estimates, and acceptance criteria.",
+          "what": "用于将需求输入整理成可执行的功能规格。",
+          "chain": true,
+          "chain_group": "Automaker 功能交付流水线",
+          "chain_group_en": "Automaker Feature Delivery Pipeline"
+        },
+        {
+          "name": "kanban-management",
+          "path": "library/methodologies/automaker/skills/kanban-management/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Kanban 看板管理",
+          "group_en": "Kanban Board Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "初始化 Kanban 看板，跟踪特性卡片优先级、WIP 限制和流转状态。",
+          "description_en": "Initialize a Kanban board to track feature priority, WIP limits, and card movement.",
+          "what": "用于 Automaker 工作流中管理特性开发看板。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "streaming-progress",
+          "path": "library/methodologies/automaker/skills/streaming-progress/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Agent 进度流",
+          "group_en": "Agent Progress Streaming",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把执行阶段事件格式化为实时进度流，供界面展示和机器消费。",
+          "description_en": "Format execution-stage events into real-time progress streams for UI display and machine consumption.",
+          "what": "用于 Automaker 工作流中输出实时进度事件。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "test-automation",
+          "path": "library/methodologies/automaker/skills/test-automation/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "测试自动化与失败分析",
+          "group_en": "Test Automation and Failure Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "运行 Vitest/Playwright，汇总结果、覆盖率并分析失败根因。",
+          "description_en": "Runs Vitest/Playwright suites, summarizes results and coverage, and analyzes failure root causes.",
+          "what": "执行 Vitest/Playwright 测试并分析失败。",
+          "chain": true,
+          "chain_group": "Automaker 隔离开发与测试工作流",
+          "chain_group_en": "Automaker isolated development and testing workflow"
+        },
+        {
+          "name": "worktree-isolation",
+          "path": "library/methodologies/automaker/skills/worktree-isolation/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "group_en": "Git Workflow",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "管理 git worktree 生命周期，为并行开发创建隔离分支环境。",
+          "description_en": "Manages git worktree lifecycle to create isolated branch environments for parallel development.",
+          "what": "创建并维护隔离的 git worktree 开发环境。",
+          "chain": true,
+          "chain_group": "Automaker 隔离开发与测试工作流",
+          "chain_group_en": "Automaker isolated development and testing workflow"
+        },
+        {
+          "name": "architecture-design",
+          "path": "library/methodologies/bmad-method/skills/architecture-design/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "架构设计与 ADR",
+          "group_en": "Architecture Design & ADRs",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据 PRD 和复杂度生成系统架构、技术选型、数据模型、API 合同和 ADR。",
+          "description_en": "Generate system architecture, tech stack rationale, data models, API contracts, ADRs, and readiness assessment from a PRD.",
+          "what": "帮 agent 根据 PRD 和复杂度产出系统架构、技术栈、数据模型、API 合同与 ADR。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "code-review",
+          "path": "library/methodologies/bmad-method/skills/code-review/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "多维代码审查",
+          "group_en": "Multidimensional Code Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从正确性、安全、性能、可维护性和测试覆盖五维审查代码并给出改进项。",
+          "description_en": "Review code across correctness, security, performance, maintainability, and test coverage, then provide actionable fixes.",
+          "what": "对实现结果进行五维审查，输出评分、发现、技术债和行动项。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "prd-creation",
+          "path": "library/methodologies/bmad-method/skills/prd-creation/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "PRD 创建与验证",
+          "group_en": "PRD Creation and Validation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 JTBD 和优先级框架生成 PRD、验收标准与 MVP 范围。",
+          "description_en": "Generate a PRD with acceptance criteria, prioritization, and MVP scope using JTBD and prioritization frameworks.",
+          "what": "Creates product requirements documents from discovery inputs and validates completeness.",
+          "chain": true,
+          "chain_group": "BMAD 产品定义工作流",
+          "chain_group_en": "BMAD Product Definition Workflow"
+        },
+        {
+          "name": "product-brief-creation",
+          "path": "library/methodologies/bmad-method/skills/product-brief-creation/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "产品 Brief 创建",
+          "group_en": "Product Brief Creation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于市场、领域和技术调研生成产品 brief、指标与范围边界。",
+          "description_en": "Synthesize market, domain, and technical research into a product brief with metrics and scope boundaries.",
+          "what": "Produces structured product briefs from research findings for downstream planning.",
+          "chain": true,
+          "chain_group": "BMAD 产品定义工作流",
+          "chain_group_en": "BMAD Product Definition Workflow"
+        },
+        {
+          "name": "project-documentation",
+          "path": "library/methodologies/bmad-method/skills/project-documentation/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "项目文档生成",
+          "group_en": "Project Documentation Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "扫描源码树并生成项目概览、组件深潜文档与 Mermaid 架构图。",
+          "description_en": "Analyzes a source tree and produces onboarding docs, component deep dives, and Mermaid architecture diagrams.",
+          "what": "帮助 agent 为代码库建立可导航的项目文档与架构视图。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "qa-testing",
+          "path": "library/methodologies/bmad-method/skills/qa-testing/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "API/E2E 测试与质量门禁",
+          "group_en": "API/E2E Testing and Quality Gates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成并执行 API/E2E 测试，汇总覆盖率与质量门禁结论。",
+          "description_en": "Generates and runs API and E2E tests, then reports coverage and quality-gate status.",
+          "what": "帮助 agent 验证实现并为发布决策提供测试依据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "quick-flow",
+          "path": "library/methodologies/bmad-method/skills/quick-flow/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "轻量 SDD 框架",
+          "group_en": "Lightweight SDD Framework",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 快速生成规格、分故事实现并做代码评审。",
+          "description_en": "Helps an agent turn requirements into specs, implement stories, and review quality.",
+          "what": "Lean solo-developer workflow from quick spec to tested implementation and review.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sprint-planning",
+          "path": "library/methodologies/bmad-method/skills/sprint-planning/SKILL.md",
+          "subcategory": "3-9",
+          "subcategory_title": "3.9 OKR / Sprint / Retro / Stakeholder",
+          "category": "product-management",
+          "group": "Sprint 计划工作流",
+          "group_en": "Sprint Planning Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 根据史诗、速度和依赖制定可执行冲刺计划。",
+          "description_en": "Helps an agent plan sprint goals, select stories, order work, and flag blockers.",
+          "what": "Sprint planning workflow for selecting stories, defining goals, and ordering execution.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-development",
+          "path": "library/methodologies/bmad-method/skills/story-development/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "TDD（多家同名版本）",
+          "group_en": "TDD Implementations",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "把用户故事按 TDD 转为失败测试、最小实现、重构和验收验证。",
+          "description_en": "Turns user stories into TDD cycles with failing tests, minimal implementation, refactoring, and acceptance verification.",
+          "what": "Implement each user story with acceptance criteria using test-driven development.",
+          "chain": true,
+          "chain_group": "BMAD 产品交付工作流",
+          "chain_group_en": "BMAD Product Delivery Workflow"
+        },
+        {
+          "name": "ux-design",
+          "path": "library/methodologies/bmad-method/skills/ux-design/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "UX 设计与工程交接",
+          "group_en": "UX Design and Engineering Handoff",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于 PRD 与人物画像生成用户流程、线框图、设计系统和交接规范。",
+          "description_en": "Creates user flows, wireframes, design-system foundations, accessibility notes, and engineering handoff specs from PRD inputs.",
+          "what": "Design the UX foundation for a product from PRD personas and complexity.",
+          "chain": true,
+          "chain_group": "BMAD 产品交付工作流",
+          "chain_group_en": "BMAD Product Delivery Workflow"
+        },
+        {
+          "name": "architecture-patterns",
+          "path": "library/methodologies/cc10x/skills/architecture-patterns/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "后端架构",
+          "group_en": "Backend Architecture",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供系统边界、数据流、集成模式和扩展性决策指南。",
+          "description_en": "Gives agents guidance on system boundaries, data flow, integration patterns, and scalability decisions.",
+          "what": "系统架构与 API 设计决策指南。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "wshobson · 组「后端架构 / 微服务设计」"
+        },
+        {
+          "name": "code-generation",
+          "path": "library/methodologies/cc10x/skills/code-generation/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "TDD 实现规范",
+          "group_en": "TDD Implementation Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 按现有模式写出最少代码，避免过度实现并保持测试通过。",
+          "description_en": "Guides agents to write minimal, convention-aligned code that keeps tests passing without overengineering.",
+          "what": "TDD 实现阶段的极简代码生成规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "code-review-patterns",
+          "path": "library/methodologies/cc10x/skills/code-review-patterns/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "代码审查模式",
+          "group_en": "Code Review Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用安全、质量、性能、可维护性维度审查代码并生成置信度门禁。",
+          "description_en": "Review code across security, quality, performance, and maintainability with confidence-gated findings.",
+          "what": "为 agent 提供结构化代码审查清单、置信度门槛和 Router Contract 输出。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "debugging-patterns",
+          "path": "library/methodologies/cc10x/skills/debugging-patterns/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "调试诊断模式",
+          "group_en": "Debugging Diagnosis Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用日志优先、git 关联和模式匹配框架定位根因并评分。",
+          "description_en": "Diagnose root causes with log-first investigation, git correlation, and pattern matching.",
+          "what": "指导 agent 在调试或构建失败时先收集证据，再判断根因置信度。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "planning-patterns",
+          "path": "library/methodologies/cc10x/skills/planning-patterns/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "结构化计划到构建衔接",
+          "group_en": "Structured Planning to Build",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 调研方案、制定分阶段计划、评估风险与验收标准，并衔接构建执行。",
+          "description_en": "Helps the agent research options, create phased plans, assess risks and acceptance criteria, and hand off smoothly to build execution.",
+          "what": "把调研、方案权衡、分阶段计划、风险和验收标准整理成可执行的构建前置计划。",
+          "chain": true,
+          "chain_group": "CC10x 计划与记忆闭环",
+          "chain_group_en": "CC10x Planning and Memory Loop"
+        },
+        {
+          "name": "session-memory",
+          "path": "library/methodologies/cc10x/skills/session-memory/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "Agent 记忆 / 工作笔记",
+          "group_en": "Agent Memory / Work Notes",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "用三份 Markdown 持久化上下文、模式和进度，帮助工作流跨重置保持一致。",
+          "description_en": "Persists context, patterns, and progress in three Markdown files so workflows stay consistent across Claude Code resets.",
+          "what": "在 Claude Code 会话重置前后读写三份 Markdown，保存上下文、模式和进度证据。",
+          "chain": true,
+          "chain_group": "CC10x 计划与记忆闭环",
+          "chain_group_en": "CC10x Planning and Memory Loop"
+        },
+        {
+          "name": "test-driven-development",
+          "path": "library/methodologies/cc10x/skills/test-driven-development/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "TDD（多家同名版本）",
+          "group_en": "Strict TDD Enforcement",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "强制先写失败测试，再最小实现并通过测试，最后重构。",
+          "description_en": "Enforces a strict test-first RED-GREEN-REFACTOR cycle with mandatory evidence.",
+          "what": "要求每个功能或修复都走 RED-GREEN-REFACTOR，并记录退出码证据。",
+          "chain": true,
+          "chain_group": "CC10X 构建验证工作流",
+          "chain_group_en": "CC10X Build Verification Workflow",
+          "dup_catalog": "superpowers/mattpocock/Pawel/addyosmani · 组「TDD（多家同名版本）」"
+        },
+        {
+          "name": "verification-before-completion",
+          "path": "library/methodologies/cc10x/skills/verification-before-completion/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "完工验证",
+          "group_en": "Completion Verification",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "要求完成声明必须由测试、日志或退出码等证据证明。",
+          "description_en": "Requires every completion claim to be backed by tests, logs, or exit codes.",
+          "what": "在任务收尾前核对测试输出、日志和退出码，作为完成依据。",
+          "chain": true,
+          "chain_group": "CC10X 构建验证工作流",
+          "chain_group_en": "CC10X Build Verification Workflow",
+          "dup_catalog": "superpowers · 组「完工验证」"
+        },
+        {
+          "name": "audit-trail",
+          "path": "library/methodologies/ccpm/skills/audit-trail/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "PRD-to-Commit 追踪审计",
+          "group_en": "PRD-to-Commit Traceability Audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "追踪 PRD 到提交，验证用户故事、任务和 GitHub Issue 覆盖。",
+          "description_en": "Trace work from PRD to commits and verify story, task, and GitHub issue coverage.",
+          "what": "为 agent 建立从需求到代码提交的审计链。",
+          "chain": true,
+          "chain_group": "CCPM 规格驱动开发流水线",
+          "chain_group_en": "CCPM Spec-Driven Development Pipeline"
+        },
+        {
+          "name": "context-management",
+          "path": "library/methodologies/ccpm/skills/context-management/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "CCPM 项目上下文管理",
+          "group_en": "CCPM Project Context Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "加载并隔离项目上下文，跨 CCPM 阶段和会话维护状态。",
+          "description_en": "Load and isolate project context while preserving state across CCPM phases and sessions.",
+          "what": "为 agent 提供阶段化上下文加载与会话恢复。",
+          "chain": true,
+          "chain_group": "CCPM 规格驱动开发流水线",
+          "chain_group_en": "CCPM Spec-Driven Development Pipeline"
+        },
+        {
+          "name": "epic-generation",
+          "path": "library/methodologies/ccpm/skills/epic-generation/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "PRD 转 Epic 工程 Handoff",
+          "group_en": "PRD-to-Epic Engineering Handoff",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把最终 PRD 转成包含 ADR、架构选择、依赖图和技术方案的 Epic 文档。",
+          "description_en": "Turns a finalized PRD into an Epic plan with ADRs, architecture choices, dependency mapping, and technical approach.",
+          "what": "将 PRD 转化为可执行的技术实施方案和依赖规划。",
+          "chain": true,
+          "chain_group": "CCPM 工程计划到 GitHub 同步工作流",
+          "chain_group_en": "CCPM Epic-to-GitHub Sync Workflow"
+        },
+        {
+          "name": "github-sync",
+          "path": "library/methodologies/ccpm/skills/github-sync/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "GitHub Issue 同步",
+          "group_en": "GitHub Issue Sync",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把 Epic 与任务双向同步到 GitHub Issues，维护标签、关系、进度和状态映射。",
+          "description_en": "Syncs Epics and tasks bidirectionally with GitHub Issues, including labels, relationships, progress, and status mapping.",
+          "what": "将 Epic 和任务映射到 GitHub Issues，并持续同步状态。",
+          "chain": true,
+          "chain_group": "CCPM 工程计划到 GitHub 同步工作流",
+          "chain_group_en": "CCPM Epic-to-GitHub Sync Workflow"
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "Kaelio",
+        "repo": "ktx",
+        "full_name": "Kaelio/ktx",
+        "url": "https://github.com/Kaelio/ktx",
+        "stars": 1295,
+        "pushed_at": "2026-06-19",
+        "default_branch": "main",
+        "github_description": "ktx is an executable context layer for data and analytics agents 🐙 Allow Claude Code, Codex, or other AI agents to query data accurately and with full context of your company",
+        "topics": [
+          "agent",
+          "agent-skills",
+          "agents",
+          "ai-agent",
+          "ai-agents",
+          "analytics",
+          "analytics-engineering",
+          "business-intelligence",
+          "claude",
+          "claude-code",
+          "claude-skills",
+          "codex",
+          "context-layer",
+          "data-analysis",
+          "data-engineering",
+          "llm",
+          "mcp",
+          "memory",
+          "semantic-layer",
+          "skills"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "analytics",
+          "path": "packages/cli/src/skills/analytics/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "ktx 语义层数据分析",
+          "group_en": "ktx semantic-layer analytics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 发现 ktx 数据源，并用语义层或 SQL 准确分析查询。",
+          "description_en": "Helps agents discover ktx-connected data sources and analyze them accurately through the semantic layer or SQL.",
+          "what": "Defines when to invoke ktx analytics and how to discover, inspect, plan, and query data.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Corey · 组「基座上下文 / 测量」"
+        },
+        {
+          "name": "dbt_ingest",
+          "path": "packages/cli/src/skills/dbt_ingest/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "dbt 元数据入 ktx 语义层",
+          "group_en": "dbt metadata ingestion into ktx",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把 dbt YAML 模型与来源映射为 ktx 语义层覆盖和列说明。",
+          "description_en": "Maps dbt YAML models and sources into ktx semantic-layer overlays and column notes.",
+          "what": "Explains how to convert uploaded dbt project metadata into ktx semantic-layer overlays and column notes.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "historic_sql_patterns",
+          "path": "packages/cli/src/skills/historic_sql_patterns/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "数据上下文记忆构建",
+          "group_en": "Data Context Memory Builder",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 historic-SQL patterns 分片，识别跨表重复分析意图，验证 join 标识符后输出结构化 pattern 证据。",
+          "description_en": "Reads historic-SQL pattern shards to identify repeated cross-table analytical intents and emit verified pattern evidence.",
+          "what": "从 historic-SQL patterns 输入中提取可复用分析意图，并生成记忆代理可投影的证据。",
+          "chain": true,
+          "chain_group": "historic-SQL 记忆构建工作流",
+          "chain_group_en": "Historic SQL Memory-Building Workflow"
+        },
+        {
+          "name": "historic_sql_table_digest",
+          "path": "packages/cli/src/skills/historic_sql_table_digest/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "数据上下文记忆构建",
+          "group_en": "Data Context Memory Builder",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 historic-SQL 表使用分片，生成简洁使用叙事，并输出 table_usage 证据供上下文投影。",
+          "description_en": "Reads a historic-SQL table-usage shard, summarizes how the table is used, and emits table_usage evidence for context projection.",
+          "what": "将单个 historic-SQL 表使用记录压缩为结构化 table_usage 证据。",
+          "chain": true,
+          "chain_group": "historic-SQL 记忆构建工作流",
+          "chain_group_en": "Historic SQL Memory-Building Workflow"
+        },
+        {
+          "name": "ingest_triage",
+          "path": "packages/cli/src/skills/ingest_triage/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "Agent 记忆写入冲突处理",
+          "group_en": "Agent Memory Write Conflict Handling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在写入前识别并解决上下文包冲突，维护记忆一致性。",
+          "description_en": "Resolves bundle-ingest conflicts before writes to keep agent memory consistent.",
+          "what": "在上下文包写入前分类并消解重复或矛盾。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "live_database_ingest",
+          "path": "packages/cli/src/skills/live_database_ingest/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "数据库 schema 语义层导入",
+          "group_en": "Database Schema Semantic-Layer Ingestion",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从数据库结构快照创建语义层来源，并生成 wiki 更新。",
+          "description_en": "Creates semantic-layer sources and wiki updates from live database schema snapshots.",
+          "what": "将表结构、注释和外键导入语义层并校验。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "looker_ingest",
+          "path": "packages/cli/src/skills/looker_ingest/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Looker 语义层摄入",
+          "group_en": "Looker semantic-layer ingestion",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从 Looker 运行时 JSON 提取指标、分段和语义，形成可复用上下文知识。",
+          "description_en": "Extracts metrics, segments, and semantics from Looker runtime JSON into reusable context knowledge.",
+          "what": "Ingests Looker runtime artifacts into ktx semantic-layer knowledge.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "lookml_ingest",
+          "path": "packages/cli/src/skills/lookml_ingest/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Looker 语义层摄入",
+          "group_en": "Looker semantic-layer ingestion",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把 LookML 视图、模型和 Explore 映射为 ktx 语义层来源与连接图。",
+          "description_en": "Maps LookML views, models, and explores into ktx semantic-layer sources and join graphs.",
+          "what": "Translates LookML definitions into ktx semantic-layer primitives.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "metabase_ingest",
+          "path": "packages/cli/src/skills/metabase_ingest/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "KTX 语义层导入",
+          "group_en": "KTX semantic layer ingestion",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将 Metabase 问题、模型和指标转换为 ktx 语义层定义，辅助 agent 理解查询上下文。",
+          "description_en": "Convert Metabase questions, models, and metrics into ktx semantic layer definitions so agents understand query context.",
+          "what": "用于 Metabase bundle 场景，提取卡片、SQL、元数据和引用关系并生成 KSL 定义。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "metricflow_ingest",
+          "path": "packages/cli/src/skills/metricflow_ingest/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "KTX 语义层导入",
+          "group_en": "KTX semantic layer ingestion",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将 MetricFlow 语义模型和指标映射为 ktx 语义层来源，统一 agent 查询上下文。",
+          "description_en": "Map MetricFlow semantic models and metrics into ktx semantic layer sources to unify agent query context.",
+          "what": "用于 MetricFlow YAML 场景，解析 semantic_model、measure、entity 和 metric 映射。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "notion_synthesize",
+          "path": "packages/cli/src/skills/notion_synthesize/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "KTX 持久上下文记忆",
+          "group_en": "KTX persistent context memory",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把 Notion 页面与证据合成持久 wiki 记忆和语义层来源。",
+          "description_en": "Synthesizes Notion pages and evidence into durable wiki memory and semantic-layer sources.",
+          "what": "从 Notion 原始内容生成可复用上下文记忆和语义层来源。",
+          "chain": true,
+          "chain_group": "Notion 上下文入库到语义层查询",
+          "chain_group_en": "From Notion context ingestion to semantic-layer querying"
+        },
+        {
+          "name": "sl",
+          "path": "packages/cli/src/skills/sl/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "KTX 语义层查询",
+          "group_en": "KTX semantic layer querying",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取并查询公司语义层 YAML，帮助 agent 准确使用业务指标。",
+          "description_en": "Reads and queries company semantic-layer YAML so agents can use business metrics accurately.",
+          "what": "用 sl_query 读取预定义指标、来源、连接和分段。",
+          "chain": true,
+          "chain_group": "Notion 上下文入库到语义层查询",
+          "chain_group_en": "From Notion context ingestion to semantic-layer querying"
+        },
+        {
+          "name": "sl_capture",
+          "path": "packages/cli/src/skills/sl_capture/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "Agent 记忆 / 工作笔记",
+          "group_en": "Agent memory / working notes",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助记忆代理捕获可复用指标、维度、连接模式，并写入 ktx 语义层。",
+          "description_en": "Helps the memory agent capture reusable metrics, dimensions, and join patterns into ktx’s semantic layer.",
+          "what": "让记忆代理把可复用的指标、维度、连接模式沉淀到语义层。",
+          "chain": true,
+          "chain_group": "KTX 回合后记忆捕获工作流",
+          "chain_group_en": "KTX post-turn memory capture workflow"
+        },
+        {
+          "name": "wiki_capture",
+          "path": "packages/cli/src/skills/wiki_capture/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "Agent 记忆 / 工作笔记",
+          "group_en": "Agent memory / working notes",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助记忆代理沉淀业务定义、过滤规则和组织约定到 wiki 知识库。",
+          "description_en": "Helps the memory agent preserve business definitions, filters, and organizational conventions in a wiki knowledge base.",
+          "what": "让记忆代理把组织业务规则和偏好沉淀为 wiki 页面。",
+          "chain": true,
+          "chain_group": "KTX 回合后记忆捕获工作流",
+          "chain_group_en": "KTX post-turn memory capture workflow"
+        },
+        {
+          "name": "ktx",
+          "path": "skills/ktx/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "ktx 数据 Agent 上下文层配置",
+          "group_en": "ktx Data Agent Context Layer Setup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 非交互安装和配置 ktx，连接数据源、初始化上下文、嵌入与集成并验证可用性。",
+          "description_en": "Helps an agent install and configure ktx non-interactively, connect data sources, initialize context and embeddings, wire integrations, and verify readiness.",
+          "what": "安装、配置、接入并排错 ktx 数据 Agent 上下文层。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
