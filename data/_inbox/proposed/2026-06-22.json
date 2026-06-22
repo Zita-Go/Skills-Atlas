@@ -1,0 +1,1370 @@
+{
+  "generated_at": "2026-06-22T05:31:05+00:00",
+  "date": "2026-06-22",
+  "proposed_count": 6,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 80,
+      "blocklisted": 20,
+      "seen_recently": 134,
+      "truncated": 133,
+      "no_skill_files": 3,
+      "skill_name_dup": 4,
+      "looks_aggregator": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "mex-memory/mex",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "abubakarsiddik31/claude-skills-collection",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "tfriedel/claude-office-skills",
+        "reason": "⚠ 疑似 vendored 副本（仍提交待人审）：4/4 个 skill 名已在目录——docx, pdf, pptx, xlsx；建议人审核是否整仓拒/blocklist"
+      },
+      {
+        "full_name": "23blocks-OS/ai-maestro",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "mliu98/awesome-human-distillation",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "中医课程学习助手",
+      "group_en": "TCM Course Study Assistant",
+      "category": "education-learning",
+      "subcategory": "19-3",
+      "chain": false,
+      "description": "基于倪海厦课程资料做学习检索、方证穴位辨析、笔记整理与板书证据索引。",
+      "description_en": "A grounded study assistant for Ni Haisha TCM course materials, covering retrieval, formula-pattern and acupoint lookup, notes, and screenshot evidence indexing.",
+      "sources": [
+        "JuneYaooo/nihaisha-nishi-tcm"
+      ]
+    },
+    {
+      "skills": [
+        "docx",
+        "pptx",
+        "xlsx"
+      ],
+      "group": "Office 文档四件套",
+      "group_en": "Office document workflow",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 Claude Code 创建、编辑和分析 PPTX 演示文稿，处理文本、版式、备注与 XML 细节。",
+      "description_en": "Helps Claude create, edit, review, and analyze DOCX files with support for tracked changes, comments, formatting preservation, and text extraction.",
+      "sources": [
+        "tfriedel/claude-office-skills"
+      ]
+    },
+    {
+      "skills": [
+        "pdf"
+      ],
+      "group": "PDF 重型 API",
+      "group_en": "PDF processing toolkit",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 Claude 处理 PDF 文档，完成文本/表格提取、生成、拆分合并、元数据读取与表单填写。",
+      "description_en": "Helps Claude process PDF documents, including text and table extraction, generation, splitting, merging, metadata reading, and form filling.",
+      "sources": [
+        "tfriedel/claude-office-skills"
+      ]
+    },
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "Design DNA 提取与应用",
+      "group_en": "Design DNA extraction and application",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "从参考 UI 提取设计 DNA JSON，并用于生成一致视觉界面。",
+      "description_en": "Extracts a reference UI’s Design DNA as JSON and applies it to generate matching visuals.",
+      "sources": [
+        "zanwei/design-dna"
+      ]
+    },
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "LLM Council 决策压力测试",
+      "group_en": "LLM Council Decision Pressure-Testing",
+      "category": "product-management",
+      "subcategory": "3-2",
+      "chain": false,
+      "description": "让 agent 用五位独立 AI 顾问匿名互评，综合给出决策建议。",
+      "description_en": "Runs decisions through five independent AI advisors with anonymous peer review and a synthesized verdict.",
+      "sources": [
+        "aiwithremy/claude-skills-llm-council"
+      ]
+    },
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "SEO 审计与诊断",
+      "group_en": "SEO Audits & Diagnostics",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "帮助 Agent 对网站、博客和仓库执行 LLM 优先的 SEO 审计，并生成优先修复计划。",
+      "description_en": "Helps an agent run LLM-first SEO audits for websites, blogs, and repositories, then produce prioritized fixes.",
+      "sources": [
+        "Bhanunamikaze/Agentic-SEO-Skill"
+      ]
+    },
+    {
+      "skills": [
+        "ccpa",
+        "dpdpa"
+      ],
+      "group": "隐私 / 数据合规(DPA / DSAR / PIA / GDPR)",
+      "group_en": "Privacy / Data Compliance (DPA / DSAR / PIA / GDPR)",
+      "category": "legal-compliance",
+      "subcategory": "14-5",
+      "chain": false,
+      "description": "帮助 agent 处理印度 DPDPA 合规问题，包括同意、通知、跨境传输与儿童数据义务。",
+      "description_en": "Helps agents handle India DPDPA compliance, including consent, notices, cross-border transfers, and children's data obligations.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "cis-controls"
+      ],
+      "group": "CIS Controls 实施与差距评估",
+      "group_en": "CIS Controls implementation and gap assessment",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "帮助按 CIS Controls v8 做实施分组、差距评估和安全加固建议。",
+      "description_en": "Guides CIS Controls v8 scoping, implementation planning, gap assessments, and security hardening.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "cmmc"
+      ],
+      "group": "网络安全合规 / CMMC 与 NIST SP 800-171",
+      "group_en": "Cybersecurity Compliance / CMMC and NIST SP 800-171",
+      "category": "legal-compliance",
+      "subcategory": "14-5",
+      "chain": false,
+      "description": "帮助 agent 处理 CMMC 差距评估、SSP、CUI 保护与审计准备。",
+      "description_en": "Helps agents handle CMMC gap assessments, SSP drafting, CUI protection, and audit readiness.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "csrd"
+      ],
+      "group": "欧盟监管合规 / CSRD 与 ESG 披露",
+      "group_en": "EU Regulatory Compliance / CSRD and ESG Reporting",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助 agent 解释 CSRD 范围、双重重要性评估与 ESRS 报告要求。",
+      "description_en": "Helps agents explain CSRD scope, double materiality assessments, and ESRS reporting requirements.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "dora"
+      ],
+      "group": "DORA 数字运营韧性合规",
+      "group_en": "DORA Digital Operational Resilience Compliance",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助 agent 解读 DORA 合规要求，覆盖 ICT 风险、事件报告、TLPT 与第三方管理。",
+      "description_en": "Helps agents interpret DORA obligations across ICT risk, incident reporting, TLPT, and third-party management.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "ear"
+      ],
+      "group": "出口管制合规（EAR / ITAR）",
+      "group_en": "Export Controls Compliance (EAR / ITAR)",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "辅助完成 ECCN/EAR99 分类、许可分析、受限方筛查与出口合规体系设计。",
+      "description_en": "Guides ECCN/EAR99 classification, license analysis, restricted-party screening, and export compliance program design.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "eu-ai-act"
+      ],
+      "group": "AI 治理 / EU AI Act 合规",
+      "group_en": "AI Governance / EU AI Act Compliance",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助按 EU AI Act 对 AI 系统进行分级，并梳理提供者、部署者和 GPAI 义务。",
+      "description_en": "Classifies AI systems under the EU AI Act and maps provider, deployer, and GPAI obligations.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "eu-cra",
+        "fedramp"
+      ],
+      "group": "法规合规与差距分析",
+      "group_en": "Regulatory Compliance and Gap Analysis",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助 agent 梳理 FedRAMP 准备度、ATO 文档、NIST 800-53 控制映射与持续监控。",
+      "description_en": "Helps the agent assess EU CRA scope, product classification, conformity routes, SBOM obligations, and incident reporting requirements.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "gdpr-compliance"
+      ],
+      "group": "DPA / DSAR / PIA / GDPR",
+      "group_en": "DPA, DSAR, PIA, and GDPR",
+      "category": "legal-compliance",
+      "subcategory": "14-5",
+      "chain": false,
+      "description": "帮助 agent 依据 GDPR 条款审查系统、数据流和隐私文档，并生成合规建议。",
+      "description_en": "Helps the agent audit systems, data flows, and privacy documents against GDPR requirements and produce article-backed compliance guidance.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "hipaa-compliance"
+      ],
+      "group": "HIPAA 合规与医疗数据安全",
+      "group_en": "HIPAA Compliance and Healthcare Data Security",
+      "category": "medical-clinical",
+      "subcategory": "15-2",
+      "chain": false,
+      "description": "帮助 agent 审查医疗数据系统、HIPAA 政策与通知，并提供技术保障建议。",
+      "description_en": "Helps the agent review healthcare data systems, HIPAA policies and notices, and recommend technical safeguards.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "ism",
+        "iso27001"
+      ],
+      "group": "安全合规框架评估",
+      "group_en": "Security compliance framework assessment",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助 agent 完成 ISO 27001 差距评估、控制清单、SoA 和认证准备。",
+      "description_en": "Helps an agent perform ISO 27001 gap reviews, control checklists, SoA drafting, and certification readiness.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "iso27701"
+      ],
+      "group": "隐私合规（ISO 27701 PIMS）",
+      "group_en": "Privacy Compliance (ISO 27701 PIMS)",
+      "category": "legal-compliance",
+      "subcategory": "14-5",
+      "chain": false,
+      "description": "指导 ISO 27701 隐私管理体系落地、差距评估、SoA 与 DPIA 支持。",
+      "description_en": "Guides ISO 27701 PIMS implementation, gap assessments, SoA creation, DPIA support, and privacy-control alignment.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "iso42001"
+      ],
+      "group": "AI 治理合规（ISO 42001 AIMS）",
+      "group_en": "AI Governance Compliance (ISO 42001 AIMS)",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "指导 ISO 42001 AIMS 建设、AI 风险评估、SoA 与认证准备。",
+      "description_en": "Guides ISO 42001 AIMS implementation, AI risk assessment, SoA generation, and certification readiness.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "itar"
+      ],
+      "group": "出口管制 / 国防贸易合规",
+      "group_en": "Export Control & Defense Trade Compliance",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助 agent 分析 ITAR 管辖、注册、许可证与协议合规。",
+      "description_en": "Helps agents analyze ITAR jurisdiction, registration, licensing, and agreement compliance.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "lgpd"
+      ],
+      "group": "数据隐私合规（LGPD / GDPR）",
+      "group_en": "Data Privacy Compliance (LGPD / GDPR)",
+      "category": "legal-compliance",
+      "subcategory": "14-5",
+      "chain": false,
+      "description": "帮助 agent 处理巴西 LGPD 数据处理、主体权利与差距评估。",
+      "description_en": "Helps agents handle Brazilian LGPD data processing, data subject rights, and gap assessments.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "nis2"
+      ],
+      "group": "NIS2 网络与信息安全合规",
+      "group_en": "NIS2 Cybersecurity Compliance",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助 agent 解读 NIS2 义务、分类实体、评估差距并起草政策。",
+      "description_en": "Helps agents interpret NIS2 obligations, classify entities, assess gaps, and draft policies.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "nist-800-53"
+      ],
+      "group": "NIST 800-53 安全控制合规",
+      "group_en": "NIST 800-53 Security Control Compliance",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助 agent 选择 NIST 控制基线、裁剪控制并映射 FedRAMP/FISMA。",
+      "description_en": "Helps agents select NIST control baselines, tailor controls, and map them to FedRAMP or FISMA.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "nist-ai-rmf"
+      ],
+      "group": "AI 治理 / AI 法合规(EU AI Act) / 监管追踪 / 法规差距",
+      "group_en": "AI Governance / AI Law Compliance / Regulatory Tracking / Gap Analysis",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助 agent 按 NIST AI RMF 四职能开展 AI 风险画像、差距评估与治理行动规划。",
+      "description_en": "Helps agents use NIST AI RMF to assess AI risk, identify gaps, and plan governance actions.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "nist-csf"
+      ],
+      "group": "NIST CSF 差距评估与实施规划",
+      "group_en": "NIST CSF Gap Assessment and Implementation Planning",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助 agent 按 NIST CSF 2.0 做网络安全风险画像、差距评估、实施层级与跨框架映射。",
+      "description_en": "Helps agents apply NIST CSF 2.0 to profile cybersecurity risk, assess gaps, plan implementation tiers, and map frameworks.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "nzism"
+      ],
+      "group": "NZISM 合规与政府安全义务",
+      "group_en": "NZISM Compliance and Government Security Obligations",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮 agent 按 NZISM 做控制解释、差距分析、分类分级和认证准备。",
+      "description_en": "Helps an agent explain NZISM controls, run gap analyses, classify systems, and prepare for certification and accreditation.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "pci-compliance"
+      ],
+      "group": "PCI DSS 合规 / CDE 范围界定",
+      "group_en": "PCI DSS Compliance and CDE Scoping",
+      "category": "legal-compliance",
+      "subcategory": "14-5",
+      "chain": false,
+      "description": "帮 agent 按 PCI DSS 界定 CDE、选 SAQ/ROC、做差距评估和审计准备。",
+      "description_en": "Helps an agent scope the CDE, choose SAQ/ROC paths, assess PCI DSS gaps, and prepare for audits.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "section-508"
+      ],
+      "group": "联邦 ICT 无障碍合规（Section 508 / WCAG / VPAT）",
+      "group_en": "Federal ICT Accessibility Compliance (Section 508 / WCAG / VPAT)",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助 Agent 处理联邦 ICT 无障碍法规、WCAG 检测、VPAT 和整改计划。",
+      "description_en": "Helps agents handle federal ICT accessibility rules, WCAG checks, VPATs, and remediation planning.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "soc2"
+      ],
+      "group": "SOC 2 审计准备与控制文档",
+      "group_en": "SOC 2 Audit Readiness and Control Documentation",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助 Agent 完成 SOC 2 审计准备、控制差距分析、证据收集和文档编写。",
+      "description_en": "Helps agents prepare for SOC 2 audits, perform control gap analysis, gather evidence, and draft documentation.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "swift-csp"
+      ],
+      "group": "SWIFT CSP 合规",
+      "group_en": "SWIFT CSP Compliance",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "协助金融机构解读 SWIFT CSP/CSCF 控制项，完成差距分析、证明准备与安全运营合规。",
+      "description_en": "Helps financial institutions interpret SWIFT CSP/CSCF controls, perform gap analysis, and prepare attestation evidence.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "tsa-compliance"
+      ],
+      "group": "TSA 网络安全合规",
+      "group_en": "TSA Cybersecurity Compliance",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "帮助交通关键基础设施运营方理解 TSA 安全指令，制定 CIP/COIP 并完成 CISA 报告。",
+      "description_en": "Helps transportation critical infrastructure operators understand TSA directives, build CIP/COIP plans, and complete CISA reporting.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "vn-pdpl"
+      ],
+      "group": "隐私 / 数据合规（DPA / DSAR / PIA / GDPR）",
+      "group_en": "Privacy / Data Compliance (DPA / DSAR / PIA / GDPR)",
+      "category": "legal-compliance",
+      "subcategory": "14-5",
+      "chain": false,
+      "description": "越南 PDPL 合规顾问，支持差距分析、数据主体权利、跨境传输评估与通知流程。",
+      "description_en": "Vietnam PDPL compliance advisor for gap analysis, data subject rights, cross-border transfers, and breach workflows.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    },
+    {
+      "skills": [
+        "wcag"
+      ],
+      "group": "Web 无障碍合规（WCAG）",
+      "group_en": "Web Accessibility Compliance (WCAG)",
+      "category": "legal-compliance",
+      "subcategory": "14-7",
+      "chain": false,
+      "description": "WCAG 无障碍标准顾问，支持审计、符合性判断、ARIA 与法规映射。",
+      "description_en": "WCAG accessibility advisor for audits, conformance checks, ARIA guidance, and legal mapping.",
+      "sources": [
+        "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "JuneYaooo",
+        "repo": "nihaisha-nishi-tcm",
+        "full_name": "JuneYaooo/nihaisha-nishi-tcm",
+        "url": "https://github.com/JuneYaooo/nihaisha-nishi-tcm",
+        "stars": 798,
+        "pushed_at": "2026-06-18",
+        "default_branch": "main",
+        "github_description": "倪海厦中医课程资料的 Agent Skill：支持课程检索、方证穴位辨析、学习笔记整理与板书截图证据索引。 |  An Agent Skill for Ni Haisha TCM course study, formula-pattern lookup, acupoint reference, and screenshot evidence indexing.",
+        "topics": [
+          "acupuncture",
+          "agent-skills",
+          "claude-code-skills",
+          "codex-skill",
+          "nihaisha",
+          "nihaixia",
+          "nishi",
+          "shennong",
+          "tcm",
+          "tcmcp",
+          "traditional-chinese-medicine",
+          "traditional-chinese-medicine-healthcare"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-code"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "19-3",
+          "subcategory_title": "19.3 学习科学 / 复习工具",
+          "category": "education-learning",
+          "group": "中医课程学习助手",
+          "group_en": "TCM Course Study Assistant",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于倪海厦课程资料做学习检索、方证穴位辨析、笔记整理与板书证据索引。",
+          "description_en": "A grounded study assistant for Ni Haisha TCM course materials, covering retrieval, formula-pattern and acupoint lookup, notes, and screenshot evidence indexing.",
+          "what": "面向倪海厦中医课程资料的学习检索、方证穴位辨析和板书证据索引。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "tfriedel",
+        "repo": "claude-office-skills",
+        "full_name": "tfriedel/claude-office-skills",
+        "url": "https://github.com/tfriedel/claude-office-skills",
+        "stars": 760,
+        "pushed_at": "2026-04-01",
+        "default_branch": "main",
+        "github_description": "Office document creation and editing skills for Claude Code - PPTX, DOCX, XLSX, and PDF workflows with automation support",
+        "topics": [],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "docx",
+          "path": "public/docx/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office document workflow",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 Claude 创建、编辑、审阅和分析 DOCX 文档，支持修订、批注、格式保留与文本提取。",
+          "description_en": "Helps Claude create, edit, review, and analyze DOCX files with support for tracked changes, comments, formatting preservation, and text extraction.",
+          "what": "DOCX 文档创建、编辑与审阅。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        },
+        {
+          "name": "pdf",
+          "path": "public/pdf/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "PDF 重型 API",
+          "group_en": "PDF processing toolkit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 Claude 处理 PDF 文档，完成文本/表格提取、生成、拆分合并、元数据读取与表单填写。",
+          "description_en": "Helps Claude process PDF documents, including text and table extraction, generation, splitting, merging, metadata reading, and form filling.",
+          "what": "PDF 文档提取、生成与批量处理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        },
+        {
+          "name": "pptx",
+          "path": "public/pptx/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office Document Suite",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 Claude Code 创建、编辑和分析 PPTX 演示文稿，处理文本、版式、备注与 XML 细节。",
+          "description_en": "Helps Claude Code create, edit, and analyze PPTX presentations, including text, layouts, notes, and OOXML details.",
+          "what": "用于 PPTX 文档的读取、修改、编辑和分析。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        },
+        {
+          "name": "xlsx",
+          "path": "public/xlsx/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office Document Suite",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 Claude Code 创建、编辑和分析 XLSX/CSV 表格，保留公式、格式、模板并进行校验。",
+          "description_en": "Helps Claude Code create, edit, and analyze XLSX and CSV spreadsheets while preserving formulas, formatting, templates, and validating outputs.",
+          "what": "用于电子表格的创建、公式保留更新、数据分析和校验。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "zanwei",
+        "repo": "design-dna",
+        "full_name": "zanwei/design-dna",
+        "url": "https://github.com/zanwei/design-dna",
+        "stars": 754,
+        "pushed_at": "2026-04-13",
+        "default_branch": "main",
+        "github_description": "Turn reference UIs (images, screenshots, URLs) into quantified Design DNA JSON—tokens, qualitative style, visual effects—then generate matching UI from your content.",
+        "topics": [
+          "agent-skills",
+          "claude-skills",
+          "codex-skills",
+          "cursor-skills",
+          "design-dna",
+          "design-system",
+          "design-tokens",
+          "skills-cli",
+          "ui-design",
+          "visual-design"
+        ],
+        "language": "",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-codex-skills"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "Design DNA 提取与应用",
+          "group_en": "Design DNA extraction and application",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从参考 UI 提取设计 DNA JSON，并用于生成一致视觉界面。",
+          "description_en": "Extracts a reference UI’s Design DNA as JSON and applies it to generate matching visuals.",
+          "what": "Analyzes reference UIs into design-system, style, and visual-effect tokens for consistent UI generation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "aiwithremy",
+        "repo": "claude-skills-llm-council",
+        "full_name": "aiwithremy/claude-skills-llm-council",
+        "url": "https://github.com/aiwithremy/claude-skills-llm-council",
+        "stars": 739,
+        "pushed_at": "2026-04-26",
+        "default_branch": "main",
+        "github_description": "LLM Council — a Claude Code skill that runs your decisions through 5 AI advisors with peer review",
+        "topics": [],
+        "language": "",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "3-2",
+          "subcategory_title": "3.2 问题框定 / 假设管理",
+          "category": "product-management",
+          "group": "LLM Council 决策压力测试",
+          "group_en": "LLM Council Decision Pressure-Testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 用五位独立 AI 顾问匿名互评，综合给出决策建议。",
+          "description_en": "Runs decisions through five independent AI advisors with anonymous peer review and a synthesized verdict.",
+          "what": "提供多视角决策评审与最终建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "Bhanunamikaze",
+        "repo": "Agentic-SEO-Skill",
+        "full_name": "Bhanunamikaze/Agentic-SEO-Skill",
+        "url": "https://github.com/Bhanunamikaze/Agentic-SEO-Skill",
+        "stars": 679,
+        "pushed_at": "2026-06-18",
+        "default_branch": "main",
+        "github_description": "An LLM-first SEO analysis skill for Antigravity, Codex, Claude with 16 specialized sub-skills, 10 specialist agents, and 88 optional utility scripts used as evidence collectors.",
+        "topics": [
+          "ai-skill",
+          "ai-skills",
+          "antigravity-ai",
+          "antigravity-skills",
+          "antigravity-tools",
+          "claude-skill",
+          "claude-skills",
+          "codex-skill",
+          "codex-skills",
+          "seo",
+          "seo-optimization",
+          "skills"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-codex-skills"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 审计与诊断",
+          "group_en": "SEO Audits & Diagnostics",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 Agent 对网站、博客和仓库执行 LLM 优先的 SEO 审计，并生成优先修复计划。",
+          "description_en": "Helps an agent run LLM-first SEO audits for websites, blogs, and repositories, then produce prioritized fixes.",
+          "what": "根入口把常见 SEO 请求映射到固定审计流程，并输出审计报告与行动清单。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "Sushegaad",
+        "repo": "Claude-Skills-Governance-Risk-and-Compliance",
+        "full_name": "Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+        "url": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+        "stars": 672,
+        "pushed_at": "2026-06-22",
+        "default_branch": "main",
+        "github_description": "Claude Skills for Governance, Risk, & Compliance (GRC): Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, EU AI Act, ISO 42001, ISO 27701, DORA, CSRD, India's DPDPA, CMMC 2.0, NIST AI Risk, SWIFT, Australia's ISM, EU NIS2, CCPA/CPRA, and others. Benchmark 97% (with skills) vs 81% (without skills).",
+        "topics": [
+          "claude-ai",
+          "claude-skills",
+          "compliance",
+          "csrd",
+          "data-privacy",
+          "dpdpa-2023",
+          "eu-ai-act",
+          "fedramp",
+          "gdpr",
+          "governance",
+          "grc",
+          "hipaa",
+          "iso27001",
+          "iso27701",
+          "iso42001",
+          "nist-csf",
+          "pci-dss",
+          "risk",
+          "security",
+          "soc2"
+        ],
+        "language": "HTML",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "ccpa",
+          "path": "plugins/ccpa/skills/ccpa/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "隐私 / 数据合规(DPA / DSAR / PIA / GDPR)",
+          "group_en": "Privacy / Data Compliance (DPA / DSAR / PIA / GDPR)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助判断 CCPA/CPRA 适用性、消费者权利和隐私合规差距。",
+          "description_en": "Guides CCPA/CPRA applicability, consumer-rights handling, and privacy compliance gaps.",
+          "what": "加州隐私合规与差距评估。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cis-controls",
+          "path": "plugins/cis-controls/skills/cis-controls/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "CIS Controls 实施与差距评估",
+          "group_en": "CIS Controls implementation and gap assessment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助按 CIS Controls v8 做实施分组、差距评估和安全加固建议。",
+          "description_en": "Guides CIS Controls v8 scoping, implementation planning, gap assessments, and security hardening.",
+          "what": "CIS Controls 实施与差距评估。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cmmc",
+          "path": "plugins/cmmc/skills/cmmc/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "网络安全合规 / CMMC 与 NIST SP 800-171",
+          "group_en": "Cybersecurity Compliance / CMMC and NIST SP 800-171",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理 CMMC 差距评估、SSP、CUI 保护与审计准备。",
+          "description_en": "Helps agents handle CMMC gap assessments, SSP drafting, CUI protection, and audit readiness.",
+          "what": "Expert guidance for CMMC 2.0, NIST SP 800-171, CUI protection, SSPs, POA&Ms, and defense contractor compliance.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "csrd",
+          "path": "plugins/csrd/skills/csrd/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "欧盟监管合规 / CSRD 与 ESG 披露",
+          "group_en": "EU Regulatory Compliance / CSRD and ESG Reporting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 解释 CSRD 范围、双重重要性评估与 ESRS 报告要求。",
+          "description_en": "Helps agents explain CSRD scope, double materiality assessments, and ESRS reporting requirements.",
+          "what": "Expert guidance for CSRD applicability, ESRS reporting, double materiality, XBRL tagging, assurance, and EU sustainability disclosures.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dora",
+          "path": "plugins/dora/skills/dora/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "DORA 数字运营韧性合规",
+          "group_en": "DORA Digital Operational Resilience Compliance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 解读 DORA 合规要求，覆盖 ICT 风险、事件报告、TLPT 与第三方管理。",
+          "description_en": "Helps agents interpret DORA obligations across ICT risk, incident reporting, TLPT, and third-party management.",
+          "what": "Expert advisor for EU DORA compliance, ICT resilience, incident classification, and third-party risk obligations.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dpdpa",
+          "path": "plugins/dpdpa/skills/dpdpa/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "隐私 / 数据合规(DPA / DSAR / PIA / GDPR)",
+          "group_en": "Privacy / Data Compliance (DPA / DSAR / PIA / GDPR)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 处理印度 DPDPA 合规问题，包括同意、通知、跨境传输与儿童数据义务。",
+          "description_en": "Helps agents handle India DPDPA compliance, including consent, notices, cross-border transfers, and children's data obligations.",
+          "what": "Expert advisor for India's DPDPA privacy compliance, Data Fiduciary duties, consent, breach rules, and SDF obligations.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ear",
+          "path": "plugins/ear/skills/ear/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "出口管制合规（EAR / ITAR）",
+          "group_en": "Export Controls Compliance (EAR / ITAR)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "辅助完成 ECCN/EAR99 分类、许可分析、受限方筛查与出口合规体系设计。",
+          "description_en": "Guides ECCN/EAR99 classification, license analysis, restricted-party screening, and export compliance program design.",
+          "what": "EAR 合规顾问，覆盖 ECCN/EAR99、许可例外、FDPR、受限方与 ECP 设计。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "eu-ai-act",
+          "path": "plugins/eu-ai-act/skills/eu-ai-act/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "AI 治理 / EU AI Act 合规",
+          "group_en": "AI Governance / EU AI Act Compliance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助按 EU AI Act 对 AI 系统进行分级，并梳理提供者、部署者和 GPAI 义务。",
+          "description_en": "Classifies AI systems under the EU AI Act and maps provider, deployer, and GPAI obligations.",
+          "what": "EU AI Act 合规顾问，覆盖风险分级、禁止实践、透明度和治理义务。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "eu-cra",
+          "path": "plugins/eu-cra/skills/eu-cra/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "法规合规与差距分析",
+          "group_en": "Regulatory Compliance and Gap Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 评估欧盟 CRA 适用范围、产品分类、合格评定、SBOM 与事件报告。",
+          "description_en": "Helps the agent assess EU CRA scope, product classification, conformity routes, SBOM obligations, and incident reporting requirements.",
+          "what": "EU CRA 合规顾问，覆盖 PDE 分类、合格评定、SBOM 与事件报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "fedramp",
+          "path": "plugins/fedramp/skills/fedramp/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "法规合规与差距分析",
+          "group_en": "Regulatory Compliance and Gap Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 梳理 FedRAMP 准备度、ATO 文档、NIST 800-53 控制映射与持续监控。",
+          "description_en": "Helps the agent navigate FedRAMP readiness, ATO documentation, NIST 800-53 control mapping, and continuous monitoring.",
+          "what": "FedRAMP 合规顾问，覆盖准备度、ATO 文档、控制映射与持续监控。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "gdpr-compliance",
+          "path": "plugins/gdpr-compliance/skills/gdpr-compliance/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "DPA / DSAR / PIA / GDPR",
+          "group_en": "DPA, DSAR, PIA, and GDPR",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 依据 GDPR 条款审查系统、数据流和隐私文档，并生成合规建议。",
+          "description_en": "Helps the agent audit systems, data flows, and privacy documents against GDPR requirements and produce article-backed compliance guidance.",
+          "what": "审查 GDPR 合规、数据流、隐私文档和 PII 处理实践。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hipaa-compliance",
+          "path": "plugins/hipaa-compliance/skills/hipaa-compliance/SKILL.md",
+          "subcategory": "15-2",
+          "subcategory_title": "15.2 医疗互操作 / 合规(FHIR / HIPAA)",
+          "category": "medical-clinical",
+          "group": "HIPAA 合规与医疗数据安全",
+          "group_en": "HIPAA Compliance and Healthcare Data Security",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 审查医疗数据系统、HIPAA 政策与通知，并提供技术保障建议。",
+          "description_en": "Helps the agent review healthcare data systems, HIPAA policies and notices, and recommend technical safeguards.",
+          "what": "审查 HIPAA 合规、PHI 处理、BAA 与医疗系统技术保障。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ism",
+          "path": "plugins/ism/skills/ism/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "安全合规框架评估",
+          "group_en": "Security compliance framework assessment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "辅助 agent 按 ASD ISM 做控制选择、差距分析和 IRAP 准备。",
+          "description_en": "Helps an agent apply the ASD ISM to control selection, gap analysis, and IRAP readiness.",
+          "what": "用于澳大利亚政府与供应链场景下的 ISM 合规咨询、控制适用性和证据差距判断。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "iso27001",
+          "path": "plugins/iso27001/skills/iso27001/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "安全合规框架评估",
+          "group_en": "Security compliance framework assessment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 完成 ISO 27001 差距评估、控制清单、SoA 和认证准备。",
+          "description_en": "Helps an agent perform ISO 27001 gap reviews, control checklists, SoA drafting, and certification readiness.",
+          "what": "用于 ISO 27001 ISMS 的差距审计、控制建议、政策生成和认证准备。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "iso27701",
+          "path": "plugins/iso27701/skills/iso27701/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "隐私合规（ISO 27701 PIMS）",
+          "group_en": "Privacy Compliance (ISO 27701 PIMS)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 ISO 27701 隐私管理体系落地、差距评估、SoA 与 DPIA 支持。",
+          "description_en": "Guides ISO 27701 PIMS implementation, gap assessments, SoA creation, DPIA support, and privacy-control alignment.",
+          "what": "Expert ISO 27701 PIMS advisor for privacy management, gap assessments, SoA, DPIA, and GDPR alignment.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "iso42001",
+          "path": "plugins/iso42001/skills/iso42001/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "AI 治理合规（ISO 42001 AIMS）",
+          "group_en": "AI Governance Compliance (ISO 42001 AIMS)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 ISO 42001 AIMS 建设、AI 风险评估、SoA 与认证准备。",
+          "description_en": "Guides ISO 42001 AIMS implementation, AI risk assessment, SoA generation, and certification readiness.",
+          "what": "Expert ISO 42001 AIMS advisor for AI governance, risk assessment, auditing, and certification readiness.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "itar",
+          "path": "plugins/itar/skills/itar/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "出口管制 / 国防贸易合规",
+          "group_en": "Export Control & Defense Trade Compliance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 分析 ITAR 管辖、注册、许可证与协议合规。",
+          "description_en": "Helps agents analyze ITAR jurisdiction, registration, licensing, and agreement compliance.",
+          "what": "Expert ITAR compliance advisor for U.S. defense export controls.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "lgpd",
+          "path": "plugins/lgpd/skills/lgpd/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "数据隐私合规（LGPD / GDPR）",
+          "group_en": "Data Privacy Compliance (LGPD / GDPR)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理巴西 LGPD 数据处理、主体权利与差距评估。",
+          "description_en": "Helps agents handle Brazilian LGPD data processing, data subject rights, and gap assessments.",
+          "what": "Expert LGPD privacy compliance advisor for Brazilian data protection.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nis2",
+          "path": "plugins/nis2/skills/nis2/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "NIS2 网络与信息安全合规",
+          "group_en": "NIS2 Cybersecurity Compliance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 解读 NIS2 义务、分类实体、评估差距并起草政策。",
+          "description_en": "Helps agents interpret NIS2 obligations, classify entities, assess gaps, and draft policies.",
+          "what": "EU NIS2 compliance advisor covering entity classification, risk measures, incident reporting, governance, supply chain, and penalties.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nist-800-53",
+          "path": "plugins/nist-800-53/skills/nist-800-53/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "NIST 800-53 安全控制合规",
+          "group_en": "NIST 800-53 Security Control Compliance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 选择 NIST 控制基线、裁剪控制并映射 FedRAMP/FISMA。",
+          "description_en": "Helps agents select NIST control baselines, tailor controls, and map them to FedRAMP or FISMA.",
+          "what": "NIST SP 800-53 Rev. 5 advisor for control selection, baselines, tailoring, assessment, OSCAL, and RMF or FedRAMP mapping.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nist-ai-rmf",
+          "path": "plugins/nist-ai-rmf/skills/nist-ai-rmf/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "AI 治理 / AI 法合规(EU AI Act) / 监管追踪 / 法规差距",
+          "group_en": "AI Governance / AI Law Compliance / Regulatory Tracking / Gap Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按 NIST AI RMF 四职能开展 AI 风险画像、差距评估与治理行动规划。",
+          "description_en": "Helps agents use NIST AI RMF to assess AI risk, identify gaps, and plan governance actions.",
+          "what": "NIST AI RMF 1.0 advisor for AI risk management and responsible AI governance.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nist-csf",
+          "path": "plugins/nist-csf/skills/nist-csf/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "NIST CSF 差距评估与实施规划",
+          "group_en": "NIST CSF Gap Assessment and Implementation Planning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按 NIST CSF 2.0 做网络安全风险画像、差距评估、实施层级与跨框架映射。",
+          "description_en": "Helps agents apply NIST CSF 2.0 to profile cybersecurity risk, assess gaps, plan implementation tiers, and map frameworks.",
+          "what": "NIST CSF 2.0 advisor for cybersecurity risk management and framework alignment.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nzism",
+          "path": "plugins/nzism/skills/nzism/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "NZISM 合规与政府安全义务",
+          "group_en": "NZISM Compliance and Government Security Obligations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 按 NZISM 做控制解释、差距分析、分类分级和认证准备。",
+          "description_en": "Helps an agent explain NZISM controls, run gap analyses, classify systems, and prepare for certification and accreditation.",
+          "what": "Expert NZISM compliance advisor for New Zealand government agencies and suppliers.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pci-compliance",
+          "path": "plugins/pci-compliance/skills/pci-compliance/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "PCI DSS 合规 / CDE 范围界定",
+          "group_en": "PCI DSS Compliance and CDE Scoping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 按 PCI DSS 界定 CDE、选 SAQ/ROC、做差距评估和审计准备。",
+          "description_en": "Helps an agent scope the CDE, choose SAQ/ROC paths, assess PCI DSS gaps, and prepare for audits.",
+          "what": "Expert PCI DSS compliance advisor for payment card data security and audit readiness.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "section-508",
+          "path": "plugins/section-508/skills/section-508/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "联邦 ICT 无障碍合规（Section 508 / WCAG / VPAT）",
+          "group_en": "Federal ICT Accessibility Compliance (Section 508 / WCAG / VPAT)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 处理联邦 ICT 无障碍法规、WCAG 检测、VPAT 和整改计划。",
+          "description_en": "Helps agents handle federal ICT accessibility rules, WCAG checks, VPATs, and remediation planning.",
+          "what": "为 Section 508 无障碍审计、VPAT/ACR、整改计划和采购义务提供专家指导。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "soc2",
+          "path": "plugins/soc2/skills/soc2/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "SOC 2 审计准备与控制文档",
+          "group_en": "SOC 2 Audit Readiness and Control Documentation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 完成 SOC 2 审计准备、控制差距分析、证据收集和文档编写。",
+          "description_en": "Helps agents prepare for SOC 2 audits, perform control gap analysis, gather evidence, and draft documentation.",
+          "what": "为 SOC 2 审计准备、信任服务准则差距分析、控制文档和证据收集提供指导。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "swift-csp",
+          "path": "plugins/swift-csp/skills/swift-csp/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "SWIFT CSP 合规",
+          "group_en": "SWIFT CSP Compliance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协助金融机构解读 SWIFT CSP/CSCF 控制项，完成差距分析、证明准备与安全运营合规。",
+          "description_en": "Helps financial institutions interpret SWIFT CSP/CSCF controls, perform gap analysis, and prepare attestation evidence.",
+          "what": "Expert advisor for SWIFT CSP/CSCF v2025 compliance.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "tsa-compliance",
+          "path": "plugins/tsa-compliance/skills/tsa-compliance/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "TSA 网络安全合规",
+          "group_en": "TSA Cybersecurity Compliance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助交通关键基础设施运营方理解 TSA 安全指令，制定 CIP/COIP 并完成 CISA 报告。",
+          "description_en": "Helps transportation critical infrastructure operators understand TSA directives, build CIP/COIP plans, and complete CISA reporting.",
+          "what": "Expert advisor for TSA cybersecurity directives and reporting obligations.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vn-pdpl",
+          "path": "plugins/vn-pdpl/skills/vn-pdpl/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "隐私 / 数据合规（DPA / DSAR / PIA / GDPR）",
+          "group_en": "Privacy / Data Compliance (DPA / DSAR / PIA / GDPR)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "越南 PDPL 合规顾问，支持差距分析、数据主体权利、跨境传输评估与通知流程。",
+          "description_en": "Vietnam PDPL compliance advisor for gap analysis, data subject rights, cross-border transfers, and breach workflows.",
+          "what": "提供越南个人数据保护法相关合规审查和流程建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wcag",
+          "path": "plugins/wcag/skills/wcag/SKILL.md",
+          "subcategory": "14-7",
+          "subcategory_title": "14.7 监管 / AI 治理",
+          "category": "legal-compliance",
+          "group": "Web 无障碍合规（WCAG）",
+          "group_en": "Web Accessibility Compliance (WCAG)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "WCAG 无障碍标准顾问，支持审计、符合性判断、ARIA 与法规映射。",
+          "description_en": "WCAG accessibility advisor for audits, conformance checks, ARIA guidance, and legal mapping.",
+          "what": "提供 Web 内容无障碍标准、审计和法规映射建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
