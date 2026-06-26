@@ -1,0 +1,4823 @@
+{
+  "generated_at": "2026-06-26T05:23:34+00:00",
+  "date": "2026-06-26",
+  "proposed_count": 7,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 81,
+      "blocklisted": 21,
+      "seen_recently": 172,
+      "truncated": 99,
+      "no_skill_files": 2,
+      "skill_name_dup": 5,
+      "not_a_collection": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "alookai/alook",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "K-Dense-AI/claude-skills-mcp",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "bruc3van/agent-skills-guard",
+        "reason": "非正经集合：仓库主要是 Agent Skills 安全扫描工具的测试夹具/规则矩阵示例，skill 明确标注非生产部署，不属于可收录 skill 集合。"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "csuite"
+      ],
+      "group": "高管决策支持",
+      "group_en": "Executive Decision Support",
+      "category": "product-management",
+      "subcategory": "3-4",
+      "chain": false,
+      "description": "为 agent 提供 CEO/CTO/CMO 级战略、技术选择、增长与项目评估支持。",
+      "description_en": "Helps an agent support executive-level strategy, technology choices, growth planning, and project evaluation.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "customer-support"
+      ],
+      "group": "客户支持工单流程",
+      "group_en": "Customer Support Ticket Workflows",
+      "category": "product-management",
+      "subcategory": "3-1",
+      "chain": false,
+      "description": "协助 agent 分流客服工单、起草回复、生成知识库文章并处理升级。",
+      "description_en": "Helps an agent triage support tickets, draft responses, create knowledge base articles, and handle escalations.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "design"
+      ],
+      "group": "UI/UX 设计工作流",
+      "group_en": "UI/UX Design Workflows",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "覆盖 UX 文案、设计系统、可访问性审查与交付，帮助 agent 按模式处理界面设计任务。",
+      "description_en": "Handles UX copy, design systems, accessibility reviews, and handoff tasks for UI/UX design work.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "finance"
+      ],
+      "group": "会计结账与审计支持",
+      "group_en": "Accounting Close & Audit Support",
+      "category": "startup-finance",
+      "subcategory": "10-3",
+      "chain": false,
+      "description": "处理日记账、对账、差异分析、报表、SOX 审计与月结，辅助财务专业人员整理工作材料。",
+      "description_en": "Supports journal entries, reconciliation, variance analysis, reporting, SOX testing, and month-end close workflows.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "hr"
+      ],
+      "group": "HR / People Operations",
+      "group_en": "HR / People Operations",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 处理招聘、绩效、薪酬、入职和组织规划等人力运营任务。",
+      "description_en": "Helps an agent handle recruiting, performance, compensation, onboarding, and org planning workflows.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "legal"
+      ],
+      "group": "法务运营 / 文书",
+      "group_en": "Legal Ops / Legal Writing",
+      "category": "legal-compliance",
+      "subcategory": "14-8",
+      "chain": false,
+      "description": "支持合同审查、合规检查、NDA 分流、法律风险评估和法律文书起草。",
+      "description_en": "Supports contract review, compliance checks, NDA triage, legal risk assessment, and legal writing.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "marketing"
+      ],
+      "group": "营销工作流中枢（marketing）",
+      "group_en": "Marketing workflow hub",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 执行 SEO 审计、活动策划、内容策略、邮件序列和品牌/竞品分析。",
+      "description_en": "Helps the agent run SEO audits, plan campaigns, shape content strategy, draft email sequences, and analyze brand or competitors.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "operations"
+      ],
+      "group": "业务运营工作流中枢（operations）",
+      "group_en": "Business operations workflow hub",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 编写 runbook、流程文档、风险评估、供应商管理和变更计划。",
+      "description_en": "Helps the agent author runbooks, process docs, risk assessments, vendor reviews, and change-management plans.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "product-management"
+      ],
+      "group": "产品管理综合工作流",
+      "group_en": "Product Management Workflows",
+      "category": "product-management",
+      "subcategory": "3-11",
+      "chain": false,
+      "description": "帮助 agent 识别产品需求，生成规格、路线图、研究摘要、竞品分析与指标回顾。",
+      "description_en": "Helps agents route product requests into specs, roadmaps, research synthesis, competitive briefs, and metrics reviews.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "productivity"
+      ],
+      "group": "个人生产力与时间管理",
+      "group_en": "Personal Productivity and Time Management",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 拆解任务、安排日/周计划、优化会议并生成状态更新。",
+      "description_en": "Helps agents break down tasks, plan days or weeks, optimize meetings, and draft status updates.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "sales"
+      ],
+      "group": "销售执行工作流",
+      "group_en": "Sales Execution Workflows",
+      "category": "marketing-growth",
+      "subcategory": "4-9",
+      "chain": false,
+      "description": "帮助 agent 准备销售会议、分析管线、撰写外联、洞察竞品并做预测。",
+      "description_en": "Helps the agent prep sales calls, analyze pipeline health, draft outreach, assess competitors, and forecast.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "code-cleanup"
+      ],
+      "group": "代码清理与债务扫描",
+      "group_en": "Code Cleanup and Debt Scans",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "扫描 TODO、未用导入、死代码等债务，生成定位报告并可在授权后修复。",
+      "description_en": "Scans for stale TODOs, unused imports, dead code, and other debt, then reports exact locations and can apply safe fixes.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "code-linting"
+      ],
+      "group": "Ruff/Biome 代码质量门禁",
+      "group_en": "Ruff and Biome quality gates",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "运行 Python 与 JS/TS 的 lint、格式化和自动修复，帮助 agent 快速收敛代码质量问题。",
+      "description_en": "Runs Python and JS/TS linting, formatting, and autofixes so an agent can quickly clean up code quality issues.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "comment-quality"
+      ],
+      "group": "实现后并行 Code Review（多子代理） / 多 Agent 发布审查门禁 / 注释质量自动检查",
+      "group_en": "Post-implementation code review / release gates / comment quality checks",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "扫描并修复代码注释中的过时时间表述和活动性语言，让注释更清晰稳定。",
+      "description_en": "Scans and fixes stale temporal wording in code comments so documentation stays clear and durable.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "condense"
+      ],
+      "group": "Markdown 指令文件瘦身",
+      "group_en": "Markdown Instruction Condenser",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "压缩 Markdown 指令文件，去除冗余措辞并保留全部要求。",
+      "description_en": "Condenses Markdown instruction files by removing filler while preserving every instruction.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "joy-check"
+      ],
+      "group": "Joy-Grievance 语气审查",
+      "group_en": "Joy-Grievance Framing Review",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "检查内容的积极 framing，对写作或指令分别给出评分和改写建议。",
+      "description_en": "Checks whether content uses constructive, positive framing and suggests reframes when needed.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "python-quality-gate"
+      ],
+      "group": "Python 质量门禁",
+      "group_en": "Python Quality Gate",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "按固定顺序运行 ruff、pytest、mypy、bandit，并生成结构化质量报告。",
+      "description_en": "Runs ruff, pytest, mypy, and bandit in a fixed order and produces a structured quality report.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "typescript-check"
+      ],
+      "group": "TypeScript 类型检查",
+      "group_en": "TypeScript Type Checking",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "通过 tsc --noEmit 验证 TypeScript 项目，并把错误整理成可操作的报告。",
+      "description_en": "Validates TypeScript projects with tsc --noEmit and turns compiler errors into actionable reports.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "universal-quality-gate"
+      ],
+      "group": "通用代码质量门禁",
+      "group_en": "Universal Code Quality Gate",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮 agent 自动识别项目语言并运行已配置的 lint、格式化和静态检查。",
+      "description_en": "Helps an agent detect project languages and run configured linting, formatting, and static checks.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "bluesky-reader"
+      ],
+      "group": "Bluesky 公共内容读取",
+      "group_en": "Bluesky Public Feed Reader",
+      "category": "data-scraping",
+      "subcategory": "7-2",
+      "chain": false,
+      "description": "帮 agent 通过 AT Protocol 拉取和搜索指定 Bluesky 账号的公开帖子。",
+      "description_en": "Helps an agent fetch and search public posts from a Bluesky account via the AT Protocol.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "content-calendar"
+      ],
+      "group": "编辑内容流水线",
+      "group_en": "Editorial content pipeline",
+      "category": "marketing-growth",
+      "subcategory": "4-12",
+      "chain": false,
+      "description": "维护编辑日历的六阶段流水线，统一记录选题、草稿、审核、发布状态。",
+      "description_en": "Maintains an editorial calendar pipeline that tracks ideas, drafts, editing, readiness, and publication state.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "content-engine"
+      ],
+      "group": "多平台内容改写",
+      "group_en": "Platform-native content repurposing",
+      "category": "marketing-growth",
+      "subcategory": "4-2",
+      "chain": false,
+      "description": "把源内容改写成适配不同社媒平台的草稿，但不负责发布或调用 API。",
+      "description_en": "Turns source assets into platform-native social drafts without publishing or making API calls.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "create-voice"
+      ],
+      "group": "写作声音 / 语气画像",
+      "group_en": "Writing Voice & Tone Profiles",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "从写作样本提取语气、句式与用词偏好，生成可复用的声音画像供写作代理调用。",
+      "description_en": "Extracts tone, sentence patterns, and word-choice preferences from writing samples to create reusable voice profiles for writing agents.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "headlines"
+      ],
+      "group": "标题 / 文案钩子生成",
+      "group_en": "Headline & Copy Hook Generation",
+      "category": "marketing-growth",
+      "subcategory": "4-2",
+      "chain": false,
+      "description": "根据简报或草稿生成标题、文章名、社交帖和邮件主题，并扩展候选后收紧优化。",
+      "description_en": "Generates headlines, article titles, social posts, and email subject lines from a brief or draft, then expands and sharpens candidates.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "image-gen"
+      ],
+      "group": "Gemini / Nano Banana 图片生成管线",
+      "group_en": "Gemini and Nano Banana Image Generation Pipeline",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "帮助 agent 选择 Gemini 或 Nano Banana 后端，生成单张、系列或批量图片。",
+      "description_en": "Routes image-generation tasks through Gemini or Nano Banana backends for single, series, or batch outputs.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "image-to-video"
+      ],
+      "group": "FFmpeg 图片音频转视频",
+      "group_en": "FFmpeg Image-and-Audio to Video",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "用 FFmpeg 将静态图片与音频合成为 MP4，可添加波形等可视化效果。",
+      "description_en": "Uses FFmpeg to turn a static image and audio into an MP4, with optional waveform or spectrum overlays.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "professional-communication"
+      ],
+      "group": "商务沟通写作 / 结构化消息",
+      "group_en": "Business Communication Writing / Structured Messages",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "将密集技术或会议输入提炼为清晰商务邮件、备忘录和状态更新。",
+      "description_en": "Turns dense technical or meeting notes into polished business emails, memos, and status updates.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "publish"
+      ],
+      "group": "博客发布与 SEO 检查",
+      "group_en": "Blog Publishing and SEO Checks",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "为博客生成大纲，完成发布前 SEO、链接、图片、分类审计并上传 WordPress。",
+      "description_en": "Prepares blog posts with outlines, pre-publish SEO checks, asset audits, taxonomy cleanup, and WordPress upload.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "reddit-moderate"
+      ],
+      "group": "Reddit 社群审核自动化",
+      "group_en": "Reddit Community Moderation Automation",
+      "category": "data-scraping",
+      "subcategory": "7-2",
+      "chain": false,
+      "description": "通过 PRAW 抓取 Reddit 审核队列，分类举报并辅助确认处理动作。",
+      "description_en": "Fetches the Reddit modqueue via PRAW, classifies reports, and helps confirm moderation actions.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "series-planner"
+      ],
+      "group": "多部分内容系列策划",
+      "group_en": "Multi-part Content Series Planning",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "为多部分文章规划结构、交叉链接、发布节奏，并控制范围与质量。",
+      "description_en": "Plans structure, cross-links, and cadence for multi-part articles while guarding scope and quality.",
+      "sources": [
+        "notque/vexjoy-agent"
+      ]
+    },
+    {
+      "skills": [
+        "add-data-source",
+        "canvas-app"
+      ],
+      "group": "Power Apps Canvas App 构建与数据连接",
+      "group_en": "Power Apps Canvas App Building and Data Connections",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "通过 Canvas Authoring MCP 创建或编辑 Power Apps 画布应用。",
+      "description_en": "Guides users to add data sources or API connectors in Power Apps Studio and verifies them through MCP.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "configure-canvas-mcp"
+      ],
+      "group": "Power Apps Canvas MCP 配置",
+      "group_en": "Power Apps Canvas MCP Configuration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "配置当前会话的 Canvas Authoring MCP，连接指定画布应用工作室。",
+      "description_en": "Configures Canvas Authoring MCP for the current session and connects it to a specified canvas app studio.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "generate-canvas-app"
+      ],
+      "group": "Power Apps Canvas 应用生成",
+      "group_en": "Power Apps Canvas App Generation",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "用于生成完整 Power Apps 画布应用，但已标记弃用。",
+      "description_en": "Generates a complete Power Apps canvas app, though it is marked as deprecated.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "report-issue"
+      ],
+      "group": "插件问题上报",
+      "group_en": "Plugin issue reporting",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "用于把 canvas-apps 插件的问题整理成 GitHub issue，并按配套流程提交。",
+      "description_en": "Packages canvas-apps plugin problems into a GitHub issue and follows the bundled reporting workflow.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "add-azuredevops"
+      ],
+      "group": "Power Apps Azure DevOps 连接器",
+      "group_en": "Power Apps Azure DevOps Connector",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "为 Power Apps code app 添加 Azure DevOps 连接器，配置连接、修复请求并更新记忆库。",
+      "description_en": "Adds an Azure DevOps connector to a Power Apps code app, configures it, applies request fixes, and updates the memory bank.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "add-connector",
+        "add-datasource"
+      ],
+      "group": "数据源/连接器接入工作流",
+      "group_en": "Data source and connector onboarding workflow",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": true,
+      "description": "为 Power Apps 代码应用添加并配置 Power Platform 连接器。",
+      "description_en": "Recommends and routes the user’s goal to the right data source or connector skill.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "add-dataverse",
+        "add-mcscopilot",
+        "add-office365",
+        "add-teams"
+      ],
+      "group": "Power Platform 连接器集成",
+      "group_en": "Power Platform Connector Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "为 Power Apps code app 添加并配置 Microsoft Copilot Studio 连接器。",
+      "description_en": "Adds and configures the Microsoft Teams connector for Power Apps code apps so agents can enable messaging flows.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "add-excel"
+      ],
+      "group": "Office 365 数据连接器",
+      "group_en": "Office 365 Data Connectors",
+      "category": "comms-integration",
+      "subcategory": "9-5",
+      "chain": false,
+      "description": "帮 agent 为 Power Apps code app 接入 Excel Online，读写 OneDrive/SharePoint 工作簿。",
+      "description_en": "Helps the agent add Excel Online to a Power Apps code app for reading and writing workbooks from OneDrive or SharePoint.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "add-onedrive",
+        "add-sharepoint"
+      ],
+      "group": "Power Platform 连接器开发",
+      "group_en": "Power Platform Connector Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "为 Power Apps 代码应用接入 SharePoint，支持列表发现、建表和连接器配置。",
+      "description_en": "Connects SharePoint to Power Apps code apps, covering list discovery, list creation, and connector setup.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "create-code-app"
+      ],
+      "group": "Power Platform Code App 脚手架",
+      "group_en": "Power Platform Code App scaffolding",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "用 React 和 Vite 搭建 Power Apps Code App，检查依赖、规划并部署。",
+      "description_en": "Scaffolds a Power Apps code app with React and Vite, checks prerequisites, plans the build, and deploys the baseline.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "deploy"
+      ],
+      "group": "Power Platform Code Apps 部署",
+      "group_en": "Power Platform Code Apps Deployment",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "构建并部署当前 Power Apps code app 到指定 Power Platform 环境。",
+      "description_en": "Builds and deploys the current Power Apps code app to a specified Power Platform environment.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "list-connections"
+      ],
+      "group": "Power Platform 连接管理",
+      "group_en": "Power Platform Connection Management",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "列出当前环境中的 Power Platform 连接，便于为 code app 选择连接器。",
+      "description_en": "Lists Power Platform connections in the current environment so a code app can select the right connector.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "generate-mcp-app-ui"
+      ],
+      "group": "MCP App 小组件生成器",
+      "group_en": "MCP App Widget Generator",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "根据 MCP 工具输出生成自包含 HTML 可视化小组件，便于在对话中展示结果。",
+      "description_en": "Generates self-contained HTML widgets that visually present an MCP tool's output inside the chat.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "genpage"
+      ],
+      "group": "Power Apps 生成式页面构建",
+      "group_en": "Power Apps Generative Page Builder",
+      "category": "software-engineering",
+      "subcategory": "1-7",
+      "chain": false,
+      "description": "为模型驱动 Power Apps 创建、更新并部署生成式页面，协调规划与代码生成。",
+      "description_en": "Creates, updates, and deploys generative pages for model-driven Power Apps using React, TypeScript, and Fluent UI.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "activate-site",
+        "add-ai-webapi"
+      ],
+      "group": "Power Platform 站点与 Web API 开发",
+      "group_en": "Power Platform Site and Web API Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "通过 Power Platform REST API 激活并配置 Power Pages 站点。",
+      "description_en": "Activates and provisions Power Pages sites through the Power Platform REST API.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "add-cloud-flow"
+      ],
+      "group": "Power Pages 与 Power Automate 集成",
+      "group_en": "Power Pages and Power Automate Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "将 Power Automate 云流注册并接入 Power Pages 页面。",
+      "description_en": "Registers Power Automate cloud flows and wires them into Power Pages pages.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "add-sample-data"
+      ],
+      "group": "测试数据填充",
+      "group_en": "Test Data Seeding",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "按依赖顺序向 Dataverse 表写入示例记录，用于测试演示。",
+      "description_en": "Seeds Dataverse tables with ordered sample records for testing and demos.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "add-seo"
+      ],
+      "group": "Power Pages SEO 基础配置",
+      "group_en": "Power Pages SEO Basics Setup",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "为 Power Pages 代码站点补齐 SEO 基础配置。",
+      "description_en": "Adds SEO essentials for Power Pages code sites.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "add-server-logic"
+      ],
+      "group": "Power Pages 服务端逻辑开发",
+      "group_en": "Power Pages Server Logic Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "为 Power Pages 创建和管理服务端 JavaScript、API 与 Dataverse 集成逻辑。",
+      "description_en": "Creates and manages server-side JavaScript logic, API endpoints, and Dataverse integrations in Power Pages.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "audit-permissions"
+      ],
+      "group": "Power Pages 权限安全审计",
+      "group_en": "Power Pages permission security audit",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "审计 Power Pages 表权限与站点代码差异，生成安全报告。",
+      "description_en": "Audits Power Pages table permissions against site code and Dataverse metadata, then produces a security report.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "configure-env-variables"
+      ],
+      "group": "Power Pages ALM 环境配置",
+      "group_en": "Power Pages ALM environment configuration",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "为 Power Pages 站点设置创建环境变量，支撑 ALM 跨环境部署。",
+      "description_en": "Sets up Dataverse environment variables for Power Pages site settings to support ALM across environments.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "create-site"
+      ],
+      "group": "Power Pages 代码站点创建",
+      "group_en": "Power Pages Code Site Creation",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "帮助 Agent 从需求发现到部署创建 Power Pages SPA 站点。",
+      "description_en": "Helps agents create Power Pages SPA sites from discovery through deployment.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "create-webroles"
+      ],
+      "group": "Power Pages Web 角色配置",
+      "group_en": "Power Pages Web Role Configuration",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "帮助 Agent 为 Power Pages 站点创建并配置访问角色。",
+      "description_en": "Helps agents create and configure access roles for Power Pages sites.",
+      "sources": [
+        "microsoft/power-platform-skills"
+      ]
+    },
+    {
+      "skills": [
+        "jira-safe",
+        "jira-workflow"
+      ],
+      "group": "Jira SAFe 工作流",
+      "group_en": "Jira SAFe Workflow",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": true,
+      "description": "帮 Agent 在 Jira 中按 SAFe 层级创建 Epic、Feature、Story 和子任务。",
+      "description_en": "Helps an agent manage Jira approvals, status transitions, and development task completion sync.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "chinese-learning-assistant"
+      ],
+      "group": "中文表达与写作辅导",
+      "group_en": "Chinese Expression & Writing Coach",
+      "category": "education-learning",
+      "subcategory": "19-2",
+      "chain": false,
+      "description": "帮助中高级中文学习者分析表达使用场景，并润色作文，提升自然流畅度。",
+      "description_en": "Helps intermediate Chinese learners analyze expression contexts and polish writing for natural fluency.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "frontend-dev-guidelines"
+      ],
+      "group": "Next.js 前端开发规范",
+      "group_en": "Next.js Frontend Development Guidelines",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 在 Next.js 15/React 19 项目中按规范创建组件、页面并优化前端代码。",
+      "description_en": "Helps agents build and refine Next.js 15/React 19 frontend code with consistent architecture and styling patterns.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "skill-developer"
+      ],
+      "group": "Skill 创建器",
+      "group_en": "Skill Creator",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "帮助 agent 创建、配置并管理 Claude Code 的 skills、hooks、agents 和命令。",
+      "description_en": "Helps agents create, configure, and manage Claude Code skills, hooks, agents, and commands.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "sitemapkit"
+      ],
+      "group": "Sitemap 发现与 URL 提取",
+      "group_en": "Sitemap Discovery and URL Extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "帮助 agent 发现网站 sitemap、提取 URL 并梳理页面结构。",
+      "description_en": "Helps agents discover sitemaps, extract URLs, and map a site’s page structure.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "create-pr"
+      ],
+      "group": "Git 工作流",
+      "group_en": "Git Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "检查变更并执行显式提交、推送和 GitHub PR 创建。",
+      "description_en": "Checks changes, commits explicitly, pushes, and opens a GitHub PR.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "create-svg-from-prompt"
+      ],
+      "group": "SVG 图像生成",
+      "group_en": "SVG Image Generation",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "调用 Gemini 生成图片并用 autotrace 转换为 SVG 矢量图。",
+      "description_en": "Uses Gemini image generation and autotrace to create SVG files from prompts.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "vibe-security"
+      ],
+      "group": "代码安全扫描与修复",
+      "group_en": "Code Security Scanning and Remediation",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "帮助 agent 扫描多语言代码漏洞，识别风险并给出修复建议。",
+      "description_en": "Helps an agent scan multi-language code for vulnerabilities, identify risks, and suggest fixes.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "axe-ios-simulator"
+      ],
+      "group": "iOS 模拟器自动化",
+      "group_en": "iOS Simulator Automation",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 操控 iOS 模拟器执行手势、输入、截图和无障碍检查。",
+      "description_en": "Helps an agent automate iOS Simulator interactions, capture media, and inspect accessibility elements.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "canton-network-repos"
+      ],
+      "group": "Canton/DAML 开发生态",
+      "group_en": "Canton/DAML Development Ecosystem",
+      "category": "web3-blockchain",
+      "subcategory": "20-3",
+      "chain": false,
+      "description": "帮助 agent 理解 Canton/DAML 生态仓库、构建流程与兼容性排查。",
+      "description_en": "Helps agents navigate Canton/DAML repositories, build flows, and compatibility issues.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "extract-transcripts"
+      ],
+      "group": "CLI 会话转录提取器",
+      "group_en": "CLI Session Transcript Extractor",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 将 Claude Code/Codex 会话 JSONL 转为可读 Markdown 转录稿。",
+      "description_en": "Turns Claude Code/Codex session JSONL logs into readable Markdown transcripts.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "gen-env"
+      ],
+      "group": "本地多实例开发环境隔离",
+      "group_en": "Local Multi-Instance Development Isolation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 生成/审查 gen-env 命令，隔离本地多实例的端口、数据、容器与浏览器状态。",
+      "description_en": "Helps agents generate or review gen-env commands to isolate ports, data, containers, and browser state across local instances.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "go-best-practices"
+      ],
+      "group": "Go 类型优先编码规范",
+      "group_en": "Type-First Go Coding Standards",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "指导 agent 读写 Go 时采用类型优先、接口契约、函数选项和错误处理规范。",
+      "description_en": "Guides agents to apply type-first Go patterns, interface contracts, functional options, and error-handling conventions.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "linear"
+      ],
+      "group": "Linear 任务管理",
+      "group_en": "Linear task management",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "通过 CLI 管理 Linear 议题、项目和团队，并支持 GraphQL 查询。",
+      "description_en": "Manage Linear issues, projects, and teams via CLI, with GraphQL query support.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "playwright-best-practices"
+      ],
+      "group": "Playwright 测试规范",
+      "group_en": "Playwright test standards",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "提供 Playwright 测试编写规范，涵盖定位器、POM、夹具、断言和网络模拟。",
+      "description_en": "Provides Playwright test-writing standards covering locators, POMs, fixtures, assertions, and network mocking.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "python-best-practices"
+      ],
+      "group": "Python 类型优先开发规范",
+      "group_en": "Type-first Python development standards",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "指导 agent 读写 Python 时先建模和类型签名，再实现并用边界校验。",
+      "description_en": "Guides agents to model data and signatures first, then implement Python code with boundary validation.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "react-best-practices"
+      ],
+      "group": "React 组件实践规范",
+      "group_en": "React component practice standards",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "指导 agent 编写 React 组件时正确使用 hooks、effects、refs 并避免常见反模式。",
+      "description_en": "Guides agents to write React components with correct hooks, effects, refs, and fewer anti-patterns.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "tamagui-best-practices"
+      ],
+      "group": "Tamagui 前端工程规范",
+      "group_en": "Tamagui frontend engineering patterns",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 在 Tamagui 项目中采用 v4 配置、编译优化和跨平台样式模式。",
+      "description_en": "Guides agents through Tamagui v1 patterns, including v4 config, compiler optimization, and cross-platform styling.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "tilt"
+      ],
+      "group": "Tilt 本地开发环境",
+      "group_en": "Tilt local development environments",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "帮助 agent 管理 Tilt/Tiltfile，利用自动重载与资源状态验证避免误重启。",
+      "description_en": "Helps agents manage Tilt and Tiltfiles, use automatic reload behavior, and verify updates without unnecessary restarts.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "tmux-processes"
+      ],
+      "group": "tmux 操控交互 CLI",
+      "group_en": "tmux Interactive CLI Control",
+      "category": "software-engineering",
+      "subcategory": "1-7",
+      "chain": false,
+      "description": "帮助 agent 在 tmux 中用交互式会话稳定启动并管理长生命周期进程。",
+      "description_en": "Helps agents reliably start and manage long-running processes inside tmux interactive sessions.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "typescript-best-practices"
+      ],
+      "group": "TypeScript 类型优先开发规范",
+      "group_en": "Type-First TypeScript Standards",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "为 agent 提供 TypeScript 类型优先开发、非法状态建模和边界校验规范。",
+      "description_en": "Gives agents a type-first TypeScript playbook for modeling state, enforcing completeness, and validating boundaries.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "web-fetch"
+      ],
+      "group": "网页抓取与正文提取",
+      "group_en": "Web Fetching and Content Extraction",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "帮助 agent 抓取网页并用 CSS 选择器或脚本提取正文，转成干净 Markdown 便于阅读和引用。",
+      "description_en": "Helps agents fetch web pages and extract the main content into clean Markdown using selectors or a fallback script.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "zig-best-practices"
+      ],
+      "group": "Zig 类型优先编码规范",
+      "group_en": "Type-First Zig Coding Standards",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 agent 在读写 Zig 代码时采用类型优先、错误集和 comptime 校验等模式，提升代码健壮性。",
+      "description_en": "Guides agents to write and review Zig code with type-first patterns, explicit errors, and comptime checks for safer implementation.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "zig-docs"
+      ],
+      "group": "Zig 文档查询",
+      "group_en": "Zig Documentation Lookup",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮 agent 获取 Zig 语言、标准库源码与 API 签名等权威参考。",
+      "description_en": "Helps the agent retrieve authoritative Zig language, stdlib source, and API signature references.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "claude-code-debug"
+      ],
+      "group": "Claude Code 扩展与 MCP 调试",
+      "group_en": "Claude Code Extension and MCP Debugging",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮 agent 排查 Claude Code 扩展、hook、MCP 与技能加载异常。",
+      "description_en": "Helps the agent troubleshoot Claude Code extensions, hooks, MCP connections, and skill loading issues.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "claude-code-headless",
+        "claude-code-hooks"
+      ],
+      "group": "Claude Code 自动化与审计工作流",
+      "group_en": "Claude Code Automation & Audit Workflow",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": true,
+      "description": "让 Claude Code 以脚本和 JSON 输出在 CI 中无交互运行。",
+      "description_en": "Run Claude Code from scripts with parseable JSON output for CI and automation.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "claude-code-templates"
+      ],
+      "group": "Skill 创建器 / Claude Code 命令创建器",
+      "group_en": "Skill Creator / Claude Code Command Creator",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "为 Claude Code 扩展、Agent、Skill 和命令生成模板脚手架。",
+      "description_en": "Generates starter templates for Claude Code extensions, agents, skills, commands, and hooks.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "code-stats"
+      ],
+      "group": "代码库概览 / 语义差异",
+      "group_en": "Codebase Overview / Semantic Diffs",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "用 tokei 和 difft 快速统计代码规模、语言构成与语义差异。",
+      "description_en": "Uses tokei and difft to quickly summarize codebase size, language mix, and semantic differences.",
+      "sources": [
+        "aiskillstore/marketplace"
+      ]
+    },
+    {
+      "skills": [
+        "a11y-audit",
+        "apply-aesthetic"
+      ],
+      "group": "审美方向应用到可访问性验证",
+      "group_en": "Aesthetic Direction to Accessibility Validation",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": true,
+      "description": "按 WCAG 2.2 与 ARIA 模式审查 UI，测量对比度、键盘与读屏状态，输出分级修复建议。",
+      "description_en": "Audits UI against WCAG 2.2 and ARIA patterns, measuring contrast and checking keyboard/screen-reader behavior with prioritized fixes.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "brandkit",
+        "design-code"
+      ],
+      "group": "品牌系统到组件代码工作流",
+      "group_en": "Brand System to Component Code Workflow",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": true,
+      "description": "从产品简报生成可访问的品牌设计系统，包括原始与语义 DTCG tokens、明暗主题和主题样式文件。",
+      "description_en": "Creates an accessible brand design system from a brief, including primitive and semantic DTCG tokens, light and dark themes, and theme CSS.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "design-component"
+      ],
+      "group": "Design System 组件规范",
+      "group_en": "Design System Component Specs",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "为 UI 组件生成规范，覆盖结构、状态、变体、设计 token 与可访问性要求。",
+      "description_en": "Creates UI component specs covering anatomy, variants, states, design tokens, and accessibility requirements.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "design-qa"
+      ],
+      "group": "Design QA 质量门禁",
+      "group_en": "Design QA Gates",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "为组件或页面建立设计 QA 门禁，覆盖 token、对比度、a11y 与视觉回归检查。",
+      "description_en": "Sets up design QA gates for components or pages, including token, contrast, accessibility, and visual regression checks.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "design-review"
+      ],
+      "group": "UX/UI 设计审查与可访问性审计",
+      "group_en": "UX/UI Design Review and Accessibility Audits",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "审查界面体验、可访问性与启发式违规，输出评分和修复优先级。",
+      "description_en": "Review UI quality, accessibility, and heuristic violations, then produce scored findings and prioritized fixes.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "design-tokens"
+      ],
+      "group": "DTCG 设计令牌系统",
+      "group_en": "DTCG Design Token Systems",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "生成、扩展和校验 DTCG 设计令牌，维护颜色、排版、间距等体系。",
+      "description_en": "Generate, extend, and validate DTCG design tokens for color, typography, spacing, and related systems.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "figma-integration"
+      ],
+      "group": "Figma↔代码双向同步",
+      "group_en": "Figma–code bidirectional sync",
+      "category": "design-frontend",
+      "subcategory": "5-4",
+      "chain": false,
+      "description": "同步 Figma 变量与代码 token，检查组件变体、尺寸和状态覆盖。",
+      "description_en": "Syncs Figma variables with code tokens and checks coverage for component variants, sizes, and states.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "governance"
+      ],
+      "group": "设计系统治理",
+      "group_en": "Design system governance",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "规范 token 与组件的版本、贡献、废弃和迁移，防止设计系统碎片化。",
+      "description_en": "Sets versioning, contribution, deprecation, and migration rules to keep the design system coherent.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "image-to-code"
+      ],
+      "group": "设计稿/截图转代码",
+      "group_en": "Design-to-code",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "从参考图或截图推断设计系统，生成 DTCG token 与可访问 UI 代码。",
+      "description_en": "Infer a design system from a reference image or screenshot and produce token-driven, accessible UI code.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "migrate-design-system"
+      ],
+      "group": "设计系统迁移与互操作",
+      "group_en": "Design system migration & interoperability",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "把现有 token 体系与主流设计系统互转，规划迁移并验证对比度与状态。",
+      "description_en": "Map a token system to or from major design systems, plan migrations, and verify contrast and states.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "performance"
+      ],
+      "group": "UI 性能与 Core Web Vitals 优化",
+      "group_en": "UI Performance & Core Web Vitals",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 按 Core Web Vitals 预算诊断并优化 UI 加载、布局稳定性和动画性能。",
+      "description_en": "Helps the agent diagnose and optimize UI loading, layout stability, and animation performance against Core Web Vitals budgets.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "prototype"
+      ],
+      "group": "原型保真度与用户验证",
+      "group_en": "Prototype Fidelity & User Validation",
+      "category": "product-management",
+      "subcategory": "3-1",
+      "chain": false,
+      "description": "帮助 agent 从内容优先到高保真逐步原型化，并配套用户旅程与可用性验证脚本。",
+      "description_en": "Helps the agent move from content-first concepts to high-fidelity prototypes with journey mapping and usability test scripts.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "redesign"
+      ],
+      "group": "UI 重设计与可用性审计",
+      "group_en": "UI Redesign & Usability Audit",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "先审计现有 UI，再按品牌与系统规则手术式重设计并验证。",
+      "description_en": "Audits an existing UI, then surgically redesigns it against brand and system rules while preserving behavior.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "token-build"
+      ],
+      "group": "DTCG 设计 Token 构建管线",
+      "group_en": "DTCG Design Token Build Pipeline",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "将 DTCG 设计 Token 构建成多平台样式与主题产物。",
+      "description_en": "Builds DTCG design tokens into platform-ready CSS, Tailwind, JS/TS, iOS, Android, and Compose outputs.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ux-writing"
+      ],
+      "group": "UX 界面文案生成与审查",
+      "group_en": "UX Microcopy Writing and Review",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "帮 agent 撰写或审查按钮、错误提示、空状态等界面文案，并应用语气与包容性规则。",
+      "description_en": "Helps an agent write or review buttons, error messages, empty states, and other UI copy using voice, tone, and inclusive-language rules.",
+      "sources": [
+        "plugin87/ux-ui-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "accessibility-audit"
+      ],
+      "group": "网站无障碍审计与整改",
+      "group_en": "Website Accessibility Audits and Remediation",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "依据 WCAG 2.1 AA 审计站点无障碍问题，并生成整改优先级和计划。",
+      "description_en": "Audits site accessibility against WCAG 2.1 AA and produces a prioritized remediation plan.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ads-creative-development"
+      ],
+      "group": "广告创意生产与测试",
+      "group_en": "Ad Creative Production and Testing",
+      "category": "marketing-growth",
+      "subcategory": "4-7",
+      "chain": false,
+      "description": "面向 Meta/TikTok/LinkedIn 等渠道，设计高转化广告创意、钩子、变体与疲劳刷新。",
+      "description_en": "Design high-converting ad creative for Meta, TikTok, LinkedIn, and similar channels, including hooks, variations, and fatigue refreshes.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ads-performance-analytics"
+      ],
+      "group": "付费广告效果分析",
+      "group_en": "Paid Media Performance Analysis",
+      "category": "marketing-growth",
+      "subcategory": "4-4",
+      "chain": false,
+      "description": "帮 agent 解读付费媒体仪表盘、归因模型、ROAS/LTV 与增量测试，避免误判预算决策。",
+      "description_en": "Helps the agent interpret paid media dashboards, attribution models, ROAS/LTV, and incrementality tests to avoid budget-decision traps.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "after-action-report"
+      ],
+      "group": "项目复盘 / 事后回顾",
+      "group_en": "Project Postmortems / After-Action Reviews",
+      "category": "product-management",
+      "subcategory": "3-9",
+      "chain": false,
+      "description": "帮 agent 对发布、事故或项目做结构化复盘，提炼时间线、根因和可执行教训。",
+      "description_en": "Helps the agent run structured postmortems for launches, incidents, or projects, capturing timelines, root causes, and actionable lessons.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ai-content-collaboration"
+      ],
+      "group": "AI 辅助内容协作规范",
+      "group_en": "AI-Assisted Content Collaboration Guidelines",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "帮助 agent 设计人机协作内容流程，守住声音、披露与伦理边界。",
+      "description_en": "Helps the agent design human-AI content workflows that preserve voice, disclosure, and ethical boundaries.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "analytics-strategy"
+      ],
+      "group": "分析测量框架",
+      "group_en": "Analytics Measurement Frameworks",
+      "category": "marketing-growth",
+      "subcategory": "4-12",
+      "chain": false,
+      "description": "帮助 agent 规划分析体系，定义 KPI、事件、归因与看板架构。",
+      "description_en": "Helps the agent plan analytics systems, KPIs, event schemas, attribution models, and dashboard architecture.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "art-direction"
+      ],
+      "group": "创意方向与视觉简报",
+      "group_en": "Creative Direction & Visual Briefing",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "帮助 agent 把品牌延展为摄影、插画、视频和活动的视觉创意方向与执行简报。",
+      "description_en": "Helps an agent extend a brand into visual creative direction and execution briefs for photography, illustration, video, and campaigns.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "backup-and-disaster-recovery"
+      ],
+      "group": "备份与灾难恢复演练",
+      "group_en": "Backup & Disaster Recovery Readiness",
+      "category": "devops-infra",
+      "subcategory": "17-4",
+      "chain": false,
+      "description": "帮助 agent 规划备份架构、设定 RPO/RTO，并组织灾难恢复演练与恢复能力审查。",
+      "description_en": "Helps an agent plan backup architecture, define RPO/RTO targets, and run disaster recovery drills.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "beta-program-management"
+      ],
+      "group": "结构化 Beta 验证",
+      "group_en": "Structured Beta Validation",
+      "category": "product-management",
+      "subcategory": "3-3",
+      "chain": false,
+      "description": "帮助 agent 设计 Beta 队列、收集反馈并制定 GA 决策标准。",
+      "description_en": "Helps an agent design beta cohorts, collect feedback, and define GA decision criteria.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "brand-archetype-system"
+      ],
+      "group": "品牌系统 / 视觉规范",
+      "group_en": "Brand Systems & Visual Guidelines",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "帮助 agent 按行业美学原型快速生成品牌色彩、字体、版式和语气方向。",
+      "description_en": "Helps an agent quickly generate brand color, typography, layout, and voice direction from industry aesthetic archetypes.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "brand-discovery",
+        "brand-ideation"
+      ],
+      "group": "品牌发现到概念收敛工作流",
+      "group_en": "Brand Discovery to Concept Convergence Workflow",
+      "category": "product-management",
+      "subcategory": "3-4",
+      "chain": true,
+      "description": "梳理受众、竞品、品类与问题空间，明确品牌可占据的定位方向。",
+      "description_en": "Maps audience, competitors, category dynamics, and problem space to identify viable positioning territory.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "brand-identity",
+        "brand-style-guide"
+      ],
+      "group": "品牌识别到品牌规范工作流",
+      "group_en": "Brand Identity to Style Guide Workflow",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": true,
+      "description": "帮助 agent 设计或评估品牌视觉识别系统，包括标志、色彩、字体、图标和动效原则。",
+      "description_en": "Helps an agent design or evaluate a brand visual identity system, including logo, color, typography, iconography, and motion principles.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "brand-voice"
+      ],
+      "group": "品牌声调指南",
+      "group_en": "Brand Voice & Tone Guidelines",
+      "category": "marketing-growth",
+      "subcategory": "4-2",
+      "chain": false,
+      "description": "帮助 agent 定义品牌声调体系，并审计或训练团队按统一口吻写作。",
+      "description_en": "Creates a brand voice and tone system that writers, designers, founders, and AI assistants can apply consistently.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "calculator-design"
+      ],
+      "group": "互动计算型引流工具",
+      "group_en": "Interactive Calculator Lead Magnets",
+      "category": "marketing-growth",
+      "subcategory": "4-6",
+      "chain": false,
+      "description": "帮助 agent 设计有真实决策价值的互动计算器，作为合格线索获取工具。",
+      "description_en": "Designs interactive calculators that provide real decision support while attracting and qualifying leads.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "chatbot-flow-design"
+      ],
+      "group": "网站聊天机器人对话流设计",
+      "group_en": "Website Chatbot Conversation Flow Design",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 设计网站聊天机器人意图识别、分支、兜底和升级流程。",
+      "description_en": "Helps an agent design website chatbot intent flows, branching logic, fallbacks, and escalation paths.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "code-review-web"
+      ],
+      "group": "Web 应用代码审查",
+      "group_en": "Web App Code Review",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "帮助 agent 审查 Web 代码，定位构建或线上问题并检查安全与性能风险。",
+      "description_en": "Helps an agent review web application code, diagnose build or production issues, and flag quality risks.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "comparison-tool-design"
+      ],
+      "group": "对比页与决策工具设计",
+      "group_en": "Comparison Pages & Decision Tools",
+      "category": "marketing-growth",
+      "subcategory": "4-8",
+      "chain": false,
+      "description": "设计并排比较工具，用轴选择与推荐纪律帮助用户决策。",
+      "description_en": "Designs side-by-side comparison tools with decision-focused axes and recommendation discipline.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "competitor-experience-audit"
+      ],
+      "group": "竞品体验基准审计",
+      "group_en": "Competitor Experience Benchmarking",
+      "category": "marketing-growth",
+      "subcategory": "4-8",
+      "chain": false,
+      "description": "审计头部竞品的品牌、UX 与站点设计，提炼行业体验标准。",
+      "description_en": "Audits leading competitors’ brand, UX, and site design to define category experience benchmarks.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-and-copy"
+      ],
+      "group": "通用内容写作与编辑",
+      "group_en": "General Content Writing and Editing",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "按目标读者、场景与品牌语气撰写或润色网站文案、博客和帮助文档。",
+      "description_en": "Drafts or edits website copy, blog posts, and help docs around the reader, goal, and brand voice.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-brief-authoring"
+      ],
+      "group": "SEO 内容简报",
+      "group_en": "SEO Content Briefing",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "为单篇内容制定关键词、搜索意图、受众、大纲、实体覆盖与成功标准。",
+      "description_en": "Creates focused content briefs with keyword, intent, audience, outline, entity coverage, and success criteria.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-distribution"
+      ],
+      "group": "内容分发渠道策略",
+      "group_en": "Content Distribution Channel Strategy",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "帮助 agent 为内容匹配受众、渠道与发布节奏，制定分发方案。",
+      "description_en": "Helps an agent match content to audiences, channels, and cadence for a strategic distribution plan.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-migration"
+      ],
+      "group": "内容迁移与 SEO 保全",
+      "group_en": "Content Migration & SEO Preservation",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "帮助 agent 规划 CMS、域名或 URL 迁移，保全 SEO 与用户书签。",
+      "description_en": "Helps an agent plan CMS, domain, or URL migrations while preserving SEO equity and user access.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-refresh-system"
+      ],
+      "group": "SEO 内容刷新与生命周期维护",
+      "group_en": "SEO Content Refresh & Lifecycle Maintenance",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "帮助 agent 审计内容老化、排序刷新优先级，并决定刷新、合并或删除。",
+      "description_en": "Helps an agent audit content decay, prioritize refresh work, and decide whether to refresh, merge, or remove aging assets.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-repurposing"
+      ],
+      "group": "跨格式内容改编与分发",
+      "group_en": "Cross-Format Content Repurposing & Distribution",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "把核心内容改编成邮件、社交、播客、视频等格式，避免低质批量改写。",
+      "description_en": "Adapts a flagship asset into medium-specific derivatives for email, social, podcast, video, and more without mass-produced AI slop.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-strategy"
+      ],
+      "group": "SEO 内容战略与主题规划",
+      "group_en": "SEO Content Strategy & Topic Planning",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "帮助 agent 规划内容定位、支柱、日历、主题集群与内容治理。",
+      "description_en": "Helps an agent plan editorial positioning, content pillars, calendars, topic clusters, and governance.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "cost-optimization"
+      ],
+      "group": "云与 SaaS 成本审计 / FinOps",
+      "group_en": "Cloud & SaaS Cost Audit / FinOps",
+      "category": "devops-infra",
+      "subcategory": "17-4",
+      "chain": false,
+      "description": "帮助 agent 审计云、SaaS 和基础设施支出，识别浪费并制定降本方案。",
+      "description_en": "Helps an agent audit cloud, SaaS, and infrastructure spend, spot waste, and plan reductions.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "creative-brief-selector",
+        "creative-brief"
+      ],
+      "group": "品牌创意简报",
+      "group_en": "Brand Creative Briefs",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "把模糊项目意图整理成可交付给设计、开发或 agent 的创意简报。",
+      "description_en": "Turns a vague project idea into a clear creative brief for designers, developers, or agents.",
+      "sources": [
+        "rampstackco/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "firebase-ai-logic-basics"
+      ],
+      "group": "Firebase AI Logic / Gemini SDK",
+      "group_en": "Firebase AI Logic / Gemini SDK",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 agent 在 Web/移动端接入 Firebase AI Logic，处理 Gemini 调用与结构化输出。",
+      "description_en": "Helps agents integrate Firebase AI Logic and Gemini into web or mobile apps with setup, inference, and structured outputs.",
+      "sources": [
+        "firebase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "firebase-app-hosting-basics"
+      ],
+      "group": "Firebase App Hosting 部署",
+      "group_en": "Firebase App Hosting Deployment",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "指导 agent 用 Firebase App Hosting 部署和管理 Next.js、Angular 等全栈 Web 应用。",
+      "description_en": "Helps agents deploy and manage full-stack web apps with Firebase App Hosting, including Next.js and Angular workflows.",
+      "sources": [
+        "firebase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "firebase-auth-basics",
+        "firebase-basics"
+      ],
+      "group": "Firebase 项目初始化与认证配置",
+      "group_en": "Firebase project setup and authentication configuration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": true,
+      "description": "帮助 Agent 为应用配置 Firebase Authentication，支持登录、用户管理和安全规则。",
+      "description_en": "Helps an agent set up Firebase Authentication for apps, including sign-in, user management, and security rules.",
+      "sources": [
+        "firebase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "firebase-crashlytics"
+      ],
+      "group": "Firebase Crashlytics 崩溃监控",
+      "group_en": "Firebase Crashlytics Crash Monitoring",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助配置 Firebase Crashlytics，收集并解读客户端崩溃报告。",
+      "description_en": "Set up Firebase Crashlytics and interpret client app crash reports.",
+      "sources": [
+        "firebase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "firebase-data-connect-basics"
+      ],
+      "group": "Firebase SQL Connect 后端",
+      "group_en": "Firebase SQL Connect Backend",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助设计 Firebase SQL Connect 后端，编写 GraphQL 查询并生成类型安全 SDK。",
+      "description_en": "Design Firebase SQL Connect backends, author GraphQL operations, and generate type-safe SDKs.",
+      "sources": [
+        "firebase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "firebase-firestore"
+      ],
+      "group": "Firestore 数据库操作",
+      "group_en": "Firestore database operations",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 识别 Firestore 实例、配置规则/索引并执行查询。",
+      "description_en": "Helps the agent detect Firestore instances, configure rules and indexes, and run queries.",
+      "sources": [
+        "firebase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "firebase-hosting-basics"
+      ],
+      "group": "Firebase Hosting 部署",
+      "group_en": "Firebase Hosting deployment",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "帮助 agent 部署静态站、SPA，并管理预览渠道与发布流程。",
+      "description_en": "Helps the agent deploy static sites and SPAs while managing preview channels and releases.",
+      "sources": [
+        "firebase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "firebase-remote-config-basics"
+      ],
+      "group": "Firebase Remote Config 开发",
+      "group_en": "Firebase Remote Config Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 Agent 配置 Remote Config、管理模板和动态更新应用行为。",
+      "description_en": "Helps the agent configure Remote Config, manage templates, and update app behavior dynamically.",
+      "sources": [
+        "firebase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "firebase-security-rules-auditor"
+      ],
+      "group": "Firebase 安全规则审计",
+      "group_en": "Firebase Security Rules Auditing",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "评估 Firestore 安全规则，找出绕过路径并给出加固建议。",
+      "description_en": "Reviews Firestore Security Rules, identifies bypass risks, and suggests hardening improvements.",
+      "sources": [
+        "firebase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "xcode-project-setup"
+      ],
+      "group": "iOS / Xcode 项目依赖集成",
+      "group_en": "iOS / Xcode Dependency Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "安全修改 Xcode 项目，添加 Swift Packages 并链接 iOS 依赖。",
+      "description_en": "Safely updates Xcode projects to add Swift Packages and link iOS dependencies.",
+      "sources": [
+        "firebase/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "rails-upgrade",
+        "upgrade-cleanup"
+      ],
+      "group": "Rails 升级工作流",
+      "group_en": "Rails Upgrade Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": true,
+      "description": "分析 Rails 应用升级风险，生成迁移报告与步骤指南。",
+      "description_en": "Analyzes Rails upgrade risks and produces migration reports with step-by-step guidance.",
+      "sources": [
+        "ombulabs/claude-code_rails-upgrade-skill"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "notque",
+        "repo": "vexjoy-agent",
+        "full_name": "notque/vexjoy-agent",
+        "url": "https://github.com/notque/vexjoy-agent",
+        "stars": 401,
+        "pushed_at": "2026-06-25",
+        "default_branch": "main",
+        "github_description": "VexJoy AI Agent with Intelligent Routing - /do routes plain-English requests to the right specialist agent and gates the work with reviews, tests, and a learning loop.",
+        "topics": [
+          "ai",
+          "ai-agents",
+          "ai-pipelines",
+          "ai-skills",
+          "ai-workflows",
+          "claude",
+          "claude-ai",
+          "claude-code",
+          "claude-code-skill",
+          "claude-skills",
+          "codex-skills",
+          "developer-tools",
+          "factory-ai"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-codex-skills"
+      },
+      "skills": [
+        {
+          "name": "csuite",
+          "path": "skills/business/csuite/SKILL.md",
+          "subcategory": "3-4",
+          "subcategory_title": "3.4 战略 / 定位 / 商业模式",
+          "category": "product-management",
+          "group": "高管决策支持",
+          "group_en": "Executive Decision Support",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 CEO/CTO/CMO 级战略、技术选择、增长与项目评估支持。",
+          "description_en": "Helps an agent support executive-level strategy, technology choices, growth planning, and project evaluation.",
+          "what": "C-suite decision support across strategy, technology, growth, competitive intelligence, and go/no-go evaluation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "customer-support",
+          "path": "skills/business/customer-support/SKILL.md",
+          "subcategory": "3-1",
+          "subcategory_title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "category": "product-management",
+          "group": "客户支持工单流程",
+          "group_en": "Customer Support Ticket Workflows",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协助 agent 分流客服工单、起草回复、生成知识库文章并处理升级。",
+          "description_en": "Helps an agent triage support tickets, draft responses, create knowledge base articles, and handle escalations.",
+          "what": "Customer-facing support workflow for triage, responses, KB articles, escalations, and customer context research.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "design",
+          "path": "skills/business/design/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "UI/UX 设计工作流",
+          "group_en": "UI/UX Design Workflows",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "覆盖 UX 文案、设计系统、可访问性审查与交付，帮助 agent 按模式处理界面设计任务。",
+          "description_en": "Handles UX copy, design systems, accessibility reviews, and handoff tasks for UI/UX design work.",
+          "what": "用于按请求模式执行 UX 文案、设计系统和可访问性审查等设计任务。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "finance",
+          "path": "skills/business/finance/SKILL.md",
+          "subcategory": "10-3",
+          "subcategory_title": "10.3 会计 / 税务 / 跨国合规",
+          "category": "startup-finance",
+          "group": "会计结账与审计支持",
+          "group_en": "Accounting Close & Audit Support",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "处理日记账、对账、差异分析、报表、SOX 审计与月结，辅助财务专业人员整理工作材料。",
+          "description_en": "Supports journal entries, reconciliation, variance analysis, reporting, SOX testing, and month-end close workflows.",
+          "what": "用于按请求模式执行会计记账、对账、差异分析和月结审计等任务。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hr",
+          "path": "skills/business/hr/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "HR / People Operations",
+          "group_en": "HR / People Operations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理招聘、绩效、薪酬、入职和组织规划等人力运营任务。",
+          "description_en": "Helps an agent handle recruiting, performance, compensation, onboarding, and org planning workflows.",
+          "what": "People operations workflows for HR-related business requests.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "legal",
+          "path": "skills/business/legal/SKILL.md",
+          "subcategory": "14-8",
+          "subcategory_title": "14.8 法务运营 / 文书",
+          "category": "legal-compliance",
+          "group": "法务运营 / 文书",
+          "group_en": "Legal Ops / Legal Writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "支持合同审查、合规检查、NDA 分流、法律风险评估和法律文书起草。",
+          "description_en": "Supports contract review, compliance checks, NDA triage, legal risk assessment, and legal writing.",
+          "what": "General legal workflow support for business and compliance analysis.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "marketing",
+          "path": "skills/business/marketing/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "营销工作流中枢（marketing）",
+          "group_en": "Marketing workflow hub",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 执行 SEO 审计、活动策划、内容策略、邮件序列和品牌/竞品分析。",
+          "description_en": "Helps the agent run SEO audits, plan campaigns, shape content strategy, draft email sequences, and analyze brand or competitors.",
+          "what": "A marketing workflow hub for SEO, campaigns, content, email, competitive analysis, brand review, and reporting.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "operations",
+          "path": "skills/business/operations/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "业务运营工作流中枢（operations）",
+          "group_en": "Business operations workflow hub",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 编写 runbook、流程文档、风险评估、供应商管理和变更计划。",
+          "description_en": "Helps the agent author runbooks, process docs, risk assessments, vendor reviews, and change-management plans.",
+          "what": "A business operations hub for runbooks, process docs, vendor review, risk, capacity, change, and compliance.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "product-management",
+          "path": "skills/business/product-management/SKILL.md",
+          "subcategory": "3-11",
+          "subcategory_title": "3.11 PM 元能力",
+          "category": "product-management",
+          "group": "产品管理综合工作流",
+          "group_en": "Product Management Workflows",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 识别产品需求，生成规格、路线图、研究摘要、竞品分析与指标回顾。",
+          "description_en": "Helps agents route product requests into specs, roadmaps, research synthesis, competitive briefs, and metrics reviews.",
+          "what": "为产品管理工作提供模式识别、参考材料加载与多模式输出。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "productivity",
+          "path": "skills/business/productivity/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "个人生产力与时间管理",
+          "group_en": "Personal Productivity and Time Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 拆解任务、安排日/周计划、优化会议并生成状态更新。",
+          "description_en": "Helps agents break down tasks, plan days or weeks, optimize meetings, and draft status updates.",
+          "what": "为个人和团队效率任务提供任务拆解、计划安排、会议优化与状态同步。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sales",
+          "path": "skills/business/sales/SKILL.md",
+          "subcategory": "4-9",
+          "subcategory_title": "4.9 销售辅助 / RevOps / 留存",
+          "category": "marketing-growth",
+          "group": "销售执行工作流",
+          "group_en": "Sales Execution Workflows",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 准备销售会议、分析管线、撰写外联、洞察竞品并做预测。",
+          "description_en": "Helps the agent prep sales calls, analyze pipeline health, draft outreach, assess competitors, and forecast.",
+          "what": "销售工作流覆盖会前准备、管线分析、外联、竞品和预测。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "code-cleanup",
+          "path": "skills/code-quality/code-cleanup/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "代码清理与债务扫描",
+          "group_en": "Code Cleanup and Debt Scans",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "扫描 TODO、未用导入、死代码等债务，生成定位报告并可在授权后修复。",
+          "description_en": "Scans for stale TODOs, unused imports, dead code, and other debt, then reports exact locations and can apply safe fixes.",
+          "what": "代码债务扫描与就地清理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "code-linting",
+          "path": "skills/code-quality/code-linting/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Ruff/Biome 代码质量门禁",
+          "group_en": "Ruff and Biome quality gates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "运行 Python 与 JS/TS 的 lint、格式化和自动修复，帮助 agent 快速收敛代码质量问题。",
+          "description_en": "Runs Python and JS/TS linting, formatting, and autofixes so an agent can quickly clean up code quality issues.",
+          "what": "A focused code-quality gate for ruff and Biome.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "comment-quality",
+          "path": "skills/code-quality/comment-quality/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "实现后并行 Code Review（多子代理） / 多 Agent 发布审查门禁 / 注释质量自动检查",
+          "group_en": "Post-implementation code review / release gates / comment quality checks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "扫描并修复代码注释中的过时时间表述和活动性语言，让注释更清晰稳定。",
+          "description_en": "Scans and fixes stale temporal wording in code comments so documentation stays clear and durable.",
+          "what": "A comment-quality reviewer for stale or relative language.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "condense",
+          "path": "skills/code-quality/condense/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Markdown 指令文件瘦身",
+          "group_en": "Markdown Instruction Condenser",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "压缩 Markdown 指令文件，去除冗余措辞并保留全部要求。",
+          "description_en": "Condenses Markdown instruction files by removing filler while preserving every instruction.",
+          "what": "一个用于精简 Markdown 指令文件、降低冗余同时保留语义的 code-quality skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "joy-check",
+          "path": "skills/code-quality/joy-check/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "Joy-Grievance 语气审查",
+          "group_en": "Joy-Grievance Framing Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "检查内容的积极 framing，对写作或指令分别给出评分和改写建议。",
+          "description_en": "Checks whether content uses constructive, positive framing and suggests reframes when needed.",
+          "what": "一个用于评估写作或指令内容语气是否积极、建设性的内容质检 skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "python-quality-gate",
+          "path": "skills/code-quality/python-quality-gate/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Python 质量门禁",
+          "group_en": "Python Quality Gate",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按固定顺序运行 ruff、pytest、mypy、bandit，并生成结构化质量报告。",
+          "description_en": "Runs ruff, pytest, mypy, and bandit in a fixed order and produces a structured quality report.",
+          "what": "Gates Python code quality with linting, tests, typing, and security checks.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "typescript-check",
+          "path": "skills/code-quality/typescript-check/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "TypeScript 类型检查",
+          "group_en": "TypeScript Type Checking",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 tsc --noEmit 验证 TypeScript 项目，并把错误整理成可操作的报告。",
+          "description_en": "Validates TypeScript projects with tsc --noEmit and turns compiler errors into actionable reports.",
+          "what": "Performs project-aware TypeScript type validation before commits or refactors.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "universal-quality-gate",
+          "path": "skills/code-quality/universal-quality-gate/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "通用代码质量门禁",
+          "group_en": "Universal Code Quality Gate",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 自动识别项目语言并运行已配置的 lint、格式化和静态检查。",
+          "description_en": "Helps an agent detect project languages and run configured linting, formatting, and static checks.",
+          "what": "Auto-detects the project stack and enforces a multi-language quality gate.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "bluesky-reader",
+          "path": "skills/content/bluesky-reader/SKILL.md",
+          "subcategory": "7-2",
+          "subcategory_title": "7.2 跨平台社交 / 趋势监测",
+          "category": "data-scraping",
+          "group": "Bluesky 公共内容读取",
+          "group_en": "Bluesky Public Feed Reader",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 通过 AT Protocol 拉取和搜索指定 Bluesky 账号的公开帖子。",
+          "description_en": "Helps an agent fetch and search public posts from a Bluesky account via the AT Protocol.",
+          "what": "Reads public Bluesky feeds and searches posts for a given profile or topic.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-calendar",
+          "path": "skills/content/content-calendar/SKILL.md",
+          "subcategory": "4-12",
+          "subcategory_title": "4.12 SOP / 测量",
+          "category": "marketing-growth",
+          "group": "编辑内容流水线",
+          "group_en": "Editorial content pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "维护编辑日历的六阶段流水线，统一记录选题、草稿、审核、发布状态。",
+          "description_en": "Maintains an editorial calendar pipeline that tracks ideas, drafts, editing, readiness, and publication state.",
+          "what": "用于管理 content-calendar.md 中的编辑内容流水线状态与操作。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-engine",
+          "path": "skills/content/content-engine/SKILL.md",
+          "subcategory": "4-2",
+          "subcategory_title": "4.2 文案 / 营销心理 / 产品命名",
+          "category": "marketing-growth",
+          "group": "多平台内容改写",
+          "group_en": "Platform-native content repurposing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把源内容改写成适配不同社媒平台的草稿，但不负责发布或调用 API。",
+          "description_en": "Turns source assets into platform-native social drafts without publishing or making API calls.",
+          "what": "用于根据平台语境改写文章、演示或文档为社媒内容草稿。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "create-voice",
+          "path": "skills/content/create-voice/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "写作声音 / 语气画像",
+          "group_en": "Writing Voice & Tone Profiles",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从写作样本提取语气、句式与用词偏好，生成可复用的声音画像供写作代理调用。",
+          "description_en": "Extracts tone, sentence patterns, and word-choice preferences from writing samples to create reusable voice profiles for writing agents.",
+          "what": "Builds a voice profile from sample texts.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "headlines",
+          "path": "skills/content/headlines/SKILL.md",
+          "subcategory": "4-2",
+          "subcategory_title": "4.2 文案 / 营销心理 / 产品命名",
+          "category": "marketing-growth",
+          "group": "标题 / 文案钩子生成",
+          "group_en": "Headline & Copy Hook Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据简报或草稿生成标题、文章名、社交帖和邮件主题，并扩展候选后收紧优化。",
+          "description_en": "Generates headlines, article titles, social posts, and email subject lines from a brief or draft, then expands and sharpens candidates.",
+          "what": "Creates headline and title options.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "image-gen",
+          "path": "skills/content/image-gen/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "Gemini / Nano Banana 图片生成管线",
+          "group_en": "Gemini and Nano Banana Image Generation Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 选择 Gemini 或 Nano Banana 后端，生成单张、系列或批量图片。",
+          "description_en": "Routes image-generation tasks through Gemini or Nano Banana backends for single, series, or batch outputs.",
+          "what": "根据请求选择后端并执行图片生成流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Codex · 组「AI 出图（Codex）」"
+        },
+        {
+          "name": "image-to-video",
+          "path": "skills/content/image-to-video/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "FFmpeg 图片音频转视频",
+          "group_en": "FFmpeg Image-and-Audio to Video",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 FFmpeg 将静态图片与音频合成为 MP4，可添加波形等可视化效果。",
+          "description_en": "Uses FFmpeg to turn a static image and audio into an MP4, with optional waveform or spectrum overlays.",
+          "what": "把图片与音频合成为短视频或音乐可视化视频。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "professional-communication",
+          "path": "skills/content/professional-communication/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "商务沟通写作 / 结构化消息",
+          "group_en": "Business Communication Writing / Structured Messages",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将密集技术或会议输入提炼为清晰商务邮件、备忘录和状态更新。",
+          "description_en": "Turns dense technical or meeting notes into polished business emails, memos, and status updates.",
+          "what": "Drafts structured business messages from existing input.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "publish",
+          "path": "skills/content/publish/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "博客发布与 SEO 检查",
+          "group_en": "Blog Publishing and SEO Checks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为博客生成大纲，完成发布前 SEO、链接、图片、分类审计并上传 WordPress。",
+          "description_en": "Prepares blog posts with outlines, pre-publish SEO checks, asset audits, taxonomy cleanup, and WordPress upload.",
+          "what": "Handles blog pre-publish checks and WordPress publishing.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "reddit-moderate",
+          "path": "skills/content/reddit-moderate/SKILL.md",
+          "subcategory": "7-2",
+          "subcategory_title": "7.2 跨平台社交 / 趋势监测",
+          "category": "data-scraping",
+          "group": "Reddit 社群审核自动化",
+          "group_en": "Reddit Community Moderation Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 PRAW 抓取 Reddit 审核队列，分类举报并辅助确认处理动作。",
+          "description_en": "Fetches the Reddit modqueue via PRAW, classifies reports, and helps confirm moderation actions.",
+          "what": "Reddit 审核队列抓取、举报分类与动作执行辅助。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "series-planner",
+          "path": "skills/content/series-planner/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "多部分内容系列策划",
+          "group_en": "Multi-part Content Series Planning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为多部分文章规划结构、交叉链接、发布节奏，并控制范围与质量。",
+          "description_en": "Plans structure, cross-links, and cadence for multi-part articles while guarding scope and quality.",
+          "what": "多部分内容的结构、链接与发布节奏规划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "microsoft",
+        "repo": "power-platform-skills",
+        "full_name": "microsoft/power-platform-skills",
+        "url": "https://github.com/microsoft/power-platform-skills",
+        "stars": 390,
+        "pushed_at": "2026-06-25",
+        "default_branch": "main",
+        "github_description": "A plugin marketplace for Claude Code/GitHub Copilot that provides Power Platform development plugins, including reusable skills, agents, and commands for building and deploying solutions.",
+        "topics": [
+          "claude-code-plugin",
+          "claude-code-skills",
+          "code-apps",
+          "github-copilot-plugin",
+          "power-apps",
+          "power-pages",
+          "power-platform"
+        ],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-code"
+      },
+      "skills": [
+        {
+          "name": "add-data-source",
+          "path": "plugins/canvas-apps/skills/add-data-source/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "Power Apps Canvas App 构建与数据连接",
+          "group_en": "Power Apps Canvas App Building and Data Connections",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导用户在 Studio 添加数据源或 API 连接器，并通过 MCP 验证。",
+          "description_en": "Guides users to add data sources or API connectors in Power Apps Studio and verifies them through MCP.",
+          "what": "一个 Power Apps 数据源与连接器添加辅助技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "canvas-app",
+          "path": "plugins/canvas-apps/skills/canvas-app/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "Power Apps Canvas App 构建与数据连接",
+          "group_en": "Power Apps Canvas App Building and Data Connections",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Canvas Authoring MCP 创建或编辑 Power Apps 画布应用。",
+          "description_en": "Creates or edits Power Apps Canvas Apps through the Canvas Authoring MCP coauthoring workflow.",
+          "what": "一个 Power Apps Canvas App 生成与修改技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "configure-canvas-mcp",
+          "path": "plugins/canvas-apps/skills/configure-canvas-mcp/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Apps Canvas MCP 配置",
+          "group_en": "Power Apps Canvas MCP Configuration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "配置当前会话的 Canvas Authoring MCP，连接指定画布应用工作室。",
+          "description_en": "Configures Canvas Authoring MCP for the current session and connects it to a specified canvas app studio.",
+          "what": "设置 Canvas Authoring MCP 会话连接。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "generate-canvas-app",
+          "path": "plugins/canvas-apps/skills/generate-canvas-app/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Apps Canvas 应用生成",
+          "group_en": "Power Apps Canvas App Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用于生成完整 Power Apps 画布应用，但已标记弃用。",
+          "description_en": "Generates a complete Power Apps canvas app, though it is marked as deprecated.",
+          "what": "旧版画布应用生成技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "report-issue",
+          "path": "plugins/canvas-apps/skills/report-issue/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "插件问题上报",
+          "group_en": "Plugin issue reporting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用于把 canvas-apps 插件的问题整理成 GitHub issue，并按配套流程提交。",
+          "description_en": "Packages canvas-apps plugin problems into a GitHub issue and follows the bundled reporting workflow.",
+          "what": "Report canvas-apps plugin bugs or issues to GitHub.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-azuredevops",
+          "path": "plugins/code-apps/skills/add-azuredevops/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Apps Azure DevOps 连接器",
+          "group_en": "Power Apps Azure DevOps Connector",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Power Apps code app 添加 Azure DevOps 连接器，配置连接、修复请求并更新记忆库。",
+          "description_en": "Adds an Azure DevOps connector to a Power Apps code app, configures it, applies request fixes, and updates the memory bank.",
+          "what": "Add and configure an Azure DevOps connector for a Power Apps code app.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-connector",
+          "path": "plugins/code-apps/skills/add-connector/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Apps 连接器与数据源",
+          "group_en": "Power Apps connectors and data sources",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Power Apps 代码应用添加并配置 Power Platform 连接器。",
+          "description_en": "Adds and configures a Power Platform connector in a Power Apps code app.",
+          "what": "Adds a generic Power Platform connector when no specialized add-* skill applies.",
+          "chain": true,
+          "chain_group": "数据源/连接器接入工作流",
+          "chain_group_en": "Data source and connector onboarding workflow"
+        },
+        {
+          "name": "add-datasource",
+          "path": "plugins/code-apps/skills/add-datasource/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Apps 连接器与数据源",
+          "group_en": "Power Apps connectors and data sources",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据用户目标推荐并路由到合适的数据源或连接器技能。",
+          "description_en": "Recommends and routes the user’s goal to the right data source or connector skill.",
+          "what": "Turns the user’s business goal into the appropriate data source or connector path.",
+          "chain": true,
+          "chain_group": "数据源/连接器接入工作流",
+          "chain_group_en": "Data source and connector onboarding workflow"
+        },
+        {
+          "name": "add-dataverse",
+          "path": "plugins/code-apps/skills/add-dataverse/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Platform 连接器集成",
+          "group_en": "Power Platform Connector Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 在 Power Apps code app 中接入 Dataverse，建表、生成模型与服务。",
+          "description_en": "Helps the agent connect a Power Apps code app to Dataverse, including schema, generated models, and services.",
+          "what": "Adds Dataverse tables and connectors to a Power Apps code app with generated TypeScript models and services.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-excel",
+          "path": "plugins/code-apps/skills/add-excel/SKILL.md",
+          "subcategory": "9-5",
+          "subcategory_title": "9.5 办公套件集成（Google Workspace 等）",
+          "category": "comms-integration",
+          "group": "Office 365 数据连接器",
+          "group_en": "Office 365 Data Connectors",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 为 Power Apps code app 接入 Excel Online，读写 OneDrive/SharePoint 工作簿。",
+          "description_en": "Helps the agent add Excel Online to a Power Apps code app for reading and writing workbooks from OneDrive or SharePoint.",
+          "what": "Adds the Excel Online connector to a Power Apps code app for workbook access.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-mcscopilot",
+          "path": "plugins/code-apps/skills/add-mcscopilot/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Platform 连接器集成",
+          "group_en": "Power Platform connector integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Power Apps code app 添加并配置 Microsoft Copilot Studio 连接器。",
+          "description_en": "Adds and configures a Microsoft Copilot Studio connector in a Power Apps code app.",
+          "what": "Adds the Microsoft Copilot Studio connector to a Power Apps code app.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-office365",
+          "path": "plugins/code-apps/skills/add-office365/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Platform 连接器集成",
+          "group_en": "Power Platform connector integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Power Apps code app 添加并配置 Office 365 Outlook 连接器。",
+          "description_en": "Adds and configures an Office 365 Outlook connector in a Power Apps code app.",
+          "what": "Adds the Office 365 Outlook connector to a Power Apps code app.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-onedrive",
+          "path": "plugins/code-apps/skills/add-onedrive/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Platform 连接器开发",
+          "group_en": "Power Platform Connector Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Power Apps 代码应用添加并配置 OneDrive 连接器，支持文件操作。",
+          "description_en": "Adds and configures a OneDrive connector for Power Apps code apps, enabling file operations.",
+          "what": "Adds a OneDrive for Business connector to a Power Apps code app and guides setup.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-sharepoint",
+          "path": "plugins/code-apps/skills/add-sharepoint/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Platform 连接器开发",
+          "group_en": "Power Platform Connector Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Power Apps 代码应用接入 SharePoint，支持列表发现、建表和连接器配置。",
+          "description_en": "Connects SharePoint to Power Apps code apps, covering list discovery, list creation, and connector setup.",
+          "what": "Adds a SharePoint Online connector and helps configure lists and data access.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-teams",
+          "path": "plugins/code-apps/skills/add-teams/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Platform 连接器集成",
+          "group_en": "Power Platform connector integrations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Power Apps Code App 添加 Teams 连接器，配置连接并支持消息发送。",
+          "description_en": "Adds and configures the Microsoft Teams connector for Power Apps code apps so agents can enable messaging flows.",
+          "what": "为 Power Apps Code App 添加并配置 Teams 连接器。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "create-code-app",
+          "path": "plugins/code-apps/skills/create-code-app/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "Power Platform Code App 脚手架",
+          "group_en": "Power Platform Code App scaffolding",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 React 和 Vite 搭建 Power Apps Code App，检查依赖、规划并部署。",
+          "description_en": "Scaffolds a Power Apps code app with React and Vite, checks prerequisites, plans the build, and deploys the baseline.",
+          "what": "创建 Power Apps Code App 项目并引导完成搭建与部署。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deploy",
+          "path": "plugins/code-apps/skills/deploy/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Power Platform Code Apps 部署",
+          "group_en": "Power Platform Code Apps Deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "构建并部署当前 Power Apps code app 到指定 Power Platform 环境。",
+          "description_en": "Builds and deploys the current Power Apps code app to a specified Power Platform environment.",
+          "what": "部署前检查构建、请求确认后推送更新并回报道部署结果。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "list-connections",
+          "path": "plugins/code-apps/skills/list-connections/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Platform 连接管理",
+          "group_en": "Power Platform Connection Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "列出当前环境中的 Power Platform 连接，便于为 code app 选择连接器。",
+          "description_en": "Lists Power Platform connections in the current environment so a code app can select the right connector.",
+          "what": "读取连接 ID，并在连接器缺失时提示用户前往环境页面创建。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "generate-mcp-app-ui",
+          "path": "plugins/mcp-apps/skills/generate-mcp-app-ui/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "MCP App 小组件生成器",
+          "group_en": "MCP App Widget Generator",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据 MCP 工具输出生成自包含 HTML 可视化小组件，便于在对话中展示结果。",
+          "description_en": "Generates self-contained HTML widgets that visually present an MCP tool's output inside the chat.",
+          "what": "Generate a focused MCP App widget from a tool's test output.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "genpage",
+          "path": "plugins/model-apps/skills/genpage/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Power Apps 生成式页面构建",
+          "group_en": "Power Apps Generative Page Builder",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为模型驱动 Power Apps 创建、更新并部署生成式页面，协调规划与代码生成。",
+          "description_en": "Creates, updates, and deploys generative pages for model-driven Power Apps using React, TypeScript, and Fluent UI.",
+          "what": "Builds and deploys model-driven Power Apps generative pages through specialist agents.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "activate-site",
+          "path": "plugins/power-pages/skills/activate-site/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Platform 站点与 Web API 开发",
+          "group_en": "Power Platform Site and Web API Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Power Platform REST API 激活并配置 Power Pages 站点。",
+          "description_en": "Activates and provisions Power Pages sites through the Power Platform REST API.",
+          "what": "用于在指定环境中启用已创建的 Power Pages code site。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-ai-webapi",
+          "path": "plugins/power-pages/skills/add-ai-webapi/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Platform 站点与 Web API 开发",
+          "group_en": "Power Platform Site and Web API Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Power Pages SPA 页面集成生成式 AI 摘要类 Web API。",
+          "description_en": "Adds generative AI summarization Web APIs to Power Pages SPA pages.",
+          "what": "用于在记录或列表页面生成 Dataverse 内容的 AI 摘要与洞察。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-cloud-flow",
+          "path": "plugins/power-pages/skills/add-cloud-flow/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Pages 与 Power Automate 集成",
+          "group_en": "Power Pages and Power Automate Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将 Power Automate 云流注册并接入 Power Pages 页面。",
+          "description_en": "Registers Power Automate cloud flows and wires them into Power Pages pages.",
+          "what": "为 Power Pages 创建云流消费元数据并生成客户端调用代码。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-sample-data",
+          "path": "plugins/power-pages/skills/add-sample-data/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "测试数据填充",
+          "group_en": "Test Data Seeding",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按依赖顺序向 Dataverse 表写入示例记录，用于测试演示。",
+          "description_en": "Seeds Dataverse tables with ordered sample records for testing and demos.",
+          "what": "通过 OData API 填充示例数据并跟踪执行进度。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-seo",
+          "path": "plugins/power-pages/skills/add-seo/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "Power Pages SEO 基础配置",
+          "group_en": "Power Pages SEO Basics Setup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Power Pages 代码站点补齐 SEO 基础配置。",
+          "description_en": "Adds SEO essentials for Power Pages code sites.",
+          "what": "Adds robots.txt, sitemap.xml, metadata, Open Graph, and favicon setup for Power Pages code sites.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "add-server-logic",
+          "path": "plugins/power-pages/skills/add-server-logic/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Power Pages 服务端逻辑开发",
+          "group_en": "Power Pages Server Logic Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Power Pages 创建和管理服务端 JavaScript、API 与 Dataverse 集成逻辑。",
+          "description_en": "Creates and manages server-side JavaScript logic, API endpoints, and Dataverse integrations in Power Pages.",
+          "what": "Creates and manages secure server-side JavaScript, API endpoints, and Dataverse integrations for Power Pages.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "audit-permissions",
+          "path": "plugins/power-pages/skills/audit-permissions/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "Power Pages 权限安全审计",
+          "group_en": "Power Pages permission security audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计 Power Pages 表权限与站点代码差异，生成安全报告。",
+          "description_en": "Audits Power Pages table permissions against site code and Dataverse metadata, then produces a security report.",
+          "what": "Audits Power Pages table permissions against site code and Dataverse metadata, then produces an HTML report with severity-ranked findings and remediation suggestions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "configure-env-variables",
+          "path": "plugins/power-pages/skills/configure-env-variables/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Power Pages ALM 环境配置",
+          "group_en": "Power Pages ALM environment configuration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Power Pages 站点设置创建环境变量，支撑 ALM 跨环境部署。",
+          "description_en": "Sets up Dataverse environment variables for Power Pages site settings to support ALM across environments.",
+          "what": "Creates Dataverse environment variables for Power Pages site settings and prepares deployment settings for ALM.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "create-site",
+          "path": "plugins/power-pages/skills/create-site/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "Power Pages 代码站点创建",
+          "group_en": "Power Pages Code Site Creation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 从需求发现到部署创建 Power Pages SPA 站点。",
+          "description_en": "Helps agents create Power Pages SPA sites from discovery through deployment.",
+          "what": "Guides the agent through planning, scaffolding, implementing, validating, and deploying a Power Pages code site.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "create-webroles",
+          "path": "plugins/power-pages/skills/create-webroles/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "Power Pages Web 角色配置",
+          "group_en": "Power Pages Web Role Configuration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 为 Power Pages 站点创建并配置访问角色。",
+          "description_en": "Helps agents create and configure access roles for Power Pages sites.",
+          "what": "Configures authenticated and anonymous web roles with permissions and uniqueness checks for a Power Pages code site.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "aiskillstore",
+        "repo": "marketplace",
+        "full_name": "aiskillstore/marketplace",
+        "url": "https://github.com/aiskillstore/marketplace",
+        "stars": 376,
+        "pushed_at": "2026-06-25",
+        "default_branch": "main",
+        "github_description": "Security-audited skills for Claude, Codex & Claude Code. One-click install, quality verified.",
+        "topics": [
+          "ai-skills",
+          "claude",
+          "claude-code",
+          "claude-skills",
+          "codex",
+          "codex-skills",
+          "skills"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-codex-skills"
+      },
+      "skills": [
+        {
+          "name": "jira-safe",
+          "path": "skills/01000001-01001110/jira-safe/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Jira 项目工作流",
+          "group_en": "Jira Project Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 Agent 在 Jira 中按 SAFe 层级创建 Epic、Feature、Story 和子任务。",
+          "description_en": "Helps an agent create SAFe-aligned Epics, Features, Stories, and subtasks in Jira.",
+          "what": "Creates SAFe-aligned Jira work items.",
+          "chain": true,
+          "chain_group": "Jira SAFe 工作流",
+          "chain_group_en": "Jira SAFe Workflow"
+        },
+        {
+          "name": "jira-workflow",
+          "path": "skills/01000001-01001110/jira-safe/jira-workflow/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Jira 项目工作流",
+          "group_en": "Jira Project Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 Agent 管理 Jira 事项审批、状态流转，并同步开发任务完成状态。",
+          "description_en": "Helps an agent manage Jira approvals, status transitions, and development task completion sync.",
+          "what": "Orchestrates Jira issue lifecycle transitions and approvals.",
+          "chain": true,
+          "chain_group": "Jira SAFe 工作流",
+          "chain_group_en": "Jira SAFe Workflow"
+        },
+        {
+          "name": "chinese-learning-assistant",
+          "path": "skills/0918nobita/chinese-learning-assistant/SKILL.md",
+          "subcategory": "19-2",
+          "subcategory_title": "19.2 自适应辅导 / 苏格拉底教学",
+          "category": "education-learning",
+          "group": "中文表达与写作辅导",
+          "group_en": "Chinese Expression & Writing Coach",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助中高级中文学习者分析表达使用场景，并润色作文，提升自然流畅度。",
+          "description_en": "Helps intermediate Chinese learners analyze expression contexts and polish writing for natural fluency.",
+          "what": "Analyzes Chinese expressions and improves learner writing.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "frontend-dev-guidelines",
+          "path": "skills/0chan-smc/frontend-dev-guidelines/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Next.js 前端开发规范",
+          "group_en": "Next.js Frontend Development Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Next.js 15/React 19 项目中按规范创建组件、页面并优化前端代码。",
+          "description_en": "Helps agents build and refine Next.js 15/React 19 frontend code with consistent architecture and styling patterns.",
+          "what": "Guides Next.js 15 frontend implementation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skill-developer",
+          "path": "skills/0chan-smc/skill-developer/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器",
+          "group_en": "Skill Creator",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 创建、配置并管理 Claude Code 的 skills、hooks、agents 和命令。",
+          "description_en": "Helps agents create, configure, and manage Claude Code skills, hooks, agents, and commands.",
+          "what": "用于创建和管理 Claude Code 技能、钩子、代理和命令。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sitemapkit",
+          "path": "skills/0nl1n1n/sitemapkit/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Sitemap 发现与 URL 提取",
+          "group_en": "Sitemap Discovery and URL Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 发现网站 sitemap、提取 URL 并梳理页面结构。",
+          "description_en": "Helps agents discover sitemaps, extract URLs, and map a site’s page structure.",
+          "what": "用于通过 SitemapKit MCP 发现 sitemap 并提取网站 URL。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "create-pr",
+          "path": "skills/0tarof/create-pr/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "group_en": "Git Workflow",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "检查变更并执行显式提交、推送和 GitHub PR 创建。",
+          "description_en": "Checks changes, commits explicitly, pushes, and opens a GitHub PR.",
+          "what": "Creates a GitHub PR after validating changes and running required checks.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "create-svg-from-prompt",
+          "path": "skills/0x6a77/create-svg-from-prompt/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "SVG 图像生成",
+          "group_en": "SVG Image Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "调用 Gemini 生成图片并用 autotrace 转换为 SVG 矢量图。",
+          "description_en": "Uses Gemini image generation and autotrace to create SVG files from prompts.",
+          "what": "Generates SVG images from text prompts.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vibe-security",
+          "path": "skills/0x8506/vibe-security/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "代码安全扫描与修复",
+          "group_en": "Code Security Scanning and Remediation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 扫描多语言代码漏洞，识别风险并给出修复建议。",
+          "description_en": "Helps an agent scan multi-language code for vulnerabilities, identify risks, and suggest fixes.",
+          "what": "用于代码安全扫描、漏洞分析与修复建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "axe-ios-simulator",
+          "path": "skills/0xbigboss/axe-ios-simulator/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "iOS 模拟器自动化",
+          "group_en": "iOS Simulator Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 操控 iOS 模拟器执行手势、输入、截图和无障碍检查。",
+          "description_en": "Helps an agent automate iOS Simulator interactions, capture media, and inspect accessibility elements.",
+          "what": "用于通过 AXe CLI 自动化 iOS 模拟器交互与测试任务。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "canton-network-repos",
+          "path": "skills/0xbigboss/canton-network-repos/SKILL.md",
+          "subcategory": "20-3",
+          "subcategory_title": "20.3 合约开发 / 工具链",
+          "category": "web3-blockchain",
+          "group": "Canton/DAML 开发生态",
+          "group_en": "Canton/DAML Development Ecosystem",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 理解 Canton/DAML 生态仓库、构建流程与兼容性排查。",
+          "description_en": "Helps agents navigate Canton/DAML repositories, build flows, and compatibility issues.",
+          "what": "提供 Canton Network、DAML 与 Splice 仓库关系、构建和兼容性排查指引。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "extract-transcripts",
+          "path": "skills/0xbigboss/extract-transcripts/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "CLI 会话转录提取器",
+          "group_en": "CLI Session Transcript Extractor",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 Claude Code/Codex 会话 JSONL 转为可读 Markdown 转录稿。",
+          "description_en": "Turns Claude Code/Codex session JSONL logs into readable Markdown transcripts.",
+          "what": "把 Claude Code 与 Codex CLI 的 JSONL 会话日志转换成可读 Markdown 转录稿。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "gen-env",
+          "path": "skills/0xbigboss/gen-env/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "本地多实例开发环境隔离",
+          "group_en": "Local Multi-Instance Development Isolation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 生成/审查 gen-env 命令，隔离本地多实例的端口、数据、容器与浏览器状态。",
+          "description_en": "Helps agents generate or review gen-env commands to isolate ports, data, containers, and browser state across local instances.",
+          "what": "生成带实例身份的本地环境隔离命令。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "go-best-practices",
+          "path": "skills/0xbigboss/go-best-practices/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Go 类型优先编码规范",
+          "group_en": "Type-First Go Coding Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 读写 Go 时采用类型优先、接口契约、函数选项和错误处理规范。",
+          "description_en": "Guides agents to apply type-first Go patterns, interface contracts, functional options, and error-handling conventions.",
+          "what": "应用 Go 类型优先编码规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "linear",
+          "path": "skills/0xbigboss/linear/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Linear 任务管理",
+          "group_en": "Linear task management",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "通过 CLI 管理 Linear 议题、项目和团队，并支持 GraphQL 查询。",
+          "description_en": "Manage Linear issues, projects, and teams via CLI, with GraphQL query support.",
+          "what": "Use for Linear project management and issue tracking.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Codex/mattpocock/wrsmith108 · 组「Spec → 工程」"
+        },
+        {
+          "name": "playwright-best-practices",
+          "path": "skills/0xbigboss/playwright-best-practices/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Playwright 测试规范",
+          "group_en": "Playwright test standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 Playwright 测试编写规范，涵盖定位器、POM、夹具、断言和网络模拟。",
+          "description_en": "Provides Playwright test-writing standards covering locators, POMs, fixtures, assertions, and network mocking.",
+          "what": "Use when writing or modifying Playwright tests.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "python-best-practices",
+          "path": "skills/0xbigboss/python-best-practices/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "Python 类型优先开发规范",
+          "group_en": "Type-first Python development standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 读写 Python 时先建模和类型签名，再实现并用边界校验。",
+          "description_en": "Guides agents to model data and signatures first, then implement Python code with boundary validation.",
+          "what": "A coding standard skill for type-first Python development.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "react-best-practices",
+          "path": "skills/0xbigboss/react-best-practices/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "React 组件实践规范",
+          "group_en": "React component practice standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 编写 React 组件时正确使用 hooks、effects、refs 并避免常见反模式。",
+          "description_en": "Guides agents to write React components with correct hooks, effects, refs, and fewer anti-patterns.",
+          "what": "A coding standard skill for React component development.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "vercel-labs · 组「Vercel 三件套」"
+        },
+        {
+          "name": "tamagui-best-practices",
+          "path": "skills/0xbigboss/tamagui-best-practices/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Tamagui 前端工程规范",
+          "group_en": "Tamagui frontend engineering patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Tamagui 项目中采用 v4 配置、编译优化和跨平台样式模式。",
+          "description_en": "Guides agents through Tamagui v1 patterns, including v4 config, compiler optimization, and cross-platform styling.",
+          "what": "Provides Tamagui v1 pattern guidance for config v4, compiler optimization, overlays, forms, animations, and theming.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "tilt",
+          "path": "skills/0xbigboss/tilt/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "Tilt 本地开发环境",
+          "group_en": "Tilt local development environments",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 管理 Tilt/Tiltfile，利用自动重载与资源状态验证避免误重启。",
+          "description_en": "Helps agents manage Tilt and Tiltfiles, use automatic reload behavior, and verify updates without unnecessary restarts.",
+          "what": "Provides Tilt CLI and Tiltfile guidance for live reload behavior and resource update verification.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "tmux-processes",
+          "path": "skills/0xbigboss/tmux-processes/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "tmux 操控交互 CLI",
+          "group_en": "tmux Interactive CLI Control",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 在 tmux 中用交互式会话稳定启动并管理长生命周期进程。",
+          "description_en": "Helps agents reliably start and manage long-running processes inside tmux interactive sessions.",
+          "what": "用 tmux 管理开发服务器、watcher 等长生命周期进程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "typescript-best-practices",
+          "path": "skills/0xbigboss/typescript-best-practices/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "TypeScript 类型优先开发规范",
+          "group_en": "Type-First TypeScript Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 TypeScript 类型优先开发、非法状态建模和边界校验规范。",
+          "description_en": "Gives agents a type-first TypeScript playbook for modeling state, enforcing completeness, and validating boundaries.",
+          "what": "指导 TypeScript/JavaScript 代码的类型建模、穷尽处理和运行时校验。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "web-fetch",
+          "path": "skills/0xbigboss/web-fetch/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "网页抓取与正文提取",
+          "group_en": "Web Fetching and Content Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 抓取网页并用 CSS 选择器或脚本提取正文，转成干净 Markdown 便于阅读和引用。",
+          "description_en": "Helps agents fetch web pages and extract the main content into clean Markdown using selectors or a fallback script.",
+          "what": "网页抓取与正文提取",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "zig-best-practices",
+          "path": "skills/0xbigboss/zig-best-practices/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Zig 类型优先编码规范",
+          "group_en": "Type-First Zig Coding Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 在读写 Zig 代码时采用类型优先、错误集和 comptime 校验等模式，提升代码健壮性。",
+          "description_en": "Guides agents to write and review Zig code with type-first patterns, explicit errors, and comptime checks for safer implementation.",
+          "what": "Zig 类型优先编码规范",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "zig-docs",
+          "path": "skills/0xbigboss/zig-docs/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Zig 文档查询",
+          "group_en": "Zig Documentation Lookup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 获取 Zig 语言、标准库源码与 API 签名等权威参考。",
+          "description_en": "Helps the agent retrieve authoritative Zig language, stdlib source, and API signature references.",
+          "what": "Fetches Zig documentation and standard library details via CLI-friendly sources.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "claude-code-debug",
+          "path": "skills/0xdarkmatter/claude-code-debug/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Claude Code 扩展与 MCP 调试",
+          "group_en": "Claude Code Extension and MCP Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 排查 Claude Code 扩展、hook、MCP 与技能加载异常。",
+          "description_en": "Helps the agent troubleshoot Claude Code extensions, hooks, MCP connections, and skill loading issues.",
+          "what": "Diagnoses Claude Code behavior, extension loading, hooks, agents, and MCP failures.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "claude-code-headless",
+          "path": "skills/0xdarkmatter/claude-code-headless/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "Claude Code 无头运行",
+          "group_en": "Claude Code Headless Execution",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 Claude Code 以脚本和 JSON 输出在 CI 中无交互运行。",
+          "description_en": "Run Claude Code from scripts with parseable JSON output for CI and automation.",
+          "what": "Enables scripted, non-interactive Claude Code execution with JSON output and session resume.",
+          "chain": true,
+          "chain_group": "Claude Code 自动化与审计工作流",
+          "chain_group_en": "Claude Code Automation & Audit Workflow"
+        },
+        {
+          "name": "claude-code-hooks",
+          "path": "skills/0xdarkmatter/claude-code-hooks/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "Claude Code 工具钩子",
+          "group_en": "Claude Code Tool Hooks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在 Claude Code 工具调用前后执行校验、审计或自定义脚本。",
+          "description_en": "Wrap Claude Code tool calls with pre/post hooks for validation and auditing.",
+          "what": "Adds configurable hooks around Claude Code tool invocations for validation, audit, and automation.",
+          "chain": true,
+          "chain_group": "Claude Code 自动化与审计工作流",
+          "chain_group_en": "Claude Code Automation & Audit Workflow"
+        },
+        {
+          "name": "claude-code-templates",
+          "path": "skills/0xdarkmatter/claude-code-templates/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器 / Claude Code 命令创建器",
+          "group_en": "Skill Creator / Claude Code Command Creator",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Claude Code 扩展、Agent、Skill 和命令生成模板脚手架。",
+          "description_en": "Generates starter templates for Claude Code extensions, agents, skills, commands, and hooks.",
+          "what": "Starter templates for Claude Code extensions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "code-stats",
+          "path": "skills/0xdarkmatter/code-stats/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "代码库概览 / 语义差异",
+          "group_en": "Codebase Overview / Semantic Diffs",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 tokei 和 difft 快速统计代码规模、语言构成与语义差异。",
+          "description_en": "Uses tokei and difft to quickly summarize codebase size, language mix, and semantic differences.",
+          "what": "Analyzes codebase size, language mix, and semantic diffs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "plugin87",
+        "repo": "ux-ui-agent-skills",
+        "full_name": "plugin87/ux-ui-agent-skills",
+        "url": "https://github.com/plugin87/ux-ui-agent-skills",
+        "stars": 375,
+        "pushed_at": "2026-06-22",
+        "default_branch": "main",
+        "github_description": "Turn Claude into a Senior Design Architect — DTCG design tokens, 42 components, WCAG 2.2 accessibility, any-framework code, 138 design systems, and runnable skills.",
+        "topics": [
+          "accessibility",
+          "ai-agents",
+          "claude",
+          "claude-code",
+          "claude-skills",
+          "component-library",
+          "design-system",
+          "design-to-code",
+          "design-tokens",
+          "dtcg",
+          "figma",
+          "react",
+          "tailwindcss",
+          "ui",
+          "ux",
+          "wcag"
+        ],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "a11y-audit",
+          "path": ".claude/skills/a11y-audit/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "无障碍测试（屏幕阅读器 + WCAG）",
+          "group_en": "Accessibility Testing (Screen Readers + WCAG)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "按 WCAG 2.2 与 ARIA 模式审查 UI，测量对比度、键盘与读屏状态，输出分级修复建议。",
+          "description_en": "Audits UI against WCAG 2.2 and ARIA patterns, measuring contrast and checking keyboard/screen-reader behavior with prioritized fixes.",
+          "what": "执行 WCAG/ARIA 可访问性审计并给出可验证修复。",
+          "chain": true,
+          "chain_group": "审美方向应用到可访问性验证",
+          "chain_group_en": "Aesthetic Direction to Accessibility Validation"
+        },
+        {
+          "name": "apply-aesthetic",
+          "path": ".claude/skills/apply-aesthetic/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "设计方向与 Design Token 映射",
+          "group_en": "Design Direction to Token Mapping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据指定审美方向或 138 个设计系统，映射语义 token 并验证可访问性。",
+          "description_en": "Maps a chosen visual direction or named design system into semantic tokens while checking accessibility.",
+          "what": "将审美方向或设计系统映射为语义 token 并检查对比度。",
+          "chain": true,
+          "chain_group": "审美方向应用到可访问性验证",
+          "chain_group_en": "Aesthetic Direction to Accessibility Validation"
+        },
+        {
+          "name": "brandkit",
+          "path": ".claude/skills/brandkit/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "品牌设计系统与 DTCG token 生成",
+          "group_en": "Brand Design System and DTCG Token Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从产品简报生成可访问的品牌设计系统，包括原始与语义 DTCG tokens、明暗主题和主题样式文件。",
+          "description_en": "Creates an accessible brand design system from a brief, including primitive and semantic DTCG tokens, light and dark themes, and theme CSS.",
+          "what": "Generate a complete brand foundation and token system from a product brief.",
+          "chain": true,
+          "chain_group": "品牌系统到组件代码工作流",
+          "chain_group_en": "Brand System to Component Code Workflow"
+        },
+        {
+          "name": "design-code",
+          "path": ".claude/skills/design-code/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "跨框架 UI 组件代码生成",
+          "group_en": "Cross-Framework UI Component Code Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将 token 驱动的组件规范转换为任意前端框架的生产级可访问 UI 代码。",
+          "description_en": "Turns token-driven component specs into production-ready, accessible UI code across frontend frameworks.",
+          "what": "Generate accessible component code for the user’s target framework.",
+          "chain": true,
+          "chain_group": "品牌系统到组件代码工作流",
+          "chain_group_en": "Brand System to Component Code Workflow"
+        },
+        {
+          "name": "design-component",
+          "path": ".claude/skills/design-component/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Design System 组件规范",
+          "group_en": "Design System Component Specs",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 UI 组件生成规范，覆盖结构、状态、变体、设计 token 与可访问性要求。",
+          "description_en": "Creates UI component specs covering anatomy, variants, states, design tokens, and accessibility requirements.",
+          "what": "Defines a component specification before implementation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "design-qa",
+          "path": ".claude/skills/design-qa/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Design QA 质量门禁",
+          "group_en": "Design QA Gates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为组件或页面建立设计 QA 门禁，覆盖 token、对比度、a11y 与视觉回归检查。",
+          "description_en": "Sets up design QA gates for components or pages, including token, contrast, accessibility, and visual regression checks.",
+          "what": "Runs automated and manual design quality checks before release.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "design-review",
+          "path": ".claude/skills/design-review/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "UX/UI 设计审查与可访问性审计",
+          "group_en": "UX/UI Design Review and Accessibility Audits",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审查界面体验、可访问性与启发式违规，输出评分和修复优先级。",
+          "description_en": "Review UI quality, accessibility, and heuristic violations, then produce scored findings and prioritized fixes.",
+          "what": "对现有页面或产品进行 6 维度评分、WCAG 与尼尔森启发式审查并给出修复建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "design-tokens",
+          "path": ".claude/skills/design-tokens/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "DTCG 设计令牌系统",
+          "group_en": "DTCG Design Token Systems",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成、扩展和校验 DTCG 设计令牌，维护颜色、排版、间距等体系。",
+          "description_en": "Generate, extend, and validate DTCG design tokens for color, typography, spacing, and related systems.",
+          "what": "按 DTCG 的 primitive→semantic→component 三层结构生成、扩展和校验设计令牌。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "figma-integration",
+          "path": ".claude/skills/figma-integration/SKILL.md",
+          "subcategory": "5-4",
+          "subcategory_title": "5.4 Figma 双向集成",
+          "category": "design-frontend",
+          "group": "Figma↔代码双向同步",
+          "group_en": "Figma–code bidirectional sync",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "同步 Figma 变量与代码 token，检查组件变体、尺寸和状态覆盖。",
+          "description_en": "Syncs Figma variables with code tokens and checks coverage for component variants, sizes, and states.",
+          "what": "让 Figma Variables、DTCG token 与组件实现保持一致。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "governance",
+          "path": ".claude/skills/governance/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "设计系统治理",
+          "group_en": "Design system governance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "规范 token 与组件的版本、贡献、废弃和迁移，防止设计系统碎片化。",
+          "description_en": "Sets versioning, contribution, deprecation, and migration rules to keep the design system coherent.",
+          "what": "为设计系统变更建立 SemVer、贡献、废弃和沟通规则。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "image-to-code",
+          "path": ".claude/skills/image-to-code/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "设计稿/截图转代码",
+          "group_en": "Design-to-code",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从参考图或截图推断设计系统，生成 DTCG token 与可访问 UI 代码。",
+          "description_en": "Infer a design system from a reference image or screenshot and produce token-driven, accessible UI code.",
+          "what": "将视觉参考转化为可维护的 token-driven UI 实现。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "migrate-design-system",
+          "path": ".claude/skills/migrate-design-system/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "设计系统迁移与互操作",
+          "group_en": "Design system migration & interoperability",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把现有 token 体系与主流设计系统互转，规划迁移并验证对比度与状态。",
+          "description_en": "Map a token system to or from major design systems, plan migrations, and verify contrast and states.",
+          "what": "帮助 agent 在设计系统之间建立 token 与组件映射。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "performance",
+          "path": ".claude/skills/performance/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "UI 性能与 Core Web Vitals 优化",
+          "group_en": "UI Performance & Core Web Vitals",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按 Core Web Vitals 预算诊断并优化 UI 加载、布局稳定性和动画性能。",
+          "description_en": "Helps the agent diagnose and optimize UI loading, layout stability, and animation performance against Core Web Vitals budgets.",
+          "what": "Guides UI performance tuning for LCP, INP, and CLS with concrete verification targets.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "prototype",
+          "path": ".claude/skills/prototype/SKILL.md",
+          "subcategory": "3-1",
+          "subcategory_title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "category": "product-management",
+          "group": "原型保真度与用户验证",
+          "group_en": "Prototype Fidelity & User Validation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 从内容优先到高保真逐步原型化，并配套用户旅程与可用性验证脚本。",
+          "description_en": "Helps the agent move from content-first concepts to high-fidelity prototypes with journey mapping and usability test scripts.",
+          "what": "Selects the right prototype fidelity and pairs each level with a validation plan.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "mattpocock/Dean · 组「Prototype 选型」"
+        },
+        {
+          "name": "redesign",
+          "path": ".claude/skills/redesign/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "UI 重设计与可用性审计",
+          "group_en": "UI Redesign & Usability Audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "先审计现有 UI，再按品牌与系统规则手术式重设计并验证。",
+          "description_en": "Audits an existing UI, then surgically redesigns it against brand and system rules while preserving behavior.",
+          "what": "用于升级已有网站或应用的视觉质量而不破坏功能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "token-build",
+          "path": ".claude/skills/token-build/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "DTCG 设计 Token 构建管线",
+          "group_en": "DTCG Design Token Build Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将 DTCG 设计 Token 构建成多平台样式与主题产物。",
+          "description_en": "Builds DTCG design tokens into platform-ready CSS, Tailwind, JS/TS, iOS, Android, and Compose outputs.",
+          "what": "用于把设计 Token 源文件生成并校验为各平台主题产物。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ux-writing",
+          "path": ".claude/skills/ux-writing/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "UX 界面文案生成与审查",
+          "group_en": "UX Microcopy Writing and Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 撰写或审查按钮、错误提示、空状态等界面文案，并应用语气与包容性规则。",
+          "description_en": "Helps an agent write or review buttons, error messages, empty states, and other UI copy using voice, tone, and inclusive-language rules.",
+          "what": "A skill for producing and critiquing product interface microcopy.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "rampstackco",
+        "repo": "claude-skills",
+        "full_name": "rampstackco/claude-skills",
+        "url": "https://github.com/rampstackco/claude-skills",
+        "stars": 374,
+        "pushed_at": "2026-06-22",
+        "default_branch": "main",
+        "github_description": "Stack-agnostic Claude Skills covering the full website lifecycle: brand, design, content, SEO, dev, ops, growth, and research. Build, ship, audit, optimize.",
+        "topics": [
+          "agent-skills",
+          "ai-agents",
+          "anthropic",
+          "claude",
+          "claude-ai",
+          "claude-code",
+          "claude-skills",
+          "mcp",
+          "product-management",
+          "rampstack",
+          "seo",
+          "skills-collection",
+          "web-design",
+          "web-development"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "accessibility-audit",
+          "path": "dist/pi/.agents/skills/accessibility-audit/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "网站无障碍审计与整改",
+          "group_en": "Website Accessibility Audits and Remediation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "依据 WCAG 2.1 AA 审计站点无障碍问题，并生成整改优先级和计划。",
+          "description_en": "Audits site accessibility against WCAG 2.1 AA and produces a prioritized remediation plan.",
+          "what": "运行以 WCAG 为核心的无障碍审计，并输出整改计划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ads-creative-development",
+          "path": "dist/pi/.agents/skills/ads-creative-development/SKILL.md",
+          "subcategory": "4-7",
+          "subcategory_title": "4.7 病毒式传播 / Hook / 创意",
+          "category": "marketing-growth",
+          "group": "广告创意生产与测试",
+          "group_en": "Ad Creative Production and Testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "面向 Meta/TikTok/LinkedIn 等渠道，设计高转化广告创意、钩子、变体与疲劳刷新。",
+          "description_en": "Design high-converting ad creative for Meta, TikTok, LinkedIn, and similar channels, including hooks, variations, and fatigue refreshes.",
+          "what": "为效果广告设计创意、钩子、节奏、变体和疲劳刷新机制。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ads-performance-analytics",
+          "path": "dist/pi/.agents/skills/ads-performance-analytics/SKILL.md",
+          "subcategory": "4-4",
+          "subcategory_title": "4.4 付费广告 / ASO",
+          "category": "marketing-growth",
+          "group": "付费广告效果分析",
+          "group_en": "Paid Media Performance Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 解读付费媒体仪表盘、归因模型、ROAS/LTV 与增量测试，避免误判预算决策。",
+          "description_en": "Helps the agent interpret paid media dashboards, attribution models, ROAS/LTV, and incrementality tests to avoid budget-decision traps.",
+          "what": "解读付费广告数据并识别归因、ROAS/LTV 与增量测试中的常见误判。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "after-action-report",
+          "path": "dist/pi/.agents/skills/after-action-report/SKILL.md",
+          "subcategory": "3-9",
+          "subcategory_title": "3.9 OKR / Sprint / Retro / Stakeholder",
+          "category": "product-management",
+          "group": "项目复盘 / 事后回顾",
+          "group_en": "Project Postmortems / After-Action Reviews",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 对发布、事故或项目做结构化复盘，提炼时间线、根因和可执行教训。",
+          "description_en": "Helps the agent run structured postmortems for launches, incidents, or projects, capturing timelines, root causes, and actionable lessons.",
+          "what": "为发布、事故或项目运行结构化复盘，形成经验教训和改进行动。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ai-content-collaboration",
+          "path": "dist/pi/.agents/skills/ai-content-collaboration/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "AI 辅助内容协作规范",
+          "group_en": "AI-Assisted Content Collaboration Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计人机协作内容流程，守住声音、披露与伦理边界。",
+          "description_en": "Helps the agent design human-AI content workflows that preserve voice, disclosure, and ethical boundaries.",
+          "what": "A senior editorial playbook for human-AI content workflows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "analytics-strategy",
+          "path": "dist/pi/.agents/skills/analytics-strategy/SKILL.md",
+          "subcategory": "4-12",
+          "subcategory_title": "4.12 SOP / 测量",
+          "category": "marketing-growth",
+          "group": "分析测量框架",
+          "group_en": "Analytics Measurement Frameworks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 规划分析体系，定义 KPI、事件、归因与看板架构。",
+          "description_en": "Helps the agent plan analytics systems, KPIs, event schemas, attribution models, and dashboard architecture.",
+          "what": "A measurement-planning playbook for analytics setup and audits.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "art-direction",
+          "path": "dist/pi/.agents/skills/art-direction/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "创意方向与视觉简报",
+          "group_en": "Creative Direction & Visual Briefing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 把品牌延展为摄影、插画、视频和活动的视觉创意方向与执行简报。",
+          "description_en": "Helps an agent extend a brand into visual creative direction and execution briefs for photography, illustration, video, and campaigns.",
+          "what": "将已批准品牌转化为具体创意交付物的方向与评审标准。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "backup-and-disaster-recovery",
+          "path": "dist/pi/.agents/skills/backup-and-disaster-recovery/SKILL.md",
+          "subcategory": "17-4",
+          "subcategory_title": "17.4 SRE / 事故响应 / SLO / FinOps",
+          "category": "devops-infra",
+          "group": "备份与灾难恢复演练",
+          "group_en": "Backup & Disaster Recovery Readiness",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 规划备份架构、设定 RPO/RTO，并组织灾难恢复演练与恢复能力审查。",
+          "description_en": "Helps an agent plan backup architecture, define RPO/RTO targets, and run disaster recovery drills.",
+          "what": "定义 RPO/RTO、备份架构和恢复演练计划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "beta-program-management",
+          "path": "dist/pi/.agents/skills/beta-program-management/SKILL.md",
+          "subcategory": "3-3",
+          "subcategory_title": "3.3 产品发现 / 实验",
+          "category": "product-management",
+          "group": "结构化 Beta 验证",
+          "group_en": "Structured Beta Validation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计 Beta 队列、收集反馈并制定 GA 决策标准。",
+          "description_en": "Helps an agent design beta cohorts, collect feedback, and define GA decision criteria.",
+          "what": "用于上线前用结构化 Beta 验证产品信号。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brand-archetype-system",
+          "path": "dist/pi/.agents/skills/brand-archetype-system/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "品牌系统 / 视觉规范",
+          "group_en": "Brand Systems & Visual Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按行业美学原型快速生成品牌色彩、字体、版式和语气方向。",
+          "description_en": "Helps an agent quickly generate brand color, typography, layout, and voice direction from industry aesthetic archetypes.",
+          "what": "用于把品牌简报映射到已知美学家族。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brand-discovery",
+          "path": "dist/pi/.agents/skills/brand-discovery/SKILL.md",
+          "subcategory": "3-4",
+          "subcategory_title": "3.4 战略 / 定位 / 商业模式",
+          "category": "product-management",
+          "group": "品牌发现与定位调研",
+          "group_en": "Brand Discovery & Positioning Research",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "梳理受众、竞品、品类与问题空间，明确品牌可占据的定位方向。",
+          "description_en": "Maps audience, competitors, category dynamics, and problem space to identify viable positioning territory.",
+          "what": "它帮助 agent 在品牌或网站项目初期完成上游调研和定位假设。",
+          "chain": true,
+          "chain_group": "品牌发现到概念收敛工作流",
+          "chain_group_en": "Brand Discovery to Concept Convergence Workflow"
+        },
+        {
+          "name": "brand-ideation",
+          "path": "dist/pi/.agents/skills/brand-ideation/SKILL.md",
+          "subcategory": "4-2",
+          "subcategory_title": "4.2 文案 / 营销心理 / 产品命名",
+          "category": "marketing-growth",
+          "group": "品牌概念与命名探索",
+          "group_en": "Brand Concept & Naming Exploration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成并收敛品牌名称、定位方向、情绪板和叙事角度。",
+          "description_en": "Generates and narrows naming options, positioning territories, mood directions, and narrative angles.",
+          "what": "它帮助 agent 在早期品牌工作中发散创意并收敛到可执行方向。",
+          "chain": true,
+          "chain_group": "品牌发现到概念收敛工作流",
+          "chain_group_en": "Brand Discovery to Concept Convergence Workflow"
+        },
+        {
+          "name": "brand-identity",
+          "path": "dist/pi/.agents/skills/brand-identity/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "品牌系统 / 视觉规范",
+          "group_en": "Brand System / Visual Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计或评估品牌视觉识别系统，包括标志、色彩、字体、图标和动效原则。",
+          "description_en": "Helps an agent design or evaluate a brand visual identity system, including logo, color, typography, iconography, and motion principles.",
+          "what": "用于在品牌方向已确定后产出或审查视觉识别资产。",
+          "chain": true,
+          "chain_group": "品牌识别到品牌规范工作流",
+          "chain_group_en": "Brand Identity to Style Guide Workflow"
+        },
+        {
+          "name": "brand-style-guide",
+          "path": "dist/pi/.agents/skills/brand-style-guide/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "品牌系统 / 视觉规范",
+          "group_en": "Brand System / Visual Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 创建或审计完整品牌规范文档，沉淀可供团队长期复用的品牌系统。",
+          "description_en": "Helps an agent create or audit a comprehensive brand style guide that documents a reusable brand system.",
+          "what": "用于把已完成的品牌识别整理成正式规范和交付手册。",
+          "chain": true,
+          "chain_group": "品牌识别到品牌规范工作流",
+          "chain_group_en": "Brand Identity to Style Guide Workflow"
+        },
+        {
+          "name": "brand-voice",
+          "path": "dist/pi/.agents/skills/brand-voice/SKILL.md",
+          "subcategory": "4-2",
+          "subcategory_title": "4.2 文案 / 营销心理 / 产品命名",
+          "category": "marketing-growth",
+          "group": "品牌声调指南",
+          "group_en": "Brand Voice & Tone Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 定义品牌声调体系，并审计或训练团队按统一口吻写作。",
+          "description_en": "Creates a brand voice and tone system that writers, designers, founders, and AI assistants can apply consistently.",
+          "what": "定义、审计并沉淀品牌写作声调规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "calculator-design",
+          "path": "dist/pi/.agents/skills/calculator-design/SKILL.md",
+          "subcategory": "4-6",
+          "subcategory_title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "category": "marketing-growth",
+          "group": "互动计算型引流工具",
+          "group_en": "Interactive Calculator Lead Magnets",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计有真实决策价值的互动计算器，作为合格线索获取工具。",
+          "description_en": "Designs interactive calculators that provide real decision support while attracting and qualifying leads.",
+          "what": "设计兼具决策支持和获客价值的互动计算器。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "chatbot-flow-design",
+          "path": "dist/pi/.agents/skills/chatbot-flow-design/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "网站聊天机器人对话流设计",
+          "group_en": "Website Chatbot Conversation Flow Design",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计网站聊天机器人意图识别、分支、兜底和升级流程。",
+          "description_en": "Helps an agent design website chatbot intent flows, branching logic, fallbacks, and escalation paths.",
+          "what": "用于设计结构化引导式网站聊天机器人对话流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "code-review-web",
+          "path": "dist/pi/.agents/skills/code-review-web/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Web 应用代码审查",
+          "group_en": "Web App Code Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 审查 Web 代码，定位构建或线上问题并检查安全与性能风险。",
+          "description_en": "Helps an agent review web application code, diagnose build or production issues, and flag quality risks.",
+          "what": "用于在合并、排障或审计时审查 Web 应用代码。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "comparison-tool-design",
+          "path": "dist/pi/.agents/skills/comparison-tool-design/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "对比页与决策工具设计",
+          "group_en": "Comparison Pages & Decision Tools",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "设计并排比较工具，用轴选择与推荐纪律帮助用户决策。",
+          "description_en": "Designs side-by-side comparison tools with decision-focused axes and recommendation discipline.",
+          "what": "Helps agents design comparison tools and vs pages that guide users toward a decision instead of dumping features.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competitor-experience-audit",
+          "path": "dist/pi/.agents/skills/competitor-experience-audit/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "竞品体验基准审计",
+          "group_en": "Competitor Experience Benchmarking",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计头部竞品的品牌、UX 与站点设计，提炼行业体验标准。",
+          "description_en": "Audits leading competitors’ brand, UX, and site design to define category experience benchmarks.",
+          "what": "Helps agents evaluate competitor sites and identify the brand, UX, and design bar a new build should meet.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-and-copy",
+          "path": "dist/pi/.agents/skills/content-and-copy/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "通用内容写作与编辑",
+          "group_en": "General Content Writing and Editing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按目标读者、场景与品牌语气撰写或润色网站文案、博客和帮助文档。",
+          "description_en": "Drafts or edits website copy, blog posts, and help docs around the reader, goal, and brand voice.",
+          "what": "按读者、目标和语气生产或打磨内容。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-brief-authoring",
+          "path": "dist/pi/.agents/skills/content-brief-authoring/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 内容简报",
+          "group_en": "SEO Content Briefing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为单篇内容制定关键词、搜索意图、受众、大纲、实体覆盖与成功标准。",
+          "description_en": "Creates focused content briefs with keyword, intent, audience, outline, entity coverage, and success criteria.",
+          "what": "把选题转化为可执行的内容简报。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-distribution",
+          "path": "dist/pi/.agents/skills/content-distribution/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "内容分发渠道策略",
+          "group_en": "Content Distribution Channel Strategy",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 为内容匹配受众、渠道与发布节奏，制定分发方案。",
+          "description_en": "Helps an agent match content to audiences, channels, and cadence for a strategic distribution plan.",
+          "what": "为内容制定 owned、earned、paid 渠道匹配与放大策略。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-migration",
+          "path": "dist/pi/.agents/skills/content-migration/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "内容迁移与 SEO 保全",
+          "group_en": "Content Migration & SEO Preservation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 规划 CMS、域名或 URL 迁移，保全 SEO 与用户书签。",
+          "description_en": "Helps an agent plan CMS, domain, or URL migrations while preserving SEO equity and user access.",
+          "what": "规划内容迁移路径、重定向与整合风险，避免 SEO 和用户访问受损。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-refresh-system",
+          "path": "dist/pi/.agents/skills/content-refresh-system/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 内容刷新与生命周期维护",
+          "group_en": "SEO Content Refresh & Lifecycle Maintenance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 审计内容老化、排序刷新优先级，并决定刷新、合并或删除。",
+          "description_en": "Helps an agent audit content decay, prioritize refresh work, and decide whether to refresh, merge, or remove aging assets.",
+          "what": "A playbook for identifying content decay and planning quarterly refresh, merge, or deletion decisions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-repurposing",
+          "path": "dist/pi/.agents/skills/content-repurposing/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "跨格式内容改编与分发",
+          "group_en": "Cross-Format Content Repurposing & Distribution",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把核心内容改编成邮件、社交、播客、视频等格式，避免低质批量改写。",
+          "description_en": "Adapts a flagship asset into medium-specific derivatives for email, social, podcast, video, and more without mass-produced AI slop.",
+          "what": "A framework for turning one strong source asset into adapted content across multiple distribution channels.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-strategy",
+          "path": "dist/pi/.agents/skills/content-strategy/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 内容战略与主题规划",
+          "group_en": "SEO Content Strategy & Topic Planning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 规划内容定位、支柱、日历、主题集群与内容治理。",
+          "description_en": "Helps an agent plan editorial positioning, content pillars, calendars, topic clusters, and governance.",
+          "what": "A strategic content-planning skill for building coherent SEO and editorial programs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Corey · 组「SEO 全套（Corey Haines 6 件）」"
+        },
+        {
+          "name": "cost-optimization",
+          "path": "dist/pi/.agents/skills/cost-optimization/SKILL.md",
+          "subcategory": "17-4",
+          "subcategory_title": "17.4 SRE / 事故响应 / SLO / FinOps",
+          "category": "devops-infra",
+          "group": "云与 SaaS 成本审计 / FinOps",
+          "group_en": "Cloud & SaaS Cost Audit / FinOps",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 审计云、SaaS 和基础设施支出，识别浪费并制定降本方案。",
+          "description_en": "Helps an agent audit cloud, SaaS, and infrastructure spend, spot waste, and plan reductions.",
+          "what": "A FinOps-oriented skill for reviewing spend, rightsizing resources, and negotiating vendor costs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "creative-brief-selector",
+          "path": "dist/pi/.agents/skills/creative-brief-selector/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "品牌创意简报",
+          "group_en": "Brand Creative Briefs",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于业务定位、参考站和既有作品生成差异化品牌简报。",
+          "description_en": "Generates a differentiated brand brief from positioning, reference sites, and prior work.",
+          "what": "Creates a brand-positioned creative brief with reference and divergence checks.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "creative-brief",
+          "path": "dist/pi/.agents/skills/creative-brief/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "品牌创意简报",
+          "group_en": "Brand Creative Briefs",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把模糊项目意图整理成可交付给设计、开发或 agent 的创意简报。",
+          "description_en": "Turns a vague project idea into a clear creative brief for designers, developers, or agents.",
+          "what": "Creates or refines a project creative brief for kickoff and handoff.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "firebase",
+        "repo": "agent-skills",
+        "full_name": "firebase/agent-skills",
+        "url": "https://github.com/firebase/agent-skills",
+        "stars": 359,
+        "pushed_at": "2026-06-22",
+        "default_branch": "main",
+        "github_description": "Agent Skills for Firebase",
+        "topics": [],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "firebase-ai-logic-basics",
+          "path": "skills/firebase-ai-logic-basics/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Firebase AI Logic / Gemini SDK",
+          "group_en": "Firebase AI Logic / Gemini SDK",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 在 Web/移动端接入 Firebase AI Logic，处理 Gemini 调用与结构化输出。",
+          "description_en": "Helps agents integrate Firebase AI Logic and Gemini into web or mobile apps with setup, inference, and structured outputs.",
+          "what": "Assists agents in integrating Firebase AI Logic (Gemini API) into web and mobile apps.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "firebase-app-hosting-basics",
+          "path": "skills/firebase-app-hosting-basics/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Firebase App Hosting 部署",
+          "group_en": "Firebase App Hosting Deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 用 Firebase App Hosting 部署和管理 Next.js、Angular 等全栈 Web 应用。",
+          "description_en": "Helps agents deploy and manage full-stack web apps with Firebase App Hosting, including Next.js and Angular workflows.",
+          "what": "Assists agents in deploying and managing full-stack web apps with Firebase App Hosting.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "firebase-auth-basics",
+          "path": "skills/firebase-auth-basics/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Firebase 项目与认证开发",
+          "group_en": "Firebase project and authentication development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 为应用配置 Firebase Authentication，支持登录、用户管理和安全规则。",
+          "description_en": "Helps an agent set up Firebase Authentication for apps, including sign-in, user management, and security rules.",
+          "what": "Firebase Authentication 配置与用户身份管理技能。",
+          "chain": true,
+          "chain_group": "Firebase 项目初始化与认证配置",
+          "chain_group_en": "Firebase project setup and authentication configuration"
+        },
+        {
+          "name": "firebase-basics",
+          "path": "skills/firebase-basics/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Firebase 项目与认证开发",
+          "group_en": "Firebase project and authentication development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 初始化 Firebase 项目、检查 CLI 环境并配置客户端配置文件。",
+          "description_en": "Helps an agent initialize Firebase projects, check the CLI environment, and configure client config files.",
+          "what": "Firebase CLI 项目初始化与环境配置技能。",
+          "chain": true,
+          "chain_group": "Firebase 项目初始化与认证配置",
+          "chain_group_en": "Firebase project setup and authentication configuration"
+        },
+        {
+          "name": "firebase-crashlytics",
+          "path": "skills/firebase-crashlytics/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Firebase Crashlytics 崩溃监控",
+          "group_en": "Firebase Crashlytics Crash Monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助配置 Firebase Crashlytics，收集并解读客户端崩溃报告。",
+          "description_en": "Set up Firebase Crashlytics and interpret client app crash reports.",
+          "what": "配置 Crashlytics SDK 并生成可操作的崩溃报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "firebase-data-connect-basics",
+          "path": "skills/firebase-data-connect-basics/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Firebase SQL Connect 后端",
+          "group_en": "Firebase SQL Connect Backend",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助设计 Firebase SQL Connect 后端，编写 GraphQL 查询并生成类型安全 SDK。",
+          "description_en": "Design Firebase SQL Connect backends, author GraphQL operations, and generate type-safe SDKs.",
+          "what": "搭建 Data Connect/SQL Connect 关系型后端。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "firebase-firestore",
+          "path": "skills/firebase-firestore/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Firestore 数据库操作",
+          "group_en": "Firestore database operations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 识别 Firestore 实例、配置规则/索引并执行查询。",
+          "description_en": "Helps the agent detect Firestore instances, configure rules and indexes, and run queries.",
+          "what": "管理 Cloud Firestore 数据库、安全规则、索引和数据查询。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "firebase-hosting-basics",
+          "path": "skills/firebase-hosting-basics/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Firebase Hosting 部署",
+          "group_en": "Firebase Hosting deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 部署静态站、SPA，并管理预览渠道与发布流程。",
+          "description_en": "Helps the agent deploy static sites and SPAs while managing preview channels and releases.",
+          "what": "使用 Firebase Hosting 部署 Web 应用、静态内容和预览环境。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "firebase-remote-config-basics",
+          "path": "skills/firebase-remote-config-basics/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Firebase Remote Config 开发",
+          "group_en": "Firebase Remote Config Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 配置 Remote Config、管理模板和动态更新应用行为。",
+          "description_en": "Helps the agent configure Remote Config, manage templates, and update app behavior dynamically.",
+          "what": "用于 Firebase Remote Config 的初始化、模板和 SDK 使用指导。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "firebase-security-rules-auditor",
+          "path": "skills/firebase-security-rules-auditor/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "Firebase 安全规则审计",
+          "group_en": "Firebase Security Rules Auditing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "评估 Firestore 安全规则，找出绕过路径并给出加固建议。",
+          "description_en": "Reviews Firestore Security Rules, identifies bypass risks, and suggests hardening improvements.",
+          "what": "用于审计 Firestore 安全规则的安全性与正确性。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "xcode-project-setup",
+          "path": "skills/xcode-project-setup/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "iOS / Xcode 项目依赖集成",
+          "group_en": "iOS / Xcode Dependency Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "安全修改 Xcode 项目，添加 Swift Packages 并链接 iOS 依赖。",
+          "description_en": "Safely updates Xcode projects to add Swift Packages and link iOS dependencies.",
+          "what": "Adds Swift Packages and links files for Firebase or Alamofire-style iOS dependencies.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "ombulabs",
+        "repo": "claude-code_rails-upgrade-skill",
+        "full_name": "ombulabs/claude-code_rails-upgrade-skill",
+        "url": "https://github.com/ombulabs/claude-code_rails-upgrade-skill",
+        "stars": 354,
+        "pushed_at": "2026-06-23",
+        "default_branch": "main",
+        "github_description": "A Claude Code Skill to Upgrade Rails",
+        "topics": [
+          "claude-code",
+          "claude-code-skill",
+          "claude-code-skills",
+          "ruby-on-rails",
+          "technical-debt"
+        ],
+        "language": "Ruby",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-code"
+      },
+      "skills": [
+        {
+          "name": "rails-upgrade",
+          "path": "rails-upgrade/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Rails 升级工作流",
+          "group_en": "Rails Upgrade Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析 Rails 应用升级风险，生成迁移报告与步骤指南。",
+          "description_en": "Analyzes Rails upgrade risks and produces migration reports with step-by-step guidance.",
+          "what": "用于规划 Rails 多跳升级、识别破坏性变更并输出迁移方案。",
+          "chain": true,
+          "chain_group": "Rails 升级工作流",
+          "chain_group_en": "Rails Upgrade Workflow"
+        },
+        {
+          "name": "upgrade-cleanup",
+          "path": "upgrade-cleanup/upgrade-cleanup/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Rails 升级工作流",
+          "group_en": "Rails Upgrade Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "清理 Rails 升级后的双启动脚手架，完成或回退升级。",
+          "description_en": "Cleans up dual-boot scaffolding after a Rails upgrade, or rolls it back safely.",
+          "what": "用于在升级完成后移除 NextRails 分支与双启动配置，或暂停并回退升级尝试。",
+          "chain": true,
+          "chain_group": "Rails 升级工作流",
+          "chain_group_en": "Rails Upgrade Workflow"
+        }
+      ]
+    }
+  ]
+}
