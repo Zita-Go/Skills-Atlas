@@ -1,0 +1,4360 @@
+{
+  "generated_at": "2026-06-28T05:52:58+00:00",
+  "date": "2026-06-28",
+  "proposed_count": 8,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 80,
+      "blocklisted": 21,
+      "seen_recently": 191,
+      "truncated": 82,
+      "no_skill_files": 2,
+      "skill_name_dup": 4
+    },
+    "filtered_out": [
+      {
+        "full_name": "byoungd/English-level-up-tips",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "hypnguyen1209/offensive-claude",
+        "reason": "⚠ 疑似 vendored 副本（仍提交待人审）：3/25 个 skill 名已在目录——malware-analysis, threat-hunting, web-pentest；建议人审核是否整仓拒/blocklist"
+      },
+      {
+        "full_name": "zhuyansen/agent-skills-hub",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "competition-ad-certificate-abuse"
+      ],
+      "group": "AD CS 证书滥用分析",
+      "group_en": "AD CS Certificate Abuse Analysis",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "在沙箱假设下分析证书模板、CA 策略与证书映射形成的权限路径。",
+      "description_en": "Analyzes AD CS templates, CA policy, and certificate mapping under sandbox assumptions to trace privilege paths.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-agent-cloud"
+      ],
+      "group": "Agent 云与供应链攻击路径分析",
+      "group_en": "Agent Cloud and Supply Chain Attack Path Analysis",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": false,
+      "description": "识别 prompt-to-tool、检索投毒、云部署漂移、CI 制品与供应链风险链。",
+      "description_en": "Maps prompt-to-tool flows, retrieval poisoning, cloud drift, CI artifacts, and supply-chain risks under sandbox assumptions.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-android-hooking"
+      ],
+      "group": "CTF 移动应用逆向与 Hook 分析",
+      "group_en": "CTF Mobile Reverse Engineering and Hooking",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": false,
+      "description": "在沙箱假设下分析 APK Hook、Frida 追踪、签名恢复与信任边界。",
+      "description_en": "Analyzes APK hooking, Frida traces, signing recovery, and trust boundaries under sandbox assumptions.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-browser-persistence",
+        "cloud-security",
+        "web-pentest"
+      ],
+      "group": "渗透测试(Web / API / 基础设施)",
+      "group_en": "Penetration Testing (Web / API / Infrastructure)",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": false,
+      "description": "辅助 Agent 按流程开展 Web/API 渗透测试，覆盖认证、业务逻辑、WAF 和常见漏洞验证。",
+      "description_en": "Helps an agent run structured web/API pentests across auth, business logic, WAF, and common vulnerability validation.",
+      "sources": [
+        "hypnguyen1209/offensive-claude",
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-bundle-sourcemap-recovery",
+        "competition-cloud-metadata-path"
+      ],
+      "group": "CTF Sandbox 路由工作流",
+      "group_en": "CTF Sandbox Routing Workflow",
+      "category": "security-offensive",
+      "subcategory": "18-3",
+      "chain": true,
+      "description": "帮助智能体从发布的前端资产、源码映射和 chunk 关系还原运行时结构、隐藏路由与 API。",
+      "description_en": "Helps agents reconstruct runtime structure, hidden routes, and APIs from served frontend artifacts, sourcemaps, and chunk maps.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-container-runtime"
+      ],
+      "group": "CTF 容器运行时分析",
+      "group_en": "CTF Container Runtime Analysis",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "帮助 agent 对比清单与运行态，定位 Pod、挂载、Sidecar 与路由映射。",
+      "description_en": "Helps agents compare manifests with live runtime and trace pod, mount, sidecar, and route mappings.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-crypto-mobile"
+      ],
+      "group": "CTF 密码与移动端分析",
+      "group_en": "CTF Crypto and Mobile Analysis",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "帮助 agent 还原编码/加密链、隐写载荷，并分析 APK/IPA 信任边界。",
+      "description_en": "Helps agents reconstruct encoding and crypto chains, inspect hidden payloads, and analyze APK/IPA trust boundaries.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-custom-protocol-replay",
+        "competition-dpapi-credential-chain",
+        "competition-relay-coercion-chain",
+        "initial-access",
+        "keylogger-arch",
+        "network-attack",
+        "privesc-linux",
+        "privesc-windows",
+        "red-team-ops",
+        "windows-boundaries",
+        "windows-mitigations"
+      ],
+      "group": "红队 / 攻击链 / 后渗透",
+      "group_en": "Red teaming / attack chains / post-exploitation",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "在取得 Windows shell 后识别提权路径，覆盖令牌滥用、服务误配、UAC 绕过与 AD 升级。",
+      "description_en": "Identifies Windows privilege-escalation paths after initial shell access, including token abuse, service misconfigurations, UAC bypasses, and AD escalation.",
+      "sources": [
+        "hypnguyen1209/offensive-claude",
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-file-parser-chain"
+      ],
+      "group": "文件解析链追踪",
+      "group_en": "File parser chain tracing",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": false,
+      "description": "引导 agent 追踪上传文件从入口到解析、解压、转换和反序列化的路径。",
+      "description_en": "Guides the agent through an uploaded file's path from ingestion to parsing, extraction, conversion, and deserialization.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-firmware-layout"
+      ],
+      "group": "固件布局逆向",
+      "group_en": "Firmware layout reverse engineering",
+      "category": "security-offensive",
+      "subcategory": "18-4",
+      "chain": false,
+      "description": "帮助 agent 拆解固件镜像，梳理分区、启动链、更新包与设备信任边界。",
+      "description_en": "Helps the agent unpack firmware images and map partitions, boot chains, update packages, and device trust boundaries.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-forensic-timeline",
+        "competition-graphql-rpc-drift"
+      ],
+      "group": "CTF 沙盒路由后专项分析",
+      "group_en": "Post-routing CTF sandbox specializations",
+      "category": "security-offensive",
+      "subcategory": "18-4",
+      "chain": true,
+      "description": "帮 agent 对比声明接口契约与真实处理逻辑，识别隐藏、过期或越权操作。",
+      "description_en": "Helps an agent normalize multi-source forensic evidence, reconstruct attack timelines, and separate confirmed events from inferred gaps.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-identity-windows",
+        "competition-ios-runtime"
+      ],
+      "group": "CTF 沙盒路由工作流",
+      "group_en": "CTF Sandbox Routing Workflow",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": true,
+      "description": "在 CTF 沙盒中分析 IPA 运行时行为、Keychain、URL scheme 与请求签名恢复。",
+      "description_en": "Maps AD, Windows host, and mail evidence in a CTF sandbox to trace identity chains and lateral movement paths.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-jwt-claim-confusion"
+      ],
+      "group": "JWT 认证混淆测试",
+      "group_en": "JWT Claim Confusion Testing",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": false,
+      "description": "帮 agent 在 CTF 沙箱中审查 JWT 头、声明、密钥选择与身份接受逻辑。",
+      "description_en": "Helps an agent audit JWT headers, claims, key selection, and identity acceptance logic in a CTF sandbox.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-k8s-control-plane"
+      ],
+      "group": "Kubernetes 控制面攻击路径",
+      "group_en": "Kubernetes Control-Plane Attack Paths",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "帮 agent 分析 Kubernetes 控制面权限、服务账号信任、RBAC 与控制器行为。",
+      "description_en": "Helps an agent analyze Kubernetes control-plane permissions, service-account trust, RBAC edges, and controller behavior.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-kerberos-delegation",
+        "competition-kernel-container-escape"
+      ],
+      "group": "CTF 沙盒攻击链专项",
+      "group_en": "CTF Sandbox Attack-Chain Specializations",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "帮助 agent 在 CTF 沙盒中梳理 Kerberos 委派、SPN 与票据接受关系，定位权限提升路径。",
+      "description_en": "Helps the agent map Kerberos delegation edges, SPNs, and ticket acceptance to identify privilege-escalation paths in CTF sandboxes.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-linux-credential-pivot",
+        "competition-lsass-ticket-material"
+      ],
+      "group": "CTF 凭证与横向移动专项",
+      "group_en": "CTF Credential and Lateral Movement Specialization",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "分析 LSASS、Kerberos 票据和 DPAPI/SSP 材料，判断可复现凭证并关联权限边界。",
+      "description_en": "Maps Linux credentials, tokens, SSH material, and service trust boundaries to identify reproducible lateral movement paths.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-mailbox-abuse"
+      ],
+      "group": "CTF 邮箱滥用链路",
+      "group_en": "CTF Mailbox Abuse Chains",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "在沙箱假设下追踪邮箱规则、OAuth 授权、转发链路及邮件证据。",
+      "description_en": "Traces mailbox rules, OAuth grants, forwarding chains, and email evidence under sandbox assumptions.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-malware-config"
+      ],
+      "group": "恶意软件配置恢复",
+      "group_en": "Malware Config Recovery",
+      "category": "security-offensive",
+      "subcategory": "18-4",
+      "chain": false,
+      "description": "在沙箱假设下恢复恶意软件配置、解码 C2 字段并提取 IOC。",
+      "description_en": "Recovers malware configs, decodes C2 fields, and extracts IOCs under sandbox assumptions.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-oauth-oidc-chain"
+      ],
+      "group": "CTF 身份链 / OAuth OIDC 攻击路径",
+      "group_en": "CTF Identity Chains / OAuth-OIDC Attack Paths",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "帮助 agent 在授权 CTF 场景中梳理 OAuth/OIDC 身份链路、令牌交换与权限接受逻辑。",
+      "description_en": "Helps agents trace OAuth/OIDC identity chains, token exchange, and privilege acceptance in authorized CTF scenarios.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-pcap-protocol"
+      ],
+      "group": "CTF 流量取证 / 协议分析",
+      "group_en": "CTF Traffic Forensics / Protocol Analysis",
+      "category": "security-offensive",
+      "subcategory": "18-4",
+      "chain": false,
+      "description": "帮助 agent 分析 PCAP、重建会话、解码协议，并将流量证据关联到恶意或应用行为。",
+      "description_en": "Helps agents analyze PCAPs, reconstruct sessions, decode protocols, and correlate traffic evidence with malware or application behavior.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-prompt-injection",
+        "competition-queue-worker-drift"
+      ],
+      "group": "CTF 沙盒安全挑战路由",
+      "group_en": "CTF Sandbox Security Challenge Routing",
+      "category": "ml-llm-engineering",
+      "subcategory": "21-8",
+      "chain": true,
+      "description": "用于追踪队列 payload、异步 worker、重试、死信队列及延迟副作用之间的安全链路。",
+      "description_en": "Analyzes prompt injection, retrieval poisoning, memory contamination, and MCP or tool-boundary abuse in agentic systems.",
+      "sources": [
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "competition-race-condition-state-drift",
+        "recon-osint"
+      ],
+      "group": "漏洞挖掘 / Bug Bounty / OSINT",
+      "group_en": "Vulnerability research / Bug bounty / OSINT",
+      "category": "security-offensive",
+      "subcategory": "18-3",
+      "chain": false,
+      "description": "在 CTF 沙箱中复现竞态、时序和状态漂移，形成可对比证据。",
+      "description_en": "Reproduce race windows, ordering bugs, and state drift in a CTF sandbox with comparable evidence.",
+      "sources": [
+        "hypnguyen1209/offensive-claude",
+        "zhaoxuya520/reverse-skill"
+      ]
+    },
+    {
+      "skills": [
+        "c_2_ast"
+      ],
+      "group": "C 代码 AST 解析",
+      "group_en": "C Code AST Parsing",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "把 C 源码解析为 AST，供 agent 做代码结构理解、静态分析和后续程序分析。",
+      "description_en": "Parses C source code into an AST for code-structure understanding, static analysis, and downstream program analysis.",
+      "sources": [
+        "Narwhal-Lab/MagicSkills"
+      ]
+    },
+    {
+      "skills": [
+        "agnix"
+      ],
+      "group": "Skill 规范校验",
+      "group_en": "Skill spec validation",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-3",
+      "chain": false,
+      "description": "调用 agnix 校验 CLAUDE.md、SKILL.md、hooks 与 MCP 配置，并支持自动修复。",
+      "description_en": "Run agnix to validate CLAUDE.md, SKILL.md, hooks, and MCP configs, with optional autofixes.",
+      "sources": [
+        "agent-sh/agnix"
+      ]
+    },
+    {
+      "skills": [
+        "agent-without-context"
+      ],
+      "group": "agent-without-context",
+      "group_en": "agent-without-context",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "",
+      "description_en": "",
+      "sources": [
+        "agent-sh/agnix"
+      ]
+    },
+    {
+      "skills": [
+        "active-directory-attack",
+        "advanced-redteam"
+      ],
+      "group": "红队攻击链路",
+      "group_en": "Red team attack chain",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": true,
+      "description": "帮助 agent 规划高级红队行动、C2 架构与 OPSEC 记录。",
+      "description_en": "Helps an agent plan advanced red team operations, C2 infrastructure, and OPSEC documentation.",
+      "sources": [
+        "hypnguyen1209/offensive-claude"
+      ]
+    },
+    {
+      "skills": [
+        "ai-security"
+      ],
+      "group": "AI/ML 安全评估",
+      "group_en": "AI/ML Security Assessment",
+      "category": "ml-llm-engineering",
+      "subcategory": "21-8",
+      "chain": false,
+      "description": "帮助 agent 评估 LLM/RAG/ML 应用的注入、越狱、投毒与供应链风险。",
+      "description_en": "Helps agents assess injection, jailbreak, poisoning, and supply-chain risks in LLM/RAG/ML apps.",
+      "sources": [
+        "hypnguyen1209/offensive-claude"
+      ]
+    },
+    {
+      "skills": [
+        "coding-mastery"
+      ],
+      "group": "漏洞利用开发工具链",
+      "group_en": "Exploit Development Tooling",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": false,
+      "description": "帮助 Agent 编写漏洞利用、PoC、自动化安全工具和系统级安全代码。",
+      "description_en": "Helps an agent write exploit, PoC, automation, and systems-level security tooling code.",
+      "sources": [
+        "hypnguyen1209/offensive-claude"
+      ]
+    },
+    {
+      "skills": [
+        "crypto-analysis"
+      ],
+      "group": "密码与 TLS 安全审计",
+      "group_en": "Cryptography and TLS Security Audits",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "协助 Agent 审查加密实现、TLS 配置、哈希与密钥强度，并整理安全发现。",
+      "description_en": "Helps an agent review cryptographic implementations, TLS settings, hashes, and key strength, then summarize findings.",
+      "sources": [
+        "hypnguyen1209/offensive-claude"
+      ]
+    },
+    {
+      "skills": [
+        "edr-evasion",
+        "exploit-development"
+      ],
+      "group": "红队武器化与规避工作流",
+      "group_en": "Red Team Weaponization and Evasion Workflow",
+      "category": "security-offensive",
+      "subcategory": "18-2",
+      "chain": true,
+      "description": "帮助红队将已确认漏洞转化为 PoC、载荷与利用方案。",
+      "description_en": "Helps red teams turn confirmed vulnerabilities into PoCs, payloads, and exploitation plans.",
+      "sources": [
+        "hypnguyen1209/offensive-claude"
+      ]
+    },
+    {
+      "skills": [
+        "incident-response"
+      ],
+      "group": "incident-response",
+      "group_en": "Blue Team / SOC / Threat Hunting / Detection Engineering / Malware Analysis / Reverse Engineering",
+      "category": "security-offensive",
+      "subcategory": "18-4",
+      "chain": false,
+      "description": "帮助 agent 执行事件响应取证、时间线、IOC 与报告",
+      "description_en": "Helps the agent execute incident response forensics, timeline reconstruction, IOC generation, and reporting.",
+      "sources": [
+        "hypnguyen1209/offensive-claude"
+      ]
+    },
+    {
+      "skills": [
+        "malware-analysis"
+      ],
+      "group": "malware-analysis",
+      "group_en": "Blue team / SOC / threat hunting / detection engineering / malware analysis",
+      "category": "security-offensive",
+      "subcategory": "18-4",
+      "chain": false,
+      "description": "对可疑样本做静态/动态分析，产出 YARA/Sigma 规则、IOC 与行为报告。",
+      "description_en": "Triage suspicious samples with static and dynamic analysis to produce YARA/Sigma rules, IOCs, and behavioral reports.",
+      "sources": [
+        "hypnguyen1209/offensive-claude"
+      ]
+    },
+    {
+      "skills": [
+        "mobile-pentest"
+      ],
+      "group": "移动应用渗透测试",
+      "group_en": "Mobile App Penetration Testing",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": false,
+      "description": "协助 Claude Code 对 Android/iOS 应用做静态、动态分析，识别不安全存储、组件暴露、Frida 绕过等移动安全问题。",
+      "description_en": "Helps Claude Code assess Android/iOS apps through static and dynamic analysis, identifying insecure storage, exposed components, Frida instrumentation issues, and related mobile risks.",
+      "sources": [
+        "hypnguyen1209/offensive-claude"
+      ]
+    },
+    {
+      "skills": [
+        "reverse-engineering",
+        "shellcode-dev"
+      ],
+      "group": "漏洞武器化链路",
+      "group_en": "Exploit Weaponization Pipeline",
+      "category": "security-offensive",
+      "subcategory": "18-4",
+      "chain": true,
+      "description": "帮助 agent 规划 shellcode 开发、加载器与规避检测的实现流程。",
+      "description_en": "Helps agents reverse-engineer binaries, firmware, and malware through static and dynamic analysis.",
+      "sources": [
+        "hypnguyen1209/offensive-claude"
+      ]
+    },
+    {
+      "skills": [
+        "threat-hunting"
+      ],
+      "group": "threat-hunting",
+      "group_en": "Blue Team / SOC / Threat Hunting / Detection Engineering / Malware Analysis / Reverse Engineering",
+      "category": "security-offensive",
+      "subcategory": "18-4",
+      "chain": false,
+      "description": "协助 Agent 做威胁狩猎、IOC 提取、ATT&CK 映射和检测规则生成。",
+      "description_en": "Guides the agent through proactive threat hunting, IOC extraction, ATT&CK mapping, and detection-rule creation.",
+      "sources": [
+        "hypnguyen1209/offensive-claude"
+      ]
+    },
+    {
+      "skills": [
+        "vulnerability-analysis"
+      ],
+      "group": "源码漏洞审计",
+      "group_en": "Source Code Vulnerability Auditing",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "帮助 Agent 对源码做威胁建模、污点追踪、注入/鉴权/加密等问题审计。",
+      "description_en": "Guides the agent through source-code security audits, taint tracing, and checks for injection, auth, crypto, and supply-chain risks.",
+      "sources": [
+        "hypnguyen1209/offensive-claude"
+      ]
+    },
+    {
+      "skills": [
+        "godot-2d-animation"
+      ],
+      "group": "Godot 2D 动画实现",
+      "group_en": "Godot 2D Animation Implementation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 Godot 2D 帧动画、骨骼切图和精确时序实现。",
+      "description_en": "Guides Godot 2D frame animation, cutout rigs, and precise timing implementation.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-2d-physics"
+      ],
+      "group": "Godot 2D 物理碰撞",
+      "group_en": "Godot 2D Physics and Collision",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 Godot 2D 项目处理碰撞层、触发区、射线和空间查询。",
+      "description_en": "Helps Godot 2D projects handle collision layers, trigger zones, raycasts, and space queries.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-3d-lighting"
+      ],
+      "group": "Godot 3D 光照实现",
+      "group_en": "Godot 3D lighting implementation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 Godot 3D 光照、阴影与全局照明实现及性能取舍。",
+      "description_en": "Guides Godot 3D lighting, shadows, global illumination, and performance tradeoffs.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-3d-materials"
+      ],
+      "group": "Godot 3D PBR 材质",
+      "group_en": "Godot 3D PBR materials",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 Godot 3D PBR 材质、纹理通道、透明模式与 Shader 转换。",
+      "description_en": "Guides Godot 3D PBR materials, texture channels, transparency modes, and shader conversion.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-3d-world-building"
+      ],
+      "group": "Godot 3D 关卡搭建",
+      "group_en": "Godot 3D Level Building",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 agent 在 Godot 中用 GridMap、CSG、WorldEnvironment 搭建 3D 关卡，并规避导航、碰撞和性能陷阱。",
+      "description_en": "Guides agents in building Godot 3D levels with GridMap, CSG, and environment effects while avoiding common navigation, collision, and performance pitfalls.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-ability-system"
+      ],
+      "group": "Godot 能力系统",
+      "group_en": "Godot Ability Systems",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 agent 设计 Godot 技能系统，覆盖冷却、连招、技能树、升级路径和资源管理，并规避状态漏洞。",
+      "description_en": "Guides agents in designing Godot ability systems with cooldowns, combos, skill trees, upgrades, resource management, and safeguards against state exploits.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-adapt-2d-to-3d",
+        "godot-adapt-3d-to-2d"
+      ],
+      "group": "Godot 2D/3D 维度迁移",
+      "group_en": "Godot 2D/3D Dimension Migration",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 Agent 将 Godot 2D 项目迁移到 3D，处理节点、相机、物理、美术和控制方案。",
+      "description_en": "Helps an agent simplify Godot 3D projects into 2D, covering camera flattening, physics conversion, art assets, and controls.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-adapt-desktop-to-mobile",
+        "godot-adapt-mobile-to-desktop"
+      ],
+      "group": "Godot 跨平台移植适配",
+      "group_en": "Godot Cross-Platform Porting",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "帮助 agent 将 Godot 移动游戏扩展到桌面，加入键鼠控制、高分辨率 UI 与图形设置。",
+      "description_en": "Helps an agent adapt Godot mobile games for desktop with mouse/keyboard controls, higher-resolution UI, and graphics settings.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-adapt-single-to-multiplayer"
+      ],
+      "group": "Godot 多人游戏改造",
+      "group_en": "Godot Multiplayer Retrofit Patterns",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导将单机 Godot 游戏改造成多人联机，覆盖权威服务器、RPC 与延迟补偿。",
+      "description_en": "Guides retrofitting single-player Godot games into multiplayer, covering authoritative servers, RPCs, and lag compensation.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-ai-navigation"
+      ],
+      "group": "Godot AI 寻路与导航",
+      "group_en": "Godot AI Navigation and Pathfinding",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "提供 Godot AI 寻路蓝图，覆盖 NavigationServer、动态导航网格、避障与性能优化。",
+      "description_en": "Provides Godot AI pathfinding blueprints using NavigationServer, dynamic navmeshes, avoidance, and performance patterns.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-analyst"
+      ],
+      "group": "Godot 架构评审",
+      "group_en": "Godot Architecture Review",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "帮助 Agent 按生产基准评估 Godot 项目架构、Cohesion、Mechanics 与循环质量。",
+      "description_en": "Helps an agent assess a Godot project’s architecture, cohesion, mechanics, and loop quality against production rubrics.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-animation-player"
+      ],
+      "group": "Godot 动画系统",
+      "group_en": "Godot Animation System",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 Agent 编写 Godot 时间线动画、过场、UI 过渡与回调优化。",
+      "description_en": "Helps an agent build Godot timeline animations, cutscenes, UI transitions, and callback-safe animation flows.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-animation-tree-mastery"
+      ],
+      "group": "Godot 动画状态机与混合系统",
+      "group_en": "Godot Animation State Machines and Blending Systems",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 Godot AnimationTree 的状态机、混合空间、根运动与过渡条件设计。",
+      "description_en": "Guides Godot AnimationTree state machines, blend spaces, root motion, and transition design.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-audio-systems"
+      ],
+      "group": "Godot 音频总线与空间音效系统",
+      "group_en": "Godot Audio Bus and Spatial Audio Systems",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 Godot 音频总线、空间音频、混音路由、音乐过渡与性能池化。",
+      "description_en": "Guides Godot audio buses, spatial audio, mix routing, music transitions, and performance pooling.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-auditor"
+      ],
+      "group": "Godot 架构审计与禁止清单执行",
+      "group_en": "Godot Architecture Audits and Never-list Enforcement",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "让 Agent 按协议审查 Godot 项目结构、架构扇区与禁止清单，定位隐性技术债。",
+      "description_en": "Helps an agent audit Godot projects against architecture sectors and never-lists to surface hidden technical debt.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-autoload-architecture"
+      ],
+      "group": "Godot 工程架构与脚本模式",
+      "group_en": "Godot Engineering Architecture and Scripting Patterns",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 Agent 在 Godot 中实现 AutoLoad 单例、全局状态、场景切换与事件总线等稳健架构。",
+      "description_en": "Guides an agent in implementing robust Godot AutoLoad patterns for singletons, global state, scene transitions, and event buses.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-builder"
+      ],
+      "group": "Godot 工程与构建自动化",
+      "group_en": "Godot engineering and build automation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 Agent 用 Godot CLI 无头构建、场景生成、资源管线与 CI/CD 自动化。",
+      "description_en": "Helps an agent automate Godot CLI builds, scene generation, asset pipelines, and CI/CD workflows.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-camera-systems"
+      ],
+      "group": "Godot 摄像机系统",
+      "group_en": "Godot camera systems",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为 Agent 提供 Godot 2D/3D 摄像机平滑跟随、抖动、边界与多镜头模式。",
+      "description_en": "Gives an agent proven Godot 2D/3D camera patterns for smooth follow, shake, limits, and multi-camera setups.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-characterbody-2d",
+        "godot-combat-system"
+      ],
+      "group": "Godot 2D 玩法实现",
+      "group_en": "Godot 2D gameplay implementation",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 实现 Godot CharacterBody2D 的移动、碰撞与状态机。",
+      "description_en": "Guides agents in implementing Godot CharacterBody2D movement, collision handling, and state machines.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-composition-apps",
+        "godot-composition"
+      ],
+      "group": "Godot 组合式架构规范",
+      "group_en": "Godot Composition Architecture Standards",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为 Godot 应用/工具制定组合式架构与解耦规范",
+      "description_en": "Defines composable component patterns and signal-based communication for Godot game entities.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-debugging-profiling"
+      ],
+      "group": "系统化调试与性能诊断",
+      "group_en": "Systematic Debugging & Performance Diagnostics",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 用 Godot 调试器、断点、警告和性能分析定位并修复问题。",
+      "description_en": "Helps agents debug Godot projects using breakpoints, warnings, stack traces, profiling, and performance diagnostics.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-dialogue-system"
+      ],
+      "group": "Godot 叙事对话系统",
+      "group_en": "Godot Narrative Dialogue Systems",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 构建数据驱动的分支对话、选择条件、演出效果和本地化对话系统。",
+      "description_en": "Helps agents build data-driven branching dialogue with choices, conditional flags, typewriter effects, localization, and voice integration.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-economy-system"
+      ],
+      "group": "Godot 游戏经济系统设计",
+      "group_en": "Godot Game Economy System Design",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为 agent 提供 Godot 游戏经济系统设计指导，覆盖货币、商店、战利品和动态定价平衡。",
+      "description_en": "Helps agents design balanced Godot game economies, including currencies, shops, loot tables, and dynamic pricing.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-export-builds"
+      ],
+      "group": "Godot 多平台导出与构建",
+      "group_en": "Godot Multi-Platform Export and Builds",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "为 agent 提供 Godot 多平台导出与发布构建指导，覆盖模板、签名、CI/CD 和性能优化。",
+      "description_en": "Guides agents through Godot multi-platform exports and release builds, including templates, signing, CI/CD, and optimization.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "godot-game-loop-collection",
+        "godot-game-loop-harvest"
+      ],
+      "group": "Godot 游戏循环与玩法机制",
+      "group_en": "Godot game loop and gameplay mechanics",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "提供 Godot 采集/收获系统设计，覆盖工具校验、耗尽、生成与保存。",
+      "description_en": "Provides a Godot harvesting system pattern covering tool validation, depletion, respawning, and persistence.",
+      "sources": [
+        "thedivergentai/GD-Agentic-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "1password"
+      ],
+      "group": "Agent 凭据与 Secret 管理",
+      "group_en": "Agent Credentials and Secret Management",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 用 1Password CLI 保存、查找并读取 API 凭据。",
+      "description_en": "Helps the agent store, search, and retrieve API credentials through the 1Password CLI.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "browser"
+      ],
+      "group": "Chrome DevTools 浏览器自动化与抓取",
+      "group_en": "Chrome DevTools Browser Automation and Scraping",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "帮助 agent 启动 Chrome、导航页面、执行 JS 并抓取 DOM。",
+      "description_en": "Helps the agent launch Chrome, navigate pages, run JavaScript, and extract DOM data.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "docx-format-replicator"
+      ],
+      "group": "Office 文档四件套 / Excel 数据处理工作流",
+      "group_en": "Office document processing workflows",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "从现有 Word 文档提取格式配置，并生成同格式新文档，帮助 agent 批量复用模板与统一企业文档样式。",
+      "description_en": "Extracts formatting from an existing Word document and generates new documents that preserve the same structure and style.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "happy-app-audit"
+      ],
+      "group": "macOS 应用遥测 / 隐私 SDK 静态审计",
+      "group_en": "macOS App telemetry and privacy SDK audit",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "仅通过静态分析审计本地 macOS .app 包，识别遥测 SDK、上报端点、磁盘队列和隐私相关字段。",
+      "description_en": "Statically audits a local macOS .app bundle for telemetry SDKs, upload endpoints, local queues, and privacy-relevant fields.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "happy-audio-gen"
+      ],
+      "group": "多提供商 TTS 语音合成",
+      "group_en": "Multi-provider text-to-speech generation",
+      "category": "media",
+      "subcategory": "6-2",
+      "chain": false,
+      "description": "支持 OpenAI、ElevenLabs、Bailian、MiniMax、SiliconFlow、PlayHT 等提供商，将文本合成为语音。",
+      "description_en": "Converts text to speech using multiple TTS providers, including OpenAI, ElevenLabs, Bailian, MiniMax, SiliconFlow, and PlayHT.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "happy-dreamina"
+      ],
+      "group": "即梦图像/视频生成",
+      "group_en": "Dreamina image and video generation",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "通过即梦 CLI 生成文生图、图生图、文生视频、图生视频，并查询任务历史。",
+      "description_en": "Uses the Dreamina CLI to generate images and videos and check task history.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "happy-image-gen"
+      ],
+      "group": "AI 图像生成（多 API）",
+      "group_en": "AI Image Generation Across Multiple APIs",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "统一调用多家文生图/图生图 API，生成或重绘静态图片。",
+      "description_en": "Generates or restyles still images through a unified multi-provider image API workflow.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "happy-video-gen"
+      ],
+      "group": "AI 视频生成（多模型提供商）",
+      "group_en": "AI Video Generation Across Multiple Providers",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "统一提交并轮询多家视频生成 API，产出短视频文件。",
+      "description_en": "Submits and polls multiple video-generation providers to deliver short video outputs.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "mkfast-deploy"
+      ],
+      "group": "Cloudflare Workers 部署（mkfast/TanStarter）",
+      "group_en": "Cloudflare Workers Deployment for mkfast/TanStarter",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "为 mkfast/TanStarter 项目检测组件并生成裁剪后的 Cloudflare Workers 部署步骤。",
+      "description_en": "Detects enabled components in mkfast/TanStarter projects and generates a trimmed Cloudflare Workers deployment plan.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "open-source-prep"
+      ],
+      "group": "开源协议与仓库合规准备",
+      "group_en": "Open-Source Licensing and Repository Readiness",
+      "category": "legal-compliance",
+      "subcategory": "14-4",
+      "chain": false,
+      "description": "扫描密钥与历史泄漏，补齐开源协议、许可证和贡献安全文档。",
+      "description_en": "Scans for leaked secrets and prepares open-source licensing, contribution, and security documentation.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "trends-bulletin"
+      ],
+      "group": "多平台热词趋势监测与 Telegram 推送",
+      "group_en": "Multi-platform Trend Monitoring and Telegram Briefing",
+      "category": "data-scraping",
+      "subcategory": "7-2",
+      "chain": false,
+      "description": "采集多个平台热门趋势，生成关键洞察并推送到 Telegram。",
+      "description_en": "Collects hot trends across multiple platforms, summarizes key insights, and sends the briefing to Telegram.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "video-processor"
+      ],
+      "group": "video-processor",
+      "group_en": "Programmatic Video / Local Video Editing / Video Toolchains (FFmpeg / Remotion) / Digital Human Dubbing / Multilingual Dubbing",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "下载视频、提取音频、转换格式，并用 Whisper 生成转写文本。",
+      "description_en": "Downloads videos, extracts audio, converts formats, and generates transcriptions with Whisper.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "wechat-article-writer"
+      ],
+      "group": "公众号文章写作 / 爆款标题",
+      "group_en": "WeChat Article Writing and Viral Headlines",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "帮助 Agent 搜索素材、撰写公众号文章、生成爆款标题并优化排版。",
+      "description_en": "Helps an agent research topics, draft WeChat articles, generate viral-style headlines, and polish layout.",
+      "sources": [
+        "iamzhihuix/happy-claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "accessibility-compliance"
+      ],
+      "group": "Web 可访问性合规与无障碍审计",
+      "group_en": "Web Accessibility Compliance Audits",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 Agent 按 WCAG 标准审查新闻站/学术平台，并给出可访问界面、替代文本和数据可视化建议。",
+      "description_en": "Helps agents audit news and academic sites against WCAG standards and recommend accessible interfaces, alt text, and data visualizations.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "claude-md-updater"
+      ],
+      "group": "CLAUDE.md 会话知识沉淀",
+      "group_en": "CLAUDE.md Session Memory Updates",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "帮助 Agent 从对话中提取经验、路径、基础设施与流程变更，生成 CLAUDE.md 更新建议。",
+      "description_en": "Extracts durable lessons, paths, infrastructure changes, and workflow updates from a conversation and drafts scoped CLAUDE.md edits.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "electron-dev"
+      ],
+      "group": "Electron 桌面应用开发",
+      "group_en": "Electron Desktop App Development",
+      "category": "software-engineering",
+      "subcategory": "1-7",
+      "chain": false,
+      "description": "帮助 agent 构建安全、可打包的 Electron 桌面应用，覆盖 React/TypeScript、IPC、窗口/托盘与音频集成。",
+      "description_en": "Helps an agent build secure, packageable Electron desktop apps with React/TypeScript, IPC, window and tray handling, and audio integration.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "mobile-debugging"
+      ],
+      "group": "移动端 Web 调试",
+      "group_en": "Mobile Web Debugging",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 在真实手机或平板上调试网页，提供 Eruda、vConsole、远程调试和云测平台方案。",
+      "description_en": "Helps an agent debug web pages on real phones and tablets using Eruda, vConsole, remote debugging, and cloud testing tools.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "one-way-door"
+      ],
+      "group": "架构决策门禁",
+      "group_en": "Architecture decision gate",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "帮 agent 在创建关键架构文件前识别不可逆决策，评估取舍并推动讨论。",
+      "description_en": "Helps the agent flag irreversible architecture decisions before creating key files and surface trade-offs for discussion.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "python-pipeline"
+      ],
+      "group": "Python 数据流水线",
+      "group_en": "Python data pipelines",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮 agent 设计模块化 Python 批处理流水线，并选择 pandas、Polars 或 DuckDB。",
+      "description_en": "Helps the agent design modular Python batch-processing pipelines and choose between pandas, Polars, and DuckDB.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "test-first-bugs"
+      ],
+      "group": "测试优先 Bug 修复",
+      "group_en": "Test-First Bug Fixing",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "在用户报 bug 时，先复现并写失败测试，再修复并跑回归验证。",
+      "description_en": "Guides agents to reproduce bugs, write failing tests, fix them, and verify regressions.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "vibe-coding"
+      ],
+      "group": "AI 辅助开发方法论",
+      "group_en": "AI-Assisted Development Methodology",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "为 AI 辅助编码提供规划、版本控制、测试和迭代调试的实践方法。",
+      "description_en": "Provides practical workflows for planning, committing, testing, and debugging with AI coding assistants.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "web-scraping"
+      ],
+      "group": "新闻调查网页抓取流水线",
+      "group_en": "Journalism investigation scraping pipeline",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "帮助 agent 设计可靠网页抓取链路，抽取正文并处理动态或社交内容。",
+      "description_en": "Helps an agent build a reliable scraping workflow for extracting article content from dynamic or social sources.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "web-ui-best-practices"
+      ],
+      "group": "Web UI 质感审查清单",
+      "group_en": "Web UI polish checklist",
+      "category": "design-frontend",
+      "subcategory": "5-2",
+      "chain": false,
+      "description": "帮助 agent 审查或构建网页界面，关注速度、导航、视觉克制和文案质感。",
+      "description_en": "Helps an agent review or build web interfaces with attention to speed, navigation, restraint, and copy quality.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "zero-build-frontend"
+      ],
+      "group": "零构建前端开发模式",
+      "group_en": "Zero-build Frontend Patterns",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "帮助 agent 用 CDN 引入 React/Tailwind 等构建无需构建工具的静态 Web 应用。",
+      "description_en": "Helps agents build static web apps without bundlers using CDN-loaded React, Tailwind, htmx, Alpine, and import maps.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "ai-writing-detox"
+      ],
+      "group": "语法 / 文风审查",
+      "group_en": "Writing Style Review",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "帮助 agent 删除 AI 套话并润色稿件，让发布前文本更自然可信。",
+      "description_en": "Helps agents remove AI-sounding phrasing and polish drafts before publication.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "crisis-communications"
+      ],
+      "group": "新闻危机沟通与快速响应",
+      "group_en": "Newsroom Crisis Communications",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为记者和公关人员在突发事件中组织核实、响应与对外沟通。",
+      "description_en": "Helps journalists and comms teams coordinate verification, response, and public messaging during crises.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "data-journalism"
+      ],
+      "group": "数据新闻分析与叙事",
+      "group_en": "Data Journalism Analysis & Storytelling",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "指导记者用数据提出问题、清洗分析、验证证据并生成数据新闻。",
+      "description_en": "Guides reporters through data-driven questions, cleaning, analysis, evidence, and storytelling.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "editorial-workflow"
+      ],
+      "group": "新闻编辑室工作流",
+      "group_en": "Newsroom Editorial Workflow",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "帮助 agent 跟踪新闻选题、截稿日期、编辑流转与交接协议。",
+      "description_en": "Helps agents track story assignments, deadlines, editorial handoffs, and workflow status.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "fact-check-workflow"
+      ],
+      "group": "事实核查工作流",
+      "group_en": "Fact-Checking Workflow",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 提取待核查主张、收集证据、评级并形成发布/更正记录。",
+      "description_en": "Helps agents extract claims, gather evidence, rate verification outcomes, and document corrections.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "foia-requests"
+      ],
+      "group": "FOIA 与公共记录请求",
+      "group_en": "FOIA and Public Records Requests",
+      "category": "legal-compliance",
+      "subcategory": "14-8",
+      "chain": false,
+      "description": "帮助起草、跟踪和申诉政府信息公开请求流程。",
+      "description_en": "Drafts, tracks, and appeals FOIA and public records requests.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "interview-prep"
+      ],
+      "group": "采访准备与来源管理",
+      "group_en": "Interview Prep and Source Management",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助规划采访研究、问题框架和合规录音流程。",
+      "description_en": "Helps plan interview research, question frameworks, and compliant recording practices.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "interview-transcription"
+      ],
+      "group": "采访转录与引用提取",
+      "group_en": "Interview Transcription & Quote Extraction",
+      "category": "media",
+      "subcategory": "6-2",
+      "chain": false,
+      "description": "帮助记者处理采访音视频、生成带时间戳转录稿并提取可核验引用。",
+      "description_en": "Helps journalists process interview recordings, create timestamped transcripts, and extract verifiable quotes.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "newsletter-publishing"
+      ],
+      "group": "邮件通讯发布",
+      "group_en": "Newsletter Publishing",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "帮助记者和研究者规划、制作、发布邮件通讯并分析订阅与互动表现。",
+      "description_en": "Helps journalists and researchers plan, produce, publish newsletters, and analyze audience engagement.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "newsroom-style"
+      ],
+      "group": "新闻写作风格规范",
+      "group_en": "Newsroom Writing Style Guide",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "按 AP Style 和新闻惯例编辑稿件、标题与社媒文案。",
+      "description_en": "Applies AP Style and newsroom conventions to articles, headlines, and social copy.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "photo-metadata"
+      ],
+      "group": "新闻图片元数据标注",
+      "group_en": "News Photo Metadata Tagging",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "用 exiftool 为新闻图片写入版权、署名、地点等元数据。",
+      "description_en": "Writes IPTC, EXIF, and XMP metadata for news photos with exiftool.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "social-media-intelligence"
+      ],
+      "group": "跨平台社交情报监测",
+      "group_en": "Cross-platform Social Intelligence Monitoring",
+      "category": "data-scraping",
+      "subcategory": "7-2",
+      "chain": false,
+      "description": "帮助记者监测社交平台叙事传播、协同行为和虚假信息线索。",
+      "description_en": "Helps reporters monitor narrative spread, coordinated behavior, and misinformation signals across social platforms.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "source-verification"
+      ],
+      "group": "新闻来源与事实核查",
+      "group_en": "Journalism Source and Fact-Checking Verification",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助记者用 SIFT 等方法核查来源、主张出处和数字内容真伪。",
+      "description_en": "Guides reporters through SIFT-style source, claim, and digital-content verification workflows.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "story-pitch"
+      ],
+      "group": "新闻投稿与选题 Pitch",
+      "group_en": "Journalism Story Pitching",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "帮 agent 梳理选题价值、证据与访问计划，生成面向编辑的投稿或委托 pitch。",
+      "description_en": "Helps an agent shape a story’s value, evidence, access plan, and outlet-specific pitch for editors.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "okf-wiki"
+      ],
+      "group": "OKF 知识库脚手架",
+      "group_en": "OKF Knowledge Base Scaffolding",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "帮 agent 初始化 OKF 知识库，按单概念文件组织 Markdown 与 YAML 溯源元数据。",
+      "description_en": "Helps an agent initialize an OKF knowledge base with one-concept-per-file Markdown and provenance metadata.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "pdf-design",
+        "document-design"
+      ],
+      "group": "PDF 报告与印刷文档设计",
+      "group_en": "PDF Reports and Print Document Design",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 agent 按品牌配置制作可导出 PDF 的印刷就绪 HTML 文档。",
+      "description_en": "Helps agents generate, preview, and iteratively edit professional PDF reports and funding proposals.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "project-memory"
+      ],
+      "group": "项目记忆模板",
+      "group_en": "Project Memory Templates",
+      "category": "agent-architecture",
+      "subcategory": "12-3",
+      "chain": false,
+      "description": "为新闻/学术项目生成 CLAUDE.md 项目记忆，沉淀协作惯例与特殊细节。",
+      "description_en": "Generates CLAUDE.md project memory files that preserve collaboration norms and project-specific quirks.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "project-retrospective"
+      ],
+      "group": "项目复盘模板",
+      "group_en": "Project Retrospective Templates",
+      "category": "product-management",
+      "subcategory": "3-9",
+      "chain": false,
+      "description": "在项目结束时生成 LESSONS.md 复盘文件，记录失败、教训与机构知识。",
+      "description_en": "Creates LESSONS.md retrospectives at project close, documenting failures, lessons, and institutional knowledge.",
+      "sources": [
+        "jamditis/claude-skills-journalism"
+      ]
+    },
+    {
+      "skills": [
+        "docker-ros2-development",
+        "robot-bringup"
+      ],
+      "group": "ROS2 机器人系统部署",
+      "group_en": "ROS2 Robot System Deployment",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "帮助 agent 编写 ROS2 Dockerfile、Compose、DDS/GPU/设备透传配置。",
+      "description_en": "Helps agents configure ROS2 boot services, systemd units, layered launches, device rules, and production monitoring.",
+      "sources": [
+        "arpitg1304/robotics-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "robot-perception"
+      ],
+      "group": "机器人感知与传感器处理",
+      "group_en": "Robot Perception and Sensor Processing",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导机器人视觉、点云、传感器标定与多传感器融合实现。",
+      "description_en": "Guides robot vision, point clouds, sensor calibration, and multi-sensor fusion.",
+      "sources": [
+        "arpitg1304/robotics-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "robotics-design-patterns"
+      ],
+      "group": "机器人软件架构与设计模式",
+      "group_en": "Robotics Software Architecture and Design Patterns",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "提供机器人软件架构、状态机、安全机制与 HAL 设计指南。",
+      "description_en": "Provides guidance on robot software architecture, state machines, safety, and HAL design.",
+      "sources": [
+        "arpitg1304/robotics-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "robotics-security"
+      ],
+      "group": "机器人安全加固",
+      "group_en": "Robotics Security Hardening",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "指导 ROS2/SROS2 加密、证书、网络隔离、密钥与机器人系统加固。",
+      "description_en": "Guides ROS2/SROS2 encryption, certificates, network segmentation, secrets, and robot system hardening.",
+      "sources": [
+        "arpitg1304/robotics-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "robotics-software-principles"
+      ],
+      "group": "机器人软件设计原则 / 代码审查",
+      "group_en": "Robotics Software Design & Code Review",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "帮助设计模块化机器人软件架构、接口、错误处理与代码审查。",
+      "description_en": "Helps design modular robotics software architecture, interfaces, error handling, and code reviews.",
+      "sources": [
+        "arpitg1304/robotics-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "robotics-testing"
+      ],
+      "group": "机器人测试策略",
+      "group_en": "Robotics Testing Strategies",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 为 ROS 节点、仿真、HIL 与感知规划控制管线设计测试。",
+      "description_en": "Helps the agent design tests for ROS nodes, simulations, HIL, and robotics pipelines.",
+      "sources": [
+        "arpitg1304/robotics-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ros1"
+      ],
+      "group": "ROS1 开发实践",
+      "group_en": "ROS1 Development Practices",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 agent 构建、维护和调试 ROS1 包、节点、launch 与通信系统。",
+      "description_en": "Guides the agent in building, maintaining, and debugging ROS1 packages, nodes, launch files, and communication systems.",
+      "sources": [
+        "arpitg1304/robotics-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ros2-web-integration"
+      ],
+      "group": "ROS2 Web 集成",
+      "group_en": "ROS 2 Web Integration",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 构建 ROS2 与 Web 技术桥接、REST API、WebSocket 和浏览器机器人界面。",
+      "description_en": "Helps the agent integrate ROS 2 with REST APIs, WebSockets, browser dashboards, and robot-facing web interfaces.",
+      "sources": [
+        "arpitg1304/robotics-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ros2"
+      ],
+      "group": "ROS2 机器人软件开发",
+      "group_en": "ROS 2 Robotics Software Development",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 编写、调试和部署 ROS2 节点、包、launch 文件及生产级机器人系统。",
+      "description_en": "Helps the agent build, debug, and deploy ROS 2 nodes, packages, launch files, and production robotics systems.",
+      "sources": [
+        "arpitg1304/robotics-agent-skills"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "zhaoxuya520",
+        "repo": "reverse-skill",
+        "full_name": "zhaoxuya520/reverse-skill",
+        "url": "https://github.com/zhaoxuya520/reverse-skill",
+        "stars": 6617,
+        "pushed_at": "2026-06-27",
+        "default_branch": "main",
+        "github_description": "Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing + On-demand toolchain bootstrapping + Self-evolving knowledge base  Supports Claude Code, Kiro, Cursor, Cline, and other AI coding clients 逆向/渗透/安全技能路由包 - AI 自动路由 + 按需自举工具链 + 自动进化经验库 | 支持 Claude Code / Kiro / Cursor / Cline 等代码 AI 客户端",
+        "topics": [],
+        "language": "PowerShell",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "competition-ad-certificate-abuse",
+          "path": "CTF-Sandbox-Orchestrator/competition-ad-certificate-abuse/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "AD CS 证书滥用分析",
+          "group_en": "AD CS Certificate Abuse Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在沙箱假设下分析证书模板、CA 策略与证书映射形成的权限路径。",
+          "description_en": "Analyzes AD CS templates, CA policy, and certificate mapping under sandbox assumptions to trace privilege paths.",
+          "what": "分析 AD CS 证书模板、CA 策略与证书映射如何形成权限接受路径。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-agent-cloud",
+          "path": "CTF-Sandbox-Orchestrator/competition-agent-cloud/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "Agent 云与供应链攻击路径分析",
+          "group_en": "Agent Cloud and Supply Chain Attack Path Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "识别 prompt-to-tool、检索投毒、云部署漂移、CI 制品与供应链风险链。",
+          "description_en": "Maps prompt-to-tool flows, retrieval poisoning, cloud drift, CI artifacts, and supply-chain risks under sandbox assumptions.",
+          "what": "分析 AI Agent、云部署、容器、CI/CD 与供应链挑战中的攻击路径。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-android-hooking",
+          "path": "CTF-Sandbox-Orchestrator/competition-android-hooking/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "CTF 移动应用逆向与 Hook 分析",
+          "group_en": "CTF Mobile Reverse Engineering and Hooking",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在沙箱假设下分析 APK Hook、Frida 追踪、签名恢复与信任边界。",
+          "description_en": "Analyzes APK hooking, Frida traces, signing recovery, and trust boundaries under sandbox assumptions.",
+          "what": "用于 Android 应用的动态 Hook 与信任边界调查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-browser-persistence",
+          "path": "CTF-Sandbox-Orchestrator/competition-browser-persistence/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "渗透测试(Web / API / 基础设施)",
+          "group_en": "Penetration Testing (Web / API / Infrastructure)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在沙箱假设下追踪浏览器存储、缓存和服务 worker 对会话与访问的影响。",
+          "description_en": "Traces browser storage, caches, and service workers to explain session behavior and access effects.",
+          "what": "用于浏览器持久化状态与会话访问分析。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-bundle-sourcemap-recovery",
+          "path": "CTF-Sandbox-Orchestrator/competition-bundle-sourcemap-recovery/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "前端资产逆向 / 源码映射恢复",
+          "group_en": "Frontend Asset Reverse Engineering / Sourcemap Recovery",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助智能体从发布的前端资产、源码映射和 chunk 关系还原运行时结构、隐藏路由与 API。",
+          "description_en": "Helps agents reconstruct runtime structure, hidden routes, and APIs from served frontend artifacts, sourcemaps, and chunk maps.",
+          "what": "从构建产物和 source map 还原前端运行时结构。",
+          "chain": true,
+          "chain_group": "CTF Sandbox 路由工作流",
+          "chain_group_en": "CTF Sandbox Routing Workflow"
+        },
+        {
+          "name": "competition-cloud-metadata-path",
+          "path": "CTF-Sandbox-Orchestrator/competition-cloud-metadata-path/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "云元数据身份提权路径",
+          "group_en": "Cloud Metadata Identity Escalation Paths",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助智能体追踪云元数据可达路径，分析身份令牌、角色假设与 SSRF 提权信任链。",
+          "description_en": "Helps agents trace cloud metadata reachability, identity tokens, role assumption, and SSRF-based privilege escalation chains.",
+          "what": "梳理云元数据 SSRF 到权限提升的证据链。",
+          "chain": true,
+          "chain_group": "CTF Sandbox 路由工作流",
+          "chain_group_en": "CTF Sandbox Routing Workflow"
+        },
+        {
+          "name": "competition-container-runtime",
+          "path": "CTF-Sandbox-Orchestrator/competition-container-runtime/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "CTF 容器运行时分析",
+          "group_en": "CTF Container Runtime Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 对比清单与运行态，定位 Pod、挂载、Sidecar 与路由映射。",
+          "description_en": "Helps agents compare manifests with live runtime and trace pod, mount, sidecar, and route mappings.",
+          "what": "定位运行态容器差异、挂载来源、Sidecar/Init 影响和路由到容器的关系。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-crypto-mobile",
+          "path": "CTF-Sandbox-Orchestrator/competition-crypto-mobile/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "CTF 密码与移动端分析",
+          "group_en": "CTF Crypto and Mobile Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 还原编码/加密链、隐写载荷，并分析 APK/IPA 信任边界。",
+          "description_en": "Helps agents reconstruct encoding and crypto chains, inspect hidden payloads, and analyze APK/IPA trust boundaries.",
+          "what": "处理 CTF 中密码、隐写、APK/IPA 签名、存储和请求签名逻辑分析。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-custom-protocol-replay",
+          "path": "CTF-Sandbox-Orchestrator/competition-custom-protocol-replay/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red teaming / attack chains / post-exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "解析未知协议并重建握手、帧格式和状态序列，生成可复现回放方案。",
+          "description_en": "Decode unknown protocols, reconstruct handshakes, framing, and state sequences, then produce reproducible replay plans.",
+          "what": "Recover custom protocol semantics and build accepted-session replay harnesses.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-dpapi-credential-chain",
+          "path": "CTF-Sandbox-Orchestrator/competition-dpapi-credential-chain/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red teaming / attack chains / post-exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "梳理 DPAPI blob、主密钥和凭据来源，证明受保护 Windows 秘密的解密链路。",
+          "description_en": "Trace DPAPI blobs, masterkeys, and credential sources to prove how protected Windows secrets are decrypted.",
+          "what": "Map DPAPI masterkey and browser or vault credential chains.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-file-parser-chain",
+          "path": "CTF-Sandbox-Orchestrator/competition-file-parser-chain/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "文件解析链追踪",
+          "group_en": "File parser chain tracing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导 agent 追踪上传文件从入口到解析、解压、转换和反序列化的路径。",
+          "description_en": "Guides the agent through an uploaded file's path from ingestion to parsing, extraction, conversion, and deserialization.",
+          "what": "Trace how an uploaded artifact is parsed and consumed by backend components.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-firmware-layout",
+          "path": "CTF-Sandbox-Orchestrator/competition-firmware-layout/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "固件布局逆向",
+          "group_en": "Firmware layout reverse engineering",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 拆解固件镜像，梳理分区、启动链、更新包与设备信任边界。",
+          "description_en": "Helps the agent unpack firmware images and map partitions, boot chains, update packages, and device trust boundaries.",
+          "what": "Map firmware structure, boot/update chains, and device-facing trust boundaries.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-forensic-timeline",
+          "path": "CTF-Sandbox-Orchestrator/competition-forensic-timeline/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "DFIR 时间线重建 / 多证据关联",
+          "group_en": "DFIR timeline reconstruction and multi-evidence correlation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 将多源取证证据归一化，重建攻击时间线并区分确认与推断。",
+          "description_en": "Helps an agent normalize multi-source forensic evidence, reconstruct attack timelines, and separate confirmed events from inferred gaps.",
+          "what": "将 EVTX、PCAP、注册表、磁盘、内存、邮箱和浏览器等证据串联成可复现的攻击叙事。",
+          "chain": true,
+          "chain_group": "CTF 沙盒路由后专项分析",
+          "chain_group_en": "Post-routing CTF sandbox specializations"
+        },
+        {
+          "name": "competition-graphql-rpc-drift",
+          "path": "CTF-Sandbox-Orchestrator/competition-graphql-rpc-drift/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "API 契约漂移与隐藏操作分析",
+          "group_en": "API contract drift and hidden operation analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 对比声明接口契约与真实处理逻辑，识别隐藏、过期或越权操作。",
+          "description_en": "Helps an agent compare declared API contracts with live handlers to surface hidden, stale, or privileged operations.",
+          "what": "围绕 GraphQL、RPC 和 OpenAPI 契约漂移定位隐藏操作与权限行为差异。",
+          "chain": true,
+          "chain_group": "CTF 沙盒路由后专项分析",
+          "chain_group_en": "Post-routing CTF sandbox specializations"
+        },
+        {
+          "name": "competition-identity-windows",
+          "path": "CTF-Sandbox-Orchestrator/competition-identity-windows/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "AD 身份与横向移动 CTF",
+          "group_en": "AD Identity & Lateral Movement CTF",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在 CTF 沙盒中梳理 AD、Windows 主机与邮件证据，定位身份链和横向移动路径。",
+          "description_en": "Maps AD, Windows host, and mail evidence in a CTF sandbox to trace identity chains and lateral movement paths.",
+          "what": "用于在 CTF 沙盒中梳理 Windows/AD 身份证据、凭据边界和横向移动链。",
+          "chain": true,
+          "chain_group": "CTF 沙盒路由工作流",
+          "chain_group_en": "CTF Sandbox Routing Workflow"
+        },
+        {
+          "name": "competition-ios-runtime",
+          "path": "CTF-Sandbox-Orchestrator/competition-ios-runtime/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "iOS 运行时逆向 CTF",
+          "group_en": "iOS Runtime Reverse Engineering CTF",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在 CTF 沙盒中分析 IPA 运行时行为、Keychain、URL scheme 与请求签名恢复。",
+          "description_en": "Analyzes IPA runtime behavior, Keychain state, URL schemes, and request-signing recovery in a CTF sandbox.",
+          "what": "用于在 CTF 沙盒中分析 iOS 应用运行时边界、存储状态与网络请求行为。",
+          "chain": true,
+          "chain_group": "CTF 沙盒路由工作流",
+          "chain_group_en": "CTF Sandbox Routing Workflow"
+        },
+        {
+          "name": "competition-jwt-claim-confusion",
+          "path": "CTF-Sandbox-Orchestrator/competition-jwt-claim-confusion/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "JWT 认证混淆测试",
+          "group_en": "JWT Claim Confusion Testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 在 CTF 沙箱中审查 JWT 头、声明、密钥选择与身份接受逻辑。",
+          "description_en": "Helps an agent audit JWT headers, claims, key selection, and identity acceptance logic in a CTF sandbox.",
+          "what": "用于定位 JWT 头、声明、信任策略导致的身份或权限混淆漏洞。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-k8s-control-plane",
+          "path": "CTF-Sandbox-Orchestrator/competition-k8s-control-plane/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "Kubernetes 控制面攻击路径",
+          "group_en": "Kubernetes Control-Plane Attack Paths",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 分析 Kubernetes 控制面权限、服务账号信任、RBAC 与控制器行为。",
+          "description_en": "Helps an agent analyze Kubernetes control-plane permissions, service-account trust, RBAC edges, and controller behavior.",
+          "what": "用于追踪 Kubernetes 控制面状态、权限边与控制器变更如何影响集群安全。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-kerberos-delegation",
+          "path": "CTF-Sandbox-Orchestrator/competition-kerberos-delegation/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "CTF 沙盒攻击链专项",
+          "group_en": "CTF Sandbox Attack-Chain Specializations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 CTF 沙盒中梳理 Kerberos 委派、SPN 与票据接受关系，定位权限提升路径。",
+          "description_en": "Helps the agent map Kerberos delegation edges, SPNs, and ticket acceptance to identify privilege-escalation paths in CTF sandboxes.",
+          "what": "判断 Kerberos 委派边如何转化为有效权限。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-kernel-container-escape",
+          "path": "CTF-Sandbox-Orchestrator/competition-kernel-container-escape/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "CTF 沙盒攻击链专项",
+          "group_en": "CTF Sandbox Attack-Chain Specializations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 CTF 沙盒中映射容器隔离边界与内核攻击面，验证逃逸原语是否成立。",
+          "description_en": "Helps the agent map container isolation boundaries and kernel attack surface to verify escape primitives in CTF sandboxes.",
+          "what": "判断容器逃逸原语是否真正跨越隔离边界。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-linux-credential-pivot",
+          "path": "CTF-Sandbox-Orchestrator/competition-linux-credential-pivot/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "CTF 凭证与横向移动专项",
+          "group_en": "CTF Credential and Lateral Movement Specialization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "梳理 Linux 凭证、令牌、SSH 材料和服务信任边界，定位可复现的横向移动路径。",
+          "description_en": "Maps Linux credentials, tokens, SSH material, and service trust boundaries to identify reproducible lateral movement paths.",
+          "what": "CTF 沙箱中 Linux 凭证、令牌与 SSH 材料的信任边界梳理流程",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-lsass-ticket-material",
+          "path": "CTF-Sandbox-Orchestrator/competition-lsass-ticket-material/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "CTF 凭证与横向移动专项",
+          "group_en": "CTF Credential and Lateral Movement Specialization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析 LSASS、Kerberos 票据和 DPAPI/SSP 材料，判断可复现凭证并关联权限边界。",
+          "description_en": "Analyzes LSASS, Kerberos tickets, and DPAPI/SSP artifacts to determine replayable credentials and privilege edges.",
+          "what": "CTF 沙箱中 Windows LSASS、Kerberos 与 DPAPI/SSP 材料分析流程",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-mailbox-abuse",
+          "path": "CTF-Sandbox-Orchestrator/competition-mailbox-abuse/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "CTF 邮箱滥用链路",
+          "group_en": "CTF Mailbox Abuse Chains",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在沙箱假设下追踪邮箱规则、OAuth 授权、转发链路及邮件证据。",
+          "description_en": "Traces mailbox rules, OAuth grants, forwarding chains, and email evidence under sandbox assumptions.",
+          "what": "用于判断并分析邮件滥用、OAuth 同意授权、转发/传输规则及令牌到邮箱的副作用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-malware-config",
+          "path": "CTF-Sandbox-Orchestrator/competition-malware-config/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "恶意软件配置恢复",
+          "group_en": "Malware Config Recovery",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在沙箱假设下恢复恶意软件配置、解码 C2 字段并提取 IOC。",
+          "description_en": "Recovers malware configs, decodes C2 fields, and extracts IOCs under sandbox assumptions.",
+          "what": "用于从样本和 staged payload 中恢复配置、提取 beacon/C2 参数并记录解码路径。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-oauth-oidc-chain",
+          "path": "CTF-Sandbox-Orchestrator/competition-oauth-oidc-chain/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "CTF 身份链 / OAuth OIDC 攻击路径",
+          "group_en": "CTF Identity Chains / OAuth-OIDC Attack Paths",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在授权 CTF 场景中梳理 OAuth/OIDC 身份链路、令牌交换与权限接受逻辑。",
+          "description_en": "Helps agents trace OAuth/OIDC identity chains, token exchange, and privilege acceptance in authorized CTF scenarios.",
+          "what": "分析 OAuth/OIDC 流程如何被用来证明身份接受或权限提升。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-pcap-protocol",
+          "path": "CTF-Sandbox-Orchestrator/competition-pcap-protocol/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "CTF 流量取证 / 协议分析",
+          "group_en": "CTF Traffic Forensics / Protocol Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 分析 PCAP、重建会话、解码协议，并将流量证据关联到恶意或应用行为。",
+          "description_en": "Helps agents analyze PCAPs, reconstruct sessions, decode protocols, and correlate traffic evidence with malware or application behavior.",
+          "what": "从流量包中重建协议会话并提取可用于安全分析的证据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-prompt-injection",
+          "path": "CTF-Sandbox-Orchestrator/competition-prompt-injection/SKILL.md",
+          "subcategory": "21-8",
+          "subcategory_title": "21.8 LLM 安全 / 护栏",
+          "category": "ml-llm-engineering",
+          "group": "Agentic 系统提示注入与越界利用",
+          "group_en": "Agentic Prompt Injection and Boundary Abuse",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用于分析提示注入、检索污染、记忆污染和 MCP/工具边界滥用等 agent 信任边界挑战。",
+          "description_en": "Analyzes prompt injection, retrieval poisoning, memory contamination, and MCP or tool-boundary abuse in agentic systems.",
+          "what": "Map the trust boundary, exploit chain, and evidence for agent-chain prompt-injection challenges.",
+          "chain": true,
+          "chain_group": "CTF 沙盒安全挑战路由",
+          "chain_group_en": "CTF Sandbox Security Challenge Routing"
+        },
+        {
+          "name": "competition-queue-worker-drift",
+          "path": "CTF-Sandbox-Orchestrator/competition-queue-worker-drift/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "异步队列与 Worker 攻击链分析",
+          "group_en": "Async Queue and Worker Attack-Chain Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用于追踪队列 payload、异步 worker、重试、死信队列及延迟副作用之间的安全链路。",
+          "description_en": "Traces queue payloads, async workers, retries, dead-letter handling, and delayed side effects.",
+          "what": "Reproduce and document exploit chains where async worker behavior diverges from the request path.",
+          "chain": true,
+          "chain_group": "CTF 沙盒安全挑战路由",
+          "chain_group_en": "CTF Sandbox Security Challenge Routing"
+        },
+        {
+          "name": "competition-race-condition-state-drift",
+          "path": "CTF-Sandbox-Orchestrator/competition-race-condition-state-drift/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "漏洞挖掘 / Bug Bounty / OSINT",
+          "group_en": "Vulnerability research / Bug bounty / OSINT",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在 CTF 沙箱中复现竞态、时序和状态漂移，形成可对比证据。",
+          "description_en": "Reproduce race windows, ordering bugs, and state drift in a CTF sandbox with comparable evidence.",
+          "what": "用于竞态和状态漂移类缺陷复现。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competition-relay-coercion-chain",
+          "path": "CTF-Sandbox-Orchestrator/competition-relay-coercion-chain/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red team / Attack chains / Post-exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 梳理强制认证中继链路，定位接受身份的服务与权限影响。",
+          "description_en": "Trace forced-auth relay chains to identify accepting services and privilege impact.",
+          "what": "用于强制认证中继链路分析。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "Narwhal-Lab",
+        "repo": "MagicSkills",
+        "full_name": "Narwhal-Lab/MagicSkills",
+        "url": "https://github.com/Narwhal-Lab/MagicSkills",
+        "stars": 303,
+        "pushed_at": "2026-04-08",
+        "default_branch": "main",
+        "github_description": "MagicSkills：Stop copying skills between agents. MagicSkills turns scattered SKILL.md folders into reusable, composable, tool-ready capabilities.",
+        "topics": [
+          "agent",
+          "ai",
+          "function",
+          "package",
+          "python",
+          "skills",
+          "tool"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "path-skill-md"
+      },
+      "skills": [
+        {
+          "name": "c_2_ast",
+          "path": "skill_template/c_2_ast/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "C 代码 AST 解析",
+          "group_en": "C Code AST Parsing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把 C 源码解析为 AST，供 agent 做代码结构理解、静态分析和后续程序分析。",
+          "description_en": "Parses C source code into an AST for code-structure understanding, static analysis, and downstream program analysis.",
+          "what": "将用户提供的 C 源码或文件转换为 AST 输出。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "agent-sh",
+        "repo": "agnix",
+        "full_name": "agent-sh/agnix",
+        "url": "https://github.com/agent-sh/agnix",
+        "stars": 301,
+        "pushed_at": "2026-06-27",
+        "default_branch": "main",
+        "github_description": "The missing linter and lsp for AI coding assistants. Validate CLAUDE.md, AGENTS.md, SKILL.md, hooks, MCP. Plugin for all major IDEs included, with autofixes.",
+        "topics": [
+          "agent",
+          "ai",
+          "ai-agents",
+          "ai-coding-assistant",
+          "claude",
+          "cli",
+          "code-quality",
+          "codex",
+          "copilot",
+          "cursor",
+          "devtools",
+          "linter",
+          "llm",
+          "lsp",
+          "mcp",
+          "opencode",
+          "rust",
+          "skills",
+          "vscode",
+          "vscode-extension"
+        ],
+        "language": "Rust",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "path-skill-md"
+      },
+      "skills": [
+        {
+          "name": "agnix",
+          "path": "plugin/skills/agnix/SKILL.md",
+          "subcategory": "13-3",
+          "subcategory_title": "13.3 Skill 安全审计",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 规范校验",
+          "group_en": "Skill spec validation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "调用 agnix 校验 CLAUDE.md、SKILL.md、hooks 与 MCP 配置，并支持自动修复。",
+          "description_en": "Run agnix to validate CLAUDE.md, SKILL.md, hooks, and MCP configs, with optional autofixes.",
+          "what": "Validates agent configuration files against broad rules for AI coding tools.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "agent-without-context",
+          "path": "tests/fixtures/invalid/skills/agent-without-context/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "agent-without-context",
+          "group_en": "agent-without-context",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "",
+          "description_en": "",
+          "what": "",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "hypnguyen1209",
+        "repo": "offensive-claude",
+        "full_name": "hypnguyen1209/offensive-claude",
+        "url": "https://github.com/hypnguyen1209/offensive-claude",
+        "stars": 300,
+        "pushed_at": "2026-06-28",
+        "default_branch": "main",
+        "github_description": "Offensive security toolkit for Claude Code covering red team, exploit dev, AD attacks, EDR bypass, mobile pentest",
+        "topics": [
+          "claude-code",
+          "claude-code-skills",
+          "exploit-development",
+          "offensive-security",
+          "redteam"
+        ],
+        "language": "Shell",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-code"
+      },
+      "skills": [
+        {
+          "name": "active-directory-attack",
+          "path": "skills/active-directory-attack/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team / Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 在授权测试中梳理 AD 攻击路径与发现记录。",
+          "description_en": "Helps an agent plan authorized Active Directory testing and organize findings.",
+          "what": "用于 Active Directory 授权渗透测试流程。",
+          "chain": true,
+          "chain_group": "红队攻击链路",
+          "chain_group_en": "Red team attack chain"
+        },
+        {
+          "name": "advanced-redteam",
+          "path": "skills/advanced-redteam/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team / Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 规划高级红队行动、C2 架构与 OPSEC 记录。",
+          "description_en": "Helps an agent plan advanced red team operations, C2 infrastructure, and OPSEC documentation.",
+          "what": "用于高级红队行动规划与 OPSEC 管理。",
+          "chain": true,
+          "chain_group": "红队攻击链路",
+          "chain_group_en": "Red team attack chain"
+        },
+        {
+          "name": "ai-security",
+          "path": "skills/ai-security/SKILL.md",
+          "subcategory": "21-8",
+          "subcategory_title": "21.8 LLM 安全 / 护栏",
+          "category": "ml-llm-engineering",
+          "group": "AI/ML 安全评估",
+          "group_en": "AI/ML Security Assessment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 评估 LLM/RAG/ML 应用的注入、越狱、投毒与供应链风险。",
+          "description_en": "Helps agents assess injection, jailbreak, poisoning, and supply-chain risks in LLM/RAG/ML apps.",
+          "what": "A skill for evaluating AI/ML systems against prompt injection, jailbreaks, RAG poisoning, extraction, and supply-chain threats.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cloud-security",
+          "path": "skills/cloud-security/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "渗透测试(Web / API / 基础设施)",
+          "group_en": "Penetration Testing (Web / API / Infrastructure)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 检查云账号、容器/K8s、Serverless 与 IaC 的攻防风险。",
+          "description_en": "Helps agents assess cloud, container, Kubernetes, serverless, and IaC security risks.",
+          "what": "A skill for cloud infrastructure penetration testing across major cloud providers and container, serverless, and IaC environments.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "coding-mastery",
+          "path": "skills/coding-mastery/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "漏洞利用开发工具链",
+          "group_en": "Exploit Development Tooling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 编写漏洞利用、PoC、自动化安全工具和系统级安全代码。",
+          "description_en": "Helps an agent write exploit, PoC, automation, and systems-level security tooling code.",
+          "what": "用于在红队任务中生成或改造专用安全工具代码。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "crypto-analysis",
+          "path": "skills/crypto-analysis/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "密码与 TLS 安全审计",
+          "group_en": "Cryptography and TLS Security Audits",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协助 Agent 审查加密实现、TLS 配置、哈希与密钥强度，并整理安全发现。",
+          "description_en": "Helps an agent review cryptographic implementations, TLS settings, hashes, and key strength, then summarize findings.",
+          "what": "用于在代码或配置审查中定位密码学与 TLS 相关风险。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "edr-evasion",
+          "path": "skills/edr-evasion/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助红队规划 EDR 规避策略并评估检测盲点。",
+          "description_en": "Helps red teams plan EDR evasion strategies and assess detection gaps.",
+          "what": "用于红队行动中的规避阶段，衔接利用开发与初始访问。",
+          "chain": true,
+          "chain_group": "红队武器化与规避工作流",
+          "chain_group_en": "Red Team Weaponization and Evasion Workflow"
+        },
+        {
+          "name": "exploit-development",
+          "path": "skills/exploit-development/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助红队将已确认漏洞转化为 PoC、载荷与利用方案。",
+          "description_en": "Helps red teams turn confirmed vulnerabilities into PoCs, payloads, and exploitation plans.",
+          "what": "用于红队攻击链中的武器化与漏洞利用阶段。",
+          "chain": true,
+          "chain_group": "红队武器化与规避工作流",
+          "chain_group_en": "Red Team Weaponization and Evasion Workflow"
+        },
+        {
+          "name": "incident-response",
+          "path": "skills/incident-response/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "incident-response",
+          "group_en": "Blue Team / SOC / Threat Hunting / Detection Engineering / Malware Analysis / Reverse Engineering",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "帮助 agent 执行事件响应取证、时间线、IOC 与报告",
+          "description_en": "Helps the agent execute incident response forensics, timeline reconstruction, IOC generation, and reporting.",
+          "what": "事件响应取证与报告技能",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "initial-access",
+          "path": "skills/initial-access/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team / Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 规划初始入侵路径、钓鱼投递与暴露服务利用",
+          "description_en": "Helps the agent plan initial footholds, phishing delivery, and exposed-service exploitation.",
+          "what": "初始入侵规划技能",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "keylogger-arch",
+          "path": "skills/keylogger-arch/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red team operations / attack chains / post-exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "分析 Windows 输入捕获与键盘记录架构，辅助红队植入体与 EDR 研究。",
+          "description_en": "Analyze Windows input-capture and keylogging architectures to support red-team implant and EDR research.",
+          "what": "用于研究红队输入监控类植入体架构。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "malware-analysis",
+          "path": "skills/malware-analysis/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "malware-analysis",
+          "group_en": "Blue team / SOC / threat hunting / detection engineering / malware analysis",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "对可疑样本做静态/动态分析，产出 YARA/Sigma 规则、IOC 与行为报告。",
+          "description_en": "Triage suspicious samples with static and dynamic analysis to produce YARA/Sigma rules, IOCs, and behavioral reports.",
+          "what": "用于恶意样本分析与检测规则产出。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "gl0bal01/Masriyan · 组「恶意代码分析 / 逆向」"
+        },
+        {
+          "name": "mobile-pentest",
+          "path": "skills/mobile-pentest/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "移动应用渗透测试",
+          "group_en": "Mobile App Penetration Testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协助 Claude Code 对 Android/iOS 应用做静态、动态分析，识别不安全存储、组件暴露、Frida 绕过等移动安全问题。",
+          "description_en": "Helps Claude Code assess Android/iOS apps through static and dynamic analysis, identifying insecure storage, exposed components, Frida instrumentation issues, and related mobile risks.",
+          "what": "用于移动应用渗透测试与漏洞发现。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "network-attack",
+          "path": "skills/network-attack/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team / Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导 Claude Code 执行内网渗透、协议探测、横向移动、域环境利用和流量拦截等网络攻击面评估。",
+          "description_en": "Guides Claude Code through internal network pentesting, protocol checks, lateral movement, AD exploitation, and traffic interception scenarios.",
+          "what": "用于内网渗透测试与横向移动。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "privesc-linux",
+          "path": "skills/privesc-linux/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team / Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在取得 Linux shell 后枚举提权路径，覆盖 SUID、sudo、cron、容器逃逸等场景。",
+          "description_en": "Enumerates Linux privilege-escalation paths after initial shell access, including SUID, sudo, cron, and container escape scenarios.",
+          "what": "Linux post-exploitation privilege-escalation checklist.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "privesc-windows",
+          "path": "skills/privesc-windows/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team / Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "在取得 Windows shell 后识别提权路径，覆盖令牌滥用、服务误配、UAC 绕过与 AD 升级。",
+          "description_en": "Identifies Windows privilege-escalation paths after initial shell access, including token abuse, service misconfigurations, UAC bypasses, and AD escalation.",
+          "what": "Windows post-exploitation privilege-escalation checklist.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "recon-osint",
+          "path": "skills/recon-osint/SKILL.md",
+          "subcategory": "18-3",
+          "subcategory_title": "18.3 漏洞挖掘 / Bug Bounty / OSINT",
+          "category": "security-offensive",
+          "group": "漏洞挖掘 / Bug Bounty / OSINT",
+          "group_en": "Vulnerability Research, Bug Bounty & OSINT",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 做被动侦察、资产枚举和攻击面梳理。",
+          "description_en": "Helps the agent perform passive reconnaissance, asset enumeration, and attack-surface mapping.",
+          "what": "用于目标接触初期收集域名、资产、历史暴露面和公开情报。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "red-team-ops",
+          "path": "skills/red-team-ops/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team, Attack Chain & Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 规划红队行动、持久化和后渗透测试流程。",
+          "description_en": "Helps the agent plan red-team engagements, persistence scenarios, and post-exploitation workflows.",
+          "what": "用于模拟高级威胁行动并检查检测、响应和防御规避能力。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "reverse-engineering",
+          "path": "skills/reverse-engineering/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "reverse-engineering",
+          "group_en": "Blue Team / SOC / Threat Hunting / Detection Engineering / Malware Analysis / Reverse Engineering",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "帮助 agent 对二进制、固件和恶意软件进行静态/动态逆向分析。",
+          "description_en": "Helps agents reverse-engineer binaries, firmware, and malware through static and dynamic analysis.",
+          "what": "为后续漏洞利用或恶意软件分析提取二进制与协议信息。",
+          "chain": true,
+          "chain_group": "漏洞武器化链路",
+          "chain_group_en": "Exploit Weaponization Pipeline"
+        },
+        {
+          "name": "shellcode-dev",
+          "path": "skills/shellcode-dev/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team Operations / Attack Chains / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 规划 shellcode 开发、加载器与规避检测的实现流程。",
+          "description_en": "Guides agents through shellcode development, loader design, and detection-evasion planning.",
+          "what": "把已发现漏洞转化为可部署载荷与加载器方案。",
+          "chain": true,
+          "chain_group": "漏洞武器化链路",
+          "chain_group_en": "Exploit Weaponization Pipeline"
+        },
+        {
+          "name": "threat-hunting",
+          "path": "skills/threat-hunting/SKILL.md",
+          "subcategory": "18-4",
+          "subcategory_title": "18.4 蓝队 / SOC / 威胁狩猎 / 恶意代码分析",
+          "category": "security-offensive",
+          "group": "threat-hunting",
+          "group_en": "Blue Team / SOC / Threat Hunting / Detection Engineering / Malware Analysis / Reverse Engineering",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "协助 Agent 做威胁狩猎、IOC 提取、ATT&CK 映射和检测规则生成。",
+          "description_en": "Guides the agent through proactive threat hunting, IOC extraction, ATT&CK mapping, and detection-rule creation.",
+          "what": "面向防守方的威胁狩猎与检测工程技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "briiirussell/Masriyan/transilienceai · 组「蓝队 / SOC / 威胁狩猎 / 检测工程」"
+        },
+        {
+          "name": "vulnerability-analysis",
+          "path": "skills/vulnerability-analysis/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "源码漏洞审计",
+          "group_en": "Source Code Vulnerability Auditing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 对源码做威胁建模、污点追踪、注入/鉴权/加密等问题审计。",
+          "description_en": "Guides the agent through source-code security audits, taint tracing, and checks for injection, auth, crypto, and supply-chain risks.",
+          "what": "面向源码安全审计与漏洞分析的技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "web-pentest",
+          "path": "skills/web-pentest/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "渗透测试(Web / API / 基础设施)",
+          "group_en": "Web/API Penetration Testing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "辅助 Agent 按流程开展 Web/API 渗透测试，覆盖认证、业务逻辑、WAF 和常见漏洞验证。",
+          "description_en": "Helps an agent run structured web/API pentests across auth, business logic, WAF, and common vulnerability validation.",
+          "what": "Web/API 渗透测试流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "transilienceai/briiirussell/Masriyan · 组「渗透测试(Web / API / 基础设施)」"
+        },
+        {
+          "name": "windows-boundaries",
+          "path": "skills/windows-boundaries/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team / Attack Chain / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "辅助 Agent 分析 Windows 权限边界、沙箱逃逸与提权路径，支撑红队利用规划。",
+          "description_en": "Helps an agent reason about Windows security boundaries, sandbox escape paths, and privilege-escalation planning for red-team operations.",
+          "what": "Windows 安全边界利用规划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "windows-mitigations",
+          "path": "skills/windows-mitigations/SKILL.md",
+          "subcategory": "18-2",
+          "subcategory_title": "18.2 红队 / 攻击链 / 后渗透",
+          "category": "security-offensive",
+          "group": "红队 / 攻击链 / 后渗透",
+          "group_en": "Red Team Attack Chains / Post-Exploitation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 分析 Windows 缓解机制，规划绕过策略并记录利用前侦察结果。",
+          "description_en": "Helps the agent analyze Windows mitigations, plan bypass strategies, and document pre-exploitation reconnaissance.",
+          "what": "Plan Windows exploit mitigation bypasses.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "thedivergentai",
+        "repo": "GD-Agentic-Skills",
+        "full_name": "thedivergentai/GD-Agentic-Skills",
+        "url": "https://github.com/thedivergentai/GD-Agentic-Skills",
+        "stars": 300,
+        "pushed_at": "2026-06-11",
+        "default_branch": "main",
+        "github_description": "The official \"Long-Term Memory\" for Godot 4.5+ AI Agents. A high-density library of 95+ expert skills and 27 genre blueprints, providing audited, strictly typed GDScript patterns, automated persona orchestration (Analyst, Auditor, Builder), and production-grade game engineering.",
+        "topics": [],
+        "language": "GDScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "godot-2d-animation",
+          "path": "skills/godot-2d-animation/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 2D 动画实现",
+          "group_en": "Godot 2D Animation Implementation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Godot 2D 帧动画、骨骼切图和精确时序实现。",
+          "description_en": "Guides Godot 2D frame animation, cutout rigs, and precise timing implementation.",
+          "what": "为 Godot 2D 动画系统提供可执行实现准则。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-2d-physics",
+          "path": "skills/godot-2d-physics/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 2D 物理碰撞",
+          "group_en": "Godot 2D Physics and Collision",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Godot 2D 项目处理碰撞层、触发区、射线和空间查询。",
+          "description_en": "Helps Godot 2D projects handle collision layers, trigger zones, raycasts, and space queries.",
+          "what": "为 Godot 2D 物理交互提供碰撞与查询实现规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-3d-lighting",
+          "path": "skills/godot-3d-lighting/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 3D 光照实现",
+          "group_en": "Godot 3D lighting implementation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Godot 3D 光照、阴影与全局照明实现及性能取舍。",
+          "description_en": "Guides Godot 3D lighting, shadows, global illumination, and performance tradeoffs.",
+          "what": "用于处理 Godot 3D 光照、阴影、GI 和烘焙决策。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-3d-materials",
+          "path": "skills/godot-3d-materials/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 3D PBR 材质",
+          "group_en": "Godot 3D PBR materials",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Godot 3D PBR 材质、纹理通道、透明模式与 Shader 转换。",
+          "description_en": "Guides Godot 3D PBR materials, texture channels, transparency modes, and shader conversion.",
+          "what": "用于处理 Godot 3D PBR 材质、纹理通道、透明模式和 Shader 参数。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-3d-world-building",
+          "path": "skills/godot-3d-world-building/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 3D 关卡搭建",
+          "group_en": "Godot 3D Level Building",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 在 Godot 中用 GridMap、CSG、WorldEnvironment 搭建 3D 关卡，并规避导航、碰撞和性能陷阱。",
+          "description_en": "Guides agents in building Godot 3D levels with GridMap, CSG, and environment effects while avoiding common navigation, collision, and performance pitfalls.",
+          "what": "提供 Godot 3D 关卡搭建的实战规则与反模式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-ability-system",
+          "path": "skills/godot-ability-system/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 能力系统",
+          "group_en": "Godot Ability Systems",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 设计 Godot 技能系统，覆盖冷却、连招、技能树、升级路径和资源管理，并规避状态漏洞。",
+          "description_en": "Guides agents in designing Godot ability systems with cooldowns, combos, skill trees, upgrades, resource management, and safeguards against state exploits.",
+          "what": "提供 Godot 角色能力、冷却、连招与技能树设计模式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-adapt-2d-to-3d",
+          "path": "skills/godot-adapt-2d-to-3d/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 2D/3D 维度迁移",
+          "group_en": "Godot 2D/3D Dimension Migration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 将 Godot 2D 项目迁移到 3D，处理节点、相机、物理、美术和控制方案。",
+          "description_en": "Helps an agent port Godot 2D projects into 3D, covering node conversion, cameras, physics, art, and controls.",
+          "what": "Godot 2D-to-3D migration patterns.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-adapt-3d-to-2d",
+          "path": "skills/godot-adapt-3d-to-2d/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 2D/3D 维度迁移",
+          "group_en": "Godot 2D/3D Dimension Migration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 将 Godot 3D 项目降维到 2D，处理相机、物理、美术资产和控制简化。",
+          "description_en": "Helps an agent simplify Godot 3D projects into 2D, covering camera flattening, physics conversion, art assets, and controls.",
+          "what": "Godot 3D-to-2D simplification patterns.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-adapt-desktop-to-mobile",
+          "path": "skills/godot-adapt-desktop-to-mobile/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Godot 跨平台移植适配",
+          "group_en": "Godot Cross-Platform Porting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 Godot 桌面游戏移植到移动端，处理触控、UI 缩放与性能优化。",
+          "description_en": "Helps an agent port Godot desktop games to mobile by handling touch controls, UI scaling, and performance tuning.",
+          "what": "Desktop-to-mobile porting guidance for Godot games.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-adapt-mobile-to-desktop",
+          "path": "skills/godot-adapt-mobile-to-desktop/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Godot 跨平台移植适配",
+          "group_en": "Godot Cross-Platform Porting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 Godot 移动游戏扩展到桌面，加入键鼠控制、高分辨率 UI 与图形设置。",
+          "description_en": "Helps an agent adapt Godot mobile games for desktop with mouse/keyboard controls, higher-resolution UI, and graphics settings.",
+          "what": "Mobile-to-desktop porting guidance for Godot games.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-adapt-single-to-multiplayer",
+          "path": "skills/godot-adapt-single-to-multiplayer/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 多人游戏改造",
+          "group_en": "Godot Multiplayer Retrofit Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导将单机 Godot 游戏改造成多人联机，覆盖权威服务器、RPC 与延迟补偿。",
+          "description_en": "Guides retrofitting single-player Godot games into multiplayer, covering authoritative servers, RPCs, and lag compensation.",
+          "what": "Godot 游戏多人化架构与延迟处理指南。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-ai-navigation",
+          "path": "skills/godot-ai-navigation/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot AI 寻路与导航",
+          "group_en": "Godot AI Navigation and Pathfinding",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 Godot AI 寻路蓝图，覆盖 NavigationServer、动态导航网格、避障与性能优化。",
+          "description_en": "Provides Godot AI pathfinding blueprints using NavigationServer, dynamic navmeshes, avoidance, and performance patterns.",
+          "what": "Godot 角色/敌人寻路与动态导航实现指南。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-analyst",
+          "path": "skills/godot-analyst/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Godot 架构评审",
+          "group_en": "Godot Architecture Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 按生产基准评估 Godot 项目架构、Cohesion、Mechanics 与循环质量。",
+          "description_en": "Helps an agent assess a Godot project’s architecture, cohesion, mechanics, and loop quality against production rubrics.",
+          "what": "Maps the project structure, selects evaluation rubrics, runs scoring logic, and returns a blueprint for improving Godot project quality.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-animation-player",
+          "path": "skills/godot-animation-player/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 动画系统",
+          "group_en": "Godot Animation System",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 编写 Godot 时间线动画、过场、UI 过渡与回调优化。",
+          "description_en": "Helps an agent build Godot timeline animations, cutscenes, UI transitions, and callback-safe animation flows.",
+          "what": "Provides expert AnimationPlayer patterns for tracks, callbacks, root motion, procedural animation, RESET tracks, and performance pitfalls.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-animation-tree-mastery",
+          "path": "skills/godot-animation-tree-mastery/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 动画状态机与混合系统",
+          "group_en": "Godot Animation State Machines and Blending Systems",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Godot AnimationTree 的状态机、混合空间、根运动与过渡条件设计。",
+          "description_en": "Guides Godot AnimationTree state machines, blend spaces, root motion, and transition design.",
+          "what": "帮助 agent 搭建复杂角色动画与移动混合系统。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-audio-systems",
+          "path": "skills/godot-audio-systems/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 音频总线与空间音效系统",
+          "group_en": "Godot Audio Bus and Spatial Audio Systems",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Godot 音频总线、空间音频、混音路由、音乐过渡与性能池化。",
+          "description_en": "Guides Godot audio buses, spatial audio, mix routing, music transitions, and performance pooling.",
+          "what": "帮助 agent 设计游戏音效、音乐系统与音频性能策略。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-auditor",
+          "path": "skills/godot-auditor/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Godot 架构审计与禁止清单执行",
+          "group_en": "Godot Architecture Audits and Never-list Enforcement",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 Agent 按协议审查 Godot 项目结构、架构扇区与禁止清单，定位隐性技术债。",
+          "description_en": "Helps an agent audit Godot projects against architecture sectors and never-lists to surface hidden technical debt.",
+          "what": "按阶段审查 Godot 项目并执行禁止清单。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-autoload-architecture",
+          "path": "skills/godot-autoload-architecture/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 工程架构与脚本模式",
+          "group_en": "Godot Engineering Architecture and Scripting Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Agent 在 Godot 中实现 AutoLoad 单例、全局状态、场景切换与事件总线等稳健架构。",
+          "description_en": "Guides an agent in implementing robust Godot AutoLoad patterns for singletons, global state, scene transitions, and event buses.",
+          "what": "为 Godot 项目选择并落地 AutoLoad 架构模式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-builder",
+          "path": "skills/godot-builder/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 工程与构建自动化",
+          "group_en": "Godot engineering and build automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 用 Godot CLI 无头构建、场景生成、资源管线与 CI/CD 自动化。",
+          "description_en": "Helps an agent automate Godot CLI builds, scene generation, asset pipelines, and CI/CD workflows.",
+          "what": "Godot 4.x 无头构建与工程自动化。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-camera-systems",
+          "path": "skills/godot-camera-systems/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 摄像机系统",
+          "group_en": "Godot camera systems",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Agent 提供 Godot 2D/3D 摄像机平滑跟随、抖动、边界与多镜头模式。",
+          "description_en": "Gives an agent proven Godot 2D/3D camera patterns for smooth follow, shake, limits, and multi-camera setups.",
+          "what": "Godot 摄像机控制模式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-characterbody-2d",
+          "path": "skills/godot-characterbody-2d/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Godot 2D 玩法实现",
+          "group_en": "Godot 2D gameplay implementation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 实现 Godot CharacterBody2D 的移动、碰撞与状态机。",
+          "description_en": "Guides agents in implementing Godot CharacterBody2D movement, collision handling, and state machines.",
+          "what": "Godot CharacterBody2D movement and collision implementation patterns.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-combat-system",
+          "path": "skills/godot-combat-system/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Godot 2D 玩法实现",
+          "group_en": "Godot 2D gameplay implementation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 搭建 Godot 组件化战斗系统、伤害数据与状态机。",
+          "description_en": "Guides agents in building component-based Godot combat systems with damage data and state machines.",
+          "what": "Godot component-based combat, hitbox, health, cooldown, and combo patterns.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-composition-apps",
+          "path": "skills/godot-composition-apps/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 组合式架构规范",
+          "group_en": "Godot Composition Architecture Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Godot 应用/工具制定组合式架构与解耦规范",
+          "description_en": "Defines composable, decoupled architecture standards for Godot apps, tools, and UI.",
+          "what": "Use this skill when an agent needs to design or refactor Godot node structures around composition rather than inheritance.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-composition",
+          "path": "skills/godot-composition/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 组合式架构规范",
+          "group_en": "Godot Composition Architecture Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Godot 游戏实体设计组合式组件与信号通信",
+          "description_en": "Defines composable component patterns and signal-based communication for Godot game entities.",
+          "what": "Use this skill when an agent needs to structure Godot gameplay entities with specialized component nodes and clear orchestration.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-debugging-profiling",
+          "path": "skills/godot-debugging-profiling/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "系统化调试与性能诊断",
+          "group_en": "Systematic Debugging & Performance Diagnostics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 Godot 调试器、断点、警告和性能分析定位并修复问题。",
+          "description_en": "Helps agents debug Godot projects using breakpoints, warnings, stack traces, profiling, and performance diagnostics.",
+          "what": "提供 Godot 项目从断点、警告到 profiler 的调试与性能诊断流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-dialogue-system",
+          "path": "skills/godot-dialogue-system/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 叙事对话系统",
+          "group_en": "Godot Narrative Dialogue Systems",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 构建数据驱动的分支对话、选择条件、演出效果和本地化对话系统。",
+          "description_en": "Helps agents build data-driven branching dialogue with choices, conditional flags, typewriter effects, localization, and voice integration.",
+          "what": "提供资源化对话图、分支选项、UI 桥接和本地化/配音接入模式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-economy-system",
+          "path": "skills/godot-economy-system/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 游戏经济系统设计",
+          "group_en": "Godot Game Economy System Design",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 Godot 游戏经济系统设计指导，覆盖货币、商店、战利品和动态定价平衡。",
+          "description_en": "Helps agents design balanced Godot game economies, including currencies, shops, loot tables, and dynamic pricing.",
+          "what": "定义 Godot 经济系统的货币、商店、战利品和价格平衡模式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-export-builds",
+          "path": "skills/godot-export-builds/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Godot 多平台导出与构建",
+          "group_en": "Godot Multi-Platform Export and Builds",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 Godot 多平台导出与发布构建指导，覆盖模板、签名、CI/CD 和性能优化。",
+          "description_en": "Guides agents through Godot multi-platform exports and release builds, including templates, signing, CI/CD, and optimization.",
+          "what": "规划 Godot 游戏的多平台导出、签名和 CI/CD 发布流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-game-loop-collection",
+          "path": "skills/godot-game-loop-collection/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 游戏循环与玩法机制",
+          "group_en": "Godot game loop and gameplay mechanics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 Godot 收集任务循环框架，指导实现寻物、拾取与状态切换。",
+          "description_en": "Provides a Godot framework for collection quests, scavenger hunts, and item-gathering objectives.",
+          "what": "Guides implementation of collection-loop mechanics in Godot 4.5+.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "godot-game-loop-harvest",
+          "path": "skills/godot-game-loop-harvest/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Godot 游戏循环与玩法机制",
+          "group_en": "Godot game loop and gameplay mechanics",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 Godot 采集/收获系统设计，覆盖工具校验、耗尽、生成与保存。",
+          "description_en": "Provides a Godot harvesting system pattern covering tool validation, depletion, respawning, and persistence.",
+          "what": "Guides implementation of data-driven harvesting mechanics in Godot 4.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "iamzhihuix",
+        "repo": "happy-claude-skills",
+        "full_name": "iamzhihuix/happy-claude-skills",
+        "url": "https://github.com/iamzhihuix/happy-claude-skills",
+        "stars": 300,
+        "pushed_at": "2026-04-20",
+        "default_branch": "main",
+        "github_description": "",
+        "topics": [],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "1password",
+          "path": "skills/1password/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Agent 凭据与 Secret 管理",
+          "group_en": "Agent Credentials and Secret Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 1Password CLI 保存、查找并读取 API 凭据。",
+          "description_en": "Helps the agent store, search, and retrieve API credentials through the 1Password CLI.",
+          "what": "Use 1Password CLI to manage passwords and API credentials for agent workflows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "browser",
+          "path": "skills/browser/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Chrome DevTools 浏览器自动化与抓取",
+          "group_en": "Chrome DevTools Browser Automation and Scraping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 启动 Chrome、导航页面、执行 JS 并抓取 DOM。",
+          "description_en": "Helps the agent launch Chrome, navigate pages, run JavaScript, and extract DOM data.",
+          "what": "Controls Chrome through CDP for browsing, scripting, screenshots, and scraping tasks.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "docx-format-replicator",
+          "path": "skills/docx-format-replicator/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套 / Excel 数据处理工作流",
+          "group_en": "Office document processing workflows",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从现有 Word 文档提取格式配置，并生成同格式新文档，帮助 agent 批量复用模板与统一企业文档样式。",
+          "description_en": "Extracts formatting from an existing Word document and generates new documents that preserve the same structure and style.",
+          "what": "Extracts DOCX formatting from a template and generates new Word documents with the same structure/style.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "happy-app-audit",
+          "path": "skills/happy-app-audit/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "macOS 应用遥测 / 隐私 SDK 静态审计",
+          "group_en": "macOS App telemetry and privacy SDK audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "仅通过静态分析审计本地 macOS .app 包，识别遥测 SDK、上报端点、磁盘队列和隐私相关字段。",
+          "description_en": "Statically audits a local macOS .app bundle for telemetry SDKs, upload endpoints, local queues, and privacy-relevant fields.",
+          "what": "Statically audits a local macOS .app bundle for telemetry SDKs, upload endpoints, queues, and privacy-relevant reporting behavior.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "happy-audio-gen",
+          "path": "skills/happy-audio-gen/SKILL.md",
+          "subcategory": "6-2",
+          "subcategory_title": "6.2 音频 / TTS / 转写",
+          "category": "media",
+          "group": "多提供商 TTS 语音合成",
+          "group_en": "Multi-provider text-to-speech generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "支持 OpenAI、ElevenLabs、Bailian、MiniMax、SiliconFlow、PlayHT 等提供商，将文本合成为语音。",
+          "description_en": "Converts text to speech using multiple TTS providers, including OpenAI, ElevenLabs, Bailian, MiniMax, SiliconFlow, and PlayHT.",
+          "what": "把任意文本转成 mp3、wav、ogg 或 flac 语音输出。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "happy-dreamina",
+          "path": "skills/happy-dreamina/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "即梦图像/视频生成",
+          "group_en": "Dreamina image and video generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过即梦 CLI 生成文生图、图生图、文生视频、图生视频，并查询任务历史。",
+          "description_en": "Uses the Dreamina CLI to generate images and videos and check task history.",
+          "what": "在用户明确指定即梦/Dreamina 时，调用对应 CLI 生成图片或视频。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "happy-image-gen",
+          "path": "skills/happy-image-gen/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "AI 图像生成（多 API）",
+          "group_en": "AI Image Generation Across Multiple APIs",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "统一调用多家文生图/图生图 API，生成或重绘静态图片。",
+          "description_en": "Generates or restyles still images through a unified multi-provider image API workflow.",
+          "what": "A multi-provider skill for text-to-image and image-to-image generation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "happy-video-gen",
+          "path": "skills/happy-video-gen/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "AI 视频生成（多模型提供商）",
+          "group_en": "AI Video Generation Across Multiple Providers",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "统一提交并轮询多家视频生成 API，产出短视频文件。",
+          "description_en": "Submits and polls multiple video-generation providers to deliver short video outputs.",
+          "what": "A multi-provider skill for text-to-video and image-to-video generation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "mkfast-deploy",
+          "path": "skills/mkfast-deploy/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Cloudflare Workers 部署（mkfast/TanStarter）",
+          "group_en": "Cloudflare Workers Deployment for mkfast/TanStarter",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 mkfast/TanStarter 项目检测组件并生成裁剪后的 Cloudflare Workers 部署步骤。",
+          "description_en": "Detects enabled components in mkfast/TanStarter projects and generates a trimmed Cloudflare Workers deployment plan.",
+          "what": "部署前评估项目启用的组件，避免照搬完整 Cloudflare 文档。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "open-source-prep",
+          "path": "skills/open-source-prep/SKILL.md",
+          "subcategory": "14-4",
+          "subcategory_title": "14.4 知识产权",
+          "category": "legal-compliance",
+          "group": "开源协议与仓库合规准备",
+          "group_en": "Open-Source Licensing and Repository Readiness",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "扫描密钥与历史泄漏，补齐开源协议、许可证和贡献安全文档。",
+          "description_en": "Scans for leaked secrets and prepares open-source licensing, contribution, and security documentation.",
+          "what": "为开源前项目做密钥扫描、许可证选择与必备文档补齐。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "trends-bulletin",
+          "path": "skills/trends-bulletin/SKILL.md",
+          "subcategory": "7-2",
+          "subcategory_title": "7.2 跨平台社交 / 趋势监测",
+          "category": "data-scraping",
+          "group": "多平台热词趋势监测与 Telegram 推送",
+          "group_en": "Multi-platform Trend Monitoring and Telegram Briefing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "采集多个平台热门趋势，生成关键洞察并推送到 Telegram。",
+          "description_en": "Collects hot trends across multiple platforms, summarizes key insights, and sends the briefing to Telegram.",
+          "what": "多平台热门趋势采集、AI 摘要并推送到 Telegram。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "video-processor",
+          "path": "skills/video-processor/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "video-processor",
+          "group_en": "Programmatic Video / Local Video Editing / Video Toolchains (FFmpeg / Remotion) / Digital Human Dubbing / Multilingual Dubbing",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "下载视频、提取音频、转换格式，并用 Whisper 生成转写文本。",
+          "description_en": "Downloads videos, extracts audio, converts formats, and generates transcriptions with Whisper.",
+          "what": "用 yt-dlp、FFmpeg 和 Whisper 下载、转换视频并提取音频/转写。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "wechat-article-writer",
+          "path": "skills/wechat-article-writer/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "公众号文章写作 / 爆款标题",
+          "group_en": "WeChat Article Writing and Viral Headlines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 搜索素材、撰写公众号文章、生成爆款标题并优化排版。",
+          "description_en": "Helps an agent research topics, draft WeChat articles, generate viral-style headlines, and polish layout.",
+          "what": "公众号文章四步写作流程：搜索资料、撰写正文、生成标题、排版优化。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "jamditis",
+        "repo": "claude-skills-journalism",
+        "full_name": "jamditis/claude-skills-journalism",
+        "url": "https://github.com/jamditis/claude-skills-journalism",
+        "stars": 299,
+        "pushed_at": "2026-06-26",
+        "default_branch": "master",
+        "github_description": "Claude Code skills for journalism, media, and academia - verification, FOIA, data journalism, academic writing, and more",
+        "topics": [
+          "academic-writing",
+          "claude",
+          "claude-code",
+          "claude-skills",
+          "data-journalism",
+          "fact-checking",
+          "foia",
+          "journalism",
+          "media",
+          "newsroom",
+          "osint",
+          "skills",
+          "verification"
+        ],
+        "language": "HTML",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "accessibility-compliance",
+          "path": "dev-toolkit/skills/accessibility-compliance/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Web 可访问性合规与无障碍审计",
+          "group_en": "Web Accessibility Compliance Audits",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 按 WCAG 标准审查新闻站/学术平台，并给出可访问界面、替代文本和数据可视化建议。",
+          "description_en": "Helps agents audit news and academic sites against WCAG standards and recommend accessible interfaces, alt text, and data visualizations.",
+          "what": "为新闻与学术发布场景提供 WCAG 可访问性审查与改进建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "claude-md-updater",
+          "path": "dev-toolkit/skills/claude-md-updater/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "CLAUDE.md 会话知识沉淀",
+          "group_en": "CLAUDE.md Session Memory Updates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 从对话中提取经验、路径、基础设施与流程变更，生成 CLAUDE.md 更新建议。",
+          "description_en": "Extracts durable lessons, paths, infrastructure changes, and workflow updates from a conversation and drafts scoped CLAUDE.md edits.",
+          "what": "把当前会话中有长期价值的信息整理成待审批的 CLAUDE.md 更新。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "electron-dev",
+          "path": "dev-toolkit/skills/electron-dev/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Electron 桌面应用开发",
+          "group_en": "Electron Desktop App Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 构建安全、可打包的 Electron 桌面应用，覆盖 React/TypeScript、IPC、窗口/托盘与音频集成。",
+          "description_en": "Helps an agent build secure, packageable Electron desktop apps with React/TypeScript, IPC, window and tray handling, and audio integration.",
+          "what": "用于开发 Electron 桌面应用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "mobile-debugging",
+          "path": "dev-toolkit/skills/mobile-debugging/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "移动端 Web 调试",
+          "group_en": "Mobile Web Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在真实手机或平板上调试网页，提供 Eruda、vConsole、远程调试和云测平台方案。",
+          "description_en": "Helps an agent debug web pages on real phones and tablets using Eruda, vConsole, remote debugging, and cloud testing tools.",
+          "what": "用于移动端网页调试。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "one-way-door",
+          "path": "dev-toolkit/skills/one-way-door/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "架构决策门禁",
+          "group_en": "Architecture decision gate",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 在创建关键架构文件前识别不可逆决策，评估取舍并推动讨论。",
+          "description_en": "Helps the agent flag irreversible architecture decisions before creating key files and surface trade-offs for discussion.",
+          "what": "在提交前检查架构决策是否属于不可逆的一次门决策。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "python-pipeline",
+          "path": "dev-toolkit/skills/python-pipeline/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Python 数据流水线",
+          "group_en": "Python data pipelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 设计模块化 Python 批处理流水线，并选择 pandas、Polars 或 DuckDB。",
+          "description_en": "Helps the agent design modular Python batch-processing pipelines and choose between pandas, Polars, and DuckDB.",
+          "what": "构建生产级 Python 数据处理流水线与批处理系统。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "test-first-bugs",
+          "path": "dev-toolkit/skills/test-first-bugs/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "测试优先 Bug 修复",
+          "group_en": "Test-First Bug Fixing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在用户报 bug 时，先复现并写失败测试，再修复并跑回归验证。",
+          "description_en": "Guides agents to reproduce bugs, write failing tests, fix them, and verify regressions.",
+          "what": "测试优先的 bug 修复流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vibe-coding",
+          "path": "dev-toolkit/skills/vibe-coding/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "AI 辅助开发方法论",
+          "group_en": "AI-Assisted Development Methodology",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 AI 辅助编码提供规划、版本控制、测试和迭代调试的实践方法。",
+          "description_en": "Provides practical workflows for planning, committing, testing, and debugging with AI coding assistants.",
+          "what": "AI 辅助软件开发方法论。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "web-scraping",
+          "path": "dev-toolkit/skills/web-scraping/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "新闻调查网页抓取流水线",
+          "group_en": "Journalism investigation scraping pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计可靠网页抓取链路，抽取正文并处理动态或社交内容。",
+          "description_en": "Helps an agent build a reliable scraping workflow for extracting article content from dynamic or social sources.",
+          "what": "Web scraping methodology for journalism and data gathering.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "web-ui-best-practices",
+          "path": "dev-toolkit/skills/web-ui-best-practices/SKILL.md",
+          "subcategory": "5-2",
+          "subcategory_title": "5.2 前端工程规范",
+          "category": "design-frontend",
+          "group": "Web UI 质感审查清单",
+          "group_en": "Web UI polish checklist",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 审查或构建网页界面，关注速度、导航、视觉克制和文案质感。",
+          "description_en": "Helps an agent review or build web interfaces with attention to speed, navigation, restraint, and copy quality.",
+          "what": "A practical checklist for evaluating and improving user-facing web UI.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "zero-build-frontend",
+          "path": "dev-toolkit/skills/zero-build-frontend/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "零构建前端开发模式",
+          "group_en": "Zero-build Frontend Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 CDN 引入 React/Tailwind 等构建无需构建工具的静态 Web 应用。",
+          "description_en": "Helps agents build static web apps without bundlers using CDN-loaded React, Tailwind, htmx, Alpine, and import maps.",
+          "what": "提供零构建前端技术栈选择、ESM import map 和静态 Web 应用开发模式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ai-writing-detox",
+          "path": "journalism-core/skills/ai-writing-detox/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "语法 / 文风审查",
+          "group_en": "Writing Style Review",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 删除 AI 套话并润色稿件，让发布前文本更自然可信。",
+          "description_en": "Helps agents remove AI-sounding phrasing and polish drafts before publication.",
+          "what": "提供删除 AI 写作套话、替换自然表达的发布前润色清单。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "crisis-communications",
+          "path": "journalism-core/skills/crisis-communications/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "新闻危机沟通与快速响应",
+          "group_en": "Newsroom Crisis Communications",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为记者和公关人员在突发事件中组织核实、响应与对外沟通。",
+          "description_en": "Helps journalists and comms teams coordinate verification, response, and public messaging during crises.",
+          "what": "用于突发新闻和危机事件中的快速响应与事实核查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "data-journalism",
+          "path": "journalism-core/skills/data-journalism/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "数据新闻分析与叙事",
+          "group_en": "Data Journalism Analysis & Storytelling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导记者用数据提出问题、清洗分析、验证证据并生成数据新闻。",
+          "description_en": "Guides reporters through data-driven questions, cleaning, analysis, evidence, and storytelling.",
+          "what": "用于数据新闻选题、数据处理、统计分析和故事呈现。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "editorial-workflow",
+          "path": "journalism-core/skills/editorial-workflow/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "新闻编辑室工作流",
+          "group_en": "Newsroom Editorial Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 跟踪新闻选题、截稿日期、编辑流转与交接协议。",
+          "description_en": "Helps agents track story assignments, deadlines, editorial handoffs, and workflow status.",
+          "what": "用于新闻编辑室的选题、截稿、流转与交接管理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "fact-check-workflow",
+          "path": "journalism-core/skills/fact-check-workflow/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "事实核查工作流",
+          "group_en": "Fact-Checking Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 提取待核查主张、收集证据、评级并形成发布/更正记录。",
+          "description_en": "Helps agents extract claims, gather evidence, rate verification outcomes, and document corrections.",
+          "what": "用于新闻发布前的系统性事实核查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "foia-requests",
+          "path": "journalism-core/skills/foia-requests/SKILL.md",
+          "subcategory": "14-8",
+          "subcategory_title": "14.8 法务运营 / 文书",
+          "category": "legal-compliance",
+          "group": "FOIA 与公共记录请求",
+          "group_en": "FOIA and Public Records Requests",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助起草、跟踪和申诉政府信息公开请求流程。",
+          "description_en": "Drafts, tracks, and appeals FOIA and public records requests.",
+          "what": "为记者和研究人员管理政府信息公开与公共记录请求工作流。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "interview-prep",
+          "path": "journalism-core/skills/interview-prep/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "采访准备与来源管理",
+          "group_en": "Interview Prep and Source Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助规划采访研究、问题框架和合规录音流程。",
+          "description_en": "Helps plan interview research, question frameworks, and compliant recording practices.",
+          "what": "为记者准备采访前的背景研究、提问框架、后勤与合规事项。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Paramchoudhary/santifer · 组「面试准备」"
+        },
+        {
+          "name": "interview-transcription",
+          "path": "journalism-core/skills/interview-transcription/SKILL.md",
+          "subcategory": "6-2",
+          "subcategory_title": "6.2 音频 / TTS / 转写",
+          "category": "media",
+          "group": "采访转录与引用提取",
+          "group_en": "Interview Transcription & Quote Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助记者处理采访音视频、生成带时间戳转录稿并提取可核验引用。",
+          "description_en": "Helps journalists process interview recordings, create timestamped transcripts, and extract verifiable quotes.",
+          "what": "将采访音视频转为可核查的时间戳文本和引用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "newsletter-publishing",
+          "path": "journalism-core/skills/newsletter-publishing/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "邮件通讯发布",
+          "group_en": "Newsletter Publishing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助记者和研究者规划、制作、发布邮件通讯并分析订阅与互动表现。",
+          "description_en": "Helps journalists and researchers plan, produce, publish newsletters, and analyze audience engagement.",
+          "what": "搭建和维护邮件通讯的发布、订阅与表现分析流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "newsroom-style",
+          "path": "journalism-core/skills/newsroom-style/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "新闻写作风格规范",
+          "group_en": "Newsroom Writing Style Guide",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按 AP Style 和新闻惯例编辑稿件、标题与社媒文案。",
+          "description_en": "Applies AP Style and newsroom conventions to articles, headlines, and social copy.",
+          "what": "用 AP Style 统一新闻稿件、标题和社媒文案风格。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "photo-metadata",
+          "path": "journalism-core/skills/photo-metadata/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "新闻图片元数据标注",
+          "group_en": "News Photo Metadata Tagging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 exiftool 为新闻图片写入版权、署名、地点等元数据。",
+          "description_en": "Writes IPTC, EXIF, and XMP metadata for news photos with exiftool.",
+          "what": "为新闻图片嵌入署名、说明、关键词、版权和使用许可信息。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "social-media-intelligence",
+          "path": "journalism-core/skills/social-media-intelligence/SKILL.md",
+          "subcategory": "7-2",
+          "subcategory_title": "7.2 跨平台社交 / 趋势监测",
+          "category": "data-scraping",
+          "group": "跨平台社交情报监测",
+          "group_en": "Cross-platform Social Intelligence Monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助记者监测社交平台叙事传播、协同行为和虚假信息线索。",
+          "description_en": "Helps reporters monitor narrative spread, coordinated behavior, and misinformation signals across social platforms.",
+          "what": "用于追踪社交平台上的叙事传播、协同行为和可疑账号。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "source-verification",
+          "path": "journalism-core/skills/source-verification/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "新闻来源与事实核查",
+          "group_en": "Journalism Source and Fact-Checking Verification",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助记者用 SIFT 等方法核查来源、主张出处和数字内容真伪。",
+          "description_en": "Guides reporters through SIFT-style source, claim, and digital-content verification workflows.",
+          "what": "用于核查来源可信度、事实主张出处和数字内容真实性。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "story-pitch",
+          "path": "journalism-core/skills/story-pitch/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "新闻投稿与选题 Pitch",
+          "group_en": "Journalism Story Pitching",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 梳理选题价值、证据与访问计划，生成面向编辑的投稿或委托 pitch。",
+          "description_en": "Helps an agent shape a story’s value, evidence, access plan, and outlet-specific pitch for editors.",
+          "what": "Craft effective story pitches, query letters, and story angles for journalism and freelance assignments.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "okf-wiki",
+          "path": "okf-wiki/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "OKF 知识库脚手架",
+          "group_en": "OKF Knowledge Base Scaffolding",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 初始化 OKF 知识库，按单概念文件组织 Markdown 与 YAML 溯源元数据。",
+          "description_en": "Helps an agent initialize an OKF knowledge base with one-concept-per-file Markdown and provenance metadata.",
+          "what": "Scaffold and validate an Open Knowledge Format wiki or knowledge base for human and agent editing.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pdf-design",
+          "path": "pdf-design/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "PDF 报告与印刷文档设计",
+          "group_en": "PDF Reports and Print Document Design",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 生成、预览并迭代编辑专业 PDF 报告和资助提案。",
+          "description_en": "Helps agents generate, preview, and iteratively edit professional PDF reports and funding proposals.",
+          "what": "创建、预览、修改并导出 PDF 报告或提案。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "document-design",
+          "path": "pdf-playground/skills/document-design/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "PDF 报告与印刷文档设计",
+          "group_en": "PDF Reports and Print Document Design",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按品牌配置制作可导出 PDF 的印刷就绪 HTML 文档。",
+          "description_en": "Helps agents create print-ready HTML documents with brand styling for PDF export.",
+          "what": "用品牌样式生成可打印、可导出的 HTML 文档。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "project-memory",
+          "path": "project-templates-toolkit/skills/project-memory/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "项目记忆模板",
+          "group_en": "Project Memory Templates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为新闻/学术项目生成 CLAUDE.md 项目记忆，沉淀协作惯例与特殊细节。",
+          "description_en": "Generates CLAUDE.md project memory files that preserve collaboration norms and project-specific quirks.",
+          "what": "为新闻/学术项目生成 CLAUDE.md 项目记忆，沉淀协作惯例与特殊细节。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "project-retrospective",
+          "path": "project-templates-toolkit/skills/project-retrospective/SKILL.md",
+          "subcategory": "3-9",
+          "subcategory_title": "3.9 OKR / Sprint / Retro / Stakeholder",
+          "category": "product-management",
+          "group": "项目复盘模板",
+          "group_en": "Project Retrospective Templates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在项目结束时生成 LESSONS.md 复盘文件，记录失败、教训与机构知识。",
+          "description_en": "Creates LESSONS.md retrospectives at project close, documenting failures, lessons, and institutional knowledge.",
+          "what": "在项目结束时生成 LESSONS.md 复盘文件，记录失败、教训与机构知识。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "arpitg1304",
+        "repo": "robotics-agent-skills",
+        "full_name": "arpitg1304/robotics-agent-skills",
+        "url": "https://github.com/arpitg1304/robotics-agent-skills",
+        "stars": 297,
+        "pushed_at": "2026-05-25",
+        "default_branch": "main",
+        "github_description": "Agent skills that make AI coding assistants write production-grade robotics software. ROS1, ROS2, design patterns, SOLID principles, and testing — for Claude Code, Cursor, Copilot, and any SKILL.md-compatible agent.",
+        "topics": [
+          "agent-skills",
+          "ai-coding-assistant",
+          "claude-skills",
+          "robotics"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "path-skill-md"
+      },
+      "skills": [
+        {
+          "name": "docker-ros2-development",
+          "path": "skills/docker-ros2-development/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "ROS2 机器人系统部署",
+          "group_en": "ROS2 Robot System Deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 编写 ROS2 Dockerfile、Compose、DDS/GPU/设备透传配置。",
+          "description_en": "Helps agents craft ROS2 Dockerfiles, Compose stacks, DDS networking, GPU passthrough, and device forwarding.",
+          "what": "为 agent 提供 ROS2 容器化开发模式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "robot-bringup",
+          "path": "skills/robot-bringup/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "ROS2 机器人系统部署",
+          "group_en": "ROS2 Robot System Deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 配置 ROS2 开机启动、systemd、launch 组合与监控。",
+          "description_en": "Helps agents configure ROS2 boot services, systemd units, layered launches, device rules, and production monitoring.",
+          "what": "为 agent 提供 ROS2 机器人开机启动方案。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "robot-perception",
+          "path": "skills/robot-perception/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "机器人感知与传感器处理",
+          "group_en": "Robot Perception and Sensor Processing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导机器人视觉、点云、传感器标定与多传感器融合实现。",
+          "description_en": "Guides robot vision, point clouds, sensor calibration, and multi-sensor fusion.",
+          "what": "处理机器人感知管线中的视觉、深度、点云和传感器同步问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "robotics-design-patterns",
+          "path": "skills/robotics-design-patterns/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "机器人软件架构与设计模式",
+          "group_en": "Robotics Software Architecture and Design Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供机器人软件架构、状态机、安全机制与 HAL 设计指南。",
+          "description_en": "Provides guidance on robot software architecture, state machines, safety, and HAL design.",
+          "what": "帮助设计行为树、状态机、安全监控和硬件抽象层等机器人软件结构。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "robotics-security",
+          "path": "skills/robotics-security/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "机器人安全加固",
+          "group_en": "Robotics Security Hardening",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 ROS2/SROS2 加密、证书、网络隔离、密钥与机器人系统加固。",
+          "description_en": "Guides ROS2/SROS2 encryption, certificates, network segmentation, secrets, and robot system hardening.",
+          "what": "为机器人系统应用安全加固与部署防护实践。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "robotics-software-principles",
+          "path": "skills/robotics-software-principles/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "机器人软件设计原则 / 代码审查",
+          "group_en": "Robotics Software Design & Code Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助设计模块化机器人软件架构、接口、错误处理与代码审查。",
+          "description_en": "Helps design modular robotics software architecture, interfaces, error handling, and code reviews.",
+          "what": "将通用软件工程原则转化为机器人模块开发决策。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "robotics-testing",
+          "path": "skills/robotics-testing/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "机器人测试策略",
+          "group_en": "Robotics Testing Strategies",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 为 ROS 节点、仿真、HIL 与感知规划控制管线设计测试。",
+          "description_en": "Helps the agent design tests for ROS nodes, simulations, HIL, and robotics pipelines.",
+          "what": "覆盖单元测试、集成测试、仿真测试、HIL、mock 硬件和回归验证。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ros1",
+          "path": "skills/ros1/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "ROS1 开发实践",
+          "group_en": "ROS1 Development Practices",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 构建、维护和调试 ROS1 包、节点、launch 与通信系统。",
+          "description_en": "Guides the agent in building, maintaining, and debugging ROS1 packages, nodes, launch files, and communication systems.",
+          "what": "涵盖 catkin、rospy/roscpp、话题/服务/动作、tf 与迁移要点。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ros2-web-integration",
+          "path": "skills/ros2-web-integration/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "ROS2 Web 集成",
+          "group_en": "ROS 2 Web Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 构建 ROS2 与 Web 技术桥接、REST API、WebSocket 和浏览器机器人界面。",
+          "description_en": "Helps the agent integrate ROS 2 with REST APIs, WebSockets, browser dashboards, and robot-facing web interfaces.",
+          "what": "Integrates ROS 2 systems with web dashboards, APIs, and browser-based robot control interfaces.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ros2",
+          "path": "skills/ros2/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "ROS2 机器人软件开发",
+          "group_en": "ROS 2 Robotics Software Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 编写、调试和部署 ROS2 节点、包、launch 文件及生产级机器人系统。",
+          "description_en": "Helps the agent build, debug, and deploy ROS 2 nodes, packages, launch files, and production robotics systems.",
+          "what": "Guides ROS 2 package development, middleware configuration, lifecycle nodes, and production deployment.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
