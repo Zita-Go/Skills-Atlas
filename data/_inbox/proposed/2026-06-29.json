@@ -1,0 +1,4430 @@
+{
+  "generated_at": "2026-06-29T05:30:00+00:00",
+  "date": "2026-06-29",
+  "proposed_count": 6,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 80,
+      "blocklisted": 21,
+      "seen_recently": 199,
+      "truncated": 76,
+      "looks_aggregator": 2,
+      "skill_name_dup": 5,
+      "not_a_collection": 1,
+      "no_skill_files": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "tmstack/awesome-persona-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "fleurytian/awesome-claude-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "testdino-hq/playwright-skill",
+        "reason": "非正经集合：仓库描述和正文更像 Playwright 最佳实践/指南集合，而不是可直接复用的 AI agent 工具型 skill 集合。"
+      },
+      {
+        "full_name": "chrlsio/agent-skills",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "content-reviewer"
+      ],
+      "group": "Influencer 内容审核 SOP",
+      "group_en": "Influencer Content Review SOP",
+      "category": "marketing-growth",
+      "subcategory": "4-12",
+      "chain": false,
+      "description": "审核达人内容是否契合品牌、活动与合规要求，给出通过/修改/拒绝和反馈。",
+      "description_en": "Reviews creator submissions against brand, campaign, and compliance requirements, then returns a go/revise/reject decision with actionable feedback.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "contract-helper"
+      ],
+      "group": "合同 / 法律文书生成",
+      "group_en": "Contract / Legal Document Generation",
+      "category": "legal-compliance",
+      "subcategory": "14-1",
+      "chain": false,
+      "description": "起草并审查达人合作协议，识别条款风险并给出谈判要点。",
+      "description_en": "Drafts and reviews influencer partnership agreements, flags risky clauses, and suggests negotiation points.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "outreach-manager"
+      ],
+      "group": "创作者外联与联盟合作",
+      "group_en": "Creator Outreach & Affiliate Partnerships",
+      "category": "marketing-growth",
+      "subcategory": "4-6",
+      "chain": false,
+      "description": "帮 agent 撰写创作者外联、跟进节奏、谈判话术并跟踪合作状态。",
+      "description_en": "Draft creator outreach, follow-up cadences, negotiation scripts, and track partnership status.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "geo-content-optimizer"
+      ],
+      "group": "生成引擎优化",
+      "group_en": "Generative Engine Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "优化内容结构与权威信号，提升 AI 答案引用和 GEO 可见性。",
+      "description_en": "Optimize content structure and authority signals to improve AI citation readiness and GEO visibility.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "meta-tags-optimizer"
+      ],
+      "group": "SEO 元标签与 CTR 优化",
+      "group_en": "SEO Meta Tags & CTR Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "为页面生成并优化标题、元描述、OG/Twitter 标签与 CTR 变体。",
+      "description_en": "Creates and optimizes titles, meta descriptions, OG/Twitter tags, and CTR variants for pages.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "schema-markup-generator"
+      ],
+      "group": "SEO 结构化数据",
+      "group_en": "SEO Structured Data",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "生成 FAQ、HowTo、Article、Product 等 Schema.org JSON-LD 富结果标记。",
+      "description_en": "Generates Schema.org JSON-LD for FAQ, HowTo, Article, Product, and other rich-result markup.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "seo-content-writer",
+        "on-page-seo-auditor",
+        "ebay-seo"
+      ],
+      "group": "SEO 内容创作与页面优化",
+      "group_en": "SEO Content Creation and Page Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "帮助 agent 优化 eBay 标题、类目、Item specifics 与 Cassini 排名因素，提升商品搜索曝光。",
+      "description_en": "Helps an agent optimize eBay titles, categories, item specifics, and Cassini ranking factors to improve product search visibility.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills",
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-amplifier"
+      ],
+      "group": "Influencer 内容付费放大",
+      "group_en": "Influencer Paid Amplification",
+      "category": "marketing-growth",
+      "subcategory": "4-4",
+      "chain": false,
+      "description": "筛选适合付费放大的红人内容，规划 Spark Ads/白名单投放、受众、预算与扩量/暂停策略。",
+      "description_en": "Scores influencer content for paid boosting and plans whitelisting, Spark Ads, targeting, budget, and optimization.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "landing-optimizer"
+      ],
+      "group": "Influencer 落地页转化优化",
+      "group_en": "Influencer Landing Page CRO",
+      "category": "marketing-growth",
+      "subcategory": "4-5",
+      "chain": false,
+      "description": "为达人引流落地页做信息匹配、CTA、社证与A/B测试规划。",
+      "description_en": "Optimizes influencer-driven landing pages for message match, CTA, social proof, and A/B testing.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ugc-repurposer"
+      ],
+      "group": "UGC 素材多渠道复用",
+      "group_en": "UGC Content Repurposing",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "把达人/UGC素材拆解成多平台广告、社媒、邮件与网站资产。",
+      "description_en": "Turns influencer or UGC assets into reusable assets for ads, social, email, and web.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-quality-auditor",
+        "domain-authority-auditor"
+      ],
+      "group": "发布前 SEO 内容与域名审计",
+      "group_en": "Pre-publish SEO content and domain audit",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": true,
+      "description": "用80项CORE-EEAT评估内容质量、发布就绪度和修复优先级。",
+      "description_en": "Scores content quality with an 80-item CORE-EEAT rubric and returns a prioritized fix plan.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "entity-optimizer"
+      ],
+      "group": "实体优化与知识图谱",
+      "group_en": "Entity Optimization & Knowledge Graph",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "审计并规范品牌实体身份，强化知识图谱、Wikidata 与 AI 引用识别信号。",
+      "description_en": "Audits and standardizes brand/entity identity to strengthen Knowledge Graph, Wikidata, and AI citation signals.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "memory-management"
+      ],
+      "group": "SEO/GEO 项目记忆生命周期",
+      "group_en": "SEO/GEO Project Memory Lifecycle",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "维护 SEO/GEO 项目的热/温/冷记忆层级，支持归档、检索与隐私清理。",
+      "description_en": "Maintains hot, warm, and cold memory tiers for SEO/GEO projects, supporting archival, retrieval, and privacy cleanup.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "audience-analyzer",
+        "niche-researcher"
+      ],
+      "group": "洞察阶段：受众与细分社区研究",
+      "group_en": "Insight Phase: Audience & Niche Community Research",
+      "category": "product-management",
+      "subcategory": "3-1",
+      "chain": true,
+      "description": "分析目标受众画像、平台偏好与影响者筛选标准。",
+      "description_en": "Builds audience personas, platform priorities, and influencer-fit criteria.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "trend-spotter"
+      ],
+      "group": "趋势与文化节点侦察",
+      "group_en": "Trend & Cultural Moment Scouting",
+      "category": "marketing-growth",
+      "subcategory": "4-7",
+      "chain": false,
+      "description": "帮 agent 发现品牌相关趋势、文化节点与入局建议。",
+      "description_en": "Helps the agent identify brand-relevant trends, cultural moments, and campaign timing recommendations.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "competitor-tracker"
+      ],
+      "group": "影响者营销竞品情报",
+      "group_en": "Influencer Marketing Competitor Intelligence",
+      "category": "marketing-growth",
+      "subcategory": "4-8",
+      "chain": false,
+      "description": "帮 agent 追踪竞品达人合作、活动策略与机会缺口。",
+      "description_en": "Helps the agent track competitors’ creator partnerships, campaign tactics, and opportunity gaps.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "fit-scorer",
+        "influencer-discovery"
+      ],
+      "group": "达人发现与评分筛选",
+      "group_en": "Influencer Discovery & Fit Scoring",
+      "category": "marketing-growth",
+      "subcategory": "4-6",
+      "chain": true,
+      "description": "按品牌/品类/平台发现达人，整理受众、互动、真实性风险与分层名单。",
+      "description_en": "Scores and ranks influencer candidates across audience fit, content quality, brand alignment, authenticity, and partnership potential.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "alert-manager"
+      ],
+      "group": "SEO 排名/GEO 预警监控",
+      "group_en": "SEO Ranking and GEO Alert Monitoring",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "配置排名、流量、技术、外链与GEO异常阈值提醒，便于持续监控。",
+      "description_en": "Sets up threshold-based alerts for ranking, traffic, technical, backlink, and GEO changes.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "backlink-analyzer"
+      ],
+      "group": "SEO 外链分析",
+      "group_en": "SEO Backlink Analysis",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "分析外链画像、锚文本、有毒链接与竞争外链缺口，辅助外链策略。",
+      "description_en": "Analyzes backlink profiles, anchor text, toxic links, and competitor link gaps.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "performance-reporter",
+        "rank-tracker"
+      ],
+      "group": "SEO/GEO 监控与汇报工作流",
+      "group_en": "SEO/GEO Monitoring and Reporting Workflow",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": true,
+      "description": "聚合SEO/GEO数据，生成含流量、排名、权威和内容进展的绩效报告。",
+      "description_en": "Aggregates SEO/GEO data into stakeholder-ready performance reports covering traffic, rankings, authority, and content progress.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "content-refresher"
+      ],
+      "group": "SEO 内容刷新与排名恢复",
+      "group_en": "SEO Content Refresh & Ranking Recovery",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "诊断内容陈旧与流量衰减，生成刷新计划与 GEO 发布建议。",
+      "description_en": "Diagnoses stale content and traffic decay, then produces a refresh plan with GEO and republishing guidance.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "internal-linking-optimizer"
+      ],
+      "group": "SEO 内链架构优化",
+      "group_en": "SEO Internal Link Architecture Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "分析站内链接、孤立页和锚文本，输出优先级修复计划。",
+      "description_en": "Analyzes internal links, orphan pages, and anchor text, then delivers a prioritized optimization plan.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "technical-seo-checker"
+      ],
+      "group": "SEO 技术健康审计",
+      "group_en": "Technical SEO health audit",
+      "category": "marketing-growth",
+      "subcategory": "4-1",
+      "chain": false,
+      "description": "检查抓取索引、速度、robots、站点地图、规范链接和迁移等技术问题。",
+      "description_en": "Checks crawlability, indexing, speed, robots, sitemaps, canonicals, and migrations.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "brief-generator",
+        "budget-optimizer"
+      ],
+      "group": "影响者营销计划准备（预算→Brief）",
+      "group_en": "Influencer Campaign Planning (Budget → Brief)",
+      "category": "marketing-growth",
+      "subcategory": "4-6",
+      "chain": true,
+      "description": "为影响者活动生成结构化 brief，含交付、信息、时间线和披露条款。",
+      "description_en": "Creates structured creator briefs with deliverables, key messages, creative direction, timeline, disclosure rules, and compensation terms.",
+      "sources": [
+        "aaron-he-zhu/aaron-marketing-skills"
+      ]
+    },
+    {
+      "skills": [
+        "affiliate-marketing-strategy"
+      ],
+      "group": "电商联盟营销",
+      "group_en": "E-commerce Affiliate Marketing",
+      "category": "marketing-growth",
+      "subcategory": "4-6",
+      "chain": false,
+      "description": "帮助 agent 设计电商联盟计划、佣金结构、招募和追踪优化。",
+      "description_en": "Helps an agent design affiliate programs, commission structures, recruitment plans, and performance tracking for ecommerce stores.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "api-monitoring"
+      ],
+      "group": "电商 API 监控与告警",
+      "group_en": "E-commerce API Monitoring & Alerts",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 agent 为电商集成设计 API/Webhook 监控、告警和 SLA 报告。",
+      "description_en": "Helps an agent design API and webhook health checks, alerting rules, SLA reporting, and integration validation for ecommerce systems.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "brand-monitoring"
+      ],
+      "group": "品牌舆情监测",
+      "group_en": "Brand Mentions & Crisis Monitoring",
+      "category": "data-scraping",
+      "subcategory": "7-2",
+      "chain": false,
+      "description": "跨 Reddit、新闻、YouTube 等来源追踪品牌提及、情绪趋势与危机信号。",
+      "description_en": "Tracks brand mentions across Reddit, news, YouTube, and search sources, with sentiment, trend, and crisis signals.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "brand-protection-amazon"
+      ],
+      "group": "亚马逊品牌保护",
+      "group_en": "Amazon Brand Protection",
+      "category": "legal-compliance",
+      "subcategory": "14-4",
+      "chain": false,
+      "description": "识别亚马逊跟卖、假货、价格违规和商标滥用，并生成投诉与取证指引。",
+      "description_en": "Detects Amazon hijackers, counterfeits, MAP violations, and trademark abuse, with complaint and evidence-gathering guidance.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "brand-protection-ebay",
+        "brand-protection-shopify"
+      ],
+      "group": "电商品牌保护与侵权监测",
+      "group_en": "E-commerce Brand Protection & Infringement Monitoring",
+      "category": "legal-compliance",
+      "subcategory": "14-4",
+      "chain": false,
+      "description": "帮助 agent 监测 DTC/Shopify 生态中的仿冒站、域名抢注和社媒侵权。",
+      "description_en": "Helps agents monitor DTC/Shopify ecosystems for fake stores, domain abuse, social ads, and infringement, then prepare DMCA or cease-and-desist notices.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "brand-protection-tiktok",
+        "brand-protection-walmart"
+      ],
+      "group": "电商平台品牌保护",
+      "group_en": "E-commerce Brand Protection",
+      "category": "legal-compliance",
+      "subcategory": "14-4",
+      "chain": false,
+      "description": "帮助 agent 监测 Walmart Marketplace 未授权卖家、假货线索与商标滥用，并生成投诉材料。",
+      "description_en": "Helps an agent monitor Walmart Marketplace for unauthorized sellers, counterfeit signals, and trademark abuse, then draft takedown complaints.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "competitive-pricing-strategy",
+        "dynamic-pricing-ecommerce"
+      ],
+      "group": "定价策略",
+      "group_en": "Pricing Strategy",
+      "category": "marketing-growth",
+      "subcategory": "4-10",
+      "chain": false,
+      "description": "帮助 agent 为电商商品制定动态定价、竞品响应和利润护栏策略。",
+      "description_en": "Helps an agent design dynamic pricing, competitor-aware repricing, and margin guardrails for online sellers.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "competitor-price-analysis",
+        "competitor-price-tracker",
+        "ecommerce-competitor-analysis"
+      ],
+      "group": "竞品分析",
+      "group_en": "Competitive Analysis",
+      "category": "marketing-growth",
+      "subcategory": "4-8",
+      "chain": false,
+      "description": "跨平台评估竞品渠道、定位、策略和表现，形成竞争情报与 benchmark。",
+      "description_en": "Analyze competitors’ channel presence, positioning, strategy, and performance to produce actionable competitive intelligence.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "conversion-rate-optimization"
+      ],
+      "group": "电商 CRO 与漏斗优化",
+      "group_en": "E-commerce CRO and Funnel Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-5",
+      "chain": false,
+      "description": "帮助 agent 审计电商转化漏斗，定位流失环节并给出优化实验建议。",
+      "description_en": "Helps the agent audit e-commerce funnels, find drop-off points, and recommend conversion experiments.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "cross-border-ecommerce"
+      ],
+      "group": "跨境电商市场进入策略",
+      "group_en": "Cross-Border E-Commerce Expansion Strategy",
+      "category": "product-management",
+      "subcategory": "3-5",
+      "chain": false,
+      "description": "评估目标市场、履约模型与税费，生成分阶段出海路线图。",
+      "description_en": "Scores target markets, compares fulfillment options, and builds a phased cross-border expansion roadmap.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "customer-feedback-analysis"
+      ],
+      "group": "反馈情感分析",
+      "group_en": "Customer Feedback & Sentiment Analysis",
+      "category": "product-management",
+      "subcategory": "3-1",
+      "chain": false,
+      "description": "分析电商评论与反馈，提炼痛点、需求与改进优先级。",
+      "description_en": "Analyzes customer reviews and feedback to surface pain points, feature requests, and improvement priorities.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "domain-monitoring"
+      ],
+      "group": "电商域名与 SSL 监控",
+      "group_en": "E-commerce Domain & SSL Monitoring",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "为电商站点设计域名、SSL 与 DNS 健康检查、告警规则和安全评级。",
+      "description_en": "Designs domain, SSL, and DNS health checks, alerts, and security ratings for e-commerce sites.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "dropshipping-product-research"
+      ],
+      "group": "Dropshipping 选品研究",
+      "group_en": "Dropshipping Product Research",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为 dropshipping 选品评估利润、供应商、物流、竞争与营销可行性。",
+      "description_en": "Evaluates dropshipping product ideas across margins, suppliers, shipping, competition, and marketing viability.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ebay-advertising"
+      ],
+      "group": "eBay 广告投放优化",
+      "group_en": "eBay Ad Campaign Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-4",
+      "chain": false,
+      "description": "帮助 agent 规划 eBay 广告活动、出价预算分配并优化 ROAS 指标。",
+      "description_en": "Helps an agent plan eBay ad campaigns, allocate bids and budgets, and optimize ROAS performance.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ebay-product-research"
+      ],
+      "group": "eBay 选品与竞争密度分析",
+      "group_en": "eBay Product and Competition Research",
+      "category": "marketing-growth",
+      "subcategory": "4-8",
+      "chain": false,
+      "description": "帮 agent 分析 eBay 成交、供需与竞争，筛选可盈利品类。",
+      "description_en": "Helps agents analyze eBay sales, demand, and competition to identify profitable niches.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ebay-seller-guide"
+      ],
+      "group": "eBay 卖家运营指南",
+      "group_en": "eBay Seller Operations Guide",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 agent 搭建 eBay 店铺、优化 listing、物流与卖家等级。",
+      "description_en": "Guides agents through eBay store setup, listing optimization, shipping, and seller growth.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ebay-seller-tools"
+      ],
+      "group": "eBay 卖家工具选型",
+      "group_en": "eBay Seller Tool Selection",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 评估 eBay 店铺的上架、定价、库存、物流、分析和研究工具，并给出选型建议。",
+      "description_en": "Helps an agent evaluate listing, repricing, inventory, shipping, analytics, and research tools for an eBay store and recommend a practical stack.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-ab-testing"
+      ],
+      "group": "电商 A/B 测试与转化优化",
+      "group_en": "E-commerce A/B Testing & Conversion Optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-5",
+      "chain": false,
+      "description": "帮助 agent 设计电商 A/B 测试、计算样本量并给出平台化转化优化建议。",
+      "description_en": "Helps an agent design e-commerce A/B tests, estimate sample sizes, and produce platform-specific conversion recommendations.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-branding"
+      ],
+      "group": "品牌系统 / 视觉规范",
+      "group_en": "Brand System & Visual Guidelines",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "帮助 agent 定义电商品牌定位、信息框架、视觉规范并检查跨渠道一致性。",
+      "description_en": "Helps an agent define e-commerce brand positioning, messaging, visual guidelines, and cross-channel consistency checks.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-business-plan"
+      ],
+      "group": "电商商业计划与战略",
+      "group_en": "E-commerce business planning and strategy",
+      "category": "product-management",
+      "subcategory": "3-4",
+      "chain": false,
+      "description": "帮助 agent 制定电商商业计划，覆盖市场分析、财务预测、营销策略与路线图。",
+      "description_en": "Helps an agent draft an e-commerce business plan covering market analysis, financial projections, marketing strategy, and roadmap.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-checkout-optimization"
+      ],
+      "group": "结账转化优化",
+      "group_en": "Checkout conversion optimization",
+      "category": "marketing-growth",
+      "subcategory": "4-5",
+      "chain": false,
+      "description": "帮助 agent 分析结账漏斗，识别流失原因并优化支付、信任与配送体验。",
+      "description_en": "Helps an agent analyze checkout drop-offs and improve payment, trust, and fulfillment UX to reduce abandonment.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-content-marketing"
+      ],
+      "group": "电商内容营销规划",
+      "group_en": "E-commerce content marketing planning",
+      "category": "marketing-growth",
+      "subcategory": "4-2",
+      "chain": false,
+      "description": "规划电商内容主题、日历和平台策略，结合评论、趋势、竞品与 SEO 找增长机会。",
+      "description_en": "Plan ecommerce content themes, calendars, and platform strategies using reviews, trends, competitors, and SEO signals.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-customer-retention"
+      ],
+      "group": "电商客户留存与复购",
+      "group_en": "E-commerce retention and repeat purchase",
+      "category": "marketing-growth",
+      "subcategory": "4-9",
+      "chain": false,
+      "description": "帮助 agent 制定电商留存、忠诚度、RFM 分群与赢回策略。",
+      "description_en": "Helps an agent design e-commerce retention, loyalty, RFM segmentation, and win-back strategies.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "ecommerce-email-marketing-builder"
+      ],
+      "group": "电商邮件自动化营销",
+      "group_en": "E-commerce email marketing automation",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "帮助 agent 搭建电商邮件自动化、ESP 配置、分群与年度活动日历。",
+      "description_en": "Helps an agent set up e-commerce email automation, ESP configuration, segmentation, and campaign calendars.",
+      "sources": [
+        "nexscope-ai/eCommerce-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "agency-docs-updater",
+        "agency-meetup-publish"
+      ],
+      "group": "会议录制发布流水线",
+      "group_en": "Meeting Recording Publishing Pipeline",
+      "category": "media",
+      "subcategory": "6-1",
+      "chain": false,
+      "description": "处理 Meetup 录像：下载 Zoom、剪辑片头片尾、生成缩略图并上传 YouTube。",
+      "description_en": "Processes meetup recordings by downloading Zoom video, adding intros/outros, creating thumbnails, and uploading to YouTube.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agency-socials"
+      ],
+      "group": "AGENCY 社区社媒资产",
+      "group_en": "AGENCY Community Social Assets",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "按 AGENCY 社区设计规范生成活动封面、缩略图和社媒素材。",
+      "description_en": "Creates event covers, thumbnails, and social assets using the AGENCY Community design system.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agent-cli"
+      ],
+      "group": "Python CLI Agent 友好化",
+      "group_en": "Python Agent-Friendly CLI Utilities",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "为 Python CLI 增加结构化 JSON/NDJSON 输出和自动化辅助工具包。",
+      "description_en": "Adds machine-readable JSON/NDJSON output to Python CLIs and scaffolds reusable CLI helper packages.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "app-release"
+      ],
+      "group": "Apple 应用发布流水线",
+      "group_en": "Apple App Release Pipeline",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "帮助 agent 按门禁清单完成 iOS/watchOS 应用 TestFlight/App Store 发布与 CloudKit 部署。",
+      "description_en": "Guides the agent through a gated iOS/watchOS release workflow for TestFlight, App Store Connect, signing, CloudKit, and Apple portal steps.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "balanced"
+      ],
+      "group": "平衡式批判对话模式",
+      "group_en": "Balanced Critical Dialogue Mode",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "让 agent 以证据化、多视角方式提供诚实反馈、权衡分析和决策建议。",
+      "description_en": "Enables a non-sycophantic, evidence-based dialogue mode for balanced feedback, tradeoff analysis, and decision support.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "brand-agency"
+      ],
+      "group": "Agency 品牌视觉规范",
+      "group_en": "Agency Brand Style Guide",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "为生成的演示、SVG、文档和网页套用 Agency 品牌色、字体与新粗野主义风格。",
+      "description_en": "Applies Agency’s colors, typography, and neobrutalist style to generated presentations, SVGs, documents, and web UIs.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "browser-mate"
+      ],
+      "group": "浏览器 Agent CLI",
+      "group_en": "Browser Agent CLI",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "让 agent 复用独立 Chrome 调试实例，在不关闭用户浏览器的前提下自动化已登录站点。",
+      "description_en": "Lets an agent automate logged-in sites in a separate Chrome debugging instance without closing the user’s browser.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "browsing-history",
+        "chrome-history"
+      ],
+      "group": "浏览器历史记录查询",
+      "group_en": "Browser History Query",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 Agent 用自然语言搜索 Chrome 历史记录，过滤日期、内容类型、关键词和站点并整理结果。",
+      "description_en": "Lets an agent query synced browsing history with natural language, filter by date, device, domain, or keyword, and export results.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "coaching-session-summarizer"
+      ],
+      "group": "会话记录摘要与跨期洞察",
+      "group_en": "Session Note Summaries & Cross-Session Insights",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "分析教练或治疗会话转录，生成洞察、决策和行动项摘要。",
+      "description_en": "Summarizes coaching or therapy transcripts into insights, decisions, action items, and cross-session patterns.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "codex"
+      ],
+      "group": "Codex CLI 运行指南",
+      "group_en": "Codex CLI Execution Guide",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 Claude Code 用正确参数运行或恢复 Codex CLI 任务。",
+      "description_en": "Guides Claude Code to run or resume Codex CLI tasks with safe sandbox and command options.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "annotate",
+        "anon"
+      ],
+      "group": "隐私脱敏与 PII 标注流程",
+      "group_en": "Privacy redaction and PII annotation workflow",
+      "category": "legal-compliance",
+      "subcategory": "14-5",
+      "chain": true,
+      "description": "协调人工标注 PII，导出标签并计算一致性以形成黄金集。",
+      "description_en": "Redacts transcripts locally, producing a shareable copy, placeholder map, and stats summary.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "audit",
+        "red"
+      ],
+      "group": "PII 审计与重识别风险评估",
+      "group_en": "PII Audit & Re-identification Risk Checks",
+      "category": "legal-compliance",
+      "subcategory": "14-5",
+      "chain": false,
+      "description": "帮助 agent 本地扫描会话语料，仅输出 PII 统计与脱敏报告。",
+      "description_en": "Checks residual re-identification risk in already-redacted text, reporting only risk categories and counts.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "rehydrate",
+        "setup"
+      ],
+      "group": "CONFIDE 本地脱敏往返流程",
+      "group_en": "CONFIDE Local De-identification Round Trip",
+      "category": "legal-compliance",
+      "subcategory": "14-5",
+      "chain": true,
+      "description": "把 GREEN 占位符分析结果按本地映射恢复原名，同时避免 PII 外传。",
+      "description_en": "Installs and configures the local CONFIDE de-identification toolkit for ready-to-use anonymization and risk checks.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "vault",
+        "view"
+      ],
+      "group": "CONFIDE 敏感会话数据处理流程",
+      "group_en": "CONFIDE Sensitive Session Data Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": true,
+      "description": "生成本地 HTML，展示原文、脱敏和还原结果，便于 agent 审查 PII 处理效果。",
+      "description_en": "Generates a local HTML viewer to inspect original, redacted, and rehydrated text with PII spans highlighted.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "context-builder"
+      ],
+      "group": "客户上下文发现 / CLAUDE.md 生成",
+      "group_en": "Client Context Discovery / CLAUDE.md Generation",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": false,
+      "description": "引导客户完成发现式问答，生成可复用 CLAUDE.md 上下文。",
+      "description_en": "Guides consulting discovery questions and compiles reusable CLAUDE.md context.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "cull"
+      ],
+      "group": "AI 艺术图库管理 / Cull",
+      "group_en": "AI Art Library Management / Cull",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "帮助 agent 用 Cull 浏览、评分、筛选并导出 AI 艺术图片。",
+      "description_en": "Helps the agent browse, rate, shortlist, and export AI-art images in Cull.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "daydream"
+      ],
+      "group": "Obsidian 笔记洞察挖掘",
+      "group_en": "Obsidian Vault Insight Mining",
+      "category": "docs-knowledge",
+      "subcategory": "2-4",
+      "chain": false,
+      "description": "自动扫描 Obsidian 笔记，发现隐藏关联并生成洞察摘要。",
+      "description_en": "Scans an Obsidian vault to surface hidden note connections and generate ranked insights.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "decision-toolkit"
+      ],
+      "group": "结构化决策工具箱",
+      "group_en": "Structured Decision-Making Toolkit",
+      "category": "product-management",
+      "subcategory": "3-2",
+      "chain": false,
+      "description": "生成步骤指南、偏差检查和情景探索工具，帮助系统梳理重大选择。",
+      "description_en": "Generates step-by-step guides, bias checkers, and scenario explorers for major decisions.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "deep-research"
+      ],
+      "group": "Deep Research API 调研工作流",
+      "group_en": "OpenAI Deep Research workflow",
+      "category": "comms-integration",
+      "subcategory": "9-4",
+      "chain": false,
+      "description": "通过 Deep Research API 增强问题、保存参数并执行联网深度调研。",
+      "description_en": "Enhances research prompts, saves parameters, and runs web-enabled deep research via OpenAI Deep Research API.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "doctorg"
+      ],
+      "group": "循证健康问答",
+      "group_en": "Evidence-based health Q&A",
+      "category": "medical-clinical",
+      "subcategory": "15-1",
+      "chain": false,
+      "description": "基于分级可信来源回答健康、营养、运动和睡眠问题，可结合 Apple Health 背景。",
+      "description_en": "Answers health, nutrition, exercise, and sleep questions using tiered trusted sources, with optional Apple Health context.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ecosystem"
+      ],
+      "group": "Claude Code 技能生态巡检",
+      "group_en": "Claude Code Skill Ecosystem Audits",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "检查技能健康、过期链接、CLAUDE.md 漂移和日常服务状态",
+      "description_en": "Audits Claude Code skill freshness, broken links, CLAUDE.md drift, and daily service status.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "elevenlabs-tts"
+      ],
+      "group": "ElevenLabs TTS 音频生成",
+      "group_en": "ElevenLabs TTS Audio Generation",
+      "category": "media",
+      "subcategory": "6-2",
+      "chain": false,
+      "description": "用 ElevenLabs API 把文本合成为可定制声音的音频文件",
+      "description_en": "Converts text into customizable voice audio using the ElevenLabs API.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "fathom"
+      ],
+      "group": "Fathom 会议记录同步",
+      "group_en": "Fathom meeting record sync",
+      "category": "media",
+      "subcategory": "6-2",
+      "chain": false,
+      "description": "拉取 Fathom 会议、转录、摘要与行动项，支持按日期筛选和下载视频。",
+      "description_en": "Fetches Fathom meetings, transcripts, summaries, and action items, with date filters and video download support.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "feature-factory"
+      ],
+      "group": "单功能交付流水线",
+      "group_en": "Single-feature delivery workflow",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "用目标契约、TDD、确定性验证和人工关口把单个功能从意图推进到合并。",
+      "description_en": "Guides a solo feature from goal contract through TDD, deterministic verification, and human merge gates.",
+      "sources": [
+        "glebis/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "chunking-strategy"
+      ],
+      "group": "RAG 文档切分与检索评估",
+      "group_en": "RAG Document Chunking & Retrieval Evaluation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为 RAG、向量搜索和大文档处理选择切分策略，并评估语义连贯性与检索指标。",
+      "description_en": "Helps agents choose chunking strategies for RAG, vector search, and large-document pipelines while evaluating coherence and retrieval quality.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "prompt-engineering"
+      ],
+      "group": "提示工程与优化",
+      "group_en": "Prompt Engineering & Optimization",
+      "category": "agent-architecture",
+      "subcategory": "12-6",
+      "chain": false,
+      "description": "帮助 Agent 编写、调试和优化 LLM 提示，包含 few-shot、系统提示和模板。",
+      "description_en": "Helps agents write, debug, and optimize LLM prompts, including few-shot examples, system prompts, and reusable templates.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "rag"
+      ],
+      "group": "RAG 应用构建",
+      "group_en": "RAG application building",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "构建 RAG 管线，包含文档切分、嵌入、向量存储与检索问答应用。",
+      "description_en": "Build RAG pipelines with document chunking, embeddings, vector storage, and retrieval-based Q&A.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-cloudformation-auto-scaling"
+      ],
+      "group": "IaC（CloudFormation）",
+      "group_en": "IaC (CloudFormation)",
+      "category": "devops-infra",
+      "subcategory": "17-1",
+      "chain": false,
+      "description": "生成 CloudFormation 自动伸缩模板，覆盖 EC2/ECS/Lambda 伸缩策略与高可用实践。",
+      "description_en": "Generate CloudFormation auto-scaling templates for EC2, ECS, and Lambda with high-availability practices.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-cloudformation-bedrock",
+        "aws-cloudformation-cloudfront"
+      ],
+      "group": "IaC 模板（CloudFormation）",
+      "group_en": "IaC Templates (CloudFormation)",
+      "category": "devops-infra",
+      "subcategory": "17-1",
+      "chain": false,
+      "description": "提供 CloudFront CDN CloudFormation 模板，覆盖多源、缓存、域名、WAF 和性能配置。",
+      "description_en": "Provides CloudFormation patterns for CloudFront distributions, origins, caching, domains, WAF, and performance.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-cloudformation-cloudwatch",
+        "aws-cloudformation-dynamodb"
+      ],
+      "group": "AWS CloudFormation 资源模板",
+      "group_en": "AWS CloudFormation Resource Templates",
+      "category": "devops-infra",
+      "subcategory": "17-1",
+      "chain": false,
+      "description": "帮助 Agent 用 CloudFormation 生成 DynamoDB 表、索引、扩缩容、加密、TTL 和流配置。",
+      "description_en": "Helps the agent generate CloudFormation-managed DynamoDB tables, indexes, scaling, encryption, TTL, and stream settings.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-cloudformation-ec2",
+        "aws-cloudformation-ecs"
+      ],
+      "group": "AWS CloudFormation 基础设施",
+      "group_en": "AWS CloudFormation Infrastructure",
+      "category": "devops-infra",
+      "subcategory": "17-1",
+      "chain": false,
+      "description": "帮 agent 生成 CloudFormation 模板，部署 EC2、安全组、IAM 和负载均衡。",
+      "description_en": "Helps an agent use CloudFormation to set up ECS clusters, services, autoscaling, and blue/green deployments.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-cloudformation-elasticache",
+        "aws-cloudformation-iam"
+      ],
+      "group": "CloudFormation IaC 模式",
+      "group_en": "CloudFormation IaC Patterns",
+      "category": "devops-infra",
+      "subcategory": "17-1",
+      "chain": false,
+      "description": "帮 Agent 用 CloudFormation 设计 Redis/Memcached 缓存层、高可用与安全配置。",
+      "description_en": "Helps an agent model IAM roles, policies, trust relationships, and least-privilege boundaries in CloudFormation.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-cloudformation-lambda",
+        "aws-cloudformation-rds"
+      ],
+      "group": "AWS CloudFormation 基础设施模板",
+      "group_en": "AWS CloudFormation Infrastructure Templates",
+      "category": "devops-infra",
+      "subcategory": "17-1",
+      "chain": false,
+      "description": "帮助 agent 创建和校验 RDS/Aurora 的 CloudFormation 基础设施。",
+      "description_en": "Helps the agent create and validate CloudFormation infrastructure for RDS and Aurora.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-cloudformation-s3",
+        "aws-cloudformation-security"
+      ],
+      "group": "IaC（Terraform / Pulumi / Packer / CloudFormation）",
+      "group_en": "IaC (Terraform / Pulumi / Packer / CloudFormation)",
+      "category": "devops-infra",
+      "subcategory": "17-1",
+      "chain": false,
+      "description": "帮助 agent 编写 CloudFormation 安全基础设施，覆盖 KMS、Secrets、IAM、VPC 与证书。",
+      "description_en": "Helps agents generate and validate S3 CloudFormation templates with versioning, encryption, policies, and lifecycle rules.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-cloudformation-task-ecs-deploy-gh"
+      ],
+      "group": "容器 CI/CD 部署流水线",
+      "group_en": "Container CI/CD Deployment Pipelines",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "为 agent 生成 ECS 容器在 GitHub Actions 与 CloudFormation 下的 CI/CD 部署方案。",
+      "description_en": "Guides agents in building production-ready ECS deployments with GitHub Actions, ECR, and CloudFormation.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-cloudformation-vpc"
+      ],
+      "group": "CloudFormation VPC 基础设施",
+      "group_en": "CloudFormation VPC Infrastructure",
+      "category": "devops-infra",
+      "subcategory": "17-1",
+      "chain": false,
+      "description": "帮助 agent 用 CloudFormation 规划 VPC、子网、路由、网关和可复用输出。",
+      "description_en": "Guides agents in designing reusable CloudFormation VPC foundations with subnets, routing, and gateways.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-cli-beast"
+      ],
+      "group": "AWS CLI 运维自动化",
+      "group_en": "AWS CLI Operations Automation",
+      "category": "devops-infra",
+      "subcategory": "17-4",
+      "chain": false,
+      "description": "提供 AWS CLI 高级模式，批量管理云资源并执行安全校验。",
+      "description_en": "Advanced AWS CLI patterns for bulk cloud operations and security checks.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-cost-optimization"
+      ],
+      "group": "SRE / 事故响应 / SLO / FinOps",
+      "group_en": "SRE / Incident Response / SLO / FinOps",
+      "category": "devops-infra",
+      "subcategory": "17-4",
+      "chain": false,
+      "description": "指导 AWS 成本审查、FinOps 实践和预算/闲置资源优化。",
+      "description_en": "Guides AWS cost reviews, FinOps practices, budgeting, and idle-resource cleanup.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-drawio-architecture-diagrams"
+      ],
+      "group": "AWS 架构图生成",
+      "group_en": "AWS Architecture Diagram Generation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 Agent 生成含官方 AWS 图标的 draw.io 架构图 XML 文件。",
+      "description_en": "Helps an agent generate draw.io XML architecture diagrams using official AWS icons.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "aws-sam-bootstrap"
+      ],
+      "group": "AWS SAM / CloudFormation IaC",
+      "group_en": "AWS SAM / CloudFormation IaC",
+      "category": "devops-infra",
+      "subcategory": "17-1",
+      "chain": false,
+      "description": "帮助 Agent 初始化 AWS SAM 项目，生成模板并校验部署流程。",
+      "description_en": "Helps an agent bootstrap AWS SAM projects, generate templates, and validate deployment workflows.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "adr-drafting",
+        "drawio-logical-diagrams"
+      ],
+      "group": "架构决策记录（ADR）",
+      "group_en": "Architecture Decision Records (ADR)",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "根据系统设计内容生成 draw.io 逻辑流程图、架构图、UML 与 BPMN 文件。",
+      "description_en": "Creates ADR documents for architectural decisions, checking repository conventions and writing a standard Markdown record.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "bug-fix-brief"
+      ],
+      "group": "Bug Fix Brief 文档",
+      "group_en": "Bug Fix Brief Documentation",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "生成结构化 Bug Fix Brief，记录根因、复现步骤、修复方案和实施清单。",
+      "description_en": "Generates structured bug-fix briefs covering root cause, repro steps, fix options, and implementation checklist.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "docs-updater",
+        "github-issue-workflow",
+        "pr-review-comments"
+      ],
+      "group": "GitHub 三件套 / Git 工作流",
+      "group_en": "GitHub Essentials / Git Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "分析最近发布标签后的 Git 变更，自动同步 README、CHANGELOG 和文档目录。",
+      "description_en": "Guides an agent from GitHub issue triage through implementation, verification, review, commit, and PR creation.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "learn"
+      ],
+      "group": "项目规则提取与持久化",
+      "group_en": "Project Rule Extraction & Persistence",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": false,
+      "description": "自主分析代码库约定和架构模式，生成 Claude Code 项目规则文件。",
+      "description_en": "Autonomously analyzes codebase conventions and architecture, then generates Claude Code project rules.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "memory-md-management"
+      ],
+      "group": "Agent 项目记忆文件维护",
+      "group_en": "Agent project memory maintenance",
+      "category": "agent-architecture",
+      "subcategory": "12-3",
+      "chain": false,
+      "description": "审计、评估并改进 CLAUDE.md 等项目记忆文件，帮助 agent 获得更准确的项目上下文。",
+      "description_en": "Audits, evaluates, and improves project memory files like CLAUDE.md so agents get better project context.",
+      "sources": [
+        "giuseppe-trisciuoglio/developer-kit"
+      ]
+    },
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "IaC（Terraform / Pulumi / Packer）",
+      "group_en": "Infrastructure as Code (Terraform / Pulumi / Packer)",
+      "category": "devops-infra",
+      "subcategory": "17-1",
+      "chain": false,
+      "description": "帮助 agent 诊断并修复 Terraform/OpenTofu 生成、审查、迁移中的失败模式。",
+      "description_en": "Helps agents diagnose and fix Terraform/OpenTofu failure modes during generation, review, migration, or delivery.",
+      "sources": [
+        "LukasNiessen/terrashark"
+      ]
+    },
+    {
+      "skills": [
+        "skills",
+        "anki-connect"
+      ],
+      "group": "Anki 复习卡片管理",
+      "group_en": "Anki Flashcard Review Management",
+      "category": "education-learning",
+      "subcategory": "19-3",
+      "chain": false,
+      "description": "让 agent 通过 AnkiConnect 本地 API 安全读写 Anki 的牌组、笔记、卡片与媒体，修改前请求确认。",
+      "description_en": "Lets an agent safely manage Anki decks, notes, cards, and media through the AnkiConnect local API, with confirmation required for changes.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "beautiful-mermaid"
+      ],
+      "group": "Mermaid 图表渲染",
+      "group_en": "Mermaid diagram rendering",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "帮助 agent 将 Mermaid 代码渲染为 SVG/PNG，并校验主题与语法。",
+      "description_en": "Helps the agent render Mermaid diagrams as SVG or PNG while checking theme and syntax choices.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "context7"
+      ],
+      "group": "Context7 文档查询",
+      "group_en": "Context7 documentation lookup",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "通过 Context7 API 查询最新库文档与代码示例，减少过期知识风险。",
+      "description_en": "Fetches current library docs and code examples through Context7 to avoid relying on stale knowledge.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "copilot-sdk"
+      ],
+      "group": "Copilot SDK 集成",
+      "group_en": "Copilot SDK Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 使用 GitHub Copilot SDK 进行应用集成、权限配置、事件流、工具与 MCP 协作。",
+      "description_en": "Helps an agent work with the GitHub Copilot SDK for app integrations, auth, permissions, event streams, custom tools, and MCP collaboration.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "gog-cli"
+      ],
+      "group": "Google Workspace CLI 自动化",
+      "group_en": "Google Workspace CLI Automation",
+      "category": "comms-integration",
+      "subcategory": "9-5",
+      "chain": false,
+      "description": "帮助 agent 通过 gog/gogcli 从命令行安全操作 Gmail、Calendar、Drive、Docs 等 Google Workspace。",
+      "description_en": "Helps an agent safely operate Gmail, Calendar, Drive, Docs, Sheets, and other Google Workspace services through the gog/gogcli command-line tool.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "gpt-image-1-5"
+      ],
+      "group": "OpenAI GPT 图像生成与编辑",
+      "group_en": "OpenAI GPT Image Generation and Editing",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "使用 GPT Image 1.5 生成新图，并支持基于输入图和掩膜编辑图片。",
+      "description_en": "Generate new images and edit existing ones with OpenAI GPT Image 1.5, including mask-based inpainting.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "here-be-git"
+      ],
+      "group": "Git 工作流",
+      "group_en": "Git Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "初始化当前目录 Git 仓库，并可写入 AGENTS.md 让 agent 及时提交变更。",
+      "description_en": "Initialize a Git repository and optionally add AGENTS.md instructions so the agent commits changes promptly.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "lorem-ipsum"
+      ],
+      "group": "Lorem Ipsum 占位文本",
+      "group_en": "Lorem Ipsum Placeholder Text",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "生成各种结构的 lorem ipsum 占位文本，便于填充版面或原型内容。",
+      "description_en": "Generate lorem ipsum placeholder text in multiple structures for mockups, layouts, and prototypes.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "markdown-converter"
+      ],
+      "group": "文档转 Markdown",
+      "group_en": "Document to Markdown Conversion",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "将 PDF、Office、HTML、图片、音频等文件转换为 Markdown，便于 LLM 读取分析。",
+      "description_en": "Convert PDFs, Office files, HTML, images, audio, and more into Markdown for LLM-friendly reading and analysis.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "mgrep-code-search"
+      ],
+      "group": "语义代码搜索（mgrep）",
+      "group_en": "Semantic Code Search with mgrep",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "用自然语言语义搜索代码库，辅助定位功能与理解实现。",
+      "description_en": "Search codebases with natural-language queries to locate features and understand implementation.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "monologue-notes-api"
+      ],
+      "group": "Monologue Notes 只读 API",
+      "group_en": "Monologue Notes Read-Only API",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "通过 REST API 安全读取和搜索用户的 Monologue 笔记。",
+      "description_en": "Safely read and search the user’s Monologue notes through the REST API.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nano-banana-2",
+        "nano-banana-pro"
+      ],
+      "group": "Nano Banana 图像生成与编辑",
+      "group_en": "Nano Banana image generation and editing",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "让 agent 调用 Nano Banana Pro API 生成或编辑图片，支持 1K/2K/4K 分辨率。",
+      "description_en": "Lets an agent call the Nano Banana 2 API to generate or edit images with aspect-ratio and resolution control.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "notion-api"
+      ],
+      "group": "Notion REST API 集成",
+      "group_en": "Notion REST API Integration",
+      "category": "docs-knowledge",
+      "subcategory": "2-5",
+      "chain": false,
+      "description": "指导 agent 通过 REST API 安全认证并读写 Notion 页面、数据库、块和评论。",
+      "description_en": "Helps the agent authenticate safely and read, create, update, or delete Notion pages, databases, blocks, and comments via REST.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "promptify"
+      ],
+      "group": "Prompt 改写与生成",
+      "group_en": "Prompt Rewriting & Generation",
+      "category": "agent-architecture",
+      "subcategory": "12-6",
+      "chain": false,
+      "description": "将用户模糊请求改写为清晰、具体、完整的 AI 模型提示词。",
+      "description_en": "Turns vague user requests into clear, specific, complete prompts that AI models can follow effectively.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "raindrop-api"
+      ],
+      "group": "Raindrop.io 书签 API 集成",
+      "group_en": "Raindrop.io Bookmark API Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 Agent 通过 Raindrop REST API 管理书签、集合、标签与备份。",
+      "description_en": "Helps the agent manage Raindrop.io bookmarks, collections, tags, and backups through the REST API.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ray-so-code-snippet"
+      ],
+      "group": "代码截图美化（ray.so）",
+      "group_en": "Code Screenshot Beautification (ray.so)",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "指导 Agent 使用 ray.so 将代码片段生成美观图片并保存到本地。",
+      "description_en": "Guides the agent in turning code snippets into polished images with ray.so and saving them locally.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "tavily"
+      ],
+      "group": "Tavily 网页搜索与抓取",
+      "group_en": "Tavily Web Search & Crawling",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "为 agent 提供基于 curl 的 Tavily REST API 搜索、抽取、映射和爬取流程，返回结构化结果。",
+      "description_en": "Gives the agent a curl-based Tavily REST API workflow for web search, extraction, mapping, and crawling with structured LLM-friendly results.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "todoist-api"
+      ],
+      "group": "Todoist 任务管理 CLI",
+      "group_en": "Todoist Task Management CLI",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "指导 agent 使用 td CLI 对 Todoist 任务、项目、标签和评论进行读写操作，并在破坏性动作前确认。",
+      "description_en": "Guides the agent in using the td CLI to read and write Todoist tasks, projects, labels, and comments, with confirmation before destructive actions.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ultrathink"
+      ],
+      "group": "ANSI 彩蛋",
+      "group_en": "ANSI Art Easter Egg",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "当用户触发 ultrathink 时，在终端打印彩色 ANSI 艺术字，不输出额外说明。",
+      "description_en": "Prints a colorful ANSI-art rendering of “Ultrathink” in the terminal when the skill is invoked.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "upstash-redis-kv"
+      ],
+      "group": "Upstash Redis KV",
+      "group_en": "Upstash Redis KV",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "通过 REST 调用 Upstash Redis，帮助 agent 保存、读取并操作缓存、计数器等键值数据。",
+      "description_en": "Use Upstash’s Redis-compatible REST API to save, retrieve, and manipulate cache, counters, and other key-value data.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "youtube-transcript"
+      ],
+      "group": "YouTube 字幕 / 转录下载 / YouTube 字幕提取",
+      "group_en": "YouTube subtitles and transcript download",
+      "category": "media",
+      "subcategory": "6-2",
+      "chain": false,
+      "description": "帮助 agent 从 YouTube URL 或视频 ID 获取字幕/转录文本，可选时间戳。",
+      "description_en": "Helps the agent fetch YouTube captions or transcripts from a URL or video ID, with optional timestamps.",
+      "sources": [
+        "intellectronica/agent-skills"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "aaron-he-zhu",
+        "repo": "aaron-marketing-skills",
+        "full_name": "aaron-he-zhu/aaron-marketing-skills",
+        "url": "https://github.com/aaron-he-zhu/aaron-marketing-skills",
+        "stars": 2288,
+        "pushed_at": "2026-06-28",
+        "default_branch": "main",
+        "github_description": "38 marketing skills + 5 commands for Claude Code & 35+ AI agents: SEO/GEO + influencer marketing (IMPACT). Frameworks: CORE-EEAT, CITE, C3.",
+        "topics": [
+          "agent-skills",
+          "ai-skills",
+          "claude-code",
+          "claude-skills",
+          "content-optimization",
+          "creator-marketing",
+          "generative-engine-optimization",
+          "geo",
+          "influencer-marketing",
+          "marketing",
+          "search-engine-optimization",
+          "seo",
+          "seo-tools"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "content-reviewer",
+          "path": "activate/content-reviewer/SKILL.md",
+          "subcategory": "4-12",
+          "subcategory_title": "4.12 SOP / 测量",
+          "category": "marketing-growth",
+          "group": "Influencer 内容审核 SOP",
+          "group_en": "Influencer Content Review SOP",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审核达人内容是否契合品牌、活动与合规要求，给出通过/修改/拒绝和反馈。",
+          "description_en": "Reviews creator submissions against brand, campaign, and compliance requirements, then returns a go/revise/reject decision with actionable feedback.",
+          "what": "Review influencer content submissions and produce a gate decision with creator feedback.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "contract-helper",
+          "path": "activate/contract-helper/SKILL.md",
+          "subcategory": "14-1",
+          "subcategory_title": "14.1 合同 / NDA / 供应商审查",
+          "category": "legal-compliance",
+          "group": "合同 / 法律文书生成",
+          "group_en": "Contract / Legal Document Generation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "起草并审查达人合作协议，识别条款风险并给出谈判要点。",
+          "description_en": "Drafts and reviews influencer partnership agreements, flags risky clauses, and suggests negotiation points.",
+          "what": "Draft and review influencer partnership agreements with clause-level red flags.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "outreach-manager",
+          "path": "activate/outreach-manager/SKILL.md",
+          "subcategory": "4-6",
+          "subcategory_title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "category": "marketing-growth",
+          "group": "创作者外联与联盟合作",
+          "group_en": "Creator Outreach & Affiliate Partnerships",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 撰写创作者外联、跟进节奏、谈判话术并跟踪合作状态。",
+          "description_en": "Draft creator outreach, follow-up cadences, negotiation scripts, and track partnership status.",
+          "what": "用于创作者外联、合作谈判和关系状态追踪。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "geo-content-optimizer",
+          "path": "build/geo-content-optimizer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "生成引擎优化",
+          "group_en": "Generative Engine Optimization",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "优化内容结构与权威信号，提升 AI 答案引用和 GEO 可见性。",
+          "description_en": "Optimize content structure and authority signals to improve AI citation readiness and GEO visibility.",
+          "what": "用于让内容更容易被 AI 搜索和生成式答案引用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "meta-tags-optimizer",
+          "path": "build/meta-tags-optimizer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 元标签与 CTR 优化",
+          "group_en": "SEO Meta Tags & CTR Optimization",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为页面生成并优化标题、元描述、OG/Twitter 标签与 CTR 变体。",
+          "description_en": "Creates and optimizes titles, meta descriptions, OG/Twitter tags, and CTR variants for pages.",
+          "what": "优化页面元信息以提升搜索和社交分享点击率。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "notfair · 组「SEO 元标签与 CTR 优化」"
+        },
+        {
+          "name": "schema-markup-generator",
+          "path": "build/schema-markup-generator/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 结构化数据",
+          "group_en": "SEO Structured Data",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "生成 FAQ、HowTo、Article、Product 等 Schema.org JSON-LD 富结果标记。",
+          "description_en": "Generates Schema.org JSON-LD for FAQ, HowTo, Article, Product, and other rich-result markup.",
+          "what": "为页面创建结构化数据，帮助搜索引擎理解实体与富结果资格。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "notfair · 组「SEO 结构化数据」"
+        },
+        {
+          "name": "seo-content-writer",
+          "path": "build/seo-content-writer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 内容创作与页面优化",
+          "group_en": "SEO Content Creation and Page Optimization",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为指定关键词和搜索意图起草 SEO 文章、博客、落地页与产品描述，并输出可复用摘要。",
+          "description_en": "Drafts SEO-ready articles, blogs, landing pages, and product descriptions from keywords, briefs, and search intent.",
+          "what": "根据 brief 和关键词生成 SEO 内容交付稿。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-amplifier",
+          "path": "convert/content-amplifier/SKILL.md",
+          "subcategory": "4-4",
+          "subcategory_title": "4.4 付费广告 / ASO",
+          "category": "marketing-growth",
+          "group": "Influencer 内容付费放大",
+          "group_en": "Influencer Paid Amplification",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "筛选适合付费放大的红人内容，规划 Spark Ads/白名单投放、受众、预算与扩量/暂停策略。",
+          "description_en": "Scores influencer content for paid boosting and plans whitelisting, Spark Ads, targeting, budget, and optimization.",
+          "what": "为红人内容选择付费放大方案。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "landing-optimizer",
+          "path": "convert/landing-optimizer/SKILL.md",
+          "subcategory": "4-5",
+          "subcategory_title": "4.5 CRO / 转化优化",
+          "category": "marketing-growth",
+          "group": "Influencer 落地页转化优化",
+          "group_en": "Influencer Landing Page CRO",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为达人引流落地页做信息匹配、CTA、社证与A/B测试规划。",
+          "description_en": "Optimizes influencer-driven landing pages for message match, CTA, social proof, and A/B testing.",
+          "what": "优化达人引流落地页的信息匹配、页面结构、社证、优惠码与测试路线。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ugc-repurposer",
+          "path": "convert/ugc-repurposer/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "UGC 素材多渠道复用",
+          "group_en": "UGC Content Repurposing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把达人/UGC素材拆解成多平台广告、社媒、邮件与网站资产。",
+          "description_en": "Turns influencer or UGC assets into reusable assets for ads, social, email, and web.",
+          "what": "把达人或用户生成内容改造成多渠道可复用素材。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "content-quality-auditor",
+          "path": "cross-cutting/content-quality-auditor/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "CORE-EEAT 内容质量审计",
+          "group_en": "CORE-EEAT content quality audits",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用80项CORE-EEAT评估内容质量、发布就绪度和修复优先级。",
+          "description_en": "Scores content quality with an 80-item CORE-EEAT rubric and returns a prioritized fix plan.",
+          "what": "发布前审计内容质量、E-E-A-T 与修复计划。",
+          "chain": true,
+          "chain_group": "发布前 SEO 内容与域名审计",
+          "chain_group_en": "Pre-publish SEO content and domain audit"
+        },
+        {
+          "name": "domain-authority-auditor",
+          "path": "cross-cutting/domain-authority-auditor/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "CITE 域名权威审计",
+          "group_en": "CITE domain authority audits",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用40项CITE评分域名可信度、权威等级和引用风险。",
+          "description_en": "Assesses domain trust and authority with a 40-item CITE rubric and trust verdicts.",
+          "what": "审计域名权威、可信度与引用风险。",
+          "chain": true,
+          "chain_group": "发布前 SEO 内容与域名审计",
+          "chain_group_en": "Pre-publish SEO content and domain audit"
+        },
+        {
+          "name": "entity-optimizer",
+          "path": "cross-cutting/entity-optimizer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "实体优化与知识图谱",
+          "group_en": "Entity Optimization & Knowledge Graph",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计并规范品牌实体身份，强化知识图谱、Wikidata 与 AI 引用识别信号。",
+          "description_en": "Audits and standardizes brand/entity identity to strengthen Knowledge Graph, Wikidata, and AI citation signals.",
+          "what": "规范实体身份以提升 SEO/GEO 识别与引用机会。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "memory-management",
+          "path": "cross-cutting/memory-management/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "SEO/GEO 项目记忆生命周期",
+          "group_en": "SEO/GEO Project Memory Lifecycle",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "维护 SEO/GEO 项目的热/温/冷记忆层级，支持归档、检索与隐私清理。",
+          "description_en": "Maintains hot, warm, and cold memory tiers for SEO/GEO projects, supporting archival, retrieval, and privacy cleanup.",
+          "what": "管理跨会话项目记忆，保持活跃上下文可检索且可清理。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "audience-analyzer",
+          "path": "insight/audience-analyzer/SKILL.md",
+          "subcategory": "3-1",
+          "subcategory_title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "category": "product-management",
+          "group": "受众画像与影响者筛选",
+          "group_en": "Audience Personas & Influencer Fit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析目标受众画像、平台偏好与影响者筛选标准。",
+          "description_en": "Builds audience personas, platform priorities, and influencer-fit criteria.",
+          "what": "Identifies the target audience and translates it into influencer-selection criteria.",
+          "chain": true,
+          "chain_group": "洞察阶段：受众与细分社区研究",
+          "chain_group_en": "Insight Phase: Audience & Niche Community Research"
+        },
+        {
+          "name": "niche-researcher",
+          "path": "insight/niche-researcher/SKILL.md",
+          "subcategory": "3-1",
+          "subcategory_title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "category": "product-management",
+          "group": "细分社区洞察与进入策略",
+          "group_en": "Niche Community Insight & Entry Strategy",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "解析细分社区文化、关键声音与品牌进入策略。",
+          "description_en": "Maps niche communities, cultural norms, key voices, and entry strategy.",
+          "what": "Decodes a niche community so a brand can enter it authentically.",
+          "chain": true,
+          "chain_group": "洞察阶段：受众与细分社区研究",
+          "chain_group_en": "Insight Phase: Audience & Niche Community Research"
+        },
+        {
+          "name": "trend-spotter",
+          "path": "insight/trend-spotter/SKILL.md",
+          "subcategory": "4-7",
+          "subcategory_title": "4.7 病毒式传播 / Hook / 创意",
+          "category": "marketing-growth",
+          "group": "趋势与文化节点侦察",
+          "group_en": "Trend & Cultural Moment Scouting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 发现品牌相关趋势、文化节点与入局建议。",
+          "description_en": "Helps the agent identify brand-relevant trends, cultural moments, and campaign timing recommendations.",
+          "what": "识别可借势的趋势、内容形式和文化节点，并给出入局建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competitor-tracker",
+          "path": "map/competitor-tracker/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "影响者营销竞品情报",
+          "group_en": "Influencer Marketing Competitor Intelligence",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 追踪竞品达人合作、活动策略与机会缺口。",
+          "description_en": "Helps the agent track competitors’ creator partnerships, campaign tactics, and opportunity gaps.",
+          "what": "梳理竞品合作的创作者、活动打法、表现估算和可切入机会。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "fit-scorer",
+          "path": "map/fit-scorer/SKILL.md",
+          "subcategory": "4-6",
+          "subcategory_title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "category": "marketing-growth",
+          "group": "达人合作发现与评分筛选",
+          "group_en": "Influencer Partnership Discovery & Fit Scoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为候选达人按受众、内容、品牌契合等维度打分排序，输出合作建议。",
+          "description_en": "Scores and ranks influencer candidates across audience fit, content quality, brand alignment, authenticity, and partnership potential.",
+          "what": "Objectively score and rank a known influencer shortlist.",
+          "chain": true,
+          "chain_group": "达人发现与评分筛选",
+          "chain_group_en": "Influencer Discovery & Fit Scoring"
+        },
+        {
+          "name": "influencer-discovery",
+          "path": "map/influencer-discovery/SKILL.md",
+          "subcategory": "4-6",
+          "subcategory_title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "category": "marketing-growth",
+          "group": "达人合作发现与评分筛选",
+          "group_en": "Influencer Partnership Discovery & Fit Scoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按品牌/品类/平台发现达人，整理受众、互动、真实性风险与分层名单。",
+          "description_en": "Discovers influencer candidates by niche, platform, and audience, then profiles them with engagement metrics and authenticity checks.",
+          "what": "Build a qualified influencer prospect list from scratch.",
+          "chain": true,
+          "chain_group": "达人发现与评分筛选",
+          "chain_group_en": "Influencer Discovery & Fit Scoring"
+        },
+        {
+          "name": "alert-manager",
+          "path": "monitor/alert-manager/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 排名/GEO 预警监控",
+          "group_en": "SEO Ranking and GEO Alert Monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "配置排名、流量、技术、外链与GEO异常阈值提醒，便于持续监控。",
+          "description_en": "Sets up threshold-based alerts for ranking, traffic, technical, backlink, and GEO changes.",
+          "what": "Configures proactive SEO/GEO monitoring triggers and handoff summaries.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "backlink-analyzer",
+          "path": "monitor/backlink-analyzer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 外链分析",
+          "group_en": "SEO Backlink Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析外链画像、锚文本、有毒链接与竞争外链缺口，辅助外链策略。",
+          "description_en": "Analyzes backlink profiles, anchor text, toxic links, and competitor link gaps.",
+          "what": "Profiles backlink quality and link-building opportunities for SEO planning.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "performance-reporter",
+          "path": "monitor/performance-reporter/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO/GEO 绩效报告与排名监控",
+          "group_en": "SEO/GEO Performance Reporting and Rank Monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "聚合SEO/GEO数据，生成含流量、排名、权威和内容进展的绩效报告。",
+          "description_en": "Aggregates SEO/GEO data into stakeholder-ready performance reports covering traffic, rankings, authority, and content progress.",
+          "what": "Use this skill when an agent needs to produce multi-metric SEO/GEO performance reports or dashboards.",
+          "chain": true,
+          "chain_group": "SEO/GEO 监控与汇报工作流",
+          "chain_group_en": "SEO/GEO Monitoring and Reporting Workflow"
+        },
+        {
+          "name": "rank-tracker",
+          "path": "monitor/rank-tracker/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO/GEO 绩效报告与排名监控",
+          "group_en": "SEO/GEO Performance Reporting and Rank Monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "追踪关键词排名和SERP变化，识别排名波动与AI可见性异常。",
+          "description_en": "Tracks keyword rankings and SERP changes over time, flagging ranking shifts and AI visibility anomalies.",
+          "what": "Use this skill when an agent needs to monitor keyword rankings, SERP positions, or AI-response visibility.",
+          "chain": true,
+          "chain_group": "SEO/GEO 监控与汇报工作流",
+          "chain_group_en": "SEO/GEO Monitoring and Reporting Workflow"
+        },
+        {
+          "name": "content-refresher",
+          "path": "optimize/content-refresher/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 内容刷新与排名恢复",
+          "group_en": "SEO Content Refresh & Ranking Recovery",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "诊断内容陈旧与流量衰减，生成刷新计划与 GEO 发布建议。",
+          "description_en": "Diagnoses stale content and traffic decay, then produces a refresh plan with GEO and republishing guidance.",
+          "what": "帮助 agent 更新旧内容、恢复排名并规划 GEO 优化。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "internal-linking-optimizer",
+          "path": "optimize/internal-linking-optimizer/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 内链架构优化",
+          "group_en": "SEO Internal Link Architecture Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析站内链接、孤立页和锚文本，输出优先级修复计划。",
+          "description_en": "Analyzes internal links, orphan pages, and anchor text, then delivers a prioritized optimization plan.",
+          "what": "帮助 agent 改善站内链接结构、权重流动和抓取深度。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "on-page-seo-auditor",
+          "path": "optimize/on-page-seo-auditor/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 内容创作与页面优化",
+          "group_en": "SEO content and on-page optimization",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "审计单页标题、元描述、结构、关键词与图片，给出优先修复建议。",
+          "description_en": "Audits a single page’s SEO structure and prioritizes fixes.",
+          "what": "评估页面 SEO 健康度并输出修复优先级。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "technical-seo-checker",
+          "path": "optimize/technical-seo-checker/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 技术健康审计",
+          "group_en": "Technical SEO health audit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "检查抓取索引、速度、robots、站点地图、规范链接和迁移等技术问题。",
+          "description_en": "Checks crawlability, indexing, speed, robots, sitemaps, canonicals, and migrations.",
+          "what": "识别阻碍搜索引擎抓取、索引和排名的技术 SEO 问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brief-generator",
+          "path": "plan/brief-generator/SKILL.md",
+          "subcategory": "4-6",
+          "subcategory_title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "category": "marketing-growth",
+          "group": "影响者营销规划（Brief + 预算）",
+          "group_en": "Influencer Marketing Planning (Brief + Budget)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为影响者活动生成结构化 brief，含交付、信息、时间线和披露条款。",
+          "description_en": "Creates structured creator briefs with deliverables, key messages, creative direction, timeline, disclosure rules, and compensation terms.",
+          "what": "Generates an influencer brief for a campaign or product.",
+          "chain": true,
+          "chain_group": "影响者营销计划准备（预算→Brief）",
+          "chain_group_en": "Influencer Campaign Planning (Budget → Brief)"
+        },
+        {
+          "name": "budget-optimizer",
+          "path": "plan/budget-optimizer/SKILL.md",
+          "subcategory": "4-6",
+          "subcategory_title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "category": "marketing-growth",
+          "group": "影响者营销规划（Brief + 预算）",
+          "group_en": "Influencer Marketing Planning (Brief + Budget)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为影响者活动分配预算，比较平台、达人层级和投放情景的 ROI。",
+          "description_en": "Allocates influencer budgets across creator tiers, platforms, and scenarios while projecting ROI, CPM, and CPE.",
+          "what": "Optimizes influencer spend allocation across creators, platforms, and scenarios.",
+          "chain": true,
+          "chain_group": "影响者营销计划准备（预算→Brief）",
+          "chain_group_en": "Influencer Campaign Planning (Budget → Brief)"
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "nexscope-ai",
+        "repo": "eCommerce-Skills",
+        "full_name": "nexscope-ai/eCommerce-Skills",
+        "url": "https://github.com/nexscope-ai/eCommerce-Skills",
+        "stars": 295,
+        "pushed_at": "2026-06-10",
+        "default_branch": "main",
+        "github_description": "E-commerce skills for AI agents — product research, marketing automation, supply chain optimization, and business analytics for online sellers across Amazon, Shopify, Etsy, TikTok Shop, and all platforms.",
+        "topics": [
+          "agent-skills",
+          "ai",
+          "ai-agent-skills",
+          "ai-agents",
+          "amazon-seller-tools",
+          "claude-code-skills",
+          "claude-skills",
+          "ecommerce",
+          "openclaw-skills",
+          "shopify-tools",
+          "tiktok-shop-automation"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-code"
+      },
+      "skills": [
+        {
+          "name": "affiliate-marketing-strategy",
+          "path": "affiliate-marketing-strategy/SKILL.md",
+          "subcategory": "4-6",
+          "subcategory_title": "4.6 潜客 / 引流 / 推荐 / 联盟",
+          "category": "marketing-growth",
+          "group": "电商联盟营销",
+          "group_en": "E-commerce Affiliate Marketing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计电商联盟计划、佣金结构、招募和追踪优化。",
+          "description_en": "Helps an agent design affiliate programs, commission structures, recruitment plans, and performance tracking for ecommerce stores.",
+          "what": "Builds and optimizes affiliate marketing programs for ecommerce platforms.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "api-monitoring",
+          "path": "api-monitoring/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "电商 API 监控与告警",
+          "group_en": "E-commerce API Monitoring & Alerts",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 为电商集成设计 API/Webhook 监控、告警和 SLA 报告。",
+          "description_en": "Helps an agent design API and webhook health checks, alerting rules, SLA reporting, and integration validation for ecommerce systems.",
+          "what": "Designs monitoring and alerting frameworks for ecommerce API integrations.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brand-monitoring",
+          "path": "brand-monitoring/SKILL.md",
+          "subcategory": "7-2",
+          "subcategory_title": "7.2 跨平台社交 / 趋势监测",
+          "category": "data-scraping",
+          "group": "品牌舆情监测",
+          "group_en": "Brand Mentions & Crisis Monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "跨 Reddit、新闻、YouTube 等来源追踪品牌提及、情绪趋势与危机信号。",
+          "description_en": "Tracks brand mentions across Reddit, news, YouTube, and search sources, with sentiment, trend, and crisis signals.",
+          "what": "监控品牌舆情并输出趋势、情绪、危机与竞品对比洞察。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brand-protection-amazon",
+          "path": "brand-protection/brand-protection-amazon/SKILL.md",
+          "subcategory": "14-4",
+          "subcategory_title": "14.4 知识产权",
+          "category": "legal-compliance",
+          "group": "亚马逊品牌保护",
+          "group_en": "Amazon Brand Protection",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "识别亚马逊跟卖、假货、价格违规和商标滥用，并生成投诉与取证指引。",
+          "description_en": "Detects Amazon hijackers, counterfeits, MAP violations, and trademark abuse, with complaint and evidence-gathering guidance.",
+          "what": "为亚马逊品牌提供侵权、跟卖与违规风险识别及处置模板。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brand-protection-ebay",
+          "path": "brand-protection/brand-protection-ebay/SKILL.md",
+          "subcategory": "14-4",
+          "subcategory_title": "14.4 知识产权",
+          "category": "legal-compliance",
+          "group": "电商品牌保护与侵权监测",
+          "group_en": "E-commerce Brand Protection & Infringement Monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 监测平台侵权、识别假货或未授权卖家并生成投诉模板。",
+          "description_en": "Helps agents monitor marketplace infringement, spot counterfeit or unauthorized sellers, and draft takedown complaints.",
+          "what": "针对 eBay 的品牌保护、VeRO 投诉与 MAP/假货风险监测。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brand-protection-shopify",
+          "path": "brand-protection/brand-protection-shopify/SKILL.md",
+          "subcategory": "14-4",
+          "subcategory_title": "14.4 知识产权",
+          "category": "legal-compliance",
+          "group": "电商品牌保护与侵权监测",
+          "group_en": "E-commerce Brand Protection & Infringement Monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 监测 DTC/Shopify 生态中的仿冒站、域名抢注和社媒侵权。",
+          "description_en": "Helps agents monitor DTC/Shopify ecosystems for fake stores, domain abuse, social ads, and infringement, then prepare DMCA or cease-and-desist notices.",
+          "what": "针对 Shopify/DTC 生态的仿冒站、域名滥用、社媒侵权与下架通知。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brand-protection-tiktok",
+          "path": "brand-protection/brand-protection-tiktok/SKILL.md",
+          "subcategory": "14-4",
+          "subcategory_title": "14.4 知识产权",
+          "category": "legal-compliance",
+          "group": "电商平台品牌保护",
+          "group_en": "E-commerce Brand Protection",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 监测 TikTok Shop 未授权卖家、假货线索与达人滥用，并生成投诉材料。",
+          "description_en": "Helps an agent monitor TikTok Shop for unauthorized sellers, counterfeit signals, and affiliate abuse, then draft takedown complaints.",
+          "what": "用于 TikTok Shop 的品牌保护、MAP 违规识别和 IP Protection 报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brand-protection-walmart",
+          "path": "brand-protection/brand-protection-walmart/SKILL.md",
+          "subcategory": "14-4",
+          "subcategory_title": "14.4 知识产权",
+          "category": "legal-compliance",
+          "group": "电商平台品牌保护",
+          "group_en": "E-commerce Brand Protection",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 监测 Walmart Marketplace 未授权卖家、假货线索与商标滥用，并生成投诉材料。",
+          "description_en": "Helps an agent monitor Walmart Marketplace for unauthorized sellers, counterfeit signals, and trademark abuse, then draft takedown complaints.",
+          "what": "用于 Walmart Marketplace 的品牌保护、WFS 卖家监测和 Brand Portal 报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competitive-pricing-strategy",
+          "path": "competitive-pricing-strategy/SKILL.md",
+          "subcategory": "4-10",
+          "subcategory_title": "4.10 定价 / 商业模型",
+          "category": "marketing-growth",
+          "group": "定价策略",
+          "group_en": "Pricing Strategy",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 基于竞品、利润率和需求制定电商定价与调价策略。",
+          "description_en": "Helps agents create ecommerce pricing and repricing strategies from competitor, margin, and demand signals.",
+          "what": "制定跨平台电商定价、调价与利润优化建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competitor-price-analysis",
+          "path": "competitor-price-analysis/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "竞品分析",
+          "group_en": "Competitive Analysis",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 梳理竞品价格分布、定位区间与价格空白机会。",
+          "description_en": "Helps agents map competitor price distribution, positioning tiers, and pricing whitespace.",
+          "what": "识别竞品价格带、定位集群与可切入价格机会。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "competitor-price-tracker",
+          "path": "competitor-price-tracker/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "竞品分析",
+          "group_en": "Competitive Analysis",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 建立竞品价格监控流程，追踪调价、促销和价格战信号。",
+          "description_en": "Helps the agent set up competitor price monitoring, detect price changes and promotions, and spot pricing pressure.",
+          "what": "Tracks competitor pricing patterns and alerts sellers to meaningful price movements.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "conversion-rate-optimization",
+          "path": "conversion-rate-optimization/SKILL.md",
+          "subcategory": "4-5",
+          "subcategory_title": "4.5 CRO / 转化优化",
+          "category": "marketing-growth",
+          "group": "电商 CRO 与漏斗优化",
+          "group_en": "E-commerce CRO and Funnel Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 审计电商转化漏斗，定位流失环节并给出优化实验建议。",
+          "description_en": "Helps the agent audit e-commerce funnels, find drop-off points, and recommend conversion experiments.",
+          "what": "Guides systematic CRO audits and prioritized optimization roadmaps for online stores.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cross-border-ecommerce",
+          "path": "cross-border-ecommerce/SKILL.md",
+          "subcategory": "3-5",
+          "subcategory_title": "3.5 GTM / 进入策略 / 增长 loop",
+          "category": "product-management",
+          "group": "跨境电商市场进入策略",
+          "group_en": "Cross-Border E-Commerce Expansion Strategy",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "评估目标市场、履约模型与税费，生成分阶段出海路线图。",
+          "description_en": "Scores target markets, compares fulfillment options, and builds a phased cross-border expansion roadmap.",
+          "what": "帮助 agent 为电商业务制定进入新国家或地区的扩张方案。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "customer-feedback-analysis",
+          "path": "customer-feedback-analysis/SKILL.md",
+          "subcategory": "3-1",
+          "subcategory_title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "category": "product-management",
+          "group": "反馈情感分析",
+          "group_en": "Customer Feedback & Sentiment Analysis",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "分析电商评论与反馈，提炼痛点、需求与改进优先级。",
+          "description_en": "Analyzes customer reviews and feedback to surface pain points, feature requests, and improvement priorities.",
+          "what": "帮助 agent 从电商评论中识别用户痛点并转化为产品改进建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "domain-monitoring",
+          "path": "domain-monitoring/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "电商域名与 SSL 监控",
+          "group_en": "E-commerce Domain & SSL Monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为电商站点设计域名、SSL 与 DNS 健康检查、告警规则和安全评级。",
+          "description_en": "Designs domain, SSL, and DNS health checks, alerts, and security ratings for e-commerce sites.",
+          "what": "帮助 agent 为电商业务建立域名监控与 SSL 到期告警流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dropshipping-product-research",
+          "path": "dropshipping-product-research/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Dropshipping 选品研究",
+          "group_en": "Dropshipping Product Research",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 dropshipping 选品评估利润、供应商、物流、竞争与营销可行性。",
+          "description_en": "Evaluates dropshipping product ideas across margins, suppliers, shipping, competition, and marketing viability.",
+          "what": "帮助 agent 筛选适合 dropshipping 的可盈利产品与供应商方向。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dynamic-pricing-ecommerce",
+          "path": "dynamic-pricing-ecommerce/SKILL.md",
+          "subcategory": "4-10",
+          "subcategory_title": "4.10 定价 / 商业模型",
+          "category": "marketing-growth",
+          "group": "定价策略",
+          "group_en": "Pricing Strategy",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 为电商商品制定动态定价、竞品响应和利润护栏策略。",
+          "description_en": "Helps an agent design dynamic pricing, competitor-aware repricing, and margin guardrails for online sellers.",
+          "what": "Dynamic pricing strategy for e-commerce products.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ebay-advertising",
+          "path": "ebay-advertising/SKILL.md",
+          "subcategory": "4-4",
+          "subcategory_title": "4.4 付费广告 / ASO",
+          "category": "marketing-growth",
+          "group": "eBay 广告投放优化",
+          "group_en": "eBay Ad Campaign Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 规划 eBay 广告活动、出价预算分配并优化 ROAS 指标。",
+          "description_en": "Helps an agent plan eBay ad campaigns, allocate bids and budgets, and optimize ROAS performance.",
+          "what": "Paid advertising campaign optimization for eBay sellers.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ebay-product-research",
+          "path": "ebay-product-research/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "eBay 选品与竞争密度分析",
+          "group_en": "eBay Product and Competition Research",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 分析 eBay 成交、供需与竞争，筛选可盈利品类。",
+          "description_en": "Helps agents analyze eBay sales, demand, and competition to identify profitable niches.",
+          "what": "分析 eBay 已完成成交、sell-through、竞争密度和季节性需求，输出选品建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ebay-seller-guide",
+          "path": "ebay-seller-guide/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "eBay 卖家运营指南",
+          "group_en": "eBay Seller Operations Guide",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 搭建 eBay 店铺、优化 listing、物流与卖家等级。",
+          "description_en": "Guides agents through eBay store setup, listing optimization, shipping, and seller growth.",
+          "what": "覆盖 eBay 店铺搭建、listing 策略、SEO、物流退货和卖家等级提升。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ebay-seller-tools",
+          "path": "ebay-seller-tools/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "eBay 卖家工具选型",
+          "group_en": "eBay Seller Tool Selection",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 评估 eBay 店铺的上架、定价、库存、物流、分析和研究工具，并给出选型建议。",
+          "description_en": "Helps an agent evaluate listing, repricing, inventory, shipping, analytics, and research tools for an eBay store and recommend a practical stack.",
+          "what": "为 eBay 卖家比较和选择运营工具。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ebay-seo",
+          "path": "ebay-seo/SKILL.md",
+          "subcategory": "4-1",
+          "subcategory_title": "4.1 SEO / AEO / GEO / 结构化数据",
+          "category": "marketing-growth",
+          "group": "SEO 内容创作与页面优化",
+          "group_en": "SEO Content Creation & On-page Optimization",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 优化 eBay 标题、类目、Item specifics 与 Cassini 排名因素，提升商品搜索曝光。",
+          "description_en": "Helps an agent optimize eBay titles, categories, item specifics, and Cassini ranking factors to improve product search visibility.",
+          "what": "指导 agent 优化 eBay 商品搜索排名。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-ab-testing",
+          "path": "ecommerce-ab-testing/SKILL.md",
+          "subcategory": "4-5",
+          "subcategory_title": "4.5 CRO / 转化优化",
+          "category": "marketing-growth",
+          "group": "电商 A/B 测试与转化优化",
+          "group_en": "E-commerce A/B Testing & Conversion Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计电商 A/B 测试、计算样本量并给出平台化转化优化建议。",
+          "description_en": "Helps an agent design e-commerce A/B tests, estimate sample sizes, and produce platform-specific conversion recommendations.",
+          "what": "为电商团队规划并评估页面、价格、广告和结账流程测试。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-branding",
+          "path": "ecommerce-branding/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "品牌系统 / 视觉规范",
+          "group_en": "Brand System & Visual Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 定义电商品牌定位、信息框架、视觉规范并检查跨渠道一致性。",
+          "description_en": "Helps an agent define e-commerce brand positioning, messaging, visual guidelines, and cross-channel consistency checks.",
+          "what": "为新产品或店铺建立可执行的品牌定位与一致性规范。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-business-plan",
+          "path": "ecommerce-business-plan/SKILL.md",
+          "subcategory": "3-4",
+          "subcategory_title": "3.4 战略 / 定位 / 商业模式",
+          "category": "product-management",
+          "group": "电商商业计划与战略",
+          "group_en": "E-commerce business planning and strategy",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 制定电商商业计划，覆盖市场分析、财务预测、营销策略与路线图。",
+          "description_en": "Helps an agent draft an e-commerce business plan covering market analysis, financial projections, marketing strategy, and roadmap.",
+          "what": "为启动或扩张电商业务制定完整商业计划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-checkout-optimization",
+          "path": "ecommerce-checkout-optimization/SKILL.md",
+          "subcategory": "4-5",
+          "subcategory_title": "4.5 CRO / 转化优化",
+          "category": "marketing-growth",
+          "group": "结账转化优化",
+          "group_en": "Checkout conversion optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 分析结账漏斗，识别流失原因并优化支付、信任与配送体验。",
+          "description_en": "Helps an agent analyze checkout drop-offs and improve payment, trust, and fulfillment UX to reduce abandonment.",
+          "what": "诊断并优化结账流程以降低购物车流失。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-competitor-analysis",
+          "path": "ecommerce-competitor-analysis/SKILL.md",
+          "subcategory": "4-8",
+          "subcategory_title": "4.8 竞品 / 对比页 / 战情",
+          "category": "marketing-growth",
+          "group": "竞品分析",
+          "group_en": "Competitive analysis",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "跨平台评估竞品渠道、定位、策略和表现，形成竞争情报与 benchmark。",
+          "description_en": "Analyze competitors’ channel presence, positioning, strategy, and performance to produce actionable competitive intelligence.",
+          "what": "Cross-platform ecommerce competitor benchmarking and strategic intelligence.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-content-marketing",
+          "path": "ecommerce-content-marketing/SKILL.md",
+          "subcategory": "4-2",
+          "subcategory_title": "4.2 文案 / 营销心理 / 产品命名",
+          "category": "marketing-growth",
+          "group": "电商内容营销规划",
+          "group_en": "E-commerce content marketing planning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "规划电商内容主题、日历和平台策略，结合评论、趋势、竞品与 SEO 找增长机会。",
+          "description_en": "Plan ecommerce content themes, calendars, and platform strategies using reviews, trends, competitors, and SEO signals.",
+          "what": "Builds or audits a cross-platform ecommerce content strategy and calendar.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-customer-retention",
+          "path": "ecommerce-customer-retention/SKILL.md",
+          "subcategory": "4-9",
+          "subcategory_title": "4.9 销售辅助 / RevOps / 留存",
+          "category": "marketing-growth",
+          "group": "电商客户留存与复购",
+          "group_en": "E-commerce retention and repeat purchase",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 制定电商留存、忠诚度、RFM 分群与赢回策略。",
+          "description_en": "Helps an agent design e-commerce retention, loyalty, RFM segmentation, and win-back strategies.",
+          "what": "Builds retention strategies for Shopify, Amazon, Etsy, TikTok Shop, and other e-commerce businesses.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecommerce-email-marketing-builder",
+          "path": "ecommerce-email-marketing-builder/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "电商邮件自动化营销",
+          "group_en": "E-commerce email marketing automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 搭建电商邮件自动化、ESP 配置、分群与年度活动日历。",
+          "description_en": "Helps an agent set up e-commerce email automation, ESP configuration, segmentation, and campaign calendars.",
+          "what": "Creates email flows, copy, segmentation rules, A/B tests, and campaign plans for e-commerce stores.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "glebis",
+        "repo": "claude-skills",
+        "full_name": "glebis/claude-skills",
+        "url": "https://github.com/glebis/claude-skills",
+        "stars": 295,
+        "pushed_at": "2026-06-23",
+        "default_branch": "main",
+        "github_description": "Collection of Claude Code skills for enhanced AI workflows",
+        "topics": [],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "agency-docs-updater",
+          "path": "agency-docs-updater/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "会议录制发布流水线",
+          "group_en": "Meeting Recording Publishing Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "自动发布会议录制：拉取录像、生成缩略图、更新站点并上传 YouTube。",
+          "description_en": "Publishes meeting recordings end to end: fetches video, creates thumbnails, updates the site, and uploads to YouTube.",
+          "what": "自动执行会议录制发布流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "agency-meetup-publish",
+          "path": "agency-meetup-publish/SKILL.md",
+          "subcategory": "6-1",
+          "subcategory_title": "6.1 视频剪辑 / 生成",
+          "category": "media",
+          "group": "会议录制发布流水线",
+          "group_en": "Meeting Recording Publishing Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "处理 Meetup 录像：下载 Zoom、剪辑片头片尾、生成缩略图并上传 YouTube。",
+          "description_en": "Processes meetup recordings by downloading Zoom video, adding intros/outros, creating thumbnails, and uploading to YouTube.",
+          "what": "自动处理 Meetup 录制并发布到 YouTube。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "agency-socials",
+          "path": "agency-socials/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "AGENCY 社区社媒资产",
+          "group_en": "AGENCY Community Social Assets",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按 AGENCY 社区设计规范生成活动封面、缩略图和社媒素材。",
+          "description_en": "Creates event covers, thumbnails, and social assets using the AGENCY Community design system.",
+          "what": "生成符合 AGENCY Community 设计系统的活动封面、YouTube 缩略图和社媒素材。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "agent-cli",
+          "path": "agent-cli/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Python CLI Agent 友好化",
+          "group_en": "Python Agent-Friendly CLI Utilities",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Python CLI 增加结构化 JSON/NDJSON 输出和自动化辅助工具包。",
+          "description_en": "Adds machine-readable JSON/NDJSON output to Python CLIs and scaffolds reusable CLI helper packages.",
+          "what": "把 Python CLI 输出改成机器可读 JSON/NDJSON，并可生成 cli_utils 工具包。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "app-release",
+          "path": "app-release/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Apple 应用发布流水线",
+          "group_en": "Apple App Release Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按门禁清单完成 iOS/watchOS 应用 TestFlight/App Store 发布与 CloudKit 部署。",
+          "description_en": "Guides the agent through a gated iOS/watchOS release workflow for TestFlight, App Store Connect, signing, CloudKit, and Apple portal steps.",
+          "what": "把 iOS/watchOS 发布流程拆成可验证的门禁清单。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "balanced",
+          "path": "balanced/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "平衡式批判对话模式",
+          "group_en": "Balanced Critical Dialogue Mode",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 以证据化、多视角方式提供诚实反馈、权衡分析和决策建议。",
+          "description_en": "Enables a non-sycophantic, evidence-based dialogue mode for balanced feedback, tradeoff analysis, and decision support.",
+          "what": "提供非迎合、证据优先的反馈与决策对话模式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brand-agency",
+          "path": "brand-agency/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "Agency 品牌视觉规范",
+          "group_en": "Agency Brand Style Guide",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为生成的演示、SVG、文档和网页套用 Agency 品牌色、字体与新粗野主义风格。",
+          "description_en": "Applies Agency’s colors, typography, and neobrutalist style to generated presentations, SVGs, documents, and web UIs.",
+          "what": "适用于需要遵循 Agency 视觉规范的生成物。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "browser-mate",
+          "path": "browser-mate/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "浏览器 Agent CLI",
+          "group_en": "Browser Agent CLI",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "让 agent 复用独立 Chrome 调试实例，在不关闭用户浏览器的前提下自动化已登录站点。",
+          "description_en": "Lets an agent automate logged-in sites in a separate Chrome debugging instance without closing the user’s browser.",
+          "what": "适用于需保留用户浏览器会话的自动化任务。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "browsing-history",
+          "path": "browsing-history/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "浏览器历史记录查询",
+          "group_en": "Browser History Query",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 用自然语言查询跨设备浏览历史，并按日期、设备、域名、关键词筛选或导出。",
+          "description_en": "Lets an agent query synced browsing history with natural language, filter by date, device, domain, or keyword, and export results.",
+          "what": "查询跨设备浏览历史并支持导出。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "chrome-history",
+          "path": "chrome-history/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "浏览器历史记录查询",
+          "group_en": "Browser History Query",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 用自然语言搜索 Chrome 历史记录，过滤日期、内容类型、关键词和站点并整理结果。",
+          "description_en": "Lets an agent search Chrome history using natural language, filter by date, content type, keyword, or site, and organize results.",
+          "what": "检索并筛选 Chrome 浏览历史。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "coaching-session-summarizer",
+          "path": "coaching-session-summarizer/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "会话记录摘要与跨期洞察",
+          "group_en": "Session Note Summaries & Cross-Session Insights",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析教练或治疗会话转录，生成洞察、决策和行动项摘要。",
+          "description_en": "Summarizes coaching or therapy transcripts into insights, decisions, action items, and cross-session patterns.",
+          "what": "用于在 Fathom 或 Granola 同步新会话记录后，由 Claude Code 直接读取并整理会话笔记。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "codex",
+          "path": "codex/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Codex CLI 运行指南",
+          "group_en": "Codex CLI Execution Guide",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Claude Code 用正确参数运行或恢复 Codex CLI 任务。",
+          "description_en": "Guides Claude Code to run or resume Codex CLI tasks with safe sandbox and command options.",
+          "what": "用于在用户要求运行 Codex CLI、分析代码或继续上次 Codex 任务时组装命令。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "annotate",
+          "path": "confide/skills/annotate/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "隐私脱敏与 PII 标注",
+          "group_en": "Privacy redaction and PII annotation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协调人工标注 PII，导出标签并计算一致性以形成黄金集。",
+          "description_en": "Coordinates human PII annotation, exports labels, and computes agreement for a gold set.",
+          "what": "让多人标注 PII 片段并评估一致性。",
+          "chain": true,
+          "chain_group": "隐私脱敏与 PII 标注流程",
+          "chain_group_en": "Privacy redaction and PII annotation workflow"
+        },
+        {
+          "name": "anon",
+          "path": "confide/skills/anon/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "隐私脱敏与 PII 标注",
+          "group_en": "Privacy redaction and PII annotation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "本地脱敏转录文本，生成可分享副本、占位符映射和统计摘要。",
+          "description_en": "Redacts transcripts locally, producing a shareable copy, placeholder map, and stats summary.",
+          "what": "在共享或云端分析前移除 PII。",
+          "chain": true,
+          "chain_group": "隐私脱敏与 PII 标注流程",
+          "chain_group_en": "Privacy redaction and PII annotation workflow"
+        },
+        {
+          "name": "audit",
+          "path": "confide/skills/audit/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "PII 审计与重识别风险评估",
+          "group_en": "PII Audit & Re-identification Risk Checks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 本地扫描会话语料，仅输出 PII 统计与脱敏报告。",
+          "description_en": "Helps an agent scan local session transcripts and return only PII statistics and redaction coverage.",
+          "what": "在本地对会话语料做仅统计的 PII 审计。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "red",
+          "path": "confide/skills/red/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "PII 审计与重识别风险评估",
+          "group_en": "PII Audit & Re-identification Risk Checks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "检查已脱敏文本的残留重识别风险，只报告风险类别和计数。",
+          "description_en": "Checks residual re-identification risk in already-redacted text, reporting only risk categories and counts.",
+          "what": "对已脱敏文本做残留重识别风险评估。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "rehydrate",
+          "path": "confide/skills/rehydrate/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "本地脱敏与 PII 回灌",
+          "group_en": "Local PII Redaction & Rehydration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把 GREEN 占位符分析结果按本地映射恢复原名，同时避免 PII 外传。",
+          "description_en": "Restores a GREEN placeholder analysis using a local map without sending PII back to the cloud.",
+          "what": "将云端分析中的占位符按本地映射恢复为真实值。",
+          "chain": true,
+          "chain_group": "CONFIDE 本地脱敏往返流程",
+          "chain_group_en": "CONFIDE Local De-identification Round Trip"
+        },
+        {
+          "name": "setup",
+          "path": "confide/skills/setup/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "本地脱敏与 PII 回灌",
+          "group_en": "Local PII Redaction & Rehydration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "本地安装并配置 CONFIDE 脱敏工具，确保匿名化与风险检查可直接运行。",
+          "description_en": "Installs and configures the local CONFIDE de-identification toolkit for ready-to-use anonymization and risk checks.",
+          "what": "安装配置 CONFIDE 本地脱敏套件。",
+          "chain": true,
+          "chain_group": "CONFIDE 本地脱敏往返流程",
+          "chain_group_en": "CONFIDE Local De-identification Round Trip"
+        },
+        {
+          "name": "vault",
+          "path": "confide/skills/vault/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "CONFIDE 数据保险库",
+          "group_en": "CONFIDE Data Vault",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 检查并指导建立三层加密存储，保护真实会话数据落盘安全。",
+          "description_en": "Helps the agent verify and guide a three-lock encrypted storage setup for sensitive session data at rest.",
+          "what": "Sets up and checks device, encrypted-store, and per-file encryption for RED transcript data.",
+          "chain": true,
+          "chain_group": "CONFIDE 敏感会话数据处理流程",
+          "chain_group_en": "CONFIDE Sensitive Session Data Workflow"
+        },
+        {
+          "name": "view",
+          "path": "confide/skills/view/SKILL.md",
+          "subcategory": "14-5",
+          "subcategory_title": "14.5 隐私 / 数据合规",
+          "category": "legal-compliance",
+          "group": "PII 脱敏可视化审查",
+          "group_en": "PII Redaction Review Visualization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成本地 HTML，展示原文、脱敏和还原结果，便于 agent 审查 PII 处理效果。",
+          "description_en": "Generates a local HTML viewer to inspect original, redacted, and rehydrated text with PII spans highlighted.",
+          "what": "Creates a private interactive diff view for de-identification and rehydration review.",
+          "chain": true,
+          "chain_group": "CONFIDE 敏感会话数据处理流程",
+          "chain_group_en": "CONFIDE Sensitive Session Data Workflow"
+        },
+        {
+          "name": "context-builder",
+          "path": "context-builder/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "客户上下文发现 / CLAUDE.md 生成",
+          "group_en": "Client Context Discovery / CLAUDE.md Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导客户完成发现式问答，生成可复用 CLAUDE.md 上下文。",
+          "description_en": "Guides consulting discovery questions and compiles reusable CLAUDE.md context.",
+          "what": "一个用于结构化客户访谈并沉淀上下文的 Claude Code skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cull",
+          "path": "cull/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "AI 艺术图库管理 / Cull",
+          "group_en": "AI Art Library Management / Cull",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 Cull 浏览、评分、筛选并导出 AI 艺术图片。",
+          "description_en": "Helps the agent browse, rate, shortlist, and export AI-art images in Cull.",
+          "what": "一个用于操作 Cull 图库来管理 AI 艺术图片的 Claude Code skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "daydream",
+          "path": "daydream/SKILL.md",
+          "subcategory": "2-4",
+          "subcategory_title": "2.4 NotebookLM / 知识图谱 / 课程化",
+          "category": "docs-knowledge",
+          "group": "Obsidian 笔记洞察挖掘",
+          "group_en": "Obsidian Vault Insight Mining",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "自动扫描 Obsidian 笔记，发现隐藏关联并生成洞察摘要。",
+          "description_en": "Scans an Obsidian vault to surface hidden note connections and generate ranked insights.",
+          "what": "通过随机采样笔记对并评分筛选，产出洞察、摘要和日志。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "decision-toolkit",
+          "path": "decision-toolkit/SKILL.md",
+          "subcategory": "3-2",
+          "subcategory_title": "3.2 问题框定 / 假设管理",
+          "category": "product-management",
+          "group": "结构化决策工具箱",
+          "group_en": "Structured Decision-Making Toolkit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成步骤指南、偏差检查和情景探索工具，帮助系统梳理重大选择。",
+          "description_en": "Generates step-by-step guides, bias checkers, and scenario explorers for major decisions.",
+          "what": "把复杂选择转化为可交互、可访问的决策辅助工具。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deep-research",
+          "path": "deep-research/SKILL.md",
+          "subcategory": "9-4",
+          "subcategory_title": "9.4 Sleep-time 自治研究",
+          "category": "comms-integration",
+          "group": "Deep Research API 调研工作流",
+          "group_en": "OpenAI Deep Research workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Deep Research API 增强问题、保存参数并执行联网深度调研。",
+          "description_en": "Enhances research prompts, saves parameters, and runs web-enabled deep research via OpenAI Deep Research API.",
+          "what": "Run deep research on general topics.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "franklee16/lingzhi227/luwill/K-Dense-writer · 组「深度文献检索 / 综述」"
+        },
+        {
+          "name": "doctorg",
+          "path": "doctorg/SKILL.md",
+          "subcategory": "15-1",
+          "subcategory_title": "15.1 临床文书 / 决策支持",
+          "category": "medical-clinical",
+          "group": "循证健康问答",
+          "group_en": "Evidence-based health Q&A",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于分级可信来源回答健康、营养、运动和睡眠问题，可结合 Apple Health 背景。",
+          "description_en": "Answers health, nutrition, exercise, and sleep questions using tiered trusted sources, with optional Apple Health context.",
+          "what": "Provide evidence-rated health and wellness answers.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecosystem",
+          "path": "ecosystem/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "Claude Code 技能生态巡检",
+          "group_en": "Claude Code Skill Ecosystem Audits",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "检查技能健康、过期链接、CLAUDE.md 漂移和日常服务状态",
+          "description_en": "Audits Claude Code skill freshness, broken links, CLAUDE.md drift, and daily service status.",
+          "what": "审计 Claude Code 技能新鲜度、损坏链接、CLAUDE.md 漂移和 Mac Mini 服务状态。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "elevenlabs-tts",
+          "path": "elevenlabs-tts/SKILL.md",
+          "subcategory": "6-2",
+          "subcategory_title": "6.2 音频 / TTS / 转写",
+          "category": "media",
+          "group": "ElevenLabs TTS 音频生成",
+          "group_en": "ElevenLabs TTS Audio Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 ElevenLabs API 把文本合成为可定制声音的音频文件",
+          "description_en": "Converts text into customizable voice audio using the ElevenLabs API.",
+          "what": "把文本通过 ElevenLabs API 合成为可定制声音的音频文件。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "fathom",
+          "path": "fathom/SKILL.md",
+          "subcategory": "6-2",
+          "subcategory_title": "6.2 音频 / TTS / 转写",
+          "category": "media",
+          "group": "Fathom 会议记录同步",
+          "group_en": "Fathom meeting record sync",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "拉取 Fathom 会议、转录、摘要与行动项，支持按日期筛选和下载视频。",
+          "description_en": "Fetches Fathom meetings, transcripts, summaries, and action items, with date filters and video download support.",
+          "what": "Fetches and optionally analyzes Fathom meeting records via the API.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "feature-factory",
+          "path": "feature-factory/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "单功能交付流水线",
+          "group_en": "Single-feature delivery workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用目标契约、TDD、确定性验证和人工关口把单个功能从意图推进到合并。",
+          "description_en": "Guides a solo feature from goal contract through TDD, deterministic verification, and human merge gates.",
+          "what": "A behavior guide for shipping one feature with goal-first TDD and verification gates.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "giuseppe-trisciuoglio",
+        "repo": "developer-kit",
+        "full_name": "giuseppe-trisciuoglio/developer-kit",
+        "url": "https://github.com/giuseppe-trisciuoglio/developer-kit",
+        "stars": 293,
+        "pushed_at": "2026-06-22",
+        "default_branch": "main",
+        "github_description": " Modular plugin marketplace for Claude Code and agentic CLIs, with validated, spec-driven skills, agents, commands, and workflows for Java, TypeScript, Python, PHP, AWS, and AI.",
+        "topics": [
+          "agentic-code",
+          "agentic-coding",
+          "agents",
+          "aws",
+          "aws-cloudformation",
+          "claude-code",
+          "claude-code-skill",
+          "claude-code-skills",
+          "claude-skills",
+          "claude-skills-creator",
+          "java",
+          "langchain4j",
+          "php",
+          "python",
+          "skills",
+          "spring-boot",
+          "typescript"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-code"
+      },
+      "skills": [
+        {
+          "name": "chunking-strategy",
+          "path": "plugins/developer-kit-ai/skills/chunking-strategy/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "RAG 文档切分与检索评估",
+          "group_en": "RAG Document Chunking & Retrieval Evaluation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 RAG、向量搜索和大文档处理选择切分策略，并评估语义连贯性与检索指标。",
+          "description_en": "Helps agents choose chunking strategies for RAG, vector search, and large-document pipelines while evaluating coherence and retrieval quality.",
+          "what": "为 RAG 检索选择文档切分方案并评估质量。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "prompt-engineering",
+          "path": "plugins/developer-kit-ai/skills/prompt-engineering/SKILL.md",
+          "subcategory": "12-6",
+          "subcategory_title": "12.6 提示工程 / Prompt 生成",
+          "category": "agent-architecture",
+          "group": "提示工程与优化",
+          "group_en": "Prompt Engineering & Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 编写、调试和优化 LLM 提示，包含 few-shot、系统提示和模板。",
+          "description_en": "Helps agents write, debug, and optimize LLM prompts, including few-shot examples, system prompts, and reusable templates.",
+          "what": "编写、调试并优化可复用的 LLM 提示模板。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "rag",
+          "path": "plugins/developer-kit-ai/skills/rag/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "RAG 应用构建",
+          "group_en": "RAG application building",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "构建 RAG 管线，包含文档切分、嵌入、向量存储与检索问答应用。",
+          "description_en": "Build RAG pipelines with document chunking, embeddings, vector storage, and retrieval-based Q&A.",
+          "what": "用于构建带外部知识库检索能力的 RAG 应用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-auto-scaling",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-auto-scaling/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "IaC（CloudFormation）",
+          "group_en": "IaC (CloudFormation)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成 CloudFormation 自动伸缩模板，覆盖 EC2/ECS/Lambda 伸缩策略与高可用实践。",
+          "description_en": "Generate CloudFormation auto-scaling templates for EC2, ECS, and Lambda with high-availability practices.",
+          "what": "用于编写 AWS 自动伸缩基础设施即代码模板。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-bedrock",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-bedrock/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "IaC 模板（CloudFormation）",
+          "group_en": "IaC Templates (CloudFormation)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 Bedrock 资源 CloudFormation 模板，辅助搭建代理、RAG、护栏和工作流。",
+          "description_en": "Provides CloudFormation templates for Bedrock agents, RAG, guardrails, and workflow orchestration.",
+          "what": "帮助 Agent 生成或审查 Amazon Bedrock 相关 CloudFormation 资源。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-cloudfront",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-cloudfront/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "IaC 模板（CloudFormation）",
+          "group_en": "IaC Templates (CloudFormation)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 CloudFront CDN CloudFormation 模板，覆盖多源、缓存、域名、WAF 和性能配置。",
+          "description_en": "Provides CloudFormation patterns for CloudFront distributions, origins, caching, domains, WAF, and performance.",
+          "what": "帮助 Agent 生成或审查 CloudFront CDN 的 CloudFormation 配置。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-cloudwatch",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-cloudwatch/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "AWS CloudFormation 资源模板",
+          "group_en": "AWS CloudFormation Resource Templates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 用 CloudFormation 生成 CloudWatch 指标、告警、仪表盘和日志监控资源。",
+          "description_en": "Helps the agent generate CloudFormation-managed CloudWatch metrics, alarms, dashboards, and log monitoring resources.",
+          "what": "用 CloudFormation 创建 CloudWatch 监控基础设施。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-dynamodb",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-dynamodb/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "AWS CloudFormation 资源模板",
+          "group_en": "AWS CloudFormation Resource Templates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 用 CloudFormation 生成 DynamoDB 表、索引、扩缩容、加密、TTL 和流配置。",
+          "description_en": "Helps the agent generate CloudFormation-managed DynamoDB tables, indexes, scaling, encryption, TTL, and stream settings.",
+          "what": "用 CloudFormation 创建 DynamoDB 表及配置。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-ec2",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-ec2/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "AWS CloudFormation 基础设施",
+          "group_en": "AWS CloudFormation Infrastructure",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 生成 CloudFormation 模板，部署 EC2、安全组、IAM 和负载均衡。",
+          "description_en": "Helps an agent generate CloudFormation templates for EC2, security groups, IAM roles, and load balancers.",
+          "what": "用于编写 EC2 相关 CloudFormation 模板。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-ecs",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-ecs/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "AWS CloudFormation 基础设施",
+          "group_en": "AWS CloudFormation Infrastructure",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 用 CloudFormation 搭建 ECS 集群、服务、自动扩缩和蓝绿发布。",
+          "description_en": "Helps an agent use CloudFormation to set up ECS clusters, services, autoscaling, and blue/green deployments.",
+          "what": "用于编写 ECS 相关 CloudFormation 模板。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-elasticache",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-elasticache/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "CloudFormation IaC 模式",
+          "group_en": "CloudFormation IaC Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 Agent 用 CloudFormation 设计 Redis/Memcached 缓存层、高可用与安全配置。",
+          "description_en": "Helps an agent design Redis/Memcached cache tiers with CloudFormation, including HA and security settings.",
+          "what": "CloudFormation patterns for ElastiCache infrastructure.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-iam",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-iam/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "CloudFormation IaC 模式",
+          "group_en": "CloudFormation IaC Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 Agent 用 CloudFormation 建模 IAM 角色、策略、信任关系和最小权限边界。",
+          "description_en": "Helps an agent model IAM roles, policies, trust relationships, and least-privilege boundaries in CloudFormation.",
+          "what": "CloudFormation patterns for IAM security infrastructure.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-lambda",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-lambda/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "AWS CloudFormation 基础设施模板",
+          "group_en": "AWS CloudFormation Infrastructure Templates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 生成、验证并部署 Lambda 的 CloudFormation 模板。",
+          "description_en": "Helps the agent generate, validate, and deploy CloudFormation templates for Lambda.",
+          "what": "生成、验证并部署 Lambda 的 CloudFormation 模板，覆盖事件源、API Gateway 和监控配置。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-rds",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-rds/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "AWS CloudFormation 基础设施模板",
+          "group_en": "AWS CloudFormation Infrastructure Templates",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 创建和校验 RDS/Aurora 的 CloudFormation 基础设施。",
+          "description_en": "Helps the agent create and validate CloudFormation infrastructure for RDS and Aurora.",
+          "what": "创建和校验 RDS/Aurora CloudFormation 模板，覆盖实例、集群、多 AZ、参数组和跨栈引用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-s3",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-s3/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "IaC（Terraform / Pulumi / Packer / CloudFormation）",
+          "group_en": "IaC (Terraform / Pulumi / Packer / CloudFormation)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 生成并校验带版本、加密、策略和生命周期规则的 S3 CloudFormation 模板。",
+          "description_en": "Helps agents generate and validate S3 CloudFormation templates with versioning, encryption, policies, and lifecycle rules.",
+          "what": "生成并校验 S3 CloudFormation 模板。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-security",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-security/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "IaC（Terraform / Pulumi / Packer / CloudFormation）",
+          "group_en": "IaC (Terraform / Pulumi / Packer / CloudFormation)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 编写 CloudFormation 安全基础设施，覆盖 KMS、Secrets、IAM、VPC 与证书。",
+          "description_en": "Helps agents author CloudFormation security infrastructure covering KMS, Secrets Manager, IAM, VPC, and certificates.",
+          "what": "生成安全基础设施 CloudFormation 模板。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-task-ecs-deploy-gh",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-task-ecs-deploy-gh/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "容器 CI/CD 部署流水线",
+          "group_en": "Container CI/CD Deployment Pipelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 生成 ECS 容器在 GitHub Actions 与 CloudFormation 下的 CI/CD 部署方案。",
+          "description_en": "Guides agents in building production-ready ECS deployments with GitHub Actions, ECR, and CloudFormation.",
+          "what": "ECS + ECR + CloudFormation + GitHub Actions 部署流水线。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cloudformation-vpc",
+          "path": "plugins/developer-kit-aws/skills/aws-cloudformation/aws-cloudformation-vpc/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "CloudFormation VPC 基础设施",
+          "group_en": "CloudFormation VPC Infrastructure",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 CloudFormation 规划 VPC、子网、路由、网关和可复用输出。",
+          "description_en": "Guides agents in designing reusable CloudFormation VPC foundations with subnets, routing, and gateways.",
+          "what": "CloudFormation VPC 基础网络搭建。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cli-beast",
+          "path": "plugins/developer-kit-aws/skills/aws/aws-cli-beast/SKILL.md",
+          "subcategory": "17-4",
+          "subcategory_title": "17.4 SRE / 事故响应 / SLO / FinOps",
+          "category": "devops-infra",
+          "group": "AWS CLI 运维自动化",
+          "group_en": "AWS CLI Operations Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 AWS CLI 高级模式，批量管理云资源并执行安全校验。",
+          "description_en": "Advanced AWS CLI patterns for bulk cloud operations and security checks.",
+          "what": "用于 AWS CLI 自动化、跨服务批量操作、JMESPath 查询和安全配置检查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-cost-optimization",
+          "path": "plugins/developer-kit-aws/skills/aws/aws-cost-optimization/SKILL.md",
+          "subcategory": "17-4",
+          "subcategory_title": "17.4 SRE / 事故响应 / SLO / FinOps",
+          "category": "devops-infra",
+          "group": "SRE / 事故响应 / SLO / FinOps",
+          "group_en": "SRE / Incident Response / SLO / FinOps",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导 AWS 成本审查、FinOps 实践和预算/闲置资源优化。",
+          "description_en": "Guides AWS cost reviews, FinOps practices, budgeting, and idle-resource cleanup.",
+          "what": "用于识别 AWS 闲置资源、优化 EC2/EBS/S3 成本并配置预算与告警。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "grafana/ahmedasmar/Jeffallan · 组「SRE / 事故响应 / SLO / FinOps」"
+        },
+        {
+          "name": "aws-drawio-architecture-diagrams",
+          "path": "plugins/developer-kit-aws/skills/aws/aws-drawio-architecture-diagrams/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "AWS 架构图生成",
+          "group_en": "AWS Architecture Diagram Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 生成含官方 AWS 图标的 draw.io 架构图 XML 文件。",
+          "description_en": "Helps an agent generate draw.io XML architecture diagrams using official AWS icons.",
+          "what": "Generates draw.io files for AWS VPC, multi-tier, and serverless architecture diagrams.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "aws-sam-bootstrap",
+          "path": "plugins/developer-kit-aws/skills/aws/aws-sam-bootstrap/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "AWS SAM / CloudFormation IaC",
+          "group_en": "AWS SAM / CloudFormation IaC",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 初始化 AWS SAM 项目，生成模板并校验部署流程。",
+          "description_en": "Helps an agent bootstrap AWS SAM projects, generate templates, and validate deployment workflows.",
+          "what": "Creates and validates AWS SAM project files and deployment workflows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "adr-drafting",
+          "path": "plugins/developer-kit-core/skills/adr-drafting/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "架构决策记录（ADR）",
+          "group_en": "Architecture Decision Records (ADR)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为架构决策生成 ADR 文档，检查仓库约定并创建标准 Markdown 记录。",
+          "description_en": "Creates ADR documents for architectural decisions, checking repository conventions and writing a standard Markdown record.",
+          "what": "Creates new ADR documents with repository-aware naming and standard sections.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "bug-fix-brief",
+          "path": "plugins/developer-kit-core/skills/bug-fix-brief/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Bug Fix Brief 文档",
+          "group_en": "Bug Fix Brief Documentation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成结构化 Bug Fix Brief，记录根因、复现步骤、修复方案和实施清单。",
+          "description_en": "Generates structured bug-fix briefs covering root cause, repro steps, fix options, and implementation checklist.",
+          "what": "Creates structured bug-fix briefs to document issue corrections and fix planning.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "docs-updater",
+          "path": "plugins/developer-kit-core/skills/docs-updater/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "GitHub 三件套 / Git 工作流",
+          "group_en": "GitHub Essentials / Git Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析最近发布标签后的 Git 变更，自动同步 README、CHANGELOG 和文档目录。",
+          "description_en": "Analyzes Git changes since the latest release tag and keeps README, changelog, and docs in sync.",
+          "what": "Release-oriented documentation maintenance from git diffs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "drawio-logical-diagrams",
+          "path": "plugins/developer-kit-core/skills/drawio-logical-diagrams/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "架构决策记录（ADR）",
+          "group_en": "Architecture Decision Records (ADR)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "根据系统设计内容生成 draw.io 逻辑流程图、架构图、UML 与 BPMN 文件。",
+          "description_en": "Creates draw.io logical flow, architecture, UML, and BPMN diagrams from system design content.",
+          "what": "Diagram generation for logical system and process design.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "github-issue-workflow",
+          "path": "plugins/developer-kit-core/skills/github-issue-workflow/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "GitHub 三件套 / Git 工作流",
+          "group_en": "GitHub & Git Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导 Agent 从 GitHub issue 获取需求、实现验证、代码审查到提交 PR。",
+          "description_en": "Guides an agent from GitHub issue triage through implementation, verification, review, commit, and PR creation.",
+          "what": "用于把 GitHub issue 转成可合并 PR 的结构化工作流。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "learn",
+          "path": "plugins/developer-kit-core/skills/learn/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "项目规则提取与持久化",
+          "group_en": "Project Rule Extraction & Persistence",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "自主分析代码库约定和架构模式，生成 Claude Code 项目规则文件。",
+          "description_en": "Autonomously analyzes codebase conventions and architecture, then generates Claude Code project rules.",
+          "what": "用于从现有项目抽取并持久化开发约定。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "memory-md-management",
+          "path": "plugins/developer-kit-core/skills/memory-md-management/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "Agent 项目记忆文件维护",
+          "group_en": "Agent project memory maintenance",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计、评估并改进 CLAUDE.md 等项目记忆文件，帮助 agent 获得更准确的项目上下文。",
+          "description_en": "Audits, evaluates, and improves project memory files like CLAUDE.md so agents get better project context.",
+          "what": "发现、评分、报告并更新项目记忆文件。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pr-review-comments",
+          "path": "plugins/developer-kit-core/skills/pr-review-comments/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "GitHub 三件套 / Git 工作流",
+          "group_en": "GitHub toolkit / Git workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将 JSON 中的评审发现按文件行号发布为 GitHub PR 行内评论，便于团队查看。",
+          "description_en": "Publishes review findings from JSON as line-anchored inline comments on a GitHub pull request.",
+          "what": "把离线评审结果自动同步到 PR 行内评论。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "LukasNiessen",
+        "repo": "terrashark",
+        "full_name": "LukasNiessen/terrashark",
+        "url": "https://github.com/LukasNiessen/terrashark",
+        "stars": 290,
+        "pushed_at": "2026-06-28",
+        "default_branch": "main",
+        "github_description": "Terraform Skill for Claude Code and Codex. LLMs hallucinate a lot with Terraform - TerraShark fixes this. It eliminates hallucinations, is designed for modular and secure code and grounds your IaC in the official Hashicorp Terraform best practices.",
+        "topics": [
+          "aws",
+          "azure",
+          "claude",
+          "claude-code",
+          "claude-code-skills",
+          "claude-skills",
+          "codex",
+          "codex-skills",
+          "devops",
+          "gcp",
+          "infrastructure-as-code",
+          "modules",
+          "opentofu",
+          "skills",
+          "terraform"
+        ],
+        "language": "",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-code"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "IaC（Terraform / Pulumi / Packer）",
+          "group_en": "Infrastructure as Code (Terraform / Pulumi / Packer)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 诊断并修复 Terraform/OpenTofu 生成、审查、迁移中的失败模式。",
+          "description_en": "Helps agents diagnose and fix Terraform/OpenTofu failure modes during generation, review, migration, or delivery.",
+          "what": "A workflow for grounding Terraform/OpenTofu work in context, failure-mode diagnosis, references, and delivery safeguards.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "intellectronica",
+        "repo": "agent-skills",
+        "full_name": "intellectronica/agent-skills",
+        "url": "https://github.com/intellectronica/agent-skills",
+        "stars": 277,
+        "pushed_at": "2026-04-25",
+        "default_branch": "main",
+        "github_description": "@intellectronica's agent skills",
+        "topics": [
+          "agent",
+          "skills"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "skills",
+          "path": "plugins/anki-connect/skills/SKILL.md",
+          "subcategory": "19-3",
+          "subcategory_title": "19.3 学习科学 / 复习工具",
+          "category": "education-learning",
+          "group": "Anki 复习卡片管理",
+          "group_en": "Anki Flashcard Review Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 通过 AnkiConnect 本地 API 安全读写 Anki 的牌组、笔记、卡片与媒体，修改前请求确认。",
+          "description_en": "Lets an agent safely manage Anki decks, notes, cards, and media through the AnkiConnect local API, with confirmation required for changes.",
+          "what": "Agent skill for AnkiConnect API operations.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "trailofbits · 组「专业级安全 Marketplace」"
+        },
+        {
+          "name": "anki-connect",
+          "path": "skills/anki-connect/SKILL.md",
+          "subcategory": "19-3",
+          "subcategory_title": "19.3 学习科学 / 复习工具",
+          "category": "education-learning",
+          "group": "Anki 复习卡片管理",
+          "group_en": "Anki Flashcard Review Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 通过 AnkiConnect 本地 API 安全读写 Anki 的牌组、笔记、卡片与媒体，修改前请求确认。",
+          "description_en": "Lets an agent safely manage Anki decks, notes, cards, and media through the AnkiConnect local API, with confirmation required for changes.",
+          "what": "Agent skill for AnkiConnect API operations.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "beautiful-mermaid",
+          "path": "skills/beautiful-mermaid/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "Mermaid 图表渲染",
+          "group_en": "Mermaid diagram rendering",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 Mermaid 代码渲染为 SVG/PNG，并校验主题与语法。",
+          "description_en": "Helps the agent render Mermaid diagrams as SVG or PNG while checking theme and syntax choices.",
+          "what": "将 Mermaid 图表渲染为 SVG 或 PNG。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "context7",
+          "path": "skills/context7/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Context7 文档查询",
+          "group_en": "Context7 documentation lookup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Context7 API 查询最新库文档与代码示例，减少过期知识风险。",
+          "description_en": "Fetches current library docs and code examples through Context7 to avoid relying on stale knowledge.",
+          "what": "通过 Context7 API 获取最新库文档。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "copilot-sdk",
+          "path": "skills/copilot-sdk/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Copilot SDK 集成",
+          "group_en": "Copilot SDK Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 使用 GitHub Copilot SDK 进行应用集成、权限配置、事件流、工具与 MCP 协作。",
+          "description_en": "Helps an agent work with the GitHub Copilot SDK for app integrations, auth, permissions, event streams, custom tools, and MCP collaboration.",
+          "what": "Use when the user needs to drive GitHub Copilot programmatically through the Copilot SDK.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "gog-cli",
+          "path": "skills/gog-cli/SKILL.md",
+          "subcategory": "9-5",
+          "subcategory_title": "9.5 办公套件集成（Google Workspace 等）",
+          "category": "comms-integration",
+          "group": "Google Workspace CLI 自动化",
+          "group_en": "Google Workspace CLI Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 通过 gog/gogcli 从命令行安全操作 Gmail、Calendar、Drive、Docs 等 Google Workspace。",
+          "description_en": "Helps an agent safely operate Gmail, Calendar, Drive, Docs, Sheets, and other Google Workspace services through the gog/gogcli command-line tool.",
+          "what": "Use when the user wants command-line Google Workspace automation with gog or gogcli.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "gpt-image-1-5",
+          "path": "skills/gpt-image-1-5/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "OpenAI GPT 图像生成与编辑",
+          "group_en": "OpenAI GPT Image Generation and Editing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "使用 GPT Image 1.5 生成新图，并支持基于输入图和掩膜编辑图片。",
+          "description_en": "Generate new images and edit existing ones with OpenAI GPT Image 1.5, including mask-based inpainting.",
+          "what": "用于文生图、图生图和遮罩修复。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "here-be-git",
+          "path": "skills/here-be-git/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "group_en": "Git Workflow",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "初始化当前目录 Git 仓库，并可写入 AGENTS.md 让 agent 及时提交变更。",
+          "description_en": "Initialize a Git repository and optionally add AGENTS.md instructions so the agent commits changes promptly.",
+          "what": "用于初始化 Git 仓库并配置 agent 提交规则。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "lorem-ipsum",
+          "path": "skills/lorem-ipsum/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Lorem Ipsum 占位文本",
+          "group_en": "Lorem Ipsum Placeholder Text",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成各种结构的 lorem ipsum 占位文本，便于填充版面或原型内容。",
+          "description_en": "Generate lorem ipsum placeholder text in multiple structures for mockups, layouts, and prototypes.",
+          "what": "Creates dummy placeholder content when users need filler text.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "markdown-converter",
+          "path": "skills/markdown-converter/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "文档转 Markdown",
+          "group_en": "Document to Markdown Conversion",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将 PDF、Office、HTML、图片、音频等文件转换为 Markdown，便于 LLM 读取分析。",
+          "description_en": "Convert PDFs, Office files, HTML, images, audio, and more into Markdown for LLM-friendly reading and analysis.",
+          "what": "Turns diverse file formats into Markdown for downstream text processing.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "mgrep-code-search",
+          "path": "skills/mgrep-code-search/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "语义代码搜索（mgrep）",
+          "group_en": "Semantic Code Search with mgrep",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用自然语言语义搜索代码库，辅助定位功能与理解实现。",
+          "description_en": "Search codebases with natural-language queries to locate features and understand implementation.",
+          "what": "Semantic code search for unfamiliar or large codebases.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "monologue-notes-api",
+          "path": "skills/monologue-notes-api/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Monologue Notes 只读 API",
+          "group_en": "Monologue Notes Read-Only API",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 REST API 安全读取和搜索用户的 Monologue 笔记。",
+          "description_en": "Safely read and search the user’s Monologue notes through the REST API.",
+          "what": "Read-only Monologue Notes API access with token-safe handling.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nano-banana-2",
+          "path": "skills/nano-banana-2/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "Nano Banana 图像生成与编辑",
+          "group_en": "Nano Banana image generation and editing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 调用 Nano Banana 2 API 生成或编辑图片，支持比例和分辨率控制。",
+          "description_en": "Lets an agent call the Nano Banana 2 API to generate or edit images with aspect-ratio and resolution control.",
+          "what": "调用 Gemini 3.1 Flash Image Preview API 生成或编辑图像。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nano-banana-pro",
+          "path": "skills/nano-banana-pro/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "Nano Banana 图像生成与编辑",
+          "group_en": "Nano Banana image generation and editing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 调用 Nano Banana Pro API 生成或编辑图片，支持 1K/2K/4K 分辨率。",
+          "description_en": "Lets an agent call the Nano Banana Pro API to generate or edit images with 1K/2K/4K resolution options.",
+          "what": "调用 Gemini 3 Pro Image API 生成或编辑图像。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "notion-api",
+          "path": "skills/notion-api/SKILL.md",
+          "subcategory": "2-5",
+          "subcategory_title": "2.5 Notion 协作矩阵",
+          "category": "docs-knowledge",
+          "group": "Notion REST API 集成",
+          "group_en": "Notion REST API Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 通过 REST API 安全认证并读写 Notion 页面、数据库、块和评论。",
+          "description_en": "Helps the agent authenticate safely and read, create, update, or delete Notion pages, databases, blocks, and comments via REST.",
+          "what": "Notion API 操作指南",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "promptify",
+          "path": "skills/promptify/SKILL.md",
+          "subcategory": "12-6",
+          "subcategory_title": "12.6 提示工程 / Prompt 生成",
+          "category": "agent-architecture",
+          "group": "Prompt 改写与生成",
+          "group_en": "Prompt Rewriting & Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将用户模糊请求改写为清晰、具体、完整的 AI 模型提示词。",
+          "description_en": "Turns vague user requests into clear, specific, complete prompts that AI models can follow effectively.",
+          "what": "用户请求提示词优化",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "raindrop-api",
+          "path": "skills/raindrop-api/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Raindrop.io 书签 API 集成",
+          "group_en": "Raindrop.io Bookmark API Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Agent 通过 Raindrop REST API 管理书签、集合、标签与备份。",
+          "description_en": "Helps the agent manage Raindrop.io bookmarks, collections, tags, and backups through the REST API.",
+          "what": "操作 Raindrop.io 书签 API。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ray-so-code-snippet",
+          "path": "skills/ray-so-code-snippet/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "代码截图美化（ray.so）",
+          "group_en": "Code Screenshot Beautification (ray.so)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Agent 使用 ray.so 将代码片段生成美观图片并保存到本地。",
+          "description_en": "Guides the agent in turning code snippets into polished images with ray.so and saving them locally.",
+          "what": "生成美观的代码片段图片。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "tavily",
+          "path": "skills/tavily/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "Tavily 网页搜索与抓取",
+          "group_en": "Tavily Web Search & Crawling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供基于 curl 的 Tavily REST API 搜索、抽取、映射和爬取流程，返回结构化结果。",
+          "description_en": "Gives the agent a curl-based Tavily REST API workflow for web search, extraction, mapping, and crawling with structured LLM-friendly results.",
+          "what": "Use Tavily for live web search, extraction, and crawling when built-in search is unavailable or insufficient.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "todoist-api",
+          "path": "skills/todoist-api/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Todoist 任务管理 CLI",
+          "group_en": "Todoist Task Management CLI",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 使用 td CLI 对 Todoist 任务、项目、标签和评论进行读写操作，并在破坏性动作前确认。",
+          "description_en": "Guides the agent in using the td CLI to read and write Todoist tasks, projects, labels, and comments, with confirmation before destructive actions.",
+          "what": "Use the Todoist CLI to manage tasks and projects safely from an agent workflow.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ultrathink",
+          "path": "skills/ultrathink/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "ANSI 彩蛋",
+          "group_en": "ANSI Art Easter Egg",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "当用户触发 ultrathink 时，在终端打印彩色 ANSI 艺术字，不输出额外说明。",
+          "description_en": "Prints a colorful ANSI-art rendering of “Ultrathink” in the terminal when the skill is invoked.",
+          "what": "按触发条件输出彩色 ANSI 艺术字。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "upstash-redis-kv",
+          "path": "skills/upstash-redis-kv/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Upstash Redis KV",
+          "group_en": "Upstash Redis KV",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 REST 调用 Upstash Redis，帮助 agent 保存、读取并操作缓存、计数器等键值数据。",
+          "description_en": "Use Upstash’s Redis-compatible REST API to save, retrieve, and manipulate cache, counters, and other key-value data.",
+          "what": "封装 Upstash Redis REST 命令，供 agent 直接读写键值数据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "youtube-transcript",
+          "path": "skills/youtube-transcript/SKILL.md",
+          "subcategory": "6-2",
+          "subcategory_title": "6.2 音频 / TTS / 转写",
+          "category": "media",
+          "group": "YouTube 字幕 / 转录下载 / YouTube 字幕提取",
+          "group_en": "YouTube subtitles and transcript download",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 从 YouTube URL 或视频 ID 获取字幕/转录文本，可选时间戳。",
+          "description_en": "Helps the agent fetch YouTube captions or transcripts from a URL or video ID, with optional timestamps.",
+          "what": "Extracts YouTube transcripts from URLs or video IDs, with optional timestamps.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
