@@ -7330,3 +7330,15 @@
   description_en: Creates cross-platform SKILL.md agent skills from workflow descriptions, then validates, configures, exports, and migrates them.
   sources:
   - agent-skill-creator
+- id: data-scraping--7-2--539
+  skills:
+  - x-twitter-scraper
+  group: X/Twitter 数据工作流
+  group_en: X/Twitter Data Workflows
+  category: data-scraping
+  subcategory: 7-2
+  chain: false
+  description: Xquik x-twitter-scraper：通过 Xquik REST API 和 MCP 做 X/Twitter 搜索、用户查询、导出、媒体下载、监控、webhook 与需确认的写入流程；默认只读、仅使用 API key。
+  description_en: 'Xquik x-twitter-scraper: use Xquik REST API and MCP for X/Twitter search, user lookup, exports, media download, monitoring, webhooks, and approval-gated writes; read-only by default and API-key only.'
+  sources:
+  - xquik-dev-x-twitter-scraper

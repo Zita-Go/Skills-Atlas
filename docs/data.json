@@ -13927,6 +13927,41 @@
               "when_to_use": "找域名时查可用性和注册价格",
               "when_to_use_en": "Looking up domains during domain name selection.",
               "py": "yu ming cha zhao  +  bi jia  domain-hunter  yu ming ke yong xing cha xun yu jia ge dui bi"
+            },
+            {
+              "skills": [
+                "x-twitter-scraper"
+              ],
+              "group": "X/Twitter 数据工作流",
+              "group_en": "X/Twitter Data Workflows",
+              "chain": false,
+              "description": "Xquik x-twitter-scraper：通过 Xquik REST API 和 MCP 做 X/Twitter 搜索、用户查询、导出、媒体下载、监控、webhook 与需确认的写入流程；默认只读、仅使用 API key。",
+              "description_en": "Xquik x-twitter-scraper: use Xquik REST API and MCP for X/Twitter search, user lookup, exports, media download, monitoring, webhooks, and approval-gated writes; read-only by default and API-key only.",
+              "sources": [
+                {
+                  "name": "xquik-dev-x-twitter-scraper",
+                  "url": "https://github.com/Xquik-dev/x-twitter-scraper",
+                  "stars": 183,
+                  "last_commit": "2026-08-18",
+                  "type": "skill",
+                  "author": "Xquik-dev",
+                  "repo": "x-twitter-scraper",
+                  "default_branch": "master",
+                  "license": "MIT",
+                  "doc_path": "skills/x-twitter-scraper/SKILL.md",
+                  "install": {
+                    "command": "npx skills add Xquik-dev/x-twitter-scraper",
+                    "kind": "skill",
+                    "alt": "git clone https://github.com/Xquik-dev/x-twitter-scraper ~/.claude/skills/x-twitter-scraper"
+                  }
+                }
+              ],
+              "use_case": "",
+              "use_case_en": "",
+              "personas": [],
+              "when_to_use": "",
+              "when_to_use_en": "",
+              "py": "X/Twitter  shu ju gong zuo liu  x-twitter-scraper "
             }
           ]
         },
@@ -27199,6 +27234,28 @@
         "alt": "git clone https://github.com/callstackincubator/agent-skills ~/.claude/skills/agent-skills"
       },
       "skill_docs": null,
+      "skill_licenses": null
+    },
+    "xquik-dev-x-twitter-scraper": {
+      "url": "https://github.com/Xquik-dev/x-twitter-scraper",
+      "description": "Xquik 的 X/Twitter 数据 workflow skill：REST API、MCP 设置、监控、webhooks、导出与需确认的写入流程。",
+      "description_en": "Xquik's X/Twitter data workflow skill for REST API usage, MCP setup, monitoring, webhooks, exports, and approval-gated writes.",
+      "stars": 183,
+      "last_commit": "2026-08-18",
+      "type": "skill",
+      "author": "Xquik-dev",
+      "repo": "x-twitter-scraper",
+      "default_branch": "master",
+      "license": "MIT",
+      "doc_path": "skills/x-twitter-scraper/SKILL.md",
+      "install": {
+        "command": "npx skills add Xquik-dev/x-twitter-scraper",
+        "kind": "skill",
+        "alt": "git clone https://github.com/Xquik-dev/x-twitter-scraper ~/.claude/skills/x-twitter-scraper"
+      },
+      "skill_docs": {
+        "x-twitter-scraper": "skills/x-twitter-scraper/SKILL.md"
+      },
       "skill_licenses": null
     }
   }
