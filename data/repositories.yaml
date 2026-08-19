@@ -2463,3 +2463,18 @@
   description: Callstack 的 agent skill 集：React Native / 移动端工程相关原创 skill。
   description_en: Callstack’s agent skills — original React Native / mobile-engineering skills.
   license: MIT
+- id: xquik-dev-x-twitter-scraper
+  author: Xquik-dev
+  repo: x-twitter-scraper
+  url: https://github.com/Xquik-dev/x-twitter-scraper
+  type: skill
+  skill_group_count: 1
+  stars: 183
+  default_branch: master
+  last_commit: '2026-08-18'
+  description: Xquik 的 X/Twitter 数据 workflow skill：REST API、MCP 设置、监控、webhooks、导出与需确认的写入流程。
+  description_en: Xquik's X/Twitter data workflow skill for REST API usage, MCP setup, monitoring, webhooks, exports, and approval-gated writes.
+  license: MIT
+  doc_path: skills/x-twitter-scraper/SKILL.md
+  skill_docs:
+    x-twitter-scraper: skills/x-twitter-scraper/SKILL.md
