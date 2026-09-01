@@ -556,7 +556,7 @@
                   "repo": "cc-wf-studio",
                   "default_branch": "main",
                   "license": "AGPL-3.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add breaking-brake/cc-wf-studio",
                     "kind": "skill-pack",
@@ -591,8 +591,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -626,8 +626,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -663,7 +663,7 @@
                   "repo": "cc-sdd",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add gotalab/cc-sdd",
                     "kind": "multi-skill-suite",
@@ -699,7 +699,7 @@
                   "repo": "cc-sdd",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add gotalab/cc-sdd",
                     "kind": "multi-skill-suite",
@@ -735,7 +735,7 @@
                   "repo": "cc-sdd",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add gotalab/cc-sdd",
                     "kind": "multi-skill-suite",
@@ -771,7 +771,7 @@
                   "repo": "cc-sdd",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add gotalab/cc-sdd",
                     "kind": "multi-skill-suite",
@@ -807,7 +807,7 @@
                   "repo": "cc-sdd",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add gotalab/cc-sdd",
                     "kind": "multi-skill-suite",
@@ -843,7 +843,7 @@
                   "repo": "cc-sdd",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add gotalab/cc-sdd",
                     "kind": "multi-skill-suite",
@@ -878,7 +878,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -913,7 +913,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -1468,7 +1468,7 @@
                   "repo": "hive",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add aden-hive/hive",
                     "kind": "multi-skill-suite",
@@ -1507,7 +1507,7 @@
                   "repo": "hive",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add aden-hive/hive",
                     "kind": "multi-skill-suite",
@@ -1542,7 +1542,7 @@
                   "repo": "hive",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add aden-hive/hive",
                     "kind": "multi-skill-suite",
@@ -1577,7 +1577,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add antfu/skills",
                     "kind": "multi-skill-suite",
@@ -1612,7 +1612,7 @@
                   "repo": "cc-sdd",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add gotalab/cc-sdd",
                     "kind": "multi-skill-suite",
@@ -1647,7 +1647,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -1682,7 +1682,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -1717,7 +1717,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -1753,7 +1753,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -1787,8 +1787,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -1822,8 +1822,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -1858,7 +1858,7 @@
                   "repo": "agent-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add callstackincubator/agent-skills",
                     "kind": "multi-skill-suite",
@@ -2474,7 +2474,7 @@
                   "repo": "superpowers-zh",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add jnMetaCode/superpowers-zh",
                     "kind": "multi-skill-suite",
@@ -2509,7 +2509,7 @@
                   "repo": "cc-wf-studio",
                   "default_branch": "main",
                   "license": "AGPL-3.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add breaking-brake/cc-wf-studio",
                     "kind": "skill-pack",
@@ -2543,8 +2543,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -2578,8 +2578,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -2613,8 +2613,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -2648,8 +2648,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -2685,7 +2685,7 @@
                   "repo": "cc-sdd",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add gotalab/cc-sdd",
                     "kind": "multi-skill-suite",
@@ -2720,7 +2720,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -2755,7 +2755,7 @@
                   "repo": "ponytail",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add DietrichGebert/ponytail",
                     "kind": "multi-skill-suite",
@@ -2790,7 +2790,7 @@
                   "repo": "ponytail",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add DietrichGebert/ponytail",
                     "kind": "multi-skill-suite",
@@ -2825,7 +2825,7 @@
                   "repo": "ponytail",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add DietrichGebert/ponytail",
                     "kind": "multi-skill-suite",
@@ -2860,7 +2860,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -3269,7 +3269,7 @@
                   "repo": "hive",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add aden-hive/hive",
                     "kind": "multi-skill-suite",
@@ -3304,7 +3304,7 @@
                   "repo": "superpowers-zh",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add jnMetaCode/superpowers-zh",
                     "kind": "multi-skill-suite",
@@ -3339,7 +3339,7 @@
                   "repo": "superpowers-zh",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add jnMetaCode/superpowers-zh",
                     "kind": "multi-skill-suite",
@@ -3374,7 +3374,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -3409,7 +3409,7 @@
                   "repo": "agent-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add callstackincubator/agent-skills",
                     "kind": "multi-skill-suite",
@@ -3527,7 +3527,7 @@
                   "repo": "pinme",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add glitternetwork/pinme",
                     "kind": "skill-pack",
@@ -3562,7 +3562,7 @@
                   "repo": "pinme",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add glitternetwork/pinme",
                     "kind": "skill-pack",
@@ -3596,8 +3596,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -3633,7 +3633,7 @@
                   "repo": "agent-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add callstackincubator/agent-skills",
                     "kind": "multi-skill-suite",
@@ -3949,7 +3949,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -3985,7 +3985,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -4020,7 +4020,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -4055,8 +4055,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -4090,8 +4090,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -4125,8 +4125,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -4161,7 +4161,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -4314,7 +4314,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -4355,7 +4355,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -4720,8 +4720,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -4756,8 +4756,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -4791,8 +4791,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -4826,8 +4826,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -4861,8 +4861,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -4896,8 +4896,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -4931,8 +4931,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -5114,7 +5114,7 @@
                   "repo": "openhanako",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add liliMozi/openhanako",
                     "kind": "skill-pack",
@@ -5154,7 +5154,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5190,7 +5190,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5226,7 +5226,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5262,7 +5262,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5298,7 +5298,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5333,7 +5333,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5368,7 +5368,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5404,7 +5404,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5440,7 +5440,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5475,7 +5475,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5510,7 +5510,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5546,7 +5546,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5582,7 +5582,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5618,7 +5618,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -5735,7 +5735,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -5770,7 +5770,7 @@
                   "repo": "PaperSpine",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WUBING2023/PaperSpine",
                     "kind": "multi-skill-suite",
@@ -5805,7 +5805,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -6187,7 +6187,7 @@
                   "repo": "blog",
                   "default_branch": "master",
                   "license": "GPL-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add digoal/blog",
                     "kind": "multi-skill-suite",
@@ -6221,8 +6221,8 @@
                   "author": "dontbesilent2025",
                   "repo": "dbskill",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dontbesilent2025/dbskill",
                     "kind": "multi-skill-suite",
@@ -6256,8 +6256,8 @@
                   "author": "dontbesilent2025",
                   "repo": "dbskill",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dontbesilent2025/dbskill",
                     "kind": "multi-skill-suite",
@@ -6292,7 +6292,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -6327,7 +6327,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -6362,7 +6362,7 @@
                   "repo": "superpowers-zh",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add jnMetaCode/superpowers-zh",
                     "kind": "multi-skill-suite",
@@ -6660,7 +6660,7 @@
                   "repo": "claude-obsidian",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add AgriciDaniel/claude-obsidian",
                     "kind": "multi-skill-suite",
@@ -6697,7 +6697,7 @@
                   "repo": "claude-obsidian",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add AgriciDaniel/claude-obsidian",
                     "kind": "multi-skill-suite",
@@ -6732,7 +6732,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -6767,7 +6767,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -6802,7 +6802,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -7042,8 +7042,8 @@
                   "author": "dontbesilent2025",
                   "repo": "dbskill",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dontbesilent2025/dbskill",
                     "kind": "multi-skill-suite",
@@ -7077,8 +7077,8 @@
                   "author": "dontbesilent2025",
                   "repo": "dbskill",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dontbesilent2025/dbskill",
                     "kind": "multi-skill-suite",
@@ -7570,8 +7570,8 @@
                   "author": "dontbesilent2025",
                   "repo": "dbskill",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dontbesilent2025/dbskill",
                     "kind": "multi-skill-suite",
@@ -7606,7 +7606,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -7641,7 +7641,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -7676,7 +7676,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -8223,8 +8223,8 @@
                   "author": "dontbesilent2025",
                   "repo": "dbskill",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dontbesilent2025/dbskill",
                     "kind": "multi-skill-suite",
@@ -9339,7 +9339,7 @@
                   "repo": "NotFair",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nowork-studio/NotFair",
                     "kind": "multi-skill-suite",
@@ -9374,7 +9374,7 @@
                   "repo": "NotFair",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nowork-studio/NotFair",
                     "kind": "multi-skill-suite",
@@ -9409,7 +9409,7 @@
                   "repo": "NotFair",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nowork-studio/NotFair",
                     "kind": "multi-skill-suite",
@@ -9444,7 +9444,7 @@
                   "repo": "NotFair",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nowork-studio/NotFair",
                     "kind": "multi-skill-suite",
@@ -9479,7 +9479,7 @@
                   "repo": "NotFair",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nowork-studio/NotFair",
                     "kind": "multi-skill-suite",
@@ -9514,7 +9514,7 @@
                   "repo": "NotFair",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nowork-studio/NotFair",
                     "kind": "multi-skill-suite",
@@ -9549,7 +9549,7 @@
                   "repo": "NotFair",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nowork-studio/NotFair",
                     "kind": "multi-skill-suite",
@@ -9584,7 +9584,7 @@
                   "repo": "NotFair",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nowork-studio/NotFair",
                     "kind": "multi-skill-suite",
@@ -9619,7 +9619,7 @@
                   "repo": "NotFair",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nowork-studio/NotFair",
                     "kind": "multi-skill-suite",
@@ -9654,7 +9654,7 @@
                   "repo": "NotFair",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nowork-studio/NotFair",
                     "kind": "multi-skill-suite",
@@ -9689,7 +9689,7 @@
                   "repo": "NotFair",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add nowork-studio/NotFair",
                     "kind": "multi-skill-suite",
@@ -9881,8 +9881,8 @@
                   "author": "dontbesilent2025",
                   "repo": "dbskill",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dontbesilent2025/dbskill",
                     "kind": "multi-skill-suite",
@@ -10629,8 +10629,8 @@
                   "author": "dontbesilent2025",
                   "repo": "dbskill",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dontbesilent2025/dbskill",
                     "kind": "multi-skill-suite",
@@ -10782,8 +10782,8 @@
                   "author": "dontbesilent2025",
                   "repo": "dbskill",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dontbesilent2025/dbskill",
                     "kind": "multi-skill-suite",
@@ -11431,7 +11431,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add antfu/skills",
                     "kind": "multi-skill-suite",
@@ -11466,7 +11466,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add antfu/skills",
                     "kind": "multi-skill-suite",
@@ -11501,7 +11501,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add antfu/skills",
                     "kind": "multi-skill-suite",
@@ -11536,7 +11536,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add antfu/skills",
                     "kind": "multi-skill-suite",
@@ -11571,7 +11571,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add antfu/skills",
                     "kind": "multi-skill-suite",
@@ -11606,7 +11606,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add antfu/skills",
                     "kind": "multi-skill-suite",
@@ -11641,7 +11641,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add antfu/skills",
                     "kind": "multi-skill-suite",
@@ -11675,8 +11675,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -11710,8 +11710,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -11745,8 +11745,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -11780,8 +11780,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -11897,7 +11897,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add antfu/skills",
                     "kind": "multi-skill-suite",
@@ -11931,8 +11931,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -12362,7 +12362,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -12771,7 +12771,7 @@
                   "repo": "drawio-skill",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Agents365-ai/drawio-skill",
                     "kind": "skill",
@@ -12964,7 +12964,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -12999,7 +12999,7 @@
                   "repo": "GPT-Image2-Skill",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add wuyoscar/GPT-Image2-Skill",
                     "kind": "skill",
@@ -13034,7 +13034,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -13069,7 +13069,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -13348,7 +13348,7 @@
                   "repo": "video-editing-skill",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": "README.md",
+                  "doc_path": null,
                   "install": {
                     "command": "npx skills add 6missedcalls/video-editing-skill",
                     "kind": "skill",
@@ -13525,7 +13525,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -13753,7 +13753,7 @@
                   "repo": "claude-obsidian",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add AgriciDaniel/claude-obsidian",
                     "kind": "multi-skill-suite",
@@ -13788,7 +13788,7 @@
                   "repo": "google-maps-scraper",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add gosom/google-maps-scraper",
                     "kind": "skill",
@@ -14293,7 +14293,7 @@
                   "repo": "blog",
                   "default_branch": "master",
                   "license": "GPL-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add digoal/blog",
                     "kind": "multi-skill-suite",
@@ -14328,7 +14328,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -14363,7 +14363,7 @@
                   "repo": "SenseNova-Skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add OpenSenseNova/SenseNova-Skills",
                     "kind": "multi-skill-suite",
@@ -14399,7 +14399,7 @@
                   "repo": "pg-aiguide",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add timescale/pg-aiguide",
                     "kind": "multi-skill-suite",
@@ -14435,7 +14435,7 @@
                   "repo": "pg-aiguide",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add timescale/pg-aiguide",
                     "kind": "multi-skill-suite",
@@ -14471,7 +14471,7 @@
                   "repo": "pg-aiguide",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add timescale/pg-aiguide",
                     "kind": "multi-skill-suite",
@@ -14507,7 +14507,7 @@
                   "repo": "pg-aiguide",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add timescale/pg-aiguide",
                     "kind": "multi-skill-suite",
@@ -16038,7 +16038,7 @@
                   "repo": "nature-skills",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Yuan1z0825/nature-skills",
                     "kind": "multi-skill-suite",
@@ -16073,7 +16073,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -16108,7 +16108,7 @@
                   "repo": "PaperSpine",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WUBING2023/PaperSpine",
                     "kind": "multi-skill-suite",
@@ -16143,7 +16143,7 @@
                   "repo": "PaperSpine",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WUBING2023/PaperSpine",
                     "kind": "multi-skill-suite",
@@ -16178,8 +16178,8 @@
                   "author": "HKUSTDial",
                   "repo": "Supervisor-Skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-SA-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add HKUSTDial/Supervisor-Skills",
                     "kind": "multi-skill-suite",
@@ -16213,8 +16213,8 @@
                   "author": "HKUSTDial",
                   "repo": "Supervisor-Skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-SA-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add HKUSTDial/Supervisor-Skills",
                     "kind": "multi-skill-suite",
@@ -16340,7 +16340,7 @@
                   "repo": "slr-prisma",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": "README.md",
+                  "doc_path": null,
                   "install": {
                     "command": "npx skills add keemanxp/slr-prisma",
                     "kind": "skill",
@@ -16468,7 +16468,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -16503,7 +16503,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -16541,7 +16541,7 @@
                   "repo": "PaperSpine",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WUBING2023/PaperSpine",
                     "kind": "multi-skill-suite",
@@ -16608,7 +16608,7 @@
                   "repo": "latex-document-skill",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": "README.md",
+                  "doc_path": null,
                   "install": {
                     "command": "npx skills add ndpvt-web/latex-document-skill",
                     "kind": "skill",
@@ -16931,7 +16931,7 @@
                   "repo": "PaperSpine",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WUBING2023/PaperSpine",
                     "kind": "multi-skill-suite",
@@ -16965,8 +16965,8 @@
                   "author": "HKUSTDial",
                   "repo": "Supervisor-Skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-SA-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add HKUSTDial/Supervisor-Skills",
                     "kind": "multi-skill-suite",
@@ -17098,8 +17098,8 @@
                   "author": "HKUSTDial",
                   "repo": "Supervisor-Skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-SA-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add HKUSTDial/Supervisor-Skills",
                     "kind": "multi-skill-suite",
@@ -17306,7 +17306,7 @@
                   "repo": "cc-sdd",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add gotalab/cc-sdd",
                     "kind": "multi-skill-suite",
@@ -17341,7 +17341,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -17376,7 +17376,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -17531,7 +17531,7 @@
                   "repo": "hive",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add aden-hive/hive",
                     "kind": "multi-skill-suite",
@@ -17758,7 +17758,7 @@
                   "repo": "hive",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add aden-hive/hive",
                     "kind": "multi-skill-suite",
@@ -17793,7 +17793,7 @@
                   "repo": "superpowers-zh",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add jnMetaCode/superpowers-zh",
                     "kind": "multi-skill-suite",
@@ -17827,8 +17827,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -17862,8 +17862,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -17898,7 +17898,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -17933,7 +17933,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -17968,7 +17968,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -18161,7 +18161,7 @@
                   "repo": "hive",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add aden-hive/hive",
                     "kind": "multi-skill-suite",
@@ -18196,7 +18196,7 @@
                   "repo": "claude-obsidian",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add AgriciDaniel/claude-obsidian",
                     "kind": "multi-skill-suite",
@@ -18231,7 +18231,7 @@
                   "repo": "openhanako",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add liliMozi/openhanako",
                     "kind": "skill-pack",
@@ -18265,8 +18265,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -18300,8 +18300,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -18481,7 +18481,7 @@
                   "repo": "hive",
                   "default_branch": "main",
                   "license": "Apache-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add aden-hive/hive",
                     "kind": "multi-skill-suite",
@@ -18515,8 +18515,8 @@
                   "author": "tech-leads-club",
                   "repo": "agent-skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "MIT",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add tech-leads-club/agent-skills",
                     "kind": "multi-skill-suite",
@@ -18551,7 +18551,7 @@
                   "repo": "claude-code-settings",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add feiskyer/claude-code-settings",
                     "kind": "multi-skill-suite",
@@ -18778,8 +18778,8 @@
                   "author": "dontbesilent2025",
                   "repo": "dbskill",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dontbesilent2025/dbskill",
                     "kind": "multi-skill-suite",
@@ -18814,7 +18814,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -18892,7 +18892,7 @@
                   "repo": "agent-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add callstackincubator/agent-skills",
                     "kind": "multi-skill-suite",
@@ -19011,7 +19011,7 @@
                   "repo": "ponytail",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add DietrichGebert/ponytail",
                     "kind": "multi-skill-suite",
@@ -19081,7 +19081,7 @@
                   "repo": "claude-legal-skill",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": "README.md",
+                  "doc_path": "skill.md",
                   "install": {
                     "command": "npx skills add evolsb/claude-legal-skill",
                     "kind": "skill",
@@ -19364,8 +19364,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -20107,7 +20107,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -20142,7 +20142,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -20177,7 +20177,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -20213,7 +20213,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -20248,7 +20248,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -20461,7 +20461,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -20496,7 +20496,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -20727,7 +20727,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -20762,7 +20762,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -20798,7 +20798,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -20833,7 +20833,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -20868,7 +20868,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -20903,7 +20903,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -21087,7 +21087,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -21194,7 +21194,7 @@
                   "repo": "blog",
                   "default_branch": "master",
                   "license": "GPL-2.0",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add digoal/blog",
                     "kind": "multi-skill-suite",
@@ -21457,7 +21457,7 @@
                   "repo": "agent-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add callstackincubator/agent-skills",
                     "kind": "multi-skill-suite",
@@ -21576,7 +21576,7 @@
                   "repo": "skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dotnet/skills",
                     "kind": "multi-skill-suite",
@@ -21610,8 +21610,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -21645,8 +21645,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -21680,8 +21680,8 @@
                   "author": "WordPress",
                   "repo": "agent-skills",
                   "default_branch": "trunk",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "GPL-2.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add WordPress/agent-skills",
                     "kind": "multi-skill-suite",
@@ -22045,7 +22045,7 @@
                   "repo": "claude-bug-bounty",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": "README.md",
+                  "doc_path": null,
                   "install": {
                     "command": "npx skills add shuvonsec/claude-bug-bounty",
                     "kind": "multi-skill-suite",
@@ -22224,7 +22224,7 @@
                   "repo": "malware-analysis-claude-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": "README.md",
+                  "doc_path": null,
                   "install": {
                     "command": "npx skills add gl0bal01/malware-analysis-claude-skills",
                     "kind": "skill-pack",
@@ -22394,8 +22394,8 @@
                   "author": "dontbesilent2025",
                   "repo": "dbskill",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add dontbesilent2025/dbskill",
                     "kind": "multi-skill-suite",
@@ -22430,7 +22430,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -22465,7 +22465,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -22606,7 +22606,7 @@
                   "repo": "ljg-skills",
                   "default_branch": "master",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add lijigang/ljg-skills",
                     "kind": "multi-skill-suite",
@@ -23145,7 +23145,7 @@
                   "repo": "finance-skills",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add himself65/finance-skills",
                     "kind": "multi-skill-suite",
@@ -23280,7 +23280,7 @@
                   "repo": "AI-Research-SKILLs",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Orchestra-Research/AI-Research-SKILLs",
                     "kind": "multi-skill-suite",
@@ -23322,7 +23322,7 @@
                   "repo": "AI-Research-SKILLs",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Orchestra-Research/AI-Research-SKILLs",
                     "kind": "multi-skill-suite",
@@ -23363,7 +23363,7 @@
                   "repo": "AI-Research-SKILLs",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Orchestra-Research/AI-Research-SKILLs",
                     "kind": "multi-skill-suite",
@@ -23408,7 +23408,7 @@
                   "repo": "AI-Research-SKILLs",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Orchestra-Research/AI-Research-SKILLs",
                     "kind": "multi-skill-suite",
@@ -23444,7 +23444,7 @@
                   "repo": "AI-Research-SKILLs",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Orchestra-Research/AI-Research-SKILLs",
                     "kind": "multi-skill-suite",
@@ -23486,7 +23486,7 @@
                   "repo": "AI-Research-SKILLs",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Orchestra-Research/AI-Research-SKILLs",
                     "kind": "multi-skill-suite",
@@ -23528,7 +23528,7 @@
                   "repo": "AI-Research-SKILLs",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Orchestra-Research/AI-Research-SKILLs",
                     "kind": "multi-skill-suite",
@@ -23569,7 +23569,7 @@
                   "repo": "AI-Research-SKILLs",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Orchestra-Research/AI-Research-SKILLs",
                     "kind": "multi-skill-suite",
@@ -23612,7 +23612,7 @@
                   "repo": "AI-Research-SKILLs",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Orchestra-Research/AI-Research-SKILLs",
                     "kind": "multi-skill-suite",
@@ -23653,7 +23653,7 @@
                   "repo": "AI-Research-SKILLs",
                   "default_branch": "main",
                   "license": "MIT",
-                  "doc_path": null,
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add Orchestra-Research/AI-Research-SKILLs",
                     "kind": "multi-skill-suite",
@@ -23687,8 +23687,8 @@
                   "author": "HKUSTDial",
                   "repo": "Supervisor-Skills",
                   "default_branch": "main",
-                  "license": null,
-                  "doc_path": null,
+                  "license": "CC-BY-NC-SA-4.0",
+                  "doc_path": "README.md",
                   "install": {
                     "command": "npx skills add HKUSTDial/Supervisor-Skills",
                     "kind": "multi-skill-suite",
@@ -23761,17 +23761,11 @@
         "alt": "git clone https://github.com/mattpocock/skills ~/.claude/skills/skills"
       },
       "skill_docs": {
-        "caveman": "skills/productivity/caveman/SKILL.md",
-        "diagnose": "skills/engineering/diagnose/SKILL.md",
         "grill-me": "skills/productivity/grill-me/SKILL.md",
         "handoff": "skills/productivity/handoff/SKILL.md",
         "improve-codebase-architecture": "skills/engineering/improve-codebase-architecture/SKILL.md",
         "prototype": "skills/engineering/prototype/SKILL.md",
-        "tdd": "skills/engineering/tdd/SKILL.md",
-        "to-issues": "skills/engineering/to-issues/SKILL.md",
-        "to-prd": "skills/engineering/to-prd/SKILL.md",
-        "write-a-skill": "skills/productivity/write-a-skill/SKILL.md",
-        "zoom-out": "skills/engineering/zoom-out/SKILL.md"
+        "tdd": "skills/engineering/tdd/SKILL.md"
       },
       "skill_licenses": null
     },
@@ -24203,9 +24197,7 @@
         "command": "npx skills add kreuzberg-dev/kreuzberg",
         "kind": "extraction-engine"
       },
-      "skill_docs": {
-        "kreuzberg": "skills/kreuzberg/SKILL.md"
-      },
+      "skill_docs": null,
       "skill_licenses": null
     },
     "deusyu": {
@@ -24265,9 +24257,7 @@
         "kind": "skill",
         "alt": "/plugin marketplace add NeoLabHQ/context-engineering-kit"
       },
-      "skill_docs": {
-        "write-concisely": "plugins/docs/skills/write-concisely/SKILL.md"
-      },
+      "skill_docs": null,
       "skill_licenses": null
     },
     "alchaincyf": {
@@ -24532,6 +24522,7 @@
         "acquisition-channel-advisor": "skills/acquisition-channel-advisor/SKILL.md",
         "ai-shaped-readiness-advisor": "skills/ai-shaped-readiness-advisor/SKILL.md",
         "altitude-horizon-framework": "skills/altitude-horizon-framework/SKILL.md",
+        "ansoff-matrix": "skills/ansoff-matrix/SKILL.md",
         "business-health-diagnostic": "skills/business-health-diagnostic/SKILL.md",
         "company-research": "skills/company-research/SKILL.md",
         "customer-journey-map": "skills/customer-journey-map/SKILL.md",
@@ -24550,6 +24541,7 @@
         "opportunity-solution-tree": "skills/opportunity-solution-tree/SKILL.md",
         "pestel-analysis": "skills/pestel-analysis/SKILL.md",
         "pol-probe-advisor": "skills/pol-probe-advisor/SKILL.md",
+        "porters-five-forces": "skills/porters-five-forces/SKILL.md",
         "positioning-statement": "skills/positioning-statement/SKILL.md",
         "positioning-workshop": "skills/positioning-workshop/SKILL.md",
         "prd-development": "skills/prd-development/SKILL.md",
@@ -24565,6 +24557,7 @@
         "saas-revenue-growth-metrics": "skills/saas-revenue-growth-metrics/SKILL.md",
         "skill-authoring-workflow": "skills/skill-authoring-workflow/SKILL.md",
         "storyboard": "skills/storyboard/SKILL.md",
+        "swot-analysis": "skills/swot-analysis/SKILL.md",
         "tam-sam-som-calculator": "skills/tam-sam-som-calculator/SKILL.md",
         "user-story": "skills/user-story/SKILL.md",
         "user-story-splitting": "skills/user-story-splitting/SKILL.md",
@@ -25290,7 +25283,52 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/franklee16/academic-research-skills ~/.claude/skills/academic-research-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "academic-paper-writer": "writing/academic-paper-writer/SKILL.md",
+        "academic-researcher": "literature-review/academic-researcher/SKILL.md",
+        "academic-writing": "writing/academic-writing/SKILL.md",
+        "api-data-fetcher": "data-sourcing/api-data-fetcher/SKILL.md",
+        "beamer-presentation": "presentations/beamer-presentation/SKILL.md",
+        "beautiful_deck": "presentations/beautiful_deck/SKILL.md",
+        "citation-management": "citations/citation-management/SKILL.md",
+        "consistency-checker": "peer-review/consistency-checker/SKILL.md",
+        "csv-data-summarizer": "data-analysis/csv-data-summarizer/SKILL.md",
+        "data-analysis": "data-analysis/data-analysis/SKILL.md",
+        "deep-research": "literature-review/deep-research/SKILL.md",
+        "econ-visualization": "visualization/econ-visualization/SKILL.md",
+        "econ-write": "writing/econ-write/SKILL.md",
+        "exploratory-data-analysis": "data-analysis/exploratory-data-analysis/SKILL.md",
+        "fact-checker": "peer-review/fact-checker/SKILL.md",
+        "fletcher": "peer-review/fletcher/SKILL.md",
+        "fred-economic-data": "data-sourcing/fred-economic-data/SKILL.md",
+        "hypothesis-generation": "brainstorming/hypothesis-generation/SKILL.md",
+        "latex-posters": "output-tools/latex-posters/SKILL.md",
+        "latex-tables": "output-tools/latex-tables/SKILL.md",
+        "lit-review": "literature-review/lit-review/SKILL.md",
+        "literature-review": "literature-review/SKILL.md",
+        "make-poster": "output-tools/make-poster/SKILL.md",
+        "matplotlib": "visualization/matplotlib/SKILL.md",
+        "paper-2-web": "output-tools/paper-2-web/SKILL.md",
+        "peer-review": "peer-review/peer-review/SKILL.md",
+        "python-panel-data": "data-analysis/python-panel-data/SKILL.md",
+        "r-analyst": "data-analysis/r-analyst/SKILL.md",
+        "r-econometrics": "data-analysis/r-econometrics/SKILL.md",
+        "referee2": "peer-review/referee2/SKILL.md",
+        "research-grants": "grants/research-grants/SKILL.md",
+        "research-ideation": "brainstorming/research-ideation/SKILL.md",
+        "review-response": "writing/review-response/SKILL.md",
+        "revision-coordinator": "writing/revision-coordinator/SKILL.md",
+        "scholar-evaluation": "peer-review/scholar-evaluation/SKILL.md",
+        "scientific-brainstorming": "brainstorming/scientific-brainstorming/SKILL.md",
+        "scientific-critical-thinking": "peer-review/scientific-critical-thinking/SKILL.md",
+        "scientific-slides": "presentations/scientific-slides/SKILL.md",
+        "scientific-visualization": "visualization/scientific-visualization/SKILL.md",
+        "scientific-writing": "writing/scientific-writing/SKILL.md",
+        "sec-edgar-parser": "data-sourcing/sec-edgar-parser/SKILL.md",
+        "stata": "data-analysis/stata/SKILL.md",
+        "stata-analyst": "data-analysis/stata-analyst/SKILL.md",
+        "tikz": "visualization/tikz/SKILL.md"
+      },
       "skill_licenses": null
     },
     "K-Dense-writer": {
@@ -25328,7 +25366,9 @@
         "command": "/plugin marketplace add andrehuang/academic-writing-agents",
         "kind": "plugin"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "academic": "skills/academic/SKILL.md"
+      },
       "skill_licenses": null
     },
     "keemanxp": {
@@ -25342,7 +25382,7 @@
       "repo": "slr-prisma",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": "README.md",
+      "doc_path": null,
       "install": {
         "command": "npx skills add keemanxp/slr-prisma",
         "kind": "skill",
@@ -25368,7 +25408,10 @@
         "kind": "skill",
         "alt": "git clone https://github.com/renocrypt/latex-arxiv-SKILL ~/.claude/skills/latex-arxiv-SKILL"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "arxiv-paper-writer": ".codex/skills/arxiv-paper-writer/SKILL.md",
+        "latex-rhythm-refiner": ".codex/skills/latex-rhythm-refiner/SKILL.md"
+      },
       "skill_licenses": null
     },
     "ndpvt-web": {
@@ -25382,7 +25425,7 @@
       "repo": "latex-document-skill",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": "README.md",
+      "doc_path": null,
       "install": {
         "command": "npx skills add ndpvt-web/latex-document-skill",
         "kind": "skill",
@@ -25408,7 +25451,11 @@
         "kind": "skill-pack",
         "alt": "git clone https://github.com/luwill/research-skills ~/.claude/skills/research-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "medical-imaging-review": "medical-imaging-review/SKILL.md",
+        "paper-slide-deck": "paper-slide-deck/SKILL.md",
+        "research-proposal": "research-proposal/SKILL.md"
+      },
       "skill_licenses": null
     },
     "lingzhi227": {
@@ -25428,7 +25475,36 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/lingzhi227/agent-research-skills ~/.claude/skills/agent-research-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "algorithm-design": "skills/algorithm-design/SKILL.md",
+        "backward-traceability": "skills/backward-traceability/SKILL.md",
+        "citation-management": "skills/citation-management/SKILL.md",
+        "code-debugging": "skills/code-debugging/SKILL.md",
+        "data-analysis": "skills/data-analysis/SKILL.md",
+        "deep-research": "skills/deep-research/SKILL.md",
+        "experiment-code": "skills/experiment-code/SKILL.md",
+        "experiment-design": "skills/experiment-design/SKILL.md",
+        "figure-generation": "skills/figure-generation/SKILL.md",
+        "github-research": "skills/github-research/SKILL.md",
+        "idea-generation": "skills/idea-generation/SKILL.md",
+        "latex-formatting": "skills/latex-formatting/SKILL.md",
+        "literature-review": "skills/literature-review/SKILL.md",
+        "literature-search": "skills/literature-search/SKILL.md",
+        "novelty-assessment": "skills/novelty-assessment/SKILL.md",
+        "paper-assembly": "skills/paper-assembly/SKILL.md",
+        "paper-compilation": "skills/paper-compilation/SKILL.md",
+        "paper-revision": "skills/paper-revision/SKILL.md",
+        "paper-to-code": "skills/paper-to-code/SKILL.md",
+        "paper-writing-section": "skills/paper-writing-section/SKILL.md",
+        "rebuttal-writing": "skills/rebuttal-writing/SKILL.md",
+        "related-work-writing": "skills/related-work-writing/SKILL.md",
+        "research-planning": "skills/research-planning/SKILL.md",
+        "self-review": "skills/self-review/SKILL.md",
+        "slide-generation": "skills/slide-generation/SKILL.md",
+        "survey-generation": "skills/survey-generation/SKILL.md",
+        "symbolic-equation": "skills/symbolic-equation/SKILL.md",
+        "table-generation": "skills/table-generation/SKILL.md"
+      },
       "skill_licenses": null
     },
     "claude-for-legal": {
@@ -25447,7 +25523,71 @@
         "command": "/plugin marketplace add anthropics/claude-for-legal",
         "kind": "marketplace"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "ai-inventory": "ai-governance-legal/skills/ai-inventory/SKILL.md",
+        "aia-generation": "ai-governance-legal/skills/aia-generation/SKILL.md",
+        "bar-prep-questions": "law-student/skills/bar-prep-questions/SKILL.md",
+        "board-minutes": "corporate-legal/skills/board-minutes/SKILL.md",
+        "brief-section-drafter": "litigation-legal/skills/brief-section-drafter/SKILL.md",
+        "case-brief": "law-student/skills/case-brief/SKILL.md",
+        "cease-desist": "ip-legal/skills/cease-desist/SKILL.md",
+        "chronology": "litigation-legal/skills/chronology/SKILL.md",
+        "claim-chart": "litigation-legal/skills/claim-chart/SKILL.md",
+        "clearance": "ip-legal/skills/clearance/SKILL.md",
+        "client-intake": "legal-clinic/skills/client-intake/SKILL.md",
+        "client-letter": "legal-clinic/skills/client-letter/SKILL.md",
+        "closing-checklist": "corporate-legal/skills/closing-checklist/SKILL.md",
+        "cold-call-prep": "law-student/skills/cold-call-prep/SKILL.md",
+        "comments": "regulatory-legal/skills/comments/SKILL.md",
+        "deal-team-summary": "corporate-legal/skills/deal-team-summary/SKILL.md",
+        "demand-draft": "litigation-legal/skills/demand-draft/SKILL.md",
+        "deposition-prep": "litigation-legal/skills/deposition-prep/SKILL.md",
+        "diligence-issue-extraction": "corporate-legal/skills/diligence-issue-extraction/SKILL.md",
+        "dpa-review": "privacy-legal/skills/dpa-review/SKILL.md",
+        "dsar-response": "privacy-legal/skills/dsar-response/SKILL.md",
+        "entity-compliance": "corporate-legal/skills/entity-compliance/SKILL.md",
+        "flashcards": "law-student/skills/flashcards/SKILL.md",
+        "form-generation": "legal-clinic/skills/form-generation/SKILL.md",
+        "fto-triage": "ip-legal/skills/fto-triage/SKILL.md",
+        "gap-surfacer": "regulatory-legal/skills/gap-surfacer/SKILL.md",
+        "handbook-updates": "employment-legal/skills/handbook-updates/SKILL.md",
+        "hiring-review": "employment-legal/skills/hiring-review/SKILL.md",
+        "infringement-triage": "ip-legal/skills/infringement-triage/SKILL.md",
+        "integration-management": "corporate-legal/skills/integration-management/SKILL.md",
+        "internal-investigation": "employment-legal/skills/internal-investigation/SKILL.md",
+        "international-expansion": "employment-legal/skills/international-expansion/SKILL.md",
+        "invention-intake": "ip-legal/skills/invention-intake/SKILL.md",
+        "ip-clause-review": "ip-legal/skills/ip-clause-review/SKILL.md",
+        "irac-practice": "law-student/skills/irac-practice/SKILL.md",
+        "legal-hold": "litigation-legal/skills/legal-hold/SKILL.md",
+        "legal-writing": "law-student/skills/legal-writing/SKILL.md",
+        "marketing-claims-review": "product-legal/skills/marketing-claims-review/SKILL.md",
+        "material-contract-schedule": "corporate-legal/skills/material-contract-schedule/SKILL.md",
+        "memo": "legal-clinic/skills/memo/SKILL.md",
+        "nda-review": "commercial-legal/skills/nda-review/SKILL.md",
+        "oss-review": "ip-legal/skills/oss-review/SKILL.md",
+        "outline-builder": "law-student/skills/outline-builder/SKILL.md",
+        "pia-generation": "privacy-legal/skills/pia-generation/SKILL.md",
+        "plain-language-letters": "legal-clinic/skills/plain-language-letters/SKILL.md",
+        "policy-diff": "regulatory-legal/skills/policy-diff/SKILL.md",
+        "policy-redraft": "regulatory-legal/skills/policy-redraft/SKILL.md",
+        "policy-starter": "ai-governance-legal/skills/policy-starter/SKILL.md",
+        "portfolio": "ip-legal/skills/portfolio/SKILL.md",
+        "privilege-log-review": "litigation-legal/skills/privilege-log-review/SKILL.md",
+        "reg-feed-watcher": "regulatory-legal/skills/reg-feed-watcher/SKILL.md",
+        "saas-msa-review": "commercial-legal/skills/saas-msa-review/SKILL.md",
+        "socratic-drill": "law-student/skills/socratic-drill/SKILL.md",
+        "study-plan": "law-student/skills/study-plan/SKILL.md",
+        "subpoena-triage": "litigation-legal/skills/subpoena-triage/SKILL.md",
+        "tabular-review": "corporate-legal/skills/tabular-review/SKILL.md",
+        "takedown": "ip-legal/skills/takedown/SKILL.md",
+        "termination-review": "employment-legal/skills/termination-review/SKILL.md",
+        "vendor-agreement-review": "commercial-legal/skills/vendor-agreement-review/SKILL.md",
+        "vendor-ai-review": "ai-governance-legal/skills/vendor-ai-review/SKILL.md",
+        "wage-hour-qa": "employment-legal/skills/wage-hour-qa/SKILL.md",
+        "worker-classification": "employment-legal/skills/worker-classification/SKILL.md",
+        "written-consent": "corporate-legal/skills/written-consent/SKILL.md"
+      },
       "skill_licenses": null
     },
     "knowledge-work-plugins": {
@@ -25466,7 +25606,12 @@
         "command": "/plugin marketplace add anthropics/knowledge-work-plugins",
         "kind": "marketplace"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "brief": "legal/skills/brief/SKILL.md",
+        "contract-review": "small-business/skills/contract-review/SKILL.md",
+        "legal-risk-assessment": "legal/skills/legal-risk-assessment/SKILL.md",
+        "triage-nda": "legal/skills/triage-nda/SKILL.md"
+      },
       "skill_licenses": null
     },
     "evolsb": {
@@ -25480,7 +25625,7 @@
       "repo": "claude-legal-skill",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": "README.md",
+      "doc_path": "skill.md",
       "install": {
         "command": "npx skills add evolsb/claude-legal-skill",
         "kind": "skill",
@@ -25526,7 +25671,23 @@
         "kind": "multi-skill-suite",
         "alt": "/plugin marketplace add borghei/Claude-Skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "contract-review": "legal/contract-review/SKILL.md",
+        "data-breach-response": "legal/data-breach-response/SKILL.md",
+        "dpia-assessment": "legal/dpia-assessment/SKILL.md",
+        "legal-canned-responses": "legal/legal-canned-responses/SKILL.md",
+        "legal-meeting-briefing": "legal/legal-meeting-briefing/SKILL.md",
+        "legal-red-team": "legal/legal-red-team/SKILL.md",
+        "legal-risk-assessment": "legal/legal-risk-assessment/SKILL.md",
+        "mediation-analysis": "legal/mediation-analysis/SKILL.md",
+        "nda-review": "legal/nda-review/SKILL.md",
+        "privacy-compliance": "legal/privacy-compliance/SKILL.md",
+        "privacy-notice-generator": "legal/privacy-notice-generator/SKILL.md",
+        "statute-analysis": "legal/statute-analysis/SKILL.md",
+        "tabular-document-review": "legal/tabular-document-review/SKILL.md",
+        "vendor-due-diligence": "legal/vendor-due-diligence/SKILL.md",
+        "whistleblower-compliance": "legal/whistleblower-compliance/SKILL.md"
+      },
       "skill_licenses": null
     },
     "anthropics-healthcare": {
@@ -25564,7 +25725,26 @@
         "command": "/plugin marketplace add anthropics/financial-services",
         "kind": "marketplace"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "bond-futures-basis": "plugins/partner-built/lseg/skills/bond-futures-basis/SKILL.md",
+        "bond-relative-value": "plugins/partner-built/lseg/skills/bond-relative-value/SKILL.md",
+        "buyer-list": "plugins/vertical-plugins/investment-banking/skills/buyer-list/SKILL.md",
+        "cim-builder": "plugins/vertical-plugins/investment-banking/skills/cim-builder/SKILL.md",
+        "dd-checklist": "plugins/vertical-plugins/private-equity/skills/dd-checklist/SKILL.md",
+        "deal-screening": "plugins/vertical-plugins/private-equity/skills/deal-screening/SKILL.md",
+        "financial-plan": "plugins/vertical-plugins/wealth-management/skills/financial-plan/SKILL.md",
+        "fx-carry-trade": "plugins/partner-built/lseg/skills/fx-carry-trade/SKILL.md",
+        "initiating-coverage": "plugins/vertical-plugins/equity-research/skills/initiating-coverage/SKILL.md",
+        "macro-rates-monitor": "plugins/partner-built/lseg/skills/macro-rates-monitor/SKILL.md",
+        "merger-model": "plugins/vertical-plugins/investment-banking/skills/merger-model/SKILL.md",
+        "option-vol-analysis": "plugins/partner-built/lseg/skills/option-vol-analysis/SKILL.md",
+        "portfolio-rebalance": "plugins/vertical-plugins/wealth-management/skills/portfolio-rebalance/SKILL.md",
+        "swap-curve-strategy": "plugins/partner-built/lseg/skills/swap-curve-strategy/SKILL.md",
+        "tax-loss-harvesting": "plugins/vertical-plugins/wealth-management/skills/tax-loss-harvesting/SKILL.md",
+        "teaser": "plugins/vertical-plugins/investment-banking/skills/teaser/SKILL.md",
+        "unit-economics": "plugins/vertical-plugins/private-equity/skills/unit-economics/SKILL.md",
+        "value-creation-plan": "plugins/vertical-plugins/private-equity/skills/value-creation-plan/SKILL.md"
+      },
       "skill_licenses": null
     },
     "agiprolabs": {
@@ -25584,7 +25764,46 @@
         "kind": "multi-skill-suite",
         "alt": "/plugin marketplace add agiprolabs/claude-trading-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "backtrader": "skills/backtrader/SKILL.md",
+        "coingecko-api": "skills/coingecko-api/SKILL.md",
+        "cointegration-analysis": "skills/cointegration-analysis/SKILL.md",
+        "copy-trading": "skills/copy-trading/SKILL.md",
+        "correlation-analysis": "skills/correlation-analysis/SKILL.md",
+        "custom-indicators": "skills/custom-indicators/SKILL.md",
+        "defillama-api": "skills/defillama-api/SKILL.md",
+        "dex-execution": "skills/dex-execution/SKILL.md",
+        "dex-pool-analysis": "skills/dex-pool-analysis/SKILL.md",
+        "dexscreener-api": "skills/dexscreener-api/SKILL.md",
+        "exit-strategies": "skills/exit-strategies/SKILL.md",
+        "feature-engineering": "skills/feature-engineering/SKILL.md",
+        "fixed-income": "skills/fixed-income/SKILL.md",
+        "helius-api": "skills/helius-api/SKILL.md",
+        "impermanent-loss": "skills/impermanent-loss/SKILL.md",
+        "kelly-criterion": "skills/kelly-criterion/SKILL.md",
+        "lp-math": "skills/lp-math/SKILL.md",
+        "mean-reversion": "skills/mean-reversion/SKILL.md",
+        "mev-analysis": "skills/mev-analysis/SKILL.md",
+        "ohlcv-processing": "skills/ohlcv-processing/SKILL.md",
+        "options-pricing": "skills/options-pricing/SKILL.md",
+        "pandas-ta": "skills/pandas-ta/SKILL.md",
+        "portfolio-analytics": "skills/portfolio-analytics/SKILL.md",
+        "position-sizing": "skills/position-sizing/SKILL.md",
+        "regime-detection": "skills/regime-detection/SKILL.md",
+        "risk-management": "skills/risk-management/SKILL.md",
+        "sentiment-analysis": "skills/sentiment-analysis/SKILL.md",
+        "signal-classification": "skills/signal-classification/SKILL.md",
+        "slippage-modeling": "skills/slippage-modeling/SKILL.md",
+        "solana-tx-building": "skills/solana-tx-building/SKILL.md",
+        "strategy-framework": "skills/strategy-framework/SKILL.md",
+        "ta-lib": "skills/ta-lib/SKILL.md",
+        "token-economics": "skills/token-economics/SKILL.md",
+        "trading-visualization": "skills/trading-visualization/SKILL.md",
+        "vectorbt": "skills/vectorbt/SKILL.md",
+        "volatility-modeling": "skills/volatility-modeling/SKILL.md",
+        "walk-forward-validation": "skills/walk-forward-validation/SKILL.md",
+        "whale-tracking": "skills/whale-tracking/SKILL.md"
+      },
       "skill_licenses": null
     },
     "JoelLewis": {
@@ -25604,7 +25823,30 @@
         "kind": "multi-skill-suite",
         "alt": "/plugin marketplace add JoelLewis/finance_skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "anti-money-laundering": "plugins/compliance/skills/anti-money-laundering/SKILL.md",
+        "asset-allocation": "plugins/wealth-management/skills/asset-allocation/SKILL.md",
+        "commodities": "plugins/wealth-management/skills/commodities/SKILL.md",
+        "currencies-and-fx": "plugins/wealth-management/skills/currencies-and-fx/SKILL.md",
+        "diversification": "plugins/wealth-management/skills/diversification/SKILL.md",
+        "fiduciary-standards": "plugins/compliance/skills/fiduciary-standards/SKILL.md",
+        "fixed-income-corporate": "plugins/wealth-management/skills/fixed-income-corporate/SKILL.md",
+        "fixed-income-sovereign": "plugins/wealth-management/skills/fixed-income-sovereign/SKILL.md",
+        "forward-risk": "plugins/wealth-management/skills/forward-risk/SKILL.md",
+        "historical-risk": "plugins/wealth-management/skills/historical-risk/SKILL.md",
+        "investment-policy": "plugins/wealth-management/skills/investment-policy/SKILL.md",
+        "know-your-customer": "plugins/compliance/skills/know-your-customer/SKILL.md",
+        "margin-operations": "plugins/trading-operations/skills/margin-operations/SKILL.md",
+        "market-data": "plugins/data-integration/skills/market-data/SKILL.md",
+        "performance-attribution": "plugins/wealth-management/skills/performance-attribution/SKILL.md",
+        "reconciliation": "plugins/client-operations/skills/reconciliation/SKILL.md",
+        "reg-bi": "plugins/compliance/skills/reg-bi/SKILL.md",
+        "settlement-clearing": "plugins/trading-operations/skills/settlement-clearing/SKILL.md",
+        "stp-automation": "plugins/client-operations/skills/stp-automation/SKILL.md",
+        "tax-efficiency": "plugins/wealth-management/skills/tax-efficiency/SKILL.md",
+        "tax-loss-harvesting": "plugins/wealth-management/skills/tax-loss-harvesting/SKILL.md",
+        "volatility-modeling": "plugins/wealth-management/skills/volatility-modeling/SKILL.md"
+      },
       "skill_licenses": null
     },
     "OctagonAI": {
@@ -25624,7 +25866,17 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/OctagonAI/skills ~/.claude/skills/skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "analyst-estimates": "skills/analyst-estimates/SKILL.md",
+        "balance-sheet": "skills/balance-sheet/SKILL.md",
+        "cash-flow-statement": "skills/cash-flow-statement/SKILL.md",
+        "financial-metrics-analysis": "skills/financial-metrics-analysis/SKILL.md",
+        "income-statement": "skills/income-statement/SKILL.md",
+        "sec-risk-factors": "skills/sec-risk-factors/SKILL.md",
+        "sector-performance-snapshot": "skills/sector-performance-snapshot/SKILL.md",
+        "stock-performance": "skills/stock-performance/SKILL.md",
+        "stock-quote": "skills/stock-quote/SKILL.md"
+      },
       "skill_licenses": null
     },
     "marketcalls": {
@@ -25644,7 +25896,10 @@
         "kind": "skill-pack",
         "alt": "git clone https://github.com/marketcalls/vectorbt-backtesting-skills ~/.claude/skills/vectorbt-backtesting-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "backtest": ".claude/skills/backtest/SKILL.md",
+        "optimize": ".claude/skills/optimize/SKILL.md"
+      },
       "skill_licenses": null
     },
     "hashicorp": {
@@ -25663,7 +25918,14 @@
         "command": "/plugin marketplace add hashicorp/agent-skills",
         "kind": "marketplace"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "aws-ami-builder": "plugins/packer/skills/aws-ami-builder/SKILL.md",
+        "new-terraform-provider": "plugins/terraform/skills/new-terraform-provider/SKILL.md",
+        "refactor-module": "plugins/terraform/skills/refactor-module/SKILL.md",
+        "terraform-stacks": "plugins/terraform/skills/terraform-stacks/SKILL.md",
+        "terraform-style-guide": "plugins/terraform/skills/terraform-style-guide/SKILL.md",
+        "terraform-test": "plugins/terraform/skills/terraform-test/SKILL.md"
+      },
       "skill_licenses": null
     },
     "grafana": {
@@ -25683,7 +25945,22 @@
         "kind": "multi-skill-suite",
         "alt": "/plugin marketplace add grafana/skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "adaptive-metrics": "skills/grafana-cloud/adaptive-metrics/SKILL.md",
+        "alerting-irm": "skills/grafana-core/alerting-irm/SKILL.md",
+        "alloy": "skills/grafana-core/alloy/SKILL.md",
+        "app-observability": "skills/grafana-cloud/app-observability/SKILL.md",
+        "beyla": "skills/grafana-core/beyla/SKILL.md",
+        "cost-management": "skills/grafana-cloud/cost-management/SKILL.md",
+        "dashboarding": "skills/grafana-core/dashboarding/SKILL.md",
+        "grafana-oss": "skills/grafana-core/grafana-oss/SKILL.md",
+        "infrastructure": "skills/grafana-cloud/infrastructure/SKILL.md",
+        "loki": "skills/grafana-lgtm/loki/SKILL.md",
+        "oncall-irm": "skills/grafana-cloud/oncall-irm/SKILL.md",
+        "opentelemetry": "skills/grafana-core/opentelemetry/SKILL.md",
+        "prometheus-cardinality-troubleshooter": "skills/grafana-cloud/prometheus-cardinality-troubleshooter/SKILL.md",
+        "promql": "skills/grafana-core/promql/SKILL.md"
+      },
       "skill_licenses": null
     },
     "pulumi": {
@@ -25703,7 +25980,11 @@
         "kind": "multi-skill-suite",
         "alt": "/plugin marketplace add pulumi/agent-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "cloudformation-to-pulumi": "migration/skills/cloudformation-to-pulumi/SKILL.md",
+        "pulumi-best-practices": "pulumi/skills/pulumi-best-practices/SKILL.md",
+        "pulumi-component": "pulumi/skills/pulumi-component/SKILL.md"
+      },
       "skill_licenses": null
     },
     "ahmedasmar": {
@@ -25742,7 +26023,12 @@
         "kind": "multi-skill-suite",
         "alt": "/plugin marketplace add Jeffallan/claude-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "devops-engineer": "skills/devops-engineer/SKILL.md",
+        "kubernetes-specialist": "skills/kubernetes-specialist/SKILL.md",
+        "monitoring-expert": "skills/monitoring-expert/SKILL.md",
+        "sre-engineer": "skills/sre-engineer/SKILL.md"
+      },
       "skill_licenses": null
     },
     "antonbabenko": {
@@ -25762,7 +26048,9 @@
         "kind": "skill",
         "alt": "git clone https://github.com/antonbabenko/terraform-skill ~/.claude/skills/terraform-skill"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "terraform-skill": "skills/terraform-skill/SKILL.md"
+      },
       "skill_licenses": null
     },
     "foxj77": {
@@ -25782,7 +26070,14 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/foxj77/claude-code-skills ~/.claude/skills/claude-code-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "cert-manager-troubleshooting": "cert-manager-troubleshooting/SKILL.md",
+        "flux-gitops-patterns": "flux-gitops-patterns/SKILL.md",
+        "flux-operations": "flux-operations/SKILL.md",
+        "k8s-network-troubleshooting": "k8s-network-troubleshooting/SKILL.md",
+        "k8s-platform-operations": "k8s-platform-operations/SKILL.md",
+        "k8s-security-hardening": "k8s-security-hardening/SKILL.md"
+      },
       "skill_licenses": null
     },
     "blacklanternsecurity": {
@@ -25802,7 +26097,19 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/blacklanternsecurity/red-run ~/.claude/skills/red-run"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "ad-persistence": "skills/ad/ad-persistence/SKILL.md",
+        "adcs-template-abuse": "skills/ad/adcs-template-abuse/SKILL.md",
+        "credential-dumping": "skills/ad/credential-dumping/SKILL.md",
+        "deserialization-java": "skills/web/deserialization-java/SKILL.md",
+        "jwt-attacks": "skills/web/jwt-attacks/SKILL.md",
+        "kerberos-roasting": "skills/ad/kerberos-roasting/SKILL.md",
+        "pass-the-hash": "skills/ad/pass-the-hash/SKILL.md",
+        "request-smuggling": "skills/web/request-smuggling/SKILL.md",
+        "sql-injection-union": "skills/web/sql-injection-union/SKILL.md",
+        "ssrf": "skills/web/ssrf/SKILL.md",
+        "xss-stored": "skills/web/xss-stored/SKILL.md"
+      },
       "skill_licenses": null
     },
     "transilienceai": {
@@ -25822,7 +26129,20 @@
         "kind": "multi-skill-suite",
         "alt": "/plugin marketplace add transilienceai/communitytools"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "api-security": "skills/api-security/SKILL.md",
+        "attack-path-stitcher": "skills/attack-path-stitcher/SKILL.md",
+        "authentication": "skills/authentication/SKILL.md",
+        "client-side": "skills/client-side/SKILL.md",
+        "cloud-containers": "skills/cloud-containers/SKILL.md",
+        "cve-risk-score": "skills/cve-risk-score/SKILL.md",
+        "dfir": "skills/dfir/SKILL.md",
+        "hackerone": "skills/hackerone/SKILL.md",
+        "injection": "skills/injection/SKILL.md",
+        "server-side": "skills/server-side/SKILL.md",
+        "ti-ingest": "skills/ti-ingest/SKILL.md",
+        "web-app-logic": "skills/web-app-logic/SKILL.md"
+      },
       "skill_licenses": null
     },
     "Masriyan": {
@@ -25862,7 +26182,17 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/elementalsouls/Claude-BugHunter ~/.claude/skills/Claude-BugHunter"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "bb-methodology": "skills/bb-methodology/SKILL.md",
+        "bug-bounty": "skills/bug-bounty/SKILL.md",
+        "bugcrowd-reporting": "skills/bugcrowd-reporting/SKILL.md",
+        "cloud-iam-deep": "skills/cloud-iam-deep/SKILL.md",
+        "offensive-osint": "skills/offensive-osint/SKILL.md",
+        "osint-methodology": "skills/osint-methodology/SKILL.md",
+        "report-writing": "skills/report-writing/SKILL.md",
+        "triage-validation": "skills/triage-validation/SKILL.md",
+        "web2-recon": "skills/web2-recon/SKILL.md"
+      },
       "skill_licenses": null
     },
     "elementalsouls-osint": {
@@ -25882,7 +26212,10 @@
         "kind": "skill-pack",
         "alt": "git clone https://github.com/elementalsouls/Claude-OSINT ~/.claude/skills/Claude-OSINT"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "offensive-osint": "skills/offensive-osint/SKILL.md",
+        "osint-methodology": "skills/osint-methodology/SKILL.md"
+      },
       "skill_licenses": null
     },
     "shuvonsec": {
@@ -25896,13 +26229,20 @@
       "repo": "claude-bug-bounty",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": "README.md",
+      "doc_path": null,
       "install": {
         "command": "npx skills add shuvonsec/claude-bug-bounty",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/shuvonsec/claude-bug-bounty ~/.claude/skills/claude-bug-bounty"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "bb-methodology": "skills/bb-methodology/SKILL.md",
+        "bug-bounty": "skills/bug-bounty/SKILL.md",
+        "report-writing": "skills/report-writing/SKILL.md",
+        "triage-validation": "skills/triage-validation/SKILL.md",
+        "web2-recon": "skills/web2-recon/SKILL.md",
+        "web2-vuln-classes": "skills/web2-vuln-classes/SKILL.md"
+      },
       "skill_licenses": null
     },
     "briiirussell": {
@@ -25922,7 +26262,18 @@
         "kind": "multi-skill-suite",
         "alt": "/plugin marketplace add briiirussell/cybersecurity-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "breach-patterns": "skills/breach-patterns/SKILL.md",
+        "disk-forensics": "skills/disk-forensics/SKILL.md",
+        "incident-triage": "skills/incident-triage/SKILL.md",
+        "osint-recon": "skills/osint-recon/SKILL.md",
+        "recon": "skills/recon/SKILL.md",
+        "red-team-engagement": "skills/red-team-engagement/SKILL.md",
+        "siem-detection": "skills/siem-detection/SKILL.md",
+        "soc-operations": "skills/soc-operations/SKILL.md",
+        "threat-hunting": "skills/threat-hunting/SKILL.md",
+        "web-pentest": "skills/web-pentest/SKILL.md"
+      },
       "skill_licenses": null
     },
     "gl0bal01": {
@@ -25936,13 +26287,19 @@
       "repo": "malware-analysis-claude-skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": "README.md",
+      "doc_path": null,
       "install": {
         "command": "npx skills add gl0bal01/malware-analysis-claude-skills",
         "kind": "skill-pack",
         "alt": "git clone https://github.com/gl0bal01/malware-analysis-claude-skills ~/.claude/skills/malware-analysis-claude-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "detection-engineer": "detection-engineer/SKILL.md",
+        "malware-dynamic-analysis": "malware-dynamic-analysis/SKILL.md",
+        "malware-report-writer": "malware-report-writer/SKILL.md",
+        "malware-triage": "malware-triage/SKILL.md",
+        "specialized-file-analyzer": "specialized-file-analyzer/SKILL.md"
+      },
       "skill_licenses": null
     },
     "GarethManning": {
@@ -25962,7 +26319,25 @@
         "kind": "multi-skill-suite",
         "alt": "/plugin marketplace add GarethManning/education-agent-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "AI Feedback Design Principles": "skills/ai-learning-science/ai-feedback-design-principles/SKILL.md",
+        "AI Output Critical Audit Designer": "skills/ai-literacy/ai-output-critical-audit-designer/SKILL.md",
+        "AI Socratic Dialogue Designer": "skills/ai-literacy/ai-socratic-dialogue-designer/SKILL.md",
+        "Adaptive Hint Sequence Designer": "skills/ai-learning-science/adaptive-hint-sequence-designer/SKILL.md",
+        "Backwards Design Unit Planner": "skills/curriculum-assessment/backwards-design-unit-planner/SKILL.md",
+        "Cognitive Load Analyser": "skills/memory-learning-science/cognitive-load-analyser/SKILL.md",
+        "Cognitive Tutoring Architecture Designer": "skills/ai-learning-science/cognitive-tutoring-architecture-designer/SKILL.md",
+        "Competency Unpacker": "skills/curriculum-assessment/competency-unpacker/SKILL.md",
+        "Criterion-Referenced Rubric Generator": "skills/curriculum-assessment/criterion-referenced-rubric-generator/SKILL.md",
+        "Differentiation Adapter": "skills/curriculum-assessment/differentiation-adapter/SKILL.md",
+        "Dual Coding Designer": "skills/memory-learning-science/dual-coding-designer/SKILL.md",
+        "Intelligent Tutoring Dialogue Designer": "skills/ai-learning-science/intelligent-tutoring-dialogue-designer/SKILL.md",
+        "Interleaving Unit Planner": "skills/memory-learning-science/interleaving-unit-planner/SKILL.md",
+        "Project Brief Designer": "skills/curriculum-assessment/project-brief-designer/SKILL.md",
+        "Prompt Literacy Sequence Designer": "skills/ai-literacy/prompt-literacy-sequence-designer/SKILL.md",
+        "Scope and Sequence Designer": "skills/curriculum-assessment/scope-and-sequence-designer/SKILL.md",
+        "Vocabulary Tiering Tool": "skills/eal-language-development/vocabulary-tiering-tool/SKILL.md"
+      },
       "skill_licenses": null
     },
     "dmccreary": {
@@ -25982,7 +26357,15 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/dmccreary/claude-skills ~/.claude/skills/claude-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "book-chapter-generator": "skills/book-chapter-generator/SKILL.md",
+        "faq-generator": "skills/faq-generator/SKILL.md",
+        "glossary-generator": "skills/glossary-generator/SKILL.md",
+        "init-textbook": "skills/archived/init-textbook/SKILL.md",
+        "learning-graph-generator": "skills/learning-graph-generator/SKILL.md",
+        "microsim-generator": "skills/microsim-generator/SKILL.md",
+        "quiz-generator": "skills/quiz-generator/SKILL.md"
+      },
       "skill_licenses": null
     },
     "SYuan03": {
@@ -26022,7 +26405,17 @@
         "command": "/plugin marketplace add auditmos/skills",
         "kind": "plugin"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "audit-lending": "skills/audit-lending/SKILL.md",
+        "audit-liquidation": "skills/audit-liquidation/SKILL.md",
+        "audit-math-precision": "skills/audit-math-precision/SKILL.md",
+        "audit-oracle": "skills/audit-oracle/SKILL.md",
+        "audit-reentrancy": "skills/audit-reentrancy/SKILL.md",
+        "audit-signature": "skills/audit-signature/SKILL.md",
+        "audit-slippage": "skills/audit-slippage/SKILL.md",
+        "audit-staking": "skills/audit-staking/SKILL.md",
+        "audit-state-validation": "skills/audit-state-validation/SKILL.md"
+      },
       "skill_licenses": null
     },
     "quillai-network": {
@@ -26041,7 +26434,13 @@
         "command": "/plugin marketplace add quillai-network/quillshield_skills",
         "kind": "plugin"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "behavioral-state-analysis": "plugins/behavioral-state-analysis/skills/behavioral-state-analysis/SKILL.md",
+        "oracle-flashloan-analysis": "plugins/oracle-flashloan-analysis/skills/oracle-flashloan-analysis/SKILL.md",
+        "proxy-upgrade-safety": "plugins/proxy-upgrade-safety/skills/proxy-upgrade-safety/SKILL.md",
+        "semantic-guard-analysis": "plugins/semantic-guard-analysis/skills/semantic-guard-analysis/SKILL.md",
+        "state-invariant-detection": "plugins/state-invariant-detection/skills/state-invariant-detection/SKILL.md"
+      },
       "skill_licenses": null
     },
     "blockscout": {
@@ -26061,7 +26460,10 @@
         "kind": "skill-pack",
         "alt": "/plugin marketplace add blockscout/agent-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "blockscout-analysis": "blockscout-analysis/SKILL.md",
+        "web3-dev": "web3-dev/SKILL.md"
+      },
       "skill_licenses": null
     },
     "quiknode-labs": {
@@ -26081,7 +26483,9 @@
         "kind": "skill",
         "alt": "/plugin marketplace add quiknode-labs/blockchain-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "quicknode-skill": "skills/quicknode-skill/SKILL.md"
+      },
       "skill_licenses": null
     },
     "XSpoonAi": {
@@ -26101,7 +26505,17 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/XSpoonAi/spoon-awesome-skill ~/.claude/skills/spoon-awesome-skill"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "Account Abstraction Paymaster": "web3-core-operations/account-abstraction-paymaster/SKILL.md",
+        "contract-deployer": "web3-core-operations/contract-deployer/SKILL.md",
+        "dao-proposal-starter": "web3-core-operations/dao-proposal-starter/SKILL.md",
+        "gas-oracle": "web3-data-intelligence/gas-oracle/SKILL.md",
+        "impermanent-loss": "web3-data-intelligence/impermanent-loss/SKILL.md",
+        "nft-metadata-pinner": "web3-core-operations/nft-metadata-pinner/SKILL.md",
+        "nft-minter-basic": "web3-core-operations/nft-minter-basic/SKILL.md",
+        "security-audit": "web3-core-operations/security-audit/SKILL.md",
+        "solana-toolkit": "web3-core-operations/solana-toolkit/SKILL.md"
+      },
       "skill_licenses": null
     },
     "elevenlabs": {
@@ -26121,7 +26535,16 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/elevenlabs/skills ~/.claude/skills/skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "agents": "agents/SKILL.md",
+        "music": "music/SKILL.md",
+        "sound-effects": "sound-effects/SKILL.md",
+        "speech-engine": "speech-engine/SKILL.md",
+        "speech-to-text": "speech-to-text/SKILL.md",
+        "text-to-speech": "text-to-speech/SKILL.md",
+        "voice-changer": "voice-changer/SKILL.md",
+        "voice-isolator": "voice-isolator/SKILL.md"
+      },
       "skill_licenses": null
     },
     "heygen-com": {
@@ -26141,7 +26564,11 @@
         "kind": "skill-pack",
         "alt": "/plugin marketplace add heygen-com/skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "heygen-avatar": "heygen-avatar/SKILL.md",
+        "heygen-translate": "heygen-translate/SKILL.md",
+        "heygen-video": "heygen-video/SKILL.md"
+      },
       "skill_licenses": null
     },
     "bitwize-music-studio": {
@@ -26160,7 +26587,14 @@
         "command": "/plugin marketplace add bitwize-music-studio/claude-ai-music-skills",
         "kind": "plugin"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "album-conceptualizer": "skills/album-conceptualizer/SKILL.md",
+        "genre-creator": "skills/genre-creator/SKILL.md",
+        "lyric-writer": "skills/lyric-writer/SKILL.md",
+        "mastering-engineer": "skills/mastering-engineer/SKILL.md",
+        "mix-engineer": "skills/mix-engineer/SKILL.md",
+        "release-director": "skills/release-director/SKILL.md"
+      },
       "skill_licenses": null
     },
     "6missedcalls": {
@@ -26174,7 +26608,7 @@
       "repo": "video-editing-skill",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": "README.md",
+      "doc_path": null,
       "install": {
         "command": "npx skills add 6missedcalls/video-editing-skill",
         "kind": "skill",
@@ -26200,7 +26634,12 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/digitalsamba/claude-code-video-toolkit ~/.claude/skills/claude-code-video-toolkit"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "ffmpeg": ".claude/skills/ffmpeg/SKILL.md",
+        "moviepy": ".claude/skills/moviepy/SKILL.md",
+        "playwright-recording": ".claude/skills/playwright-recording/SKILL.md",
+        "remotion": ".claude/skills/remotion/SKILL.md"
+      },
       "skill_licenses": null
     },
     "shawnpang": {
@@ -26220,7 +26659,21 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/shawnpang/startup-founder-skills ~/.claude/skills/startup-founder-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "board-update": "skills/board-update/SKILL.md",
+        "cold-outreach": "skills/cold-outreach/SKILL.md",
+        "data-room": "skills/data-room/SKILL.md",
+        "fundraising-email": "skills/fundraising-email/SKILL.md",
+        "investor-research": "skills/investor-research/SKILL.md",
+        "market-research": "skills/market-research/SKILL.md",
+        "mvp-scoping": "skills/mvp-scoping/SKILL.md",
+        "pitch-deck": "skills/pitch-deck/SKILL.md",
+        "prd-writing": "skills/prd-writing/SKILL.md",
+        "roadmap-planning": "skills/roadmap-planning/SKILL.md",
+        "sales-script": "skills/sales-script/SKILL.md",
+        "startup-context": "skills/startup-context/SKILL.md",
+        "user-research-synthesis": "skills/user-research-synthesis/SKILL.md"
+      },
       "skill_licenses": null
     },
     "ncklrs": {
@@ -26240,7 +26693,10 @@
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/ncklrs/startup-os-skills ~/.claude/skills/startup-os-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "competitive-strategist": "skills/competitive-strategist/SKILL.md",
+        "gtm-leader": "skills/gtm-leader/SKILL.md"
+      },
       "skill_licenses": null
     },
     "tjboudreaux": {
@@ -26260,7 +26716,10 @@
         "kind": "skill-pack",
         "alt": "/plugin marketplace add tjboudreaux/cc-skills-vc-fundraising"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "fundraising-narrative": "skills/fundraising-narrative/SKILL.md",
+        "investor-relations": "skills/investor-relations/SKILL.md"
+      },
       "skill_licenses": null
     },
     "oh-my-openagent": {
@@ -26281,27 +26740,16 @@
         "alt": "git clone https://github.com/code-yeongyu/oh-my-openagent ~/.claude/skills/oh-my-openagent"
       },
       "skill_docs": {
-        "get-unpublished-changes": ".agents/skills/get-unpublished-changes/SKILL.md",
-        "github-triage": ".agents/skills/github-triage/SKILL.md",
-        "hyperplan": ".agents/skills/hyperplan/SKILL.md",
-        "pre-publish-review": ".agents/skills/pre-publish-review/SKILL.md",
-        "git-master": "src/features/builtin-skills/git-master/SKILL.md",
-        "remove-deadcode": ".agents/skills/remove-deadcode/SKILL.md",
-        "security-research": ".agents/skills/security-research/SKILL.md",
-        "work-with-pr": ".agents/skills/work-with-pr/SKILL.md",
+        "agent-browser": "packages/skills-loader-core/src/features/builtin-skills/agent-browser/SKILL.md",
         "comment-checker": "packages/omo-codex/plugin/components/comment-checker/skills/comment-checker/SKILL.md",
+        "debugging": "packages/shared-skills/skills/debugging/SKILL.md",
+        "get-unpublished-changes": ".agents/skills/get-unpublished-changes/SKILL.md",
         "lsp": "packages/omo-codex/plugin/components/lsp/skills/lsp/SKILL.md",
-        "ulw-loop": "packages/omo-codex/plugin/components/ulw-loop/skills/ulw-loop/SKILL.md",
-        "debugging": "packages/omo-codex/plugin/skills/debugging/SKILL.md",
-        "frontend-ui-ux": "packages/omo-codex/plugin/skills/frontend-ui-ux/SKILL.md",
-        "init-deep": "packages/omo-codex/plugin/skills/init-deep/SKILL.md",
-        "programming": "packages/omo-codex/plugin/skills/programming/SKILL.md",
-        "refactor": "packages/omo-codex/plugin/skills/refactor/SKILL.md",
-        "remove-ai-slops": "packages/omo-codex/plugin/skills/remove-ai-slops/SKILL.md",
-        "review-work": "packages/omo-codex/plugin/skills/review-work/SKILL.md",
-        "start-work": "packages/omo-codex/plugin/skills/start-work/SKILL.md",
-        "ulw-plan": "packages/omo-codex/plugin/skills/ulw-plan/SKILL.md",
-        "agent-browser": "src/features/builtin-skills/agent-browser/SKILL.md"
+        "programming": "packages/shared-skills/skills/programming/SKILL.md",
+        "refactor": "packages/shared-skills/skills/refactor/SKILL.md",
+        "remove-ai-slops": "packages/shared-skills/skills/remove-ai-slops/SKILL.md",
+        "remove-deadcode": ".agents/skills/remove-deadcode/SKILL.md",
+        "review-work": "packages/shared-skills/skills/review-work/SKILL.md"
       },
       "skill_licenses": null
     },
@@ -26323,13 +26771,13 @@
         "alt": "git clone https://github.com/Lum1104/Understand-Anything ~/.claude/skills/Understand-Anything"
       },
       "skill_docs": {
+        "understand": "understand-anything-plugin/skills/understand/SKILL.md",
         "understand-chat": "understand-anything-plugin/skills/understand-chat/SKILL.md",
         "understand-dashboard": "understand-anything-plugin/skills/understand-dashboard/SKILL.md",
         "understand-diff": "understand-anything-plugin/skills/understand-diff/SKILL.md",
         "understand-domain": "understand-anything-plugin/skills/understand-domain/SKILL.md",
         "understand-explain": "understand-anything-plugin/skills/understand-explain/SKILL.md",
         "understand-knowledge": "understand-anything-plugin/skills/understand-knowledge/SKILL.md",
-        "understand": "understand-anything-plugin/skills/understand/SKILL.md",
         "understand-onboard": "understand-anything-plugin/skills/understand-onboard/SKILL.md"
       },
       "skill_licenses": null
@@ -26352,29 +26800,29 @@
         "alt": "git clone https://github.com/addyosmani/agent-skills ~/.claude/skills/agent-skills"
       },
       "skill_docs": {
-        "git-workflow-and-versioning": "skills/git-workflow-and-versioning/SKILL.md",
-        "debugging-and-error-recovery": "skills/debugging-and-error-recovery/SKILL.md",
-        "code-review-and-quality": "skills/code-review-and-quality/SKILL.md",
-        "browser-testing-with-devtools": "skills/browser-testing-with-devtools/SKILL.md",
         "api-and-interface-design": "skills/api-and-interface-design/SKILL.md",
+        "browser-testing-with-devtools": "skills/browser-testing-with-devtools/SKILL.md",
         "ci-cd-and-automation": "skills/ci-cd-and-automation/SKILL.md",
+        "code-review-and-quality": "skills/code-review-and-quality/SKILL.md",
         "code-simplification": "skills/code-simplification/SKILL.md",
         "context-engineering": "skills/context-engineering/SKILL.md",
+        "debugging-and-error-recovery": "skills/debugging-and-error-recovery/SKILL.md",
         "deprecation-and-migration": "skills/deprecation-and-migration/SKILL.md",
+        "documentation-and-adrs": "skills/documentation-and-adrs/SKILL.md",
         "doubt-driven-development": "skills/doubt-driven-development/SKILL.md",
         "frontend-ui-engineering": "skills/frontend-ui-engineering/SKILL.md",
+        "git-workflow-and-versioning": "skills/git-workflow-and-versioning/SKILL.md",
         "idea-refine": "skills/idea-refine/SKILL.md",
         "incremental-implementation": "skills/incremental-implementation/SKILL.md",
         "interview-me": "skills/interview-me/SKILL.md",
         "performance-optimization": "skills/performance-optimization/SKILL.md",
-        "spec-driven-development": "skills/spec-driven-development/SKILL.md",
         "planning-and-task-breakdown": "skills/planning-and-task-breakdown/SKILL.md",
         "security-and-hardening": "skills/security-and-hardening/SKILL.md",
         "shipping-and-launch": "skills/shipping-and-launch/SKILL.md",
         "source-driven-development": "skills/source-driven-development/SKILL.md",
+        "spec-driven-development": "skills/spec-driven-development/SKILL.md",
         "test-driven-development": "skills/test-driven-development/SKILL.md",
-        "using-agent-skills": "skills/using-agent-skills/SKILL.md",
-        "documentation-and-adrs": "skills/documentation-and-adrs/SKILL.md"
+        "using-agent-skills": "skills/using-agent-skills/SKILL.md"
       },
       "skill_licenses": null
     },
@@ -26395,36 +26843,36 @@
         "kind": "marketplace"
       },
       "skill_docs": {
-        "gitlab-ci-patterns": "plugins/cicd-automation/skills/gitlab-ci-patterns/SKILL.md",
-        "parallel-debugging": "plugins/agent-teams/skills/parallel-debugging/SKILL.md",
         "api-design-principles": "plugins/backend-development/skills/api-design-principles/SKILL.md",
-        "secrets-management": "plugins/cicd-automation/skills/secrets-management/SKILL.md",
-        "screen-reader-testing": "plugins/accessibility-compliance/skills/screen-reader-testing/SKILL.md",
-        "wcag-audit-patterns": "plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md",
-        "multi-reviewer-patterns": "plugins/agent-teams/skills/multi-reviewer-patterns/SKILL.md",
-        "parallel-feature-development": "plugins/agent-teams/skills/parallel-feature-development/SKILL.md",
-        "task-coordination-strategies": "plugins/agent-teams/skills/task-coordination-strategies/SKILL.md",
-        "team-composition-patterns": "plugins/agent-teams/skills/team-composition-patterns/SKILL.md",
-        "team-communication-protocols": "plugins/agent-teams/skills/team-communication-protocols/SKILL.md",
-        "fastapi-templates": "plugins/api-scaffolding/skills/fastapi-templates/SKILL.md",
         "architecture-patterns": "plugins/backend-development/skills/architecture-patterns/SKILL.md",
-        "microservices-patterns": "plugins/backend-development/skills/microservices-patterns/SKILL.md",
+        "block-no-verify-hook": "plugins/block-no-verify/skills/block-no-verify-hook/SKILL.md",
+        "brand-landingpage": "plugins/brand-landingpage/skills/brand-landingpage/SKILL.md",
         "cqrs-implementation": "plugins/backend-development/skills/cqrs-implementation/SKILL.md",
+        "data-storytelling": "plugins/business-analytics/skills/data-storytelling/SKILL.md",
+        "defi-protocol-templates": "plugins/blockchain-web3/skills/defi-protocol-templates/SKILL.md",
+        "deployment-pipeline-design": "plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md",
         "event-store-design": "plugins/backend-development/skills/event-store-design/SKILL.md",
+        "fastapi-templates": "plugins/api-scaffolding/skills/fastapi-templates/SKILL.md",
+        "github-actions-templates": "plugins/cicd-automation/skills/github-actions-templates/SKILL.md",
+        "gitlab-ci-patterns": "plugins/cicd-automation/skills/gitlab-ci-patterns/SKILL.md",
+        "kpi-dashboard-design": "plugins/business-analytics/skills/kpi-dashboard-design/SKILL.md",
+        "microservices-patterns": "plugins/backend-development/skills/microservices-patterns/SKILL.md",
+        "multi-reviewer-patterns": "plugins/agent-teams/skills/multi-reviewer-patterns/SKILL.md",
+        "nft-standards": "plugins/blockchain-web3/skills/nft-standards/SKILL.md",
+        "parallel-debugging": "plugins/agent-teams/skills/parallel-debugging/SKILL.md",
+        "parallel-feature-development": "plugins/agent-teams/skills/parallel-feature-development/SKILL.md",
         "projection-patterns": "plugins/backend-development/skills/projection-patterns/SKILL.md",
         "saga-orchestration": "plugins/backend-development/skills/saga-orchestration/SKILL.md",
-        "temporal-python-testing": "plugins/backend-development/skills/temporal-python-testing/SKILL.md",
-        "workflow-orchestration-patterns": "plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md",
-        "block-no-verify-hook": "plugins/block-no-verify/skills/block-no-verify-hook/SKILL.md",
-        "defi-protocol-templates": "plugins/blockchain-web3/skills/defi-protocol-templates/SKILL.md",
-        "nft-standards": "plugins/blockchain-web3/skills/nft-standards/SKILL.md",
+        "screen-reader-testing": "plugins/accessibility-compliance/skills/screen-reader-testing/SKILL.md",
+        "secrets-management": "plugins/cicd-automation/skills/secrets-management/SKILL.md",
         "solidity-security": "plugins/blockchain-web3/skills/solidity-security/SKILL.md",
+        "task-coordination-strategies": "plugins/agent-teams/skills/task-coordination-strategies/SKILL.md",
+        "team-communication-protocols": "plugins/agent-teams/skills/team-communication-protocols/SKILL.md",
+        "team-composition-patterns": "plugins/agent-teams/skills/team-composition-patterns/SKILL.md",
+        "temporal-python-testing": "plugins/backend-development/skills/temporal-python-testing/SKILL.md",
+        "wcag-audit-patterns": "plugins/accessibility-compliance/skills/wcag-audit-patterns/SKILL.md",
         "web3-testing": "plugins/blockchain-web3/skills/web3-testing/SKILL.md",
-        "brand-landingpage": "plugins/brand-landingpage/skills/brand-landingpage/SKILL.md",
-        "data-storytelling": "plugins/business-analytics/skills/data-storytelling/SKILL.md",
-        "kpi-dashboard-design": "plugins/business-analytics/skills/kpi-dashboard-design/SKILL.md",
-        "deployment-pipeline-design": "plugins/cicd-automation/skills/deployment-pipeline-design/SKILL.md",
-        "github-actions-templates": "plugins/cicd-automation/skills/github-actions-templates/SKILL.md"
+        "workflow-orchestration-patterns": "plugins/backend-development/skills/workflow-orchestration-patterns/SKILL.md"
       },
       "skill_licenses": null
     },
@@ -26446,25 +26894,25 @@
         "alt": "git clone https://github.com/JimLiu/baoyu-skills ~/.claude/skills/baoyu-skills"
       },
       "skill_docs": {
-        "release-skills": ".claude/skills/release-skills/SKILL.md",
-        "baoyu-image-gen": "skills/baoyu-image-gen/SKILL.md",
         "baoyu-article-illustrator": "skills/baoyu-article-illustrator/SKILL.md",
-        "baoyu-cover-image": "skills/baoyu-cover-image/SKILL.md",
-        "baoyu-infographic": "skills/baoyu-infographic/SKILL.md",
-        "baoyu-xhs-images": "skills/baoyu-xhs-images/SKILL.md",
         "baoyu-comic": "skills/baoyu-comic/SKILL.md",
-        "baoyu-diagram": "skills/baoyu-diagram/SKILL.md",
-        "baoyu-slide-deck": "skills/baoyu-slide-deck/SKILL.md",
         "baoyu-compress-image": "skills/baoyu-compress-image/SKILL.md",
-        "baoyu-translate": "skills/baoyu-translate/SKILL.md",
+        "baoyu-cover-image": "skills/baoyu-cover-image/SKILL.md",
+        "baoyu-diagram": "skills/baoyu-diagram/SKILL.md",
         "baoyu-format-markdown": "skills/baoyu-format-markdown/SKILL.md",
+        "baoyu-image-gen": "skills/baoyu-image-gen/SKILL.md",
+        "baoyu-infographic": "skills/baoyu-infographic/SKILL.md",
         "baoyu-markdown-to-html": "skills/baoyu-markdown-to-html/SKILL.md",
-        "baoyu-url-to-markdown": "skills/baoyu-url-to-markdown/SKILL.md",
-        "baoyu-youtube-transcript": "skills/baoyu-youtube-transcript/SKILL.md",
-        "baoyu-wechat-summary": "skills/baoyu-wechat-summary/SKILL.md",
         "baoyu-post-to-wechat": "skills/baoyu-post-to-wechat/SKILL.md",
         "baoyu-post-to-weibo": "skills/baoyu-post-to-weibo/SKILL.md",
-        "baoyu-post-to-x": "skills/baoyu-post-to-x/SKILL.md"
+        "baoyu-post-to-x": "skills/baoyu-post-to-x/SKILL.md",
+        "baoyu-slide-deck": "skills/baoyu-slide-deck/SKILL.md",
+        "baoyu-translate": "skills/baoyu-translate/SKILL.md",
+        "baoyu-url-to-markdown": "skills/baoyu-url-to-markdown/SKILL.md",
+        "baoyu-wechat-summary": "skills/baoyu-wechat-summary/SKILL.md",
+        "baoyu-xhs-images": "skills/baoyu-xhs-images/SKILL.md",
+        "baoyu-youtube-transcript": "skills/baoyu-youtube-transcript/SKILL.md",
+        "release-skills": ".claude/skills/release-skills/SKILL.md"
       },
       "skill_licenses": null
     },
@@ -26485,9 +26933,7 @@
         "kind": "skill",
         "alt": "git clone https://github.com/OthmanAdi/planning-with-files ~/.claude/skills/planning-with-files"
       },
-      "skill_docs": {
-        "planning-with-files": ".codebuddy/skills/planning-with-files/SKILL.md"
-      },
+      "skill_docs": null,
       "skill_licenses": null
     },
     "googleworkspace-cli": {
@@ -26508,36 +26954,36 @@
         "alt": "git clone https://github.com/googleworkspace/cli ~/.claude/skills/cli"
       },
       "skill_docs": {
-        "gws-gmail": "skills/gws-gmail/SKILL.md",
-        "gws-gmail-send": "skills/gws-gmail-send/SKILL.md",
-        "gws-gmail-read": "skills/gws-gmail-read/SKILL.md",
-        "gws-gmail-reply": "skills/gws-gmail-reply/SKILL.md",
-        "gws-gmail-reply-all": "skills/gws-gmail-reply-all/SKILL.md",
-        "gws-gmail-forward": "skills/gws-gmail-forward/SKILL.md",
-        "gws-gmail-triage": "skills/gws-gmail-triage/SKILL.md",
-        "gws-gmail-watch": "skills/gws-gmail-watch/SKILL.md",
+        "gws-admin-reports": "skills/gws-admin-reports/SKILL.md",
         "gws-calendar": "skills/gws-calendar/SKILL.md",
         "gws-calendar-agenda": "skills/gws-calendar-agenda/SKILL.md",
         "gws-calendar-insert": "skills/gws-calendar-insert/SKILL.md",
-        "gws-drive": "skills/gws-drive/SKILL.md",
-        "gws-drive-upload": "skills/gws-drive-upload/SKILL.md",
-        "gws-docs": "skills/gws-docs/SKILL.md",
-        "gws-docs-write": "skills/gws-docs-write/SKILL.md",
-        "gws-forms": "skills/gws-forms/SKILL.md",
-        "gws-keep": "skills/gws-keep/SKILL.md",
         "gws-chat": "skills/gws-chat/SKILL.md",
         "gws-chat-send": "skills/gws-chat-send/SKILL.md",
-        "gws-meet": "skills/gws-meet/SKILL.md",
         "gws-classroom": "skills/gws-classroom/SKILL.md",
-        "gws-people": "skills/gws-people/SKILL.md",
-        "gws-admin-reports": "skills/gws-admin-reports/SKILL.md",
+        "gws-docs": "skills/gws-docs/SKILL.md",
+        "gws-docs-write": "skills/gws-docs-write/SKILL.md",
+        "gws-drive": "skills/gws-drive/SKILL.md",
+        "gws-drive-upload": "skills/gws-drive-upload/SKILL.md",
         "gws-events": "skills/gws-events/SKILL.md",
-        "gws-events-subscribe": "skills/gws-events-subscribe/SKILL.md",
         "gws-events-renew": "skills/gws-events-renew/SKILL.md",
+        "gws-events-subscribe": "skills/gws-events-subscribe/SKILL.md",
+        "gws-forms": "skills/gws-forms/SKILL.md",
+        "gws-gmail": "skills/gws-gmail/SKILL.md",
+        "gws-gmail-forward": "skills/gws-gmail-forward/SKILL.md",
+        "gws-gmail-read": "skills/gws-gmail-read/SKILL.md",
+        "gws-gmail-reply": "skills/gws-gmail-reply/SKILL.md",
+        "gws-gmail-reply-all": "skills/gws-gmail-reply-all/SKILL.md",
+        "gws-gmail-send": "skills/gws-gmail-send/SKILL.md",
+        "gws-gmail-triage": "skills/gws-gmail-triage/SKILL.md",
+        "gws-gmail-watch": "skills/gws-gmail-watch/SKILL.md",
+        "gws-keep": "skills/gws-keep/SKILL.md",
+        "gws-meet": "skills/gws-meet/SKILL.md",
         "gws-modelarmor": "skills/gws-modelarmor/SKILL.md",
         "gws-modelarmor-create-template": "skills/gws-modelarmor-create-template/SKILL.md",
         "gws-modelarmor-sanitize-prompt": "skills/gws-modelarmor-sanitize-prompt/SKILL.md",
-        "gws-modelarmor-sanitize-response": "skills/gws-modelarmor-sanitize-response/SKILL.md"
+        "gws-modelarmor-sanitize-response": "skills/gws-modelarmor-sanitize-response/SKILL.md",
+        "gws-people": "skills/gws-people/SKILL.md"
       },
       "skill_licenses": null
     },
@@ -26552,13 +26998,24 @@
       "repo": "nature-skills",
       "default_branch": "main",
       "license": "Apache-2.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add Yuan1z0825/nature-skills",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/Yuan1z0825/nature-skills ~/.claude/skills/nature-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "nature-academic-search": "skills/nature-academic-search/SKILL.md",
+        "nature-citation": "skills/nature-citation/SKILL.md",
+        "nature-data": "skills/nature-data/SKILL.md",
+        "nature-figure": "skills/nature-figure/SKILL.md",
+        "nature-paper2ppt": "skills/nature-paper2ppt/SKILL.md",
+        "nature-polishing": "skills/nature-polishing/SKILL.md",
+        "nature-reader": "skills/nature-reader/SKILL.md",
+        "nature-response": "skills/nature-response/SKILL.md",
+        "nature-reviewer": "skills/nature-reviewer/SKILL.md",
+        "nature-writing": "skills/nature-writing/SKILL.md"
+      },
       "skill_licenses": null
     },
     "guizang-ppt-skill": {
@@ -26592,13 +27049,34 @@
       "repo": "AI-Research-SKILLs",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add Orchestra-Research/AI-Research-SKILLs",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/Orchestra-Research/AI-Research-SKILLs ~/.claude/skills/AI-Research-SKILLs"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "constitutional-ai": "07-safety-alignment/constitutional-ai/SKILL.md",
+        "huggingface-tokenizers": "02-tokenization/huggingface-tokenizers/SKILL.md",
+        "litgpt": "01-model-architecture/litgpt/SKILL.md",
+        "llamaguard": "07-safety-alignment/llamaguard/SKILL.md",
+        "nemo-curator": "05-data-processing/nemo-curator/SKILL.md",
+        "nemo-guardrails": "07-safety-alignment/nemo-guardrails/SKILL.md",
+        "nnsight": "04-mechanistic-interpretability/nnsight/SKILL.md",
+        "openrlhf": "06-post-training/openrlhf/SKILL.md",
+        "peft": "03-fine-tuning/peft/SKILL.md",
+        "prompt-guard": "07-safety-alignment/prompt-guard/SKILL.md",
+        "pyvene": "04-mechanistic-interpretability/pyvene/SKILL.md",
+        "ray-data": "05-data-processing/ray-data/SKILL.md",
+        "rwkv": "01-model-architecture/rwkv/SKILL.md",
+        "sentencepiece": "02-tokenization/sentencepiece/SKILL.md",
+        "simpo": "06-post-training/simpo/SKILL.md",
+        "slime": "06-post-training/slime/SKILL.md",
+        "torchforge": "06-post-training/torchforge/SKILL.md",
+        "torchtitan": "01-model-architecture/torchtitan/SKILL.md",
+        "trl-fine-tuning": "06-post-training/trl-fine-tuning/SKILL.md",
+        "verl": "06-post-training/verl/SKILL.md"
+      },
       "skill_licenses": null
     },
     "dbskill": {
@@ -26611,14 +27089,30 @@
       "author": "dontbesilent2025",
       "repo": "dbskill",
       "default_branch": "main",
-      "license": null,
-      "doc_path": null,
+      "license": "CC-BY-NC-4.0",
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add dontbesilent2025/dbskill",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/dontbesilent2025/dbskill ~/.claude/skills/dbskill"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "dbs-agent-migration": "skills/dbs-agent-migration/SKILL.md",
+        "dbs-ai-check": "skills/dbs-ai-check/SKILL.md",
+        "dbs-benchmark": "skills/dbs-benchmark/SKILL.md",
+        "dbs-content": "skills/dbs-content/SKILL.md",
+        "dbs-decision": "skills/dbs-decision/SKILL.md",
+        "dbs-deconstruct": "skills/dbs-deconstruct/SKILL.md",
+        "dbs-diagnosis": "skills/dbs-diagnosis/SKILL.md",
+        "dbs-goal": "skills/dbs-goal/SKILL.md",
+        "dbs-good-question": "skills/dbs-good-question/SKILL.md",
+        "dbs-hook": "skills/dbs-hook/SKILL.md",
+        "dbs-learning": "skills/dbs-learning/SKILL.md",
+        "dbs-report": "skills/dbs-report/SKILL.md",
+        "dbs-restore": "skills/dbs-restore/SKILL.md",
+        "dbs-save": "skills/dbs-save/SKILL.md",
+        "dbs-xhs-title": "skills/dbs-xhs-title/SKILL.md"
+      },
       "skill_licenses": null
     },
     "digoal-blog": {
@@ -26632,13 +27126,18 @@
       "repo": "blog",
       "default_branch": "master",
       "license": "GPL-2.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add digoal/blog",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/digoal/blog ~/.claude/skills/blog"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "article-to-podcast-script": "skills/article-to-podcast-script/SKILL.md",
+        "database-foundation-course-writer": "skills/database-foundation-course-writer/SKILL.md",
+        "paper-interpretation": "skills/paper-interpretation/SKILL.md",
+        "pgfaq": "skills/pgfaq/SKILL.md"
+      },
       "skill_licenses": null
     },
     "prompt-master": {
@@ -26672,13 +27171,31 @@
       "repo": "hive",
       "default_branch": "main",
       "license": "Apache-2.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add aden-hive/hive",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/aden-hive/hive ~/.claude/skills/hive"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "browser-automation": "core/framework/skills/_default_skills/browser-automation/SKILL.md",
+        "browser-edge-cases": ".claude/skills/browser-edge-cases/SKILL.md",
+        "colony-progress-tracker": "core/framework/skills/_default_skills/colony-progress-tracker/SKILL.md",
+        "context-preservation": "core/framework/skills/_default_skills/context-preservation/SKILL.md",
+        "error-recovery": "core/framework/skills/_default_skills/error-recovery/SKILL.md",
+        "linkedin-automation": "core/framework/skills/_preset_skills/linkedin-automation/SKILL.md",
+        "note-taking": "core/framework/skills/_default_skills/note-taking/SKILL.md",
+        "quality-monitor": "core/framework/skills/_default_skills/quality-monitor/SKILL.md",
+        "terminal-tools-foundations": "core/framework/skills/_preset_skills/terminal-tools-foundations/SKILL.md",
+        "terminal-tools-fs-search": "core/framework/skills/_preset_skills/terminal-tools-fs-search/SKILL.md",
+        "terminal-tools-job-control": "core/framework/skills/_preset_skills/terminal-tools-job-control/SKILL.md",
+        "terminal-tools-pty-sessions": "core/framework/skills/_preset_skills/terminal-tools-pty-sessions/SKILL.md",
+        "terminal-tools-troubleshooting": "core/framework/skills/_preset_skills/terminal-tools-troubleshooting/SKILL.md",
+        "test-reporting": ".claude/skills/test-reporting/SKILL.md",
+        "triage-issue": ".claude/skills/triage-issue/SKILL.md",
+        "writing-hive-skills": "core/framework/skills/_default_skills/writing-hive-skills/SKILL.md",
+        "x-automation": "core/framework/skills/_preset_skills/x-automation/SKILL.md"
+      },
       "skill_licenses": null
     },
     "claude-obsidian": {
@@ -26692,13 +27209,29 @@
       "repo": "claude-obsidian",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add AgriciDaniel/claude-obsidian",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/AgriciDaniel/claude-obsidian ~/.claude/skills/claude-obsidian"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "autoresearch": "skills/autoresearch/SKILL.md",
+        "canvas": "skills/canvas/SKILL.md",
+        "defuddle": "skills/defuddle/SKILL.md",
+        "obsidian-bases": "skills/obsidian-bases/SKILL.md",
+        "obsidian-markdown": "skills/obsidian-markdown/SKILL.md",
+        "save": "skills/save/SKILL.md",
+        "think": "skills/think/SKILL.md",
+        "wiki": "skills/wiki/SKILL.md",
+        "wiki-cli": "skills/wiki-cli/SKILL.md",
+        "wiki-fold": "skills/wiki-fold/SKILL.md",
+        "wiki-ingest": "skills/wiki-ingest/SKILL.md",
+        "wiki-lint": "skills/wiki-lint/SKILL.md",
+        "wiki-mode": "skills/wiki-mode/SKILL.md",
+        "wiki-query": "skills/wiki-query/SKILL.md",
+        "wiki-retrieve": "skills/wiki-retrieve/SKILL.md"
+      },
       "skill_licenses": null
     },
     "ljg-skills": {
@@ -26712,13 +27245,29 @@
       "repo": "ljg-skills",
       "default_branch": "master",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add lijigang/ljg-skills",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/lijigang/ljg-skills ~/.claude/skills/ljg-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "ljg-book": "skills/ljg-book/SKILL.md",
+        "ljg-card": "skills/ljg-card/SKILL.md",
+        "ljg-invest": "skills/ljg-invest/SKILL.md",
+        "ljg-learn": "skills/ljg-learn/SKILL.md",
+        "ljg-paper": "skills/ljg-paper/SKILL.md",
+        "ljg-plain": "skills/ljg-plain/SKILL.md",
+        "ljg-present": "skills/ljg-present/SKILL.md",
+        "ljg-qa": "skills/ljg-qa/SKILL.md",
+        "ljg-rank": "skills/ljg-rank/SKILL.md",
+        "ljg-read": "skills/ljg-read/SKILL.md",
+        "ljg-relationship": "skills/ljg-relationship/SKILL.md",
+        "ljg-roundtable": "skills/ljg-roundtable/SKILL.md",
+        "ljg-think": "skills/ljg-think/SKILL.md",
+        "ljg-word": "skills/ljg-word/SKILL.md",
+        "ljg-writes": "skills/ljg-writes/SKILL.md"
+      },
       "skill_licenses": null
     },
     "antfu-skills": {
@@ -26732,13 +27281,23 @@
       "repo": "skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add antfu/skills",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/antfu/skills ~/.claude/skills/skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "antfu": "skills/antfu/SKILL.md",
+        "nuxt": "skills/nuxt/SKILL.md",
+        "pinia": "skills/pinia/SKILL.md",
+        "pnpm": "skills/pnpm/SKILL.md",
+        "unocss": "skills/unocss/SKILL.md",
+        "vite": "skills/vite/SKILL.md",
+        "vitepress": "skills/vitepress/SKILL.md",
+        "vitest": "skills/vitest/SKILL.md",
+        "vue": "skills/vue/SKILL.md"
+      },
       "skill_licenses": null
     },
     "superpowers-zh": {
@@ -26752,13 +27311,19 @@
       "repo": "superpowers-zh",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add jnMetaCode/superpowers-zh",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/jnMetaCode/superpowers-zh ~/.claude/skills/superpowers-zh"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "chinese-code-review": "skills/chinese-code-review/SKILL.md",
+        "chinese-commit-conventions": "skills/chinese-commit-conventions/SKILL.md",
+        "chinese-documentation": "skills/chinese-documentation/SKILL.md",
+        "chinese-git-workflow": "skills/chinese-git-workflow/SKILL.md",
+        "workflow-runner": "skills/workflow-runner/SKILL.md"
+      },
       "skill_licenses": null
     },
     "cc-wf-studio": {
@@ -26772,13 +27337,16 @@
       "repo": "cc-wf-studio",
       "default_branch": "main",
       "license": "AGPL-3.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add breaking-brake/cc-wf-studio",
         "kind": "skill-pack",
         "alt": "git clone https://github.com/breaking-brake/cc-wf-studio ~/.claude/skills/cc-wf-studio"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "jira-driven-planning": ".claude/skills/jira-driven-planning/SKILL.md",
+        "pr-review-analysis": ".claude/skills/pr-review-analysis/SKILL.md"
+      },
       "skill_licenses": null
     },
     "openhanako": {
@@ -26792,13 +27360,15 @@
       "repo": "openhanako",
       "default_branch": "main",
       "license": "Apache-2.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add liliMozi/openhanako",
         "kind": "skill-pack",
         "alt": "git clone https://github.com/liliMozi/openhanako ~/.claude/skills/openhanako"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "quiet-musing": "skills2set/quiet-musing/SKILL.md"
+      },
       "skill_licenses": null
     },
     "tech-leads-club": {
@@ -26811,14 +27381,35 @@
       "author": "tech-leads-club",
       "repo": "agent-skills",
       "default_branch": "main",
-      "license": null,
-      "doc_path": null,
+      "license": "MIT",
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add tech-leads-club/agent-skills",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/tech-leads-club/agent-skills ~/.claude/skills/agent-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "aws-advisor": "packages/skills-catalog/skills/(cloud)/aws-advisor/SKILL.md",
+        "codenavi": "packages/skills-catalog/skills/(development)/codenavi/SKILL.md",
+        "component-common-domain-detection": "packages/skills-catalog/skills/(architecture)/component-common-domain-detection/SKILL.md",
+        "component-flattening-analysis": "packages/skills-catalog/skills/(architecture)/component-flattening-analysis/SKILL.md",
+        "component-identification-sizing": "packages/skills-catalog/skills/(architecture)/component-identification-sizing/SKILL.md",
+        "coupling-analysis": "packages/skills-catalog/skills/(architecture)/coupling-analysis/SKILL.md",
+        "create-adr": "packages/skills-catalog/skills/(creation)/create-adr/SKILL.md",
+        "create-rfc": "packages/skills-catalog/skills/(creation)/create-rfc/SKILL.md",
+        "create-technical-design-doc": "packages/skills-catalog/skills/(creation)/create-technical-design-doc/SKILL.md",
+        "cursor-subagent-creator": "packages/skills-catalog/skills/(creation)/cursor-subagent-creator/SKILL.md",
+        "decomposition-planning-roadmap": "packages/skills-catalog/skills/(architecture)/decomposition-planning-roadmap/SKILL.md",
+        "domain-analysis": "packages/skills-catalog/skills/(architecture)/domain-analysis/SKILL.md",
+        "domain-identification-grouping": "packages/skills-catalog/skills/(architecture)/domain-identification-grouping/SKILL.md",
+        "frontend-blueprint": "packages/skills-catalog/skills/(architecture)/frontend-blueprint/SKILL.md",
+        "legacy-migration-planner": "packages/skills-catalog/skills/(architecture)/legacy-migration-planner/SKILL.md",
+        "modular-decomposition": "packages/skills-catalog/skills/(architecture)/modular-decomposition/SKILL.md",
+        "modular-design-principles": "packages/skills-catalog/skills/(architecture)/modular-design-principles/SKILL.md",
+        "skill-architect": "packages/skills-catalog/skills/(creation)/skill-architect/SKILL.md",
+        "subagent-creator": "packages/skills-catalog/skills/(creation)/subagent-creator/SKILL.md",
+        "tactical-ddd": "packages/skills-catalog/skills/(architecture)/tactical-ddd/SKILL.md"
+      },
       "skill_licenses": null
     },
     "google-maps-scraper": {
@@ -26832,13 +27423,15 @@
       "repo": "google-maps-scraper",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add gosom/google-maps-scraper",
         "kind": "skill",
         "alt": "git clone https://github.com/gosom/google-maps-scraper ~/.claude/skills/google-maps-scraper"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "google-maps-scraper": "skills/google-maps-scraper/SKILL.md"
+      },
       "skill_licenses": null
     },
     "sensenova-skills": {
@@ -26852,13 +27445,44 @@
       "repo": "SenseNova-Skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add OpenSenseNova/SenseNova-Skills",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/OpenSenseNova/SenseNova-Skills ~/.claude/skills/SenseNova-Skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "bar-chart-visualization": "skills/sn-da-excel-workflow/capability/excel-data-visualization/bar-chart-visualization/SKILL.md",
+        "basic-statistics": "skills/sn-da-excel-workflow/capability/excel-data-statistics/basic-statistics/SKILL.md",
+        "category-coloring": "skills/sn-da-excel-workflow/capability/excel-cell-coloring/category-coloring/SKILL.md",
+        "category-filtering": "skills/sn-da-excel-workflow/capability/excel-data-filtering/category-filtering/SKILL.md",
+        "category-statistics": "skills/sn-da-excel-workflow/capability/excel-data-statistics/category-statistics/SKILL.md",
+        "comparison-analysis": "skills/sn-da-excel-workflow/capability/excel-data-analysis/comparison-analysis/SKILL.md",
+        "condition-filtering": "skills/sn-da-excel-workflow/capability/excel-data-filtering/condition-filtering/SKILL.md",
+        "data-bar-formatting": "skills/sn-da-excel-workflow/capability/excel-conditional-formatting/data-bar-formatting/SKILL.md",
+        "duplicate-removal": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/duplicate-removal/SKILL.md",
+        "duplicate-value-coloring": "skills/sn-da-excel-workflow/capability/excel-cell-coloring/duplicate-value-coloring/SKILL.md",
+        "group-by-analysis": "skills/sn-da-excel-workflow/capability/excel-data-analysis/group-by-analysis/SKILL.md",
+        "grouped-statistics": "skills/sn-da-excel-workflow/capability/excel-data-statistics/grouped-statistics/SKILL.md",
+        "histogram-visualization": "skills/sn-da-excel-workflow/capability/excel-data-visualization/histogram-visualization/SKILL.md",
+        "invalid-data-cleaning": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/invalid-data-cleaning/SKILL.md",
+        "kpi-metric-analysis": "skills/sn-da-excel-workflow/capability/excel-data-analysis/kpi-metric-analysis/SKILL.md",
+        "line-chart-visualization": "skills/sn-da-excel-workflow/capability/excel-data-visualization/line-chart-visualization/SKILL.md",
+        "missing-value-handling": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/missing-value-handling/SKILL.md",
+        "numeric-format-normalization": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/numeric-format-normalization/SKILL.md",
+        "outlier-coloring": "skills/sn-da-excel-workflow/capability/excel-cell-coloring/outlier-coloring/SKILL.md",
+        "outlier-detection": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/outlier-detection/SKILL.md",
+        "percentage-calculation": "skills/sn-da-excel-workflow/capability/excel-data-statistics/percentage-calculation/SKILL.md",
+        "pivot-table-analysis": "skills/sn-da-excel-workflow/capability/excel-data-analysis/pivot-table-analysis/SKILL.md",
+        "range-filtering": "skills/sn-da-excel-workflow/capability/excel-data-filtering/range-filtering/SKILL.md",
+        "sn-da-excel-workflow": "skills/sn-da-excel-workflow/SKILL.md",
+        "text-normalization": "skills/sn-da-excel-workflow/capability/excel-data-cleaning/text-normalization/SKILL.md",
+        "threshold-cell-coloring": "skills/sn-da-excel-workflow/capability/excel-cell-coloring/threshold-cell-coloring/SKILL.md",
+        "threshold-filtering": "skills/sn-da-excel-workflow/capability/excel-data-filtering/threshold-filtering/SKILL.md",
+        "time-series-analysis": "skills/sn-da-excel-workflow/capability/excel-data-analysis/time-series-analysis/SKILL.md",
+        "top-value-coloring": "skills/sn-da-excel-workflow/capability/excel-cell-coloring/top-value-coloring/SKILL.md",
+        "trend-analysis": "skills/sn-da-excel-workflow/capability/excel-data-analysis/trend-analysis/SKILL.md"
+      },
       "skill_licenses": null
     },
     "pinme": {
@@ -26872,13 +27496,16 @@
       "repo": "pinme",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add glitternetwork/pinme",
         "kind": "skill-pack",
         "alt": "git clone https://github.com/glitternetwork/pinme ~/.claude/skills/pinme"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "pinme": "skills/pinme/SKILL.md",
+        "pinme-share": "skills/pinme-share/SKILL.md"
+      },
       "skill_licenses": null
     },
     "cc-sdd": {
@@ -26892,7 +27519,7 @@
       "repo": "cc-sdd",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add gotalab/cc-sdd",
         "kind": "multi-skill-suite",
@@ -26932,13 +27559,30 @@
       "repo": "skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add dotnet/skills",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/dotnet/skills ~/.claude/skills/skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "analyzing-dotnet-performance": "plugins/dotnet-diag/skills/analyzing-dotnet-performance/SKILL.md",
+        "android-tombstone-symbolication": "plugins/dotnet-diag/skills/android-tombstone-symbolication/SKILL.md",
+        "apple-crash-symbolication": "plugins/dotnet-diag/skills/apple-crash-symbolication/SKILL.md",
+        "author-component": "plugins/dotnet-blazor/skills/author-component/SKILL.md",
+        "clr-activation-debugging": "plugins/dotnet-diag/skills/clr-activation-debugging/SKILL.md",
+        "collect-user-input": "plugins/dotnet-blazor/skills/collect-user-input/SKILL.md",
+        "configuring-opentelemetry-dotnet": "plugins/dotnet-aspnetcore/skills/configuring-opentelemetry-dotnet/SKILL.md",
+        "convert-blazor-server-to-webapp": "plugins/dotnet-aspnetcore/skills/convert-blazor-server-to-webapp/SKILL.md",
+        "create-blazor-project": "plugins/dotnet-blazor/skills/create-blazor-project/SKILL.md",
+        "create-custom-agent": ".agents/skills/create-custom-agent/SKILL.md",
+        "dotnet-trace-collect": "plugins/dotnet-diag/skills/dotnet-trace-collect/SKILL.md",
+        "dotnet-webapi": "plugins/dotnet-aspnetcore/skills/dotnet-webapi/SKILL.md",
+        "dump-collect": "plugins/dotnet-diag/skills/dump-collect/SKILL.md",
+        "minimal-api-file-upload": "plugins/dotnet-aspnetcore/skills/minimal-api-file-upload/SKILL.md",
+        "optimizing-ef-core-queries": "plugins/dotnet-data/skills/optimizing-ef-core-queries/SKILL.md",
+        "technology-selection": "plugins/dotnet-ai/skills/technology-selection/SKILL.md"
+      },
       "skill_licenses": null
     },
     "drawio-skill": {
@@ -26952,13 +27596,15 @@
       "repo": "drawio-skill",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add Agents365-ai/drawio-skill",
         "kind": "skill",
         "alt": "git clone https://github.com/Agents365-ai/drawio-skill ~/.claude/skills/drawio-skill"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "drawio-skill": "skills/drawio-skill/SKILL.md"
+      },
       "skill_licenses": null
     },
     "paperspine": {
@@ -26972,7 +27618,7 @@
       "repo": "PaperSpine",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add WUBING2023/PaperSpine",
         "kind": "multi-skill-suite",
@@ -26992,13 +27638,15 @@
       "repo": "GPT-Image2-Skill",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add wuyoscar/GPT-Image2-Skill",
         "kind": "skill",
         "alt": "git clone https://github.com/wuyoscar/GPT-Image2-Skill ~/.claude/skills/GPT-Image2-Skill"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "gpt-image": "skills/gpt-image/SKILL.md"
+      },
       "skill_licenses": null
     },
     "ponytail": {
@@ -27012,7 +27660,7 @@
       "repo": "ponytail",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add DietrichGebert/ponytail",
         "kind": "multi-skill-suite",
@@ -27032,7 +27680,7 @@
       "repo": "NotFair",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add nowork-studio/NotFair",
         "kind": "multi-skill-suite",
@@ -27052,13 +27700,36 @@
       "repo": "finance-skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add himself65/finance-skills",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/himself65/finance-skills ~/.claude/skills/finance-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "company-valuation": "plugins/market-analysis/skills/company-valuation/SKILL.md",
+        "discord-reader": "plugins/social-readers/skills/discord-reader/SKILL.md",
+        "earnings-preview": "plugins/market-analysis/skills/earnings-preview/SKILL.md",
+        "earnings-recap": "plugins/market-analysis/skills/earnings-recap/SKILL.md",
+        "estimate-analysis": "plugins/market-analysis/skills/estimate-analysis/SKILL.md",
+        "etf-premium": "plugins/market-analysis/skills/etf-premium/SKILL.md",
+        "finance-sentiment": "plugins/data-providers/skills/finance-sentiment/SKILL.md",
+        "hormuz-strait": "plugins/data-providers/skills/hormuz-strait/SKILL.md",
+        "hyperliquid-reader": "plugins/data-providers/skills/hyperliquid-reader/SKILL.md",
+        "linkedin-reader": "plugins/social-readers/skills/linkedin-reader/SKILL.md",
+        "opencli-reader": "plugins/social-readers/skills/opencli-reader/SKILL.md",
+        "options-payoff": "plugins/market-analysis/skills/options-payoff/SKILL.md",
+        "saas-valuation-compression": "plugins/market-analysis/skills/saas-valuation-compression/SKILL.md",
+        "sepa-strategy": "plugins/market-analysis/skills/sepa-strategy/SKILL.md",
+        "startup-analysis": "plugins/startup-tools/skills/startup-analysis/SKILL.md",
+        "stock-correlation": "plugins/market-analysis/skills/stock-correlation/SKILL.md",
+        "stock-liquidity": "plugins/market-analysis/skills/stock-liquidity/SKILL.md",
+        "telegram-reader": "plugins/social-readers/skills/telegram-reader/SKILL.md",
+        "tradingview-reader": "plugins/data-providers/skills/tradingview-reader/SKILL.md",
+        "twitter-reader": "plugins/social-readers/skills/twitter-reader/SKILL.md",
+        "yc-reader": "plugins/social-readers/skills/yc-reader/SKILL.md",
+        "yfinance-data": "plugins/market-analysis/skills/yfinance-data/SKILL.md"
+      },
       "skill_licenses": null
     },
     "supervisor-skills": {
@@ -27071,14 +27742,22 @@
       "author": "HKUSTDial",
       "repo": "Supervisor-Skills",
       "default_branch": "main",
-      "license": null,
-      "doc_path": null,
+      "license": "CC-BY-NC-SA-4.0",
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add HKUSTDial/Supervisor-Skills",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/HKUSTDial/Supervisor-Skills ~/.claude/skills/Supervisor-Skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "benchmark-paper-template": "skills/benchmark-paper-template/SKILL.md",
+        "figure-designer": "skills/figure-designer/SKILL.md",
+        "idea-evaluator": "skills/idea-evaluator/SKILL.md",
+        "intro-drafter": "skills/intro-drafter/SKILL.md",
+        "pre-submission-reviewer": "skills/pre-submission-reviewer/SKILL.md",
+        "tech-paper-template": "skills/tech-paper-template/SKILL.md",
+        "vibe-research-workflow": "skills/vibe-research-workflow/SKILL.md"
+      },
       "skill_licenses": null
     },
     "patent-disclosure-skill": {
@@ -27112,13 +27791,22 @@
       "repo": "pg-aiguide",
       "default_branch": "main",
       "license": "Apache-2.0",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add timescale/pg-aiguide",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/timescale/pg-aiguide ~/.claude/skills/pg-aiguide"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "design-postgis-tables": "skills/design-postgis-tables/SKILL.md",
+        "design-postgres-tables": "skills/design-postgres-tables/SKILL.md",
+        "find-hypertable-candidates": "skills/find-hypertable-candidates/SKILL.md",
+        "migrate-postgres-tables-to-hypertables": "skills/migrate-postgres-tables-to-hypertables/SKILL.md",
+        "pgvector-semantic-search": "skills/pgvector-semantic-search/SKILL.md",
+        "postgres": "skills/postgres/SKILL.md",
+        "postgres-hybrid-text-search": "skills/postgres-hybrid-text-search/SKILL.md",
+        "setup-timescaledb-hypertables": "skills/setup-timescaledb-hypertables/SKILL.md"
+      },
       "skill_licenses": null
     },
     "wordpress-agent-skills": {
@@ -27131,14 +27819,32 @@
       "author": "WordPress",
       "repo": "agent-skills",
       "default_branch": "trunk",
-      "license": null,
-      "doc_path": null,
+      "license": "GPL-2.0",
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add WordPress/agent-skills",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/WordPress/agent-skills ~/.claude/skills/agent-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "blueprint": "skills/blueprint/SKILL.md",
+        "wordpress-router": "skills/wordpress-router/SKILL.md",
+        "wp-abilities-api": "skills/wp-abilities-api/SKILL.md",
+        "wp-abilities-audit": "skills/wp-abilities-audit/SKILL.md",
+        "wp-abilities-verify": "skills/wp-abilities-verify/SKILL.md",
+        "wp-block-development": "skills/wp-block-development/SKILL.md",
+        "wp-block-themes": "skills/wp-block-themes/SKILL.md",
+        "wp-interactivity-api": "skills/wp-interactivity-api/SKILL.md",
+        "wp-performance": "skills/wp-performance/SKILL.md",
+        "wp-phpstan": "skills/wp-phpstan/SKILL.md",
+        "wp-playground": "skills/wp-playground/SKILL.md",
+        "wp-plugin-development": "skills/wp-plugin-development/SKILL.md",
+        "wp-plugin-directory-guidelines": "skills/wp-plugin-directory-guidelines/SKILL.md",
+        "wp-project-triage": "skills/wp-project-triage/SKILL.md",
+        "wp-rest-api": "skills/wp-rest-api/SKILL.md",
+        "wp-wpcli-and-ops": "skills/wp-wpcli-and-ops/SKILL.md",
+        "wpds": "skills/wpds/SKILL.md"
+      },
       "skill_licenses": null
     },
     "feiskyer-cc-settings": {
@@ -27152,13 +27858,22 @@
       "repo": "claude-code-settings",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add feiskyer/claude-code-settings",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/feiskyer/claude-code-settings ~/.claude/skills/claude-code-settings"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "codex-skill": "skills/codex-skill/SKILL.md",
+        "deep-research": "skills/deep-research/SKILL.md",
+        "github-fix-issue": "skills/github-fix-issue/SKILL.md",
+        "github-review-pr": "skills/github-review-pr/SKILL.md",
+        "gpt-image-skill": "skills/gpt-image-skill/SKILL.md",
+        "nanobanana-skill": "skills/nanobanana-skill/SKILL.md",
+        "translate": "skills/translate/SKILL.md",
+        "youtube-transcribe-skill": "skills/youtube-transcribe-skill/SKILL.md"
+      },
       "skill_licenses": null
     },
     "agent-skill-creator": {
@@ -27192,13 +27907,19 @@
       "repo": "agent-skills",
       "default_branch": "main",
       "license": "MIT",
-      "doc_path": null,
+      "doc_path": "README.md",
       "install": {
         "command": "npx skills add callstackincubator/agent-skills",
         "kind": "multi-skill-suite",
         "alt": "git clone https://github.com/callstackincubator/agent-skills ~/.claude/skills/agent-skills"
       },
-      "skill_docs": null,
+      "skill_docs": {
+        "github-actions": "skills/github-actions/SKILL.md",
+        "react-native-best-practices": "skills/react-native-best-practices/SKILL.md",
+        "react-native-brownfield-migration": "skills/react-native-brownfield-migration/SKILL.md",
+        "upgrading-react-native": "skills/upgrading-react-native/SKILL.md",
+        "validate-skills": ".claude/skills/validate-skills/SKILL.md"
+      },
       "skill_licenses": null
     }
   }
