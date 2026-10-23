@@ -1,0 +1,2649 @@
+{
+  "generated_at": "2026-06-23T05:11:58+00:00",
+  "date": "2026-06-23",
+  "proposed_count": 5,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 81,
+      "blocklisted": 20,
+      "seen_recently": 142,
+      "truncated": 124,
+      "skill_name_dup": 1,
+      "not_a_collection": 3,
+      "looks_aggregator": 2
+    },
+    "filtered_out": [
+      {
+        "full_name": "sno-ai/mda",
+        "reason": "非正经集合：该仓库主要是 MDA 规范、编译兼容演示和 conformance fixture，不是可直接供 AI agent 使用的正经 skill 集合。"
+      },
+      {
+        "full_name": "skillmatic-ai/awesome-agent-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "darkrishabh/agent-skills-eval",
+        "reason": "非正经集合：该仓库主要是 agent skill 测试/评测运行器，且仅含 examples 下的基础 CSV 玩具 skill，不像值得收录的正式 skill 集合。"
+      },
+      {
+        "full_name": "JackyST0/awesome-agent-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "JimLiu/Illustrated-Agent-Skills",
+        "reason": "非正经集合：仓库定位更像《图解 Skill》实战指南的示例章节，而非可直接收录的正式 AI skill 集合。"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "find-skills"
+      ],
+      "group": "Skill 自动发现与调用 / Skill 安装 / 发现",
+      "group_en": "Skill discovery, installation, and invocation",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-2",
+      "chain": false,
+      "description": "帮用户搜索、安装和更新可复用 agent skills，扩展能力边界。",
+      "description_en": "Helps users search, install, and update reusable agent skills to extend capabilities.",
+      "sources": [
+        "heshengtao/super-agent-party"
+      ]
+    },
+    {
+      "skills": [
+        "officeCLI"
+      ],
+      "group": "OfficeCLI 文档处理",
+      "group_en": "OfficeCLI document handling",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "用 officecli 创建、检查、修改和校对 Word、Excel、PPT 文档。",
+      "description_en": "Uses officecli to create, inspect, modify, and proofread Word, Excel, and PowerPoint files.",
+      "sources": [
+        "heshengtao/super-agent-party"
+      ]
+    },
+    {
+      "skills": [
+        "sap-extension-creator"
+      ],
+      "group": "SAP 扩展创建器",
+      "group_en": "SAP Extension Creator",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 Agent 创建 SAP 静态或 Node 扩展，并接入 MCP 工具。",
+      "description_en": "Helps agents scaffold SAP static or Node.js extensions and register MCP tools.",
+      "sources": [
+        "heshengtao/super-agent-party"
+      ]
+    },
+    {
+      "skills": [
+        "skill-creator"
+      ],
+      "group": "Skill 创建器",
+      "group_en": "Skill Creator",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "指导 Agent 编写清晰、精简、可复用的 Claude Skill。",
+      "description_en": "Guides agents in writing concise, reusable Claude Skills.",
+      "sources": [
+        "heshengtao/super-agent-party"
+      ]
+    },
+    {
+      "skills": [
+        "deploying-laravel-cloud"
+      ],
+      "group": "Laravel Cloud 部署运维",
+      "group_en": "Laravel Cloud Deployment & Operations",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "帮助 agent 使用 Laravel Cloud CLI 部署应用、管理环境、数据库、域名与用量。",
+      "description_en": "Helps the agent deploy apps and manage environments, databases, domains, and usage through the Laravel Cloud CLI.",
+      "sources": [
+        "laravel/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "configure-nightwatch"
+      ],
+      "group": "Laravel Nightwatch 观测配置",
+      "group_en": "Laravel Nightwatch Observability Configuration",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 agent 配置 Nightwatch 采样、过滤和脱敏，平衡可观测性与隐私。",
+      "description_en": "Helps the agent configure Nightwatch sampling, filtering, and redaction to balance observability with privacy.",
+      "sources": [
+        "laravel/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "starter-kit-upgrade"
+      ],
+      "group": "Laravel Starter Kit 增量同步",
+      "group_en": "Laravel Starter Kit Incremental Sync",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "帮助 agent 将 Laravel starter kit 的单项上游改进安全应用到已定制项目，先在独立分支处理并避免自动覆盖。",
+      "description_en": "Helps the agent safely apply one upstream Laravel starter-kit improvement to a customized project on a dedicated branch without overwriting changes.",
+      "sources": [
+        "laravel/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-active-directory-b2c"
+      ],
+      "group": "Microsoft / .NET 栈",
+      "group_en": "Microsoft / .NET stack",
+      "category": "software-engineering",
+      "subcategory": "1-7",
+      "chain": false,
+      "description": "为 Azure AD B2C 开发提供用户流、自定义策略、IdP/MFA、API 安全、CI/CD 与 Sentinel 监控指南。",
+      "description_en": "Guides agents building Azure AD B2C flows, custom policies, IdPs/MFA, secure APIs, CI/CD, and Sentinel monitoring.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-advisor"
+      ],
+      "group": "Azure Advisor 健康与监控",
+      "group_en": "Azure Advisor health and monitoring",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "为 Azure Advisor 开发提供告警、工作簿、Resource Graph 查询、迁移风险与主权云配置参考。",
+      "description_en": "Helps agents create Azure Advisor alerts, workbooks, Resource Graph queries, migration-risk views, and sovereign-cloud setups.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-ai-vision"
+      ],
+      "group": "Azure AI Vision 开发指南",
+      "group_en": "Azure AI Vision Development Guide",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 在 Azure AI Vision 开发中查询文档、决策配置、处理配额、集成与部署。",
+      "description_en": "Helps agents make Azure AI Vision development decisions, check limits, configure integrations, and plan deployments.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-aks-edge-essentials"
+      ],
+      "group": "AKS Edge / Arc 集群运维",
+      "group_en": "AKS Edge and Arc Cluster Operations",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "帮助 agent 管理 AKS Edge/Arc 集群，处理故障、架构、配额、安全和部署。",
+      "description_en": "Helps agents operate AKS Edge and Arc clusters, troubleshoot issues, evaluate architecture, and manage deployment constraints.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-analysis-services",
+        "azure-anomaly-detector"
+      ],
+      "group": "Azure 服务开发排障",
+      "group_en": "Azure service development troubleshooting",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "提供 Azure Anomaly Detector API 调优、容器与边缘部署排障指引。",
+      "description_en": "Guides API tuning and troubleshooting for containerized or edge deployments of Azure Anomaly Detector.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-api-center",
+        "azure-api-management"
+      ],
+      "group": "Azure API 平台开发指南",
+      "group_en": "Azure API platform development guides",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 处理 Azure Api Center 的 API 注册、网关同步、门户定制和库存管理。",
+      "description_en": "Helps the agent handle Azure API Center tasks such as API registration, gateway sync, portal customization, and inventory management.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-app-configuration",
+        "azure-app-service"
+      ],
+      "group": "Azure 服务开发指南",
+      "group_en": "Azure Service Development Guides",
+      "category": "software-engineering",
+      "subcategory": "1-7",
+      "chain": false,
+      "description": "为 Azure App Configuration 开发提供排障、配额、安全、刷新和部署等实时文档指导。",
+      "description_en": "Guides agents through Azure App Configuration development, troubleshooting, quotas, security, refresh behavior, and deployment.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-app-testing"
+      ],
+      "group": "Azure 应用测试与性能验证",
+      "group_en": "Azure app testing and performance validation",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "为 Azure 应用测试任务提供官方文档速查、排障和决策指南。",
+      "description_en": "Provides Microsoft Docs-backed quick reference, troubleshooting, and decision guidance for Azure app testing tasks.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-application-gateway"
+      ],
+      "group": "Azure 网络入口与应用网关",
+      "group_en": "Azure networking ingress and application gateways",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "为 Azure Application Gateway 配置、WAF、TLS、AKS 入口提供文档指南。",
+      "description_en": "Guides Azure Application Gateway configuration, WAF/TLS setup, routing, and AKS ingress with Microsoft Docs.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-arc"
+      ],
+      "group": "Azure Arc 混合部署与运维",
+      "group_en": "Azure Arc Hybrid Deployment and Operations",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "为 Azure Arc 开发提供架构、部署、安全、配额、集成与排障指引。",
+      "description_en": "Provides Azure Arc development guidance on architecture, deployment, security, quotas, integrations, and troubleshooting.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-architecture"
+      ],
+      "group": "Azure 架构决策与参考设计",
+      "group_en": "Azure Architecture Decisions and Reference Designs",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 选择 Azure 服务、参考架构、设计模式并完成迁移方案。",
+      "description_en": "Helps agents choose Azure services, reference architectures, design patterns, and migration paths.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-artifact-signing"
+      ],
+      "group": "Azure Artifact 签名与安全",
+      "group_en": "Azure Artifact signing and security",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "为 agent 提供 Azure Artifact Signing 的证书生命周期、RBAC、迁移、日志与 CI/CD 集成指南。",
+      "description_en": "Guides agents through Azure Artifact Signing certificate lifecycle, RBAC, migrations, diagnostics, and CI/CD integration.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-artifacts"
+      ],
+      "group": "Azure Artifacts 包管理",
+      "group_en": "Azure Artifacts package management",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "为 agent 提供 Azure Artifacts feed、上游源、视图晋升、保留策略、CI/CD 与 npm 配置指南。",
+      "description_en": "Guides agents through Azure Artifacts feeds, upstream sources, promotion views, retention, CI/CD, and npm configuration.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-attestation"
+      ],
+      "group": "Azure Attestation 安全顾问",
+      "group_en": "Azure Attestation security advisor",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "为 Azure Attestation 提供令牌验证、策略、基线与私有端点配置指引。",
+      "description_en": "Guides Azure Attestation token validation, policy authoring, baselines, and private endpoint configuration.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-automation"
+      ],
+      "group": "Azure 运维自动化",
+      "group_en": "Azure operations automation",
+      "category": "devops-infra",
+      "subcategory": "17-4",
+      "chain": false,
+      "description": "帮助构建 Azure Automation runbook、DSC、混合 Worker 与变更跟踪。",
+      "description_en": "Guides Azure Automation runbooks, DSC state configuration, hybrid workers, and change tracking.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-backup",
+        "azure-bastion"
+      ],
+      "group": "Azure 服务架构与运维顾问",
+      "group_en": "Azure Service Architecture and Operations Advisor",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 Agent 设计 Azure Bastion 安全远程访问、认证、网络集成与配置。",
+      "description_en": "Guides agents on Azure Bastion secure remote access, authentication, network integration, and configuration.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-batch",
+        "azure-blob-storage"
+      ],
+      "group": "Azure 服务开发专家",
+      "group_en": "Azure service development experts",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "为 Azure Blob Storage 分层、生命周期、认证、挂载与部署提供开发排障和架构指导。",
+      "description_en": "Provides development guidance, troubleshooting, architecture patterns, limits, security, and deployment advice for Azure Blob Storage.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-blueprints"
+      ],
+      "group": "Azure 蓝图治理与部署",
+      "group_en": "Azure Blueprints governance and deployment",
+      "category": "devops-infra",
+      "subcategory": "17-1",
+      "chain": false,
+      "description": "为 Agent 提供 Azure Blueprints 架构、配置、自动化与排障知识，支持 CLI/PowerShell/REST 实现。",
+      "description_en": "Helps agents design, automate, and troubleshoot Azure Blueprints using current Microsoft Learn guidance.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-boards"
+      ],
+      "group": "Azure Boards 工作项与敏捷看板",
+      "group_en": "Azure Boards work tracking and agile boards",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "为 Agent 提供 Azure Boards 工作项、查询、图表、冲刺和 WIQL 集成实践与排障。",
+      "description_en": "Helps agents manage work items, queries, sprints, and WIQL integrations in Azure Boards.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-bot-service"
+      ],
+      "group": "Azure AI Bot Service 开发",
+      "group_en": "Azure AI Bot Service Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "为 agent 提供 Azure AI Bot Service 架构、集成、安全、部署与排障指南。",
+      "description_en": "Azure AI Bot Service guidance for architecture, channel integrations, security, deployment, and troubleshooting.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-business-process-tracking"
+      ],
+      "group": "Azure DevOps 流水线与部署",
+      "group_en": "Azure DevOps Pipelines and Deployment",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "为 agent 提供 Azure Business Process Tracking 的 DevOps 构建、测试、流水线与部署指引。",
+      "description_en": "DevOps guidance for building, testing, and deploying Azure Business Process Tracking solutions.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-cache-redis"
+      ],
+      "group": "Azure Redis 缓存",
+      "group_en": "Azure Redis Cache",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 处理 Redis 缓存配置、架构、安全与部署问题。",
+      "description_en": "Helps the agent handle Redis cache configuration, architecture, security, and deployment issues.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-carbon-optimization"
+      ],
+      "group": "Azure 碳优化",
+      "group_en": "Azure Carbon Optimization",
+      "category": "devops-infra",
+      "subcategory": "17-4",
+      "chain": false,
+      "description": "帮助 agent 处理碳排放数据、REST API 与仪表板问题。",
+      "description_en": "Helps the agent handle carbon emissions data, the REST API, and dashboard issues.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-chaos-studio"
+      ],
+      "group": "Azure Chaos Studio 故障实验",
+      "group_en": "Azure Chaos Studio Fault-Injection Experiments",
+      "category": "devops-infra",
+      "subcategory": "17-4",
+      "chain": false,
+      "description": "帮助 agent 设计 Azure 故障注入实验、配置目标并处理配额、安全和遥测。",
+      "description_en": "Helps an agent design Azure fault-injection experiments, configure targets, and handle quotas, security, and telemetry.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "azure-cloud-adoption-framework"
+      ],
+      "group": "Azure 云采用框架与 landing zone 规划",
+      "group_en": "Azure Cloud Adoption Framework and Landing Zone Planning",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 按 Azure CAF 规划云采用、landing zone、治理和迁移。",
+      "description_en": "Helps an agent plan cloud adoption, landing zones, governance, and migration using Azure CAF.",
+      "sources": [
+        "MicrosoftDocs/Agent-Skills"
+      ]
+    },
+    {
+      "skills": [
+        "auditing-skills"
+      ],
+      "group": "Skill 安全审计与修复",
+      "group_en": "Skill Security Auditing and Remediation",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-3",
+      "chain": false,
+      "description": "帮助 agent 使用 skills.sh 等审计来源检查发布 skill 的安全与质量问题，并修复发现项。",
+      "description_en": "Helps agents audit published skills with tools like skills.sh and remediate security or quality findings.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "creating-mermaid-dbt-dag"
+      ],
+      "group": "dbt DAG / Mermaid 可视化",
+      "group_en": "dbt DAG / Mermaid Visualization",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 通过 MCP 或 manifest 解析 dbt 模型血缘，并生成 Mermaid 依赖图。",
+      "description_en": "Helps agents parse dbt model lineage via MCP or manifest files and render Mermaid dependency diagrams.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "migrating-dbt-core-to-fusion"
+      ],
+      "group": "dbt-core 到 Fusion 迁移排障",
+      "group_en": "dbt-core to Fusion Migration Triage",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 按流程运行 autofix、审查变更并分类 dbt-core 到 Fusion 迁移错误。",
+      "description_en": "Helps an agent run autofix, review changes, and classify remaining dbt-core to Fusion migration errors.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "migrating-dbt-project-across-platforms"
+      ],
+      "group": "dbt 跨数据平台迁移",
+      "group_en": "dbt Cross-Platform Data Warehouse Migration",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 agent 利用 dbt Fusion 编译反馈与单元测试，将 dbt 项目迁移到目标数据平台。",
+      "description_en": "Guides an agent in using dbt Fusion compile feedback and unit tests to migrate a dbt project to a target data platform.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "adding-dbt-unit-test"
+      ],
+      "group": "dbt 模型单元测试",
+      "group_en": "dbt Model Unit Testing",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 为 dbt 模型编写单元测试 YAML，模拟上游输入并校验预期输出。",
+      "description_en": "Helps agents write dbt model unit test YAML by mocking upstream inputs and validating expected outputs.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "answering-natural-language-questions-with-dbt"
+      ],
+      "group": "自然语言 → SQL",
+      "group_en": "Natural Language to SQL",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 基于 dbt Semantic Layer 或 SQL 回答业务分析问题，如指标、KPI 和趋势查询。",
+      "description_en": "Helps agents answer business analytics questions using dbt’s Semantic Layer or ad hoc SQL against warehouse data.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "building-dbt-semantic-layer"
+      ],
+      "group": "dbt 语义层与指标建模",
+      "group_en": "dbt Semantic Layer Modeling",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 创建和修改 dbt Semantic Layer 的语义模型、维度、指标及 YAML 规范。",
+      "description_en": "Helps agents create and modify dbt Semantic Layer components, including semantic models, dimensions, metrics, and YAML specs.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "configuring-dbt-mcp-server"
+      ],
+      "group": "MCP Server 开发",
+      "group_en": "MCP Server Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 为 Claude、Cursor、VS Code 等配置并验证 dbt MCP 服务连接。",
+      "description_en": "Helps agents configure and validate the dbt MCP server connection for tools like Claude, Cursor, and VS Code.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "fetching-dbt-docs"
+      ],
+      "group": "dbt 文档检索",
+      "group_en": "dbt Documentation Lookup",
+      "category": "data-scraping",
+      "subcategory": "7-1",
+      "chain": false,
+      "description": "帮助 agent 快速检索并读取 dbt 官方文档。",
+      "description_en": "Helps agents quickly find and read official dbt documentation.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "running-dbt-commands"
+      ],
+      "group": "dbt CLI 执行",
+      "group_en": "dbt CLI Execution",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 规范运行 dbt 构建、测试和查询命令。",
+      "description_en": "Helps agents run dbt build, test, and query commands safely and consistently.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "troubleshooting-dbt-job-errors"
+      ],
+      "group": "dbt Cloud 作业故障排查",
+      "group_en": "dbt Cloud job failure troubleshooting",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 分析 dbt Cloud 失败日志、API 与数据问题，定位作业失败根因。",
+      "description_en": "Helps an agent analyze dbt Cloud run logs, Admin API data, git history, and data issues to identify job failure root causes.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "using-dbt-for-analytics-engineering"
+      ],
+      "group": "dbt 数据建模与转换",
+      "group_en": "dbt data modeling and transformations",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 在 dbt 项目中创建或修改模型、测试并验证数据转换结果。",
+      "description_en": "Helps an agent create and modify dbt models, write SQL transformations, add tests, and validate data results.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "working-with-dbt-mesh"
+      ],
+      "group": "dbt Mesh 与模型变更影响分析",
+      "group_en": "dbt Mesh and Model Change Impact Analysis",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 评估 dbt 模型变更的破坏性影响、依赖范围，并规划版本化、合同与跨项目引用。",
+      "description_en": "Helps agents assess breaking dbt model changes, map affected dependencies, and plan versions, contracts, and cross-project references.",
+      "sources": [
+        "dbt-labs/dbt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "nw-ab-critique-dimensions",
+        "nw-abr-critique-dimensions"
+      ],
+      "group": "Claude Code Agent 质量评审维度",
+      "group_en": "Claude Code Agent Quality Review Dimensions",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-3",
+      "chain": false,
+      "description": "提供评审 Agent 定义的质量维度，检查模板合规、聚焦度与差异说明。",
+      "description_en": "Provides criteria for reviewing agent definitions, including template compliance, focus, and divergence quality.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-ad-critique-dimensions"
+      ],
+      "group": "验收测试质量评审",
+      "group_en": "Acceptance Test Quality Review",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "用于评审验收测试是否覆盖异常路径、GWT格式、业务语言和可观察行为。",
+      "description_en": "Reviews acceptance tests for error coverage, GWT structure, business language, and observable behavior assertions.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-agent-creation-workflow"
+      ],
+      "group": "Agent 创建工作流",
+      "group_en": "Agent Creation Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导从需求分析、设计、创建到验证迭代地构建 Agent。",
+      "description_en": "Guides agents through analyze, design, create, validate, and refine phases when building new agents.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-agent-testing"
+      ],
+      "group": "Agent 验证 / 对抗测试",
+      "group_en": "Agent validation and adversarial testing",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 分层验证输出质量、集成交接、对抗风险和提示注入抗性。",
+      "description_en": "Helps agents validate output quality, workflow handoffs, adversarial risks, and prompt-injection resistance.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-architectural-styles-tradeoffs",
+        "nw-ddd-eventsourcing"
+      ],
+      "group": "事件溯源 / CQRS / Saga / 后端架构 / 微服务设计",
+      "group_en": "Backend architecture and microservices design",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 Agent 判断何时采用事件溯源/CQRS，并设计事件流、投影、快照和 Saga。",
+      "description_en": "Helps agents decide when to use event sourcing/CQRS and design event streams, projections, snapshots, and sagas.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-architecture-patterns"
+      ],
+      "group": "架构模式与系统设计",
+      "group_en": "Architecture patterns and system design",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 在系统设计时选择架构模式并用 C4 等模型沟通方案。",
+      "description_en": "Helps agents choose architecture patterns and communicate designs using models like C4.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-at-completeness-check"
+      ],
+      "group": "验收测试完整性检查",
+      "group_en": "Acceptance test completeness checks",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "为 agent 提供验收测试分类与 15 项机械清单，判定候选 AT 是否完整。",
+      "description_en": "Gives agents a canonical acceptance-test taxonomy and mechanical checklist to judge coverage.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-authoritative-sources"
+      ],
+      "group": "权威来源与检索策略",
+      "group_en": "Authoritative Sources and Search Strategy",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "维护领域权威来源库与检索规则，帮助 agent 选择可信资料并判断时效。",
+      "description_en": "Maintains domain-specific authority databases and search rules so agents can choose credible, fresh sources.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-bdd-methodology"
+      ],
+      "group": "BDD 验收测试设计",
+      "group_en": "BDD Acceptance Test Design",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "指导 agent 用 Given-When-Then 编写验收场景，驱动外层 TDD 与实现迭代。",
+      "description_en": "Guides agents in writing acceptance scenarios with Given-When-Then to drive outside-in TDD and implementation loops.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-bdd-requirements"
+      ],
+      "group": "BDD 需求发现与验收示例",
+      "group_en": "BDD Requirements Discovery",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "引导 agent 组织 Three Amigos、Example Mapping，并把规则转成 Given-When-Then 验收场景。",
+      "description_en": "Guides agents to run Three Amigos and Example Mapping, then translate rules into Given-When-Then acceptance scenarios.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-brainstorming"
+      ],
+      "group": "产品问题框定与创意发散",
+      "group_en": "Product Framing and Ideation",
+      "category": "product-management",
+      "subcategory": "3-3",
+      "chain": false,
+      "description": "帮助 agent 先做 HMW 问题框定，再分批生成多样方案并延后评估。",
+      "description_en": "Helps agents frame HMW questions, generate diverse options in structured sessions, and defer evaluation until after ideation.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-buddy-command-catalog"
+      ],
+      "group": "nWave 命令路由目录",
+      "group_en": "nWave Command Routing Catalog",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "汇总 /nw-* 命令、适用场景与代理路由，帮助 buddy 选择正确入口。",
+      "description_en": "Catalogs /nw-* commands, use cases, and agent routing so the buddy can pick the right entry point.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-buddy-project-reading"
+      ],
+      "group": "Agent 项目阅读协议",
+      "group_en": "Agent Project-Reading Protocol",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": false,
+      "description": "规定 buddy 读取项目文件的顺序、证据引用与克制原则，避免臆测。",
+      "description_en": "Defines a grounded project-reading protocol with inspection order and citation discipline for the buddy agent.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-buddy-ssot-knowledge"
+      ],
+      "group": "仓库事实源与权威文件映射",
+      "group_en": "Repository Source-of-Truth Mapping",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": false,
+      "description": "帮 Agent 识别仓库权威事实源，发现重复信息冲突并避免引用过期内容。",
+      "description_en": "Helps the agent find the repo’s authoritative facts, flag conflicting copies, and avoid stale claims.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-buddy-wave-knowledge"
+      ],
+      "group": "nWave 波次工作流知识库",
+      "group_en": "nWave Wave Workflow Knowledge",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "帮 Agent 理解 nWave 各阶段目标、输入输出和下一步路由，不越权执行。",
+      "description_en": "Helps the agent understand each nWave phase, its inputs and outputs, and where to route next without executing work.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-buddy"
+      ],
+      "group": "nWave 项目级方法论助手",
+      "group_en": "nWave Project Methodology Assistant",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "读取项目与配置文档，回答 nWave 方法、状态、命令、迁移和故障排查问题。",
+      "description_en": "Reads project and config docs to answer grounded questions about nWave methodology, state, commands, migration, and troubleshooting.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-bugfix"
+      ],
+      "group": "TDD（多家同名版本）",
+      "group_en": "TDD Implementations",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "端到端缺陷修复流程：根因分析、用户确认、回归测试与 TDD 修复验证。",
+      "description_en": "End-to-end defect resolution with root-cause analysis, user approval, regression tests, and TDD-based fix verification.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-canary"
+      ],
+      "group": "Skill 注入检测金丝雀",
+      "group_en": "Skill Injection Canary",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-3",
+      "chain": false,
+      "description": "检测 SKILL.md 自动注入是否生效，并用固定暗语验证内容完整性。",
+      "description_en": "Detects whether SKILL.md auto-injection is active and verifies content integrity with a fixed passphrase.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-cicd-and-deployment"
+      ],
+      "group": "nw-cicd-and-deployment",
+      "group_en": "Kubernetes / GitOps / CI-CD / CI/CD Pipelines / GitHub Actions Templates",
+      "category": "devops-infra",
+      "subcategory": "17-2",
+      "chain": false,
+      "description": "帮助 agent 设计本地质量门禁、CI/CD 管道、GitHub Actions 模式和分支发布策略。",
+      "description_en": "Helps agents design local quality gates, CI/CD pipelines, GitHub Actions patterns, and branch release strategies.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-collaboration-and-handoffs"
+      ],
+      "group": "nWave 多 Agent 交接协议",
+      "group_en": "nWave Multi-Agent Handoff Protocols",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "定义多 Agent 间交接内容、触发条件与提交格式，支撑 TDD/Mikado/重构流程协作。",
+      "description_en": "Defines cross-agent handoff content, triggers, and commit formats for TDD, Mikado, and refactoring workflows.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-collapse-detection"
+      ],
+      "group": "技术文档类型边界检测",
+      "group_en": "Technical Documentation Boundary Checks",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "识别教程、指南、参考、解释文档的类型混杂问题，并给出拆分与修正策略。",
+      "description_en": "Detects mixed-purpose documentation patterns and recommends how to split or rewrite them.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-command-design-patterns",
+        "nw-command-optimization-workflow"
+      ],
+      "group": "命令设计到瘦身优化工作流",
+      "group_en": "Command Design to Optimization Workflow",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": true,
+      "description": "提供命令定义模式，规范 dispatcher/orchestrator 的规模、结构与声明式调用模板。",
+      "description_en": "Guides agents through analyzing bloated commands, extracting shared logic, and refactoring them into lean declarative definitions.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-continue"
+      ],
+      "group": "nWave 功能推进向导",
+      "group_en": "nWave Feature Progression Wizard",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "扫描功能文档，识别 wave 进度并自动恢复下一步。",
+      "description_en": "Scans feature docs, detects wave progress, and resumes the next step automatically.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-data-architecture-patterns"
+      ],
+      "group": "数据架构选型模式",
+      "group_en": "Data Architecture Selection Patterns",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "提供数据仓库、湖仓、数据湖与数据网格的架构选型参考。",
+      "description_en": "Provides decision guidance for data warehouse, lakehouse, data lake, and data mesh architectures.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-database-technology-selection"
+      ],
+      "group": "数据库技术选型",
+      "group_en": "Database Technology Selection",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 按访问模式、一致性、规模、延迟和合规要求比较数据库并给出选型建议。",
+      "description_en": "Helps an agent compare database families and products by access patterns, consistency, scale, latency, and compliance to recommend a fit.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-ddd-event-modeling"
+      ],
+      "group": "事件建模与规格生成",
+      "group_en": "Event Modeling and Spec Generation",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "帮助 agent 用事件建模梳理业务流程，识别命令、事件、视图并生成 Given/When/Then 规格。",
+      "description_en": "Helps an agent map business flows with event modeling, identify commands, events, and views, then generate Given/When/Then specs.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    },
+    {
+      "skills": [
+        "nw-ddd-strategic"
+      ],
+      "group": "DDD 战略设计与领域建模",
+      "group_en": "Strategic DDD & Domain Modeling",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 Agent 做 DDD 战略建模：划分子域、发现限界上下文并建立组织对齐。",
+      "description_en": "Helps agents perform strategic DDD modeling: classify subdomains, discover bounded contexts, and align teams.",
+      "sources": [
+        "nWave-ai/nWave"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "heshengtao",
+        "repo": "super-agent-party",
+        "full_name": "heshengtao/super-agent-party",
+        "url": "https://github.com/heshengtao/super-agent-party",
+        "stars": 2406,
+        "pushed_at": "2026-06-22",
+        "default_branch": "main",
+        "github_description": "⭐ All-in-one AI companion! Super Agent Party = Self hosted neuro sama + openclaw! ⭐ 全能AI伴侣！超级智能体派对 = 自托管neuro sama + openclaw!",
+        "topics": [
+          "agent-skills",
+          "ai-companion",
+          "ai-vtuber",
+          "claude-code",
+          "comfyui",
+          "cowork",
+          "discord-bot",
+          "home-assistant",
+          "im-bot",
+          "livestream",
+          "mcp",
+          "neuro-sama",
+          "openclaw",
+          "sap",
+          "sillytavern",
+          "super-agent-party",
+          "vrm"
+        ],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "find-skills",
+          "path": "skills/find-skills/SKILL.md",
+          "subcategory": "13-2",
+          "subcategory_title": "13.2 安装 / 发现 / 打包",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 自动发现与调用 / Skill 安装 / 发现",
+          "group_en": "Skill discovery, installation, and invocation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮用户搜索、安装和更新可复用 agent skills，扩展能力边界。",
+          "description_en": "Helps users search, install, and update reusable agent skills to extend capabilities.",
+          "what": "Searches the open skills ecosystem and installs requested skills.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "officeCLI",
+          "path": "skills/officeCLI/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "OfficeCLI 文档处理",
+          "group_en": "OfficeCLI document handling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 officecli 创建、检查、修改和校对 Word、Excel、PPT 文档。",
+          "description_en": "Uses officecli to create, inspect, modify, and proofread Word, Excel, and PowerPoint files.",
+          "what": "Operates Office documents through the officecli command-line interface.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sap-extension-creator",
+          "path": "skills/sap-extension-creator/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "SAP 扩展创建器",
+          "group_en": "SAP Extension Creator",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 创建 SAP 静态或 Node 扩展，并接入 MCP 工具。",
+          "description_en": "Helps agents scaffold SAP static or Node.js extensions and register MCP tools.",
+          "what": "用于创建 Super Agent Party 扩展，支持纯前端或 Node.js 后端模式。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "skill-creator",
+          "path": "skills/skill-creator/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器",
+          "group_en": "Skill Creator",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导 Agent 编写清晰、精简、可复用的 Claude Skill。",
+          "description_en": "Guides agents in writing concise, reusable Claude Skills.",
+          "what": "用于按有效 Skill 写作原则创建或更新 Claude Skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/Codex/superpowers/mattpocock · 组「Skill 创建器」"
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "laravel",
+        "repo": "agent-skills",
+        "full_name": "laravel/agent-skills",
+        "url": "https://github.com/laravel/agent-skills",
+        "stars": 656,
+        "pushed_at": "2026-06-11",
+        "default_branch": "main",
+        "github_description": "Laravel official collection of agent skills",
+        "topics": [],
+        "language": "Shell",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "deploying-laravel-cloud",
+          "path": "laravel-cloud/skills/deploying-laravel-cloud/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Laravel Cloud 部署运维",
+          "group_en": "Laravel Cloud Deployment & Operations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 使用 Laravel Cloud CLI 部署应用、管理环境、数据库、域名与用量。",
+          "description_en": "Helps the agent deploy apps and manage environments, databases, domains, and usage through the Laravel Cloud CLI.",
+          "what": "部署并管理 Laravel Cloud 资源。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "configure-nightwatch",
+          "path": "laravel-nightwatch/skills/configure-nightwatch/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Laravel Nightwatch 观测配置",
+          "group_en": "Laravel Nightwatch Observability Configuration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 配置 Nightwatch 采样、过滤和脱敏，平衡可观测性与隐私。",
+          "description_en": "Helps the agent configure Nightwatch sampling, filtering, and redaction to balance observability with privacy.",
+          "what": "配置 Nightwatch 数据采集与隐私策略。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "starter-kit-upgrade",
+          "path": "laravel/skills/starter-kit-upgrade/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Laravel Starter Kit 增量同步",
+          "group_en": "Laravel Starter Kit Incremental Sync",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 Laravel starter kit 的单项上游改进安全应用到已定制项目，先在独立分支处理并避免自动覆盖。",
+          "description_en": "Helps the agent safely apply one upstream Laravel starter-kit improvement to a customized project on a dedicated branch without overwriting changes.",
+          "what": "从 Laravel starter kit 中按特性同步上游改进，保留用户定制并走独立分支。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "MicrosoftDocs",
+        "repo": "Agent-Skills",
+        "full_name": "MicrosoftDocs/Agent-Skills",
+        "url": "https://github.com/MicrosoftDocs/Agent-Skills",
+        "stars": 614,
+        "pushed_at": "2026-06-22",
+        "default_branch": "main",
+        "github_description": "Curated Agent Skills for Microsoft & Azure – giving AI coding assistants structured, real-time expertise from Microsoft Learn docs.",
+        "topics": [
+          "agent",
+          "agent-skills",
+          "agentic-skills",
+          "agentskill",
+          "ai",
+          "ai-agents",
+          "ai-coding",
+          "azure",
+          "azure-functions",
+          "azure-kubernetes-service",
+          "azure-openai",
+          "azure-sql-database",
+          "azure-storage",
+          "azure-virtual-machine",
+          "claude-code",
+          "github-copilot",
+          "microsoft-learn",
+          "openai-codex",
+          "skills"
+        ],
+        "language": "",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "azure-active-directory-b2c",
+          "path": "skills/azure-active-directory-b2c/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Microsoft / .NET 栈",
+          "group_en": "Microsoft / .NET stack",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为 Azure AD B2C 开发提供用户流、自定义策略、IdP/MFA、API 安全、CI/CD 与 Sentinel 监控指南。",
+          "description_en": "Guides agents building Azure AD B2C flows, custom policies, IdPs/MFA, secure APIs, CI/CD, and Sentinel monitoring.",
+          "what": "Azure AD B2C 开发与运维参考。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-advisor",
+          "path": "skills/azure-advisor/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Azure Advisor 健康与监控",
+          "group_en": "Azure Advisor health and monitoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Azure Advisor 开发提供告警、工作簿、Resource Graph 查询、迁移风险与主权云配置参考。",
+          "description_en": "Helps agents create Azure Advisor alerts, workbooks, Resource Graph queries, migration-risk views, and sovereign-cloud setups.",
+          "what": "Azure Advisor 建议、告警与工作簿参考。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-ai-vision",
+          "path": "skills/azure-ai-vision/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Azure AI Vision 开发指南",
+          "group_en": "Azure AI Vision Development Guide",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Azure AI Vision 开发中查询文档、决策配置、处理配额、集成与部署。",
+          "description_en": "Helps agents make Azure AI Vision development decisions, check limits, configure integrations, and plan deployments.",
+          "what": "为 Azure AI Vision 相关开发任务提供微软官方文档级指导。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-aks-edge-essentials",
+          "path": "skills/azure-aks-edge-essentials/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "AKS Edge / Arc 集群运维",
+          "group_en": "AKS Edge and Arc Cluster Operations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 管理 AKS Edge/Arc 集群，处理故障、架构、配额、安全和部署。",
+          "description_en": "Helps agents operate AKS Edge and Arc clusters, troubleshoot issues, evaluate architecture, and manage deployment constraints.",
+          "what": "为 AKS Edge Essentials 的运维、架构与部署任务提供指导。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-analysis-services",
+          "path": "skills/azure-analysis-services/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Azure 服务开发排障",
+          "group_en": "Azure service development troubleshooting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 Azure Analysis Services 开发、网络连通性与网关排障指引。",
+          "description_en": "Provides development, connectivity, and gateway troubleshooting guidance for Azure Analysis Services.",
+          "what": "用于排查 Analysis Services 的服务端点、防火墙/VNET、DNS、网关和 SSL 问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-anomaly-detector",
+          "path": "skills/azure-anomaly-detector/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Azure 服务开发排障",
+          "group_en": "Azure service development troubleshooting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供 Azure Anomaly Detector API 调优、容器与边缘部署排障指引。",
+          "description_en": "Guides API tuning and troubleshooting for containerized or edge deployments of Azure Anomaly Detector.",
+          "what": "用于排查 Anomaly Detector 的 API、Docker/ACI/IoT Edge 部署、配额与配置问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-api-center",
+          "path": "skills/azure-api-center/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Azure API 平台开发指南",
+          "group_en": "Azure API platform development guides",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理 Azure Api Center 的 API 注册、网关同步、门户定制和库存管理。",
+          "description_en": "Helps the agent handle Azure API Center tasks such as API registration, gateway sync, portal customization, and inventory management.",
+          "what": "Azure Api Center 开发参考",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-api-management",
+          "path": "skills/azure-api-management/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Azure API 平台开发指南",
+          "group_en": "Azure API platform development guides",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理 Azure API Management 的策略、网关、认证、域配置与扩缩容。",
+          "description_en": "Helps the agent work with Azure API Management policies, gateways, authentication, custom domains, and scaling.",
+          "what": "Azure API Management 开发参考",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-app-configuration",
+          "path": "skills/azure-app-configuration/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Azure 服务开发指南",
+          "group_en": "Azure Service Development Guides",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Azure App Configuration 开发提供排障、配额、安全、刷新和部署等实时文档指导。",
+          "description_en": "Guides agents through Azure App Configuration development, troubleshooting, quotas, security, refresh behavior, and deployment.",
+          "what": "Azure App Configuration 开发、配置刷新、功能标志和部署的专家文档助手。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-app-service",
+          "path": "skills/azure-app-service/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Azure 服务开发指南",
+          "group_en": "Azure Service Development Guides",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Azure App Service 开发提供架构选型、网络、证书、CI/CD、身份和部署文档指导。",
+          "description_en": "Guides agents through Azure App Service architecture choices, networking, certificates, CI/CD, identity, and deployment.",
+          "what": "Azure App Service 架构、配置、部署和运维排障的专家文档助手。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-app-testing",
+          "path": "skills/azure-app-testing/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Azure 应用测试与性能验证",
+          "group_en": "Azure app testing and performance validation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Azure 应用测试任务提供官方文档速查、排障和决策指南。",
+          "description_en": "Provides Microsoft Docs-backed quick reference, troubleshooting, and decision guidance for Azure app testing tasks.",
+          "what": "用于 Azure App Testing 相关开发任务，提供官方文档速查、排障和测试决策支持。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-application-gateway",
+          "path": "skills/azure-application-gateway/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "Azure 网络入口与应用网关",
+          "group_en": "Azure networking ingress and application gateways",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Azure Application Gateway 配置、WAF、TLS、AKS 入口提供文档指南。",
+          "description_en": "Guides Azure Application Gateway configuration, WAF/TLS setup, routing, and AKS ingress with Microsoft Docs.",
+          "what": "用于 Azure Application Gateway 相关开发任务，提供配置、WAF、TLS、AKS 入口的文档指导。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-arc",
+          "path": "skills/azure-arc/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Azure Arc 混合部署与运维",
+          "group_en": "Azure Arc Hybrid Deployment and Operations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Azure Arc 开发提供架构、部署、安全、配额、集成与排障指引。",
+          "description_en": "Provides Azure Arc development guidance on architecture, deployment, security, quotas, integrations, and troubleshooting.",
+          "what": "Azure Arc 混合环境开发与运维参考。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-architecture",
+          "path": "skills/azure-architecture/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "Azure 架构决策与参考设计",
+          "group_en": "Azure Architecture Decisions and Reference Designs",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 选择 Azure 服务、参考架构、设计模式并完成迁移方案。",
+          "description_en": "Helps agents choose Azure services, reference architectures, design patterns, and migration paths.",
+          "what": "Azure 解决方案架构与设计模式参考。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-artifact-signing",
+          "path": "skills/azure-artifact-signing/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "Azure Artifact 签名与安全",
+          "group_en": "Azure Artifact signing and security",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 Azure Artifact Signing 的证书生命周期、RBAC、迁移、日志与 CI/CD 集成指南。",
+          "description_en": "Guides agents through Azure Artifact Signing certificate lifecycle, RBAC, migrations, diagnostics, and CI/CD integration.",
+          "what": "Helps agents make secure signing decisions for Azure artifacts.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-artifacts",
+          "path": "skills/azure-artifacts/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Azure Artifacts 包管理",
+          "group_en": "Azure Artifacts package management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 Azure Artifacts feed、上游源、视图晋升、保留策略、CI/CD 与 npm 配置指南。",
+          "description_en": "Guides agents through Azure Artifacts feeds, upstream sources, promotion views, retention, CI/CD, and npm configuration.",
+          "what": "Helps agents manage package feeds and CI/CD publishing workflows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-attestation",
+          "path": "skills/azure-attestation/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "Azure Attestation 安全顾问",
+          "group_en": "Azure Attestation security advisor",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Azure Attestation 提供令牌验证、策略、基线与私有端点配置指引。",
+          "description_en": "Guides Azure Attestation token validation, policy authoring, baselines, and private endpoint configuration.",
+          "what": "Azure Attestation 开发、排障与安全配置参考。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-automation",
+          "path": "skills/azure-automation/SKILL.md",
+          "subcategory": "17-4",
+          "subcategory_title": "17.4 SRE / 事故响应 / SLO / FinOps",
+          "category": "devops-infra",
+          "group": "Azure 运维自动化",
+          "group_en": "Azure operations automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助构建 Azure Automation runbook、DSC、混合 Worker 与变更跟踪。",
+          "description_en": "Guides Azure Automation runbooks, DSC state configuration, hybrid workers, and change tracking.",
+          "what": "Azure Automation 运维脚本和状态配置开发参考。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-backup",
+          "path": "skills/azure-backup/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "Azure 服务架构与运维顾问",
+          "group_en": "Azure Service Architecture and Operations Advisor",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 查询 Azure Backup 架构、配置、自动化、配额与安全排障。",
+          "description_en": "Guides agents on Azure Backup architecture, configuration, automation, quotas, and troubleshooting.",
+          "what": "为 Azure Backup 相关开发与运维任务提供 Microsoft Learn 文档和最佳实践指导。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-bastion",
+          "path": "skills/azure-bastion/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "Azure 服务架构与运维顾问",
+          "group_en": "Azure Service Architecture and Operations Advisor",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 设计 Azure Bastion 安全远程访问、认证、网络集成与配置。",
+          "description_en": "Guides agents on Azure Bastion secure remote access, authentication, network integration, and configuration.",
+          "what": "为 Azure Bastion 配置、安全访问和网络集成任务提供 Microsoft Learn 文档指导。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-batch",
+          "path": "skills/azure-batch/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "Azure 服务开发专家",
+          "group_en": "Azure service development experts",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Azure Batch 池、任务、自动扩缩、容器与部署提供开发排障和架构指导。",
+          "description_en": "Provides development guidance, troubleshooting, architecture patterns, limits, security, and deployment advice for Azure Batch.",
+          "what": "帮助 agent 处理 Azure Batch 的池、任务、自动扩缩、容器、MPI、存储挂载和 CI/CD 相关开发问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-blob-storage",
+          "path": "skills/azure-blob-storage/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "Azure 服务开发专家",
+          "group_en": "Azure service development experts",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Azure Blob Storage 分层、生命周期、认证、挂载与部署提供开发排障和架构指导。",
+          "description_en": "Provides development guidance, troubleshooting, architecture patterns, limits, security, and deployment advice for Azure Blob Storage.",
+          "what": "帮助 agent 处理 Azure Blob Storage 的层级、生命周期、不可变性、SAS/RBAC、Data Lake、挂载和部署问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-blueprints",
+          "path": "skills/azure-blueprints/SKILL.md",
+          "subcategory": "17-1",
+          "subcategory_title": "17.1 IaC（Terraform / Pulumi / Packer）",
+          "category": "devops-infra",
+          "group": "Azure 蓝图治理与部署",
+          "group_en": "Azure Blueprints governance and deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Agent 提供 Azure Blueprints 架构、配置、自动化与排障知识，支持 CLI/PowerShell/REST 实现。",
+          "description_en": "Helps agents design, automate, and troubleshoot Azure Blueprints using current Microsoft Learn guidance.",
+          "what": "辅助 Azure Blueprints 的架构设计、合规映射、自动化部署和故障排查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-boards",
+          "path": "skills/azure-boards/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Azure Boards 工作项与敏捷看板",
+          "group_en": "Azure Boards work tracking and agile boards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Agent 提供 Azure Boards 工作项、查询、图表、冲刺和 WIQL 集成实践与排障。",
+          "description_en": "Helps agents manage work items, queries, sprints, and WIQL integrations in Azure Boards.",
+          "what": "辅助配置和查询 Azure Boards 工作项、看板、冲刺与 GitHub 链接。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-bot-service",
+          "path": "skills/azure-bot-service/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Azure AI Bot Service 开发",
+          "group_en": "Azure AI Bot Service Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 Azure AI Bot Service 架构、集成、安全、部署与排障指南。",
+          "description_en": "Azure AI Bot Service guidance for architecture, channel integrations, security, deployment, and troubleshooting.",
+          "what": "Build Azure AI bots across channels with docs-backed guidance.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-business-process-tracking",
+          "path": "skills/azure-business-process-tracking/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Azure DevOps 流水线与部署",
+          "group_en": "Azure DevOps Pipelines and Deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 Azure Business Process Tracking 的 DevOps 构建、测试、流水线与部署指引。",
+          "description_en": "DevOps guidance for building, testing, and deploying Azure Business Process Tracking solutions.",
+          "what": "Set up CI/CD pipelines for Azure Business Process Tracking deployments.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-cache-redis",
+          "path": "skills/azure-cache-redis/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "Azure Redis 缓存",
+          "group_en": "Azure Redis Cache",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理 Redis 缓存配置、架构、安全与部署问题。",
+          "description_en": "Helps the agent handle Redis cache configuration, architecture, security, and deployment issues.",
+          "what": "用于 Azure Cache for Redis 的开发、配置和部署参考。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-carbon-optimization",
+          "path": "skills/azure-carbon-optimization/SKILL.md",
+          "subcategory": "17-4",
+          "subcategory_title": "17.4 SRE / 事故响应 / SLO / FinOps",
+          "category": "devops-infra",
+          "group": "Azure 碳优化",
+          "group_en": "Azure Carbon Optimization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理碳排放数据、REST API 与仪表板问题。",
+          "description_en": "Helps the agent handle carbon emissions data, the REST API, and dashboard issues.",
+          "what": "用于 Azure Carbon Optimization 的开发、数据导出和仪表板排障。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-chaos-studio",
+          "path": "skills/azure-chaos-studio/SKILL.md",
+          "subcategory": "17-4",
+          "subcategory_title": "17.4 SRE / 事故响应 / SLO / FinOps",
+          "category": "devops-infra",
+          "group": "Azure Chaos Studio 故障实验",
+          "group_en": "Azure Chaos Studio Fault-Injection Experiments",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计 Azure 故障注入实验、配置目标并处理配额、安全和遥测。",
+          "description_en": "Helps an agent design Azure fault-injection experiments, configure targets, and handle quotas, security, and telemetry.",
+          "what": "用于 Azure Chaos Studio 开发、CLI/REST 集成和故障实验排错。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "azure-cloud-adoption-framework",
+          "path": "skills/azure-cloud-adoption-framework/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "Azure 云采用框架与 landing zone 规划",
+          "group_en": "Azure Cloud Adoption Framework and Landing Zone Planning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按 Azure CAF 规划云采用、landing zone、治理和迁移。",
+          "description_en": "Helps an agent plan cloud adoption, landing zones, governance, and migration using Azure CAF.",
+          "what": "用于 Azure 云采用策略、治理、准备度和迁移场景规划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "dbt-labs",
+        "repo": "dbt-agent-skills",
+        "full_name": "dbt-labs/dbt-agent-skills",
+        "url": "https://github.com/dbt-labs/dbt-agent-skills",
+        "stars": 578,
+        "pushed_at": "2026-06-22",
+        "default_branch": "main",
+        "github_description": "A curated collection of Agent Skills for working with dbt, to help AI agents understand and execute dbt workflows more effectively.",
+        "topics": [],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "auditing-skills",
+          "path": ".claude/skills/auditing-skills/SKILL.md",
+          "subcategory": "13-3",
+          "subcategory_title": "13.3 Skill 安全审计",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 安全审计与修复",
+          "group_en": "Skill Security Auditing and Remediation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 使用 skills.sh 等审计来源检查发布 skill 的安全与质量问题，并修复发现项。",
+          "description_en": "Helps agents audit published skills with tools like skills.sh and remediate security or quality findings.",
+          "what": "Audit published skills against security scanners and remediate findings.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "creating-mermaid-dbt-dag",
+          "path": "skills/dbt-extras/skills/creating-mermaid-dbt-dag/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "dbt DAG / Mermaid 可视化",
+          "group_en": "dbt DAG / Mermaid Visualization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 通过 MCP 或 manifest 解析 dbt 模型血缘，并生成 Mermaid 依赖图。",
+          "description_en": "Helps agents parse dbt model lineage via MCP or manifest files and render Mermaid dependency diagrams.",
+          "what": "Generate Mermaid lineage diagrams for dbt models.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "migrating-dbt-core-to-fusion",
+          "path": "skills/dbt-migration/skills/migrating-dbt-core-to-fusion/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "dbt-core 到 Fusion 迁移排障",
+          "group_en": "dbt-core to Fusion Migration Triage",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按流程运行 autofix、审查变更并分类 dbt-core 到 Fusion 迁移错误。",
+          "description_en": "Helps an agent run autofix, review changes, and classify remaining dbt-core to Fusion migration errors.",
+          "what": "A structured triage skill for dbt Fusion migration blockers.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "migrating-dbt-project-across-platforms",
+          "path": "skills/dbt-migration/skills/migrating-dbt-project-across-platforms/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "dbt 跨数据平台迁移",
+          "group_en": "dbt Cross-Platform Data Warehouse Migration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 利用 dbt Fusion 编译反馈与单元测试，将 dbt 项目迁移到目标数据平台。",
+          "description_en": "Guides an agent in using dbt Fusion compile feedback and unit tests to migrate a dbt project to a target data platform.",
+          "what": "A repeatable workflow for moving dbt projects between warehouses.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "adding-dbt-unit-test",
+          "path": "skills/dbt/skills/adding-dbt-unit-test/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "dbt 模型单元测试",
+          "group_en": "dbt Model Unit Testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 为 dbt 模型编写单元测试 YAML，模拟上游输入并校验预期输出。",
+          "description_en": "Helps agents write dbt model unit test YAML by mocking upstream inputs and validating expected outputs.",
+          "what": "Adds unit tests for dbt models.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "answering-natural-language-questions-with-dbt",
+          "path": "skills/dbt/skills/answering-natural-language-questions-with-dbt/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "自然语言 → SQL",
+          "group_en": "Natural Language to SQL",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 基于 dbt Semantic Layer 或 SQL 回答业务分析问题，如指标、KPI 和趋势查询。",
+          "description_en": "Helps agents answer business analytics questions using dbt’s Semantic Layer or ad hoc SQL against warehouse data.",
+          "what": "Answers business analytics questions with dbt data.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "building-dbt-semantic-layer",
+          "path": "skills/dbt/skills/building-dbt-semantic-layer/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "dbt 语义层与指标建模",
+          "group_en": "dbt Semantic Layer Modeling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 创建和修改 dbt Semantic Layer 的语义模型、维度、指标及 YAML 规范。",
+          "description_en": "Helps agents create and modify dbt Semantic Layer components, including semantic models, dimensions, metrics, and YAML specs.",
+          "what": "用于 dbt Semantic Layer YAML 编写与校验。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "configuring-dbt-mcp-server",
+          "path": "skills/dbt/skills/configuring-dbt-mcp-server/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "MCP Server 开发",
+          "group_en": "MCP Server Development",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 为 Claude、Cursor、VS Code 等配置并验证 dbt MCP 服务连接。",
+          "description_en": "Helps agents configure and validate the dbt MCP server connection for tools like Claude, Cursor, and VS Code.",
+          "what": "用于 dbt MCP 服务安装配置与连通性排查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "fetching-dbt-docs",
+          "path": "skills/dbt/skills/fetching-dbt-docs/SKILL.md",
+          "subcategory": "7-1",
+          "subcategory_title": "7.1 网页抓取 / 爬虫",
+          "category": "data-scraping",
+          "group": "dbt 文档检索",
+          "group_en": "dbt Documentation Lookup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 快速检索并读取 dbt 官方文档。",
+          "description_en": "Helps agents quickly find and read official dbt documentation.",
+          "what": "Fetches dbt docs as LLM-friendly markdown for lookup and answers.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "running-dbt-commands",
+          "path": "skills/dbt/skills/running-dbt-commands/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "dbt CLI 执行",
+          "group_en": "dbt CLI Execution",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 规范运行 dbt 构建、测试和查询命令。",
+          "description_en": "Helps agents run dbt build, test, and query commands safely and consistently.",
+          "what": "Formats and executes dbt CLI commands for models, tests, builds, compiles, and show queries.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "troubleshooting-dbt-job-errors",
+          "path": "skills/dbt/skills/troubleshooting-dbt-job-errors/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "dbt Cloud 作业故障排查",
+          "group_en": "dbt Cloud job failure troubleshooting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 分析 dbt Cloud 失败日志、API 与数据问题，定位作业失败根因。",
+          "description_en": "Helps an agent analyze dbt Cloud run logs, Admin API data, git history, and data issues to identify job failure root causes.",
+          "what": "用于 dbt Cloud 或平台作业失败且错误不明确、间歇出现或需要根因诊断时。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "using-dbt-for-analytics-engineering",
+          "path": "skills/dbt/skills/using-dbt-for-analytics-engineering/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "dbt 数据建模与转换",
+          "group_en": "dbt data modeling and transformations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 dbt 项目中创建或修改模型、测试并验证数据转换结果。",
+          "description_en": "Helps an agent create and modify dbt models, write SQL transformations, add tests, and validate data results.",
+          "what": "用于 dbt 项目的建模、重构、测试编写和数据分析工程等常规开发任务。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "working-with-dbt-mesh",
+          "path": "skills/dbt/skills/working-with-dbt-mesh/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "dbt Mesh 与模型变更影响分析",
+          "group_en": "dbt Mesh and Model Change Impact Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 评估 dbt 模型变更的破坏性影响、依赖范围，并规划版本化、合同与跨项目引用。",
+          "description_en": "Helps agents assess breaking dbt model changes, map affected dependencies, and plan versions, contracts, and cross-project references.",
+          "what": "用于在修改 dbt 模型前判断影响范围并选择安全的 Mesh 变更策略。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "nWave-ai",
+        "repo": "nWave",
+        "full_name": "nWave-ai/nWave",
+        "url": "https://github.com/nWave-ai/nWave",
+        "stars": 559,
+        "pushed_at": "2026-06-19",
+        "default_branch": "main",
+        "github_description": "AI agents that guide you from idea to working code, with you in control at every step.",
+        "topics": [
+          "agentic-ai",
+          "agentic-coding",
+          "agentic-framework",
+          "agentic-workflow",
+          "ai",
+          "atdd",
+          "bdd",
+          "claude-code",
+          "claude-code-cli",
+          "claude-code-commands",
+          "claude-code-hooks",
+          "claude-code-skills",
+          "claude-code-subagents",
+          "devops",
+          "lean-ux",
+          "opencode",
+          "software-architecture",
+          "software-craftmanship",
+          "tdd"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-code"
+      },
+      "skills": [
+        {
+          "name": "nw-ab-critique-dimensions",
+          "path": "nWave/skills/nw-ab-critique-dimensions/SKILL.md",
+          "subcategory": "13-3",
+          "subcategory_title": "13.3 Skill 安全审计",
+          "category": "meta-skill-mgmt",
+          "group": "Claude Code Agent 质量评审维度",
+          "group_en": "Claude Code Agent Quality Review Dimensions",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供评审 Agent 定义的质量维度，检查模板合规、聚焦度与差异说明。",
+          "description_en": "Provides criteria for reviewing agent definitions, including template compliance, focus, and divergence quality.",
+          "what": "用于审查 Agent 定义是否符合 Claude Code 规范并避免臃肿冗余。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-abr-critique-dimensions",
+          "path": "nWave/skills/nw-abr-critique-dimensions/SKILL.md",
+          "subcategory": "13-3",
+          "subcategory_title": "13.3 Skill 安全审计",
+          "category": "meta-skill-mgmt",
+          "group": "Claude Code Agent 质量评审维度",
+          "group_en": "Claude Code Agent Quality Review Dimensions",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供评审 Agent 定义的质量维度，检查模板合规、聚焦度与差异说明。",
+          "description_en": "Provides criteria for reviewing agent definitions, including template compliance, focus, and divergence quality.",
+          "what": "用于审查 Agent 定义是否符合 Claude Code 规范并避免臃肿冗余。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-ad-critique-dimensions",
+          "path": "nWave/skills/nw-ad-critique-dimensions/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "验收测试质量评审",
+          "group_en": "Acceptance Test Quality Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用于评审验收测试是否覆盖异常路径、GWT格式、业务语言和可观察行为。",
+          "description_en": "Reviews acceptance tests for error coverage, GWT structure, business language, and observable behavior assertions.",
+          "what": "在验收测试交接评审中检查测试质量。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-agent-creation-workflow",
+          "path": "nWave/skills/nw-agent-creation-workflow/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Agent 创建工作流",
+          "group_en": "Agent Creation Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导从需求分析、设计、创建到验证迭代地构建 Agent。",
+          "description_en": "Guides agents through analyze, design, create, validate, and refine phases when building new agents.",
+          "what": "按五阶段流程创建和维护 Agent。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-agent-testing",
+          "path": "nWave/skills/nw-agent-testing/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Agent 验证 / 对抗测试",
+          "group_en": "Agent validation and adversarial testing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 分层验证输出质量、集成交接、对抗风险和提示注入抗性。",
+          "description_en": "Helps agents validate output quality, workflow handoffs, adversarial risks, and prompt-injection resistance.",
+          "what": "提供 5 层 Agent 工作流验证框架。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-architectural-styles-tradeoffs",
+          "path": "nWave/skills/nw-architectural-styles-tradeoffs/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "事件溯源 / CQRS / Saga / 后端架构 / 微服务设计",
+          "group_en": "Backend architecture and microservices design",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供架构风格决策树、权衡矩阵和组合模式，辅助设计选型。",
+          "description_en": "Offers decision trees, trade-off matrices, and composition patterns for architecture style selection.",
+          "what": "提供架构风格选型决策树与权衡矩阵。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-architecture-patterns",
+          "path": "nWave/skills/nw-architecture-patterns/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "架构模式与系统设计",
+          "group_en": "Architecture patterns and system design",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在系统设计时选择架构模式并用 C4 等模型沟通方案。",
+          "description_en": "Helps agents choose architecture patterns and communicate designs using models like C4.",
+          "what": "提供 C4、六边形架构等模式与质量评估框架。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-at-completeness-check",
+          "path": "nWave/skills/nw-at-completeness-check/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "验收测试完整性检查",
+          "group_en": "Acceptance test completeness checks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供验收测试分类与 15 项机械清单，判定候选 AT 是否完整。",
+          "description_en": "Gives agents a canonical acceptance-test taxonomy and mechanical checklist to judge coverage.",
+          "what": "用 7 类 15 项检查验收测试集是否完整。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-authoritative-sources",
+          "path": "nWave/skills/nw-authoritative-sources/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "权威来源与检索策略",
+          "group_en": "Authoritative Sources and Search Strategy",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "维护领域权威来源库与检索规则，帮助 agent 选择可信资料并判断时效。",
+          "description_en": "Maintains domain-specific authority databases and search rules so agents can choose credible, fresh sources.",
+          "what": "为 agent 提供按领域划分的权威来源、搜索策略和时效判断规则。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-bdd-methodology",
+          "path": "nWave/skills/nw-bdd-methodology/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "BDD 验收测试设计",
+          "group_en": "BDD Acceptance Test Design",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 用 Given-When-Then 编写验收场景，驱动外层 TDD 与实现迭代。",
+          "description_en": "Guides agents in writing acceptance scenarios with Given-When-Then to drive outside-in TDD and implementation loops.",
+          "what": "为 agent 提供 BDD 验收测试设计方法、场景规则和 pytest-bdd 实现要点。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-bdd-requirements",
+          "path": "nWave/skills/nw-bdd-requirements/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "BDD 需求发现与验收示例",
+          "group_en": "BDD Requirements Discovery",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导 agent 组织 Three Amigos、Example Mapping，并把规则转成 Given-When-Then 验收场景。",
+          "description_en": "Guides agents to run Three Amigos and Example Mapping, then translate rules into Given-When-Then acceptance scenarios.",
+          "what": "运行 25 分钟 Three Amigos 需求探索并产出规则、例子和问题清单。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-brainstorming",
+          "path": "nWave/skills/nw-brainstorming/SKILL.md",
+          "subcategory": "3-3",
+          "subcategory_title": "3.3 产品发现 / 实验",
+          "category": "product-management",
+          "group": "产品问题框定与创意发散",
+          "group_en": "Product Framing and Ideation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 先做 HMW 问题框定，再分批生成多样方案并延后评估。",
+          "description_en": "Helps agents frame HMW questions, generate diverse options in structured sessions, and defer evaluation until after ideation.",
+          "what": "主持严格分离的发散/收敛头脑风暴，输出候选方案与评估输入。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-buddy-command-catalog",
+          "path": "nWave/skills/nw-buddy-command-catalog/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "nWave 命令路由目录",
+          "group_en": "nWave Command Routing Catalog",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "汇总 /nw-* 命令、适用场景与代理路由，帮助 buddy 选择正确入口。",
+          "description_en": "Catalogs /nw-* commands, use cases, and agent routing so the buddy can pick the right entry point.",
+          "what": "定义 nWave 命令、适用场景与对应 agent 的映射。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-buddy-project-reading",
+          "path": "nWave/skills/nw-buddy-project-reading/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "Agent 项目阅读协议",
+          "group_en": "Agent Project-Reading Protocol",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "规定 buddy 读取项目文件的顺序、证据引用与克制原则，避免臆测。",
+          "description_en": "Defines a grounded project-reading protocol with inspection order and citation discipline for the buddy agent.",
+          "what": "让 buddy agent 基于项目文件回答，并要求逐条引用来源。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-buddy-ssot-knowledge",
+          "path": "nWave/skills/nw-buddy-ssot-knowledge/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "仓库事实源与权威文件映射",
+          "group_en": "Repository Source-of-Truth Mapping",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 Agent 识别仓库权威事实源，发现重复信息冲突并避免引用过期内容。",
+          "description_en": "Helps the agent find the repo’s authoritative facts, flag conflicting copies, and avoid stale claims.",
+          "what": "Defines authoritative files and stale caches for nWave repository knowledge.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-buddy-wave-knowledge",
+          "path": "nWave/skills/nw-buddy-wave-knowledge/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "nWave 波次工作流知识库",
+          "group_en": "nWave Wave Workflow Knowledge",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 Agent 理解 nWave 各阶段目标、输入输出和下一步路由，不越权执行。",
+          "description_en": "Helps the agent understand each nWave phase, its inputs and outputs, and where to route next without executing work.",
+          "what": "Maps the canonical nWave wave sequence and routing responsibilities.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-buddy",
+          "path": "nWave/skills/nw-buddy/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "nWave 项目级方法论助手",
+          "group_en": "nWave Project Methodology Assistant",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取项目与配置文档，回答 nWave 方法、状态、命令、迁移和故障排查问题。",
+          "description_en": "Reads project and config docs to answer grounded questions about nWave methodology, state, commands, migration, and troubleshooting.",
+          "what": "项目级只读问答助手，用于解释 nWave 配置、命令、迁移与故障排查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-bugfix",
+          "path": "nWave/skills/nw-bugfix/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "TDD（多家同名版本）",
+          "group_en": "TDD Implementations",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "端到端缺陷修复流程：根因分析、用户确认、回归测试与 TDD 修复验证。",
+          "description_en": "End-to-end defect resolution with root-cause analysis, user approval, regression tests, and TDD-based fix verification.",
+          "what": "把缺陷修复拆成 RCA、用户确认、失败回归测试、修复和验证提交。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-canary",
+          "path": "nWave/skills/nw-canary/SKILL.md",
+          "subcategory": "13-3",
+          "subcategory_title": "13.3 Skill 安全审计",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 注入检测金丝雀",
+          "group_en": "Skill Injection Canary",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "检测 SKILL.md 自动注入是否生效，并用固定暗语验证内容完整性。",
+          "description_en": "Detects whether SKILL.md auto-injection is active and verifies content integrity with a fixed passphrase.",
+          "what": "用于验证 Skill 注入检测机制是否正常。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-cicd-and-deployment",
+          "path": "nWave/skills/nw-cicd-and-deployment/SKILL.md",
+          "subcategory": "17-2",
+          "subcategory_title": "17.2 Kubernetes / GitOps / CI-CD",
+          "category": "devops-infra",
+          "group": "nw-cicd-and-deployment",
+          "group_en": "Kubernetes / GitOps / CI-CD / CI/CD Pipelines / GitHub Actions Templates",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计本地质量门禁、CI/CD 管道、GitHub Actions 模式和分支发布策略。",
+          "description_en": "Helps agents design local quality gates, CI/CD pipelines, GitHub Actions patterns, and branch release strategies.",
+          "what": "为 CI/CD 管道与部署工作流提供设计方法。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-collaboration-and-handoffs",
+          "path": "nWave/skills/nw-collaboration-and-handoffs/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "nWave 多 Agent 交接协议",
+          "group_en": "nWave Multi-Agent Handoff Protocols",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "定义多 Agent 间交接内容、触发条件与提交格式，支撑 TDD/Mikado/重构流程协作。",
+          "description_en": "Defines cross-agent handoff content, triggers, and commit formats for TDD, Mikado, and refactoring workflows.",
+          "what": "规范多 Agent 协作中的接收、交接、协作对象以及从 TDD 转入 Mikado 或重构的触发条件。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-collapse-detection",
+          "path": "nWave/skills/nw-collapse-detection/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "技术文档类型边界检测",
+          "group_en": "Technical Documentation Boundary Checks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "识别教程、指南、参考、解释文档的类型混杂问题，并给出拆分与修正策略。",
+          "description_en": "Detects mixed-purpose documentation patterns and recommends how to split or rewrite them.",
+          "what": "检查文档是否混淆教程、指南、参考和解释的边界，并指导修复。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-command-design-patterns",
+          "path": "nWave/skills/nw-command-design-patterns/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "命令定义文件设计模式",
+          "group_en": "Command Definition Design Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供命令定义模式，规范 dispatcher/orchestrator 的规模、结构与声明式调用模板。",
+          "description_en": "Defines command file patterns, including size targets, dispatcher/orchestrator structure, and declarative invocation templates.",
+          "what": "用于建立命令文件的规模目标、分类和声明式模板。",
+          "chain": true,
+          "chain_group": "命令设计到瘦身优化工作流",
+          "chain_group_en": "Command Design to Optimization Workflow"
+        },
+        {
+          "name": "nw-command-optimization-workflow",
+          "path": "nWave/skills/nw-command-optimization-workflow/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "命令文件瘦身与重构流程",
+          "group_en": "Command File Optimization Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 分析臃肿命令，抽离共享内容并重构为精简声明式定义。",
+          "description_en": "Guides agents through analyzing bloated commands, extracting shared logic, and refactoring them into lean declarative definitions.",
+          "what": "用于把大型命令文件压缩为可维护的声明式定义。",
+          "chain": true,
+          "chain_group": "命令设计到瘦身优化工作流",
+          "chain_group_en": "Command Design to Optimization Workflow"
+        },
+        {
+          "name": "nw-continue",
+          "path": "nWave/skills/nw-continue/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "nWave 功能推进向导",
+          "group_en": "nWave Feature Progression Wizard",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "扫描功能文档，识别 wave 进度并自动恢复下一步。",
+          "description_en": "Scans feature docs, detects wave progress, and resumes the next step automatically.",
+          "what": "Resume an active feature wave without manual artifact inspection.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-data-architecture-patterns",
+          "path": "nWave/skills/nw-data-architecture-patterns/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "数据架构选型模式",
+          "group_en": "Data Architecture Selection Patterns",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "提供数据仓库、湖仓、数据湖与数据网格的架构选型参考。",
+          "description_en": "Provides decision guidance for data warehouse, lakehouse, data lake, and data mesh architectures.",
+          "what": "Choose a data architecture pattern based on structure, analytics, ML, and organizational needs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-database-technology-selection",
+          "path": "nWave/skills/nw-database-technology-selection/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "数据库技术选型",
+          "group_en": "Database Technology Selection",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按访问模式、一致性、规模、延迟和合规要求比较数据库并给出选型建议。",
+          "description_en": "Helps an agent compare database families and products by access patterns, consistency, scale, latency, and compliance to recommend a fit.",
+          "what": "用于数据库技术选型与架构决策。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-ddd-event-modeling",
+          "path": "nWave/skills/nw-ddd-event-modeling/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "事件建模与规格生成",
+          "group_en": "Event Modeling and Spec Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用事件建模梳理业务流程，识别命令、事件、视图并生成 Given/When/Then 规格。",
+          "description_en": "Helps an agent map business flows with event modeling, identify commands, events, and views, then generate Given/When/Then specs.",
+          "what": "用于事件建模并产出可测试规格。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-ddd-eventsourcing",
+          "path": "nWave/skills/nw-ddd-eventsourcing/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "事件溯源 / CQRS / Saga / 后端架构 / 微服务设计",
+          "group_en": "Event Sourcing, CQRS, Saga & Backend Architecture",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 判断何时采用事件溯源/CQRS，并设计事件流、投影、快照和 Saga。",
+          "description_en": "Helps agents decide when to use event sourcing/CQRS and design event streams, projections, snapshots, and sagas.",
+          "what": "DDD 战术架构决策指南",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nw-ddd-strategic",
+          "path": "nWave/skills/nw-ddd-strategic/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "DDD 战略设计与领域建模",
+          "group_en": "Strategic DDD & Domain Modeling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 做 DDD 战略建模：划分子域、发现限界上下文并建立组织对齐。",
+          "description_en": "Helps agents perform strategic DDD modeling: classify subdomains, discover bounded contexts, and align teams.",
+          "what": "DDD 战略建模与上下文划分指南",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
