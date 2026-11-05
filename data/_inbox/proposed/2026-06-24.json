@@ -1,0 +1,3659 @@
+{
+  "generated_at": "2026-06-24T05:20:43+00:00",
+  "date": "2026-06-24",
+  "proposed_count": 8,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 81,
+      "blocklisted": 20,
+      "seen_recently": 150,
+      "truncated": 116,
+      "looks_aggregator": 1,
+      "no_skill_files": 1,
+      "skill_name_dup": 2
+    },
+    "filtered_out": [
+      {
+        "full_name": "hashgraph-online/awesome-codex-plugins",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "VikashLoomba/copilot-mcp",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "codex-ppt"
+      ],
+      "group": "GPT-Image 全图 PPT 生成",
+      "group_en": "Full-slide image PPT generation",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "从文章、报告或大纲生成视觉统一的图片化 PPTX 演示文稿。",
+      "description_en": "Generates visually unified, full-slide image PPTX decks from articles, reports, notes, or outlines.",
+      "sources": [
+        "ningzimu/codex-ppt-skill"
+      ]
+    },
+    {
+      "skills": [
+        "access-management",
+        "create-project"
+      ],
+      "group": "Elastic Cloud 初始化与访问管理工作流",
+      "group_en": "Elastic Cloud setup and access management workflow",
+      "category": "",
+      "subcategory": "",
+      "chain": true,
+      "description": "通过 Elastic Cloud API 创建 Serverless 项目并保存凭据。",
+      "description_en": "Manage organization access, project roles, and Cloud API keys in Elastic Cloud.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "manage-project"
+      ],
+      "group": "Elastic Cloud 项目运维",
+      "group_en": "Elastic Cloud project operations",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "管理 Elastic Cloud Serverless 项目与凭据，帮助 agent 连接并执行日常运维。",
+      "description_en": "Manage Elastic Cloud Serverless projects and credentials so the agent can connect and perform day-2 operations.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "network-security"
+      ],
+      "group": "Elastic Cloud 网络访问控制",
+      "group_en": "Elastic Cloud network access controls",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "配置 Elastic Cloud Serverless 项目的 IP 与 VPC 流量过滤，限制访问入口。",
+      "description_en": "Configure Elastic Cloud Serverless IP and VPC traffic filters to restrict network access.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "setup"
+      ],
+      "group": "Elastic Cloud 环境配置",
+      "group_en": "Elastic Cloud environment setup",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "配置 Elastic Cloud API 密钥、默认环境和连接验证，为后续云端技能提供凭据基础。",
+      "description_en": "Sets up Elastic Cloud API credentials, environment defaults, and connection validation for later cloud skills.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "elasticsearch-audit"
+      ],
+      "group": "Elastic 安全审计日志",
+      "group_en": "Elastic security audit logging",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "帮助 agent 配置并查询 Elasticsearch 安全审计日志，排查认证失败与未授权访问。",
+      "description_en": "Helps agents configure and query Elasticsearch security audit logs to investigate auth failures and unauthorized access.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "elasticsearch-authn"
+      ],
+      "group": "Elasticsearch 认证接入",
+      "group_en": "Elasticsearch Authentication",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 Agent 安全连接 Elasticsearch，选择认证方式并管理 API key 生命周期。",
+      "description_en": "Helps agents connect securely to Elasticsearch and manage API key lifecycles.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "elasticsearch-authz"
+      ],
+      "group": "Elasticsearch 权限管理",
+      "group_en": "Elasticsearch RBAC Management",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 Agent 管理 Elasticsearch 用户、角色、映射和文档/字段级权限，落实最小权限。",
+      "description_en": "Helps agents manage Elasticsearch users, roles, mappings, and document- or field-level permissions.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "elasticsearch-esql"
+      ],
+      "group": "Elasticsearch 查询与日志分析",
+      "group_en": "Elasticsearch Querying and Log Analysis",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 对 Elasticsearch 执行 ES|QL 查询、聚合指标并生成可视化结果。",
+      "description_en": "Helps an agent run ES|QL queries, aggregate metrics, explore logs, and build chart-ready results in Elasticsearch.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "elasticsearch-file-ingest"
+      ],
+      "group": "Elasticsearch 数据导入流水线",
+      "group_en": "Elasticsearch Data Ingestion Pipelines",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 将 CSV、JSON、Parquet 等文件流式导入并转换到 Elasticsearch。",
+      "description_en": "Helps an agent stream and transform CSV, JSON, Parquet, and Arrow IPC files into Elasticsearch.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "elasticsearch-onboarding"
+      ],
+      "group": "Elasticsearch 搜索入门",
+      "group_en": "Elasticsearch Search Onboarding",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "引导开发者理解需求、建模数据并构建 Elasticsearch 搜索体验。",
+      "description_en": "Guides developers through intent discovery, data modeling, and building Elasticsearch search experiences.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "elasticsearch-security-troubleshooting"
+      ],
+      "group": "Elasticsearch 安全排障",
+      "group_en": "Elasticsearch Security Troubleshooting",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "诊断并修复 Elasticsearch 认证、授权、TLS、API Key 等安全问题。",
+      "description_en": "Diagnoses and fixes Elasticsearch authentication, authorization, TLS, API key, and Kibana login issues.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agent-builder"
+      ],
+      "group": "Kibana Agent Builder 管理",
+      "group_en": "Kibana Agent Builder Management",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 Agent 在 Kibana 中创建、维护并测试 Agent Builder 代理与自定义工具。",
+      "description_en": "Helps an agent create, maintain, and test Kibana Agent Builder agents and custom tools.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "kibana-alerting-rules"
+      ],
+      "group": "Kibana 告警规则管理",
+      "group_en": "Kibana Alerting Rules Management",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 Agent 通过 API 或 Terraform 管理 Kibana 告警规则及其生命周期。",
+      "description_en": "Helps an agent manage Kibana alerting rules and their lifecycle through APIs or Terraform.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "kibana-anomaly-detection"
+      ],
+      "group": "Kibana 可观测性 / ML 异常检测",
+      "group_en": "Kibana Observability and ML Anomaly Detection",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 agent 调查 Elastic ML 异常告警，解释分数，管理任务、数据流与故障。",
+      "description_en": "Helps an agent investigate Elastic ML anomaly alerts, explain scores, manage jobs and datafeeds, and troubleshoot failures.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "kibana-audit"
+      ],
+      "group": "Kibana 安全审计日志",
+      "group_en": "Kibana Security Audit Logging",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "帮助 agent 启用和配置 Kibana 审计日志，筛选事件并追踪访问、登录和空间操作。",
+      "description_en": "Helps an agent enable and tune Kibana audit logging, filter noisy events, and trace access, login, and space activity.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "kibana-connectors",
+        "kibana-dashboards"
+      ],
+      "group": "Elastic/Kibana 运维技能",
+      "group_en": "Elastic/Kibana Operations Skills",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 Agent 通过 REST API 或 Terraform 创建和管理 Kibana 连接器。",
+      "description_en": "Helps an agent create, manage, and deploy Kibana dashboards declaratively via API.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "kibana-vega",
+        "streams"
+      ],
+      "group": "Kibana 数据可视化与 Streams",
+      "group_en": "Kibana data visualization and Streams",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 查询 Kibana Streams 元数据、设置、事件、附件并管理启停和重同步。",
+      "description_en": "Helps the agent inspect Kibana Streams metadata, settings, events, attachments, and lifecycle actions.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "edot-dotnet-instrument",
+        "edot-dotnet-migrate"
+      ],
+      "group": "Elastic EDOT .NET 可观测性接入",
+      "group_en": "Elastic EDOT .NET observability setup",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 agent 将 .NET 应用接入 EDOT/OpenTelemetry，自动采集 traces、metrics、logs。",
+      "description_en": "Helps the agent wire a .NET app into Elastic OpenTelemetry for traces, metrics, and logs.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "edot-java-instrument",
+        "edot-java-migrate"
+      ],
+      "group": "EDOT Java 观测接入",
+      "group_en": "EDOT Java Observability",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 Agent 将 Java 应用从经典 Elastic APM 迁移到 EDOT Java Agent。",
+      "description_en": "Helps the agent instrument Java services with the EDOT Java Agent to collect traces, metrics, and logs.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "edot-python-instrument",
+        "edot-python-migrate"
+      ],
+      "group": "Elastic EDOT Python 观测接入",
+      "group_en": "Elastic EDOT Python Observability",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 agent 将 Python 应用从经典 Elastic APM 迁移到 EDOT/OpenTelemetry。",
+      "description_en": "Helps an agent instrument a Python service with EDOT to collect traces, metrics, and logs.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "k8s-investigation"
+      ],
+      "group": "Kubernetes OTel 故障调查",
+      "group_en": "Kubernetes OTel Troubleshooting",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 agent 基于 OTel 遥测调查 Kubernetes 工作负载、节点和控制面故障。",
+      "description_en": "Helps an agent investigate Kubernetes workload, node, and control-plane issues using OTel telemetry.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "llm-obs"
+      ],
+      "group": "LLM / Agent 可观测性",
+      "group_en": "LLM and Agent Observability",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 agent 在 Elastic 中监控 LLM 与 Agent 工作流的性能、成本、Token 和响应质量。",
+      "description_en": "Helps an agent monitor LLM and agent workflows in Elastic for performance, cost, token usage, and response quality.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "logs-search"
+      ],
+      "group": "Elastic Observability 日志检索",
+      "group_en": "Elastic Observability log search",
+      "category": "devops-infra",
+      "subcategory": "17-3",
+      "chain": false,
+      "description": "帮助 agent 用 ES|QL 检索和过滤日志，定位异常与根因。",
+      "description_en": "Helps the agent search and filter logs with ES|QL to investigate anomalies and identify likely root causes.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "manage-slos"
+      ],
+      "group": "SRE / 事故响应 / SLO / FinOps",
+      "group_en": "SRE / incident response / SLO / FinOps",
+      "category": "devops-infra",
+      "subcategory": "17-4",
+      "chain": false,
+      "description": "帮助 agent 创建管理 SLO，定义 SLI 与错误预算。",
+      "description_en": "Helps the agent create and manage SLOs, define SLIs, and handle error budgets in Elastic Observability.",
+      "sources": [
+        "elastic/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "caveman-commit",
+        "common-git-collaboration"
+      ],
+      "group": "Git 工作流",
+      "group_en": "Git workflow",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "生成简短规范的 Conventional Commit 提交信息。",
+      "description_en": "Enforces conventions for commits, branches, merges, and pull requests to improve collaboration.",
+      "sources": [
+        "HoangNguyen0403/agent-skills-standard"
+      ]
+    },
+    {
+      "skills": [
+        "caveman-compress"
+      ],
+      "group": "Agent 记忆 / 工作笔记",
+      "group_en": "Agent memory and work notes",
+      "category": "agent-architecture",
+      "subcategory": "12-3",
+      "chain": false,
+      "description": "将记忆文件压缩成省 token 的 caveman 格式并备份。",
+      "description_en": "Compresses memory files into token-saving caveman format while preserving key details.",
+      "sources": [
+        "HoangNguyen0403/agent-skills-standard"
+      ]
+    },
+    {
+      "skills": [
+        "common-feedback-reporter"
+      ],
+      "group": "预写代码规范审计",
+      "group_en": "Pre-write Coding Standard Audit",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "在写入前审计代码是否违反已加载技能规则，并提示修复。",
+      "description_en": "Audits planned code before file writes for violations of loaded skill rules and suggests fixes.",
+      "sources": [
+        "HoangNguyen0403/agent-skills-standard"
+      ]
+    },
+    {
+      "skills": [
+        "common-pentest-methodology"
+      ],
+      "group": "渗透测试方法",
+      "group_en": "Penetration Testing Methodology",
+      "category": "security-offensive",
+      "subcategory": "18-1",
+      "chain": false,
+      "description": "为 agent 提供 PTES 渗透测试流程、攻击面映射和漏洞验证矩阵。",
+      "description_en": "Gives the agent a PTES-aligned pentest workflow, attack-surface mapping, and vulnerability validation matrices.",
+      "sources": [
+        "HoangNguyen0403/agent-skills-standard"
+      ]
+    },
+    {
+      "skills": [
+        "common-performance-engineering"
+      ],
+      "group": "通用性能工程标准",
+      "group_en": "General Performance Engineering Standards",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "指导 agent 先基线剖析，再定位瓶颈、优化资源并复测验证。",
+      "description_en": "Guides the agent to baseline first, identify bottlenecks, optimize resource use, and re-profile to verify gains.",
+      "sources": [
+        "HoangNguyen0403/agent-skills-standard"
+      ]
+    },
+    {
+      "skills": [
+        "common-session-retrospective"
+      ],
+      "group": "技能库复盘与改进",
+      "group_en": "Skill Library Retrospectives",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "复盘会话纠错信号，定位技能缺口并改进技能库。",
+      "description_en": "Reviews correction signals from sessions to find skill gaps and improve the skill library.",
+      "sources": [
+        "HoangNguyen0403/agent-skills-standard"
+      ]
+    },
+    {
+      "skills": [
+        "common-skill-creator"
+      ],
+      "group": "Skill 创建器",
+      "group_en": "Skill Creator",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "标准化 Skill 创建、评估和触发优化，提升技能质量。",
+      "description_en": "Standardizes Skill creation, evaluation, and trigger tuning to maximize usefulness and token ROI.",
+      "sources": [
+        "HoangNguyen0403/agent-skills-standard"
+      ]
+    },
+    {
+      "skills": [
+        "common-system-design"
+      ],
+      "group": "系统架构与分布式设计标准",
+      "group_en": "System Architecture & Distributed Design Standards",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 在设计功能时划定模块边界、选择架构模式并检查扩展性与耦合。",
+      "description_en": "Helps the agent define module boundaries, choose architecture patterns, and check scalability and coupling.",
+      "sources": [
+        "HoangNguyen0403/agent-skills-standard"
+      ]
+    },
+    {
+      "skills": [
+        "common-tdd"
+      ],
+      "group": "TDD 红绿重构标准",
+      "group_en": "TDD Red-Green-Refactor Standard",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "强制 agent 先写失败测试，再实现最小代码并通过测试，最后重构。",
+      "description_en": "Forces the agent to write a failing test first, implement the minimum code, then refactor.",
+      "sources": [
+        "HoangNguyen0403/agent-skills-standard"
+      ]
+    },
+    {
+      "skills": [
+        "ln-1000-pipeline-orchestrator",
+        "ln-200-scope-decomposer"
+      ],
+      "group": "Agile 范围拆解到 Story 交付流水线",
+      "group_en": "Agile Scope-to-Story Delivery Pipeline",
+      "category": "product-management",
+      "subcategory": "3-9",
+      "chain": true,
+      "description": "把项目范围拆解为 Epic、Story，并可选按 RICE 做优先级排序。",
+      "description_en": "Breaks project scope into Epics and Stories, with optional RICE prioritization.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-201-opportunity-discoverer"
+      ],
+      "group": "流量优先机会发现",
+      "group_en": "Traffic-First Opportunity Discovery",
+      "category": "product-management",
+      "subcategory": "3-3",
+      "chain": false,
+      "description": "用流量优先漏斗识别有真实需求的产品增长方向，帮助尽早淘汰低机会想法。",
+      "description_en": "Uses a traffic-first funnel to surface product growth opportunities with validated demand and kill weak ideas early.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-210-epic-coordinator"
+      ],
+      "group": "Epic 规划与重排",
+      "group_en": "Epic Planning and Replanning",
+      "category": "product-management",
+      "subcategory": "3-9",
+      "chain": false,
+      "description": "将大型范围拆解并规划为 3–7 个 Epic，支持新建或范围变化后的重排。",
+      "description_en": "Breaks large scopes into 3–7 Epics and supports creation or replanning when scope changes.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-220-story-coordinator",
+        "ln-221-story-creator"
+      ],
+      "group": "Epic 到 Story 的敏捷规划工作流",
+      "group_en": "Epic-to-Story Agile Planning Workflow",
+      "category": "product-management",
+      "subcategory": "3-6",
+      "chain": true,
+      "description": "将 Epic 拆解为 5-10 个 Story，并协调规划、研究和多 Epic 路由。",
+      "description_en": "Generates Story documents from an Epic and ideal plan, then validates them against INVEST criteria.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-222-story-replanner"
+      ],
+      "group": "Epic Story 重规划",
+      "group_en": "Epic Story Replanning",
+      "category": "product-management",
+      "subcategory": "3-9",
+      "chain": false,
+      "description": "帮助 agent 对比理想方案与现有 Stories，分类 KEEP/UPDATE/OBSOLETE/CREATE 并调整看板。",
+      "description_en": "Helps an agent compare the ideal story plan with existing stories, classify changes, and update the kanban.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-230-story-prioritizer"
+      ],
+      "group": "Story RICE 优先级",
+      "group_en": "Story RICE Prioritization",
+      "category": "product-management",
+      "subcategory": "3-7",
+      "chain": false,
+      "description": "帮助 agent 用 RICE 和市场研究为 Stories 打分，生成优先级表供冲刺规划。",
+      "description_en": "Helps an agent score stories with RICE and market research, then generate a prioritization table for sprint planning.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-300-task-coordinator",
+        "ln-301-task-creator"
+      ],
+      "group": "敏捷任务拆解与创建流水线",
+      "group_en": "Agile Task Breakdown and Issue Creation Workflow",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": true,
+      "description": "分析用户故事并生成任务计划，支持后续创建或重规划任务。",
+      "description_en": "Creates implementation, refactoring, and test tasks from an approved plan and story data.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-302-task-replanner"
+      ],
+      "group": "Sprint 任务重规划",
+      "group_en": "Sprint Task Replanning",
+      "category": "product-management",
+      "subcategory": "3-9",
+      "chain": false,
+      "description": "对比理想任务计划与现有任务，应用更新以保持需求变更同步。",
+      "description_en": "Compares the ideal task plan with existing tasks and applies updates to keep sprint work aligned with changing requirements.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-310-multi-agent-validator"
+      ],
+      "group": "Sprint 计划评审",
+      "group_en": "Sprint Plan Review",
+      "category": "product-management",
+      "subcategory": "3-9",
+      "chain": false,
+      "description": "通过多证据通道评审 Story 或计划，合并结论并给出修订建议。",
+      "description_en": "Reviews Stories or plans through parallel evidence lanes, merges findings, and proposes bounded refinements.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-311-review-research-worker",
+        "ln-312-review-findings-worker"
+      ],
+      "group": "评审证据到发现工作流",
+      "group_en": "Evidence-to-Findings Review Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": true,
+      "description": "收集官方文档、MCP 引用、Context7 与最佳实践证据，并生成机器可读研究摘要。",
+      "description_en": "Gathers official docs, MCP references, Context7 evidence, and current best practices into a machine-readable research summary.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-313-review-docs-worker"
+      ],
+      "group": "评审驱动文档生成",
+      "group_en": "Review-Driven Documentation Generation",
+      "category": "product-management",
+      "subcategory": "3-6",
+      "chain": false,
+      "description": "在评审运行后提取领域并生成或更新受控文档",
+      "description_en": "Creates and updates controlled documentation after a review run by extracting technical domains and linking them to the story.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-314-review-repair-worker"
+      ],
+      "group": "低风险代码修复执行",
+      "group_en": "Low-Risk Code Repair Execution",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "按已接受发现项执行低风险修复并记录清理证据",
+      "description_en": "Applies accepted low-risk code repairs from review findings while keeping evidence and safety boundaries explicit.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-315-review-merge-worker",
+        "ln-316-review-refinement-worker"
+      ],
+      "group": "评审合并与精修流水线",
+      "group_en": "Review merge and refinement pipeline",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": true,
+      "description": "合并评审证据，去重并验证 agent 发现，产出经验证聚合结果。",
+      "description_en": "Merges review evidence, deduplicates and verifies agent findings, then produces one validated aggregate result.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-400-story-executor",
+        "ln-401-task-executor"
+      ],
+      "group": "Agile Story 执行流水线",
+      "group_en": "Agile Story Execution Pipeline",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": true,
+      "description": "帮助 agent 按优先级执行 Story 任务，维护检查点和状态流转。",
+      "description_en": "Helps an agent execute Story tasks in priority order while maintaining checkpoints and state transitions.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-402-task-reviewer",
+        "ln-403-task-rework"
+      ],
+      "group": "任务审查—返工闭环",
+      "group_en": "Task review–rework loop",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": true,
+      "description": "根据审查反馈修复 To Rework 任务，应用改动并重新提交复核。",
+      "description_en": "Reviews a task in To Review, checks quality, standards, architecture, and tests, then decides whether it is Done or needs Rework.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-404-test-executor",
+        "ln-500-story-quality-gate"
+      ],
+      "group": "Story 测试与质量门禁流程",
+      "group_en": "Story Testing and Quality Gate Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": true,
+      "description": "将标记为 tests 的故事任务按测试计划执行并推进到评审，控制风险范围。",
+      "description_en": "Runs test-labeled story tasks through a structured test plan and moves them toward review within defined risk limits.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-510-quality-coordinator",
+        "ln-511-code-quality-checker"
+      ],
+      "group": "敏捷质量评审流水线",
+      "group_en": "Agile quality review pipeline",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": true,
+      "description": "评估已完成的实现任务，按 DRY/KISS/YAGNI 和架构合规给出质量分。",
+      "description_en": "Coordinates story-quality reviews by gathering research, agent-review input, and regression evidence.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-512-tech-debt-cleaner"
+      ],
+      "group": "低风险技术债清理",
+      "group_en": "Low-risk tech debt cleanup",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "根据审计结果自动清理未用导入、死代码等低风险技术债。",
+      "description_en": "Automatically resolves safe audit findings such as unused imports and dead code without touching business logic.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-513-regression-checker"
+      ],
+      "group": "回归测试门禁",
+      "group_en": "Regression test gate",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "运行现有测试套件，验证实现变更没有引入回归。",
+      "description_en": "Runs the existing test suite to verify implementation changes introduced no regressions.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-514-test-log-analyzer"
+      ],
+      "group": "测试日志质量分析",
+      "group_en": "Test Log Quality Analysis",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮 agent 分析测试/开发日志，分类错误、评估日志质量并给出修复建议。",
+      "description_en": "Helps agents analyze test and development logs, classify errors, assess log quality, and recommend fixes.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ln-520-test-planner"
+      ],
+      "group": "测试规划编排",
+      "group_en": "Test Planning Orchestration",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "为 Story 规划测试覆盖，协调研究、手工测试与自动化测试计划。",
+      "description_en": "Plans comprehensive test coverage for a story and coordinates research, manual testing, and automated test planning.",
+      "sources": [
+        "levnikolaevich/claude-code-skills"
+      ]
+    },
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "八字紫微命理分析",
+      "group_en": "Bazi and Ziwei Fortune Analysis",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "根据用户生辰调用算法排盘，并生成八字、紫微或综合印证分析。",
+      "description_en": "Uses algorithmic chart calculation to generate Bazi, Ziwei, or combined metaphysical readings from a user's birth data.",
+      "sources": [
+        "dzcmemory-web/bazi-ziwei-skill"
+      ]
+    },
+    {
+      "skills": [
+        "session-handoff-prompt"
+      ],
+      "group": "会话接力 / 上下文 handoff",
+      "group_en": "Session handoff and context transfer",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "生成可粘贴到新会话的续接提示，保留目标、事实、决策和下一步。",
+      "description_en": "Creates a paste-ready continuation prompt that preserves goals, facts, decisions, and next steps for a fresh session.",
+      "sources": [
+        "dongshuyan/compass-skills"
+      ]
+    },
+    {
+      "skills": [
+        "task-clarifier"
+      ],
+      "group": "需求澄清工作流",
+      "group_en": "Task clarification workflow",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "通过连续提问澄清用户需求，直到用户和 AI 都确认理解一致。",
+      "description_en": "Guides users through clarifying questions until both the user and AI share a verified understanding.",
+      "sources": [
+        "dongshuyan/compass-skills"
+      ]
+    },
+    {
+      "skills": [
+        "task-forest"
+      ],
+      "group": "仓库任务森林 / 任务 DAG",
+      "group_en": "Repository Task Forest / Task DAG",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "维护仓库内任务森林，跟踪目标、依赖、进度与偏差。",
+      "description_en": "Maintains a repo-local task forest, tracking goals, dependencies, progress, and deviations.",
+      "sources": [
+        "dongshuyan/compass-skills"
+      ]
+    },
+    {
+      "skills": [
+        "user-profile-keeper"
+      ],
+      "group": "本地用户画像与偏好记忆",
+      "group_en": "Local User Profile & Preference Memory",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "维护本地用户画像，沉淀偏好、边界与协作习惯。",
+      "description_en": "Maintains a local user profile for preferences, boundaries, and collaboration habits.",
+      "sources": [
+        "dongshuyan/compass-skills"
+      ]
+    },
+    {
+      "skills": [
+        "chdb-datastore",
+        "chdb-sql"
+      ],
+      "group": "ClickHouse/chDB 数据查询与分析",
+      "group_en": "ClickHouse/chDB data querying and analysis",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "让 agent 用 chDB DataStore 加速 pandas，并跨文件、云存储和数据库做 DataFrame 分析。",
+      "description_en": "Helps agents accelerate pandas workflows with chDB DataStore and analyze data across files, cloud storage, and databases.",
+      "sources": [
+        "ClickHouse/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "clickhouse-architecture-advisor",
+        "clickhouse-best-practices"
+      ],
+      "group": "ClickHouse 架构决策与最佳实践审查",
+      "group_en": "ClickHouse architecture decisioning and best-practice review",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": true,
+      "description": "帮 agent 审查 ClickHouse schema、查询和配置，并引用规则。",
+      "description_en": "Helps agents review ClickHouse schemas, queries, and configurations using rule-based best practices.",
+      "sources": [
+        "ClickHouse/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "clickhouse-js-node-coding"
+      ],
+      "group": "ClickHouse Node.js SDK 集成开发",
+      "group_en": "ClickHouse Node.js SDK Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 编写和集成 ClickHouse Node.js 客户端代码。",
+      "description_en": "Helps the agent write and integrate ClickHouse Node.js client code.",
+      "sources": [
+        "ClickHouse/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "clickhouse-js-node-troubleshooting"
+      ],
+      "group": "系统化调试",
+      "group_en": "Systematic debugging",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助 agent 诊断 ClickHouse Node.js 客户端连接、流处理、TLS 与超时问题。",
+      "description_en": "Helps the agent diagnose ClickHouse Node.js client connection, streaming, TLS, and timeout issues.",
+      "sources": [
+        "ClickHouse/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "clickhouse-managed-postgres-rca"
+      ],
+      "group": "ClickHouse 托管 Postgres 性能诊断",
+      "group_en": "ClickHouse-managed Postgres performance diagnosis",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 基于 Prometheus 指标和慢查询模式定位 ClickHouse 托管 Postgres 性能问题，并给出修复建议。",
+      "description_en": "Helps an agent diagnose ClickHouse-managed Postgres performance issues using Prometheus metrics and slow-query patterns, then recommend fixes.",
+      "sources": [
+        "ClickHouse/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "clickhousectl-cloud-deploy"
+      ],
+      "group": "ClickHouse Cloud 部署",
+      "group_en": "ClickHouse Cloud deployment",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "引导 agent 使用 clickhousectl 完成 ClickHouse Cloud 账号、服务创建、迁移和连接应用。",
+      "description_en": "Guides an agent through ClickHouse Cloud setup, service creation, migration, and app connection using clickhousectl.",
+      "sources": [
+        "ClickHouse/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "clickhousectl-local-dev"
+      ],
+      "group": "ClickHouse 本地开发与查询",
+      "group_en": "ClickHouse Local Development and Querying",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "指导 agent 安装 clickhousectl、搭建本地 ClickHouse、建表并启动查询开发。",
+      "description_en": "Guides agents in installing clickhousectl, setting up local ClickHouse, creating tables, and starting query-based development.",
+      "sources": [
+        "ClickHouse/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "cc-changelog"
+      ],
+      "group": "Claude Code 版本兼容性追踪",
+      "group_en": "Claude Code release compatibility tracking",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "跟踪 Claude Code 版本更新，分析对插件的破坏性影响、机会和废弃项。",
+      "description_en": "Tracks Claude Code releases and assesses plugin impact, including breakages, opportunities, and deprecations.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "docs-check"
+      ],
+      "group": "Claude Code 文档兼容性验证",
+      "group_en": "Claude Code docs compatibility validation",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "对照最新 Claude Code 文档验证插件组件，发现破坏变更和废弃项。",
+      "description_en": "Validates plugin components against the latest Claude Code docs to catch breakages and deprecations.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "plugin-dev-workflow"
+      ],
+      "group": "插件开发质量门禁（Elixir/Phoenix）",
+      "group_en": "Plugin Development Quality Gates (Elixir/Phoenix)",
+      "category": "meta-skill-mgmt",
+      "subcategory": "13-1",
+      "chain": false,
+      "description": "指导修改插件、skills、agents、hooks 或评估框架，并在提交前运行评估、lint 与测试。",
+      "description_en": "Guides edits to this repo’s plugin, skills, agents, hooks, or eval framework, and runs eval, lint, and tests before committing.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "promote"
+      ],
+      "group": "发布社交帖生成",
+      "group_en": "Release Social Post Generator",
+      "category": "marketing-growth",
+      "subcategory": "4-3",
+      "chain": false,
+      "description": "根据版本数据和可验证指标生成 X/Twitter 发布帖、线程、ASCII 卡片与渲染命令。",
+      "description_en": "Generates data-backed X/Twitter release posts, tweet threads, ASCII cards, CodeSnap commands, and fact checks.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "release"
+      ],
+      "group": "Git 工作流 / 通用发布流程自动化",
+      "group_en": "Git Workflows / General Release Automation",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "按清单完成插件版本升级、CI 门禁、提交打标签和 GitHub 发布。",
+      "description_en": "Runs the plugin release checklist: version bump, CI gate, commit, tag, and GitHub release.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "session-deep-dive"
+      ],
+      "group": "Session 深度定性分析",
+      "group_en": "Session Deep-Dive Analysis",
+      "category": "product-management",
+      "subcategory": "3-1",
+      "chain": false,
+      "description": "分析高价值会话，调用子代理归纳模式并与既有发现对比。",
+      "description_en": "Analyzes high-signal sessions, spawns subagents to surface patterns, and compares them with known findings.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "session-scan",
+        "session-trends"
+      ],
+      "group": "Claude Code 会话指标流水线",
+      "group_en": "Claude Code Session Metrics Pipeline",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": true,
+      "description": "通过 ccrider MCP 扫描 Claude Code 会话，计算摩擦、机会和指纹指标。",
+      "description_en": "Reads the session metrics ledger, analyzes trends, and compares them with MEMORY.md baselines for progress tracking.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "skill-monitor"
+      ],
+      "group": "Skill 效能监控与改进看板",
+      "group_en": "Skill Performance Monitor",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "读取会话指标，分析各 skill 的调用、摩擦与结果，定位退化项并生成改进建议。",
+      "description_en": "Reads session metrics to analyze each skill’s usage, friction, and outcomes, then flags degradation and recommends improvements.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "autoresearch"
+      ],
+      "group": "Plugin skill 自进化评估循环",
+      "group_en": "Plugin Skill Self-Improvement Loop",
+      "category": "agent-architecture",
+      "subcategory": "12-5",
+      "chain": false,
+      "description": "围绕 plugin skill 做单点变异、确定性评测、保留改进或回滚失败。",
+      "description_en": "Runs a deterministic mutation-and-evaluation loop for plugin skills, keeping improvements and reverting regressions.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "catchup",
+        "ketchup"
+      ],
+      "group": "缺席后上下文同步",
+      "group_en": "Post-Absence Context Sync",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "汇总缺席期间错过的 PR、提交、Linear 事项和会议，生成优先级简报，帮助快速回归上下文。",
+      "description_en": "Summarizes missed PRs, commits, Linear tickets, and meetings into a prioritized brief for a quick return to context.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "ash-framework"
+      ],
+      "group": "Ash Framework 编码参考",
+      "group_en": "Ash Framework Coding Reference",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导 Phoenix/Ash 资源、action、policy 等领域代码生成与修改。",
+      "description_en": "Provides coding guidance for Ash resources, actions, policies, and domain interfaces in Phoenix projects.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "assigns-audit"
+      ],
+      "group": "LiveView assigns 内存审计",
+      "group_en": "LiveView Assigns Memory Audit",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "审计 LiveView assigns，识别大列表、临时数据未清理和内存膨胀问题。",
+      "description_en": "Audits LiveView assigns to spot large lists, missing temporary_assigns, and memory bloat.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "audit"
+      ],
+      "group": "Phoenix 项目健康审计",
+      "group_en": "Phoenix Project Health Audits",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "用多子代理评估架构、性能、测试、依赖与代码质量，定位项目健康风险。",
+      "description_en": "Assesses architecture, performance, tests, dependencies, and code quality with parallel subagents.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "boundaries"
+      ],
+      "group": "Phoenix Context 边界检查",
+      "group_en": "Phoenix Context Boundary Checks",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "通过 mix xref 检查 Phoenix context 依赖、耦合与循环，发现边界违规。",
+      "description_en": "Uses mix xref to inspect Phoenix context dependencies, coupling, and cycles.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "brainstorm"
+      ],
+      "group": "Phoenix 功能需求探索",
+      "group_en": "Phoenix Feature Discovery",
+      "category": "product-management",
+      "subcategory": "3-3",
+      "chain": false,
+      "description": "面向 Phoenix 功能想法做访谈、研究并沉淀需求。",
+      "description_en": "Guides Phoenix feature discovery through interviews, research, and structured requirements.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "brief"
+      ],
+      "group": "Phoenix 计划文件解读",
+      "group_en": "Phoenix Plan Briefings",
+      "category": "product-management",
+      "subcategory": "3-6",
+      "chain": false,
+      "description": "交互式解读计划文件，说明决策理由与方案形态。",
+      "description_en": "Walks developers through plan files, decisions, and the proposed solution shape.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "call-tracing"
+      ],
+      "group": "Elixir/Phoenix 调试与代码审查工作流",
+      "group_en": "Elixir/Phoenix Debugging and Review Workflow",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "用 mix xref callers 构建调用树，定位数据流、入口和签名变更影响。",
+      "description_en": "Builds mix xref call trees to trace data flow, entry points, and signature-change impact.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "challenge"
+      ],
+      "group": "Elixir/Phoenix 挑战式审查模式",
+      "group_en": "Elixir/Phoenix Challenge Review Mode",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "用对抗式问题审查 Ecto、LiveView、OTP 和 PR 变更，要求验证后再批准。",
+      "description_en": "Uses adversarial review questions for Ecto, LiveView, OTP, and PR readiness before approval.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "compound-docs",
+        "compound"
+      ],
+      "group": "Phoenix 问题解决方案知识库闭环",
+      "group_en": "Phoenix issue solution knowledge-base loop",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": true,
+      "description": "帮助 agent 在排查前检索历史解决方案，沉淀可复用的 Phoenix 问题知识。",
+      "description_en": "Helps the agent capture root causes, investigation steps, and prevention notes after fixes for future search.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "deploy"
+      ],
+      "group": "Elixir/Phoenix 生产部署到 Fly.io",
+      "group_en": "Elixir/Phoenix Production Deployment to Fly.io",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "指导 Phoenix 应用配置 Docker、Fly.io、健康检查与生产发布。",
+      "description_en": "Guides Phoenix app deployment with Docker, Fly.io, health checks, and production releases.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "deps-audit"
+      ],
+      "group": "Hex 依赖供应链安全审计",
+      "group_en": "Hex Dependency Supply-Chain Audit",
+      "category": "software-engineering",
+      "subcategory": "1-8",
+      "chain": false,
+      "description": "审计 Hex 依赖包变更，识别供应链风险、CVE 与 typosquat。",
+      "description_en": "Audits Hex dependency changes for supply-chain risks, CVEs, typosquats, and suspicious package metadata.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "deps-update",
+        "deps-vet"
+      ],
+      "group": "Elixir Hex 依赖审计与更新工作流",
+      "group_en": "Elixir Hex dependency audit and update workflow",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": true,
+      "description": "帮助 agent 盘点并升级 Elixir Hex 依赖，修复破坏并拆分可审查 PR。",
+      "description_en": "Helps an agent inventory and upgrade Elixir Hex dependencies, fix breakages, and split changes into reviewable PRs.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "document"
+      ],
+      "group": "Elixir/Phoenix 文档注释生成",
+      "group_en": "Elixir/Phoenix Code Documentation Generation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "为 Elixir 公共模块和函数生成 @moduledoc/@doc，明确 API 契约与边界条件。",
+      "description_en": "Generates @moduledoc and @doc strings for Elixir public APIs, clarifying contracts and edge cases.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "ecto-constraint-debug"
+      ],
+      "group": "Ecto 约束错误调试",
+      "group_en": "Ecto Constraint Error Debugging",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "定位 Ecto 约束错误，解析约束名、检查迁移、追踪写入路径并识别竞态。",
+      "description_en": "Diagnoses Ecto constraint failures by parsing constraint names, checking migrations, tracing insert paths, and spotting races.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    },
+    {
+      "skills": [
+        "ecto-patterns",
+        "elixir-idioms"
+      ],
+      "group": "Elixir/Phoenix 编码规范",
+      "group_en": "Elixir/Phoenix coding standards",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 在 Ecto 代码中遵守 schema、changeset、查询与迁移规范。",
+      "description_en": "Helps the agent write idiomatic Elixir and avoid common BEAM concurrency pitfalls.",
+      "sources": [
+        "oliver-kriska/claude-elixir-phoenix"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "ningzimu",
+        "repo": "codex-ppt-skill",
+        "full_name": "ningzimu/codex-ppt-skill",
+        "url": "https://github.com/ningzimu/codex-ppt-skill",
+        "stars": 2411,
+        "pushed_at": "2026-06-20",
+        "default_branch": "main",
+        "github_description": "GPT-Image-2 PPT Generator Skill for Creating Image-Based PowerPoint Presentations in Codex and Other Skill-Compatible Agents",
+        "topics": [
+          "agent-skills",
+          "ai-ppt",
+          "claude-code",
+          "codex",
+          "gpt-image-2",
+          "powerpoint",
+          "ppt",
+          "ppt-skill",
+          "pptx",
+          "presentation",
+          "skill"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "codex-ppt",
+          "path": "skills/codex-ppt/SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "GPT-Image 全图 PPT 生成",
+          "group_en": "Full-slide image PPT generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从文章、报告或大纲生成视觉统一的图片化 PPTX 演示文稿。",
+          "description_en": "Generates visually unified, full-slide image PPTX decks from articles, reports, notes, or outlines.",
+          "what": "将源材料转换为 16:9 全图幻灯片并组装为 PPTX。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "elastic",
+        "repo": "agent-skills",
+        "full_name": "elastic/agent-skills",
+        "url": "https://github.com/elastic/agent-skills",
+        "stars": 513,
+        "pushed_at": "2026-06-23",
+        "default_branch": "main",
+        "github_description": "Official Elastic Skills",
+        "topics": [],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "access-management",
+          "path": "plugins/cloud/skills/access-management/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Elastic Cloud 访问管理",
+          "group_en": "Elastic Cloud Access Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "管理 Elastic Cloud 组织访问、项目角色与 Cloud API 密钥。",
+          "description_en": "Manage organization access, project roles, and Cloud API keys in Elastic Cloud.",
+          "what": "Manage access for Elastic Cloud organizations and serverless projects.",
+          "chain": true,
+          "chain_group": "Elastic Cloud 初始化与访问管理工作流",
+          "chain_group_en": "Elastic Cloud setup and access management workflow"
+        },
+        {
+          "name": "create-project",
+          "path": "plugins/cloud/skills/create-project/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Elastic Cloud 项目创建",
+          "group_en": "Elastic Cloud Project Creation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 Elastic Cloud API 创建 Serverless 项目并保存凭据。",
+          "description_en": "Create Elastic Cloud serverless projects and save scoped credentials.",
+          "what": "Create serverless Elastic Cloud projects through the Cloud API.",
+          "chain": true,
+          "chain_group": "Elastic Cloud 初始化与访问管理工作流",
+          "chain_group_en": "Elastic Cloud setup and access management workflow"
+        },
+        {
+          "name": "manage-project",
+          "path": "plugins/cloud/skills/manage-project/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Elastic Cloud 项目运维",
+          "group_en": "Elastic Cloud project operations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "管理 Elastic Cloud Serverless 项目与凭据，帮助 agent 连接并执行日常运维。",
+          "description_en": "Manage Elastic Cloud Serverless projects and credentials so the agent can connect and perform day-2 operations.",
+          "what": "处理项目列表、详情、更新、删除、凭据重置/加载、恢复和端点解析。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "network-security",
+          "path": "plugins/cloud/skills/network-security/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Elastic Cloud 网络访问控制",
+          "group_en": "Elastic Cloud network access controls",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "配置 Elastic Cloud Serverless 项目的 IP 与 VPC 流量过滤，限制访问入口。",
+          "description_en": "Configure Elastic Cloud Serverless IP and VPC traffic filters to restrict network access.",
+          "what": "创建、更新、删除 IP allowlist 和 AWS PrivateLink VPC 过滤规则。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "setup",
+          "path": "plugins/cloud/skills/setup/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Elastic Cloud 环境配置",
+          "group_en": "Elastic Cloud environment setup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "配置 Elastic Cloud API 密钥、默认环境和连接验证，为后续云端技能提供凭据基础。",
+          "description_en": "Sets up Elastic Cloud API credentials, environment defaults, and connection validation for later cloud skills.",
+          "what": "Sets up Elastic Cloud authentication and environment defaults.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "elasticsearch-audit",
+          "path": "plugins/elasticsearch/skills/elasticsearch-audit/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "Elastic 安全审计日志",
+          "group_en": "Elastic security audit logging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 配置并查询 Elasticsearch 安全审计日志，排查认证失败与未授权访问。",
+          "description_en": "Helps agents configure and query Elasticsearch security audit logs to investigate auth failures and unauthorized access.",
+          "what": "Enables and queries Elasticsearch security audit logs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "elasticsearch-authn",
+          "path": "plugins/elasticsearch/skills/elasticsearch-authn/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Elasticsearch 认证接入",
+          "group_en": "Elasticsearch Authentication",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 安全连接 Elasticsearch，选择认证方式并管理 API key 生命周期。",
+          "description_en": "Helps agents connect securely to Elasticsearch and manage API key lifecycles.",
+          "what": "让 Agent 在不暴露秘密的前提下连接 Elasticsearch 并管理 API key。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "elasticsearch-authz",
+          "path": "plugins/elasticsearch/skills/elasticsearch-authz/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Elasticsearch 权限管理",
+          "group_en": "Elasticsearch RBAC Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 管理 Elasticsearch 用户、角色、映射和文档/字段级权限，落实最小权限。",
+          "description_en": "Helps agents manage Elasticsearch users, roles, mappings, and document- or field-level permissions.",
+          "what": "让 Agent 为 Elasticsearch 配置 RBAC、用户映射和细粒度访问控制。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "elasticsearch-esql",
+          "path": "plugins/elasticsearch/skills/elasticsearch-esql/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Elasticsearch 查询与日志分析",
+          "group_en": "Elasticsearch Querying and Log Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 对 Elasticsearch 执行 ES|QL 查询、聚合指标并生成可视化结果。",
+          "description_en": "Helps an agent run ES|QL queries, aggregate metrics, explore logs, and build chart-ready results in Elasticsearch.",
+          "what": "Execute ES|QL queries against Elasticsearch for data exploration, log analysis, metrics aggregation, and dashboard preparation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "elasticsearch-file-ingest",
+          "path": "plugins/elasticsearch/skills/elasticsearch-file-ingest/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Elasticsearch 数据导入流水线",
+          "group_en": "Elasticsearch Data Ingestion Pipelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 CSV、JSON、Parquet 等文件流式导入并转换到 Elasticsearch。",
+          "description_en": "Helps an agent stream and transform CSV, JSON, Parquet, and Arrow IPC files into Elasticsearch.",
+          "what": "Ingests and transforms large data files into Elasticsearch using stream processing and custom JavaScript transforms.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "elasticsearch-onboarding",
+          "path": "plugins/elasticsearch/skills/elasticsearch-onboarding/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Elasticsearch 搜索入门",
+          "group_en": "Elasticsearch Search Onboarding",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导开发者理解需求、建模数据并构建 Elasticsearch 搜索体验。",
+          "description_en": "Guides developers through intent discovery, data modeling, and building Elasticsearch search experiences.",
+          "what": "A workflow for turning vague search goals into a working Elasticsearch implementation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "elasticsearch-security-troubleshooting",
+          "path": "plugins/elasticsearch/skills/elasticsearch-security-troubleshooting/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "Elasticsearch 安全排障",
+          "group_en": "Elasticsearch Security Troubleshooting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "诊断并修复 Elasticsearch 认证、授权、TLS、API Key 等安全问题。",
+          "description_en": "Diagnoses and fixes Elasticsearch authentication, authorization, TLS, API key, and Kibana login issues.",
+          "what": "A triage workflow for resolving Elasticsearch security errors and access failures.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "agent-builder",
+          "path": "plugins/kibana/skills/agent-builder/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Kibana Agent Builder 管理",
+          "group_en": "Kibana Agent Builder Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 在 Kibana 中创建、维护并测试 Agent Builder 代理与自定义工具。",
+          "description_en": "Helps an agent create, maintain, and test Kibana Agent Builder agents and custom tools.",
+          "what": "用于管理 Kibana Agent Builder 中的代理和自定义工具。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kibana-alerting-rules",
+          "path": "plugins/kibana/skills/kibana-alerting-rules/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Kibana 告警规则管理",
+          "group_en": "Kibana Alerting Rules Management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 通过 API 或 Terraform 管理 Kibana 告警规则及其生命周期。",
+          "description_en": "Helps an agent manage Kibana alerting rules and their lifecycle through APIs or Terraform.",
+          "what": "用于创建、更新和维护 Kibana 告警规则。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kibana-anomaly-detection",
+          "path": "plugins/kibana/skills/kibana-anomaly-detection/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Kibana 可观测性 / ML 异常检测",
+          "group_en": "Kibana Observability and ML Anomaly Detection",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 调查 Elastic ML 异常告警，解释分数，管理任务、数据流与故障。",
+          "description_en": "Helps an agent investigate Elastic ML anomaly alerts, explain scores, manage jobs and datafeeds, and troubleshoot failures.",
+          "what": "Investigate and manage Elastic ML anomaly detection in Kibana.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kibana-audit",
+          "path": "plugins/kibana/skills/kibana-audit/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "Kibana 安全审计日志",
+          "group_en": "Kibana Security Audit Logging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 启用和配置 Kibana 审计日志，筛选事件并追踪访问、登录和空间操作。",
+          "description_en": "Helps an agent enable and tune Kibana audit logging, filter noisy events, and trace access, login, and space activity.",
+          "what": "Configure and query Kibana audit logging for security events.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kibana-connectors",
+          "path": "plugins/kibana/skills/kibana-connectors/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Elastic/Kibana 运维技能",
+          "group_en": "Elastic/Kibana Operations Skills",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 通过 REST API 或 Terraform 创建和管理 Kibana 连接器。",
+          "description_en": "Helps an agent create and manage Kibana connectors via REST API or Terraform.",
+          "what": "Configures Kibana alerting connectors for Slack, PagerDuty, Jira, webhooks, and other integrations.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kibana-dashboards",
+          "path": "plugins/kibana/skills/kibana-dashboards/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Elastic/Kibana 运维技能",
+          "group_en": "Elastic/Kibana Operations Skills",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 以声明式 API 创建、管理和自动化部署 Kibana 仪表盘。",
+          "description_en": "Helps an agent create, manage, and deploy Kibana dashboards declaratively via API.",
+          "what": "Defines Kibana dashboards and visualizations in a Git-friendly, LLM-assisted workflow.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kibana-vega",
+          "path": "plugins/kibana/skills/kibana-vega/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Kibana 数据可视化与 Streams",
+          "group_en": "Kibana data visualization and Streams",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 ES|QL 数据源在 Kibana 创建、管理 Vega 图表与面板布局。",
+          "description_en": "Helps the agent create and manage Vega/Vega-Lite charts in Kibana from ES|QL data sources.",
+          "what": "用于在 Kibana 中创建和管理 Vega/Vega-Lite 可视化。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "streams",
+          "path": "plugins/kibana/skills/streams/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Kibana 数据可视化与 Streams",
+          "group_en": "Kibana data visualization and Streams",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 查询 Kibana Streams 元数据、设置、事件、附件并管理启停和重同步。",
+          "description_en": "Helps the agent inspect Kibana Streams metadata, settings, events, attachments, and lifecycle actions.",
+          "what": "用于读取和管理 Kibana Streams 的元数据与生命周期。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "edot-dotnet-instrument",
+          "path": "plugins/observability/skills/edot-dotnet-instrument/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Elastic EDOT .NET 可观测性接入",
+          "group_en": "Elastic EDOT .NET observability setup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 .NET 应用接入 EDOT/OpenTelemetry，自动采集 traces、metrics、logs。",
+          "description_en": "Helps the agent wire a .NET app into Elastic OpenTelemetry for traces, metrics, and logs.",
+          "what": "指导 .NET 服务接入 Elastic 的 OpenTelemetry 可观测性管线。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "edot-dotnet-migrate",
+          "path": "plugins/observability/skills/edot-dotnet-migrate/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Elastic EDOT .NET 可观测性接入",
+          "group_en": "Elastic EDOT .NET observability setup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 .NET 应用从经典 Elastic APM Agent 迁移到 EDOT SDK。",
+          "description_en": "Helps the agent migrate a .NET app from the classic Elastic APM agent to the EDOT SDK.",
+          "what": "指导从 Elastic.APM 迁移到 Elastic.OpenTelemetry。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "edot-java-instrument",
+          "path": "plugins/observability/skills/edot-java-instrument/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "EDOT Java 观测接入",
+          "group_en": "EDOT Java Observability",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 为 Java 服务接入 EDOT Java Agent，自动采集追踪、指标和日志。",
+          "description_en": "Helps the agent instrument Java services with the EDOT Java Agent to collect traces, metrics, and logs.",
+          "what": "用于无 APM Agent 的 Java 服务自动观测接入。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "edot-java-migrate",
+          "path": "plugins/observability/skills/edot-java-migrate/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "EDOT Java 观测接入",
+          "group_en": "EDOT Java Observability",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 将 Java 应用从经典 Elastic APM 迁移到 EDOT Java Agent。",
+          "description_en": "Helps the agent migrate Java apps from the classic Elastic APM agent to the EDOT Java Agent.",
+          "what": "用于经典 Elastic APM Java Agent 到 EDOT 的迁移。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "edot-python-instrument",
+          "path": "plugins/observability/skills/edot-python-instrument/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Elastic EDOT Python 观测接入",
+          "group_en": "Elastic EDOT Python Observability",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 为 Python 服务接入 EDOT，自动采集 traces、metrics 和 logs。",
+          "description_en": "Helps an agent instrument a Python service with EDOT to collect traces, metrics, and logs.",
+          "what": "为新 Python 服务安装并配置 Elastic OpenTelemetry 自动观测。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "edot-python-migrate",
+          "path": "plugins/observability/skills/edot-python-migrate/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Elastic EDOT Python 观测接入",
+          "group_en": "Elastic EDOT Python Observability",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 Python 应用从经典 Elastic APM 迁移到 EDOT/OpenTelemetry。",
+          "description_en": "Helps an agent migrate a Python app from classic Elastic APM to EDOT/OpenTelemetry.",
+          "what": "替换旧 APM 依赖、环境变量并配置 EDOT 自动插桩。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "k8s-investigation",
+          "path": "plugins/observability/skills/k8s-investigation/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Kubernetes OTel 故障调查",
+          "group_en": "Kubernetes OTel Troubleshooting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 基于 OTel 遥测调查 Kubernetes 工作负载、节点和控制面故障。",
+          "description_en": "Helps an agent investigate Kubernetes workload, node, and control-plane issues using OTel telemetry.",
+          "what": "用于 Kubernetes OTel 故障调查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "llm-obs",
+          "path": "plugins/observability/skills/llm-obs/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "LLM / Agent 可观测性",
+          "group_en": "LLM and Agent Observability",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Elastic 中监控 LLM 与 Agent 工作流的性能、成本、Token 和响应质量。",
+          "description_en": "Helps an agent monitor LLM and agent workflows in Elastic for performance, cost, token usage, and response quality.",
+          "what": "用于 LLM 与 Agent 可观测性。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "logs-search",
+          "path": "plugins/observability/skills/logs-search/SKILL.md",
+          "subcategory": "17-3",
+          "subcategory_title": "17.3 可观测性 / 监控",
+          "category": "devops-infra",
+          "group": "Elastic Observability 日志检索",
+          "group_en": "Elastic Observability log search",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 ES|QL 检索和过滤日志，定位异常与根因。",
+          "description_en": "Helps the agent search and filter logs with ES|QL to investigate anomalies and identify likely root causes.",
+          "what": "在 Elastic Observability 中按时间、范围和过滤条件迭代缩小日志样本。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "manage-slos",
+          "path": "plugins/observability/skills/manage-slos/SKILL.md",
+          "subcategory": "17-4",
+          "subcategory_title": "17.4 SRE / 事故响应 / SLO / FinOps",
+          "category": "devops-infra",
+          "group": "SRE / 事故响应 / SLO / FinOps",
+          "group_en": "SRE / incident response / SLO / FinOps",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 创建管理 SLO，定义 SLI 与错误预算。",
+          "description_en": "Helps the agent create and manage SLOs, define SLIs, and handle error budgets in Elastic Observability.",
+          "what": "通过 Kibana API 管理 SLO 生命周期并配置 SLI 类型。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "HoangNguyen0403",
+        "repo": "agent-skills-standard",
+        "full_name": "HoangNguyen0403/agent-skills-standard",
+        "url": "https://github.com/HoangNguyen0403/agent-skills-standard",
+        "stars": 509,
+        "pushed_at": "2026-06-24",
+        "default_branch": "develop",
+        "github_description": "A collection of Agent Skills Standard and Best Practice for Programming Languages, Frameworks that help our AI Agent follow best practies on frameworks and programming laguages",
+        "topics": [
+          "agent-",
+          "agentic-ai",
+          "android",
+          "angular",
+          "best-practices",
+          "coding-standards",
+          "cursor-rules",
+          "flutter",
+          "golang",
+          "ios",
+          "kotlin",
+          "laravel",
+          "nestjs",
+          "nextjs",
+          "react",
+          "react-native",
+          "reactjs",
+          "spring-boot",
+          "typescript"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "caveman-commit",
+          "path": ".agents/skills/caveman-commit/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "group_en": "Git workflow",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "生成简短规范的 Conventional Commit 提交信息。",
+          "description_en": "Generates terse, conventional commit messages from staged changes.",
+          "what": "Produces concise Conventional Commit subjects and optional bodies with issue references.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "caveman-compress",
+          "path": ".agents/skills/caveman-compress/SKILL.md",
+          "subcategory": "12-3",
+          "subcategory_title": "12.3 Agent 记忆系统",
+          "category": "agent-architecture",
+          "group": "Agent 记忆 / 工作笔记",
+          "group_en": "Agent memory and work notes",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "将记忆文件压缩成省 token 的 caveman 格式并备份。",
+          "description_en": "Compresses memory files into token-saving caveman format while preserving key details.",
+          "what": "Reduces memory file token cost while keeping a human-readable backup.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "common-feedback-reporter",
+          "path": ".agents/skills/common/common-feedback-reporter/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "预写代码规范审计",
+          "group_en": "Pre-write Coding Standard Audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在写入前审计代码是否违反已加载技能规则，并提示修复。",
+          "description_en": "Audits planned code before file writes for violations of loaded skill rules and suggests fixes.",
+          "what": "预写阶段检查代码是否违反已加载技能规则并触发修复。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "common-git-collaboration",
+          "path": ".agents/skills/common/common-git-collaboration/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流",
+          "group_en": "Git Workflow",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "约束提交、分支、合并和 PR 流程，提升 Git 协作质量。",
+          "description_en": "Enforces conventions for commits, branches, merges, and pull requests to improve collaboration.",
+          "what": "执行提交、分支、合并和 PR 的协作规范检查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "common-pentest-methodology",
+          "path": ".agents/skills/common/common-pentest-methodology/SKILL.md",
+          "subcategory": "18-1",
+          "subcategory_title": "18.1 渗透测试(Web / API / 基础设施)",
+          "category": "security-offensive",
+          "group": "渗透测试方法",
+          "group_en": "Penetration Testing Methodology",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 agent 提供 PTES 渗透测试流程、攻击面映射和漏洞验证矩阵。",
+          "description_en": "Gives the agent a PTES-aligned pentest workflow, attack-surface mapping, and vulnerability validation matrices.",
+          "what": "PTES 对齐的渗透测试方法骨架，覆盖范围、侦察、威胁建模、分析和报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "common-performance-engineering",
+          "path": ".agents/skills/common/common-performance-engineering/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "通用性能工程标准",
+          "group_en": "General Performance Engineering Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 先基线剖析，再定位瓶颈、优化资源并复测验证。",
+          "description_en": "Guides the agent to baseline first, identify bottlenecks, optimize resource use, and re-profile to verify gains.",
+          "what": "通用性能优化工作流，强调先测量、后优化、再验证。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "common-session-retrospective",
+          "path": ".agents/skills/common/common-session-retrospective/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "技能库复盘与改进",
+          "group_en": "Skill Library Retrospectives",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "复盘会话纠错信号，定位技能缺口并改进技能库。",
+          "description_en": "Reviews correction signals from sessions to find skill gaps and improve the skill library.",
+          "what": "Analyzes session corrections to classify root causes and propose concrete skill-library fixes.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "common-skill-creator",
+          "path": ".agents/skills/common/common-skill-creator/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "Skill 创建器",
+          "group_en": "Skill Creator",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "标准化 Skill 创建、评估和触发优化，提升技能质量。",
+          "description_en": "Standardizes Skill creation, evaluation, and trigger tuning to maximize usefulness and token ROI.",
+          "what": "Defines standards for writing, auditing, and improving Agent Skills.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "common-system-design",
+          "path": ".agents/skills/common/common-system-design/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "系统架构与分布式设计标准",
+          "group_en": "System Architecture & Distributed Design Standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在设计功能时划定模块边界、选择架构模式并检查扩展性与耦合。",
+          "description_en": "Helps the agent define module boundaries, choose architecture patterns, and check scalability and coupling.",
+          "what": "用于新功能、模块边界和可扩展性评审。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "common-tdd",
+          "path": ".agents/skills/common/common-tdd/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "TDD 红绿重构标准",
+          "group_en": "TDD Red-Green-Refactor Standard",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "强制 agent 先写失败测试，再实现最小代码并通过测试，最后重构。",
+          "description_en": "Forces the agent to write a failing test first, implement the minimum code, then refactor.",
+          "what": "用于新增功能、修 bug 或扩展测试覆盖的 TDD 流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "levnikolaevich",
+        "repo": "claude-code-skills",
+        "full_name": "levnikolaevich/claude-code-skills",
+        "url": "https://github.com/levnikolaevich/claude-code-skills",
+        "stars": 499,
+        "pushed_at": "2026-06-10",
+        "default_branch": "master",
+        "github_description": "Plugin suite + bundled MCP servers for Claude Code. Full delivery lifecycle: Agile pipeline with multi-model AI review, project bootstrap, documentation generation, codebase audits, performance optimization, community workflows. Includes hex-line (hash-verified editing), hex-graph (code knowledge graph), and hex-ssh (remote SSH) MCP servers.",
+        "topics": [
+          "agile-workflows",
+          "ai-agents",
+          "anthropic",
+          "claude-ai",
+          "claude-code",
+          "claude-code-skills",
+          "code-analysis",
+          "code-review",
+          "codebase-audit",
+          "developer-productivity",
+          "developer-tools",
+          "documentation-generator",
+          "mcp",
+          "mcp-server",
+          "model-context-protocol",
+          "performance-optimization",
+          "remote-ssh",
+          "software-architecture",
+          "tree-sitter",
+          "workflow-automation"
+        ],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-code"
+      },
+      "skills": [
+        {
+          "name": "ln-1000-pipeline-orchestrator",
+          "path": "plugins/agile-workflow/skills/ln-1000-pipeline-orchestrator/SKILL.md",
+          "subcategory": "3-9",
+          "subcategory_title": "3.9 OKR / Sprint / Retro / Stakeholder",
+          "category": "product-management",
+          "group": "Story 端到端交付流水线",
+          "group_en": "Story End-to-End Delivery Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协调 Story 从任务拆解、验证、执行到质量门禁的端到端交付。",
+          "description_en": "Coordinates a Story through tasking, validation, execution, and quality gates.",
+          "what": "L1 编排器，把选定 Story 推进完整交付管线。",
+          "chain": true,
+          "chain_group": "Agile 范围拆解到 Story 交付流水线",
+          "chain_group_en": "Agile Scope-to-Story Delivery Pipeline"
+        },
+        {
+          "name": "ln-200-scope-decomposer",
+          "path": "plugins/agile-workflow/skills/ln-200-scope-decomposer/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "User Story / 拆任务",
+          "group_en": "User Story Breakdown",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "把项目范围拆解为 Epic、Story，并可选按 RICE 做优先级排序。",
+          "description_en": "Breaks project scope into Epics and Stories, with optional RICE prioritization.",
+          "what": "顶层范围拆解编排器，生成可交付 Story backlog。",
+          "chain": true,
+          "chain_group": "Agile 范围拆解到 Story 交付流水线",
+          "chain_group_en": "Agile Scope-to-Story Delivery Pipeline"
+        },
+        {
+          "name": "ln-201-opportunity-discoverer",
+          "path": "plugins/agile-workflow/skills/ln-201-opportunity-discoverer/SKILL.md",
+          "subcategory": "3-3",
+          "subcategory_title": "3.3 产品发现 / 实验",
+          "category": "product-management",
+          "group": "流量优先机会发现",
+          "group_en": "Traffic-First Opportunity Discovery",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用流量优先漏斗识别有真实需求的产品增长方向，帮助尽早淘汰低机会想法。",
+          "description_en": "Uses a traffic-first funnel to surface product growth opportunities with validated demand and kill weak ideas early.",
+          "what": "从真实搜索和流量需求出发筛选产品方向。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ln-210-epic-coordinator",
+          "path": "plugins/agile-workflow/skills/ln-210-epic-coordinator/SKILL.md",
+          "subcategory": "3-9",
+          "subcategory_title": "3.9 OKR / Sprint / Retro / Stakeholder",
+          "category": "product-management",
+          "group": "Epic 规划与重排",
+          "group_en": "Epic Planning and Replanning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将大型范围拆解并规划为 3–7 个 Epic，支持新建或范围变化后的重排。",
+          "description_en": "Breaks large scopes into 3–7 Epics and supports creation or replanning when scope changes.",
+          "what": "把范围拆成可跟踪的 Epic 并支持重规划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ln-220-story-coordinator",
+          "path": "plugins/agile-workflow/skills/ln-220-story-coordinator/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "User Story / 拆任务",
+          "group_en": "User Story Decomposition",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "将 Epic 拆解为 5-10 个 Story，并协调规划、研究和多 Epic 路由。",
+          "description_en": "Breaks an Epic into 5-10 Stories while coordinating planning, research, and multi-Epic routing.",
+          "what": "Epic-to-Story planning coordinator for Agile delivery.",
+          "chain": true,
+          "chain_group": "Epic 到 Story 的敏捷规划工作流",
+          "chain_group_en": "Epic-to-Story Agile Planning Workflow"
+        },
+        {
+          "name": "ln-221-story-creator",
+          "path": "plugins/agile-workflow/skills/ln-221-story-creator/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "User Story / 拆任务",
+          "group_en": "User Story Decomposition",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "根据 Epic 和理想计划生成 Story 文档，并按 INVEST 标准验证质量。",
+          "description_en": "Generates Story documents from an Epic and ideal plan, then validates them against INVEST criteria.",
+          "what": "Story document generator with INVEST validation.",
+          "chain": true,
+          "chain_group": "Epic 到 Story 的敏捷规划工作流",
+          "chain_group_en": "Epic-to-Story Agile Planning Workflow"
+        },
+        {
+          "name": "ln-222-story-replanner",
+          "path": "plugins/agile-workflow/skills/ln-222-story-replanner/SKILL.md",
+          "subcategory": "3-9",
+          "subcategory_title": "3.9 OKR / Sprint / Retro / Stakeholder",
+          "category": "product-management",
+          "group": "Epic Story 重规划",
+          "group_en": "Epic Story Replanning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 对比理想方案与现有 Stories，分类 KEEP/UPDATE/OBSOLETE/CREATE 并调整看板。",
+          "description_en": "Helps an agent compare the ideal story plan with existing stories, classify changes, and update the kanban.",
+          "what": "Replans story backlogs when epic requirements change.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ln-230-story-prioritizer",
+          "path": "plugins/agile-workflow/skills/ln-230-story-prioritizer/SKILL.md",
+          "subcategory": "3-7",
+          "subcategory_title": "3.7 优先级 / 投资决策",
+          "category": "product-management",
+          "group": "Story RICE 优先级",
+          "group_en": "Story RICE Prioritization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 RICE 和市场研究为 Stories 打分，生成优先级表供冲刺规划。",
+          "description_en": "Helps an agent score stories with RICE and market research, then generate a prioritization table for sprint planning.",
+          "what": "Scores and ranks stories with RICE for sprint planning.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ln-300-task-coordinator",
+          "path": "plugins/agile-workflow/skills/ln-300-task-coordinator/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "敏捷任务拆解与创建流水线",
+          "group_en": "Agile Task Breakdown and Issue Creation Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析用户故事并生成任务计划，支持后续创建或重规划任务。",
+          "description_en": "Analyzes user stories and produces task plans for creation or replanning.",
+          "what": "L2 coordinator that turns stories into an actionable task plan.",
+          "chain": true,
+          "chain_group": "敏捷任务拆解与创建流水线",
+          "chain_group_en": "Agile Task Breakdown and Issue Creation Workflow"
+        },
+        {
+          "name": "ln-301-task-creator",
+          "path": "plugins/agile-workflow/skills/ln-301-task-creator/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "敏捷任务拆解与创建流水线",
+          "group_en": "Agile Task Breakdown and Issue Creation Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据已批准计划和故事数据创建实现、重构与测试任务。",
+          "description_en": "Creates implementation, refactoring, and test tasks from an approved plan and story data.",
+          "what": "Worker that materializes planned work into tracker tasks.",
+          "chain": true,
+          "chain_group": "敏捷任务拆解与创建流水线",
+          "chain_group_en": "Agile Task Breakdown and Issue Creation Workflow"
+        },
+        {
+          "name": "ln-302-task-replanner",
+          "path": "plugins/agile-workflow/skills/ln-302-task-replanner/SKILL.md",
+          "subcategory": "3-9",
+          "subcategory_title": "3.9 OKR / Sprint / Retro / Stakeholder",
+          "category": "product-management",
+          "group": "Sprint 任务重规划",
+          "group_en": "Sprint Task Replanning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "对比理想任务计划与现有任务，应用更新以保持需求变更同步。",
+          "description_en": "Compares the ideal task plan with existing tasks and applies updates to keep sprint work aligned with changing requirements.",
+          "what": "同步 Story 任务计划与需求变更。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ln-310-multi-agent-validator",
+          "path": "plugins/agile-workflow/skills/ln-310-multi-agent-validator/SKILL.md",
+          "subcategory": "3-9",
+          "subcategory_title": "3.9 OKR / Sprint / Retro / Stakeholder",
+          "category": "product-management",
+          "group": "Sprint 计划评审",
+          "group_en": "Sprint Plan Review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过多证据通道评审 Story 或计划，合并结论并给出修订建议。",
+          "description_en": "Reviews Stories or plans through parallel evidence lanes, merges findings, and proposes bounded refinements.",
+          "what": "用多证据评审 Story 或计划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ln-311-review-research-worker",
+          "path": "plugins/agile-workflow/skills/ln-311-review-research-worker/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "评审研究证据收集",
+          "group_en": "Review Research Evidence Gathering",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "收集官方文档、MCP 引用、Context7 与最佳实践证据，并生成机器可读研究摘要。",
+          "description_en": "Gathers official docs, MCP references, Context7 evidence, and current best practices into a machine-readable research summary.",
+          "what": "用于评审或验证流程的结构化研究 worker，负责收集证据并输出摘要。",
+          "chain": true,
+          "chain_group": "评审证据到发现工作流",
+          "chain_group_en": "Evidence-to-Findings Review Workflow"
+        },
+        {
+          "name": "ln-312-review-findings-worker",
+          "path": "plugins/agile-workflow/skills/ln-312-review-findings-worker/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "评审发现规范化",
+          "group_en": "Normalized Review Findings",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析目标产物或 diff，将证据转化为标准化评审发现，并支持生成修复计划。",
+          "description_en": "Analyzes target artifacts or diffs and converts evidence into normalized review findings with fix planning support.",
+          "what": "用于把评审证据和目标产物分析结果整理成标准化发现与修复计划。",
+          "chain": true,
+          "chain_group": "评审证据到发现工作流",
+          "chain_group_en": "Evidence-to-Findings Review Workflow"
+        },
+        {
+          "name": "ln-313-review-docs-worker",
+          "path": "plugins/agile-workflow/skills/ln-313-review-docs-worker/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "评审驱动文档生成",
+          "group_en": "Review-Driven Documentation Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在评审运行后提取领域并生成或更新受控文档",
+          "description_en": "Creates and updates controlled documentation after a review run by extracting technical domains and linking them to the story.",
+          "what": "用于把评审后的有效变更沉淀为项目文档。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ln-314-review-repair-worker",
+          "path": "plugins/agile-workflow/skills/ln-314-review-repair-worker/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "低风险代码修复执行",
+          "group_en": "Low-Risk Code Repair Execution",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按已接受发现项执行低风险修复并记录清理证据",
+          "description_en": "Applies accepted low-risk code repairs from review findings while keeping evidence and safety boundaries explicit.",
+          "what": "用于在评审后执行受限的代码修复。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ln-315-review-merge-worker",
+          "path": "plugins/agile-workflow/skills/ln-315-review-merge-worker/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "评审运行时 Worker 流水线",
+          "group_en": "Review Runtime Worker Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "合并评审证据，去重并验证 agent 发现，产出经验证聚合结果。",
+          "description_en": "Merges review evidence, deduplicates and verifies agent findings, then produces one validated aggregate result.",
+          "what": "合并评审证据，去重并验证 agent 发现，产出聚合结果。",
+          "chain": true,
+          "chain_group": "评审合并与精修流水线",
+          "chain_group_en": "Review merge and refinement pipeline"
+        },
+        {
+          "name": "ln-316-review-refinement-worker",
+          "path": "plugins/agile-workflow/skills/ln-316-review-refinement-worker/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "评审运行时 Worker 流水线",
+          "group_en": "Review Runtime Worker Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在评审合并后运行两阶段外部顾问精修，记录轨迹与清理证据。",
+          "description_en": "Runs a two-stage external advisor refinement after review merge, recording traces and cleanup evidence.",
+          "what": "在评审合并后执行两阶段外部顾问精修并记录证据。",
+          "chain": true,
+          "chain_group": "评审合并与精修流水线",
+          "chain_group_en": "Review merge and refinement pipeline"
+        },
+        {
+          "name": "ln-400-story-executor",
+          "path": "plugins/agile-workflow/skills/ln-400-story-executor/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Agile Story 执行流水线",
+          "group_en": "Agile Story Execution Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按优先级执行 Story 任务，维护检查点和状态流转。",
+          "description_en": "Helps an agent execute Story tasks in priority order while maintaining checkpoints and state transitions.",
+          "what": "协调 Story 从 Todo、In Progress、To Rework 到 To Review 的执行流程，并保存可恢复状态。",
+          "chain": true,
+          "chain_group": "Agile Story 执行流水线",
+          "chain_group_en": "Agile Story Execution Pipeline"
+        },
+        {
+          "name": "ln-401-task-executor",
+          "path": "plugins/agile-workflow/skills/ln-401-task-executor/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "Agile Story 执行流水线",
+          "group_en": "Agile Story Execution Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 执行单个实现或重构任务，更新状态并运行检查。",
+          "description_en": "Helps an agent carry out one implementation or refactor task, update status, and run checks.",
+          "what": "面向单个任务的工作器，按技术说明完成代码、文档、测试或配置改动并推进到 To Review。",
+          "chain": true,
+          "chain_group": "Agile Story 执行流水线",
+          "chain_group_en": "Agile Story Execution Pipeline"
+        },
+        {
+          "name": "ln-402-task-reviewer",
+          "path": "plugins/agile-workflow/skills/ln-402-task-reviewer/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "敏捷任务审查与返工闭环",
+          "group_en": "Agile Task Review & Rework Loop",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审查待复核任务，检查质量、规范、架构与测试，给出完成或返工结论。",
+          "description_en": "Reviews a task in To Review, checks quality, standards, architecture, and tests, then decides whether it is Done or needs Rework.",
+          "what": "Task implementation review gate.",
+          "chain": true,
+          "chain_group": "任务审查—返工闭环",
+          "chain_group_en": "Task review–rework loop"
+        },
+        {
+          "name": "ln-403-task-rework",
+          "path": "plugins/agile-workflow/skills/ln-403-task-rework/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "敏捷任务审查与返工闭环",
+          "group_en": "Agile Task Review & Rework Loop",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据审查反馈修复 To Rework 任务，应用改动并重新提交复核。",
+          "description_en": "Applies reviewer feedback to a To Rework task, makes the fixes, and sends it back for review.",
+          "what": "Applies review feedback and returns the task to review.",
+          "chain": true,
+          "chain_group": "任务审查—返工闭环",
+          "chain_group_en": "Task review–rework loop"
+        },
+        {
+          "name": "ln-404-test-executor",
+          "path": "plugins/agile-workflow/skills/ln-404-test-executor/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "测试任务执行器",
+          "group_en": "Test Task Executor",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将标记为 tests 的故事任务按测试计划执行并推进到评审，控制风险范围。",
+          "description_en": "Runs test-labeled story tasks through a structured test plan and moves them toward review within defined risk limits.",
+          "what": "执行单个 Story 的测试任务并更新看板状态。",
+          "chain": true,
+          "chain_group": "Story 测试与质量门禁流程",
+          "chain_group_en": "Story Testing and Quality Gate Workflow"
+        },
+        {
+          "name": "ln-500-story-quality-gate",
+          "path": "plugins/agile-workflow/skills/ln-500-story-quality-gate/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "故事质量门禁",
+          "group_en": "Story Quality Gate",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在故事待评审时汇总质量与测试摘要，给出分级结论并决定是否完成。",
+          "description_en": "Summarizes quality and test results for a ready story, issues a verdict, and decides whether it can be marked done.",
+          "what": "Story 级质量门禁协调器，调用相关流程并更新完成状态。",
+          "chain": true,
+          "chain_group": "Story 测试与质量门禁流程",
+          "chain_group_en": "Story Testing and Quality Gate Workflow"
+        },
+        {
+          "name": "ln-510-quality-coordinator",
+          "path": "plugins/agile-workflow/skills/ln-510-quality-coordinator/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "质量评审协调",
+          "group_en": "Quality review coordination",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协调用户故事质量评审，汇总研究、代理审查和回归证据。",
+          "description_en": "Coordinates story-quality reviews by gathering research, agent-review input, and regression evidence.",
+          "what": "用于组织实现后质量评审并输出规范化结论。",
+          "chain": true,
+          "chain_group": "敏捷质量评审流水线",
+          "chain_group_en": "Agile quality review pipeline"
+        },
+        {
+          "name": "ln-511-code-quality-checker",
+          "path": "plugins/agile-workflow/skills/ln-511-code-quality-checker/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "实现后代码质量评分",
+          "group_en": "Post-implementation code quality scoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "评估已完成的实现任务，按 DRY/KISS/YAGNI 和架构合规给出质量分。",
+          "description_en": "Scores completed implementation tasks against DRY/KISS/YAGNI principles and architecture compliance.",
+          "what": "用于对 Done 的实现任务进行代码质量评分。",
+          "chain": true,
+          "chain_group": "敏捷质量评审流水线",
+          "chain_group_en": "Agile quality review pipeline"
+        },
+        {
+          "name": "ln-512-tech-debt-cleaner",
+          "path": "plugins/agile-workflow/skills/ln-512-tech-debt-cleaner/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "低风险技术债清理",
+          "group_en": "Low-risk tech debt cleanup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据审计结果自动清理未用导入、死代码等低风险技术债。",
+          "description_en": "Automatically resolves safe audit findings such as unused imports and dead code without touching business logic.",
+          "what": "Auto-fixes safe maintenance findings from codebase audits.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ln-513-regression-checker",
+          "path": "plugins/agile-workflow/skills/ln-513-regression-checker/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "回归测试门禁",
+          "group_en": "Regression test gate",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "运行现有测试套件，验证实现变更没有引入回归。",
+          "description_en": "Runs the existing test suite to verify implementation changes introduced no regressions.",
+          "what": "Executes tests and returns pass/fail results for quality gates.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ln-514-test-log-analyzer",
+          "path": "plugins/agile-workflow/skills/ln-514-test-log-analyzer/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "测试日志质量分析",
+          "group_en": "Test Log Quality Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 分析测试/开发日志，分类错误、评估日志质量并给出修复建议。",
+          "description_en": "Helps agents analyze test and development logs, classify errors, assess log quality, and recommend fixes.",
+          "what": "Analyzes app/test logs to classify errors, assess log quality, and map stack traces to source.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ln-520-test-planner",
+          "path": "plugins/agile-workflow/skills/ln-520-test-planner/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "测试规划编排",
+          "group_en": "Test Planning Orchestration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Story 规划测试覆盖，协调研究、手工测试与自动化测试计划。",
+          "description_en": "Plans comprehensive test coverage for a story and coordinates research, manual testing, and automated test planning.",
+          "what": "Coordinates a story-level test-planning pipeline across research, manual testing, and automated test planning.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "dzcmemory-web",
+        "repo": "bazi-ziwei-skill",
+        "full_name": "dzcmemory-web/bazi-ziwei-skill",
+        "url": "https://github.com/dzcmemory-web/bazi-ziwei-skill",
+        "stars": 491,
+        "pushed_at": "2026-06-14",
+        "default_branch": "main",
+        "github_description": "AI 八字 + 紫微斗数排盘与综合印证 Skill：算法精准排盘（不靠 LLM 猜），三种分析模式，一键生成水墨风 HTML 命盘海报。兼容 Claude / Codex / Cursor / Workbuddy 等 SKILL.md Agent。",
+        "topics": [
+          "ai-agent",
+          "bazi",
+          "bazi-suanming",
+          "chinese-astrology",
+          "claude-skill",
+          "fortune-telling",
+          "metaphysics",
+          "skill-md",
+          "ziwei",
+          "ziwei-doushu"
+        ],
+        "language": "TypeScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "path-skill-md"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "八字紫微命理分析",
+          "group_en": "Bazi and Ziwei Fortune Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据用户生辰调用算法排盘，并生成八字、紫微或综合印证分析。",
+          "description_en": "Uses algorithmic chart calculation to generate Bazi, Ziwei, or combined metaphysical readings from a user's birth data.",
+          "what": "生辰排盘后进行八字、紫微斗数或两盘综合印证分析。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "dongshuyan",
+        "repo": "compass-skills",
+        "full_name": "dongshuyan/compass-skills",
+        "url": "https://github.com/dongshuyan/compass-skills",
+        "stars": 481,
+        "pushed_at": "2026-06-21",
+        "default_branch": "master",
+        "github_description": "司南：个性化 AI 任务总控 Skills 系统 /COMPASS: Personal Alignment Skills OS for AI Agents",
+        "topics": [
+          "agent-memory",
+          "agent-skill",
+          "agent-skills",
+          "ai-agents",
+          "ai-coding-agent",
+          "ai-skills",
+          "claude-code",
+          "claude-skills",
+          "codex-skills",
+          "developer-tools",
+          "local-first",
+          "openai-codex",
+          "personal-ai",
+          "prompt-engineering",
+          "skill-md",
+          "skill-md-skillsmp",
+          "skills-sh",
+          "skillsmp",
+          "task-management",
+          "workflow-automation"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-codex-skills"
+      },
+      "skills": [
+        {
+          "name": "session-handoff-prompt",
+          "path": "skills/session-handoff-prompt/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "会话接力 / 上下文 handoff",
+          "group_en": "Session handoff and context transfer",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "生成可粘贴到新会话的续接提示，保留目标、事实、决策和下一步。",
+          "description_en": "Creates a paste-ready continuation prompt that preserves goals, facts, decisions, and next steps for a fresh session.",
+          "what": "Helps an agent resume work across sessions with compact, high-fidelity context.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "task-clarifier",
+          "path": "skills/task-clarifier/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "需求澄清工作流",
+          "group_en": "Task clarification workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过连续提问澄清用户需求，直到用户和 AI 都确认理解一致。",
+          "description_en": "Guides users through clarifying questions until both the user and AI share a verified understanding.",
+          "what": "Helps agents resolve ambiguity before executing a task.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "task-forest",
+          "path": "skills/task-forest/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "仓库任务森林 / 任务 DAG",
+          "group_en": "Repository Task Forest / Task DAG",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "维护仓库内任务森林，跟踪目标、依赖、进度与偏差。",
+          "description_en": "Maintains a repo-local task forest, tracking goals, dependencies, progress, and deviations.",
+          "what": "Creates and updates a local task DAG for planning, progress tracking, and session handoff.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "user-profile-keeper",
+          "path": "skills/user-profile-keeper/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "本地用户画像与偏好记忆",
+          "group_en": "Local User Profile & Preference Memory",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "维护本地用户画像，沉淀偏好、边界与协作习惯。",
+          "description_en": "Maintains a local user profile for preferences, boundaries, and collaboration habits.",
+          "what": "Stores auditable, local-only user preferences, identity boundaries, and collaboration context.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "ClickHouse",
+        "repo": "agent-skills",
+        "full_name": "ClickHouse/agent-skills",
+        "url": "https://github.com/ClickHouse/agent-skills",
+        "stars": 476,
+        "pushed_at": "2026-06-08",
+        "default_branch": "main",
+        "github_description": "The official Agent Skills for ClickHouse and ClickHouse Cloud",
+        "topics": [
+          "agents",
+          "clickhouse"
+        ],
+        "language": "JavaScript",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "chdb-datastore",
+          "path": "skills/chdb-datastore/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "ClickHouse/chDB 数据查询与分析",
+          "group_en": "ClickHouse/chDB data querying and analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 用 chDB DataStore 加速 pandas，并跨文件、云存储和数据库做 DataFrame 分析。",
+          "description_en": "Helps agents accelerate pandas workflows with chDB DataStore and analyze data across files, cloud storage, and databases.",
+          "what": "Use for pandas-style DataFrame analysis, filtering, aggregation, joins, and faster local tabular data processing.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "chdb-sql",
+          "path": "skills/chdb-sql/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "ClickHouse/chDB 数据查询与分析",
+          "group_en": "ClickHouse/chDB data querying and analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 在 Python 进程中执行 ClickHouse SQL，查询本地文件、S3 和远程数据库。",
+          "description_en": "Helps agents run ClickHouse SQL inside Python to query local files, S3 paths, URLs, and remote databases.",
+          "what": "Use for analytical SQL queries, multi-step sessions, table functions, and cross-source SQL joins.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "clickhouse-architecture-advisor",
+          "path": "skills/clickhouse-architecture-advisor/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "ClickHouse 数据库架构与最佳实践",
+          "group_en": "ClickHouse database architecture and best practices",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 按负载设计 ClickHouse 架构，并标注建议来源。",
+          "description_en": "Helps agents design workload-aware ClickHouse architectures and label recommendation provenance.",
+          "what": "ClickHouse 架构决策与最佳实践审查",
+          "chain": true,
+          "chain_group": "ClickHouse 架构决策与最佳实践审查",
+          "chain_group_en": "ClickHouse architecture decisioning and best-practice review"
+        },
+        {
+          "name": "clickhouse-best-practices",
+          "path": "skills/clickhouse-best-practices/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "ClickHouse 数据库架构与最佳实践",
+          "group_en": "ClickHouse database architecture and best practices",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 审查 ClickHouse schema、查询和配置，并引用规则。",
+          "description_en": "Helps agents review ClickHouse schemas, queries, and configurations using rule-based best practices.",
+          "what": "ClickHouse 架构决策与最佳实践审查",
+          "chain": true,
+          "chain_group": "ClickHouse 架构决策与最佳实践审查",
+          "chain_group_en": "ClickHouse architecture decisioning and best-practice review"
+        },
+        {
+          "name": "clickhouse-js-node-coding",
+          "path": "skills/clickhouse-js-node-coding/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "ClickHouse Node.js SDK 集成开发",
+          "group_en": "ClickHouse Node.js SDK Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 编写和集成 ClickHouse Node.js 客户端代码。",
+          "description_en": "Helps the agent write and integrate ClickHouse Node.js client code.",
+          "what": "用于在 Node.js 应用中连接、查询和操作 ClickHouse。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "clickhouse-js-node-troubleshooting",
+          "path": "skills/clickhouse-js-node-troubleshooting/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "系统化调试",
+          "group_en": "Systematic debugging",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 诊断 ClickHouse Node.js 客户端连接、流处理、TLS 与超时问题。",
+          "description_en": "Helps the agent diagnose ClickHouse Node.js client connection, streaming, TLS, and timeout issues.",
+          "what": "用于定位并修复 ClickHouse Node.js 客户端运行问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "clickhouse-managed-postgres-rca",
+          "path": "skills/clickhouse-managed-postgres-rca/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "ClickHouse 托管 Postgres 性能诊断",
+          "group_en": "ClickHouse-managed Postgres performance diagnosis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 基于 Prometheus 指标和慢查询模式定位 ClickHouse 托管 Postgres 性能问题，并给出修复建议。",
+          "description_en": "Helps an agent diagnose ClickHouse-managed Postgres performance issues using Prometheus metrics and slow-query patterns, then recommend fixes.",
+          "what": "用于 ClickHouse 托管 Postgres 性能问题排查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "clickhousectl-cloud-deploy",
+          "path": "skills/clickhousectl-cloud-deploy/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "ClickHouse Cloud 部署",
+          "group_en": "ClickHouse Cloud deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导 agent 使用 clickhousectl 完成 ClickHouse Cloud 账号、服务创建、迁移和连接应用。",
+          "description_en": "Guides an agent through ClickHouse Cloud setup, service creation, migration, and app connection using clickhousectl.",
+          "what": "用于 ClickHouse Cloud 部署与迁移流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "clickhousectl-local-dev",
+          "path": "skills/clickhousectl-local-dev/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "ClickHouse 本地开发与查询",
+          "group_en": "ClickHouse Local Development and Querying",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 安装 clickhousectl、搭建本地 ClickHouse、建表并启动查询开发。",
+          "description_en": "Guides agents in installing clickhousectl, setting up local ClickHouse, creating tables, and starting query-based development.",
+          "what": "ClickHouse local development setup skill.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "oliver-kriska",
+        "repo": "claude-elixir-phoenix",
+        "full_name": "oliver-kriska/claude-elixir-phoenix",
+        "url": "https://github.com/oliver-kriska/claude-elixir-phoenix",
+        "stars": 459,
+        "pushed_at": "2026-06-19",
+        "default_branch": "main",
+        "github_description": "Claude Code plugin for Elixir/Phoenix/LiveView — 20 specialist agents, Iron Laws enforcement, and Tidewave MCP integration. Plan features with parallel research agents, execute with automatic verification, review with 4-agent parallel audits, and capture learnings as reusable knowledge.",
+        "topics": [
+          "ai-agents",
+          "ai-coding-assistant",
+          "automation",
+          "claude",
+          "claude-code",
+          "claude-code-plugin",
+          "claude-code-skills",
+          "claude-skills",
+          "code-review",
+          "developer-tools",
+          "ecto",
+          "elixir",
+          "elixir-lang",
+          "elixir-phoenix",
+          "liveview",
+          "oban",
+          "phoenix",
+          "phoenix-framework",
+          "tidewave",
+          "vibe-coding"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-claude-code"
+      },
+      "skills": [
+        {
+          "name": "cc-changelog",
+          "path": ".claude/skills/cc-changelog/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Claude Code 版本兼容性追踪",
+          "group_en": "Claude Code release compatibility tracking",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "跟踪 Claude Code 版本更新，分析对插件的破坏性影响、机会和废弃项。",
+          "description_en": "Tracks Claude Code releases and assesses plugin impact, including breakages, opportunities, and deprecations.",
+          "what": "Fetches changelog entries and classifies their impact on the plugin.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "docs-check",
+          "path": ".claude/skills/docs-check/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Claude Code 文档兼容性验证",
+          "group_en": "Claude Code docs compatibility validation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "对照最新 Claude Code 文档验证插件组件，发现破坏变更和废弃项。",
+          "description_en": "Validates plugin components against the latest Claude Code docs to catch breakages and deprecations.",
+          "what": "Runs structural checks across agents, skills, hooks, and config.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "plugin-dev-workflow",
+          "path": ".claude/skills/plugin-dev-workflow/SKILL.md",
+          "subcategory": "13-1",
+          "subcategory_title": "13.1 写 Skill / 创建 Skill",
+          "category": "meta-skill-mgmt",
+          "group": "插件开发质量门禁（Elixir/Phoenix）",
+          "group_en": "Plugin Development Quality Gates (Elixir/Phoenix)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导修改插件、skills、agents、hooks 或评估框架，并在提交前运行评估、lint 与测试。",
+          "description_en": "Guides edits to this repo’s plugin, skills, agents, hooks, or eval framework, and runs eval, lint, and tests before committing.",
+          "what": "A repo-specific workflow for safe plugin development and validation.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "promote",
+          "path": ".claude/skills/promote/SKILL.md",
+          "subcategory": "4-3",
+          "subcategory_title": "4.3 多渠道分发（邮件 / SMS / 社交）",
+          "category": "marketing-growth",
+          "group": "发布社交帖生成",
+          "group_en": "Release Social Post Generator",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据版本数据和可验证指标生成 X/Twitter 发布帖、线程、ASCII 卡片与渲染命令。",
+          "description_en": "Generates data-backed X/Twitter release posts, tweet threads, ASCII cards, CodeSnap commands, and fact checks.",
+          "what": "Creates verified release promotion content for X/Twitter.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "release",
+          "path": ".claude/skills/release/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Git 工作流 / 通用发布流程自动化",
+          "group_en": "Git Workflows / General Release Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "按清单完成插件版本升级、CI 门禁、提交打标签和 GitHub 发布。",
+          "description_en": "Runs the plugin release checklist: version bump, CI gate, commit, tag, and GitHub release.",
+          "what": "发布新版本插件并保持版本、标签与发布记录一致。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "session-deep-dive",
+          "path": ".claude/skills/session-deep-dive/SKILL.md",
+          "subcategory": "3-1",
+          "subcategory_title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "category": "product-management",
+          "group": "Session 深度定性分析",
+          "group_en": "Session Deep-Dive Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "分析高价值会话，调用子代理归纳模式并与既有发现对比。",
+          "description_en": "Analyzes high-signal sessions, spawns subagents to surface patterns, and compares them with known findings.",
+          "what": "把选定会话记录转化为定性洞察。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "session-scan",
+          "path": ".claude/skills/session-scan/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Claude Code 会话指标流水线",
+          "group_en": "Claude Code Session Metrics Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 ccrider MCP 扫描 Claude Code 会话，计算摩擦、机会和指纹指标。",
+          "description_en": "Scans Claude Code sessions via ccrider MCP and computes friction, opportunity, and fingerprint metrics.",
+          "what": "Scans Claude Code sessions via ccrider MCP and computes session metrics.",
+          "chain": true,
+          "chain_group": "Claude Code 会话指标流水线",
+          "chain_group_en": "Claude Code Session Metrics Pipeline"
+        },
+        {
+          "name": "session-trends",
+          "path": ".claude/skills/session-trends/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Claude Code 会话指标流水线",
+          "group_en": "Claude Code Session Metrics Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取会话指标账本，分析趋势并与 MEMORY.md 基线对比，跟踪进展。",
+          "description_en": "Reads the session metrics ledger, analyzes trends, and compares them with MEMORY.md baselines for progress tracking.",
+          "what": "Analyzes session metrics trends and compares them with memory baselines.",
+          "chain": true,
+          "chain_group": "Claude Code 会话指标流水线",
+          "chain_group_en": "Claude Code Session Metrics Pipeline"
+        },
+        {
+          "name": "skill-monitor",
+          "path": ".claude/skills/skill-monitor/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Skill 效能监控与改进看板",
+          "group_en": "Skill Performance Monitor",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取会话指标，分析各 skill 的调用、摩擦与结果，定位退化项并生成改进建议。",
+          "description_en": "Reads session metrics to analyze each skill’s usage, friction, and outcomes, then flags degradation and recommends improvements.",
+          "what": "跨会话评估 skill 效果并给出改进建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "autoresearch",
+          "path": "lab/autoresearch/SKILL.md",
+          "subcategory": "12-5",
+          "subcategory_title": "12.5 Tool / 评测 / 项目级方法论",
+          "category": "agent-architecture",
+          "group": "Plugin skill 自进化评估循环",
+          "group_en": "Plugin Skill Self-Improvement Loop",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "围绕 plugin skill 做单点变异、确定性评测、保留改进或回滚失败。",
+          "description_en": "Runs a deterministic mutation-and-evaluation loop for plugin skills, keeping improvements and reverting regressions.",
+          "what": "用评估循环自动迭代改进技能。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "ai-research-skills · 组「自主研究编排」"
+        },
+        {
+          "name": "catchup",
+          "path": "plugins/catchup/skills/catchup/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "缺席后上下文同步",
+          "group_en": "Post-Absence Context Sync",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "汇总缺席期间错过的 PR、提交、Linear 事项和会议，生成优先级简报，帮助快速回归上下文。",
+          "description_en": "Summarizes missed PRs, commits, Linear tickets, and meetings into a prioritized brief for a quick return to context.",
+          "what": "Creates a prioritized brief of missed collaboration signals since a chosen window.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ketchup",
+          "path": "plugins/catchup/skills/ketchup/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "缺席后上下文同步",
+          "group_en": "Post-Absence Context Sync",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "作为 /catchup 的别名，原样透传参数，用于以趣味命令触发同一缺席回归简报流程。",
+          "description_en": "A playful alias for /catchup that forwards all arguments unchanged to the same return-brief workflow.",
+          "what": "Aliases the catchup workflow without changing behavior.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ash-framework",
+          "path": "plugins/elixir-phoenix/skills/ash-framework/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Ash Framework 编码参考",
+          "group_en": "Ash Framework Coding Reference",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Phoenix/Ash 资源、action、policy 等领域代码生成与修改。",
+          "description_en": "Provides coding guidance for Ash resources, actions, policies, and domain interfaces in Phoenix projects.",
+          "what": "用于生成和修改 Ash Framework 资源、领域接口及相关 Phoenix 代码。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "assigns-audit",
+          "path": "plugins/elixir-phoenix/skills/assigns-audit/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "LiveView assigns 内存审计",
+          "group_en": "LiveView Assigns Memory Audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计 LiveView assigns，识别大列表、临时数据未清理和内存膨胀问题。",
+          "description_en": "Audits LiveView assigns to spot large lists, missing temporary_assigns, and memory bloat.",
+          "what": "用于定位 LiveView socket assigns 中的内存与可维护性风险。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "audit",
+          "path": "plugins/elixir-phoenix/skills/audit/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Phoenix 项目健康审计",
+          "group_en": "Phoenix Project Health Audits",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用多子代理评估架构、性能、测试、依赖与代码质量，定位项目健康风险。",
+          "description_en": "Assesses architecture, performance, tests, dependencies, and code quality with parallel subagents.",
+          "what": "A full or quick project-wide health audit using parallel specialist subagents.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "boundaries",
+          "path": "plugins/elixir-phoenix/skills/boundaries/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Phoenix Context 边界检查",
+          "group_en": "Phoenix Context Boundary Checks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过 mix xref 检查 Phoenix context 依赖、耦合与循环，发现边界违规。",
+          "description_en": "Uses mix xref to inspect Phoenix context dependencies, coupling, and cycles.",
+          "what": "Validates Phoenix context boundaries and module coupling with mix xref.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brainstorm",
+          "path": "plugins/elixir-phoenix/skills/brainstorm/SKILL.md",
+          "subcategory": "3-3",
+          "subcategory_title": "3.3 产品发现 / 实验",
+          "category": "product-management",
+          "group": "Phoenix 功能需求探索",
+          "group_en": "Phoenix Feature Discovery",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "面向 Phoenix 功能想法做访谈、研究并沉淀需求。",
+          "description_en": "Guides Phoenix feature discovery through interviews, research, and structured requirements.",
+          "what": "通过分步访谈和调研把模糊想法整理成可执行输入。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "brief",
+          "path": "plugins/elixir-phoenix/skills/brief/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "Phoenix 计划文件解读",
+          "group_en": "Phoenix Plan Briefings",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "交互式解读计划文件，说明决策理由与方案形态。",
+          "description_en": "Walks developers through plan files, decisions, and the proposed solution shape.",
+          "what": "帮助开发者快速理解计划文件的理由、取舍和后续动作。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "claude-for-legal/knowledge-work-plugins/borghei · 组「法务运营 / 文书 / 法援诊所」"
+        },
+        {
+          "name": "call-tracing",
+          "path": "plugins/elixir-phoenix/skills/call-tracing/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Elixir/Phoenix 调试与代码审查工作流",
+          "group_en": "Elixir/Phoenix Debugging and Review Workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用 mix xref callers 构建调用树，定位数据流、入口和签名变更影响。",
+          "description_en": "Builds mix xref call trees to trace data flow, entry points, and signature-change impact.",
+          "what": "通过 mix xref callers 从入口点构建 Elixir/Phoenix 调用树，辅助调试和数据流理解。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "challenge",
+          "path": "plugins/elixir-phoenix/skills/challenge/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Elixir/Phoenix 挑战式审查模式",
+          "group_en": "Elixir/Phoenix Challenge Review Mode",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用对抗式问题审查 Ecto、LiveView、OTP 和 PR 变更，要求验证后再批准。",
+          "description_en": "Uses adversarial review questions for Ecto, LiveView, OTP, and PR readiness before approval.",
+          "what": "以挑战模式审查关键变更，聚焦迁移安全、查询性能、边界条件和验证证据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "compound-docs",
+          "path": "plugins/elixir-phoenix/skills/compound-docs/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "Elixir/Phoenix 解决方案知识库",
+          "group_en": "Elixir/Phoenix solution knowledge base",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在排查前检索历史解决方案，沉淀可复用的 Phoenix 问题知识。",
+          "description_en": "Helps the agent search past solutions before debugging and build reusable Phoenix troubleshooting knowledge.",
+          "what": "提供带 YAML frontmatter 的可搜索解决方案文档库。",
+          "chain": true,
+          "chain_group": "Phoenix 问题解决方案知识库闭环",
+          "chain_group_en": "Phoenix issue solution knowledge-base loop"
+        },
+        {
+          "name": "compound",
+          "path": "plugins/elixir-phoenix/skills/compound/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "Elixir/Phoenix 解决方案知识库",
+          "group_en": "Elixir/Phoenix solution knowledge base",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在修复问题后捕获根因、处理步骤和预防建议，形成可检索知识。",
+          "description_en": "Helps the agent capture root causes, investigation steps, and prevention notes after fixes for future search.",
+          "what": "将已解决的问题整理成标准化解决方案文档。",
+          "chain": true,
+          "chain_group": "Phoenix 问题解决方案知识库闭环",
+          "chain_group_en": "Phoenix issue solution knowledge-base loop"
+        },
+        {
+          "name": "deploy",
+          "path": "plugins/elixir-phoenix/skills/deploy/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "Elixir/Phoenix 生产部署到 Fly.io",
+          "group_en": "Elixir/Phoenix Production Deployment to Fly.io",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 Phoenix 应用配置 Docker、Fly.io、健康检查与生产发布。",
+          "description_en": "Guides Phoenix app deployment with Docker, Fly.io, health checks, and production releases.",
+          "what": "配置 Elixir/Phoenix 项目的生产部署方案。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deps-audit",
+          "path": "plugins/elixir-phoenix/skills/deps-audit/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "Hex 依赖供应链安全审计",
+          "group_en": "Hex Dependency Supply-Chain Audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "审计 Hex 依赖包变更，识别供应链风险、CVE 与 typosquat。",
+          "description_en": "Audits Hex dependency changes for supply-chain risks, CVEs, typosquats, and suspicious package metadata.",
+          "what": "检查 Hex 依赖变更是否安全。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "deps-update",
+          "path": "plugins/elixir-phoenix/skills/deps-update/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "Elixir Hex 依赖更新工作流",
+          "group_en": "Elixir Hex dependency update workflow",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 盘点并升级 Elixir Hex 依赖，修复破坏并拆分可审查 PR。",
+          "description_en": "Helps an agent inventory and upgrade Elixir Hex dependencies, fix breakages, and split changes into reviewable PRs.",
+          "what": "A mutating dependency update skill for Elixir/Phoenix projects that bundles patches and isolates major upgrades.",
+          "chain": true,
+          "chain_group": "Elixir Hex 依赖审计与更新工作流",
+          "chain_group_en": "Elixir Hex dependency audit and update workflow"
+        },
+        {
+          "name": "deps-vet",
+          "path": "plugins/elixir-phoenix/skills/deps-vet/SKILL.md",
+          "subcategory": "1-8",
+          "subcategory_title": "1.8 安全审计 / 威胁建模",
+          "category": "software-engineering",
+          "group": "Elixir Hex 依赖安全审查记录",
+          "group_en": "Elixir Hex dependency security review ledger",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在安全审查后记录 Hex 包版本结论，维护项目审计账本。",
+          "description_en": "Helps an agent record security-review outcomes for Hex package versions and maintain a project audit ledger.",
+          "what": "A dependency vetting ledger skill that captures human-approved Hex package verdicts after audit findings.",
+          "chain": true,
+          "chain_group": "Elixir Hex 依赖审计与更新工作流",
+          "chain_group_en": "Elixir Hex dependency audit and update workflow"
+        },
+        {
+          "name": "document",
+          "path": "plugins/elixir-phoenix/skills/document/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Elixir/Phoenix 文档注释生成",
+          "group_en": "Elixir/Phoenix Code Documentation Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Elixir 公共模块和函数生成 @moduledoc/@doc，明确 API 契约与边界条件。",
+          "description_en": "Generates @moduledoc and @doc strings for Elixir public APIs, clarifying contracts and edge cases.",
+          "what": "为 Elixir 公共模块和函数补充文档注释。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecto-constraint-debug",
+          "path": "plugins/elixir-phoenix/skills/ecto-constraint-debug/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Ecto 约束错误调试",
+          "group_en": "Ecto Constraint Error Debugging",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "定位 Ecto 约束错误，解析约束名、检查迁移、追踪写入路径并识别竞态。",
+          "description_en": "Diagnoses Ecto constraint failures by parsing constraint names, checking migrations, tracing insert paths, and spotting races.",
+          "what": "排查 Ecto 唯一键、外键和 check 约束失败。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ecto-patterns",
+          "path": "plugins/elixir-phoenix/skills/ecto-patterns/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Elixir/Phoenix 编码规范",
+          "group_en": "Elixir/Phoenix coding standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Ecto 代码中遵守 schema、changeset、查询与迁移规范。",
+          "description_en": "Helps the agent apply safe Ecto schema, changeset, query, and migration patterns.",
+          "what": "为编辑 Ecto schema、changeset、查询和迁移提供约束性参考。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "elixir-idioms",
+          "path": "plugins/elixir-phoenix/skills/elixir-idioms/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Elixir/Phoenix 编码规范",
+          "group_en": "Elixir/Phoenix coding standards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 编写符合 BEAM/OTP 习惯的 Elixir 代码并规避常见并发陷阱。",
+          "description_en": "Helps the agent write idiomatic Elixir and avoid common BEAM concurrency pitfalls.",
+          "what": "为编写 Elixir 进程、OTP 结构和 BEAM 相关调试提供规则参考。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
