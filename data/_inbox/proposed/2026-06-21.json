@@ -1,0 +1,3704 @@
+{
+  "generated_at": "2026-06-21T06:39:14+00:00",
+  "date": "2026-06-21",
+  "proposed_count": 7,
+  "meta": {
+    "rejected": {
+      "already_in_repos_yaml": 80,
+      "blocklisted": 20,
+      "seen_recently": 124,
+      "truncated": 143,
+      "no_skill_files": 2,
+      "skill_name_dup": 10,
+      "looks_aggregator": 1
+    },
+    "filtered_out": [
+      {
+        "full_name": "theDakshJaitly/mex",
+        "reason": "无 SKILL.md —— 非原始来源"
+      },
+      {
+        "full_name": "new-silvermoon/awesome-android-agent-skills",
+        "reason": "仓库名含 awesome —— 聚合清单，跳过"
+      },
+      {
+        "full_name": "zLanqing/codex-claude-academic-skills",
+        "reason": "⚠ 疑似 vendored 副本（仍提交待人审）：7/24 个 skill 名已在目录——citation-management, exploratory-data-analysis, literature-review, matplotlib, pdf, scientific-visualization…；建议人审核是否整仓拒/blocklist"
+      },
+      {
+        "full_name": "jiweiyeah/Skills-Manager",
+        "reason": "无 SKILL.md —— 非原始来源"
+      }
+    ]
+  },
+  "skills_yaml_draft": [
+    {
+      "skills": [
+        "complete-example",
+        "make-latex-model"
+      ],
+      "group": "LaTeX 科研模板优化与示例生成",
+      "group_en": "LaTeX Research Template Optimization & Sample Generation",
+      "category": "academic-research",
+      "subcategory": "11-4",
+      "chain": false,
+      "description": "优化 LaTeX 模板样式与构建参数，并执行高保真对齐和回归验收。",
+      "description_en": "Completes sample content for existing LaTeX projects while preserving template structure and file safety.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "nsfc-abstract",
+        "nsfc-budget"
+      ],
+      "group": "NSFC 基金申请写作",
+      "group_en": "NSFC grant application writing",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "生成 NSFC 标书中英文摘要、标题建议并写入 Markdown 文件。",
+      "description_en": "Drafts bilingual NSFC proposal abstracts, title options, and writes the result to Markdown.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "nsfc-code"
+      ],
+      "group": "NSFC 申请代码推荐",
+      "group_en": "NSFC application code recommendations",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "读取 NSFC 标书正文，推荐 5 组申请代码及可追溯理由。",
+      "description_en": "Reads an NSFC proposal and recommends five application-code pairs with traceable rationale.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "nsfc-humanization"
+      ],
+      "group": "NSFC 标书去机器味润色",
+      "group_en": "NSFC proposal humanization",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "在保留 LaTeX 结构的前提下，去除 NSFC 标书文本的机器味。",
+      "description_en": "Polishes NSFC proposal text while preserving LaTeX structure and original meaning.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "nsfc-justification-writer",
+        "nsfc-length-aligner",
+        "nsfc-research-content-writer",
+        "nsfc-research-foundation-writer",
+        "nsfc-reviewers",
+        "nsfc-roadmap"
+      ],
+      "group": "科研基金 / Grant 申请",
+      "group_en": "Grant Proposal Writing",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "基于最小信息表撰写或重构 NSFC 立项依据，保持 LaTeX 模板结构。",
+      "description_en": "Helps an agent write the research foundation, working conditions, and risk response sections with an evidence-based structure.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "nsfc-qc"
+      ],
+      "group": "NSFC 标书质量控制",
+      "group_en": "NSFC Grant Proposal QC",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "对 NSFC 标书做只读质检，检查文风、引用、篇幅结构与逻辑并生成报告。",
+      "description_en": "Performs read-only quality checks on NSFC grant proposals and produces a standardized QC report.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "nsfc-ref-alignment"
+      ],
+      "group": "NSFC 标书引用核查",
+      "group_en": "NSFC Grant Proposal Reference Alignment",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "检查 NSFC 标书引用与参考文献一致性，识别缺失、格式错误和语义错配风险。",
+      "description_en": "Checks whether in-text citations match the bibliography and flags missing entries, format issues, or semantic mismatches.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "nsfc-schematic"
+      ],
+      "group": "NSFC 基金原理图 / 机制图生成",
+      "group_en": "NSFC Grant Schematics & Mechanism Diagrams",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "把标书或规格中的机制链、算法架构和模块关系转成可编辑 drawio 图及 PDF/SVG/PNG 渲染文件。",
+      "description_en": "Turns grant specs or proposal text into editable Draw.io diagrams plus PDF, SVG, and PNG renderings.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "paper-explain-figures"
+      ],
+      "group": "论文 Figure 解读与读图教学",
+      "group_en": "Paper Figure Interpretation & Reading Guides",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": false,
+      "description": "读取论文 Figure 与附近生成代码，综合视觉、代码和用户解读生成高可读 Markdown 报告。",
+      "description_en": "Reads paper figures and nearby source code, then combines visual, code, and user context into a readable Markdown report.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "paper-know-journal",
+        "paper-select-journal"
+      ],
+      "group": "SCI 选刊与期刊调研流水线",
+      "group_en": "SCI Journal Selection and Journal Research Workflow",
+      "category": "academic-research",
+      "subcategory": "11-4",
+      "chain": true,
+      "description": "基于稿件和用户偏好筛选 SCI 候选期刊，联网核验范围、质量与近期论文后排序推荐。",
+      "description_en": "Researches a specified journal’s submission requirements, official information, review speed, fees, and community reputation, then produces a report.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "paper-write-sci"
+      ],
+      "group": "SCI 论文写作与修订",
+      "group_en": "SCI Paper Writing & Revision",
+      "category": "academic-research",
+      "subcategory": "11-1",
+      "chain": false,
+      "description": "根据 LaTeX 项目撰写、修订和润色 SCI 论文，并核验数字逻辑。",
+      "description_en": "Write, revise, and polish SCI papers from a LaTeX project while checking numerical and logical consistency.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "research-citation-check"
+      ],
+      "group": "系统综述引用核查",
+      "group_en": "Systematic Review Citation Audit",
+      "category": "academic-research",
+      "subcategory": "11-5",
+      "chain": false,
+      "description": "核查综述正文引用与文献内容是否一致，并仅对致命错误做最小化改写。",
+      "description_en": "Check whether citations in a review align with the cited papers, making only minimal edits for critical errors.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "research-guide-updater"
+      ],
+      "group": "项目写作指南沉淀",
+      "group_en": "Project Writing Guide Memory",
+      "category": "docs-knowledge",
+      "subcategory": "2-6",
+      "chain": false,
+      "description": "将对话中的可复用写作洞见沉淀到指定项目指南，保持术语和口径一致。",
+      "description_en": "Captures reusable writing insights from a conversation into a specified project guide, keeping terminology and positioning consistent.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "research-idea"
+      ],
+      "group": "研究选题 / 假设 / 构思",
+      "group_en": "Research Topic Ideation & Hypotheses",
+      "category": "academic-research",
+      "subcategory": "11-6",
+      "chain": false,
+      "description": "基于资料和查新生成多个可证伪科学问题-假设，并推荐最佳研究切入点。",
+      "description_en": "Turns provided materials and novelty checks into multiple falsifiable research questions and hypotheses, then recommends the strongest direction.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "research-literature-review"
+      ],
+      "group": "系统综述与文献调研流水线",
+      "group_en": "Systematic Literature Review Pipeline",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": false,
+      "description": "帮助 agent 检索、评分、选文并生成综述及 PDF/Word。",
+      "description_en": "Helps agents search, score, select papers, and draft multilingual reviews with PDF/Word exports.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "research-plan"
+      ],
+      "group": "实验设计与科研分析策略",
+      "group_en": "Research Analysis Planning",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "根据科研问题调研方法论文并生成可执行分析计划。",
+      "description_en": "Researches method papers and turns research needs into executable analysis plans.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "research-topic-extractor"
+      ],
+      "group": "综述主题提取",
+      "group_en": "Review Topic Extraction",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": false,
+      "description": "从文件、图片、网页或描述中提取综述主题、关键词与核心问题。",
+      "description_en": "Extracts review topics, keywords, and core questions from files, images, webpages, or free-form descriptions.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "transfer-old-latex-to-new"
+      ],
+      "group": "LaTeX 模板迁移",
+      "group_en": "LaTeX Template Migration",
+      "category": "academic-research",
+      "subcategory": "11-4",
+      "chain": false,
+      "description": "把旧论文、标书、简历等正文迁移到现有 ChineseResearchLaTeX 模板内容层。",
+      "description_en": "Migrates existing paper, proposal, thesis, or CV content into the current ChineseResearchLaTeX template layer.",
+      "sources": [
+        "huangwb8/ChineseResearchLaTeX"
+      ]
+    },
+    {
+      "skills": [
+        "kotlin-backend-jpa-entity-mapping"
+      ],
+      "group": "Kotlin JPA 实体建模",
+      "group_en": "Kotlin JPA Entity Modeling",
+      "category": "software-engineering",
+      "subcategory": "1-9",
+      "chain": false,
+      "description": "帮助 agent 设计 Kotlin JPA 实体、关系映射和索引，规避 ORM 陷阱。",
+      "description_en": "Helps the agent design Kotlin JPA entities, relationships, and indexes while avoiding common ORM pitfalls.",
+      "sources": [
+        "Kotlin/kotlin-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "kotlin-tooling-agp9-migration"
+      ],
+      "group": "KMP 构建迁移",
+      "group_en": "KMP Build Migration",
+      "category": "software-engineering",
+      "subcategory": "1-5",
+      "chain": false,
+      "description": "指导 agent 将 KMP 项目迁移到 AGP 9，处理插件替换、模块拆分和 DSL 调整。",
+      "description_en": "Guides the agent in migrating KMP projects to AGP 9, including plugin replacement, module splitting, and DSL changes.",
+      "sources": [
+        "Kotlin/kotlin-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "kotlin-tooling-cocoapods-spm-migration",
+        "kotlin-tooling-immutable-collections-0-5-x-migration"
+      ],
+      "group": "Kotlin 项目迁移与升级",
+      "group_en": "Kotlin project migration and upgrade",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "帮助 agent 将 Kotlin Multiplatform iOS 依赖从 CocoaPods 迁移到 SwiftPM。",
+      "description_en": "Helps an agent upgrade kotlinx.collections.immutable to 0.5.x using compiler deprecation hints.",
+      "sources": [
+        "Kotlin/kotlin-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "kotlin-tooling-java-to-kotlin"
+      ],
+      "group": "Java 到 Kotlin 迁移",
+      "group_en": "Java-to-Kotlin Migration",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "帮助 agent 将 Java 源码按流程迁移为惯用 Kotlin，并处理框架差异。",
+      "description_en": "Helps agents migrate Java sources into idiomatic Kotlin with framework-aware guidance and verification.",
+      "sources": [
+        "Kotlin/kotlin-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "cloudflare-api"
+      ],
+      "group": "Cloudflare API 运维自动化",
+      "group_en": "Cloudflare API Operations Automation",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮 Claude Code 直接调用 Cloudflare REST API，批量执行 DNS、缓存、WAF、KV/R2/D1 等运维操作。",
+      "description_en": "Helps Claude Code call Cloudflare’s REST API directly to batch DNS, cache, WAF, and KV/R2/D1 operations.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "cloudflare-worker-builder"
+      ],
+      "group": "Cloudflare Worker 构建与部署",
+      "group_en": "Cloudflare Worker Build & Deployment",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "为 Claude Code 生成、配置并部署 Hono/Vite 版 Cloudflare Worker，含 D1/R2/KV/Queues 绑定。",
+      "description_en": "Generates, configures, and deploys Hono/Vite Cloudflare Workers with D1, R2, KV, and Queues bindings.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "d1-drizzle-schema",
+        "d1-migration"
+      ],
+      "group": "Cloudflare D1 数据库开发工作流",
+      "group_en": "Cloudflare D1 Database Development Workflow",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": true,
+      "description": "为 Cloudflare D1 生成 Drizzle schema、迁移命令和数据库文档。",
+      "description_en": "Guide D1 migrations from SQL review through local and remote apply, plus failure recovery.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "db-seed"
+      ],
+      "group": "数据库种子数据生成",
+      "group_en": "Database Seed Data Generation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "读取 Drizzle/SQL/Prisma schema，生成可运行的数据库种子脚本。",
+      "description_en": "Reads Drizzle, SQL, or Prisma schemas and generates runnable database seed scripts.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "hono-api-scaffolder"
+      ],
+      "group": "API 与接口设计",
+      "group_en": "API & Interface Design",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "为 Cloudflare Workers 项目生成 Hono 路由、中间件、类型绑定、校验和 API 文档。",
+      "description_en": "Scaffolds Hono routes, middleware, typed bindings, validation, and endpoint docs for Cloudflare Workers.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "tanstack-start",
+        "vite-flare-starter"
+      ],
+      "group": "Cloudflare 全栈 Web 应用构建",
+      "group_en": "Cloudflare full-stack web app building",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "帮助从零生成 Cloudflare Workers 上的 TanStack Start 全栈应用。",
+      "description_en": "Helps Claude Code clone, configure, and deploy a full-stack Cloudflare app from the vite-flare-starter template.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ai-image-generator"
+      ],
+      "group": "AI 图像生成（多 API）",
+      "group_en": "AI Image Generation (Multiple APIs)",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "指导 Claude Code 调用 Gemini/GPT 图像 API，按场景选择模型、生成提示词、批量变体并做质量检查。",
+      "description_en": "Helps Claude Code generate images via Gemini and OpenAI APIs with model selection, prompting, variations, and quality checks.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "color-palette"
+      ],
+      "group": "品牌系统 / 视觉规范",
+      "group_en": "Brand System / Visual Guidelines",
+      "category": "design-frontend",
+      "subcategory": "5-1",
+      "chain": false,
+      "description": "从品牌主色生成 11 级可访问色阶、语义 token、暗色变体与 Tailwind v4 CSS，并检查 WCAG 对比度。",
+      "description_en": "Turns a brand hex into accessible color scales, semantic tokens, dark-mode variants, Tailwind v4 CSS, and WCAG checks.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "favicon-gen"
+      ],
+      "group": "Favicon 品牌资产生成",
+      "group_en": "Favicon Brand Asset Generator",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "根据 logo、文字或品牌色生成完整 favicon 套件，并输出网页集成代码。",
+      "description_en": "Generates a complete favicon package from a logo, text, or brand colors, including web integration code.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "icon-set-generator"
+      ],
+      "group": "项目定制 SVG 图标集",
+      "group_en": "Custom Project SVG Icon Sets",
+      "category": "design-frontend",
+      "subcategory": "5-7",
+      "chain": false,
+      "description": "为网站或应用生成风格一致的项目专属 SVG 图标集，避免通用图标库的同质化。",
+      "description_en": "Creates cohesive, project-specific SVG icon sets with a consistent visual style for websites and apps.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "image-processing"
+      ],
+      "group": "网页图片处理与缩略图",
+      "group_en": "Web Image Processing & Thumbnails",
+      "category": "design-frontend",
+      "subcategory": "5-8",
+      "chain": false,
+      "description": "帮助 Claude Code 调整、压缩、转换网页图片并生成缩略图或 OG 图。",
+      "description_en": "Helps Claude Code resize, compress, convert web images, and generate thumbnails or OG cards.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "app-docs"
+      ],
+      "group": "应用用户文档生成",
+      "group_en": "App User Documentation Generator",
+      "category": "docs-knowledge",
+      "subcategory": "2-3",
+      "chain": false,
+      "description": "浏览运行中的 Web 应用，截图并生成可发布的结构化用户指南。",
+      "description_en": "Browses a live web app, captures screenshots, and produces a structured, publishable user guide.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "fork-discipline"
+      ],
+      "group": "多客户平台边界审计 / 重构规划",
+      "group_en": "Multi-client Platform Boundary Audit and Refactoring",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "帮助 agent 审计多客户代码库的核心与客户端边界，产出违规报告和重构计划。",
+      "description_en": "Helps the agent audit core/client boundaries in multi-client codebases and produce violation reports with refactoring plans.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "git-workflow"
+      ],
+      "group": "git-workflow",
+      "group_en": "Git Workflow / GitHub Issue-PR Analysis & Release Automation / Generic Release Automation / GitHub Trio",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "帮助 agent 按结构化步骤准备 PR、清理分支、处理冲突并管理发布标签。",
+      "description_en": "Helps the agent follow structured steps to prepare PRs, clean branches, handle conflicts, and manage release tags.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "github-release"
+      ],
+      "group": "通用发布流程自动化",
+      "group_en": "General Release Automation",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "帮 agent 在发布前做安全清理、版本打 tag 并通过 gh 发布 GitHub Release。",
+      "description_en": "Helps agents sanitize a repo, create version tags, and publish GitHub releases via the gh CLI.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "onboarding-ux"
+      ],
+      "group": "新用户引导体验修复",
+      "group_en": "New User Onboarding UX Fixes",
+      "category": "product-management",
+      "subcategory": "3-1",
+      "chain": false,
+      "description": "帮 agent 浏览应用发现新手引导缺口，并生成提示文案与前端代码来修复。",
+      "description_en": "Helps agents inspect an app for onboarding gaps and generate guidance copy plus frontend fixes.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "project-docs"
+      ],
+      "group": "工程交付文档生成",
+      "group_en": "Engineering handoff documentation generation",
+      "category": "product-management",
+      "subcategory": "3-6",
+      "chain": false,
+      "description": "从代码、路由、配置和 schema 生成架构、API、数据库等项目文档。",
+      "description_en": "Generates architecture, API endpoint, and database schema documentation by analyzing the actual codebase.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "project-health"
+      ],
+      "group": "Claude Code 项目配置与上下文管理",
+      "group_en": "Claude Code project configuration and context management",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": false,
+      "description": "配置项目、审计权限/上下文/MCP/泄露密钥，并整理 Claude Code 项目状态。",
+      "description_en": "Configures projects, audits permissions, context, MCP coverage, and leaked secrets, then keeps Claude Code project state tidy.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "responsiveness-check"
+      ],
+      "group": "响应式断点巡检",
+      "group_en": "Responsive breakpoint checks",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "通过浏览器自动化按断点截图，发现响应式布局断裂、溢出和导航切换问题。",
+      "description_en": "Automates viewport sweeps and screenshot comparisons to catch responsive layout breaks, overflow, and navigation shifts.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "roadmap"
+      ],
+      "group": "应用构建路线图",
+      "group_en": "Application build roadmaps",
+      "category": "software-engineering",
+      "subcategory": "1-1",
+      "chain": false,
+      "description": "把产品想法拆成可执行阶段任务，并驱动 Claude Code 按里程碑构建、提交、测试和部署。",
+      "description_en": "Turns product ideas into phased build plans and guides Claude Code through milestones, commits, tests, and deployment.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "team-update"
+      ],
+      "group": "团队更新与反馈闭环",
+      "group_en": "Team Updates & Feedback Loop",
+      "category": "comms-integration",
+      "subcategory": "9-2",
+      "chain": false,
+      "description": "帮助 Agent 发布项目进展、收集团队反馈并规划后续行动。",
+      "description_en": "Helps an agent post project updates, collect team feedback, and plan next steps.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ux-audit"
+      ],
+      "group": "交互优先 UX 与质量审计",
+      "group_en": "Interaction-First UX and Quality Audit",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "引导 Agent 像真实用户操作 Web 应用，发现可用性和行为缺陷。",
+      "description_en": "Guides an agent to use a live web app like a real user and uncover usability and behavioral issues.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "ux-compare",
+        "ux-extract"
+      ],
+      "group": "UX 模式提取与对比工作流",
+      "group_en": "UX pattern extraction and comparison workflow",
+      "category": "product-management",
+      "subcategory": "3-1",
+      "chain": true,
+      "description": "系统研究参考 Web 应用，抽取交互、文案、状态与响应式模式，生成可复用模式库。",
+      "description_en": "Compares multiple UX pattern libraries to identify conventions, tradeoffs, gaps, and recommendations for a new product feature.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "vitest"
+      ],
+      "group": "Vitest 测试基础设施搭建",
+      "group_en": "Vitest Test Infrastructure Setup",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "检测项目类型并生成 Vitest 配置、测试脚手架、脚本与 Jest 迁移方案。",
+      "description_en": "Detects the project type and generates Vitest config, test scaffolding, package scripts, and Jest migration guidance.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "design-loop"
+      ],
+      "group": "自主多页站点构建循环",
+      "group_en": "Autonomous Multi-Page Site Build Loop",
+      "category": "design-frontend",
+      "subcategory": "5-3",
+      "chain": false,
+      "description": "通过接力任务文件循环生成、集成并视觉验证多页 HTML/Tailwind 站点。",
+      "description_en": "Uses a relay task file to repeatedly generate, integrate, and visually verify multi-page HTML/Tailwind sites.",
+      "sources": [
+        "jezweb/claude-skills"
+      ]
+    },
+    {
+      "skills": [
+        "office-academic-skill",
+        "research-writing-skill"
+      ],
+      "group": "学术论文阅读报告与写作润色工作流",
+      "group_en": "Academic Reading Report and Manuscript Writing Workflow",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": true,
+      "description": "帮助生成和检查学术 Word/PPT，支持论文报告、答辩幻灯片与版式审阅。",
+      "description_en": "Generates and inspects academic Word/PPT deliverables, including reading reports, defense slides, and layout checks.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "scientific-toolkit-skill"
+      ],
+      "group": "科研编码 / 可复现分析与出版级图表",
+      "group_en": "Research Coding, Reproducible Analysis & Publication Figures",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "帮助完成科研计算、数据分析、仿真建模与期刊级图表生成。",
+      "description_en": "Supports scientific computing, data analysis, simulations, and publication-quality plotting workflows.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "astropy"
+      ],
+      "group": "天文 / 天体物理 Python 分析",
+      "group_en": "Astronomy & Astrophysics Python Analysis",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "处理天文坐标、物理单位、FITS 文件、宇宙学与星表数据分析。",
+      "description_en": "Handles astronomical coordinates, units, FITS files, cosmology, and catalog data analysis.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "citation-management"
+      ],
+      "group": "引文 / 参考文献管理",
+      "group_en": "Citations and Reference Management",
+      "category": "academic-research",
+      "subcategory": "11-4",
+      "chain": false,
+      "description": "帮助 agent 检索学术数据库、提取元数据、校验引用并生成规范 BibTeX，保障论文参考文献准确。",
+      "description_en": "Helps the agent search academic databases, extract metadata, validate citations, and generate clean BibTeX entries for accurate references.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "exploratory-data-analysis"
+      ],
+      "group": "科学数据探索分析",
+      "group_en": "Scientific Data Exploration",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "帮助 agent 自动识别科研数据文件、评估质量、生成摘要报告和后续分析建议。",
+      "description_en": "Helps the agent auto-detect scientific data files, assess quality, summarize structure, and recommend next analysis steps.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "literature-review"
+      ],
+      "group": "深度文献检索 / 综述",
+      "group_en": "Deep Literature Search / Systematic Reviews",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": false,
+      "description": "跨数据库检索文献、核验引文，并生成可发表的综述文档。",
+      "description_en": "Searches academic databases, verifies citations, and generates publication-ready systematic review documents.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "matlab"
+      ],
+      "group": "MATLAB / Octave 科学计算",
+      "group_en": "MATLAB / Octave Scientific Computing",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "编写 MATLAB/Octave 脚本，完成数值计算、数据分析与科学可视化。",
+      "description_en": "Writes MATLAB/Octave scripts for numerical computing, data analysis, and scientific visualization.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "matplotlib",
+        "scientific-visualization",
+        "seaborn"
+      ],
+      "group": "科学 / 出版级数据可视化",
+      "group_en": "Scientific publication visualization",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 选择 Matplotlib 接口并生成可发表图表。",
+      "description_en": "Helps the agent create journal-ready scientific figures with multi-panel layouts, annotations, and export formats.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "networkx"
+      ],
+      "group": "复杂网络 / 图数据分析",
+      "group_en": "Complex network and graph analysis",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 构建、分析和可视化 Python 复杂网络图。",
+      "description_en": "Helps the agent build, analyze, and visualize complex networks in Python.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "paper-lookup"
+      ],
+      "group": "深度文献检索 / 综述 / PaperSpine 论文重写流水线",
+      "group_en": "Deep Literature Search / Review Workflows",
+      "category": "academic-research",
+      "subcategory": "11-3",
+      "chain": false,
+      "description": "帮助 agent 跨多个学术数据库检索论文、DOI、作者与开放获取全文。",
+      "description_en": "Helps the agent search across academic databases for papers, DOIs, authors, and open-access full text.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "pdf"
+      ],
+      "group": "Office 文档四件套",
+      "group_en": "Office Document Toolkit",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 agent 读取、拆分、合并、OCR、加密与生成 PDF 文件。",
+      "description_en": "Helps the agent read, split, merge, OCR, encrypt, and generate PDF files.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "pymatgen"
+      ],
+      "group": "计算材料科学工具包",
+      "group_en": "Computational Materials Science Toolkit",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "帮助 agent 处理晶体结构、相图、电子结构与 Materials Project 数据。",
+      "description_en": "Helps the agent work with crystal structures, phase diagrams, electronic-structure data, and Materials Project workflows.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "pymoo"
+      ],
+      "group": "多目标优化与 Pareto 分析",
+      "group_en": "Multi-Objective Optimization & Pareto Analysis",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "帮助 agent 构建多目标优化问题、求解 Pareto 前沿并比较折中方案。",
+      "description_en": "Helps the agent formulate multi-objective optimization problems, solve Pareto fronts, and compare trade-off solutions.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "qutip"
+      ],
+      "group": "量子物理仿真与开放系统建模",
+      "group_en": "Quantum Physics Simulation & Open Systems Modeling",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "帮助 agent 用 QuTiP 模拟开放量子系统、主方程和退相干动力学。",
+      "description_en": "Helps the agent use QuTiP to simulate open quantum systems, master equations, and decoherence dynamics.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "scikit-learn"
+      ],
+      "group": "Python 机器学习建模",
+      "group_en": "Python Machine Learning Modeling",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "辅助使用 scikit-learn 完成分类、回归、聚类、评估与调参。",
+      "description_en": "Guides agents in scikit-learn classification, regression, clustering, evaluation, and tuning.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "simpy"
+      ],
+      "group": "科研编码 / 科学计算",
+      "group_en": "Research Coding / Scientific Computing",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "用于 Python 离散事件仿真，建模流程、队列、资源竞争与时间事件。",
+      "description_en": "Builds Python discrete-event simulations for processes, queues, resources, and time-based events.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "statistical-analysis"
+      ],
+      "group": "统计分析与 APA 报告",
+      "group_en": "Statistical Analysis & APA Reporting",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "指导统计检验选择、假设检查、功效分析，并生成 APA 风格结果报告。",
+      "description_en": "Guides test selection, assumption checks, power analysis, and APA-style statistical reporting.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "statsmodels"
+      ],
+      "group": "统计 / 计量数据分析(Python)",
+      "group_en": "Statistical and Econometric Analysis (Python)",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "帮助 agent 在 Python 中选用 statsmodels 完成回归、时间序列、诊断与统计推断。",
+      "description_en": "Helps agents choose and apply statsmodels in Python for regression, time-series modeling, diagnostics, and statistical inference.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "sympy"
+      ],
+      "group": "科研符号数学计算(Python)",
+      "group_en": "Research Symbolic Math Computation (Python)",
+      "category": "academic-research",
+      "subcategory": "11-2",
+      "chain": false,
+      "description": "帮助 agent 使用 SymPy 完成符号代数、微积分、方程求解、矩阵推导与代码生成。",
+      "description_en": "Helps agents use SymPy for symbolic algebra, calculus, equation solving, matrix manipulation, and code generation.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "timesfm-forecasting"
+      ],
+      "group": "时间序列预测（TimesFM）",
+      "group_en": "Time-Series Forecasting (TimesFM)",
+      "category": "data-scraping",
+      "subcategory": "7-3",
+      "chain": false,
+      "description": "让 agent 用 TimesFM 对单变量时间序列做零样本预测，输出点预测、区间并先检查本地资源。",
+      "description_en": "Enables agents to run zero-shot univariate time-series forecasting with TimesFM, producing point forecasts, prediction intervals, and resource preflight checks.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "xlsx"
+      ],
+      "group": "Excel 电子表格处理",
+      "group_en": "Spreadsheet Handling",
+      "category": "docs-knowledge",
+      "subcategory": "2-1",
+      "chain": false,
+      "description": "帮助 agent 处理以电子表格为主输入输出的任务，包括打开、编辑、创建、转换、清洗和格式化表格。",
+      "description_en": "Helps agents handle tasks where spreadsheets are the primary input or output, including opening, editing, creating, converting, cleaning, and formatting workbook files.",
+      "sources": [
+        "zLanqing/codex-claude-academic-skills"
+      ]
+    },
+    {
+      "skills": [
+        "agent-transcript"
+      ],
+      "group": "GitHub PR/Issue 会话记录脱敏",
+      "group_en": "GitHub PR/Issue transcript redaction",
+      "category": "software-engineering",
+      "subcategory": "1-4",
+      "chain": false,
+      "description": "脱敏本地 Agent 会话，生成可插入 PR/Issue 的 Markdown 记录。",
+      "description_en": "Sanitizes local agent session logs into safe Markdown for PR or issue bodies.",
+      "sources": [
+        "openclaw/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "autoreview"
+      ],
+      "group": "提交前自动代码审查",
+      "group_en": "Pre-ship automated code review",
+      "category": "software-engineering",
+      "subcategory": "1-3",
+      "chain": false,
+      "description": "在提交或发布前运行多引擎代码审查，辅助发现可修复问题。",
+      "description_en": "Runs advisory multi-engine code review before committing or shipping changes.",
+      "sources": [
+        "openclaw/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "crabbox"
+      ],
+      "group": "远端 sandbox agent 运行时",
+      "group_en": "Remote Sandbox Agent Runtime",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "通过 Crabbox/Testbox 调度远程环境，验证 CI 等价任务并报告租赁信息。",
+      "description_en": "Runs remote validation environments through Crabbox/Testbox and reports provider and lease details.",
+      "sources": [
+        "openclaw/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "handoff"
+      ],
+      "group": "Agent 任务交接提示",
+      "group_en": "Agent Task Handoff Prompts",
+      "category": "agent-architecture",
+      "subcategory": "12-4",
+      "chain": false,
+      "description": "为另一个 agent 生成可粘贴的接手提示，概括任务、上下文与审查要求。",
+      "description_en": "Creates a clipboard-ready prompt that gives another agent task context, constraints, and review instructions.",
+      "sources": [
+        "openclaw/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "session-viewer"
+      ],
+      "group": "会话 JSONL 查看与导出",
+      "group_en": "Session JSONL Viewer and Export",
+      "category": "agent-architecture",
+      "subcategory": "12-2",
+      "chain": false,
+      "description": "把 Codex、Claude、OpenClaw 或 Pi 的会话 JSONL 转成可搜索 HTML 页面，便于审阅和分享。",
+      "description_en": "Turns Codex, Claude, OpenClaw, or Pi session JSONL transcripts into searchable HTML pages for review and sharing.",
+      "sources": [
+        "openclaw/agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "(root)"
+      ],
+      "group": "(root)",
+      "group_en": "Academic presentations / Beamer / paper-to-PPT / zero-dependency HTML slides / slide image generation / PPT video pipeline / PPTX standard generation",
+      "category": "design-frontend",
+      "subcategory": "5-5",
+      "chain": false,
+      "description": "按主链步骤协调调研、搜集、大纲、设计和生成，适合把文档或主题转成 PPT。",
+      "description_en": "Coordinates research, sourcing, outlining, design, and generation into a controlled presentation pipeline.",
+      "sources": [
+        "sunbigfly/ppt-agent-skills"
+      ]
+    },
+    {
+      "skills": [
+        "accessorysetupkit"
+      ],
+      "group": "AccessorySetupKit 配件发现与授权",
+      "group_en": "AccessorySetupKit accessory discovery and authorization",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 在 iOS 应用中配置 AccessorySetupKit，用系统 picker 发现并授权蓝牙或 Wi-Fi 配件。",
+      "description_en": "Helps an agent configure AccessorySetupKit in iOS apps, using the system picker to discover and authorize Bluetooth or Wi-Fi accessories.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "activitykit"
+      ],
+      "group": "ActivityKit Live Activities 与 Dynamic Island",
+      "group_en": "ActivityKit Live Activities and Dynamic Island",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 实现或审查 ActivityKit Live Activities、Dynamic Island 布局和实时推送更新。",
+      "description_en": "Helps an agent implement or review ActivityKit Live Activities, Dynamic Island layouts, and real-time push updates.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "adattributionkit",
+        "alarmkit"
+      ],
+      "group": "Apple iOS SDK 集成",
+      "group_en": "Apple iOS SDK Integration",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 实现 AlarmKit 闹钟、倒计时、系统 UI 与小组件联动。",
+      "description_en": "Helps the agent implement privacy-preserving ad attribution, postbacks, and conversion values in iOS apps.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "app-clips"
+      ],
+      "group": "App Clips 构建与迁移",
+      "group_en": "App Clips Build and Migration",
+      "category": "software-engineering",
+      "subcategory": "1-7",
+      "chain": false,
+      "description": "帮助 agent 创建 App Clip 目标、配置调用入口、处理数据通知位置并规划迁移。",
+      "description_en": "Helps an agent create App Clip targets, configure invocation flows, handle data, notifications, and location, and plan migration to the full app.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "app-intents"
+      ],
+      "group": "App Intents 系统集成",
+      "group_en": "App Intents System Integration",
+      "category": "software-engineering",
+      "subcategory": "1-7",
+      "chain": false,
+      "description": "帮助 agent 实现 App Intents，把应用动作和实体暴露给 Siri、快捷指令、Spotlight、小组件和控制中心。",
+      "description_en": "Helps an agent implement App Intents to expose app actions and entities to Siri, Shortcuts, Spotlight, widgets, and Control Center.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "app-store-optimization",
+        "app-store-review"
+      ],
+      "group": "App Store 上架与审核工作流",
+      "group_en": "App Store Launch & Review Workflow",
+      "category": "marketing-growth",
+      "subcategory": "4-4",
+      "chain": true,
+      "description": "帮助 agent 制定 App Store 关键词、元数据、截图和转化优化方案。",
+      "description_en": "Guides agents through App Store keyword strategy, metadata, screenshots, and conversion experiments.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "apple-on-device-ai"
+      ],
+      "group": "Apple 端侧 AI 与 Core ML 集成",
+      "group_en": "Apple On-Device AI and Core ML Integration",
+      "category": "ml-llm-engineering",
+      "subcategory": "21-1",
+      "chain": false,
+      "description": "帮助 agent 在 Apple 平台集成 Foundation Models、Core ML、MLX Swift 与 llama.cpp。",
+      "description_en": "Helps an agent integrate Foundation Models, Core ML, MLX Swift, and llama.cpp on Apple platforms.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "appmigrationkit"
+      ],
+      "group": "AppMigrationKit 数据迁移实现",
+      "group_en": "AppMigrationKit Data Migration Implementation",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 实现 iOS 与 Android 等平台之间的一次性应用数据迁移扩展。",
+      "description_en": "Helps an agent implement one-time app data migration extensions between iOS and other platforms.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "audioaccessorykit",
+        "authentication"
+      ],
+      "group": "iOS / Swift 框架实现",
+      "group_en": "iOS / Swift Framework Implementation",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "指导实现 Apple 登录、通行密钥、OAuth、自动填充与生物识别重认证。",
+      "description_en": "Guides iOS authentication flows with Sign in with Apple, passkeys, OAuth, autofill, and biometric re-authentication.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "avkit",
+        "background-processing"
+      ],
+      "group": "Apple SDK / iOS 功能实现",
+      "group_en": "Apple SDK / iOS Feature Implementation",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 在 iOS/SwiftUI 中接入 AVKit 视频播放、画中画、AirPlay 与字幕能力。",
+      "description_en": "Helps configure iOS background tasks, background downloads, and push triggers with expiration handling.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "browserenginekit",
+        "callkit"
+      ],
+      "group": "Apple iOS SDK 开发",
+      "group_en": "Apple iOS SDK Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 agent 构建 iOS/iPadOS 非 WebKit 浏览器引擎及扩展配置。",
+      "description_en": "Guides agents in implementing VoIP call flows, PushKit registration, and native call integration.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "carplay",
+        "cloudkit"
+      ],
+      "group": "Apple iOS / Swift 开发技能包",
+      "group_en": "Apple iOS and Swift Development Skill Set",
+      "category": "software-engineering",
+      "subcategory": "1-7",
+      "chain": false,
+      "description": "指导 agent 实现和审查 CloudKit/iCloud 数据同步、冲突处理与错误恢复。",
+      "description_en": "Guides agents in implementing and reviewing CloudKit/iCloud sync, conflict handling, and error recovery.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "contacts-framework",
+        "core-bluetooth"
+      ],
+      "group": "iOS 系统框架开发",
+      "group_en": "iOS System Framework Development",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 实现 BLE 扫描连接、服务发现、特征读写通知、外设广播和后台恢复。",
+      "description_en": "Helps an agent build BLE workflows with Core Bluetooth, including scanning, connections, GATT reads and writes, advertising, and background restoration.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "core-data",
+        "core-motion"
+      ],
+      "group": "iOS / Apple 框架开发",
+      "group_en": "iOS and Apple Framework Development",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 读取 Core Motion 传感器与运动数据。",
+      "description_en": "Helps the agent build, review, and improve Core Data persistence layers.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "core-nfc",
+        "coreml"
+      ],
+      "group": "Apple iOS 框架开发",
+      "group_en": "Apple iOS Framework Development",
+      "category": "",
+      "subcategory": "",
+      "chain": false,
+      "description": "帮助 agent 在 Swift/iOS 中加载 Core ML 模型、配置计算单元并运行推理。",
+      "description_en": "Helps the agent implement NFC tag read/write, session lifecycle handling, and entitlement setup in iOS.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "cryptokit"
+      ],
+      "group": "Apple CryptoKit 安全原语",
+      "group_en": "Apple CryptoKit primitives",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 agent 在 Swift 中使用 CryptoKit 完成哈希、HMAC、加密、签名和密钥交换。",
+      "description_en": "Guides the agent in using Swift CryptoKit for hashing, HMAC, encryption, signing, and key exchange.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "cryptotokenkit"
+      ],
+      "group": "CryptoTokenKit 令牌与智能卡",
+      "group_en": "CryptoTokenKit tokens and smart cards",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "指导 agent 在 Apple 平台集成 CryptoTokenKit、智能卡、令牌扩展和证书认证。",
+      "description_en": "Guides integration of CryptoTokenKit, smart cards, token extensions, and certificate authentication on Apple platforms.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "debugging-instruments"
+      ],
+      "group": "iOS 调试与性能分析",
+      "group_en": "iOS debugging and performance profiling",
+      "category": "software-engineering",
+      "subcategory": "1-2",
+      "chain": false,
+      "description": "帮助代理用 LLDB、Memory Graph 和 Instruments 排查 iOS 崩溃、卡顿、内存和性能问题。",
+      "description_en": "Helps the agent diagnose iOS crashes, hangs, memory issues, and performance bottlenecks with LLDB, Memory Graph, and Instruments.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "device-integrity"
+      ],
+      "group": "Apple 设备完整性与 App Attest",
+      "group_en": "Apple device integrity and App Attest",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助代理实现 DeviceCheck 与 App Attest，验证真实设备和合法 App 请求。",
+      "description_en": "Helps the agent implement DeviceCheck and App Attest to verify genuine devices and legitimate app requests.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    },
+    {
+      "skills": [
+        "dockkit",
+        "energykit"
+      ],
+      "group": "iOS / Apple 框架 SDK 开发",
+      "group_en": "iOS / Apple Framework SDK Development",
+      "category": "software-engineering",
+      "subcategory": "1-6",
+      "chain": false,
+      "description": "帮助 agent 接入 EnergyKit，查询电网清洁或低价时段并提交负载事件。",
+      "description_en": "Helps the agent implement DockKit accessory discovery, subject tracking, motor control, and framing setup.",
+      "sources": [
+        "dpearson2699/swift-ios-skills"
+      ]
+    }
+  ],
+  "proposals": [
+    {
+      "repo": {
+        "author": "huangwb8",
+        "repo": "ChineseResearchLaTeX",
+        "full_name": "huangwb8/ChineseResearchLaTeX",
+        "url": "https://github.com/huangwb8/ChineseResearchLaTeX",
+        "stars": 2381,
+        "pushed_at": "2026-06-21",
+        "default_branch": "main",
+        "github_description": "中国科研常用LaTeX模板集",
+        "topics": [
+          "ai",
+          "claude-code",
+          "codex-cli",
+          "funding",
+          "graduate",
+          "latex-template",
+          "research",
+          "researchpapers",
+          "vibe-codng"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "zh-skill-readme"
+      },
+      "skills": [
+        {
+          "name": "complete-example",
+          "path": "skills/complete-example/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "LaTeX 科研模板优化与示例生成",
+          "group_en": "LaTeX Research Template Optimization & Sample Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为现有 LaTeX 项目补全示例内容，并保护模板结构与文件安全。",
+          "description_en": "Completes sample content for existing LaTeX projects while preserving template structure and file safety.",
+          "what": "为 LaTeX 项目生成受控示例内容。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "make-latex-model",
+          "path": "skills/make-latex-model/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "LaTeX 科研模板优化与示例生成",
+          "group_en": "LaTeX Research Template Optimization & Sample Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "优化 LaTeX 模板样式与构建参数，并执行高保真对齐和回归验收。",
+          "description_en": "Optimizes LaTeX template styling and build parameters with high-fidelity alignment and regression checks.",
+          "what": "为 LaTeX 模板做样式对齐与回归优化。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-abstract",
+          "path": "skills/nsfc-abstract/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "NSFC 基金申请写作",
+          "group_en": "NSFC grant application writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "生成 NSFC 标书中英文摘要、标题建议并写入 Markdown 文件。",
+          "description_en": "Drafts bilingual NSFC proposal abstracts, title options, and writes the result to Markdown.",
+          "what": "把零散项目信息整理成五句式摘要、英文翻译和标题建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-budget",
+          "path": "skills/nsfc-budget/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "NSFC 基金申请写作",
+          "group_en": "NSFC grant application writing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于标书材料生成 NSFC 预算说明书 LaTeX 项目并渲染 PDF。",
+          "description_en": "Turns proposal materials into a LaTeX budget justification package and renders budget.pdf.",
+          "what": "把标书材料与预算口径整理成可提交的预算说明书及 PDF。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-code",
+          "path": "skills/nsfc-code/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "NSFC 申请代码推荐",
+          "group_en": "NSFC application code recommendations",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 NSFC 标书正文，推荐 5 组申请代码及可追溯理由。",
+          "description_en": "Reads an NSFC proposal and recommends five application-code pairs with traceable rationale.",
+          "what": "根据标书正文和参考库推荐申请代码1/2。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-humanization",
+          "path": "skills/nsfc-humanization/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "NSFC 标书去机器味润色",
+          "group_en": "NSFC proposal humanization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在保留 LaTeX 结构的前提下，去除 NSFC 标书文本的机器味。",
+          "description_en": "Polishes NSFC proposal text while preserving LaTeX structure and original meaning.",
+          "what": "对 NSFC 标书正文做保守润色，保护 LaTeX 与事实信息。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-justification-writer",
+          "path": "skills/nsfc-justification-writer/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "科研基金 / Grant 申请",
+          "group_en": "Grant Proposal Writing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "基于最小信息表撰写或重构 NSFC 立项依据，保持 LaTeX 模板结构。",
+          "description_en": "Drafts or restructures NSFC proposal rationales from a minimal info form while preserving the LaTeX template structure.",
+          "what": "围绕“为什么要做/现状不足/科学问题/切入点”生成或重构立项依据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-length-aligner",
+          "path": "skills/nsfc-length-aligner/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "科研基金 / Grant 申请",
+          "group_en": "Grant Proposal Writing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "按国自然标书页数与字数预算检查篇幅，并建议扩写或压缩。",
+          "description_en": "Checks proposal length against page and word-count budgets, then recommends targeted expansion or compression.",
+          "what": "按页数、字数或字符数预算检查标书篇幅，并给出针对性改写建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-qc",
+          "path": "skills/nsfc-qc/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "NSFC 标书质量控制",
+          "group_en": "NSFC Grant Proposal QC",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "对 NSFC 标书做只读质检，检查文风、引用、篇幅结构与逻辑并生成报告。",
+          "description_en": "Performs read-only quality checks on NSFC grant proposals and produces a standardized QC report.",
+          "what": "并行检查 NSFC 标书的文风、引用、篇幅、结构和逻辑，输出标准化 QC 报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-ref-alignment",
+          "path": "skills/nsfc-ref-alignment/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "NSFC 标书引用核查",
+          "group_en": "NSFC Grant Proposal Reference Alignment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "检查 NSFC 标书引用与参考文献一致性，识别缺失、格式错误和语义错配风险。",
+          "description_en": "Checks whether in-text citations match the bibliography and flags missing entries, format issues, or semantic mismatches.",
+          "what": "核查正文引用、BibTeX 条目和语义主张是否一致，输出只读审核报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-research-content-writer",
+          "path": "skills/nsfc-research-content-writer/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "科研基金 / Grant 申请",
+          "group_en": "Grant Proposal Writing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "编排并生成 NSFC 研究内容、创新点与三年计划的 LaTeX 正文文件。",
+          "description_en": "Helps an agent draft and write NSFC research content, innovations, and the three-year plan as LaTeX snippets.",
+          "what": "用于 NSFC 申请书“研究内容”章节的写作与文件落地。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-research-foundation-writer",
+          "path": "skills/nsfc-research-foundation-writer/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "科研基金 / Grant 申请",
+          "group_en": "Grant Proposal Writing",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 用证据链撰写 NSFC 研究基础、工作条件与风险应对。",
+          "description_en": "Helps an agent write the research foundation, working conditions, and risk response sections with an evidence-based structure.",
+          "what": "用于 NSFC 申请书“研究基础/工作条件/风险应对”章节写作。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-reviewers",
+          "path": "skills/nsfc-reviewers/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "科研基金 / Grant 申请",
+          "group_en": "Research Grant Application Support",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "模拟专家审阅 NSFC 标书，输出分级问题与修改建议。",
+          "description_en": "Simulates expert review of NSFC proposals, producing graded issues and actionable fixes.",
+          "what": "用于对国自然标书做专家式风险诊断、分级评审和修改优先级建议。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-roadmap",
+          "path": "skills/nsfc-roadmap/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "科研基金 / Grant 申请",
+          "group_en": "Research Grant Application Support",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "把 NSFC 标书内容转为可编辑 drawio 与 A4 可打印路线图。",
+          "description_en": "Turns proposal content into editable Draw.io files and A4-ready roadmap visuals.",
+          "what": "用于把研究内容、技术路线和风险控制整理成可打印、可嵌入的技术路线图。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "nsfc-schematic",
+          "path": "skills/nsfc-schematic/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "NSFC 基金原理图 / 机制图生成",
+          "group_en": "NSFC Grant Schematics & Mechanism Diagrams",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把标书或规格中的机制链、算法架构和模块关系转成可编辑 drawio 图及 PDF/SVG/PNG 渲染文件。",
+          "description_en": "Turns grant specs or proposal text into editable Draw.io diagrams plus PDF, SVG, and PNG renderings.",
+          "what": "生成 NSFC 原理图/机制图",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "paper-explain-figures",
+          "path": "skills/paper-explain-figures/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "论文 Figure 解读与读图教学",
+          "group_en": "Paper Figure Interpretation & Reading Guides",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取论文 Figure 与附近生成代码，综合视觉、代码和用户解读生成高可读 Markdown 报告。",
+          "description_en": "Reads paper figures and nearby source code, then combines visual, code, and user context into a readable Markdown report.",
+          "what": "解读论文 Figure 并生成读图报告",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "paper-know-journal",
+          "path": "skills/paper-know-journal/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "SCI 选刊与期刊投稿指南",
+          "group_en": "SCI Journal Selection and Submission Guide Research",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "调研指定期刊的投稿要求、官网信息、审稿速度、费用和社区评价，生成报告。",
+          "description_en": "Researches a specified journal’s submission requirements, official information, review speed, fees, and community reputation, then produces a report.",
+          "what": "为指定期刊生成投稿指南与可信度调研报告。",
+          "chain": true,
+          "chain_group": "SCI 选刊与期刊调研流水线",
+          "chain_group_en": "SCI Journal Selection and Journal Research Workflow"
+        },
+        {
+          "name": "paper-select-journal",
+          "path": "skills/paper-select-journal/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "SCI 选刊与期刊投稿指南",
+          "group_en": "SCI Journal Selection and Submission Guide Research",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "基于稿件和用户偏好筛选 SCI 候选期刊，联网核验范围、质量与近期论文后排序推荐。",
+          "description_en": "Filters SCI journal candidates from a manuscript and user preferences, verifies scope, quality, and recent papers online, then ranks recommendations.",
+          "what": "为稿件生成按推荐度排序的 SCI 选刊报告。",
+          "chain": true,
+          "chain_group": "SCI 选刊与期刊调研流水线",
+          "chain_group_en": "SCI Journal Selection and Journal Research Workflow"
+        },
+        {
+          "name": "paper-write-sci",
+          "path": "skills/paper-write-sci/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "SCI 论文写作与修订",
+          "group_en": "SCI Paper Writing & Revision",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据 LaTeX 项目撰写、修订和润色 SCI 论文，并核验数字逻辑。",
+          "description_en": "Write, revise, and polish SCI papers from a LaTeX project while checking numerical and logical consistency.",
+          "what": "用于 LaTeX 论文项目的 SCI 论文撰写、修订、风格化润色与一致性审查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "research-citation-check",
+          "path": "skills/research-citation-check/SKILL.md",
+          "subcategory": "11-5",
+          "subcategory_title": "11.5 同行评审 / 论文质量",
+          "category": "academic-research",
+          "group": "系统综述引用核查",
+          "group_en": "Systematic Review Citation Audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "核查综述正文引用与文献内容是否一致，并仅对致命错误做最小化改写。",
+          "description_en": "Check whether citations in a review align with the cited papers, making only minimal edits for critical errors.",
+          "what": "用于检查综述类论文中引用与文献内容的语义一致性并输出核查报告。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "research-guide-updater",
+          "path": "skills/research-guide-updater/SKILL.md",
+          "subcategory": "2-6",
+          "subcategory_title": "2.6 跨 session 持久记忆",
+          "category": "docs-knowledge",
+          "group": "项目写作指南沉淀",
+          "group_en": "Project Writing Guide Memory",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "将对话中的可复用写作洞见沉淀到指定项目指南，保持术语和口径一致。",
+          "description_en": "Captures reusable writing insights from a conversation into a specified project guide, keeping terminology and positioning consistent.",
+          "what": "更新指定项目指南，沉淀写作规则与术语口径。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "research-idea",
+          "path": "skills/research-idea/SKILL.md",
+          "subcategory": "11-6",
+          "subcategory_title": "11.6 研究选题 / 假设 / 构思",
+          "category": "academic-research",
+          "group": "研究选题 / 假设 / 构思",
+          "group_en": "Research Topic Ideation & Hypotheses",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "基于资料和查新生成多个可证伪科学问题-假设，并推荐最佳研究切入点。",
+          "description_en": "Turns provided materials and novelty checks into multiple falsifiable research questions and hypotheses, then recommends the strongest direction.",
+          "what": "生成可证伪科学问题-假设候选并给出推荐。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "research-literature-review",
+          "path": "skills/research-literature-review/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "系统综述与文献调研流水线",
+          "group_en": "Systematic Literature Review Pipeline",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 检索、评分、选文并生成综述及 PDF/Word。",
+          "description_en": "Helps agents search, score, select papers, and draft multilingual reviews with PDF/Word exports.",
+          "what": "从多源检索到导出产物的系统综述流水线。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "research-plan",
+          "path": "skills/research-plan/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "实验设计与科研分析策略",
+          "group_en": "Research Analysis Planning",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据科研问题调研方法论文并生成可执行分析计划。",
+          "description_en": "Researches method papers and turns research needs into executable analysis plans.",
+          "what": "基于文献调研的实验设计与分析流程规划。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "research-topic-extractor",
+          "path": "skills/research-topic-extractor/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "综述主题提取",
+          "group_en": "Review Topic Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从文件、图片、网页或描述中提取综述主题、关键词与核心问题。",
+          "description_en": "Extracts review topics, keywords, and core questions from files, images, webpages, or free-form descriptions.",
+          "what": "用于文献综述前，把多源材料整理成可检索、可执行的主题结构。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "transfer-old-latex-to-new",
+          "path": "skills/transfer-old-latex-to-new/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "LaTeX 模板迁移",
+          "group_en": "LaTeX Template Migration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把旧论文、标书、简历等正文迁移到现有 ChineseResearchLaTeX 模板内容层。",
+          "description_en": "Migrates existing paper, proposal, thesis, or CV content into the current ChineseResearchLaTeX template layer.",
+          "what": "用于把旧项目正文接入当前 LaTeX 模板，而不改公共模板骨架。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "Kotlin",
+        "repo": "kotlin-agent-skills",
+        "full_name": "Kotlin/kotlin-agent-skills",
+        "url": "https://github.com/Kotlin/kotlin-agent-skills",
+        "stars": 879,
+        "pushed_at": "2026-06-08",
+        "default_branch": "main",
+        "github_description": "A collection of AI agent skills useful for projects using Kotlin language",
+        "topics": [
+          "kotlin",
+          "skills"
+        ],
+        "language": "Shell",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "kotlin-backend-jpa-entity-mapping",
+          "path": "skills/kotlin-backend-jpa-entity-mapping/SKILL.md",
+          "subcategory": "1-9",
+          "subcategory_title": "1.9 后端架构 / 微服务 / 分布式系统",
+          "category": "software-engineering",
+          "group": "Kotlin JPA 实体建模",
+          "group_en": "Kotlin JPA Entity Modeling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 设计 Kotlin JPA 实体、关系映射和索引，规避 ORM 陷阱。",
+          "description_en": "Helps the agent design Kotlin JPA entities, relationships, and indexes while avoiding common ORM pitfalls.",
+          "what": "用于创建或审查 Spring Data JPA/Hibernate 实体时提供 Kotlin 特定规则。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kotlin-tooling-agp9-migration",
+          "path": "skills/kotlin-tooling-agp9-migration/SKILL.md",
+          "subcategory": "1-5",
+          "subcategory_title": "1.5 多平台部署",
+          "category": "software-engineering",
+          "group": "KMP 构建迁移",
+          "group_en": "KMP Build Migration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 将 KMP 项目迁移到 AGP 9，处理插件替换、模块拆分和 DSL 调整。",
+          "description_en": "Guides the agent in migrating KMP projects to AGP 9, including plugin replacement, module splitting, and DSL changes.",
+          "what": "用于升级 Android Gradle Plugin 时迁移 KMP 构建配置。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kotlin-tooling-cocoapods-spm-migration",
+          "path": "skills/kotlin-tooling-cocoapods-spm-migration/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Kotlin 项目迁移与升级",
+          "group_en": "Kotlin project migration and upgrade",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 Kotlin Multiplatform iOS 依赖从 CocoaPods 迁移到 SwiftPM。",
+          "description_en": "Helps an agent migrate Kotlin Multiplatform iOS dependencies from CocoaPods to SwiftPM.",
+          "what": "迁移 KMP 的 CocoaPods 配置、导入和 Xcode 设置到 SwiftPM。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kotlin-tooling-immutable-collections-0-5-x-migration",
+          "path": "skills/kotlin-tooling-immutable-collections-0-5-x-migration/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Kotlin 项目迁移与升级",
+          "group_en": "Kotlin project migration and upgrade",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按编译器警告升级 kotlinx.collections.immutable 到 0.5.x。",
+          "description_en": "Helps an agent upgrade kotlinx.collections.immutable to 0.5.x using compiler deprecation hints.",
+          "what": "按 0.5.x 新命名迁移 PersistentList/Map/Set 等 API 调用。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "kotlin-tooling-java-to-kotlin",
+          "path": "skills/kotlin-tooling-java-to-kotlin/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "Java 到 Kotlin 迁移",
+          "group_en": "Java-to-Kotlin Migration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 将 Java 源码按流程迁移为惯用 Kotlin，并处理框架差异。",
+          "description_en": "Helps agents migrate Java sources into idiomatic Kotlin with framework-aware guidance and verification.",
+          "what": "Converts Java source files to idiomatic Kotlin across common frameworks.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "jezweb",
+        "repo": "claude-skills",
+        "full_name": "jezweb/claude-skills",
+        "url": "https://github.com/jezweb/claude-skills",
+        "stars": 865,
+        "pushed_at": "2026-06-11",
+        "default_branch": "main",
+        "github_description": "Skills for Claude Code CLI such as full stack dev Cloudflare, React, Tailwind v4, and AI integrations.",
+        "topics": [
+          "ai",
+          "anthropic",
+          "automation",
+          "claude-code",
+          "claude-skills",
+          "cloudflare",
+          "devtools",
+          "productivity",
+          "react",
+          "skills",
+          "tailwind",
+          "vite"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "cloudflare-api",
+          "path": "plugins/cloudflare/skills/cloudflare-api/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Cloudflare API 运维自动化",
+          "group_en": "Cloudflare API Operations Automation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 Claude Code 直接调用 Cloudflare REST API，批量执行 DNS、缓存、WAF、KV/R2/D1 等运维操作。",
+          "description_en": "Helps Claude Code call Cloudflare’s REST API directly to batch DNS, cache, WAF, and KV/R2/D1 operations.",
+          "what": "面向 Cloudflare 的批量 API 运维 skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cloudflare-worker-builder",
+          "path": "plugins/cloudflare/skills/cloudflare-worker-builder/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Cloudflare Worker 构建与部署",
+          "group_en": "Cloudflare Worker Build & Deployment",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Claude Code 生成、配置并部署 Hono/Vite 版 Cloudflare Worker，含 D1/R2/KV/Queues 绑定。",
+          "description_en": "Generates, configures, and deploys Hono/Vite Cloudflare Workers with D1, R2, KV, and Queues bindings.",
+          "what": "Cloudflare Worker 项目脚手架与部署 skill。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "d1-drizzle-schema",
+          "path": "plugins/cloudflare/skills/d1-drizzle-schema/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Cloudflare D1 数据库开发",
+          "group_en": "Cloudflare D1 Database Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为 Cloudflare D1 生成 Drizzle schema、迁移命令和数据库文档。",
+          "description_en": "Generate Cloudflare D1-compatible Drizzle schemas, migration commands, and database docs.",
+          "what": "生成 D1 兼容的 Drizzle schema、迁移命令和 DATABASE_SCHEMA.md。",
+          "chain": true,
+          "chain_group": "Cloudflare D1 数据库开发工作流",
+          "chain_group_en": "Cloudflare D1 Database Development Workflow"
+        },
+        {
+          "name": "d1-migration",
+          "path": "plugins/cloudflare/skills/d1-migration/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "Cloudflare D1 数据库开发",
+          "group_en": "Cloudflare D1 Database Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 D1 迁移生成、SQL 检查、本地/远程应用与失败修复。",
+          "description_en": "Guide D1 migrations from SQL review through local and remote apply, plus failure recovery.",
+          "what": "执行并修复 Drizzle D1 迁移，包括 SQL 检查与失败恢复。",
+          "chain": true,
+          "chain_group": "Cloudflare D1 数据库开发工作流",
+          "chain_group_en": "Cloudflare D1 Database Development Workflow"
+        },
+        {
+          "name": "db-seed",
+          "path": "plugins/cloudflare/skills/db-seed/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "数据库种子数据生成",
+          "group_en": "Database Seed Data Generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取 Drizzle/SQL/Prisma schema，生成可运行的数据库种子脚本。",
+          "description_en": "Reads Drizzle, SQL, or Prisma schemas and generates runnable database seed scripts.",
+          "what": "Generates realistic, idempotent seed data scripts for dev, demo, or test databases.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "hono-api-scaffolder",
+          "path": "plugins/cloudflare/skills/hono-api-scaffolder/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "API 与接口设计",
+          "group_en": "API & Interface Design",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "为 Cloudflare Workers 项目生成 Hono 路由、中间件、类型绑定、校验和 API 文档。",
+          "description_en": "Scaffolds Hono routes, middleware, typed bindings, validation, and endpoint docs for Cloudflare Workers.",
+          "what": "Adds structured Hono API routes to an existing Cloudflare Workers project.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "tanstack-start",
+          "path": "plugins/cloudflare/skills/tanstack-start/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "Cloudflare 全栈 Web 应用构建",
+          "group_en": "Cloudflare full-stack web app building",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助从零生成 Cloudflare Workers 上的 TanStack Start 全栈应用。",
+          "description_en": "Helps Claude Code generate a deployable TanStack Start full-stack app on Cloudflare Workers from scratch.",
+          "what": "Builds a TanStack Start app with Cloudflare Workers, D1/Drizzle, auth, Tailwind, and shadcn/ui.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "vite-flare-starter",
+          "path": "plugins/cloudflare/skills/vite-flare-starter/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "Cloudflare 全栈 Web 应用构建",
+          "group_en": "Cloudflare full-stack web app building",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助基于 vite-flare-starter 生成并配置可部署 Cloudflare 全栈应用。",
+          "description_en": "Helps Claude Code clone, configure, and deploy a full-stack Cloudflare app from the vite-flare-starter template.",
+          "what": "Clones and configures vite-flare-starter for a deployable Cloudflare full-stack app.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ai-image-generator",
+          "path": "plugins/design-assets/skills/ai-image-generator/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "AI 图像生成（多 API）",
+          "group_en": "AI Image Generation (Multiple APIs)",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "指导 Claude Code 调用 Gemini/GPT 图像 API，按场景选择模型、生成提示词、批量变体并做质量检查。",
+          "description_en": "Helps Claude Code generate images via Gemini and OpenAI APIs with model selection, prompting, variations, and quality checks.",
+          "what": "AI 图像生成与多模型 API 调用指南。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "color-palette",
+          "path": "plugins/design-assets/skills/color-palette/SKILL.md",
+          "subcategory": "5-1",
+          "subcategory_title": "5.1 品牌系统 / 视觉规范",
+          "category": "design-frontend",
+          "group": "品牌系统 / 视觉规范",
+          "group_en": "Brand System / Visual Guidelines",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从品牌主色生成 11 级可访问色阶、语义 token、暗色变体与 Tailwind v4 CSS，并检查 WCAG 对比度。",
+          "description_en": "Turns a brand hex into accessible color scales, semantic tokens, dark-mode variants, Tailwind v4 CSS, and WCAG checks.",
+          "what": "可访问品牌配色与 Tailwind token 生成。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "favicon-gen",
+          "path": "plugins/design-assets/skills/favicon-gen/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "Favicon 品牌资产生成",
+          "group_en": "Favicon Brand Asset Generator",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "根据 logo、文字或品牌色生成完整 favicon 套件，并输出网页集成代码。",
+          "description_en": "Generates a complete favicon package from a logo, text, or brand colors, including web integration code.",
+          "what": "为网页项目快速创建 favicon.svg、ico、PNG 图标与 manifest。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "icon-set-generator",
+          "path": "plugins/design-assets/skills/icon-set-generator/SKILL.md",
+          "subcategory": "5-7",
+          "subcategory_title": "5.7 创意 / 艺术 / 品牌资产",
+          "category": "design-frontend",
+          "group": "项目定制 SVG 图标集",
+          "group_en": "Custom Project SVG Icon Sets",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为网站或应用生成风格一致的项目专属 SVG 图标集，避免通用图标库的同质化。",
+          "description_en": "Creates cohesive, project-specific SVG icon sets with a consistent visual style for websites and apps.",
+          "what": "把项目定位转化为统一风格的自定义 SVG 图标资产。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "image-processing",
+          "path": "plugins/design-assets/skills/image-processing/SKILL.md",
+          "subcategory": "5-8",
+          "subcategory_title": "5.8 截图 / 多媒体生成",
+          "category": "design-frontend",
+          "group": "网页图片处理与缩略图",
+          "group_en": "Web Image Processing & Thumbnails",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Claude Code 调整、压缩、转换网页图片并生成缩略图或 OG 图。",
+          "description_en": "Helps Claude Code resize, compress, convert web images, and generate thumbnails or OG cards.",
+          "what": "用 img-process 或 Pillow 脚本处理常见图片任务。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "app-docs",
+          "path": "plugins/dev-tools/skills/app-docs/SKILL.md",
+          "subcategory": "2-3",
+          "subcategory_title": "2.3 写作 / 共写 / 文案打磨",
+          "category": "docs-knowledge",
+          "group": "应用用户文档生成",
+          "group_en": "App User Documentation Generator",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "浏览运行中的 Web 应用，截图并生成可发布的结构化用户指南。",
+          "description_en": "Browses a live web app, captures screenshots, and produces a structured, publishable user guide.",
+          "what": "用浏览器自动化识别页面并撰写带截图的操作文档。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "fork-discipline",
+          "path": "plugins/dev-tools/skills/fork-discipline/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "多客户平台边界审计 / 重构规划",
+          "group_en": "Multi-client Platform Boundary Audit and Refactoring",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 审计多客户代码库的核心与客户端边界，产出违规报告和重构计划。",
+          "description_en": "Helps the agent audit core/client boundaries in multi-client codebases and produce violation reports with refactoring plans.",
+          "what": "Audit core/client boundaries in multi-client codebases and generate a refactoring plan.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "git-workflow",
+          "path": "plugins/dev-tools/skills/git-workflow/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "git-workflow",
+          "group_en": "Git Workflow / GitHub Issue-PR Analysis & Release Automation / Generic Release Automation / GitHub Trio",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "帮助 agent 按结构化步骤准备 PR、清理分支、处理冲突并管理发布标签。",
+          "description_en": "Helps the agent follow structured steps to prepare PRs, clean branches, handle conflicts, and manage release tags.",
+          "what": "Guide PR preparation, branch cleanup, merge-conflict handling, and release tagging.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "github-release",
+          "path": "plugins/dev-tools/skills/github-release/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "通用发布流程自动化",
+          "group_en": "General Release Automation",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮 agent 在发布前做安全清理、版本打 tag 并通过 gh 发布 GitHub Release。",
+          "description_en": "Helps agents sanitize a repo, create version tags, and publish GitHub releases via the gh CLI.",
+          "what": "GitHub 发布准备、安全检查与自动发布工作流。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "onboarding-ux",
+          "path": "plugins/dev-tools/skills/onboarding-ux/SKILL.md",
+          "subcategory": "3-1",
+          "subcategory_title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "category": "product-management",
+          "group": "新用户引导体验修复",
+          "group_en": "New User Onboarding UX Fixes",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮 agent 浏览应用发现新手引导缺口，并生成提示文案与前端代码来修复。",
+          "description_en": "Helps agents inspect an app for onboarding gaps and generate guidance copy plus frontend fixes.",
+          "what": "新用户引导体验审计与站内引导内容/代码生成。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "project-docs",
+          "path": "plugins/dev-tools/skills/project-docs/SKILL.md",
+          "subcategory": "3-6",
+          "subcategory_title": "3.6 PRD / Spec / 工程 handoff",
+          "category": "product-management",
+          "group": "工程交付文档生成",
+          "group_en": "Engineering handoff documentation generation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "从代码、路由、配置和 schema 生成架构、API、数据库等项目文档。",
+          "description_en": "Generates architecture, API endpoint, and database schema documentation by analyzing the actual codebase.",
+          "what": "从真实代码库生成结构化项目文档。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "project-health",
+          "path": "plugins/dev-tools/skills/project-health/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "Claude Code 项目配置与上下文管理",
+          "group_en": "Claude Code project configuration and context management",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "配置项目、审计权限/上下文/MCP/泄露密钥，并整理 Claude Code 项目状态。",
+          "description_en": "Configures projects, audits permissions, context, MCP coverage, and leaked secrets, then keeps Claude Code project state tidy.",
+          "what": "配置、审计并维护 Claude Code 项目上下文。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "responsiveness-check",
+          "path": "plugins/dev-tools/skills/responsiveness-check/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "响应式断点巡检",
+          "group_en": "Responsive breakpoint checks",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过浏览器自动化按断点截图，发现响应式布局断裂、溢出和导航切换问题。",
+          "description_en": "Automates viewport sweeps and screenshot comparisons to catch responsive layout breaks, overflow, and navigation shifts.",
+          "what": "用浏览器自动化完成响应式断点巡检。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "roadmap",
+          "path": "plugins/dev-tools/skills/roadmap/SKILL.md",
+          "subcategory": "1-1",
+          "subcategory_title": "1.1 计划 / SDD（Spec-Driven Development）方法论",
+          "category": "software-engineering",
+          "group": "应用构建路线图",
+          "group_en": "Application build roadmaps",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把产品想法拆成可执行阶段任务，并驱动 Claude Code 按里程碑构建、提交、测试和部署。",
+          "description_en": "Turns product ideas into phased build plans and guides Claude Code through milestones, commits, tests, and deployment.",
+          "what": "生成并执行面向应用构建的阶段化路线图。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "team-update",
+          "path": "plugins/dev-tools/skills/team-update/SKILL.md",
+          "subcategory": "9-2",
+          "subcategory_title": "9.2 项目管理 / Issue 追踪",
+          "category": "comms-integration",
+          "group": "团队更新与反馈闭环",
+          "group_en": "Team Updates & Feedback Loop",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 Agent 发布项目进展、收集团队反馈并规划后续行动。",
+          "description_en": "Helps an agent post project updates, collect team feedback, and plan next steps.",
+          "what": "用 playbook 适配聊天、Git、issue 和任务工具，形成可复用的团队同步流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ux-audit",
+          "path": "plugins/dev-tools/skills/ux-audit/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "交互优先 UX 与质量审计",
+          "group_en": "Interaction-First UX and Quality Audit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "引导 Agent 像真实用户操作 Web 应用，发现可用性和行为缺陷。",
+          "description_en": "Guides an agent to use a live web app like a real user and uncover usability and behavioral issues.",
+          "what": "要求真实交互证据，结合可访问性、性能预算和复现步骤输出审计结论。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "ux-compare",
+          "path": "plugins/dev-tools/skills/ux-compare/SKILL.md",
+          "subcategory": "3-1",
+          "subcategory_title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "category": "product-management",
+          "group": "UX 模式对比决策",
+          "group_en": "UX Pattern Comparison",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "读取多个 UX 模式库，逐类比较共识、差异与缺口，为新功能设计给出建议。",
+          "description_en": "Compares multiple UX pattern libraries to identify conventions, tradeoffs, gaps, and recommendations for a new product feature.",
+          "what": "Turns extracted UX pattern libraries into design recommendations and tradeoff analysis.",
+          "chain": true,
+          "chain_group": "UX 模式提取与对比工作流",
+          "chain_group_en": "UX pattern extraction and comparison workflow"
+        },
+        {
+          "name": "ux-extract",
+          "path": "plugins/dev-tools/skills/ux-extract/SKILL.md",
+          "subcategory": "3-1",
+          "subcategory_title": "3.1 用户研究 / 客户旅程 / 反馈分析",
+          "category": "product-management",
+          "group": "UX 参考应用模式提取",
+          "group_en": "Reference UX Pattern Extraction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "系统研究参考 Web 应用，抽取交互、文案、状态与响应式模式，生成可复用模式库。",
+          "description_en": "Studies a reference web app and extracts interaction, copy, state, and responsive patterns into a reusable pattern library.",
+          "what": "Builds a concrete UX pattern library from a reference app for later audits or builds.",
+          "chain": true,
+          "chain_group": "UX 模式提取与对比工作流",
+          "chain_group_en": "UX pattern extraction and comparison workflow"
+        },
+        {
+          "name": "vitest",
+          "path": "plugins/dev-tools/skills/vitest/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "Vitest 测试基础设施搭建",
+          "group_en": "Vitest Test Infrastructure Setup",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "检测项目类型并生成 Vitest 配置、测试脚手架、脚本与 Jest 迁移方案。",
+          "description_en": "Detects the project type and generates Vitest config, test scaffolding, package scripts, and Jest migration guidance.",
+          "what": "Helps an agent set up or migrate a Vitest testing stack in the current project.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "antfu-skills · 组「Vitest 单元测试与覆盖率」"
+        },
+        {
+          "name": "design-loop",
+          "path": "plugins/frontend/skills/design-loop/SKILL.md",
+          "subcategory": "5-3",
+          "subcategory_title": "5.3 UI artifact / Web app 构建",
+          "category": "design-frontend",
+          "group": "自主多页站点构建循环",
+          "group_en": "Autonomous Multi-Page Site Build Loop",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "通过接力任务文件循环生成、集成并视觉验证多页 HTML/Tailwind 站点。",
+          "description_en": "Uses a relay task file to repeatedly generate, integrate, and visually verify multi-page HTML/Tailwind sites.",
+          "what": "Helps an agent keep building a multi-page site page by page in an autonomous loop.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "zLanqing",
+        "repo": "codex-claude-academic-skills",
+        "full_name": "zLanqing/codex-claude-academic-skills",
+        "url": "https://github.com/zLanqing/codex-claude-academic-skills",
+        "stars": 859,
+        "pushed_at": "2026-05-14",
+        "default_branch": "main",
+        "github_description": "本仓库包含三个面向学术科研人员的Skills，覆盖从文献阅读、论文写作到科学计算的完整研究工作流。office-academic-skill 负责论文阅读报告与学术 PPT/Word 文档生成；research-writing-skill 提供论文写作、润色与审稿回复辅助；scientific-toolkit-skill 整合 MATLAB/Python 科学计算与期刊级图表生成。三个 Skill 专为中文科研用户设计，可在 Claude Code 和 codex 中一键调用。",
+        "topics": [],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-claude-skills"
+      },
+      "skills": [
+        {
+          "name": "office-academic-skill",
+          "path": "office-academic-skill/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "学术论文 Word/PPT 交付物",
+          "group_en": "Academic Word/PPT Deliverables",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助生成和检查学术 Word/PPT，支持论文报告、答辩幻灯片与版式审阅。",
+          "description_en": "Generates and inspects academic Word/PPT deliverables, including reading reports, defense slides, and layout checks.",
+          "what": "面向中文科研用户的 Office 交付物生成与检查。",
+          "chain": true,
+          "chain_group": "学术论文阅读报告与写作润色工作流",
+          "chain_group_en": "Academic Reading Report and Manuscript Writing Workflow"
+        },
+        {
+          "name": "research-writing-skill",
+          "path": "research-writing-skill/SKILL.md",
+          "subcategory": "11-1",
+          "subcategory_title": "11.1 学术写作全流程",
+          "category": "academic-research",
+          "group": "科研论文写作与审稿回复",
+          "group_en": "Research Paper Writing and Reviewer Response",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "辅助撰写、修订和润色论文正文，生成审稿回复并规划论证结构。",
+          "description_en": "Helps draft, revise, and polish manuscript prose, including reviewer responses and argument planning.",
+          "what": "面向中文科研用户的论文写作、润色与 rebuttal 辅助。",
+          "chain": true,
+          "chain_group": "学术论文阅读报告与写作润色工作流",
+          "chain_group_en": "Academic Reading Report and Manuscript Writing Workflow"
+        },
+        {
+          "name": "scientific-toolkit-skill",
+          "path": "scientific-toolkit-skill/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "科研编码 / 可复现分析与出版级图表",
+          "group_en": "Research Coding, Reproducible Analysis & Publication Figures",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助完成科研计算、数据分析、仿真建模与期刊级图表生成。",
+          "description_en": "Supports scientific computing, data analysis, simulations, and publication-quality plotting workflows.",
+          "what": "用于科研计算、数据分析、仿真、统计与期刊图表生成。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "astropy",
+          "path": "scientific-toolkit-skill/references/scientific-skills/astropy/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "天文 / 天体物理 Python 分析",
+          "group_en": "Astronomy & Astrophysics Python Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "处理天文坐标、物理单位、FITS 文件、宇宙学与星表数据分析。",
+          "description_en": "Handles astronomical coordinates, units, FITS files, cosmology, and catalog data analysis.",
+          "what": "用于天文数据读取、坐标转换、单位换算与宇宙学计算。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "citation-management",
+          "path": "scientific-toolkit-skill/references/scientific-skills/citation-management/SKILL.md",
+          "subcategory": "11-4",
+          "subcategory_title": "11.4 学术投稿 / LaTeX / 排版",
+          "category": "academic-research",
+          "group": "引文 / 参考文献管理",
+          "group_en": "Citations and Reference Management",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 检索学术数据库、提取元数据、校验引用并生成规范 BibTeX，保障论文参考文献准确。",
+          "description_en": "Helps the agent search academic databases, extract metadata, validate citations, and generate clean BibTeX entries for accurate references.",
+          "what": "Searches Google Scholar/PubMed, validates citation metadata, and outputs formatted BibTeX.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "franklee16/K-Dense-writer/lingzhi227 · 组「引文 / 参考文献管理」"
+        },
+        {
+          "name": "exploratory-data-analysis",
+          "path": "scientific-toolkit-skill/references/scientific-skills/exploratory-data-analysis/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "科学数据探索分析",
+          "group_en": "Scientific Data Exploration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 自动识别科研数据文件、评估质量、生成摘要报告和后续分析建议。",
+          "description_en": "Helps the agent auto-detect scientific data files, assess quality, summarize structure, and recommend next analysis steps.",
+          "what": "Performs file-aware exploratory analysis and quality assessment for scientific datasets.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "franklee16/lingzhi227 · 组「统计 / 计量数据分析(R / Stata / Python)」"
+        },
+        {
+          "name": "literature-review",
+          "path": "scientific-toolkit-skill/references/scientific-skills/literature-review/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "深度文献检索 / 综述",
+          "group_en": "Deep Literature Search / Systematic Reviews",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "跨数据库检索文献、核验引文，并生成可发表的综述文档。",
+          "description_en": "Searches academic databases, verifies citations, and generates publication-ready systematic review documents.",
+          "what": "Systematic literature search, citation verification, and review synthesis.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "franklee16/lingzhi227/luwill/K-Dense-writer · 组「深度文献检索 / 综述」"
+        },
+        {
+          "name": "matlab",
+          "path": "scientific-toolkit-skill/references/scientific-skills/matlab/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "MATLAB / Octave 科学计算",
+          "group_en": "MATLAB / Octave Scientific Computing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "编写 MATLAB/Octave 脚本，完成数值计算、数据分析与科学可视化。",
+          "description_en": "Writes MATLAB/Octave scripts for numerical computing, data analysis, and scientific visualization.",
+          "what": "MATLAB/Octave numerical computing and scientific visualization.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "matplotlib",
+          "path": "scientific-toolkit-skill/references/scientific-skills/matplotlib/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "科学 / 出版级数据可视化",
+          "group_en": "Scientific publication visualization",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 选择 Matplotlib 接口并生成可发表图表。",
+          "description_en": "Helps the agent choose Matplotlib APIs and create publication-ready figures.",
+          "what": "Use for scientific plotting with fine-grained customization and PNG, PDF, or SVG export.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "franklee16/K-Dense-writer/lingzhi227 · 组「科学 / 出版级数据可视化」"
+        },
+        {
+          "name": "networkx",
+          "path": "scientific-toolkit-skill/references/scientific-skills/networkx/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "复杂网络 / 图数据分析",
+          "group_en": "Complex network and graph analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 构建、分析和可视化 Python 复杂网络图。",
+          "description_en": "Helps the agent build, analyze, and visualize complex networks in Python.",
+          "what": "Use for graph modeling, network algorithms, centrality analysis, and topology visualization.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "paper-lookup",
+          "path": "scientific-toolkit-skill/references/scientific-skills/paper-lookup/SKILL.md",
+          "subcategory": "11-3",
+          "subcategory_title": "11.3 文献检索 / 系统综述",
+          "category": "academic-research",
+          "group": "深度文献检索 / 综述 / PaperSpine 论文重写流水线",
+          "group_en": "Deep Literature Search / Review Workflows",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 跨多个学术数据库检索论文、DOI、作者与开放获取全文。",
+          "description_en": "Helps the agent search across academic databases for papers, DOIs, authors, and open-access full text.",
+          "what": "Academic literature lookup skill across multiple scholarly APIs.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pdf",
+          "path": "scientific-toolkit-skill/references/scientific-skills/pdf/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Office 文档四件套",
+          "group_en": "Office Document Toolkit",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 读取、拆分、合并、OCR、加密与生成 PDF 文件。",
+          "description_en": "Helps the agent read, split, merge, OCR, encrypt, and generate PDF files.",
+          "what": "General-purpose PDF processing guide for reading and manipulating PDF documents.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        },
+        {
+          "name": "pymatgen",
+          "path": "scientific-toolkit-skill/references/scientific-skills/pymatgen/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "计算材料科学工具包",
+          "group_en": "Computational Materials Science Toolkit",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理晶体结构、相图、电子结构与 Materials Project 数据。",
+          "description_en": "Helps the agent work with crystal structures, phase diagrams, electronic-structure data, and Materials Project workflows.",
+          "what": "Use this skill for computational materials science tasks with pymatgen.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "pymoo",
+          "path": "scientific-toolkit-skill/references/scientific-skills/pymoo/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "多目标优化与 Pareto 分析",
+          "group_en": "Multi-Objective Optimization & Pareto Analysis",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 构建多目标优化问题、求解 Pareto 前沿并比较折中方案。",
+          "description_en": "Helps the agent formulate multi-objective optimization problems, solve Pareto fronts, and compare trade-off solutions.",
+          "what": "Use this skill for multi-objective optimization workflows with pymoo.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "qutip",
+          "path": "scientific-toolkit-skill/references/scientific-skills/qutip/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "量子物理仿真与开放系统建模",
+          "group_en": "Quantum Physics Simulation & Open Systems Modeling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 用 QuTiP 模拟开放量子系统、主方程和退相干动力学。",
+          "description_en": "Helps the agent use QuTiP to simulate open quantum systems, master equations, and decoherence dynamics.",
+          "what": "Simulates quantum optics and Lindblad dynamics with QuTiP.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "scientific-visualization",
+          "path": "scientific-toolkit-skill/references/scientific-skills/scientific-visualization/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "科学 / 出版级数据可视化",
+          "group_en": "Scientific Publication-Ready Data Visualization",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 生成符合期刊要求的科研图表、多面板布局与导出格式。",
+          "description_en": "Helps the agent create journal-ready scientific figures with multi-panel layouts, annotations, and export formats.",
+          "what": "Creates publication-quality figures for scientific manuscripts.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "franklee16/K-Dense-writer/lingzhi227 · 组「科学 / 出版级数据可视化」"
+        },
+        {
+          "name": "scikit-learn",
+          "path": "scientific-toolkit-skill/references/scientific-skills/scikit-learn/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "Python 机器学习建模",
+          "group_en": "Python Machine Learning Modeling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "辅助使用 scikit-learn 完成分类、回归、聚类、评估与调参。",
+          "description_en": "Guides agents in scikit-learn classification, regression, clustering, evaluation, and tuning.",
+          "what": "Reference skill for building and evaluating Python machine learning workflows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "seaborn",
+          "path": "scientific-toolkit-skill/references/scientific-skills/seaborn/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "科学 / 出版级数据可视化",
+          "group_en": "Scientific Publication Visualization",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "辅助使用 Seaborn 制作统计探索图与出版级可视化。",
+          "description_en": "Guides agents in creating statistical exploration plots and publication-quality Seaborn visuals.",
+          "what": "Reference skill for statistical visualization with Seaborn.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "simpy",
+          "path": "scientific-toolkit-skill/references/scientific-skills/simpy/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "科研编码 / 科学计算",
+          "group_en": "Research Coding / Scientific Computing",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "用于 Python 离散事件仿真，建模流程、队列、资源竞争与时间事件。",
+          "description_en": "Builds Python discrete-event simulations for processes, queues, resources, and time-based events.",
+          "what": "A SimPy skill for process-based discrete-event simulation in Python.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "statistical-analysis",
+          "path": "scientific-toolkit-skill/references/scientific-skills/statistical-analysis/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "统计分析与 APA 报告",
+          "group_en": "Statistical Analysis & APA Reporting",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导统计检验选择、假设检查、功效分析，并生成 APA 风格结果报告。",
+          "description_en": "Guides test selection, assumption checks, power analysis, and APA-style statistical reporting.",
+          "what": "A guided statistical analysis workflow for academic research reporting.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "statsmodels",
+          "path": "scientific-toolkit-skill/references/scientific-skills/statsmodels/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "统计 / 计量数据分析(Python)",
+          "group_en": "Statistical and Econometric Analysis (Python)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Python 中选用 statsmodels 完成回归、时间序列、诊断与统计推断。",
+          "description_en": "Helps agents choose and apply statsmodels in Python for regression, time-series modeling, diagnostics, and statistical inference.",
+          "what": "用于 statsmodels 的调用决策、模型类型匹配、诊断检查与结果解释。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "sympy",
+          "path": "scientific-toolkit-skill/references/scientific-skills/sympy/SKILL.md",
+          "subcategory": "11-2",
+          "subcategory_title": "11.2 科研 / 工程 / 分析",
+          "category": "academic-research",
+          "group": "科研符号数学计算(Python)",
+          "group_en": "Research Symbolic Math Computation (Python)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 使用 SymPy 完成符号代数、微积分、方程求解、矩阵推导与代码生成。",
+          "description_en": "Helps agents use SymPy for symbolic algebra, calculus, equation solving, matrix manipulation, and code generation.",
+          "what": "用于 SymPy 的调用边界、典型任务匹配和精确符号求解指导。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "timesfm-forecasting",
+          "path": "scientific-toolkit-skill/references/scientific-skills/timesfm-forecasting/SKILL.md",
+          "subcategory": "7-3",
+          "subcategory_title": "7.3 数据库 / SQL / 分析",
+          "category": "data-scraping",
+          "group": "时间序列预测（TimesFM）",
+          "group_en": "Time-Series Forecasting (TimesFM)",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "让 agent 用 TimesFM 对单变量时间序列做零样本预测，输出点预测、区间并先检查本地资源。",
+          "description_en": "Enables agents to run zero-shot univariate time-series forecasting with TimesFM, producing point forecasts, prediction intervals, and resource preflight checks.",
+          "what": "用于本地调用 TimesFM 进行单变量时间序列预测。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "xlsx",
+          "path": "scientific-toolkit-skill/references/scientific-skills/xlsx/SKILL.md",
+          "subcategory": "2-1",
+          "subcategory_title": "2.1 Office 文档处理（Word / PPT / Excel / PDF）",
+          "category": "docs-knowledge",
+          "group": "Excel 电子表格处理",
+          "group_en": "Spreadsheet Handling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理以电子表格为主输入输出的任务，包括打开、编辑、创建、转换、清洗和格式化表格。",
+          "description_en": "Helps agents handle tasks where spreadsheets are the primary input or output, including opening, editing, creating, converting, cleaning, and formatting workbook files.",
+          "what": "用于处理 XLSX、CSV、TSV 等电子表格文件的读写、清洗和生成。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "Anthropic/K-Dense-writer · 组「Office 文档四件套」"
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "openclaw",
+        "repo": "agent-skills",
+        "full_name": "openclaw/agent-skills",
+        "url": "https://github.com/openclaw/agent-skills",
+        "stars": 823,
+        "pushed_at": "2026-06-19",
+        "default_branch": "main",
+        "github_description": "Useful skills for agents and claws.",
+        "topics": [],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "agent-transcript",
+          "path": "skills/agent-transcript/SKILL.md",
+          "subcategory": "1-4",
+          "subcategory_title": "1.4 Git / PR / CI 协作",
+          "category": "software-engineering",
+          "group": "GitHub PR/Issue 会话记录脱敏",
+          "group_en": "GitHub PR/Issue transcript redaction",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "脱敏本地 Agent 会话，生成可插入 PR/Issue 的 Markdown 记录。",
+          "description_en": "Sanitizes local agent session logs into safe Markdown for PR or issue bodies.",
+          "what": "Creates sanitized, previewable transcript snippets for GitHub PR and issue updates.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "autoreview",
+          "path": "skills/autoreview/SKILL.md",
+          "subcategory": "1-3",
+          "subcategory_title": "1.3 代码 Review / 重构 / 语义去重",
+          "category": "software-engineering",
+          "group": "提交前自动代码审查",
+          "group_en": "Pre-ship automated code review",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "在提交或发布前运行多引擎代码审查，辅助发现可修复问题。",
+          "description_en": "Runs advisory multi-engine code review before committing or shipping changes.",
+          "what": "Provides a structured closeout code review using Codex by default and optional alternate engines.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "crabbox",
+          "path": "skills/crabbox/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "远端 sandbox agent 运行时",
+          "group_en": "Remote Sandbox Agent Runtime",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "通过 Crabbox/Testbox 调度远程环境，验证 CI 等价任务并报告租赁信息。",
+          "description_en": "Runs remote validation environments through Crabbox/Testbox and reports provider and lease details.",
+          "what": "用于通过 Crabbox/Testbox 执行远程验证并上报 provider 与 lease id。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "handoff",
+          "path": "skills/handoff/SKILL.md",
+          "subcategory": "12-4",
+          "subcategory_title": "12.4 多 agent 拓扑 / 远端 sandbox / Harness",
+          "category": "agent-architecture",
+          "group": "Agent 任务交接提示",
+          "group_en": "Agent Task Handoff Prompts",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "为另一个 agent 生成可粘贴的接手提示，概括任务、上下文与审查要求。",
+          "description_en": "Creates a clipboard-ready prompt that gives another agent task context, constraints, and review instructions.",
+          "what": "用于把任务交接给另一个 agent 继续调查或执行。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "mattpocock · 组「会话接力 / 上下文 handoff」"
+        },
+        {
+          "name": "session-viewer",
+          "path": "skills/session-viewer/SKILL.md",
+          "subcategory": "12-2",
+          "subcategory_title": "12.2 Context 生命周期管理",
+          "category": "agent-architecture",
+          "group": "会话 JSONL 查看与导出",
+          "group_en": "Session JSONL Viewer and Export",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "把 Codex、Claude、OpenClaw 或 Pi 的会话 JSONL 转成可搜索 HTML 页面，便于审阅和分享。",
+          "description_en": "Turns Codex, Claude, OpenClaw, or Pi session JSONL transcripts into searchable HTML pages for review and sharing.",
+          "what": "Render agent session transcripts as a searchable single-file HTML viewer.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "sunbigfly",
+        "repo": "ppt-agent-skills",
+        "full_name": "sunbigfly/ppt-agent-skills",
+        "url": "https://github.com/sunbigfly/ppt-agent-skills",
+        "stars": 806,
+        "pushed_at": "2026-06-08",
+        "default_branch": "main",
+        "github_description": "A code-driven presentation generation framework. 像构建软件工程一样生成演示文稿。",
+        "topics": [
+          "ai-agents",
+          "html-to-pptx",
+          "multi-agent",
+          "pitch-deck",
+          "powerpoint",
+          "ppt",
+          "pptx",
+          "presentation-generator",
+          "slide-generator",
+          "visual-qa"
+        ],
+        "language": "Python",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "name-agent-skills"
+      },
+      "skills": [
+        {
+          "name": "(root)",
+          "path": "SKILL.md",
+          "subcategory": "5-5",
+          "subcategory_title": "5.5 演示 / 幻灯片生成",
+          "category": "design-frontend",
+          "group": "(root)",
+          "group_en": "Academic presentations / Beamer / paper-to-PPT / zero-dependency HTML slides / slide image generation / PPT video pipeline / PPTX standard generation",
+          "group_missing": true,
+          "reused_group": false,
+          "description_zh": "按主链步骤协调调研、搜集、大纲、设计和生成，适合把文档或主题转成 PPT。",
+          "description_en": "Coordinates research, sourcing, outlining, design, and generation into a controlled presentation pipeline.",
+          "what": "把文档、主题或汇报意图转化为结构化的多页 HTML 演示稿。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    },
+    {
+      "repo": {
+        "author": "dpearson2699",
+        "repo": "swift-ios-skills",
+        "full_name": "dpearson2699/swift-ios-skills",
+        "url": "https://github.com/dpearson2699/swift-ios-skills",
+        "stars": 777,
+        "pushed_at": "2026-05-28",
+        "default_branch": "main",
+        "github_description": "Agent Skills for iOS 26+, Swift 6.3, SwiftUI, and modern Apple frameworks",
+        "topics": [
+          "accessibility",
+          "agent-skills",
+          "ai-coding",
+          "apple",
+          "claude-code",
+          "codex-skills",
+          "cursor-skills",
+          "ios",
+          "ios-development",
+          "liquid-glass",
+          "localization",
+          "mapkit",
+          "networking",
+          "storekit",
+          "swift",
+          "swift-concurrency",
+          "swiftdata",
+          "swiftui",
+          "widgetkit",
+          "xcode"
+        ],
+        "language": "",
+        "is_fork": false,
+        "archived": false,
+        "disabled": false,
+        "matched_query": "topic-codex-skills"
+      },
+      "skills": [
+        {
+          "name": "accessorysetupkit",
+          "path": "skills/accessorysetupkit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "AccessorySetupKit 配件发现与授权",
+          "group_en": "AccessorySetupKit accessory discovery and authorization",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 iOS 应用中配置 AccessorySetupKit，用系统 picker 发现并授权蓝牙或 Wi-Fi 配件。",
+          "description_en": "Helps an agent configure AccessorySetupKit in iOS apps, using the system picker to discover and authorize Bluetooth or Wi-Fi accessories.",
+          "what": "Use when setting up privacy-preserving Bluetooth or Wi-Fi accessory discovery on iOS.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "activitykit",
+          "path": "skills/activitykit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "ActivityKit Live Activities 与 Dynamic Island",
+          "group_en": "ActivityKit Live Activities and Dynamic Island",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 实现或审查 ActivityKit Live Activities、Dynamic Island 布局和实时推送更新。",
+          "description_en": "Helps an agent implement or review ActivityKit Live Activities, Dynamic Island layouts, and real-time push updates.",
+          "what": "Use when building Live Activities or Dynamic Island experiences with ActivityKit.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "adattributionkit",
+          "path": "skills/adattributionkit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apple iOS SDK 集成",
+          "group_en": "Apple iOS SDK Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 iOS 应用中实现隐私保护广告归因、回传与转化值。",
+          "description_en": "Helps the agent implement privacy-preserving ad attribution, postbacks, and conversion values in iOS apps.",
+          "what": "Implement AdAttributionKit flows for publisher apps, advertised apps, impressions, postbacks, conversion values, and re-engagement attribution.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "alarmkit",
+          "path": "skills/alarmkit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apple iOS SDK 集成",
+          "group_en": "Apple iOS SDK Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 实现 AlarmKit 闹钟、倒计时、系统 UI 与小组件联动。",
+          "description_en": "Helps the agent implement AlarmKit alarms, countdown timers, system UI, and widget integration.",
+          "what": "Build wake-up alarms and countdown timers using AlarmKit scheduling, authorization, Live Activities, and Widget Extension handoff.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "app-clips",
+          "path": "skills/app-clips/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "App Clips 构建与迁移",
+          "group_en": "App Clips Build and Migration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 创建 App Clip 目标、配置调用入口、处理数据通知位置并规划迁移。",
+          "description_en": "Helps an agent create App Clip targets, configure invocation flows, handle data, notifications, and location, and plan migration to the full app.",
+          "what": "Builds and wires App Clips for lightweight iOS experiences.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "app-intents",
+          "path": "skills/app-intents/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "App Intents 系统集成",
+          "group_en": "App Intents System Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 实现 App Intents，把应用动作和实体暴露给 Siri、快捷指令、Spotlight、小组件和控制中心。",
+          "description_en": "Helps an agent implement App Intents to expose app actions and entities to Siri, Shortcuts, Spotlight, widgets, and Control Center.",
+          "what": "Exposes app functionality to Apple system surfaces.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "app-store-optimization",
+          "path": "skills/app-store-optimization/SKILL.md",
+          "subcategory": "4-4",
+          "subcategory_title": "4.4 付费广告 / ASO",
+          "category": "marketing-growth",
+          "group": "App 商店优化",
+          "group_en": "App Store Optimization",
+          "group_missing": false,
+          "reused_group": true,
+          "description_zh": "帮助 agent 制定 App Store 关键词、元数据、截图和转化优化方案。",
+          "description_en": "Guides agents through App Store keyword strategy, metadata, screenshots, and conversion experiments.",
+          "what": "ASO workflow for App Store product page discoverability and conversion.",
+          "chain": true,
+          "chain_group": "App Store 上架与审核工作流",
+          "chain_group_en": "App Store Launch & Review Workflow"
+        },
+        {
+          "name": "app-store-review",
+          "path": "skills/app-store-review/SKILL.md",
+          "subcategory": "4-11",
+          "subcategory_title": "4.11 GTM / 发布 / Product Hunt",
+          "category": "marketing-growth",
+          "group": "App Store 审核与上架准备",
+          "group_en": "App Store Review & Submission Readiness",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 检查 App Store 审核风险、隐私清单与提交流程。",
+          "description_en": "Guides agents through App Store review readiness, privacy manifests, and submission requirements.",
+          "what": "Checklist for avoiding App Store rejection before submission.",
+          "chain": true,
+          "chain_group": "App Store 上架与审核工作流",
+          "chain_group_en": "App Store Launch & Review Workflow"
+        },
+        {
+          "name": "apple-on-device-ai",
+          "path": "skills/apple-on-device-ai/SKILL.md",
+          "subcategory": "21-1",
+          "subcategory_title": "21.1 模型架构 / 实现",
+          "category": "ml-llm-engineering",
+          "group": "Apple 端侧 AI 与 Core ML 集成",
+          "group_en": "Apple On-Device AI and Core ML Integration",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Apple 平台集成 Foundation Models、Core ML、MLX Swift 与 llama.cpp。",
+          "description_en": "Helps an agent integrate Foundation Models, Core ML, MLX Swift, and llama.cpp on Apple platforms.",
+          "what": "Guide for selecting and deploying on-device AI frameworks in Apple apps.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "appmigrationkit",
+          "path": "skills/appmigrationkit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "AppMigrationKit 数据迁移实现",
+          "group_en": "AppMigrationKit Data Migration Implementation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 实现 iOS 与 Android 等平台之间的一次性应用数据迁移扩展。",
+          "description_en": "Helps an agent implement one-time app data migration extensions between iOS and other platforms.",
+          "what": "Guide for building AppMigrationKit export and import extensions.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "audioaccessorykit",
+          "path": "skills/audioaccessorykit/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "iOS / Swift 框架实现",
+          "group_en": "iOS / Swift Framework Implementation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "辅助实现 iOS 音频配件注册、切换、位置与连接源处理。",
+          "description_en": "Helps implement iOS audio accessory registration, routing, placement, and connected-source handling.",
+          "what": "Guides an agent in adding AudioAccessoryKit support for paired audio accessories and automatic audio switching.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "authentication",
+          "path": "skills/authentication/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "iOS / Swift 框架实现",
+          "group_en": "iOS / Swift Framework Implementation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导实现 Apple 登录、通行密钥、OAuth、自动填充与生物识别重认证。",
+          "description_en": "Guides iOS authentication flows with Sign in with Apple, passkeys, OAuth, autofill, and biometric re-authentication.",
+          "what": "Guides an agent in building iOS authentication flows using AuthenticationServices and LocalAuthentication.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": "",
+          "dup_catalog": "transilienceai/briiirussell/Masriyan · 组「渗透测试(Web / API / 基础设施)」"
+        },
+        {
+          "name": "avkit",
+          "path": "skills/avkit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apple SDK / iOS 功能实现",
+          "group_en": "Apple SDK / iOS Feature Implementation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 iOS/SwiftUI 中接入 AVKit 视频播放、画中画、AirPlay 与字幕能力。",
+          "description_en": "Helps an agent add AVKit video playback, Picture-in-Picture, AirPlay, and captions in iOS/SwiftUI.",
+          "what": "Adds system-standard media playback UI and controls.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "background-processing",
+          "path": "skills/background-processing/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apple SDK / iOS 功能实现",
+          "group_en": "Apple SDK / iOS Feature Implementation",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 配置 iOS 后台任务、后台下载与后台推送，处理到期和模拟调试。",
+          "description_en": "Helps configure iOS background tasks, background downloads, and push triggers with expiration handling.",
+          "what": "Registers and schedules background work using iOS BackgroundTasks.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "browserenginekit",
+          "path": "skills/browserenginekit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apple iOS SDK 开发",
+          "group_en": "Apple iOS SDK Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 构建 iOS/iPadOS 非 WebKit 浏览器引擎及扩展配置。",
+          "description_en": "Guides agents in building non-WebKit browser engines and extensions for iOS/iPadOS.",
+          "what": "Build alternative browser engines on iOS/iPadOS with BrowserEngineKit.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "callkit",
+          "path": "skills/callkit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apple iOS SDK 开发",
+          "group_en": "Apple iOS SDK Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 实现 VoIP 呼叫流程、PushKit 注册和系统通话集成。",
+          "description_en": "Guides agents in implementing VoIP call flows, PushKit registration, and native call integration.",
+          "what": "Implement VoIP calls with CallKit and PushKit.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "carplay",
+          "path": "skills/carplay/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Apple iOS / Swift 开发技能包",
+          "group_en": "Apple iOS and Swift Development Skill Set",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 构建和审查 CarPlay 车载模板界面、权限与模拟测试。",
+          "description_en": "Guides agents in building and reviewing CarPlay template UIs, entitlements, and simulator testing.",
+          "what": "用于创建或审查 CarPlay-enabled 车载应用的模板层级、生命周期和测试流程。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cloudkit",
+          "path": "skills/cloudkit/SKILL.md",
+          "subcategory": "1-7",
+          "subcategory_title": "1.7 .NET / 桌面 / 远端运行环境",
+          "category": "software-engineering",
+          "group": "Apple iOS / Swift 开发技能包",
+          "group_en": "Apple iOS and Swift Development Skill Set",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 实现和审查 CloudKit/iCloud 数据同步、冲突处理与错误恢复。",
+          "description_en": "Guides agents in implementing and reviewing CloudKit/iCloud sync, conflict handling, and error recovery.",
+          "what": "用于处理 CloudKit 容器、记录查询、SwiftData 集成、冲突解决和 iCloud 账号状态检查。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "contacts-framework",
+          "path": "skills/contacts-framework/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "iOS 系统框架开发",
+          "group_en": "iOS System Framework Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 处理 iOS 联系人权限、读写、选择器集成和变更监听。",
+          "description_en": "Helps an agent implement iOS Contacts features, including permissions, contact CRUD, picker UI, and change observation.",
+          "what": "Contacts and ContactsUI integration for Swift/iOS.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "core-bluetooth",
+          "path": "skills/core-bluetooth/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "iOS 系统框架开发",
+          "group_en": "iOS System Framework Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 实现 BLE 扫描连接、服务发现、特征读写通知、外设广播和后台恢复。",
+          "description_en": "Helps an agent build BLE workflows with Core Bluetooth, including scanning, connections, GATT reads and writes, advertising, and background restoration.",
+          "what": "Core Bluetooth BLE workflows for Swift/iOS.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "core-data",
+          "path": "skills/core-data/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "iOS / Apple 框架开发",
+          "group_en": "iOS and Apple Framework Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协助 agent 构建、审查和改进 Core Data 持久层。",
+          "description_en": "Helps the agent build, review, and improve Core Data persistence layers.",
+          "what": "用于 Core Data 栈搭建、并发、批量操作、迁移与测试。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "core-motion",
+          "path": "skills/core-motion/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "iOS / Apple 框架开发",
+          "group_en": "iOS and Apple Framework Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 读取 Core Motion 传感器与运动数据。",
+          "description_en": "Helps the agent read Core Motion sensor and activity data.",
+          "what": "用于访问加速度计、陀螺仪、计步器、活动识别与高度数据。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "core-nfc",
+          "path": "skills/core-nfc/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Apple iOS 框架开发",
+          "group_en": "Apple iOS Framework Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 iOS 中实现 NFC 标签读写、会话生命周期和权限配置。",
+          "description_en": "Helps the agent implement NFC tag read/write, session lifecycle handling, and entitlement setup in iOS.",
+          "what": "用于 CoreNFC 权限配置、NDEF/标签读取会话、写入与后台读取。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "coreml",
+          "path": "skills/coreml/SKILL.md",
+          "subcategory": "",
+          "subcategory_title": "",
+          "category": "",
+          "group": "Apple iOS 框架开发",
+          "group_en": "Apple iOS Framework Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 在 Swift/iOS 中加载 Core ML 模型、配置计算单元并运行推理。",
+          "description_en": "Helps the agent load Core ML models in Swift/iOS, configure compute units, and run inference.",
+          "what": "用于 Core ML 模型加载、预测、计算单元配置、性能分析和部署。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cryptokit",
+          "path": "skills/cryptokit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apple CryptoKit 安全原语",
+          "group_en": "Apple CryptoKit primitives",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 在 Swift 中使用 CryptoKit 完成哈希、HMAC、加密、签名和密钥交换。",
+          "description_en": "Guides the agent in using Swift CryptoKit for hashing, HMAC, encryption, signing, and key exchange.",
+          "what": "Apple CryptoKit implementation checklist for Swift apps.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "cryptotokenkit",
+          "path": "skills/cryptotokenkit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "CryptoTokenKit 令牌与智能卡",
+          "group_en": "CryptoTokenKit tokens and smart cards",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "指导 agent 在 Apple 平台集成 CryptoTokenKit、智能卡、令牌扩展和证书认证。",
+          "description_en": "Guides integration of CryptoTokenKit, smart cards, token extensions, and certificate authentication on Apple platforms.",
+          "what": "Apple token and smart-card integration workflow for Swift apps.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "debugging-instruments",
+          "path": "skills/debugging-instruments/SKILL.md",
+          "subcategory": "1-2",
+          "subcategory_title": "1.2 TDD / 测试 / 调试 / 验证",
+          "category": "software-engineering",
+          "group": "iOS 调试与性能分析",
+          "group_en": "iOS debugging and performance profiling",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助代理用 LLDB、Memory Graph 和 Instruments 排查 iOS 崩溃、卡顿、内存和性能问题。",
+          "description_en": "Helps the agent diagnose iOS crashes, hangs, memory issues, and performance bottlenecks with LLDB, Memory Graph, and Instruments.",
+          "what": "指导代理使用 LLDB、Memory Graph 和 Instruments 排查 iOS 应用问题。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "device-integrity",
+          "path": "skills/device-integrity/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "Apple 设备完整性与 App Attest",
+          "group_en": "Apple device integrity and App Attest",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助代理实现 DeviceCheck 与 App Attest，验证真实设备和合法 App 请求。",
+          "description_en": "Helps the agent implement DeviceCheck and App Attest to verify genuine devices and legitimate app requests.",
+          "what": "指导代理集成 Apple 设备完整性机制，用于反欺诈和敏感请求验证。",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "dockkit",
+          "path": "skills/dockkit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "iOS / Apple 框架 SDK 开发",
+          "group_en": "iOS / Apple Framework SDK Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "协助 agent 实现 DockKit 配件发现、主体跟踪、云台控制与取景配置。",
+          "description_en": "Helps the agent implement DockKit accessory discovery, subject tracking, motor control, and framing setup.",
+          "what": "Builds video apps that use motorized camera docks to track faces or bodies.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        },
+        {
+          "name": "energykit",
+          "path": "skills/energykit/SKILL.md",
+          "subcategory": "1-6",
+          "subcategory_title": "1.6 API / SDK / MCP / Agent 开发",
+          "category": "software-engineering",
+          "group": "iOS / Apple 框架 SDK 开发",
+          "group_en": "iOS / Apple Framework SDK Development",
+          "group_missing": false,
+          "reused_group": false,
+          "description_zh": "帮助 agent 接入 EnergyKit，查询电网清洁或低价时段并提交负载事件。",
+          "description_en": "Helps the agent integrate EnergyKit to query cleaner or cheaper grid periods and submit load events.",
+          "what": "Guides smart home scheduling around cleaner or lower-cost electricity windows.",
+          "chain": false,
+          "chain_group": "",
+          "chain_group_en": ""
+        }
+      ]
+    }
+  ]
+}
